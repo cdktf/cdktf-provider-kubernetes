@@ -219,7 +219,7 @@ export class KubernetesProvider extends TerraformProvider {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       client_certificate: this._clientCertificate,
       client_key: this._clientKey,

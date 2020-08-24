@@ -143,7 +143,7 @@ export class PersistentVolumeClaim extends TerraformResource {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       wait_until_bound: this._waitUntilBound,
       metadata: this._metadata,

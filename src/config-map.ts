@@ -96,7 +96,7 @@ export class ConfigMap extends TerraformResource {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       binary_data: this._binaryData,
       data: this._data,

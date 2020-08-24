@@ -136,7 +136,7 @@ export class ServiceAccount extends TerraformResource {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       automount_service_account_token: this._automountServiceAccountToken,
       image_pull_secret: this._imagePullSecret,

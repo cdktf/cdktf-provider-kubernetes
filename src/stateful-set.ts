@@ -1614,7 +1614,7 @@ export class StatefulSet extends TerraformResource {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       wait_for_rollout: this._waitForRollout,
       metadata: this._metadata,
