@@ -161,7 +161,7 @@ export class Ingress extends TerraformResource {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       wait_for_load_balancer: this._waitForLoadBalancer,
       metadata: this._metadata,

@@ -3164,7 +3164,7 @@ export class DataKubernetesPod extends TerraformDataSource {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       metadata: this._metadata,
     };

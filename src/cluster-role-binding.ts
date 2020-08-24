@@ -110,7 +110,7 @@ export class ClusterRoleBinding extends TerraformResource {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       metadata: this._metadata,
       role_ref: this._roleRef,

@@ -1589,7 +1589,7 @@ export class CronJob extends TerraformResource {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       metadata: this._metadata,
       spec: this._spec,
