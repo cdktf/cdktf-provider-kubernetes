@@ -1168,6 +1168,11 @@ export class DataKubernetesPodSpecContainer extends ComplexComputedList {
     return this.getStringAttribute('termination_message_path');
   }
 
+  // termination_message_policy - computed: true, optional: false, required: true
+  public get terminationMessagePolicy() {
+    return this.getStringAttribute('termination_message_policy');
+  }
+
   // tty - computed: true, optional: false, required: true
   public get tty() {
     return this.getBooleanAttribute('tty');
@@ -2059,6 +2064,11 @@ export class DataKubernetesPodSpecInitContainer extends ComplexComputedList {
     return this.getStringAttribute('termination_message_path');
   }
 
+  // termination_message_policy - computed: true, optional: false, required: true
+  public get terminationMessagePolicy() {
+    return this.getStringAttribute('termination_message_policy');
+  }
+
   // tty - computed: true, optional: false, required: true
   public get tty() {
     return this.getBooleanAttribute('tty');
@@ -2096,6 +2106,18 @@ export class DataKubernetesPodSpecSecurityContextSeLinuxOptions extends ComplexC
     return this.getStringAttribute('user');
   }
 }
+export class DataKubernetesPodSpecSecurityContextSysctl extends ComplexComputedList {
+
+  // name - computed: true, optional: false, required: true
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+
+  // value - computed: true, optional: false, required: true
+  public get value() {
+    return this.getStringAttribute('value');
+  }
+}
 export class DataKubernetesPodSpecSecurityContext extends ComplexComputedList {
 
   // fs_group - computed: true, optional: false, required: true
@@ -2125,6 +2147,11 @@ export class DataKubernetesPodSpecSecurityContext extends ComplexComputedList {
 
   // supplemental_groups - computed: true, optional: false, required: true
   public get supplementalGroups() {
+    return 'not implemented' as any;
+  }
+
+  // sysctl - computed: true, optional: false, required: true
+  public get sysctl() {
     return 'not implemented' as any;
   }
 }
@@ -2485,6 +2512,11 @@ export class DataKubernetesPodSpecVolumeEmptyDir extends ComplexComputedList {
   public get medium() {
     return this.getStringAttribute('medium');
   }
+
+  // size_limit - computed: true, optional: false, required: true
+  public get sizeLimit() {
+    return this.getStringAttribute('size_limit');
+  }
 }
 export class DataKubernetesPodSpecVolumeFc extends ComplexComputedList {
 
@@ -2705,6 +2737,183 @@ export class DataKubernetesPodSpecVolumePhotonPersistentDisk extends ComplexComp
   // pd_id - computed: true, optional: false, required: true
   public get pdId() {
     return this.getStringAttribute('pd_id');
+  }
+}
+export class DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItems extends ComplexComputedList {
+
+  // key - computed: true, optional: false, required: true
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+
+  // mode - computed: true, optional: false, required: true
+  public get mode() {
+    return this.getStringAttribute('mode');
+  }
+
+  // path - computed: true, optional: false, required: true
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+}
+export class DataKubernetesPodSpecVolumeProjectedSourcesConfigMap extends ComplexComputedList {
+
+  // items - computed: true, optional: false, required: true
+  public get items() {
+    return 'not implemented' as any;
+  }
+
+  // name - computed: true, optional: false, required: true
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+
+  // optional - computed: true, optional: false, required: true
+  public get optional() {
+    return this.getBooleanAttribute('optional');
+  }
+}
+export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef extends ComplexComputedList {
+
+  // api_version - computed: true, optional: false, required: true
+  public get apiVersion() {
+    return this.getStringAttribute('api_version');
+  }
+
+  // field_path - computed: true, optional: false, required: true
+  public get fieldPath() {
+    return this.getStringAttribute('field_path');
+  }
+}
+export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef extends ComplexComputedList {
+
+  // container_name - computed: true, optional: false, required: true
+  public get containerName() {
+    return this.getStringAttribute('container_name');
+  }
+
+  // quantity - computed: true, optional: false, required: true
+  public get quantity() {
+    return this.getStringAttribute('quantity');
+  }
+
+  // resource - computed: true, optional: false, required: true
+  public get resource() {
+    return this.getStringAttribute('resource');
+  }
+}
+export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItems extends ComplexComputedList {
+
+  // field_ref - computed: true, optional: false, required: true
+  public get fieldRef() {
+    return 'not implemented' as any;
+  }
+
+  // mode - computed: true, optional: false, required: true
+  public get mode() {
+    return this.getStringAttribute('mode');
+  }
+
+  // path - computed: true, optional: false, required: true
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+
+  // resource_field_ref - computed: true, optional: false, required: true
+  public get resourceFieldRef() {
+    return 'not implemented' as any;
+  }
+}
+export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApi extends ComplexComputedList {
+
+  // items - computed: true, optional: false, required: true
+  public get items() {
+    return 'not implemented' as any;
+  }
+}
+export class DataKubernetesPodSpecVolumeProjectedSourcesSecretItems extends ComplexComputedList {
+
+  // key - computed: true, optional: false, required: true
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+
+  // mode - computed: true, optional: false, required: true
+  public get mode() {
+    return this.getStringAttribute('mode');
+  }
+
+  // path - computed: true, optional: false, required: true
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+}
+export class DataKubernetesPodSpecVolumeProjectedSourcesSecret extends ComplexComputedList {
+
+  // items - computed: true, optional: false, required: true
+  public get items() {
+    return 'not implemented' as any;
+  }
+
+  // name - computed: true, optional: false, required: true
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+
+  // optional - computed: true, optional: false, required: true
+  public get optional() {
+    return this.getBooleanAttribute('optional');
+  }
+}
+export class DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountToken extends ComplexComputedList {
+
+  // audience - computed: true, optional: false, required: true
+  public get audience() {
+    return this.getStringAttribute('audience');
+  }
+
+  // expiration_seconds - computed: true, optional: false, required: true
+  public get expirationSeconds() {
+    return this.getNumberAttribute('expiration_seconds');
+  }
+
+  // path - computed: true, optional: false, required: true
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+}
+export class DataKubernetesPodSpecVolumeProjectedSources extends ComplexComputedList {
+
+  // config_map - computed: true, optional: false, required: true
+  public get configMap() {
+    return 'not implemented' as any;
+  }
+
+  // downward_api - computed: true, optional: false, required: true
+  public get downwardApi() {
+    return 'not implemented' as any;
+  }
+
+  // secret - computed: true, optional: false, required: true
+  public get secret() {
+    return 'not implemented' as any;
+  }
+
+  // service_account_token - computed: true, optional: false, required: true
+  public get serviceAccountToken() {
+    return 'not implemented' as any;
+  }
+}
+export class DataKubernetesPodSpecVolumeProjected extends ComplexComputedList {
+
+  // default_mode - computed: true, optional: false, required: true
+  public get defaultMode() {
+    return this.getStringAttribute('default_mode');
+  }
+
+  // sources - computed: true, optional: false, required: true
+  public get sources() {
+    return 'not implemented' as any;
   }
 }
 export class DataKubernetesPodSpecVolumeQuobyte extends ComplexComputedList {
@@ -2948,6 +3157,11 @@ export class DataKubernetesPodSpecVolume extends ComplexComputedList {
 
   // photon_persistent_disk - computed: true, optional: false, required: true
   public get photonPersistentDisk() {
+    return 'not implemented' as any;
+  }
+
+  // projected - computed: true, optional: false, required: true
+  public get projected() {
     return 'not implemented' as any;
   }
 

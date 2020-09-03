@@ -547,6 +547,8 @@ export interface ReplicationControllerSpecTemplateContainer {
   readonly stdinOnce?: boolean;
   /** Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated. */
   readonly terminationMessagePath?: string;
+  /** Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. */
+  readonly terminationMessagePolicy?: string;
   /** Whether this container should allocate a TTY for itself */
   readonly tty?: boolean;
   /** Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated. */
@@ -956,6 +958,8 @@ export interface ReplicationControllerSpecTemplateInitContainer {
   readonly stdinOnce?: boolean;
   /** Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated. */
   readonly terminationMessagePath?: string;
+  /** Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. */
+  readonly terminationMessagePolicy?: string;
   /** Whether this container should allocate a TTY for itself */
   readonly tty?: boolean;
   /** Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated. */
@@ -1003,6 +1007,12 @@ export interface ReplicationControllerSpecTemplateSecurityContextSeLinuxOptions 
   /** User is a SELinux user label that applies to the container. */
   readonly user?: string;
 }
+export interface ReplicationControllerSpecTemplateSecurityContextSysctl {
+  /** Name of a property to set. */
+  readonly name: string;
+  /** Value of a property to set. */
+  readonly value: string;
+}
 export interface ReplicationControllerSpecTemplateSecurityContext {
   /** A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume. */
   readonly fsGroup?: number;
@@ -1016,6 +1026,8 @@ export interface ReplicationControllerSpecTemplateSecurityContext {
   readonly supplementalGroups?: number[];
   /** se_linux_options block */
   readonly seLinuxOptions?: ReplicationControllerSpecTemplateSecurityContextSeLinuxOptions[];
+  /** sysctl block */
+  readonly sysctl?: ReplicationControllerSpecTemplateSecurityContextSysctl[];
 }
 export interface ReplicationControllerSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions {
   /** The label key that the selector applies to. */
@@ -1537,6 +1549,8 @@ export interface ReplicationControllerSpecTemplateSpecContainer {
   readonly stdinOnce?: boolean;
   /** Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated. */
   readonly terminationMessagePath?: string;
+  /** Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. */
+  readonly terminationMessagePolicy?: string;
   /** Whether this container should allocate a TTY for itself */
   readonly tty?: boolean;
   /** Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated. */
@@ -1946,6 +1960,8 @@ export interface ReplicationControllerSpecTemplateSpecInitContainer {
   readonly stdinOnce?: boolean;
   /** Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated. */
   readonly terminationMessagePath?: string;
+  /** Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. */
+  readonly terminationMessagePolicy?: string;
   /** Whether this container should allocate a TTY for itself */
   readonly tty?: boolean;
   /** Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated. */
@@ -1981,6 +1997,12 @@ export interface ReplicationControllerSpecTemplateSpecSecurityContextSeLinuxOpti
   /** User is a SELinux user label that applies to the container. */
   readonly user?: string;
 }
+export interface ReplicationControllerSpecTemplateSpecSecurityContextSysctl {
+  /** Name of a property to set. */
+  readonly name: string;
+  /** Value of a property to set. */
+  readonly value: string;
+}
 export interface ReplicationControllerSpecTemplateSpecSecurityContext {
   /** A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume. */
   readonly fsGroup?: number;
@@ -1994,6 +2016,8 @@ export interface ReplicationControllerSpecTemplateSpecSecurityContext {
   readonly supplementalGroups?: number[];
   /** se_linux_options block */
   readonly seLinuxOptions?: ReplicationControllerSpecTemplateSpecSecurityContextSeLinuxOptions[];
+  /** sysctl block */
+  readonly sysctl?: ReplicationControllerSpecTemplateSpecSecurityContextSysctl[];
 }
 export interface ReplicationControllerSpecTemplateSpecToleration {
   /** Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute. */
@@ -2158,6 +2182,8 @@ export interface ReplicationControllerSpecTemplateSpecVolumeDownwardApi {
 export interface ReplicationControllerSpecTemplateSpecVolumeEmptyDir {
   /** What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir */
   readonly medium?: string;
+  /** Total amount of local storage required for this EmptyDir volume. */
+  readonly sizeLimit?: string;
 }
 export interface ReplicationControllerSpecTemplateSpecVolumeFc {
   /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
@@ -2262,6 +2288,88 @@ export interface ReplicationControllerSpecTemplateSpecVolumePhotonPersistentDisk
   readonly fsType?: string;
   /** ID that identifies Photon Controller persistent disk */
   readonly pdId: string;
+}
+export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConfigMapItems {
+  /** The key to project. */
+  readonly key?: string;
+  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  readonly mode?: string;
+  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  readonly path?: string;
+}
+export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConfigMap {
+  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  readonly name?: string;
+  /** Optional: Specify whether the ConfigMap or it's keys must be defined. */
+  readonly optional?: boolean;
+  /** items block */
+  readonly items?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConfigMapItems[];
+}
+export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef {
+  /** Version of the schema the FieldPath is written in terms of, defaults to 'v1'. */
+  readonly apiVersion?: string;
+  /** Path of the field to select in the specified API version */
+  readonly fieldPath?: string;
+}
+export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
+  readonly containerName: string;
+  readonly quantity?: string;
+  /** Resource to select */
+  readonly resource: string;
+}
+export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems {
+  /** Mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  readonly mode?: string;
+  /** Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..' */
+  readonly path: string;
+  /** field_ref block */
+  readonly fieldRef?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef[];
+  /** resource_field_ref block */
+  readonly resourceFieldRef?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef[];
+}
+export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApi {
+  /** items block */
+  readonly items?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[];
+}
+export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecretItems {
+  /** The key to project. */
+  readonly key?: string;
+  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  readonly mode?: string;
+  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  readonly path?: string;
+}
+export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecret {
+  /** Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets */
+  readonly name?: string;
+  /** Optional: Specify whether the Secret or it's keys must be defined. */
+  readonly optional?: boolean;
+  /** items block */
+  readonly items?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecretItems[];
+}
+export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken {
+  /** Audience is the intended audience of the token */
+  readonly audience?: string;
+  /** ExpirationSeconds is the expected duration of validity of the service account token. It defaults to 1 hour and must be at least 10 minutes (600 seconds). */
+  readonly expirationSeconds?: number;
+  /** Path specifies a relative path to the mount point of the projected volume. */
+  readonly path: string;
+}
+export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSources {
+  /** config_map block */
+  readonly configMap?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConfigMap[];
+  /** downward_api block */
+  readonly downwardApi?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApi[];
+  /** secret block */
+  readonly secret?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecret[];
+  /** service_account_token block */
+  readonly serviceAccountToken?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken[];
+}
+export interface ReplicationControllerSpecTemplateSpecVolumeProjected {
+  /** Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  readonly defaultMode?: string;
+  /** sources block */
+  readonly sources: ReplicationControllerSpecTemplateSpecVolumeProjectedSources[];
 }
 export interface ReplicationControllerSpecTemplateSpecVolumeQuobyte {
   /** Group to map volume access to Default is no group */
@@ -2368,6 +2476,8 @@ export interface ReplicationControllerSpecTemplateSpecVolume {
   readonly persistentVolumeClaim?: ReplicationControllerSpecTemplateSpecVolumePersistentVolumeClaim[];
   /** photon_persistent_disk block */
   readonly photonPersistentDisk?: ReplicationControllerSpecTemplateSpecVolumePhotonPersistentDisk[];
+  /** projected block */
+  readonly projected?: ReplicationControllerSpecTemplateSpecVolumeProjected[];
   /** quobyte block */
   readonly quobyte?: ReplicationControllerSpecTemplateSpecVolumeQuobyte[];
   /** rbd block */
@@ -2590,6 +2700,8 @@ export interface ReplicationControllerSpecTemplateVolumeDownwardApi {
 export interface ReplicationControllerSpecTemplateVolumeEmptyDir {
   /** What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir */
   readonly medium?: string;
+  /** Total amount of local storage required for this EmptyDir volume. */
+  readonly sizeLimit?: string;
 }
 export interface ReplicationControllerSpecTemplateVolumeFc {
   /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
@@ -2694,6 +2806,88 @@ export interface ReplicationControllerSpecTemplateVolumePhotonPersistentDisk {
   readonly fsType?: string;
   /** ID that identifies Photon Controller persistent disk */
   readonly pdId: string;
+}
+export interface ReplicationControllerSpecTemplateVolumeProjectedSourcesConfigMapItems {
+  /** The key to project. */
+  readonly key?: string;
+  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  readonly mode?: string;
+  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  readonly path?: string;
+}
+export interface ReplicationControllerSpecTemplateVolumeProjectedSourcesConfigMap {
+  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  readonly name?: string;
+  /** Optional: Specify whether the ConfigMap or it's keys must be defined. */
+  readonly optional?: boolean;
+  /** items block */
+  readonly items?: ReplicationControllerSpecTemplateVolumeProjectedSourcesConfigMapItems[];
+}
+export interface ReplicationControllerSpecTemplateVolumeProjectedSourcesDownwardApiItemsFieldRef {
+  /** Version of the schema the FieldPath is written in terms of, defaults to 'v1'. */
+  readonly apiVersion?: string;
+  /** Path of the field to select in the specified API version */
+  readonly fieldPath?: string;
+}
+export interface ReplicationControllerSpecTemplateVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
+  readonly containerName: string;
+  readonly quantity?: string;
+  /** Resource to select */
+  readonly resource: string;
+}
+export interface ReplicationControllerSpecTemplateVolumeProjectedSourcesDownwardApiItems {
+  /** Mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  readonly mode?: string;
+  /** Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..' */
+  readonly path: string;
+  /** field_ref block */
+  readonly fieldRef?: ReplicationControllerSpecTemplateVolumeProjectedSourcesDownwardApiItemsFieldRef[];
+  /** resource_field_ref block */
+  readonly resourceFieldRef?: ReplicationControllerSpecTemplateVolumeProjectedSourcesDownwardApiItemsResourceFieldRef[];
+}
+export interface ReplicationControllerSpecTemplateVolumeProjectedSourcesDownwardApi {
+  /** items block */
+  readonly items?: ReplicationControllerSpecTemplateVolumeProjectedSourcesDownwardApiItems[];
+}
+export interface ReplicationControllerSpecTemplateVolumeProjectedSourcesSecretItems {
+  /** The key to project. */
+  readonly key?: string;
+  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  readonly mode?: string;
+  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  readonly path?: string;
+}
+export interface ReplicationControllerSpecTemplateVolumeProjectedSourcesSecret {
+  /** Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets */
+  readonly name?: string;
+  /** Optional: Specify whether the Secret or it's keys must be defined. */
+  readonly optional?: boolean;
+  /** items block */
+  readonly items?: ReplicationControllerSpecTemplateVolumeProjectedSourcesSecretItems[];
+}
+export interface ReplicationControllerSpecTemplateVolumeProjectedSourcesServiceAccountToken {
+  /** Audience is the intended audience of the token */
+  readonly audience?: string;
+  /** ExpirationSeconds is the expected duration of validity of the service account token. It defaults to 1 hour and must be at least 10 minutes (600 seconds). */
+  readonly expirationSeconds?: number;
+  /** Path specifies a relative path to the mount point of the projected volume. */
+  readonly path: string;
+}
+export interface ReplicationControllerSpecTemplateVolumeProjectedSources {
+  /** config_map block */
+  readonly configMap?: ReplicationControllerSpecTemplateVolumeProjectedSourcesConfigMap[];
+  /** downward_api block */
+  readonly downwardApi?: ReplicationControllerSpecTemplateVolumeProjectedSourcesDownwardApi[];
+  /** secret block */
+  readonly secret?: ReplicationControllerSpecTemplateVolumeProjectedSourcesSecret[];
+  /** service_account_token block */
+  readonly serviceAccountToken?: ReplicationControllerSpecTemplateVolumeProjectedSourcesServiceAccountToken[];
+}
+export interface ReplicationControllerSpecTemplateVolumeProjected {
+  /** Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  readonly defaultMode?: string;
+  /** sources block */
+  readonly sources: ReplicationControllerSpecTemplateVolumeProjectedSources[];
 }
 export interface ReplicationControllerSpecTemplateVolumeQuobyte {
   /** Group to map volume access to Default is no group */
@@ -2800,6 +2994,8 @@ export interface ReplicationControllerSpecTemplateVolume {
   readonly persistentVolumeClaim?: ReplicationControllerSpecTemplateVolumePersistentVolumeClaim[];
   /** photon_persistent_disk block */
   readonly photonPersistentDisk?: ReplicationControllerSpecTemplateVolumePhotonPersistentDisk[];
+  /** projected block */
+  readonly projected?: ReplicationControllerSpecTemplateVolumeProjected[];
   /** quobyte block */
   readonly quobyte?: ReplicationControllerSpecTemplateVolumeQuobyte[];
   /** rbd block */

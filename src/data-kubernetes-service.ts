@@ -73,6 +73,11 @@ export class DataKubernetesServiceSpec extends ComplexComputedList {
     return this.getStringAttribute('external_traffic_policy');
   }
 
+  // health_check_node_port - computed: true, optional: false, required: true
+  public get healthCheckNodePort() {
+    return this.getNumberAttribute('health_check_node_port');
+  }
+
   // load_balancer_ip - computed: true, optional: false, required: true
   public get loadBalancerIp() {
     return this.getStringAttribute('load_balancer_ip');
