@@ -547,6 +547,8 @@ export interface PodSpecContainer {
   readonly stdinOnce?: boolean;
   /** Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated. */
   readonly terminationMessagePath?: string;
+  /** Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. */
+  readonly terminationMessagePolicy?: string;
   /** Whether this container should allocate a TTY for itself */
   readonly tty?: boolean;
   /** Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated. */
@@ -956,6 +958,8 @@ export interface PodSpecInitContainer {
   readonly stdinOnce?: boolean;
   /** Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated. */
   readonly terminationMessagePath?: string;
+  /** Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. */
+  readonly terminationMessagePolicy?: string;
   /** Whether this container should allocate a TTY for itself */
   readonly tty?: boolean;
   /** Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated. */
@@ -991,6 +995,12 @@ export interface PodSpecSecurityContextSeLinuxOptions {
   /** User is a SELinux user label that applies to the container. */
   readonly user?: string;
 }
+export interface PodSpecSecurityContextSysctl {
+  /** Name of a property to set. */
+  readonly name: string;
+  /** Value of a property to set. */
+  readonly value: string;
+}
 export interface PodSpecSecurityContext {
   /** A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume. */
   readonly fsGroup?: number;
@@ -1004,6 +1014,8 @@ export interface PodSpecSecurityContext {
   readonly supplementalGroups?: number[];
   /** se_linux_options block */
   readonly seLinuxOptions?: PodSpecSecurityContextSeLinuxOptions[];
+  /** sysctl block */
+  readonly sysctl?: PodSpecSecurityContextSysctl[];
 }
 export interface PodSpecToleration {
   /** Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute. */
@@ -1168,6 +1180,8 @@ export interface PodSpecVolumeDownwardApi {
 export interface PodSpecVolumeEmptyDir {
   /** What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir */
   readonly medium?: string;
+  /** Total amount of local storage required for this EmptyDir volume. */
+  readonly sizeLimit?: string;
 }
 export interface PodSpecVolumeFc {
   /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
@@ -1272,6 +1286,88 @@ export interface PodSpecVolumePhotonPersistentDisk {
   readonly fsType?: string;
   /** ID that identifies Photon Controller persistent disk */
   readonly pdId: string;
+}
+export interface PodSpecVolumeProjectedSourcesConfigMapItems {
+  /** The key to project. */
+  readonly key?: string;
+  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  readonly mode?: string;
+  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  readonly path?: string;
+}
+export interface PodSpecVolumeProjectedSourcesConfigMap {
+  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  readonly name?: string;
+  /** Optional: Specify whether the ConfigMap or it's keys must be defined. */
+  readonly optional?: boolean;
+  /** items block */
+  readonly items?: PodSpecVolumeProjectedSourcesConfigMapItems[];
+}
+export interface PodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef {
+  /** Version of the schema the FieldPath is written in terms of, defaults to 'v1'. */
+  readonly apiVersion?: string;
+  /** Path of the field to select in the specified API version */
+  readonly fieldPath?: string;
+}
+export interface PodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
+  readonly containerName: string;
+  readonly quantity?: string;
+  /** Resource to select */
+  readonly resource: string;
+}
+export interface PodSpecVolumeProjectedSourcesDownwardApiItems {
+  /** Mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  readonly mode?: string;
+  /** Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..' */
+  readonly path: string;
+  /** field_ref block */
+  readonly fieldRef?: PodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef[];
+  /** resource_field_ref block */
+  readonly resourceFieldRef?: PodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef[];
+}
+export interface PodSpecVolumeProjectedSourcesDownwardApi {
+  /** items block */
+  readonly items?: PodSpecVolumeProjectedSourcesDownwardApiItems[];
+}
+export interface PodSpecVolumeProjectedSourcesSecretItems {
+  /** The key to project. */
+  readonly key?: string;
+  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  readonly mode?: string;
+  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  readonly path?: string;
+}
+export interface PodSpecVolumeProjectedSourcesSecret {
+  /** Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets */
+  readonly name?: string;
+  /** Optional: Specify whether the Secret or it's keys must be defined. */
+  readonly optional?: boolean;
+  /** items block */
+  readonly items?: PodSpecVolumeProjectedSourcesSecretItems[];
+}
+export interface PodSpecVolumeProjectedSourcesServiceAccountToken {
+  /** Audience is the intended audience of the token */
+  readonly audience?: string;
+  /** ExpirationSeconds is the expected duration of validity of the service account token. It defaults to 1 hour and must be at least 10 minutes (600 seconds). */
+  readonly expirationSeconds?: number;
+  /** Path specifies a relative path to the mount point of the projected volume. */
+  readonly path: string;
+}
+export interface PodSpecVolumeProjectedSources {
+  /** config_map block */
+  readonly configMap?: PodSpecVolumeProjectedSourcesConfigMap[];
+  /** downward_api block */
+  readonly downwardApi?: PodSpecVolumeProjectedSourcesDownwardApi[];
+  /** secret block */
+  readonly secret?: PodSpecVolumeProjectedSourcesSecret[];
+  /** service_account_token block */
+  readonly serviceAccountToken?: PodSpecVolumeProjectedSourcesServiceAccountToken[];
+}
+export interface PodSpecVolumeProjected {
+  /** Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  readonly defaultMode?: string;
+  /** sources block */
+  readonly sources: PodSpecVolumeProjectedSources[];
 }
 export interface PodSpecVolumeQuobyte {
   /** Group to map volume access to Default is no group */
@@ -1378,6 +1474,8 @@ export interface PodSpecVolume {
   readonly persistentVolumeClaim?: PodSpecVolumePersistentVolumeClaim[];
   /** photon_persistent_disk block */
   readonly photonPersistentDisk?: PodSpecVolumePhotonPersistentDisk[];
+  /** projected block */
+  readonly projected?: PodSpecVolumeProjected[];
   /** quobyte block */
   readonly quobyte?: PodSpecVolumeQuobyte[];
   /** rbd block */

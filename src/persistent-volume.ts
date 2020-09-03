@@ -338,6 +338,8 @@ export interface PersistentVolumeSpec {
   readonly persistentVolumeReclaimPolicy?: string;
   /** A description of the persistent volume's class. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class */
   readonly storageClassName?: string;
+  /** Defines if a volume is intended to be used with a formatted filesystem. or to remain in raw block state. */
+  readonly volumeMode?: string;
   /** node_affinity block */
   readonly nodeAffinity?: PersistentVolumeSpecNodeAffinity[];
   /** persistent_volume_source block */

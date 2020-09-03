@@ -8,10 +8,30 @@ import { TerraformMetaArguments } from 'cdktf';
 // Configuration
 
 export interface ClusterRoleConfig extends TerraformMetaArguments {
+  /** aggregation_rule block */
+  readonly aggregationRule?: ClusterRoleAggregationRule[];
   /** metadata block */
   readonly metadata: ClusterRoleMetadata[];
   /** rule block */
-  readonly rule: ClusterRoleRule[];
+  readonly rule?: ClusterRoleRule[];
+}
+export interface ClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressions {
+  /** The label key that the selector applies to. */
+  readonly key?: string;
+  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  readonly operator?: string;
+  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  readonly values?: string[];
+}
+export interface ClusterRoleAggregationRuleClusterRoleSelectors {
+  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  readonly matchLabels?: { [key: string]: string };
+  /** match_expressions block */
+  readonly matchExpressions?: ClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressions[];
+}
+export interface ClusterRoleAggregationRule {
+  /** cluster_role_selectors block */
+  readonly clusterRoleSelectors?: ClusterRoleAggregationRuleClusterRoleSelectors[];
 }
 export interface ClusterRoleMetadata {
   /** An unstructured key value map stored with the clusterRole that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
@@ -53,6 +73,7 @@ export class ClusterRole extends TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._aggregationRule = config.aggregationRule;
     this._metadata = config.metadata;
     this._rule = config.rule;
   }
@@ -70,6 +91,15 @@ export class ClusterRole extends TerraformResource {
     this._id = value;
   }
 
+  // aggregation_rule - computed: false, optional: true, required: false
+  private _aggregationRule?: ClusterRoleAggregationRule[];
+  public get aggregationRule() {
+    return this._aggregationRule;
+  }
+  public set aggregationRule(value: ClusterRoleAggregationRule[] | undefined) {
+    this._aggregationRule = value;
+  }
+
   // metadata - computed: false, optional: false, required: true
   private _metadata: ClusterRoleMetadata[];
   public get metadata() {
@@ -79,12 +109,12 @@ export class ClusterRole extends TerraformResource {
     this._metadata = value;
   }
 
-  // rule - computed: false, optional: false, required: true
-  private _rule: ClusterRoleRule[];
+  // rule - computed: false, optional: true, required: false
+  private _rule?: ClusterRoleRule[];
   public get rule() {
     return this._rule;
   }
-  public set rule(value: ClusterRoleRule[]) {
+  public set rule(value: ClusterRoleRule[] | undefined) {
     this._rule = value;
   }
 
@@ -94,6 +124,7 @@ export class ClusterRole extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      aggregation_rule: this._aggregationRule,
       metadata: this._metadata,
       rule: this._rule,
     };
