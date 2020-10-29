@@ -82,7 +82,7 @@ export interface MutatingWebhookConfigurationWebhookObjectSelector {
 export interface MutatingWebhookConfigurationWebhookRule {
   readonly apiGroups: string[];
   readonly apiVersions: string[];
-  /** Operations is the operations the admission hook cares about - CREATE, UPDATE, or * for all operations. If '*' is present, the length of the slice must be one. Required. */
+  /** Operations is the operations the admission hook cares about - CREATE, UPDATE, DELETE, CONNECT or * for all of those operations and any future admission operations that are added. If '*' is present, the length of the slice must be one. Required. */
   readonly operations: string[];
   readonly resources: string[];
   readonly scope?: string;

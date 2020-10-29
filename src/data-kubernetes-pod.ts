@@ -2084,6 +2084,13 @@ export class DataKubernetesPodSpecInitContainer extends ComplexComputedList {
     return this.getStringAttribute('working_dir');
   }
 }
+export class DataKubernetesPodSpecReadinessGate extends ComplexComputedList {
+
+  // condition_type - computed: true, optional: false, required: true
+  public get conditionType() {
+    return this.getStringAttribute('condition_type');
+  }
+}
 export class DataKubernetesPodSpecSecurityContextSeLinuxOptions extends ComplexComputedList {
 
   // level - computed: true, optional: false, required: true
@@ -2224,6 +2231,11 @@ export class DataKubernetesPodSpecVolumeAzureDisk extends ComplexComputedList {
   // fs_type - computed: true, optional: false, required: true
   public get fsType() {
     return this.getStringAttribute('fs_type');
+  }
+
+  // kind - computed: true, optional: false, required: true
+  public get kind() {
+    return this.getStringAttribute('kind');
   }
 
   // read_only - computed: true, optional: false, required: true
@@ -3217,6 +3229,11 @@ export class DataKubernetesPodSpec extends ComplexComputedList {
     return this.getStringAttribute('dns_policy');
   }
 
+  // enable_service_links - computed: true, optional: false, required: true
+  public get enableServiceLinks() {
+    return this.getBooleanAttribute('enable_service_links');
+  }
+
   // host_aliases - computed: true, optional: false, required: true
   public get hostAliases() {
     return 'not implemented' as any;
@@ -3265,6 +3282,11 @@ export class DataKubernetesPodSpec extends ComplexComputedList {
   // priority_class_name - computed: true, optional: false, required: true
   public get priorityClassName() {
     return this.getStringAttribute('priority_class_name');
+  }
+
+  // readiness_gate - computed: true, optional: false, required: true
+  public get readinessGate() {
+    return 'not implemented' as any;
   }
 
   // restart_policy - computed: true, optional: false, required: true

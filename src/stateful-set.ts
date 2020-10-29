@@ -1009,6 +1009,10 @@ export interface StatefulSetSpecTemplateSpecInitContainer {
   /** volume_mount block */
   readonly volumeMount?: StatefulSetSpecTemplateSpecInitContainerVolumeMount[];
 }
+export interface StatefulSetSpecTemplateSpecReadinessGate {
+  /** refers to a condition in the pod's condition list with matching type. */
+  readonly conditionType: string;
+}
 export interface StatefulSetSpecTemplateSpecSecurityContextSeLinuxOptions {
   /** Level is SELinux level label that applies to the container. */
   readonly level?: string;
@@ -1072,6 +1076,8 @@ export interface StatefulSetSpecTemplateSpecVolumeAzureDisk {
   readonly diskName: string;
   /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
   readonly fsType?: string;
+  /** The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared */
+  readonly kind?: string;
   /** Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). */
   readonly readOnly?: boolean;
 }
@@ -1516,6 +1522,8 @@ export interface StatefulSetSpecTemplateSpec {
   readonly automountServiceAccountToken?: boolean;
   /** Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy). */
   readonly dnsPolicy?: string;
+  /** Enables generating environment variables for service discovery. Optional: Defaults to true. */
+  readonly enableServiceLinks?: boolean;
   /** Use the host's ipc namespace. Optional: Defaults to false. */
   readonly hostIpc?: boolean;
   /** Host networking requested for this pod. Use the host's network namespace. If this option is set, the ports that will be used must be specified. */
@@ -1552,6 +1560,8 @@ export interface StatefulSetSpecTemplateSpec {
   readonly imagePullSecrets?: StatefulSetSpecTemplateSpecImagePullSecrets[];
   /** init_container block */
   readonly initContainer?: StatefulSetSpecTemplateSpecInitContainer[];
+  /** readiness_gate block */
+  readonly readinessGate?: StatefulSetSpecTemplateSpecReadinessGate[];
   /** security_context block */
   readonly securityContext?: StatefulSetSpecTemplateSpecSecurityContext[];
   /** toleration block */

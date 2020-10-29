@@ -72,6 +72,8 @@ export interface PersistentVolumeSpecPersistentVolumeSourceAzureDisk {
   readonly diskName: string;
   /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
   readonly fsType?: string;
+  /** The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared */
+  readonly kind?: string;
   /** Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). */
   readonly readOnly?: boolean;
 }

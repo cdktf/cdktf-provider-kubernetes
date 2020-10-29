@@ -32,9 +32,9 @@ export interface NetworkPolicySpecEgressPorts {
   readonly protocol?: string;
 }
 export interface NetworkPolicySpecEgressToIpBlock {
-  /** CIDR is a string representing the IP Block Valid examples are "192.168.1.1/24" */
+  /** CIDR is a string representing the IP Block Valid examples are "192.168.1.1/24" or "2001:db9::/64" */
   readonly cidr?: string;
-  /** Except is a slice of CIDRs that should not be included within an IP Block Valid examples are "192.168.1.1/24" Except values will be rejected if they are outside the CIDR range */
+  /** Except is a slice of CIDRs that should not be included within an IP Block Valid examples are "192.168.1.1/24" or "2001:db9::/64" Except values will be rejected if they are outside the CIDR range */
   readonly except?: string[];
 }
 export interface NetworkPolicySpecEgressToNamespaceSelectorMatchExpressions {
@@ -80,9 +80,9 @@ export interface NetworkPolicySpecEgress {
   readonly to?: NetworkPolicySpecEgressTo[];
 }
 export interface NetworkPolicySpecIngressFromIpBlock {
-  /** CIDR is a string representing the IP Block Valid examples are "192.168.1.1/24" */
+  /** CIDR is a string representing the IP Block Valid examples are "192.168.1.1/24" or "2001:db9::/64" */
   readonly cidr?: string;
-  /** Except is a slice of CIDRs that should not be included within an IP Block Valid examples are "192.168.1.1/24" Except values will be rejected if they are outside the CIDR range */
+  /** Except is a slice of CIDRs that should not be included within an IP Block Valid examples are "192.168.1.1/24" or "2001:db9::/64" Except values will be rejected if they are outside the CIDR range */
   readonly except?: string[];
 }
 export interface NetworkPolicySpecIngressFromNamespaceSelectorMatchExpressions {
