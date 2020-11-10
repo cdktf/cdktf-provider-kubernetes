@@ -14,14 +14,14 @@ export interface DataKubernetesServiceAccountConfig extends TerraformMetaArgumen
 }
 export class DataKubernetesServiceAccountImagePullSecret extends ComplexComputedList {
 
-  // name - computed: true, optional: false, required: true
+  // name - computed: true, optional: false, required: false
   public get name() {
     return this.getStringAttribute('name');
   }
 }
 export class DataKubernetesServiceAccountSecret extends ComplexComputedList {
 
-  // name - computed: true, optional: false, required: true
+  // name - computed: true, optional: false, required: false
   public get name() {
     return this.getStringAttribute('name');
   }
@@ -63,31 +63,27 @@ export class DataKubernetesServiceAccount extends TerraformDataSource {
   // ATTRIBUTES
   // ==========
 
-  // automount_service_account_token - computed: true, optional: false, required: true
+  // automount_service_account_token - computed: true, optional: false, required: false
   public get automountServiceAccountToken() {
     return this.getBooleanAttribute('automount_service_account_token');
   }
 
-  // default_secret_name - computed: true, optional: false, required: true
+  // default_secret_name - computed: true, optional: false, required: false
   public get defaultSecretName() {
     return this.getStringAttribute('default_secret_name');
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
-  // image_pull_secret - computed: true, optional: false, required: true
+  // image_pull_secret - computed: true, optional: false, required: false
   public imagePullSecret(index: string) {
     return new DataKubernetesServiceAccountImagePullSecret(this, 'image_pull_secret', index);
   }
 
-  // secret - computed: true, optional: false, required: true
+  // secret - computed: true, optional: false, required: false
   public secret(index: string) {
     return new DataKubernetesServiceAccountSecret(this, 'secret', index);
   }
@@ -95,10 +91,14 @@ export class DataKubernetesServiceAccount extends TerraformDataSource {
   // metadata - computed: false, optional: false, required: true
   private _metadata: DataKubernetesServiceAccountMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: DataKubernetesServiceAccountMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // =========

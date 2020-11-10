@@ -83,39 +83,53 @@ export class ClusterRole extends TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // aggregation_rule - computed: false, optional: true, required: false
   private _aggregationRule?: ClusterRoleAggregationRule[];
   public get aggregationRule() {
-    return this._aggregationRule;
+    return this.interpolationForAttribute('aggregation_rule') as any;
   }
-  public set aggregationRule(value: ClusterRoleAggregationRule[] | undefined) {
+  public set aggregationRule(value: ClusterRoleAggregationRule[] ) {
     this._aggregationRule = value;
+  }
+  public resetAggregationRule() {
+    this._aggregationRule = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get aggregationRuleInput() {
+    return this._aggregationRule
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: ClusterRoleMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: ClusterRoleMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // rule - computed: false, optional: true, required: false
   private _rule?: ClusterRoleRule[];
   public get rule() {
-    return this._rule;
+    return this.interpolationForAttribute('rule') as any;
   }
-  public set rule(value: ClusterRoleRule[] | undefined) {
+  public set rule(value: ClusterRoleRule[] ) {
     this._rule = value;
+  }
+  public resetRule() {
+    this._rule = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ruleInput() {
+    return this._rule
   }
 
   // =========

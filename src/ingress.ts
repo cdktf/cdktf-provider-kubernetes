@@ -18,12 +18,12 @@ export interface IngressConfig extends TerraformMetaArguments {
 }
 export class IngressLoadBalancerIngress extends ComplexComputedList {
 
-  // hostname - computed: true, optional: false, required: true
+  // hostname - computed: true, optional: false, required: false
   public get hostname() {
     return this.getStringAttribute('hostname');
   }
 
-  // ip - computed: true, optional: false, required: true
+  // ip - computed: true, optional: false, required: false
   public get ip() {
     return this.getStringAttribute('ip');
   }
@@ -119,15 +119,11 @@ export class Ingress extends TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
-  // load_balancer_ingress - computed: true, optional: false, required: true
+  // load_balancer_ingress - computed: true, optional: false, required: false
   public loadBalancerIngress(index: string) {
     return new IngressLoadBalancerIngress(this, 'load_balancer_ingress', index);
   }
@@ -135,28 +131,43 @@ export class Ingress extends TerraformResource {
   // wait_for_load_balancer - computed: false, optional: true, required: false
   private _waitForLoadBalancer?: boolean;
   public get waitForLoadBalancer() {
-    return this._waitForLoadBalancer;
+    return this.getBooleanAttribute('wait_for_load_balancer');
   }
-  public set waitForLoadBalancer(value: boolean | undefined) {
+  public set waitForLoadBalancer(value: boolean ) {
     this._waitForLoadBalancer = value;
+  }
+  public resetWaitForLoadBalancer() {
+    this._waitForLoadBalancer = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get waitForLoadBalancerInput() {
+    return this._waitForLoadBalancer
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: IngressMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: IngressMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // spec - computed: false, optional: false, required: true
   private _spec: IngressSpec[];
   public get spec() {
-    return this._spec;
+    return this.interpolationForAttribute('spec') as any;
   }
   public set spec(value: IngressSpec[]) {
     this._spec = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get specInput() {
+    return this._spec
   }
 
   // =========

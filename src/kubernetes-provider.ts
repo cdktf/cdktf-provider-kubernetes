@@ -85,8 +85,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get clientCertificate() {
     return this._clientCertificate;
   }
-  public set clientCertificate(value: string | undefined) {
+  public set clientCertificate(value: string  | undefined) {
     this._clientCertificate = value;
+  }
+  public resetClientCertificate() {
+    this._clientCertificate = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get clientCertificateInput() {
+    return this._clientCertificate
   }
 
   // client_key - computed: false, optional: true, required: false
@@ -94,8 +101,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get clientKey() {
     return this._clientKey;
   }
-  public set clientKey(value: string | undefined) {
+  public set clientKey(value: string  | undefined) {
     this._clientKey = value;
+  }
+  public resetClientKey() {
+    this._clientKey = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get clientKeyInput() {
+    return this._clientKey
   }
 
   // cluster_ca_certificate - computed: false, optional: true, required: false
@@ -103,8 +117,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get clusterCaCertificate() {
     return this._clusterCaCertificate;
   }
-  public set clusterCaCertificate(value: string | undefined) {
+  public set clusterCaCertificate(value: string  | undefined) {
     this._clusterCaCertificate = value;
+  }
+  public resetClusterCaCertificate() {
+    this._clusterCaCertificate = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get clusterCaCertificateInput() {
+    return this._clusterCaCertificate
   }
 
   // config_context - computed: false, optional: true, required: false
@@ -112,8 +133,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get configContext() {
     return this._configContext;
   }
-  public set configContext(value: string | undefined) {
+  public set configContext(value: string  | undefined) {
     this._configContext = value;
+  }
+  public resetConfigContext() {
+    this._configContext = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get configContextInput() {
+    return this._configContext
   }
 
   // config_context_auth_info - computed: false, optional: true, required: false
@@ -121,8 +149,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get configContextAuthInfo() {
     return this._configContextAuthInfo;
   }
-  public set configContextAuthInfo(value: string | undefined) {
+  public set configContextAuthInfo(value: string  | undefined) {
     this._configContextAuthInfo = value;
+  }
+  public resetConfigContextAuthInfo() {
+    this._configContextAuthInfo = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get configContextAuthInfoInput() {
+    return this._configContextAuthInfo
   }
 
   // config_context_cluster - computed: false, optional: true, required: false
@@ -130,8 +165,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get configContextCluster() {
     return this._configContextCluster;
   }
-  public set configContextCluster(value: string | undefined) {
+  public set configContextCluster(value: string  | undefined) {
     this._configContextCluster = value;
+  }
+  public resetConfigContextCluster() {
+    this._configContextCluster = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get configContextClusterInput() {
+    return this._configContextCluster
   }
 
   // config_path - computed: false, optional: true, required: false
@@ -139,8 +181,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get configPath() {
     return this._configPath;
   }
-  public set configPath(value: string | undefined) {
+  public set configPath(value: string  | undefined) {
     this._configPath = value;
+  }
+  public resetConfigPath() {
+    this._configPath = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get configPathInput() {
+    return this._configPath
   }
 
   // host - computed: false, optional: true, required: false
@@ -148,8 +197,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get host() {
     return this._host;
   }
-  public set host(value: string | undefined) {
+  public set host(value: string  | undefined) {
     this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host
   }
 
   // insecure - computed: false, optional: true, required: false
@@ -157,8 +213,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get insecure() {
     return this._insecure;
   }
-  public set insecure(value: boolean | undefined) {
+  public set insecure(value: boolean  | undefined) {
     this._insecure = value;
+  }
+  public resetInsecure() {
+    this._insecure = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get insecureInput() {
+    return this._insecure
   }
 
   // load_config_file - computed: false, optional: true, required: false
@@ -166,8 +229,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get loadConfigFile() {
     return this._loadConfigFile;
   }
-  public set loadConfigFile(value: boolean | undefined) {
+  public set loadConfigFile(value: boolean  | undefined) {
     this._loadConfigFile = value;
+  }
+  public resetLoadConfigFile() {
+    this._loadConfigFile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get loadConfigFileInput() {
+    return this._loadConfigFile
   }
 
   // password - computed: false, optional: true, required: false
@@ -175,8 +245,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get password() {
     return this._password;
   }
-  public set password(value: string | undefined) {
+  public set password(value: string  | undefined) {
     this._password = value;
+  }
+  public resetPassword() {
+    this._password = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get passwordInput() {
+    return this._password
   }
 
   // token - computed: false, optional: true, required: false
@@ -184,8 +261,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get token() {
     return this._token;
   }
-  public set token(value: string | undefined) {
+  public set token(value: string  | undefined) {
     this._token = value;
+  }
+  public resetToken() {
+    this._token = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get tokenInput() {
+    return this._token
   }
 
   // username - computed: false, optional: true, required: false
@@ -193,8 +277,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get username() {
     return this._username;
   }
-  public set username(value: string | undefined) {
+  public set username(value: string  | undefined) {
     this._username = value;
+  }
+  public resetUsername() {
+    this._username = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get usernameInput() {
+    return this._username
   }
 
   // alias - computed: false, optional: true, required: false
@@ -202,8 +293,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get alias() {
     return this._alias;
   }
-  public set alias(value: string | undefined) {
+  public set alias(value: string  | undefined) {
     this._alias = value;
+  }
+  public resetAlias() {
+    this._alias = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get aliasInput() {
+    return this._alias
   }
 
   // exec - computed: false, optional: true, required: false
@@ -211,8 +309,15 @@ export class KubernetesProvider extends TerraformProvider {
   public get exec() {
     return this._exec;
   }
-  public set exec(value: KubernetesProviderExec[] | undefined) {
+  public set exec(value: KubernetesProviderExec[]  | undefined) {
     this._exec = value;
+  }
+  public resetExec() {
+    this._exec = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get execInput() {
+    return this._exec
   }
 
   // =========

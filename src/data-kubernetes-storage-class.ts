@@ -47,36 +47,32 @@ export class DataKubernetesStorageClass extends TerraformDataSource {
   // ATTRIBUTES
   // ==========
 
-  // allow_volume_expansion - computed: true, optional: false, required: true
+  // allow_volume_expansion - computed: true, optional: false, required: false
   public get allowVolumeExpansion() {
     return this.getBooleanAttribute('allow_volume_expansion');
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
-  // mount_options - computed: true, optional: false, required: true
+  // mount_options - computed: true, optional: false, required: false
   public get mountOptions() {
     return this.getListAttribute('mount_options');
   }
 
-  // parameters - computed: true, optional: false, required: true
+  // parameters - computed: true, optional: false, required: false
   public parameters(key: string): string {
     return new StringMap(this, 'parameters').lookup(key);
   }
 
-  // reclaim_policy - computed: true, optional: false, required: true
+  // reclaim_policy - computed: true, optional: false, required: false
   public get reclaimPolicy() {
     return this.getStringAttribute('reclaim_policy');
   }
 
-  // storage_provisioner - computed: true, optional: false, required: true
+  // storage_provisioner - computed: true, optional: false, required: false
   public get storageProvisioner() {
     return this.getStringAttribute('storage_provisioner');
   }
@@ -84,10 +80,14 @@ export class DataKubernetesStorageClass extends TerraformDataSource {
   // metadata - computed: false, optional: false, required: true
   private _metadata: DataKubernetesStorageClassMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: DataKubernetesStorageClassMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // =========

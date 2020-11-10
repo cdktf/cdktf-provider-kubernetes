@@ -14,7 +14,7 @@ export interface DataKubernetesNamespaceConfig extends TerraformMetaArguments {
 }
 export class DataKubernetesNamespaceSpec extends ComplexComputedList {
 
-  // finalizers - computed: true, optional: false, required: true
+  // finalizers - computed: true, optional: false, required: false
   public get finalizers() {
     return this.getListAttribute('finalizers');
   }
@@ -55,15 +55,11 @@ export class DataKubernetesNamespace extends TerraformDataSource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
-  // spec - computed: true, optional: false, required: true
+  // spec - computed: true, optional: false, required: false
   public spec(index: string) {
     return new DataKubernetesNamespaceSpec(this, 'spec', index);
   }
@@ -71,10 +67,14 @@ export class DataKubernetesNamespace extends TerraformDataSource {
   // metadata - computed: false, optional: false, required: true
   private _metadata: DataKubernetesNamespaceMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: DataKubernetesNamespaceMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // =========

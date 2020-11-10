@@ -14,101 +14,101 @@ export interface DataKubernetesServiceConfig extends TerraformMetaArguments {
 }
 export class DataKubernetesServiceLoadBalancerIngress extends ComplexComputedList {
 
-  // hostname - computed: true, optional: false, required: true
+  // hostname - computed: true, optional: false, required: false
   public get hostname() {
     return this.getStringAttribute('hostname');
   }
 
-  // ip - computed: true, optional: false, required: true
+  // ip - computed: true, optional: false, required: false
   public get ip() {
     return this.getStringAttribute('ip');
   }
 }
 export class DataKubernetesServiceSpecPort extends ComplexComputedList {
 
-  // name - computed: true, optional: false, required: true
+  // name - computed: true, optional: false, required: false
   public get name() {
     return this.getStringAttribute('name');
   }
 
-  // node_port - computed: true, optional: false, required: true
+  // node_port - computed: true, optional: false, required: false
   public get nodePort() {
     return this.getNumberAttribute('node_port');
   }
 
-  // port - computed: true, optional: false, required: true
+  // port - computed: true, optional: false, required: false
   public get port() {
     return this.getNumberAttribute('port');
   }
 
-  // protocol - computed: true, optional: false, required: true
+  // protocol - computed: true, optional: false, required: false
   public get protocol() {
     return this.getStringAttribute('protocol');
   }
 
-  // target_port - computed: true, optional: false, required: true
+  // target_port - computed: true, optional: false, required: false
   public get targetPort() {
     return this.getStringAttribute('target_port');
   }
 }
 export class DataKubernetesServiceSpec extends ComplexComputedList {
 
-  // cluster_ip - computed: true, optional: false, required: true
+  // cluster_ip - computed: true, optional: false, required: false
   public get clusterIp() {
     return this.getStringAttribute('cluster_ip');
   }
 
-  // external_ips - computed: true, optional: false, required: true
+  // external_ips - computed: true, optional: false, required: false
   public get externalIps() {
     return this.getListAttribute('external_ips');
   }
 
-  // external_name - computed: true, optional: false, required: true
+  // external_name - computed: true, optional: false, required: false
   public get externalName() {
     return this.getStringAttribute('external_name');
   }
 
-  // external_traffic_policy - computed: true, optional: false, required: true
+  // external_traffic_policy - computed: true, optional: false, required: false
   public get externalTrafficPolicy() {
     return this.getStringAttribute('external_traffic_policy');
   }
 
-  // health_check_node_port - computed: true, optional: false, required: true
+  // health_check_node_port - computed: true, optional: false, required: false
   public get healthCheckNodePort() {
     return this.getNumberAttribute('health_check_node_port');
   }
 
-  // load_balancer_ip - computed: true, optional: false, required: true
+  // load_balancer_ip - computed: true, optional: false, required: false
   public get loadBalancerIp() {
     return this.getStringAttribute('load_balancer_ip');
   }
 
-  // load_balancer_source_ranges - computed: true, optional: false, required: true
+  // load_balancer_source_ranges - computed: true, optional: false, required: false
   public get loadBalancerSourceRanges() {
     return this.getListAttribute('load_balancer_source_ranges');
   }
 
-  // port - computed: true, optional: false, required: true
+  // port - computed: true, optional: false, required: false
   public get port() {
-    return 'not implemented' as any;
+    return this.interpolationForAttribute('port') as any;
   }
 
-  // publish_not_ready_addresses - computed: true, optional: false, required: true
+  // publish_not_ready_addresses - computed: true, optional: false, required: false
   public get publishNotReadyAddresses() {
     return this.getBooleanAttribute('publish_not_ready_addresses');
   }
 
-  // selector - computed: true, optional: false, required: true
+  // selector - computed: true, optional: false, required: false
   public get selector() {
-    return 'not implemented' as any;
+    return this.interpolationForAttribute('selector') as any;
   }
 
-  // session_affinity - computed: true, optional: false, required: true
+  // session_affinity - computed: true, optional: false, required: false
   public get sessionAffinity() {
     return this.getStringAttribute('session_affinity');
   }
 
-  // type - computed: true, optional: false, required: true
+  // type - computed: true, optional: false, required: false
   public get type() {
     return this.getStringAttribute('type');
   }
@@ -151,20 +151,16 @@ export class DataKubernetesService extends TerraformDataSource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
-  // load_balancer_ingress - computed: true, optional: false, required: true
+  // load_balancer_ingress - computed: true, optional: false, required: false
   public loadBalancerIngress(index: string) {
     return new DataKubernetesServiceLoadBalancerIngress(this, 'load_balancer_ingress', index);
   }
 
-  // spec - computed: true, optional: false, required: true
+  // spec - computed: true, optional: false, required: false
   public spec(index: string) {
     return new DataKubernetesServiceSpec(this, 'spec', index);
   }
@@ -172,10 +168,14 @@ export class DataKubernetesService extends TerraformDataSource {
   // metadata - computed: false, optional: false, required: true
   private _metadata: DataKubernetesServiceMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: DataKubernetesServiceMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // =========

@@ -76,60 +76,88 @@ export class ServiceAccount extends TerraformResource {
   // automount_service_account_token - computed: false, optional: true, required: false
   private _automountServiceAccountToken?: boolean;
   public get automountServiceAccountToken() {
-    return this._automountServiceAccountToken;
+    return this.getBooleanAttribute('automount_service_account_token');
   }
-  public set automountServiceAccountToken(value: boolean | undefined) {
+  public set automountServiceAccountToken(value: boolean ) {
     this._automountServiceAccountToken = value;
   }
+  public resetAutomountServiceAccountToken() {
+    this._automountServiceAccountToken = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get automountServiceAccountTokenInput() {
+    return this._automountServiceAccountToken
+  }
 
-  // default_secret_name - computed: true, optional: false, required: true
+  // default_secret_name - computed: true, optional: false, required: false
   public get defaultSecretName() {
     return this.getStringAttribute('default_secret_name');
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // image_pull_secret - computed: false, optional: true, required: false
   private _imagePullSecret?: ServiceAccountImagePullSecret[];
   public get imagePullSecret() {
-    return this._imagePullSecret;
+    return this.interpolationForAttribute('image_pull_secret') as any;
   }
-  public set imagePullSecret(value: ServiceAccountImagePullSecret[] | undefined) {
+  public set imagePullSecret(value: ServiceAccountImagePullSecret[] ) {
     this._imagePullSecret = value;
+  }
+  public resetImagePullSecret() {
+    this._imagePullSecret = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get imagePullSecretInput() {
+    return this._imagePullSecret
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: ServiceAccountMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: ServiceAccountMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // secret - computed: false, optional: true, required: false
   private _secret?: ServiceAccountSecret[];
   public get secret() {
-    return this._secret;
+    return this.interpolationForAttribute('secret') as any;
   }
-  public set secret(value: ServiceAccountSecret[] | undefined) {
+  public set secret(value: ServiceAccountSecret[] ) {
     this._secret = value;
+  }
+  public resetSecret() {
+    this._secret = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get secretInput() {
+    return this._secret
   }
 
   // timeouts - computed: false, optional: true, required: false
   private _timeouts?: ServiceAccountTimeouts;
   public get timeouts() {
-    return this._timeouts;
+    return this.interpolationForAttribute('timeouts') as any;
   }
-  public set timeouts(value: ServiceAccountTimeouts | undefined) {
+  public set timeouts(value: ServiceAccountTimeouts ) {
     this._timeouts = value;
+  }
+  public resetTimeouts() {
+    this._timeouts = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutsInput() {
+    return this._timeouts
   }
 
   // =========

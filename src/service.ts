@@ -18,12 +18,12 @@ export interface ServiceConfig extends TerraformMetaArguments {
 }
 export class ServiceLoadBalancerIngress extends ComplexComputedList {
 
-  // hostname - computed: true, optional: false, required: true
+  // hostname - computed: true, optional: false, required: false
   public get hostname() {
     return this.getStringAttribute('hostname');
   }
 
-  // ip - computed: true, optional: false, required: true
+  // ip - computed: true, optional: false, required: false
   public get ip() {
     return this.getStringAttribute('ip');
   }
@@ -111,15 +111,11 @@ export class Service extends TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
-  // load_balancer_ingress - computed: true, optional: false, required: true
+  // load_balancer_ingress - computed: true, optional: false, required: false
   public loadBalancerIngress(index: string) {
     return new ServiceLoadBalancerIngress(this, 'load_balancer_ingress', index);
   }
@@ -127,28 +123,43 @@ export class Service extends TerraformResource {
   // metadata - computed: false, optional: false, required: true
   private _metadata: ServiceMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: ServiceMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // spec - computed: false, optional: false, required: true
   private _spec: ServiceSpec[];
   public get spec() {
-    return this._spec;
+    return this.interpolationForAttribute('spec') as any;
   }
   public set spec(value: ServiceSpec[]) {
     this._spec = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get specInput() {
+    return this._spec
   }
 
   // timeouts - computed: false, optional: true, required: false
   private _timeouts?: ServiceTimeouts;
   public get timeouts() {
-    return this._timeouts;
+    return this.interpolationForAttribute('timeouts') as any;
   }
-  public set timeouts(value: ServiceTimeouts | undefined) {
+  public set timeouts(value: ServiceTimeouts ) {
     this._timeouts = value;
+  }
+  public resetTimeouts() {
+    this._timeouts = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutsInput() {
+    return this._timeouts
   }
 
   // =========

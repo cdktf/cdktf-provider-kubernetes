@@ -49,32 +49,32 @@ export class DataKubernetesConfigMap extends TerraformDataSource {
   // ATTRIBUTES
   // ==========
 
-  // binary_data - computed: true, optional: false, required: true
+  // binary_data - computed: true, optional: false, required: false
   public binaryData(key: string): string {
     return new StringMap(this, 'binary_data').lookup(key);
   }
 
-  // data - computed: true, optional: false, required: true
+  // data - computed: true, optional: false, required: false
   public data(key: string): string {
     return new StringMap(this, 'data').lookup(key);
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: DataKubernetesConfigMapMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: DataKubernetesConfigMapMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // =========

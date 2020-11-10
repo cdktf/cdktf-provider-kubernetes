@@ -59,37 +59,51 @@ export class ConfigMap extends TerraformResource {
   // binary_data - computed: false, optional: true, required: false
   private _binaryData?: { [key: string]: string };
   public get binaryData() {
-    return this._binaryData;
+    return this.interpolationForAttribute('binary_data') as any;
   }
-  public set binaryData(value: { [key: string]: string } | undefined) {
+  public set binaryData(value: { [key: string]: string } ) {
     this._binaryData = value;
+  }
+  public resetBinaryData() {
+    this._binaryData = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get binaryDataInput() {
+    return this._binaryData
   }
 
   // data - computed: false, optional: true, required: false
   private _data?: { [key: string]: string };
   public get data() {
-    return this._data;
+    return this.interpolationForAttribute('data') as any;
   }
-  public set data(value: { [key: string]: string } | undefined) {
+  public set data(value: { [key: string]: string } ) {
     this._data = value;
+  }
+  public resetData() {
+    this._data = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get dataInput() {
+    return this._data
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: ConfigMapMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: ConfigMapMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // =========

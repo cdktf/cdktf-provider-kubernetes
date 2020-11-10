@@ -95,48 +95,66 @@ export class PersistentVolumeClaim extends TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // wait_until_bound - computed: false, optional: true, required: false
   private _waitUntilBound?: boolean;
   public get waitUntilBound() {
-    return this._waitUntilBound;
+    return this.getBooleanAttribute('wait_until_bound');
   }
-  public set waitUntilBound(value: boolean | undefined) {
+  public set waitUntilBound(value: boolean ) {
     this._waitUntilBound = value;
+  }
+  public resetWaitUntilBound() {
+    this._waitUntilBound = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get waitUntilBoundInput() {
+    return this._waitUntilBound
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: PersistentVolumeClaimMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: PersistentVolumeClaimMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // spec - computed: false, optional: false, required: true
   private _spec: PersistentVolumeClaimSpec[];
   public get spec() {
-    return this._spec;
+    return this.interpolationForAttribute('spec') as any;
   }
   public set spec(value: PersistentVolumeClaimSpec[]) {
     this._spec = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get specInput() {
+    return this._spec
   }
 
   // timeouts - computed: false, optional: true, required: false
   private _timeouts?: PersistentVolumeClaimTimeouts;
   public get timeouts() {
-    return this._timeouts;
+    return this.interpolationForAttribute('timeouts') as any;
   }
-  public set timeouts(value: PersistentVolumeClaimTimeouts | undefined) {
+  public set timeouts(value: PersistentVolumeClaimTimeouts ) {
     this._timeouts = value;
+  }
+  public resetTimeouts() {
+    this._timeouts = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutsInput() {
+    return this._timeouts
   }
 
   // =========

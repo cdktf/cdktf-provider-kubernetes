@@ -86,30 +86,37 @@ export class Endpoints extends TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: EndpointsMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: EndpointsMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // subset - computed: false, optional: true, required: false
   private _subset?: EndpointsSubset[];
   public get subset() {
-    return this._subset;
+    return this.interpolationForAttribute('subset') as any;
   }
-  public set subset(value: EndpointsSubset[] | undefined) {
+  public set subset(value: EndpointsSubset[] ) {
     this._subset = value;
+  }
+  public resetSubset() {
+    this._subset = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get subsetInput() {
+    return this._subset
   }
 
   // =========

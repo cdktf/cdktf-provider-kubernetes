@@ -60,46 +60,64 @@ export class PriorityClass extends TerraformResource {
   // description - computed: false, optional: true, required: false
   private _description?: string;
   public get description() {
-    return this._description;
+    return this.getStringAttribute('description');
   }
-  public set description(value: string | undefined) {
+  public set description(value: string ) {
     this._description = value;
+  }
+  public resetDescription() {
+    this._description = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get descriptionInput() {
+    return this._description
   }
 
   // global_default - computed: false, optional: true, required: false
   private _globalDefault?: boolean;
   public get globalDefault() {
-    return this._globalDefault;
+    return this.getBooleanAttribute('global_default');
   }
-  public set globalDefault(value: boolean | undefined) {
+  public set globalDefault(value: boolean ) {
     this._globalDefault = value;
+  }
+  public resetGlobalDefault() {
+    this._globalDefault = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get globalDefaultInput() {
+    return this._globalDefault
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // value - computed: false, optional: false, required: true
   private _value: number;
   public get value() {
-    return this._value;
+    return this.getNumberAttribute('value');
   }
   public set value(value: number) {
     this._value = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valueInput() {
+    return this._value
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: PriorityClassMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: PriorityClassMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // =========
