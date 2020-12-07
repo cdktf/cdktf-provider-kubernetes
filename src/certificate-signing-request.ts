@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface CertificateSigningRequestConfig extends TerraformMetaArguments {
+export interface CertificateSigningRequestConfig extends cdktf.TerraformMetaArguments {
   /** Automatically approve the CertificateSigningRequest */
   readonly autoApprove?: boolean;
   /** metadata block */
@@ -27,6 +26,17 @@ export interface CertificateSigningRequestMetadata {
   /** Name of the certificate signing request, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
   readonly name?: string;
 }
+
+function certificateSigningRequestMetadataToTerraform(struct?: CertificateSigningRequestMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface CertificateSigningRequestSpec {
   /** Base64-encoded PKCS#10 CSR data */
   readonly request: string;
@@ -60,13 +70,31 @@ Valid values are:
  "netscape sgc" */
   readonly usages?: string[];
 }
+
+function certificateSigningRequestSpecToTerraform(struct?: CertificateSigningRequestSpec): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    request: cdktf.stringToTerraform(struct!.request),
+    signer_name: cdktf.stringToTerraform(struct!.signerName),
+    usages: cdktf.listMapper(cdktf.stringToTerraform)(struct!.usages),
+  }
+}
+
 export interface CertificateSigningRequestTimeouts {
   readonly create?: string;
 }
 
+function certificateSigningRequestTimeoutsToTerraform(struct?: CertificateSigningRequestTimeouts): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    create: cdktf.stringToTerraform(struct!.create),
+  }
+}
+
+
 // Resource
 
-export class CertificateSigningRequest extends TerraformResource {
+export class CertificateSigningRequest extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -167,10 +195,10 @@ export class CertificateSigningRequest extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      auto_approve: this._autoApprove,
-      metadata: this._metadata,
-      spec: this._spec,
-      timeouts: this._timeouts,
+      auto_approve: cdktf.booleanToTerraform(this._autoApprove),
+      metadata: cdktf.listMapper(certificateSigningRequestMetadataToTerraform)(this._metadata),
+      spec: cdktf.listMapper(certificateSigningRequestSpecToTerraform)(this._spec),
+      timeouts: certificateSigningRequestTimeoutsToTerraform(this._timeouts),
     };
   }
 }

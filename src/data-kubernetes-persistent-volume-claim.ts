@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesPersistentVolumeClaimConfig extends TerraformMetaArguments {
+export interface DataKubernetesPersistentVolumeClaimConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: DataKubernetesPersistentVolumeClaimMetadata[];
   /** spec block */
@@ -25,6 +24,18 @@ export interface DataKubernetesPersistentVolumeClaimMetadata {
   /** Namespace defines the space within which name of the persistent volume claim must be unique. */
   readonly namespace?: string;
 }
+
+function dataKubernetesPersistentVolumeClaimMetadataToTerraform(struct?: DataKubernetesPersistentVolumeClaimMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
 export interface DataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressions {
   /** The label key that the selector applies to. */
   readonly key?: string;
@@ -33,12 +44,31 @@ export interface DataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressions
   /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
   readonly values?: string[];
 }
+
+function dataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressionsToTerraform(struct?: DataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+  }
+}
+
 export interface DataKubernetesPersistentVolumeClaimSpecSelector {
   /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
   readonly matchLabels?: { [key: string]: string };
   /** match_expressions block */
   readonly matchExpressions?: DataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressions[];
 }
+
+function dataKubernetesPersistentVolumeClaimSpecSelectorToTerraform(struct?: DataKubernetesPersistentVolumeClaimSpecSelector): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(dataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+  }
+}
+
 export interface DataKubernetesPersistentVolumeClaimSpec {
   /** Name of the storage class requested by the claim */
   readonly storageClassName?: string;
@@ -48,9 +78,19 @@ export interface DataKubernetesPersistentVolumeClaimSpec {
   readonly selector?: DataKubernetesPersistentVolumeClaimSpecSelector[];
 }
 
+function dataKubernetesPersistentVolumeClaimSpecToTerraform(struct?: DataKubernetesPersistentVolumeClaimSpec): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    storage_class_name: cdktf.stringToTerraform(struct!.storageClassName),
+    volume_name: cdktf.stringToTerraform(struct!.volumeName),
+    selector: cdktf.listMapper(dataKubernetesPersistentVolumeClaimSpecSelectorToTerraform)(struct!.selector),
+  }
+}
+
+
 // Resource
 
-export class DataKubernetesPersistentVolumeClaim extends TerraformDataSource {
+export class DataKubernetesPersistentVolumeClaim extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -115,8 +155,8 @@ export class DataKubernetesPersistentVolumeClaim extends TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      spec: this._spec,
+      metadata: cdktf.listMapper(dataKubernetesPersistentVolumeClaimMetadataToTerraform)(this._metadata),
+      spec: cdktf.listMapper(dataKubernetesPersistentVolumeClaimSpecToTerraform)(this._spec),
     };
   }
 }

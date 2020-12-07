@@ -2,13 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { ComplexComputedList } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface ServiceConfig extends TerraformMetaArguments {
+export interface ServiceConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: ServiceMetadata[];
   /** spec block */
@@ -16,7 +14,7 @@ export interface ServiceConfig extends TerraformMetaArguments {
   /** timeouts block */
   readonly timeouts?: ServiceTimeouts;
 }
-export class ServiceLoadBalancerIngress extends ComplexComputedList {
+export class ServiceLoadBalancerIngress extends cdktf.ComplexComputedList {
 
   // hostname - computed: true, optional: false, required: false
   public get hostname() {
@@ -40,6 +38,18 @@ export interface ServiceMetadata {
   /** Namespace defines the space within which name of the service must be unique. */
   readonly namespace?: string;
 }
+
+function serviceMetadataToTerraform(struct?: ServiceMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
 export interface ServiceSpecPort {
   /** The name of this port within the service. All ports within the service must have unique names. Optional if only one ServicePort is defined on this service. */
   readonly name?: string;
@@ -52,6 +62,18 @@ export interface ServiceSpecPort {
   /** Number or name of the port to access on the pods targeted by the service. Number must be in the range 1 to 65535. This field is ignored for services with `cluster_ip = "None"`. More info: http://kubernetes.io/docs/user-guide/services#defining-a-service */
   readonly targetPort?: string;
 }
+
+function serviceSpecPortToTerraform(struct?: ServiceSpecPort): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    name: cdktf.stringToTerraform(struct!.name),
+    node_port: cdktf.numberToTerraform(struct!.nodePort),
+    port: cdktf.numberToTerraform(struct!.port),
+    protocol: cdktf.stringToTerraform(struct!.protocol),
+    target_port: cdktf.stringToTerraform(struct!.targetPort),
+  }
+}
+
 export interface ServiceSpec {
   /** The IP address of the service. It is usually assigned randomly by the master. If an address is specified manually and is not in use by others, it will be allocated to the service; otherwise, creation of the service will fail. `None` can be specified for headless services when proxying is not required. Ignored if type is `ExternalName`. More info: http://kubernetes.io/docs/user-guide/services#virtual-ips-and-service-proxies */
   readonly clusterIp?: string;
@@ -78,13 +100,40 @@ export interface ServiceSpec {
   /** port block */
   readonly port?: ServiceSpecPort[];
 }
+
+function serviceSpecToTerraform(struct?: ServiceSpec): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    cluster_ip: cdktf.stringToTerraform(struct!.clusterIp),
+    external_ips: cdktf.listMapper(cdktf.stringToTerraform)(struct!.externalIps),
+    external_name: cdktf.stringToTerraform(struct!.externalName),
+    external_traffic_policy: cdktf.stringToTerraform(struct!.externalTrafficPolicy),
+    health_check_node_port: cdktf.numberToTerraform(struct!.healthCheckNodePort),
+    load_balancer_ip: cdktf.stringToTerraform(struct!.loadBalancerIp),
+    load_balancer_source_ranges: cdktf.listMapper(cdktf.stringToTerraform)(struct!.loadBalancerSourceRanges),
+    publish_not_ready_addresses: cdktf.booleanToTerraform(struct!.publishNotReadyAddresses),
+    selector: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.selector),
+    session_affinity: cdktf.stringToTerraform(struct!.sessionAffinity),
+    type: cdktf.stringToTerraform(struct!.type),
+    port: cdktf.listMapper(serviceSpecPortToTerraform)(struct!.port),
+  }
+}
+
 export interface ServiceTimeouts {
   readonly create?: string;
 }
 
+function serviceTimeoutsToTerraform(struct?: ServiceTimeouts): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    create: cdktf.stringToTerraform(struct!.create),
+  }
+}
+
+
 // Resource
 
-export class Service extends TerraformResource {
+export class Service extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -168,9 +217,9 @@ export class Service extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      spec: this._spec,
-      timeouts: this._timeouts,
+      metadata: cdktf.listMapper(serviceMetadataToTerraform)(this._metadata),
+      spec: cdktf.listMapper(serviceSpecToTerraform)(this._spec),
+      timeouts: serviceTimeoutsToTerraform(this._timeouts),
     };
   }
 }

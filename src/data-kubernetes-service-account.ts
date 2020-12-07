@@ -2,24 +2,22 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { ComplexComputedList } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesServiceAccountConfig extends TerraformMetaArguments {
+export interface DataKubernetesServiceAccountConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: DataKubernetesServiceAccountMetadata[];
 }
-export class DataKubernetesServiceAccountImagePullSecret extends ComplexComputedList {
+export class DataKubernetesServiceAccountImagePullSecret extends cdktf.ComplexComputedList {
 
   // name - computed: true, optional: false, required: false
   public get name() {
     return this.getStringAttribute('name');
   }
 }
-export class DataKubernetesServiceAccountSecret extends ComplexComputedList {
+export class DataKubernetesServiceAccountSecret extends cdktf.ComplexComputedList {
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -37,9 +35,20 @@ export interface DataKubernetesServiceAccountMetadata {
   readonly namespace?: string;
 }
 
+function dataKubernetesServiceAccountMetadataToTerraform(struct?: DataKubernetesServiceAccountMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
+
 // Resource
 
-export class DataKubernetesServiceAccount extends TerraformDataSource {
+export class DataKubernetesServiceAccount extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -107,7 +116,7 @@ export class DataKubernetesServiceAccount extends TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
+      metadata: cdktf.listMapper(dataKubernetesServiceAccountMetadataToTerraform)(this._metadata),
     };
   }
 }

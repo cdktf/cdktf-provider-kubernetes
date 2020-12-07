@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface LimitRangeConfig extends TerraformMetaArguments {
+export interface LimitRangeConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: LimitRangeMetadata[];
   /** spec block */
@@ -25,6 +24,18 @@ export interface LimitRangeMetadata {
   /** Namespace defines the space within which name of the limit range must be unique. */
   readonly namespace?: string;
 }
+
+function limitRangeMetadataToTerraform(struct?: LimitRangeMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
 export interface LimitRangeSpecLimit {
   /** Default resource requirement limit value by resource name if resource limit is omitted. */
   readonly default?: { [key: string]: string };
@@ -39,14 +50,35 @@ export interface LimitRangeSpecLimit {
   /** Type of resource that this limit applies to. */
   readonly type?: string;
 }
+
+function limitRangeSpecLimitToTerraform(struct?: LimitRangeSpecLimit): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    default: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.default),
+    default_request: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.defaultRequest),
+    max: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.max),
+    max_limit_request_ratio: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.maxLimitRequestRatio),
+    min: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.min),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
 export interface LimitRangeSpec {
   /** limit block */
   readonly limit?: LimitRangeSpecLimit[];
 }
 
+function limitRangeSpecToTerraform(struct?: LimitRangeSpec): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    limit: cdktf.listMapper(limitRangeSpecLimitToTerraform)(struct!.limit),
+  }
+}
+
+
 // Resource
 
-export class LimitRange extends TerraformResource {
+export class LimitRange extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -111,8 +143,8 @@ export class LimitRange extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      spec: this._spec,
+      metadata: cdktf.listMapper(limitRangeMetadataToTerraform)(this._metadata),
+      spec: cdktf.listMapper(limitRangeSpecToTerraform)(this._spec),
     };
   }
 }

@@ -2,13 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { StringMap } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesConfigMapConfig extends TerraformMetaArguments {
+export interface DataKubernetesConfigMapConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: DataKubernetesConfigMapMetadata[];
 }
@@ -23,9 +21,20 @@ export interface DataKubernetesConfigMapMetadata {
   readonly namespace?: string;
 }
 
+function dataKubernetesConfigMapMetadataToTerraform(struct?: DataKubernetesConfigMapMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
+
 // Resource
 
-export class DataKubernetesConfigMap extends TerraformDataSource {
+export class DataKubernetesConfigMap extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -51,12 +60,12 @@ export class DataKubernetesConfigMap extends TerraformDataSource {
 
   // binary_data - computed: true, optional: false, required: false
   public binaryData(key: string): string {
-    return new StringMap(this, 'binary_data').lookup(key);
+    return new cdktf.StringMap(this, 'binary_data').lookup(key);
   }
 
   // data - computed: true, optional: false, required: false
   public data(key: string): string {
-    return new StringMap(this, 'data').lookup(key);
+    return new cdktf.StringMap(this, 'data').lookup(key);
   }
 
   // id - computed: true, optional: true, required: false
@@ -83,7 +92,7 @@ export class DataKubernetesConfigMap extends TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
+      metadata: cdktf.listMapper(dataKubernetesConfigMapMetadataToTerraform)(this._metadata),
     };
   }
 }

@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface ApiServiceConfig extends TerraformMetaArguments {
+export interface ApiServiceConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: ApiServiceMetadata[];
   /** spec block */
@@ -23,6 +22,17 @@ export interface ApiServiceMetadata {
   /** Name of the api_service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
   readonly name?: string;
 }
+
+function apiServiceMetadataToTerraform(struct?: ApiServiceMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface ApiServiceSpecService {
   /** Name is the name of the service. */
   readonly name: string;
@@ -31,6 +41,16 @@ export interface ApiServiceSpecService {
   /** If specified, the port on the service that is hosting the service. Defaults to 443 for backward compatibility. Should be a valid port number (1-65535, inclusive). */
   readonly port?: number;
 }
+
+function apiServiceSpecServiceToTerraform(struct?: ApiServiceSpecService): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+    port: cdktf.numberToTerraform(struct!.port),
+  }
+}
+
 export interface ApiServiceSpec {
   /** CABundle is a PEM encoded CA bundle which will be used to validate an API server's serving certificate. If unspecified, system trust roots on the apiserver are used. */
   readonly caBundle?: string;
@@ -48,9 +68,23 @@ export interface ApiServiceSpec {
   readonly service?: ApiServiceSpecService[];
 }
 
+function apiServiceSpecToTerraform(struct?: ApiServiceSpec): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    ca_bundle: cdktf.stringToTerraform(struct!.caBundle),
+    group: cdktf.stringToTerraform(struct!.group),
+    group_priority_minimum: cdktf.numberToTerraform(struct!.groupPriorityMinimum),
+    insecure_skip_tls_verify: cdktf.booleanToTerraform(struct!.insecureSkipTlsVerify),
+    version: cdktf.stringToTerraform(struct!.version),
+    version_priority: cdktf.numberToTerraform(struct!.versionPriority),
+    service: cdktf.listMapper(apiServiceSpecServiceToTerraform)(struct!.service),
+  }
+}
+
+
 // Resource
 
-export class ApiService extends TerraformResource {
+export class ApiService extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -112,8 +146,8 @@ export class ApiService extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      spec: this._spec,
+      metadata: cdktf.listMapper(apiServiceMetadataToTerraform)(this._metadata),
+      spec: cdktf.listMapper(apiServiceSpecToTerraform)(this._spec),
     };
   }
 }

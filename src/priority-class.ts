@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface PriorityClassConfig extends TerraformMetaArguments {
+export interface PriorityClassConfig extends cdktf.TerraformMetaArguments {
   /** An arbitrary string that usually provides guidelines on when this priority class should be used. */
   readonly description?: string;
   /** Specifies whether this PriorityClass should be considered as the default priority for pods that do not have any priority class. Only one PriorityClass can be marked as `globalDefault`. However, if more than one PriorityClasses exists with their `globalDefault` field set to true, the smallest value of such global default PriorityClasses will be used as the default priority. */
@@ -28,9 +27,20 @@ export interface PriorityClassMetadata {
   readonly name?: string;
 }
 
+function priorityClassMetadataToTerraform(struct?: PriorityClassMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
+
 // Resource
 
-export class PriorityClass extends TerraformResource {
+export class PriorityClass extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -126,10 +136,10 @@ export class PriorityClass extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      description: this._description,
-      global_default: this._globalDefault,
-      value: this._value,
-      metadata: this._metadata,
+      description: cdktf.stringToTerraform(this._description),
+      global_default: cdktf.booleanToTerraform(this._globalDefault),
+      value: cdktf.numberToTerraform(this._value),
+      metadata: cdktf.listMapper(priorityClassMetadataToTerraform)(this._metadata),
     };
   }
 }

@@ -2,13 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { StringMap } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesStorageClassConfig extends TerraformMetaArguments {
+export interface DataKubernetesStorageClassConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: DataKubernetesStorageClassMetadata[];
 }
@@ -21,9 +19,19 @@ export interface DataKubernetesStorageClassMetadata {
   readonly name?: string;
 }
 
+function dataKubernetesStorageClassMetadataToTerraform(struct?: DataKubernetesStorageClassMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
+
 // Resource
 
-export class DataKubernetesStorageClass extends TerraformDataSource {
+export class DataKubernetesStorageClass extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -64,7 +72,7 @@ export class DataKubernetesStorageClass extends TerraformDataSource {
 
   // parameters - computed: true, optional: false, required: false
   public parameters(key: string): string {
-    return new StringMap(this, 'parameters').lookup(key);
+    return new cdktf.StringMap(this, 'parameters').lookup(key);
   }
 
   // reclaim_policy - computed: true, optional: false, required: false
@@ -96,7 +104,7 @@ export class DataKubernetesStorageClass extends TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
+      metadata: cdktf.listMapper(dataKubernetesStorageClassMetadataToTerraform)(this._metadata),
     };
   }
 }

@@ -2,13 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { StringMap } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesSecretConfig extends TerraformMetaArguments {
+export interface DataKubernetesSecretConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: DataKubernetesSecretMetadata[];
 }
@@ -23,9 +21,20 @@ export interface DataKubernetesSecretMetadata {
   readonly namespace?: string;
 }
 
+function dataKubernetesSecretMetadataToTerraform(struct?: DataKubernetesSecretMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
+
 // Resource
 
-export class DataKubernetesSecret extends TerraformDataSource {
+export class DataKubernetesSecret extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -51,7 +60,7 @@ export class DataKubernetesSecret extends TerraformDataSource {
 
   // data - computed: true, optional: false, required: false
   public data(key: string): string {
-    return new StringMap(this, 'data').lookup(key);
+    return new cdktf.StringMap(this, 'data').lookup(key);
   }
 
   // id - computed: true, optional: true, required: false
@@ -83,7 +92,7 @@ export class DataKubernetesSecret extends TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
+      metadata: cdktf.listMapper(dataKubernetesSecretMetadataToTerraform)(this._metadata),
     };
   }
 }

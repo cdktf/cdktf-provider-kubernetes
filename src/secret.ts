@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface SecretConfig extends TerraformMetaArguments {
+export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /** A map of the secret data. */
   readonly data?: { [key: string]: string };
   /** Type of secret */
@@ -28,9 +27,21 @@ export interface SecretMetadata {
   readonly namespace?: string;
 }
 
+function secretMetadataToTerraform(struct?: SecretMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
+
 // Resource
 
-export class Secret extends TerraformResource {
+export class Secret extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -112,9 +123,9 @@ export class Secret extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      data: this._data,
-      type: this._type,
-      metadata: this._metadata,
+      data: cdktf.hashMapper(cdktf.anyToTerraform)(this._data),
+      type: cdktf.stringToTerraform(this._type),
+      metadata: cdktf.listMapper(secretMetadataToTerraform)(this._metadata),
     };
   }
 }

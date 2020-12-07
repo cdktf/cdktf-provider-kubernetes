@@ -2,17 +2,15 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { ComplexComputedList } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesServiceConfig extends TerraformMetaArguments {
+export interface DataKubernetesServiceConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: DataKubernetesServiceMetadata[];
 }
-export class DataKubernetesServiceLoadBalancerIngress extends ComplexComputedList {
+export class DataKubernetesServiceLoadBalancerIngress extends cdktf.ComplexComputedList {
 
   // hostname - computed: true, optional: false, required: false
   public get hostname() {
@@ -24,7 +22,7 @@ export class DataKubernetesServiceLoadBalancerIngress extends ComplexComputedLis
     return this.getStringAttribute('ip');
   }
 }
-export class DataKubernetesServiceSpecPort extends ComplexComputedList {
+export class DataKubernetesServiceSpecPort extends cdktf.ComplexComputedList {
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -51,7 +49,7 @@ export class DataKubernetesServiceSpecPort extends ComplexComputedList {
     return this.getStringAttribute('target_port');
   }
 }
-export class DataKubernetesServiceSpec extends ComplexComputedList {
+export class DataKubernetesServiceSpec extends cdktf.ComplexComputedList {
 
   // cluster_ip - computed: true, optional: false, required: false
   public get clusterIp() {
@@ -124,9 +122,20 @@ export interface DataKubernetesServiceMetadata {
   readonly namespace?: string;
 }
 
+function dataKubernetesServiceMetadataToTerraform(struct?: DataKubernetesServiceMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
+
 // Resource
 
-export class DataKubernetesService extends TerraformDataSource {
+export class DataKubernetesService extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -184,7 +193,7 @@ export class DataKubernetesService extends TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
+      metadata: cdktf.listMapper(dataKubernetesServiceMetadataToTerraform)(this._metadata),
     };
   }
 }

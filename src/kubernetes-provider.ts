@@ -2,7 +2,7 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformProvider } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
@@ -42,9 +42,20 @@ export interface KubernetesProviderExec {
   readonly env?: { [key: string]: string };
 }
 
+function kubernetesProviderExecToTerraform(struct?: KubernetesProviderExec): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    api_version: cdktf.stringToTerraform(struct!.apiVersion),
+    args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
+    command: cdktf.stringToTerraform(struct!.command),
+    env: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.env),
+  }
+}
+
+
 // Resource
 
-export class KubernetesProvider extends TerraformProvider {
+export class KubernetesProvider extends cdktf.TerraformProvider {
 
   // ===========
   // INITIALIZER
@@ -326,21 +337,21 @@ export class KubernetesProvider extends TerraformProvider {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      client_certificate: this._clientCertificate,
-      client_key: this._clientKey,
-      cluster_ca_certificate: this._clusterCaCertificate,
-      config_context: this._configContext,
-      config_context_auth_info: this._configContextAuthInfo,
-      config_context_cluster: this._configContextCluster,
-      config_path: this._configPath,
-      host: this._host,
-      insecure: this._insecure,
-      load_config_file: this._loadConfigFile,
-      password: this._password,
-      token: this._token,
-      username: this._username,
-      alias: this._alias,
-      exec: this._exec,
+      client_certificate: cdktf.stringToTerraform(this._clientCertificate),
+      client_key: cdktf.stringToTerraform(this._clientKey),
+      cluster_ca_certificate: cdktf.stringToTerraform(this._clusterCaCertificate),
+      config_context: cdktf.stringToTerraform(this._configContext),
+      config_context_auth_info: cdktf.stringToTerraform(this._configContextAuthInfo),
+      config_context_cluster: cdktf.stringToTerraform(this._configContextCluster),
+      config_path: cdktf.stringToTerraform(this._configPath),
+      host: cdktf.stringToTerraform(this._host),
+      insecure: cdktf.booleanToTerraform(this._insecure),
+      load_config_file: cdktf.booleanToTerraform(this._loadConfigFile),
+      password: cdktf.stringToTerraform(this._password),
+      token: cdktf.stringToTerraform(this._token),
+      username: cdktf.stringToTerraform(this._username),
+      alias: cdktf.stringToTerraform(this._alias),
+      exec: cdktf.listMapper(kubernetesProviderExecToTerraform)(this._exec),
     };
   }
 }

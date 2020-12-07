@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface PodDisruptionBudgetConfig extends TerraformMetaArguments {
+export interface PodDisruptionBudgetConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: PodDisruptionBudgetMetadata[];
   /** spec block */
@@ -25,6 +24,18 @@ export interface PodDisruptionBudgetMetadata {
   /** Namespace defines the space within which name of the pod disruption budget must be unique. */
   readonly namespace?: string;
 }
+
+function podDisruptionBudgetMetadataToTerraform(struct?: PodDisruptionBudgetMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
 export interface PodDisruptionBudgetSpecSelectorMatchExpressions {
   /** The label key that the selector applies to. */
   readonly key?: string;
@@ -33,12 +44,31 @@ export interface PodDisruptionBudgetSpecSelectorMatchExpressions {
   /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
   readonly values?: string[];
 }
+
+function podDisruptionBudgetSpecSelectorMatchExpressionsToTerraform(struct?: PodDisruptionBudgetSpecSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+  }
+}
+
 export interface PodDisruptionBudgetSpecSelector {
   /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
   readonly matchLabels?: { [key: string]: string };
   /** match_expressions block */
   readonly matchExpressions?: PodDisruptionBudgetSpecSelectorMatchExpressions[];
 }
+
+function podDisruptionBudgetSpecSelectorToTerraform(struct?: PodDisruptionBudgetSpecSelector): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(podDisruptionBudgetSpecSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+  }
+}
+
 export interface PodDisruptionBudgetSpec {
   readonly maxUnavailable?: string;
   readonly minAvailable?: string;
@@ -46,9 +76,19 @@ export interface PodDisruptionBudgetSpec {
   readonly selector: PodDisruptionBudgetSpecSelector[];
 }
 
+function podDisruptionBudgetSpecToTerraform(struct?: PodDisruptionBudgetSpec): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    max_unavailable: cdktf.stringToTerraform(struct!.maxUnavailable),
+    min_available: cdktf.stringToTerraform(struct!.minAvailable),
+    selector: cdktf.listMapper(podDisruptionBudgetSpecSelectorToTerraform)(struct!.selector),
+  }
+}
+
+
 // Resource
 
-export class PodDisruptionBudget extends TerraformResource {
+export class PodDisruptionBudget extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -110,8 +150,8 @@ export class PodDisruptionBudget extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      spec: this._spec,
+      metadata: cdktf.listMapper(podDisruptionBudgetMetadataToTerraform)(this._metadata),
+      spec: cdktf.listMapper(podDisruptionBudgetSpecToTerraform)(this._spec),
     };
   }
 }

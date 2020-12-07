@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DefaultServiceAccountConfig extends TerraformMetaArguments {
+export interface DefaultServiceAccountConfig extends cdktf.TerraformMetaArguments {
   /** True to enable automatic mounting of the service account token */
   readonly automountServiceAccountToken?: boolean;
   /** image_pull_secret block */
@@ -23,6 +22,14 @@ export interface DefaultServiceAccountImagePullSecret {
   /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
   readonly name?: string;
 }
+
+function defaultServiceAccountImagePullSecretToTerraform(struct?: DefaultServiceAccountImagePullSecret): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface DefaultServiceAccountMetadata {
   /** An unstructured key value map stored with the service account that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
   readonly annotations?: { [key: string]: string };
@@ -33,17 +40,44 @@ export interface DefaultServiceAccountMetadata {
   /** Namespace defines the space within which name of the service account must be unique. */
   readonly namespace?: string;
 }
+
+function defaultServiceAccountMetadataToTerraform(struct?: DefaultServiceAccountMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
 export interface DefaultServiceAccountSecret {
   /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
   readonly name?: string;
 }
+
+function defaultServiceAccountSecretToTerraform(struct?: DefaultServiceAccountSecret): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface DefaultServiceAccountTimeouts {
   readonly create?: string;
 }
 
+function defaultServiceAccountTimeoutsToTerraform(struct?: DefaultServiceAccountTimeouts): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    create: cdktf.stringToTerraform(struct!.create),
+  }
+}
+
+
 // Resource
 
-export class DefaultServiceAccount extends TerraformResource {
+export class DefaultServiceAccount extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -164,11 +198,11 @@ export class DefaultServiceAccount extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      automount_service_account_token: this._automountServiceAccountToken,
-      image_pull_secret: this._imagePullSecret,
-      metadata: this._metadata,
-      secret: this._secret,
-      timeouts: this._timeouts,
+      automount_service_account_token: cdktf.booleanToTerraform(this._automountServiceAccountToken),
+      image_pull_secret: cdktf.listMapper(defaultServiceAccountImagePullSecretToTerraform)(this._imagePullSecret),
+      metadata: cdktf.listMapper(defaultServiceAccountMetadataToTerraform)(this._metadata),
+      secret: cdktf.listMapper(defaultServiceAccountSecretToTerraform)(this._secret),
+      timeouts: defaultServiceAccountTimeoutsToTerraform(this._timeouts),
     };
   }
 }

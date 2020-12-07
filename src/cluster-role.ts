@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface ClusterRoleConfig extends TerraformMetaArguments {
+export interface ClusterRoleConfig extends cdktf.TerraformMetaArguments {
   /** aggregation_rule block */
   readonly aggregationRule?: ClusterRoleAggregationRule[];
   /** metadata block */
@@ -23,16 +22,43 @@ export interface ClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressions 
   /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
   readonly values?: string[];
 }
+
+function clusterRoleAggregationRuleClusterRoleSelectorsMatchExpressionsToTerraform(struct?: ClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+  }
+}
+
 export interface ClusterRoleAggregationRuleClusterRoleSelectors {
   /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
   readonly matchLabels?: { [key: string]: string };
   /** match_expressions block */
   readonly matchExpressions?: ClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressions[];
 }
+
+function clusterRoleAggregationRuleClusterRoleSelectorsToTerraform(struct?: ClusterRoleAggregationRuleClusterRoleSelectors): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(clusterRoleAggregationRuleClusterRoleSelectorsMatchExpressionsToTerraform)(struct!.matchExpressions),
+  }
+}
+
 export interface ClusterRoleAggregationRule {
   /** cluster_role_selectors block */
   readonly clusterRoleSelectors?: ClusterRoleAggregationRuleClusterRoleSelectors[];
 }
+
+function clusterRoleAggregationRuleToTerraform(struct?: ClusterRoleAggregationRule): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    cluster_role_selectors: cdktf.listMapper(clusterRoleAggregationRuleClusterRoleSelectorsToTerraform)(struct!.clusterRoleSelectors),
+  }
+}
+
 export interface ClusterRoleMetadata {
   /** An unstructured key value map stored with the clusterRole that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
   readonly annotations?: { [key: string]: string };
@@ -41,6 +67,16 @@ export interface ClusterRoleMetadata {
   /** Name of the clusterRole, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
   readonly name?: string;
 }
+
+function clusterRoleMetadataToTerraform(struct?: ClusterRoleMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface ClusterRoleRule {
   /** APIGroups is the name of the APIGroup that contains the resources. If multiple API groups are specified, any action requested against one of the enumerated resources in any API group will be allowed. */
   readonly apiGroups?: string[];
@@ -54,9 +90,21 @@ export interface ClusterRoleRule {
   readonly verbs: string[];
 }
 
+function clusterRoleRuleToTerraform(struct?: ClusterRoleRule): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    api_groups: cdktf.listMapper(cdktf.stringToTerraform)(struct!.apiGroups),
+    non_resource_urls: cdktf.listMapper(cdktf.stringToTerraform)(struct!.nonResourceUrls),
+    resource_names: cdktf.listMapper(cdktf.stringToTerraform)(struct!.resourceNames),
+    resources: cdktf.listMapper(cdktf.stringToTerraform)(struct!.resources),
+    verbs: cdktf.listMapper(cdktf.stringToTerraform)(struct!.verbs),
+  }
+}
+
+
 // Resource
 
-export class ClusterRole extends TerraformResource {
+export class ClusterRole extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -138,9 +186,9 @@ export class ClusterRole extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      aggregation_rule: this._aggregationRule,
-      metadata: this._metadata,
-      rule: this._rule,
+      aggregation_rule: cdktf.listMapper(clusterRoleAggregationRuleToTerraform)(this._aggregationRule),
+      metadata: cdktf.listMapper(clusterRoleMetadataToTerraform)(this._metadata),
+      rule: cdktf.listMapper(clusterRoleRuleToTerraform)(this._rule),
     };
   }
 }

@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface MutatingWebhookConfigurationConfig extends TerraformMetaArguments {
+export interface MutatingWebhookConfigurationConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: MutatingWebhookConfigurationMetadata[];
   /** webhook block */
@@ -23,6 +22,17 @@ export interface MutatingWebhookConfigurationMetadata {
   /** Name of the mutating webhook configuration, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
   readonly name?: string;
 }
+
+function mutatingWebhookConfigurationMetadataToTerraform(struct?: MutatingWebhookConfigurationMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface MutatingWebhookConfigurationWebhookClientConfigService {
   /** `name` is the name of the service. Required */
   readonly name: string;
@@ -33,6 +43,17 @@ export interface MutatingWebhookConfigurationWebhookClientConfigService {
   /** If specified, the port on the service that hosting webhook. Default to 443 for backward compatibility. `port` should be a valid port number (1-65535, inclusive). */
   readonly port?: number;
 }
+
+function mutatingWebhookConfigurationWebhookClientConfigServiceToTerraform(struct?: MutatingWebhookConfigurationWebhookClientConfigService): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+    path: cdktf.stringToTerraform(struct!.path),
+    port: cdktf.numberToTerraform(struct!.port),
+  }
+}
+
 export interface MutatingWebhookConfigurationWebhookClientConfig {
   /** `caBundle` is a PEM encoded CA bundle which will be used to validate the webhook's server certificate. If unspecified, system trust roots on the apiserver are used. */
   readonly caBundle?: string;
@@ -51,6 +72,16 @@ Attempting to use a user or basic auth e.g. "user:password@" is not allowed. Fra
   /** service block */
   readonly service?: MutatingWebhookConfigurationWebhookClientConfigService[];
 }
+
+function mutatingWebhookConfigurationWebhookClientConfigToTerraform(struct?: MutatingWebhookConfigurationWebhookClientConfig): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    ca_bundle: cdktf.stringToTerraform(struct!.caBundle),
+    url: cdktf.stringToTerraform(struct!.url),
+    service: cdktf.listMapper(mutatingWebhookConfigurationWebhookClientConfigServiceToTerraform)(struct!.service),
+  }
+}
+
 export interface MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions {
   /** The label key that the selector applies to. */
   readonly key?: string;
@@ -59,12 +90,31 @@ export interface MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpres
   /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
   readonly values?: string[];
 }
+
+function mutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsToTerraform(struct?: MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+  }
+}
+
 export interface MutatingWebhookConfigurationWebhookNamespaceSelector {
   /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
   readonly matchLabels?: { [key: string]: string };
   /** match_expressions block */
   readonly matchExpressions?: MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions[];
 }
+
+function mutatingWebhookConfigurationWebhookNamespaceSelectorToTerraform(struct?: MutatingWebhookConfigurationWebhookNamespaceSelector): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(mutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+  }
+}
+
 export interface MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressions {
   /** The label key that the selector applies to. */
   readonly key?: string;
@@ -73,12 +123,31 @@ export interface MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressio
   /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
   readonly values?: string[];
 }
+
+function mutatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsToTerraform(struct?: MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+  }
+}
+
 export interface MutatingWebhookConfigurationWebhookObjectSelector {
   /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
   readonly matchLabels?: { [key: string]: string };
   /** match_expressions block */
   readonly matchExpressions?: MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressions[];
 }
+
+function mutatingWebhookConfigurationWebhookObjectSelectorToTerraform(struct?: MutatingWebhookConfigurationWebhookObjectSelector): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(mutatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+  }
+}
+
 export interface MutatingWebhookConfigurationWebhookRule {
   readonly apiGroups: string[];
   readonly apiVersions: string[];
@@ -87,6 +156,18 @@ export interface MutatingWebhookConfigurationWebhookRule {
   readonly resources: string[];
   readonly scope?: string;
 }
+
+function mutatingWebhookConfigurationWebhookRuleToTerraform(struct?: MutatingWebhookConfigurationWebhookRule): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    api_groups: cdktf.listMapper(cdktf.stringToTerraform)(struct!.apiGroups),
+    api_versions: cdktf.listMapper(cdktf.stringToTerraform)(struct!.apiVersions),
+    operations: cdktf.listMapper(cdktf.stringToTerraform)(struct!.operations),
+    resources: cdktf.listMapper(cdktf.stringToTerraform)(struct!.resources),
+    scope: cdktf.stringToTerraform(struct!.scope),
+  }
+}
+
 export interface MutatingWebhookConfigurationWebhook {
   /** AdmissionReviewVersions is an ordered list of preferred `AdmissionReview` versions the Webhook expects. API server will try to use first version in the list which it supports. If none of the versions specified in this list supported by API server, validation will fail for this object. If a persisted webhook configuration specifies allowed versions and does not include any versions known to the API Server, calls to the webhook will fail and be subject to the failure policy. */
   readonly admissionReviewVersions?: string[];
@@ -124,9 +205,27 @@ Defaults to "Never". */
   readonly rule: MutatingWebhookConfigurationWebhookRule[];
 }
 
+function mutatingWebhookConfigurationWebhookToTerraform(struct?: MutatingWebhookConfigurationWebhook): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    admission_review_versions: cdktf.listMapper(cdktf.stringToTerraform)(struct!.admissionReviewVersions),
+    failure_policy: cdktf.stringToTerraform(struct!.failurePolicy),
+    match_policy: cdktf.stringToTerraform(struct!.matchPolicy),
+    name: cdktf.stringToTerraform(struct!.name),
+    reinvocation_policy: cdktf.stringToTerraform(struct!.reinvocationPolicy),
+    side_effects: cdktf.stringToTerraform(struct!.sideEffects),
+    timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
+    client_config: cdktf.listMapper(mutatingWebhookConfigurationWebhookClientConfigToTerraform)(struct!.clientConfig),
+    namespace_selector: cdktf.listMapper(mutatingWebhookConfigurationWebhookNamespaceSelectorToTerraform)(struct!.namespaceSelector),
+    object_selector: cdktf.listMapper(mutatingWebhookConfigurationWebhookObjectSelectorToTerraform)(struct!.objectSelector),
+    rule: cdktf.listMapper(mutatingWebhookConfigurationWebhookRuleToTerraform)(struct!.rule),
+  }
+}
+
+
 // Resource
 
-export class MutatingWebhookConfiguration extends TerraformResource {
+export class MutatingWebhookConfiguration extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -188,8 +287,8 @@ export class MutatingWebhookConfiguration extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      webhook: this._webhook,
+      metadata: cdktf.listMapper(mutatingWebhookConfigurationMetadataToTerraform)(this._metadata),
+      webhook: cdktf.listMapper(mutatingWebhookConfigurationWebhookToTerraform)(this._webhook),
     };
   }
 }

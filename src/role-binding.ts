@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface RoleBindingConfig extends TerraformMetaArguments {
+export interface RoleBindingConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: RoleBindingMetadata[];
   /** role_ref block */
@@ -25,6 +24,17 @@ export interface RoleBindingMetadata {
   /** Namespace defines the space within which name of the roleBinding must be unique. */
   readonly namespace?: string;
 }
+
+function roleBindingMetadataToTerraform(struct?: RoleBindingMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
 export interface RoleBindingRoleRef {
   /** The API group of the user. The only value possible at the moment is `rbac.authorization.k8s.io`. */
   readonly apiGroup: string;
@@ -33,6 +43,16 @@ export interface RoleBindingRoleRef {
   /** The name of the User to bind to. */
   readonly name: string;
 }
+
+function roleBindingRoleRefToTerraform(struct?: RoleBindingRoleRef): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    api_group: cdktf.stringToTerraform(struct!.apiGroup),
+    kind: cdktf.stringToTerraform(struct!.kind),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface RoleBindingSubject {
   /** The API group of the subject resource. */
   readonly apiGroup?: string;
@@ -44,9 +64,20 @@ export interface RoleBindingSubject {
   readonly namespace?: string;
 }
 
+function roleBindingSubjectToTerraform(struct?: RoleBindingSubject): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    api_group: cdktf.stringToTerraform(struct!.apiGroup),
+    kind: cdktf.stringToTerraform(struct!.kind),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
+
 // Resource
 
-export class RoleBinding extends TerraformResource {
+export class RoleBinding extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -122,9 +153,9 @@ export class RoleBinding extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      role_ref: this._roleRef,
-      subject: this._subject,
+      metadata: cdktf.listMapper(roleBindingMetadataToTerraform)(this._metadata),
+      role_ref: cdktf.listMapper(roleBindingRoleRefToTerraform)(this._roleRef),
+      subject: cdktf.listMapper(roleBindingSubjectToTerraform)(this._subject),
     };
   }
 }

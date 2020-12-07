@@ -2,17 +2,15 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { ComplexComputedList } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesIngressConfig extends TerraformMetaArguments {
+export interface DataKubernetesIngressConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: DataKubernetesIngressMetadata[];
 }
-export class DataKubernetesIngressLoadBalancerIngress extends ComplexComputedList {
+export class DataKubernetesIngressLoadBalancerIngress extends cdktf.ComplexComputedList {
 
   // hostname - computed: true, optional: false, required: false
   public get hostname() {
@@ -24,7 +22,7 @@ export class DataKubernetesIngressLoadBalancerIngress extends ComplexComputedLis
     return this.getStringAttribute('ip');
   }
 }
-export class DataKubernetesIngressSpecBackend extends ComplexComputedList {
+export class DataKubernetesIngressSpecBackend extends cdktf.ComplexComputedList {
 
   // service_name - computed: true, optional: false, required: false
   public get serviceName() {
@@ -36,7 +34,7 @@ export class DataKubernetesIngressSpecBackend extends ComplexComputedList {
     return this.getStringAttribute('service_port');
   }
 }
-export class DataKubernetesIngressSpecRuleHttpPathBackend extends ComplexComputedList {
+export class DataKubernetesIngressSpecRuleHttpPathBackend extends cdktf.ComplexComputedList {
 
   // service_name - computed: true, optional: false, required: false
   public get serviceName() {
@@ -48,7 +46,7 @@ export class DataKubernetesIngressSpecRuleHttpPathBackend extends ComplexCompute
     return this.getStringAttribute('service_port');
   }
 }
-export class DataKubernetesIngressSpecRuleHttpPath extends ComplexComputedList {
+export class DataKubernetesIngressSpecRuleHttpPath extends cdktf.ComplexComputedList {
 
   // backend - computed: true, optional: false, required: false
   public get backend() {
@@ -60,14 +58,14 @@ export class DataKubernetesIngressSpecRuleHttpPath extends ComplexComputedList {
     return this.getStringAttribute('path');
   }
 }
-export class DataKubernetesIngressSpecRuleHttp extends ComplexComputedList {
+export class DataKubernetesIngressSpecRuleHttp extends cdktf.ComplexComputedList {
 
   // path - computed: true, optional: false, required: false
   public get path() {
     return this.interpolationForAttribute('path') as any;
   }
 }
-export class DataKubernetesIngressSpecRule extends ComplexComputedList {
+export class DataKubernetesIngressSpecRule extends cdktf.ComplexComputedList {
 
   // host - computed: true, optional: false, required: false
   public get host() {
@@ -79,7 +77,7 @@ export class DataKubernetesIngressSpecRule extends ComplexComputedList {
     return this.interpolationForAttribute('http') as any;
   }
 }
-export class DataKubernetesIngressSpecTls extends ComplexComputedList {
+export class DataKubernetesIngressSpecTls extends cdktf.ComplexComputedList {
 
   // hosts - computed: true, optional: false, required: false
   public get hosts() {
@@ -91,7 +89,7 @@ export class DataKubernetesIngressSpecTls extends ComplexComputedList {
     return this.getStringAttribute('secret_name');
   }
 }
-export class DataKubernetesIngressSpec extends ComplexComputedList {
+export class DataKubernetesIngressSpec extends cdktf.ComplexComputedList {
 
   // backend - computed: true, optional: false, required: false
   public get backend() {
@@ -119,9 +117,20 @@ export interface DataKubernetesIngressMetadata {
   readonly namespace?: string;
 }
 
+function dataKubernetesIngressMetadataToTerraform(struct?: DataKubernetesIngressMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
+
 // Resource
 
-export class DataKubernetesIngress extends TerraformDataSource {
+export class DataKubernetesIngress extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -179,7 +188,7 @@ export class DataKubernetesIngress extends TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
+      metadata: cdktf.listMapper(dataKubernetesIngressMetadataToTerraform)(this._metadata),
     };
   }
 }

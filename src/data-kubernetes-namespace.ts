@@ -2,17 +2,15 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { ComplexComputedList } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesNamespaceConfig extends TerraformMetaArguments {
+export interface DataKubernetesNamespaceConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: DataKubernetesNamespaceMetadata[];
 }
-export class DataKubernetesNamespaceSpec extends ComplexComputedList {
+export class DataKubernetesNamespaceSpec extends cdktf.ComplexComputedList {
 
   // finalizers - computed: true, optional: false, required: false
   public get finalizers() {
@@ -28,9 +26,19 @@ export interface DataKubernetesNamespaceMetadata {
   readonly name?: string;
 }
 
+function dataKubernetesNamespaceMetadataToTerraform(struct?: DataKubernetesNamespaceMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
+
 // Resource
 
-export class DataKubernetesNamespace extends TerraformDataSource {
+export class DataKubernetesNamespace extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -83,7 +91,7 @@ export class DataKubernetesNamespace extends TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
+      metadata: cdktf.listMapper(dataKubernetesNamespaceMetadataToTerraform)(this._metadata),
     };
   }
 }

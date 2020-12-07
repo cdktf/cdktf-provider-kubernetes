@@ -2,17 +2,16 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesAllNamespacesConfig extends TerraformMetaArguments {
+export interface DataKubernetesAllNamespacesConfig extends cdktf.TerraformMetaArguments {
 }
 
 // Resource
 
-export class DataKubernetesAllNamespaces extends TerraformDataSource {
+export class DataKubernetesAllNamespaces extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER

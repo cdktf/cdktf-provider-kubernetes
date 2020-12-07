@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface RoleConfig extends TerraformMetaArguments {
+export interface RoleConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: RoleMetadata[];
   /** rule block */
@@ -25,6 +24,18 @@ export interface RoleMetadata {
   /** Namespace defines the space within which name of the role must be unique. */
   readonly namespace?: string;
 }
+
+function roleMetadataToTerraform(struct?: RoleMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
 export interface RoleRule {
   /** Name of the APIGroup that contains the resources */
   readonly apiGroups: string[];
@@ -36,9 +47,20 @@ export interface RoleRule {
   readonly verbs: string[];
 }
 
+function roleRuleToTerraform(struct?: RoleRule): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    api_groups: cdktf.listMapper(cdktf.stringToTerraform)(struct!.apiGroups),
+    resource_names: cdktf.listMapper(cdktf.stringToTerraform)(struct!.resourceNames),
+    resources: cdktf.listMapper(cdktf.stringToTerraform)(struct!.resources),
+    verbs: cdktf.listMapper(cdktf.stringToTerraform)(struct!.verbs),
+  }
+}
+
+
 // Resource
 
-export class Role extends TerraformResource {
+export class Role extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -100,8 +122,8 @@ export class Role extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      rule: this._rule,
+      metadata: cdktf.listMapper(roleMetadataToTerraform)(this._metadata),
+      rule: cdktf.listMapper(roleRuleToTerraform)(this._rule),
     };
   }
 }

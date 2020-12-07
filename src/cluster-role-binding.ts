@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface ClusterRoleBindingConfig extends TerraformMetaArguments {
+export interface ClusterRoleBindingConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: ClusterRoleBindingMetadata[];
   /** role_ref block */
@@ -23,6 +22,16 @@ export interface ClusterRoleBindingMetadata {
   /** Name of the clusterRoleBinding, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
   readonly name?: string;
 }
+
+function clusterRoleBindingMetadataToTerraform(struct?: ClusterRoleBindingMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface ClusterRoleBindingRoleRef {
   /** The API group of the user. The only value possible at the moment is `rbac.authorization.k8s.io`. */
   readonly apiGroup: string;
@@ -31,6 +40,16 @@ export interface ClusterRoleBindingRoleRef {
   /** The name of the User to bind to. */
   readonly name: string;
 }
+
+function clusterRoleBindingRoleRefToTerraform(struct?: ClusterRoleBindingRoleRef): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    api_group: cdktf.stringToTerraform(struct!.apiGroup),
+    kind: cdktf.stringToTerraform(struct!.kind),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface ClusterRoleBindingSubject {
   /** The API group of the subject resource. */
   readonly apiGroup?: string;
@@ -42,9 +61,20 @@ export interface ClusterRoleBindingSubject {
   readonly namespace?: string;
 }
 
+function clusterRoleBindingSubjectToTerraform(struct?: ClusterRoleBindingSubject): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    api_group: cdktf.stringToTerraform(struct!.apiGroup),
+    kind: cdktf.stringToTerraform(struct!.kind),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
+
 // Resource
 
-export class ClusterRoleBinding extends TerraformResource {
+export class ClusterRoleBinding extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -120,9 +150,9 @@ export class ClusterRoleBinding extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      role_ref: this._roleRef,
-      subject: this._subject,
+      metadata: cdktf.listMapper(clusterRoleBindingMetadataToTerraform)(this._metadata),
+      role_ref: cdktf.listMapper(clusterRoleBindingRoleRefToTerraform)(this._roleRef),
+      subject: cdktf.listMapper(clusterRoleBindingSubjectToTerraform)(this._subject),
     };
   }
 }

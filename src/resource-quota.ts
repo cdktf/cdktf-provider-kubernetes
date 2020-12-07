@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface ResourceQuotaConfig extends TerraformMetaArguments {
+export interface ResourceQuotaConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: ResourceQuotaMetadata[];
   /** spec block */
@@ -27,20 +26,50 @@ export interface ResourceQuotaMetadata {
   /** Namespace defines the space within which name of the resource quota must be unique. */
   readonly namespace?: string;
 }
+
+function resourceQuotaMetadataToTerraform(struct?: ResourceQuotaMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
 export interface ResourceQuotaSpec {
   /** The set of desired hard limits for each named resource. More info: http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota */
   readonly hard?: { [key: string]: string };
   /** A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects. */
   readonly scopes?: string[];
 }
+
+function resourceQuotaSpecToTerraform(struct?: ResourceQuotaSpec): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    hard: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.hard),
+    scopes: cdktf.listMapper(cdktf.stringToTerraform)(struct!.scopes),
+  }
+}
+
 export interface ResourceQuotaTimeouts {
   readonly create?: string;
   readonly update?: string;
 }
 
+function resourceQuotaTimeoutsToTerraform(struct?: ResourceQuotaTimeouts): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    create: cdktf.stringToTerraform(struct!.create),
+    update: cdktf.stringToTerraform(struct!.update),
+  }
+}
+
+
 // Resource
 
-export class ResourceQuota extends TerraformResource {
+export class ResourceQuota extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -122,9 +151,9 @@ export class ResourceQuota extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      spec: this._spec,
-      timeouts: this._timeouts,
+      metadata: cdktf.listMapper(resourceQuotaMetadataToTerraform)(this._metadata),
+      spec: cdktf.listMapper(resourceQuotaSpecToTerraform)(this._spec),
+      timeouts: resourceQuotaTimeoutsToTerraform(this._timeouts),
     };
   }
 }

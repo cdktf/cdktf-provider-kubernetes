@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface StorageClassConfig extends TerraformMetaArguments {
+export interface StorageClassConfig extends cdktf.TerraformMetaArguments {
   /** Indicates whether the storage class allow volume expand */
   readonly allowVolumeExpansion?: boolean;
   /** Persistent Volumes that are dynamically created by a storage class will have the mount options specified */
@@ -34,9 +33,20 @@ export interface StorageClassMetadata {
   readonly name?: string;
 }
 
+function storageClassMetadataToTerraform(struct?: StorageClassMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
+
 // Resource
 
-export class StorageClass extends TerraformResource {
+export class StorageClass extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -183,13 +193,13 @@ export class StorageClass extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      allow_volume_expansion: this._allowVolumeExpansion,
-      mount_options: this._mountOptions,
-      parameters: this._parameters,
-      reclaim_policy: this._reclaimPolicy,
-      storage_provisioner: this._storageProvisioner,
-      volume_binding_mode: this._volumeBindingMode,
-      metadata: this._metadata,
+      allow_volume_expansion: cdktf.booleanToTerraform(this._allowVolumeExpansion),
+      mount_options: cdktf.listMapper(cdktf.stringToTerraform)(this._mountOptions),
+      parameters: cdktf.hashMapper(cdktf.anyToTerraform)(this._parameters),
+      reclaim_policy: cdktf.stringToTerraform(this._reclaimPolicy),
+      storage_provisioner: cdktf.stringToTerraform(this._storageProvisioner),
+      volume_binding_mode: cdktf.stringToTerraform(this._volumeBindingMode),
+      metadata: cdktf.listMapper(storageClassMetadataToTerraform)(this._metadata),
     };
   }
 }
