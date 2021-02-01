@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface PodSecurityPolicyConfig extends TerraformMetaArguments {
+export interface PodSecurityPolicyConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: PodSecurityPolicyMetadata[];
   /** spec block */
@@ -21,10 +20,28 @@ export interface PodSecurityPolicyMetadata {
   /** Name of the podsecuritypolicy, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
   readonly name?: string;
 }
+
+function podSecurityPolicyMetadataToTerraform(struct?: PodSecurityPolicyMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface PodSecurityPolicySpecAllowedFlexVolumes {
   /** driver is the name of the Flexvolume driver. */
   readonly driver: string;
 }
+
+function podSecurityPolicySpecAllowedFlexVolumesToTerraform(struct?: PodSecurityPolicySpecAllowedFlexVolumes): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    driver: cdktf.stringToTerraform(struct!.driver),
+  }
+}
+
 export interface PodSecurityPolicySpecAllowedHostPaths {
   /** pathPrefix is the path prefix that the host volume must match. It does not support `*`. Trailing slashes are trimmed when validating the path prefix with a host path.
 
@@ -33,80 +50,190 @@ Examples: `/foo` would allow `/foo`, `/foo/` and `/foo/bar` `/foo` would not all
   /** when set to true, will allow host volumes matching the pathPrefix only if all volume mounts are readOnly. */
   readonly readOnly?: boolean;
 }
+
+function podSecurityPolicySpecAllowedHostPathsToTerraform(struct?: PodSecurityPolicySpecAllowedHostPaths): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    path_prefix: cdktf.stringToTerraform(struct!.pathPrefix),
+    read_only: cdktf.booleanToTerraform(struct!.readOnly),
+  }
+}
+
 export interface PodSecurityPolicySpecFsGroupRange {
   /** max is the end of the range, inclusive. */
   readonly max: number;
   /** min is the start of the range, inclusive. */
   readonly min: number;
 }
+
+function podSecurityPolicySpecFsGroupRangeToTerraform(struct?: PodSecurityPolicySpecFsGroupRange): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    max: cdktf.numberToTerraform(struct!.max),
+    min: cdktf.numberToTerraform(struct!.min),
+  }
+}
+
 export interface PodSecurityPolicySpecFsGroup {
   /** rule is the strategy that will dictate what FSGroup is used in the SecurityContext. */
   readonly rule: string;
   /** range block */
   readonly range?: PodSecurityPolicySpecFsGroupRange[];
 }
+
+function podSecurityPolicySpecFsGroupToTerraform(struct?: PodSecurityPolicySpecFsGroup): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    rule: cdktf.stringToTerraform(struct!.rule),
+    range: cdktf.listMapper(podSecurityPolicySpecFsGroupRangeToTerraform)(struct!.range),
+  }
+}
+
 export interface PodSecurityPolicySpecHostPorts {
   /** max is the end of the range, inclusive. */
   readonly max: number;
   /** min is the start of the range, inclusive. */
   readonly min: number;
 }
+
+function podSecurityPolicySpecHostPortsToTerraform(struct?: PodSecurityPolicySpecHostPorts): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    max: cdktf.numberToTerraform(struct!.max),
+    min: cdktf.numberToTerraform(struct!.min),
+  }
+}
+
 export interface PodSecurityPolicySpecRunAsGroupRange {
   /** max is the end of the range, inclusive. */
   readonly max: number;
   /** min is the start of the range, inclusive. */
   readonly min: number;
 }
+
+function podSecurityPolicySpecRunAsGroupRangeToTerraform(struct?: PodSecurityPolicySpecRunAsGroupRange): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    max: cdktf.numberToTerraform(struct!.max),
+    min: cdktf.numberToTerraform(struct!.min),
+  }
+}
+
 export interface PodSecurityPolicySpecRunAsGroup {
   /** rule is the strategy that will dictate the allowable RunAsGroup values that may be set. */
   readonly rule: string;
   /** range block */
   readonly range?: PodSecurityPolicySpecRunAsGroupRange[];
 }
+
+function podSecurityPolicySpecRunAsGroupToTerraform(struct?: PodSecurityPolicySpecRunAsGroup): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    rule: cdktf.stringToTerraform(struct!.rule),
+    range: cdktf.listMapper(podSecurityPolicySpecRunAsGroupRangeToTerraform)(struct!.range),
+  }
+}
+
 export interface PodSecurityPolicySpecRunAsUserRange {
   /** max is the end of the range, inclusive. */
   readonly max: number;
   /** min is the start of the range, inclusive. */
   readonly min: number;
 }
+
+function podSecurityPolicySpecRunAsUserRangeToTerraform(struct?: PodSecurityPolicySpecRunAsUserRange): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    max: cdktf.numberToTerraform(struct!.max),
+    min: cdktf.numberToTerraform(struct!.min),
+  }
+}
+
 export interface PodSecurityPolicySpecRunAsUser {
   /** rule is the strategy that will dictate the allowable RunAsUser values that may be set. */
   readonly rule: string;
   /** range block */
   readonly range?: PodSecurityPolicySpecRunAsUserRange[];
 }
+
+function podSecurityPolicySpecRunAsUserToTerraform(struct?: PodSecurityPolicySpecRunAsUser): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    rule: cdktf.stringToTerraform(struct!.rule),
+    range: cdktf.listMapper(podSecurityPolicySpecRunAsUserRangeToTerraform)(struct!.range),
+  }
+}
+
 export interface PodSecurityPolicySpecSeLinuxSeLinuxOptions {
   readonly level: string;
   readonly role: string;
   readonly type: string;
   readonly user: string;
 }
+
+function podSecurityPolicySpecSeLinuxSeLinuxOptionsToTerraform(struct?: PodSecurityPolicySpecSeLinuxSeLinuxOptions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    level: cdktf.stringToTerraform(struct!.level),
+    role: cdktf.stringToTerraform(struct!.role),
+    type: cdktf.stringToTerraform(struct!.type),
+    user: cdktf.stringToTerraform(struct!.user),
+  }
+}
+
 export interface PodSecurityPolicySpecSeLinux {
   /** rule is the strategy that will dictate the allowable labels that may be set. */
   readonly rule: string;
   /** se_linux_options block */
   readonly seLinuxOptions?: PodSecurityPolicySpecSeLinuxSeLinuxOptions[];
 }
+
+function podSecurityPolicySpecSeLinuxToTerraform(struct?: PodSecurityPolicySpecSeLinux): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    rule: cdktf.stringToTerraform(struct!.rule),
+    se_linux_options: cdktf.listMapper(podSecurityPolicySpecSeLinuxSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
+  }
+}
+
 export interface PodSecurityPolicySpecSupplementalGroupsRange {
   /** max is the end of the range, inclusive. */
   readonly max: number;
   /** min is the start of the range, inclusive. */
   readonly min: number;
 }
+
+function podSecurityPolicySpecSupplementalGroupsRangeToTerraform(struct?: PodSecurityPolicySpecSupplementalGroupsRange): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    max: cdktf.numberToTerraform(struct!.max),
+    min: cdktf.numberToTerraform(struct!.min),
+  }
+}
+
 export interface PodSecurityPolicySpecSupplementalGroups {
   /** rule is the strategy that will dictate what supplemental groups is used in the SecurityContext. */
   readonly rule: string;
   /** range block */
   readonly range?: PodSecurityPolicySpecSupplementalGroupsRange[];
 }
+
+function podSecurityPolicySpecSupplementalGroupsToTerraform(struct?: PodSecurityPolicySpecSupplementalGroups): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    rule: cdktf.stringToTerraform(struct!.rule),
+    range: cdktf.listMapper(podSecurityPolicySpecSupplementalGroupsRangeToTerraform)(struct!.range),
+  }
+}
+
 export interface PodSecurityPolicySpec {
   /** allowPrivilegeEscalation determines if a pod can request to allow privilege escalation. If unspecified, defaults to true. */
   readonly allowPrivilegeEscalation?: boolean;
   /** allowedCapabilities is a list of capabilities that can be requested to add to the container. Capabilities in this field may be added at the pod author's discretion. You must not list a capability in both allowedCapabilities and requiredDropCapabilities. */
   readonly allowedCapabilities?: string[];
-  /** AllowedProcMountTypes is a whitelist of allowed ProcMountTypes. Empty or nil indicates that only the DefaultProcMountType may be used. This requires the ProcMountType feature flag to be enabled. */
+  /** AllowedProcMountTypes is an allowlist of allowed ProcMountTypes. Empty or nil indicates that only the DefaultProcMountType may be used. This requires the ProcMountType feature flag to be enabled. */
   readonly allowedProcMountTypes?: string[];
-  /** allowedUnsafeSysctls is a list of explicitly allowed unsafe sysctls, defaults to none. Each entry is either a plain sysctl name or ends in "*" in which case it is considered as a prefix of allowed sysctls. Single * means all unsafe sysctls are allowed. Kubelet has to whitelist all allowed unsafe sysctls explicitly to avoid rejection.
+  /** allowedUnsafeSysctls is a list of explicitly allowed unsafe sysctls, defaults to none. Each entry is either a plain sysctl name or ends in "*" in which case it is considered as a prefix of allowed sysctls. Single * means all unsafe sysctls are allowed. Kubelet has to allowlist all allowed unsafe sysctls explicitly to avoid rejection.
 
 Examples: e.g. "foo/*" allows "foo/bar", "foo/baz", etc. e.g. "foo.*" allows "foo.bar", "foo.baz", etc. */
   readonly allowedUnsafeSysctls?: string[];
@@ -130,7 +257,7 @@ Examples: e.g. "foo/*" forbids "foo/bar", "foo/baz", etc. e.g. "foo.*" forbids "
   readonly readOnlyRootFilesystem?: boolean;
   /** requiredDropCapabilities are the capabilities that will be dropped from the container.  These are required to be dropped and cannot be added. */
   readonly requiredDropCapabilities?: string[];
-  /** volumes is a white list of allowed volume plugins. Empty indicates that no volumes may be used. To allow all volumes you may use '*'. */
+  /** volumes is an allowlist of volume plugins. Empty indicates that no volumes may be used. To allow all volumes you may use '*'. */
   readonly volumes?: string[];
   /** allowed_flex_volumes block */
   readonly allowedFlexVolumes?: PodSecurityPolicySpecAllowedFlexVolumes[];
@@ -150,9 +277,38 @@ Examples: e.g. "foo/*" forbids "foo/bar", "foo/baz", etc. e.g. "foo.*" forbids "
   readonly supplementalGroups: PodSecurityPolicySpecSupplementalGroups[];
 }
 
+function podSecurityPolicySpecToTerraform(struct?: PodSecurityPolicySpec): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    allow_privilege_escalation: cdktf.booleanToTerraform(struct!.allowPrivilegeEscalation),
+    allowed_capabilities: cdktf.listMapper(cdktf.stringToTerraform)(struct!.allowedCapabilities),
+    allowed_proc_mount_types: cdktf.listMapper(cdktf.stringToTerraform)(struct!.allowedProcMountTypes),
+    allowed_unsafe_sysctls: cdktf.listMapper(cdktf.stringToTerraform)(struct!.allowedUnsafeSysctls),
+    default_add_capabilities: cdktf.listMapper(cdktf.stringToTerraform)(struct!.defaultAddCapabilities),
+    default_allow_privilege_escalation: cdktf.booleanToTerraform(struct!.defaultAllowPrivilegeEscalation),
+    forbidden_sysctls: cdktf.listMapper(cdktf.stringToTerraform)(struct!.forbiddenSysctls),
+    host_ipc: cdktf.booleanToTerraform(struct!.hostIpc),
+    host_network: cdktf.booleanToTerraform(struct!.hostNetwork),
+    host_pid: cdktf.booleanToTerraform(struct!.hostPid),
+    privileged: cdktf.booleanToTerraform(struct!.privileged),
+    read_only_root_filesystem: cdktf.booleanToTerraform(struct!.readOnlyRootFilesystem),
+    required_drop_capabilities: cdktf.listMapper(cdktf.stringToTerraform)(struct!.requiredDropCapabilities),
+    volumes: cdktf.listMapper(cdktf.stringToTerraform)(struct!.volumes),
+    allowed_flex_volumes: cdktf.listMapper(podSecurityPolicySpecAllowedFlexVolumesToTerraform)(struct!.allowedFlexVolumes),
+    allowed_host_paths: cdktf.listMapper(podSecurityPolicySpecAllowedHostPathsToTerraform)(struct!.allowedHostPaths),
+    fs_group: cdktf.listMapper(podSecurityPolicySpecFsGroupToTerraform)(struct!.fsGroup),
+    host_ports: cdktf.listMapper(podSecurityPolicySpecHostPortsToTerraform)(struct!.hostPorts),
+    run_as_group: cdktf.listMapper(podSecurityPolicySpecRunAsGroupToTerraform)(struct!.runAsGroup),
+    run_as_user: cdktf.listMapper(podSecurityPolicySpecRunAsUserToTerraform)(struct!.runAsUser),
+    se_linux: cdktf.listMapper(podSecurityPolicySpecSeLinuxToTerraform)(struct!.seLinux),
+    supplemental_groups: cdktf.listMapper(podSecurityPolicySpecSupplementalGroupsToTerraform)(struct!.supplementalGroups),
+  }
+}
+
+
 // Resource
 
-export class PodSecurityPolicy extends TerraformResource {
+export class PodSecurityPolicy extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -178,40 +334,44 @@ export class PodSecurityPolicy extends TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: PodSecurityPolicyMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: PodSecurityPolicyMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // spec - computed: false, optional: false, required: true
   private _spec: PodSecurityPolicySpec[];
   public get spec() {
-    return this._spec;
+    return this.interpolationForAttribute('spec') as any;
   }
   public set spec(value: PodSecurityPolicySpec[]) {
     this._spec = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get specInput() {
+    return this._spec
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      spec: this._spec,
+      metadata: cdktf.listMapper(podSecurityPolicyMetadataToTerraform)(this._metadata),
+      spec: cdktf.listMapper(podSecurityPolicySpecToTerraform)(this._spec),
     };
   }
 }

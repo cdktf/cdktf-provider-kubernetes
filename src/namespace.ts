@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface NamespaceConfig extends TerraformMetaArguments {
+export interface NamespaceConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: NamespaceMetadata[];
   /** timeouts block */
@@ -23,13 +22,32 @@ export interface NamespaceMetadata {
   /** Name of the namespace, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
   readonly name?: string;
 }
+
+function namespaceMetadataToTerraform(struct?: NamespaceMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface NamespaceTimeouts {
   readonly delete?: string;
 }
 
+function namespaceTimeoutsToTerraform(struct?: NamespaceTimeouts): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    delete: cdktf.stringToTerraform(struct!.delete),
+  }
+}
+
+
 // Resource
 
-export class Namespace extends TerraformResource {
+export class Namespace extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -55,40 +73,47 @@ export class Namespace extends TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: NamespaceMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: NamespaceMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // timeouts - computed: false, optional: true, required: false
   private _timeouts?: NamespaceTimeouts;
   public get timeouts() {
-    return this._timeouts;
+    return this.interpolationForAttribute('timeouts') as any;
   }
-  public set timeouts(value: NamespaceTimeouts | undefined) {
+  public set timeouts(value: NamespaceTimeouts ) {
     this._timeouts = value;
+  }
+  public resetTimeouts() {
+    this._timeouts = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutsInput() {
+    return this._timeouts
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      timeouts: this._timeouts,
+      metadata: cdktf.listMapper(namespaceMetadataToTerraform)(this._metadata),
+      timeouts: namespaceTimeoutsToTerraform(this._timeouts),
     };
   }
 }

@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface ValidatingWebhookConfigurationConfig extends TerraformMetaArguments {
+export interface ValidatingWebhookConfigurationConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: ValidatingWebhookConfigurationMetadata[];
   /** webhook block */
@@ -23,6 +22,17 @@ export interface ValidatingWebhookConfigurationMetadata {
   /** Name of the validating webhook configuration, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
   readonly name?: string;
 }
+
+function validatingWebhookConfigurationMetadataToTerraform(struct?: ValidatingWebhookConfigurationMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface ValidatingWebhookConfigurationWebhookClientConfigService {
   /** `name` is the name of the service. Required */
   readonly name: string;
@@ -33,6 +43,17 @@ export interface ValidatingWebhookConfigurationWebhookClientConfigService {
   /** If specified, the port on the service that hosting webhook. Default to 443 for backward compatibility. `port` should be a valid port number (1-65535, inclusive). */
   readonly port?: number;
 }
+
+function validatingWebhookConfigurationWebhookClientConfigServiceToTerraform(struct?: ValidatingWebhookConfigurationWebhookClientConfigService): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+    path: cdktf.stringToTerraform(struct!.path),
+    port: cdktf.numberToTerraform(struct!.port),
+  }
+}
+
 export interface ValidatingWebhookConfigurationWebhookClientConfig {
   /** `caBundle` is a PEM encoded CA bundle which will be used to validate the webhook's server certificate. If unspecified, system trust roots on the apiserver are used. */
   readonly caBundle?: string;
@@ -51,6 +72,16 @@ Attempting to use a user or basic auth e.g. "user:password@" is not allowed. Fra
   /** service block */
   readonly service?: ValidatingWebhookConfigurationWebhookClientConfigService[];
 }
+
+function validatingWebhookConfigurationWebhookClientConfigToTerraform(struct?: ValidatingWebhookConfigurationWebhookClientConfig): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    ca_bundle: cdktf.stringToTerraform(struct!.caBundle),
+    url: cdktf.stringToTerraform(struct!.url),
+    service: cdktf.listMapper(validatingWebhookConfigurationWebhookClientConfigServiceToTerraform)(struct!.service),
+  }
+}
+
 export interface ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions {
   /** The label key that the selector applies to. */
   readonly key?: string;
@@ -59,12 +90,31 @@ export interface ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpr
   /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
   readonly values?: string[];
 }
+
+function validatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsToTerraform(struct?: ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+  }
+}
+
 export interface ValidatingWebhookConfigurationWebhookNamespaceSelector {
   /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
   readonly matchLabels?: { [key: string]: string };
   /** match_expressions block */
   readonly matchExpressions?: ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions[];
 }
+
+function validatingWebhookConfigurationWebhookNamespaceSelectorToTerraform(struct?: ValidatingWebhookConfigurationWebhookNamespaceSelector): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(validatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+  }
+}
+
 export interface ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressions {
   /** The label key that the selector applies to. */
   readonly key?: string;
@@ -73,20 +123,51 @@ export interface ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpress
   /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
   readonly values?: string[];
 }
+
+function validatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsToTerraform(struct?: ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+  }
+}
+
 export interface ValidatingWebhookConfigurationWebhookObjectSelector {
   /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
   readonly matchLabels?: { [key: string]: string };
   /** match_expressions block */
   readonly matchExpressions?: ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressions[];
 }
+
+function validatingWebhookConfigurationWebhookObjectSelectorToTerraform(struct?: ValidatingWebhookConfigurationWebhookObjectSelector): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(validatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+  }
+}
+
 export interface ValidatingWebhookConfigurationWebhookRule {
   readonly apiGroups: string[];
   readonly apiVersions: string[];
-  /** Operations is the operations the admission hook cares about - CREATE, UPDATE, or * for all operations. If '*' is present, the length of the slice must be one. Required. */
+  /** Operations is the operations the admission hook cares about - CREATE, UPDATE, DELETE, CONNECT or * for all of those operations and any future admission operations that are added. If '*' is present, the length of the slice must be one. Required. */
   readonly operations: string[];
   readonly resources: string[];
   readonly scope?: string;
 }
+
+function validatingWebhookConfigurationWebhookRuleToTerraform(struct?: ValidatingWebhookConfigurationWebhookRule): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    api_groups: cdktf.listMapper(cdktf.stringToTerraform)(struct!.apiGroups),
+    api_versions: cdktf.listMapper(cdktf.stringToTerraform)(struct!.apiVersions),
+    operations: cdktf.listMapper(cdktf.stringToTerraform)(struct!.operations),
+    resources: cdktf.listMapper(cdktf.stringToTerraform)(struct!.resources),
+    scope: cdktf.stringToTerraform(struct!.scope),
+  }
+}
+
 export interface ValidatingWebhookConfigurationWebhook {
   /** AdmissionReviewVersions is an ordered list of preferred `AdmissionReview` versions the Webhook expects. API server will try to use first version in the list which it supports. If none of the versions specified in this list supported by API server, validation will fail for this object. If a persisted webhook configuration specifies allowed versions and does not include any versions known to the API Server, calls to the webhook will fail and be subject to the failure policy. */
   readonly admissionReviewVersions?: string[];
@@ -116,9 +197,26 @@ Defaults to "Equivalent" */
   readonly rule: ValidatingWebhookConfigurationWebhookRule[];
 }
 
+function validatingWebhookConfigurationWebhookToTerraform(struct?: ValidatingWebhookConfigurationWebhook): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    admission_review_versions: cdktf.listMapper(cdktf.stringToTerraform)(struct!.admissionReviewVersions),
+    failure_policy: cdktf.stringToTerraform(struct!.failurePolicy),
+    match_policy: cdktf.stringToTerraform(struct!.matchPolicy),
+    name: cdktf.stringToTerraform(struct!.name),
+    side_effects: cdktf.stringToTerraform(struct!.sideEffects),
+    timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
+    client_config: cdktf.listMapper(validatingWebhookConfigurationWebhookClientConfigToTerraform)(struct!.clientConfig),
+    namespace_selector: cdktf.listMapper(validatingWebhookConfigurationWebhookNamespaceSelectorToTerraform)(struct!.namespaceSelector),
+    object_selector: cdktf.listMapper(validatingWebhookConfigurationWebhookObjectSelectorToTerraform)(struct!.objectSelector),
+    rule: cdktf.listMapper(validatingWebhookConfigurationWebhookRuleToTerraform)(struct!.rule),
+  }
+}
+
+
 // Resource
 
-export class ValidatingWebhookConfiguration extends TerraformResource {
+export class ValidatingWebhookConfiguration extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -144,40 +242,44 @@ export class ValidatingWebhookConfiguration extends TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: ValidatingWebhookConfigurationMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: ValidatingWebhookConfigurationMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // webhook - computed: false, optional: false, required: true
   private _webhook: ValidatingWebhookConfigurationWebhook[];
   public get webhook() {
-    return this._webhook;
+    return this.interpolationForAttribute('webhook') as any;
   }
   public set webhook(value: ValidatingWebhookConfigurationWebhook[]) {
     this._webhook = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get webhookInput() {
+    return this._webhook
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      webhook: this._webhook,
+      metadata: cdktf.listMapper(validatingWebhookConfigurationMetadataToTerraform)(this._metadata),
+      webhook: cdktf.listMapper(validatingWebhookConfigurationWebhookToTerraform)(this._webhook),
     };
   }
 }

@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface SecretConfig extends TerraformMetaArguments {
+export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /** A map of the secret data. */
   readonly data?: { [key: string]: string };
   /** Type of secret */
@@ -28,9 +27,21 @@ export interface SecretMetadata {
   readonly namespace?: string;
 }
 
+function secretMetadataToTerraform(struct?: SecretMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
+
 // Resource
 
-export class Secret extends TerraformResource {
+export class Secret extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -59,48 +70,62 @@ export class Secret extends TerraformResource {
   // data - computed: false, optional: true, required: false
   private _data?: { [key: string]: string };
   public get data() {
-    return this._data;
+    return this.interpolationForAttribute('data') as any;
   }
-  public set data(value: { [key: string]: string } | undefined) {
+  public set data(value: { [key: string]: string } ) {
     this._data = value;
+  }
+  public resetData() {
+    this._data = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get dataInput() {
+    return this._data
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // type - computed: false, optional: true, required: false
   private _type?: string;
   public get type() {
-    return this._type;
+    return this.getStringAttribute('type');
   }
-  public set type(value: string | undefined) {
+  public set type(value: string ) {
     this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: SecretMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: SecretMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      data: this._data,
-      type: this._type,
-      metadata: this._metadata,
+      data: cdktf.hashMapper(cdktf.anyToTerraform)(this._data),
+      type: cdktf.stringToTerraform(this._type),
+      metadata: cdktf.listMapper(secretMetadataToTerraform)(this._metadata),
     };
   }
 }

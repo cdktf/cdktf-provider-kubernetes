@@ -2,13 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { ComplexComputedList } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface IngressConfig extends TerraformMetaArguments {
+export interface IngressConfig extends cdktf.TerraformMetaArguments {
   /** Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created. */
   readonly waitForLoadBalancer?: boolean;
   /** metadata block */
@@ -16,14 +14,14 @@ export interface IngressConfig extends TerraformMetaArguments {
   /** spec block */
   readonly spec: IngressSpec[];
 }
-export class IngressLoadBalancerIngress extends ComplexComputedList {
+export class IngressLoadBalancerIngress extends cdktf.ComplexComputedList {
 
-  // hostname - computed: true, optional: false, required: true
+  // hostname - computed: true, optional: false, required: false
   public get hostname() {
     return this.getStringAttribute('hostname');
   }
 
-  // ip - computed: true, optional: false, required: true
+  // ip - computed: true, optional: false, required: false
   public get ip() {
     return this.getStringAttribute('ip');
   }
@@ -40,45 +38,112 @@ export interface IngressMetadata {
   /** Namespace defines the space within which name of the ingress must be unique. */
   readonly namespace?: string;
 }
+
+function ingressMetadataToTerraform(struct?: IngressMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
 export interface IngressSpecBackend {
   /** Specifies the name of the referenced service. */
   readonly serviceName?: string;
   /** Specifies the port of the referenced service. */
   readonly servicePort?: string;
 }
+
+function ingressSpecBackendToTerraform(struct?: IngressSpecBackend): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    service_name: cdktf.stringToTerraform(struct!.serviceName),
+    service_port: cdktf.stringToTerraform(struct!.servicePort),
+  }
+}
+
 export interface IngressSpecRuleHttpPathBackend {
   /** Specifies the name of the referenced service. */
   readonly serviceName?: string;
   /** Specifies the port of the referenced service. */
   readonly servicePort?: string;
 }
+
+function ingressSpecRuleHttpPathBackendToTerraform(struct?: IngressSpecRuleHttpPathBackend): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    service_name: cdktf.stringToTerraform(struct!.serviceName),
+    service_port: cdktf.stringToTerraform(struct!.servicePort),
+  }
+}
+
 export interface IngressSpecRuleHttpPath {
-  /** Path is an extended POSIX regex as defined by IEEE Std 1003.1, (i.e this follows the egrep/unix syntax, not the perl syntax) matched against the path of an incoming request. Currently it can contain characters disallowed from the conventional "path" part of a URL as defined by RFC 3986. Paths must begin with a '/'. If unspecified, the path defaults to a catch all sending traffic to the backend. */
+  /** Path is matched against the path of an incoming request. Currently it can contain characters disallowed from the conventional "path" part of a URL as defined by RFC 3986. Paths must begin with a '/'. When unspecified, all paths from incoming requests are matched. */
   readonly path?: string;
   /** backend block */
   readonly backend?: IngressSpecRuleHttpPathBackend[];
 }
+
+function ingressSpecRuleHttpPathToTerraform(struct?: IngressSpecRuleHttpPath): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    path: cdktf.stringToTerraform(struct!.path),
+    backend: cdktf.listMapper(ingressSpecRuleHttpPathBackendToTerraform)(struct!.backend),
+  }
+}
+
 export interface IngressSpecRuleHttp {
   /** path block */
   readonly path: IngressSpecRuleHttpPath[];
 }
+
+function ingressSpecRuleHttpToTerraform(struct?: IngressSpecRuleHttp): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    path: cdktf.listMapper(ingressSpecRuleHttpPathToTerraform)(struct!.path),
+  }
+}
+
 export interface IngressSpecRule {
-  /** Host is the fully qualified domain name of a network host, as defined by RFC 3986. Note the following deviations from the "host" part of the URI as defined in the RFC: 1. IPs are not allowed. Currently an IngressRuleValue can only apply to the
-	  IP in the Spec of the parent Ingress.
+  /** Host is the fully qualified domain name of a network host, as defined by RFC 3986. Note the following deviations from the "host" part of the URI as defined in RFC 3986: 1. IPs are not allowed. Currently an IngressRuleValue can only apply to
+   the IP in the Spec of the parent Ingress.
 2. The `:` delimiter is not respected because ports are not allowed.
 	  Currently the port of an Ingress is implicitly :80 for http and
 	  :443 for https.
-Both these may change in the future. Incoming requests are matched against the host before the IngressRuleValue. If the host is unspecified, the Ingress routes all traffic based on the specified IngressRuleValue. */
+Both these may change in the future. Incoming requests are matched against the host before the IngressRuleValue. If the host is unspecified, the Ingress routes all traffic based on the specified IngressRuleValue.
+
+Host can be "precise" which is a domain name without the terminating dot of a network host (e.g. "foo.bar.com") or "wildcard", which is a domain name prefixed with a single wildcard label (e.g. "*.foo.com"). The wildcard character '*' must appear by itself as the first DNS label and matches only a single label. You cannot have a wildcard label by itself (e.g. Host == "*"). Requests will be matched against the Host field in the following way: 1. If Host is precise, the request matches this rule if the http host header is equal to Host. 2. If Host is a wildcard, then the request matches this rule if the http host header is to equal to the suffix (removing the first label) of the wildcard rule. */
   readonly host?: string;
   /** http block */
   readonly http: IngressSpecRuleHttp[];
 }
+
+function ingressSpecRuleToTerraform(struct?: IngressSpecRule): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    host: cdktf.stringToTerraform(struct!.host),
+    http: cdktf.listMapper(ingressSpecRuleHttpToTerraform)(struct!.http),
+  }
+}
+
 export interface IngressSpecTls {
   /** Hosts are a list of hosts included in the TLS certificate. The values in this list must match the name/s used in the tlsSecret. Defaults to the wildcard host setting for the loadbalancer controller fulfilling this Ingress, if left unspecified. */
   readonly hosts?: string[];
-  /** SecretName is the name of the secret used to terminate SSL traffic on 443. Field is left optional to allow SSL routing based on SNI hostname alone. If the SNI host in a listener conflicts with the "Host" header field used by an IngressRule, the SNI host is used for termination and value of the Host header is used for routing. */
+  /** SecretName is the name of the secret used to terminate TLS traffic on port 443. Field is left optional to allow TLS routing based on SNI hostname alone. If the SNI host in a listener conflicts with the "Host" header field used by an IngressRule, the SNI host is used for termination and value of the Host header is used for routing. */
   readonly secretName?: string;
 }
+
+function ingressSpecTlsToTerraform(struct?: IngressSpecTls): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    hosts: cdktf.listMapper(cdktf.stringToTerraform)(struct!.hosts),
+    secret_name: cdktf.stringToTerraform(struct!.secretName),
+  }
+}
+
 export interface IngressSpec {
   /** backend block */
   readonly backend?: IngressSpecBackend[];
@@ -88,9 +153,19 @@ export interface IngressSpec {
   readonly tls?: IngressSpecTls[];
 }
 
+function ingressSpecToTerraform(struct?: IngressSpec): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    backend: cdktf.listMapper(ingressSpecBackendToTerraform)(struct!.backend),
+    rule: cdktf.listMapper(ingressSpecRuleToTerraform)(struct!.rule),
+    tls: cdktf.listMapper(ingressSpecTlsToTerraform)(struct!.tls),
+  }
+}
+
+
 // Resource
 
-export class Ingress extends TerraformResource {
+export class Ingress extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -117,15 +192,11 @@ export class Ingress extends TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
-  // load_balancer_ingress - computed: true, optional: false, required: true
+  // load_balancer_ingress - computed: true, optional: false, required: false
   public loadBalancerIngress(index: string) {
     return new IngressLoadBalancerIngress(this, 'load_balancer_ingress', index);
   }
@@ -133,39 +204,54 @@ export class Ingress extends TerraformResource {
   // wait_for_load_balancer - computed: false, optional: true, required: false
   private _waitForLoadBalancer?: boolean;
   public get waitForLoadBalancer() {
-    return this._waitForLoadBalancer;
+    return this.getBooleanAttribute('wait_for_load_balancer');
   }
-  public set waitForLoadBalancer(value: boolean | undefined) {
+  public set waitForLoadBalancer(value: boolean ) {
     this._waitForLoadBalancer = value;
+  }
+  public resetWaitForLoadBalancer() {
+    this._waitForLoadBalancer = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get waitForLoadBalancerInput() {
+    return this._waitForLoadBalancer
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: IngressMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: IngressMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // spec - computed: false, optional: false, required: true
   private _spec: IngressSpec[];
   public get spec() {
-    return this._spec;
+    return this.interpolationForAttribute('spec') as any;
   }
   public set spec(value: IngressSpec[]) {
     this._spec = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get specInput() {
+    return this._spec
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      wait_for_load_balancer: this._waitForLoadBalancer,
-      metadata: this._metadata,
-      spec: this._spec,
+      wait_for_load_balancer: cdktf.booleanToTerraform(this._waitForLoadBalancer),
+      metadata: cdktf.listMapper(ingressMetadataToTerraform)(this._metadata),
+      spec: cdktf.listMapper(ingressSpecToTerraform)(this._spec),
     };
   }
 }

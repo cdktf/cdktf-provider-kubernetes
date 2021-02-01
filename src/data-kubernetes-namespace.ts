@@ -2,19 +2,17 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { ComplexComputedList } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesNamespaceConfig extends TerraformMetaArguments {
+export interface DataKubernetesNamespaceConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: DataKubernetesNamespaceMetadata[];
 }
-export class DataKubernetesNamespaceSpec extends ComplexComputedList {
+export class DataKubernetesNamespaceSpec extends cdktf.ComplexComputedList {
 
-  // finalizers - computed: true, optional: false, required: true
+  // finalizers - computed: true, optional: false, required: false
   public get finalizers() {
     return this.getListAttribute('finalizers');
   }
@@ -28,9 +26,19 @@ export interface DataKubernetesNamespaceMetadata {
   readonly name?: string;
 }
 
+function dataKubernetesNamespaceMetadataToTerraform(struct?: DataKubernetesNamespaceMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
+
 // Resource
 
-export class DataKubernetesNamespace extends TerraformDataSource {
+export class DataKubernetesNamespace extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -55,15 +63,11 @@ export class DataKubernetesNamespace extends TerraformDataSource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
-  // spec - computed: true, optional: false, required: true
+  // spec - computed: true, optional: false, required: false
   public spec(index: string) {
     return new DataKubernetesNamespaceSpec(this, 'spec', index);
   }
@@ -71,19 +75,23 @@ export class DataKubernetesNamespace extends TerraformDataSource {
   // metadata - computed: false, optional: false, required: true
   private _metadata: DataKubernetesNamespaceMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: DataKubernetesNamespaceMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
+      metadata: cdktf.listMapper(dataKubernetesNamespaceMetadataToTerraform)(this._metadata),
     };
   }
 }

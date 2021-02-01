@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface PersistentVolumeClaimConfig extends TerraformMetaArguments {
+export interface PersistentVolumeClaimConfig extends cdktf.TerraformMetaArguments {
   /** Whether to wait for the claim to reach `Bound` state (to find volume in which to claim the space) */
   readonly waitUntilBound?: boolean;
   /** metadata block */
@@ -29,12 +28,33 @@ export interface PersistentVolumeClaimMetadata {
   /** Namespace defines the space within which name of the persistent volume claim must be unique. */
   readonly namespace?: string;
 }
+
+function persistentVolumeClaimMetadataToTerraform(struct?: PersistentVolumeClaimMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
 export interface PersistentVolumeClaimSpecResources {
   /** Map describing the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
   readonly limits?: { [key: string]: string };
   /** Map describing the minimum amount of compute resources required. If this is omitted for a container, it defaults to `limits` if that is explicitly specified, otherwise to an implementation-defined value. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
   readonly requests?: { [key: string]: string };
 }
+
+function persistentVolumeClaimSpecResourcesToTerraform(struct?: PersistentVolumeClaimSpecResources): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    limits: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.limits),
+    requests: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.requests),
+  }
+}
+
 export interface PersistentVolumeClaimSpecSelectorMatchExpressions {
   /** The label key that the selector applies to. */
   readonly key?: string;
@@ -43,12 +63,31 @@ export interface PersistentVolumeClaimSpecSelectorMatchExpressions {
   /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
   readonly values?: string[];
 }
+
+function persistentVolumeClaimSpecSelectorMatchExpressionsToTerraform(struct?: PersistentVolumeClaimSpecSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+  }
+}
+
 export interface PersistentVolumeClaimSpecSelector {
   /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
   readonly matchLabels?: { [key: string]: string };
   /** match_expressions block */
   readonly matchExpressions?: PersistentVolumeClaimSpecSelectorMatchExpressions[];
 }
+
+function persistentVolumeClaimSpecSelectorToTerraform(struct?: PersistentVolumeClaimSpecSelector): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(persistentVolumeClaimSpecSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+  }
+}
+
 export interface PersistentVolumeClaimSpec {
   /** A set of the desired access modes the volume should have. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#access-modes-1 */
   readonly accessModes: string[];
@@ -61,13 +100,33 @@ export interface PersistentVolumeClaimSpec {
   /** selector block */
   readonly selector?: PersistentVolumeClaimSpecSelector[];
 }
+
+function persistentVolumeClaimSpecToTerraform(struct?: PersistentVolumeClaimSpec): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    access_modes: cdktf.listMapper(cdktf.stringToTerraform)(struct!.accessModes),
+    storage_class_name: cdktf.stringToTerraform(struct!.storageClassName),
+    volume_name: cdktf.stringToTerraform(struct!.volumeName),
+    resources: cdktf.listMapper(persistentVolumeClaimSpecResourcesToTerraform)(struct!.resources),
+    selector: cdktf.listMapper(persistentVolumeClaimSpecSelectorToTerraform)(struct!.selector),
+  }
+}
+
 export interface PersistentVolumeClaimTimeouts {
   readonly create?: string;
 }
 
+function persistentVolumeClaimTimeoutsToTerraform(struct?: PersistentVolumeClaimTimeouts): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    create: cdktf.stringToTerraform(struct!.create),
+  }
+}
+
+
 // Resource
 
-export class PersistentVolumeClaim extends TerraformResource {
+export class PersistentVolumeClaim extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -95,60 +154,78 @@ export class PersistentVolumeClaim extends TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // wait_until_bound - computed: false, optional: true, required: false
   private _waitUntilBound?: boolean;
   public get waitUntilBound() {
-    return this._waitUntilBound;
+    return this.getBooleanAttribute('wait_until_bound');
   }
-  public set waitUntilBound(value: boolean | undefined) {
+  public set waitUntilBound(value: boolean ) {
     this._waitUntilBound = value;
+  }
+  public resetWaitUntilBound() {
+    this._waitUntilBound = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get waitUntilBoundInput() {
+    return this._waitUntilBound
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: PersistentVolumeClaimMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: PersistentVolumeClaimMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // spec - computed: false, optional: false, required: true
   private _spec: PersistentVolumeClaimSpec[];
   public get spec() {
-    return this._spec;
+    return this.interpolationForAttribute('spec') as any;
   }
   public set spec(value: PersistentVolumeClaimSpec[]) {
     this._spec = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get specInput() {
+    return this._spec
   }
 
   // timeouts - computed: false, optional: true, required: false
   private _timeouts?: PersistentVolumeClaimTimeouts;
   public get timeouts() {
-    return this._timeouts;
+    return this.interpolationForAttribute('timeouts') as any;
   }
-  public set timeouts(value: PersistentVolumeClaimTimeouts | undefined) {
+  public set timeouts(value: PersistentVolumeClaimTimeouts ) {
     this._timeouts = value;
+  }
+  public resetTimeouts() {
+    this._timeouts = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutsInput() {
+    return this._timeouts
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      wait_until_bound: this._waitUntilBound,
-      metadata: this._metadata,
-      spec: this._spec,
-      timeouts: this._timeouts,
+      wait_until_bound: cdktf.booleanToTerraform(this._waitUntilBound),
+      metadata: cdktf.listMapper(persistentVolumeClaimMetadataToTerraform)(this._metadata),
+      spec: cdktf.listMapper(persistentVolumeClaimSpecToTerraform)(this._spec),
+      timeouts: persistentVolumeClaimTimeoutsToTerraform(this._timeouts),
     };
   }
 }

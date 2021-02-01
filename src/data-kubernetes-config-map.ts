@@ -2,13 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { StringMap } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesConfigMapConfig extends TerraformMetaArguments {
+export interface DataKubernetesConfigMapConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: DataKubernetesConfigMapMetadata[];
 }
@@ -23,9 +21,20 @@ export interface DataKubernetesConfigMapMetadata {
   readonly namespace?: string;
 }
 
+function dataKubernetesConfigMapMetadataToTerraform(struct?: DataKubernetesConfigMapMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
+
 // Resource
 
-export class DataKubernetesConfigMap extends TerraformDataSource {
+export class DataKubernetesConfigMap extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -49,41 +58,41 @@ export class DataKubernetesConfigMap extends TerraformDataSource {
   // ATTRIBUTES
   // ==========
 
-  // binary_data - computed: true, optional: false, required: true
+  // binary_data - computed: true, optional: false, required: false
   public binaryData(key: string): string {
-    return new StringMap(this, 'binary_data').lookup(key);
+    return new cdktf.StringMap(this, 'binary_data').lookup(key);
   }
 
-  // data - computed: true, optional: false, required: true
+  // data - computed: true, optional: false, required: false
   public data(key: string): string {
-    return new StringMap(this, 'data').lookup(key);
+    return new cdktf.StringMap(this, 'data').lookup(key);
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: DataKubernetesConfigMapMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: DataKubernetesConfigMapMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
+      metadata: cdktf.listMapper(dataKubernetesConfigMapMetadataToTerraform)(this._metadata),
     };
   }
 }

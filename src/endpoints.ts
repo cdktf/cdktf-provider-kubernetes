@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface EndpointsConfig extends TerraformMetaArguments {
+export interface EndpointsConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: EndpointsMetadata[];
   /** subset block */
@@ -25,6 +24,18 @@ export interface EndpointsMetadata {
   /** Namespace defines the space within which name of the endpoints must be unique. */
   readonly namespace?: string;
 }
+
+function endpointsMetadataToTerraform(struct?: EndpointsMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
 export interface EndpointsSubsetAddress {
   /** The Hostname of this endpoint. */
   readonly hostname?: string;
@@ -33,6 +44,16 @@ export interface EndpointsSubsetAddress {
   /** Node hosting this endpoint. This can be used to determine endpoints local to a node. */
   readonly nodeName?: string;
 }
+
+function endpointsSubsetAddressToTerraform(struct?: EndpointsSubsetAddress): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    hostname: cdktf.stringToTerraform(struct!.hostname),
+    ip: cdktf.stringToTerraform(struct!.ip),
+    node_name: cdktf.stringToTerraform(struct!.nodeName),
+  }
+}
+
 export interface EndpointsSubsetNotReadyAddress {
   /** The Hostname of this endpoint. */
   readonly hostname?: string;
@@ -41,6 +62,16 @@ export interface EndpointsSubsetNotReadyAddress {
   /** Node hosting this endpoint. This can be used to determine endpoints local to a node. */
   readonly nodeName?: string;
 }
+
+function endpointsSubsetNotReadyAddressToTerraform(struct?: EndpointsSubsetNotReadyAddress): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    hostname: cdktf.stringToTerraform(struct!.hostname),
+    ip: cdktf.stringToTerraform(struct!.ip),
+    node_name: cdktf.stringToTerraform(struct!.nodeName),
+  }
+}
+
 export interface EndpointsSubsetPort {
   /** The name of this port within the endpoint. Must be a DNS_LABEL. Optional if only one Port is defined on this endpoint. */
   readonly name?: string;
@@ -49,6 +80,16 @@ export interface EndpointsSubsetPort {
   /** The IP protocol for this port. Supports `TCP` and `UDP`. Default is `TCP`. */
   readonly protocol?: string;
 }
+
+function endpointsSubsetPortToTerraform(struct?: EndpointsSubsetPort): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    name: cdktf.stringToTerraform(struct!.name),
+    port: cdktf.numberToTerraform(struct!.port),
+    protocol: cdktf.stringToTerraform(struct!.protocol),
+  }
+}
+
 export interface EndpointsSubset {
   /** address block */
   readonly address?: EndpointsSubsetAddress[];
@@ -58,9 +99,19 @@ export interface EndpointsSubset {
   readonly port?: EndpointsSubsetPort[];
 }
 
+function endpointsSubsetToTerraform(struct?: EndpointsSubset): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    address: cdktf.listMapper(endpointsSubsetAddressToTerraform)(struct!.address),
+    not_ready_address: cdktf.listMapper(endpointsSubsetNotReadyAddressToTerraform)(struct!.notReadyAddress),
+    port: cdktf.listMapper(endpointsSubsetPortToTerraform)(struct!.port),
+  }
+}
+
+
 // Resource
 
-export class Endpoints extends TerraformResource {
+export class Endpoints extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -86,40 +137,47 @@ export class Endpoints extends TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: EndpointsMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: EndpointsMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // subset - computed: false, optional: true, required: false
   private _subset?: EndpointsSubset[];
   public get subset() {
-    return this._subset;
+    return this.interpolationForAttribute('subset') as any;
   }
-  public set subset(value: EndpointsSubset[] | undefined) {
+  public set subset(value: EndpointsSubset[] ) {
     this._subset = value;
+  }
+  public resetSubset() {
+    this._subset = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get subsetInput() {
+    return this._subset
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      subset: this._subset,
+      metadata: cdktf.listMapper(endpointsMetadataToTerraform)(this._metadata),
+      subset: cdktf.listMapper(endpointsSubsetToTerraform)(this._subset),
     };
   }
 }

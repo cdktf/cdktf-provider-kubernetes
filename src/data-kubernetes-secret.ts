@@ -2,13 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { StringMap } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesSecretConfig extends TerraformMetaArguments {
+export interface DataKubernetesSecretConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: DataKubernetesSecretMetadata[];
 }
@@ -23,9 +21,20 @@ export interface DataKubernetesSecretMetadata {
   readonly namespace?: string;
 }
 
+function dataKubernetesSecretMetadataToTerraform(struct?: DataKubernetesSecretMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
+
 // Resource
 
-export class DataKubernetesSecret extends TerraformDataSource {
+export class DataKubernetesSecret extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -49,21 +58,17 @@ export class DataKubernetesSecret extends TerraformDataSource {
   // ATTRIBUTES
   // ==========
 
-  // data - computed: true, optional: false, required: true
+  // data - computed: true, optional: false, required: false
   public data(key: string): string {
-    return new StringMap(this, 'data').lookup(key);
+    return new cdktf.StringMap(this, 'data').lookup(key);
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
-  // type - computed: true, optional: false, required: true
+  // type - computed: true, optional: false, required: false
   public get type() {
     return this.getStringAttribute('type');
   }
@@ -71,19 +76,23 @@ export class DataKubernetesSecret extends TerraformDataSource {
   // metadata - computed: false, optional: false, required: true
   private _metadata: DataKubernetesSecretMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: DataKubernetesSecretMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
+      metadata: cdktf.listMapper(dataKubernetesSecretMetadataToTerraform)(this._metadata),
     };
   }
 }

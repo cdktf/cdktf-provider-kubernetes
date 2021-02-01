@@ -2,17 +2,16 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataKubernetesAllNamespacesConfig extends TerraformMetaArguments {
+export interface DataKubernetesAllNamespacesConfig extends cdktf.TerraformMetaArguments {
 }
 
 // Resource
 
-export class DataKubernetesAllNamespaces extends TerraformDataSource {
+export class DataKubernetesAllNamespaces extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -36,15 +35,11 @@ export class DataKubernetesAllNamespaces extends TerraformDataSource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
-  // namespaces - computed: true, optional: false, required: true
+  // namespaces - computed: true, optional: false, required: false
   public get namespaces() {
     return this.getListAttribute('namespaces');
   }
@@ -53,7 +48,7 @@ export class DataKubernetesAllNamespaces extends TerraformDataSource {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
     };
   }

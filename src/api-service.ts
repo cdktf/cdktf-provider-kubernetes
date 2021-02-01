@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface ApiServiceConfig extends TerraformMetaArguments {
+export interface ApiServiceConfig extends cdktf.TerraformMetaArguments {
   /** metadata block */
   readonly metadata: ApiServiceMetadata[];
   /** spec block */
@@ -23,6 +22,17 @@ export interface ApiServiceMetadata {
   /** Name of the api_service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
   readonly name?: string;
 }
+
+function apiServiceMetadataToTerraform(struct?: ApiServiceMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface ApiServiceSpecService {
   /** Name is the name of the service. */
   readonly name: string;
@@ -31,12 +41,22 @@ export interface ApiServiceSpecService {
   /** If specified, the port on the service that is hosting the service. Defaults to 443 for backward compatibility. Should be a valid port number (1-65535, inclusive). */
   readonly port?: number;
 }
+
+function apiServiceSpecServiceToTerraform(struct?: ApiServiceSpecService): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+    port: cdktf.numberToTerraform(struct!.port),
+  }
+}
+
 export interface ApiServiceSpec {
   /** CABundle is a PEM encoded CA bundle which will be used to validate an API server's serving certificate. If unspecified, system trust roots on the apiserver are used. */
   readonly caBundle?: string;
   /** Group is the API group name this server hosts. */
   readonly group: string;
-  /** GroupPriorityMininum is the priority this group should have at least. Higher priority means that the group is preferred by clients over lower priority ones. Note that other versions of this group might specify even higher GroupPriorityMininum values such that the whole group gets a higher priority. The primary sort is based on GroupPriorityMinimum, ordered highest number to lowest (20 before 10). The secondary sort is based on the alphabetical comparison of the name of the object. (v1.bar before v1.foo) We'd recommend something like: *.k8s.io (except extensions) at 18000 and PaaSes (OpenShift, Deis) are recommended to be in the 2000s. */
+  /** GroupPriorityMinimum is the priority this group should have at least. Higher priority means that the group is preferred by clients over lower priority ones. Note that other versions of this group might specify even higher GroupPriorityMininum values such that the whole group gets a higher priority. The primary sort is based on GroupPriorityMinimum, ordered highest number to lowest (20 before 10). The secondary sort is based on the alphabetical comparison of the name of the object. (v1.bar before v1.foo) We'd recommend something like: *.k8s.io (except extensions) at 18000 and PaaSes (OpenShift, Deis) are recommended to be in the 2000s. */
   readonly groupPriorityMinimum: number;
   /** InsecureSkipTLSVerify disables TLS certificate verification when communicating with this server. This is strongly discouraged. You should use the CABundle instead. */
   readonly insecureSkipTlsVerify?: boolean;
@@ -48,9 +68,23 @@ export interface ApiServiceSpec {
   readonly service?: ApiServiceSpecService[];
 }
 
+function apiServiceSpecToTerraform(struct?: ApiServiceSpec): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    ca_bundle: cdktf.stringToTerraform(struct!.caBundle),
+    group: cdktf.stringToTerraform(struct!.group),
+    group_priority_minimum: cdktf.numberToTerraform(struct!.groupPriorityMinimum),
+    insecure_skip_tls_verify: cdktf.booleanToTerraform(struct!.insecureSkipTlsVerify),
+    version: cdktf.stringToTerraform(struct!.version),
+    version_priority: cdktf.numberToTerraform(struct!.versionPriority),
+    service: cdktf.listMapper(apiServiceSpecServiceToTerraform)(struct!.service),
+  }
+}
+
+
 // Resource
 
-export class ApiService extends TerraformResource {
+export class ApiService extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -76,40 +110,44 @@ export class ApiService extends TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: ApiServiceMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: ApiServiceMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // spec - computed: false, optional: false, required: true
   private _spec: ApiServiceSpec[];
   public get spec() {
-    return this._spec;
+    return this.interpolationForAttribute('spec') as any;
   }
   public set spec(value: ApiServiceSpec[]) {
     this._spec = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get specInput() {
+    return this._spec
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: this._metadata,
-      spec: this._spec,
+      metadata: cdktf.listMapper(apiServiceMetadataToTerraform)(this._metadata),
+      spec: cdktf.listMapper(apiServiceSpecToTerraform)(this._spec),
     };
   }
 }

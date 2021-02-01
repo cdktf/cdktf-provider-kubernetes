@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface ConfigMapConfig extends TerraformMetaArguments {
+export interface ConfigMapConfig extends cdktf.TerraformMetaArguments {
   /** BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet. This field only accepts base64-encoded payloads that will be decoded/encoded before being sent/received to/from the apiserver. */
   readonly binaryData?: { [key: string]: string };
   /** Data contains the configuration data. Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process. */
@@ -28,9 +27,21 @@ export interface ConfigMapMetadata {
   readonly namespace?: string;
 }
 
+function configMapMetadataToTerraform(struct?: ConfigMapMetadata): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
+    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
+
 // Resource
 
-export class ConfigMap extends TerraformResource {
+export class ConfigMap extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -59,48 +70,62 @@ export class ConfigMap extends TerraformResource {
   // binary_data - computed: false, optional: true, required: false
   private _binaryData?: { [key: string]: string };
   public get binaryData() {
-    return this._binaryData;
+    return this.interpolationForAttribute('binary_data') as any;
   }
-  public set binaryData(value: { [key: string]: string } | undefined) {
+  public set binaryData(value: { [key: string]: string } ) {
     this._binaryData = value;
+  }
+  public resetBinaryData() {
+    this._binaryData = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get binaryDataInput() {
+    return this._binaryData
   }
 
   // data - computed: false, optional: true, required: false
   private _data?: { [key: string]: string };
   public get data() {
-    return this._data;
+    return this.interpolationForAttribute('data') as any;
   }
-  public set data(value: { [key: string]: string } | undefined) {
+  public set data(value: { [key: string]: string } ) {
     this._data = value;
+  }
+  public resetData() {
+    this._data = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get dataInput() {
+    return this._data
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // metadata - computed: false, optional: false, required: true
   private _metadata: ConfigMapMetadata[];
   public get metadata() {
-    return this._metadata;
+    return this.interpolationForAttribute('metadata') as any;
   }
   public set metadata(value: ConfigMapMetadata[]) {
     this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      binary_data: this._binaryData,
-      data: this._data,
-      metadata: this._metadata,
+      binary_data: cdktf.hashMapper(cdktf.anyToTerraform)(this._binaryData),
+      data: cdktf.hashMapper(cdktf.anyToTerraform)(this._data),
+      metadata: cdktf.listMapper(configMapMetadataToTerraform)(this._metadata),
     };
   }
 }
