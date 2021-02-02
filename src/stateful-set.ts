@@ -7,12 +7,14 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface StatefulSetConfig extends cdktf.TerraformMetaArguments {
-  /** Wait for the rollout of the stateful set to complete. Defaults to false. */
+  /** Wait for the rollout of the stateful set to complete. Defaults to true. */
   readonly waitForRollout?: boolean;
   /** metadata block */
   readonly metadata: StatefulSetMetadata[];
   /** spec block */
   readonly spec: StatefulSetSpec[];
+  /** timeouts block */
+  readonly timeouts?: StatefulSetTimeouts;
 }
 export interface StatefulSetMetadata {
   /** An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
@@ -511,6 +513,7 @@ function statefulSetSpecTemplateSpecContainerEnvValueFromFieldRefToTerraform(str
 
 export interface StatefulSetSpecTemplateSpecContainerEnvValueFromResourceFieldRef {
   readonly containerName?: string;
+  readonly divisor?: string;
   /** Resource to select */
   readonly resource: string;
 }
@@ -519,6 +522,7 @@ function statefulSetSpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerra
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
+    divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
 }
@@ -1021,44 +1025,18 @@ function statefulSetSpecTemplateSpecContainerReadinessProbeToTerraform(struct?: 
   }
 }
 
-export interface StatefulSetSpecTemplateSpecContainerResourcesLimits {
-  readonly cpu?: string;
-  readonly memory?: string;
-}
-
-function statefulSetSpecTemplateSpecContainerResourcesLimitsToTerraform(struct?: StatefulSetSpecTemplateSpecContainerResourcesLimits): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    cpu: cdktf.stringToTerraform(struct!.cpu),
-    memory: cdktf.stringToTerraform(struct!.memory),
-  }
-}
-
-export interface StatefulSetSpecTemplateSpecContainerResourcesRequests {
-  readonly cpu?: string;
-  readonly memory?: string;
-}
-
-function statefulSetSpecTemplateSpecContainerResourcesRequestsToTerraform(struct?: StatefulSetSpecTemplateSpecContainerResourcesRequests): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    cpu: cdktf.stringToTerraform(struct!.cpu),
-    memory: cdktf.stringToTerraform(struct!.memory),
-  }
-}
-
 export interface StatefulSetSpecTemplateSpecContainerResources {
-  /** limits block */
-  readonly limits?: StatefulSetSpecTemplateSpecContainerResourcesLimits[];
-  /** requests block */
-  readonly requests?: StatefulSetSpecTemplateSpecContainerResourcesRequests[];
+  /** Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
+  readonly limits?: { [key: string]: string };
+  /** Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/ */
+  readonly requests?: { [key: string]: string };
 }
 
 function statefulSetSpecTemplateSpecContainerResourcesToTerraform(struct?: StatefulSetSpecTemplateSpecContainerResources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
-    limits: cdktf.listMapper(statefulSetSpecTemplateSpecContainerResourcesLimitsToTerraform)(struct!.limits),
-    requests: cdktf.listMapper(statefulSetSpecTemplateSpecContainerResourcesRequestsToTerraform)(struct!.requests),
+    limits: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.limits),
+    requests: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.requests),
   }
 }
 
@@ -1106,11 +1084,11 @@ export interface StatefulSetSpecTemplateSpecContainerSecurityContext {
   /** Whether this container has a read-only root filesystem. Default is false. */
   readonly readOnlyRootFilesystem?: boolean;
   /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
-  readonly runAsGroup?: number;
+  readonly runAsGroup?: string;
   /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
   readonly runAsNonRoot?: boolean;
   /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
-  readonly runAsUser?: number;
+  readonly runAsUser?: string;
   /** capabilities block */
   readonly capabilities?: StatefulSetSpecTemplateSpecContainerSecurityContextCapabilities[];
   /** se_linux_options block */
@@ -1123,9 +1101,9 @@ function statefulSetSpecTemplateSpecContainerSecurityContextToTerraform(struct?:
     allow_privilege_escalation: cdktf.booleanToTerraform(struct!.allowPrivilegeEscalation),
     privileged: cdktf.booleanToTerraform(struct!.privileged),
     read_only_root_filesystem: cdktf.booleanToTerraform(struct!.readOnlyRootFilesystem),
-    run_as_group: cdktf.numberToTerraform(struct!.runAsGroup),
+    run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
-    run_as_user: cdktf.numberToTerraform(struct!.runAsUser),
+    run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: cdktf.listMapper(statefulSetSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform)(struct!.capabilities),
     se_linux_options: cdktf.listMapper(statefulSetSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
   }
@@ -1418,6 +1396,7 @@ function statefulSetSpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform
 
 export interface StatefulSetSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef {
   readonly containerName?: string;
+  readonly divisor?: string;
   /** Resource to select */
   readonly resource: string;
 }
@@ -1426,6 +1405,7 @@ function statefulSetSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToT
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
+    divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
 }
@@ -1928,44 +1908,18 @@ function statefulSetSpecTemplateSpecInitContainerReadinessProbeToTerraform(struc
   }
 }
 
-export interface StatefulSetSpecTemplateSpecInitContainerResourcesLimits {
-  readonly cpu?: string;
-  readonly memory?: string;
-}
-
-function statefulSetSpecTemplateSpecInitContainerResourcesLimitsToTerraform(struct?: StatefulSetSpecTemplateSpecInitContainerResourcesLimits): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    cpu: cdktf.stringToTerraform(struct!.cpu),
-    memory: cdktf.stringToTerraform(struct!.memory),
-  }
-}
-
-export interface StatefulSetSpecTemplateSpecInitContainerResourcesRequests {
-  readonly cpu?: string;
-  readonly memory?: string;
-}
-
-function statefulSetSpecTemplateSpecInitContainerResourcesRequestsToTerraform(struct?: StatefulSetSpecTemplateSpecInitContainerResourcesRequests): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    cpu: cdktf.stringToTerraform(struct!.cpu),
-    memory: cdktf.stringToTerraform(struct!.memory),
-  }
-}
-
 export interface StatefulSetSpecTemplateSpecInitContainerResources {
-  /** limits block */
-  readonly limits?: StatefulSetSpecTemplateSpecInitContainerResourcesLimits[];
-  /** requests block */
-  readonly requests?: StatefulSetSpecTemplateSpecInitContainerResourcesRequests[];
+  /** Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
+  readonly limits?: { [key: string]: string };
+  /** Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/ */
+  readonly requests?: { [key: string]: string };
 }
 
 function statefulSetSpecTemplateSpecInitContainerResourcesToTerraform(struct?: StatefulSetSpecTemplateSpecInitContainerResources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
-    limits: cdktf.listMapper(statefulSetSpecTemplateSpecInitContainerResourcesLimitsToTerraform)(struct!.limits),
-    requests: cdktf.listMapper(statefulSetSpecTemplateSpecInitContainerResourcesRequestsToTerraform)(struct!.requests),
+    limits: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.limits),
+    requests: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.requests),
   }
 }
 
@@ -2013,11 +1967,11 @@ export interface StatefulSetSpecTemplateSpecInitContainerSecurityContext {
   /** Whether this container has a read-only root filesystem. Default is false. */
   readonly readOnlyRootFilesystem?: boolean;
   /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
-  readonly runAsGroup?: number;
+  readonly runAsGroup?: string;
   /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
   readonly runAsNonRoot?: boolean;
   /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
-  readonly runAsUser?: number;
+  readonly runAsUser?: string;
   /** capabilities block */
   readonly capabilities?: StatefulSetSpecTemplateSpecInitContainerSecurityContextCapabilities[];
   /** se_linux_options block */
@@ -2030,9 +1984,9 @@ function statefulSetSpecTemplateSpecInitContainerSecurityContextToTerraform(stru
     allow_privilege_escalation: cdktf.booleanToTerraform(struct!.allowPrivilegeEscalation),
     privileged: cdktf.booleanToTerraform(struct!.privileged),
     read_only_root_filesystem: cdktf.booleanToTerraform(struct!.readOnlyRootFilesystem),
-    run_as_group: cdktf.numberToTerraform(struct!.runAsGroup),
+    run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
-    run_as_user: cdktf.numberToTerraform(struct!.runAsUser),
+    run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: cdktf.listMapper(statefulSetSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform)(struct!.capabilities),
     se_linux_options: cdktf.listMapper(statefulSetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
   }
@@ -2280,13 +2234,13 @@ function statefulSetSpecTemplateSpecSecurityContextSysctlToTerraform(struct?: St
 
 export interface StatefulSetSpecTemplateSpecSecurityContext {
   /** A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume. */
-  readonly fsGroup?: number;
+  readonly fsGroup?: string;
   /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. */
-  readonly runAsGroup?: number;
+  readonly runAsGroup?: string;
   /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
   readonly runAsNonRoot?: boolean;
   /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. */
-  readonly runAsUser?: number;
+  readonly runAsUser?: string;
   /** A list of groups applied to the first process run in each container, in addition to the container's primary GID. If unspecified, no groups will be added to any container. */
   readonly supplementalGroups?: number[];
   /** se_linux_options block */
@@ -2298,10 +2252,10 @@ export interface StatefulSetSpecTemplateSpecSecurityContext {
 function statefulSetSpecTemplateSpecSecurityContextToTerraform(struct?: StatefulSetSpecTemplateSpecSecurityContext): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
-    fs_group: cdktf.numberToTerraform(struct!.fsGroup),
-    run_as_group: cdktf.numberToTerraform(struct!.runAsGroup),
+    fs_group: cdktf.stringToTerraform(struct!.fsGroup),
+    run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
-    run_as_user: cdktf.numberToTerraform(struct!.runAsUser),
+    run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform)(struct!.supplementalGroups),
     se_linux_options: cdktf.listMapper(statefulSetSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
     sysctl: cdktf.listMapper(statefulSetSpecTemplateSpecSecurityContextSysctlToTerraform)(struct!.sysctl),
@@ -2610,7 +2564,7 @@ function statefulSetSpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform(st
 
 export interface StatefulSetSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef {
   readonly containerName: string;
-  readonly quantity?: string;
+  readonly divisor?: string;
   /** Resource to select */
   readonly resource: string;
 }
@@ -2619,7 +2573,7 @@ function statefulSetSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerr
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
-    quantity: cdktf.stringToTerraform(struct!.quantity),
+    divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
 }
@@ -3322,7 +3276,7 @@ export interface StatefulSetSpecTemplateSpec {
   readonly automountServiceAccountToken?: boolean;
   /** Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy). */
   readonly dnsPolicy?: string;
-  /** Enables generating environment variables for service discovery. Optional: Defaults to true. */
+  /** Enables generating environment variables for service discovery. Defaults to true. */
   readonly enableServiceLinks?: boolean;
   /** Use the host's ipc namespace. Optional: Defaults to false. */
   readonly hostIpc?: boolean;
@@ -3559,7 +3513,7 @@ export interface StatefulSetSpec {
   /** Controls how pods are created during initial scale up, when replacing pods on nodes, or when scaling down. */
   readonly podManagementPolicy?: string;
   /** The desired number of replicas of the given Template, in the sense that they are instantiations of the same Template. Value must be a positive integer. */
-  readonly replicas?: number;
+  readonly replicas?: string;
   /** The maximum number of revisions that will be maintained in the StatefulSet's revision history. The default value is 10. */
   readonly revisionHistoryLimit?: number;
   /** The name of the service that governs this StatefulSet. This service must exist before the StatefulSet, and is responsible for the network identity of the set. */
@@ -3578,13 +3532,30 @@ function statefulSetSpecToTerraform(struct?: StatefulSetSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     pod_management_policy: cdktf.stringToTerraform(struct!.podManagementPolicy),
-    replicas: cdktf.numberToTerraform(struct!.replicas),
+    replicas: cdktf.stringToTerraform(struct!.replicas),
     revision_history_limit: cdktf.numberToTerraform(struct!.revisionHistoryLimit),
     service_name: cdktf.stringToTerraform(struct!.serviceName),
     selector: cdktf.listMapper(statefulSetSpecSelectorToTerraform)(struct!.selector),
     template: cdktf.listMapper(statefulSetSpecTemplateToTerraform)(struct!.template),
     update_strategy: cdktf.listMapper(statefulSetSpecUpdateStrategyToTerraform)(struct!.updateStrategy),
     volume_claim_template: cdktf.listMapper(statefulSetSpecVolumeClaimTemplateToTerraform)(struct!.volumeClaimTemplate),
+  }
+}
+
+export interface StatefulSetTimeouts {
+  readonly create?: string;
+  readonly delete?: string;
+  readonly read?: string;
+  readonly update?: string;
+}
+
+function statefulSetTimeoutsToTerraform(struct?: StatefulSetTimeouts): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    create: cdktf.stringToTerraform(struct!.create),
+    delete: cdktf.stringToTerraform(struct!.delete),
+    read: cdktf.stringToTerraform(struct!.read),
+    update: cdktf.stringToTerraform(struct!.update),
   }
 }
 
@@ -3611,6 +3582,7 @@ export class StatefulSet extends cdktf.TerraformResource {
     this._waitForRollout = config.waitForRollout;
     this._metadata = config.metadata;
     this._spec = config.spec;
+    this._timeouts = config.timeouts;
   }
 
   // ==========
@@ -3664,6 +3636,22 @@ export class StatefulSet extends cdktf.TerraformResource {
     return this._spec
   }
 
+  // timeouts - computed: false, optional: true, required: false
+  private _timeouts?: StatefulSetTimeouts;
+  public get timeouts() {
+    return this.interpolationForAttribute('timeouts') as any;
+  }
+  public set timeouts(value: StatefulSetTimeouts ) {
+    this._timeouts = value;
+  }
+  public resetTimeouts() {
+    this._timeouts = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutsInput() {
+    return this._timeouts
+  }
+
   // =========
   // SYNTHESIS
   // =========
@@ -3673,6 +3661,7 @@ export class StatefulSet extends cdktf.TerraformResource {
       wait_for_rollout: cdktf.booleanToTerraform(this._waitForRollout),
       metadata: cdktf.listMapper(statefulSetMetadataToTerraform)(this._metadata),
       spec: cdktf.listMapper(statefulSetSpecToTerraform)(this._spec),
+      timeouts: statefulSetTimeoutsToTerraform(this._timeouts),
     };
   }
 }

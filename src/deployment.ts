@@ -546,6 +546,7 @@ function deploymentSpecTemplateSpecContainerEnvValueFromFieldRefToTerraform(stru
 
 export interface DeploymentSpecTemplateSpecContainerEnvValueFromResourceFieldRef {
   readonly containerName?: string;
+  readonly divisor?: string;
   /** Resource to select */
   readonly resource: string;
 }
@@ -554,6 +555,7 @@ function deploymentSpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraf
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
+    divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
 }
@@ -1056,44 +1058,18 @@ function deploymentSpecTemplateSpecContainerReadinessProbeToTerraform(struct?: D
   }
 }
 
-export interface DeploymentSpecTemplateSpecContainerResourcesLimits {
-  readonly cpu?: string;
-  readonly memory?: string;
-}
-
-function deploymentSpecTemplateSpecContainerResourcesLimitsToTerraform(struct?: DeploymentSpecTemplateSpecContainerResourcesLimits): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    cpu: cdktf.stringToTerraform(struct!.cpu),
-    memory: cdktf.stringToTerraform(struct!.memory),
-  }
-}
-
-export interface DeploymentSpecTemplateSpecContainerResourcesRequests {
-  readonly cpu?: string;
-  readonly memory?: string;
-}
-
-function deploymentSpecTemplateSpecContainerResourcesRequestsToTerraform(struct?: DeploymentSpecTemplateSpecContainerResourcesRequests): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    cpu: cdktf.stringToTerraform(struct!.cpu),
-    memory: cdktf.stringToTerraform(struct!.memory),
-  }
-}
-
 export interface DeploymentSpecTemplateSpecContainerResources {
-  /** limits block */
-  readonly limits?: DeploymentSpecTemplateSpecContainerResourcesLimits[];
-  /** requests block */
-  readonly requests?: DeploymentSpecTemplateSpecContainerResourcesRequests[];
+  /** Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
+  readonly limits?: { [key: string]: string };
+  /** Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/ */
+  readonly requests?: { [key: string]: string };
 }
 
 function deploymentSpecTemplateSpecContainerResourcesToTerraform(struct?: DeploymentSpecTemplateSpecContainerResources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
-    limits: cdktf.listMapper(deploymentSpecTemplateSpecContainerResourcesLimitsToTerraform)(struct!.limits),
-    requests: cdktf.listMapper(deploymentSpecTemplateSpecContainerResourcesRequestsToTerraform)(struct!.requests),
+    limits: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.limits),
+    requests: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.requests),
   }
 }
 
@@ -1141,11 +1117,11 @@ export interface DeploymentSpecTemplateSpecContainerSecurityContext {
   /** Whether this container has a read-only root filesystem. Default is false. */
   readonly readOnlyRootFilesystem?: boolean;
   /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
-  readonly runAsGroup?: number;
+  readonly runAsGroup?: string;
   /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
   readonly runAsNonRoot?: boolean;
   /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
-  readonly runAsUser?: number;
+  readonly runAsUser?: string;
   /** capabilities block */
   readonly capabilities?: DeploymentSpecTemplateSpecContainerSecurityContextCapabilities[];
   /** se_linux_options block */
@@ -1158,9 +1134,9 @@ function deploymentSpecTemplateSpecContainerSecurityContextToTerraform(struct?: 
     allow_privilege_escalation: cdktf.booleanToTerraform(struct!.allowPrivilegeEscalation),
     privileged: cdktf.booleanToTerraform(struct!.privileged),
     read_only_root_filesystem: cdktf.booleanToTerraform(struct!.readOnlyRootFilesystem),
-    run_as_group: cdktf.numberToTerraform(struct!.runAsGroup),
+    run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
-    run_as_user: cdktf.numberToTerraform(struct!.runAsUser),
+    run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: cdktf.listMapper(deploymentSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform)(struct!.capabilities),
     se_linux_options: cdktf.listMapper(deploymentSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
   }
@@ -1453,6 +1429,7 @@ function deploymentSpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform(
 
 export interface DeploymentSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef {
   readonly containerName?: string;
+  readonly divisor?: string;
   /** Resource to select */
   readonly resource: string;
 }
@@ -1461,6 +1438,7 @@ function deploymentSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTe
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
+    divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
 }
@@ -1963,44 +1941,18 @@ function deploymentSpecTemplateSpecInitContainerReadinessProbeToTerraform(struct
   }
 }
 
-export interface DeploymentSpecTemplateSpecInitContainerResourcesLimits {
-  readonly cpu?: string;
-  readonly memory?: string;
-}
-
-function deploymentSpecTemplateSpecInitContainerResourcesLimitsToTerraform(struct?: DeploymentSpecTemplateSpecInitContainerResourcesLimits): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    cpu: cdktf.stringToTerraform(struct!.cpu),
-    memory: cdktf.stringToTerraform(struct!.memory),
-  }
-}
-
-export interface DeploymentSpecTemplateSpecInitContainerResourcesRequests {
-  readonly cpu?: string;
-  readonly memory?: string;
-}
-
-function deploymentSpecTemplateSpecInitContainerResourcesRequestsToTerraform(struct?: DeploymentSpecTemplateSpecInitContainerResourcesRequests): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    cpu: cdktf.stringToTerraform(struct!.cpu),
-    memory: cdktf.stringToTerraform(struct!.memory),
-  }
-}
-
 export interface DeploymentSpecTemplateSpecInitContainerResources {
-  /** limits block */
-  readonly limits?: DeploymentSpecTemplateSpecInitContainerResourcesLimits[];
-  /** requests block */
-  readonly requests?: DeploymentSpecTemplateSpecInitContainerResourcesRequests[];
+  /** Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
+  readonly limits?: { [key: string]: string };
+  /** Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/ */
+  readonly requests?: { [key: string]: string };
 }
 
 function deploymentSpecTemplateSpecInitContainerResourcesToTerraform(struct?: DeploymentSpecTemplateSpecInitContainerResources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
-    limits: cdktf.listMapper(deploymentSpecTemplateSpecInitContainerResourcesLimitsToTerraform)(struct!.limits),
-    requests: cdktf.listMapper(deploymentSpecTemplateSpecInitContainerResourcesRequestsToTerraform)(struct!.requests),
+    limits: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.limits),
+    requests: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.requests),
   }
 }
 
@@ -2048,11 +2000,11 @@ export interface DeploymentSpecTemplateSpecInitContainerSecurityContext {
   /** Whether this container has a read-only root filesystem. Default is false. */
   readonly readOnlyRootFilesystem?: boolean;
   /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
-  readonly runAsGroup?: number;
+  readonly runAsGroup?: string;
   /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
   readonly runAsNonRoot?: boolean;
   /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
-  readonly runAsUser?: number;
+  readonly runAsUser?: string;
   /** capabilities block */
   readonly capabilities?: DeploymentSpecTemplateSpecInitContainerSecurityContextCapabilities[];
   /** se_linux_options block */
@@ -2065,9 +2017,9 @@ function deploymentSpecTemplateSpecInitContainerSecurityContextToTerraform(struc
     allow_privilege_escalation: cdktf.booleanToTerraform(struct!.allowPrivilegeEscalation),
     privileged: cdktf.booleanToTerraform(struct!.privileged),
     read_only_root_filesystem: cdktf.booleanToTerraform(struct!.readOnlyRootFilesystem),
-    run_as_group: cdktf.numberToTerraform(struct!.runAsGroup),
+    run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
-    run_as_user: cdktf.numberToTerraform(struct!.runAsUser),
+    run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: cdktf.listMapper(deploymentSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform)(struct!.capabilities),
     se_linux_options: cdktf.listMapper(deploymentSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
   }
@@ -2315,13 +2267,13 @@ function deploymentSpecTemplateSpecSecurityContextSysctlToTerraform(struct?: Dep
 
 export interface DeploymentSpecTemplateSpecSecurityContext {
   /** A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume. */
-  readonly fsGroup?: number;
+  readonly fsGroup?: string;
   /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. */
-  readonly runAsGroup?: number;
+  readonly runAsGroup?: string;
   /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
   readonly runAsNonRoot?: boolean;
   /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. */
-  readonly runAsUser?: number;
+  readonly runAsUser?: string;
   /** A list of groups applied to the first process run in each container, in addition to the container's primary GID. If unspecified, no groups will be added to any container. */
   readonly supplementalGroups?: number[];
   /** se_linux_options block */
@@ -2333,10 +2285,10 @@ export interface DeploymentSpecTemplateSpecSecurityContext {
 function deploymentSpecTemplateSpecSecurityContextToTerraform(struct?: DeploymentSpecTemplateSpecSecurityContext): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
-    fs_group: cdktf.numberToTerraform(struct!.fsGroup),
-    run_as_group: cdktf.numberToTerraform(struct!.runAsGroup),
+    fs_group: cdktf.stringToTerraform(struct!.fsGroup),
+    run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
-    run_as_user: cdktf.numberToTerraform(struct!.runAsUser),
+    run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform)(struct!.supplementalGroups),
     se_linux_options: cdktf.listMapper(deploymentSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
     sysctl: cdktf.listMapper(deploymentSpecTemplateSpecSecurityContextSysctlToTerraform)(struct!.sysctl),
@@ -2645,7 +2597,7 @@ function deploymentSpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform(str
 
 export interface DeploymentSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef {
   readonly containerName: string;
-  readonly quantity?: string;
+  readonly divisor?: string;
   /** Resource to select */
   readonly resource: string;
 }
@@ -2654,7 +2606,7 @@ function deploymentSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerra
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
-    quantity: cdktf.stringToTerraform(struct!.quantity),
+    divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
 }
@@ -3357,7 +3309,7 @@ export interface DeploymentSpecTemplateSpec {
   readonly automountServiceAccountToken?: boolean;
   /** Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy). */
   readonly dnsPolicy?: string;
-  /** Enables generating environment variables for service discovery. Optional: Defaults to true. */
+  /** Enables generating environment variables for service discovery. Defaults to true. */
   readonly enableServiceLinks?: boolean;
   /** Use the host's ipc namespace. Optional: Defaults to false. */
   readonly hostIpc?: boolean;
@@ -3459,8 +3411,8 @@ export interface DeploymentSpec {
   readonly paused?: boolean;
   /** The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that progress will not be estimated during the time a deployment is paused. Defaults to 600s. */
   readonly progressDeadlineSeconds?: number;
-  /** The number of desired replicas. Defaults to 1. More info: http://kubernetes.io/docs/user-guide/replication-controller#what-is-a-replication-controller */
-  readonly replicas?: number;
+  /** Number of desired pods. This is a string to be able to distinguish between explicit zero and not specified. */
+  readonly replicas?: string;
   /** The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10. */
   readonly revisionHistoryLimit?: number;
   /** selector block */
@@ -3477,7 +3429,7 @@ function deploymentSpecToTerraform(struct?: DeploymentSpec): any {
     min_ready_seconds: cdktf.numberToTerraform(struct!.minReadySeconds),
     paused: cdktf.booleanToTerraform(struct!.paused),
     progress_deadline_seconds: cdktf.numberToTerraform(struct!.progressDeadlineSeconds),
-    replicas: cdktf.numberToTerraform(struct!.replicas),
+    replicas: cdktf.stringToTerraform(struct!.replicas),
     revision_history_limit: cdktf.numberToTerraform(struct!.revisionHistoryLimit),
     selector: cdktf.listMapper(deploymentSpecSelectorToTerraform)(struct!.selector),
     strategy: cdktf.listMapper(deploymentSpecStrategyToTerraform)(struct!.strategy),

@@ -2,6 +2,6 @@
   "language": "typescript",
   "app": "echo noop",
   "terraformProviders": [
-    "kubernetes@~> 1.0"
+    "kubernetes@~> 2.0"
   ]
 }

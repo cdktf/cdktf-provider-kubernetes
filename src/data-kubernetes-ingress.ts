@@ -10,18 +10,6 @@ export interface DataKubernetesIngressConfig extends cdktf.TerraformMetaArgument
   /** metadata block */
   readonly metadata: DataKubernetesIngressMetadata[];
 }
-export class DataKubernetesIngressLoadBalancerIngress extends cdktf.ComplexComputedList {
-
-  // hostname - computed: true, optional: false, required: false
-  public get hostname() {
-    return this.getStringAttribute('hostname');
-  }
-
-  // ip - computed: true, optional: false, required: false
-  public get ip() {
-    return this.getStringAttribute('ip');
-  }
-}
 export class DataKubernetesIngressSpecBackend extends cdktf.ComplexComputedList {
 
   // service_name - computed: true, optional: false, required: false
@@ -106,6 +94,32 @@ export class DataKubernetesIngressSpec extends cdktf.ComplexComputedList {
     return this.interpolationForAttribute('tls') as any;
   }
 }
+export class DataKubernetesIngressStatusLoadBalancerIngress extends cdktf.ComplexComputedList {
+
+  // hostname - computed: true, optional: false, required: false
+  public get hostname() {
+    return this.getStringAttribute('hostname');
+  }
+
+  // ip - computed: true, optional: false, required: false
+  public get ip() {
+    return this.getStringAttribute('ip');
+  }
+}
+export class DataKubernetesIngressStatusLoadBalancer extends cdktf.ComplexComputedList {
+
+  // ingress - computed: true, optional: false, required: false
+  public get ingress() {
+    return this.interpolationForAttribute('ingress') as any;
+  }
+}
+export class DataKubernetesIngressStatus extends cdktf.ComplexComputedList {
+
+  // load_balancer - computed: true, optional: false, required: false
+  public get loadBalancer() {
+    return this.interpolationForAttribute('load_balancer') as any;
+  }
+}
 export interface DataKubernetesIngressMetadata {
   /** An unstructured key value map stored with the ingress that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
   readonly annotations?: { [key: string]: string };
@@ -159,14 +173,14 @@ export class DataKubernetesIngress extends cdktf.TerraformDataSource {
     return this.getStringAttribute('id');
   }
 
-  // load_balancer_ingress - computed: true, optional: false, required: false
-  public loadBalancerIngress(index: string) {
-    return new DataKubernetesIngressLoadBalancerIngress(this, 'load_balancer_ingress', index);
-  }
-
   // spec - computed: true, optional: false, required: false
   public spec(index: string) {
     return new DataKubernetesIngressSpec(this, 'spec', index);
+  }
+
+  // status - computed: true, optional: false, required: false
+  public status(index: string) {
+    return new DataKubernetesIngressStatus(this, 'status', index);
   }
 
   // metadata - computed: false, optional: false, required: true

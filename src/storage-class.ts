@@ -19,9 +19,38 @@ export interface StorageClassConfig extends cdktf.TerraformMetaArguments {
   readonly storageProvisioner: string;
   /** Indicates when volume binding and dynamic provisioning should occur */
   readonly volumeBindingMode?: string;
+  /** allowed_topologies block */
+  readonly allowedTopologies?: StorageClassAllowedTopologies[];
   /** metadata block */
   readonly metadata: StorageClassMetadata[];
 }
+export interface StorageClassAllowedTopologiesMatchLabelExpressions {
+  /** The label key that the selector applies to. */
+  readonly key?: string;
+  /** An array of string values. One value must match the label to be selected. */
+  readonly values?: string[];
+}
+
+function storageClassAllowedTopologiesMatchLabelExpressionsToTerraform(struct?: StorageClassAllowedTopologiesMatchLabelExpressions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+  }
+}
+
+export interface StorageClassAllowedTopologies {
+  /** match_label_expressions block */
+  readonly matchLabelExpressions?: StorageClassAllowedTopologiesMatchLabelExpressions[];
+}
+
+function storageClassAllowedTopologiesToTerraform(struct?: StorageClassAllowedTopologies): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    match_label_expressions: cdktf.listMapper(storageClassAllowedTopologiesMatchLabelExpressionsToTerraform)(struct!.matchLabelExpressions),
+  }
+}
+
 export interface StorageClassMetadata {
   /** An unstructured key value map stored with the storage class that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
   readonly annotations?: { [key: string]: string };
@@ -69,6 +98,7 @@ export class StorageClass extends cdktf.TerraformResource {
     this._reclaimPolicy = config.reclaimPolicy;
     this._storageProvisioner = config.storageProvisioner;
     this._volumeBindingMode = config.volumeBindingMode;
+    this._allowedTopologies = config.allowedTopologies;
     this._metadata = config.metadata;
   }
 
@@ -174,6 +204,22 @@ export class StorageClass extends cdktf.TerraformResource {
     return this._volumeBindingMode
   }
 
+  // allowed_topologies - computed: false, optional: true, required: false
+  private _allowedTopologies?: StorageClassAllowedTopologies[];
+  public get allowedTopologies() {
+    return this.interpolationForAttribute('allowed_topologies') as any;
+  }
+  public set allowedTopologies(value: StorageClassAllowedTopologies[] ) {
+    this._allowedTopologies = value;
+  }
+  public resetAllowedTopologies() {
+    this._allowedTopologies = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get allowedTopologiesInput() {
+    return this._allowedTopologies
+  }
+
   // metadata - computed: false, optional: false, required: true
   private _metadata: StorageClassMetadata[];
   public get metadata() {
@@ -199,6 +245,7 @@ export class StorageClass extends cdktf.TerraformResource {
       reclaim_policy: cdktf.stringToTerraform(this._reclaimPolicy),
       storage_provisioner: cdktf.stringToTerraform(this._storageProvisioner),
       volume_binding_mode: cdktf.stringToTerraform(this._volumeBindingMode),
+      allowed_topologies: cdktf.listMapper(storageClassAllowedTopologiesToTerraform)(this._allowedTopologies),
       metadata: cdktf.listMapper(storageClassMetadataToTerraform)(this._metadata),
     };
   }

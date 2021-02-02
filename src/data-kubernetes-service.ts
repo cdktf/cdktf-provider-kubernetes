@@ -10,18 +10,6 @@ export interface DataKubernetesServiceConfig extends cdktf.TerraformMetaArgument
   /** metadata block */
   readonly metadata: DataKubernetesServiceMetadata[];
 }
-export class DataKubernetesServiceLoadBalancerIngress extends cdktf.ComplexComputedList {
-
-  // hostname - computed: true, optional: false, required: false
-  public get hostname() {
-    return this.getStringAttribute('hostname');
-  }
-
-  // ip - computed: true, optional: false, required: false
-  public get ip() {
-    return this.getStringAttribute('ip');
-  }
-}
 export class DataKubernetesServiceSpecPort extends cdktf.ComplexComputedList {
 
   // name - computed: true, optional: false, required: false
@@ -111,6 +99,32 @@ export class DataKubernetesServiceSpec extends cdktf.ComplexComputedList {
     return this.getStringAttribute('type');
   }
 }
+export class DataKubernetesServiceStatusLoadBalancerIngress extends cdktf.ComplexComputedList {
+
+  // hostname - computed: true, optional: false, required: false
+  public get hostname() {
+    return this.getStringAttribute('hostname');
+  }
+
+  // ip - computed: true, optional: false, required: false
+  public get ip() {
+    return this.getStringAttribute('ip');
+  }
+}
+export class DataKubernetesServiceStatusLoadBalancer extends cdktf.ComplexComputedList {
+
+  // ingress - computed: true, optional: false, required: false
+  public get ingress() {
+    return this.interpolationForAttribute('ingress') as any;
+  }
+}
+export class DataKubernetesServiceStatus extends cdktf.ComplexComputedList {
+
+  // load_balancer - computed: true, optional: false, required: false
+  public get loadBalancer() {
+    return this.interpolationForAttribute('load_balancer') as any;
+  }
+}
 export interface DataKubernetesServiceMetadata {
   /** An unstructured key value map stored with the service that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
   readonly annotations?: { [key: string]: string };
@@ -164,14 +178,14 @@ export class DataKubernetesService extends cdktf.TerraformDataSource {
     return this.getStringAttribute('id');
   }
 
-  // load_balancer_ingress - computed: true, optional: false, required: false
-  public loadBalancerIngress(index: string) {
-    return new DataKubernetesServiceLoadBalancerIngress(this, 'load_balancer_ingress', index);
-  }
-
   // spec - computed: true, optional: false, required: false
   public spec(index: string) {
     return new DataKubernetesServiceSpec(this, 'spec', index);
+  }
+
+  // status - computed: true, optional: false, required: false
+  public status(index: string) {
+    return new DataKubernetesServiceStatus(this, 'status', index);
   }
 
   // metadata - computed: false, optional: false, required: true

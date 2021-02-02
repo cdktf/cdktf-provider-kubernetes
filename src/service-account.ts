@@ -7,7 +7,7 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface ServiceAccountConfig extends cdktf.TerraformMetaArguments {
-  /** True to enable automatic mounting of the service account token */
+  /** Enable automatic mounting of the service account token */
   readonly automountServiceAccountToken?: boolean;
   /** image_pull_secret block */
   readonly imagePullSecret?: ServiceAccountImagePullSecret[];

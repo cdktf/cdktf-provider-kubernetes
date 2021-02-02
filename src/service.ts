@@ -7,6 +7,8 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface ServiceConfig extends cdktf.TerraformMetaArguments {
+  /** Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created. */
+  readonly waitForLoadBalancer?: boolean;
   /** metadata block */
   readonly metadata: ServiceMetadata[];
   /** spec block */
@@ -14,7 +16,7 @@ export interface ServiceConfig extends cdktf.TerraformMetaArguments {
   /** timeouts block */
   readonly timeouts?: ServiceTimeouts;
 }
-export class ServiceLoadBalancerIngress extends cdktf.ComplexComputedList {
+export class ServiceStatusLoadBalancerIngress extends cdktf.ComplexComputedList {
 
   // hostname - computed: true, optional: false, required: false
   public get hostname() {
@@ -24,6 +26,20 @@ export class ServiceLoadBalancerIngress extends cdktf.ComplexComputedList {
   // ip - computed: true, optional: false, required: false
   public get ip() {
     return this.getStringAttribute('ip');
+  }
+}
+export class ServiceStatusLoadBalancer extends cdktf.ComplexComputedList {
+
+  // ingress - computed: true, optional: false, required: false
+  public get ingress() {
+    return this.interpolationForAttribute('ingress') as any;
+  }
+}
+export class ServiceStatus extends cdktf.ComplexComputedList {
+
+  // load_balancer - computed: true, optional: false, required: false
+  public get loadBalancer() {
+    return this.interpolationForAttribute('load_balancer') as any;
   }
 }
 export interface ServiceMetadata {
@@ -150,6 +166,7 @@ export class Service extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._waitForLoadBalancer = config.waitForLoadBalancer;
     this._metadata = config.metadata;
     this._spec = config.spec;
     this._timeouts = config.timeouts;
@@ -164,9 +181,25 @@ export class Service extends cdktf.TerraformResource {
     return this.getStringAttribute('id');
   }
 
-  // load_balancer_ingress - computed: true, optional: false, required: false
-  public loadBalancerIngress(index: string) {
-    return new ServiceLoadBalancerIngress(this, 'load_balancer_ingress', index);
+  // status - computed: true, optional: false, required: false
+  public status(index: string) {
+    return new ServiceStatus(this, 'status', index);
+  }
+
+  // wait_for_load_balancer - computed: false, optional: true, required: false
+  private _waitForLoadBalancer?: boolean;
+  public get waitForLoadBalancer() {
+    return this.getBooleanAttribute('wait_for_load_balancer');
+  }
+  public set waitForLoadBalancer(value: boolean ) {
+    this._waitForLoadBalancer = value;
+  }
+  public resetWaitForLoadBalancer() {
+    this._waitForLoadBalancer = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get waitForLoadBalancerInput() {
+    return this._waitForLoadBalancer
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -217,6 +250,7 @@ export class Service extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      wait_for_load_balancer: cdktf.booleanToTerraform(this._waitForLoadBalancer),
       metadata: cdktf.listMapper(serviceMetadataToTerraform)(this._metadata),
       spec: cdktf.listMapper(serviceSpecToTerraform)(this._spec),
       timeouts: serviceTimeoutsToTerraform(this._timeouts),
