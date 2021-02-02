@@ -512,6 +512,7 @@ function jobSpecTemplateSpecContainerEnvValueFromFieldRefToTerraform(struct?: Jo
 
 export interface JobSpecTemplateSpecContainerEnvValueFromResourceFieldRef {
   readonly containerName?: string;
+  readonly divisor?: string;
   /** Resource to select */
   readonly resource: string;
 }
@@ -520,6 +521,7 @@ function jobSpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraform(str
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
+    divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
 }
@@ -1022,44 +1024,18 @@ function jobSpecTemplateSpecContainerReadinessProbeToTerraform(struct?: JobSpecT
   }
 }
 
-export interface JobSpecTemplateSpecContainerResourcesLimits {
-  readonly cpu?: string;
-  readonly memory?: string;
-}
-
-function jobSpecTemplateSpecContainerResourcesLimitsToTerraform(struct?: JobSpecTemplateSpecContainerResourcesLimits): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    cpu: cdktf.stringToTerraform(struct!.cpu),
-    memory: cdktf.stringToTerraform(struct!.memory),
-  }
-}
-
-export interface JobSpecTemplateSpecContainerResourcesRequests {
-  readonly cpu?: string;
-  readonly memory?: string;
-}
-
-function jobSpecTemplateSpecContainerResourcesRequestsToTerraform(struct?: JobSpecTemplateSpecContainerResourcesRequests): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    cpu: cdktf.stringToTerraform(struct!.cpu),
-    memory: cdktf.stringToTerraform(struct!.memory),
-  }
-}
-
 export interface JobSpecTemplateSpecContainerResources {
-  /** limits block */
-  readonly limits?: JobSpecTemplateSpecContainerResourcesLimits[];
-  /** requests block */
-  readonly requests?: JobSpecTemplateSpecContainerResourcesRequests[];
+  /** Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
+  readonly limits?: { [key: string]: string };
+  /** Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/ */
+  readonly requests?: { [key: string]: string };
 }
 
 function jobSpecTemplateSpecContainerResourcesToTerraform(struct?: JobSpecTemplateSpecContainerResources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
-    limits: cdktf.listMapper(jobSpecTemplateSpecContainerResourcesLimitsToTerraform)(struct!.limits),
-    requests: cdktf.listMapper(jobSpecTemplateSpecContainerResourcesRequestsToTerraform)(struct!.requests),
+    limits: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.limits),
+    requests: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.requests),
   }
 }
 
@@ -1107,11 +1083,11 @@ export interface JobSpecTemplateSpecContainerSecurityContext {
   /** Whether this container has a read-only root filesystem. Default is false. */
   readonly readOnlyRootFilesystem?: boolean;
   /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
-  readonly runAsGroup?: number;
+  readonly runAsGroup?: string;
   /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
   readonly runAsNonRoot?: boolean;
   /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
-  readonly runAsUser?: number;
+  readonly runAsUser?: string;
   /** capabilities block */
   readonly capabilities?: JobSpecTemplateSpecContainerSecurityContextCapabilities[];
   /** se_linux_options block */
@@ -1124,9 +1100,9 @@ function jobSpecTemplateSpecContainerSecurityContextToTerraform(struct?: JobSpec
     allow_privilege_escalation: cdktf.booleanToTerraform(struct!.allowPrivilegeEscalation),
     privileged: cdktf.booleanToTerraform(struct!.privileged),
     read_only_root_filesystem: cdktf.booleanToTerraform(struct!.readOnlyRootFilesystem),
-    run_as_group: cdktf.numberToTerraform(struct!.runAsGroup),
+    run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
-    run_as_user: cdktf.numberToTerraform(struct!.runAsUser),
+    run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: cdktf.listMapper(jobSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform)(struct!.capabilities),
     se_linux_options: cdktf.listMapper(jobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
   }
@@ -1419,6 +1395,7 @@ function jobSpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform(struct?
 
 export interface JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef {
   readonly containerName?: string;
+  readonly divisor?: string;
   /** Resource to select */
   readonly resource: string;
 }
@@ -1427,6 +1404,7 @@ function jobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTerraform
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
+    divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
 }
@@ -1929,44 +1907,18 @@ function jobSpecTemplateSpecInitContainerReadinessProbeToTerraform(struct?: JobS
   }
 }
 
-export interface JobSpecTemplateSpecInitContainerResourcesLimits {
-  readonly cpu?: string;
-  readonly memory?: string;
-}
-
-function jobSpecTemplateSpecInitContainerResourcesLimitsToTerraform(struct?: JobSpecTemplateSpecInitContainerResourcesLimits): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    cpu: cdktf.stringToTerraform(struct!.cpu),
-    memory: cdktf.stringToTerraform(struct!.memory),
-  }
-}
-
-export interface JobSpecTemplateSpecInitContainerResourcesRequests {
-  readonly cpu?: string;
-  readonly memory?: string;
-}
-
-function jobSpecTemplateSpecInitContainerResourcesRequestsToTerraform(struct?: JobSpecTemplateSpecInitContainerResourcesRequests): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    cpu: cdktf.stringToTerraform(struct!.cpu),
-    memory: cdktf.stringToTerraform(struct!.memory),
-  }
-}
-
 export interface JobSpecTemplateSpecInitContainerResources {
-  /** limits block */
-  readonly limits?: JobSpecTemplateSpecInitContainerResourcesLimits[];
-  /** requests block */
-  readonly requests?: JobSpecTemplateSpecInitContainerResourcesRequests[];
+  /** Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
+  readonly limits?: { [key: string]: string };
+  /** Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/ */
+  readonly requests?: { [key: string]: string };
 }
 
 function jobSpecTemplateSpecInitContainerResourcesToTerraform(struct?: JobSpecTemplateSpecInitContainerResources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
-    limits: cdktf.listMapper(jobSpecTemplateSpecInitContainerResourcesLimitsToTerraform)(struct!.limits),
-    requests: cdktf.listMapper(jobSpecTemplateSpecInitContainerResourcesRequestsToTerraform)(struct!.requests),
+    limits: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.limits),
+    requests: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.requests),
   }
 }
 
@@ -2014,11 +1966,11 @@ export interface JobSpecTemplateSpecInitContainerSecurityContext {
   /** Whether this container has a read-only root filesystem. Default is false. */
   readonly readOnlyRootFilesystem?: boolean;
   /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
-  readonly runAsGroup?: number;
+  readonly runAsGroup?: string;
   /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
   readonly runAsNonRoot?: boolean;
   /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
-  readonly runAsUser?: number;
+  readonly runAsUser?: string;
   /** capabilities block */
   readonly capabilities?: JobSpecTemplateSpecInitContainerSecurityContextCapabilities[];
   /** se_linux_options block */
@@ -2031,9 +1983,9 @@ function jobSpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: Job
     allow_privilege_escalation: cdktf.booleanToTerraform(struct!.allowPrivilegeEscalation),
     privileged: cdktf.booleanToTerraform(struct!.privileged),
     read_only_root_filesystem: cdktf.booleanToTerraform(struct!.readOnlyRootFilesystem),
-    run_as_group: cdktf.numberToTerraform(struct!.runAsGroup),
+    run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
-    run_as_user: cdktf.numberToTerraform(struct!.runAsUser),
+    run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: cdktf.listMapper(jobSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform)(struct!.capabilities),
     se_linux_options: cdktf.listMapper(jobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
   }
@@ -2281,13 +2233,13 @@ function jobSpecTemplateSpecSecurityContextSysctlToTerraform(struct?: JobSpecTem
 
 export interface JobSpecTemplateSpecSecurityContext {
   /** A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume. */
-  readonly fsGroup?: number;
+  readonly fsGroup?: string;
   /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. */
-  readonly runAsGroup?: number;
+  readonly runAsGroup?: string;
   /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
   readonly runAsNonRoot?: boolean;
   /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. */
-  readonly runAsUser?: number;
+  readonly runAsUser?: string;
   /** A list of groups applied to the first process run in each container, in addition to the container's primary GID. If unspecified, no groups will be added to any container. */
   readonly supplementalGroups?: number[];
   /** se_linux_options block */
@@ -2299,10 +2251,10 @@ export interface JobSpecTemplateSpecSecurityContext {
 function jobSpecTemplateSpecSecurityContextToTerraform(struct?: JobSpecTemplateSpecSecurityContext): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
-    fs_group: cdktf.numberToTerraform(struct!.fsGroup),
-    run_as_group: cdktf.numberToTerraform(struct!.runAsGroup),
+    fs_group: cdktf.stringToTerraform(struct!.fsGroup),
+    run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
-    run_as_user: cdktf.numberToTerraform(struct!.runAsUser),
+    run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform)(struct!.supplementalGroups),
     se_linux_options: cdktf.listMapper(jobSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
     sysctl: cdktf.listMapper(jobSpecTemplateSpecSecurityContextSysctlToTerraform)(struct!.sysctl),
@@ -2611,7 +2563,7 @@ function jobSpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform(struct?: J
 
 export interface JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef {
   readonly containerName: string;
-  readonly quantity?: string;
+  readonly divisor?: string;
   /** Resource to select */
   readonly resource: string;
 }
@@ -2620,7 +2572,7 @@ function jobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerraform(st
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
-    quantity: cdktf.stringToTerraform(struct!.quantity),
+    divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
 }
@@ -3323,7 +3275,7 @@ export interface JobSpecTemplateSpec {
   readonly automountServiceAccountToken?: boolean;
   /** Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy). */
   readonly dnsPolicy?: string;
-  /** Enables generating environment variables for service discovery. Optional: Defaults to true. */
+  /** Enables generating environment variables for service discovery. Defaults to true. */
   readonly enableServiceLinks?: boolean;
   /** Use the host's ipc namespace. Optional: Defaults to false. */
   readonly hostIpc?: boolean;
@@ -3425,12 +3377,12 @@ export interface JobSpec {
   readonly backoffLimit?: number;
   /** Specifies the desired number of successfully finished pods the job should be run with. Setting to nil means that the success of any pod signals the success of all pods, and allows parallelism to have any positive value. Setting to 1 means that parallelism is limited to 1 and the success of that pod signals the success of the job. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ */
   readonly completions?: number;
-  /** Controls generation of pod labels and pod selectors. Leave unset unless you are certain what you are doing. When false or unset, the system pick labels unique to this job and appends those labels to the pod template. When true, the user is responsyble for picking unique labels and specifying the selector. Failure to pick a unique label may cause this and other jobs to not function correctly. More info: https://git.k8s.io/community/contributors/design-proposals/selector-generation.md */
+  /** Controls generation of pod labels and pod selectors. Leave unset unless you are certain what you are doing. When false or unset, the system pick labels unique to this job and appends those labels to the pod template. When true, the user is responsible for picking unique labels and specifying the selector. Failure to pick a unique label may cause this and other jobs to not function correctly. More info: https://git.k8s.io/community/contributors/design-proposals/selector-generation.md */
   readonly manualSelector?: boolean;
   /** Specifies the maximum desired number of pods the job should run at any given time. The actual number of pods running in steady state will be less than this number when ((.spec.completions - .status.successful) < .spec.parallelism), i.e. when the work left to do is less than max parallelism. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ */
   readonly parallelism?: number;
   /** ttlSecondsAfterFinished limits the lifetime of a Job that has finished execution (either Complete or Failed). If this field is set, ttlSecondsAfterFinished after the Job finishes, it is eligible to be automatically deleted. When the Job is being deleted, its lifecycle guarantees (e.g. finalizers) will be honored. If this field is unset, the Job won't be automatically deleted. If this field is set to zero, the Job becomes eligible to be deleted immediately after it finishes. */
-  readonly ttlSecondsAfterFinished?: number;
+  readonly ttlSecondsAfterFinished?: string;
   /** selector block */
   readonly selector?: JobSpecSelector[];
   /** template block */
@@ -3445,7 +3397,7 @@ function jobSpecToTerraform(struct?: JobSpec): any {
     completions: cdktf.numberToTerraform(struct!.completions),
     manual_selector: cdktf.booleanToTerraform(struct!.manualSelector),
     parallelism: cdktf.numberToTerraform(struct!.parallelism),
-    ttl_seconds_after_finished: cdktf.numberToTerraform(struct!.ttlSecondsAfterFinished),
+    ttl_seconds_after_finished: cdktf.stringToTerraform(struct!.ttlSecondsAfterFinished),
     selector: cdktf.listMapper(jobSpecSelectorToTerraform)(struct!.selector),
     template: cdktf.listMapper(jobSpecTemplateToTerraform)(struct!.template),
   }

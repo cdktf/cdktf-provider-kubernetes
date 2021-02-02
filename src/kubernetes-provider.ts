@@ -16,14 +16,14 @@ export interface KubernetesProviderConfig {
   readonly configContext?: string;
   readonly configContextAuthInfo?: string;
   readonly configContextCluster?: string;
-  /** Path to the kube config file, defaults to ~/.kube/config */
+  /** Path to the kube config file. Can be set with KUBE_CONFIG_PATH. */
   readonly configPath?: string;
+  /** A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable. */
+  readonly configPaths?: string[];
   /** The hostname (in form of URI) of Kubernetes master. */
   readonly host?: string;
   /** Whether server should be accessed without verifying the TLS certificate. */
   readonly insecure?: boolean;
-  /** Load local kubeconfig. */
-  readonly loadConfigFile?: boolean;
   /** The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint. */
   readonly password?: string;
   /** Token to authenticate an service account */
@@ -66,7 +66,7 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
       terraformResourceType: 'kubernetes',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersionConstraint: '~> 1.0'
+        providerVersionConstraint: '~> 2.0'
       },
       terraformProviderSource: 'kubernetes'
     });
@@ -77,9 +77,9 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
     this._configContextAuthInfo = config.configContextAuthInfo;
     this._configContextCluster = config.configContextCluster;
     this._configPath = config.configPath;
+    this._configPaths = config.configPaths;
     this._host = config.host;
     this._insecure = config.insecure;
-    this._loadConfigFile = config.loadConfigFile;
     this._password = config.password;
     this._token = config.token;
     this._username = config.username;
@@ -203,6 +203,22 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
     return this._configPath
   }
 
+  // config_paths - computed: false, optional: true, required: false
+  private _configPaths?: string[];
+  public get configPaths() {
+    return this._configPaths;
+  }
+  public set configPaths(value: string[]  | undefined) {
+    this._configPaths = value;
+  }
+  public resetConfigPaths() {
+    this._configPaths = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get configPathsInput() {
+    return this._configPaths
+  }
+
   // host - computed: false, optional: true, required: false
   private _host?: string;
   public get host() {
@@ -233,22 +249,6 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   // Temporarily expose input value. Use with caution.
   public get insecureInput() {
     return this._insecure
-  }
-
-  // load_config_file - computed: false, optional: true, required: false
-  private _loadConfigFile?: boolean;
-  public get loadConfigFile() {
-    return this._loadConfigFile;
-  }
-  public set loadConfigFile(value: boolean  | undefined) {
-    this._loadConfigFile = value;
-  }
-  public resetLoadConfigFile() {
-    this._loadConfigFile = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get loadConfigFileInput() {
-    return this._loadConfigFile
   }
 
   // password - computed: false, optional: true, required: false
@@ -344,9 +344,9 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
       config_context_auth_info: cdktf.stringToTerraform(this._configContextAuthInfo),
       config_context_cluster: cdktf.stringToTerraform(this._configContextCluster),
       config_path: cdktf.stringToTerraform(this._configPath),
+      config_paths: cdktf.listMapper(cdktf.stringToTerraform)(this._configPaths),
       host: cdktf.stringToTerraform(this._host),
       insecure: cdktf.booleanToTerraform(this._insecure),
-      load_config_file: cdktf.booleanToTerraform(this._loadConfigFile),
       password: cdktf.stringToTerraform(this._password),
       token: cdktf.stringToTerraform(this._token),
       username: cdktf.stringToTerraform(this._username),

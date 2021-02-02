@@ -374,6 +374,11 @@ export class DataKubernetesPodSpecContainerEnvValueFromResourceFieldRef extends 
     return this.getStringAttribute('container_name');
   }
 
+  // divisor - computed: true, optional: false, required: false
+  public get divisor() {
+    return this.getStringAttribute('divisor');
+  }
+
   // resource - computed: true, optional: false, required: false
   public get resource() {
     return this.getStringAttribute('resource');
@@ -845,30 +850,6 @@ export class DataKubernetesPodSpecContainerReadinessProbe extends cdktf.ComplexC
     return this.getNumberAttribute('timeout_seconds');
   }
 }
-export class DataKubernetesPodSpecContainerResourcesLimits extends cdktf.ComplexComputedList {
-
-  // cpu - computed: true, optional: false, required: false
-  public get cpu() {
-    return this.getStringAttribute('cpu');
-  }
-
-  // memory - computed: true, optional: false, required: false
-  public get memory() {
-    return this.getStringAttribute('memory');
-  }
-}
-export class DataKubernetesPodSpecContainerResourcesRequests extends cdktf.ComplexComputedList {
-
-  // cpu - computed: true, optional: false, required: false
-  public get cpu() {
-    return this.getStringAttribute('cpu');
-  }
-
-  // memory - computed: true, optional: false, required: false
-  public get memory() {
-    return this.getStringAttribute('memory');
-  }
-}
 export class DataKubernetesPodSpecContainerResources extends cdktf.ComplexComputedList {
 
   // limits - computed: true, optional: false, required: false
@@ -939,7 +920,7 @@ export class DataKubernetesPodSpecContainerSecurityContext extends cdktf.Complex
 
   // run_as_group - computed: true, optional: false, required: false
   public get runAsGroup() {
-    return this.getNumberAttribute('run_as_group');
+    return this.getStringAttribute('run_as_group');
   }
 
   // run_as_non_root - computed: true, optional: false, required: false
@@ -949,7 +930,7 @@ export class DataKubernetesPodSpecContainerSecurityContext extends cdktf.Complex
 
   // run_as_user - computed: true, optional: false, required: false
   public get runAsUser() {
-    return this.getNumberAttribute('run_as_user');
+    return this.getStringAttribute('run_as_user');
   }
 
   // se_linux_options - computed: true, optional: false, required: false
@@ -1268,6 +1249,11 @@ export class DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRef exte
   // container_name - computed: true, optional: false, required: false
   public get containerName() {
     return this.getStringAttribute('container_name');
+  }
+
+  // divisor - computed: true, optional: false, required: false
+  public get divisor() {
+    return this.getStringAttribute('divisor');
   }
 
   // resource - computed: true, optional: false, required: false
@@ -1741,30 +1727,6 @@ export class DataKubernetesPodSpecInitContainerReadinessProbe extends cdktf.Comp
     return this.getNumberAttribute('timeout_seconds');
   }
 }
-export class DataKubernetesPodSpecInitContainerResourcesLimits extends cdktf.ComplexComputedList {
-
-  // cpu - computed: true, optional: false, required: false
-  public get cpu() {
-    return this.getStringAttribute('cpu');
-  }
-
-  // memory - computed: true, optional: false, required: false
-  public get memory() {
-    return this.getStringAttribute('memory');
-  }
-}
-export class DataKubernetesPodSpecInitContainerResourcesRequests extends cdktf.ComplexComputedList {
-
-  // cpu - computed: true, optional: false, required: false
-  public get cpu() {
-    return this.getStringAttribute('cpu');
-  }
-
-  // memory - computed: true, optional: false, required: false
-  public get memory() {
-    return this.getStringAttribute('memory');
-  }
-}
 export class DataKubernetesPodSpecInitContainerResources extends cdktf.ComplexComputedList {
 
   // limits - computed: true, optional: false, required: false
@@ -1835,7 +1797,7 @@ export class DataKubernetesPodSpecInitContainerSecurityContext extends cdktf.Com
 
   // run_as_group - computed: true, optional: false, required: false
   public get runAsGroup() {
-    return this.getNumberAttribute('run_as_group');
+    return this.getStringAttribute('run_as_group');
   }
 
   // run_as_non_root - computed: true, optional: false, required: false
@@ -1845,7 +1807,7 @@ export class DataKubernetesPodSpecInitContainerSecurityContext extends cdktf.Com
 
   // run_as_user - computed: true, optional: false, required: false
   public get runAsUser() {
-    return this.getNumberAttribute('run_as_user');
+    return this.getStringAttribute('run_as_user');
   }
 
   // se_linux_options - computed: true, optional: false, required: false
@@ -2127,12 +2089,12 @@ export class DataKubernetesPodSpecSecurityContext extends cdktf.ComplexComputedL
 
   // fs_group - computed: true, optional: false, required: false
   public get fsGroup() {
-    return this.getNumberAttribute('fs_group');
+    return this.getStringAttribute('fs_group');
   }
 
   // run_as_group - computed: true, optional: false, required: false
   public get runAsGroup() {
-    return this.getNumberAttribute('run_as_group');
+    return this.getStringAttribute('run_as_group');
   }
 
   // run_as_non_root - computed: true, optional: false, required: false
@@ -2142,7 +2104,7 @@ export class DataKubernetesPodSpecSecurityContext extends cdktf.ComplexComputedL
 
   // run_as_user - computed: true, optional: false, required: false
   public get runAsUser() {
-    return this.getNumberAttribute('run_as_user');
+    return this.getStringAttribute('run_as_user');
   }
 
   // se_linux_options - computed: true, optional: false, required: false
@@ -2472,9 +2434,9 @@ export class DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRef extends
     return this.getStringAttribute('container_name');
   }
 
-  // quantity - computed: true, optional: false, required: false
-  public get quantity() {
-    return this.getStringAttribute('quantity');
+  // divisor - computed: true, optional: false, required: false
+  public get divisor() {
+    return this.getStringAttribute('divisor');
   }
 
   // resource - computed: true, optional: false, required: false

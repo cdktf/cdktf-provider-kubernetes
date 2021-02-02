@@ -14,7 +14,7 @@ export interface IngressConfig extends cdktf.TerraformMetaArguments {
   /** spec block */
   readonly spec: IngressSpec[];
 }
-export class IngressLoadBalancerIngress extends cdktf.ComplexComputedList {
+export class IngressStatusLoadBalancerIngress extends cdktf.ComplexComputedList {
 
   // hostname - computed: true, optional: false, required: false
   public get hostname() {
@@ -24,6 +24,20 @@ export class IngressLoadBalancerIngress extends cdktf.ComplexComputedList {
   // ip - computed: true, optional: false, required: false
   public get ip() {
     return this.getStringAttribute('ip');
+  }
+}
+export class IngressStatusLoadBalancer extends cdktf.ComplexComputedList {
+
+  // ingress - computed: true, optional: false, required: false
+  public get ingress() {
+    return this.interpolationForAttribute('ingress') as any;
+  }
+}
+export class IngressStatus extends cdktf.ComplexComputedList {
+
+  // load_balancer - computed: true, optional: false, required: false
+  public get loadBalancer() {
+    return this.interpolationForAttribute('load_balancer') as any;
   }
 }
 export interface IngressMetadata {
@@ -145,6 +159,8 @@ function ingressSpecTlsToTerraform(struct?: IngressSpecTls): any {
 }
 
 export interface IngressSpec {
+  /** IngressClassName is the name of the IngressClass cluster resource. The associated IngressClass defines which controller will implement the resource. This replaces the deprecated `kubernetes.io/ingress.class` annotation. For backwards compatibility, when that annotation is set, it must be given precedence over this field. The controller may emit a warning if the field and annotation have different values. Implementations of this API should ignore Ingresses without a class specified. An IngressClass resource may be marked as default, which can be used to set a default value for this field. For more information, refer to the IngressClass documentation. */
+  readonly ingressClassName?: string;
   /** backend block */
   readonly backend?: IngressSpecBackend[];
   /** rule block */
@@ -156,6 +172,7 @@ export interface IngressSpec {
 function ingressSpecToTerraform(struct?: IngressSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
+    ingress_class_name: cdktf.stringToTerraform(struct!.ingressClassName),
     backend: cdktf.listMapper(ingressSpecBackendToTerraform)(struct!.backend),
     rule: cdktf.listMapper(ingressSpecRuleToTerraform)(struct!.rule),
     tls: cdktf.listMapper(ingressSpecTlsToTerraform)(struct!.tls),
@@ -196,9 +213,9 @@ export class Ingress extends cdktf.TerraformResource {
     return this.getStringAttribute('id');
   }
 
-  // load_balancer_ingress - computed: true, optional: false, required: false
-  public loadBalancerIngress(index: string) {
-    return new IngressLoadBalancerIngress(this, 'load_balancer_ingress', index);
+  // status - computed: true, optional: false, required: false
+  public status(index: string) {
+    return new IngressStatus(this, 'status', index);
   }
 
   // wait_for_load_balancer - computed: false, optional: true, required: false
