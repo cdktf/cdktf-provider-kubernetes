@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/terraform-cdk-providers/cdktf-provider-kubernetes/compare/v0.0.102...v0.1.1) (2021-02-02)
+
 ### 0.0.102 (2021-02-01)
 
 ### 0.0.101 (2021-01-29)
