@@ -592,6 +592,13 @@
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
 
+"@types/fs-extra@^8.0.0":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-8.1.1.tgz#1e49f22d09aa46e19b51c0b013cb63d0d923a068"
+  integrity sha512-TcUlBem321DFQzBNuz8p0CLLKp0VvF/XH9E4KHNmgwyp4E3AfgI5cjiIVZWlbfThBop2qxFIh4+LeY6hVWWZ2w==
+  dependencies:
+    "@types/node" "*"
+
 "@types/glob@*":
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/@types/glob/-/glob-7.1.3.tgz#e6ba80f36b7daad2c685acd9266382e68985c183"
@@ -2423,7 +2430,7 @@ fs-constants@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
   integrity sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==
 
-fs-extra@^8.1.0:
+fs-extra@^8.0.0, fs-extra@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
   integrity sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
@@ -3718,9 +3725,13 @@ jsii-reflect@^1.16.0, jsii-reflect@^1.20.1:
     yargs "^16.2.0"
 
 jsii-release@^0.2.11:
-  version "0.2.16"
-  resolved "https://registry.yarnpkg.com/jsii-release/-/jsii-release-0.2.16.tgz#45e4269eb55d56c9a55bda834289b7367d2dd2f6"
-  integrity sha512-PJoOYBm8qKugtDOMUeGmZ0214SCCCutkBaKWWMPA6+GIb98ubtP7y/YUueENjk/p7+JZo5lmE8CtC/lS5Xi4Tg==
+  version "0.2.17"
+  resolved "https://registry.yarnpkg.com/jsii-release/-/jsii-release-0.2.17.tgz#76c6e80246c3c336b3e6e07f527308ee0ccee7fa"
+  integrity sha512-p4bGKuviSYERap9ljQeFnZKho2ab5GJfghw1apMHc9AAer3VbNSkIoh1wVu/kH1I0fMUS6gtjV3yJAXoqbQ4MQ==
+  dependencies:
+    "@types/fs-extra" "^8.0.0"
+    fs-extra "^8.0.0"
+    shlex "^2.0.2"
 
 jsii-rosetta@^1.20.1:
   version "1.20.1"
@@ -5375,6 +5386,11 @@ shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
+
+shlex@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/shlex/-/shlex-2.0.2.tgz#debf51a145f1df9e7cb7cce04340ccb45120092d"
+  integrity sha512-i4p9nNXgBTILspHwZlBCNsZzwuVWW8SFx5dyIONrjL0R+AbMOPbg7ndqgGfjYivkYRTtZMKqIT8HT+QyOhPQWA==
 
 side-channel@^1.0.2:
   version "1.0.2"
