@@ -2319,6 +2319,60 @@ function deploymentSpecTemplateSpecTolerationToTerraform(struct?: DeploymentSpec
   }
 }
 
+export interface DeploymentSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions {
+  /** The label key that the selector applies to. */
+  readonly key?: string;
+  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  readonly operator?: string;
+  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  readonly values?: string[];
+}
+
+function deploymentSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform(struct?: DeploymentSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+  }
+}
+
+export interface DeploymentSpecTemplateSpecTopologySpreadConstraintLabelSelector {
+  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  readonly matchLabels?: { [key: string]: string };
+  /** match_expressions block */
+  readonly matchExpressions?: DeploymentSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions[];
+}
+
+function deploymentSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform(struct?: DeploymentSpecTemplateSpecTopologySpreadConstraintLabelSelector): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(deploymentSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+  }
+}
+
+export interface DeploymentSpecTemplateSpecTopologySpreadConstraint {
+  /** describes the degree to which pods may be unevenly distributed. */
+  readonly maxSkew?: number;
+  /** the key of node labels. Nodes that have a label with this key and identical values are considered to be in the same topology. */
+  readonly topologyKey?: string;
+  /** indicates how to deal with a pod if it doesn't satisfy the spread constraint. */
+  readonly whenUnsatisfiable?: string;
+  /** label_selector block */
+  readonly labelSelector?: DeploymentSpecTemplateSpecTopologySpreadConstraintLabelSelector[];
+}
+
+function deploymentSpecTemplateSpecTopologySpreadConstraintToTerraform(struct?: DeploymentSpecTemplateSpecTopologySpreadConstraint): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    max_skew: cdktf.numberToTerraform(struct!.maxSkew),
+    topology_key: cdktf.stringToTerraform(struct!.topologyKey),
+    when_unsatisfiable: cdktf.stringToTerraform(struct!.whenUnsatisfiable),
+    label_selector: cdktf.listMapper(deploymentSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform)(struct!.labelSelector),
+  }
+}
+
 export interface DeploymentSpecTemplateSpecVolumeAwsElasticBlockStore {
   /** Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore */
   readonly fsType?: string;
@@ -2949,7 +3003,7 @@ function deploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRe
 
 export interface DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
   readonly containerName: string;
-  readonly quantity?: string;
+  readonly divisor?: string;
   /** Resource to select */
   readonly resource: string;
 }
@@ -2958,7 +3012,7 @@ function deploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourc
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
-    quantity: cdktf.stringToTerraform(struct!.quantity),
+    divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
 }
@@ -3353,6 +3407,8 @@ export interface DeploymentSpecTemplateSpec {
   readonly securityContext?: DeploymentSpecTemplateSpecSecurityContext[];
   /** toleration block */
   readonly toleration?: DeploymentSpecTemplateSpecToleration[];
+  /** topology_spread_constraint block */
+  readonly topologySpreadConstraint?: DeploymentSpecTemplateSpecTopologySpreadConstraint[];
   /** volume block */
   readonly volume?: DeploymentSpecTemplateSpecVolume[];
 }
@@ -3385,6 +3441,7 @@ function deploymentSpecTemplateSpecToTerraform(struct?: DeploymentSpecTemplateSp
     readiness_gate: cdktf.listMapper(deploymentSpecTemplateSpecReadinessGateToTerraform)(struct!.readinessGate),
     security_context: cdktf.listMapper(deploymentSpecTemplateSpecSecurityContextToTerraform)(struct!.securityContext),
     toleration: cdktf.listMapper(deploymentSpecTemplateSpecTolerationToTerraform)(struct!.toleration),
+    topology_spread_constraint: cdktf.listMapper(deploymentSpecTemplateSpecTopologySpreadConstraintToTerraform)(struct!.topologySpreadConstraint),
     volume: cdktf.listMapper(deploymentSpecTemplateSpecVolumeToTerraform)(struct!.volume),
   }
 }

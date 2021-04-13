@@ -2149,6 +2149,57 @@ export class DataKubernetesPodSpecToleration extends cdktf.ComplexComputedList {
     return this.getStringAttribute('value');
   }
 }
+export class DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressions extends cdktf.ComplexComputedList {
+
+  // key - computed: true, optional: false, required: false
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+
+  // operator - computed: true, optional: false, required: false
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+
+  // values - computed: true, optional: false, required: false
+  public get values() {
+    return this.getListAttribute('values');
+  }
+}
+export class DataKubernetesPodSpecTopologySpreadConstraintLabelSelector extends cdktf.ComplexComputedList {
+
+  // match_expressions - computed: true, optional: false, required: false
+  public get matchExpressions() {
+    return this.interpolationForAttribute('match_expressions') as any;
+  }
+
+  // match_labels - computed: true, optional: false, required: false
+  public get matchLabels() {
+    return this.interpolationForAttribute('match_labels') as any;
+  }
+}
+export class DataKubernetesPodSpecTopologySpreadConstraint extends cdktf.ComplexComputedList {
+
+  // label_selector - computed: true, optional: false, required: false
+  public get labelSelector() {
+    return this.interpolationForAttribute('label_selector') as any;
+  }
+
+  // max_skew - computed: true, optional: false, required: false
+  public get maxSkew() {
+    return this.getNumberAttribute('max_skew');
+  }
+
+  // topology_key - computed: true, optional: false, required: false
+  public get topologyKey() {
+    return this.getStringAttribute('topology_key');
+  }
+
+  // when_unsatisfiable - computed: true, optional: false, required: false
+  public get whenUnsatisfiable() {
+    return this.getStringAttribute('when_unsatisfiable');
+  }
+}
 export class DataKubernetesPodSpecVolumeAwsElasticBlockStore extends cdktf.ComplexComputedList {
 
   // fs_type - computed: true, optional: false, required: false
@@ -2764,9 +2815,9 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResource
     return this.getStringAttribute('container_name');
   }
 
-  // quantity - computed: true, optional: false, required: false
-  public get quantity() {
-    return this.getStringAttribute('quantity');
+  // divisor - computed: true, optional: false, required: false
+  public get divisor() {
+    return this.getStringAttribute('divisor');
   }
 
   // resource - computed: true, optional: false, required: false
@@ -3282,6 +3333,11 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
   // toleration - computed: true, optional: false, required: false
   public get toleration() {
     return this.interpolationForAttribute('toleration') as any;
+  }
+
+  // topology_spread_constraint - computed: true, optional: false, required: false
+  public get topologySpreadConstraint() {
+    return this.interpolationForAttribute('topology_spread_constraint') as any;
   }
 
   // volume - computed: true, optional: false, required: false

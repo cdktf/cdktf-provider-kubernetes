@@ -2305,6 +2305,60 @@ function cronJobSpecJobTemplateSpecTemplateSpecTolerationToTerraform(struct?: Cr
   }
 }
 
+export interface CronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions {
+  /** The label key that the selector applies to. */
+  readonly key?: string;
+  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  readonly operator?: string;
+  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  readonly values?: string[];
+}
+
+function cronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+  }
+}
+
+export interface CronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelector {
+  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  readonly matchLabels?: { [key: string]: string };
+  /** match_expressions block */
+  readonly matchExpressions?: CronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions[];
+}
+
+function cronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelector): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+  }
+}
+
+export interface CronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraint {
+  /** describes the degree to which pods may be unevenly distributed. */
+  readonly maxSkew?: number;
+  /** the key of node labels. Nodes that have a label with this key and identical values are considered to be in the same topology. */
+  readonly topologyKey?: string;
+  /** indicates how to deal with a pod if it doesn't satisfy the spread constraint. */
+  readonly whenUnsatisfiable?: string;
+  /** label_selector block */
+  readonly labelSelector?: CronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelector[];
+}
+
+function cronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraint): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    max_skew: cdktf.numberToTerraform(struct!.maxSkew),
+    topology_key: cdktf.stringToTerraform(struct!.topologyKey),
+    when_unsatisfiable: cdktf.stringToTerraform(struct!.whenUnsatisfiable),
+    label_selector: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform)(struct!.labelSelector),
+  }
+}
+
 export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStore {
   /** Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore */
   readonly fsType?: string;
@@ -2935,7 +2989,7 @@ function cronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApi
 
 export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
   readonly containerName: string;
-  readonly quantity?: string;
+  readonly divisor?: string;
   /** Resource to select */
   readonly resource: string;
 }
@@ -2944,7 +2998,7 @@ function cronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApi
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
-    quantity: cdktf.stringToTerraform(struct!.quantity),
+    divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
 }
@@ -3339,6 +3393,8 @@ export interface CronJobSpecJobTemplateSpecTemplateSpec {
   readonly securityContext?: CronJobSpecJobTemplateSpecTemplateSpecSecurityContext[];
   /** toleration block */
   readonly toleration?: CronJobSpecJobTemplateSpecTemplateSpecToleration[];
+  /** topology_spread_constraint block */
+  readonly topologySpreadConstraint?: CronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraint[];
   /** volume block */
   readonly volume?: CronJobSpecJobTemplateSpecTemplateSpecVolume[];
 }
@@ -3371,6 +3427,7 @@ function cronJobSpecJobTemplateSpecTemplateSpecToTerraform(struct?: CronJobSpecJ
     readiness_gate: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecReadinessGateToTerraform)(struct!.readinessGate),
     security_context: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecSecurityContextToTerraform)(struct!.securityContext),
     toleration: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecTolerationToTerraform)(struct!.toleration),
+    topology_spread_constraint: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintToTerraform)(struct!.topologySpreadConstraint),
     volume: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecVolumeToTerraform)(struct!.volume),
   }
 }
