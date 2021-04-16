@@ -7,6 +7,8 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface SecretConfig extends cdktf.TerraformMetaArguments {
+  /** A map of the secret data in base64 encoding. Use this for binary data. */
+  readonly binaryData?: { [key: string]: string };
   /** A map of the secret data. */
   readonly data?: { [key: string]: string };
   /** Type of secret */
@@ -58,6 +60,7 @@ export class Secret extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._binaryData = config.binaryData;
     this._data = config.data;
     this._type = config.type;
     this._metadata = config.metadata;
@@ -67,12 +70,28 @@ export class Secret extends cdktf.TerraformResource {
   // ATTRIBUTES
   // ==========
 
-  // data - computed: false, optional: true, required: false
-  private _data?: { [key: string]: string };
-  public get data() {
-    return this.interpolationForAttribute('data') as any;
+  // binary_data - computed: false, optional: true, required: false
+  private _binaryData?: { [key: string]: string };
+  public get binaryData() {
+    return this.interpolationForAttribute('binary_data') as any;
   }
-  public set data(value: { [key: string]: string } ) {
+  public set binaryData(value: { [key: string]: string } ) {
+    this._binaryData = value;
+  }
+  public resetBinaryData() {
+    this._binaryData = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get binaryDataInput() {
+    return this._binaryData
+  }
+
+  // data - computed: true, optional: true, required: false
+  private _data?: { [key: string]: string }
+  public get data(): { [key: string]: string } {
+    return this.interpolationForAttribute('data') as any; // Getting the computed value is not yet implemented
+  }
+  public set data(value: { [key: string]: string }) {
     this._data = value;
   }
   public resetData() {
@@ -123,6 +142,7 @@ export class Secret extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      binary_data: cdktf.hashMapper(cdktf.anyToTerraform)(this._binaryData),
       data: cdktf.hashMapper(cdktf.anyToTerraform)(this._data),
       type: cdktf.stringToTerraform(this._type),
       metadata: cdktf.listMapper(secretMetadataToTerraform)(this._metadata),

@@ -32,6 +32,21 @@ function persistentVolumeMetadataToTerraform(struct?: PersistentVolumeMetadata):
   }
 }
 
+export interface PersistentVolumeSpecClaimRef {
+  /** The name of the PersistentVolumeClaim */
+  readonly name: string;
+  /** The namespace of the PersistentVolumeClaim. Uses 'default' namespace if none is specified. */
+  readonly namespace?: string;
+}
+
+function persistentVolumeSpecClaimRefToTerraform(struct?: PersistentVolumeSpecClaimRef): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    name: cdktf.stringToTerraform(struct!.name),
+    namespace: cdktf.stringToTerraform(struct!.namespace),
+  }
+}
+
 export interface PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressions {
   /** The label key that the selector applies to. */
   readonly key: string;
@@ -160,6 +175,8 @@ export interface PersistentVolumeSpecPersistentVolumeSourceAzureFile {
   readonly readOnly?: boolean;
   /** The name of secret that contains Azure Storage Account Name and Key */
   readonly secretName: string;
+  /** The namespace of the secret that contains Azure Storage Account Name and Key. For Kubernetes up to 1.18.x the default is the same as the Pod. For Kubernetes 1.19.x and later the default is "default" namespace. */
+  readonly secretNamespace?: string;
   /** Share Name */
   readonly shareName: string;
 }
@@ -169,6 +186,7 @@ function persistentVolumeSpecPersistentVolumeSourceAzureFileToTerraform(struct?:
   return {
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_name: cdktf.stringToTerraform(struct!.secretName),
+    secret_namespace: cdktf.stringToTerraform(struct!.secretNamespace),
     share_name: cdktf.stringToTerraform(struct!.shareName),
   }
 }
@@ -696,6 +714,8 @@ export interface PersistentVolumeSpec {
   readonly storageClassName?: string;
   /** Defines if a volume is intended to be used with a formatted filesystem. or to remain in raw block state. */
   readonly volumeMode?: string;
+  /** claim_ref block */
+  readonly claimRef?: PersistentVolumeSpecClaimRef[];
   /** node_affinity block */
   readonly nodeAffinity?: PersistentVolumeSpecNodeAffinity[];
   /** persistent_volume_source block */
@@ -711,6 +731,7 @@ function persistentVolumeSpecToTerraform(struct?: PersistentVolumeSpec): any {
     persistent_volume_reclaim_policy: cdktf.stringToTerraform(struct!.persistentVolumeReclaimPolicy),
     storage_class_name: cdktf.stringToTerraform(struct!.storageClassName),
     volume_mode: cdktf.stringToTerraform(struct!.volumeMode),
+    claim_ref: cdktf.listMapper(persistentVolumeSpecClaimRefToTerraform)(struct!.claimRef),
     node_affinity: cdktf.listMapper(persistentVolumeSpecNodeAffinityToTerraform)(struct!.nodeAffinity),
     persistent_volume_source: cdktf.listMapper(persistentVolumeSpecPersistentVolumeSourceToTerraform)(struct!.persistentVolumeSource),
   }
