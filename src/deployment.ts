@@ -2426,6 +2426,8 @@ export interface DeploymentSpecTemplateSpecVolumeAzureFile {
   readonly readOnly?: boolean;
   /** The name of secret that contains Azure Storage Account Name and Key */
   readonly secretName: string;
+  /** The namespace of the secret that contains Azure Storage Account Name and Key. For Kubernetes up to 1.18.x the default is the same as the Pod. For Kubernetes 1.19.x and later the default is "default" namespace. */
+  readonly secretNamespace?: string;
   /** Share Name */
   readonly shareName: string;
 }
@@ -2435,6 +2437,7 @@ function deploymentSpecTemplateSpecVolumeAzureFileToTerraform(struct?: Deploymen
   return {
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_name: cdktf.stringToTerraform(struct!.secretName),
+    secret_namespace: cdktf.stringToTerraform(struct!.secretNamespace),
     share_name: cdktf.stringToTerraform(struct!.shareName),
   }
 }

@@ -2266,6 +2266,11 @@ export class DataKubernetesPodSpecVolumeAzureFile extends cdktf.ComplexComputedL
     return this.getStringAttribute('secret_name');
   }
 
+  // secret_namespace - computed: true, optional: false, required: false
+  public get secretNamespace() {
+    return this.getStringAttribute('secret_namespace');
+  }
+
   // share_name - computed: true, optional: false, required: false
   public get shareName() {
     return this.getStringAttribute('share_name');
