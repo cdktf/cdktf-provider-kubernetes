@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.34](https://github.com/terraform-cdk-providers/cdktf-provider-kubernetes/compare/v0.2.33...v0.2.34) (2021-04-22)
+
 ### [0.2.33](https://github.com/terraform-cdk-providers/cdktf-provider-kubernetes/compare/v0.2.32...v0.2.33) (2021-04-16)
 
 ### [0.2.32](https://github.com/terraform-cdk-providers/cdktf-provider-kubernetes/compare/v0.2.31...v0.2.32) (2021-04-16)
