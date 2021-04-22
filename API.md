@@ -2554,12 +2554,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesIngressSpec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesIngressSpec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -2586,12 +2586,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesIngressSpecBackend(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesIngressSpecBackend(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -2617,12 +2617,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesIngressSpecRule(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesIngressSpecRule(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -2648,12 +2648,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesIngressSpecRuleHttp(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesIngressSpecRuleHttp(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -2678,12 +2678,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesIngressSpecRuleHttpPath(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesIngressSpecRuleHttpPath(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -2709,12 +2709,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesIngressSpecRuleHttpPathBackend(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesIngressSpecRuleHttpPathBackend(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -2740,12 +2740,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesIngressSpecTls(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesIngressSpecTls(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -2771,12 +2771,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesIngressStatus(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesIngressStatus(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -2801,12 +2801,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesIngressStatusLoadBalancer(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesIngressStatusLoadBalancer(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -2831,12 +2831,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesIngressStatusLoadBalancerIngress(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesIngressStatusLoadBalancerIngress(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -2928,12 +2928,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesNamespaceSpec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesNamespaceSpec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3093,12 +3093,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3149,12 +3149,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinity(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinity(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3181,12 +3181,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityNodeAffinity(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityNodeAffinity(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3212,12 +3212,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3243,12 +3243,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3273,12 +3273,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3305,12 +3305,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3335,12 +3335,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3365,12 +3365,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3397,12 +3397,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAffinity(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAffinity(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3428,12 +3428,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3459,12 +3459,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3491,12 +3491,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3522,12 +3522,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3554,12 +3554,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3586,12 +3586,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3617,12 +3617,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3649,12 +3649,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAntiAffinity(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAntiAffinity(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3680,12 +3680,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3711,12 +3711,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3743,12 +3743,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3774,12 +3774,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3806,12 +3806,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3838,12 +3838,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3869,12 +3869,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3901,12 +3901,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainer(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainer(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3951,12 +3951,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerEnv(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerEnv(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -3983,12 +3983,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerEnvFrom(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerEnvFrom(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4015,12 +4015,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerEnvFromConfigMapRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerEnvFromConfigMapRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4046,12 +4046,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerEnvFromSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerEnvFromSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4077,12 +4077,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerEnvValueFrom(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerEnvValueFrom(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4110,12 +4110,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4142,12 +4142,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerEnvValueFromFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerEnvValueFromFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4173,12 +4173,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerEnvValueFromResourceFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerEnvValueFromResourceFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4205,12 +4205,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerEnvValueFromSecretKeyRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerEnvValueFromSecretKeyRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4237,12 +4237,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLifecycle(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLifecycle(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4268,12 +4268,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLifecyclePostStart(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLifecyclePostStart(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4300,12 +4300,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLifecyclePostStartExec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLifecyclePostStartExec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4330,12 +4330,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLifecyclePostStartHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLifecyclePostStartHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4364,12 +4364,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4395,12 +4395,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLifecyclePostStartTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLifecyclePostStartTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4425,12 +4425,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLifecyclePreStop(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLifecyclePreStop(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4457,12 +4457,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLifecyclePreStopExec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLifecyclePreStopExec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4487,12 +4487,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLifecyclePreStopHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLifecyclePreStopHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4521,12 +4521,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4552,12 +4552,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLifecyclePreStopTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLifecyclePreStopTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4582,12 +4582,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLivenessProbe(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLivenessProbe(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4619,12 +4619,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLivenessProbeExec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLivenessProbeExec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4649,12 +4649,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLivenessProbeHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLivenessProbeHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4683,12 +4683,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4714,12 +4714,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerLivenessProbeTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerLivenessProbeTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4744,12 +4744,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerPort(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerPort(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4778,12 +4778,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerReadinessProbe(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerReadinessProbe(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4815,12 +4815,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerReadinessProbeExec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerReadinessProbeExec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4845,12 +4845,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerReadinessProbeHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerReadinessProbeHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4879,12 +4879,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4910,12 +4910,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerReadinessProbeTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerReadinessProbeTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4940,12 +4940,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerResources(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerResources(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -4971,12 +4971,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerSecurityContext(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerSecurityContext(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5008,12 +5008,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerSecurityContextCapabilities(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerSecurityContextCapabilities(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5039,12 +5039,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerSecurityContextSeLinuxOptions(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerSecurityContextSeLinuxOptions(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5072,12 +5072,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerStartupProbe(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerStartupProbe(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5109,12 +5109,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerStartupProbeExec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerStartupProbeExec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5139,12 +5139,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerStartupProbeHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerStartupProbeHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5173,12 +5173,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5204,12 +5204,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerStartupProbeTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerStartupProbeTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5234,12 +5234,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecContainerVolumeMount(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecContainerVolumeMount(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5268,12 +5268,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecDnsConfig(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecDnsConfig(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5300,12 +5300,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecDnsConfigOption(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecDnsConfigOption(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5331,12 +5331,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecHostAliases(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecHostAliases(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5362,12 +5362,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecImagePullSecrets(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecImagePullSecrets(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5392,12 +5392,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainer(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainer(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5442,12 +5442,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerEnv(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerEnv(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5474,12 +5474,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerEnvFrom(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerEnvFrom(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5506,12 +5506,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerEnvFromConfigMapRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerEnvFromConfigMapRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5537,12 +5537,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerEnvFromSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerEnvFromSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5568,12 +5568,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerEnvValueFrom(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerEnvValueFrom(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5601,12 +5601,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5633,12 +5633,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerEnvValueFromFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerEnvValueFromFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5664,12 +5664,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5696,12 +5696,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5728,12 +5728,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLifecycle(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLifecycle(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5759,12 +5759,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLifecyclePostStart(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLifecyclePostStart(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5791,12 +5791,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLifecyclePostStartExec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLifecyclePostStartExec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5821,12 +5821,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5855,12 +5855,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5886,12 +5886,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5916,12 +5916,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLifecyclePreStop(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLifecyclePreStop(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5948,12 +5948,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLifecyclePreStopExec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLifecyclePreStopExec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -5978,12 +5978,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6012,12 +6012,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6043,12 +6043,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6073,12 +6073,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLivenessProbe(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLivenessProbe(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6110,12 +6110,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLivenessProbeExec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLivenessProbeExec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6140,12 +6140,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLivenessProbeHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLivenessProbeHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6174,12 +6174,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6205,12 +6205,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerLivenessProbeTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerLivenessProbeTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6235,12 +6235,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerPort(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerPort(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6269,12 +6269,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerReadinessProbe(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerReadinessProbe(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6306,12 +6306,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerReadinessProbeExec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerReadinessProbeExec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6336,12 +6336,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerReadinessProbeHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerReadinessProbeHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6370,12 +6370,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6401,12 +6401,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerReadinessProbeTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerReadinessProbeTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6431,12 +6431,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerResources(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerResources(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6462,12 +6462,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerSecurityContext(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerSecurityContext(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6499,12 +6499,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerSecurityContextCapabilities(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerSecurityContextCapabilities(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6530,12 +6530,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptions(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptions(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6563,12 +6563,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerStartupProbe(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerStartupProbe(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6600,12 +6600,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerStartupProbeExec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerStartupProbeExec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6630,12 +6630,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerStartupProbeHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerStartupProbeHttpGet(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6664,12 +6664,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeader(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6695,12 +6695,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerStartupProbeTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerStartupProbeTcpSocket(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6725,12 +6725,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecInitContainerVolumeMount(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecInitContainerVolumeMount(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6759,12 +6759,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecReadinessGate(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecReadinessGate(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6789,12 +6789,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecSecurityContext(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecSecurityContext(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6825,12 +6825,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecSecurityContextSeLinuxOptions(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecSecurityContextSeLinuxOptions(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6858,12 +6858,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecSecurityContextSysctl(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecSecurityContextSysctl(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6889,12 +6889,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecToleration(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecToleration(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6923,12 +6923,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecTopologySpreadConstraint(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecTopologySpreadConstraint(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6956,12 +6956,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecTopologySpreadConstraintLabelSelector(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecTopologySpreadConstraintLabelSelector(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -6987,12 +6987,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressions(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7019,12 +7019,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolume(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolume(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7075,12 +7075,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeAwsElasticBlockStore(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeAwsElasticBlockStore(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7108,12 +7108,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeAzureDisk(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeAzureDisk(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7143,12 +7143,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeAzureFile(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeAzureFile(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7176,12 +7176,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeCephFs(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeCephFs(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7211,12 +7211,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeCephFsSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeCephFsSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7242,12 +7242,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeCinder(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeCinder(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7274,12 +7274,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeConfigMap(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeConfigMap(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7307,12 +7307,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeConfigMapItems(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeConfigMapItems(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7339,12 +7339,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeCsi(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeCsi(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7377,12 +7377,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeCsiControllerExpandSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeCsiControllerExpandSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7408,12 +7408,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeCsiControllerPublishSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeCsiControllerPublishSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7439,12 +7439,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeCsiNodePublishSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeCsiNodePublishSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7470,12 +7470,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeCsiNodeStageSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeCsiNodeStageSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7501,12 +7501,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeDownwardApi(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeDownwardApi(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7532,12 +7532,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeDownwardApiItems(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeDownwardApiItems(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7565,12 +7565,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeDownwardApiItemsFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeDownwardApiItemsFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7596,12 +7596,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7628,12 +7628,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeEmptyDir(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeEmptyDir(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7659,12 +7659,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeFc(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeFc(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7692,12 +7692,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeFlexVolume(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeFlexVolume(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7726,12 +7726,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeFlexVolumeSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeFlexVolumeSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7757,12 +7757,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeFlocker(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeFlocker(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7788,12 +7788,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeGcePersistentDisk(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeGcePersistentDisk(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7821,12 +7821,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeGitRepo(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeGitRepo(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7853,12 +7853,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeGlusterfs(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeGlusterfs(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7885,12 +7885,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeHostPath(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeHostPath(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7916,12 +7916,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeIscsi(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeIscsi(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7951,12 +7951,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeLocal(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeLocal(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -7981,12 +7981,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeNfs(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeNfs(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8013,12 +8013,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumePersistentVolumeClaim(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumePersistentVolumeClaim(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8044,12 +8044,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumePhotonPersistentDisk(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumePhotonPersistentDisk(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8075,12 +8075,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeProjected(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeProjected(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8106,12 +8106,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeProjectedSources(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeProjectedSources(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8139,12 +8139,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeProjectedSourcesConfigMap(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeProjectedSourcesConfigMap(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8171,12 +8171,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItems(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItems(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8203,12 +8203,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApi(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApi(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8233,12 +8233,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItems(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItems(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8266,12 +8266,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8297,12 +8297,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8329,12 +8329,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeProjectedSourcesSecret(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeProjectedSourcesSecret(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8361,12 +8361,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeProjectedSourcesSecretItems(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeProjectedSourcesSecretItems(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8393,12 +8393,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountToken(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountToken(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8425,12 +8425,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeQuobyte(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeQuobyte(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8459,12 +8459,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeRbd(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeRbd(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8496,12 +8496,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeRbdSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeRbdSecretRef(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8527,12 +8527,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeSecret(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeSecret(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8560,12 +8560,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeSecretItems(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeSecretItems(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8592,12 +8592,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesPodSpecVolumeVsphereVolume(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesPodSpecVolumeVsphereVolume(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8850,12 +8850,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesServiceAccountImagePullSecret(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesServiceAccountImagePullSecret(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8880,12 +8880,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesServiceAccountSecret(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesServiceAccountSecret(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8910,12 +8910,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesServiceSpec(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesServiceSpec(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8951,12 +8951,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesServiceSpecPort(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesServiceSpecPort(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -8985,12 +8985,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesServiceStatus(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesServiceStatus(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -9015,12 +9015,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesServiceStatusLoadBalancer(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesServiceStatusLoadBalancer(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -9045,12 +9045,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataKubernetesServiceStatusLoadBalancerIngress(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataKubernetesServiceStatusLoadBalancerIngress(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -9628,12 +9628,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new IngressStatus(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new IngressStatus(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -9658,12 +9658,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new IngressStatusLoadBalancer(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new IngressStatusLoadBalancer(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -9688,12 +9688,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new IngressStatusLoadBalancerIngress(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new IngressStatusLoadBalancerIngress(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -11329,12 +11329,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new ServiceStatus(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new ServiceStatus(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -11359,12 +11359,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new ServiceStatusLoadBalancer(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new ServiceStatusLoadBalancer(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -11389,12 +11389,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new ServiceStatusLoadBalancerIngress(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new ServiceStatusLoadBalancerIngress(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
