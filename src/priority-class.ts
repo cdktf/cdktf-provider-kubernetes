@@ -7,23 +7,55 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface PriorityClassConfig extends cdktf.TerraformMetaArguments {
-  /** An arbitrary string that usually provides guidelines on when this priority class should be used. */
+  /**
+  * An arbitrary string that usually provides guidelines on when this priority class should be used.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html#description PriorityClass#description}
+  */
   readonly description?: string;
-  /** Specifies whether this PriorityClass should be considered as the default priority for pods that do not have any priority class. Only one PriorityClass can be marked as `globalDefault`. However, if more than one PriorityClasses exists with their `globalDefault` field set to true, the smallest value of such global default PriorityClasses will be used as the default priority. */
+  /**
+  * Specifies whether this PriorityClass should be considered as the default priority for pods that do not have any priority class. Only one PriorityClass can be marked as `globalDefault`. However, if more than one PriorityClasses exists with their `globalDefault` field set to true, the smallest value of such global default PriorityClasses will be used as the default priority.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html#global_default PriorityClass#global_default}
+  */
   readonly globalDefault?: boolean;
-  /** The value of this priority class. This is the actual priority that pods receive when they have the name of this class in their pod spec. */
+  /**
+  * The value of this priority class. This is the actual priority that pods receive when they have the name of this class in their pod spec.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html#value PriorityClass#value}
+  */
   readonly value: number;
-  /** metadata block */
+  /**
+  * metadata block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html#metadata PriorityClass#metadata}
+  */
   readonly metadata: PriorityClassMetadata[];
 }
 export interface PriorityClassMetadata {
-  /** An unstructured key value map stored with the priority class that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
+  /**
+  * An unstructured key value map stored with the priority class that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html#annotations PriorityClass#annotations}
+  */
   readonly annotations?: { [key: string]: string };
-  /** Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency */
+  /**
+  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html#generate_name PriorityClass#generate_name}
+  */
   readonly generateName?: string;
-  /** Map of string keys and values that can be used to organize and categorize (scope and select) the priority class. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels */
+  /**
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the priority class. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html#labels PriorityClass#labels}
+  */
   readonly labels?: { [key: string]: string };
-  /** Name of the priority class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the priority class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html#name PriorityClass#name}
+  */
   readonly name?: string;
 }
 
@@ -38,14 +70,22 @@ function priorityClassMetadataToTerraform(struct?: PriorityClassMetadata): any {
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html kubernetes_priority_class}
+*/
 export class PriorityClass extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html kubernetes_priority_class} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options PriorityClassConfig
+  */
   public constructor(scope: Construct, id: string, config: PriorityClassConfig) {
     super(scope, id, {
       terraformResourceType: 'kubernetes_priority_class',

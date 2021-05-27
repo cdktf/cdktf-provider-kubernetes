@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/data_kubernetes_service_account.html
+// https://www.terraform.io/docs/providers/kubernetes/d/service_account.html
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -7,7 +7,11 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface DataKubernetesServiceAccountConfig extends cdktf.TerraformMetaArguments {
-  /** metadata block */
+  /**
+  * metadata block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html#metadata DataKubernetesServiceAccount#metadata}
+  */
   readonly metadata: DataKubernetesServiceAccountMetadata[];
 }
 export class DataKubernetesServiceAccountImagePullSecret extends cdktf.ComplexComputedList {
@@ -25,13 +29,29 @@ export class DataKubernetesServiceAccountSecret extends cdktf.ComplexComputedLis
   }
 }
 export interface DataKubernetesServiceAccountMetadata {
-  /** An unstructured key value map stored with the service account that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
+  /**
+  * An unstructured key value map stored with the service account that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html#annotations DataKubernetesServiceAccount#annotations}
+  */
   readonly annotations?: { [key: string]: string };
-  /** Map of string keys and values that can be used to organize and categorize (scope and select) the service account. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels */
+  /**
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the service account. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html#labels DataKubernetesServiceAccount#labels}
+  */
   readonly labels?: { [key: string]: string };
-  /** Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html#name DataKubernetesServiceAccount#name}
+  */
   readonly name?: string;
-  /** Namespace defines the space within which name of the service account must be unique. */
+  /**
+  * Namespace defines the space within which name of the service account must be unique.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html#namespace DataKubernetesServiceAccount#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -46,14 +66,22 @@ function dataKubernetesServiceAccountMetadataToTerraform(struct?: DataKubernetes
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html kubernetes_service_account}
+*/
 export class DataKubernetesServiceAccount extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html kubernetes_service_account} Data Source
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options DataKubernetesServiceAccountConfig
+  */
   public constructor(scope: Construct, id: string, config: DataKubernetesServiceAccountConfig) {
     super(scope, id, {
       terraformResourceType: 'kubernetes_service_account',

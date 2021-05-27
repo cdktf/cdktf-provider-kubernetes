@@ -4,17 +4,17 @@
 
 Name|Description
 ----|-----------
-[ApiService](#cdktf-provider-kubernetes-apiservice)|*No description*
-[CertificateSigningRequest](#cdktf-provider-kubernetes-certificatesigningrequest)|*No description*
-[ClusterRole](#cdktf-provider-kubernetes-clusterrole)|*No description*
-[ClusterRoleBinding](#cdktf-provider-kubernetes-clusterrolebinding)|*No description*
-[ConfigMap](#cdktf-provider-kubernetes-configmap)|*No description*
-[CronJob](#cdktf-provider-kubernetes-cronjob)|*No description*
-[CsiDriver](#cdktf-provider-kubernetes-csidriver)|*No description*
-[Daemonset](#cdktf-provider-kubernetes-daemonset)|*No description*
-[DataKubernetesAllNamespaces](#cdktf-provider-kubernetes-datakubernetesallnamespaces)|*No description*
-[DataKubernetesConfigMap](#cdktf-provider-kubernetes-datakubernetesconfigmap)|*No description*
-[DataKubernetesIngress](#cdktf-provider-kubernetes-datakubernetesingress)|*No description*
+[ApiService](#cdktf-provider-kubernetes-apiservice)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service.html kubernetes_api_service}.
+[CertificateSigningRequest](#cdktf-provider-kubernetes-certificatesigningrequest)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html kubernetes_certificate_signing_request}.
+[ClusterRole](#cdktf-provider-kubernetes-clusterrole)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role.html kubernetes_cluster_role}.
+[ClusterRoleBinding](#cdktf-provider-kubernetes-clusterrolebinding)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html kubernetes_cluster_role_binding}.
+[ConfigMap](#cdktf-provider-kubernetes-configmap)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/config_map.html kubernetes_config_map}.
+[CronJob](#cdktf-provider-kubernetes-cronjob)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html kubernetes_cron_job}.
+[CsiDriver](#cdktf-provider-kubernetes-csidriver)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/csi_driver.html kubernetes_csi_driver}.
+[Daemonset](#cdktf-provider-kubernetes-daemonset)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html kubernetes_daemonset}.
+[DataKubernetesAllNamespaces](#cdktf-provider-kubernetes-datakubernetesallnamespaces)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/all_namespaces.html kubernetes_all_namespaces}.
+[DataKubernetesConfigMap](#cdktf-provider-kubernetes-datakubernetesconfigmap)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map.html kubernetes_config_map}.
+[DataKubernetesIngress](#cdktf-provider-kubernetes-datakubernetesingress)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress.html kubernetes_ingress}.
 [DataKubernetesIngressSpec](#cdktf-provider-kubernetes-datakubernetesingressspec)|*No description*
 [DataKubernetesIngressSpecBackend](#cdktf-provider-kubernetes-datakubernetesingressspecbackend)|*No description*
 [DataKubernetesIngressSpecRule](#cdktf-provider-kubernetes-datakubernetesingressspecrule)|*No description*
@@ -25,10 +25,10 @@ Name|Description
 [DataKubernetesIngressStatus](#cdktf-provider-kubernetes-datakubernetesingressstatus)|*No description*
 [DataKubernetesIngressStatusLoadBalancer](#cdktf-provider-kubernetes-datakubernetesingressstatusloadbalancer)|*No description*
 [DataKubernetesIngressStatusLoadBalancerIngress](#cdktf-provider-kubernetes-datakubernetesingressstatusloadbalanceringress)|*No description*
-[DataKubernetesNamespace](#cdktf-provider-kubernetes-datakubernetesnamespace)|*No description*
+[DataKubernetesNamespace](#cdktf-provider-kubernetes-datakubernetesnamespace)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace.html kubernetes_namespace}.
 [DataKubernetesNamespaceSpec](#cdktf-provider-kubernetes-datakubernetesnamespacespec)|*No description*
-[DataKubernetesPersistentVolumeClaim](#cdktf-provider-kubernetes-datakubernetespersistentvolumeclaim)|*No description*
-[DataKubernetesPod](#cdktf-provider-kubernetes-datakubernetespod)|*No description*
+[DataKubernetesPersistentVolumeClaim](#cdktf-provider-kubernetes-datakubernetespersistentvolumeclaim)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/persistent_volume_claim.html kubernetes_persistent_volume_claim}.
+[DataKubernetesPod](#cdktf-provider-kubernetes-datakubernetespod)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html kubernetes_pod}.
 [DataKubernetesPodSpec](#cdktf-provider-kubernetes-datakubernetespodspec)|*No description*
 [DataKubernetesPodSpecAffinity](#cdktf-provider-kubernetes-datakubernetespodspecaffinity)|*No description*
 [DataKubernetesPodSpecAffinityNodeAffinity](#cdktf-provider-kubernetes-datakubernetespodspecaffinitynodeaffinity)|*No description*
@@ -199,9 +199,9 @@ Name|Description
 [DataKubernetesPodSpecVolumeSecret](#cdktf-provider-kubernetes-datakubernetespodspecvolumesecret)|*No description*
 [DataKubernetesPodSpecVolumeSecretItems](#cdktf-provider-kubernetes-datakubernetespodspecvolumesecretitems)|*No description*
 [DataKubernetesPodSpecVolumeVsphereVolume](#cdktf-provider-kubernetes-datakubernetespodspecvolumevspherevolume)|*No description*
-[DataKubernetesSecret](#cdktf-provider-kubernetes-datakubernetessecret)|*No description*
-[DataKubernetesService](#cdktf-provider-kubernetes-datakubernetesservice)|*No description*
-[DataKubernetesServiceAccount](#cdktf-provider-kubernetes-datakubernetesserviceaccount)|*No description*
+[DataKubernetesSecret](#cdktf-provider-kubernetes-datakubernetessecret)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html kubernetes_secret}.
+[DataKubernetesService](#cdktf-provider-kubernetes-datakubernetesservice)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html kubernetes_service}.
+[DataKubernetesServiceAccount](#cdktf-provider-kubernetes-datakubernetesserviceaccount)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html kubernetes_service_account}.
 [DataKubernetesServiceAccountImagePullSecret](#cdktf-provider-kubernetes-datakubernetesserviceaccountimagepullsecret)|*No description*
 [DataKubernetesServiceAccountSecret](#cdktf-provider-kubernetes-datakubernetesserviceaccountsecret)|*No description*
 [DataKubernetesServiceSpec](#cdktf-provider-kubernetes-datakubernetesservicespec)|*No description*
@@ -209,40 +209,40 @@ Name|Description
 [DataKubernetesServiceStatus](#cdktf-provider-kubernetes-datakubernetesservicestatus)|*No description*
 [DataKubernetesServiceStatusLoadBalancer](#cdktf-provider-kubernetes-datakubernetesservicestatusloadbalancer)|*No description*
 [DataKubernetesServiceStatusLoadBalancerIngress](#cdktf-provider-kubernetes-datakubernetesservicestatusloadbalanceringress)|*No description*
-[DataKubernetesStorageClass](#cdktf-provider-kubernetes-datakubernetesstorageclass)|*No description*
-[DefaultServiceAccount](#cdktf-provider-kubernetes-defaultserviceaccount)|*No description*
-[Deployment](#cdktf-provider-kubernetes-deployment)|*No description*
-[Endpoints](#cdktf-provider-kubernetes-endpoints)|*No description*
-[HorizontalPodAutoscaler](#cdktf-provider-kubernetes-horizontalpodautoscaler)|*No description*
-[Ingress](#cdktf-provider-kubernetes-ingress)|*No description*
+[DataKubernetesStorageClass](#cdktf-provider-kubernetes-datakubernetesstorageclass)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/storage_class.html kubernetes_storage_class}.
+[DefaultServiceAccount](#cdktf-provider-kubernetes-defaultserviceaccount)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account.html kubernetes_default_service_account}.
+[Deployment](#cdktf-provider-kubernetes-deployment)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html kubernetes_deployment}.
+[Endpoints](#cdktf-provider-kubernetes-endpoints)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/endpoints.html kubernetes_endpoints}.
+[HorizontalPodAutoscaler](#cdktf-provider-kubernetes-horizontalpodautoscaler)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html kubernetes_horizontal_pod_autoscaler}.
+[Ingress](#cdktf-provider-kubernetes-ingress)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress.html kubernetes_ingress}.
 [IngressStatus](#cdktf-provider-kubernetes-ingressstatus)|*No description*
 [IngressStatusLoadBalancer](#cdktf-provider-kubernetes-ingressstatusloadbalancer)|*No description*
 [IngressStatusLoadBalancerIngress](#cdktf-provider-kubernetes-ingressstatusloadbalanceringress)|*No description*
-[Job](#cdktf-provider-kubernetes-job)|*No description*
-[KubernetesProvider](#cdktf-provider-kubernetes-kubernetesprovider)|*No description*
-[LimitRange](#cdktf-provider-kubernetes-limitrange)|*No description*
-[MutatingWebhookConfiguration](#cdktf-provider-kubernetes-mutatingwebhookconfiguration)|*No description*
-[Namespace](#cdktf-provider-kubernetes-namespace)|*No description*
-[NetworkPolicy](#cdktf-provider-kubernetes-networkpolicy)|*No description*
-[PersistentVolume](#cdktf-provider-kubernetes-persistentvolume)|*No description*
-[PersistentVolumeClaim](#cdktf-provider-kubernetes-persistentvolumeclaim)|*No description*
-[Pod](#cdktf-provider-kubernetes-pod)|*No description*
-[PodDisruptionBudget](#cdktf-provider-kubernetes-poddisruptionbudget)|*No description*
-[PodSecurityPolicy](#cdktf-provider-kubernetes-podsecuritypolicy)|*No description*
-[PriorityClass](#cdktf-provider-kubernetes-priorityclass)|*No description*
-[ReplicationController](#cdktf-provider-kubernetes-replicationcontroller)|*No description*
-[ResourceQuota](#cdktf-provider-kubernetes-resourcequota)|*No description*
-[Role](#cdktf-provider-kubernetes-role)|*No description*
-[RoleBinding](#cdktf-provider-kubernetes-rolebinding)|*No description*
-[Secret](#cdktf-provider-kubernetes-secret)|*No description*
-[Service](#cdktf-provider-kubernetes-service)|*No description*
-[ServiceAccount](#cdktf-provider-kubernetes-serviceaccount)|*No description*
+[Job](#cdktf-provider-kubernetes-job)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html kubernetes_job}.
+[KubernetesProvider](#cdktf-provider-kubernetes-kubernetesprovider)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes kubernetes}.
+[LimitRange](#cdktf-provider-kubernetes-limitrange)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html kubernetes_limit_range}.
+[MutatingWebhookConfiguration](#cdktf-provider-kubernetes-mutatingwebhookconfiguration)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html kubernetes_mutating_webhook_configuration}.
+[Namespace](#cdktf-provider-kubernetes-namespace)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/namespace.html kubernetes_namespace}.
+[NetworkPolicy](#cdktf-provider-kubernetes-networkpolicy)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/network_policy.html kubernetes_network_policy}.
+[PersistentVolume](#cdktf-provider-kubernetes-persistentvolume)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html kubernetes_persistent_volume}.
+[PersistentVolumeClaim](#cdktf-provider-kubernetes-persistentvolumeclaim)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_claim.html kubernetes_persistent_volume_claim}.
+[Pod](#cdktf-provider-kubernetes-pod)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html kubernetes_pod}.
+[PodDisruptionBudget](#cdktf-provider-kubernetes-poddisruptionbudget)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget.html kubernetes_pod_disruption_budget}.
+[PodSecurityPolicy](#cdktf-provider-kubernetes-podsecuritypolicy)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html kubernetes_pod_security_policy}.
+[PriorityClass](#cdktf-provider-kubernetes-priorityclass)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html kubernetes_priority_class}.
+[ReplicationController](#cdktf-provider-kubernetes-replicationcontroller)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html kubernetes_replication_controller}.
+[ResourceQuota](#cdktf-provider-kubernetes-resourcequota)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html kubernetes_resource_quota}.
+[Role](#cdktf-provider-kubernetes-role)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html kubernetes_role}.
+[RoleBinding](#cdktf-provider-kubernetes-rolebinding)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding.html kubernetes_role_binding}.
+[Secret](#cdktf-provider-kubernetes-secret)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html kubernetes_secret}.
+[Service](#cdktf-provider-kubernetes-service)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/service.html kubernetes_service}.
+[ServiceAccount](#cdktf-provider-kubernetes-serviceaccount)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/service_account.html kubernetes_service_account}.
 [ServiceStatus](#cdktf-provider-kubernetes-servicestatus)|*No description*
 [ServiceStatusLoadBalancer](#cdktf-provider-kubernetes-servicestatusloadbalancer)|*No description*
 [ServiceStatusLoadBalancerIngress](#cdktf-provider-kubernetes-servicestatusloadbalanceringress)|*No description*
-[StatefulSet](#cdktf-provider-kubernetes-statefulset)|*No description*
-[StorageClass](#cdktf-provider-kubernetes-storageclass)|*No description*
-[ValidatingWebhookConfiguration](#cdktf-provider-kubernetes-validatingwebhookconfiguration)|*No description*
+[StatefulSet](#cdktf-provider-kubernetes-statefulset)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html kubernetes_stateful_set}.
+[StorageClass](#cdktf-provider-kubernetes-storageclass)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class.html kubernetes_storage_class}.
+[ValidatingWebhookConfiguration](#cdktf-provider-kubernetes-validatingwebhookconfiguration)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html kubernetes_validating_webhook_configuration}.
 
 
 **Structs**
@@ -1742,7 +1742,7 @@ Name|Description
 
 ## class ApiService  <a id="cdktf-provider-kubernetes-apiservice"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service.html kubernetes_api_service}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -1750,14 +1750,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service.html kubernetes_api_service} Resource.
 
 ```ts
 new ApiService(scope: Construct, id: string, config: ApiServiceConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ApiServiceConfig](#cdktf-provider-kubernetes-apiserviceconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -1798,7 +1798,7 @@ __Returns__:
 
 ## class CertificateSigningRequest  <a id="cdktf-provider-kubernetes-certificatesigningrequest"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html kubernetes_certificate_signing_request}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -1806,14 +1806,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html kubernetes_certificate_signing_request} Resource.
 
 ```ts
 new CertificateSigningRequest(scope: Construct, id: string, config: CertificateSigningRequestConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[CertificateSigningRequestConfig](#cdktf-provider-kubernetes-certificatesigningrequestconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -1885,7 +1885,7 @@ __Returns__:
 
 ## class ClusterRole  <a id="cdktf-provider-kubernetes-clusterrole"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role.html kubernetes_cluster_role}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -1893,14 +1893,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role.html kubernetes_cluster_role} Resource.
 
 ```ts
 new ClusterRole(scope: Construct, id: string, config: ClusterRoleConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ClusterRoleConfig](#cdktf-provider-kubernetes-clusterroleconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -1968,7 +1968,7 @@ __Returns__:
 
 ## class ClusterRoleBinding  <a id="cdktf-provider-kubernetes-clusterrolebinding"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html kubernetes_cluster_role_binding}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -1976,14 +1976,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html kubernetes_cluster_role_binding} Resource.
 
 ```ts
 new ClusterRoleBinding(scope: Construct, id: string, config: ClusterRoleBindingConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ClusterRoleBindingConfig](#cdktf-provider-kubernetes-clusterrolebindingconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -2027,7 +2027,7 @@ __Returns__:
 
 ## class ConfigMap  <a id="cdktf-provider-kubernetes-configmap"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/config_map.html kubernetes_config_map}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -2035,14 +2035,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/config_map.html kubernetes_config_map} Resource.
 
 ```ts
 new ConfigMap(scope: Construct, id: string, config: ConfigMapConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ConfigMapConfig](#cdktf-provider-kubernetes-configmapconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -2110,7 +2110,7 @@ __Returns__:
 
 ## class CronJob  <a id="cdktf-provider-kubernetes-cronjob"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html kubernetes_cron_job}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -2118,14 +2118,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html kubernetes_cron_job} Resource.
 
 ```ts
 new CronJob(scope: Construct, id: string, config: CronJobConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[CronJobConfig](#cdktf-provider-kubernetes-cronjobconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -2181,7 +2181,7 @@ __Returns__:
 
 ## class CsiDriver  <a id="cdktf-provider-kubernetes-csidriver"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/csi_driver.html kubernetes_csi_driver}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -2189,14 +2189,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/csi_driver.html kubernetes_csi_driver} Resource.
 
 ```ts
 new CsiDriver(scope: Construct, id: string, config: CsiDriverConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[CsiDriverConfig](#cdktf-provider-kubernetes-csidriverconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -2249,7 +2249,7 @@ __Returns__:
 
 ## class Daemonset  <a id="cdktf-provider-kubernetes-daemonset"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html kubernetes_daemonset}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -2257,14 +2257,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html kubernetes_daemonset} Resource.
 
 ```ts
 new Daemonset(scope: Construct, id: string, config: DaemonsetConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DaemonsetConfig](#cdktf-provider-kubernetes-daemonsetconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -2273,7 +2273,7 @@ new Daemonset(scope: Construct, id: string, config: DaemonsetConfig)
   * **metadata** (<code>Array<[DaemonsetMetadata](#cdktf-provider-kubernetes-daemonsetmetadata)></code>)  metadata block. 
   * **spec** (<code>Array<[DaemonsetSpec](#cdktf-provider-kubernetes-daemonsetspec)></code>)  spec block. 
   * **timeouts** (<code>[DaemonsetTimeouts](#cdktf-provider-kubernetes-daemonsettimeouts)</code>)  timeouts block. __*Optional*__
-  * **waitForRollout** (<code>boolean</code>)  Wait for the rollout of the deployment to complete. __*Optional*__
+  * **waitForRollout** (<code>boolean</code>)  Wait for the rollout of the deployment to complete. Defaults to true. __*Optional*__
 
 
 
@@ -2335,7 +2335,7 @@ __Returns__:
 
 ## class DataKubernetesAllNamespaces  <a id="cdktf-provider-kubernetes-datakubernetesallnamespaces"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/all_namespaces.html kubernetes_all_namespaces}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -2343,14 +2343,14 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/all_namespaces.html kubernetes_all_namespaces} Data Source.
 
 ```ts
 new DataKubernetesAllNamespaces(scope: Construct, id: string, config?: DataKubernetesAllNamespacesConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataKubernetesAllNamespacesConfig](#cdktf-provider-kubernetes-datakubernetesallnamespacesconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -2386,7 +2386,7 @@ __Returns__:
 
 ## class DataKubernetesConfigMap  <a id="cdktf-provider-kubernetes-datakubernetesconfigmap"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map.html kubernetes_config_map}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -2394,14 +2394,14 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map.html kubernetes_config_map} Data Source.
 
 ```ts
 new DataKubernetesConfigMap(scope: Construct, id: string, config: DataKubernetesConfigMapConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataKubernetesConfigMapConfig](#cdktf-provider-kubernetes-datakubernetesconfigmapconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -2465,7 +2465,7 @@ __Returns__:
 
 ## class DataKubernetesIngress  <a id="cdktf-provider-kubernetes-datakubernetesingress"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress.html kubernetes_ingress}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -2473,14 +2473,14 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress.html kubernetes_ingress} Data Source.
 
 ```ts
 new DataKubernetesIngress(scope: Construct, id: string, config: DataKubernetesIngressConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataKubernetesIngressConfig](#cdktf-provider-kubernetes-datakubernetesingressconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -2852,7 +2852,7 @@ Name | Type | Description
 
 ## class DataKubernetesNamespace  <a id="cdktf-provider-kubernetes-datakubernetesnamespace"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace.html kubernetes_namespace}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -2860,14 +2860,14 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace.html kubernetes_namespace} Data Source.
 
 ```ts
 new DataKubernetesNamespace(scope: Construct, id: string, config: DataKubernetesNamespaceConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataKubernetesNamespaceConfig](#cdktf-provider-kubernetes-datakubernetesnamespaceconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -2948,7 +2948,7 @@ Name | Type | Description
 
 ## class DataKubernetesPersistentVolumeClaim  <a id="cdktf-provider-kubernetes-datakubernetespersistentvolumeclaim"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/persistent_volume_claim.html kubernetes_persistent_volume_claim}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -2956,14 +2956,14 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/persistent_volume_claim.html kubernetes_persistent_volume_claim} Data Source.
 
 ```ts
 new DataKubernetesPersistentVolumeClaim(scope: Construct, id: string, config: DataKubernetesPersistentVolumeClaimConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataKubernetesPersistentVolumeClaimConfig](#cdktf-provider-kubernetes-datakubernetespersistentvolumeclaimconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -3016,7 +3016,7 @@ __Returns__:
 
 ## class DataKubernetesPod  <a id="cdktf-provider-kubernetes-datakubernetespod"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html kubernetes_pod}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -3024,14 +3024,14 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html kubernetes_pod} Data Source.
 
 ```ts
 new DataKubernetesPod(scope: Construct, id: string, config: DataKubernetesPodConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataKubernetesPodConfig](#cdktf-provider-kubernetes-datakubernetespodconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -8613,7 +8613,7 @@ Name | Type | Description
 
 ## class DataKubernetesSecret  <a id="cdktf-provider-kubernetes-datakubernetessecret"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html kubernetes_secret}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -8621,14 +8621,14 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html kubernetes_secret} Data Source.
 
 ```ts
 new DataKubernetesSecret(scope: Construct, id: string, config: DataKubernetesSecretConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataKubernetesSecretConfig](#cdktf-provider-kubernetes-datakubernetessecretconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -8680,7 +8680,7 @@ __Returns__:
 
 ## class DataKubernetesService  <a id="cdktf-provider-kubernetes-datakubernetesservice"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html kubernetes_service}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -8688,14 +8688,14 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html kubernetes_service} Data Source.
 
 ```ts
 new DataKubernetesService(scope: Construct, id: string, config: DataKubernetesServiceConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataKubernetesServiceConfig](#cdktf-provider-kubernetes-datakubernetesserviceconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -8759,7 +8759,7 @@ __Returns__:
 
 ## class DataKubernetesServiceAccount  <a id="cdktf-provider-kubernetes-datakubernetesserviceaccount"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html kubernetes_service_account}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -8767,14 +8767,14 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html kubernetes_service_account} Data Source.
 
 ```ts
 new DataKubernetesServiceAccount(scope: Construct, id: string, config: DataKubernetesServiceAccountConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataKubernetesServiceAccountConfig](#cdktf-provider-kubernetes-datakubernetesserviceaccountconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -9066,7 +9066,7 @@ Name | Type | Description
 
 ## class DataKubernetesStorageClass  <a id="cdktf-provider-kubernetes-datakubernetesstorageclass"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/storage_class.html kubernetes_storage_class}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -9074,14 +9074,14 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/storage_class.html kubernetes_storage_class} Data Source.
 
 ```ts
 new DataKubernetesStorageClass(scope: Construct, id: string, config: DataKubernetesStorageClassConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataKubernetesStorageClassConfig](#cdktf-provider-kubernetes-datakubernetesstorageclassconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -9210,7 +9210,7 @@ __Returns__:
 
 ## class DefaultServiceAccount  <a id="cdktf-provider-kubernetes-defaultserviceaccount"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account.html kubernetes_default_service_account}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -9218,14 +9218,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account.html kubernetes_default_service_account} Resource.
 
 ```ts
 new DefaultServiceAccount(scope: Construct, id: string, config: DefaultServiceAccountConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DefaultServiceAccountConfig](#cdktf-provider-kubernetes-defaultserviceaccountconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -9324,7 +9324,7 @@ __Returns__:
 
 ## class Deployment  <a id="cdktf-provider-kubernetes-deployment"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html kubernetes_deployment}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -9332,14 +9332,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html kubernetes_deployment} Resource.
 
 ```ts
 new Deployment(scope: Construct, id: string, config: DeploymentConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DeploymentConfig](#cdktf-provider-kubernetes-deploymentconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -9348,7 +9348,7 @@ new Deployment(scope: Construct, id: string, config: DeploymentConfig)
   * **metadata** (<code>Array<[DeploymentMetadata](#cdktf-provider-kubernetes-deploymentmetadata)></code>)  metadata block. 
   * **spec** (<code>Array<[DeploymentSpec](#cdktf-provider-kubernetes-deploymentspec)></code>)  spec block. 
   * **timeouts** (<code>[DeploymentTimeouts](#cdktf-provider-kubernetes-deploymenttimeouts)</code>)  timeouts block. __*Optional*__
-  * **waitForRollout** (<code>boolean</code>)  Wait for the rollout of the deployment to complete. __*Optional*__
+  * **waitForRollout** (<code>boolean</code>)  Wait for the rollout of the deployment to complete. Defaults to true. __*Optional*__
 
 
 
@@ -9410,7 +9410,7 @@ __Returns__:
 
 ## class Endpoints  <a id="cdktf-provider-kubernetes-endpoints"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/endpoints.html kubernetes_endpoints}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -9418,14 +9418,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/endpoints.html kubernetes_endpoints} Resource.
 
 ```ts
 new Endpoints(scope: Construct, id: string, config: EndpointsConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[EndpointsConfig](#cdktf-provider-kubernetes-endpointsconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -9478,7 +9478,7 @@ __Returns__:
 
 ## class HorizontalPodAutoscaler  <a id="cdktf-provider-kubernetes-horizontalpodautoscaler"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html kubernetes_horizontal_pod_autoscaler}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -9486,14 +9486,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html kubernetes_horizontal_pod_autoscaler} Resource.
 
 ```ts
 new HorizontalPodAutoscaler(scope: Construct, id: string, config: HorizontalPodAutoscalerConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[HorizontalPodAutoscalerConfig](#cdktf-provider-kubernetes-horizontalpodautoscalerconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -9534,7 +9534,7 @@ __Returns__:
 
 ## class Ingress  <a id="cdktf-provider-kubernetes-ingress"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress.html kubernetes_ingress}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -9542,14 +9542,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress.html kubernetes_ingress} Resource.
 
 ```ts
 new Ingress(scope: Construct, id: string, config: IngressConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[IngressConfig](#cdktf-provider-kubernetes-ingressconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -9709,7 +9709,7 @@ Name | Type | Description
 
 ## class Job  <a id="cdktf-provider-kubernetes-job"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html kubernetes_job}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -9717,14 +9717,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html kubernetes_job} Resource.
 
 ```ts
 new Job(scope: Construct, id: string, config: JobConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[JobConfig](#cdktf-provider-kubernetes-jobconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -9733,7 +9733,7 @@ new Job(scope: Construct, id: string, config: JobConfig)
   * **metadata** (<code>Array<[JobMetadata](#cdktf-provider-kubernetes-jobmetadata)></code>)  metadata block. 
   * **spec** (<code>Array<[JobSpec](#cdktf-provider-kubernetes-jobspec)></code>)  spec block. 
   * **timeouts** (<code>[JobTimeouts](#cdktf-provider-kubernetes-jobtimeouts)</code>)  timeouts block. __*Optional*__
-  * **waitForCompletion** (<code>boolean</code>)  *No description* __*Optional*__
+  * **waitForCompletion** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#wait_for_completion Job#wait_for_completion}. __*Optional*__
 
 
 
@@ -9795,7 +9795,7 @@ __Returns__:
 
 ## class KubernetesProvider  <a id="cdktf-provider-kubernetes-kubernetesprovider"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes kubernetes}.
 
 __Implements__: [IConstruct](#constructs-iconstruct)
 __Extends__: [TerraformProvider](#cdktf-terraformprovider)
@@ -9803,24 +9803,24 @@ __Extends__: [TerraformProvider](#cdktf-terraformprovider)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes kubernetes} Resource.
 
 ```ts
 new KubernetesProvider(scope: Construct, id: string, config?: KubernetesProviderConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[KubernetesProviderConfig](#cdktf-provider-kubernetes-kubernetesproviderconfig)</code>)  *No description*
   * **alias** (<code>string</code>)  Alias name. __*Optional*__
   * **clientCertificate** (<code>string</code>)  PEM-encoded client certificate for TLS authentication. __*Optional*__
   * **clientKey** (<code>string</code>)  PEM-encoded client certificate key for TLS authentication. __*Optional*__
   * **clusterCaCertificate** (<code>string</code>)  PEM-encoded root certificates bundle for TLS authentication. __*Optional*__
-  * **configContext** (<code>string</code>)  *No description* __*Optional*__
-  * **configContextAuthInfo** (<code>string</code>)  *No description* __*Optional*__
-  * **configContextCluster** (<code>string</code>)  *No description* __*Optional*__
-  * **configPath** (<code>string</code>)  Path to the kube config file. __*Optional*__
-  * **configPaths** (<code>Array<string></code>)  A list of paths to kube config files. __*Optional*__
+  * **configContext** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context KubernetesProvider#config_context}. __*Optional*__
+  * **configContextAuthInfo** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context_auth_info KubernetesProvider#config_context_auth_info}. __*Optional*__
+  * **configContextCluster** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context_cluster KubernetesProvider#config_context_cluster}. __*Optional*__
+  * **configPath** (<code>string</code>)  Path to the kube config file. Can be set with KUBE_CONFIG_PATH. __*Optional*__
+  * **configPaths** (<code>Array<string></code>)  A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable. __*Optional*__
   * **exec** (<code>Array<[KubernetesProviderExec](#cdktf-provider-kubernetes-kubernetesproviderexec)></code>)  exec block. __*Optional*__
   * **host** (<code>string</code>)  The hostname (in form of URI) of Kubernetes master. __*Optional*__
   * **insecure** (<code>boolean</code>)  Whether server should be accessed without verifying the TLS certificate. __*Optional*__
@@ -10065,7 +10065,7 @@ __Returns__:
 
 ## class LimitRange  <a id="cdktf-provider-kubernetes-limitrange"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html kubernetes_limit_range}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10073,14 +10073,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html kubernetes_limit_range} Resource.
 
 ```ts
 new LimitRange(scope: Construct, id: string, config: LimitRangeConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[LimitRangeConfig](#cdktf-provider-kubernetes-limitrangeconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10133,7 +10133,7 @@ __Returns__:
 
 ## class MutatingWebhookConfiguration  <a id="cdktf-provider-kubernetes-mutatingwebhookconfiguration"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html kubernetes_mutating_webhook_configuration}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10141,14 +10141,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html kubernetes_mutating_webhook_configuration} Resource.
 
 ```ts
 new MutatingWebhookConfiguration(scope: Construct, id: string, config: MutatingWebhookConfigurationConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[MutatingWebhookConfigurationConfig](#cdktf-provider-kubernetes-mutatingwebhookconfigurationconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10189,7 +10189,7 @@ __Returns__:
 
 ## class Namespace  <a id="cdktf-provider-kubernetes-namespace"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/namespace.html kubernetes_namespace}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10197,14 +10197,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/namespace.html kubernetes_namespace} Resource.
 
 ```ts
 new Namespace(scope: Construct, id: string, config: NamespaceConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[NamespaceConfig](#cdktf-provider-kubernetes-namespaceconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10257,7 +10257,7 @@ __Returns__:
 
 ## class NetworkPolicy  <a id="cdktf-provider-kubernetes-networkpolicy"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/network_policy.html kubernetes_network_policy}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10265,14 +10265,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/network_policy.html kubernetes_network_policy} Resource.
 
 ```ts
 new NetworkPolicy(scope: Construct, id: string, config: NetworkPolicyConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[NetworkPolicyConfig](#cdktf-provider-kubernetes-networkpolicyconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10313,7 +10313,7 @@ __Returns__:
 
 ## class PersistentVolume  <a id="cdktf-provider-kubernetes-persistentvolume"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html kubernetes_persistent_volume}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10321,14 +10321,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html kubernetes_persistent_volume} Resource.
 
 ```ts
 new PersistentVolume(scope: Construct, id: string, config: PersistentVolumeConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[PersistentVolumeConfig](#cdktf-provider-kubernetes-persistentvolumeconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10384,7 +10384,7 @@ __Returns__:
 
 ## class PersistentVolumeClaim  <a id="cdktf-provider-kubernetes-persistentvolumeclaim"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_claim.html kubernetes_persistent_volume_claim}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10392,14 +10392,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_claim.html kubernetes_persistent_volume_claim} Resource.
 
 ```ts
 new PersistentVolumeClaim(scope: Construct, id: string, config: PersistentVolumeClaimConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[PersistentVolumeClaimConfig](#cdktf-provider-kubernetes-persistentvolumeclaimconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10470,7 +10470,7 @@ __Returns__:
 
 ## class Pod  <a id="cdktf-provider-kubernetes-pod"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html kubernetes_pod}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10478,14 +10478,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html kubernetes_pod} Resource.
 
 ```ts
 new Pod(scope: Construct, id: string, config: PodConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[PodConfig](#cdktf-provider-kubernetes-podconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10541,7 +10541,7 @@ __Returns__:
 
 ## class PodDisruptionBudget  <a id="cdktf-provider-kubernetes-poddisruptionbudget"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget.html kubernetes_pod_disruption_budget}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10549,14 +10549,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget.html kubernetes_pod_disruption_budget} Resource.
 
 ```ts
 new PodDisruptionBudget(scope: Construct, id: string, config: PodDisruptionBudgetConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[PodDisruptionBudgetConfig](#cdktf-provider-kubernetes-poddisruptionbudgetconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10597,7 +10597,7 @@ __Returns__:
 
 ## class PodSecurityPolicy  <a id="cdktf-provider-kubernetes-podsecuritypolicy"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html kubernetes_pod_security_policy}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10605,14 +10605,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html kubernetes_pod_security_policy} Resource.
 
 ```ts
 new PodSecurityPolicy(scope: Construct, id: string, config: PodSecurityPolicyConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[PodSecurityPolicyConfig](#cdktf-provider-kubernetes-podsecuritypolicyconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10653,7 +10653,7 @@ __Returns__:
 
 ## class PriorityClass  <a id="cdktf-provider-kubernetes-priorityclass"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html kubernetes_priority_class}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10661,14 +10661,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html kubernetes_priority_class} Resource.
 
 ```ts
 new PriorityClass(scope: Construct, id: string, config: PriorityClassConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[PriorityClassConfig](#cdktf-provider-kubernetes-priorityclassconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10739,7 +10739,7 @@ __Returns__:
 
 ## class ReplicationController  <a id="cdktf-provider-kubernetes-replicationcontroller"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html kubernetes_replication_controller}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10747,14 +10747,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html kubernetes_replication_controller} Resource.
 
 ```ts
 new ReplicationController(scope: Construct, id: string, config: ReplicationControllerConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ReplicationControllerConfig](#cdktf-provider-kubernetes-replicationcontrollerconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10810,7 +10810,7 @@ __Returns__:
 
 ## class ResourceQuota  <a id="cdktf-provider-kubernetes-resourcequota"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html kubernetes_resource_quota}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10818,14 +10818,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html kubernetes_resource_quota} Resource.
 
 ```ts
 new ResourceQuota(scope: Construct, id: string, config: ResourceQuotaConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ResourceQuotaConfig](#cdktf-provider-kubernetes-resourcequotaconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10893,7 +10893,7 @@ __Returns__:
 
 ## class Role  <a id="cdktf-provider-kubernetes-role"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html kubernetes_role}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10901,14 +10901,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html kubernetes_role} Resource.
 
 ```ts
 new Role(scope: Construct, id: string, config: RoleConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[RoleConfig](#cdktf-provider-kubernetes-roleconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -10949,7 +10949,7 @@ __Returns__:
 
 ## class RoleBinding  <a id="cdktf-provider-kubernetes-rolebinding"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding.html kubernetes_role_binding}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -10957,14 +10957,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding.html kubernetes_role_binding} Resource.
 
 ```ts
 new RoleBinding(scope: Construct, id: string, config: RoleBindingConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[RoleBindingConfig](#cdktf-provider-kubernetes-rolebindingconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -11008,7 +11008,7 @@ __Returns__:
 
 ## class Secret  <a id="cdktf-provider-kubernetes-secret"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html kubernetes_secret}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -11016,21 +11016,21 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html kubernetes_secret} Resource.
 
 ```ts
 new Secret(scope: Construct, id: string, config: SecretConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[SecretConfig](#cdktf-provider-kubernetes-secretconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **metadata** (<code>Array<[SecretMetadata](#cdktf-provider-kubernetes-secretmetadata)></code>)  metadata block. 
-  * **binaryData** (<code>Map<string, string></code>)  A map of the secret data in base64 encoding. __*Optional*__
+  * **binaryData** (<code>Map<string, string></code>)  A map of the secret data in base64 encoding. Use this for binary data. __*Optional*__
   * **data** (<code>Map<string, string></code>)  A map of the secret data. __*Optional*__
   * **type** (<code>string</code>)  Type of secret. __*Optional*__
 
@@ -11106,7 +11106,7 @@ __Returns__:
 
 ## class Service  <a id="cdktf-provider-kubernetes-service"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/service.html kubernetes_service}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -11114,14 +11114,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/service.html kubernetes_service} Resource.
 
 ```ts
 new Service(scope: Construct, id: string, config: ServiceConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ServiceConfig](#cdktf-provider-kubernetes-serviceconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -11205,7 +11205,7 @@ __Returns__:
 
 ## class ServiceAccount  <a id="cdktf-provider-kubernetes-serviceaccount"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/service_account.html kubernetes_service_account}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -11213,14 +11213,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/service_account.html kubernetes_service_account} Resource.
 
 ```ts
 new ServiceAccount(scope: Construct, id: string, config: ServiceAccountConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ServiceAccountConfig](#cdktf-provider-kubernetes-serviceaccountconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -11410,7 +11410,7 @@ Name | Type | Description
 
 ## class StatefulSet  <a id="cdktf-provider-kubernetes-statefulset"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html kubernetes_stateful_set}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -11418,14 +11418,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html kubernetes_stateful_set} Resource.
 
 ```ts
 new StatefulSet(scope: Construct, id: string, config: StatefulSetConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[StatefulSetConfig](#cdktf-provider-kubernetes-statefulsetconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -11434,7 +11434,7 @@ new StatefulSet(scope: Construct, id: string, config: StatefulSetConfig)
   * **metadata** (<code>Array<[StatefulSetMetadata](#cdktf-provider-kubernetes-statefulsetmetadata)></code>)  metadata block. 
   * **spec** (<code>Array<[StatefulSetSpec](#cdktf-provider-kubernetes-statefulsetspec)></code>)  spec block. 
   * **timeouts** (<code>[StatefulSetTimeouts](#cdktf-provider-kubernetes-statefulsettimeouts)</code>)  timeouts block. __*Optional*__
-  * **waitForRollout** (<code>boolean</code>)  Wait for the rollout of the stateful set to complete. __*Optional*__
+  * **waitForRollout** (<code>boolean</code>)  Wait for the rollout of the stateful set to complete. Defaults to true. __*Optional*__
 
 
 
@@ -11496,7 +11496,7 @@ __Returns__:
 
 ## class StorageClass  <a id="cdktf-provider-kubernetes-storageclass"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class.html kubernetes_storage_class}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -11504,14 +11504,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class.html kubernetes_storage_class} Resource.
 
 ```ts
 new StorageClass(scope: Construct, id: string, config: StorageClassConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[StorageClassConfig](#cdktf-provider-kubernetes-storageclassconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -11642,7 +11642,7 @@ __Returns__:
 
 ## class ValidatingWebhookConfiguration  <a id="cdktf-provider-kubernetes-validatingwebhookconfiguration"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html kubernetes_validating_webhook_configuration}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -11650,14 +11650,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html kubernetes_validating_webhook_configuration} Resource.
 
 ```ts
 new ValidatingWebhookConfiguration(scope: Construct, id: string, config: ValidatingWebhookConfigurationConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ValidatingWebhookConfigurationConfig](#cdktf-provider-kubernetes-validatingwebhookconfigurationconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -11726,7 +11726,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the api_service that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the api_service.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the api_service, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the api_service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -11741,7 +11741,7 @@ Name | Type | Description
 -----|------|-------------
 **group** | <code>string</code> | Group is the API group name this server hosts.
 **groupPriorityMinimum** | <code>number</code> | GroupPriorityMinimum is the priority this group should have at least.
-**version** | <code>string</code> | Version is the API version this server hosts.
+**version** | <code>string</code> | Version is the API version this server hosts. For example, `v1`.
 **versionPriority** | <code>number</code> | VersionPriority controls the ordering of this API version inside of its group.
 **caBundle**? | <code>string</code> | CABundle is a PEM encoded CA bundle which will be used to validate an API server's serving certificate.<br/>__*Optional*__
 **insecureSkipTlsVerify**? | <code>boolean</code> | InsecureSkipTLSVerify disables TLS certificate verification when communicating with this server.<br/>__*Optional*__
@@ -11796,7 +11796,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the certificate signing request that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the certificate signing request.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the certificate signing request, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the certificate signing request, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -11824,7 +11824,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#create CertificateSigningRequest#create}.<br/>__*Optional*__
 
 
 
@@ -11865,7 +11865,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -11900,7 +11900,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the clusterRoleBinding that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the clusterRoleBinding.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the clusterRoleBinding, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the clusterRoleBinding, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -11913,7 +11913,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**apiGroup** | <code>string</code> | The API group of the user.
+**apiGroup** | <code>string</code> | The API group of the user. The only value possible at the moment is `rbac.authorization.k8s.io`.
 **kind** | <code>string</code> | The kind of resource.
 **name** | <code>string</code> | The name of the User to bind to.
 
@@ -11965,7 +11965,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the clusterRole that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the clusterRole.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the clusterRole, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the clusterRole, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -11982,7 +11982,7 @@ Name | Type | Description
 **apiGroups**? | <code>Array<string></code> | APIGroups is the name of the APIGroup that contains the resources.<br/>__*Optional*__
 **nonResourceUrls**? | <code>Array<string></code> | NonResourceURLs is a set of partial urls that a user should have access to.<br/>__*Optional*__
 **resourceNames**? | <code>Array<string></code> | ResourceNames is an optional white list of names that the rule applies to.<br/>__*Optional*__
-**resources**? | <code>Array<string></code> | Resources is a list of resources this rule applies to.<br/>__*Optional*__
+**resources**? | <code>Array<string></code> | Resources is a list of resources this rule applies to. ResourceAll represents all resources.<br/>__*Optional*__
 
 
 
@@ -12017,7 +12017,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the config map that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the config map.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the config map, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the config map, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the config map must be unique.<br/>__*Optional*__
 
 
@@ -12053,7 +12053,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the cronjob that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the cronjob.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the cronjob, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the cronjob, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the cronjob must be unique.<br/>__*Optional*__
 
 
@@ -12069,10 +12069,10 @@ Name | Type | Description
 -----|------|-------------
 **jobTemplate** | <code>Array<[CronJobSpecJobTemplate](#cdktf-provider-kubernetes-cronjobspecjobtemplate)></code> | job_template block.
 **schedule** | <code>string</code> | Cron format string, e.g. 0 * * * * or @hourly, as schedule time of its jobs to be created and executed.
-**concurrencyPolicy**? | <code>string</code> | Specifies how to treat concurrent executions of a Job.<br/>__*Optional*__
+**concurrencyPolicy**? | <code>string</code> | Specifies how to treat concurrent executions of a Job. Defaults to Allow.<br/>__*Optional*__
 **failedJobsHistoryLimit**? | <code>number</code> | The number of failed finished jobs to retain.<br/>__*Optional*__
 **startingDeadlineSeconds**? | <code>number</code> | Optional deadline in seconds for starting the job if it misses scheduled time for any reason.<br/>__*Optional*__
-**successfulJobsHistoryLimit**? | <code>number</code> | The number of successful finished jobs to retain.<br/>__*Optional*__
+**successfulJobsHistoryLimit**? | <code>number</code> | The number of successful finished jobs to retain. Defaults to 3.<br/>__*Optional*__
 **suspend**? | <code>boolean</code> | This flag tells the controller to suspend subsequent executions, it does not apply to already started executions.<br/>__*Optional*__
 
 
@@ -12103,7 +12103,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the jobTemplateSpec that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the jobTemplateSpec.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the jobTemplateSpec, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the jobTemplateSpec, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -12118,7 +12118,7 @@ Name | Type | Description
 -----|------|-------------
 **template** | <code>Array<[CronJobSpecJobTemplateSpecTemplate](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplate)></code> | template block.
 **activeDeadlineSeconds**? | <code>number</code> | Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers.<br/>__*Optional*__
-**backoffLimit**? | <code>number</code> | Specifies the number of retries before marking this job failed.<br/>__*Optional*__
+**backoffLimit**? | <code>number</code> | Specifies the number of retries before marking this job failed. Defaults to 6.<br/>__*Optional*__
 **completions**? | <code>number</code> | Specifies the desired number of successfully finished pods the job should be run with.<br/>__*Optional*__
 **manualSelector**? | <code>boolean</code> | Controls generation of pod labels and pod selectors.<br/>__*Optional*__
 **parallelism**? | <code>number</code> | Specifies the maximum desired number of pods the job should run at any given time.<br/>__*Optional*__
@@ -12151,7 +12151,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -12182,7 +12182,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the job that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the job.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the job, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the job, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -12201,9 +12201,9 @@ Name | Type | Description
 **container**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainer](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecDnsConfig](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecHostAliases](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
 **hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
 **hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
@@ -12213,9 +12213,9 @@ Name | Type | Description
 **nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecReadinessGate](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
-**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod.<br/>__*Optional*__
+**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecSecurityContext](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
-**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod.<br/>__*Optional*__
+**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
 **shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
@@ -12375,7 +12375,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -12404,7 +12404,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -12419,7 +12419,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -12448,7 +12448,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -12491,7 +12491,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -12520,7 +12520,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -12535,7 +12535,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -12564,7 +12564,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -12583,7 +12583,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerEnv](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFrom](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerLifecycle](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbe](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -12611,7 +12611,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFrom](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -12627,7 +12627,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -12641,7 +12641,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -12655,7 +12655,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -12686,7 +12686,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -12715,8 +12715,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#container_name CronJob#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#divisor CronJob#divisor}.<br/>__*Optional*__
 
 
 
@@ -12729,8 +12729,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -12786,7 +12786,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -12858,7 +12858,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -12905,11 +12905,11 @@ Name | Type | Description
 **exec**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -12935,7 +12935,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -12983,7 +12983,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -12999,11 +12999,11 @@ Name | Type | Description
 **exec**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -13029,7 +13029,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -13073,7 +13073,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -13090,7 +13090,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -13140,11 +13140,11 @@ Name | Type | Description
 **exec**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeExec](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -13170,7 +13170,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -13214,11 +13214,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -13247,7 +13247,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the option.
-**value**? | <code>string</code> | Value of the option.<br/>__*Optional*__
+**value**? | <code>string</code> | Value of the option. Optional: Defaults to empty.<br/>__*Optional*__
 
 
 
@@ -13274,7 +13274,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
 
 
@@ -13292,7 +13292,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnv](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFrom](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecycle](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -13320,7 +13320,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -13336,7 +13336,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -13350,7 +13350,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -13364,7 +13364,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -13395,7 +13395,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -13424,8 +13424,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#container_name CronJob#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#divisor CronJob#divisor}.<br/>__*Optional*__
 
 
 
@@ -13438,8 +13438,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -13495,7 +13495,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -13567,7 +13567,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -13614,11 +13614,11 @@ Name | Type | Description
 **exec**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -13644,7 +13644,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -13692,7 +13692,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -13708,11 +13708,11 @@ Name | Type | Description
 **exec**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -13738,7 +13738,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -13782,7 +13782,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -13799,7 +13799,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -13849,11 +13849,11 @@ Name | Type | Description
 **exec**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -13879,7 +13879,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -13923,11 +13923,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -14050,7 +14050,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -14082,7 +14082,7 @@ Name | Type | Description
 **hostPath**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeHostPath](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumehostpath)></code> | host_path block.<br/>__*Optional*__
 **iscsi**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeIscsi](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumeiscsi)></code> | iscsi block.<br/>__*Optional*__
 **local**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeLocal](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumelocal)></code> | local block.<br/>__*Optional*__
-**name**? | <code>string</code> | Volume's name.<br/>__*Optional*__
+**name**? | <code>string</code> | Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **nfs**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeNfs](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumenfs)></code> | nfs block.<br/>__*Optional*__
 **persistentVolumeClaim**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumepersistentvolumeclaim)></code> | persistent_volume_claim block.<br/>__*Optional*__
 **photonPersistentDisk**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDisk](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumephotonpersistentdisk)></code> | photon_persistent_disk block.<br/>__*Optional*__
@@ -14103,10 +14103,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume).
+**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -14123,8 +14123,8 @@ Name | Type | Description
 **dataDiskUri** | <code>string</code> | The URI the data disk in the blob storage.
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**kind**? | <code>string</code> | The type for the data disk.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -14139,7 +14139,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -14155,10 +14155,10 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
-**user**? | <code>string</code> | User is the rados user name, default is admin.<br/>__*Optional*__
+**user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 
 
 
@@ -14171,8 +14171,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -14185,9 +14185,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder.
+**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -14202,7 +14202,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
@@ -14231,14 +14231,14 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**driver** | <code>string</code> | the name of the volume driver to use.
-**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume.
+**driver** | <code>string</code> | the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
+**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
 **controllerExpandSecretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumecsicontrollerexpandsecretref)></code> | controller_expand_secret_ref block.<br/>__*Optional*__
 **controllerPublishSecretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumecsicontrollerpublishsecretref)></code> | controller_publish_secret_ref block.<br/>__*Optional*__
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
 **volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
@@ -14252,8 +14252,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -14266,8 +14266,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -14280,8 +14280,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -14294,8 +14294,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -14352,9 +14352,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#container_name CronJob#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#divisor CronJob#divisor}.<br/>__*Optional*__
 
 
 
@@ -14384,7 +14384,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -14400,7 +14400,7 @@ Name | Type | Description
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -14414,8 +14414,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -14429,7 +14429,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **datasetName**? | <code>string</code> | Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated.<br/>__*Optional*__
-**datasetUuid**? | <code>string</code> | UUID of the dataset.<br/>__*Optional*__
+**datasetUuid**? | <code>string</code> | UUID of the dataset. This is unique identifier of a Flocker dataset.<br/>__*Optional*__
 
 
 
@@ -14442,10 +14442,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**pdName** | <code>string</code> | Unique name of the PD resource in GCE.
+**pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -14473,9 +14473,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology.
-**path** | <code>string</code> | The Glusterfs volume path.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions.<br/>__*Optional*__
+**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -14488,8 +14488,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
-**type**? | <code>string</code> | Type for HostPath volume.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath.<br/>__*Optional*__
+**type**? | <code>string</code> | Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice.<br/>__*Optional*__
 
 
 
@@ -14505,9 +14505,9 @@ Name | Type | Description
 **iqn** | <code>string</code> | Target iSCSI Qualified Name.
 **targetPortal** | <code>string</code> | iSCSI target portal.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport.<br/>__*Optional*__
+**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -14520,7 +14520,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local.<br/>__*Optional*__
 
 
 
@@ -14533,9 +14533,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path** | <code>string</code> | Path that is exported by the NFS server.
-**server** | <code>string</code> | Server is the hostname or IP address of the NFS server.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions.<br/>__*Optional*__
+**path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -14607,7 +14607,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -14679,9 +14679,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#container_name CronJob#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#divisor CronJob#divisor}.<br/>__*Optional*__
 
 
 
@@ -14695,7 +14695,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -14742,7 +14742,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -14756,13 +14756,13 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors.
-**rbdImage** | <code>string</code> | The rados image name.
+**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
+**rbdImage** | <code>string</code> | The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser.<br/>__*Optional*__
-**radosUser**? | <code>string</code> | The rados user name.<br/>__*Optional*__
-**rbdPool**? | <code>string</code> | The rados pool name.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -14776,8 +14776,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -14793,7 +14793,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeSecretItems](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumesecretitems)></code> | items block.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
-**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
 
@@ -14835,7 +14835,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**delete**? | <code>string</code> | __*Optional*__
+**delete**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#delete CronJob#delete}.<br/>__*Optional*__
 
 
 
@@ -14869,7 +14869,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the csi driver that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the csi driver.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the csi driver, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the csi driver, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -14904,7 +14904,7 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **timeouts**? | <code>[DaemonsetTimeouts](#cdktf-provider-kubernetes-daemonsettimeouts)</code> | timeouts block.<br/>__*Optional*__
-**waitForRollout**? | <code>boolean</code> | Wait for the rollout of the deployment to complete.<br/>__*Optional*__
+**waitForRollout**? | <code>boolean</code> | Wait for the rollout of the deployment to complete. Defaults to true.<br/>__*Optional*__
 
 
 
@@ -14920,7 +14920,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the daemonset that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the daemonset.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the daemonset, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the daemonset, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the daemonset must be unique.<br/>__*Optional*__
 
 
@@ -14966,7 +14966,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -14981,7 +14981,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **rollingUpdate**? | <code>Array<[DaemonsetSpecStrategyRollingUpdate](#cdktf-provider-kubernetes-daemonsetspecstrategyrollingupdate)></code> | rolling_update block.<br/>__*Optional*__
-**type**? | <code>string</code> | Type of deployment.<br/>__*Optional*__
+**type**? | <code>string</code> | Type of deployment. Can be 'RollingUpdate' or 'OnDelete'. Default is RollingUpdate.<br/>__*Optional*__
 
 
 
@@ -15024,7 +15024,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the daemon set that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the daemon set.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the daemon set, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the daemon set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -15043,9 +15043,9 @@ Name | Type | Description
 **container**? | <code>Array<[DaemonsetSpecTemplateSpecContainer](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[DaemonsetSpecTemplateSpecDnsConfig](#cdktf-provider-kubernetes-daemonsetspectemplatespecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[DaemonsetSpecTemplateSpecHostAliases](#cdktf-provider-kubernetes-daemonsetspectemplatespechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
 **hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
 **hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
@@ -15055,9 +15055,9 @@ Name | Type | Description
 **nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[DaemonsetSpecTemplateSpecReadinessGate](#cdktf-provider-kubernetes-daemonsetspectemplatespecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
-**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod.<br/>__*Optional*__
+**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[DaemonsetSpecTemplateSpecSecurityContext](#cdktf-provider-kubernetes-daemonsetspectemplatespecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
-**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod.<br/>__*Optional*__
+**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
 **shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
@@ -15217,7 +15217,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[DaemonsetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-daemonsetspectemplatespecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -15246,7 +15246,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -15261,7 +15261,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[DaemonsetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-daemonsetspectemplatespecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -15290,7 +15290,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -15333,7 +15333,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[DaemonsetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-daemonsetspectemplatespecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -15362,7 +15362,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -15377,7 +15377,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[DaemonsetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-daemonsetspectemplatespecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -15406,7 +15406,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -15425,7 +15425,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[DaemonsetSpecTemplateSpecContainerEnv](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[DaemonsetSpecTemplateSpecContainerEnvFrom](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[DaemonsetSpecTemplateSpecContainerLifecycle](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[DaemonsetSpecTemplateSpecContainerLivenessProbe](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -15453,7 +15453,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[DaemonsetSpecTemplateSpecContainerEnvValueFrom](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -15469,7 +15469,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[DaemonsetSpecTemplateSpecContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[DaemonsetSpecTemplateSpecContainerEnvFromSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -15483,7 +15483,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -15497,7 +15497,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -15528,7 +15528,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -15557,8 +15557,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html#container_name Daemonset#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html#divisor Daemonset#divisor}.<br/>__*Optional*__
 
 
 
@@ -15571,8 +15571,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -15628,7 +15628,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DaemonsetSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -15700,7 +15700,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DaemonsetSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -15747,11 +15747,11 @@ Name | Type | Description
 **exec**? | <code>Array<[DaemonsetSpecTemplateSpecContainerLivenessProbeExec](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[DaemonsetSpecTemplateSpecContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[DaemonsetSpecTemplateSpecContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -15777,7 +15777,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DaemonsetSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -15825,7 +15825,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -15841,11 +15841,11 @@ Name | Type | Description
 **exec**? | <code>Array<[DaemonsetSpecTemplateSpecContainerReadinessProbeExec](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[DaemonsetSpecTemplateSpecContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[DaemonsetSpecTemplateSpecContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -15871,7 +15871,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DaemonsetSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -15915,7 +15915,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -15932,7 +15932,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[DaemonsetSpecTemplateSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -15982,11 +15982,11 @@ Name | Type | Description
 **exec**? | <code>Array<[DaemonsetSpecTemplateSpecContainerStartupProbeExec](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[DaemonsetSpecTemplateSpecContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[DaemonsetSpecTemplateSpecContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -16012,7 +16012,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DaemonsetSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -16056,11 +16056,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -16089,7 +16089,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the option.
-**value**? | <code>string</code> | Value of the option.<br/>__*Optional*__
+**value**? | <code>string</code> | Value of the option. Optional: Defaults to empty.<br/>__*Optional*__
 
 
 
@@ -16116,7 +16116,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
 
 
@@ -16134,7 +16134,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerEnv](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerEnvFrom](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerLifecycle](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerLivenessProbe](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -16162,7 +16162,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerEnvValueFrom](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -16178,7 +16178,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerEnvFromSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -16192,7 +16192,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -16206,7 +16206,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -16237,7 +16237,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -16266,8 +16266,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html#container_name Daemonset#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html#divisor Daemonset#divisor}.<br/>__*Optional*__
 
 
 
@@ -16280,8 +16280,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -16337,7 +16337,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -16409,7 +16409,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -16456,11 +16456,11 @@ Name | Type | Description
 **exec**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerLivenessProbeExec](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -16486,7 +16486,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -16534,7 +16534,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -16550,11 +16550,11 @@ Name | Type | Description
 **exec**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerReadinessProbeExec](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -16580,7 +16580,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -16624,7 +16624,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -16641,7 +16641,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -16691,11 +16691,11 @@ Name | Type | Description
 **exec**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerStartupProbeExec](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -16721,7 +16721,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -16765,11 +16765,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -16892,7 +16892,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -16924,7 +16924,7 @@ Name | Type | Description
 **hostPath**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeHostPath](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumehostpath)></code> | host_path block.<br/>__*Optional*__
 **iscsi**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeIscsi](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumeiscsi)></code> | iscsi block.<br/>__*Optional*__
 **local**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeLocal](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumelocal)></code> | local block.<br/>__*Optional*__
-**name**? | <code>string</code> | Volume's name.<br/>__*Optional*__
+**name**? | <code>string</code> | Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **nfs**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeNfs](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumenfs)></code> | nfs block.<br/>__*Optional*__
 **persistentVolumeClaim**? | <code>Array<[DaemonsetSpecTemplateSpecVolumePersistentVolumeClaim](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumepersistentvolumeclaim)></code> | persistent_volume_claim block.<br/>__*Optional*__
 **photonPersistentDisk**? | <code>Array<[DaemonsetSpecTemplateSpecVolumePhotonPersistentDisk](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumephotonpersistentdisk)></code> | photon_persistent_disk block.<br/>__*Optional*__
@@ -16945,10 +16945,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume).
+**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -16965,8 +16965,8 @@ Name | Type | Description
 **dataDiskUri** | <code>string</code> | The URI the data disk in the blob storage.
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**kind**? | <code>string</code> | The type for the data disk.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -16981,7 +16981,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -16997,10 +16997,10 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
-**user**? | <code>string</code> | User is the rados user name, default is admin.<br/>__*Optional*__
+**user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 
 
 
@@ -17013,8 +17013,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -17027,9 +17027,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder.
+**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -17044,7 +17044,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
@@ -17073,14 +17073,14 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**driver** | <code>string</code> | the name of the volume driver to use.
-**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume.
+**driver** | <code>string</code> | the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
+**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
 **controllerExpandSecretRef**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeCsiControllerExpandSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumecsicontrollerexpandsecretref)></code> | controller_expand_secret_ref block.<br/>__*Optional*__
 **controllerPublishSecretRef**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeCsiControllerPublishSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumecsicontrollerpublishsecretref)></code> | controller_publish_secret_ref block.<br/>__*Optional*__
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
 **volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
@@ -17094,8 +17094,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -17108,8 +17108,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -17122,8 +17122,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -17136,8 +17136,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -17194,9 +17194,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html#container_name Daemonset#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html#divisor Daemonset#divisor}.<br/>__*Optional*__
 
 
 
@@ -17226,7 +17226,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -17242,7 +17242,7 @@ Name | Type | Description
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -17256,8 +17256,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -17271,7 +17271,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **datasetName**? | <code>string</code> | Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated.<br/>__*Optional*__
-**datasetUuid**? | <code>string</code> | UUID of the dataset.<br/>__*Optional*__
+**datasetUuid**? | <code>string</code> | UUID of the dataset. This is unique identifier of a Flocker dataset.<br/>__*Optional*__
 
 
 
@@ -17284,10 +17284,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**pdName** | <code>string</code> | Unique name of the PD resource in GCE.
+**pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -17315,9 +17315,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology.
-**path** | <code>string</code> | The Glusterfs volume path.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions.<br/>__*Optional*__
+**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -17330,8 +17330,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
-**type**? | <code>string</code> | Type for HostPath volume.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath.<br/>__*Optional*__
+**type**? | <code>string</code> | Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice.<br/>__*Optional*__
 
 
 
@@ -17347,9 +17347,9 @@ Name | Type | Description
 **iqn** | <code>string</code> | Target iSCSI Qualified Name.
 **targetPortal** | <code>string</code> | iSCSI target portal.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport.<br/>__*Optional*__
+**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -17362,7 +17362,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local.<br/>__*Optional*__
 
 
 
@@ -17375,9 +17375,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path** | <code>string</code> | Path that is exported by the NFS server.
-**server** | <code>string</code> | Server is the hostname or IP address of the NFS server.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions.<br/>__*Optional*__
+**path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -17449,7 +17449,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -17521,9 +17521,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html#container_name Daemonset#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html#divisor Daemonset#divisor}.<br/>__*Optional*__
 
 
 
@@ -17537,7 +17537,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -17584,7 +17584,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -17598,13 +17598,13 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors.
-**rbdImage** | <code>string</code> | The rados image name.
+**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
+**rbdImage** | <code>string</code> | The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser.<br/>__*Optional*__
-**radosUser**? | <code>string</code> | The rados user name.<br/>__*Optional*__
-**rbdPool**? | <code>string</code> | The rados pool name.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -17618,8 +17618,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -17635,7 +17635,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeSecretItems](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumesecretitems)></code> | items block.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
-**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
 
@@ -17677,9 +17677,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
-**delete**? | <code>string</code> | __*Optional*__
-**update**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html#create Daemonset#create}.<br/>__*Optional*__
+**delete**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html#delete Daemonset#delete}.<br/>__*Optional*__
+**update**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html#update Daemonset#update}.<br/>__*Optional*__
 
 
 
@@ -17727,7 +17727,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the config_map that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the config_map.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the config_map, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the config_map, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the config_map must be unique.<br/>__*Optional*__
 
 
@@ -17760,7 +17760,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the ingress that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the ingress.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the ingress, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the ingress, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the ingress must be unique.<br/>__*Optional*__
 
 
@@ -17793,7 +17793,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the namespace that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the namespace.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the namespace, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the namespace, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -17827,7 +17827,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the persistent volume claim that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume claim.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the persistent volume claim, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the persistent volume claim, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the persistent volume claim must be unique.<br/>__*Optional*__
 
 
@@ -17871,7 +17871,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -17905,7 +17905,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the pod that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the pod.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the pod, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the pod must be unique.<br/>__*Optional*__
 
 
@@ -17938,7 +17938,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the secret that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the secret.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the secret, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the secret, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the secret must be unique.<br/>__*Optional*__
 
 
@@ -17971,7 +17971,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the service account that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service account.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the service account, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the service account must be unique.<br/>__*Optional*__
 
 
@@ -18004,7 +18004,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the service that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the service, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the service must be unique.<br/>__*Optional*__
 
 
@@ -18032,7 +18032,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
+**values**? | <code>Array<string></code> | An array of string values. One value must match the label to be selected.<br/>__*Optional*__
 
 
 
@@ -18070,7 +18070,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the storage class that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the storage class.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the storage class, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the storage class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -18104,7 +18104,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -18119,7 +18119,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the service account that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service account.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the service account, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the service account must be unique.<br/>__*Optional*__
 
 
@@ -18133,7 +18133,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -18146,7 +18146,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account.html#create DefaultServiceAccount#create}.<br/>__*Optional*__
 
 
 
@@ -18166,7 +18166,7 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **timeouts**? | <code>[DeploymentTimeouts](#cdktf-provider-kubernetes-deploymenttimeouts)</code> | timeouts block.<br/>__*Optional*__
-**waitForRollout**? | <code>boolean</code> | Wait for the rollout of the deployment to complete.<br/>__*Optional*__
+**waitForRollout**? | <code>boolean</code> | Wait for the rollout of the deployment to complete. Defaults to true.<br/>__*Optional*__
 
 
 
@@ -18182,7 +18182,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the deployment that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the deployment.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the deployment, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the deployment, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the deployment must be unique.<br/>__*Optional*__
 
 
@@ -18200,7 +18200,7 @@ Name | Type | Description
 **minReadySeconds**? | <code>number</code> | Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available.<br/>__*Optional*__
 **paused**? | <code>boolean</code> | Indicates that the deployment is paused.<br/>__*Optional*__
 **progressDeadlineSeconds**? | <code>number</code> | The maximum time in seconds for a deployment to make progress before it is considered to be failed.<br/>__*Optional*__
-**replicas**? | <code>string</code> | Number of desired pods.<br/>__*Optional*__
+**replicas**? | <code>string</code> | Number of desired pods. This is a string to be able to distinguish between explicit zero and not specified.<br/>__*Optional*__
 **revisionHistoryLimit**? | <code>number</code> | The number of old ReplicaSets to retain to allow rollback.<br/>__*Optional*__
 **selector**? | <code>Array<[DeploymentSpecSelector](#cdktf-provider-kubernetes-deploymentspecselector)></code> | selector block.<br/>__*Optional*__
 **strategy**? | <code>Array<[DeploymentSpecStrategy](#cdktf-provider-kubernetes-deploymentspecstrategy)></code> | strategy block.<br/>__*Optional*__
@@ -18231,7 +18231,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -18246,7 +18246,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **rollingUpdate**? | <code>Array<[DeploymentSpecStrategyRollingUpdate](#cdktf-provider-kubernetes-deploymentspecstrategyrollingupdate)></code> | rolling_update block.<br/>__*Optional*__
-**type**? | <code>string</code> | Type of deployment.<br/>__*Optional*__
+**type**? | <code>string</code> | Type of deployment. Can be 'Recreate' or 'RollingUpdate'. Default is RollingUpdate.<br/>__*Optional*__
 
 
 
@@ -18290,7 +18290,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the pod that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the pod.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the pod, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the pod must be unique.<br/>__*Optional*__
 
 
@@ -18310,9 +18310,9 @@ Name | Type | Description
 **container**? | <code>Array<[DeploymentSpecTemplateSpecContainer](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[DeploymentSpecTemplateSpecDnsConfig](#cdktf-provider-kubernetes-deploymentspectemplatespecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[DeploymentSpecTemplateSpecHostAliases](#cdktf-provider-kubernetes-deploymentspectemplatespechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
 **hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
 **hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
@@ -18322,9 +18322,9 @@ Name | Type | Description
 **nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[DeploymentSpecTemplateSpecReadinessGate](#cdktf-provider-kubernetes-deploymentspectemplatespecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
-**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod.<br/>__*Optional*__
+**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[DeploymentSpecTemplateSpecSecurityContext](#cdktf-provider-kubernetes-deploymentspectemplatespecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
-**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod.<br/>__*Optional*__
+**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
 **shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
@@ -18484,7 +18484,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[DeploymentSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-deploymentspectemplatespecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -18513,7 +18513,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -18528,7 +18528,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[DeploymentSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-deploymentspectemplatespecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -18557,7 +18557,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -18600,7 +18600,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[DeploymentSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-deploymentspectemplatespecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -18629,7 +18629,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -18644,7 +18644,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[DeploymentSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-deploymentspectemplatespecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -18673,7 +18673,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -18692,7 +18692,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[DeploymentSpecTemplateSpecContainerEnv](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[DeploymentSpecTemplateSpecContainerEnvFrom](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[DeploymentSpecTemplateSpecContainerLifecycle](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[DeploymentSpecTemplateSpecContainerLivenessProbe](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -18720,7 +18720,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[DeploymentSpecTemplateSpecContainerEnvValueFrom](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -18736,7 +18736,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[DeploymentSpecTemplateSpecContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[DeploymentSpecTemplateSpecContainerEnvFromSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -18750,7 +18750,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -18764,7 +18764,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -18795,7 +18795,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -18824,8 +18824,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html#container_name Deployment#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html#divisor Deployment#divisor}.<br/>__*Optional*__
 
 
 
@@ -18838,8 +18838,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -18895,7 +18895,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DeploymentSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -18967,7 +18967,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DeploymentSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -19014,11 +19014,11 @@ Name | Type | Description
 **exec**? | <code>Array<[DeploymentSpecTemplateSpecContainerLivenessProbeExec](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[DeploymentSpecTemplateSpecContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[DeploymentSpecTemplateSpecContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -19044,7 +19044,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DeploymentSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -19092,7 +19092,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -19108,11 +19108,11 @@ Name | Type | Description
 **exec**? | <code>Array<[DeploymentSpecTemplateSpecContainerReadinessProbeExec](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[DeploymentSpecTemplateSpecContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[DeploymentSpecTemplateSpecContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -19138,7 +19138,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DeploymentSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -19182,7 +19182,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -19199,7 +19199,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[DeploymentSpecTemplateSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -19249,11 +19249,11 @@ Name | Type | Description
 **exec**? | <code>Array<[DeploymentSpecTemplateSpecContainerStartupProbeExec](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[DeploymentSpecTemplateSpecContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[DeploymentSpecTemplateSpecContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -19279,7 +19279,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DeploymentSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -19323,11 +19323,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -19356,7 +19356,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the option.
-**value**? | <code>string</code> | Value of the option.<br/>__*Optional*__
+**value**? | <code>string</code> | Value of the option. Optional: Defaults to empty.<br/>__*Optional*__
 
 
 
@@ -19383,7 +19383,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
 
 
@@ -19401,7 +19401,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerEnv](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerEnvFrom](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerLifecycle](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerLivenessProbe](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -19429,7 +19429,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerEnvValueFrom](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -19445,7 +19445,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerEnvFromSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -19459,7 +19459,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -19473,7 +19473,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -19504,7 +19504,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -19533,8 +19533,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html#container_name Deployment#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html#divisor Deployment#divisor}.<br/>__*Optional*__
 
 
 
@@ -19547,8 +19547,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -19604,7 +19604,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -19676,7 +19676,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -19723,11 +19723,11 @@ Name | Type | Description
 **exec**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerLivenessProbeExec](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -19753,7 +19753,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -19801,7 +19801,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -19817,11 +19817,11 @@ Name | Type | Description
 **exec**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerReadinessProbeExec](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -19847,7 +19847,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -19891,7 +19891,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -19908,7 +19908,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -19958,11 +19958,11 @@ Name | Type | Description
 **exec**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerStartupProbeExec](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -19988,7 +19988,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -20032,11 +20032,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -20159,7 +20159,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -20191,7 +20191,7 @@ Name | Type | Description
 **hostPath**? | <code>Array<[DeploymentSpecTemplateSpecVolumeHostPath](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumehostpath)></code> | host_path block.<br/>__*Optional*__
 **iscsi**? | <code>Array<[DeploymentSpecTemplateSpecVolumeIscsi](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumeiscsi)></code> | iscsi block.<br/>__*Optional*__
 **local**? | <code>Array<[DeploymentSpecTemplateSpecVolumeLocal](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumelocal)></code> | local block.<br/>__*Optional*__
-**name**? | <code>string</code> | Volume's name.<br/>__*Optional*__
+**name**? | <code>string</code> | Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **nfs**? | <code>Array<[DeploymentSpecTemplateSpecVolumeNfs](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumenfs)></code> | nfs block.<br/>__*Optional*__
 **persistentVolumeClaim**? | <code>Array<[DeploymentSpecTemplateSpecVolumePersistentVolumeClaim](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumepersistentvolumeclaim)></code> | persistent_volume_claim block.<br/>__*Optional*__
 **photonPersistentDisk**? | <code>Array<[DeploymentSpecTemplateSpecVolumePhotonPersistentDisk](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumephotonpersistentdisk)></code> | photon_persistent_disk block.<br/>__*Optional*__
@@ -20212,10 +20212,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume).
+**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -20232,8 +20232,8 @@ Name | Type | Description
 **dataDiskUri** | <code>string</code> | The URI the data disk in the blob storage.
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**kind**? | <code>string</code> | The type for the data disk.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -20248,7 +20248,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -20264,10 +20264,10 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[DeploymentSpecTemplateSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
-**user**? | <code>string</code> | User is the rados user name, default is admin.<br/>__*Optional*__
+**user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 
 
 
@@ -20280,8 +20280,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -20294,9 +20294,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder.
+**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -20311,7 +20311,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[DeploymentSpecTemplateSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
@@ -20340,14 +20340,14 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**driver** | <code>string</code> | the name of the volume driver to use.
-**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume.
+**driver** | <code>string</code> | the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
+**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
 **controllerExpandSecretRef**? | <code>Array<[DeploymentSpecTemplateSpecVolumeCsiControllerExpandSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumecsicontrollerexpandsecretref)></code> | controller_expand_secret_ref block.<br/>__*Optional*__
 **controllerPublishSecretRef**? | <code>Array<[DeploymentSpecTemplateSpecVolumeCsiControllerPublishSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumecsicontrollerpublishsecretref)></code> | controller_publish_secret_ref block.<br/>__*Optional*__
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[DeploymentSpecTemplateSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[DeploymentSpecTemplateSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
 **volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
@@ -20361,8 +20361,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -20375,8 +20375,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -20389,8 +20389,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -20403,8 +20403,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -20461,9 +20461,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html#container_name Deployment#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html#divisor Deployment#divisor}.<br/>__*Optional*__
 
 
 
@@ -20493,7 +20493,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -20509,7 +20509,7 @@ Name | Type | Description
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[DeploymentSpecTemplateSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -20523,8 +20523,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -20538,7 +20538,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **datasetName**? | <code>string</code> | Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated.<br/>__*Optional*__
-**datasetUuid**? | <code>string</code> | UUID of the dataset.<br/>__*Optional*__
+**datasetUuid**? | <code>string</code> | UUID of the dataset. This is unique identifier of a Flocker dataset.<br/>__*Optional*__
 
 
 
@@ -20551,10 +20551,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**pdName** | <code>string</code> | Unique name of the PD resource in GCE.
+**pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -20582,9 +20582,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology.
-**path** | <code>string</code> | The Glusterfs volume path.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions.<br/>__*Optional*__
+**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -20597,8 +20597,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
-**type**? | <code>string</code> | Type for HostPath volume.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath.<br/>__*Optional*__
+**type**? | <code>string</code> | Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice.<br/>__*Optional*__
 
 
 
@@ -20614,9 +20614,9 @@ Name | Type | Description
 **iqn** | <code>string</code> | Target iSCSI Qualified Name.
 **targetPortal** | <code>string</code> | iSCSI target portal.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport.<br/>__*Optional*__
+**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -20629,7 +20629,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local.<br/>__*Optional*__
 
 
 
@@ -20642,9 +20642,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path** | <code>string</code> | Path that is exported by the NFS server.
-**server** | <code>string</code> | Server is the hostname or IP address of the NFS server.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions.<br/>__*Optional*__
+**path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -20716,7 +20716,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[DeploymentSpecTemplateSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -20788,9 +20788,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html#container_name Deployment#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html#divisor Deployment#divisor}.<br/>__*Optional*__
 
 
 
@@ -20804,7 +20804,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[DeploymentSpecTemplateSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -20851,7 +20851,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -20865,13 +20865,13 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors.
-**rbdImage** | <code>string</code> | The rados image name.
+**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
+**rbdImage** | <code>string</code> | The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser.<br/>__*Optional*__
-**radosUser**? | <code>string</code> | The rados user name.<br/>__*Optional*__
-**rbdPool**? | <code>string</code> | The rados pool name.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[DeploymentSpecTemplateSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -20885,8 +20885,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -20902,7 +20902,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[DeploymentSpecTemplateSpecVolumeSecretItems](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumesecretitems)></code> | items block.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
-**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
 
@@ -20944,9 +20944,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
-**delete**? | <code>string</code> | __*Optional*__
-**update**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html#create Deployment#create}.<br/>__*Optional*__
+**delete**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html#delete Deployment#delete}.<br/>__*Optional*__
+**update**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html#update Deployment#update}.<br/>__*Optional*__
 
 
 
@@ -20980,7 +20980,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the endpoints that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the endpoints.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the endpoints, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the endpoints, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the endpoints must be unique.<br/>__*Optional*__
 
 
@@ -21009,9 +21009,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**ip** | <code>string</code> | The IP of this endpoint.
+**ip** | <code>string</code> | The IP of this endpoint. May not be loopback (127.0.0.0/8), link-local (169.254.0.0/16), or link-local multicast ((224.0.0.0/24).
 **hostname**? | <code>string</code> | The Hostname of this endpoint.<br/>__*Optional*__
-**nodeName**? | <code>string</code> | Node hosting this endpoint.<br/>__*Optional*__
+**nodeName**? | <code>string</code> | Node hosting this endpoint. This can be used to determine endpoints local to a node.<br/>__*Optional*__
 
 
 
@@ -21024,9 +21024,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**ip** | <code>string</code> | The IP of this endpoint.
+**ip** | <code>string</code> | The IP of this endpoint. May not be loopback (127.0.0.0/8), link-local (169.254.0.0/16), or link-local multicast ((224.0.0.0/24).
 **hostname**? | <code>string</code> | The Hostname of this endpoint.<br/>__*Optional*__
-**nodeName**? | <code>string</code> | Node hosting this endpoint.<br/>__*Optional*__
+**nodeName**? | <code>string</code> | Node hosting this endpoint. This can be used to determine endpoints local to a node.<br/>__*Optional*__
 
 
 
@@ -21041,7 +21041,7 @@ Name | Type | Description
 -----|------|-------------
 **port** | <code>number</code> | The port that will be exposed by this endpoint.
 **name**? | <code>string</code> | The name of this port within the endpoint.<br/>__*Optional*__
-**protocol**? | <code>string</code> | The IP protocol for this port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | The IP protocol for this port. Supports `TCP` and `UDP`. Default is `TCP`.<br/>__*Optional*__
 
 
 
@@ -21075,7 +21075,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the horizontal pod autoscaler that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the horizontal pod autoscaler.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the horizontal pod autoscaler, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the horizontal pod autoscaler, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the horizontal pod autoscaler must be unique.<br/>__*Optional*__
 
 
@@ -21166,7 +21166,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -21212,8 +21212,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **apiVersion** | <code>string</code> | API version of the referent.
-**kind** | <code>string</code> | Kind of the referent;
-**name** | <code>string</code> | Name of the referent;
+**kind** | <code>string</code> | Kind of the referent; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds.
+**name** | <code>string</code> | Name of the referent; More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
 
 
@@ -21255,7 +21255,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -21328,7 +21328,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -21388,8 +21388,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**kind** | <code>string</code> | Kind of the referent.
-**name** | <code>string</code> | Name of the referent.
+**kind** | <code>string</code> | Kind of the referent. e.g. `ReplicationController`. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **apiVersion**? | <code>string</code> | API version of the referent.<br/>__*Optional*__
 
 
@@ -21425,7 +21425,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the ingress that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the ingress.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the ingress, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the ingress, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the ingress must be unique.<br/>__*Optional*__
 
 
@@ -21545,7 +21545,7 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **timeouts**? | <code>[JobTimeouts](#cdktf-provider-kubernetes-jobtimeouts)</code> | timeouts block.<br/>__*Optional*__
-**waitForCompletion**? | <code>boolean</code> | __*Optional*__
+**waitForCompletion**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#wait_for_completion Job#wait_for_completion}.<br/>__*Optional*__
 
 
 
@@ -21561,7 +21561,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the job that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the job.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the job, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the job, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the job must be unique.<br/>__*Optional*__
 
 
@@ -21577,7 +21577,7 @@ Name | Type | Description
 -----|------|-------------
 **template** | <code>Array<[JobSpecTemplate](#cdktf-provider-kubernetes-jobspectemplate)></code> | template block.
 **activeDeadlineSeconds**? | <code>number</code> | Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers.<br/>__*Optional*__
-**backoffLimit**? | <code>number</code> | Specifies the number of retries before marking this job failed.<br/>__*Optional*__
+**backoffLimit**? | <code>number</code> | Specifies the number of retries before marking this job failed. Defaults to 6.<br/>__*Optional*__
 **completions**? | <code>number</code> | Specifies the desired number of successfully finished pods the job should be run with.<br/>__*Optional*__
 **manualSelector**? | <code>boolean</code> | Controls generation of pod labels and pod selectors.<br/>__*Optional*__
 **parallelism**? | <code>number</code> | Specifies the maximum desired number of pods the job should run at any given time.<br/>__*Optional*__
@@ -21610,7 +21610,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -21641,7 +21641,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the job that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the job.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the job, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the job, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -21660,9 +21660,9 @@ Name | Type | Description
 **container**? | <code>Array<[JobSpecTemplateSpecContainer](#cdktf-provider-kubernetes-jobspectemplatespeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[JobSpecTemplateSpecDnsConfig](#cdktf-provider-kubernetes-jobspectemplatespecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[JobSpecTemplateSpecHostAliases](#cdktf-provider-kubernetes-jobspectemplatespechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
 **hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
 **hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
@@ -21672,9 +21672,9 @@ Name | Type | Description
 **nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[JobSpecTemplateSpecReadinessGate](#cdktf-provider-kubernetes-jobspectemplatespecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
-**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod.<br/>__*Optional*__
+**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[JobSpecTemplateSpecSecurityContext](#cdktf-provider-kubernetes-jobspectemplatespecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
-**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod.<br/>__*Optional*__
+**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
 **shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
@@ -21834,7 +21834,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-jobspectemplatespecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -21863,7 +21863,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -21878,7 +21878,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-jobspectemplatespecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -21907,7 +21907,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -21950,7 +21950,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-jobspectemplatespecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -21979,7 +21979,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -21994,7 +21994,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-jobspectemplatespecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -22023,7 +22023,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -22042,7 +22042,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[JobSpecTemplateSpecContainerEnv](#cdktf-provider-kubernetes-jobspectemplatespeccontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[JobSpecTemplateSpecContainerEnvFrom](#cdktf-provider-kubernetes-jobspectemplatespeccontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[JobSpecTemplateSpecContainerLifecycle](#cdktf-provider-kubernetes-jobspectemplatespeccontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[JobSpecTemplateSpecContainerLivenessProbe](#cdktf-provider-kubernetes-jobspectemplatespeccontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -22070,7 +22070,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[JobSpecTemplateSpecContainerEnvValueFrom](#cdktf-provider-kubernetes-jobspectemplatespeccontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -22086,7 +22086,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[JobSpecTemplateSpecContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-jobspectemplatespeccontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[JobSpecTemplateSpecContainerEnvFromSecretRef](#cdktf-provider-kubernetes-jobspectemplatespeccontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -22100,7 +22100,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -22114,7 +22114,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -22145,7 +22145,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -22174,8 +22174,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_name Job#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#divisor Job#divisor}.<br/>__*Optional*__
 
 
 
@@ -22188,8 +22188,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -22245,7 +22245,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[JobSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-jobspectemplatespeccontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -22317,7 +22317,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[JobSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-jobspectemplatespeccontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -22364,11 +22364,11 @@ Name | Type | Description
 **exec**? | <code>Array<[JobSpecTemplateSpecContainerLivenessProbeExec](#cdktf-provider-kubernetes-jobspectemplatespeccontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[JobSpecTemplateSpecContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-jobspectemplatespeccontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[JobSpecTemplateSpecContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-jobspectemplatespeccontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -22394,7 +22394,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[JobSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-jobspectemplatespeccontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -22442,7 +22442,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -22458,11 +22458,11 @@ Name | Type | Description
 **exec**? | <code>Array<[JobSpecTemplateSpecContainerReadinessProbeExec](#cdktf-provider-kubernetes-jobspectemplatespeccontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[JobSpecTemplateSpecContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-jobspectemplatespeccontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[JobSpecTemplateSpecContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-jobspectemplatespeccontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -22488,7 +22488,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[JobSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-jobspectemplatespeccontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -22532,7 +22532,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -22549,7 +22549,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[JobSpecTemplateSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-jobspectemplatespeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -22599,11 +22599,11 @@ Name | Type | Description
 **exec**? | <code>Array<[JobSpecTemplateSpecContainerStartupProbeExec](#cdktf-provider-kubernetes-jobspectemplatespeccontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[JobSpecTemplateSpecContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-jobspectemplatespeccontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[JobSpecTemplateSpecContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-jobspectemplatespeccontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -22629,7 +22629,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[JobSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-jobspectemplatespeccontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -22673,11 +22673,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -22706,7 +22706,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the option.
-**value**? | <code>string</code> | Value of the option.<br/>__*Optional*__
+**value**? | <code>string</code> | Value of the option. Optional: Defaults to empty.<br/>__*Optional*__
 
 
 
@@ -22733,7 +22733,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
 
 
@@ -22751,7 +22751,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[JobSpecTemplateSpecInitContainerEnv](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[JobSpecTemplateSpecInitContainerEnvFrom](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[JobSpecTemplateSpecInitContainerLifecycle](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[JobSpecTemplateSpecInitContainerLivenessProbe](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -22779,7 +22779,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[JobSpecTemplateSpecInitContainerEnvValueFrom](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -22795,7 +22795,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[JobSpecTemplateSpecInitContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[JobSpecTemplateSpecInitContainerEnvFromSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -22809,7 +22809,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -22823,7 +22823,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -22854,7 +22854,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -22883,8 +22883,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_name Job#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#divisor Job#divisor}.<br/>__*Optional*__
 
 
 
@@ -22897,8 +22897,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -22954,7 +22954,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -23026,7 +23026,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -23073,11 +23073,11 @@ Name | Type | Description
 **exec**? | <code>Array<[JobSpecTemplateSpecInitContainerLivenessProbeExec](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[JobSpecTemplateSpecInitContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[JobSpecTemplateSpecInitContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -23103,7 +23103,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[JobSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -23151,7 +23151,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -23167,11 +23167,11 @@ Name | Type | Description
 **exec**? | <code>Array<[JobSpecTemplateSpecInitContainerReadinessProbeExec](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[JobSpecTemplateSpecInitContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[JobSpecTemplateSpecInitContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -23197,7 +23197,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[JobSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -23241,7 +23241,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -23258,7 +23258,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[JobSpecTemplateSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -23308,11 +23308,11 @@ Name | Type | Description
 **exec**? | <code>Array<[JobSpecTemplateSpecInitContainerStartupProbeExec](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[JobSpecTemplateSpecInitContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[JobSpecTemplateSpecInitContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -23338,7 +23338,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[JobSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -23382,11 +23382,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -23509,7 +23509,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -23541,7 +23541,7 @@ Name | Type | Description
 **hostPath**? | <code>Array<[JobSpecTemplateSpecVolumeHostPath](#cdktf-provider-kubernetes-jobspectemplatespecvolumehostpath)></code> | host_path block.<br/>__*Optional*__
 **iscsi**? | <code>Array<[JobSpecTemplateSpecVolumeIscsi](#cdktf-provider-kubernetes-jobspectemplatespecvolumeiscsi)></code> | iscsi block.<br/>__*Optional*__
 **local**? | <code>Array<[JobSpecTemplateSpecVolumeLocal](#cdktf-provider-kubernetes-jobspectemplatespecvolumelocal)></code> | local block.<br/>__*Optional*__
-**name**? | <code>string</code> | Volume's name.<br/>__*Optional*__
+**name**? | <code>string</code> | Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **nfs**? | <code>Array<[JobSpecTemplateSpecVolumeNfs](#cdktf-provider-kubernetes-jobspectemplatespecvolumenfs)></code> | nfs block.<br/>__*Optional*__
 **persistentVolumeClaim**? | <code>Array<[JobSpecTemplateSpecVolumePersistentVolumeClaim](#cdktf-provider-kubernetes-jobspectemplatespecvolumepersistentvolumeclaim)></code> | persistent_volume_claim block.<br/>__*Optional*__
 **photonPersistentDisk**? | <code>Array<[JobSpecTemplateSpecVolumePhotonPersistentDisk](#cdktf-provider-kubernetes-jobspectemplatespecvolumephotonpersistentdisk)></code> | photon_persistent_disk block.<br/>__*Optional*__
@@ -23562,10 +23562,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume).
+**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -23582,8 +23582,8 @@ Name | Type | Description
 **dataDiskUri** | <code>string</code> | The URI the data disk in the blob storage.
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**kind**? | <code>string</code> | The type for the data disk.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -23598,7 +23598,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -23614,10 +23614,10 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[JobSpecTemplateSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
-**user**? | <code>string</code> | User is the rados user name, default is admin.<br/>__*Optional*__
+**user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 
 
 
@@ -23630,8 +23630,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -23644,9 +23644,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder.
+**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -23661,7 +23661,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[JobSpecTemplateSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-jobspectemplatespecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
@@ -23690,14 +23690,14 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**driver** | <code>string</code> | the name of the volume driver to use.
-**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume.
+**driver** | <code>string</code> | the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
+**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
 **controllerExpandSecretRef**? | <code>Array<[JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecvolumecsicontrollerexpandsecretref)></code> | controller_expand_secret_ref block.<br/>__*Optional*__
 **controllerPublishSecretRef**? | <code>Array<[JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecvolumecsicontrollerpublishsecretref)></code> | controller_publish_secret_ref block.<br/>__*Optional*__
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[JobSpecTemplateSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[JobSpecTemplateSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
 **volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
@@ -23711,8 +23711,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -23725,8 +23725,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -23739,8 +23739,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -23753,8 +23753,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -23811,9 +23811,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_name Job#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#divisor Job#divisor}.<br/>__*Optional*__
 
 
 
@@ -23843,7 +23843,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -23859,7 +23859,7 @@ Name | Type | Description
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[JobSpecTemplateSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -23873,8 +23873,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -23888,7 +23888,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **datasetName**? | <code>string</code> | Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated.<br/>__*Optional*__
-**datasetUuid**? | <code>string</code> | UUID of the dataset.<br/>__*Optional*__
+**datasetUuid**? | <code>string</code> | UUID of the dataset. This is unique identifier of a Flocker dataset.<br/>__*Optional*__
 
 
 
@@ -23901,10 +23901,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**pdName** | <code>string</code> | Unique name of the PD resource in GCE.
+**pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -23932,9 +23932,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology.
-**path** | <code>string</code> | The Glusterfs volume path.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions.<br/>__*Optional*__
+**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -23947,8 +23947,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
-**type**? | <code>string</code> | Type for HostPath volume.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath.<br/>__*Optional*__
+**type**? | <code>string</code> | Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice.<br/>__*Optional*__
 
 
 
@@ -23964,9 +23964,9 @@ Name | Type | Description
 **iqn** | <code>string</code> | Target iSCSI Qualified Name.
 **targetPortal** | <code>string</code> | iSCSI target portal.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport.<br/>__*Optional*__
+**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -23979,7 +23979,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local.<br/>__*Optional*__
 
 
 
@@ -23992,9 +23992,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path** | <code>string</code> | Path that is exported by the NFS server.
-**server** | <code>string</code> | Server is the hostname or IP address of the NFS server.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions.<br/>__*Optional*__
+**path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -24066,7 +24066,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[JobSpecTemplateSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-jobspectemplatespecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -24138,9 +24138,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_name Job#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#divisor Job#divisor}.<br/>__*Optional*__
 
 
 
@@ -24154,7 +24154,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[JobSpecTemplateSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-jobspectemplatespecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -24201,7 +24201,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -24215,13 +24215,13 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors.
-**rbdImage** | <code>string</code> | The rados image name.
+**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
+**rbdImage** | <code>string</code> | The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser.<br/>__*Optional*__
-**radosUser**? | <code>string</code> | The rados user name.<br/>__*Optional*__
-**rbdPool**? | <code>string</code> | The rados pool name.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[JobSpecTemplateSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -24235,8 +24235,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -24252,7 +24252,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[JobSpecTemplateSpecVolumeSecretItems](#cdktf-provider-kubernetes-jobspectemplatespecvolumesecretitems)></code> | items block.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
-**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
 
@@ -24294,9 +24294,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
-**delete**? | <code>string</code> | __*Optional*__
-**update**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#create Job#create}.<br/>__*Optional*__
+**delete**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#delete Job#delete}.<br/>__*Optional*__
+**update**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#update Job#update}.<br/>__*Optional*__
 
 
 
@@ -24313,11 +24313,11 @@ Name | Type | Description
 **clientCertificate**? | <code>string</code> | PEM-encoded client certificate for TLS authentication.<br/>__*Optional*__
 **clientKey**? | <code>string</code> | PEM-encoded client certificate key for TLS authentication.<br/>__*Optional*__
 **clusterCaCertificate**? | <code>string</code> | PEM-encoded root certificates bundle for TLS authentication.<br/>__*Optional*__
-**configContext**? | <code>string</code> | __*Optional*__
-**configContextAuthInfo**? | <code>string</code> | __*Optional*__
-**configContextCluster**? | <code>string</code> | __*Optional*__
-**configPath**? | <code>string</code> | Path to the kube config file.<br/>__*Optional*__
-**configPaths**? | <code>Array<string></code> | A list of paths to kube config files.<br/>__*Optional*__
+**configContext**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context KubernetesProvider#config_context}.<br/>__*Optional*__
+**configContextAuthInfo**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context_auth_info KubernetesProvider#config_context_auth_info}.<br/>__*Optional*__
+**configContextCluster**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context_cluster KubernetesProvider#config_context_cluster}.<br/>__*Optional*__
+**configPath**? | <code>string</code> | Path to the kube config file. Can be set with KUBE_CONFIG_PATH.<br/>__*Optional*__
+**configPaths**? | <code>Array<string></code> | A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable.<br/>__*Optional*__
 **exec**? | <code>Array<[KubernetesProviderExec](#cdktf-provider-kubernetes-kubernetesproviderexec)></code> | exec block.<br/>__*Optional*__
 **host**? | <code>string</code> | The hostname (in form of URI) of Kubernetes master.<br/>__*Optional*__
 **insecure**? | <code>boolean</code> | Whether server should be accessed without verifying the TLS certificate.<br/>__*Optional*__
@@ -24336,10 +24336,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**apiVersion** | <code>string</code> | <span></span>
-**command** | <code>string</code> | <span></span>
-**args**? | <code>Array<string></code> | __*Optional*__
-**env**? | <code>Map<string, string></code> | __*Optional*__
+**apiVersion** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#api_version KubernetesProvider#api_version}.
+**command** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#command KubernetesProvider#command}.
+**args**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#args KubernetesProvider#args}.<br/>__*Optional*__
+**env**? | <code>Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#env KubernetesProvider#env}.<br/>__*Optional*__
 
 
 
@@ -24373,7 +24373,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the limit range that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the limit range.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the limit range, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the limit range, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the limit range must be unique.<br/>__*Optional*__
 
 
@@ -24439,7 +24439,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the mutating webhook configuration that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the mutating webhook configuration.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the mutating webhook configuration, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the mutating webhook configuration, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -24490,8 +24490,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | `name` is the name of the service.
-**namespace** | <code>string</code> | `namespace` is the namespace of the service.
+**name** | <code>string</code> | `name` is the name of the service. Required.
+**namespace** | <code>string</code> | `namespace` is the namespace of the service. Required.
 **path**? | <code>string</code> | `path` is an optional URL path which will be sent in any request to this service.<br/>__*Optional*__
 **port**? | <code>number</code> | If specified, the port on the service that hosting webhook.<br/>__*Optional*__
 
@@ -24521,7 +24521,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -24550,7 +24550,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -24564,11 +24564,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**apiGroups** | <code>Array<string></code> | <span></span>
-**apiVersions** | <code>Array<string></code> | <span></span>
+**apiGroups** | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#api_groups MutatingWebhookConfiguration#api_groups}.
+**apiVersions** | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#api_versions MutatingWebhookConfiguration#api_versions}.
 **operations** | <code>Array<string></code> | Operations is the operations the admission hook cares about - CREATE, UPDATE, DELETE, CONNECT or * for all of those operations and any future admission operations that are added.
-**resources** | <code>Array<string></code> | <span></span>
-**scope**? | <code>string</code> | __*Optional*__
+**resources** | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#resources MutatingWebhookConfiguration#resources}.
+**scope**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#scope MutatingWebhookConfiguration#scope}.<br/>__*Optional*__
 
 
 
@@ -24602,7 +24602,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the namespace that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the namespace.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the namespace, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the namespace, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -24615,7 +24615,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**delete**? | <code>string</code> | __*Optional*__
+**delete**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/namespace.html#delete Namespace#delete}.<br/>__*Optional*__
 
 
 
@@ -24649,7 +24649,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the network policy that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the network policy.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the network policy, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the network policy, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the network policy must be unique.<br/>__*Optional*__
 
 
@@ -24694,7 +24694,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **port**? | <code>string</code> | The port on the given protocol.<br/>__*Optional*__
-**protocol**? | <code>string</code> | The protocol (TCP, UDP, or SCTP) which traffic must match.<br/>__*Optional*__
+**protocol**? | <code>string</code> | The protocol (TCP, UDP, or SCTP) which traffic must match. If not specified, this field defaults to TCP.<br/>__*Optional*__
 
 
 
@@ -24751,7 +24751,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -24780,7 +24780,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -24852,7 +24852,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -24881,7 +24881,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -24896,7 +24896,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **port**? | <code>string</code> | The port on the given protocol.<br/>__*Optional*__
-**protocol**? | <code>string</code> | The protocol (TCP, UDP, or SCTP) which traffic must match.<br/>__*Optional*__
+**protocol**? | <code>string</code> | The protocol (TCP, UDP, or SCTP) which traffic must match. If not specified, this field defaults to TCP.<br/>__*Optional*__
 
 
 
@@ -24924,7 +24924,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -24961,7 +24961,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the persistent volume claim that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume claim.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the persistent volume claim, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the persistent volume claim, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the persistent volume claim must be unique.<br/>__*Optional*__
 
 
@@ -24975,7 +24975,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**accessModes** | <code>Array<string></code> | A set of the desired access modes the volume should have.
+**accessModes** | <code>Array<string></code> | A set of the desired access modes the volume should have. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#access-modes-1.
 **resources** | <code>Array<[PersistentVolumeClaimSpecResources](#cdktf-provider-kubernetes-persistentvolumeclaimspecresources)></code> | resources block.
 **selector**? | <code>Array<[PersistentVolumeClaimSpecSelector](#cdktf-provider-kubernetes-persistentvolumeclaimspecselector)></code> | selector block.<br/>__*Optional*__
 **storageClassName**? | <code>string</code> | Name of the storage class requested by the claim.<br/>__*Optional*__
@@ -24992,7 +24992,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Map describing the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Map describing the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Map describing the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -25021,7 +25021,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -25035,7 +25035,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_claim.html#create PersistentVolumeClaim#create}.<br/>__*Optional*__
 
 
 
@@ -25069,7 +25069,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the persistent volume that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the persistent volume, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the persistent volume, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -25082,14 +25082,14 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**accessModes** | <code>Array<string></code> | Contains all ways the volume can be mounted.
-**capacity** | <code>Map<string, string></code> | A description of the persistent volume's resources and capacity.
+**accessModes** | <code>Array<string></code> | Contains all ways the volume can be mounted. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#access-modes.
+**capacity** | <code>Map<string, string></code> | A description of the persistent volume's resources and capacity. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#capacity.
 **persistentVolumeSource** | <code>Array<[PersistentVolumeSpecPersistentVolumeSource](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesource)></code> | persistent_volume_source block.
 **claimRef**? | <code>Array<[PersistentVolumeSpecClaimRef](#cdktf-provider-kubernetes-persistentvolumespecclaimref)></code> | claim_ref block.<br/>__*Optional*__
 **mountOptions**? | <code>Array<string></code> | A list of mount options, e.g. ["ro", "soft"]. Not validated - mount will simply fail if one is invalid.<br/>__*Optional*__
 **nodeAffinity**? | <code>Array<[PersistentVolumeSpecNodeAffinity](#cdktf-provider-kubernetes-persistentvolumespecnodeaffinity)></code> | node_affinity block.<br/>__*Optional*__
 **persistentVolumeReclaimPolicy**? | <code>string</code> | What happens to a persistent volume when released from its claim.<br/>__*Optional*__
-**storageClassName**? | <code>string</code> | A description of the persistent volume's class.<br/>__*Optional*__
+**storageClassName**? | <code>string</code> | A description of the persistent volume's class. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class.<br/>__*Optional*__
 **volumeMode**? | <code>string</code> | Defines if a volume is intended to be used with a formatted filesystem.<br/>__*Optional*__
 
 
@@ -25104,7 +25104,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | The name of the PersistentVolumeClaim.
-**namespace**? | <code>string</code> | The namespace of the PersistentVolumeClaim.<br/>__*Optional*__
+**namespace**? | <code>string</code> | The namespace of the PersistentVolumeClaim. Uses 'default' namespace if none is specified.<br/>__*Optional*__
 
 
 
@@ -25158,7 +25158,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key** | <code>string</code> | The label key that the selector applies to.
-**operator** | <code>string</code> | A key's relationship to a set of values.
+**operator** | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists`, `DoesNotExist`, `Gt`, and `Lt`.
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -25173,7 +25173,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key** | <code>string</code> | The label key that the selector applies to.
-**operator** | <code>string</code> | A key's relationship to a set of values.
+**operator** | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists`, `DoesNotExist`, `Gt`, and `Lt`.
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -25218,10 +25218,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume).
+**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -25238,8 +25238,8 @@ Name | Type | Description
 **dataDiskUri** | <code>string</code> | The URI the data disk in the blob storage.
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**kind**? | <code>string</code> | The type for the data disk.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -25254,7 +25254,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -25270,10 +25270,10 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesourcecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
-**user**? | <code>string</code> | User is the rados user name, default is admin.<br/>__*Optional*__
+**user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 
 
 
@@ -25286,8 +25286,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -25300,9 +25300,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder.
+**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -25315,14 +25315,14 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**driver** | <code>string</code> | the name of the volume driver to use.
-**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume.
+**driver** | <code>string</code> | the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
+**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
 **controllerExpandSecretRef**? | <code>Array<[PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesourcecsicontrollerexpandsecretref)></code> | controller_expand_secret_ref block.<br/>__*Optional*__
 **controllerPublishSecretRef**? | <code>Array<[PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesourcecsicontrollerpublishsecretref)></code> | controller_publish_secret_ref block.<br/>__*Optional*__
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesourcecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesourcecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
 **volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
@@ -25336,8 +25336,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -25350,8 +25350,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -25364,8 +25364,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -25378,8 +25378,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -25395,7 +25395,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -25411,7 +25411,7 @@ Name | Type | Description
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesourceflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -25425,8 +25425,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -25440,7 +25440,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **datasetName**? | <code>string</code> | Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated.<br/>__*Optional*__
-**datasetUuid**? | <code>string</code> | UUID of the dataset.<br/>__*Optional*__
+**datasetUuid**? | <code>string</code> | UUID of the dataset. This is unique identifier of a Flocker dataset.<br/>__*Optional*__
 
 
 
@@ -25453,10 +25453,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**pdName** | <code>string</code> | Unique name of the PD resource in GCE.
+**pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -25469,9 +25469,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology.
-**path** | <code>string</code> | The Glusterfs volume path.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions.<br/>__*Optional*__
+**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -25484,8 +25484,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
-**type**? | <code>string</code> | Type for HostPath volume.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath.<br/>__*Optional*__
+**type**? | <code>string</code> | Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice.<br/>__*Optional*__
 
 
 
@@ -25501,9 +25501,9 @@ Name | Type | Description
 **iqn** | <code>string</code> | Target iSCSI Qualified Name.
 **targetPortal** | <code>string</code> | iSCSI target portal.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport.<br/>__*Optional*__
+**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -25516,7 +25516,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local.<br/>__*Optional*__
 
 
 
@@ -25529,9 +25529,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path** | <code>string</code> | Path that is exported by the NFS server.
-**server** | <code>string</code> | Server is the hostname or IP address of the NFS server.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions.<br/>__*Optional*__
+**path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -25561,7 +25561,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -25575,13 +25575,13 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors.
-**rbdImage** | <code>string</code> | The rados image name.
+**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
+**rbdImage** | <code>string</code> | The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser.<br/>__*Optional*__
-**radosUser**? | <code>string</code> | The rados user name.<br/>__*Optional*__
-**rbdPool**? | <code>string</code> | The rados pool name.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesourcerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -25595,8 +25595,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -25623,7 +25623,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#create PersistentVolume#create}.<br/>__*Optional*__
 
 
 
@@ -25676,7 +25676,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the pod disruption budget that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the pod disruption budget.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the pod disruption budget, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the pod disruption budget, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the pod disruption budget must be unique.<br/>__*Optional*__
 
 
@@ -25691,8 +25691,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **selector** | <code>Array<[PodDisruptionBudgetSpecSelector](#cdktf-provider-kubernetes-poddisruptionbudgetspecselector)></code> | selector block.
-**maxUnavailable**? | <code>string</code> | __*Optional*__
-**minAvailable**? | <code>string</code> | __*Optional*__
+**maxUnavailable**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget.html#max_unavailable PodDisruptionBudget#max_unavailable}.<br/>__*Optional*__
+**minAvailable**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget.html#min_available PodDisruptionBudget#min_available}.<br/>__*Optional*__
 
 
 
@@ -25720,7 +25720,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -25737,7 +25737,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the pod that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the pod.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the pod, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the pod must be unique.<br/>__*Optional*__
 
 
@@ -25771,7 +25771,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the podsecuritypolicy that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the podsecuritypolicy.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the podsecuritypolicy, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the podsecuritypolicy, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -25787,7 +25787,7 @@ Name | Type | Description
 **fsGroup** | <code>Array<[PodSecurityPolicySpecFsGroup](#cdktf-provider-kubernetes-podsecuritypolicyspecfsgroup)></code> | fs_group block.
 **runAsUser** | <code>Array<[PodSecurityPolicySpecRunAsUser](#cdktf-provider-kubernetes-podsecuritypolicyspecrunasuser)></code> | run_as_user block.
 **supplementalGroups** | <code>Array<[PodSecurityPolicySpecSupplementalGroups](#cdktf-provider-kubernetes-podsecuritypolicyspecsupplementalgroups)></code> | supplemental_groups block.
-**allowPrivilegeEscalation**? | <code>boolean</code> | allowPrivilegeEscalation determines if a pod can request to allow privilege escalation.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean</code> | allowPrivilegeEscalation determines if a pod can request to allow privilege escalation. If unspecified, defaults to true.<br/>__*Optional*__
 **allowedCapabilities**? | <code>Array<string></code> | allowedCapabilities is a list of capabilities that can be requested to add to the container.<br/>__*Optional*__
 **allowedFlexVolumes**? | <code>Array<[PodSecurityPolicySpecAllowedFlexVolumes](#cdktf-provider-kubernetes-podsecuritypolicyspecallowedflexvolumes)></code> | allowed_flex_volumes block.<br/>__*Optional*__
 **allowedHostPaths**? | <code>Array<[PodSecurityPolicySpecAllowedHostPaths](#cdktf-provider-kubernetes-podsecuritypolicyspecallowedhostpaths)></code> | allowed_host_paths block.<br/>__*Optional*__
@@ -25957,10 +25957,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**level** | <code>string</code> | <span></span>
-**role** | <code>string</code> | <span></span>
-**type** | <code>string</code> | <span></span>
-**user** | <code>string</code> | <span></span>
+**level** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#level PodSecurityPolicy#level}.
+**role** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#role PodSecurityPolicy#role}.
+**type** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#type PodSecurityPolicy#type}.
+**user** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#user PodSecurityPolicy#user}.
 
 
 
@@ -26007,9 +26007,9 @@ Name | Type | Description
 **container**? | <code>Array<[PodSpecContainer](#cdktf-provider-kubernetes-podspeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[PodSpecDnsConfig](#cdktf-provider-kubernetes-podspecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[PodSpecHostAliases](#cdktf-provider-kubernetes-podspechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
 **hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
 **hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
@@ -26019,9 +26019,9 @@ Name | Type | Description
 **nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[PodSpecReadinessGate](#cdktf-provider-kubernetes-podspecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
-**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod.<br/>__*Optional*__
+**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[PodSpecSecurityContext](#cdktf-provider-kubernetes-podspecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
-**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod.<br/>__*Optional*__
+**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
 **shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
@@ -26181,7 +26181,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-podspecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -26210,7 +26210,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -26225,7 +26225,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-podspecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -26254,7 +26254,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -26297,7 +26297,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-podspecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -26326,7 +26326,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -26341,7 +26341,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-podspecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -26370,7 +26370,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -26389,7 +26389,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[PodSpecContainerEnv](#cdktf-provider-kubernetes-podspeccontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[PodSpecContainerEnvFrom](#cdktf-provider-kubernetes-podspeccontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[PodSpecContainerLifecycle](#cdktf-provider-kubernetes-podspeccontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[PodSpecContainerLivenessProbe](#cdktf-provider-kubernetes-podspeccontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -26417,7 +26417,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[PodSpecContainerEnvValueFrom](#cdktf-provider-kubernetes-podspeccontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -26433,7 +26433,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[PodSpecContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-podspeccontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[PodSpecContainerEnvFromSecretRef](#cdktf-provider-kubernetes-podspeccontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -26447,7 +26447,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -26461,7 +26461,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -26492,7 +26492,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -26521,8 +26521,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#container_name Pod#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#divisor Pod#divisor}.<br/>__*Optional*__
 
 
 
@@ -26535,8 +26535,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -26592,7 +26592,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[PodSpecContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-podspeccontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -26664,7 +26664,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[PodSpecContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-podspeccontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -26711,11 +26711,11 @@ Name | Type | Description
 **exec**? | <code>Array<[PodSpecContainerLivenessProbeExec](#cdktf-provider-kubernetes-podspeccontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[PodSpecContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-podspeccontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[PodSpecContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-podspeccontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -26741,7 +26741,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[PodSpecContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-podspeccontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -26789,7 +26789,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -26805,11 +26805,11 @@ Name | Type | Description
 **exec**? | <code>Array<[PodSpecContainerReadinessProbeExec](#cdktf-provider-kubernetes-podspeccontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[PodSpecContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-podspeccontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[PodSpecContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-podspeccontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -26835,7 +26835,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[PodSpecContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-podspeccontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -26879,7 +26879,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -26896,7 +26896,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[PodSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-podspeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -26946,11 +26946,11 @@ Name | Type | Description
 **exec**? | <code>Array<[PodSpecContainerStartupProbeExec](#cdktf-provider-kubernetes-podspeccontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[PodSpecContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-podspeccontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[PodSpecContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-podspeccontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -26976,7 +26976,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[PodSpecContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-podspeccontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -27020,11 +27020,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -27053,7 +27053,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the option.
-**value**? | <code>string</code> | Value of the option.<br/>__*Optional*__
+**value**? | <code>string</code> | Value of the option. Optional: Defaults to empty.<br/>__*Optional*__
 
 
 
@@ -27080,7 +27080,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
 
 
@@ -27098,7 +27098,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[PodSpecInitContainerEnv](#cdktf-provider-kubernetes-podspecinitcontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[PodSpecInitContainerEnvFrom](#cdktf-provider-kubernetes-podspecinitcontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[PodSpecInitContainerLifecycle](#cdktf-provider-kubernetes-podspecinitcontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[PodSpecInitContainerLivenessProbe](#cdktf-provider-kubernetes-podspecinitcontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -27126,7 +27126,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[PodSpecInitContainerEnvValueFrom](#cdktf-provider-kubernetes-podspecinitcontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -27142,7 +27142,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[PodSpecInitContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-podspecinitcontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[PodSpecInitContainerEnvFromSecretRef](#cdktf-provider-kubernetes-podspecinitcontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -27156,7 +27156,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -27170,7 +27170,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -27201,7 +27201,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -27230,8 +27230,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#container_name Pod#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#divisor Pod#divisor}.<br/>__*Optional*__
 
 
 
@@ -27244,8 +27244,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -27301,7 +27301,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-podspecinitcontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -27373,7 +27373,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-podspecinitcontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -27420,11 +27420,11 @@ Name | Type | Description
 **exec**? | <code>Array<[PodSpecInitContainerLivenessProbeExec](#cdktf-provider-kubernetes-podspecinitcontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[PodSpecInitContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-podspecinitcontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[PodSpecInitContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-podspecinitcontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -27450,7 +27450,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[PodSpecInitContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-podspecinitcontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -27498,7 +27498,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -27514,11 +27514,11 @@ Name | Type | Description
 **exec**? | <code>Array<[PodSpecInitContainerReadinessProbeExec](#cdktf-provider-kubernetes-podspecinitcontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[PodSpecInitContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-podspecinitcontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[PodSpecInitContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-podspecinitcontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -27544,7 +27544,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[PodSpecInitContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-podspecinitcontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -27588,7 +27588,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -27605,7 +27605,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[PodSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-podspecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -27655,11 +27655,11 @@ Name | Type | Description
 **exec**? | <code>Array<[PodSpecInitContainerStartupProbeExec](#cdktf-provider-kubernetes-podspecinitcontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[PodSpecInitContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-podspecinitcontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[PodSpecInitContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-podspecinitcontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -27685,7 +27685,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[PodSpecInitContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-podspecinitcontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -27729,11 +27729,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -27856,7 +27856,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -27888,7 +27888,7 @@ Name | Type | Description
 **hostPath**? | <code>Array<[PodSpecVolumeHostPath](#cdktf-provider-kubernetes-podspecvolumehostpath)></code> | host_path block.<br/>__*Optional*__
 **iscsi**? | <code>Array<[PodSpecVolumeIscsi](#cdktf-provider-kubernetes-podspecvolumeiscsi)></code> | iscsi block.<br/>__*Optional*__
 **local**? | <code>Array<[PodSpecVolumeLocal](#cdktf-provider-kubernetes-podspecvolumelocal)></code> | local block.<br/>__*Optional*__
-**name**? | <code>string</code> | Volume's name.<br/>__*Optional*__
+**name**? | <code>string</code> | Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **nfs**? | <code>Array<[PodSpecVolumeNfs](#cdktf-provider-kubernetes-podspecvolumenfs)></code> | nfs block.<br/>__*Optional*__
 **persistentVolumeClaim**? | <code>Array<[PodSpecVolumePersistentVolumeClaim](#cdktf-provider-kubernetes-podspecvolumepersistentvolumeclaim)></code> | persistent_volume_claim block.<br/>__*Optional*__
 **photonPersistentDisk**? | <code>Array<[PodSpecVolumePhotonPersistentDisk](#cdktf-provider-kubernetes-podspecvolumephotonpersistentdisk)></code> | photon_persistent_disk block.<br/>__*Optional*__
@@ -27909,10 +27909,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume).
+**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -27929,8 +27929,8 @@ Name | Type | Description
 **dataDiskUri** | <code>string</code> | The URI the data disk in the blob storage.
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**kind**? | <code>string</code> | The type for the data disk.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -27945,7 +27945,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -27961,10 +27961,10 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[PodSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-podspecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
-**user**? | <code>string</code> | User is the rados user name, default is admin.<br/>__*Optional*__
+**user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 
 
 
@@ -27977,8 +27977,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -27991,9 +27991,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder.
+**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -28008,7 +28008,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[PodSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-podspecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
@@ -28037,14 +28037,14 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**driver** | <code>string</code> | the name of the volume driver to use.
-**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume.
+**driver** | <code>string</code> | the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
+**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
 **controllerExpandSecretRef**? | <code>Array<[PodSpecVolumeCsiControllerExpandSecretRef](#cdktf-provider-kubernetes-podspecvolumecsicontrollerexpandsecretref)></code> | controller_expand_secret_ref block.<br/>__*Optional*__
 **controllerPublishSecretRef**? | <code>Array<[PodSpecVolumeCsiControllerPublishSecretRef](#cdktf-provider-kubernetes-podspecvolumecsicontrollerpublishsecretref)></code> | controller_publish_secret_ref block.<br/>__*Optional*__
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[PodSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-podspecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[PodSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-podspecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
 **volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
@@ -28058,8 +28058,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -28072,8 +28072,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -28086,8 +28086,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -28100,8 +28100,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -28158,9 +28158,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#container_name Pod#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#divisor Pod#divisor}.<br/>__*Optional*__
 
 
 
@@ -28190,7 +28190,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -28206,7 +28206,7 @@ Name | Type | Description
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[PodSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-podspecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -28220,8 +28220,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -28235,7 +28235,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **datasetName**? | <code>string</code> | Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated.<br/>__*Optional*__
-**datasetUuid**? | <code>string</code> | UUID of the dataset.<br/>__*Optional*__
+**datasetUuid**? | <code>string</code> | UUID of the dataset. This is unique identifier of a Flocker dataset.<br/>__*Optional*__
 
 
 
@@ -28248,10 +28248,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**pdName** | <code>string</code> | Unique name of the PD resource in GCE.
+**pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -28279,9 +28279,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology.
-**path** | <code>string</code> | The Glusterfs volume path.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions.<br/>__*Optional*__
+**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -28294,8 +28294,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
-**type**? | <code>string</code> | Type for HostPath volume.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath.<br/>__*Optional*__
+**type**? | <code>string</code> | Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice.<br/>__*Optional*__
 
 
 
@@ -28311,9 +28311,9 @@ Name | Type | Description
 **iqn** | <code>string</code> | Target iSCSI Qualified Name.
 **targetPortal** | <code>string</code> | iSCSI target portal.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport.<br/>__*Optional*__
+**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -28326,7 +28326,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local.<br/>__*Optional*__
 
 
 
@@ -28339,9 +28339,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path** | <code>string</code> | Path that is exported by the NFS server.
-**server** | <code>string</code> | Server is the hostname or IP address of the NFS server.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions.<br/>__*Optional*__
+**path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -28413,7 +28413,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[PodSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-podspecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -28485,9 +28485,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#container_name Pod#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#divisor Pod#divisor}.<br/>__*Optional*__
 
 
 
@@ -28501,7 +28501,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[PodSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-podspecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -28548,7 +28548,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -28562,13 +28562,13 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors.
-**rbdImage** | <code>string</code> | The rados image name.
+**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
+**rbdImage** | <code>string</code> | The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser.<br/>__*Optional*__
-**radosUser**? | <code>string</code> | The rados user name.<br/>__*Optional*__
-**rbdPool**? | <code>string</code> | The rados pool name.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[PodSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-podspecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -28582,8 +28582,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -28599,7 +28599,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[PodSpecVolumeSecretItems](#cdktf-provider-kubernetes-podspecvolumesecretitems)></code> | items block.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
-**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
 
@@ -28641,8 +28641,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
-**delete**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#create Pod#create}.<br/>__*Optional*__
+**delete**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#delete Pod#delete}.<br/>__*Optional*__
 
 
 
@@ -28678,7 +28678,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the priority class that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the priority class.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the priority class, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the priority class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -28713,7 +28713,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the replication controller that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the replication controller.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the replication controller, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the replication controller, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the replication controller must be unique.<br/>__*Optional*__
 
 
@@ -28730,7 +28730,7 @@ Name | Type | Description
 **selector** | <code>Map<string, string></code> | A label query over pods that should match the Replicas count.
 **template** | <code>Array<[ReplicationControllerSpecTemplate](#cdktf-provider-kubernetes-replicationcontrollerspectemplate)></code> | template block.
 **minReadySeconds**? | <code>number</code> | Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available.<br/>__*Optional*__
-**replicas**? | <code>number</code> | The number of desired replicas.<br/>__*Optional*__
+**replicas**? | <code>number</code> | The number of desired replicas. Defaults to 1. More info: http://kubernetes.io/docs/user-guide/replication-controller#what-is-a-replication-controller.<br/>__*Optional*__
 
 
 
@@ -28760,7 +28760,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the replication controller's template that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the replication controller's template.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the replication controller's template, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the replication controller's template, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the replication controller's template must be unique.<br/>__*Optional*__
 
 
@@ -28780,9 +28780,9 @@ Name | Type | Description
 **container**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainer](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[ReplicationControllerSpecTemplateSpecDnsConfig](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[ReplicationControllerSpecTemplateSpecHostAliases](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
 **hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
 **hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
@@ -28792,9 +28792,9 @@ Name | Type | Description
 **nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[ReplicationControllerSpecTemplateSpecReadinessGate](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
-**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod.<br/>__*Optional*__
+**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[ReplicationControllerSpecTemplateSpecSecurityContext](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
-**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod.<br/>__*Optional*__
+**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
 **shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
@@ -28954,7 +28954,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[ReplicationControllerSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -28983,7 +28983,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -28998,7 +28998,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[ReplicationControllerSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -29027,7 +29027,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -29070,7 +29070,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[ReplicationControllerSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -29099,7 +29099,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -29114,7 +29114,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[ReplicationControllerSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -29143,7 +29143,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -29162,7 +29162,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerEnv](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerEnvFrom](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerLifecycle](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerLivenessProbe](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -29190,7 +29190,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerEnvValueFrom](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -29206,7 +29206,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerEnvFromSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -29220,7 +29220,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -29234,7 +29234,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -29265,7 +29265,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -29294,8 +29294,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#container_name ReplicationController#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#divisor ReplicationController#divisor}.<br/>__*Optional*__
 
 
 
@@ -29308,8 +29308,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -29365,7 +29365,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -29437,7 +29437,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -29484,11 +29484,11 @@ Name | Type | Description
 **exec**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerLivenessProbeExec](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -29514,7 +29514,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -29562,7 +29562,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -29578,11 +29578,11 @@ Name | Type | Description
 **exec**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerReadinessProbeExec](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -29608,7 +29608,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -29652,7 +29652,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -29669,7 +29669,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -29719,11 +29719,11 @@ Name | Type | Description
 **exec**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerStartupProbeExec](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -29749,7 +29749,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -29793,11 +29793,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -29826,7 +29826,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the option.
-**value**? | <code>string</code> | Value of the option.<br/>__*Optional*__
+**value**? | <code>string</code> | Value of the option. Optional: Defaults to empty.<br/>__*Optional*__
 
 
 
@@ -29853,7 +29853,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
 
 
@@ -29871,7 +29871,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerEnv](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerEnvFrom](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerLifecycle](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerLivenessProbe](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -29899,7 +29899,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerEnvValueFrom](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -29915,7 +29915,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerEnvFromSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -29929,7 +29929,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -29943,7 +29943,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -29974,7 +29974,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -30003,8 +30003,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#container_name ReplicationController#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#divisor ReplicationController#divisor}.<br/>__*Optional*__
 
 
 
@@ -30017,8 +30017,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -30074,7 +30074,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -30146,7 +30146,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -30193,11 +30193,11 @@ Name | Type | Description
 **exec**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeExec](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -30223,7 +30223,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -30271,7 +30271,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -30287,11 +30287,11 @@ Name | Type | Description
 **exec**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeExec](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -30317,7 +30317,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -30361,7 +30361,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -30378,7 +30378,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -30428,11 +30428,11 @@ Name | Type | Description
 **exec**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerStartupProbeExec](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -30458,7 +30458,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -30502,11 +30502,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -30629,7 +30629,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -30661,7 +30661,7 @@ Name | Type | Description
 **hostPath**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeHostPath](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumehostpath)></code> | host_path block.<br/>__*Optional*__
 **iscsi**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeIscsi](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumeiscsi)></code> | iscsi block.<br/>__*Optional*__
 **local**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeLocal](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumelocal)></code> | local block.<br/>__*Optional*__
-**name**? | <code>string</code> | Volume's name.<br/>__*Optional*__
+**name**? | <code>string</code> | Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **nfs**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeNfs](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumenfs)></code> | nfs block.<br/>__*Optional*__
 **persistentVolumeClaim**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumePersistentVolumeClaim](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumepersistentvolumeclaim)></code> | persistent_volume_claim block.<br/>__*Optional*__
 **photonPersistentDisk**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumePhotonPersistentDisk](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumephotonpersistentdisk)></code> | photon_persistent_disk block.<br/>__*Optional*__
@@ -30682,10 +30682,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume).
+**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -30702,8 +30702,8 @@ Name | Type | Description
 **dataDiskUri** | <code>string</code> | The URI the data disk in the blob storage.
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**kind**? | <code>string</code> | The type for the data disk.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -30718,7 +30718,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -30734,10 +30734,10 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
-**user**? | <code>string</code> | User is the rados user name, default is admin.<br/>__*Optional*__
+**user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 
 
 
@@ -30750,8 +30750,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -30764,9 +30764,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder.
+**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -30781,7 +30781,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
@@ -30810,14 +30810,14 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**driver** | <code>string</code> | the name of the volume driver to use.
-**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume.
+**driver** | <code>string</code> | the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
+**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
 **controllerExpandSecretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeCsiControllerExpandSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumecsicontrollerexpandsecretref)></code> | controller_expand_secret_ref block.<br/>__*Optional*__
 **controllerPublishSecretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeCsiControllerPublishSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumecsicontrollerpublishsecretref)></code> | controller_publish_secret_ref block.<br/>__*Optional*__
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
 **volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
@@ -30831,8 +30831,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -30845,8 +30845,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -30859,8 +30859,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -30873,8 +30873,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -30931,9 +30931,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#container_name ReplicationController#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#divisor ReplicationController#divisor}.<br/>__*Optional*__
 
 
 
@@ -30963,7 +30963,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -30979,7 +30979,7 @@ Name | Type | Description
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -30993,8 +30993,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -31008,7 +31008,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **datasetName**? | <code>string</code> | Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated.<br/>__*Optional*__
-**datasetUuid**? | <code>string</code> | UUID of the dataset.<br/>__*Optional*__
+**datasetUuid**? | <code>string</code> | UUID of the dataset. This is unique identifier of a Flocker dataset.<br/>__*Optional*__
 
 
 
@@ -31021,10 +31021,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**pdName** | <code>string</code> | Unique name of the PD resource in GCE.
+**pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -31052,9 +31052,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology.
-**path** | <code>string</code> | The Glusterfs volume path.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions.<br/>__*Optional*__
+**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -31067,8 +31067,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
-**type**? | <code>string</code> | Type for HostPath volume.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath.<br/>__*Optional*__
+**type**? | <code>string</code> | Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice.<br/>__*Optional*__
 
 
 
@@ -31084,9 +31084,9 @@ Name | Type | Description
 **iqn** | <code>string</code> | Target iSCSI Qualified Name.
 **targetPortal** | <code>string</code> | iSCSI target portal.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport.<br/>__*Optional*__
+**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -31099,7 +31099,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local.<br/>__*Optional*__
 
 
 
@@ -31112,9 +31112,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path** | <code>string</code> | Path that is exported by the NFS server.
-**server** | <code>string</code> | Server is the hostname or IP address of the NFS server.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions.<br/>__*Optional*__
+**path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -31186,7 +31186,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -31258,9 +31258,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#container_name ReplicationController#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#divisor ReplicationController#divisor}.<br/>__*Optional*__
 
 
 
@@ -31274,7 +31274,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -31321,7 +31321,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -31335,13 +31335,13 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors.
-**rbdImage** | <code>string</code> | The rados image name.
+**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
+**rbdImage** | <code>string</code> | The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser.<br/>__*Optional*__
-**radosUser**? | <code>string</code> | The rados user name.<br/>__*Optional*__
-**rbdPool**? | <code>string</code> | The rados pool name.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -31355,8 +31355,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -31372,7 +31372,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeSecretItems](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumesecretitems)></code> | items block.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
-**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
 
@@ -31414,9 +31414,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
-**delete**? | <code>string</code> | __*Optional*__
-**update**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#create ReplicationController#create}.<br/>__*Optional*__
+**delete**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#delete ReplicationController#delete}.<br/>__*Optional*__
+**update**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#update ReplicationController#update}.<br/>__*Optional*__
 
 
 
@@ -31451,7 +31451,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the resource quota that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the resource quota.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the resource quota, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the resource quota, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the resource quota must be unique.<br/>__*Optional*__
 
 
@@ -31465,7 +31465,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**hard**? | <code>Map<string, string></code> | The set of desired hard limits for each named resource.<br/>__*Optional*__
+**hard**? | <code>Map<string, string></code> | The set of desired hard limits for each named resource. More info: http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota.<br/>__*Optional*__
 **scopes**? | <code>Array<string></code> | A collection of filters that must match each object tracked by a quota.<br/>__*Optional*__
 
 
@@ -31479,8 +31479,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
-**update**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#create ResourceQuota#create}.<br/>__*Optional*__
+**update**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#update ResourceQuota#update}.<br/>__*Optional*__
 
 
 
@@ -31514,7 +31514,7 @@ Name | Type | Description
 -----|------|-------------
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the roleBinding that may be used to store arbitrary metadata.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the roleBinding.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the roleBinding, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the roleBinding, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the roleBinding must be unique.<br/>__*Optional*__
 
 
@@ -31528,7 +31528,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**apiGroup** | <code>string</code> | The API group of the user.
+**apiGroup** | <code>string</code> | The API group of the user. The only value possible at the moment is `rbac.authorization.k8s.io`.
 **kind** | <code>string</code> | The kind of resource.
 **name** | <code>string</code> | The name of the User to bind to.
 
@@ -31580,7 +31580,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the role that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the role.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the role, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the role, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the role must be unique.<br/>__*Optional*__
 
 
@@ -31611,7 +31611,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **metadata** | <code>Array<[SecretMetadata](#cdktf-provider-kubernetes-secretmetadata)></code> | metadata block.
-**binaryData**? | <code>Map<string, string></code> | A map of the secret data in base64 encoding.<br/>__*Optional*__
+**binaryData**? | <code>Map<string, string></code> | A map of the secret data in base64 encoding. Use this for binary data.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **data**? | <code>Map<string, string></code> | A map of the secret data.<br/>__*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
@@ -31633,7 +31633,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the secret that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the secret.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the secret, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the secret, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the secret must be unique.<br/>__*Optional*__
 
 
@@ -31668,7 +31668,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -31684,7 +31684,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the service account that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service account.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the service account, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the service account must be unique.<br/>__*Optional*__
 
 
@@ -31698,7 +31698,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -31711,7 +31711,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_account.html#create ServiceAccount#create}.<br/>__*Optional*__
 
 
 
@@ -31747,7 +31747,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the service that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the service, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the service must be unique.<br/>__*Optional*__
 
 
@@ -31771,7 +31771,7 @@ Name | Type | Description
 **port**? | <code>Array<[ServiceSpecPort](#cdktf-provider-kubernetes-servicespecport)></code> | port block.<br/>__*Optional*__
 **publishNotReadyAddresses**? | <code>boolean</code> | When set to true, indicates that DNS implementations must publish the `notReadyAddresses` of subsets for the Endpoints associated with the Service.<br/>__*Optional*__
 **selector**? | <code>Map<string, string></code> | Route service traffic to pods with label keys and values matching this selector.<br/>__*Optional*__
-**sessionAffinity**? | <code>string</code> | Used to maintain session affinity.<br/>__*Optional*__
+**sessionAffinity**? | <code>string</code> | Used to maintain session affinity. Supports `ClientIP` and `None`. Defaults to `None`. More info: http://kubernetes.io/docs/user-guide/services#virtual-ips-and-service-proxies.<br/>__*Optional*__
 **type**? | <code>string</code> | Determines how the service is exposed.<br/>__*Optional*__
 
 
@@ -31788,7 +31788,7 @@ Name | Type | Description
 **port** | <code>number</code> | The port that will be exposed by this service.
 **name**? | <code>string</code> | The name of this port within the service.<br/>__*Optional*__
 **nodePort**? | <code>number</code> | The port on each node on which this service is exposed when `type` is `NodePort` or `LoadBalancer`.<br/>__*Optional*__
-**protocol**? | <code>string</code> | The IP protocol for this port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | The IP protocol for this port. Supports `TCP` and `UDP`. Default is `TCP`.<br/>__*Optional*__
 **targetPort**? | <code>string</code> | Number or name of the port to access on the pods targeted by the service.<br/>__*Optional*__
 
 
@@ -31802,7 +31802,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service.html#create Service#create}.<br/>__*Optional*__
 
 
 
@@ -31822,7 +31822,7 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **timeouts**? | <code>[StatefulSetTimeouts](#cdktf-provider-kubernetes-statefulsettimeouts)</code> | timeouts block.<br/>__*Optional*__
-**waitForRollout**? | <code>boolean</code> | Wait for the rollout of the stateful set to complete.<br/>__*Optional*__
+**waitForRollout**? | <code>boolean</code> | Wait for the rollout of the stateful set to complete. Defaults to true.<br/>__*Optional*__
 
 
 
@@ -31838,7 +31838,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the stateful set.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the stateful set, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the stateful set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the stateful set must be unique.<br/>__*Optional*__
 
 
@@ -31857,7 +31857,7 @@ Name | Type | Description
 **template** | <code>Array<[StatefulSetSpecTemplate](#cdktf-provider-kubernetes-statefulsetspectemplate)></code> | template block.
 **podManagementPolicy**? | <code>string</code> | Controls how pods are created during initial scale up, when replacing pods on nodes, or when scaling down.<br/>__*Optional*__
 **replicas**? | <code>string</code> | The desired number of replicas of the given Template, in the sense that they are instantiations of the same Template.<br/>__*Optional*__
-**revisionHistoryLimit**? | <code>number</code> | The maximum number of revisions that will be maintained in the StatefulSet's revision history.<br/>__*Optional*__
+**revisionHistoryLimit**? | <code>number</code> | The maximum number of revisions that will be maintained in the StatefulSet's revision history. The default value is 10.<br/>__*Optional*__
 **updateStrategy**? | <code>Array<[StatefulSetSpecUpdateStrategy](#cdktf-provider-kubernetes-statefulsetspecupdatestrategy)></code> | update_strategy block.<br/>__*Optional*__
 **volumeClaimTemplate**? | <code>Array<[StatefulSetSpecVolumeClaimTemplate](#cdktf-provider-kubernetes-statefulsetspecvolumeclaimtemplate)></code> | volume_claim_template block.<br/>__*Optional*__
 
@@ -31887,7 +31887,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -31918,7 +31918,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the stateful set.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the stateful set, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the stateful set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -31937,9 +31937,9 @@ Name | Type | Description
 **container**? | <code>Array<[StatefulSetSpecTemplateSpecContainer](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[StatefulSetSpecTemplateSpecDnsConfig](#cdktf-provider-kubernetes-statefulsetspectemplatespecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[StatefulSetSpecTemplateSpecHostAliases](#cdktf-provider-kubernetes-statefulsetspectemplatespechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
 **hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
 **hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
@@ -31949,9 +31949,9 @@ Name | Type | Description
 **nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[StatefulSetSpecTemplateSpecReadinessGate](#cdktf-provider-kubernetes-statefulsetspectemplatespecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
-**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod.<br/>__*Optional*__
+**restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[StatefulSetSpecTemplateSpecSecurityContext](#cdktf-provider-kubernetes-statefulsetspectemplatespecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
-**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod.<br/>__*Optional*__
+**serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
 **shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
@@ -32111,7 +32111,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[StatefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-statefulsetspectemplatespecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -32140,7 +32140,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -32155,7 +32155,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[StatefulSetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-statefulsetspectemplatespecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -32184,7 +32184,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -32227,7 +32227,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[StatefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector](#cdktf-provider-kubernetes-statefulsetspectemplatespecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -32256,7 +32256,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -32271,7 +32271,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **labelSelector**? | <code>Array<[StatefulSetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector](#cdktf-provider-kubernetes-statefulsetspectemplatespecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)></code> | label_selector block.<br/>__*Optional*__
-**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against);<br/>__*Optional*__
+**namespaces**? | <code>Array<string></code> | namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'.<br/>__*Optional*__
 **topologyKey**? | <code>string</code> | empty topology key is interpreted by the scheduler as 'all topologies'.<br/>__*Optional*__
 
 
@@ -32300,7 +32300,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -32319,7 +32319,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[StatefulSetSpecTemplateSpecContainerEnv](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[StatefulSetSpecTemplateSpecContainerEnvFrom](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[StatefulSetSpecTemplateSpecContainerLifecycle](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[StatefulSetSpecTemplateSpecContainerLivenessProbe](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -32347,7 +32347,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[StatefulSetSpecTemplateSpecContainerEnvValueFrom](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -32363,7 +32363,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[StatefulSetSpecTemplateSpecContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[StatefulSetSpecTemplateSpecContainerEnvFromSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -32377,7 +32377,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -32391,7 +32391,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -32422,7 +32422,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -32451,8 +32451,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#container_name StatefulSet#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#divisor StatefulSet#divisor}.<br/>__*Optional*__
 
 
 
@@ -32465,8 +32465,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -32522,7 +32522,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[StatefulSetSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -32594,7 +32594,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[StatefulSetSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -32641,11 +32641,11 @@ Name | Type | Description
 **exec**? | <code>Array<[StatefulSetSpecTemplateSpecContainerLivenessProbeExec](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[StatefulSetSpecTemplateSpecContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[StatefulSetSpecTemplateSpecContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -32671,7 +32671,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[StatefulSetSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -32719,7 +32719,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -32735,11 +32735,11 @@ Name | Type | Description
 **exec**? | <code>Array<[StatefulSetSpecTemplateSpecContainerReadinessProbeExec](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[StatefulSetSpecTemplateSpecContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[StatefulSetSpecTemplateSpecContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -32765,7 +32765,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[StatefulSetSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -32809,7 +32809,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -32826,7 +32826,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[StatefulSetSpecTemplateSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -32876,11 +32876,11 @@ Name | Type | Description
 **exec**? | <code>Array<[StatefulSetSpecTemplateSpecContainerStartupProbeExec](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[StatefulSetSpecTemplateSpecContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[StatefulSetSpecTemplateSpecContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -32906,7 +32906,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[StatefulSetSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -32950,11 +32950,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -32983,7 +32983,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the option.
-**value**? | <code>string</code> | Value of the option.<br/>__*Optional*__
+**value**? | <code>string</code> | Value of the option. Optional: Defaults to empty.<br/>__*Optional*__
 
 
 
@@ -33010,7 +33010,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
 
 
@@ -33028,7 +33028,7 @@ Name | Type | Description
 **command**? | <code>Array<string></code> | Entrypoint array.<br/>__*Optional*__
 **env**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerEnv](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerenv)></code> | env block.<br/>__*Optional*__
 **envFrom**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerEnvFrom](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerenvfrom)></code> | env_from block.<br/>__*Optional*__
-**image**? | <code>string</code> | Docker image name.<br/>__*Optional*__
+**image**? | <code>string</code> | Docker image name. More info: http://kubernetes.io/docs/user-guide/images.<br/>__*Optional*__
 **imagePullPolicy**? | <code>string</code> | Image pull policy.<br/>__*Optional*__
 **lifecycle**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerLifecycle](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerlifecycle)></code> | lifecycle block.<br/>__*Optional*__
 **livenessProbe**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerLivenessProbe](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerlivenessprobe)></code> | liveness_probe block.<br/>__*Optional*__
@@ -33056,7 +33056,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the environment variable.
+**name** | <code>string</code> | Name of the environment variable. Must be a C_IDENTIFIER.
 **value**? | <code>string</code> | Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables.<br/>__*Optional*__
 **valueFrom**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerEnvValueFrom](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerenvvaluefrom)></code> | value_from block.<br/>__*Optional*__
 
@@ -33072,7 +33072,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **configMapRef**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerEnvFromConfigMapRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerenvfromconfigmapref)></code> | config_map_ref block.<br/>__*Optional*__
-**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap.<br/>__*Optional*__
+**prefix**? | <code>string</code> | An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.<br/>__*Optional*__
 **secretRef**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerEnvFromSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerenvfromsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -33086,7 +33086,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
@@ -33100,7 +33100,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | Name of the referent.
+**name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 **optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
@@ -33131,7 +33131,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
@@ -33160,8 +33160,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **resource** | <code>string</code> | Resource to select.
-**containerName**? | <code>string</code> | __*Optional*__
-**divisor**? | <code>string</code> | __*Optional*__
+**containerName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#container_name StatefulSet#container_name}.<br/>__*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#divisor StatefulSet#divisor}.<br/>__*Optional*__
 
 
 
@@ -33174,8 +33174,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**key**? | <code>string</code> | The key of the secret to select from.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
@@ -33231,7 +33231,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerlifecyclepoststarthttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -33303,7 +33303,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerlifecycleprestophttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -33350,11 +33350,11 @@ Name | Type | Description
 **exec**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerLivenessProbeExec](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerlivenessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerLivenessProbeHttpGet](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerlivenessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerLivenessProbeTcpSocket](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerlivenessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -33380,7 +33380,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerlivenessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -33428,7 +33428,7 @@ Name | Type | Description
 **hostIp**? | <code>string</code> | What host IP to bind the external port to.<br/>__*Optional*__
 **hostPort**? | <code>number</code> | Number of port to expose on the host.<br/>__*Optional*__
 **name**? | <code>string</code> | If specified, this must be an IANA_SVC_NAME and unique within the pod.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Protocol for port.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Protocol for port. Must be UDP or TCP. Defaults to "TCP".<br/>__*Optional*__
 
 
 
@@ -33444,11 +33444,11 @@ Name | Type | Description
 **exec**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerReadinessProbeExec](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerreadinessprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerReadinessProbeHttpGet](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerreadinessprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerReadinessProbeTcpSocket](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerreadinessprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -33474,7 +33474,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerreadinessprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -33518,7 +33518,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -33535,7 +33535,7 @@ Name | Type | Description
 **allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
 **privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
 **runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
@@ -33585,11 +33585,11 @@ Name | Type | Description
 **exec**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerStartupProbeExec](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerstartupprobeexec)></code> | exec block.<br/>__*Optional*__
 **failureThreshold**? | <code>number</code> | Minimum consecutive failures for the probe to be considered failed after having succeeded.<br/>__*Optional*__
 **httpGet**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerStartupProbeHttpGet](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerstartupprobehttpget)></code> | http_get block.<br/>__*Optional*__
-**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated.<br/>__*Optional*__
+**initialDelaySeconds**? | <code>number</code> | Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 **periodSeconds**? | <code>number</code> | How often (in seconds) to perform the probe.<br/>__*Optional*__
 **successThreshold**? | <code>number</code> | Minimum consecutive successes for the probe to be considered successful after having failed.<br/>__*Optional*__
 **tcpSocket**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerStartupProbeTcpSocket](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerstartupprobetcpsocket)></code> | tcp_socket block.<br/>__*Optional*__
-**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out.<br/>__*Optional*__
+**timeoutSeconds**? | <code>number</code> | Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes.<br/>__*Optional*__
 
 
 
@@ -33615,7 +33615,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP.<br/>__*Optional*__
+**host**? | <code>string</code> | Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.<br/>__*Optional*__
 **httpHeader**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerstartupprobehttpgethttpheader)></code> | http_header block.<br/>__*Optional*__
 **path**? | <code>string</code> | Path to access on the HTTP server.<br/>__*Optional*__
 **port**? | <code>string</code> | Name or number of the port to access on the container.<br/>__*Optional*__
@@ -33659,11 +33659,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted.
+**mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified).<br/>__*Optional*__
-**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
 
@@ -33786,7 +33786,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -33818,7 +33818,7 @@ Name | Type | Description
 **hostPath**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeHostPath](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumehostpath)></code> | host_path block.<br/>__*Optional*__
 **iscsi**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeIscsi](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumeiscsi)></code> | iscsi block.<br/>__*Optional*__
 **local**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeLocal](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumelocal)></code> | local block.<br/>__*Optional*__
-**name**? | <code>string</code> | Volume's name.<br/>__*Optional*__
+**name**? | <code>string</code> | Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **nfs**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeNfs](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumenfs)></code> | nfs block.<br/>__*Optional*__
 **persistentVolumeClaim**? | <code>Array<[StatefulSetSpecTemplateSpecVolumePersistentVolumeClaim](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumepersistentvolumeclaim)></code> | persistent_volume_claim block.<br/>__*Optional*__
 **photonPersistentDisk**? | <code>Array<[StatefulSetSpecTemplateSpecVolumePhotonPersistentDisk](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumephotonpersistentdisk)></code> | photon_persistent_disk block.<br/>__*Optional*__
@@ -33839,10 +33839,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume).
+**volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -33859,8 +33859,8 @@ Name | Type | Description
 **dataDiskUri** | <code>string</code> | The URI the data disk in the blob storage.
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**kind**? | <code>string</code> | The type for the data disk.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -33875,7 +33875,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -33891,10 +33891,10 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
-**user**? | <code>string</code> | User is the rados user name, default is admin.<br/>__*Optional*__
+**user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 
 
 
@@ -33907,8 +33907,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -33921,9 +33921,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder.
+**volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -33938,7 +33938,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
@@ -33967,14 +33967,14 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**driver** | <code>string</code> | the name of the volume driver to use.
-**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume.
+**driver** | <code>string</code> | the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
+**volumeHandle** | <code>string</code> | A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
 **controllerExpandSecretRef**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeCsiControllerExpandSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumecsicontrollerexpandsecretref)></code> | controller_expand_secret_ref block.<br/>__*Optional*__
 **controllerPublishSecretRef**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeCsiControllerPublishSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumecsicontrollerpublishsecretref)></code> | controller_publish_secret_ref block.<br/>__*Optional*__
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true".<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
 **volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
@@ -33988,8 +33988,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -34002,8 +34002,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -34016,8 +34016,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -34030,8 +34030,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -34088,9 +34088,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#container_name StatefulSet#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#divisor StatefulSet#divisor}.<br/>__*Optional*__
 
 
 
@@ -34120,7 +34120,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -34136,7 +34136,7 @@ Name | Type | Description
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -34150,8 +34150,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -34165,7 +34165,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **datasetName**? | <code>string</code> | Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated.<br/>__*Optional*__
-**datasetUuid**? | <code>string</code> | UUID of the dataset.<br/>__*Optional*__
+**datasetUuid**? | <code>string</code> | UUID of the dataset. This is unique identifier of a Flocker dataset.<br/>__*Optional*__
 
 
 
@@ -34178,10 +34178,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**pdName** | <code>string</code> | Unique name of the PD resource in GCE.
+**pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -34209,9 +34209,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology.
-**path** | <code>string</code> | The Glusterfs volume path.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions.<br/>__*Optional*__
+**endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
+**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -34224,8 +34224,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
-**type**? | <code>string</code> | Type for HostPath volume.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath.<br/>__*Optional*__
+**type**? | <code>string</code> | Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice.<br/>__*Optional*__
 
 
 
@@ -34241,9 +34241,9 @@ Name | Type | Description
 **iqn** | <code>string</code> | Target iSCSI Qualified Name.
 **targetPortal** | <code>string</code> | iSCSI target portal.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport.<br/>__*Optional*__
+**iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -34256,7 +34256,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path**? | <code>string</code> | Path of the directory on the host.<br/>__*Optional*__
+**path**? | <code>string</code> | Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local.<br/>__*Optional*__
 
 
 
@@ -34269,9 +34269,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**path** | <code>string</code> | Path that is exported by the NFS server.
-**server** | <code>string</code> | Server is the hostname or IP address of the NFS server.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions.<br/>__*Optional*__
+**path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
+**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -34343,7 +34343,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -34415,9 +34415,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerName** | <code>string</code> | <span></span>
+**containerName** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#container_name StatefulSet#container_name}.
 **resource** | <code>string</code> | Resource to select.
-**divisor**? | <code>string</code> | __*Optional*__
+**divisor**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#divisor StatefulSet#divisor}.<br/>__*Optional*__
 
 
 
@@ -34431,7 +34431,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **items**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
@@ -34478,7 +34478,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -34492,13 +34492,13 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors.
-**rbdImage** | <code>string</code> | The rados image name.
+**cephMonitors** | <code>Array<string></code> | A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
+**rbdImage** | <code>string</code> | The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
-**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser.<br/>__*Optional*__
-**radosUser**? | <code>string</code> | The rados user name.<br/>__*Optional*__
-**rbdPool**? | <code>string</code> | The rados pool name.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts.<br/>__*Optional*__
+**keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -34512,8 +34512,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
-**namespace**? | <code>string</code> | Name of the referent.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -34529,7 +34529,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeSecretItems](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumesecretitems)></code> | items block.<br/>__*Optional*__
 **optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
-**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use.<br/>__*Optional*__
+**secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
 
@@ -34572,7 +34572,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **rollingUpdate**? | <code>Array<[StatefulSetSpecUpdateStrategyRollingUpdate](#cdktf-provider-kubernetes-statefulsetspecupdatestrategyrollingupdate)></code> | rolling_update block.<br/>__*Optional*__
-**type**? | <code>string</code> | Indicates the type of the StatefulSet update strategy.<br/>__*Optional*__
+**type**? | <code>string</code> | Indicates the type of the StatefulSet update strategy. Default is RollingUpdate.<br/>__*Optional*__
 
 
 
@@ -34585,7 +34585,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**partition**? | <code>number</code> | Indicates the ordinal at which the StatefulSet should be partitioned.<br/>__*Optional*__
+**partition**? | <code>number</code> | Indicates the ordinal at which the StatefulSet should be partitioned. Default value is 0.<br/>__*Optional*__
 
 
 
@@ -34615,7 +34615,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the persistent volume claim that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume claim.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the persistent volume claim, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the persistent volume claim, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the persistent volume claim must be unique.<br/>__*Optional*__
 
 
@@ -34629,7 +34629,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**accessModes** | <code>Array<string></code> | A set of the desired access modes the volume should have.
+**accessModes** | <code>Array<string></code> | A set of the desired access modes the volume should have. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#access-modes-1.
 **resources** | <code>Array<[StatefulSetSpecVolumeClaimTemplateSpecResources](#cdktf-provider-kubernetes-statefulsetspecvolumeclaimtemplatespecresources)></code> | resources block.
 **selector**? | <code>Array<[StatefulSetSpecVolumeClaimTemplateSpecSelector](#cdktf-provider-kubernetes-statefulsetspecvolumeclaimtemplatespecselector)></code> | selector block.<br/>__*Optional*__
 **storageClassName**? | <code>string</code> | Name of the storage class requested by the claim.<br/>__*Optional*__
@@ -34646,7 +34646,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Map describing the maximum amount of compute resources allowed.<br/>__*Optional*__
+**limits**? | <code>Map<string, string></code> | Map describing the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
 **requests**? | <code>Map<string, string></code> | Map describing the minimum amount of compute resources required.<br/>__*Optional*__
 
 
@@ -34675,7 +34675,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -34689,10 +34689,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**create**? | <code>string</code> | __*Optional*__
-**delete**? | <code>string</code> | __*Optional*__
-**read**? | <code>string</code> | __*Optional*__
-**update**? | <code>string</code> | __*Optional*__
+**create**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#create StatefulSet#create}.<br/>__*Optional*__
+**delete**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#delete StatefulSet#delete}.<br/>__*Optional*__
+**read**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read StatefulSet#read}.<br/>__*Optional*__
+**update**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#update StatefulSet#update}.<br/>__*Optional*__
 
 
 
@@ -34719,7 +34719,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
+**values**? | <code>Array<string></code> | An array of string values. One value must match the label to be selected.<br/>__*Optional*__
 
 
 
@@ -34759,7 +34759,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the storage class that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the storage class.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the storage class, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the storage class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -34793,7 +34793,7 @@ Name | Type | Description
 **annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the validating webhook configuration that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
 **labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the validating webhook configuration.<br/>__*Optional*__
-**name**? | <code>string</code> | Name of the validating webhook configuration, must be unique.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the validating webhook configuration, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
 
@@ -34843,8 +34843,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | `name` is the name of the service.
-**namespace** | <code>string</code> | `namespace` is the namespace of the service.
+**name** | <code>string</code> | `name` is the name of the service. Required.
+**namespace** | <code>string</code> | `namespace` is the namespace of the service. Required.
 **path**? | <code>string</code> | `path` is an optional URL path which will be sent in any request to this service.<br/>__*Optional*__
 **port**? | <code>number</code> | If specified, the port on the service that hosting webhook.<br/>__*Optional*__
 
@@ -34874,7 +34874,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -34903,7 +34903,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **key**? | <code>string</code> | The label key that the selector applies to.<br/>__*Optional*__
-**operator**? | <code>string</code> | A key's relationship to a set of values.<br/>__*Optional*__
+**operator**? | <code>string</code> | A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.<br/>__*Optional*__
 **values**? | <code>Array<string></code> | An array of string values.<br/>__*Optional*__
 
 
@@ -34917,11 +34917,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**apiGroups** | <code>Array<string></code> | <span></span>
-**apiVersions** | <code>Array<string></code> | <span></span>
+**apiGroups** | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#api_groups ValidatingWebhookConfiguration#api_groups}.
+**apiVersions** | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#api_versions ValidatingWebhookConfiguration#api_versions}.
 **operations** | <code>Array<string></code> | Operations is the operations the admission hook cares about - CREATE, UPDATE, DELETE, CONNECT or * for all of those operations and any future admission operations that are added.
-**resources** | <code>Array<string></code> | <span></span>
-**scope**? | <code>string</code> | __*Optional*__
+**resources** | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#resources ValidatingWebhookConfiguration#resources}.
+**scope**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#scope ValidatingWebhookConfiguration#scope}.<br/>__*Optional*__
 
 
 

@@ -7,25 +7,61 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface StatefulSetConfig extends cdktf.TerraformMetaArguments {
-  /** Wait for the rollout of the stateful set to complete. Defaults to true. */
+  /**
+  * Wait for the rollout of the stateful set to complete. Defaults to true.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#wait_for_rollout StatefulSet#wait_for_rollout}
+  */
   readonly waitForRollout?: boolean;
-  /** metadata block */
+  /**
+  * metadata block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#metadata StatefulSet#metadata}
+  */
   readonly metadata: StatefulSetMetadata[];
-  /** spec block */
+  /**
+  * spec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#spec StatefulSet#spec}
+  */
   readonly spec: StatefulSetSpec[];
-  /** timeouts block */
+  /**
+  * timeouts block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#timeouts StatefulSet#timeouts}
+  */
   readonly timeouts?: StatefulSetTimeouts;
 }
 export interface StatefulSetMetadata {
-  /** An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
+  /**
+  * An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#annotations StatefulSet#annotations}
+  */
   readonly annotations?: { [key: string]: string };
-  /** Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency */
+  /**
+  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#generate_name StatefulSet#generate_name}
+  */
   readonly generateName?: string;
-  /** Map of string keys and values that can be used to organize and categorize (scope and select) the stateful set. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels */
+  /**
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the stateful set. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#labels StatefulSet#labels}
+  */
   readonly labels?: { [key: string]: string };
-  /** Name of the stateful set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the stateful set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Namespace defines the space within which name of the stateful set must be unique. */
+  /**
+  * Namespace defines the space within which name of the stateful set must be unique.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespace StatefulSet#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -41,11 +77,23 @@ function statefulSetMetadataToTerraform(struct?: StatefulSetMetadata): any {
 }
 
 export interface StatefulSetSpecSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#operator StatefulSet#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#values StatefulSet#values}
+  */
   readonly values?: string[];
 }
 
@@ -59,9 +107,17 @@ function statefulSetSpecSelectorMatchExpressionsToTerraform(struct?: StatefulSet
 }
 
 export interface StatefulSetSpecSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_expressions StatefulSet#match_expressions}
+  */
   readonly matchExpressions?: StatefulSetSpecSelectorMatchExpressions[];
 }
 
@@ -74,13 +130,29 @@ function statefulSetSpecSelectorToTerraform(struct?: StatefulSetSpecSelector): a
 }
 
 export interface StatefulSetSpecTemplateMetadata {
-  /** An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
+  /**
+  * An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#annotations StatefulSet#annotations}
+  */
   readonly annotations?: { [key: string]: string };
-  /** Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency */
+  /**
+  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#generate_name StatefulSet#generate_name}
+  */
   readonly generateName?: string;
-  /** Map of string keys and values that can be used to organize and categorize (scope and select) the stateful set. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels */
+  /**
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the stateful set. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#labels StatefulSet#labels}
+  */
   readonly labels?: { [key: string]: string };
-  /** Name of the stateful set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the stateful set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
 }
 
@@ -95,11 +167,23 @@ function statefulSetSpecTemplateMetadataToTerraform(struct?: StatefulSetSpecTemp
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt. */
+  /**
+  * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#operator StatefulSet#operator}
+  */
   readonly operator?: string;
-  /** Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch. */
+  /**
+  * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#values StatefulSet#values}
+  */
   readonly values?: string[];
 }
 
@@ -113,7 +197,11 @@ function statefulSetSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulin
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference {
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_expressions StatefulSet#match_expressions}
+  */
   readonly matchExpressions?: StatefulSetSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[];
 }
 
@@ -125,9 +213,17 @@ function statefulSetSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulin
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution {
-  /** weight is in the range 1-100 */
+  /**
+  * weight is in the range 1-100
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#weight StatefulSet#weight}
+  */
   readonly weight: number;
-  /** preference block */
+  /**
+  * preference block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#preference StatefulSet#preference}
+  */
   readonly preference: StatefulSetSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference[];
 }
 
@@ -140,11 +236,23 @@ function statefulSetSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulin
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt. */
+  /**
+  * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#operator StatefulSet#operator}
+  */
   readonly operator?: string;
-  /** Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch. */
+  /**
+  * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#values StatefulSet#values}
+  */
   readonly values?: string[];
 }
 
@@ -158,7 +266,11 @@ function statefulSetSpecTemplateSpecAffinityNodeAffinityRequiredDuringScheduling
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm {
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_expressions StatefulSet#match_expressions}
+  */
   readonly matchExpressions?: StatefulSetSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions[];
 }
 
@@ -170,7 +282,11 @@ function statefulSetSpecTemplateSpecAffinityNodeAffinityRequiredDuringScheduling
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution {
-  /** node_selector_term block */
+  /**
+  * node_selector_term block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#node_selector_term StatefulSet#node_selector_term}
+  */
   readonly nodeSelectorTerm?: StatefulSetSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[];
 }
 
@@ -182,9 +298,17 @@ function statefulSetSpecTemplateSpecAffinityNodeAffinityRequiredDuringScheduling
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityNodeAffinity {
-  /** preferred_during_scheduling_ignored_during_execution block */
+  /**
+  * preferred_during_scheduling_ignored_during_execution block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#preferred_during_scheduling_ignored_during_execution StatefulSet#preferred_during_scheduling_ignored_during_execution}
+  */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: StatefulSetSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[];
-  /** required_during_scheduling_ignored_during_execution block */
+  /**
+  * required_during_scheduling_ignored_during_execution block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#required_during_scheduling_ignored_during_execution StatefulSet#required_during_scheduling_ignored_during_execution}
+  */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: StatefulSetSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
 
@@ -197,11 +321,23 @@ function statefulSetSpecTemplateSpecAffinityNodeAffinityToTerraform(struct?: Sta
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#operator StatefulSet#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#values StatefulSet#values}
+  */
   readonly values?: string[];
 }
 
@@ -215,9 +351,17 @@ function statefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringScheduling
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_expressions StatefulSet#match_expressions}
+  */
   readonly matchExpressions?: StatefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[];
 }
 
@@ -230,11 +374,23 @@ function statefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringScheduling
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
-  /** namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace' */
+  /**
+  * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespaces StatefulSet#namespaces}
+  */
   readonly namespaces?: string[];
-  /** empty topology key is interpreted by the scheduler as 'all topologies' */
+  /**
+  * empty topology key is interpreted by the scheduler as 'all topologies'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#topology_key StatefulSet#topology_key}
+  */
   readonly topologyKey?: string;
-  /** label_selector block */
+  /**
+  * label_selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#label_selector StatefulSet#label_selector}
+  */
   readonly labelSelector?: StatefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
 }
 
@@ -248,9 +404,17 @@ function statefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringScheduling
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution {
-  /** weight associated with matching the corresponding podAffinityTerm, in the range 1-100 */
+  /**
+  * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#weight StatefulSet#weight}
+  */
   readonly weight: number;
-  /** pod_affinity_term block */
+  /**
+  * pod_affinity_term block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#pod_affinity_term StatefulSet#pod_affinity_term}
+  */
   readonly podAffinityTerm: StatefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm[];
 }
 
@@ -263,11 +427,23 @@ function statefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringScheduling
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#operator StatefulSet#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#values StatefulSet#values}
+  */
   readonly values?: string[];
 }
 
@@ -281,9 +457,17 @@ function statefulSetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingI
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_expressions StatefulSet#match_expressions}
+  */
   readonly matchExpressions?: StatefulSetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[];
 }
 
@@ -296,11 +480,23 @@ function statefulSetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingI
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution {
-  /** namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace' */
+  /**
+  * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespaces StatefulSet#namespaces}
+  */
   readonly namespaces?: string[];
-  /** empty topology key is interpreted by the scheduler as 'all topologies' */
+  /**
+  * empty topology key is interpreted by the scheduler as 'all topologies'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#topology_key StatefulSet#topology_key}
+  */
   readonly topologyKey?: string;
-  /** label_selector block */
+  /**
+  * label_selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#label_selector StatefulSet#label_selector}
+  */
   readonly labelSelector?: StatefulSetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[];
 }
 
@@ -314,9 +510,17 @@ function statefulSetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingI
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAffinity {
-  /** preferred_during_scheduling_ignored_during_execution block */
+  /**
+  * preferred_during_scheduling_ignored_during_execution block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#preferred_during_scheduling_ignored_during_execution StatefulSet#preferred_during_scheduling_ignored_during_execution}
+  */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: StatefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[];
-  /** required_during_scheduling_ignored_during_execution block */
+  /**
+  * required_during_scheduling_ignored_during_execution block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#required_during_scheduling_ignored_during_execution StatefulSet#required_during_scheduling_ignored_during_execution}
+  */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: StatefulSetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
 
@@ -329,11 +533,23 @@ function statefulSetSpecTemplateSpecAffinityPodAffinityToTerraform(struct?: Stat
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#operator StatefulSet#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#values StatefulSet#values}
+  */
   readonly values?: string[];
 }
 
@@ -347,9 +563,17 @@ function statefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedu
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_expressions StatefulSet#match_expressions}
+  */
   readonly matchExpressions?: StatefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[];
 }
 
@@ -362,11 +586,23 @@ function statefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedu
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
-  /** namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace' */
+  /**
+  * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespaces StatefulSet#namespaces}
+  */
   readonly namespaces?: string[];
-  /** empty topology key is interpreted by the scheduler as 'all topologies' */
+  /**
+  * empty topology key is interpreted by the scheduler as 'all topologies'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#topology_key StatefulSet#topology_key}
+  */
   readonly topologyKey?: string;
-  /** label_selector block */
+  /**
+  * label_selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#label_selector StatefulSet#label_selector}
+  */
   readonly labelSelector?: StatefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
 }
 
@@ -380,9 +616,17 @@ function statefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedu
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution {
-  /** weight associated with matching the corresponding podAffinityTerm, in the range 1-100 */
+  /**
+  * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#weight StatefulSet#weight}
+  */
   readonly weight: number;
-  /** pod_affinity_term block */
+  /**
+  * pod_affinity_term block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#pod_affinity_term StatefulSet#pod_affinity_term}
+  */
   readonly podAffinityTerm: StatefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm[];
 }
 
@@ -395,11 +639,23 @@ function statefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedu
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#operator StatefulSet#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#values StatefulSet#values}
+  */
   readonly values?: string[];
 }
 
@@ -413,9 +669,17 @@ function statefulSetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedul
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_expressions StatefulSet#match_expressions}
+  */
   readonly matchExpressions?: StatefulSetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[];
 }
 
@@ -428,11 +692,23 @@ function statefulSetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedul
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution {
-  /** namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace' */
+  /**
+  * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespaces StatefulSet#namespaces}
+  */
   readonly namespaces?: string[];
-  /** empty topology key is interpreted by the scheduler as 'all topologies' */
+  /**
+  * empty topology key is interpreted by the scheduler as 'all topologies'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#topology_key StatefulSet#topology_key}
+  */
   readonly topologyKey?: string;
-  /** label_selector block */
+  /**
+  * label_selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#label_selector StatefulSet#label_selector}
+  */
   readonly labelSelector?: StatefulSetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[];
 }
 
@@ -446,9 +722,17 @@ function statefulSetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedul
 }
 
 export interface StatefulSetSpecTemplateSpecAffinityPodAntiAffinity {
-  /** preferred_during_scheduling_ignored_during_execution block */
+  /**
+  * preferred_during_scheduling_ignored_during_execution block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#preferred_during_scheduling_ignored_during_execution StatefulSet#preferred_during_scheduling_ignored_during_execution}
+  */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: StatefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[];
-  /** required_during_scheduling_ignored_during_execution block */
+  /**
+  * required_during_scheduling_ignored_during_execution block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#required_during_scheduling_ignored_during_execution StatefulSet#required_during_scheduling_ignored_during_execution}
+  */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: StatefulSetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
 
@@ -461,11 +745,23 @@ function statefulSetSpecTemplateSpecAffinityPodAntiAffinityToTerraform(struct?: 
 }
 
 export interface StatefulSetSpecTemplateSpecAffinity {
-  /** node_affinity block */
+  /**
+  * node_affinity block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#node_affinity StatefulSet#node_affinity}
+  */
   readonly nodeAffinity?: StatefulSetSpecTemplateSpecAffinityNodeAffinity[];
-  /** pod_affinity block */
+  /**
+  * pod_affinity block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#pod_affinity StatefulSet#pod_affinity}
+  */
   readonly podAffinity?: StatefulSetSpecTemplateSpecAffinityPodAffinity[];
-  /** pod_anti_affinity block */
+  /**
+  * pod_anti_affinity block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#pod_anti_affinity StatefulSet#pod_anti_affinity}
+  */
   readonly podAntiAffinity?: StatefulSetSpecTemplateSpecAffinityPodAntiAffinity[];
 }
 
@@ -479,11 +775,23 @@ function statefulSetSpecTemplateSpecAffinityToTerraform(struct?: StatefulSetSpec
 }
 
 export interface StatefulSetSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef {
-  /** The key to select. */
+  /**
+  * The key to select.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Specify whether the ConfigMap or its key must be defined. */
+  /**
+  * Specify whether the ConfigMap or its key must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -497,9 +805,17 @@ function statefulSetSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraf
 }
 
 export interface StatefulSetSpecTemplateSpecContainerEnvValueFromFieldRef {
-  /** Version of the schema the FieldPath is written in terms of, defaults to "v1". */
+  /**
+  * Version of the schema the FieldPath is written in terms of, defaults to "v1".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#api_version StatefulSet#api_version}
+  */
   readonly apiVersion?: string;
-  /** Path of the field to select in the specified API version */
+  /**
+  * Path of the field to select in the specified API version
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#field_path StatefulSet#field_path}
+  */
   readonly fieldPath?: string;
 }
 
@@ -512,9 +828,19 @@ function statefulSetSpecTemplateSpecContainerEnvValueFromFieldRefToTerraform(str
 }
 
 export interface StatefulSetSpecTemplateSpecContainerEnvValueFromResourceFieldRef {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#container_name StatefulSet#container_name}
+  */
   readonly containerName?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#divisor StatefulSet#divisor}
+  */
   readonly divisor?: string;
-  /** Resource to select */
+  /**
+  * Resource to select
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#resource StatefulSet#resource}
+  */
   readonly resource: string;
 }
 
@@ -528,11 +854,23 @@ function statefulSetSpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerra
 }
 
 export interface StatefulSetSpecTemplateSpecContainerEnvValueFromSecretKeyRef {
-  /** The key of the secret to select from. Must be a valid secret key. */
+  /**
+  * The key of the secret to select from. Must be a valid secret key.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Specify whether the Secret or its key must be defined. */
+  /**
+  * Specify whether the Secret or its key must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -546,13 +884,29 @@ function statefulSetSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform
 }
 
 export interface StatefulSetSpecTemplateSpecContainerEnvValueFrom {
-  /** config_map_key_ref block */
+  /**
+  * config_map_key_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#config_map_key_ref StatefulSet#config_map_key_ref}
+  */
   readonly configMapKeyRef?: StatefulSetSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef[];
-  /** field_ref block */
+  /**
+  * field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#field_ref StatefulSet#field_ref}
+  */
   readonly fieldRef?: StatefulSetSpecTemplateSpecContainerEnvValueFromFieldRef[];
-  /** resource_field_ref block */
+  /**
+  * resource_field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#resource_field_ref StatefulSet#resource_field_ref}
+  */
   readonly resourceFieldRef?: StatefulSetSpecTemplateSpecContainerEnvValueFromResourceFieldRef[];
-  /** secret_key_ref block */
+  /**
+  * secret_key_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret_key_ref StatefulSet#secret_key_ref}
+  */
   readonly secretKeyRef?: StatefulSetSpecTemplateSpecContainerEnvValueFromSecretKeyRef[];
 }
 
@@ -567,11 +921,23 @@ function statefulSetSpecTemplateSpecContainerEnvValueFromToTerraform(struct?: St
 }
 
 export interface StatefulSetSpecTemplateSpecContainerEnv {
-  /** Name of the environment variable. Must be a C_IDENTIFIER */
+  /**
+  * Name of the environment variable. Must be a C_IDENTIFIER
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
-  /** Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "". */
+  /**
+  * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
-  /** value_from block */
+  /**
+  * value_from block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value_from StatefulSet#value_from}
+  */
   readonly valueFrom?: StatefulSetSpecTemplateSpecContainerEnvValueFrom[];
 }
 
@@ -585,9 +951,17 @@ function statefulSetSpecTemplateSpecContainerEnvToTerraform(struct?: StatefulSet
 }
 
 export interface StatefulSetSpecTemplateSpecContainerEnvFromConfigMapRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
-  /** Specify whether the ConfigMap must be defined */
+  /**
+  * Specify whether the ConfigMap must be defined
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -600,9 +974,17 @@ function statefulSetSpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(stru
 }
 
 export interface StatefulSetSpecTemplateSpecContainerEnvFromSecretRef {
-  /** Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names */
+  /**
+  * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
-  /** Specify whether the Secret must be defined */
+  /**
+  * Specify whether the Secret must be defined
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -615,11 +997,23 @@ function statefulSetSpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct?
 }
 
 export interface StatefulSetSpecTemplateSpecContainerEnvFrom {
-  /** An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER. */
+  /**
+  * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#prefix StatefulSet#prefix}
+  */
   readonly prefix?: string;
-  /** config_map_ref block */
+  /**
+  * config_map_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#config_map_ref StatefulSet#config_map_ref}
+  */
   readonly configMapRef?: StatefulSetSpecTemplateSpecContainerEnvFromConfigMapRef[];
-  /** secret_ref block */
+  /**
+  * secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret_ref StatefulSet#secret_ref}
+  */
   readonly secretRef?: StatefulSetSpecTemplateSpecContainerEnvFromSecretRef[];
 }
 
@@ -633,7 +1027,11 @@ function statefulSetSpecTemplateSpecContainerEnvFromToTerraform(struct?: Statefu
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLifecyclePostStartExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#command StatefulSet#command}
+  */
   readonly command?: string[];
 }
 
@@ -645,9 +1043,17 @@ function statefulSetSpecTemplateSpecContainerLifecyclePostStartExecToTerraform(s
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
 }
 
@@ -660,15 +1066,35 @@ function statefulSetSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLifecyclePostStartHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host StatefulSet#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#scheme StatefulSet#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_header StatefulSet#http_header}
+  */
   readonly httpHeader?: StatefulSetSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[];
 }
 
@@ -684,7 +1110,11 @@ function statefulSetSpecTemplateSpecContainerLifecyclePostStartHttpGetToTerrafor
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLifecyclePostStartTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port: string;
 }
 
@@ -696,11 +1126,23 @@ function statefulSetSpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraf
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLifecyclePostStart {
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#exec StatefulSet#exec}
+  */
   readonly exec?: StatefulSetSpecTemplateSpecContainerLifecyclePostStartExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_get StatefulSet#http_get}
+  */
   readonly httpGet?: StatefulSetSpecTemplateSpecContainerLifecyclePostStartHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tcp_socket StatefulSet#tcp_socket}
+  */
   readonly tcpSocket?: StatefulSetSpecTemplateSpecContainerLifecyclePostStartTcpSocket[];
 }
 
@@ -714,7 +1156,11 @@ function statefulSetSpecTemplateSpecContainerLifecyclePostStartToTerraform(struc
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLifecyclePreStopExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#command StatefulSet#command}
+  */
   readonly command?: string[];
 }
 
@@ -726,9 +1172,17 @@ function statefulSetSpecTemplateSpecContainerLifecyclePreStopExecToTerraform(str
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
 }
 
@@ -741,15 +1195,35 @@ function statefulSetSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderTo
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLifecyclePreStopHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host StatefulSet#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#scheme StatefulSet#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_header StatefulSet#http_header}
+  */
   readonly httpHeader?: StatefulSetSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[];
 }
 
@@ -765,7 +1239,11 @@ function statefulSetSpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLifecyclePreStopTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port: string;
 }
 
@@ -777,11 +1255,23 @@ function statefulSetSpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerrafor
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLifecyclePreStop {
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#exec StatefulSet#exec}
+  */
   readonly exec?: StatefulSetSpecTemplateSpecContainerLifecyclePreStopExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_get StatefulSet#http_get}
+  */
   readonly httpGet?: StatefulSetSpecTemplateSpecContainerLifecyclePreStopHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tcp_socket StatefulSet#tcp_socket}
+  */
   readonly tcpSocket?: StatefulSetSpecTemplateSpecContainerLifecyclePreStopTcpSocket[];
 }
 
@@ -795,9 +1285,17 @@ function statefulSetSpecTemplateSpecContainerLifecyclePreStopToTerraform(struct?
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLifecycle {
-  /** post_start block */
+  /**
+  * post_start block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#post_start StatefulSet#post_start}
+  */
   readonly postStart?: StatefulSetSpecTemplateSpecContainerLifecyclePostStart[];
-  /** pre_stop block */
+  /**
+  * pre_stop block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#pre_stop StatefulSet#pre_stop}
+  */
   readonly preStop?: StatefulSetSpecTemplateSpecContainerLifecyclePreStop[];
 }
 
@@ -810,7 +1308,11 @@ function statefulSetSpecTemplateSpecContainerLifecycleToTerraform(struct?: State
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLivenessProbeExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#command StatefulSet#command}
+  */
   readonly command?: string[];
 }
 
@@ -822,9 +1324,17 @@ function statefulSetSpecTemplateSpecContainerLivenessProbeExecToTerraform(struct
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
 }
 
@@ -837,15 +1347,35 @@ function statefulSetSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToTer
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLivenessProbeHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host StatefulSet#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#scheme StatefulSet#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_header StatefulSet#http_header}
+  */
   readonly httpHeader?: StatefulSetSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[];
 }
 
@@ -861,7 +1391,11 @@ function statefulSetSpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(str
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLivenessProbeTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port: string;
 }
 
@@ -873,21 +1407,53 @@ function statefulSetSpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform(s
 }
 
 export interface StatefulSetSpecTemplateSpecContainerLivenessProbe {
-  /** Minimum consecutive failures for the probe to be considered failed after having succeeded. */
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#failure_threshold StatefulSet#failure_threshold}
+  */
   readonly failureThreshold?: number;
-  /** Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#initial_delay_seconds StatefulSet#initial_delay_seconds}
+  */
   readonly initialDelaySeconds?: number;
-  /** How often (in seconds) to perform the probe */
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#period_seconds StatefulSet#period_seconds}
+  */
   readonly periodSeconds?: number;
-  /** Minimum consecutive successes for the probe to be considered successful after having failed. */
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#success_threshold StatefulSet#success_threshold}
+  */
   readonly successThreshold?: number;
-  /** Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#timeout_seconds StatefulSet#timeout_seconds}
+  */
   readonly timeoutSeconds?: number;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#exec StatefulSet#exec}
+  */
   readonly exec?: StatefulSetSpecTemplateSpecContainerLivenessProbeExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_get StatefulSet#http_get}
+  */
   readonly httpGet?: StatefulSetSpecTemplateSpecContainerLivenessProbeHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tcp_socket StatefulSet#tcp_socket}
+  */
   readonly tcpSocket?: StatefulSetSpecTemplateSpecContainerLivenessProbeTcpSocket[];
 }
 
@@ -906,15 +1472,35 @@ function statefulSetSpecTemplateSpecContainerLivenessProbeToTerraform(struct?: S
 }
 
 export interface StatefulSetSpecTemplateSpecContainerPort {
-  /** Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536. */
+  /**
+  * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#container_port StatefulSet#container_port}
+  */
   readonly containerPort: number;
-  /** What host IP to bind the external port to. */
+  /**
+  * What host IP to bind the external port to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host_ip StatefulSet#host_ip}
+  */
   readonly hostIp?: string;
-  /** Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this. */
+  /**
+  * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host_port StatefulSet#host_port}
+  */
   readonly hostPort?: number;
-  /** If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services */
+  /**
+  * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Protocol for port. Must be UDP or TCP. Defaults to "TCP". */
+  /**
+  * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#protocol StatefulSet#protocol}
+  */
   readonly protocol?: string;
 }
 
@@ -930,7 +1516,11 @@ function statefulSetSpecTemplateSpecContainerPortToTerraform(struct?: StatefulSe
 }
 
 export interface StatefulSetSpecTemplateSpecContainerReadinessProbeExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#command StatefulSet#command}
+  */
   readonly command?: string[];
 }
 
@@ -942,9 +1532,17 @@ function statefulSetSpecTemplateSpecContainerReadinessProbeExecToTerraform(struc
 }
 
 export interface StatefulSetSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
 }
 
@@ -957,15 +1555,35 @@ function statefulSetSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToTe
 }
 
 export interface StatefulSetSpecTemplateSpecContainerReadinessProbeHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host StatefulSet#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#scheme StatefulSet#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_header StatefulSet#http_header}
+  */
   readonly httpHeader?: StatefulSetSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[];
 }
 
@@ -981,7 +1599,11 @@ function statefulSetSpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(st
 }
 
 export interface StatefulSetSpecTemplateSpecContainerReadinessProbeTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port: string;
 }
 
@@ -993,21 +1615,53 @@ function statefulSetSpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform(
 }
 
 export interface StatefulSetSpecTemplateSpecContainerReadinessProbe {
-  /** Minimum consecutive failures for the probe to be considered failed after having succeeded. */
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#failure_threshold StatefulSet#failure_threshold}
+  */
   readonly failureThreshold?: number;
-  /** Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#initial_delay_seconds StatefulSet#initial_delay_seconds}
+  */
   readonly initialDelaySeconds?: number;
-  /** How often (in seconds) to perform the probe */
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#period_seconds StatefulSet#period_seconds}
+  */
   readonly periodSeconds?: number;
-  /** Minimum consecutive successes for the probe to be considered successful after having failed. */
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#success_threshold StatefulSet#success_threshold}
+  */
   readonly successThreshold?: number;
-  /** Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#timeout_seconds StatefulSet#timeout_seconds}
+  */
   readonly timeoutSeconds?: number;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#exec StatefulSet#exec}
+  */
   readonly exec?: StatefulSetSpecTemplateSpecContainerReadinessProbeExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_get StatefulSet#http_get}
+  */
   readonly httpGet?: StatefulSetSpecTemplateSpecContainerReadinessProbeHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tcp_socket StatefulSet#tcp_socket}
+  */
   readonly tcpSocket?: StatefulSetSpecTemplateSpecContainerReadinessProbeTcpSocket[];
 }
 
@@ -1026,9 +1680,17 @@ function statefulSetSpecTemplateSpecContainerReadinessProbeToTerraform(struct?: 
 }
 
 export interface StatefulSetSpecTemplateSpecContainerResources {
-  /** Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
+  /**
+  * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#limits StatefulSet#limits}
+  */
   readonly limits?: { [key: string]: string };
-  /** Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/ */
+  /**
+  * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#requests StatefulSet#requests}
+  */
   readonly requests?: { [key: string]: string };
 }
 
@@ -1041,9 +1703,17 @@ function statefulSetSpecTemplateSpecContainerResourcesToTerraform(struct?: State
 }
 
 export interface StatefulSetSpecTemplateSpecContainerSecurityContextCapabilities {
-  /** Added capabilities */
+  /**
+  * Added capabilities
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#add StatefulSet#add}
+  */
   readonly add?: string[];
-  /** Removed capabilities */
+  /**
+  * Removed capabilities
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#drop StatefulSet#drop}
+  */
   readonly drop?: string[];
 }
 
@@ -1056,13 +1726,29 @@ function statefulSetSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraf
 }
 
 export interface StatefulSetSpecTemplateSpecContainerSecurityContextSeLinuxOptions {
-  /** Level is SELinux level label that applies to the container. */
+  /**
+  * Level is SELinux level label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#level StatefulSet#level}
+  */
   readonly level?: string;
-  /** Role is a SELinux role label that applies to the container. */
+  /**
+  * Role is a SELinux role label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#role StatefulSet#role}
+  */
   readonly role?: string;
-  /** Type is a SELinux type label that applies to the container. */
+  /**
+  * Type is a SELinux type label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#type StatefulSet#type}
+  */
   readonly type?: string;
-  /** User is a SELinux user label that applies to the container. */
+  /**
+  * User is a SELinux user label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#user StatefulSet#user}
+  */
   readonly user?: string;
 }
 
@@ -1077,21 +1763,53 @@ function statefulSetSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerr
 }
 
 export interface StatefulSetSpecTemplateSpecContainerSecurityContext {
-  /** AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN */
+  /**
+  * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#allow_privilege_escalation StatefulSet#allow_privilege_escalation}
+  */
   readonly allowPrivilegeEscalation?: boolean;
-  /** Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false. */
+  /**
+  * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#privileged StatefulSet#privileged}
+  */
   readonly privileged?: boolean;
-  /** Whether this container has a read-only root filesystem. Default is false. */
+  /**
+  * Whether this container has a read-only root filesystem. Default is false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only_root_filesystem StatefulSet#read_only_root_filesystem}
+  */
   readonly readOnlyRootFilesystem?: boolean;
-  /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#run_as_group StatefulSet#run_as_group}
+  */
   readonly runAsGroup?: string;
-  /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#run_as_non_root StatefulSet#run_as_non_root}
+  */
   readonly runAsNonRoot?: boolean;
-  /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#run_as_user StatefulSet#run_as_user}
+  */
   readonly runAsUser?: string;
-  /** capabilities block */
+  /**
+  * capabilities block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#capabilities StatefulSet#capabilities}
+  */
   readonly capabilities?: StatefulSetSpecTemplateSpecContainerSecurityContextCapabilities[];
-  /** se_linux_options block */
+  /**
+  * se_linux_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#se_linux_options StatefulSet#se_linux_options}
+  */
   readonly seLinuxOptions?: StatefulSetSpecTemplateSpecContainerSecurityContextSeLinuxOptions[];
 }
 
@@ -1110,7 +1828,11 @@ function statefulSetSpecTemplateSpecContainerSecurityContextToTerraform(struct?:
 }
 
 export interface StatefulSetSpecTemplateSpecContainerStartupProbeExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#command StatefulSet#command}
+  */
   readonly command?: string[];
 }
 
@@ -1122,9 +1844,17 @@ function statefulSetSpecTemplateSpecContainerStartupProbeExecToTerraform(struct?
 }
 
 export interface StatefulSetSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
 }
 
@@ -1137,15 +1867,35 @@ function statefulSetSpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToTerr
 }
 
 export interface StatefulSetSpecTemplateSpecContainerStartupProbeHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host StatefulSet#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#scheme StatefulSet#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_header StatefulSet#http_header}
+  */
   readonly httpHeader?: StatefulSetSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[];
 }
 
@@ -1161,7 +1911,11 @@ function statefulSetSpecTemplateSpecContainerStartupProbeHttpGetToTerraform(stru
 }
 
 export interface StatefulSetSpecTemplateSpecContainerStartupProbeTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port: string;
 }
 
@@ -1173,21 +1927,53 @@ function statefulSetSpecTemplateSpecContainerStartupProbeTcpSocketToTerraform(st
 }
 
 export interface StatefulSetSpecTemplateSpecContainerStartupProbe {
-  /** Minimum consecutive failures for the probe to be considered failed after having succeeded. */
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#failure_threshold StatefulSet#failure_threshold}
+  */
   readonly failureThreshold?: number;
-  /** Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#initial_delay_seconds StatefulSet#initial_delay_seconds}
+  */
   readonly initialDelaySeconds?: number;
-  /** How often (in seconds) to perform the probe */
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#period_seconds StatefulSet#period_seconds}
+  */
   readonly periodSeconds?: number;
-  /** Minimum consecutive successes for the probe to be considered successful after having failed. */
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#success_threshold StatefulSet#success_threshold}
+  */
   readonly successThreshold?: number;
-  /** Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#timeout_seconds StatefulSet#timeout_seconds}
+  */
   readonly timeoutSeconds?: number;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#exec StatefulSet#exec}
+  */
   readonly exec?: StatefulSetSpecTemplateSpecContainerStartupProbeExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_get StatefulSet#http_get}
+  */
   readonly httpGet?: StatefulSetSpecTemplateSpecContainerStartupProbeHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tcp_socket StatefulSet#tcp_socket}
+  */
   readonly tcpSocket?: StatefulSetSpecTemplateSpecContainerStartupProbeTcpSocket[];
 }
 
@@ -1206,15 +1992,35 @@ function statefulSetSpecTemplateSpecContainerStartupProbeToTerraform(struct?: St
 }
 
 export interface StatefulSetSpecTemplateSpecContainerVolumeMount {
-  /** Path within the container at which the volume should be mounted. Must not contain ':'. */
+  /**
+  * Path within the container at which the volume should be mounted. Must not contain ':'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#mount_path StatefulSet#mount_path}
+  */
   readonly mountPath: string;
-  /** Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional. */
+  /**
+  * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#mount_propagation StatefulSet#mount_propagation}
+  */
   readonly mountPropagation?: string;
-  /** This must match the Name of a Volume. */
+  /**
+  * This must match the Name of a Volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
-  /** Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false. */
+  /**
+  * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root). */
+  /**
+  * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#sub_path StatefulSet#sub_path}
+  */
   readonly subPath?: string;
 }
 
@@ -1230,47 +2036,131 @@ function statefulSetSpecTemplateSpecContainerVolumeMountToTerraform(struct?: Sta
 }
 
 export interface StatefulSetSpecTemplateSpecContainer {
-  /** Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands */
+  /**
+  * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#args StatefulSet#args}
+  */
   readonly args?: string[];
-  /** Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands */
+  /**
+  * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#command StatefulSet#command}
+  */
   readonly command?: string[];
-  /** Docker image name. More info: http://kubernetes.io/docs/user-guide/images */
+  /**
+  * Docker image name. More info: http://kubernetes.io/docs/user-guide/images
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#image StatefulSet#image}
+  */
   readonly image?: string;
-  /** Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images */
+  /**
+  * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#image_pull_policy StatefulSet#image_pull_policy}
+  */
   readonly imagePullPolicy?: string;
-  /** Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated. */
+  /**
+  * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
-  /** Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF.  */
+  /**
+  * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#stdin StatefulSet#stdin}
+  */
   readonly stdin?: boolean;
-  /** Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF. */
+  /**
+  * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#stdin_once StatefulSet#stdin_once}
+  */
   readonly stdinOnce?: boolean;
-  /** Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated. */
+  /**
+  * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#termination_message_path StatefulSet#termination_message_path}
+  */
   readonly terminationMessagePath?: string;
-  /** Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. */
+  /**
+  * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#termination_message_policy StatefulSet#termination_message_policy}
+  */
   readonly terminationMessagePolicy?: string;
-  /** Whether this container should allocate a TTY for itself */
+  /**
+  * Whether this container should allocate a TTY for itself
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tty StatefulSet#tty}
+  */
   readonly tty?: boolean;
-  /** Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated. */
+  /**
+  * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#working_dir StatefulSet#working_dir}
+  */
   readonly workingDir?: string;
-  /** env block */
+  /**
+  * env block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#env StatefulSet#env}
+  */
   readonly env?: StatefulSetSpecTemplateSpecContainerEnv[];
-  /** env_from block */
+  /**
+  * env_from block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#env_from StatefulSet#env_from}
+  */
   readonly envFrom?: StatefulSetSpecTemplateSpecContainerEnvFrom[];
-  /** lifecycle block */
+  /**
+  * lifecycle block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#lifecycle StatefulSet#lifecycle}
+  */
   readonly lifecycle?: StatefulSetSpecTemplateSpecContainerLifecycle[];
-  /** liveness_probe block */
+  /**
+  * liveness_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#liveness_probe StatefulSet#liveness_probe}
+  */
   readonly livenessProbe?: StatefulSetSpecTemplateSpecContainerLivenessProbe[];
-  /** port block */
+  /**
+  * port block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port?: StatefulSetSpecTemplateSpecContainerPort[];
-  /** readiness_probe block */
+  /**
+  * readiness_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#readiness_probe StatefulSet#readiness_probe}
+  */
   readonly readinessProbe?: StatefulSetSpecTemplateSpecContainerReadinessProbe[];
-  /** resources block */
+  /**
+  * resources block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#resources StatefulSet#resources}
+  */
   readonly resources?: StatefulSetSpecTemplateSpecContainerResources[];
-  /** security_context block */
+  /**
+  * security_context block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#security_context StatefulSet#security_context}
+  */
   readonly securityContext?: StatefulSetSpecTemplateSpecContainerSecurityContext[];
-  /** startup_probe block */
+  /**
+  * startup_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#startup_probe StatefulSet#startup_probe}
+  */
   readonly startupProbe?: StatefulSetSpecTemplateSpecContainerStartupProbe[];
-  /** volume_mount block */
+  /**
+  * volume_mount block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#volume_mount StatefulSet#volume_mount}
+  */
   readonly volumeMount?: StatefulSetSpecTemplateSpecContainerVolumeMount[];
 }
 
@@ -1302,9 +2192,17 @@ function statefulSetSpecTemplateSpecContainerToTerraform(struct?: StatefulSetSpe
 }
 
 export interface StatefulSetSpecTemplateSpecDnsConfigOption {
-  /** Name of the option. */
+  /**
+  * Name of the option.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
-  /** Value of the option. Optional: Defaults to empty. */
+  /**
+  * Value of the option. Optional: Defaults to empty.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
 }
 
@@ -1317,11 +2215,23 @@ function statefulSetSpecTemplateSpecDnsConfigOptionToTerraform(struct?: Stateful
 }
 
 export interface StatefulSetSpecTemplateSpecDnsConfig {
-  /** A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed. */
+  /**
+  * A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#nameservers StatefulSet#nameservers}
+  */
   readonly nameservers?: string[];
-  /** A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed. */
+  /**
+  * A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#searches StatefulSet#searches}
+  */
   readonly searches?: string[];
-  /** option block */
+  /**
+  * option block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#option StatefulSet#option}
+  */
   readonly option?: StatefulSetSpecTemplateSpecDnsConfigOption[];
 }
 
@@ -1335,9 +2245,17 @@ function statefulSetSpecTemplateSpecDnsConfigToTerraform(struct?: StatefulSetSpe
 }
 
 export interface StatefulSetSpecTemplateSpecHostAliases {
-  /** Hostnames for the IP address. */
+  /**
+  * Hostnames for the IP address.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#hostnames StatefulSet#hostnames}
+  */
   readonly hostnames: string[];
-  /** IP address of the host file entry. */
+  /**
+  * IP address of the host file entry.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#ip StatefulSet#ip}
+  */
   readonly ip: string;
 }
 
@@ -1350,7 +2268,11 @@ function statefulSetSpecTemplateSpecHostAliasesToTerraform(struct?: StatefulSetS
 }
 
 export interface StatefulSetSpecTemplateSpecImagePullSecrets {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
 }
 
@@ -1362,11 +2284,23 @@ function statefulSetSpecTemplateSpecImagePullSecretsToTerraform(struct?: Statefu
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef {
-  /** The key to select. */
+  /**
+  * The key to select.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Specify whether the ConfigMap or its key must be defined. */
+  /**
+  * Specify whether the ConfigMap or its key must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -1380,9 +2314,17 @@ function statefulSetSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTe
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerEnvValueFromFieldRef {
-  /** Version of the schema the FieldPath is written in terms of, defaults to "v1". */
+  /**
+  * Version of the schema the FieldPath is written in terms of, defaults to "v1".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#api_version StatefulSet#api_version}
+  */
   readonly apiVersion?: string;
-  /** Path of the field to select in the specified API version */
+  /**
+  * Path of the field to select in the specified API version
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#field_path StatefulSet#field_path}
+  */
   readonly fieldPath?: string;
 }
 
@@ -1395,9 +2337,19 @@ function statefulSetSpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#container_name StatefulSet#container_name}
+  */
   readonly containerName?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#divisor StatefulSet#divisor}
+  */
   readonly divisor?: string;
-  /** Resource to select */
+  /**
+  * Resource to select
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#resource StatefulSet#resource}
+  */
   readonly resource: string;
 }
 
@@ -1411,11 +2363,23 @@ function statefulSetSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToT
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef {
-  /** The key of the secret to select from. Must be a valid secret key. */
+  /**
+  * The key of the secret to select from. Must be a valid secret key.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Specify whether the Secret or its key must be defined. */
+  /**
+  * Specify whether the Secret or its key must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -1429,13 +2393,29 @@ function statefulSetSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerra
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerEnvValueFrom {
-  /** config_map_key_ref block */
+  /**
+  * config_map_key_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#config_map_key_ref StatefulSet#config_map_key_ref}
+  */
   readonly configMapKeyRef?: StatefulSetSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef[];
-  /** field_ref block */
+  /**
+  * field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#field_ref StatefulSet#field_ref}
+  */
   readonly fieldRef?: StatefulSetSpecTemplateSpecInitContainerEnvValueFromFieldRef[];
-  /** resource_field_ref block */
+  /**
+  * resource_field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#resource_field_ref StatefulSet#resource_field_ref}
+  */
   readonly resourceFieldRef?: StatefulSetSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef[];
-  /** secret_key_ref block */
+  /**
+  * secret_key_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret_key_ref StatefulSet#secret_key_ref}
+  */
   readonly secretKeyRef?: StatefulSetSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef[];
 }
 
@@ -1450,11 +2430,23 @@ function statefulSetSpecTemplateSpecInitContainerEnvValueFromToTerraform(struct?
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerEnv {
-  /** Name of the environment variable. Must be a C_IDENTIFIER */
+  /**
+  * Name of the environment variable. Must be a C_IDENTIFIER
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
-  /** Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "". */
+  /**
+  * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
-  /** value_from block */
+  /**
+  * value_from block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value_from StatefulSet#value_from}
+  */
   readonly valueFrom?: StatefulSetSpecTemplateSpecInitContainerEnvValueFrom[];
 }
 
@@ -1468,9 +2460,17 @@ function statefulSetSpecTemplateSpecInitContainerEnvToTerraform(struct?: Statefu
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerEnvFromConfigMapRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
-  /** Specify whether the ConfigMap must be defined */
+  /**
+  * Specify whether the ConfigMap must be defined
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -1483,9 +2483,17 @@ function statefulSetSpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerEnvFromSecretRef {
-  /** Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names */
+  /**
+  * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
-  /** Specify whether the Secret must be defined */
+  /**
+  * Specify whether the Secret must be defined
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -1498,11 +2506,23 @@ function statefulSetSpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(str
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerEnvFrom {
-  /** An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER. */
+  /**
+  * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#prefix StatefulSet#prefix}
+  */
   readonly prefix?: string;
-  /** config_map_ref block */
+  /**
+  * config_map_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#config_map_ref StatefulSet#config_map_ref}
+  */
   readonly configMapRef?: StatefulSetSpecTemplateSpecInitContainerEnvFromConfigMapRef[];
-  /** secret_ref block */
+  /**
+  * secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret_ref StatefulSet#secret_ref}
+  */
   readonly secretRef?: StatefulSetSpecTemplateSpecInitContainerEnvFromSecretRef[];
 }
 
@@ -1516,7 +2536,11 @@ function statefulSetSpecTemplateSpecInitContainerEnvFromToTerraform(struct?: Sta
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLifecyclePostStartExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#command StatefulSet#command}
+  */
   readonly command?: string[];
 }
 
@@ -1528,9 +2552,17 @@ function statefulSetSpecTemplateSpecInitContainerLifecyclePostStartExecToTerrafo
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
 }
 
@@ -1543,15 +2575,35 @@ function statefulSetSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHe
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLifecyclePostStartHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host StatefulSet#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#scheme StatefulSet#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_header StatefulSet#http_header}
+  */
   readonly httpHeader?: StatefulSetSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[];
 }
 
@@ -1567,7 +2619,11 @@ function statefulSetSpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerr
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLifecyclePostStartTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port: string;
 }
 
@@ -1579,11 +2635,23 @@ function statefulSetSpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTe
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLifecyclePostStart {
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#exec StatefulSet#exec}
+  */
   readonly exec?: StatefulSetSpecTemplateSpecInitContainerLifecyclePostStartExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_get StatefulSet#http_get}
+  */
   readonly httpGet?: StatefulSetSpecTemplateSpecInitContainerLifecyclePostStartHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tcp_socket StatefulSet#tcp_socket}
+  */
   readonly tcpSocket?: StatefulSetSpecTemplateSpecInitContainerLifecyclePostStartTcpSocket[];
 }
 
@@ -1597,7 +2665,11 @@ function statefulSetSpecTemplateSpecInitContainerLifecyclePostStartToTerraform(s
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLifecyclePreStopExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#command StatefulSet#command}
+  */
   readonly command?: string[];
 }
 
@@ -1609,9 +2681,17 @@ function statefulSetSpecTemplateSpecInitContainerLifecyclePreStopExecToTerraform
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
 }
 
@@ -1624,15 +2704,35 @@ function statefulSetSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHead
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLifecyclePreStopHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host StatefulSet#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#scheme StatefulSet#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_header StatefulSet#http_header}
+  */
   readonly httpHeader?: StatefulSetSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[];
 }
 
@@ -1648,7 +2748,11 @@ function statefulSetSpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraf
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLifecyclePreStopTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port: string;
 }
 
@@ -1660,11 +2764,23 @@ function statefulSetSpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerr
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLifecyclePreStop {
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#exec StatefulSet#exec}
+  */
   readonly exec?: StatefulSetSpecTemplateSpecInitContainerLifecyclePreStopExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_get StatefulSet#http_get}
+  */
   readonly httpGet?: StatefulSetSpecTemplateSpecInitContainerLifecyclePreStopHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tcp_socket StatefulSet#tcp_socket}
+  */
   readonly tcpSocket?: StatefulSetSpecTemplateSpecInitContainerLifecyclePreStopTcpSocket[];
 }
 
@@ -1678,9 +2794,17 @@ function statefulSetSpecTemplateSpecInitContainerLifecyclePreStopToTerraform(str
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLifecycle {
-  /** post_start block */
+  /**
+  * post_start block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#post_start StatefulSet#post_start}
+  */
   readonly postStart?: StatefulSetSpecTemplateSpecInitContainerLifecyclePostStart[];
-  /** pre_stop block */
+  /**
+  * pre_stop block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#pre_stop StatefulSet#pre_stop}
+  */
   readonly preStop?: StatefulSetSpecTemplateSpecInitContainerLifecyclePreStop[];
 }
 
@@ -1693,7 +2817,11 @@ function statefulSetSpecTemplateSpecInitContainerLifecycleToTerraform(struct?: S
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLivenessProbeExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#command StatefulSet#command}
+  */
   readonly command?: string[];
 }
 
@@ -1705,9 +2833,17 @@ function statefulSetSpecTemplateSpecInitContainerLivenessProbeExecToTerraform(st
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
 }
 
@@ -1720,15 +2856,35 @@ function statefulSetSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderT
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLivenessProbeHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host StatefulSet#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#scheme StatefulSet#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_header StatefulSet#http_header}
+  */
   readonly httpHeader?: StatefulSetSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[];
 }
 
@@ -1744,7 +2900,11 @@ function statefulSetSpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLivenessProbeTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port: string;
 }
 
@@ -1756,21 +2916,53 @@ function statefulSetSpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerrafo
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerLivenessProbe {
-  /** Minimum consecutive failures for the probe to be considered failed after having succeeded. */
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#failure_threshold StatefulSet#failure_threshold}
+  */
   readonly failureThreshold?: number;
-  /** Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#initial_delay_seconds StatefulSet#initial_delay_seconds}
+  */
   readonly initialDelaySeconds?: number;
-  /** How often (in seconds) to perform the probe */
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#period_seconds StatefulSet#period_seconds}
+  */
   readonly periodSeconds?: number;
-  /** Minimum consecutive successes for the probe to be considered successful after having failed. */
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#success_threshold StatefulSet#success_threshold}
+  */
   readonly successThreshold?: number;
-  /** Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#timeout_seconds StatefulSet#timeout_seconds}
+  */
   readonly timeoutSeconds?: number;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#exec StatefulSet#exec}
+  */
   readonly exec?: StatefulSetSpecTemplateSpecInitContainerLivenessProbeExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_get StatefulSet#http_get}
+  */
   readonly httpGet?: StatefulSetSpecTemplateSpecInitContainerLivenessProbeHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tcp_socket StatefulSet#tcp_socket}
+  */
   readonly tcpSocket?: StatefulSetSpecTemplateSpecInitContainerLivenessProbeTcpSocket[];
 }
 
@@ -1789,15 +2981,35 @@ function statefulSetSpecTemplateSpecInitContainerLivenessProbeToTerraform(struct
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerPort {
-  /** Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536. */
+  /**
+  * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#container_port StatefulSet#container_port}
+  */
   readonly containerPort: number;
-  /** What host IP to bind the external port to. */
+  /**
+  * What host IP to bind the external port to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host_ip StatefulSet#host_ip}
+  */
   readonly hostIp?: string;
-  /** Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this. */
+  /**
+  * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host_port StatefulSet#host_port}
+  */
   readonly hostPort?: number;
-  /** If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services */
+  /**
+  * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Protocol for port. Must be UDP or TCP. Defaults to "TCP". */
+  /**
+  * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#protocol StatefulSet#protocol}
+  */
   readonly protocol?: string;
 }
 
@@ -1813,7 +3025,11 @@ function statefulSetSpecTemplateSpecInitContainerPortToTerraform(struct?: Statef
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerReadinessProbeExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#command StatefulSet#command}
+  */
   readonly command?: string[];
 }
 
@@ -1825,9 +3041,17 @@ function statefulSetSpecTemplateSpecInitContainerReadinessProbeExecToTerraform(s
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
 }
 
@@ -1840,15 +3064,35 @@ function statefulSetSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerReadinessProbeHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host StatefulSet#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#scheme StatefulSet#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_header StatefulSet#http_header}
+  */
   readonly httpHeader?: StatefulSetSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[];
 }
 
@@ -1864,7 +3108,11 @@ function statefulSetSpecTemplateSpecInitContainerReadinessProbeHttpGetToTerrafor
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerReadinessProbeTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port: string;
 }
 
@@ -1876,21 +3124,53 @@ function statefulSetSpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraf
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerReadinessProbe {
-  /** Minimum consecutive failures for the probe to be considered failed after having succeeded. */
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#failure_threshold StatefulSet#failure_threshold}
+  */
   readonly failureThreshold?: number;
-  /** Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#initial_delay_seconds StatefulSet#initial_delay_seconds}
+  */
   readonly initialDelaySeconds?: number;
-  /** How often (in seconds) to perform the probe */
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#period_seconds StatefulSet#period_seconds}
+  */
   readonly periodSeconds?: number;
-  /** Minimum consecutive successes for the probe to be considered successful after having failed. */
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#success_threshold StatefulSet#success_threshold}
+  */
   readonly successThreshold?: number;
-  /** Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#timeout_seconds StatefulSet#timeout_seconds}
+  */
   readonly timeoutSeconds?: number;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#exec StatefulSet#exec}
+  */
   readonly exec?: StatefulSetSpecTemplateSpecInitContainerReadinessProbeExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_get StatefulSet#http_get}
+  */
   readonly httpGet?: StatefulSetSpecTemplateSpecInitContainerReadinessProbeHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tcp_socket StatefulSet#tcp_socket}
+  */
   readonly tcpSocket?: StatefulSetSpecTemplateSpecInitContainerReadinessProbeTcpSocket[];
 }
 
@@ -1909,9 +3189,17 @@ function statefulSetSpecTemplateSpecInitContainerReadinessProbeToTerraform(struc
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerResources {
-  /** Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
+  /**
+  * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#limits StatefulSet#limits}
+  */
   readonly limits?: { [key: string]: string };
-  /** Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/ */
+  /**
+  * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#requests StatefulSet#requests}
+  */
   readonly requests?: { [key: string]: string };
 }
 
@@ -1924,9 +3212,17 @@ function statefulSetSpecTemplateSpecInitContainerResourcesToTerraform(struct?: S
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerSecurityContextCapabilities {
-  /** Added capabilities */
+  /**
+  * Added capabilities
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#add StatefulSet#add}
+  */
   readonly add?: string[];
-  /** Removed capabilities */
+  /**
+  * Removed capabilities
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#drop StatefulSet#drop}
+  */
   readonly drop?: string[];
 }
 
@@ -1939,13 +3235,29 @@ function statefulSetSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTe
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions {
-  /** Level is SELinux level label that applies to the container. */
+  /**
+  * Level is SELinux level label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#level StatefulSet#level}
+  */
   readonly level?: string;
-  /** Role is a SELinux role label that applies to the container. */
+  /**
+  * Role is a SELinux role label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#role StatefulSet#role}
+  */
   readonly role?: string;
-  /** Type is a SELinux type label that applies to the container. */
+  /**
+  * Type is a SELinux type label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#type StatefulSet#type}
+  */
   readonly type?: string;
-  /** User is a SELinux user label that applies to the container. */
+  /**
+  * User is a SELinux user label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#user StatefulSet#user}
+  */
   readonly user?: string;
 }
 
@@ -1960,21 +3272,53 @@ function statefulSetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsTo
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerSecurityContext {
-  /** AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN */
+  /**
+  * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#allow_privilege_escalation StatefulSet#allow_privilege_escalation}
+  */
   readonly allowPrivilegeEscalation?: boolean;
-  /** Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false. */
+  /**
+  * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#privileged StatefulSet#privileged}
+  */
   readonly privileged?: boolean;
-  /** Whether this container has a read-only root filesystem. Default is false. */
+  /**
+  * Whether this container has a read-only root filesystem. Default is false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only_root_filesystem StatefulSet#read_only_root_filesystem}
+  */
   readonly readOnlyRootFilesystem?: boolean;
-  /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#run_as_group StatefulSet#run_as_group}
+  */
   readonly runAsGroup?: string;
-  /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#run_as_non_root StatefulSet#run_as_non_root}
+  */
   readonly runAsNonRoot?: boolean;
-  /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#run_as_user StatefulSet#run_as_user}
+  */
   readonly runAsUser?: string;
-  /** capabilities block */
+  /**
+  * capabilities block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#capabilities StatefulSet#capabilities}
+  */
   readonly capabilities?: StatefulSetSpecTemplateSpecInitContainerSecurityContextCapabilities[];
-  /** se_linux_options block */
+  /**
+  * se_linux_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#se_linux_options StatefulSet#se_linux_options}
+  */
   readonly seLinuxOptions?: StatefulSetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions[];
 }
 
@@ -1993,7 +3337,11 @@ function statefulSetSpecTemplateSpecInitContainerSecurityContextToTerraform(stru
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerStartupProbeExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#command StatefulSet#command}
+  */
   readonly command?: string[];
 }
 
@@ -2005,9 +3353,17 @@ function statefulSetSpecTemplateSpecInitContainerStartupProbeExecToTerraform(str
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
 }
 
@@ -2020,15 +3376,35 @@ function statefulSetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderTo
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerStartupProbeHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host StatefulSet#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#scheme StatefulSet#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_header StatefulSet#http_header}
+  */
   readonly httpHeader?: StatefulSetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[];
 }
 
@@ -2044,7 +3420,11 @@ function statefulSetSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerStartupProbeTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port: string;
 }
 
@@ -2056,21 +3436,53 @@ function statefulSetSpecTemplateSpecInitContainerStartupProbeTcpSocketToTerrafor
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerStartupProbe {
-  /** Minimum consecutive failures for the probe to be considered failed after having succeeded. */
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#failure_threshold StatefulSet#failure_threshold}
+  */
   readonly failureThreshold?: number;
-  /** Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#initial_delay_seconds StatefulSet#initial_delay_seconds}
+  */
   readonly initialDelaySeconds?: number;
-  /** How often (in seconds) to perform the probe */
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#period_seconds StatefulSet#period_seconds}
+  */
   readonly periodSeconds?: number;
-  /** Minimum consecutive successes for the probe to be considered successful after having failed. */
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#success_threshold StatefulSet#success_threshold}
+  */
   readonly successThreshold?: number;
-  /** Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#timeout_seconds StatefulSet#timeout_seconds}
+  */
   readonly timeoutSeconds?: number;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#exec StatefulSet#exec}
+  */
   readonly exec?: StatefulSetSpecTemplateSpecInitContainerStartupProbeExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#http_get StatefulSet#http_get}
+  */
   readonly httpGet?: StatefulSetSpecTemplateSpecInitContainerStartupProbeHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tcp_socket StatefulSet#tcp_socket}
+  */
   readonly tcpSocket?: StatefulSetSpecTemplateSpecInitContainerStartupProbeTcpSocket[];
 }
 
@@ -2089,15 +3501,35 @@ function statefulSetSpecTemplateSpecInitContainerStartupProbeToTerraform(struct?
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainerVolumeMount {
-  /** Path within the container at which the volume should be mounted. Must not contain ':'. */
+  /**
+  * Path within the container at which the volume should be mounted. Must not contain ':'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#mount_path StatefulSet#mount_path}
+  */
   readonly mountPath: string;
-  /** Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional. */
+  /**
+  * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#mount_propagation StatefulSet#mount_propagation}
+  */
   readonly mountPropagation?: string;
-  /** This must match the Name of a Volume. */
+  /**
+  * This must match the Name of a Volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
-  /** Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false. */
+  /**
+  * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root). */
+  /**
+  * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#sub_path StatefulSet#sub_path}
+  */
   readonly subPath?: string;
 }
 
@@ -2113,47 +3545,131 @@ function statefulSetSpecTemplateSpecInitContainerVolumeMountToTerraform(struct?:
 }
 
 export interface StatefulSetSpecTemplateSpecInitContainer {
-  /** Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands */
+  /**
+  * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#args StatefulSet#args}
+  */
   readonly args?: string[];
-  /** Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands */
+  /**
+  * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#command StatefulSet#command}
+  */
   readonly command?: string[];
-  /** Docker image name. More info: http://kubernetes.io/docs/user-guide/images */
+  /**
+  * Docker image name. More info: http://kubernetes.io/docs/user-guide/images
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#image StatefulSet#image}
+  */
   readonly image?: string;
-  /** Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images */
+  /**
+  * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#image_pull_policy StatefulSet#image_pull_policy}
+  */
   readonly imagePullPolicy?: string;
-  /** Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated. */
+  /**
+  * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
-  /** Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF.  */
+  /**
+  * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#stdin StatefulSet#stdin}
+  */
   readonly stdin?: boolean;
-  /** Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF. */
+  /**
+  * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#stdin_once StatefulSet#stdin_once}
+  */
   readonly stdinOnce?: boolean;
-  /** Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated. */
+  /**
+  * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#termination_message_path StatefulSet#termination_message_path}
+  */
   readonly terminationMessagePath?: string;
-  /** Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. */
+  /**
+  * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#termination_message_policy StatefulSet#termination_message_policy}
+  */
   readonly terminationMessagePolicy?: string;
-  /** Whether this container should allocate a TTY for itself */
+  /**
+  * Whether this container should allocate a TTY for itself
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tty StatefulSet#tty}
+  */
   readonly tty?: boolean;
-  /** Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated. */
+  /**
+  * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#working_dir StatefulSet#working_dir}
+  */
   readonly workingDir?: string;
-  /** env block */
+  /**
+  * env block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#env StatefulSet#env}
+  */
   readonly env?: StatefulSetSpecTemplateSpecInitContainerEnv[];
-  /** env_from block */
+  /**
+  * env_from block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#env_from StatefulSet#env_from}
+  */
   readonly envFrom?: StatefulSetSpecTemplateSpecInitContainerEnvFrom[];
-  /** lifecycle block */
+  /**
+  * lifecycle block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#lifecycle StatefulSet#lifecycle}
+  */
   readonly lifecycle?: StatefulSetSpecTemplateSpecInitContainerLifecycle[];
-  /** liveness_probe block */
+  /**
+  * liveness_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#liveness_probe StatefulSet#liveness_probe}
+  */
   readonly livenessProbe?: StatefulSetSpecTemplateSpecInitContainerLivenessProbe[];
-  /** port block */
+  /**
+  * port block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#port StatefulSet#port}
+  */
   readonly port?: StatefulSetSpecTemplateSpecInitContainerPort[];
-  /** readiness_probe block */
+  /**
+  * readiness_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#readiness_probe StatefulSet#readiness_probe}
+  */
   readonly readinessProbe?: StatefulSetSpecTemplateSpecInitContainerReadinessProbe[];
-  /** resources block */
+  /**
+  * resources block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#resources StatefulSet#resources}
+  */
   readonly resources?: StatefulSetSpecTemplateSpecInitContainerResources[];
-  /** security_context block */
+  /**
+  * security_context block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#security_context StatefulSet#security_context}
+  */
   readonly securityContext?: StatefulSetSpecTemplateSpecInitContainerSecurityContext[];
-  /** startup_probe block */
+  /**
+  * startup_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#startup_probe StatefulSet#startup_probe}
+  */
   readonly startupProbe?: StatefulSetSpecTemplateSpecInitContainerStartupProbe[];
-  /** volume_mount block */
+  /**
+  * volume_mount block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#volume_mount StatefulSet#volume_mount}
+  */
   readonly volumeMount?: StatefulSetSpecTemplateSpecInitContainerVolumeMount[];
 }
 
@@ -2185,7 +3701,11 @@ function statefulSetSpecTemplateSpecInitContainerToTerraform(struct?: StatefulSe
 }
 
 export interface StatefulSetSpecTemplateSpecReadinessGate {
-  /** refers to a condition in the pod's condition list with matching type. */
+  /**
+  * refers to a condition in the pod's condition list with matching type.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#condition_type StatefulSet#condition_type}
+  */
   readonly conditionType: string;
 }
 
@@ -2197,13 +3717,29 @@ function statefulSetSpecTemplateSpecReadinessGateToTerraform(struct?: StatefulSe
 }
 
 export interface StatefulSetSpecTemplateSpecSecurityContextSeLinuxOptions {
-  /** Level is SELinux level label that applies to the container. */
+  /**
+  * Level is SELinux level label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#level StatefulSet#level}
+  */
   readonly level?: string;
-  /** Role is a SELinux role label that applies to the container. */
+  /**
+  * Role is a SELinux role label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#role StatefulSet#role}
+  */
   readonly role?: string;
-  /** Type is a SELinux type label that applies to the container. */
+  /**
+  * Type is a SELinux type label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#type StatefulSet#type}
+  */
   readonly type?: string;
-  /** User is a SELinux user label that applies to the container. */
+  /**
+  * User is a SELinux user label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#user StatefulSet#user}
+  */
   readonly user?: string;
 }
 
@@ -2218,9 +3754,17 @@ function statefulSetSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(str
 }
 
 export interface StatefulSetSpecTemplateSpecSecurityContextSysctl {
-  /** Name of a property to set. */
+  /**
+  * Name of a property to set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name: string;
-  /** Value of a property to set. */
+  /**
+  * Value of a property to set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value: string;
 }
 
@@ -2233,19 +3777,47 @@ function statefulSetSpecTemplateSpecSecurityContextSysctlToTerraform(struct?: St
 }
 
 export interface StatefulSetSpecTemplateSpecSecurityContext {
-  /** A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume. */
+  /**
+  * A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fs_group StatefulSet#fs_group}
+  */
   readonly fsGroup?: string;
-  /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. */
+  /**
+  * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#run_as_group StatefulSet#run_as_group}
+  */
   readonly runAsGroup?: string;
-  /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#run_as_non_root StatefulSet#run_as_non_root}
+  */
   readonly runAsNonRoot?: boolean;
-  /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. */
+  /**
+  * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#run_as_user StatefulSet#run_as_user}
+  */
   readonly runAsUser?: string;
-  /** A list of groups applied to the first process run in each container, in addition to the container's primary GID. If unspecified, no groups will be added to any container. */
+  /**
+  * A list of groups applied to the first process run in each container, in addition to the container's primary GID. If unspecified, no groups will be added to any container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#supplemental_groups StatefulSet#supplemental_groups}
+  */
   readonly supplementalGroups?: number[];
-  /** se_linux_options block */
+  /**
+  * se_linux_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#se_linux_options StatefulSet#se_linux_options}
+  */
   readonly seLinuxOptions?: StatefulSetSpecTemplateSpecSecurityContextSeLinuxOptions[];
-  /** sysctl block */
+  /**
+  * sysctl block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#sysctl StatefulSet#sysctl}
+  */
   readonly sysctl?: StatefulSetSpecTemplateSpecSecurityContextSysctl[];
 }
 
@@ -2263,15 +3835,35 @@ function statefulSetSpecTemplateSpecSecurityContextToTerraform(struct?: Stateful
 }
 
 export interface StatefulSetSpecTemplateSpecToleration {
-  /** Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute. */
+  /**
+  * Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#effect StatefulSet#effect}
+  */
   readonly effect?: string;
-  /** Key is the taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys. */
+  /**
+  * Key is the taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** Operator represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category. */
+  /**
+  * Operator represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#operator StatefulSet#operator}
+  */
   readonly operator?: string;
-  /** TolerationSeconds represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system. */
+  /**
+  * TolerationSeconds represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#toleration_seconds StatefulSet#toleration_seconds}
+  */
   readonly tolerationSeconds?: string;
-  /** Value is the taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string. */
+  /**
+  * Value is the taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#value StatefulSet#value}
+  */
   readonly value?: string;
 }
 
@@ -2287,11 +3879,23 @@ function statefulSetSpecTemplateSpecTolerationToTerraform(struct?: StatefulSetSp
 }
 
 export interface StatefulSetSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#operator StatefulSet#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#values StatefulSet#values}
+  */
   readonly values?: string[];
 }
 
@@ -2305,9 +3909,17 @@ function statefulSetSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchEx
 }
 
 export interface StatefulSetSpecTemplateSpecTopologySpreadConstraintLabelSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_expressions StatefulSet#match_expressions}
+  */
   readonly matchExpressions?: StatefulSetSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions[];
 }
 
@@ -2320,13 +3932,29 @@ function statefulSetSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerra
 }
 
 export interface StatefulSetSpecTemplateSpecTopologySpreadConstraint {
-  /** describes the degree to which pods may be unevenly distributed. */
+  /**
+  * describes the degree to which pods may be unevenly distributed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#max_skew StatefulSet#max_skew}
+  */
   readonly maxSkew?: number;
-  /** the key of node labels. Nodes that have a label with this key and identical values are considered to be in the same topology. */
+  /**
+  * the key of node labels. Nodes that have a label with this key and identical values are considered to be in the same topology.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#topology_key StatefulSet#topology_key}
+  */
   readonly topologyKey?: string;
-  /** indicates how to deal with a pod if it doesn't satisfy the spread constraint. */
+  /**
+  * indicates how to deal with a pod if it doesn't satisfy the spread constraint.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#when_unsatisfiable StatefulSet#when_unsatisfiable}
+  */
   readonly whenUnsatisfiable?: string;
-  /** label_selector block */
+  /**
+  * label_selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#label_selector StatefulSet#label_selector}
+  */
   readonly labelSelector?: StatefulSetSpecTemplateSpecTopologySpreadConstraintLabelSelector[];
 }
 
@@ -2341,13 +3969,29 @@ function statefulSetSpecTemplateSpecTopologySpreadConstraintToTerraform(struct?:
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeAwsElasticBlockStore {
-  /** Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore */
+  /**
+  * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fs_type StatefulSet#fs_type}
+  */
   readonly fsType?: string;
-  /** The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty). */
+  /**
+  * The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#partition StatefulSet#partition}
+  */
   readonly partition?: number;
-  /** Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore */
+  /**
+  * Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore */
+  /**
+  * Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#volume_id StatefulSet#volume_id}
+  */
   readonly volumeId: string;
 }
 
@@ -2362,17 +4006,41 @@ function statefulSetSpecTemplateSpecVolumeAwsElasticBlockStoreToTerraform(struct
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeAzureDisk {
-  /** Host Caching mode: None, Read Only, Read Write. */
+  /**
+  * Host Caching mode: None, Read Only, Read Write.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#caching_mode StatefulSet#caching_mode}
+  */
   readonly cachingMode: string;
-  /** The URI the data disk in the blob storage */
+  /**
+  * The URI the data disk in the blob storage
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#data_disk_uri StatefulSet#data_disk_uri}
+  */
   readonly dataDiskUri: string;
-  /** The Name of the data disk in the blob storage */
+  /**
+  * The Name of the data disk in the blob storage
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#disk_name StatefulSet#disk_name}
+  */
   readonly diskName: string;
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fs_type StatefulSet#fs_type}
+  */
   readonly fsType?: string;
-  /** The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared */
+  /**
+  * The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#kind StatefulSet#kind}
+  */
   readonly kind?: string;
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
 }
 
@@ -2389,13 +4057,29 @@ function statefulSetSpecTemplateSpecVolumeAzureDiskToTerraform(struct?: Stateful
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeAzureFile {
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** The name of secret that contains Azure Storage Account Name and Key */
+  /**
+  * The name of secret that contains Azure Storage Account Name and Key
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret_name StatefulSet#secret_name}
+  */
   readonly secretName: string;
-  /** The namespace of the secret that contains Azure Storage Account Name and Key. For Kubernetes up to 1.18.x the default is the same as the Pod. For Kubernetes 1.19.x and later the default is "default" namespace. */
+  /**
+  * The namespace of the secret that contains Azure Storage Account Name and Key. For Kubernetes up to 1.18.x the default is the same as the Pod. For Kubernetes 1.19.x and later the default is "default" namespace.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret_namespace StatefulSet#secret_namespace}
+  */
   readonly secretNamespace?: string;
-  /** Share Name */
+  /**
+  * Share Name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#share_name StatefulSet#share_name}
+  */
   readonly shareName: string;
 }
 
@@ -2410,9 +4094,17 @@ function statefulSetSpecTemplateSpecVolumeAzureFileToTerraform(struct?: Stateful
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeCephFsSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespace StatefulSet#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -2425,17 +4117,41 @@ function statefulSetSpecTemplateSpecVolumeCephFsSecretRefToTerraform(struct?: St
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeCephFs {
-  /** Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it */
+  /**
+  * Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#monitors StatefulSet#monitors}
+  */
   readonly monitors: string[];
-  /** Used as the mounted root, rather than the full Ceph tree, default is / */
+  /**
+  * Used as the mounted root, rather than the full Ceph tree, default is /
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it */
+  /**
+  * The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret_file StatefulSet#secret_file}
+  */
   readonly secretFile?: string;
-  /** User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it */
+  /**
+  * User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#user StatefulSet#user}
+  */
   readonly user?: string;
-  /** secret_ref block */
+  /**
+  * secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret_ref StatefulSet#secret_ref}
+  */
   readonly secretRef?: StatefulSetSpecTemplateSpecVolumeCephFsSecretRef[];
 }
 
@@ -2452,11 +4168,23 @@ function statefulSetSpecTemplateSpecVolumeCephFsToTerraform(struct?: StatefulSet
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeCinder {
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fs_type StatefulSet#fs_type}
+  */
   readonly fsType?: string;
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md */
+  /**
+  * Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#volume_id StatefulSet#volume_id}
+  */
   readonly volumeId: string;
 }
 
@@ -2470,11 +4198,23 @@ function statefulSetSpecTemplateSpecVolumeCinderToTerraform(struct?: StatefulSet
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeConfigMapItems {
-  /** The key to project. */
+  /**
+  * The key to project.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#mode StatefulSet#mode}
+  */
   readonly mode?: string;
-  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  /**
+  * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
 }
 
@@ -2488,13 +4228,29 @@ function statefulSetSpecTemplateSpecVolumeConfigMapItemsToTerraform(struct?: Sta
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeConfigMap {
-  /** Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#default_mode StatefulSet#default_mode}
+  */
   readonly defaultMode?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Optional: Specify whether the ConfigMap or its keys must be defined. */
+  /**
+  * Optional: Specify whether the ConfigMap or its keys must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
+  */
   readonly optional?: boolean;
-  /** items block */
+  /**
+  * items block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#items StatefulSet#items}
+  */
   readonly items?: StatefulSetSpecTemplateSpecVolumeConfigMapItems[];
 }
 
@@ -2509,9 +4265,17 @@ function statefulSetSpecTemplateSpecVolumeConfigMapToTerraform(struct?: Stateful
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeCsiControllerExpandSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespace StatefulSet#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -2524,9 +4288,17 @@ function statefulSetSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerrafor
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeCsiControllerPublishSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespace StatefulSet#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -2539,9 +4311,17 @@ function statefulSetSpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerrafo
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeCsiNodePublishSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespace StatefulSet#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -2554,9 +4334,17 @@ function statefulSetSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(str
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeCsiNodeStageSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespace StatefulSet#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -2569,23 +4357,59 @@ function statefulSetSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struc
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeCsi {
-  /** the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi */
+  /**
+  * the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#driver StatefulSet#driver}
+  */
   readonly driver: string;
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fs_type StatefulSet#fs_type}
+  */
   readonly fsType?: string;
-  /** Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi */
+  /**
+  * Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Attributes of the volume to publish. */
+  /**
+  * Attributes of the volume to publish.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#volume_attributes StatefulSet#volume_attributes}
+  */
   readonly volumeAttributes?: { [key: string]: string };
-  /** A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi */
+  /**
+  * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#volume_handle StatefulSet#volume_handle}
+  */
   readonly volumeHandle: string;
-  /** controller_expand_secret_ref block */
+  /**
+  * controller_expand_secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#controller_expand_secret_ref StatefulSet#controller_expand_secret_ref}
+  */
   readonly controllerExpandSecretRef?: StatefulSetSpecTemplateSpecVolumeCsiControllerExpandSecretRef[];
-  /** controller_publish_secret_ref block */
+  /**
+  * controller_publish_secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#controller_publish_secret_ref StatefulSet#controller_publish_secret_ref}
+  */
   readonly controllerPublishSecretRef?: StatefulSetSpecTemplateSpecVolumeCsiControllerPublishSecretRef[];
-  /** node_publish_secret_ref block */
+  /**
+  * node_publish_secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#node_publish_secret_ref StatefulSet#node_publish_secret_ref}
+  */
   readonly nodePublishSecretRef?: StatefulSetSpecTemplateSpecVolumeCsiNodePublishSecretRef[];
-  /** node_stage_secret_ref block */
+  /**
+  * node_stage_secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#node_stage_secret_ref StatefulSet#node_stage_secret_ref}
+  */
   readonly nodeStageSecretRef?: StatefulSetSpecTemplateSpecVolumeCsiNodeStageSecretRef[];
 }
 
@@ -2605,9 +4429,17 @@ function statefulSetSpecTemplateSpecVolumeCsiToTerraform(struct?: StatefulSetSpe
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeDownwardApiItemsFieldRef {
-  /** Version of the schema the FieldPath is written in terms of, defaults to "v1". */
+  /**
+  * Version of the schema the FieldPath is written in terms of, defaults to "v1".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#api_version StatefulSet#api_version}
+  */
   readonly apiVersion?: string;
-  /** Path of the field to select in the specified API version */
+  /**
+  * Path of the field to select in the specified API version
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#field_path StatefulSet#field_path}
+  */
   readonly fieldPath?: string;
 }
 
@@ -2620,9 +4452,19 @@ function statefulSetSpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform(st
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#container_name StatefulSet#container_name}
+  */
   readonly containerName: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#divisor StatefulSet#divisor}
+  */
   readonly divisor?: string;
-  /** Resource to select */
+  /**
+  * Resource to select
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#resource StatefulSet#resource}
+  */
   readonly resource: string;
 }
 
@@ -2636,13 +4478,29 @@ function statefulSetSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerr
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeDownwardApiItems {
-  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#mode StatefulSet#mode}
+  */
   readonly mode?: string;
-  /** Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..' */
+  /**
+  * Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path: string;
-  /** field_ref block */
+  /**
+  * field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#field_ref StatefulSet#field_ref}
+  */
   readonly fieldRef: StatefulSetSpecTemplateSpecVolumeDownwardApiItemsFieldRef[];
-  /** resource_field_ref block */
+  /**
+  * resource_field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#resource_field_ref StatefulSet#resource_field_ref}
+  */
   readonly resourceFieldRef?: StatefulSetSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef[];
 }
 
@@ -2657,9 +4515,17 @@ function statefulSetSpecTemplateSpecVolumeDownwardApiItemsToTerraform(struct?: S
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeDownwardApi {
-  /** Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#default_mode StatefulSet#default_mode}
+  */
   readonly defaultMode?: string;
-  /** items block */
+  /**
+  * items block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#items StatefulSet#items}
+  */
   readonly items?: StatefulSetSpecTemplateSpecVolumeDownwardApiItems[];
 }
 
@@ -2672,9 +4538,17 @@ function statefulSetSpecTemplateSpecVolumeDownwardApiToTerraform(struct?: Statef
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeEmptyDir {
-  /** What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir */
+  /**
+  * What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#medium StatefulSet#medium}
+  */
   readonly medium?: string;
-  /** Total amount of local storage required for this EmptyDir volume. */
+  /**
+  * Total amount of local storage required for this EmptyDir volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#size_limit StatefulSet#size_limit}
+  */
   readonly sizeLimit?: string;
 }
 
@@ -2687,13 +4561,29 @@ function statefulSetSpecTemplateSpecVolumeEmptyDirToTerraform(struct?: StatefulS
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeFc {
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fs_type StatefulSet#fs_type}
+  */
   readonly fsType?: string;
-  /** FC target lun number */
+  /**
+  * FC target lun number
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#lun StatefulSet#lun}
+  */
   readonly lun: number;
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** FC target worldwide names (WWNs) */
+  /**
+  * FC target worldwide names (WWNs)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#target_ww_ns StatefulSet#target_ww_ns}
+  */
   readonly targetWwNs: string[];
 }
 
@@ -2708,9 +4598,17 @@ function statefulSetSpecTemplateSpecVolumeFcToTerraform(struct?: StatefulSetSpec
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeFlexVolumeSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespace StatefulSet#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -2723,15 +4621,35 @@ function statefulSetSpecTemplateSpecVolumeFlexVolumeSecretRefToTerraform(struct?
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeFlexVolume {
-  /** Driver is the name of the driver to use for this volume. */
+  /**
+  * Driver is the name of the driver to use for this volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#driver StatefulSet#driver}
+  */
   readonly driver: string;
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script. */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fs_type StatefulSet#fs_type}
+  */
   readonly fsType?: string;
-  /** Extra command options if any. */
+  /**
+  * Extra command options if any.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#options StatefulSet#options}
+  */
   readonly options?: { [key: string]: string };
-  /** Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write). */
+  /**
+  * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** secret_ref block */
+  /**
+  * secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret_ref StatefulSet#secret_ref}
+  */
   readonly secretRef?: StatefulSetSpecTemplateSpecVolumeFlexVolumeSecretRef[];
 }
 
@@ -2747,9 +4665,17 @@ function statefulSetSpecTemplateSpecVolumeFlexVolumeToTerraform(struct?: Statefu
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeFlocker {
-  /** Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated */
+  /**
+  * Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#dataset_name StatefulSet#dataset_name}
+  */
   readonly datasetName?: string;
-  /** UUID of the dataset. This is unique identifier of a Flocker dataset */
+  /**
+  * UUID of the dataset. This is unique identifier of a Flocker dataset
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#dataset_uuid StatefulSet#dataset_uuid}
+  */
   readonly datasetUuid?: string;
 }
 
@@ -2762,13 +4688,29 @@ function statefulSetSpecTemplateSpecVolumeFlockerToTerraform(struct?: StatefulSe
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeGcePersistentDisk {
-  /** Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk */
+  /**
+  * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fs_type StatefulSet#fs_type}
+  */
   readonly fsType?: string;
-  /** The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty). More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk */
+  /**
+  * The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty). More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#partition StatefulSet#partition}
+  */
   readonly partition?: number;
-  /** Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk */
+  /**
+  * Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#pd_name StatefulSet#pd_name}
+  */
   readonly pdName: string;
-  /** Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk */
+  /**
+  * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
 }
 
@@ -2783,11 +4725,23 @@ function statefulSetSpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct?: 
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeGitRepo {
-  /** Target directory name. Must not contain or start with '..'. If '.' is supplied, the volume directory will be the git repository. Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name. */
+  /**
+  * Target directory name. Must not contain or start with '..'. If '.' is supplied, the volume directory will be the git repository. Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#directory StatefulSet#directory}
+  */
   readonly directory?: string;
-  /** Repository URL */
+  /**
+  * Repository URL
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#repository StatefulSet#repository}
+  */
   readonly repository?: string;
-  /** Commit hash for the specified revision. */
+  /**
+  * Commit hash for the specified revision.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#revision StatefulSet#revision}
+  */
   readonly revision?: string;
 }
 
@@ -2801,11 +4755,23 @@ function statefulSetSpecTemplateSpecVolumeGitRepoToTerraform(struct?: StatefulSe
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeGlusterfs {
-  /** The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod */
+  /**
+  * The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#endpoints_name StatefulSet#endpoints_name}
+  */
   readonly endpointsName: string;
-  /** The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod */
+  /**
+  * The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path: string;
-  /** Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod */
+  /**
+  * Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
 }
 
@@ -2819,9 +4785,17 @@ function statefulSetSpecTemplateSpecVolumeGlusterfsToTerraform(struct?: Stateful
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeHostPath {
-  /** Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath */
+  /**
+  * Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
-  /** Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice */
+  /**
+  * Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#type StatefulSet#type}
+  */
   readonly type?: string;
 }
 
@@ -2834,17 +4808,41 @@ function statefulSetSpecTemplateSpecVolumeHostPathToTerraform(struct?: StatefulS
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeIscsi {
-  /** Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#iscsi */
+  /**
+  * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#iscsi
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fs_type StatefulSet#fs_type}
+  */
   readonly fsType?: string;
-  /** Target iSCSI Qualified Name. */
+  /**
+  * Target iSCSI Qualified Name.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#iqn StatefulSet#iqn}
+  */
   readonly iqn: string;
-  /** iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp). */
+  /**
+  * iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#iscsi_interface StatefulSet#iscsi_interface}
+  */
   readonly iscsiInterface?: string;
-  /** iSCSI target lun number. */
+  /**
+  * iSCSI target lun number.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#lun StatefulSet#lun}
+  */
   readonly lun?: number;
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to false. */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260). */
+  /**
+  * iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#target_portal StatefulSet#target_portal}
+  */
   readonly targetPortal: string;
 }
 
@@ -2861,7 +4859,11 @@ function statefulSetSpecTemplateSpecVolumeIscsiToTerraform(struct?: StatefulSetS
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeLocal {
-  /** Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local */
+  /**
+  * Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
 }
 
@@ -2873,11 +4875,23 @@ function statefulSetSpecTemplateSpecVolumeLocalToTerraform(struct?: StatefulSetS
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeNfs {
-  /** Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs */
+  /**
+  * Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path: string;
-  /** Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs */
+  /**
+  * Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs */
+  /**
+  * Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#server StatefulSet#server}
+  */
   readonly server: string;
 }
 
@@ -2891,9 +4905,17 @@ function statefulSetSpecTemplateSpecVolumeNfsToTerraform(struct?: StatefulSetSpe
 }
 
 export interface StatefulSetSpecTemplateSpecVolumePersistentVolumeClaim {
-  /** ClaimName is the name of a PersistentVolumeClaim in the same  */
+  /**
+  * ClaimName is the name of a PersistentVolumeClaim in the same 
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#claim_name StatefulSet#claim_name}
+  */
   readonly claimName?: string;
-  /** Will force the ReadOnly setting in VolumeMounts. */
+  /**
+  * Will force the ReadOnly setting in VolumeMounts.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
 }
 
@@ -2906,9 +4928,17 @@ function statefulSetSpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struc
 }
 
 export interface StatefulSetSpecTemplateSpecVolumePhotonPersistentDisk {
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fs_type StatefulSet#fs_type}
+  */
   readonly fsType?: string;
-  /** ID that identifies Photon Controller persistent disk */
+  /**
+  * ID that identifies Photon Controller persistent disk
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#pd_id StatefulSet#pd_id}
+  */
   readonly pdId: string;
 }
 
@@ -2921,11 +4951,23 @@ function statefulSetSpecTemplateSpecVolumePhotonPersistentDiskToTerraform(struct
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeProjectedSourcesConfigMapItems {
-  /** The key to project. */
+  /**
+  * The key to project.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#mode StatefulSet#mode}
+  */
   readonly mode?: string;
-  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  /**
+  * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
 }
 
@@ -2939,11 +4981,23 @@ function statefulSetSpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraf
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeProjectedSourcesConfigMap {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Optional: Specify whether the ConfigMap or it's keys must be defined. */
+  /**
+  * Optional: Specify whether the ConfigMap or it's keys must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
+  */
   readonly optional?: boolean;
-  /** items block */
+  /**
+  * items block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#items StatefulSet#items}
+  */
   readonly items?: StatefulSetSpecTemplateSpecVolumeProjectedSourcesConfigMapItems[];
 }
 
@@ -2957,9 +5011,17 @@ function statefulSetSpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform(s
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef {
-  /** Version of the schema the FieldPath is written in terms of, defaults to 'v1'. */
+  /**
+  * Version of the schema the FieldPath is written in terms of, defaults to 'v1'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#api_version StatefulSet#api_version}
+  */
   readonly apiVersion?: string;
-  /** Path of the field to select in the specified API version */
+  /**
+  * Path of the field to select in the specified API version
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#field_path StatefulSet#field_path}
+  */
   readonly fieldPath?: string;
 }
 
@@ -2972,9 +5034,19 @@ function statefulSetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldR
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#container_name StatefulSet#container_name}
+  */
   readonly containerName: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#divisor StatefulSet#divisor}
+  */
   readonly divisor?: string;
-  /** Resource to select */
+  /**
+  * Resource to select
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#resource StatefulSet#resource}
+  */
   readonly resource: string;
 }
 
@@ -2988,13 +5060,29 @@ function statefulSetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResour
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems {
-  /** Mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#mode StatefulSet#mode}
+  */
   readonly mode?: string;
-  /** Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..' */
+  /**
+  * Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path: string;
-  /** field_ref block */
+  /**
+  * field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#field_ref StatefulSet#field_ref}
+  */
   readonly fieldRef?: StatefulSetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef[];
-  /** resource_field_ref block */
+  /**
+  * resource_field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#resource_field_ref StatefulSet#resource_field_ref}
+  */
   readonly resourceFieldRef?: StatefulSetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef[];
 }
 
@@ -3009,7 +5097,11 @@ function statefulSetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerr
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeProjectedSourcesDownwardApi {
-  /** items block */
+  /**
+  * items block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#items StatefulSet#items}
+  */
   readonly items?: StatefulSetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[];
 }
 
@@ -3021,11 +5113,23 @@ function statefulSetSpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeProjectedSourcesSecretItems {
-  /** The key to project. */
+  /**
+  * The key to project.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#mode StatefulSet#mode}
+  */
   readonly mode?: string;
-  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  /**
+  * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
 }
 
@@ -3039,11 +5143,23 @@ function statefulSetSpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeProjectedSourcesSecret {
-  /** Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets */
+  /**
+  * Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Optional: Specify whether the Secret or it's keys must be defined. */
+  /**
+  * Optional: Specify whether the Secret or it's keys must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
+  */
   readonly optional?: boolean;
-  /** items block */
+  /**
+  * items block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#items StatefulSet#items}
+  */
   readonly items?: StatefulSetSpecTemplateSpecVolumeProjectedSourcesSecretItems[];
 }
 
@@ -3057,11 +5173,23 @@ function statefulSetSpecTemplateSpecVolumeProjectedSourcesSecretToTerraform(stru
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken {
-  /** Audience is the intended audience of the token */
+  /**
+  * Audience is the intended audience of the token
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#audience StatefulSet#audience}
+  */
   readonly audience?: string;
-  /** ExpirationSeconds is the expected duration of validity of the service account token. It defaults to 1 hour and must be at least 10 minutes (600 seconds). */
+  /**
+  * ExpirationSeconds is the expected duration of validity of the service account token. It defaults to 1 hour and must be at least 10 minutes (600 seconds).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#expiration_seconds StatefulSet#expiration_seconds}
+  */
   readonly expirationSeconds?: number;
-  /** Path specifies a relative path to the mount point of the projected volume. */
+  /**
+  * Path specifies a relative path to the mount point of the projected volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path: string;
 }
 
@@ -3075,13 +5203,29 @@ function statefulSetSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToT
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeProjectedSources {
-  /** config_map block */
+  /**
+  * config_map block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#config_map StatefulSet#config_map}
+  */
   readonly configMap?: StatefulSetSpecTemplateSpecVolumeProjectedSourcesConfigMap[];
-  /** downward_api block */
+  /**
+  * downward_api block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#downward_api StatefulSet#downward_api}
+  */
   readonly downwardApi?: StatefulSetSpecTemplateSpecVolumeProjectedSourcesDownwardApi[];
-  /** secret block */
+  /**
+  * secret block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret StatefulSet#secret}
+  */
   readonly secret?: StatefulSetSpecTemplateSpecVolumeProjectedSourcesSecret[];
-  /** service_account_token block */
+  /**
+  * service_account_token block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#service_account_token StatefulSet#service_account_token}
+  */
   readonly serviceAccountToken?: StatefulSetSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken[];
 }
 
@@ -3096,9 +5240,17 @@ function statefulSetSpecTemplateSpecVolumeProjectedSourcesToTerraform(struct?: S
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeProjected {
-  /** Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#default_mode StatefulSet#default_mode}
+  */
   readonly defaultMode?: string;
-  /** sources block */
+  /**
+  * sources block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#sources StatefulSet#sources}
+  */
   readonly sources: StatefulSetSpecTemplateSpecVolumeProjectedSources[];
 }
 
@@ -3111,15 +5263,35 @@ function statefulSetSpecTemplateSpecVolumeProjectedToTerraform(struct?: Stateful
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeQuobyte {
-  /** Group to map volume access to Default is no group */
+  /**
+  * Group to map volume access to Default is no group
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#group StatefulSet#group}
+  */
   readonly group?: string;
-  /** Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false. */
+  /**
+  * Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes */
+  /**
+  * Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#registry StatefulSet#registry}
+  */
   readonly registry: string;
-  /** User to map volume access to Defaults to serivceaccount user */
+  /**
+  * User to map volume access to Defaults to serivceaccount user
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#user StatefulSet#user}
+  */
   readonly user?: string;
-  /** Volume is a string that references an already created Quobyte volume by name. */
+  /**
+  * Volume is a string that references an already created Quobyte volume by name.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#volume StatefulSet#volume}
+  */
   readonly volume: string;
 }
 
@@ -3135,9 +5307,17 @@ function statefulSetSpecTemplateSpecVolumeQuobyteToTerraform(struct?: StatefulSe
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeRbdSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespace StatefulSet#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -3150,21 +5330,53 @@ function statefulSetSpecTemplateSpecVolumeRbdSecretRefToTerraform(struct?: State
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeRbd {
-  /** A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it */
+  /**
+  * A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#ceph_monitors StatefulSet#ceph_monitors}
+  */
   readonly cephMonitors: string[];
-  /** Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#rbd */
+  /**
+  * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#rbd
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fs_type StatefulSet#fs_type}
+  */
   readonly fsType?: string;
-  /** Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it */
+  /**
+  * Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#keyring StatefulSet#keyring}
+  */
   readonly keyring?: string;
-  /** The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it */
+  /**
+  * The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#rados_user StatefulSet#rados_user}
+  */
   readonly radosUser?: string;
-  /** The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it */
+  /**
+  * The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#rbd_image StatefulSet#rbd_image}
+  */
   readonly rbdImage: string;
-  /** The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it. */
+  /**
+  * The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#rbd_pool StatefulSet#rbd_pool}
+  */
   readonly rbdPool?: string;
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
+  */
   readonly readOnly?: boolean;
-  /** secret_ref block */
+  /**
+  * secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret_ref StatefulSet#secret_ref}
+  */
   readonly secretRef?: StatefulSetSpecTemplateSpecVolumeRbdSecretRef[];
 }
 
@@ -3183,11 +5395,23 @@ function statefulSetSpecTemplateSpecVolumeRbdToTerraform(struct?: StatefulSetSpe
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeSecretItems {
-  /** The key to project. */
+  /**
+  * The key to project.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#mode StatefulSet#mode}
+  */
   readonly mode?: string;
-  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  /**
+  * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#path StatefulSet#path}
+  */
   readonly path?: string;
 }
 
@@ -3201,13 +5425,29 @@ function statefulSetSpecTemplateSpecVolumeSecretItemsToTerraform(struct?: Statef
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeSecret {
-  /** Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#default_mode StatefulSet#default_mode}
+  */
   readonly defaultMode?: string;
-  /** Optional: Specify whether the Secret or its keys must be defined. */
+  /**
+  * Optional: Specify whether the Secret or its keys must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
+  */
   readonly optional?: boolean;
-  /** Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets */
+  /**
+  * Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret_name StatefulSet#secret_name}
+  */
   readonly secretName?: string;
-  /** items block */
+  /**
+  * items block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#items StatefulSet#items}
+  */
   readonly items?: StatefulSetSpecTemplateSpecVolumeSecretItems[];
 }
 
@@ -3222,9 +5462,17 @@ function statefulSetSpecTemplateSpecVolumeSecretToTerraform(struct?: StatefulSet
 }
 
 export interface StatefulSetSpecTemplateSpecVolumeVsphereVolume {
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fs_type StatefulSet#fs_type}
+  */
   readonly fsType?: string;
-  /** Path that identifies vSphere volume vmdk */
+  /**
+  * Path that identifies vSphere volume vmdk
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#volume_path StatefulSet#volume_path}
+  */
   readonly volumePath: string;
 }
 
@@ -3237,59 +5485,167 @@ function statefulSetSpecTemplateSpecVolumeVsphereVolumeToTerraform(struct?: Stat
 }
 
 export interface StatefulSetSpecTemplateSpecVolume {
-  /** Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** aws_elastic_block_store block */
+  /**
+  * aws_elastic_block_store block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#aws_elastic_block_store StatefulSet#aws_elastic_block_store}
+  */
   readonly awsElasticBlockStore?: StatefulSetSpecTemplateSpecVolumeAwsElasticBlockStore[];
-  /** azure_disk block */
+  /**
+  * azure_disk block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#azure_disk StatefulSet#azure_disk}
+  */
   readonly azureDisk?: StatefulSetSpecTemplateSpecVolumeAzureDisk[];
-  /** azure_file block */
+  /**
+  * azure_file block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#azure_file StatefulSet#azure_file}
+  */
   readonly azureFile?: StatefulSetSpecTemplateSpecVolumeAzureFile[];
-  /** ceph_fs block */
+  /**
+  * ceph_fs block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#ceph_fs StatefulSet#ceph_fs}
+  */
   readonly cephFs?: StatefulSetSpecTemplateSpecVolumeCephFs[];
-  /** cinder block */
+  /**
+  * cinder block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#cinder StatefulSet#cinder}
+  */
   readonly cinder?: StatefulSetSpecTemplateSpecVolumeCinder[];
-  /** config_map block */
+  /**
+  * config_map block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#config_map StatefulSet#config_map}
+  */
   readonly configMap?: StatefulSetSpecTemplateSpecVolumeConfigMap[];
-  /** csi block */
+  /**
+  * csi block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#csi StatefulSet#csi}
+  */
   readonly csi?: StatefulSetSpecTemplateSpecVolumeCsi[];
-  /** downward_api block */
+  /**
+  * downward_api block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#downward_api StatefulSet#downward_api}
+  */
   readonly downwardApi?: StatefulSetSpecTemplateSpecVolumeDownwardApi[];
-  /** empty_dir block */
+  /**
+  * empty_dir block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#empty_dir StatefulSet#empty_dir}
+  */
   readonly emptyDir?: StatefulSetSpecTemplateSpecVolumeEmptyDir[];
-  /** fc block */
+  /**
+  * fc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#fc StatefulSet#fc}
+  */
   readonly fc?: StatefulSetSpecTemplateSpecVolumeFc[];
-  /** flex_volume block */
+  /**
+  * flex_volume block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#flex_volume StatefulSet#flex_volume}
+  */
   readonly flexVolume?: StatefulSetSpecTemplateSpecVolumeFlexVolume[];
-  /** flocker block */
+  /**
+  * flocker block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#flocker StatefulSet#flocker}
+  */
   readonly flocker?: StatefulSetSpecTemplateSpecVolumeFlocker[];
-  /** gce_persistent_disk block */
+  /**
+  * gce_persistent_disk block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#gce_persistent_disk StatefulSet#gce_persistent_disk}
+  */
   readonly gcePersistentDisk?: StatefulSetSpecTemplateSpecVolumeGcePersistentDisk[];
-  /** git_repo block */
+  /**
+  * git_repo block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#git_repo StatefulSet#git_repo}
+  */
   readonly gitRepo?: StatefulSetSpecTemplateSpecVolumeGitRepo[];
-  /** glusterfs block */
+  /**
+  * glusterfs block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#glusterfs StatefulSet#glusterfs}
+  */
   readonly glusterfs?: StatefulSetSpecTemplateSpecVolumeGlusterfs[];
-  /** host_path block */
+  /**
+  * host_path block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host_path StatefulSet#host_path}
+  */
   readonly hostPath?: StatefulSetSpecTemplateSpecVolumeHostPath[];
-  /** iscsi block */
+  /**
+  * iscsi block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#iscsi StatefulSet#iscsi}
+  */
   readonly iscsi?: StatefulSetSpecTemplateSpecVolumeIscsi[];
-  /** local block */
+  /**
+  * local block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#local StatefulSet#local}
+  */
   readonly local?: StatefulSetSpecTemplateSpecVolumeLocal[];
-  /** nfs block */
+  /**
+  * nfs block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#nfs StatefulSet#nfs}
+  */
   readonly nfs?: StatefulSetSpecTemplateSpecVolumeNfs[];
-  /** persistent_volume_claim block */
+  /**
+  * persistent_volume_claim block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#persistent_volume_claim StatefulSet#persistent_volume_claim}
+  */
   readonly persistentVolumeClaim?: StatefulSetSpecTemplateSpecVolumePersistentVolumeClaim[];
-  /** photon_persistent_disk block */
+  /**
+  * photon_persistent_disk block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#photon_persistent_disk StatefulSet#photon_persistent_disk}
+  */
   readonly photonPersistentDisk?: StatefulSetSpecTemplateSpecVolumePhotonPersistentDisk[];
-  /** projected block */
+  /**
+  * projected block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#projected StatefulSet#projected}
+  */
   readonly projected?: StatefulSetSpecTemplateSpecVolumeProjected[];
-  /** quobyte block */
+  /**
+  * quobyte block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#quobyte StatefulSet#quobyte}
+  */
   readonly quobyte?: StatefulSetSpecTemplateSpecVolumeQuobyte[];
-  /** rbd block */
+  /**
+  * rbd block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#rbd StatefulSet#rbd}
+  */
   readonly rbd?: StatefulSetSpecTemplateSpecVolumeRbd[];
-  /** secret block */
+  /**
+  * secret block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#secret StatefulSet#secret}
+  */
   readonly secret?: StatefulSetSpecTemplateSpecVolumeSecret[];
-  /** vsphere_volume block */
+  /**
+  * vsphere_volume block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#vsphere_volume StatefulSet#vsphere_volume}
+  */
   readonly vsphereVolume?: StatefulSetSpecTemplateSpecVolumeVsphereVolume[];
 }
 
@@ -3327,59 +5683,167 @@ function statefulSetSpecTemplateSpecVolumeToTerraform(struct?: StatefulSetSpecTe
 }
 
 export interface StatefulSetSpecTemplateSpec {
-  /** Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer. */
+  /**
+  * Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#active_deadline_seconds StatefulSet#active_deadline_seconds}
+  */
   readonly activeDeadlineSeconds?: number;
-  /** AutomountServiceAccountToken indicates whether a service account token should be automatically mounted. */
+  /**
+  * AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#automount_service_account_token StatefulSet#automount_service_account_token}
+  */
   readonly automountServiceAccountToken?: boolean;
-  /** Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy). */
+  /**
+  * Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#dns_policy StatefulSet#dns_policy}
+  */
   readonly dnsPolicy?: string;
-  /** Enables generating environment variables for service discovery. Defaults to true. */
+  /**
+  * Enables generating environment variables for service discovery. Defaults to true.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#enable_service_links StatefulSet#enable_service_links}
+  */
   readonly enableServiceLinks?: boolean;
-  /** Use the host's ipc namespace. Optional: Defaults to false. */
+  /**
+  * Use the host's ipc namespace. Optional: Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host_ipc StatefulSet#host_ipc}
+  */
   readonly hostIpc?: boolean;
-  /** Host networking requested for this pod. Use the host's network namespace. If this option is set, the ports that will be used must be specified. */
+  /**
+  * Host networking requested for this pod. Use the host's network namespace. If this option is set, the ports that will be used must be specified.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host_network StatefulSet#host_network}
+  */
   readonly hostNetwork?: boolean;
-  /** Use the host's pid namespace. */
+  /**
+  * Use the host's pid namespace.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host_pid StatefulSet#host_pid}
+  */
   readonly hostPid?: boolean;
-  /** Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value. */
+  /**
+  * Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#hostname StatefulSet#hostname}
+  */
   readonly hostname?: string;
-  /** NodeName is a request to schedule this pod onto a specific node. If it is non-empty, the scheduler simply schedules this pod onto that node, assuming that it fits resource requirements. */
+  /**
+  * NodeName is a request to schedule this pod onto a specific node. If it is non-empty, the scheduler simply schedules this pod onto that node, assuming that it fits resource requirements.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#node_name StatefulSet#node_name}
+  */
   readonly nodeName?: string;
-  /** NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: http://kubernetes.io/docs/user-guide/node-selection. */
+  /**
+  * NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: http://kubernetes.io/docs/user-guide/node-selection.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#node_selector StatefulSet#node_selector}
+  */
   readonly nodeSelector?: { [key: string]: string };
-  /** If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default. */
+  /**
+  * If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#priority_class_name StatefulSet#priority_class_name}
+  */
   readonly priorityClassName?: string;
-  /** Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy. */
+  /**
+  * Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#restart_policy StatefulSet#restart_policy}
+  */
   readonly restartPolicy?: string;
-  /** ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md. */
+  /**
+  * ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#service_account_name StatefulSet#service_account_name}
+  */
   readonly serviceAccountName?: string;
-  /** Share a single process namespace between all of the containers in a pod. When this is set containers will be able to view and signal processes from other containers in the same pod, and the first process in each container will not be assigned PID 1. HostPID and ShareProcessNamespace cannot both be set. Optional: Defaults to false. */
+  /**
+  * Share a single process namespace between all of the containers in a pod. When this is set containers will be able to view and signal processes from other containers in the same pod, and the first process in each container will not be assigned PID 1. HostPID and ShareProcessNamespace cannot both be set. Optional: Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#share_process_namespace StatefulSet#share_process_namespace}
+  */
   readonly shareProcessNamespace?: boolean;
-  /** If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all.. */
+  /**
+  * If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#subdomain StatefulSet#subdomain}
+  */
   readonly subdomain?: string;
-  /** Optional duration in seconds the pod needs to terminate gracefully. May be decreased in delete request. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period will be used instead. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. */
+  /**
+  * Optional duration in seconds the pod needs to terminate gracefully. May be decreased in delete request. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period will be used instead. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#termination_grace_period_seconds StatefulSet#termination_grace_period_seconds}
+  */
   readonly terminationGracePeriodSeconds?: number;
-  /** affinity block */
+  /**
+  * affinity block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#affinity StatefulSet#affinity}
+  */
   readonly affinity?: StatefulSetSpecTemplateSpecAffinity[];
-  /** container block */
+  /**
+  * container block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#container StatefulSet#container}
+  */
   readonly container?: StatefulSetSpecTemplateSpecContainer[];
-  /** dns_config block */
+  /**
+  * dns_config block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#dns_config StatefulSet#dns_config}
+  */
   readonly dnsConfig?: StatefulSetSpecTemplateSpecDnsConfig[];
-  /** host_aliases block */
+  /**
+  * host_aliases block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host_aliases StatefulSet#host_aliases}
+  */
   readonly hostAliases?: StatefulSetSpecTemplateSpecHostAliases[];
-  /** image_pull_secrets block */
+  /**
+  * image_pull_secrets block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#image_pull_secrets StatefulSet#image_pull_secrets}
+  */
   readonly imagePullSecrets?: StatefulSetSpecTemplateSpecImagePullSecrets[];
-  /** init_container block */
+  /**
+  * init_container block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#init_container StatefulSet#init_container}
+  */
   readonly initContainer?: StatefulSetSpecTemplateSpecInitContainer[];
-  /** readiness_gate block */
+  /**
+  * readiness_gate block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#readiness_gate StatefulSet#readiness_gate}
+  */
   readonly readinessGate?: StatefulSetSpecTemplateSpecReadinessGate[];
-  /** security_context block */
+  /**
+  * security_context block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#security_context StatefulSet#security_context}
+  */
   readonly securityContext?: StatefulSetSpecTemplateSpecSecurityContext[];
-  /** toleration block */
+  /**
+  * toleration block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#toleration StatefulSet#toleration}
+  */
   readonly toleration?: StatefulSetSpecTemplateSpecToleration[];
-  /** topology_spread_constraint block */
+  /**
+  * topology_spread_constraint block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#topology_spread_constraint StatefulSet#topology_spread_constraint}
+  */
   readonly topologySpreadConstraint?: StatefulSetSpecTemplateSpecTopologySpreadConstraint[];
-  /** volume block */
+  /**
+  * volume block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#volume StatefulSet#volume}
+  */
   readonly volume?: StatefulSetSpecTemplateSpecVolume[];
 }
 
@@ -3417,9 +5881,17 @@ function statefulSetSpecTemplateSpecToTerraform(struct?: StatefulSetSpecTemplate
 }
 
 export interface StatefulSetSpecTemplate {
-  /** metadata block */
+  /**
+  * metadata block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#metadata StatefulSet#metadata}
+  */
   readonly metadata: StatefulSetSpecTemplateMetadata[];
-  /** spec block */
+  /**
+  * spec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#spec StatefulSet#spec}
+  */
   readonly spec?: StatefulSetSpecTemplateSpec[];
 }
 
@@ -3432,7 +5904,11 @@ function statefulSetSpecTemplateToTerraform(struct?: StatefulSetSpecTemplate): a
 }
 
 export interface StatefulSetSpecUpdateStrategyRollingUpdate {
-  /** Indicates the ordinal at which the StatefulSet should be partitioned. Default value is 0. */
+  /**
+  * Indicates the ordinal at which the StatefulSet should be partitioned. Default value is 0.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#partition StatefulSet#partition}
+  */
   readonly partition?: number;
 }
 
@@ -3444,9 +5920,17 @@ function statefulSetSpecUpdateStrategyRollingUpdateToTerraform(struct?: Stateful
 }
 
 export interface StatefulSetSpecUpdateStrategy {
-  /** Indicates the type of the StatefulSet update strategy. Default is RollingUpdate */
+  /**
+  * Indicates the type of the StatefulSet update strategy. Default is RollingUpdate
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#type StatefulSet#type}
+  */
   readonly type?: string;
-  /** rolling_update block */
+  /**
+  * rolling_update block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#rolling_update StatefulSet#rolling_update}
+  */
   readonly rollingUpdate?: StatefulSetSpecUpdateStrategyRollingUpdate[];
 }
 
@@ -3459,15 +5943,35 @@ function statefulSetSpecUpdateStrategyToTerraform(struct?: StatefulSetSpecUpdate
 }
 
 export interface StatefulSetSpecVolumeClaimTemplateMetadata {
-  /** An unstructured key value map stored with the persistent volume claim that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
+  /**
+  * An unstructured key value map stored with the persistent volume claim that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#annotations StatefulSet#annotations}
+  */
   readonly annotations?: { [key: string]: string };
-  /** Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency */
+  /**
+  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#generate_name StatefulSet#generate_name}
+  */
   readonly generateName?: string;
-  /** Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume claim. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels */
+  /**
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume claim. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#labels StatefulSet#labels}
+  */
   readonly labels?: { [key: string]: string };
-  /** Name of the persistent volume claim, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the persistent volume claim, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#name StatefulSet#name}
+  */
   readonly name?: string;
-  /** Namespace defines the space within which name of the persistent volume claim must be unique. */
+  /**
+  * Namespace defines the space within which name of the persistent volume claim must be unique.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#namespace StatefulSet#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -3483,9 +5987,17 @@ function statefulSetSpecVolumeClaimTemplateMetadataToTerraform(struct?: Stateful
 }
 
 export interface StatefulSetSpecVolumeClaimTemplateSpecResources {
-  /** Map describing the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
+  /**
+  * Map describing the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#limits StatefulSet#limits}
+  */
   readonly limits?: { [key: string]: string };
-  /** Map describing the minimum amount of compute resources required. If this is omitted for a container, it defaults to `limits` if that is explicitly specified, otherwise to an implementation-defined value. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
+  /**
+  * Map describing the minimum amount of compute resources required. If this is omitted for a container, it defaults to `limits` if that is explicitly specified, otherwise to an implementation-defined value. More info: http://kubernetes.io/docs/user-guide/compute-resources/
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#requests StatefulSet#requests}
+  */
   readonly requests?: { [key: string]: string };
 }
 
@@ -3498,11 +6010,23 @@ function statefulSetSpecVolumeClaimTemplateSpecResourcesToTerraform(struct?: Sta
 }
 
 export interface StatefulSetSpecVolumeClaimTemplateSpecSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#key StatefulSet#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#operator StatefulSet#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#values StatefulSet#values}
+  */
   readonly values?: string[];
 }
 
@@ -3516,9 +6040,17 @@ function statefulSetSpecVolumeClaimTemplateSpecSelectorMatchExpressionsToTerrafo
 }
 
 export interface StatefulSetSpecVolumeClaimTemplateSpecSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_expressions StatefulSet#match_expressions}
+  */
   readonly matchExpressions?: StatefulSetSpecVolumeClaimTemplateSpecSelectorMatchExpressions[];
 }
 
@@ -3531,15 +6063,35 @@ function statefulSetSpecVolumeClaimTemplateSpecSelectorToTerraform(struct?: Stat
 }
 
 export interface StatefulSetSpecVolumeClaimTemplateSpec {
-  /** A set of the desired access modes the volume should have. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#access-modes-1 */
+  /**
+  * A set of the desired access modes the volume should have. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#access-modes-1
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#access_modes StatefulSet#access_modes}
+  */
   readonly accessModes: string[];
-  /** Name of the storage class requested by the claim */
+  /**
+  * Name of the storage class requested by the claim
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#storage_class_name StatefulSet#storage_class_name}
+  */
   readonly storageClassName?: string;
-  /** The binding reference to the PersistentVolume backing this claim. */
+  /**
+  * The binding reference to the PersistentVolume backing this claim.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#volume_name StatefulSet#volume_name}
+  */
   readonly volumeName?: string;
-  /** resources block */
+  /**
+  * resources block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#resources StatefulSet#resources}
+  */
   readonly resources: StatefulSetSpecVolumeClaimTemplateSpecResources[];
-  /** selector block */
+  /**
+  * selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#selector StatefulSet#selector}
+  */
   readonly selector?: StatefulSetSpecVolumeClaimTemplateSpecSelector[];
 }
 
@@ -3555,9 +6107,17 @@ function statefulSetSpecVolumeClaimTemplateSpecToTerraform(struct?: StatefulSetS
 }
 
 export interface StatefulSetSpecVolumeClaimTemplate {
-  /** metadata block */
+  /**
+  * metadata block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#metadata StatefulSet#metadata}
+  */
   readonly metadata: StatefulSetSpecVolumeClaimTemplateMetadata[];
-  /** spec block */
+  /**
+  * spec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#spec StatefulSet#spec}
+  */
   readonly spec: StatefulSetSpecVolumeClaimTemplateSpec[];
 }
 
@@ -3570,21 +6130,53 @@ function statefulSetSpecVolumeClaimTemplateToTerraform(struct?: StatefulSetSpecV
 }
 
 export interface StatefulSetSpec {
-  /** Controls how pods are created during initial scale up, when replacing pods on nodes, or when scaling down. */
+  /**
+  * Controls how pods are created during initial scale up, when replacing pods on nodes, or when scaling down.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#pod_management_policy StatefulSet#pod_management_policy}
+  */
   readonly podManagementPolicy?: string;
-  /** The desired number of replicas of the given Template, in the sense that they are instantiations of the same Template. Value must be a positive integer. */
+  /**
+  * The desired number of replicas of the given Template, in the sense that they are instantiations of the same Template. Value must be a positive integer.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#replicas StatefulSet#replicas}
+  */
   readonly replicas?: string;
-  /** The maximum number of revisions that will be maintained in the StatefulSet's revision history. The default value is 10. */
+  /**
+  * The maximum number of revisions that will be maintained in the StatefulSet's revision history. The default value is 10.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#revision_history_limit StatefulSet#revision_history_limit}
+  */
   readonly revisionHistoryLimit?: number;
-  /** The name of the service that governs this StatefulSet. This service must exist before the StatefulSet, and is responsible for the network identity of the set. */
+  /**
+  * The name of the service that governs this StatefulSet. This service must exist before the StatefulSet, and is responsible for the network identity of the set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#service_name StatefulSet#service_name}
+  */
   readonly serviceName: string;
-  /** selector block */
+  /**
+  * selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#selector StatefulSet#selector}
+  */
   readonly selector: StatefulSetSpecSelector[];
-  /** template block */
+  /**
+  * template block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#template StatefulSet#template}
+  */
   readonly template: StatefulSetSpecTemplate[];
-  /** update_strategy block */
+  /**
+  * update_strategy block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#update_strategy StatefulSet#update_strategy}
+  */
   readonly updateStrategy?: StatefulSetSpecUpdateStrategy[];
-  /** volume_claim_template block */
+  /**
+  * volume_claim_template block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#volume_claim_template StatefulSet#volume_claim_template}
+  */
   readonly volumeClaimTemplate?: StatefulSetSpecVolumeClaimTemplate[];
 }
 
@@ -3603,9 +6195,21 @@ function statefulSetSpecToTerraform(struct?: StatefulSetSpec): any {
 }
 
 export interface StatefulSetTimeouts {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#create StatefulSet#create}
+  */
   readonly create?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#delete StatefulSet#delete}
+  */
   readonly delete?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read StatefulSet#read}
+  */
   readonly read?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#update StatefulSet#update}
+  */
   readonly update?: string;
 }
 
@@ -3620,14 +6224,22 @@ function statefulSetTimeoutsToTerraform(struct?: StatefulSetTimeouts): any {
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html kubernetes_stateful_set}
+*/
 export class StatefulSet extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html kubernetes_stateful_set} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options StatefulSetConfig
+  */
   public constructor(scope: Construct, id: string, config: StatefulSetConfig) {
     super(scope, id, {
       terraformResourceType: 'kubernetes_stateful_set',

@@ -7,23 +7,55 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface ResourceQuotaConfig extends cdktf.TerraformMetaArguments {
-  /** metadata block */
+  /**
+  * metadata block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#metadata ResourceQuota#metadata}
+  */
   readonly metadata: ResourceQuotaMetadata[];
-  /** spec block */
+  /**
+  * spec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#spec ResourceQuota#spec}
+  */
   readonly spec?: ResourceQuotaSpec[];
-  /** timeouts block */
+  /**
+  * timeouts block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#timeouts ResourceQuota#timeouts}
+  */
   readonly timeouts?: ResourceQuotaTimeouts;
 }
 export interface ResourceQuotaMetadata {
-  /** An unstructured key value map stored with the resource quota that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
+  /**
+  * An unstructured key value map stored with the resource quota that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#annotations ResourceQuota#annotations}
+  */
   readonly annotations?: { [key: string]: string };
-  /** Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency */
+  /**
+  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#generate_name ResourceQuota#generate_name}
+  */
   readonly generateName?: string;
-  /** Map of string keys and values that can be used to organize and categorize (scope and select) the resource quota. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels */
+  /**
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the resource quota. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#labels ResourceQuota#labels}
+  */
   readonly labels?: { [key: string]: string };
-  /** Name of the resource quota, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the resource quota, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#name ResourceQuota#name}
+  */
   readonly name?: string;
-  /** Namespace defines the space within which name of the resource quota must be unique. */
+  /**
+  * Namespace defines the space within which name of the resource quota must be unique.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#namespace ResourceQuota#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -39,9 +71,17 @@ function resourceQuotaMetadataToTerraform(struct?: ResourceQuotaMetadata): any {
 }
 
 export interface ResourceQuotaSpec {
-  /** The set of desired hard limits for each named resource. More info: http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota */
+  /**
+  * The set of desired hard limits for each named resource. More info: http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#hard ResourceQuota#hard}
+  */
   readonly hard?: { [key: string]: string };
-  /** A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects. */
+  /**
+  * A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#scopes ResourceQuota#scopes}
+  */
   readonly scopes?: string[];
 }
 
@@ -54,7 +94,13 @@ function resourceQuotaSpecToTerraform(struct?: ResourceQuotaSpec): any {
 }
 
 export interface ResourceQuotaTimeouts {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#create ResourceQuota#create}
+  */
   readonly create?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#update ResourceQuota#update}
+  */
   readonly update?: string;
 }
 
@@ -67,14 +113,22 @@ function resourceQuotaTimeoutsToTerraform(struct?: ResourceQuotaTimeouts): any {
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html kubernetes_resource_quota}
+*/
 export class ResourceQuota extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html kubernetes_resource_quota} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options ResourceQuotaConfig
+  */
   public constructor(scope: Construct, id: string, config: ResourceQuotaConfig) {
     super(scope, id, {
       terraformResourceType: 'kubernetes_resource_quota',
