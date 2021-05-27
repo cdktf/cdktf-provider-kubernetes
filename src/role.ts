@@ -7,21 +7,49 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface RoleConfig extends cdktf.TerraformMetaArguments {
-  /** metadata block */
+  /**
+  * metadata block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html#metadata Role#metadata}
+  */
   readonly metadata: RoleMetadata[];
-  /** rule block */
+  /**
+  * rule block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html#rule Role#rule}
+  */
   readonly rule: RoleRule[];
 }
 export interface RoleMetadata {
-  /** An unstructured key value map stored with the role that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
+  /**
+  * An unstructured key value map stored with the role that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html#annotations Role#annotations}
+  */
   readonly annotations?: { [key: string]: string };
-  /** Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency */
+  /**
+  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html#generate_name Role#generate_name}
+  */
   readonly generateName?: string;
-  /** Map of string keys and values that can be used to organize and categorize (scope and select) the role. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels */
+  /**
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the role. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html#labels Role#labels}
+  */
   readonly labels?: { [key: string]: string };
-  /** Name of the role, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the role, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html#name Role#name}
+  */
   readonly name?: string;
-  /** Namespace defines the space within which name of the role must be unique. */
+  /**
+  * Namespace defines the space within which name of the role must be unique.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html#namespace Role#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -37,13 +65,29 @@ function roleMetadataToTerraform(struct?: RoleMetadata): any {
 }
 
 export interface RoleRule {
-  /** Name of the APIGroup that contains the resources */
+  /**
+  * Name of the APIGroup that contains the resources
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html#api_groups Role#api_groups}
+  */
   readonly apiGroups: string[];
-  /** White list of names that the rule applies to */
+  /**
+  * White list of names that the rule applies to
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html#resource_names Role#resource_names}
+  */
   readonly resourceNames?: string[];
-  /** List of resources that the rule applies to */
+  /**
+  * List of resources that the rule applies to
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html#resources Role#resources}
+  */
   readonly resources: string[];
-  /** List of Verbs that apply to ALL the ResourceKinds and AttributeRestrictions contained in this rule */
+  /**
+  * List of Verbs that apply to ALL the ResourceKinds and AttributeRestrictions contained in this rule
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html#verbs Role#verbs}
+  */
   readonly verbs: string[];
 }
 
@@ -58,14 +102,22 @@ function roleRuleToTerraform(struct?: RoleRule): any {
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html kubernetes_role}
+*/
 export class Role extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html kubernetes_role} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options RoleConfig
+  */
   public constructor(scope: Construct, id: string, config: RoleConfig) {
     super(scope, id, {
       terraformResourceType: 'kubernetes_role',

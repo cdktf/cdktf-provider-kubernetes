@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/data_kubernetes_pod.html
+// https://www.terraform.io/docs/providers/kubernetes/d/pod.html
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -7,7 +7,11 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface DataKubernetesPodConfig extends cdktf.TerraformMetaArguments {
-  /** metadata block */
+  /**
+  * metadata block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html#metadata DataKubernetesPod#metadata}
+  */
   readonly metadata: DataKubernetesPodMetadata[];
 }
 export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions extends cdktf.ComplexComputedList {
@@ -3351,15 +3355,35 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
   }
 }
 export interface DataKubernetesPodMetadata {
-  /** An unstructured key value map stored with the pod that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
+  /**
+  * An unstructured key value map stored with the pod that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html#annotations DataKubernetesPod#annotations}
+  */
   readonly annotations?: { [key: string]: string };
-  /** Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency */
+  /**
+  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html#generate_name DataKubernetesPod#generate_name}
+  */
   readonly generateName?: string;
-  /** Map of string keys and values that can be used to organize and categorize (scope and select) the pod. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels */
+  /**
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the pod. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html#labels DataKubernetesPod#labels}
+  */
   readonly labels?: { [key: string]: string };
-  /** Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html#name DataKubernetesPod#name}
+  */
   readonly name?: string;
-  /** Namespace defines the space within which name of the pod must be unique. */
+  /**
+  * Namespace defines the space within which name of the pod must be unique.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html#namespace DataKubernetesPod#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -3375,14 +3399,22 @@ function dataKubernetesPodMetadataToTerraform(struct?: DataKubernetesPodMetadata
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html kubernetes_pod}
+*/
 export class DataKubernetesPod extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html kubernetes_pod} Data Source
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options DataKubernetesPodConfig
+  */
   public constructor(scope: Construct, id: string, config: DataKubernetesPodConfig) {
     super(scope, id, {
       terraformResourceType: 'kubernetes_pod',

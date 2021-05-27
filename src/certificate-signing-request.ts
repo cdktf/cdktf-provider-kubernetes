@@ -7,23 +7,55 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface CertificateSigningRequestConfig extends cdktf.TerraformMetaArguments {
-  /** Automatically approve the CertificateSigningRequest */
+  /**
+  * Automatically approve the CertificateSigningRequest
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#auto_approve CertificateSigningRequest#auto_approve}
+  */
   readonly autoApprove?: boolean;
-  /** metadata block */
+  /**
+  * metadata block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#metadata CertificateSigningRequest#metadata}
+  */
   readonly metadata: CertificateSigningRequestMetadata[];
-  /** spec block */
+  /**
+  * spec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#spec CertificateSigningRequest#spec}
+  */
   readonly spec: CertificateSigningRequestSpec[];
-  /** timeouts block */
+  /**
+  * timeouts block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#timeouts CertificateSigningRequest#timeouts}
+  */
   readonly timeouts?: CertificateSigningRequestTimeouts;
 }
 export interface CertificateSigningRequestMetadata {
-  /** An unstructured key value map stored with the certificate signing request that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
+  /**
+  * An unstructured key value map stored with the certificate signing request that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#annotations CertificateSigningRequest#annotations}
+  */
   readonly annotations?: { [key: string]: string };
-  /** Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency */
+  /**
+  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#generate_name CertificateSigningRequest#generate_name}
+  */
   readonly generateName?: string;
-  /** Map of string keys and values that can be used to organize and categorize (scope and select) the certificate signing request. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels */
+  /**
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the certificate signing request. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#labels CertificateSigningRequest#labels}
+  */
   readonly labels?: { [key: string]: string };
-  /** Name of the certificate signing request, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the certificate signing request, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#name CertificateSigningRequest#name}
+  */
   readonly name?: string;
 }
 
@@ -38,11 +70,20 @@ function certificateSigningRequestMetadataToTerraform(struct?: CertificateSignin
 }
 
 export interface CertificateSigningRequestSpec {
-  /** Base64-encoded PKCS#10 CSR data */
+  /**
+  * Base64-encoded PKCS#10 CSR data
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#request CertificateSigningRequest#request}
+  */
   readonly request: string;
-  /** Requested signer for the request. It is a qualified name in the form: `scope-hostname.io/name`.If empty, it will be defaulted: 1. If it's a kubelet client certificate, it is assigned `kubernetes.io/kube-apiserver-client-kubelet`.2. If it's a kubelet serving certificate, it is assigned `kubernetes.io/kubelet-serving`.3. Otherwise, it is assigned `kubernetes.io/legacy-unknown`. Distribution of trust for signers happens out of band.You can select on this field using `spec.signerName`. */
+  /**
+  * Requested signer for the request. It is a qualified name in the form: `scope-hostname.io/name`.If empty, it will be defaulted: 1. If it's a kubelet client certificate, it is assigned `kubernetes.io/kube-apiserver-client-kubelet`.2. If it's a kubelet serving certificate, it is assigned `kubernetes.io/kubelet-serving`.3. Otherwise, it is assigned `kubernetes.io/legacy-unknown`. Distribution of trust for signers happens out of band.You can select on this field using `spec.signerName`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#signer_name CertificateSigningRequest#signer_name}
+  */
   readonly signerName?: string;
-  /** allowedUsages specifies a set of usage contexts the key will be valid for. See: https://tools.ietf.org/html/rfc5280#section-4.2.1.3
+  /**
+  * allowedUsages specifies a set of usage contexts the key will be valid for. See: https://tools.ietf.org/html/rfc5280#section-4.2.1.3
      https://tools.ietf.org/html/rfc5280#section-4.2.1.12
 Valid values are:
  "signing",
@@ -67,7 +108,10 @@ Valid values are:
  "timestamping",
  "ocsp signing",
  "microsoft sgc",
- "netscape sgc" */
+ "netscape sgc"
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#usages CertificateSigningRequest#usages}
+  */
   readonly usages?: string[];
 }
 
@@ -81,6 +125,9 @@ function certificateSigningRequestSpecToTerraform(struct?: CertificateSigningReq
 }
 
 export interface CertificateSigningRequestTimeouts {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#create CertificateSigningRequest#create}
+  */
   readonly create?: string;
 }
 
@@ -92,14 +139,22 @@ function certificateSigningRequestTimeoutsToTerraform(struct?: CertificateSignin
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html kubernetes_certificate_signing_request}
+*/
 export class CertificateSigningRequest extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html kubernetes_certificate_signing_request} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options CertificateSigningRequestConfig
+  */
   public constructor(scope: Construct, id: string, config: CertificateSigningRequestConfig) {
     super(scope, id, {
       terraformResourceType: 'kubernetes_certificate_signing_request',

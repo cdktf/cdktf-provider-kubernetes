@@ -7,24 +7,59 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface JobConfig extends cdktf.TerraformMetaArguments {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#wait_for_completion Job#wait_for_completion}
+  */
   readonly waitForCompletion?: boolean;
-  /** metadata block */
+  /**
+  * metadata block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#metadata Job#metadata}
+  */
   readonly metadata: JobMetadata[];
-  /** spec block */
+  /**
+  * spec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#spec Job#spec}
+  */
   readonly spec: JobSpec[];
-  /** timeouts block */
+  /**
+  * timeouts block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#timeouts Job#timeouts}
+  */
   readonly timeouts?: JobTimeouts;
 }
 export interface JobMetadata {
-  /** An unstructured key value map stored with the job that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
+  /**
+  * An unstructured key value map stored with the job that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#annotations Job#annotations}
+  */
   readonly annotations?: { [key: string]: string };
-  /** Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency */
+  /**
+  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#generate_name Job#generate_name}
+  */
   readonly generateName?: string;
-  /** Map of string keys and values that can be used to organize and categorize (scope and select) the job. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels */
+  /**
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the job. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#labels Job#labels}
+  */
   readonly labels?: { [key: string]: string };
-  /** Name of the job, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the job, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Namespace defines the space within which name of the job must be unique. */
+  /**
+  * Namespace defines the space within which name of the job must be unique.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#namespace Job#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -40,11 +75,23 @@ function jobMetadataToTerraform(struct?: JobMetadata): any {
 }
 
 export interface JobSpecSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#operator Job#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#values Job#values}
+  */
   readonly values?: string[];
 }
 
@@ -58,9 +105,17 @@ function jobSpecSelectorMatchExpressionsToTerraform(struct?: JobSpecSelectorMatc
 }
 
 export interface JobSpecSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_labels Job#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_expressions Job#match_expressions}
+  */
   readonly matchExpressions?: JobSpecSelectorMatchExpressions[];
 }
 
@@ -73,13 +128,29 @@ function jobSpecSelectorToTerraform(struct?: JobSpecSelector): any {
 }
 
 export interface JobSpecTemplateMetadata {
-  /** An unstructured key value map stored with the job that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
+  /**
+  * An unstructured key value map stored with the job that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#annotations Job#annotations}
+  */
   readonly annotations?: { [key: string]: string };
-  /** Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency */
+  /**
+  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#generate_name Job#generate_name}
+  */
   readonly generateName?: string;
-  /** Map of string keys and values that can be used to organize and categorize (scope and select) the job. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels */
+  /**
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the job. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#labels Job#labels}
+  */
   readonly labels?: { [key: string]: string };
-  /** Name of the job, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the job, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
 }
 
@@ -94,11 +165,23 @@ function jobSpecTemplateMetadataToTerraform(struct?: JobSpecTemplateMetadata): a
 }
 
 export interface JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt. */
+  /**
+  * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#operator Job#operator}
+  */
   readonly operator?: string;
-  /** Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch. */
+  /**
+  * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#values Job#values}
+  */
   readonly values?: string[];
 }
 
@@ -112,7 +195,11 @@ function jobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnored
 }
 
 export interface JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference {
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_expressions Job#match_expressions}
+  */
   readonly matchExpressions?: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[];
 }
 
@@ -124,9 +211,17 @@ function jobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnored
 }
 
 export interface JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution {
-  /** weight is in the range 1-100 */
+  /**
+  * weight is in the range 1-100
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#weight Job#weight}
+  */
   readonly weight: number;
-  /** preference block */
+  /**
+  * preference block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#preference Job#preference}
+  */
   readonly preference: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference[];
 }
 
@@ -139,11 +234,23 @@ function jobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnored
 }
 
 export interface JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt. */
+  /**
+  * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#operator Job#operator}
+  */
   readonly operator?: string;
-  /** Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch. */
+  /**
+  * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#values Job#values}
+  */
   readonly values?: string[];
 }
 
@@ -157,7 +264,11 @@ function jobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredD
 }
 
 export interface JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm {
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_expressions Job#match_expressions}
+  */
   readonly matchExpressions?: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions[];
 }
 
@@ -169,7 +280,11 @@ function jobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredD
 }
 
 export interface JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution {
-  /** node_selector_term block */
+  /**
+  * node_selector_term block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#node_selector_term Job#node_selector_term}
+  */
   readonly nodeSelectorTerm?: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[];
 }
 
@@ -181,9 +296,17 @@ function jobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredD
 }
 
 export interface JobSpecTemplateSpecAffinityNodeAffinity {
-  /** preferred_during_scheduling_ignored_during_execution block */
+  /**
+  * preferred_during_scheduling_ignored_during_execution block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#preferred_during_scheduling_ignored_during_execution Job#preferred_during_scheduling_ignored_during_execution}
+  */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[];
-  /** required_during_scheduling_ignored_during_execution block */
+  /**
+  * required_during_scheduling_ignored_during_execution block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#required_during_scheduling_ignored_during_execution Job#required_during_scheduling_ignored_during_execution}
+  */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
 
@@ -196,11 +319,23 @@ function jobSpecTemplateSpecAffinityNodeAffinityToTerraform(struct?: JobSpecTemp
 }
 
 export interface JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#operator Job#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#values Job#values}
+  */
   readonly values?: string[];
 }
 
@@ -214,9 +349,17 @@ function jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredD
 }
 
 export interface JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_labels Job#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_expressions Job#match_expressions}
+  */
   readonly matchExpressions?: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[];
 }
 
@@ -229,11 +372,23 @@ function jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredD
 }
 
 export interface JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
-  /** namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace' */
+  /**
+  * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#namespaces Job#namespaces}
+  */
   readonly namespaces?: string[];
-  /** empty topology key is interpreted by the scheduler as 'all topologies' */
+  /**
+  * empty topology key is interpreted by the scheduler as 'all topologies'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#topology_key Job#topology_key}
+  */
   readonly topologyKey?: string;
-  /** label_selector block */
+  /**
+  * label_selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#label_selector Job#label_selector}
+  */
   readonly labelSelector?: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
 }
 
@@ -247,9 +402,17 @@ function jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredD
 }
 
 export interface JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution {
-  /** weight associated with matching the corresponding podAffinityTerm, in the range 1-100 */
+  /**
+  * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#weight Job#weight}
+  */
   readonly weight: number;
-  /** pod_affinity_term block */
+  /**
+  * pod_affinity_term block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#pod_affinity_term Job#pod_affinity_term}
+  */
   readonly podAffinityTerm: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm[];
 }
 
@@ -262,11 +425,23 @@ function jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredD
 }
 
 export interface JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#operator Job#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#values Job#values}
+  */
   readonly values?: string[];
 }
 
@@ -280,9 +455,17 @@ function jobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDu
 }
 
 export interface JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_labels Job#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_expressions Job#match_expressions}
+  */
   readonly matchExpressions?: JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[];
 }
 
@@ -295,11 +478,23 @@ function jobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDu
 }
 
 export interface JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution {
-  /** namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace' */
+  /**
+  * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#namespaces Job#namespaces}
+  */
   readonly namespaces?: string[];
-  /** empty topology key is interpreted by the scheduler as 'all topologies' */
+  /**
+  * empty topology key is interpreted by the scheduler as 'all topologies'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#topology_key Job#topology_key}
+  */
   readonly topologyKey?: string;
-  /** label_selector block */
+  /**
+  * label_selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#label_selector Job#label_selector}
+  */
   readonly labelSelector?: JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[];
 }
 
@@ -313,9 +508,17 @@ function jobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDu
 }
 
 export interface JobSpecTemplateSpecAffinityPodAffinity {
-  /** preferred_during_scheduling_ignored_during_execution block */
+  /**
+  * preferred_during_scheduling_ignored_during_execution block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#preferred_during_scheduling_ignored_during_execution Job#preferred_during_scheduling_ignored_during_execution}
+  */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[];
-  /** required_during_scheduling_ignored_during_execution block */
+  /**
+  * required_during_scheduling_ignored_during_execution block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#required_during_scheduling_ignored_during_execution Job#required_during_scheduling_ignored_during_execution}
+  */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
 
@@ -328,11 +531,23 @@ function jobSpecTemplateSpecAffinityPodAffinityToTerraform(struct?: JobSpecTempl
 }
 
 export interface JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#operator Job#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#values Job#values}
+  */
   readonly values?: string[];
 }
 
@@ -346,9 +561,17 @@ function jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgno
 }
 
 export interface JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_labels Job#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_expressions Job#match_expressions}
+  */
   readonly matchExpressions?: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[];
 }
 
@@ -361,11 +584,23 @@ function jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgno
 }
 
 export interface JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
-  /** namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace' */
+  /**
+  * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#namespaces Job#namespaces}
+  */
   readonly namespaces?: string[];
-  /** empty topology key is interpreted by the scheduler as 'all topologies' */
+  /**
+  * empty topology key is interpreted by the scheduler as 'all topologies'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#topology_key Job#topology_key}
+  */
   readonly topologyKey?: string;
-  /** label_selector block */
+  /**
+  * label_selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#label_selector Job#label_selector}
+  */
   readonly labelSelector?: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
 }
 
@@ -379,9 +614,17 @@ function jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgno
 }
 
 export interface JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution {
-  /** weight associated with matching the corresponding podAffinityTerm, in the range 1-100 */
+  /**
+  * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#weight Job#weight}
+  */
   readonly weight: number;
-  /** pod_affinity_term block */
+  /**
+  * pod_affinity_term block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#pod_affinity_term Job#pod_affinity_term}
+  */
   readonly podAffinityTerm: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm[];
 }
 
@@ -394,11 +637,23 @@ function jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgno
 }
 
 export interface JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#operator Job#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#values Job#values}
+  */
   readonly values?: string[];
 }
 
@@ -412,9 +667,17 @@ function jobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnor
 }
 
 export interface JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_labels Job#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_expressions Job#match_expressions}
+  */
   readonly matchExpressions?: JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[];
 }
 
@@ -427,11 +690,23 @@ function jobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnor
 }
 
 export interface JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution {
-  /** namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace' */
+  /**
+  * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#namespaces Job#namespaces}
+  */
   readonly namespaces?: string[];
-  /** empty topology key is interpreted by the scheduler as 'all topologies' */
+  /**
+  * empty topology key is interpreted by the scheduler as 'all topologies'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#topology_key Job#topology_key}
+  */
   readonly topologyKey?: string;
-  /** label_selector block */
+  /**
+  * label_selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#label_selector Job#label_selector}
+  */
   readonly labelSelector?: JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[];
 }
 
@@ -445,9 +720,17 @@ function jobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnor
 }
 
 export interface JobSpecTemplateSpecAffinityPodAntiAffinity {
-  /** preferred_during_scheduling_ignored_during_execution block */
+  /**
+  * preferred_during_scheduling_ignored_during_execution block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#preferred_during_scheduling_ignored_during_execution Job#preferred_during_scheduling_ignored_during_execution}
+  */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[];
-  /** required_during_scheduling_ignored_during_execution block */
+  /**
+  * required_during_scheduling_ignored_during_execution block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#required_during_scheduling_ignored_during_execution Job#required_during_scheduling_ignored_during_execution}
+  */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
 
@@ -460,11 +743,23 @@ function jobSpecTemplateSpecAffinityPodAntiAffinityToTerraform(struct?: JobSpecT
 }
 
 export interface JobSpecTemplateSpecAffinity {
-  /** node_affinity block */
+  /**
+  * node_affinity block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#node_affinity Job#node_affinity}
+  */
   readonly nodeAffinity?: JobSpecTemplateSpecAffinityNodeAffinity[];
-  /** pod_affinity block */
+  /**
+  * pod_affinity block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#pod_affinity Job#pod_affinity}
+  */
   readonly podAffinity?: JobSpecTemplateSpecAffinityPodAffinity[];
-  /** pod_anti_affinity block */
+  /**
+  * pod_anti_affinity block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#pod_anti_affinity Job#pod_anti_affinity}
+  */
   readonly podAntiAffinity?: JobSpecTemplateSpecAffinityPodAntiAffinity[];
 }
 
@@ -478,11 +773,23 @@ function jobSpecTemplateSpecAffinityToTerraform(struct?: JobSpecTemplateSpecAffi
 }
 
 export interface JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef {
-  /** The key to select. */
+  /**
+  * The key to select.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Specify whether the ConfigMap or its key must be defined. */
+  /**
+  * Specify whether the ConfigMap or its key must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#optional Job#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -496,9 +803,17 @@ function jobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform(stru
 }
 
 export interface JobSpecTemplateSpecContainerEnvValueFromFieldRef {
-  /** Version of the schema the FieldPath is written in terms of, defaults to "v1". */
+  /**
+  * Version of the schema the FieldPath is written in terms of, defaults to "v1".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#api_version Job#api_version}
+  */
   readonly apiVersion?: string;
-  /** Path of the field to select in the specified API version */
+  /**
+  * Path of the field to select in the specified API version
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#field_path Job#field_path}
+  */
   readonly fieldPath?: string;
 }
 
@@ -511,9 +826,19 @@ function jobSpecTemplateSpecContainerEnvValueFromFieldRefToTerraform(struct?: Jo
 }
 
 export interface JobSpecTemplateSpecContainerEnvValueFromResourceFieldRef {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_name Job#container_name}
+  */
   readonly containerName?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#divisor Job#divisor}
+  */
   readonly divisor?: string;
-  /** Resource to select */
+  /**
+  * Resource to select
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resource Job#resource}
+  */
   readonly resource: string;
 }
 
@@ -527,11 +852,23 @@ function jobSpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraform(str
 }
 
 export interface JobSpecTemplateSpecContainerEnvValueFromSecretKeyRef {
-  /** The key of the secret to select from. Must be a valid secret key. */
+  /**
+  * The key of the secret to select from. Must be a valid secret key.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Specify whether the Secret or its key must be defined. */
+  /**
+  * Specify whether the Secret or its key must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#optional Job#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -545,13 +882,29 @@ function jobSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?
 }
 
 export interface JobSpecTemplateSpecContainerEnvValueFrom {
-  /** config_map_key_ref block */
+  /**
+  * config_map_key_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#config_map_key_ref Job#config_map_key_ref}
+  */
   readonly configMapKeyRef?: JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef[];
-  /** field_ref block */
+  /**
+  * field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#field_ref Job#field_ref}
+  */
   readonly fieldRef?: JobSpecTemplateSpecContainerEnvValueFromFieldRef[];
-  /** resource_field_ref block */
+  /**
+  * resource_field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resource_field_ref Job#resource_field_ref}
+  */
   readonly resourceFieldRef?: JobSpecTemplateSpecContainerEnvValueFromResourceFieldRef[];
-  /** secret_key_ref block */
+  /**
+  * secret_key_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_key_ref Job#secret_key_ref}
+  */
   readonly secretKeyRef?: JobSpecTemplateSpecContainerEnvValueFromSecretKeyRef[];
 }
 
@@ -566,11 +919,23 @@ function jobSpecTemplateSpecContainerEnvValueFromToTerraform(struct?: JobSpecTem
 }
 
 export interface JobSpecTemplateSpecContainerEnv {
-  /** Name of the environment variable. Must be a C_IDENTIFIER */
+  /**
+  * Name of the environment variable. Must be a C_IDENTIFIER
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
-  /** Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "". */
+  /**
+  * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
-  /** value_from block */
+  /**
+  * value_from block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value_from Job#value_from}
+  */
   readonly valueFrom?: JobSpecTemplateSpecContainerEnvValueFrom[];
 }
 
@@ -584,9 +949,17 @@ function jobSpecTemplateSpecContainerEnvToTerraform(struct?: JobSpecTemplateSpec
 }
 
 export interface JobSpecTemplateSpecContainerEnvFromConfigMapRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
-  /** Specify whether the ConfigMap must be defined */
+  /**
+  * Specify whether the ConfigMap must be defined
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#optional Job#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -599,9 +972,17 @@ function jobSpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(struct?: Job
 }
 
 export interface JobSpecTemplateSpecContainerEnvFromSecretRef {
-  /** Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names */
+  /**
+  * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
-  /** Specify whether the Secret must be defined */
+  /**
+  * Specify whether the Secret must be defined
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#optional Job#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -614,11 +995,23 @@ function jobSpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct?: JobSpe
 }
 
 export interface JobSpecTemplateSpecContainerEnvFrom {
-  /** An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER. */
+  /**
+  * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#prefix Job#prefix}
+  */
   readonly prefix?: string;
-  /** config_map_ref block */
+  /**
+  * config_map_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#config_map_ref Job#config_map_ref}
+  */
   readonly configMapRef?: JobSpecTemplateSpecContainerEnvFromConfigMapRef[];
-  /** secret_ref block */
+  /**
+  * secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_ref Job#secret_ref}
+  */
   readonly secretRef?: JobSpecTemplateSpecContainerEnvFromSecretRef[];
 }
 
@@ -632,7 +1025,11 @@ function jobSpecTemplateSpecContainerEnvFromToTerraform(struct?: JobSpecTemplate
 }
 
 export interface JobSpecTemplateSpecContainerLifecyclePostStartExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#command Job#command}
+  */
   readonly command?: string[];
 }
 
@@ -644,9 +1041,17 @@ function jobSpecTemplateSpecContainerLifecyclePostStartExecToTerraform(struct?: 
 }
 
 export interface JobSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
 }
 
@@ -659,15 +1064,35 @@ function jobSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraf
 }
 
 export interface JobSpecTemplateSpecContainerLifecyclePostStartHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host Job#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#scheme Job#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_header Job#http_header}
+  */
   readonly httpHeader?: JobSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[];
 }
 
@@ -683,7 +1108,11 @@ function jobSpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform(struct
 }
 
 export interface JobSpecTemplateSpecContainerLifecyclePostStartTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port: string;
 }
 
@@ -695,11 +1124,23 @@ function jobSpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraform(stru
 }
 
 export interface JobSpecTemplateSpecContainerLifecyclePostStart {
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
+  */
   readonly exec?: JobSpecTemplateSpecContainerLifecyclePostStartExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
+  */
   readonly httpGet?: JobSpecTemplateSpecContainerLifecyclePostStartHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#tcp_socket Job#tcp_socket}
+  */
   readonly tcpSocket?: JobSpecTemplateSpecContainerLifecyclePostStartTcpSocket[];
 }
 
@@ -713,7 +1154,11 @@ function jobSpecTemplateSpecContainerLifecyclePostStartToTerraform(struct?: JobS
 }
 
 export interface JobSpecTemplateSpecContainerLifecyclePreStopExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#command Job#command}
+  */
   readonly command?: string[];
 }
 
@@ -725,9 +1170,17 @@ function jobSpecTemplateSpecContainerLifecyclePreStopExecToTerraform(struct?: Jo
 }
 
 export interface JobSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
 }
 
@@ -740,15 +1193,35 @@ function jobSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerrafor
 }
 
 export interface JobSpecTemplateSpecContainerLifecyclePreStopHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host Job#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#scheme Job#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_header Job#http_header}
+  */
   readonly httpHeader?: JobSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[];
 }
 
@@ -764,7 +1237,11 @@ function jobSpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(struct?:
 }
 
 export interface JobSpecTemplateSpecContainerLifecyclePreStopTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port: string;
 }
 
@@ -776,11 +1253,23 @@ function jobSpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerraform(struct
 }
 
 export interface JobSpecTemplateSpecContainerLifecyclePreStop {
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
+  */
   readonly exec?: JobSpecTemplateSpecContainerLifecyclePreStopExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
+  */
   readonly httpGet?: JobSpecTemplateSpecContainerLifecyclePreStopHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#tcp_socket Job#tcp_socket}
+  */
   readonly tcpSocket?: JobSpecTemplateSpecContainerLifecyclePreStopTcpSocket[];
 }
 
@@ -794,9 +1283,17 @@ function jobSpecTemplateSpecContainerLifecyclePreStopToTerraform(struct?: JobSpe
 }
 
 export interface JobSpecTemplateSpecContainerLifecycle {
-  /** post_start block */
+  /**
+  * post_start block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#post_start Job#post_start}
+  */
   readonly postStart?: JobSpecTemplateSpecContainerLifecyclePostStart[];
-  /** pre_stop block */
+  /**
+  * pre_stop block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#pre_stop Job#pre_stop}
+  */
   readonly preStop?: JobSpecTemplateSpecContainerLifecyclePreStop[];
 }
 
@@ -809,7 +1306,11 @@ function jobSpecTemplateSpecContainerLifecycleToTerraform(struct?: JobSpecTempla
 }
 
 export interface JobSpecTemplateSpecContainerLivenessProbeExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#command Job#command}
+  */
   readonly command?: string[];
 }
 
@@ -821,9 +1322,17 @@ function jobSpecTemplateSpecContainerLivenessProbeExecToTerraform(struct?: JobSp
 }
 
 export interface JobSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
 }
 
@@ -836,15 +1345,35 @@ function jobSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform(s
 }
 
 export interface JobSpecTemplateSpecContainerLivenessProbeHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host Job#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#scheme Job#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_header Job#http_header}
+  */
   readonly httpHeader?: JobSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[];
 }
 
@@ -860,7 +1389,11 @@ function jobSpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct?: Jo
 }
 
 export interface JobSpecTemplateSpecContainerLivenessProbeTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port: string;
 }
 
@@ -872,21 +1405,53 @@ function jobSpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform(struct?: 
 }
 
 export interface JobSpecTemplateSpecContainerLivenessProbe {
-  /** Minimum consecutive failures for the probe to be considered failed after having succeeded. */
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#failure_threshold Job#failure_threshold}
+  */
   readonly failureThreshold?: number;
-  /** Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#initial_delay_seconds Job#initial_delay_seconds}
+  */
   readonly initialDelaySeconds?: number;
-  /** How often (in seconds) to perform the probe */
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#period_seconds Job#period_seconds}
+  */
   readonly periodSeconds?: number;
-  /** Minimum consecutive successes for the probe to be considered successful after having failed. */
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#success_threshold Job#success_threshold}
+  */
   readonly successThreshold?: number;
-  /** Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#timeout_seconds Job#timeout_seconds}
+  */
   readonly timeoutSeconds?: number;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
+  */
   readonly exec?: JobSpecTemplateSpecContainerLivenessProbeExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
+  */
   readonly httpGet?: JobSpecTemplateSpecContainerLivenessProbeHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#tcp_socket Job#tcp_socket}
+  */
   readonly tcpSocket?: JobSpecTemplateSpecContainerLivenessProbeTcpSocket[];
 }
 
@@ -905,15 +1470,35 @@ function jobSpecTemplateSpecContainerLivenessProbeToTerraform(struct?: JobSpecTe
 }
 
 export interface JobSpecTemplateSpecContainerPort {
-  /** Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536. */
+  /**
+  * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_port Job#container_port}
+  */
   readonly containerPort: number;
-  /** What host IP to bind the external port to. */
+  /**
+  * What host IP to bind the external port to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host_ip Job#host_ip}
+  */
   readonly hostIp?: string;
-  /** Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this. */
+  /**
+  * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host_port Job#host_port}
+  */
   readonly hostPort?: number;
-  /** If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services */
+  /**
+  * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Protocol for port. Must be UDP or TCP. Defaults to "TCP". */
+  /**
+  * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#protocol Job#protocol}
+  */
   readonly protocol?: string;
 }
 
@@ -929,7 +1514,11 @@ function jobSpecTemplateSpecContainerPortToTerraform(struct?: JobSpecTemplateSpe
 }
 
 export interface JobSpecTemplateSpecContainerReadinessProbeExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#command Job#command}
+  */
   readonly command?: string[];
 }
 
@@ -941,9 +1530,17 @@ function jobSpecTemplateSpecContainerReadinessProbeExecToTerraform(struct?: JobS
 }
 
 export interface JobSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
 }
 
@@ -956,15 +1553,35 @@ function jobSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform(
 }
 
 export interface JobSpecTemplateSpecContainerReadinessProbeHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host Job#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#scheme Job#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_header Job#http_header}
+  */
   readonly httpHeader?: JobSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[];
 }
 
@@ -980,7 +1597,11 @@ function jobSpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct?: J
 }
 
 export interface JobSpecTemplateSpecContainerReadinessProbeTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port: string;
 }
 
@@ -992,21 +1613,53 @@ function jobSpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform(struct?:
 }
 
 export interface JobSpecTemplateSpecContainerReadinessProbe {
-  /** Minimum consecutive failures for the probe to be considered failed after having succeeded. */
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#failure_threshold Job#failure_threshold}
+  */
   readonly failureThreshold?: number;
-  /** Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#initial_delay_seconds Job#initial_delay_seconds}
+  */
   readonly initialDelaySeconds?: number;
-  /** How often (in seconds) to perform the probe */
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#period_seconds Job#period_seconds}
+  */
   readonly periodSeconds?: number;
-  /** Minimum consecutive successes for the probe to be considered successful after having failed. */
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#success_threshold Job#success_threshold}
+  */
   readonly successThreshold?: number;
-  /** Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#timeout_seconds Job#timeout_seconds}
+  */
   readonly timeoutSeconds?: number;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
+  */
   readonly exec?: JobSpecTemplateSpecContainerReadinessProbeExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
+  */
   readonly httpGet?: JobSpecTemplateSpecContainerReadinessProbeHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#tcp_socket Job#tcp_socket}
+  */
   readonly tcpSocket?: JobSpecTemplateSpecContainerReadinessProbeTcpSocket[];
 }
 
@@ -1025,9 +1678,17 @@ function jobSpecTemplateSpecContainerReadinessProbeToTerraform(struct?: JobSpecT
 }
 
 export interface JobSpecTemplateSpecContainerResources {
-  /** Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
+  /**
+  * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#limits Job#limits}
+  */
   readonly limits?: { [key: string]: string };
-  /** Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/ */
+  /**
+  * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#requests Job#requests}
+  */
   readonly requests?: { [key: string]: string };
 }
 
@@ -1040,9 +1701,17 @@ function jobSpecTemplateSpecContainerResourcesToTerraform(struct?: JobSpecTempla
 }
 
 export interface JobSpecTemplateSpecContainerSecurityContextCapabilities {
-  /** Added capabilities */
+  /**
+  * Added capabilities
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#add Job#add}
+  */
   readonly add?: string[];
-  /** Removed capabilities */
+  /**
+  * Removed capabilities
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#drop Job#drop}
+  */
   readonly drop?: string[];
 }
 
@@ -1055,13 +1724,29 @@ function jobSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform(stru
 }
 
 export interface JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions {
-  /** Level is SELinux level label that applies to the container. */
+  /**
+  * Level is SELinux level label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#level Job#level}
+  */
   readonly level?: string;
-  /** Role is a SELinux role label that applies to the container. */
+  /**
+  * Role is a SELinux role label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#role Job#role}
+  */
   readonly role?: string;
-  /** Type is a SELinux type label that applies to the container. */
+  /**
+  * Type is a SELinux type label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#type Job#type}
+  */
   readonly type?: string;
-  /** User is a SELinux user label that applies to the container. */
+  /**
+  * User is a SELinux user label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#user Job#user}
+  */
   readonly user?: string;
 }
 
@@ -1076,21 +1761,53 @@ function jobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(st
 }
 
 export interface JobSpecTemplateSpecContainerSecurityContext {
-  /** AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN */
+  /**
+  * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#allow_privilege_escalation Job#allow_privilege_escalation}
+  */
   readonly allowPrivilegeEscalation?: boolean;
-  /** Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false. */
+  /**
+  * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#privileged Job#privileged}
+  */
   readonly privileged?: boolean;
-  /** Whether this container has a read-only root filesystem. Default is false. */
+  /**
+  * Whether this container has a read-only root filesystem. Default is false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only_root_filesystem Job#read_only_root_filesystem}
+  */
   readonly readOnlyRootFilesystem?: boolean;
-  /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#run_as_group Job#run_as_group}
+  */
   readonly runAsGroup?: string;
-  /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#run_as_non_root Job#run_as_non_root}
+  */
   readonly runAsNonRoot?: boolean;
-  /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#run_as_user Job#run_as_user}
+  */
   readonly runAsUser?: string;
-  /** capabilities block */
+  /**
+  * capabilities block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#capabilities Job#capabilities}
+  */
   readonly capabilities?: JobSpecTemplateSpecContainerSecurityContextCapabilities[];
-  /** se_linux_options block */
+  /**
+  * se_linux_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#se_linux_options Job#se_linux_options}
+  */
   readonly seLinuxOptions?: JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions[];
 }
 
@@ -1109,7 +1826,11 @@ function jobSpecTemplateSpecContainerSecurityContextToTerraform(struct?: JobSpec
 }
 
 export interface JobSpecTemplateSpecContainerStartupProbeExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#command Job#command}
+  */
   readonly command?: string[];
 }
 
@@ -1121,9 +1842,17 @@ function jobSpecTemplateSpecContainerStartupProbeExecToTerraform(struct?: JobSpe
 }
 
 export interface JobSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
 }
 
@@ -1136,15 +1865,35 @@ function jobSpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToTerraform(st
 }
 
 export interface JobSpecTemplateSpecContainerStartupProbeHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host Job#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#scheme Job#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_header Job#http_header}
+  */
   readonly httpHeader?: JobSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[];
 }
 
@@ -1160,7 +1909,11 @@ function jobSpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct?: Job
 }
 
 export interface JobSpecTemplateSpecContainerStartupProbeTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port: string;
 }
 
@@ -1172,21 +1925,53 @@ function jobSpecTemplateSpecContainerStartupProbeTcpSocketToTerraform(struct?: J
 }
 
 export interface JobSpecTemplateSpecContainerStartupProbe {
-  /** Minimum consecutive failures for the probe to be considered failed after having succeeded. */
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#failure_threshold Job#failure_threshold}
+  */
   readonly failureThreshold?: number;
-  /** Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#initial_delay_seconds Job#initial_delay_seconds}
+  */
   readonly initialDelaySeconds?: number;
-  /** How often (in seconds) to perform the probe */
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#period_seconds Job#period_seconds}
+  */
   readonly periodSeconds?: number;
-  /** Minimum consecutive successes for the probe to be considered successful after having failed. */
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#success_threshold Job#success_threshold}
+  */
   readonly successThreshold?: number;
-  /** Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#timeout_seconds Job#timeout_seconds}
+  */
   readonly timeoutSeconds?: number;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
+  */
   readonly exec?: JobSpecTemplateSpecContainerStartupProbeExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
+  */
   readonly httpGet?: JobSpecTemplateSpecContainerStartupProbeHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#tcp_socket Job#tcp_socket}
+  */
   readonly tcpSocket?: JobSpecTemplateSpecContainerStartupProbeTcpSocket[];
 }
 
@@ -1205,15 +1990,35 @@ function jobSpecTemplateSpecContainerStartupProbeToTerraform(struct?: JobSpecTem
 }
 
 export interface JobSpecTemplateSpecContainerVolumeMount {
-  /** Path within the container at which the volume should be mounted. Must not contain ':'. */
+  /**
+  * Path within the container at which the volume should be mounted. Must not contain ':'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#mount_path Job#mount_path}
+  */
   readonly mountPath: string;
-  /** Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional. */
+  /**
+  * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#mount_propagation Job#mount_propagation}
+  */
   readonly mountPropagation?: string;
-  /** This must match the Name of a Volume. */
+  /**
+  * This must match the Name of a Volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
-  /** Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false. */
+  /**
+  * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root). */
+  /**
+  * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#sub_path Job#sub_path}
+  */
   readonly subPath?: string;
 }
 
@@ -1229,47 +2034,131 @@ function jobSpecTemplateSpecContainerVolumeMountToTerraform(struct?: JobSpecTemp
 }
 
 export interface JobSpecTemplateSpecContainer {
-  /** Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands */
+  /**
+  * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#args Job#args}
+  */
   readonly args?: string[];
-  /** Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands */
+  /**
+  * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#command Job#command}
+  */
   readonly command?: string[];
-  /** Docker image name. More info: http://kubernetes.io/docs/user-guide/images */
+  /**
+  * Docker image name. More info: http://kubernetes.io/docs/user-guide/images
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#image Job#image}
+  */
   readonly image?: string;
-  /** Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images */
+  /**
+  * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#image_pull_policy Job#image_pull_policy}
+  */
   readonly imagePullPolicy?: string;
-  /** Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated. */
+  /**
+  * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
-  /** Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF.  */
+  /**
+  * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#stdin Job#stdin}
+  */
   readonly stdin?: boolean;
-  /** Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF. */
+  /**
+  * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#stdin_once Job#stdin_once}
+  */
   readonly stdinOnce?: boolean;
-  /** Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated. */
+  /**
+  * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#termination_message_path Job#termination_message_path}
+  */
   readonly terminationMessagePath?: string;
-  /** Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. */
+  /**
+  * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#termination_message_policy Job#termination_message_policy}
+  */
   readonly terminationMessagePolicy?: string;
-  /** Whether this container should allocate a TTY for itself */
+  /**
+  * Whether this container should allocate a TTY for itself
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#tty Job#tty}
+  */
   readonly tty?: boolean;
-  /** Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated. */
+  /**
+  * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#working_dir Job#working_dir}
+  */
   readonly workingDir?: string;
-  /** env block */
+  /**
+  * env block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#env Job#env}
+  */
   readonly env?: JobSpecTemplateSpecContainerEnv[];
-  /** env_from block */
+  /**
+  * env_from block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#env_from Job#env_from}
+  */
   readonly envFrom?: JobSpecTemplateSpecContainerEnvFrom[];
-  /** lifecycle block */
+  /**
+  * lifecycle block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#lifecycle Job#lifecycle}
+  */
   readonly lifecycle?: JobSpecTemplateSpecContainerLifecycle[];
-  /** liveness_probe block */
+  /**
+  * liveness_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#liveness_probe Job#liveness_probe}
+  */
   readonly livenessProbe?: JobSpecTemplateSpecContainerLivenessProbe[];
-  /** port block */
+  /**
+  * port block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port?: JobSpecTemplateSpecContainerPort[];
-  /** readiness_probe block */
+  /**
+  * readiness_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#readiness_probe Job#readiness_probe}
+  */
   readonly readinessProbe?: JobSpecTemplateSpecContainerReadinessProbe[];
-  /** resources block */
+  /**
+  * resources block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resources Job#resources}
+  */
   readonly resources?: JobSpecTemplateSpecContainerResources[];
-  /** security_context block */
+  /**
+  * security_context block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#security_context Job#security_context}
+  */
   readonly securityContext?: JobSpecTemplateSpecContainerSecurityContext[];
-  /** startup_probe block */
+  /**
+  * startup_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#startup_probe Job#startup_probe}
+  */
   readonly startupProbe?: JobSpecTemplateSpecContainerStartupProbe[];
-  /** volume_mount block */
+  /**
+  * volume_mount block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#volume_mount Job#volume_mount}
+  */
   readonly volumeMount?: JobSpecTemplateSpecContainerVolumeMount[];
 }
 
@@ -1301,9 +2190,17 @@ function jobSpecTemplateSpecContainerToTerraform(struct?: JobSpecTemplateSpecCon
 }
 
 export interface JobSpecTemplateSpecDnsConfigOption {
-  /** Name of the option. */
+  /**
+  * Name of the option.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
-  /** Value of the option. Optional: Defaults to empty. */
+  /**
+  * Value of the option. Optional: Defaults to empty.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
 }
 
@@ -1316,11 +2213,23 @@ function jobSpecTemplateSpecDnsConfigOptionToTerraform(struct?: JobSpecTemplateS
 }
 
 export interface JobSpecTemplateSpecDnsConfig {
-  /** A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed. */
+  /**
+  * A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#nameservers Job#nameservers}
+  */
   readonly nameservers?: string[];
-  /** A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed. */
+  /**
+  * A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#searches Job#searches}
+  */
   readonly searches?: string[];
-  /** option block */
+  /**
+  * option block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#option Job#option}
+  */
   readonly option?: JobSpecTemplateSpecDnsConfigOption[];
 }
 
@@ -1334,9 +2243,17 @@ function jobSpecTemplateSpecDnsConfigToTerraform(struct?: JobSpecTemplateSpecDns
 }
 
 export interface JobSpecTemplateSpecHostAliases {
-  /** Hostnames for the IP address. */
+  /**
+  * Hostnames for the IP address.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#hostnames Job#hostnames}
+  */
   readonly hostnames: string[];
-  /** IP address of the host file entry. */
+  /**
+  * IP address of the host file entry.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#ip Job#ip}
+  */
   readonly ip: string;
 }
 
@@ -1349,7 +2266,11 @@ function jobSpecTemplateSpecHostAliasesToTerraform(struct?: JobSpecTemplateSpecH
 }
 
 export interface JobSpecTemplateSpecImagePullSecrets {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
 }
 
@@ -1361,11 +2282,23 @@ function jobSpecTemplateSpecImagePullSecretsToTerraform(struct?: JobSpecTemplate
 }
 
 export interface JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef {
-  /** The key to select. */
+  /**
+  * The key to select.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Specify whether the ConfigMap or its key must be defined. */
+  /**
+  * Specify whether the ConfigMap or its key must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#optional Job#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -1379,9 +2312,17 @@ function jobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(
 }
 
 export interface JobSpecTemplateSpecInitContainerEnvValueFromFieldRef {
-  /** Version of the schema the FieldPath is written in terms of, defaults to "v1". */
+  /**
+  * Version of the schema the FieldPath is written in terms of, defaults to "v1".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#api_version Job#api_version}
+  */
   readonly apiVersion?: string;
-  /** Path of the field to select in the specified API version */
+  /**
+  * Path of the field to select in the specified API version
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#field_path Job#field_path}
+  */
   readonly fieldPath?: string;
 }
 
@@ -1394,9 +2335,19 @@ function jobSpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform(struct?
 }
 
 export interface JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_name Job#container_name}
+  */
   readonly containerName?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#divisor Job#divisor}
+  */
   readonly divisor?: string;
-  /** Resource to select */
+  /**
+  * Resource to select
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resource Job#resource}
+  */
   readonly resource: string;
 }
 
@@ -1410,11 +2361,23 @@ function jobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTerraform
 }
 
 export interface JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef {
-  /** The key of the secret to select from. Must be a valid secret key. */
+  /**
+  * The key of the secret to select from. Must be a valid secret key.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Specify whether the Secret or its key must be defined. */
+  /**
+  * Specify whether the Secret or its key must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#optional Job#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -1428,13 +2391,29 @@ function jobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(str
 }
 
 export interface JobSpecTemplateSpecInitContainerEnvValueFrom {
-  /** config_map_key_ref block */
+  /**
+  * config_map_key_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#config_map_key_ref Job#config_map_key_ref}
+  */
   readonly configMapKeyRef?: JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef[];
-  /** field_ref block */
+  /**
+  * field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#field_ref Job#field_ref}
+  */
   readonly fieldRef?: JobSpecTemplateSpecInitContainerEnvValueFromFieldRef[];
-  /** resource_field_ref block */
+  /**
+  * resource_field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resource_field_ref Job#resource_field_ref}
+  */
   readonly resourceFieldRef?: JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef[];
-  /** secret_key_ref block */
+  /**
+  * secret_key_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_key_ref Job#secret_key_ref}
+  */
   readonly secretKeyRef?: JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef[];
 }
 
@@ -1449,11 +2428,23 @@ function jobSpecTemplateSpecInitContainerEnvValueFromToTerraform(struct?: JobSpe
 }
 
 export interface JobSpecTemplateSpecInitContainerEnv {
-  /** Name of the environment variable. Must be a C_IDENTIFIER */
+  /**
+  * Name of the environment variable. Must be a C_IDENTIFIER
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
-  /** Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "". */
+  /**
+  * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
-  /** value_from block */
+  /**
+  * value_from block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value_from Job#value_from}
+  */
   readonly valueFrom?: JobSpecTemplateSpecInitContainerEnvValueFrom[];
 }
 
@@ -1467,9 +2458,17 @@ function jobSpecTemplateSpecInitContainerEnvToTerraform(struct?: JobSpecTemplate
 }
 
 export interface JobSpecTemplateSpecInitContainerEnvFromConfigMapRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
-  /** Specify whether the ConfigMap must be defined */
+  /**
+  * Specify whether the ConfigMap must be defined
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#optional Job#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -1482,9 +2481,17 @@ function jobSpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(struct?:
 }
 
 export interface JobSpecTemplateSpecInitContainerEnvFromSecretRef {
-  /** Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names */
+  /**
+  * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
-  /** Specify whether the Secret must be defined */
+  /**
+  * Specify whether the Secret must be defined
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#optional Job#optional}
+  */
   readonly optional?: boolean;
 }
 
@@ -1497,11 +2504,23 @@ function jobSpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(struct?: Jo
 }
 
 export interface JobSpecTemplateSpecInitContainerEnvFrom {
-  /** An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER. */
+  /**
+  * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#prefix Job#prefix}
+  */
   readonly prefix?: string;
-  /** config_map_ref block */
+  /**
+  * config_map_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#config_map_ref Job#config_map_ref}
+  */
   readonly configMapRef?: JobSpecTemplateSpecInitContainerEnvFromConfigMapRef[];
-  /** secret_ref block */
+  /**
+  * secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_ref Job#secret_ref}
+  */
   readonly secretRef?: JobSpecTemplateSpecInitContainerEnvFromSecretRef[];
 }
 
@@ -1515,7 +2534,11 @@ function jobSpecTemplateSpecInitContainerEnvFromToTerraform(struct?: JobSpecTemp
 }
 
 export interface JobSpecTemplateSpecInitContainerLifecyclePostStartExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#command Job#command}
+  */
   readonly command?: string[];
 }
 
@@ -1527,9 +2550,17 @@ function jobSpecTemplateSpecInitContainerLifecyclePostStartExecToTerraform(struc
 }
 
 export interface JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
 }
 
@@ -1542,15 +2573,35 @@ function jobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTe
 }
 
 export interface JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host Job#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#scheme Job#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_header Job#http_header}
+  */
   readonly httpHeader?: JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[];
 }
 
@@ -1566,7 +2617,11 @@ function jobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform(st
 }
 
 export interface JobSpecTemplateSpecInitContainerLifecyclePostStartTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port: string;
 }
 
@@ -1578,11 +2633,23 @@ function jobSpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTerraform(
 }
 
 export interface JobSpecTemplateSpecInitContainerLifecyclePostStart {
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
+  */
   readonly exec?: JobSpecTemplateSpecInitContainerLifecyclePostStartExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
+  */
   readonly httpGet?: JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#tcp_socket Job#tcp_socket}
+  */
   readonly tcpSocket?: JobSpecTemplateSpecInitContainerLifecyclePostStartTcpSocket[];
 }
 
@@ -1596,7 +2663,11 @@ function jobSpecTemplateSpecInitContainerLifecyclePostStartToTerraform(struct?: 
 }
 
 export interface JobSpecTemplateSpecInitContainerLifecyclePreStopExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#command Job#command}
+  */
   readonly command?: string[];
 }
 
@@ -1608,9 +2679,17 @@ function jobSpecTemplateSpecInitContainerLifecyclePreStopExecToTerraform(struct?
 }
 
 export interface JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
 }
 
@@ -1623,15 +2702,35 @@ function jobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerr
 }
 
 export interface JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host Job#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#scheme Job#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_header Job#http_header}
+  */
   readonly httpHeader?: JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[];
 }
 
@@ -1647,7 +2746,11 @@ function jobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform(stru
 }
 
 export interface JobSpecTemplateSpecInitContainerLifecyclePreStopTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port: string;
 }
 
@@ -1659,11 +2762,23 @@ function jobSpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerraform(st
 }
 
 export interface JobSpecTemplateSpecInitContainerLifecyclePreStop {
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
+  */
   readonly exec?: JobSpecTemplateSpecInitContainerLifecyclePreStopExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
+  */
   readonly httpGet?: JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#tcp_socket Job#tcp_socket}
+  */
   readonly tcpSocket?: JobSpecTemplateSpecInitContainerLifecyclePreStopTcpSocket[];
 }
 
@@ -1677,9 +2792,17 @@ function jobSpecTemplateSpecInitContainerLifecyclePreStopToTerraform(struct?: Jo
 }
 
 export interface JobSpecTemplateSpecInitContainerLifecycle {
-  /** post_start block */
+  /**
+  * post_start block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#post_start Job#post_start}
+  */
   readonly postStart?: JobSpecTemplateSpecInitContainerLifecyclePostStart[];
-  /** pre_stop block */
+  /**
+  * pre_stop block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#pre_stop Job#pre_stop}
+  */
   readonly preStop?: JobSpecTemplateSpecInitContainerLifecyclePreStop[];
 }
 
@@ -1692,7 +2815,11 @@ function jobSpecTemplateSpecInitContainerLifecycleToTerraform(struct?: JobSpecTe
 }
 
 export interface JobSpecTemplateSpecInitContainerLivenessProbeExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#command Job#command}
+  */
   readonly command?: string[];
 }
 
@@ -1704,9 +2831,17 @@ function jobSpecTemplateSpecInitContainerLivenessProbeExecToTerraform(struct?: J
 }
 
 export interface JobSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
 }
 
@@ -1719,15 +2854,35 @@ function jobSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerrafo
 }
 
 export interface JobSpecTemplateSpecInitContainerLivenessProbeHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host Job#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#scheme Job#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_header Job#http_header}
+  */
   readonly httpHeader?: JobSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[];
 }
 
@@ -1743,7 +2898,11 @@ function jobSpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct?
 }
 
 export interface JobSpecTemplateSpecInitContainerLivenessProbeTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port: string;
 }
 
@@ -1755,21 +2914,53 @@ function jobSpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform(struc
 }
 
 export interface JobSpecTemplateSpecInitContainerLivenessProbe {
-  /** Minimum consecutive failures for the probe to be considered failed after having succeeded. */
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#failure_threshold Job#failure_threshold}
+  */
   readonly failureThreshold?: number;
-  /** Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#initial_delay_seconds Job#initial_delay_seconds}
+  */
   readonly initialDelaySeconds?: number;
-  /** How often (in seconds) to perform the probe */
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#period_seconds Job#period_seconds}
+  */
   readonly periodSeconds?: number;
-  /** Minimum consecutive successes for the probe to be considered successful after having failed. */
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#success_threshold Job#success_threshold}
+  */
   readonly successThreshold?: number;
-  /** Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#timeout_seconds Job#timeout_seconds}
+  */
   readonly timeoutSeconds?: number;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
+  */
   readonly exec?: JobSpecTemplateSpecInitContainerLivenessProbeExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
+  */
   readonly httpGet?: JobSpecTemplateSpecInitContainerLivenessProbeHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#tcp_socket Job#tcp_socket}
+  */
   readonly tcpSocket?: JobSpecTemplateSpecInitContainerLivenessProbeTcpSocket[];
 }
 
@@ -1788,15 +2979,35 @@ function jobSpecTemplateSpecInitContainerLivenessProbeToTerraform(struct?: JobSp
 }
 
 export interface JobSpecTemplateSpecInitContainerPort {
-  /** Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536. */
+  /**
+  * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_port Job#container_port}
+  */
   readonly containerPort: number;
-  /** What host IP to bind the external port to. */
+  /**
+  * What host IP to bind the external port to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host_ip Job#host_ip}
+  */
   readonly hostIp?: string;
-  /** Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this. */
+  /**
+  * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host_port Job#host_port}
+  */
   readonly hostPort?: number;
-  /** If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services */
+  /**
+  * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Protocol for port. Must be UDP or TCP. Defaults to "TCP". */
+  /**
+  * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#protocol Job#protocol}
+  */
   readonly protocol?: string;
 }
 
@@ -1812,7 +3023,11 @@ function jobSpecTemplateSpecInitContainerPortToTerraform(struct?: JobSpecTemplat
 }
 
 export interface JobSpecTemplateSpecInitContainerReadinessProbeExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#command Job#command}
+  */
   readonly command?: string[];
 }
 
@@ -1824,9 +3039,17 @@ function jobSpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct?: 
 }
 
 export interface JobSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
 }
 
@@ -1839,15 +3062,35 @@ function jobSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraf
 }
 
 export interface JobSpecTemplateSpecInitContainerReadinessProbeHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host Job#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#scheme Job#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_header Job#http_header}
+  */
   readonly httpHeader?: JobSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[];
 }
 
@@ -1863,7 +3106,11 @@ function jobSpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct
 }
 
 export interface JobSpecTemplateSpecInitContainerReadinessProbeTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port: string;
 }
 
@@ -1875,21 +3122,53 @@ function jobSpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform(stru
 }
 
 export interface JobSpecTemplateSpecInitContainerReadinessProbe {
-  /** Minimum consecutive failures for the probe to be considered failed after having succeeded. */
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#failure_threshold Job#failure_threshold}
+  */
   readonly failureThreshold?: number;
-  /** Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#initial_delay_seconds Job#initial_delay_seconds}
+  */
   readonly initialDelaySeconds?: number;
-  /** How often (in seconds) to perform the probe */
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#period_seconds Job#period_seconds}
+  */
   readonly periodSeconds?: number;
-  /** Minimum consecutive successes for the probe to be considered successful after having failed. */
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#success_threshold Job#success_threshold}
+  */
   readonly successThreshold?: number;
-  /** Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#timeout_seconds Job#timeout_seconds}
+  */
   readonly timeoutSeconds?: number;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
+  */
   readonly exec?: JobSpecTemplateSpecInitContainerReadinessProbeExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
+  */
   readonly httpGet?: JobSpecTemplateSpecInitContainerReadinessProbeHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#tcp_socket Job#tcp_socket}
+  */
   readonly tcpSocket?: JobSpecTemplateSpecInitContainerReadinessProbeTcpSocket[];
 }
 
@@ -1908,9 +3187,17 @@ function jobSpecTemplateSpecInitContainerReadinessProbeToTerraform(struct?: JobS
 }
 
 export interface JobSpecTemplateSpecInitContainerResources {
-  /** Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/ */
+  /**
+  * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#limits Job#limits}
+  */
   readonly limits?: { [key: string]: string };
-  /** Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/ */
+  /**
+  * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#requests Job#requests}
+  */
   readonly requests?: { [key: string]: string };
 }
 
@@ -1923,9 +3210,17 @@ function jobSpecTemplateSpecInitContainerResourcesToTerraform(struct?: JobSpecTe
 }
 
 export interface JobSpecTemplateSpecInitContainerSecurityContextCapabilities {
-  /** Added capabilities */
+  /**
+  * Added capabilities
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#add Job#add}
+  */
   readonly add?: string[];
-  /** Removed capabilities */
+  /**
+  * Removed capabilities
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#drop Job#drop}
+  */
   readonly drop?: string[];
 }
 
@@ -1938,13 +3233,29 @@ function jobSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(
 }
 
 export interface JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions {
-  /** Level is SELinux level label that applies to the container. */
+  /**
+  * Level is SELinux level label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#level Job#level}
+  */
   readonly level?: string;
-  /** Role is a SELinux role label that applies to the container. */
+  /**
+  * Role is a SELinux role label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#role Job#role}
+  */
   readonly role?: string;
-  /** Type is a SELinux type label that applies to the container. */
+  /**
+  * Type is a SELinux type label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#type Job#type}
+  */
   readonly type?: string;
-  /** User is a SELinux user label that applies to the container. */
+  /**
+  * User is a SELinux user label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#user Job#user}
+  */
   readonly user?: string;
 }
 
@@ -1959,21 +3270,53 @@ function jobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerrafor
 }
 
 export interface JobSpecTemplateSpecInitContainerSecurityContext {
-  /** AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN */
+  /**
+  * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#allow_privilege_escalation Job#allow_privilege_escalation}
+  */
   readonly allowPrivilegeEscalation?: boolean;
-  /** Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false. */
+  /**
+  * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#privileged Job#privileged}
+  */
   readonly privileged?: boolean;
-  /** Whether this container has a read-only root filesystem. Default is false. */
+  /**
+  * Whether this container has a read-only root filesystem. Default is false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only_root_filesystem Job#read_only_root_filesystem}
+  */
   readonly readOnlyRootFilesystem?: boolean;
-  /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#run_as_group Job#run_as_group}
+  */
   readonly runAsGroup?: string;
-  /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#run_as_non_root Job#run_as_non_root}
+  */
   readonly runAsNonRoot?: boolean;
-  /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#run_as_user Job#run_as_user}
+  */
   readonly runAsUser?: string;
-  /** capabilities block */
+  /**
+  * capabilities block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#capabilities Job#capabilities}
+  */
   readonly capabilities?: JobSpecTemplateSpecInitContainerSecurityContextCapabilities[];
-  /** se_linux_options block */
+  /**
+  * se_linux_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#se_linux_options Job#se_linux_options}
+  */
   readonly seLinuxOptions?: JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions[];
 }
 
@@ -1992,7 +3335,11 @@ function jobSpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: Job
 }
 
 export interface JobSpecTemplateSpecInitContainerStartupProbeExec {
-  /** Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. */
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#command Job#command}
+  */
   readonly command?: string[];
 }
 
@@ -2004,9 +3351,17 @@ function jobSpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct?: Jo
 }
 
 export interface JobSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader {
-  /** The header field name */
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** The header field value */
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
 }
 
@@ -2019,15 +3374,35 @@ function jobSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerrafor
 }
 
 export interface JobSpecTemplateSpecInitContainerStartupProbeHttpGet {
-  /** Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. */
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host Job#host}
+  */
   readonly host?: string;
-  /** Path to access on the HTTP server. */
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
-  /** Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port?: string;
-  /** Scheme to use for connecting to the host. */
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#scheme Job#scheme}
+  */
   readonly scheme?: string;
-  /** http_header block */
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_header Job#http_header}
+  */
   readonly httpHeader?: JobSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[];
 }
 
@@ -2043,7 +3418,11 @@ function jobSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct?:
 }
 
 export interface JobSpecTemplateSpecInitContainerStartupProbeTcpSocket {
-  /** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. */
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port: string;
 }
 
@@ -2055,21 +3434,53 @@ function jobSpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform(struct
 }
 
 export interface JobSpecTemplateSpecInitContainerStartupProbe {
-  /** Minimum consecutive failures for the probe to be considered failed after having succeeded. */
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#failure_threshold Job#failure_threshold}
+  */
   readonly failureThreshold?: number;
-  /** Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#initial_delay_seconds Job#initial_delay_seconds}
+  */
   readonly initialDelaySeconds?: number;
-  /** How often (in seconds) to perform the probe */
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#period_seconds Job#period_seconds}
+  */
   readonly periodSeconds?: number;
-  /** Minimum consecutive successes for the probe to be considered successful after having failed. */
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#success_threshold Job#success_threshold}
+  */
   readonly successThreshold?: number;
-  /** Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes */
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#timeout_seconds Job#timeout_seconds}
+  */
   readonly timeoutSeconds?: number;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
+  */
   readonly exec?: JobSpecTemplateSpecInitContainerStartupProbeExec[];
-  /** http_get block */
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
+  */
   readonly httpGet?: JobSpecTemplateSpecInitContainerStartupProbeHttpGet[];
-  /** tcp_socket block */
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#tcp_socket Job#tcp_socket}
+  */
   readonly tcpSocket?: JobSpecTemplateSpecInitContainerStartupProbeTcpSocket[];
 }
 
@@ -2088,15 +3499,35 @@ function jobSpecTemplateSpecInitContainerStartupProbeToTerraform(struct?: JobSpe
 }
 
 export interface JobSpecTemplateSpecInitContainerVolumeMount {
-  /** Path within the container at which the volume should be mounted. Must not contain ':'. */
+  /**
+  * Path within the container at which the volume should be mounted. Must not contain ':'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#mount_path Job#mount_path}
+  */
   readonly mountPath: string;
-  /** Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional. */
+  /**
+  * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#mount_propagation Job#mount_propagation}
+  */
   readonly mountPropagation?: string;
-  /** This must match the Name of a Volume. */
+  /**
+  * This must match the Name of a Volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
-  /** Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false. */
+  /**
+  * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root). */
+  /**
+  * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#sub_path Job#sub_path}
+  */
   readonly subPath?: string;
 }
 
@@ -2112,47 +3543,131 @@ function jobSpecTemplateSpecInitContainerVolumeMountToTerraform(struct?: JobSpec
 }
 
 export interface JobSpecTemplateSpecInitContainer {
-  /** Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands */
+  /**
+  * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#args Job#args}
+  */
   readonly args?: string[];
-  /** Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands */
+  /**
+  * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#command Job#command}
+  */
   readonly command?: string[];
-  /** Docker image name. More info: http://kubernetes.io/docs/user-guide/images */
+  /**
+  * Docker image name. More info: http://kubernetes.io/docs/user-guide/images
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#image Job#image}
+  */
   readonly image?: string;
-  /** Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images */
+  /**
+  * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#image_pull_policy Job#image_pull_policy}
+  */
   readonly imagePullPolicy?: string;
-  /** Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated. */
+  /**
+  * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
-  /** Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF.  */
+  /**
+  * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#stdin Job#stdin}
+  */
   readonly stdin?: boolean;
-  /** Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF. */
+  /**
+  * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#stdin_once Job#stdin_once}
+  */
   readonly stdinOnce?: boolean;
-  /** Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated. */
+  /**
+  * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#termination_message_path Job#termination_message_path}
+  */
   readonly terminationMessagePath?: string;
-  /** Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. */
+  /**
+  * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#termination_message_policy Job#termination_message_policy}
+  */
   readonly terminationMessagePolicy?: string;
-  /** Whether this container should allocate a TTY for itself */
+  /**
+  * Whether this container should allocate a TTY for itself
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#tty Job#tty}
+  */
   readonly tty?: boolean;
-  /** Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated. */
+  /**
+  * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#working_dir Job#working_dir}
+  */
   readonly workingDir?: string;
-  /** env block */
+  /**
+  * env block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#env Job#env}
+  */
   readonly env?: JobSpecTemplateSpecInitContainerEnv[];
-  /** env_from block */
+  /**
+  * env_from block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#env_from Job#env_from}
+  */
   readonly envFrom?: JobSpecTemplateSpecInitContainerEnvFrom[];
-  /** lifecycle block */
+  /**
+  * lifecycle block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#lifecycle Job#lifecycle}
+  */
   readonly lifecycle?: JobSpecTemplateSpecInitContainerLifecycle[];
-  /** liveness_probe block */
+  /**
+  * liveness_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#liveness_probe Job#liveness_probe}
+  */
   readonly livenessProbe?: JobSpecTemplateSpecInitContainerLivenessProbe[];
-  /** port block */
+  /**
+  * port block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#port Job#port}
+  */
   readonly port?: JobSpecTemplateSpecInitContainerPort[];
-  /** readiness_probe block */
+  /**
+  * readiness_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#readiness_probe Job#readiness_probe}
+  */
   readonly readinessProbe?: JobSpecTemplateSpecInitContainerReadinessProbe[];
-  /** resources block */
+  /**
+  * resources block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resources Job#resources}
+  */
   readonly resources?: JobSpecTemplateSpecInitContainerResources[];
-  /** security_context block */
+  /**
+  * security_context block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#security_context Job#security_context}
+  */
   readonly securityContext?: JobSpecTemplateSpecInitContainerSecurityContext[];
-  /** startup_probe block */
+  /**
+  * startup_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#startup_probe Job#startup_probe}
+  */
   readonly startupProbe?: JobSpecTemplateSpecInitContainerStartupProbe[];
-  /** volume_mount block */
+  /**
+  * volume_mount block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#volume_mount Job#volume_mount}
+  */
   readonly volumeMount?: JobSpecTemplateSpecInitContainerVolumeMount[];
 }
 
@@ -2184,7 +3699,11 @@ function jobSpecTemplateSpecInitContainerToTerraform(struct?: JobSpecTemplateSpe
 }
 
 export interface JobSpecTemplateSpecReadinessGate {
-  /** refers to a condition in the pod's condition list with matching type. */
+  /**
+  * refers to a condition in the pod's condition list with matching type.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#condition_type Job#condition_type}
+  */
   readonly conditionType: string;
 }
 
@@ -2196,13 +3715,29 @@ function jobSpecTemplateSpecReadinessGateToTerraform(struct?: JobSpecTemplateSpe
 }
 
 export interface JobSpecTemplateSpecSecurityContextSeLinuxOptions {
-  /** Level is SELinux level label that applies to the container. */
+  /**
+  * Level is SELinux level label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#level Job#level}
+  */
   readonly level?: string;
-  /** Role is a SELinux role label that applies to the container. */
+  /**
+  * Role is a SELinux role label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#role Job#role}
+  */
   readonly role?: string;
-  /** Type is a SELinux type label that applies to the container. */
+  /**
+  * Type is a SELinux type label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#type Job#type}
+  */
   readonly type?: string;
-  /** User is a SELinux user label that applies to the container. */
+  /**
+  * User is a SELinux user label that applies to the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#user Job#user}
+  */
   readonly user?: string;
 }
 
@@ -2217,9 +3752,17 @@ function jobSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct?: Jo
 }
 
 export interface JobSpecTemplateSpecSecurityContextSysctl {
-  /** Name of a property to set. */
+  /**
+  * Name of a property to set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name: string;
-  /** Value of a property to set. */
+  /**
+  * Value of a property to set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value: string;
 }
 
@@ -2232,19 +3775,47 @@ function jobSpecTemplateSpecSecurityContextSysctlToTerraform(struct?: JobSpecTem
 }
 
 export interface JobSpecTemplateSpecSecurityContext {
-  /** A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume. */
+  /**
+  * A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fs_group Job#fs_group}
+  */
   readonly fsGroup?: string;
-  /** The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. */
+  /**
+  * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#run_as_group Job#run_as_group}
+  */
   readonly runAsGroup?: string;
-  /** Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+  /**
+  * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#run_as_non_root Job#run_as_non_root}
+  */
   readonly runAsNonRoot?: boolean;
-  /** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. */
+  /**
+  * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#run_as_user Job#run_as_user}
+  */
   readonly runAsUser?: string;
-  /** A list of groups applied to the first process run in each container, in addition to the container's primary GID. If unspecified, no groups will be added to any container. */
+  /**
+  * A list of groups applied to the first process run in each container, in addition to the container's primary GID. If unspecified, no groups will be added to any container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#supplemental_groups Job#supplemental_groups}
+  */
   readonly supplementalGroups?: number[];
-  /** se_linux_options block */
+  /**
+  * se_linux_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#se_linux_options Job#se_linux_options}
+  */
   readonly seLinuxOptions?: JobSpecTemplateSpecSecurityContextSeLinuxOptions[];
-  /** sysctl block */
+  /**
+  * sysctl block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#sysctl Job#sysctl}
+  */
   readonly sysctl?: JobSpecTemplateSpecSecurityContextSysctl[];
 }
 
@@ -2262,15 +3833,35 @@ function jobSpecTemplateSpecSecurityContextToTerraform(struct?: JobSpecTemplateS
 }
 
 export interface JobSpecTemplateSpecToleration {
-  /** Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute. */
+  /**
+  * Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#effect Job#effect}
+  */
   readonly effect?: string;
-  /** Key is the taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys. */
+  /**
+  * Key is the taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** Operator represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category. */
+  /**
+  * Operator represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#operator Job#operator}
+  */
   readonly operator?: string;
-  /** TolerationSeconds represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system. */
+  /**
+  * TolerationSeconds represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#toleration_seconds Job#toleration_seconds}
+  */
   readonly tolerationSeconds?: string;
-  /** Value is the taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string. */
+  /**
+  * Value is the taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value Job#value}
+  */
   readonly value?: string;
 }
 
@@ -2286,11 +3877,23 @@ function jobSpecTemplateSpecTolerationToTerraform(struct?: JobSpecTemplateSpecTo
 }
 
 export interface JobSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions {
-  /** The label key that the selector applies to. */
+  /**
+  * The label key that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`. */
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#operator Job#operator}
+  */
   readonly operator?: string;
-  /** An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch. */
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#values Job#values}
+  */
   readonly values?: string[];
 }
 
@@ -2304,9 +3907,17 @@ function jobSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpression
 }
 
 export interface JobSpecTemplateSpecTopologySpreadConstraintLabelSelector {
-  /** A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. */
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_labels Job#match_labels}
+  */
   readonly matchLabels?: { [key: string]: string };
-  /** match_expressions block */
+  /**
+  * match_expressions block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#match_expressions Job#match_expressions}
+  */
   readonly matchExpressions?: JobSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions[];
 }
 
@@ -2319,13 +3930,29 @@ function jobSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform(str
 }
 
 export interface JobSpecTemplateSpecTopologySpreadConstraint {
-  /** describes the degree to which pods may be unevenly distributed. */
+  /**
+  * describes the degree to which pods may be unevenly distributed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#max_skew Job#max_skew}
+  */
   readonly maxSkew?: number;
-  /** the key of node labels. Nodes that have a label with this key and identical values are considered to be in the same topology. */
+  /**
+  * the key of node labels. Nodes that have a label with this key and identical values are considered to be in the same topology.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#topology_key Job#topology_key}
+  */
   readonly topologyKey?: string;
-  /** indicates how to deal with a pod if it doesn't satisfy the spread constraint. */
+  /**
+  * indicates how to deal with a pod if it doesn't satisfy the spread constraint.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#when_unsatisfiable Job#when_unsatisfiable}
+  */
   readonly whenUnsatisfiable?: string;
-  /** label_selector block */
+  /**
+  * label_selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#label_selector Job#label_selector}
+  */
   readonly labelSelector?: JobSpecTemplateSpecTopologySpreadConstraintLabelSelector[];
 }
 
@@ -2340,13 +3967,29 @@ function jobSpecTemplateSpecTopologySpreadConstraintToTerraform(struct?: JobSpec
 }
 
 export interface JobSpecTemplateSpecVolumeAwsElasticBlockStore {
-  /** Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore */
+  /**
+  * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fs_type Job#fs_type}
+  */
   readonly fsType?: string;
-  /** The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty). */
+  /**
+  * The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#partition Job#partition}
+  */
   readonly partition?: number;
-  /** Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore */
+  /**
+  * Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore */
+  /**
+  * Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#volume_id Job#volume_id}
+  */
   readonly volumeId: string;
 }
 
@@ -2361,17 +4004,41 @@ function jobSpecTemplateSpecVolumeAwsElasticBlockStoreToTerraform(struct?: JobSp
 }
 
 export interface JobSpecTemplateSpecVolumeAzureDisk {
-  /** Host Caching mode: None, Read Only, Read Write. */
+  /**
+  * Host Caching mode: None, Read Only, Read Write.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#caching_mode Job#caching_mode}
+  */
   readonly cachingMode: string;
-  /** The URI the data disk in the blob storage */
+  /**
+  * The URI the data disk in the blob storage
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#data_disk_uri Job#data_disk_uri}
+  */
   readonly dataDiskUri: string;
-  /** The Name of the data disk in the blob storage */
+  /**
+  * The Name of the data disk in the blob storage
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#disk_name Job#disk_name}
+  */
   readonly diskName: string;
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fs_type Job#fs_type}
+  */
   readonly fsType?: string;
-  /** The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared */
+  /**
+  * The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#kind Job#kind}
+  */
   readonly kind?: string;
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
 }
 
@@ -2388,13 +4055,29 @@ function jobSpecTemplateSpecVolumeAzureDiskToTerraform(struct?: JobSpecTemplateS
 }
 
 export interface JobSpecTemplateSpecVolumeAzureFile {
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** The name of secret that contains Azure Storage Account Name and Key */
+  /**
+  * The name of secret that contains Azure Storage Account Name and Key
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_name Job#secret_name}
+  */
   readonly secretName: string;
-  /** The namespace of the secret that contains Azure Storage Account Name and Key. For Kubernetes up to 1.18.x the default is the same as the Pod. For Kubernetes 1.19.x and later the default is "default" namespace. */
+  /**
+  * The namespace of the secret that contains Azure Storage Account Name and Key. For Kubernetes up to 1.18.x the default is the same as the Pod. For Kubernetes 1.19.x and later the default is "default" namespace.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_namespace Job#secret_namespace}
+  */
   readonly secretNamespace?: string;
-  /** Share Name */
+  /**
+  * Share Name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#share_name Job#share_name}
+  */
   readonly shareName: string;
 }
 
@@ -2409,9 +4092,17 @@ function jobSpecTemplateSpecVolumeAzureFileToTerraform(struct?: JobSpecTemplateS
 }
 
 export interface JobSpecTemplateSpecVolumeCephFsSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#namespace Job#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -2424,17 +4115,41 @@ function jobSpecTemplateSpecVolumeCephFsSecretRefToTerraform(struct?: JobSpecTem
 }
 
 export interface JobSpecTemplateSpecVolumeCephFs {
-  /** Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it */
+  /**
+  * Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#monitors Job#monitors}
+  */
   readonly monitors: string[];
-  /** Used as the mounted root, rather than the full Ceph tree, default is / */
+  /**
+  * Used as the mounted root, rather than the full Ceph tree, default is /
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it */
+  /**
+  * The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_file Job#secret_file}
+  */
   readonly secretFile?: string;
-  /** User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it */
+  /**
+  * User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#user Job#user}
+  */
   readonly user?: string;
-  /** secret_ref block */
+  /**
+  * secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_ref Job#secret_ref}
+  */
   readonly secretRef?: JobSpecTemplateSpecVolumeCephFsSecretRef[];
 }
 
@@ -2451,11 +4166,23 @@ function jobSpecTemplateSpecVolumeCephFsToTerraform(struct?: JobSpecTemplateSpec
 }
 
 export interface JobSpecTemplateSpecVolumeCinder {
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fs_type Job#fs_type}
+  */
   readonly fsType?: string;
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md */
+  /**
+  * Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#volume_id Job#volume_id}
+  */
   readonly volumeId: string;
 }
 
@@ -2469,11 +4196,23 @@ function jobSpecTemplateSpecVolumeCinderToTerraform(struct?: JobSpecTemplateSpec
 }
 
 export interface JobSpecTemplateSpecVolumeConfigMapItems {
-  /** The key to project. */
+  /**
+  * The key to project.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#mode Job#mode}
+  */
   readonly mode?: string;
-  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  /**
+  * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
 }
 
@@ -2487,13 +4226,29 @@ function jobSpecTemplateSpecVolumeConfigMapItemsToTerraform(struct?: JobSpecTemp
 }
 
 export interface JobSpecTemplateSpecVolumeConfigMap {
-  /** Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#default_mode Job#default_mode}
+  */
   readonly defaultMode?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Optional: Specify whether the ConfigMap or its keys must be defined. */
+  /**
+  * Optional: Specify whether the ConfigMap or its keys must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#optional Job#optional}
+  */
   readonly optional?: boolean;
-  /** items block */
+  /**
+  * items block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#items Job#items}
+  */
   readonly items?: JobSpecTemplateSpecVolumeConfigMapItems[];
 }
 
@@ -2508,9 +4263,17 @@ function jobSpecTemplateSpecVolumeConfigMapToTerraform(struct?: JobSpecTemplateS
 }
 
 export interface JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#namespace Job#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -2523,9 +4286,17 @@ function jobSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct
 }
 
 export interface JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#namespace Job#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -2538,9 +4309,17 @@ function jobSpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struc
 }
 
 export interface JobSpecTemplateSpecVolumeCsiNodePublishSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#namespace Job#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -2553,9 +4332,17 @@ function jobSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: Jo
 }
 
 export interface JobSpecTemplateSpecVolumeCsiNodeStageSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#namespace Job#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -2568,23 +4355,59 @@ function jobSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct?: JobS
 }
 
 export interface JobSpecTemplateSpecVolumeCsi {
-  /** the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi */
+  /**
+  * the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#driver Job#driver}
+  */
   readonly driver: string;
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fs_type Job#fs_type}
+  */
   readonly fsType?: string;
-  /** Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi */
+  /**
+  * Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Attributes of the volume to publish. */
+  /**
+  * Attributes of the volume to publish.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#volume_attributes Job#volume_attributes}
+  */
   readonly volumeAttributes?: { [key: string]: string };
-  /** A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi */
+  /**
+  * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#volume_handle Job#volume_handle}
+  */
   readonly volumeHandle: string;
-  /** controller_expand_secret_ref block */
+  /**
+  * controller_expand_secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#controller_expand_secret_ref Job#controller_expand_secret_ref}
+  */
   readonly controllerExpandSecretRef?: JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef[];
-  /** controller_publish_secret_ref block */
+  /**
+  * controller_publish_secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#controller_publish_secret_ref Job#controller_publish_secret_ref}
+  */
   readonly controllerPublishSecretRef?: JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef[];
-  /** node_publish_secret_ref block */
+  /**
+  * node_publish_secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#node_publish_secret_ref Job#node_publish_secret_ref}
+  */
   readonly nodePublishSecretRef?: JobSpecTemplateSpecVolumeCsiNodePublishSecretRef[];
-  /** node_stage_secret_ref block */
+  /**
+  * node_stage_secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#node_stage_secret_ref Job#node_stage_secret_ref}
+  */
   readonly nodeStageSecretRef?: JobSpecTemplateSpecVolumeCsiNodeStageSecretRef[];
 }
 
@@ -2604,9 +4427,17 @@ function jobSpecTemplateSpecVolumeCsiToTerraform(struct?: JobSpecTemplateSpecVol
 }
 
 export interface JobSpecTemplateSpecVolumeDownwardApiItemsFieldRef {
-  /** Version of the schema the FieldPath is written in terms of, defaults to "v1". */
+  /**
+  * Version of the schema the FieldPath is written in terms of, defaults to "v1".
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#api_version Job#api_version}
+  */
   readonly apiVersion?: string;
-  /** Path of the field to select in the specified API version */
+  /**
+  * Path of the field to select in the specified API version
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#field_path Job#field_path}
+  */
   readonly fieldPath?: string;
 }
 
@@ -2619,9 +4450,19 @@ function jobSpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform(struct?: J
 }
 
 export interface JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_name Job#container_name}
+  */
   readonly containerName: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#divisor Job#divisor}
+  */
   readonly divisor?: string;
-  /** Resource to select */
+  /**
+  * Resource to select
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resource Job#resource}
+  */
   readonly resource: string;
 }
 
@@ -2635,13 +4476,29 @@ function jobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerraform(st
 }
 
 export interface JobSpecTemplateSpecVolumeDownwardApiItems {
-  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#mode Job#mode}
+  */
   readonly mode?: string;
-  /** Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..' */
+  /**
+  * Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path: string;
-  /** field_ref block */
+  /**
+  * field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#field_ref Job#field_ref}
+  */
   readonly fieldRef: JobSpecTemplateSpecVolumeDownwardApiItemsFieldRef[];
-  /** resource_field_ref block */
+  /**
+  * resource_field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resource_field_ref Job#resource_field_ref}
+  */
   readonly resourceFieldRef?: JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef[];
 }
 
@@ -2656,9 +4513,17 @@ function jobSpecTemplateSpecVolumeDownwardApiItemsToTerraform(struct?: JobSpecTe
 }
 
 export interface JobSpecTemplateSpecVolumeDownwardApi {
-  /** Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#default_mode Job#default_mode}
+  */
   readonly defaultMode?: string;
-  /** items block */
+  /**
+  * items block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#items Job#items}
+  */
   readonly items?: JobSpecTemplateSpecVolumeDownwardApiItems[];
 }
 
@@ -2671,9 +4536,17 @@ function jobSpecTemplateSpecVolumeDownwardApiToTerraform(struct?: JobSpecTemplat
 }
 
 export interface JobSpecTemplateSpecVolumeEmptyDir {
-  /** What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir */
+  /**
+  * What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#medium Job#medium}
+  */
   readonly medium?: string;
-  /** Total amount of local storage required for this EmptyDir volume. */
+  /**
+  * Total amount of local storage required for this EmptyDir volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#size_limit Job#size_limit}
+  */
   readonly sizeLimit?: string;
 }
 
@@ -2686,13 +4559,29 @@ function jobSpecTemplateSpecVolumeEmptyDirToTerraform(struct?: JobSpecTemplateSp
 }
 
 export interface JobSpecTemplateSpecVolumeFc {
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fs_type Job#fs_type}
+  */
   readonly fsType?: string;
-  /** FC target lun number */
+  /**
+  * FC target lun number
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#lun Job#lun}
+  */
   readonly lun: number;
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** FC target worldwide names (WWNs) */
+  /**
+  * FC target worldwide names (WWNs)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#target_ww_ns Job#target_ww_ns}
+  */
   readonly targetWwNs: string[];
 }
 
@@ -2707,9 +4596,17 @@ function jobSpecTemplateSpecVolumeFcToTerraform(struct?: JobSpecTemplateSpecVolu
 }
 
 export interface JobSpecTemplateSpecVolumeFlexVolumeSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#namespace Job#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -2722,15 +4619,35 @@ function jobSpecTemplateSpecVolumeFlexVolumeSecretRefToTerraform(struct?: JobSpe
 }
 
 export interface JobSpecTemplateSpecVolumeFlexVolume {
-  /** Driver is the name of the driver to use for this volume. */
+  /**
+  * Driver is the name of the driver to use for this volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#driver Job#driver}
+  */
   readonly driver: string;
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script. */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fs_type Job#fs_type}
+  */
   readonly fsType?: string;
-  /** Extra command options if any. */
+  /**
+  * Extra command options if any.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#options Job#options}
+  */
   readonly options?: { [key: string]: string };
-  /** Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write). */
+  /**
+  * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** secret_ref block */
+  /**
+  * secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_ref Job#secret_ref}
+  */
   readonly secretRef?: JobSpecTemplateSpecVolumeFlexVolumeSecretRef[];
 }
 
@@ -2746,9 +4663,17 @@ function jobSpecTemplateSpecVolumeFlexVolumeToTerraform(struct?: JobSpecTemplate
 }
 
 export interface JobSpecTemplateSpecVolumeFlocker {
-  /** Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated */
+  /**
+  * Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#dataset_name Job#dataset_name}
+  */
   readonly datasetName?: string;
-  /** UUID of the dataset. This is unique identifier of a Flocker dataset */
+  /**
+  * UUID of the dataset. This is unique identifier of a Flocker dataset
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#dataset_uuid Job#dataset_uuid}
+  */
   readonly datasetUuid?: string;
 }
 
@@ -2761,13 +4686,29 @@ function jobSpecTemplateSpecVolumeFlockerToTerraform(struct?: JobSpecTemplateSpe
 }
 
 export interface JobSpecTemplateSpecVolumeGcePersistentDisk {
-  /** Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk */
+  /**
+  * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fs_type Job#fs_type}
+  */
   readonly fsType?: string;
-  /** The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty). More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk */
+  /**
+  * The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty). More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#partition Job#partition}
+  */
   readonly partition?: number;
-  /** Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk */
+  /**
+  * Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#pd_name Job#pd_name}
+  */
   readonly pdName: string;
-  /** Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk */
+  /**
+  * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
 }
 
@@ -2782,11 +4723,23 @@ function jobSpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct?: JobSpecT
 }
 
 export interface JobSpecTemplateSpecVolumeGitRepo {
-  /** Target directory name. Must not contain or start with '..'. If '.' is supplied, the volume directory will be the git repository. Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name. */
+  /**
+  * Target directory name. Must not contain or start with '..'. If '.' is supplied, the volume directory will be the git repository. Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#directory Job#directory}
+  */
   readonly directory?: string;
-  /** Repository URL */
+  /**
+  * Repository URL
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#repository Job#repository}
+  */
   readonly repository?: string;
-  /** Commit hash for the specified revision. */
+  /**
+  * Commit hash for the specified revision.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#revision Job#revision}
+  */
   readonly revision?: string;
 }
 
@@ -2800,11 +4753,23 @@ function jobSpecTemplateSpecVolumeGitRepoToTerraform(struct?: JobSpecTemplateSpe
 }
 
 export interface JobSpecTemplateSpecVolumeGlusterfs {
-  /** The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod */
+  /**
+  * The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#endpoints_name Job#endpoints_name}
+  */
   readonly endpointsName: string;
-  /** The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod */
+  /**
+  * The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path: string;
-  /** Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod */
+  /**
+  * Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
 }
 
@@ -2818,9 +4783,17 @@ function jobSpecTemplateSpecVolumeGlusterfsToTerraform(struct?: JobSpecTemplateS
 }
 
 export interface JobSpecTemplateSpecVolumeHostPath {
-  /** Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath */
+  /**
+  * Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
-  /** Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice */
+  /**
+  * Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#type Job#type}
+  */
   readonly type?: string;
 }
 
@@ -2833,17 +4806,41 @@ function jobSpecTemplateSpecVolumeHostPathToTerraform(struct?: JobSpecTemplateSp
 }
 
 export interface JobSpecTemplateSpecVolumeIscsi {
-  /** Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#iscsi */
+  /**
+  * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#iscsi
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fs_type Job#fs_type}
+  */
   readonly fsType?: string;
-  /** Target iSCSI Qualified Name. */
+  /**
+  * Target iSCSI Qualified Name.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#iqn Job#iqn}
+  */
   readonly iqn: string;
-  /** iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp). */
+  /**
+  * iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#iscsi_interface Job#iscsi_interface}
+  */
   readonly iscsiInterface?: string;
-  /** iSCSI target lun number. */
+  /**
+  * iSCSI target lun number.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#lun Job#lun}
+  */
   readonly lun?: number;
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to false. */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260). */
+  /**
+  * iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#target_portal Job#target_portal}
+  */
   readonly targetPortal: string;
 }
 
@@ -2860,7 +4857,11 @@ function jobSpecTemplateSpecVolumeIscsiToTerraform(struct?: JobSpecTemplateSpecV
 }
 
 export interface JobSpecTemplateSpecVolumeLocal {
-  /** Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local */
+  /**
+  * Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
 }
 
@@ -2872,11 +4873,23 @@ function jobSpecTemplateSpecVolumeLocalToTerraform(struct?: JobSpecTemplateSpecV
 }
 
 export interface JobSpecTemplateSpecVolumeNfs {
-  /** Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs */
+  /**
+  * Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path: string;
-  /** Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs */
+  /**
+  * Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs */
+  /**
+  * Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#server Job#server}
+  */
   readonly server: string;
 }
 
@@ -2890,9 +4903,17 @@ function jobSpecTemplateSpecVolumeNfsToTerraform(struct?: JobSpecTemplateSpecVol
 }
 
 export interface JobSpecTemplateSpecVolumePersistentVolumeClaim {
-  /** ClaimName is the name of a PersistentVolumeClaim in the same  */
+  /**
+  * ClaimName is the name of a PersistentVolumeClaim in the same 
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#claim_name Job#claim_name}
+  */
   readonly claimName?: string;
-  /** Will force the ReadOnly setting in VolumeMounts. */
+  /**
+  * Will force the ReadOnly setting in VolumeMounts.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
 }
 
@@ -2905,9 +4926,17 @@ function jobSpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct?: JobS
 }
 
 export interface JobSpecTemplateSpecVolumePhotonPersistentDisk {
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fs_type Job#fs_type}
+  */
   readonly fsType?: string;
-  /** ID that identifies Photon Controller persistent disk */
+  /**
+  * ID that identifies Photon Controller persistent disk
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#pd_id Job#pd_id}
+  */
   readonly pdId: string;
 }
 
@@ -2920,11 +4949,23 @@ function jobSpecTemplateSpecVolumePhotonPersistentDiskToTerraform(struct?: JobSp
 }
 
 export interface JobSpecTemplateSpecVolumeProjectedSourcesConfigMapItems {
-  /** The key to project. */
+  /**
+  * The key to project.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#mode Job#mode}
+  */
   readonly mode?: string;
-  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  /**
+  * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
 }
 
@@ -2938,11 +4979,23 @@ function jobSpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraform(stru
 }
 
 export interface JobSpecTemplateSpecVolumeProjectedSourcesConfigMap {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Optional: Specify whether the ConfigMap or it's keys must be defined. */
+  /**
+  * Optional: Specify whether the ConfigMap or it's keys must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#optional Job#optional}
+  */
   readonly optional?: boolean;
-  /** items block */
+  /**
+  * items block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#items Job#items}
+  */
   readonly items?: JobSpecTemplateSpecVolumeProjectedSourcesConfigMapItems[];
 }
 
@@ -2956,9 +5009,17 @@ function jobSpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform(struct?: 
 }
 
 export interface JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef {
-  /** Version of the schema the FieldPath is written in terms of, defaults to 'v1'. */
+  /**
+  * Version of the schema the FieldPath is written in terms of, defaults to 'v1'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#api_version Job#api_version}
+  */
   readonly apiVersion?: string;
-  /** Path of the field to select in the specified API version */
+  /**
+  * Path of the field to select in the specified API version
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#field_path Job#field_path}
+  */
   readonly fieldPath?: string;
 }
 
@@ -2971,9 +5032,19 @@ function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefToTerr
 }
 
 export interface JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_name Job#container_name}
+  */
   readonly containerName: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#divisor Job#divisor}
+  */
   readonly divisor?: string;
-  /** Resource to select */
+  /**
+  * Resource to select
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resource Job#resource}
+  */
   readonly resource: string;
 }
 
@@ -2987,13 +5058,29 @@ function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldR
 }
 
 export interface JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems {
-  /** Mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#mode Job#mode}
+  */
   readonly mode?: string;
-  /** Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..' */
+  /**
+  * Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path: string;
-  /** field_ref block */
+  /**
+  * field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#field_ref Job#field_ref}
+  */
   readonly fieldRef?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef[];
-  /** resource_field_ref block */
+  /**
+  * resource_field_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resource_field_ref Job#resource_field_ref}
+  */
   readonly resourceFieldRef?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef[];
 }
 
@@ -3008,7 +5095,11 @@ function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform(st
 }
 
 export interface JobSpecTemplateSpecVolumeProjectedSourcesDownwardApi {
-  /** items block */
+  /**
+  * items block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#items Job#items}
+  */
   readonly items?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[];
 }
 
@@ -3020,11 +5111,23 @@ function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform(struct?
 }
 
 export interface JobSpecTemplateSpecVolumeProjectedSourcesSecretItems {
-  /** The key to project. */
+  /**
+  * The key to project.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#mode Job#mode}
+  */
   readonly mode?: string;
-  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  /**
+  * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
 }
 
@@ -3038,11 +5141,23 @@ function jobSpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform(struct?
 }
 
 export interface JobSpecTemplateSpecVolumeProjectedSourcesSecret {
-  /** Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets */
+  /**
+  * Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Optional: Specify whether the Secret or it's keys must be defined. */
+  /**
+  * Optional: Specify whether the Secret or it's keys must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#optional Job#optional}
+  */
   readonly optional?: boolean;
-  /** items block */
+  /**
+  * items block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#items Job#items}
+  */
   readonly items?: JobSpecTemplateSpecVolumeProjectedSourcesSecretItems[];
 }
 
@@ -3056,11 +5171,23 @@ function jobSpecTemplateSpecVolumeProjectedSourcesSecretToTerraform(struct?: Job
 }
 
 export interface JobSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken {
-  /** Audience is the intended audience of the token */
+  /**
+  * Audience is the intended audience of the token
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#audience Job#audience}
+  */
   readonly audience?: string;
-  /** ExpirationSeconds is the expected duration of validity of the service account token. It defaults to 1 hour and must be at least 10 minutes (600 seconds). */
+  /**
+  * ExpirationSeconds is the expected duration of validity of the service account token. It defaults to 1 hour and must be at least 10 minutes (600 seconds).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#expiration_seconds Job#expiration_seconds}
+  */
   readonly expirationSeconds?: number;
-  /** Path specifies a relative path to the mount point of the projected volume. */
+  /**
+  * Path specifies a relative path to the mount point of the projected volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path: string;
 }
 
@@ -3074,13 +5201,29 @@ function jobSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform
 }
 
 export interface JobSpecTemplateSpecVolumeProjectedSources {
-  /** config_map block */
+  /**
+  * config_map block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#config_map Job#config_map}
+  */
   readonly configMap?: JobSpecTemplateSpecVolumeProjectedSourcesConfigMap[];
-  /** downward_api block */
+  /**
+  * downward_api block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#downward_api Job#downward_api}
+  */
   readonly downwardApi?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApi[];
-  /** secret block */
+  /**
+  * secret block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret Job#secret}
+  */
   readonly secret?: JobSpecTemplateSpecVolumeProjectedSourcesSecret[];
-  /** service_account_token block */
+  /**
+  * service_account_token block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#service_account_token Job#service_account_token}
+  */
   readonly serviceAccountToken?: JobSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken[];
 }
 
@@ -3095,9 +5238,17 @@ function jobSpecTemplateSpecVolumeProjectedSourcesToTerraform(struct?: JobSpecTe
 }
 
 export interface JobSpecTemplateSpecVolumeProjected {
-  /** Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#default_mode Job#default_mode}
+  */
   readonly defaultMode?: string;
-  /** sources block */
+  /**
+  * sources block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#sources Job#sources}
+  */
   readonly sources: JobSpecTemplateSpecVolumeProjectedSources[];
 }
 
@@ -3110,15 +5261,35 @@ function jobSpecTemplateSpecVolumeProjectedToTerraform(struct?: JobSpecTemplateS
 }
 
 export interface JobSpecTemplateSpecVolumeQuobyte {
-  /** Group to map volume access to Default is no group */
+  /**
+  * Group to map volume access to Default is no group
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#group Job#group}
+  */
   readonly group?: string;
-  /** Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false. */
+  /**
+  * Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes */
+  /**
+  * Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#registry Job#registry}
+  */
   readonly registry: string;
-  /** User to map volume access to Defaults to serivceaccount user */
+  /**
+  * User to map volume access to Defaults to serivceaccount user
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#user Job#user}
+  */
   readonly user?: string;
-  /** Volume is a string that references an already created Quobyte volume by name. */
+  /**
+  * Volume is a string that references an already created Quobyte volume by name.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#volume Job#volume}
+  */
   readonly volume: string;
 }
 
@@ -3134,9 +5305,17 @@ function jobSpecTemplateSpecVolumeQuobyteToTerraform(struct?: JobSpecTemplateSpe
 }
 
 export interface JobSpecTemplateSpecVolumeRbdSecretRef {
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#namespace Job#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -3149,21 +5328,53 @@ function jobSpecTemplateSpecVolumeRbdSecretRefToTerraform(struct?: JobSpecTempla
 }
 
 export interface JobSpecTemplateSpecVolumeRbd {
-  /** A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it */
+  /**
+  * A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#ceph_monitors Job#ceph_monitors}
+  */
   readonly cephMonitors: string[];
-  /** Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#rbd */
+  /**
+  * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#rbd
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fs_type Job#fs_type}
+  */
   readonly fsType?: string;
-  /** Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it */
+  /**
+  * Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#keyring Job#keyring}
+  */
   readonly keyring?: string;
-  /** The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it */
+  /**
+  * The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#rados_user Job#rados_user}
+  */
   readonly radosUser?: string;
-  /** The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it */
+  /**
+  * The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#rbd_image Job#rbd_image}
+  */
   readonly rbdImage: string;
-  /** The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it. */
+  /**
+  * The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#rbd_pool Job#rbd_pool}
+  */
   readonly rbdPool?: string;
-  /** Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it */
+  /**
+  * Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#read_only Job#read_only}
+  */
   readonly readOnly?: boolean;
-  /** secret_ref block */
+  /**
+  * secret_ref block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_ref Job#secret_ref}
+  */
   readonly secretRef?: JobSpecTemplateSpecVolumeRbdSecretRef[];
 }
 
@@ -3182,11 +5393,23 @@ function jobSpecTemplateSpecVolumeRbdToTerraform(struct?: JobSpecTemplateSpecVol
 }
 
 export interface JobSpecTemplateSpecVolumeSecretItems {
-  /** The key to project. */
+  /**
+  * The key to project.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#key Job#key}
+  */
   readonly key?: string;
-  /** Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#mode Job#mode}
+  */
   readonly mode?: string;
-  /** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
+  /**
+  * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#path Job#path}
+  */
   readonly path?: string;
 }
 
@@ -3200,13 +5423,29 @@ function jobSpecTemplateSpecVolumeSecretItemsToTerraform(struct?: JobSpecTemplat
 }
 
 export interface JobSpecTemplateSpecVolumeSecret {
-  /** Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+  /**
+  * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#default_mode Job#default_mode}
+  */
   readonly defaultMode?: string;
-  /** Optional: Specify whether the Secret or its keys must be defined. */
+  /**
+  * Optional: Specify whether the Secret or its keys must be defined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#optional Job#optional}
+  */
   readonly optional?: boolean;
-  /** Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets */
+  /**
+  * Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_name Job#secret_name}
+  */
   readonly secretName?: string;
-  /** items block */
+  /**
+  * items block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#items Job#items}
+  */
   readonly items?: JobSpecTemplateSpecVolumeSecretItems[];
 }
 
@@ -3221,9 +5460,17 @@ function jobSpecTemplateSpecVolumeSecretToTerraform(struct?: JobSpecTemplateSpec
 }
 
 export interface JobSpecTemplateSpecVolumeVsphereVolume {
-  /** Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. */
+  /**
+  * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fs_type Job#fs_type}
+  */
   readonly fsType?: string;
-  /** Path that identifies vSphere volume vmdk */
+  /**
+  * Path that identifies vSphere volume vmdk
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#volume_path Job#volume_path}
+  */
   readonly volumePath: string;
 }
 
@@ -3236,59 +5483,167 @@ function jobSpecTemplateSpecVolumeVsphereVolumeToTerraform(struct?: JobSpecTempl
 }
 
 export interface JobSpecTemplateSpecVolume {
-  /** Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#name Job#name}
+  */
   readonly name?: string;
-  /** aws_elastic_block_store block */
+  /**
+  * aws_elastic_block_store block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#aws_elastic_block_store Job#aws_elastic_block_store}
+  */
   readonly awsElasticBlockStore?: JobSpecTemplateSpecVolumeAwsElasticBlockStore[];
-  /** azure_disk block */
+  /**
+  * azure_disk block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#azure_disk Job#azure_disk}
+  */
   readonly azureDisk?: JobSpecTemplateSpecVolumeAzureDisk[];
-  /** azure_file block */
+  /**
+  * azure_file block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#azure_file Job#azure_file}
+  */
   readonly azureFile?: JobSpecTemplateSpecVolumeAzureFile[];
-  /** ceph_fs block */
+  /**
+  * ceph_fs block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#ceph_fs Job#ceph_fs}
+  */
   readonly cephFs?: JobSpecTemplateSpecVolumeCephFs[];
-  /** cinder block */
+  /**
+  * cinder block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#cinder Job#cinder}
+  */
   readonly cinder?: JobSpecTemplateSpecVolumeCinder[];
-  /** config_map block */
+  /**
+  * config_map block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#config_map Job#config_map}
+  */
   readonly configMap?: JobSpecTemplateSpecVolumeConfigMap[];
-  /** csi block */
+  /**
+  * csi block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#csi Job#csi}
+  */
   readonly csi?: JobSpecTemplateSpecVolumeCsi[];
-  /** downward_api block */
+  /**
+  * downward_api block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#downward_api Job#downward_api}
+  */
   readonly downwardApi?: JobSpecTemplateSpecVolumeDownwardApi[];
-  /** empty_dir block */
+  /**
+  * empty_dir block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#empty_dir Job#empty_dir}
+  */
   readonly emptyDir?: JobSpecTemplateSpecVolumeEmptyDir[];
-  /** fc block */
+  /**
+  * fc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fc Job#fc}
+  */
   readonly fc?: JobSpecTemplateSpecVolumeFc[];
-  /** flex_volume block */
+  /**
+  * flex_volume block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#flex_volume Job#flex_volume}
+  */
   readonly flexVolume?: JobSpecTemplateSpecVolumeFlexVolume[];
-  /** flocker block */
+  /**
+  * flocker block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#flocker Job#flocker}
+  */
   readonly flocker?: JobSpecTemplateSpecVolumeFlocker[];
-  /** gce_persistent_disk block */
+  /**
+  * gce_persistent_disk block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#gce_persistent_disk Job#gce_persistent_disk}
+  */
   readonly gcePersistentDisk?: JobSpecTemplateSpecVolumeGcePersistentDisk[];
-  /** git_repo block */
+  /**
+  * git_repo block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#git_repo Job#git_repo}
+  */
   readonly gitRepo?: JobSpecTemplateSpecVolumeGitRepo[];
-  /** glusterfs block */
+  /**
+  * glusterfs block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#glusterfs Job#glusterfs}
+  */
   readonly glusterfs?: JobSpecTemplateSpecVolumeGlusterfs[];
-  /** host_path block */
+  /**
+  * host_path block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host_path Job#host_path}
+  */
   readonly hostPath?: JobSpecTemplateSpecVolumeHostPath[];
-  /** iscsi block */
+  /**
+  * iscsi block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#iscsi Job#iscsi}
+  */
   readonly iscsi?: JobSpecTemplateSpecVolumeIscsi[];
-  /** local block */
+  /**
+  * local block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#local Job#local}
+  */
   readonly local?: JobSpecTemplateSpecVolumeLocal[];
-  /** nfs block */
+  /**
+  * nfs block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#nfs Job#nfs}
+  */
   readonly nfs?: JobSpecTemplateSpecVolumeNfs[];
-  /** persistent_volume_claim block */
+  /**
+  * persistent_volume_claim block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#persistent_volume_claim Job#persistent_volume_claim}
+  */
   readonly persistentVolumeClaim?: JobSpecTemplateSpecVolumePersistentVolumeClaim[];
-  /** photon_persistent_disk block */
+  /**
+  * photon_persistent_disk block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#photon_persistent_disk Job#photon_persistent_disk}
+  */
   readonly photonPersistentDisk?: JobSpecTemplateSpecVolumePhotonPersistentDisk[];
-  /** projected block */
+  /**
+  * projected block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#projected Job#projected}
+  */
   readonly projected?: JobSpecTemplateSpecVolumeProjected[];
-  /** quobyte block */
+  /**
+  * quobyte block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#quobyte Job#quobyte}
+  */
   readonly quobyte?: JobSpecTemplateSpecVolumeQuobyte[];
-  /** rbd block */
+  /**
+  * rbd block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#rbd Job#rbd}
+  */
   readonly rbd?: JobSpecTemplateSpecVolumeRbd[];
-  /** secret block */
+  /**
+  * secret block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret Job#secret}
+  */
   readonly secret?: JobSpecTemplateSpecVolumeSecret[];
-  /** vsphere_volume block */
+  /**
+  * vsphere_volume block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#vsphere_volume Job#vsphere_volume}
+  */
   readonly vsphereVolume?: JobSpecTemplateSpecVolumeVsphereVolume[];
 }
 
@@ -3326,59 +5681,167 @@ function jobSpecTemplateSpecVolumeToTerraform(struct?: JobSpecTemplateSpecVolume
 }
 
 export interface JobSpecTemplateSpec {
-  /** Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer. */
+  /**
+  * Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#active_deadline_seconds Job#active_deadline_seconds}
+  */
   readonly activeDeadlineSeconds?: number;
-  /** AutomountServiceAccountToken indicates whether a service account token should be automatically mounted. */
+  /**
+  * AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#automount_service_account_token Job#automount_service_account_token}
+  */
   readonly automountServiceAccountToken?: boolean;
-  /** Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy). */
+  /**
+  * Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#dns_policy Job#dns_policy}
+  */
   readonly dnsPolicy?: string;
-  /** Enables generating environment variables for service discovery. Defaults to true. */
+  /**
+  * Enables generating environment variables for service discovery. Defaults to true.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#enable_service_links Job#enable_service_links}
+  */
   readonly enableServiceLinks?: boolean;
-  /** Use the host's ipc namespace. Optional: Defaults to false. */
+  /**
+  * Use the host's ipc namespace. Optional: Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host_ipc Job#host_ipc}
+  */
   readonly hostIpc?: boolean;
-  /** Host networking requested for this pod. Use the host's network namespace. If this option is set, the ports that will be used must be specified. */
+  /**
+  * Host networking requested for this pod. Use the host's network namespace. If this option is set, the ports that will be used must be specified.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host_network Job#host_network}
+  */
   readonly hostNetwork?: boolean;
-  /** Use the host's pid namespace. */
+  /**
+  * Use the host's pid namespace.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host_pid Job#host_pid}
+  */
   readonly hostPid?: boolean;
-  /** Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value. */
+  /**
+  * Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#hostname Job#hostname}
+  */
   readonly hostname?: string;
-  /** NodeName is a request to schedule this pod onto a specific node. If it is non-empty, the scheduler simply schedules this pod onto that node, assuming that it fits resource requirements. */
+  /**
+  * NodeName is a request to schedule this pod onto a specific node. If it is non-empty, the scheduler simply schedules this pod onto that node, assuming that it fits resource requirements.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#node_name Job#node_name}
+  */
   readonly nodeName?: string;
-  /** NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: http://kubernetes.io/docs/user-guide/node-selection. */
+  /**
+  * NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: http://kubernetes.io/docs/user-guide/node-selection.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#node_selector Job#node_selector}
+  */
   readonly nodeSelector?: { [key: string]: string };
-  /** If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default. */
+  /**
+  * If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#priority_class_name Job#priority_class_name}
+  */
   readonly priorityClassName?: string;
-  /** Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy. */
+  /**
+  * Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#restart_policy Job#restart_policy}
+  */
   readonly restartPolicy?: string;
-  /** ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md. */
+  /**
+  * ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#service_account_name Job#service_account_name}
+  */
   readonly serviceAccountName?: string;
-  /** Share a single process namespace between all of the containers in a pod. When this is set containers will be able to view and signal processes from other containers in the same pod, and the first process in each container will not be assigned PID 1. HostPID and ShareProcessNamespace cannot both be set. Optional: Defaults to false. */
+  /**
+  * Share a single process namespace between all of the containers in a pod. When this is set containers will be able to view and signal processes from other containers in the same pod, and the first process in each container will not be assigned PID 1. HostPID and ShareProcessNamespace cannot both be set. Optional: Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#share_process_namespace Job#share_process_namespace}
+  */
   readonly shareProcessNamespace?: boolean;
-  /** If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all.. */
+  /**
+  * If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#subdomain Job#subdomain}
+  */
   readonly subdomain?: string;
-  /** Optional duration in seconds the pod needs to terminate gracefully. May be decreased in delete request. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period will be used instead. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. */
+  /**
+  * Optional duration in seconds the pod needs to terminate gracefully. May be decreased in delete request. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period will be used instead. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#termination_grace_period_seconds Job#termination_grace_period_seconds}
+  */
   readonly terminationGracePeriodSeconds?: number;
-  /** affinity block */
+  /**
+  * affinity block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#affinity Job#affinity}
+  */
   readonly affinity?: JobSpecTemplateSpecAffinity[];
-  /** container block */
+  /**
+  * container block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container Job#container}
+  */
   readonly container?: JobSpecTemplateSpecContainer[];
-  /** dns_config block */
+  /**
+  * dns_config block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#dns_config Job#dns_config}
+  */
   readonly dnsConfig?: JobSpecTemplateSpecDnsConfig[];
-  /** host_aliases block */
+  /**
+  * host_aliases block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host_aliases Job#host_aliases}
+  */
   readonly hostAliases?: JobSpecTemplateSpecHostAliases[];
-  /** image_pull_secrets block */
+  /**
+  * image_pull_secrets block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#image_pull_secrets Job#image_pull_secrets}
+  */
   readonly imagePullSecrets?: JobSpecTemplateSpecImagePullSecrets[];
-  /** init_container block */
+  /**
+  * init_container block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#init_container Job#init_container}
+  */
   readonly initContainer?: JobSpecTemplateSpecInitContainer[];
-  /** readiness_gate block */
+  /**
+  * readiness_gate block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#readiness_gate Job#readiness_gate}
+  */
   readonly readinessGate?: JobSpecTemplateSpecReadinessGate[];
-  /** security_context block */
+  /**
+  * security_context block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#security_context Job#security_context}
+  */
   readonly securityContext?: JobSpecTemplateSpecSecurityContext[];
-  /** toleration block */
+  /**
+  * toleration block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#toleration Job#toleration}
+  */
   readonly toleration?: JobSpecTemplateSpecToleration[];
-  /** topology_spread_constraint block */
+  /**
+  * topology_spread_constraint block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#topology_spread_constraint Job#topology_spread_constraint}
+  */
   readonly topologySpreadConstraint?: JobSpecTemplateSpecTopologySpreadConstraint[];
-  /** volume block */
+  /**
+  * volume block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#volume Job#volume}
+  */
   readonly volume?: JobSpecTemplateSpecVolume[];
 }
 
@@ -3416,9 +5879,17 @@ function jobSpecTemplateSpecToTerraform(struct?: JobSpecTemplateSpec): any {
 }
 
 export interface JobSpecTemplate {
-  /** metadata block */
+  /**
+  * metadata block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#metadata Job#metadata}
+  */
   readonly metadata: JobSpecTemplateMetadata[];
-  /** spec block */
+  /**
+  * spec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#spec Job#spec}
+  */
   readonly spec?: JobSpecTemplateSpec[];
 }
 
@@ -3431,21 +5902,53 @@ function jobSpecTemplateToTerraform(struct?: JobSpecTemplate): any {
 }
 
 export interface JobSpec {
-  /** Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer. */
+  /**
+  * Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#active_deadline_seconds Job#active_deadline_seconds}
+  */
   readonly activeDeadlineSeconds?: number;
-  /** Specifies the number of retries before marking this job failed. Defaults to 6 */
+  /**
+  * Specifies the number of retries before marking this job failed. Defaults to 6
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#backoff_limit Job#backoff_limit}
+  */
   readonly backoffLimit?: number;
-  /** Specifies the desired number of successfully finished pods the job should be run with. Setting to nil means that the success of any pod signals the success of all pods, and allows parallelism to have any positive value. Setting to 1 means that parallelism is limited to 1 and the success of that pod signals the success of the job. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ */
+  /**
+  * Specifies the desired number of successfully finished pods the job should be run with. Setting to nil means that the success of any pod signals the success of all pods, and allows parallelism to have any positive value. Setting to 1 means that parallelism is limited to 1 and the success of that pod signals the success of the job. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#completions Job#completions}
+  */
   readonly completions?: number;
-  /** Controls generation of pod labels and pod selectors. Leave unset unless you are certain what you are doing. When false or unset, the system pick labels unique to this job and appends those labels to the pod template. When true, the user is responsible for picking unique labels and specifying the selector. Failure to pick a unique label may cause this and other jobs to not function correctly. More info: https://git.k8s.io/community/contributors/design-proposals/selector-generation.md */
+  /**
+  * Controls generation of pod labels and pod selectors. Leave unset unless you are certain what you are doing. When false or unset, the system pick labels unique to this job and appends those labels to the pod template. When true, the user is responsible for picking unique labels and specifying the selector. Failure to pick a unique label may cause this and other jobs to not function correctly. More info: https://git.k8s.io/community/contributors/design-proposals/selector-generation.md
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#manual_selector Job#manual_selector}
+  */
   readonly manualSelector?: boolean;
-  /** Specifies the maximum desired number of pods the job should run at any given time. The actual number of pods running in steady state will be less than this number when ((.spec.completions - .status.successful) < .spec.parallelism), i.e. when the work left to do is less than max parallelism. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ */
+  /**
+  * Specifies the maximum desired number of pods the job should run at any given time. The actual number of pods running in steady state will be less than this number when ((.spec.completions - .status.successful) < .spec.parallelism), i.e. when the work left to do is less than max parallelism. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#parallelism Job#parallelism}
+  */
   readonly parallelism?: number;
-  /** ttlSecondsAfterFinished limits the lifetime of a Job that has finished execution (either Complete or Failed). If this field is set, ttlSecondsAfterFinished after the Job finishes, it is eligible to be automatically deleted. When the Job is being deleted, its lifecycle guarantees (e.g. finalizers) will be honored. If this field is unset, the Job won't be automatically deleted. If this field is set to zero, the Job becomes eligible to be deleted immediately after it finishes. */
+  /**
+  * ttlSecondsAfterFinished limits the lifetime of a Job that has finished execution (either Complete or Failed). If this field is set, ttlSecondsAfterFinished after the Job finishes, it is eligible to be automatically deleted. When the Job is being deleted, its lifecycle guarantees (e.g. finalizers) will be honored. If this field is unset, the Job won't be automatically deleted. If this field is set to zero, the Job becomes eligible to be deleted immediately after it finishes.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#ttl_seconds_after_finished Job#ttl_seconds_after_finished}
+  */
   readonly ttlSecondsAfterFinished?: string;
-  /** selector block */
+  /**
+  * selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#selector Job#selector}
+  */
   readonly selector?: JobSpecSelector[];
-  /** template block */
+  /**
+  * template block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#template Job#template}
+  */
   readonly template: JobSpecTemplate[];
 }
 
@@ -3464,8 +5967,17 @@ function jobSpecToTerraform(struct?: JobSpec): any {
 }
 
 export interface JobTimeouts {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#create Job#create}
+  */
   readonly create?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#delete Job#delete}
+  */
   readonly delete?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#update Job#update}
+  */
   readonly update?: string;
 }
 
@@ -3479,14 +5991,22 @@ function jobTimeoutsToTerraform(struct?: JobTimeouts): any {
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html kubernetes_job}
+*/
 export class Job extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html kubernetes_job} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options JobConfig
+  */
   public constructor(scope: Construct, id: string, config: JobConfig) {
     super(scope, id, {
       terraformResourceType: 'kubernetes_job',

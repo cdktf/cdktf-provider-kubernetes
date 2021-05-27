@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/kubernetes_provider.html
+// https://www.terraform.io/docs/providers/kubernetes
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -7,38 +7,107 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface KubernetesProviderConfig {
-  /** PEM-encoded client certificate for TLS authentication. */
+  /**
+  * PEM-encoded client certificate for TLS authentication.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#client_certificate KubernetesProvider#client_certificate}
+  */
   readonly clientCertificate?: string;
-  /** PEM-encoded client certificate key for TLS authentication. */
+  /**
+  * PEM-encoded client certificate key for TLS authentication.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#client_key KubernetesProvider#client_key}
+  */
   readonly clientKey?: string;
-  /** PEM-encoded root certificates bundle for TLS authentication. */
+  /**
+  * PEM-encoded root certificates bundle for TLS authentication.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#cluster_ca_certificate KubernetesProvider#cluster_ca_certificate}
+  */
   readonly clusterCaCertificate?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context KubernetesProvider#config_context}
+  */
   readonly configContext?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context_auth_info KubernetesProvider#config_context_auth_info}
+  */
   readonly configContextAuthInfo?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context_cluster KubernetesProvider#config_context_cluster}
+  */
   readonly configContextCluster?: string;
-  /** Path to the kube config file. Can be set with KUBE_CONFIG_PATH. */
+  /**
+  * Path to the kube config file. Can be set with KUBE_CONFIG_PATH.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_path KubernetesProvider#config_path}
+  */
   readonly configPath?: string;
-  /** A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable. */
+  /**
+  * A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_paths KubernetesProvider#config_paths}
+  */
   readonly configPaths?: string[];
-  /** The hostname (in form of URI) of Kubernetes master. */
+  /**
+  * The hostname (in form of URI) of Kubernetes master.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#host KubernetesProvider#host}
+  */
   readonly host?: string;
-  /** Whether server should be accessed without verifying the TLS certificate. */
+  /**
+  * Whether server should be accessed without verifying the TLS certificate.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#insecure KubernetesProvider#insecure}
+  */
   readonly insecure?: boolean;
-  /** The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint. */
+  /**
+  * The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#password KubernetesProvider#password}
+  */
   readonly password?: string;
-  /** Token to authenticate an service account */
+  /**
+  * Token to authenticate an service account
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#token KubernetesProvider#token}
+  */
   readonly token?: string;
-  /** The username to use for HTTP basic authentication when accessing the Kubernetes master endpoint. */
+  /**
+  * The username to use for HTTP basic authentication when accessing the Kubernetes master endpoint.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#username KubernetesProvider#username}
+  */
   readonly username?: string;
-  /** Alias name */
+  /**
+  * Alias name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#alias KubernetesProvider#alias}
+  */
   readonly alias?: string;
-  /** exec block */
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#exec KubernetesProvider#exec}
+  */
   readonly exec?: KubernetesProviderExec[];
 }
 export interface KubernetesProviderExec {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#api_version KubernetesProvider#api_version}
+  */
   readonly apiVersion: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#args KubernetesProvider#args}
+  */
   readonly args?: string[];
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#command KubernetesProvider#command}
+  */
   readonly command: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#env KubernetesProvider#env}
+  */
   readonly env?: { [key: string]: string };
 }
 
@@ -53,14 +122,22 @@ function kubernetesProviderExecToTerraform(struct?: KubernetesProviderExec): any
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes kubernetes}
+*/
 export class KubernetesProvider extends cdktf.TerraformProvider {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes kubernetes} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options KubernetesProviderConfig = {}
+  */
   public constructor(scope: Construct, id: string, config: KubernetesProviderConfig = {}) {
     super(scope, id, {
       terraformResourceType: 'kubernetes',

@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/data_kubernetes_secret.html
+// https://www.terraform.io/docs/providers/kubernetes/d/secret.html
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -7,17 +7,37 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface DataKubernetesSecretConfig extends cdktf.TerraformMetaArguments {
-  /** metadata block */
+  /**
+  * metadata block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html#metadata DataKubernetesSecret#metadata}
+  */
   readonly metadata: DataKubernetesSecretMetadata[];
 }
 export interface DataKubernetesSecretMetadata {
-  /** An unstructured key value map stored with the secret that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations */
+  /**
+  * An unstructured key value map stored with the secret that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html#annotations DataKubernetesSecret#annotations}
+  */
   readonly annotations?: { [key: string]: string };
-  /** Map of string keys and values that can be used to organize and categorize (scope and select) the secret. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels */
+  /**
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the secret. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html#labels DataKubernetesSecret#labels}
+  */
   readonly labels?: { [key: string]: string };
-  /** Name of the secret, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names */
+  /**
+  * Name of the secret, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html#name DataKubernetesSecret#name}
+  */
   readonly name?: string;
-  /** Namespace defines the space within which name of the secret must be unique. */
+  /**
+  * Namespace defines the space within which name of the secret must be unique.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html#namespace DataKubernetesSecret#namespace}
+  */
   readonly namespace?: string;
 }
 
@@ -32,14 +52,22 @@ function dataKubernetesSecretMetadataToTerraform(struct?: DataKubernetesSecretMe
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html kubernetes_secret}
+*/
 export class DataKubernetesSecret extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html kubernetes_secret} Data Source
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options DataKubernetesSecretConfig
+  */
   public constructor(scope: Construct, id: string, config: DataKubernetesSecretConfig) {
     super(scope, id, {
       terraformResourceType: 'kubernetes_secret',
