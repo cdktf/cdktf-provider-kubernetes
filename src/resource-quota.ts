@@ -70,6 +70,52 @@ function resourceQuotaMetadataToTerraform(struct?: ResourceQuotaMetadata): any {
   }
 }
 
+export interface ResourceQuotaSpecScopeSelectorMatchExpression {
+  /**
+  * Represents a scope's relationship to a set of values.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#operator ResourceQuota#operator}
+  */
+  readonly operator: string;
+  /**
+  * The name of the scope that the selector applies to.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#scope_name ResourceQuota#scope_name}
+  */
+  readonly scopeName: string;
+  /**
+  * A list of scope selector requirements by scope of the resources.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#values ResourceQuota#values}
+  */
+  readonly values?: string[];
+}
+
+function resourceQuotaSpecScopeSelectorMatchExpressionToTerraform(struct?: ResourceQuotaSpecScopeSelectorMatchExpression): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    operator: cdktf.stringToTerraform(struct!.operator),
+    scope_name: cdktf.stringToTerraform(struct!.scopeName),
+    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+  }
+}
+
+export interface ResourceQuotaSpecScopeSelector {
+  /**
+  * match_expression block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#match_expression ResourceQuota#match_expression}
+  */
+  readonly matchExpression?: ResourceQuotaSpecScopeSelectorMatchExpression[];
+}
+
+function resourceQuotaSpecScopeSelectorToTerraform(struct?: ResourceQuotaSpecScopeSelector): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    match_expression: cdktf.listMapper(resourceQuotaSpecScopeSelectorMatchExpressionToTerraform)(struct!.matchExpression),
+  }
+}
+
 export interface ResourceQuotaSpec {
   /**
   * The set of desired hard limits for each named resource. More info: http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota
@@ -83,6 +129,12 @@ export interface ResourceQuotaSpec {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#scopes ResourceQuota#scopes}
   */
   readonly scopes?: string[];
+  /**
+  * scope_selector block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#scope_selector ResourceQuota#scope_selector}
+  */
+  readonly scopeSelector?: ResourceQuotaSpecScopeSelector[];
 }
 
 function resourceQuotaSpecToTerraform(struct?: ResourceQuotaSpec): any {
@@ -90,6 +142,7 @@ function resourceQuotaSpecToTerraform(struct?: ResourceQuotaSpec): any {
   return {
     hard: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.hard),
     scopes: cdktf.listMapper(cdktf.stringToTerraform)(struct!.scopes),
+    scope_selector: cdktf.listMapper(resourceQuotaSpecScopeSelectorToTerraform)(struct!.scopeSelector),
   }
 }
 
