@@ -8,6 +8,12 @@ import * as cdktf from 'cdktf';
 
 export interface DataKubernetesSecretConfig extends cdktf.TerraformMetaArguments {
   /**
+  * A map of the secret data with values encoded in base64 format
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html#binary_data DataKubernetesSecret#binary_data}
+  */
+  readonly binaryData?: { [key: string]: string };
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html#metadata DataKubernetesSecret#metadata}
@@ -79,12 +85,29 @@ export class DataKubernetesSecret extends cdktf.TerraformDataSource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._binaryData = config.binaryData;
     this._metadata = config.metadata;
   }
 
   // ==========
   // ATTRIBUTES
   // ==========
+
+  // binary_data - computed: false, optional: true, required: false
+  private _binaryData?: { [key: string]: string };
+  public get binaryData() {
+    return this.interpolationForAttribute('binary_data') as any;
+  }
+  public set binaryData(value: { [key: string]: string } ) {
+    this._binaryData = value;
+  }
+  public resetBinaryData() {
+    this._binaryData = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get binaryDataInput() {
+    return this._binaryData
+  }
 
   // data - computed: true, optional: false, required: false
   public data(key: string): string {
@@ -120,6 +143,7 @@ export class DataKubernetesSecret extends cdktf.TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      binary_data: cdktf.hashMapper(cdktf.anyToTerraform)(this._binaryData),
       metadata: cdktf.listMapper(dataKubernetesSecretMetadataToTerraform)(this._metadata),
     };
   }

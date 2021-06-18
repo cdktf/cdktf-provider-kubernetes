@@ -1517,6 +1517,8 @@ Name|Description
 [ResourceQuotaConfig](#cdktf-provider-kubernetes-resourcequotaconfig)|*No description*
 [ResourceQuotaMetadata](#cdktf-provider-kubernetes-resourcequotametadata)|*No description*
 [ResourceQuotaSpec](#cdktf-provider-kubernetes-resourcequotaspec)|*No description*
+[ResourceQuotaSpecScopeSelector](#cdktf-provider-kubernetes-resourcequotaspecscopeselector)|*No description*
+[ResourceQuotaSpecScopeSelectorMatchExpression](#cdktf-provider-kubernetes-resourcequotaspecscopeselectormatchexpression)|*No description*
 [ResourceQuotaTimeouts](#cdktf-provider-kubernetes-resourcequotatimeouts)|*No description*
 [RoleBindingConfig](#cdktf-provider-kubernetes-rolebindingconfig)|*No description*
 [RoleBindingMetadata](#cdktf-provider-kubernetes-rolebindingmetadata)|*No description*
@@ -8635,6 +8637,7 @@ new DataKubernetesSecret(scope: Construct, id: string, config: DataKubernetesSec
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **metadata** (<code>Array<[DataKubernetesSecretMetadata](#cdktf-provider-kubernetes-datakubernetessecretmetadata)></code>)  metadata block. 
+  * **binaryData** (<code>Map<string, string></code>)  A map of the secret data with values encoded in base64 format. __*Optional*__
 
 
 
@@ -8643,10 +8646,12 @@ new DataKubernetesSecret(scope: Construct, id: string, config: DataKubernetesSec
 
 Name | Type | Description 
 -----|------|-------------
+**binaryData** | <code>Map<string, string></code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[DataKubernetesSecretMetadata](#cdktf-provider-kubernetes-datakubernetessecretmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[DataKubernetesSecretMetadata](#cdktf-provider-kubernetes-datakubernetessecretmetadata)></code> | <span></span>
 **type** | <code>string</code> | <span></span>
+**binaryDataInput**? | <code>Map<string, string></code> | __*Optional*__
 
 ### Methods
 
@@ -8663,6 +8668,18 @@ data(key: string): string
 
 __Returns__:
 * <code>string</code>
+
+#### resetBinaryData() <a id="cdktf-provider-kubernetes-datakubernetessecret-resetbinarydata"></a>
+
+
+
+```ts
+resetBinaryData(): void
+```
+
+
+
+
 
 #### protected synthesizeAttributes() <a id="cdktf-provider-kubernetes-datakubernetessecret-synthesizeattributes"></a>
 
@@ -17920,6 +17937,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **metadata** | <code>Array<[DataKubernetesSecretMetadata](#cdktf-provider-kubernetes-datakubernetessecretmetadata)></code> | metadata block.
+**binaryData**? | <code>Map<string, string></code> | A map of the secret data with values encoded in base64 format.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
@@ -31466,7 +31484,36 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **hard**? | <code>Map<string, string></code> | The set of desired hard limits for each named resource. More info: http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota.<br/>__*Optional*__
+**scopeSelector**? | <code>Array<[ResourceQuotaSpecScopeSelector](#cdktf-provider-kubernetes-resourcequotaspecscopeselector)></code> | scope_selector block.<br/>__*Optional*__
 **scopes**? | <code>Array<string></code> | A collection of filters that must match each object tracked by a quota.<br/>__*Optional*__
+
+
+
+## struct ResourceQuotaSpecScopeSelector  <a id="cdktf-provider-kubernetes-resourcequotaspecscopeselector"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**matchExpression**? | <code>Array<[ResourceQuotaSpecScopeSelectorMatchExpression](#cdktf-provider-kubernetes-resourcequotaspecscopeselectormatchexpression)></code> | match_expression block.<br/>__*Optional*__
+
+
+
+## struct ResourceQuotaSpecScopeSelectorMatchExpression  <a id="cdktf-provider-kubernetes-resourcequotaspecscopeselectormatchexpression"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**operator** | <code>string</code> | Represents a scope's relationship to a set of values.
+**scopeName** | <code>string</code> | The name of the scope that the selector applies to.
+**values**? | <code>Array<string></code> | A list of scope selector requirements by scope of the resources.<br/>__*Optional*__
 
 
 
