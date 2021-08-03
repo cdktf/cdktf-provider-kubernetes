@@ -14,6 +14,7 @@ export * from './horizontal-pod-autoscaler';
 export * from './ingress';
 export * from './job';
 export * from './limit-range';
+export * from './manifest';
 export * from './mutating-webhook-configuration';
 export * from './namespace';
 export * from './network-policy';

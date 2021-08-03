@@ -91,6 +91,12 @@ export interface KubernetesProviderConfig {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#exec KubernetesProvider#exec}
   */
   readonly exec?: KubernetesProviderExec[];
+  /**
+  * experiments block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#experiments KubernetesProvider#experiments}
+  */
+  readonly experiments?: KubernetesProviderExperiments[];
 }
 export interface KubernetesProviderExec {
   /**
@@ -118,6 +124,22 @@ function kubernetesProviderExecToTerraform(struct?: KubernetesProviderExec): any
     args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
     command: cdktf.stringToTerraform(struct!.command),
     env: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.env),
+  }
+}
+
+export interface KubernetesProviderExperiments {
+  /**
+  * Enable the `kubernetes_manifest` resource.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#manifest_resource KubernetesProvider#manifest_resource}
+  */
+  readonly manifestResource?: boolean;
+}
+
+function kubernetesProviderExperimentsToTerraform(struct?: KubernetesProviderExperiments): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    manifest_resource: cdktf.booleanToTerraform(struct!.manifestResource),
   }
 }
 
@@ -162,6 +184,7 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
     this._username = config.username;
     this._alias = config.alias;
     this._exec = config.exec;
+    this._experiments = config.experiments;
   }
 
   // ==========
@@ -408,6 +431,22 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
     return this._exec
   }
 
+  // experiments - computed: false, optional: true, required: false
+  private _experiments?: KubernetesProviderExperiments[];
+  public get experiments() {
+    return this._experiments;
+  }
+  public set experiments(value: KubernetesProviderExperiments[]  | undefined) {
+    this._experiments = value;
+  }
+  public resetExperiments() {
+    this._experiments = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get experimentsInput() {
+    return this._experiments
+  }
+
   // =========
   // SYNTHESIS
   // =========
@@ -429,6 +468,7 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
       username: cdktf.stringToTerraform(this._username),
       alias: cdktf.stringToTerraform(this._alias),
       exec: cdktf.listMapper(kubernetesProviderExecToTerraform)(this._exec),
+      experiments: cdktf.listMapper(kubernetesProviderExperimentsToTerraform)(this._experiments),
     };
   }
 }

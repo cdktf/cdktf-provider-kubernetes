@@ -221,6 +221,7 @@ Name|Description
 [Job](#cdktf-provider-kubernetes-job)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html kubernetes_job}.
 [KubernetesProvider](#cdktf-provider-kubernetes-kubernetesprovider)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes kubernetes}.
 [LimitRange](#cdktf-provider-kubernetes-limitrange)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html kubernetes_limit_range}.
+[Manifest](#cdktf-provider-kubernetes-manifest)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html kubernetes_manifest}.
 [MutatingWebhookConfiguration](#cdktf-provider-kubernetes-mutatingwebhookconfiguration)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html kubernetes_mutating_webhook_configuration}.
 [Namespace](#cdktf-provider-kubernetes-namespace)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/namespace.html kubernetes_namespace}.
 [NetworkPolicy](#cdktf-provider-kubernetes-networkpolicy)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/network_policy.html kubernetes_network_policy}.
@@ -1060,10 +1061,13 @@ Name|Description
 [JobTimeouts](#cdktf-provider-kubernetes-jobtimeouts)|*No description*
 [KubernetesProviderConfig](#cdktf-provider-kubernetes-kubernetesproviderconfig)|*No description*
 [KubernetesProviderExec](#cdktf-provider-kubernetes-kubernetesproviderexec)|*No description*
+[KubernetesProviderExperiments](#cdktf-provider-kubernetes-kubernetesproviderexperiments)|*No description*
 [LimitRangeConfig](#cdktf-provider-kubernetes-limitrangeconfig)|*No description*
 [LimitRangeMetadata](#cdktf-provider-kubernetes-limitrangemetadata)|*No description*
 [LimitRangeSpec](#cdktf-provider-kubernetes-limitrangespec)|*No description*
 [LimitRangeSpecLimit](#cdktf-provider-kubernetes-limitrangespeclimit)|*No description*
+[ManifestConfig](#cdktf-provider-kubernetes-manifestconfig)|*No description*
+[ManifestWaitFor](#cdktf-provider-kubernetes-manifestwaitfor)|*No description*
 [MutatingWebhookConfigurationConfig](#cdktf-provider-kubernetes-mutatingwebhookconfigurationconfig)|*No description*
 [MutatingWebhookConfigurationMetadata](#cdktf-provider-kubernetes-mutatingwebhookconfigurationmetadata)|*No description*
 [MutatingWebhookConfigurationWebhook](#cdktf-provider-kubernetes-mutatingwebhookconfigurationwebhook)|*No description*
@@ -9839,6 +9843,7 @@ new KubernetesProvider(scope: Construct, id: string, config?: KubernetesProvider
   * **configPath** (<code>string</code>)  Path to the kube config file. Can be set with KUBE_CONFIG_PATH. __*Optional*__
   * **configPaths** (<code>Array<string></code>)  A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable. __*Optional*__
   * **exec** (<code>Array<[KubernetesProviderExec](#cdktf-provider-kubernetes-kubernetesproviderexec)></code>)  exec block. __*Optional*__
+  * **experiments** (<code>Array<[KubernetesProviderExperiments](#cdktf-provider-kubernetes-kubernetesproviderexperiments)></code>)  experiments block. __*Optional*__
   * **host** (<code>string</code>)  The hostname (in form of URI) of Kubernetes master. __*Optional*__
   * **insecure** (<code>boolean</code>)  Whether server should be accessed without verifying the TLS certificate. __*Optional*__
   * **password** (<code>string</code>)  The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint. __*Optional*__
@@ -9872,6 +9877,8 @@ Name | Type | Description
 **configPathsInput**? | <code>Array<string></code> | __*Optional*__
 **exec**? | <code>Array<[KubernetesProviderExec](#cdktf-provider-kubernetes-kubernetesproviderexec)></code> | __*Optional*__
 **execInput**? | <code>Array<[KubernetesProviderExec](#cdktf-provider-kubernetes-kubernetesproviderexec)></code> | __*Optional*__
+**experiments**? | <code>Array<[KubernetesProviderExperiments](#cdktf-provider-kubernetes-kubernetesproviderexperiments)></code> | __*Optional*__
+**experimentsInput**? | <code>Array<[KubernetesProviderExperiments](#cdktf-provider-kubernetes-kubernetesproviderexperiments)></code> | __*Optional*__
 **host**? | <code>string</code> | __*Optional*__
 **hostInput**? | <code>string</code> | __*Optional*__
 **insecure**? | <code>boolean</code> | __*Optional*__
@@ -10000,6 +10007,18 @@ resetConfigPaths(): void
 
 ```ts
 resetExec(): void
+```
+
+
+
+
+
+#### resetExperiments() <a id="cdktf-provider-kubernetes-kubernetesprovider-resetexperiments"></a>
+
+
+
+```ts
+resetExperiments(): void
 ```
 
 
@@ -10135,6 +10154,88 @@ resetSpec(): void
 
 
 #### protected synthesizeAttributes() <a id="cdktf-provider-kubernetes-limitrange-synthesizeattributes"></a>
+
+
+
+```ts
+protected synthesizeAttributes(): Map<string, any>
+```
+
+
+__Returns__:
+* <code>Map<string, any></code>
+
+
+
+## class Manifest  <a id="cdktf-provider-kubernetes-manifest"></a>
+
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html kubernetes_manifest}.
+
+__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Extends__: [TerraformResource](#cdktf-terraformresource)
+
+### Initializer
+
+
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html kubernetes_manifest} Resource.
+
+```ts
+new Manifest(scope: Construct, id: string, config: ManifestConfig)
+```
+
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
+* **config** (<code>[ManifestConfig](#cdktf-provider-kubernetes-manifestconfig)</code>)  *No description*
+  * **count** (<code>number</code>)  *No description* __*Optional*__
+  * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
+  * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **manifest** (<code>Map<string, any></code>)  A Kubernetes manifest describing the desired state of the resource in HCL format. 
+  * **object** (<code>Map<string, any></code>)  The resulting resource state, as returned by the API server after applying the desired state from `manifest`. __*Optional*__
+  * **waitFor** (<code>[ManifestWaitFor](#cdktf-provider-kubernetes-manifestwaitfor)</code>)  A map of attribute paths and desired patterns to be matched. __*Optional*__
+
+
+
+### Properties
+
+
+Name | Type | Description 
+-----|------|-------------
+**manifest** | <code>Map<string, any></code> | <span></span>
+**manifestInput** | <code>Map<string, any></code> | <span></span>
+**object** | <code>Map<string, any></code> | <span></span>
+**waitFor** | <code>[ManifestWaitFor](#cdktf-provider-kubernetes-manifestwaitfor)</code> | <span></span>
+**objectInput**? | <code>Map<string, any></code> | __*Optional*__
+**waitForInput**? | <code>[ManifestWaitFor](#cdktf-provider-kubernetes-manifestwaitfor)</code> | __*Optional*__
+
+### Methods
+
+
+#### resetObject() <a id="cdktf-provider-kubernetes-manifest-resetobject"></a>
+
+
+
+```ts
+resetObject(): void
+```
+
+
+
+
+
+#### resetWaitFor() <a id="cdktf-provider-kubernetes-manifest-resetwaitfor"></a>
+
+
+
+```ts
+resetWaitFor(): void
+```
+
+
+
+
+
+#### protected synthesizeAttributes() <a id="cdktf-provider-kubernetes-manifest-synthesizeattributes"></a>
 
 
 
@@ -24337,6 +24438,7 @@ Name | Type | Description
 **configPath**? | <code>string</code> | Path to the kube config file. Can be set with KUBE_CONFIG_PATH.<br/>__*Optional*__
 **configPaths**? | <code>Array<string></code> | A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable.<br/>__*Optional*__
 **exec**? | <code>Array<[KubernetesProviderExec](#cdktf-provider-kubernetes-kubernetesproviderexec)></code> | exec block.<br/>__*Optional*__
+**experiments**? | <code>Array<[KubernetesProviderExperiments](#cdktf-provider-kubernetes-kubernetesproviderexperiments)></code> | experiments block.<br/>__*Optional*__
 **host**? | <code>string</code> | The hostname (in form of URI) of Kubernetes master.<br/>__*Optional*__
 **insecure**? | <code>boolean</code> | Whether server should be accessed without verifying the TLS certificate.<br/>__*Optional*__
 **password**? | <code>string</code> | The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint.<br/>__*Optional*__
@@ -24358,6 +24460,19 @@ Name | Type | Description
 **command** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#command KubernetesProvider#command}.
 **args**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#args KubernetesProvider#args}.<br/>__*Optional*__
 **env**? | <code>Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#env KubernetesProvider#env}.<br/>__*Optional*__
+
+
+
+## struct KubernetesProviderExperiments  <a id="cdktf-provider-kubernetes-kubernetesproviderexperiments"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**manifestResource**? | <code>boolean</code> | Enable the `kubernetes_manifest` resource.<br/>__*Optional*__
 
 
 
@@ -24424,6 +24539,38 @@ Name | Type | Description
 **maxLimitRequestRatio**? | <code>Map<string, string></code> | The named resource must have a request and limit that are both non-zero where limit divided by request is less than or equal to the enumerated value;<br/>__*Optional*__
 **min**? | <code>Map<string, string></code> | Min usage constraints on this kind by resource name.<br/>__*Optional*__
 **type**? | <code>string</code> | Type of resource that this limit applies to.<br/>__*Optional*__
+
+
+
+## struct ManifestConfig  <a id="cdktf-provider-kubernetes-manifestconfig"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**manifest** | <code>Map<string, any></code> | A Kubernetes manifest describing the desired state of the resource in HCL format.
+**count**?🔹 | <code>number</code> | __*Optional*__
+**dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
+**object**? | <code>Map<string, any></code> | The resulting resource state, as returned by the API server after applying the desired state from `manifest`.<br/>__*Optional*__
+**provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**waitFor**? | <code>[ManifestWaitFor](#cdktf-provider-kubernetes-manifestwaitfor)</code> | A map of attribute paths and desired patterns to be matched.<br/>__*Optional*__
+
+
+
+## struct ManifestWaitFor  <a id="cdktf-provider-kubernetes-manifestwaitfor"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**fields**? | <code>Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#fields Manifest#fields}.<br/>__*Optional*__
 
 
 
