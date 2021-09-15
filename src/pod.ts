@@ -32,7 +32,7 @@ export interface PodMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#annotations Pod#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -44,7 +44,7 @@ export interface PodMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#labels Pod#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -260,7 +260,7 @@ export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDurin
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#match_labels Pod#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -366,7 +366,7 @@ export interface PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuring
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#match_labels Pod#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -472,7 +472,7 @@ export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredD
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#match_labels Pod#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -578,7 +578,7 @@ export interface PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDu
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#match_labels Pod#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -696,7 +696,7 @@ export interface PodSpecContainerEnvValueFromConfigMapKeyRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#optional Pod#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function podSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: PodSpecContainerEnvValueFromConfigMapKeyRef): any {
@@ -775,7 +775,7 @@ export interface PodSpecContainerEnvValueFromSecretKeyRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#optional Pod#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function podSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?: PodSpecContainerEnvValueFromSecretKeyRef): any {
@@ -866,7 +866,7 @@ export interface PodSpecContainerEnvFromConfigMapRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#optional Pod#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function podSpecContainerEnvFromConfigMapRefToTerraform(struct?: PodSpecContainerEnvFromConfigMapRef): any {
@@ -889,7 +889,7 @@ export interface PodSpecContainerEnvFromSecretRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#optional Pod#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function podSpecContainerEnvFromSecretRefToTerraform(struct?: PodSpecContainerEnvFromSecretRef): any {
@@ -1589,13 +1589,13 @@ export interface PodSpecContainerResources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#limits Pod#limits}
   */
-  readonly limits?: { [key: string]: string };
+  readonly limits?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#requests Pod#requests}
   */
-  readonly requests?: { [key: string]: string };
+  readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
 function podSpecContainerResourcesToTerraform(struct?: PodSpecContainerResources): any {
@@ -1672,19 +1672,19 @@ export interface PodSpecContainerSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#allow_privilege_escalation Pod#allow_privilege_escalation}
   */
-  readonly allowPrivilegeEscalation?: boolean;
+  readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#privileged Pod#privileged}
   */
-  readonly privileged?: boolean;
+  readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only_root_filesystem Pod#read_only_root_filesystem}
   */
-  readonly readOnlyRootFilesystem?: boolean;
+  readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -1696,7 +1696,7 @@ export interface PodSpecContainerSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#run_as_non_root Pod#run_as_non_root}
   */
-  readonly runAsNonRoot?: boolean;
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -1919,7 +1919,7 @@ export interface PodSpecContainerVolumeMount {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   * 
@@ -1975,13 +1975,13 @@ export interface PodSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#stdin Pod#stdin}
   */
-  readonly stdin?: boolean;
+  readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#stdin_once Pod#stdin_once}
   */
-  readonly stdinOnce?: boolean;
+  readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
   * 
@@ -1999,7 +1999,7 @@ export interface PodSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#tty Pod#tty}
   */
-  readonly tty?: boolean;
+  readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
   * 
@@ -2205,7 +2205,7 @@ export interface PodSpecInitContainerEnvValueFromConfigMapKeyRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#optional Pod#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function podSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: PodSpecInitContainerEnvValueFromConfigMapKeyRef): any {
@@ -2284,7 +2284,7 @@ export interface PodSpecInitContainerEnvValueFromSecretKeyRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#optional Pod#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function podSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct?: PodSpecInitContainerEnvValueFromSecretKeyRef): any {
@@ -2375,7 +2375,7 @@ export interface PodSpecInitContainerEnvFromConfigMapRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#optional Pod#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function podSpecInitContainerEnvFromConfigMapRefToTerraform(struct?: PodSpecInitContainerEnvFromConfigMapRef): any {
@@ -2398,7 +2398,7 @@ export interface PodSpecInitContainerEnvFromSecretRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#optional Pod#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function podSpecInitContainerEnvFromSecretRefToTerraform(struct?: PodSpecInitContainerEnvFromSecretRef): any {
@@ -3098,13 +3098,13 @@ export interface PodSpecInitContainerResources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#limits Pod#limits}
   */
-  readonly limits?: { [key: string]: string };
+  readonly limits?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#requests Pod#requests}
   */
-  readonly requests?: { [key: string]: string };
+  readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
 function podSpecInitContainerResourcesToTerraform(struct?: PodSpecInitContainerResources): any {
@@ -3181,19 +3181,19 @@ export interface PodSpecInitContainerSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#allow_privilege_escalation Pod#allow_privilege_escalation}
   */
-  readonly allowPrivilegeEscalation?: boolean;
+  readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#privileged Pod#privileged}
   */
-  readonly privileged?: boolean;
+  readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only_root_filesystem Pod#read_only_root_filesystem}
   */
-  readonly readOnlyRootFilesystem?: boolean;
+  readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -3205,7 +3205,7 @@ export interface PodSpecInitContainerSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#run_as_non_root Pod#run_as_non_root}
   */
-  readonly runAsNonRoot?: boolean;
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -3428,7 +3428,7 @@ export interface PodSpecInitContainerVolumeMount {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   * 
@@ -3484,13 +3484,13 @@ export interface PodSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#stdin Pod#stdin}
   */
-  readonly stdin?: boolean;
+  readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#stdin_once Pod#stdin_once}
   */
-  readonly stdinOnce?: boolean;
+  readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
   * 
@@ -3508,7 +3508,7 @@ export interface PodSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#tty Pod#tty}
   */
-  readonly tty?: boolean;
+  readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
   * 
@@ -3698,7 +3698,7 @@ export interface PodSpecSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#run_as_non_root Pod#run_as_non_root}
   */
-  readonly runAsNonRoot?: boolean;
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
   * 
@@ -3818,7 +3818,7 @@ export interface PodSpecTopologySpreadConstraintLabelSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#match_labels Pod#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -3890,7 +3890,7 @@ export interface PodSpecVolumeAwsElasticBlockStore {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
   * 
@@ -3945,7 +3945,7 @@ export interface PodSpecVolumeAzureDisk {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function podSpecVolumeAzureDiskToTerraform(struct?: PodSpecVolumeAzureDisk): any {
@@ -3966,7 +3966,7 @@ export interface PodSpecVolumeAzureFile {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The name of secret that contains Azure Storage Account Name and Key
   * 
@@ -4038,7 +4038,7 @@ export interface PodSpecVolumeCephFs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
   * 
@@ -4083,7 +4083,7 @@ export interface PodSpecVolumeCinder {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
   * 
@@ -4149,7 +4149,7 @@ export interface PodSpecVolumeConfigMap {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#optional Pod#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
@@ -4278,13 +4278,13 @@ export interface PodSpecVolumeCsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Attributes of the volume to publish.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#volume_attributes Pod#volume_attributes}
   */
-  readonly volumeAttributes?: { [key: string]: string };
+  readonly volumeAttributes?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
   * 
@@ -4482,7 +4482,7 @@ export interface PodSpecVolumeFc {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * FC target worldwide names (WWNs)
   * 
@@ -4542,13 +4542,13 @@ export interface PodSpecVolumeFlexVolume {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#options Pod#options}
   */
-  readonly options?: { [key: string]: string };
+  readonly options?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
   * 
@@ -4615,7 +4615,7 @@ export interface PodSpecVolumeGcePersistentDisk {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function podSpecVolumeGcePersistentDiskToTerraform(struct?: PodSpecVolumeGcePersistentDisk): any {
@@ -4676,7 +4676,7 @@ export interface PodSpecVolumeGlusterfs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function podSpecVolumeGlusterfsToTerraform(struct?: PodSpecVolumeGlusterfs): any {
@@ -4741,7 +4741,7 @@ export interface PodSpecVolumeIscsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
   * 
@@ -4790,7 +4790,7 @@ export interface PodSpecVolumeNfs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
   * 
@@ -4820,7 +4820,7 @@ export interface PodSpecVolumePersistentVolumeClaim {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function podSpecVolumePersistentVolumeClaimToTerraform(struct?: PodSpecVolumePersistentVolumeClaim): any {
@@ -4896,7 +4896,7 @@ export interface PodSpecVolumeProjectedSourcesConfigMap {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#optional Pod#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
@@ -5058,7 +5058,7 @@ export interface PodSpecVolumeProjectedSourcesSecret {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#optional Pod#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
@@ -5178,7 +5178,7 @@ export interface PodSpecVolumeQuobyte {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
   * 
@@ -5275,7 +5275,7 @@ export interface PodSpecVolumeRbd {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#read_only Pod#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
   * 
@@ -5340,7 +5340,7 @@ export interface PodSpecVolumeSecret {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#optional Pod#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets
   * 
@@ -5598,7 +5598,7 @@ export interface PodSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#automount_service_account_token Pod#automount_service_account_token}
   */
-  readonly automountServiceAccountToken?: boolean;
+  readonly automountServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
   * Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy).
   * 
@@ -5610,25 +5610,25 @@ export interface PodSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#enable_service_links Pod#enable_service_links}
   */
-  readonly enableServiceLinks?: boolean;
+  readonly enableServiceLinks?: boolean | cdktf.IResolvable;
   /**
   * Use the host's ipc namespace. Optional: Defaults to false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#host_ipc Pod#host_ipc}
   */
-  readonly hostIpc?: boolean;
+  readonly hostIpc?: boolean | cdktf.IResolvable;
   /**
   * Host networking requested for this pod. Use the host's network namespace. If this option is set, the ports that will be used must be specified.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#host_network Pod#host_network}
   */
-  readonly hostNetwork?: boolean;
+  readonly hostNetwork?: boolean | cdktf.IResolvable;
   /**
   * Use the host's pid namespace.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#host_pid Pod#host_pid}
   */
-  readonly hostPid?: boolean;
+  readonly hostPid?: boolean | cdktf.IResolvable;
   /**
   * Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.
   * 
@@ -5646,7 +5646,7 @@ export interface PodSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#node_selector Pod#node_selector}
   */
-  readonly nodeSelector?: { [key: string]: string };
+  readonly nodeSelector?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default.
   * 
@@ -5670,7 +5670,7 @@ export interface PodSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html#share_process_namespace Pod#share_process_namespace}
   */
-  readonly shareProcessNamespace?: boolean;
+  readonly shareProcessNamespace?: boolean | cdktf.IResolvable;
   /**
   * If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..
   * 
@@ -5808,6 +5808,11 @@ function podTimeoutsToTerraform(struct?: PodTimeouts): any {
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html kubernetes_pod}
 */
 export class Pod extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_pod";
 
   // ===========
   // INITIALIZER

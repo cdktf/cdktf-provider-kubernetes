@@ -32,13 +32,13 @@ export interface ClusterRoleBindingMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#annotations ClusterRoleBinding#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the clusterRoleBinding. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#labels ClusterRoleBinding#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the clusterRoleBinding, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -128,6 +128,11 @@ function clusterRoleBindingSubjectToTerraform(struct?: ClusterRoleBindingSubject
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html kubernetes_cluster_role_binding}
 */
 export class ClusterRoleBinding extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_cluster_role_binding";
 
   // ===========
   // INITIALIZER

@@ -12,7 +12,7 @@ export interface PersistentVolumeClaimConfig extends cdktf.TerraformMetaArgument
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_claim.html#wait_until_bound PersistentVolumeClaim#wait_until_bound}
   */
-  readonly waitUntilBound?: boolean;
+  readonly waitUntilBound?: boolean | cdktf.IResolvable;
   /**
   * metadata block
   * 
@@ -38,7 +38,7 @@ export interface PersistentVolumeClaimMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_claim.html#annotations PersistentVolumeClaim#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -50,7 +50,7 @@ export interface PersistentVolumeClaimMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_claim.html#labels PersistentVolumeClaim#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the persistent volume claim, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -82,13 +82,13 @@ export interface PersistentVolumeClaimSpecResources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_claim.html#limits PersistentVolumeClaim#limits}
   */
-  readonly limits?: { [key: string]: string };
+  readonly limits?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map describing the minimum amount of compute resources required. If this is omitted for a container, it defaults to `limits` if that is explicitly specified, otherwise to an implementation-defined value. More info: http://kubernetes.io/docs/user-guide/compute-resources/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_claim.html#requests PersistentVolumeClaim#requests}
   */
-  readonly requests?: { [key: string]: string };
+  readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
 function persistentVolumeClaimSpecResourcesToTerraform(struct?: PersistentVolumeClaimSpecResources): any {
@@ -135,7 +135,7 @@ export interface PersistentVolumeClaimSpecSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_claim.html#match_labels PersistentVolumeClaim#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -216,6 +216,11 @@ function persistentVolumeClaimTimeoutsToTerraform(struct?: PersistentVolumeClaim
 */
 export class PersistentVolumeClaim extends cdktf.TerraformResource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_persistent_volume_claim";
+
   // ===========
   // INITIALIZER
   // ===========
@@ -254,11 +259,11 @@ export class PersistentVolumeClaim extends cdktf.TerraformResource {
   }
 
   // wait_until_bound - computed: false, optional: true, required: false
-  private _waitUntilBound?: boolean;
+  private _waitUntilBound?: boolean | cdktf.IResolvable;
   public get waitUntilBound() {
     return this.getBooleanAttribute('wait_until_bound');
   }
-  public set waitUntilBound(value: boolean ) {
+  public set waitUntilBound(value: boolean | cdktf.IResolvable ) {
     this._waitUntilBound = value;
   }
   public resetWaitUntilBound() {

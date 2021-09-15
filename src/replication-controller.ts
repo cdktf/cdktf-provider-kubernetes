@@ -32,7 +32,7 @@ export interface ReplicationControllerMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#annotations ReplicationController#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -44,7 +44,7 @@ export interface ReplicationControllerMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#labels ReplicationController#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the replication controller, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -76,7 +76,7 @@ export interface ReplicationControllerSpecTemplateMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#annotations ReplicationController#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -88,7 +88,7 @@ export interface ReplicationControllerSpecTemplateMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#labels ReplicationController#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the replication controller's template, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -304,7 +304,7 @@ export interface ReplicationControllerSpecTemplateSpecAffinityPodAffinityPreferr
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#match_labels ReplicationController#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -410,7 +410,7 @@ export interface ReplicationControllerSpecTemplateSpecAffinityPodAffinityRequire
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#match_labels ReplicationController#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -516,7 +516,7 @@ export interface ReplicationControllerSpecTemplateSpecAffinityPodAntiAffinityPre
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#match_labels ReplicationController#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -622,7 +622,7 @@ export interface ReplicationControllerSpecTemplateSpecAffinityPodAntiAffinityReq
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#match_labels ReplicationController#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -740,7 +740,7 @@ export interface ReplicationControllerSpecTemplateSpecContainerEnvValueFromConfi
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#optional ReplicationController#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: ReplicationControllerSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef): any {
@@ -819,7 +819,7 @@ export interface ReplicationControllerSpecTemplateSpecContainerEnvValueFromSecre
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#optional ReplicationController#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?: ReplicationControllerSpecTemplateSpecContainerEnvValueFromSecretKeyRef): any {
@@ -910,7 +910,7 @@ export interface ReplicationControllerSpecTemplateSpecContainerEnvFromConfigMapR
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#optional ReplicationController#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(struct?: ReplicationControllerSpecTemplateSpecContainerEnvFromConfigMapRef): any {
@@ -933,7 +933,7 @@ export interface ReplicationControllerSpecTemplateSpecContainerEnvFromSecretRef 
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#optional ReplicationController#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct?: ReplicationControllerSpecTemplateSpecContainerEnvFromSecretRef): any {
@@ -1633,13 +1633,13 @@ export interface ReplicationControllerSpecTemplateSpecContainerResources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#limits ReplicationController#limits}
   */
-  readonly limits?: { [key: string]: string };
+  readonly limits?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#requests ReplicationController#requests}
   */
-  readonly requests?: { [key: string]: string };
+  readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecContainerResourcesToTerraform(struct?: ReplicationControllerSpecTemplateSpecContainerResources): any {
@@ -1716,19 +1716,19 @@ export interface ReplicationControllerSpecTemplateSpecContainerSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#allow_privilege_escalation ReplicationController#allow_privilege_escalation}
   */
-  readonly allowPrivilegeEscalation?: boolean;
+  readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#privileged ReplicationController#privileged}
   */
-  readonly privileged?: boolean;
+  readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only_root_filesystem ReplicationController#read_only_root_filesystem}
   */
-  readonly readOnlyRootFilesystem?: boolean;
+  readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -1740,7 +1740,7 @@ export interface ReplicationControllerSpecTemplateSpecContainerSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#run_as_non_root ReplicationController#run_as_non_root}
   */
-  readonly runAsNonRoot?: boolean;
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -1963,7 +1963,7 @@ export interface ReplicationControllerSpecTemplateSpecContainerVolumeMount {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   * 
@@ -2019,13 +2019,13 @@ export interface ReplicationControllerSpecTemplateSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#stdin ReplicationController#stdin}
   */
-  readonly stdin?: boolean;
+  readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#stdin_once ReplicationController#stdin_once}
   */
-  readonly stdinOnce?: boolean;
+  readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
   * 
@@ -2043,7 +2043,7 @@ export interface ReplicationControllerSpecTemplateSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#tty ReplicationController#tty}
   */
-  readonly tty?: boolean;
+  readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
   * 
@@ -2249,7 +2249,7 @@ export interface ReplicationControllerSpecTemplateSpecInitContainerEnvValueFromC
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#optional ReplicationController#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: ReplicationControllerSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef): any {
@@ -2328,7 +2328,7 @@ export interface ReplicationControllerSpecTemplateSpecInitContainerEnvValueFromS
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#optional ReplicationController#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct?: ReplicationControllerSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef): any {
@@ -2419,7 +2419,7 @@ export interface ReplicationControllerSpecTemplateSpecInitContainerEnvFromConfig
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#optional ReplicationController#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(struct?: ReplicationControllerSpecTemplateSpecInitContainerEnvFromConfigMapRef): any {
@@ -2442,7 +2442,7 @@ export interface ReplicationControllerSpecTemplateSpecInitContainerEnvFromSecret
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#optional ReplicationController#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(struct?: ReplicationControllerSpecTemplateSpecInitContainerEnvFromSecretRef): any {
@@ -3142,13 +3142,13 @@ export interface ReplicationControllerSpecTemplateSpecInitContainerResources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#limits ReplicationController#limits}
   */
-  readonly limits?: { [key: string]: string };
+  readonly limits?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#requests ReplicationController#requests}
   */
-  readonly requests?: { [key: string]: string };
+  readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecInitContainerResourcesToTerraform(struct?: ReplicationControllerSpecTemplateSpecInitContainerResources): any {
@@ -3225,19 +3225,19 @@ export interface ReplicationControllerSpecTemplateSpecInitContainerSecurityConte
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#allow_privilege_escalation ReplicationController#allow_privilege_escalation}
   */
-  readonly allowPrivilegeEscalation?: boolean;
+  readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#privileged ReplicationController#privileged}
   */
-  readonly privileged?: boolean;
+  readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only_root_filesystem ReplicationController#read_only_root_filesystem}
   */
-  readonly readOnlyRootFilesystem?: boolean;
+  readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -3249,7 +3249,7 @@ export interface ReplicationControllerSpecTemplateSpecInitContainerSecurityConte
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#run_as_non_root ReplicationController#run_as_non_root}
   */
-  readonly runAsNonRoot?: boolean;
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -3472,7 +3472,7 @@ export interface ReplicationControllerSpecTemplateSpecInitContainerVolumeMount {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   * 
@@ -3528,13 +3528,13 @@ export interface ReplicationControllerSpecTemplateSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#stdin ReplicationController#stdin}
   */
-  readonly stdin?: boolean;
+  readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#stdin_once ReplicationController#stdin_once}
   */
-  readonly stdinOnce?: boolean;
+  readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
   * 
@@ -3552,7 +3552,7 @@ export interface ReplicationControllerSpecTemplateSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#tty ReplicationController#tty}
   */
-  readonly tty?: boolean;
+  readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
   * 
@@ -3742,7 +3742,7 @@ export interface ReplicationControllerSpecTemplateSpecSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#run_as_non_root ReplicationController#run_as_non_root}
   */
-  readonly runAsNonRoot?: boolean;
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
   * 
@@ -3862,7 +3862,7 @@ export interface ReplicationControllerSpecTemplateSpecTopologySpreadConstraintLa
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#match_labels ReplicationController#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -3934,7 +3934,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeAwsElasticBlockStore
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
   * 
@@ -3989,7 +3989,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeAzureDisk {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecVolumeAzureDiskToTerraform(struct?: ReplicationControllerSpecTemplateSpecVolumeAzureDisk): any {
@@ -4010,7 +4010,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeAzureFile {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The name of secret that contains Azure Storage Account Name and Key
   * 
@@ -4082,7 +4082,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeCephFs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
   * 
@@ -4127,7 +4127,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeCinder {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
   * 
@@ -4193,7 +4193,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeConfigMap {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#optional ReplicationController#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
@@ -4322,13 +4322,13 @@ export interface ReplicationControllerSpecTemplateSpecVolumeCsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Attributes of the volume to publish.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#volume_attributes ReplicationController#volume_attributes}
   */
-  readonly volumeAttributes?: { [key: string]: string };
+  readonly volumeAttributes?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
   * 
@@ -4526,7 +4526,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeFc {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * FC target worldwide names (WWNs)
   * 
@@ -4586,13 +4586,13 @@ export interface ReplicationControllerSpecTemplateSpecVolumeFlexVolume {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#options ReplicationController#options}
   */
-  readonly options?: { [key: string]: string };
+  readonly options?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
   * 
@@ -4659,7 +4659,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeGcePersistentDisk {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct?: ReplicationControllerSpecTemplateSpecVolumeGcePersistentDisk): any {
@@ -4720,7 +4720,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeGlusterfs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecVolumeGlusterfsToTerraform(struct?: ReplicationControllerSpecTemplateSpecVolumeGlusterfs): any {
@@ -4785,7 +4785,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeIscsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
   * 
@@ -4834,7 +4834,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeNfs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
   * 
@@ -4864,7 +4864,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumePersistentVolumeClai
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function replicationControllerSpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct?: ReplicationControllerSpecTemplateSpecVolumePersistentVolumeClaim): any {
@@ -4940,7 +4940,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConf
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#optional ReplicationController#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
@@ -5102,7 +5102,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecr
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#optional ReplicationController#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
@@ -5222,7 +5222,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeQuobyte {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
   * 
@@ -5319,7 +5319,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeRbd {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#read_only ReplicationController#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
   * 
@@ -5384,7 +5384,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeSecret {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#optional ReplicationController#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets
   * 
@@ -5642,7 +5642,7 @@ export interface ReplicationControllerSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#automount_service_account_token ReplicationController#automount_service_account_token}
   */
-  readonly automountServiceAccountToken?: boolean;
+  readonly automountServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
   * Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy).
   * 
@@ -5654,25 +5654,25 @@ export interface ReplicationControllerSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#enable_service_links ReplicationController#enable_service_links}
   */
-  readonly enableServiceLinks?: boolean;
+  readonly enableServiceLinks?: boolean | cdktf.IResolvable;
   /**
   * Use the host's ipc namespace. Optional: Defaults to false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#host_ipc ReplicationController#host_ipc}
   */
-  readonly hostIpc?: boolean;
+  readonly hostIpc?: boolean | cdktf.IResolvable;
   /**
   * Host networking requested for this pod. Use the host's network namespace. If this option is set, the ports that will be used must be specified.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#host_network ReplicationController#host_network}
   */
-  readonly hostNetwork?: boolean;
+  readonly hostNetwork?: boolean | cdktf.IResolvable;
   /**
   * Use the host's pid namespace.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#host_pid ReplicationController#host_pid}
   */
-  readonly hostPid?: boolean;
+  readonly hostPid?: boolean | cdktf.IResolvable;
   /**
   * Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.
   * 
@@ -5690,7 +5690,7 @@ export interface ReplicationControllerSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#node_selector ReplicationController#node_selector}
   */
-  readonly nodeSelector?: { [key: string]: string };
+  readonly nodeSelector?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default.
   * 
@@ -5714,7 +5714,7 @@ export interface ReplicationControllerSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#share_process_namespace ReplicationController#share_process_namespace}
   */
-  readonly shareProcessNamespace?: boolean;
+  readonly shareProcessNamespace?: boolean | cdktf.IResolvable;
   /**
   * If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..
   * 
@@ -5869,7 +5869,7 @@ export interface ReplicationControllerSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html#selector ReplicationController#selector}
   */
-  readonly selector: { [key: string]: string };
+  readonly selector: { [key: string]: string } | cdktf.IResolvable;
   /**
   * template block
   * 
@@ -5917,6 +5917,11 @@ function replicationControllerTimeoutsToTerraform(struct?: ReplicationController
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html kubernetes_replication_controller}
 */
 export class ReplicationController extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_replication_controller";
 
   // ===========
   // INITIALIZER

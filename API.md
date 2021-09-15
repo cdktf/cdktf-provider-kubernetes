@@ -1067,6 +1067,8 @@ Name|Description
 [LimitRangeSpec](#cdktf-provider-kubernetes-limitrangespec)|*No description*
 [LimitRangeSpecLimit](#cdktf-provider-kubernetes-limitrangespeclimit)|*No description*
 [ManifestConfig](#cdktf-provider-kubernetes-manifestconfig)|*No description*
+[ManifestFieldManager](#cdktf-provider-kubernetes-manifestfieldmanager)|*No description*
+[ManifestTimeouts](#cdktf-provider-kubernetes-manifesttimeouts)|*No description*
 [ManifestWaitFor](#cdktf-provider-kubernetes-manifestwaitfor)|*No description*
 [MutatingWebhookConfigurationConfig](#cdktf-provider-kubernetes-mutatingwebhookconfigurationconfig)|*No description*
 [MutatingWebhookConfigurationMetadata](#cdktf-provider-kubernetes-mutatingwebhookconfigurationmetadata)|*No description*
@@ -1750,7 +1752,7 @@ Name|Description
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service.html kubernetes_api_service}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -1784,6 +1786,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[ApiServiceMetadata](#cdktf-provider-kubernetes-apiservicemetadata)></code> | <span></span>
 **spec** | <code>Array<[ApiServiceSpec](#cdktf-provider-kubernetes-apiservicespec)></code> | <span></span>
 **specInput** | <code>Array<[ApiServiceSpec](#cdktf-provider-kubernetes-apiservicespec)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -1806,7 +1809,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html kubernetes_certificate_signing_request}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -1827,7 +1830,7 @@ new CertificateSigningRequest(scope: Construct, id: string, config: CertificateS
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **metadata** (<code>Array<[CertificateSigningRequestMetadata](#cdktf-provider-kubernetes-certificatesigningrequestmetadata)></code>)  metadata block. 
   * **spec** (<code>Array<[CertificateSigningRequestSpec](#cdktf-provider-kubernetes-certificatesigningrequestspec)></code>)  spec block. 
-  * **autoApprove** (<code>boolean</code>)  Automatically approve the CertificateSigningRequest. __*Optional*__
+  * **autoApprove** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Automatically approve the CertificateSigningRequest. __*Optional*__
   * **timeouts** (<code>[CertificateSigningRequestTimeouts](#cdktf-provider-kubernetes-certificatesigningrequesttimeouts)</code>)  timeouts block. __*Optional*__
 
 
@@ -1837,7 +1840,7 @@ new CertificateSigningRequest(scope: Construct, id: string, config: CertificateS
 
 Name | Type | Description 
 -----|------|-------------
-**autoApprove** | <code>boolean</code> | <span></span>
+**autoApprove** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **certificate** | <code>string</code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[CertificateSigningRequestMetadata](#cdktf-provider-kubernetes-certificatesigningrequestmetadata)></code> | <span></span>
@@ -1845,8 +1848,9 @@ Name | Type | Description
 **spec** | <code>Array<[CertificateSigningRequestSpec](#cdktf-provider-kubernetes-certificatesigningrequestspec)></code> | <span></span>
 **specInput** | <code>Array<[CertificateSigningRequestSpec](#cdktf-provider-kubernetes-certificatesigningrequestspec)></code> | <span></span>
 **timeouts** | <code>[CertificateSigningRequestTimeouts](#cdktf-provider-kubernetes-certificatesigningrequesttimeouts)</code> | <span></span>
-**autoApproveInput**? | <code>boolean</code> | __*Optional*__
+**autoApproveInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **timeoutsInput**? | <code>[CertificateSigningRequestTimeouts](#cdktf-provider-kubernetes-certificatesigningrequesttimeouts)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -1893,7 +1897,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role.html kubernetes_cluster_role}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -1930,6 +1934,7 @@ Name | Type | Description
 **rule** | <code>Array<[ClusterRoleRule](#cdktf-provider-kubernetes-clusterrolerule)></code> | <span></span>
 **aggregationRuleInput**? | <code>Array<[ClusterRoleAggregationRule](#cdktf-provider-kubernetes-clusterroleaggregationrule)></code> | __*Optional*__
 **ruleInput**? | <code>Array<[ClusterRoleRule](#cdktf-provider-kubernetes-clusterrolerule)></code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -1976,7 +1981,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html kubernetes_cluster_role_binding}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -2013,6 +2018,7 @@ Name | Type | Description
 **roleRefInput** | <code>Array<[ClusterRoleBindingRoleRef](#cdktf-provider-kubernetes-clusterrolebindingroleref)></code> | <span></span>
 **subject** | <code>Array<[ClusterRoleBindingSubject](#cdktf-provider-kubernetes-clusterrolebindingsubject)></code> | <span></span>
 **subjectInput** | <code>Array<[ClusterRoleBindingSubject](#cdktf-provider-kubernetes-clusterrolebindingsubject)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -2035,7 +2041,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/config_map.html kubernetes_config_map}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -2055,8 +2061,8 @@ new ConfigMap(scope: Construct, id: string, config: ConfigMapConfig)
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **metadata** (<code>Array<[ConfigMapMetadata](#cdktf-provider-kubernetes-configmapmetadata)></code>)  metadata block. 
-  * **binaryData** (<code>Map<string, string></code>)  BinaryData contains the binary data. __*Optional*__
-  * **data** (<code>Map<string, string></code>)  Data contains the configuration data. __*Optional*__
+  * **binaryData** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  BinaryData contains the binary data. __*Optional*__
+  * **data** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  Data contains the configuration data. __*Optional*__
 
 
 
@@ -2065,13 +2071,14 @@ new ConfigMap(scope: Construct, id: string, config: ConfigMapConfig)
 
 Name | Type | Description 
 -----|------|-------------
-**binaryData** | <code>Map<string, string></code> | <span></span>
-**data** | <code>Map<string, string></code> | <span></span>
+**binaryData** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
+**data** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[ConfigMapMetadata](#cdktf-provider-kubernetes-configmapmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[ConfigMapMetadata](#cdktf-provider-kubernetes-configmapmetadata)></code> | <span></span>
-**binaryDataInput**? | <code>Map<string, string></code> | __*Optional*__
-**dataInput**? | <code>Map<string, string></code> | __*Optional*__
+**binaryDataInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**dataInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -2118,7 +2125,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html kubernetes_cron_job}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -2155,6 +2162,7 @@ Name | Type | Description
 **specInput** | <code>Array<[CronJobSpec](#cdktf-provider-kubernetes-cronjobspec)></code> | <span></span>
 **timeouts** | <code>[CronJobTimeouts](#cdktf-provider-kubernetes-cronjobtimeouts)</code> | <span></span>
 **timeoutsInput**? | <code>[CronJobTimeouts](#cdktf-provider-kubernetes-cronjobtimeouts)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -2189,7 +2197,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/csi_driver.html kubernetes_csi_driver}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -2223,6 +2231,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[CsiDriverMetadata](#cdktf-provider-kubernetes-csidrivermetadata)></code> | <span></span>
 **spec** | <code>Array<[CsiDriverSpec](#cdktf-provider-kubernetes-csidriverspec)></code> | <span></span>
 **specInput**? | <code>Array<[CsiDriverSpec](#cdktf-provider-kubernetes-csidriverspec)></code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -2257,7 +2266,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset.html kubernetes_daemonset}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -2279,7 +2288,7 @@ new Daemonset(scope: Construct, id: string, config: DaemonsetConfig)
   * **metadata** (<code>Array<[DaemonsetMetadata](#cdktf-provider-kubernetes-daemonsetmetadata)></code>)  metadata block. 
   * **spec** (<code>Array<[DaemonsetSpec](#cdktf-provider-kubernetes-daemonsetspec)></code>)  spec block. 
   * **timeouts** (<code>[DaemonsetTimeouts](#cdktf-provider-kubernetes-daemonsettimeouts)</code>)  timeouts block. __*Optional*__
-  * **waitForRollout** (<code>boolean</code>)  Wait for the rollout of the deployment to complete. Defaults to true. __*Optional*__
+  * **waitForRollout** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Wait for the rollout of the deployment to complete. Defaults to true. __*Optional*__
 
 
 
@@ -2294,9 +2303,10 @@ Name | Type | Description
 **spec** | <code>Array<[DaemonsetSpec](#cdktf-provider-kubernetes-daemonsetspec)></code> | <span></span>
 **specInput** | <code>Array<[DaemonsetSpec](#cdktf-provider-kubernetes-daemonsetspec)></code> | <span></span>
 **timeouts** | <code>[DaemonsetTimeouts](#cdktf-provider-kubernetes-daemonsettimeouts)</code> | <span></span>
-**waitForRollout** | <code>boolean</code> | <span></span>
+**waitForRollout** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **timeoutsInput**? | <code>[DaemonsetTimeouts](#cdktf-provider-kubernetes-daemonsettimeouts)</code> | __*Optional*__
-**waitForRolloutInput**? | <code>boolean</code> | __*Optional*__
+**waitForRolloutInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -2343,7 +2353,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/all_namespaces.html kubernetes_all_namespaces}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -2372,6 +2382,7 @@ Name | Type | Description
 -----|------|-------------
 **id** | <code>string</code> | <span></span>
 **namespaces** | <code>Array<string></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -2394,7 +2405,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map.html kubernetes_config_map}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -2425,6 +2436,7 @@ Name | Type | Description
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[DataKubernetesConfigMapMetadata](#cdktf-provider-kubernetes-datakubernetesconfigmapmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[DataKubernetesConfigMapMetadata](#cdktf-provider-kubernetes-datakubernetesconfigmapmetadata)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -2473,7 +2485,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress.html kubernetes_ingress}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -2504,6 +2516,7 @@ Name | Type | Description
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[DataKubernetesIngressMetadata](#cdktf-provider-kubernetes-datakubernetesingressmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[DataKubernetesIngressMetadata](#cdktf-provider-kubernetes-datakubernetesingressmetadata)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -2860,7 +2873,7 @@ Name | Type | Description
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace.html kubernetes_namespace}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -2891,6 +2904,7 @@ Name | Type | Description
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[DataKubernetesNamespaceMetadata](#cdktf-provider-kubernetes-datakubernetesnamespacemetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[DataKubernetesNamespaceMetadata](#cdktf-provider-kubernetes-datakubernetesnamespacemetadata)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -2956,7 +2970,7 @@ Name | Type | Description
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/persistent_volume_claim.html kubernetes_persistent_volume_claim}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -2990,6 +3004,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[DataKubernetesPersistentVolumeClaimMetadata](#cdktf-provider-kubernetes-datakubernetespersistentvolumeclaimmetadata)></code> | <span></span>
 **spec** | <code>Array<[DataKubernetesPersistentVolumeClaimSpec](#cdktf-provider-kubernetes-datakubernetespersistentvolumeclaimspec)></code> | <span></span>
 **specInput**? | <code>Array<[DataKubernetesPersistentVolumeClaimSpec](#cdktf-provider-kubernetes-datakubernetespersistentvolumeclaimspec)></code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -3024,7 +3039,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html kubernetes_pod}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -3056,6 +3071,7 @@ Name | Type | Description
 **metadata** | <code>Array<[DataKubernetesPodMetadata](#cdktf-provider-kubernetes-datakubernetespodmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[DataKubernetesPodMetadata](#cdktf-provider-kubernetes-datakubernetespodmetadata)></code> | <span></span>
 **status** | <code>string</code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -3115,15 +3131,15 @@ Name | Type | Description
 -----|------|-------------
 **activeDeadlineSeconds** | <code>number</code> | <span></span>
 **affinity** | <code>any</code> | <span></span>
-**automountServiceAccountToken** | <code>boolean</code> | <span></span>
+**automountServiceAccountToken** | <code>any</code> | <span></span>
 **container** | <code>any</code> | <span></span>
 **dnsConfig** | <code>any</code> | <span></span>
 **dnsPolicy** | <code>string</code> | <span></span>
-**enableServiceLinks** | <code>boolean</code> | <span></span>
+**enableServiceLinks** | <code>any</code> | <span></span>
 **hostAliases** | <code>any</code> | <span></span>
-**hostIpc** | <code>boolean</code> | <span></span>
-**hostNetwork** | <code>boolean</code> | <span></span>
-**hostPid** | <code>boolean</code> | <span></span>
+**hostIpc** | <code>any</code> | <span></span>
+**hostNetwork** | <code>any</code> | <span></span>
+**hostPid** | <code>any</code> | <span></span>
 **hostname** | <code>string</code> | <span></span>
 **imagePullSecrets** | <code>any</code> | <span></span>
 **initContainer** | <code>any</code> | <span></span>
@@ -3134,7 +3150,7 @@ Name | Type | Description
 **restartPolicy** | <code>string</code> | <span></span>
 **securityContext** | <code>any</code> | <span></span>
 **serviceAccountName** | <code>string</code> | <span></span>
-**shareProcessNamespace** | <code>boolean</code> | <span></span>
+**shareProcessNamespace** | <code>any</code> | <span></span>
 **subdomain** | <code>string</code> | <span></span>
 **terminationGracePeriodSeconds** | <code>number</code> | <span></span>
 **toleration** | <code>any</code> | <span></span>
@@ -3935,11 +3951,11 @@ Name | Type | Description
 **resources** | <code>any</code> | <span></span>
 **securityContext** | <code>any</code> | <span></span>
 **startupProbe** | <code>any</code> | <span></span>
-**stdin** | <code>boolean</code> | <span></span>
-**stdinOnce** | <code>boolean</code> | <span></span>
+**stdin** | <code>any</code> | <span></span>
+**stdinOnce** | <code>any</code> | <span></span>
 **terminationMessagePath** | <code>string</code> | <span></span>
 **terminationMessagePolicy** | <code>string</code> | <span></span>
-**tty** | <code>boolean</code> | <span></span>
+**tty** | <code>any</code> | <span></span>
 **volumeMount** | <code>any</code> | <span></span>
 **workingDir** | <code>string</code> | <span></span>
 
@@ -4036,7 +4052,7 @@ new DataKubernetesPodSpecContainerEnvFromConfigMapRef(terraformResource: ITerraf
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | <span></span>
-**optional** | <code>boolean</code> | <span></span>
+**optional** | <code>any</code> | <span></span>
 
 
 
@@ -4067,7 +4083,7 @@ new DataKubernetesPodSpecContainerEnvFromSecretRef(terraformResource: ITerraform
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | <span></span>
-**optional** | <code>boolean</code> | <span></span>
+**optional** | <code>any</code> | <span></span>
 
 
 
@@ -4132,7 +4148,7 @@ Name | Type | Description
 -----|------|-------------
 **key** | <code>string</code> | <span></span>
 **name** | <code>string</code> | <span></span>
-**optional** | <code>boolean</code> | <span></span>
+**optional** | <code>any</code> | <span></span>
 
 
 
@@ -4227,7 +4243,7 @@ Name | Type | Description
 -----|------|-------------
 **key** | <code>string</code> | <span></span>
 **name** | <code>string</code> | <span></span>
-**optional** | <code>boolean</code> | <span></span>
+**optional** | <code>any</code> | <span></span>
 
 
 
@@ -4991,12 +5007,12 @@ new DataKubernetesPodSpecContainerSecurityContext(terraformResource: ITerraformR
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation** | <code>boolean</code> | <span></span>
+**allowPrivilegeEscalation** | <code>any</code> | <span></span>
 **capabilities** | <code>any</code> | <span></span>
-**privileged** | <code>boolean</code> | <span></span>
-**readOnlyRootFilesystem** | <code>boolean</code> | <span></span>
+**privileged** | <code>any</code> | <span></span>
+**readOnlyRootFilesystem** | <code>any</code> | <span></span>
 **runAsGroup** | <code>string</code> | <span></span>
-**runAsNonRoot** | <code>boolean</code> | <span></span>
+**runAsNonRoot** | <code>any</code> | <span></span>
 **runAsUser** | <code>string</code> | <span></span>
 **seLinuxOptions** | <code>any</code> | <span></span>
 
@@ -5257,7 +5273,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | <span></span>
 **mountPropagation** | <code>string</code> | <span></span>
 **name** | <code>string</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **subPath** | <code>string</code> | <span></span>
 
 
@@ -5426,11 +5442,11 @@ Name | Type | Description
 **resources** | <code>any</code> | <span></span>
 **securityContext** | <code>any</code> | <span></span>
 **startupProbe** | <code>any</code> | <span></span>
-**stdin** | <code>boolean</code> | <span></span>
-**stdinOnce** | <code>boolean</code> | <span></span>
+**stdin** | <code>any</code> | <span></span>
+**stdinOnce** | <code>any</code> | <span></span>
 **terminationMessagePath** | <code>string</code> | <span></span>
 **terminationMessagePolicy** | <code>string</code> | <span></span>
-**tty** | <code>boolean</code> | <span></span>
+**tty** | <code>any</code> | <span></span>
 **volumeMount** | <code>any</code> | <span></span>
 **workingDir** | <code>string</code> | <span></span>
 
@@ -5527,7 +5543,7 @@ new DataKubernetesPodSpecInitContainerEnvFromConfigMapRef(terraformResource: ITe
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | <span></span>
-**optional** | <code>boolean</code> | <span></span>
+**optional** | <code>any</code> | <span></span>
 
 
 
@@ -5558,7 +5574,7 @@ new DataKubernetesPodSpecInitContainerEnvFromSecretRef(terraformResource: ITerra
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | <span></span>
-**optional** | <code>boolean</code> | <span></span>
+**optional** | <code>any</code> | <span></span>
 
 
 
@@ -5623,7 +5639,7 @@ Name | Type | Description
 -----|------|-------------
 **key** | <code>string</code> | <span></span>
 **name** | <code>string</code> | <span></span>
-**optional** | <code>boolean</code> | <span></span>
+**optional** | <code>any</code> | <span></span>
 
 
 
@@ -5718,7 +5734,7 @@ Name | Type | Description
 -----|------|-------------
 **key** | <code>string</code> | <span></span>
 **name** | <code>string</code> | <span></span>
-**optional** | <code>boolean</code> | <span></span>
+**optional** | <code>any</code> | <span></span>
 
 
 
@@ -6482,12 +6498,12 @@ new DataKubernetesPodSpecInitContainerSecurityContext(terraformResource: ITerraf
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation** | <code>boolean</code> | <span></span>
+**allowPrivilegeEscalation** | <code>any</code> | <span></span>
 **capabilities** | <code>any</code> | <span></span>
-**privileged** | <code>boolean</code> | <span></span>
-**readOnlyRootFilesystem** | <code>boolean</code> | <span></span>
+**privileged** | <code>any</code> | <span></span>
+**readOnlyRootFilesystem** | <code>any</code> | <span></span>
 **runAsGroup** | <code>string</code> | <span></span>
-**runAsNonRoot** | <code>boolean</code> | <span></span>
+**runAsNonRoot** | <code>any</code> | <span></span>
 **runAsUser** | <code>string</code> | <span></span>
 **seLinuxOptions** | <code>any</code> | <span></span>
 
@@ -6748,7 +6764,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | <span></span>
 **mountPropagation** | <code>string</code> | <span></span>
 **name** | <code>string</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **subPath** | <code>string</code> | <span></span>
 
 
@@ -6811,7 +6827,7 @@ Name | Type | Description
 -----|------|-------------
 **fsGroup** | <code>string</code> | <span></span>
 **runAsGroup** | <code>string</code> | <span></span>
-**runAsNonRoot** | <code>boolean</code> | <span></span>
+**runAsNonRoot** | <code>any</code> | <span></span>
 **runAsUser** | <code>string</code> | <span></span>
 **seLinuxOptions** | <code>any</code> | <span></span>
 **supplementalGroups** | <code>any</code> | <span></span>
@@ -7097,7 +7113,7 @@ Name | Type | Description
 -----|------|-------------
 **fsType** | <code>string</code> | <span></span>
 **partition** | <code>number</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **volumeId** | <code>string</code> | <span></span>
 
 
@@ -7133,7 +7149,7 @@ Name | Type | Description
 **diskName** | <code>string</code> | <span></span>
 **fsType** | <code>string</code> | <span></span>
 **kind** | <code>string</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 
 
 
@@ -7163,7 +7179,7 @@ new DataKubernetesPodSpecVolumeAzureFile(terraformResource: ITerraformResource, 
 
 Name | Type | Description 
 -----|------|-------------
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **secretName** | <code>string</code> | <span></span>
 **secretNamespace** | <code>string</code> | <span></span>
 **shareName** | <code>string</code> | <span></span>
@@ -7198,7 +7214,7 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | <span></span>
 **path** | <code>string</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **secretFile** | <code>string</code> | <span></span>
 **secretRef** | <code>any</code> | <span></span>
 **user** | <code>string</code> | <span></span>
@@ -7263,7 +7279,7 @@ new DataKubernetesPodSpecVolumeCinder(terraformResource: ITerraformResource, ter
 Name | Type | Description 
 -----|------|-------------
 **fsType** | <code>string</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **volumeId** | <code>string</code> | <span></span>
 
 
@@ -7297,7 +7313,7 @@ Name | Type | Description
 **defaultMode** | <code>string</code> | <span></span>
 **items** | <code>any</code> | <span></span>
 **name** | <code>string</code> | <span></span>
-**optional** | <code>boolean</code> | <span></span>
+**optional** | <code>any</code> | <span></span>
 
 
 
@@ -7365,7 +7381,7 @@ Name | Type | Description
 **fsType** | <code>string</code> | <span></span>
 **nodePublishSecretRef** | <code>any</code> | <span></span>
 **nodeStageSecretRef** | <code>any</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **volumeAttributes** | <code>any</code> | <span></span>
 **volumeHandle** | <code>string</code> | <span></span>
 
@@ -7681,7 +7697,7 @@ Name | Type | Description
 -----|------|-------------
 **fsType** | <code>string</code> | <span></span>
 **lun** | <code>number</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **targetWwNs** | <code>Array<string></code> | <span></span>
 
 
@@ -7715,7 +7731,7 @@ Name | Type | Description
 **driver** | <code>string</code> | <span></span>
 **fsType** | <code>string</code> | <span></span>
 **options** | <code>any</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **secretRef** | <code>any</code> | <span></span>
 
 
@@ -7811,7 +7827,7 @@ Name | Type | Description
 **fsType** | <code>string</code> | <span></span>
 **partition** | <code>number</code> | <span></span>
 **pdName** | <code>string</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 
 
 
@@ -7875,7 +7891,7 @@ Name | Type | Description
 -----|------|-------------
 **endpointsName** | <code>string</code> | <span></span>
 **path** | <code>string</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 
 
 
@@ -7940,7 +7956,7 @@ Name | Type | Description
 **iqn** | <code>string</code> | <span></span>
 **iscsiInterface** | <code>string</code> | <span></span>
 **lun** | <code>number</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **targetPortal** | <code>string</code> | <span></span>
 
 
@@ -8002,7 +8018,7 @@ new DataKubernetesPodSpecVolumeNfs(terraformResource: ITerraformResource, terraf
 Name | Type | Description 
 -----|------|-------------
 **path** | <code>string</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **server** | <code>string</code> | <span></span>
 
 
@@ -8034,7 +8050,7 @@ new DataKubernetesPodSpecVolumePersistentVolumeClaim(terraformResource: ITerrafo
 Name | Type | Description 
 -----|------|-------------
 **claimName** | <code>string</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 
 
 
@@ -8161,7 +8177,7 @@ Name | Type | Description
 -----|------|-------------
 **items** | <code>any</code> | <span></span>
 **name** | <code>string</code> | <span></span>
-**optional** | <code>boolean</code> | <span></span>
+**optional** | <code>any</code> | <span></span>
 
 
 
@@ -8351,7 +8367,7 @@ Name | Type | Description
 -----|------|-------------
 **items** | <code>any</code> | <span></span>
 **name** | <code>string</code> | <span></span>
-**optional** | <code>boolean</code> | <span></span>
+**optional** | <code>any</code> | <span></span>
 
 
 
@@ -8446,7 +8462,7 @@ new DataKubernetesPodSpecVolumeQuobyte(terraformResource: ITerraformResource, te
 Name | Type | Description 
 -----|------|-------------
 **group** | <code>string</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **registry** | <code>string</code> | <span></span>
 **user** | <code>string</code> | <span></span>
 **volume** | <code>string</code> | <span></span>
@@ -8485,7 +8501,7 @@ Name | Type | Description
 **radosUser** | <code>string</code> | <span></span>
 **rbdImage** | <code>string</code> | <span></span>
 **rbdPool** | <code>string</code> | <span></span>
-**readOnly** | <code>boolean</code> | <span></span>
+**readOnly** | <code>any</code> | <span></span>
 **secretRef** | <code>any</code> | <span></span>
 
 
@@ -8549,7 +8565,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode** | <code>string</code> | <span></span>
 **items** | <code>any</code> | <span></span>
-**optional** | <code>boolean</code> | <span></span>
+**optional** | <code>any</code> | <span></span>
 **secretName** | <code>string</code> | <span></span>
 
 
@@ -8621,7 +8637,7 @@ Name | Type | Description
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html kubernetes_secret}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -8641,7 +8657,7 @@ new DataKubernetesSecret(scope: Construct, id: string, config: DataKubernetesSec
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **metadata** (<code>Array<[DataKubernetesSecretMetadata](#cdktf-provider-kubernetes-datakubernetessecretmetadata)></code>)  metadata block. 
-  * **binaryData** (<code>Map<string, string></code>)  A map of the secret data with values encoded in base64 format. __*Optional*__
+  * **binaryData** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  A map of the secret data with values encoded in base64 format. __*Optional*__
 
 
 
@@ -8650,12 +8666,13 @@ new DataKubernetesSecret(scope: Construct, id: string, config: DataKubernetesSec
 
 Name | Type | Description 
 -----|------|-------------
-**binaryData** | <code>Map<string, string></code> | <span></span>
+**binaryData** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[DataKubernetesSecretMetadata](#cdktf-provider-kubernetes-datakubernetessecretmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[DataKubernetesSecretMetadata](#cdktf-provider-kubernetes-datakubernetessecretmetadata)></code> | <span></span>
 **type** | <code>string</code> | <span></span>
-**binaryDataInput**? | <code>Map<string, string></code> | __*Optional*__
+**binaryDataInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -8703,7 +8720,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html kubernetes_service}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -8734,6 +8751,7 @@ Name | Type | Description
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[DataKubernetesServiceMetadata](#cdktf-provider-kubernetes-datakubernetesservicemetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[DataKubernetesServiceMetadata](#cdktf-provider-kubernetes-datakubernetesservicemetadata)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -8782,7 +8800,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html kubernetes_service_account}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -8810,11 +8828,12 @@ new DataKubernetesServiceAccount(scope: Construct, id: string, config: DataKuber
 
 Name | Type | Description 
 -----|------|-------------
-**automountServiceAccountToken** | <code>boolean</code> | <span></span>
+**automountServiceAccountToken** | <code>[IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **defaultSecretName** | <code>string</code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[DataKubernetesServiceAccountMetadata](#cdktf-provider-kubernetes-datakubernetesserviceaccountmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[DataKubernetesServiceAccountMetadata](#cdktf-provider-kubernetes-datakubernetesserviceaccountmetadata)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -8953,7 +8972,7 @@ Name | Type | Description
 **loadBalancerIp** | <code>string</code> | <span></span>
 **loadBalancerSourceRanges** | <code>Array<string></code> | <span></span>
 **port** | <code>any</code> | <span></span>
-**publishNotReadyAddresses** | <code>boolean</code> | <span></span>
+**publishNotReadyAddresses** | <code>any</code> | <span></span>
 **selector** | <code>any</code> | <span></span>
 **sessionAffinity** | <code>string</code> | <span></span>
 **type** | <code>string</code> | <span></span>
@@ -9089,7 +9108,7 @@ Name | Type | Description
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/storage_class.html kubernetes_storage_class}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -9110,9 +9129,9 @@ new DataKubernetesStorageClass(scope: Construct, id: string, config: DataKuberne
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **metadata** (<code>Array<[DataKubernetesStorageClassMetadata](#cdktf-provider-kubernetes-datakubernetesstorageclassmetadata)></code>)  metadata block. 
   * **allowedTopologies** (<code>Array<[DataKubernetesStorageClassAllowedTopologies](#cdktf-provider-kubernetes-datakubernetesstorageclassallowedtopologies)></code>)  allowed_topologies block. __*Optional*__
-  * **allowVolumeExpansion** (<code>boolean</code>)  Indicates whether the storage class allow volume expand. __*Optional*__
+  * **allowVolumeExpansion** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Indicates whether the storage class allow volume expand. __*Optional*__
   * **mountOptions** (<code>Array<string></code>)  Persistent Volumes that are dynamically created by a storage class will have the mount options specified. __*Optional*__
-  * **parameters** (<code>Map<string, string></code>)  The parameters for the provisioner that should create volumes of this storage class. __*Optional*__
+  * **parameters** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  The parameters for the provisioner that should create volumes of this storage class. __*Optional*__
   * **reclaimPolicy** (<code>string</code>)  Indicates the type of the reclaim policy. __*Optional*__
   * **volumeBindingMode** (<code>string</code>)  Indicates when volume binding and dynamic provisioning should occur. __*Optional*__
 
@@ -9123,22 +9142,23 @@ new DataKubernetesStorageClass(scope: Construct, id: string, config: DataKuberne
 
 Name | Type | Description 
 -----|------|-------------
-**allowVolumeExpansion** | <code>boolean</code> | <span></span>
+**allowVolumeExpansion** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **allowedTopologies** | <code>Array<[DataKubernetesStorageClassAllowedTopologies](#cdktf-provider-kubernetes-datakubernetesstorageclassallowedtopologies)></code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[DataKubernetesStorageClassMetadata](#cdktf-provider-kubernetes-datakubernetesstorageclassmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[DataKubernetesStorageClassMetadata](#cdktf-provider-kubernetes-datakubernetesstorageclassmetadata)></code> | <span></span>
 **mountOptions** | <code>Array<string></code> | <span></span>
-**parameters** | <code>Map<string, string></code> | <span></span>
+**parameters** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
 **reclaimPolicy** | <code>string</code> | <span></span>
 **storageProvisioner** | <code>string</code> | <span></span>
 **volumeBindingMode** | <code>string</code> | <span></span>
-**allowVolumeExpansionInput**? | <code>boolean</code> | __*Optional*__
+**allowVolumeExpansionInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **allowedTopologiesInput**? | <code>Array<[DataKubernetesStorageClassAllowedTopologies](#cdktf-provider-kubernetes-datakubernetesstorageclassallowedtopologies)></code> | __*Optional*__
 **mountOptionsInput**? | <code>Array<string></code> | __*Optional*__
-**parametersInput**? | <code>Map<string, string></code> | __*Optional*__
+**parametersInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
 **reclaimPolicyInput**? | <code>string</code> | __*Optional*__
 **volumeBindingModeInput**? | <code>string</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -9233,7 +9253,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account.html kubernetes_default_service_account}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -9253,7 +9273,7 @@ new DefaultServiceAccount(scope: Construct, id: string, config: DefaultServiceAc
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **metadata** (<code>Array<[DefaultServiceAccountMetadata](#cdktf-provider-kubernetes-defaultserviceaccountmetadata)></code>)  metadata block. 
-  * **automountServiceAccountToken** (<code>boolean</code>)  Enable automatic mounting of the service account token. __*Optional*__
+  * **automountServiceAccountToken** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Enable automatic mounting of the service account token. __*Optional*__
   * **imagePullSecret** (<code>Array<[DefaultServiceAccountImagePullSecret](#cdktf-provider-kubernetes-defaultserviceaccountimagepullsecret)></code>)  image_pull_secret block. __*Optional*__
   * **secret** (<code>Array<[DefaultServiceAccountSecret](#cdktf-provider-kubernetes-defaultserviceaccountsecret)></code>)  secret block. __*Optional*__
   * **timeouts** (<code>[DefaultServiceAccountTimeouts](#cdktf-provider-kubernetes-defaultserviceaccounttimeouts)</code>)  timeouts block. __*Optional*__
@@ -9265,7 +9285,7 @@ new DefaultServiceAccount(scope: Construct, id: string, config: DefaultServiceAc
 
 Name | Type | Description 
 -----|------|-------------
-**automountServiceAccountToken** | <code>boolean</code> | <span></span>
+**automountServiceAccountToken** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **defaultSecretName** | <code>string</code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **imagePullSecret** | <code>Array<[DefaultServiceAccountImagePullSecret](#cdktf-provider-kubernetes-defaultserviceaccountimagepullsecret)></code> | <span></span>
@@ -9273,10 +9293,11 @@ Name | Type | Description
 **metadataInput** | <code>Array<[DefaultServiceAccountMetadata](#cdktf-provider-kubernetes-defaultserviceaccountmetadata)></code> | <span></span>
 **secret** | <code>Array<[DefaultServiceAccountSecret](#cdktf-provider-kubernetes-defaultserviceaccountsecret)></code> | <span></span>
 **timeouts** | <code>[DefaultServiceAccountTimeouts](#cdktf-provider-kubernetes-defaultserviceaccounttimeouts)</code> | <span></span>
-**automountServiceAccountTokenInput**? | <code>boolean</code> | __*Optional*__
+**automountServiceAccountTokenInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **imagePullSecretInput**? | <code>Array<[DefaultServiceAccountImagePullSecret](#cdktf-provider-kubernetes-defaultserviceaccountimagepullsecret)></code> | __*Optional*__
 **secretInput**? | <code>Array<[DefaultServiceAccountSecret](#cdktf-provider-kubernetes-defaultserviceaccountsecret)></code> | __*Optional*__
 **timeoutsInput**? | <code>[DefaultServiceAccountTimeouts](#cdktf-provider-kubernetes-defaultserviceaccounttimeouts)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -9347,7 +9368,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment.html kubernetes_deployment}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -9369,7 +9390,7 @@ new Deployment(scope: Construct, id: string, config: DeploymentConfig)
   * **metadata** (<code>Array<[DeploymentMetadata](#cdktf-provider-kubernetes-deploymentmetadata)></code>)  metadata block. 
   * **spec** (<code>Array<[DeploymentSpec](#cdktf-provider-kubernetes-deploymentspec)></code>)  spec block. 
   * **timeouts** (<code>[DeploymentTimeouts](#cdktf-provider-kubernetes-deploymenttimeouts)</code>)  timeouts block. __*Optional*__
-  * **waitForRollout** (<code>boolean</code>)  Wait for the rollout of the deployment to complete. Defaults to true. __*Optional*__
+  * **waitForRollout** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Wait for the rollout of the deployment to complete. Defaults to true. __*Optional*__
 
 
 
@@ -9384,9 +9405,10 @@ Name | Type | Description
 **spec** | <code>Array<[DeploymentSpec](#cdktf-provider-kubernetes-deploymentspec)></code> | <span></span>
 **specInput** | <code>Array<[DeploymentSpec](#cdktf-provider-kubernetes-deploymentspec)></code> | <span></span>
 **timeouts** | <code>[DeploymentTimeouts](#cdktf-provider-kubernetes-deploymenttimeouts)</code> | <span></span>
-**waitForRollout** | <code>boolean</code> | <span></span>
+**waitForRollout** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **timeoutsInput**? | <code>[DeploymentTimeouts](#cdktf-provider-kubernetes-deploymenttimeouts)</code> | __*Optional*__
-**waitForRolloutInput**? | <code>boolean</code> | __*Optional*__
+**waitForRolloutInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -9433,7 +9455,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/endpoints.html kubernetes_endpoints}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -9467,6 +9489,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[EndpointsMetadata](#cdktf-provider-kubernetes-endpointsmetadata)></code> | <span></span>
 **subset** | <code>Array<[EndpointsSubset](#cdktf-provider-kubernetes-endpointssubset)></code> | <span></span>
 **subsetInput**? | <code>Array<[EndpointsSubset](#cdktf-provider-kubernetes-endpointssubset)></code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -9501,7 +9524,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html kubernetes_horizontal_pod_autoscaler}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -9535,6 +9558,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[HorizontalPodAutoscalerMetadata](#cdktf-provider-kubernetes-horizontalpodautoscalermetadata)></code> | <span></span>
 **spec** | <code>Array<[HorizontalPodAutoscalerSpec](#cdktf-provider-kubernetes-horizontalpodautoscalerspec)></code> | <span></span>
 **specInput** | <code>Array<[HorizontalPodAutoscalerSpec](#cdktf-provider-kubernetes-horizontalpodautoscalerspec)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -9557,7 +9581,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress.html kubernetes_ingress}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -9578,7 +9602,7 @@ new Ingress(scope: Construct, id: string, config: IngressConfig)
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **metadata** (<code>Array<[IngressMetadata](#cdktf-provider-kubernetes-ingressmetadata)></code>)  metadata block. 
   * **spec** (<code>Array<[IngressSpec](#cdktf-provider-kubernetes-ingressspec)></code>)  spec block. 
-  * **waitForLoadBalancer** (<code>boolean</code>)  Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created. __*Optional*__
+  * **waitForLoadBalancer** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created. __*Optional*__
 
 
 
@@ -9592,8 +9616,9 @@ Name | Type | Description
 **metadataInput** | <code>Array<[IngressMetadata](#cdktf-provider-kubernetes-ingressmetadata)></code> | <span></span>
 **spec** | <code>Array<[IngressSpec](#cdktf-provider-kubernetes-ingressspec)></code> | <span></span>
 **specInput** | <code>Array<[IngressSpec](#cdktf-provider-kubernetes-ingressspec)></code> | <span></span>
-**waitForLoadBalancer** | <code>boolean</code> | <span></span>
-**waitForLoadBalancerInput**? | <code>boolean</code> | __*Optional*__
+**waitForLoadBalancer** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
+**waitForLoadBalancerInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -9732,7 +9757,7 @@ Name | Type | Description
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html kubernetes_job}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -9754,7 +9779,7 @@ new Job(scope: Construct, id: string, config: JobConfig)
   * **metadata** (<code>Array<[JobMetadata](#cdktf-provider-kubernetes-jobmetadata)></code>)  metadata block. 
   * **spec** (<code>Array<[JobSpec](#cdktf-provider-kubernetes-jobspec)></code>)  spec block. 
   * **timeouts** (<code>[JobTimeouts](#cdktf-provider-kubernetes-jobtimeouts)</code>)  timeouts block. __*Optional*__
-  * **waitForCompletion** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#wait_for_completion Job#wait_for_completion}. __*Optional*__
+  * **waitForCompletion** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#wait_for_completion Job#wait_for_completion}. __*Optional*__
 
 
 
@@ -9769,9 +9794,10 @@ Name | Type | Description
 **spec** | <code>Array<[JobSpec](#cdktf-provider-kubernetes-jobspec)></code> | <span></span>
 **specInput** | <code>Array<[JobSpec](#cdktf-provider-kubernetes-jobspec)></code> | <span></span>
 **timeouts** | <code>[JobTimeouts](#cdktf-provider-kubernetes-jobtimeouts)</code> | <span></span>
-**waitForCompletion** | <code>boolean</code> | <span></span>
+**waitForCompletion** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **timeoutsInput**? | <code>[JobTimeouts](#cdktf-provider-kubernetes-jobtimeouts)</code> | __*Optional*__
-**waitForCompletionInput**? | <code>boolean</code> | __*Optional*__
+**waitForCompletionInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -9818,7 +9844,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes kubernetes}.
 
-__Implements__: [IConstruct](#constructs-iconstruct)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [TerraformProvider](#cdktf-terraformprovider)
 
 ### Initializer
@@ -9845,7 +9871,7 @@ new KubernetesProvider(scope: Construct, id: string, config?: KubernetesProvider
   * **exec** (<code>Array<[KubernetesProviderExec](#cdktf-provider-kubernetes-kubernetesproviderexec)></code>)  exec block. __*Optional*__
   * **experiments** (<code>Array<[KubernetesProviderExperiments](#cdktf-provider-kubernetes-kubernetesproviderexperiments)></code>)  experiments block. __*Optional*__
   * **host** (<code>string</code>)  The hostname (in form of URI) of Kubernetes master. __*Optional*__
-  * **insecure** (<code>boolean</code>)  Whether server should be accessed without verifying the TLS certificate. __*Optional*__
+  * **insecure** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Whether server should be accessed without verifying the TLS certificate. __*Optional*__
   * **password** (<code>string</code>)  The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint. __*Optional*__
   * **token** (<code>string</code>)  Token to authenticate an service account. __*Optional*__
   * **username** (<code>string</code>)  The username to use for HTTP basic authentication when accessing the Kubernetes master endpoint. __*Optional*__
@@ -9881,14 +9907,15 @@ Name | Type | Description
 **experimentsInput**? | <code>Array<[KubernetesProviderExperiments](#cdktf-provider-kubernetes-kubernetesproviderexperiments)></code> | __*Optional*__
 **host**? | <code>string</code> | __*Optional*__
 **hostInput**? | <code>string</code> | __*Optional*__
-**insecure**? | <code>boolean</code> | __*Optional*__
-**insecureInput**? | <code>boolean</code> | __*Optional*__
+**insecure**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**insecureInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **password**? | <code>string</code> | __*Optional*__
 **passwordInput**? | <code>string</code> | __*Optional*__
 **token**? | <code>string</code> | __*Optional*__
 **tokenInput**? | <code>string</code> | __*Optional*__
 **username**? | <code>string</code> | __*Optional*__
 **usernameInput**? | <code>string</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -10103,7 +10130,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html kubernetes_limit_range}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10137,6 +10164,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[LimitRangeMetadata](#cdktf-provider-kubernetes-limitrangemetadata)></code> | <span></span>
 **spec** | <code>Array<[LimitRangeSpec](#cdktf-provider-kubernetes-limitrangespec)></code> | <span></span>
 **specInput**? | <code>Array<[LimitRangeSpec](#cdktf-provider-kubernetes-limitrangespec)></code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -10171,7 +10199,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html kubernetes_manifest}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10190,8 +10218,11 @@ new Manifest(scope: Construct, id: string, config: ManifestConfig)
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
-  * **manifest** (<code>Map<string, any></code>)  A Kubernetes manifest describing the desired state of the resource in HCL format. 
-  * **object** (<code>Map<string, any></code>)  The resulting resource state, as returned by the API server after applying the desired state from `manifest`. __*Optional*__
+  * **manifest** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, any></code>)  A Kubernetes manifest describing the desired state of the resource in HCL format. 
+  * **computedFields** (<code>Array<string></code>)  List of manifest fields whose values can be altered by the API server during 'apply'. Defaults to: ["metadata.annotations", "metadata.labels"]. __*Optional*__
+  * **fieldManager** (<code>Array<[ManifestFieldManager](#cdktf-provider-kubernetes-manifestfieldmanager)></code>)  field_manager block. __*Optional*__
+  * **object** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, any></code>)  The resulting resource state, as returned by the API server after applying the desired state from `manifest`. __*Optional*__
+  * **timeouts** (<code>Array<[ManifestTimeouts](#cdktf-provider-kubernetes-manifesttimeouts)></code>)  timeouts block. __*Optional*__
   * **waitFor** (<code>[ManifestWaitFor](#cdktf-provider-kubernetes-manifestwaitfor)</code>)  A map of attribute paths and desired patterns to be matched. __*Optional*__
 
 
@@ -10201,14 +10232,45 @@ new Manifest(scope: Construct, id: string, config: ManifestConfig)
 
 Name | Type | Description 
 -----|------|-------------
-**manifest** | <code>Map<string, any></code> | <span></span>
-**manifestInput** | <code>Map<string, any></code> | <span></span>
-**object** | <code>Map<string, any></code> | <span></span>
+**computedFields** | <code>Array<string></code> | <span></span>
+**fieldManager** | <code>Array<[ManifestFieldManager](#cdktf-provider-kubernetes-manifestfieldmanager)></code> | <span></span>
+**manifest** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, any></code> | <span></span>
+**manifestInput** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, any></code> | <span></span>
+**object** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, any></code> | <span></span>
+**timeouts** | <code>Array<[ManifestTimeouts](#cdktf-provider-kubernetes-manifesttimeouts)></code> | <span></span>
 **waitFor** | <code>[ManifestWaitFor](#cdktf-provider-kubernetes-manifestwaitfor)</code> | <span></span>
-**objectInput**? | <code>Map<string, any></code> | __*Optional*__
+**computedFieldsInput**? | <code>Array<string></code> | __*Optional*__
+**fieldManagerInput**? | <code>Array<[ManifestFieldManager](#cdktf-provider-kubernetes-manifestfieldmanager)></code> | __*Optional*__
+**objectInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, any></code> | __*Optional*__
+**timeoutsInput**? | <code>Array<[ManifestTimeouts](#cdktf-provider-kubernetes-manifesttimeouts)></code> | __*Optional*__
 **waitForInput**? | <code>[ManifestWaitFor](#cdktf-provider-kubernetes-manifestwaitfor)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
+
+
+#### resetComputedFields() <a id="cdktf-provider-kubernetes-manifest-resetcomputedfields"></a>
+
+
+
+```ts
+resetComputedFields(): void
+```
+
+
+
+
+
+#### resetFieldManager() <a id="cdktf-provider-kubernetes-manifest-resetfieldmanager"></a>
+
+
+
+```ts
+resetFieldManager(): void
+```
+
+
+
 
 
 #### resetObject() <a id="cdktf-provider-kubernetes-manifest-resetobject"></a>
@@ -10217,6 +10279,18 @@ Name | Type | Description
 
 ```ts
 resetObject(): void
+```
+
+
+
+
+
+#### resetTimeouts() <a id="cdktf-provider-kubernetes-manifest-resettimeouts"></a>
+
+
+
+```ts
+resetTimeouts(): void
 ```
 
 
@@ -10253,7 +10327,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html kubernetes_mutating_webhook_configuration}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10287,6 +10361,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[MutatingWebhookConfigurationMetadata](#cdktf-provider-kubernetes-mutatingwebhookconfigurationmetadata)></code> | <span></span>
 **webhook** | <code>Array<[MutatingWebhookConfigurationWebhook](#cdktf-provider-kubernetes-mutatingwebhookconfigurationwebhook)></code> | <span></span>
 **webhookInput** | <code>Array<[MutatingWebhookConfigurationWebhook](#cdktf-provider-kubernetes-mutatingwebhookconfigurationwebhook)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -10309,7 +10384,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/namespace.html kubernetes_namespace}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10343,6 +10418,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[NamespaceMetadata](#cdktf-provider-kubernetes-namespacemetadata)></code> | <span></span>
 **timeouts** | <code>[NamespaceTimeouts](#cdktf-provider-kubernetes-namespacetimeouts)</code> | <span></span>
 **timeoutsInput**? | <code>[NamespaceTimeouts](#cdktf-provider-kubernetes-namespacetimeouts)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -10377,7 +10453,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/network_policy.html kubernetes_network_policy}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10411,6 +10487,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[NetworkPolicyMetadata](#cdktf-provider-kubernetes-networkpolicymetadata)></code> | <span></span>
 **spec** | <code>Array<[NetworkPolicySpec](#cdktf-provider-kubernetes-networkpolicyspec)></code> | <span></span>
 **specInput** | <code>Array<[NetworkPolicySpec](#cdktf-provider-kubernetes-networkpolicyspec)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -10433,7 +10510,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html kubernetes_persistent_volume}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10470,6 +10547,7 @@ Name | Type | Description
 **specInput** | <code>Array<[PersistentVolumeSpec](#cdktf-provider-kubernetes-persistentvolumespec)></code> | <span></span>
 **timeouts** | <code>[PersistentVolumeTimeouts](#cdktf-provider-kubernetes-persistentvolumetimeouts)</code> | <span></span>
 **timeoutsInput**? | <code>[PersistentVolumeTimeouts](#cdktf-provider-kubernetes-persistentvolumetimeouts)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -10504,7 +10582,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_claim.html kubernetes_persistent_volume_claim}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10526,7 +10604,7 @@ new PersistentVolumeClaim(scope: Construct, id: string, config: PersistentVolume
   * **metadata** (<code>Array<[PersistentVolumeClaimMetadata](#cdktf-provider-kubernetes-persistentvolumeclaimmetadata)></code>)  metadata block. 
   * **spec** (<code>Array<[PersistentVolumeClaimSpec](#cdktf-provider-kubernetes-persistentvolumeclaimspec)></code>)  spec block. 
   * **timeouts** (<code>[PersistentVolumeClaimTimeouts](#cdktf-provider-kubernetes-persistentvolumeclaimtimeouts)</code>)  timeouts block. __*Optional*__
-  * **waitUntilBound** (<code>boolean</code>)  Whether to wait for the claim to reach `Bound` state (to find volume in which to claim the space). __*Optional*__
+  * **waitUntilBound** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Whether to wait for the claim to reach `Bound` state (to find volume in which to claim the space). __*Optional*__
 
 
 
@@ -10541,9 +10619,10 @@ Name | Type | Description
 **spec** | <code>Array<[PersistentVolumeClaimSpec](#cdktf-provider-kubernetes-persistentvolumeclaimspec)></code> | <span></span>
 **specInput** | <code>Array<[PersistentVolumeClaimSpec](#cdktf-provider-kubernetes-persistentvolumeclaimspec)></code> | <span></span>
 **timeouts** | <code>[PersistentVolumeClaimTimeouts](#cdktf-provider-kubernetes-persistentvolumeclaimtimeouts)</code> | <span></span>
-**waitUntilBound** | <code>boolean</code> | <span></span>
+**waitUntilBound** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **timeoutsInput**? | <code>[PersistentVolumeClaimTimeouts](#cdktf-provider-kubernetes-persistentvolumeclaimtimeouts)</code> | __*Optional*__
-**waitUntilBoundInput**? | <code>boolean</code> | __*Optional*__
+**waitUntilBoundInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -10590,7 +10669,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod.html kubernetes_pod}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10627,6 +10706,7 @@ Name | Type | Description
 **specInput** | <code>Array<[PodSpec](#cdktf-provider-kubernetes-podspec)></code> | <span></span>
 **timeouts** | <code>[PodTimeouts](#cdktf-provider-kubernetes-podtimeouts)</code> | <span></span>
 **timeoutsInput**? | <code>[PodTimeouts](#cdktf-provider-kubernetes-podtimeouts)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -10661,7 +10741,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget.html kubernetes_pod_disruption_budget}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10695,6 +10775,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[PodDisruptionBudgetMetadata](#cdktf-provider-kubernetes-poddisruptionbudgetmetadata)></code> | <span></span>
 **spec** | <code>Array<[PodDisruptionBudgetSpec](#cdktf-provider-kubernetes-poddisruptionbudgetspec)></code> | <span></span>
 **specInput** | <code>Array<[PodDisruptionBudgetSpec](#cdktf-provider-kubernetes-poddisruptionbudgetspec)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -10717,7 +10798,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html kubernetes_pod_security_policy}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10751,6 +10832,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[PodSecurityPolicyMetadata](#cdktf-provider-kubernetes-podsecuritypolicymetadata)></code> | <span></span>
 **spec** | <code>Array<[PodSecurityPolicySpec](#cdktf-provider-kubernetes-podsecuritypolicyspec)></code> | <span></span>
 **specInput** | <code>Array<[PodSecurityPolicySpec](#cdktf-provider-kubernetes-podsecuritypolicyspec)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -10773,7 +10855,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html kubernetes_priority_class}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10795,7 +10877,7 @@ new PriorityClass(scope: Construct, id: string, config: PriorityClassConfig)
   * **metadata** (<code>Array<[PriorityClassMetadata](#cdktf-provider-kubernetes-priorityclassmetadata)></code>)  metadata block. 
   * **value** (<code>number</code>)  The value of this priority class. 
   * **description** (<code>string</code>)  An arbitrary string that usually provides guidelines on when this priority class should be used. __*Optional*__
-  * **globalDefault** (<code>boolean</code>)  Specifies whether this PriorityClass should be considered as the default priority for pods that do not have any priority class. __*Optional*__
+  * **globalDefault** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Specifies whether this PriorityClass should be considered as the default priority for pods that do not have any priority class. __*Optional*__
 
 
 
@@ -10805,14 +10887,15 @@ new PriorityClass(scope: Construct, id: string, config: PriorityClassConfig)
 Name | Type | Description 
 -----|------|-------------
 **description** | <code>string</code> | <span></span>
-**globalDefault** | <code>boolean</code> | <span></span>
+**globalDefault** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[PriorityClassMetadata](#cdktf-provider-kubernetes-priorityclassmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[PriorityClassMetadata](#cdktf-provider-kubernetes-priorityclassmetadata)></code> | <span></span>
 **value** | <code>number</code> | <span></span>
 **valueInput** | <code>number</code> | <span></span>
 **descriptionInput**? | <code>string</code> | __*Optional*__
-**globalDefaultInput**? | <code>boolean</code> | __*Optional*__
+**globalDefaultInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -10859,7 +10942,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller.html kubernetes_replication_controller}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10896,6 +10979,7 @@ Name | Type | Description
 **specInput** | <code>Array<[ReplicationControllerSpec](#cdktf-provider-kubernetes-replicationcontrollerspec)></code> | <span></span>
 **timeouts** | <code>[ReplicationControllerTimeouts](#cdktf-provider-kubernetes-replicationcontrollertimeouts)</code> | <span></span>
 **timeoutsInput**? | <code>[ReplicationControllerTimeouts](#cdktf-provider-kubernetes-replicationcontrollertimeouts)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -10930,7 +11014,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html kubernetes_resource_quota}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -10967,6 +11051,7 @@ Name | Type | Description
 **timeouts** | <code>[ResourceQuotaTimeouts](#cdktf-provider-kubernetes-resourcequotatimeouts)</code> | <span></span>
 **specInput**? | <code>Array<[ResourceQuotaSpec](#cdktf-provider-kubernetes-resourcequotaspec)></code> | __*Optional*__
 **timeoutsInput**? | <code>[ResourceQuotaTimeouts](#cdktf-provider-kubernetes-resourcequotatimeouts)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -11013,7 +11098,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role.html kubernetes_role}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -11047,6 +11132,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[RoleMetadata](#cdktf-provider-kubernetes-rolemetadata)></code> | <span></span>
 **rule** | <code>Array<[RoleRule](#cdktf-provider-kubernetes-rolerule)></code> | <span></span>
 **ruleInput** | <code>Array<[RoleRule](#cdktf-provider-kubernetes-rolerule)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -11069,7 +11155,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding.html kubernetes_role_binding}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -11106,6 +11192,7 @@ Name | Type | Description
 **roleRefInput** | <code>Array<[RoleBindingRoleRef](#cdktf-provider-kubernetes-rolebindingroleref)></code> | <span></span>
 **subject** | <code>Array<[RoleBindingSubject](#cdktf-provider-kubernetes-rolebindingsubject)></code> | <span></span>
 **subjectInput** | <code>Array<[RoleBindingSubject](#cdktf-provider-kubernetes-rolebindingsubject)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -11128,7 +11215,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html kubernetes_secret}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -11148,8 +11235,8 @@ new Secret(scope: Construct, id: string, config: SecretConfig)
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **metadata** (<code>Array<[SecretMetadata](#cdktf-provider-kubernetes-secretmetadata)></code>)  metadata block. 
-  * **binaryData** (<code>Map<string, string></code>)  A map of the secret data in base64 encoding. Use this for binary data. __*Optional*__
-  * **data** (<code>Map<string, string></code>)  A map of the secret data. __*Optional*__
+  * **binaryData** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  A map of the secret data in base64 encoding. Use this for binary data. __*Optional*__
+  * **data** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  A map of the secret data. __*Optional*__
   * **type** (<code>string</code>)  Type of secret. __*Optional*__
 
 
@@ -11159,15 +11246,16 @@ new Secret(scope: Construct, id: string, config: SecretConfig)
 
 Name | Type | Description 
 -----|------|-------------
-**binaryData** | <code>Map<string, string></code> | <span></span>
-**data** | <code>Map<string, string></code> | <span></span>
+**binaryData** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
+**data** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[SecretMetadata](#cdktf-provider-kubernetes-secretmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[SecretMetadata](#cdktf-provider-kubernetes-secretmetadata)></code> | <span></span>
 **type** | <code>string</code> | <span></span>
-**binaryDataInput**? | <code>Map<string, string></code> | __*Optional*__
-**dataInput**? | <code>Map<string, string></code> | __*Optional*__
+**binaryDataInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**dataInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
 **typeInput**? | <code>string</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -11226,7 +11314,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/service.html kubernetes_service}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -11248,7 +11336,7 @@ new Service(scope: Construct, id: string, config: ServiceConfig)
   * **metadata** (<code>Array<[ServiceMetadata](#cdktf-provider-kubernetes-servicemetadata)></code>)  metadata block. 
   * **spec** (<code>Array<[ServiceSpec](#cdktf-provider-kubernetes-servicespec)></code>)  spec block. 
   * **timeouts** (<code>[ServiceTimeouts](#cdktf-provider-kubernetes-servicetimeouts)</code>)  timeouts block. __*Optional*__
-  * **waitForLoadBalancer** (<code>boolean</code>)  Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created. __*Optional*__
+  * **waitForLoadBalancer** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created. __*Optional*__
 
 
 
@@ -11263,9 +11351,10 @@ Name | Type | Description
 **spec** | <code>Array<[ServiceSpec](#cdktf-provider-kubernetes-servicespec)></code> | <span></span>
 **specInput** | <code>Array<[ServiceSpec](#cdktf-provider-kubernetes-servicespec)></code> | <span></span>
 **timeouts** | <code>[ServiceTimeouts](#cdktf-provider-kubernetes-servicetimeouts)</code> | <span></span>
-**waitForLoadBalancer** | <code>boolean</code> | <span></span>
+**waitForLoadBalancer** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **timeoutsInput**? | <code>[ServiceTimeouts](#cdktf-provider-kubernetes-servicetimeouts)</code> | __*Optional*__
-**waitForLoadBalancerInput**? | <code>boolean</code> | __*Optional*__
+**waitForLoadBalancerInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -11325,7 +11414,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/service_account.html kubernetes_service_account}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -11345,7 +11434,7 @@ new ServiceAccount(scope: Construct, id: string, config: ServiceAccountConfig)
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **metadata** (<code>Array<[ServiceAccountMetadata](#cdktf-provider-kubernetes-serviceaccountmetadata)></code>)  metadata block. 
-  * **automountServiceAccountToken** (<code>boolean</code>)  Enable automatic mounting of the service account token. __*Optional*__
+  * **automountServiceAccountToken** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Enable automatic mounting of the service account token. __*Optional*__
   * **imagePullSecret** (<code>Array<[ServiceAccountImagePullSecret](#cdktf-provider-kubernetes-serviceaccountimagepullsecret)></code>)  image_pull_secret block. __*Optional*__
   * **secret** (<code>Array<[ServiceAccountSecret](#cdktf-provider-kubernetes-serviceaccountsecret)></code>)  secret block. __*Optional*__
   * **timeouts** (<code>[ServiceAccountTimeouts](#cdktf-provider-kubernetes-serviceaccounttimeouts)</code>)  timeouts block. __*Optional*__
@@ -11357,7 +11446,7 @@ new ServiceAccount(scope: Construct, id: string, config: ServiceAccountConfig)
 
 Name | Type | Description 
 -----|------|-------------
-**automountServiceAccountToken** | <code>boolean</code> | <span></span>
+**automountServiceAccountToken** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **defaultSecretName** | <code>string</code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **imagePullSecret** | <code>Array<[ServiceAccountImagePullSecret](#cdktf-provider-kubernetes-serviceaccountimagepullsecret)></code> | <span></span>
@@ -11365,10 +11454,11 @@ Name | Type | Description
 **metadataInput** | <code>Array<[ServiceAccountMetadata](#cdktf-provider-kubernetes-serviceaccountmetadata)></code> | <span></span>
 **secret** | <code>Array<[ServiceAccountSecret](#cdktf-provider-kubernetes-serviceaccountsecret)></code> | <span></span>
 **timeouts** | <code>[ServiceAccountTimeouts](#cdktf-provider-kubernetes-serviceaccounttimeouts)</code> | <span></span>
-**automountServiceAccountTokenInput**? | <code>boolean</code> | __*Optional*__
+**automountServiceAccountTokenInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **imagePullSecretInput**? | <code>Array<[ServiceAccountImagePullSecret](#cdktf-provider-kubernetes-serviceaccountimagepullsecret)></code> | __*Optional*__
 **secretInput**? | <code>Array<[ServiceAccountSecret](#cdktf-provider-kubernetes-serviceaccountsecret)></code> | __*Optional*__
 **timeoutsInput**? | <code>[ServiceAccountTimeouts](#cdktf-provider-kubernetes-serviceaccounttimeouts)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -11530,7 +11620,7 @@ Name | Type | Description
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html kubernetes_stateful_set}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -11552,7 +11642,7 @@ new StatefulSet(scope: Construct, id: string, config: StatefulSetConfig)
   * **metadata** (<code>Array<[StatefulSetMetadata](#cdktf-provider-kubernetes-statefulsetmetadata)></code>)  metadata block. 
   * **spec** (<code>Array<[StatefulSetSpec](#cdktf-provider-kubernetes-statefulsetspec)></code>)  spec block. 
   * **timeouts** (<code>[StatefulSetTimeouts](#cdktf-provider-kubernetes-statefulsettimeouts)</code>)  timeouts block. __*Optional*__
-  * **waitForRollout** (<code>boolean</code>)  Wait for the rollout of the stateful set to complete. Defaults to true. __*Optional*__
+  * **waitForRollout** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Wait for the rollout of the stateful set to complete. Defaults to true. __*Optional*__
 
 
 
@@ -11567,9 +11657,10 @@ Name | Type | Description
 **spec** | <code>Array<[StatefulSetSpec](#cdktf-provider-kubernetes-statefulsetspec)></code> | <span></span>
 **specInput** | <code>Array<[StatefulSetSpec](#cdktf-provider-kubernetes-statefulsetspec)></code> | <span></span>
 **timeouts** | <code>[StatefulSetTimeouts](#cdktf-provider-kubernetes-statefulsettimeouts)</code> | <span></span>
-**waitForRollout** | <code>boolean</code> | <span></span>
+**waitForRollout** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **timeoutsInput**? | <code>[StatefulSetTimeouts](#cdktf-provider-kubernetes-statefulsettimeouts)</code> | __*Optional*__
-**waitForRolloutInput**? | <code>boolean</code> | __*Optional*__
+**waitForRolloutInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -11616,7 +11707,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class.html kubernetes_storage_class}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -11638,9 +11729,9 @@ new StorageClass(scope: Construct, id: string, config: StorageClassConfig)
   * **metadata** (<code>Array<[StorageClassMetadata](#cdktf-provider-kubernetes-storageclassmetadata)></code>)  metadata block. 
   * **storageProvisioner** (<code>string</code>)  Indicates the type of the provisioner. 
   * **allowedTopologies** (<code>Array<[StorageClassAllowedTopologies](#cdktf-provider-kubernetes-storageclassallowedtopologies)></code>)  allowed_topologies block. __*Optional*__
-  * **allowVolumeExpansion** (<code>boolean</code>)  Indicates whether the storage class allow volume expand. __*Optional*__
+  * **allowVolumeExpansion** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Indicates whether the storage class allow volume expand. __*Optional*__
   * **mountOptions** (<code>Array<string></code>)  Persistent Volumes that are dynamically created by a storage class will have the mount options specified. __*Optional*__
-  * **parameters** (<code>Map<string, string></code>)  The parameters for the provisioner that should create volumes of this storage class. __*Optional*__
+  * **parameters** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  The parameters for the provisioner that should create volumes of this storage class. __*Optional*__
   * **reclaimPolicy** (<code>string</code>)  Indicates the type of the reclaim policy. __*Optional*__
   * **volumeBindingMode** (<code>string</code>)  Indicates when volume binding and dynamic provisioning should occur. __*Optional*__
 
@@ -11651,23 +11742,24 @@ new StorageClass(scope: Construct, id: string, config: StorageClassConfig)
 
 Name | Type | Description 
 -----|------|-------------
-**allowVolumeExpansion** | <code>boolean</code> | <span></span>
+**allowVolumeExpansion** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **allowedTopologies** | <code>Array<[StorageClassAllowedTopologies](#cdktf-provider-kubernetes-storageclassallowedtopologies)></code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **metadata** | <code>Array<[StorageClassMetadata](#cdktf-provider-kubernetes-storageclassmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[StorageClassMetadata](#cdktf-provider-kubernetes-storageclassmetadata)></code> | <span></span>
 **mountOptions** | <code>Array<string></code> | <span></span>
-**parameters** | <code>Map<string, string></code> | <span></span>
+**parameters** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
 **reclaimPolicy** | <code>string</code> | <span></span>
 **storageProvisioner** | <code>string</code> | <span></span>
 **storageProvisionerInput** | <code>string</code> | <span></span>
 **volumeBindingMode** | <code>string</code> | <span></span>
-**allowVolumeExpansionInput**? | <code>boolean</code> | __*Optional*__
+**allowVolumeExpansionInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **allowedTopologiesInput**? | <code>Array<[StorageClassAllowedTopologies](#cdktf-provider-kubernetes-storageclassallowedtopologies)></code> | __*Optional*__
 **mountOptionsInput**? | <code>Array<string></code> | __*Optional*__
-**parametersInput**? | <code>Map<string, string></code> | __*Optional*__
+**parametersInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
 **reclaimPolicyInput**? | <code>string</code> | __*Optional*__
 **volumeBindingModeInput**? | <code>string</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -11762,7 +11854,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html kubernetes_validating_webhook_configuration}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -11796,6 +11888,7 @@ Name | Type | Description
 **metadataInput** | <code>Array<[ValidatingWebhookConfigurationMetadata](#cdktf-provider-kubernetes-validatingwebhookconfigurationmetadata)></code> | <span></span>
 **webhook** | <code>Array<[ValidatingWebhookConfigurationWebhook](#cdktf-provider-kubernetes-validatingwebhookconfigurationwebhook)></code> | <span></span>
 **webhookInput** | <code>Array<[ValidatingWebhookConfigurationWebhook](#cdktf-provider-kubernetes-validatingwebhookconfigurationwebhook)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
 
@@ -11841,9 +11934,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the api_service that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>Map<string, string> &#124; [IResolvable](#cdktf-iresolvable)</code> | An unstructured key value map stored with the api_service that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the api_service.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the api_service.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the api_service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -11862,7 +11955,7 @@ Name | Type | Description
 **version** | <code>string</code> | Version is the API version this server hosts. For example, `v1`.
 **versionPriority** | <code>number</code> | VersionPriority controls the ordering of this API version inside of its group.
 **caBundle**? | <code>string</code> | CABundle is a PEM encoded CA bundle which will be used to validate an API server's serving certificate.<br/>__*Optional*__
-**insecureSkipTlsVerify**? | <code>boolean</code> | InsecureSkipTLSVerify disables TLS certificate verification when communicating with this server.<br/>__*Optional*__
+**insecureSkipTlsVerify**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | InsecureSkipTLSVerify disables TLS certificate verification when communicating with this server.<br/>__*Optional*__
 **service**? | <code>Array<[ApiServiceSpecService](#cdktf-provider-kubernetes-apiservicespecservice)></code> | service block.<br/>__*Optional*__
 
 
@@ -11893,7 +11986,7 @@ Name | Type | Description
 -----|------|-------------
 **metadata** | <code>Array<[CertificateSigningRequestMetadata](#cdktf-provider-kubernetes-certificatesigningrequestmetadata)></code> | metadata block.
 **spec** | <code>Array<[CertificateSigningRequestSpec](#cdktf-provider-kubernetes-certificatesigningrequestspec)></code> | spec block.
-**autoApprove**? | <code>boolean</code> | Automatically approve the CertificateSigningRequest.<br/>__*Optional*__
+**autoApprove**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Automatically approve the CertificateSigningRequest.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
@@ -11911,9 +12004,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the certificate signing request that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the certificate signing request that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the certificate signing request.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the certificate signing request.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the certificate signing request, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -11969,7 +12062,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[ClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressions](#cdktf-provider-kubernetes-clusterroleaggregationruleclusterroleselectorsmatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -12016,8 +12109,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the clusterRoleBinding that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the clusterRoleBinding.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the clusterRoleBinding that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the clusterRoleBinding.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the clusterRoleBinding, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -12081,8 +12174,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the clusterRole that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the clusterRole.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the clusterRole that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the clusterRole.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the clusterRole, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -12114,9 +12207,9 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **metadata** | <code>Array<[ConfigMapMetadata](#cdktf-provider-kubernetes-configmapmetadata)></code> | metadata block.
-**binaryData**? | <code>Map<string, string></code> | BinaryData contains the binary data.<br/>__*Optional*__
+**binaryData**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | BinaryData contains the binary data.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
-**data**? | <code>Map<string, string></code> | Data contains the configuration data.<br/>__*Optional*__
+**data**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Data contains the configuration data.<br/>__*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
@@ -12132,9 +12225,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the config map that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the config map that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the config map.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the config map.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the config map, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the config map must be unique.<br/>__*Optional*__
 
@@ -12168,9 +12261,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the cronjob that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the cronjob that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the cronjob.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the cronjob.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the cronjob, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the cronjob must be unique.<br/>__*Optional*__
 
@@ -12191,7 +12284,7 @@ Name | Type | Description
 **failedJobsHistoryLimit**? | <code>number</code> | The number of failed finished jobs to retain.<br/>__*Optional*__
 **startingDeadlineSeconds**? | <code>number</code> | Optional deadline in seconds for starting the job if it misses scheduled time for any reason.<br/>__*Optional*__
 **successfulJobsHistoryLimit**? | <code>number</code> | The number of successful finished jobs to retain. Defaults to 3.<br/>__*Optional*__
-**suspend**? | <code>boolean</code> | This flag tells the controller to suspend subsequent executions, it does not apply to already started executions.<br/>__*Optional*__
+**suspend**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | This flag tells the controller to suspend subsequent executions, it does not apply to already started executions.<br/>__*Optional*__
 
 
 
@@ -12218,9 +12311,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the jobTemplateSpec that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the jobTemplateSpec that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the jobTemplateSpec.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the jobTemplateSpec.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the jobTemplateSpec, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -12238,7 +12331,7 @@ Name | Type | Description
 **activeDeadlineSeconds**? | <code>number</code> | Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers.<br/>__*Optional*__
 **backoffLimit**? | <code>number</code> | Specifies the number of retries before marking this job failed. Defaults to 6.<br/>__*Optional*__
 **completions**? | <code>number</code> | Specifies the desired number of successfully finished pods the job should be run with.<br/>__*Optional*__
-**manualSelector**? | <code>boolean</code> | Controls generation of pod labels and pod selectors.<br/>__*Optional*__
+**manualSelector**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Controls generation of pod labels and pod selectors.<br/>__*Optional*__
 **parallelism**? | <code>number</code> | Specifies the maximum desired number of pods the job should run at any given time.<br/>__*Optional*__
 **selector**? | <code>Array<[CronJobSpecJobTemplateSpecSelector](#cdktf-provider-kubernetes-cronjobspecjobtemplatespecselector)></code> | selector block.<br/>__*Optional*__
 **ttlSecondsAfterFinished**? | <code>string</code> | ttlSecondsAfterFinished limits the lifetime of a Job that has finished execution (either Complete or Failed).<br/>__*Optional*__
@@ -12255,7 +12348,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[CronJobSpecJobTemplateSpecSelectorMatchExpressions](#cdktf-provider-kubernetes-cronjobspecjobtemplatespecselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -12297,9 +12390,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the job that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the job that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the job.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the job.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the job, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -12315,26 +12408,26 @@ Name | Type | Description
 -----|------|-------------
 **activeDeadlineSeconds**? | <code>number</code> | Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers.<br/>__*Optional*__
 **affinity**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecAffinity](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecaffinity)></code> | affinity block.<br/>__*Optional*__
-**automountServiceAccountToken**? | <code>boolean</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
+**automountServiceAccountToken**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
 **container**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainer](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecDnsConfig](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecHostAliases](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
-**hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
-**hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
+**hostNetwork**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Host networking requested for this pod.<br/>__*Optional*__
+**hostPid**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
 **imagePullSecrets**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecImagePullSecrets](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecimagepullsecrets)></code> | image_pull_secrets block.<br/>__*Optional*__
 **initContainer**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainer](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainer)></code> | init_container block.<br/>__*Optional*__
 **nodeName**? | <code>string</code> | NodeName is a request to schedule this pod onto a specific node.<br/>__*Optional*__
-**nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
+**nodeSelector**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecReadinessGate](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
 **restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecSecurityContext](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
-**shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
+**shareProcessNamespace**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
 **toleration**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecToleration](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespectoleration)></code> | toleration block.<br/>__*Optional*__
@@ -12508,7 +12601,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -12552,7 +12645,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -12624,7 +12717,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -12668,7 +12761,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -12710,11 +12803,11 @@ Name | Type | Description
 **resources**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerResources](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContext](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbe](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerVolumeMount](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -12760,7 +12853,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -12774,7 +12867,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -12805,7 +12898,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -12849,7 +12942,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -13191,8 +13284,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -13205,12 +13298,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespeccontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -13335,7 +13428,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -13419,11 +13512,11 @@ Name | Type | Description
 **resources**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerResources](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContext](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbe](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerVolumeMount](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -13469,7 +13562,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -13483,7 +13576,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -13514,7 +13607,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -13558,7 +13651,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -13900,8 +13993,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -13914,12 +14007,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecinitcontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -14044,7 +14137,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -14073,7 +14166,7 @@ Name | Type | Description
 -----|------|-------------
 **fsGroup**? | <code>string</code> | A special supplemental group that applies to all containers in a pod.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecsecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 **supplementalGroups**? | <code>Array<number></code> | A list of groups applied to the first process run in each container, in addition to the container's primary GID.<br/>__*Optional*__
@@ -14154,7 +14247,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespectopologyspreadconstraintlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -14224,7 +14317,7 @@ Name | Type | Description
 **volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -14242,7 +14335,7 @@ Name | Type | Description
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -14257,7 +14350,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -14273,7 +14366,7 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
 **user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
@@ -14305,7 +14398,7 @@ Name | Type | Description
 -----|------|-------------
 **volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -14321,7 +14414,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
 
@@ -14356,8 +14449,8 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
-**volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
+**volumeAttributes**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
 
@@ -14502,7 +14595,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -14517,8 +14610,8 @@ Name | Type | Description
 -----|------|-------------
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**options**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -14563,7 +14656,7 @@ Name | Type | Description
 **pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -14593,7 +14686,7 @@ Name | Type | Description
 -----|------|-------------
 **endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
 **path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -14625,7 +14718,7 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -14653,7 +14746,7 @@ Name | Type | Description
 -----|------|-------------
 **path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
 **server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -14667,7 +14760,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **claimName**? | <code>string</code> | ClaimName is the name of a PersistentVolumeClaim in the same.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
 
 
 
@@ -14726,7 +14819,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -14814,7 +14907,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -14860,7 +14953,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -14880,7 +14973,7 @@ Name | Type | Description
 **keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -14910,7 +15003,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[CronJobSpecJobTemplateSpecTemplateSpecVolumeSecretItems](#cdktf-provider-kubernetes-cronjobspecjobtemplatespectemplatespecvolumesecretitems)></code> | items block.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
 **secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
@@ -14984,9 +15077,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the csi driver that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the csi driver that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the csi driver.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the csi driver.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the csi driver, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -15000,8 +15093,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**attachRequired** | <code>boolean</code> | Indicates if the CSI volume driver requires an attach operation.
-**podInfoOnMount**? | <code>boolean</code> | Indicates that the CSI volume driver requires additional pod information (like podName, podUID, etc.) during mount operations.<br/>__*Optional*__
+**attachRequired** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates if the CSI volume driver requires an attach operation.
+**podInfoOnMount**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the CSI volume driver requires additional pod information (like podName, podUID, etc.) during mount operations.<br/>__*Optional*__
 **volumeLifecycleModes**? | <code>Array<string></code> | Defines what kind of volumes this CSI volume driver supports.<br/>__*Optional*__
 
 
@@ -15022,7 +15115,7 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **timeouts**? | <code>[DaemonsetTimeouts](#cdktf-provider-kubernetes-daemonsettimeouts)</code> | timeouts block.<br/>__*Optional*__
-**waitForRollout**? | <code>boolean</code> | Wait for the rollout of the deployment to complete. Defaults to true.<br/>__*Optional*__
+**waitForRollout**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Wait for the rollout of the deployment to complete. Defaults to true.<br/>__*Optional*__
 
 
 
@@ -15035,9 +15128,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the daemonset that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the daemonset that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the daemonset.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the daemonset.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the daemonset, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the daemonset must be unique.<br/>__*Optional*__
 
@@ -15070,7 +15163,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DaemonsetSpecSelectorMatchExpressions](#cdktf-provider-kubernetes-daemonsetspecselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -15139,9 +15232,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the daemon set that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the daemon set that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the daemon set.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the daemon set.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the daemon set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -15157,26 +15250,26 @@ Name | Type | Description
 -----|------|-------------
 **activeDeadlineSeconds**? | <code>number</code> | Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers.<br/>__*Optional*__
 **affinity**? | <code>Array<[DaemonsetSpecTemplateSpecAffinity](#cdktf-provider-kubernetes-daemonsetspectemplatespecaffinity)></code> | affinity block.<br/>__*Optional*__
-**automountServiceAccountToken**? | <code>boolean</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
+**automountServiceAccountToken**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
 **container**? | <code>Array<[DaemonsetSpecTemplateSpecContainer](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[DaemonsetSpecTemplateSpecDnsConfig](#cdktf-provider-kubernetes-daemonsetspectemplatespecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[DaemonsetSpecTemplateSpecHostAliases](#cdktf-provider-kubernetes-daemonsetspectemplatespechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
-**hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
-**hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
+**hostNetwork**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Host networking requested for this pod.<br/>__*Optional*__
+**hostPid**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
 **imagePullSecrets**? | <code>Array<[DaemonsetSpecTemplateSpecImagePullSecrets](#cdktf-provider-kubernetes-daemonsetspectemplatespecimagepullsecrets)></code> | image_pull_secrets block.<br/>__*Optional*__
 **initContainer**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainer](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainer)></code> | init_container block.<br/>__*Optional*__
 **nodeName**? | <code>string</code> | NodeName is a request to schedule this pod onto a specific node.<br/>__*Optional*__
-**nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
+**nodeSelector**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[DaemonsetSpecTemplateSpecReadinessGate](#cdktf-provider-kubernetes-daemonsetspectemplatespecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
 **restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[DaemonsetSpecTemplateSpecSecurityContext](#cdktf-provider-kubernetes-daemonsetspectemplatespecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
-**shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
+**shareProcessNamespace**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
 **toleration**? | <code>Array<[DaemonsetSpecTemplateSpecToleration](#cdktf-provider-kubernetes-daemonsetspectemplatespectoleration)></code> | toleration block.<br/>__*Optional*__
@@ -15350,7 +15443,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DaemonsetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-daemonsetspectemplatespecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -15394,7 +15487,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DaemonsetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-daemonsetspectemplatespecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -15466,7 +15559,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DaemonsetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-daemonsetspectemplatespecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -15510,7 +15603,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DaemonsetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-daemonsetspectemplatespecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -15552,11 +15645,11 @@ Name | Type | Description
 **resources**? | <code>Array<[DaemonsetSpecTemplateSpecContainerResources](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[DaemonsetSpecTemplateSpecContainerSecurityContext](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[DaemonsetSpecTemplateSpecContainerStartupProbe](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[DaemonsetSpecTemplateSpecContainerVolumeMount](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -15602,7 +15695,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -15616,7 +15709,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -15647,7 +15740,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -15691,7 +15784,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -16033,8 +16126,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -16047,12 +16140,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[DaemonsetSpecTemplateSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[DaemonsetSpecTemplateSpecContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-daemonsetspectemplatespeccontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -16177,7 +16270,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -16261,11 +16354,11 @@ Name | Type | Description
 **resources**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerResources](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerSecurityContext](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerStartupProbe](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerVolumeMount](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -16311,7 +16404,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -16325,7 +16418,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -16356,7 +16449,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -16400,7 +16493,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -16742,8 +16835,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -16756,12 +16849,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[DaemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-daemonsetspectemplatespecinitcontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -16886,7 +16979,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -16915,7 +17008,7 @@ Name | Type | Description
 -----|------|-------------
 **fsGroup**? | <code>string</code> | A special supplemental group that applies to all containers in a pod.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[DaemonsetSpecTemplateSpecSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-daemonsetspectemplatespecsecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 **supplementalGroups**? | <code>Array<number></code> | A list of groups applied to the first process run in each container, in addition to the container's primary GID.<br/>__*Optional*__
@@ -16996,7 +17089,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DaemonsetSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-daemonsetspectemplatespectopologyspreadconstraintlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -17066,7 +17159,7 @@ Name | Type | Description
 **volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -17084,7 +17177,7 @@ Name | Type | Description
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -17099,7 +17192,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -17115,7 +17208,7 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
 **user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
@@ -17147,7 +17240,7 @@ Name | Type | Description
 -----|------|-------------
 **volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -17163,7 +17256,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
 
@@ -17198,8 +17291,8 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
-**volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
+**volumeAttributes**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
 
@@ -17344,7 +17437,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -17359,8 +17452,8 @@ Name | Type | Description
 -----|------|-------------
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**options**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -17405,7 +17498,7 @@ Name | Type | Description
 **pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -17435,7 +17528,7 @@ Name | Type | Description
 -----|------|-------------
 **endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
 **path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -17467,7 +17560,7 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -17495,7 +17588,7 @@ Name | Type | Description
 -----|------|-------------
 **path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
 **server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -17509,7 +17602,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **claimName**? | <code>string</code> | ClaimName is the name of a PersistentVolumeClaim in the same.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
 
 
 
@@ -17568,7 +17661,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -17656,7 +17749,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -17702,7 +17795,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -17722,7 +17815,7 @@ Name | Type | Description
 **keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -17752,7 +17845,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[DaemonsetSpecTemplateSpecVolumeSecretItems](#cdktf-provider-kubernetes-daemonsetspectemplatespecvolumesecretitems)></code> | items block.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
 **secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
@@ -17843,8 +17936,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the config_map that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the config_map.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the config_map that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the config_map.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the config_map, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the config_map must be unique.<br/>__*Optional*__
 
@@ -17876,8 +17969,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the ingress that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the ingress.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the ingress that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the ingress.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the ingress, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the ingress must be unique.<br/>__*Optional*__
 
@@ -17909,8 +18002,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the namespace that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the namespace.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the namespace that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the namespace.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the namespace, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -17942,9 +18035,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the persistent volume claim that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the persistent volume claim that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume claim.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume claim.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the persistent volume claim, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the persistent volume claim must be unique.<br/>__*Optional*__
 
@@ -17975,7 +18068,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressions](#cdktf-provider-kubernetes-datakubernetespersistentvolumeclaimspecselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -18020,9 +18113,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the pod that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the pod that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the pod.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the pod.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the pod must be unique.<br/>__*Optional*__
 
@@ -18038,7 +18131,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **metadata** | <code>Array<[DataKubernetesSecretMetadata](#cdktf-provider-kubernetes-datakubernetessecretmetadata)></code> | metadata block.
-**binaryData**? | <code>Map<string, string></code> | A map of the secret data with values encoded in base64 format.<br/>__*Optional*__
+**binaryData**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of the secret data with values encoded in base64 format.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
@@ -18055,8 +18148,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the secret that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the secret.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the secret that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the secret.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the secret, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the secret must be unique.<br/>__*Optional*__
 
@@ -18088,8 +18181,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the service account that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service account.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the service account that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service account.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the service account must be unique.<br/>__*Optional*__
 
@@ -18121,8 +18214,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the service that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the service that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the service must be unique.<br/>__*Optional*__
 
@@ -18165,13 +18258,13 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **metadata** | <code>Array<[DataKubernetesStorageClassMetadata](#cdktf-provider-kubernetes-datakubernetesstorageclassmetadata)></code> | metadata block.
-**allowVolumeExpansion**? | <code>boolean</code> | Indicates whether the storage class allow volume expand.<br/>__*Optional*__
+**allowVolumeExpansion**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates whether the storage class allow volume expand.<br/>__*Optional*__
 **allowedTopologies**? | <code>Array<[DataKubernetesStorageClassAllowedTopologies](#cdktf-provider-kubernetes-datakubernetesstorageclassallowedtopologies)></code> | allowed_topologies block.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **mountOptions**? | <code>Array<string></code> | Persistent Volumes that are dynamically created by a storage class will have the mount options specified.<br/>__*Optional*__
-**parameters**? | <code>Map<string, string></code> | The parameters for the provisioner that should create volumes of this storage class.<br/>__*Optional*__
+**parameters**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | The parameters for the provisioner that should create volumes of this storage class.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **reclaimPolicy**? | <code>string</code> | Indicates the type of the reclaim policy.<br/>__*Optional*__
 **volumeBindingMode**? | <code>string</code> | Indicates when volume binding and dynamic provisioning should occur.<br/>__*Optional*__
@@ -18187,8 +18280,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the storage class that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the storage class.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the storage class that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the storage class.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the storage class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -18203,7 +18296,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **metadata** | <code>Array<[DefaultServiceAccountMetadata](#cdktf-provider-kubernetes-defaultserviceaccountmetadata)></code> | metadata block.
-**automountServiceAccountToken**? | <code>boolean</code> | Enable automatic mounting of the service account token.<br/>__*Optional*__
+**automountServiceAccountToken**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enable automatic mounting of the service account token.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **imagePullSecret**? | <code>Array<[DefaultServiceAccountImagePullSecret](#cdktf-provider-kubernetes-defaultserviceaccountimagepullsecret)></code> | image_pull_secret block.<br/>__*Optional*__
@@ -18236,8 +18329,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the service account that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service account.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the service account that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service account.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the service account must be unique.<br/>__*Optional*__
 
@@ -18285,7 +18378,7 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **timeouts**? | <code>[DeploymentTimeouts](#cdktf-provider-kubernetes-deploymenttimeouts)</code> | timeouts block.<br/>__*Optional*__
-**waitForRollout**? | <code>boolean</code> | Wait for the rollout of the deployment to complete. Defaults to true.<br/>__*Optional*__
+**waitForRollout**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Wait for the rollout of the deployment to complete. Defaults to true.<br/>__*Optional*__
 
 
 
@@ -18298,9 +18391,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the deployment that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the deployment that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the deployment.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the deployment.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the deployment, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the deployment must be unique.<br/>__*Optional*__
 
@@ -18317,7 +18410,7 @@ Name | Type | Description
 -----|------|-------------
 **template** | <code>Array<[DeploymentSpecTemplate](#cdktf-provider-kubernetes-deploymentspectemplate)></code> | template block.
 **minReadySeconds**? | <code>number</code> | Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available.<br/>__*Optional*__
-**paused**? | <code>boolean</code> | Indicates that the deployment is paused.<br/>__*Optional*__
+**paused**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the deployment is paused.<br/>__*Optional*__
 **progressDeadlineSeconds**? | <code>number</code> | The maximum time in seconds for a deployment to make progress before it is considered to be failed.<br/>__*Optional*__
 **replicas**? | <code>string</code> | Number of desired pods. This is a string to be able to distinguish between explicit zero and not specified.<br/>__*Optional*__
 **revisionHistoryLimit**? | <code>number</code> | The number of old ReplicaSets to retain to allow rollback.<br/>__*Optional*__
@@ -18336,7 +18429,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DeploymentSpecSelectorMatchExpressions](#cdktf-provider-kubernetes-deploymentspecselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -18406,9 +18499,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the pod that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the pod that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the pod.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the pod.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the pod must be unique.<br/>__*Optional*__
 
@@ -18425,26 +18518,26 @@ Name | Type | Description
 -----|------|-------------
 **activeDeadlineSeconds**? | <code>number</code> | Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers.<br/>__*Optional*__
 **affinity**? | <code>Array<[DeploymentSpecTemplateSpecAffinity](#cdktf-provider-kubernetes-deploymentspectemplatespecaffinity)></code> | affinity block.<br/>__*Optional*__
-**automountServiceAccountToken**? | <code>boolean</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
+**automountServiceAccountToken**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
 **container**? | <code>Array<[DeploymentSpecTemplateSpecContainer](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[DeploymentSpecTemplateSpecDnsConfig](#cdktf-provider-kubernetes-deploymentspectemplatespecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[DeploymentSpecTemplateSpecHostAliases](#cdktf-provider-kubernetes-deploymentspectemplatespechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
-**hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
-**hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
+**hostNetwork**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Host networking requested for this pod.<br/>__*Optional*__
+**hostPid**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
 **imagePullSecrets**? | <code>Array<[DeploymentSpecTemplateSpecImagePullSecrets](#cdktf-provider-kubernetes-deploymentspectemplatespecimagepullsecrets)></code> | image_pull_secrets block.<br/>__*Optional*__
 **initContainer**? | <code>Array<[DeploymentSpecTemplateSpecInitContainer](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainer)></code> | init_container block.<br/>__*Optional*__
 **nodeName**? | <code>string</code> | NodeName is a request to schedule this pod onto a specific node.<br/>__*Optional*__
-**nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
+**nodeSelector**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[DeploymentSpecTemplateSpecReadinessGate](#cdktf-provider-kubernetes-deploymentspectemplatespecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
 **restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[DeploymentSpecTemplateSpecSecurityContext](#cdktf-provider-kubernetes-deploymentspectemplatespecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
-**shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
+**shareProcessNamespace**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
 **toleration**? | <code>Array<[DeploymentSpecTemplateSpecToleration](#cdktf-provider-kubernetes-deploymentspectemplatespectoleration)></code> | toleration block.<br/>__*Optional*__
@@ -18618,7 +18711,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DeploymentSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-deploymentspectemplatespecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -18662,7 +18755,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DeploymentSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-deploymentspectemplatespecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -18734,7 +18827,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DeploymentSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-deploymentspectemplatespecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -18778,7 +18871,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DeploymentSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-deploymentspectemplatespecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -18820,11 +18913,11 @@ Name | Type | Description
 **resources**? | <code>Array<[DeploymentSpecTemplateSpecContainerResources](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[DeploymentSpecTemplateSpecContainerSecurityContext](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[DeploymentSpecTemplateSpecContainerStartupProbe](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[DeploymentSpecTemplateSpecContainerVolumeMount](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -18870,7 +18963,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -18884,7 +18977,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -18915,7 +19008,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -18959,7 +19052,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -19301,8 +19394,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -19315,12 +19408,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[DeploymentSpecTemplateSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[DeploymentSpecTemplateSpecContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-deploymentspectemplatespeccontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -19445,7 +19538,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -19529,11 +19622,11 @@ Name | Type | Description
 **resources**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerResources](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerSecurityContext](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerStartupProbe](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerVolumeMount](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -19579,7 +19672,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -19593,7 +19686,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -19624,7 +19717,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -19668,7 +19761,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -20010,8 +20103,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -20024,12 +20117,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[DeploymentSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-deploymentspectemplatespecinitcontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -20154,7 +20247,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -20183,7 +20276,7 @@ Name | Type | Description
 -----|------|-------------
 **fsGroup**? | <code>string</code> | A special supplemental group that applies to all containers in a pod.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[DeploymentSpecTemplateSpecSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-deploymentspectemplatespecsecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 **supplementalGroups**? | <code>Array<number></code> | A list of groups applied to the first process run in each container, in addition to the container's primary GID.<br/>__*Optional*__
@@ -20264,7 +20357,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[DeploymentSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-deploymentspectemplatespectopologyspreadconstraintlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -20334,7 +20427,7 @@ Name | Type | Description
 **volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -20352,7 +20445,7 @@ Name | Type | Description
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -20367,7 +20460,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -20383,7 +20476,7 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[DeploymentSpecTemplateSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
 **user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
@@ -20415,7 +20508,7 @@ Name | Type | Description
 -----|------|-------------
 **volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -20431,7 +20524,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[DeploymentSpecTemplateSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
 
@@ -20466,8 +20559,8 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[DeploymentSpecTemplateSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[DeploymentSpecTemplateSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
-**volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
+**volumeAttributes**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
 
@@ -20612,7 +20705,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -20627,8 +20720,8 @@ Name | Type | Description
 -----|------|-------------
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**options**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[DeploymentSpecTemplateSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -20673,7 +20766,7 @@ Name | Type | Description
 **pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -20703,7 +20796,7 @@ Name | Type | Description
 -----|------|-------------
 **endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
 **path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -20735,7 +20828,7 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -20763,7 +20856,7 @@ Name | Type | Description
 -----|------|-------------
 **path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
 **server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -20777,7 +20870,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **claimName**? | <code>string</code> | ClaimName is the name of a PersistentVolumeClaim in the same.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
 
 
 
@@ -20836,7 +20929,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[DeploymentSpecTemplateSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -20924,7 +21017,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[DeploymentSpecTemplateSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -20970,7 +21063,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -20990,7 +21083,7 @@ Name | Type | Description
 **keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[DeploymentSpecTemplateSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -21020,7 +21113,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[DeploymentSpecTemplateSpecVolumeSecretItems](#cdktf-provider-kubernetes-deploymentspectemplatespecvolumesecretitems)></code> | items block.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
 **secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
@@ -21096,9 +21189,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the endpoints that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the endpoints that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the endpoints.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the endpoints.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the endpoints, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the endpoints must be unique.<br/>__*Optional*__
 
@@ -21191,9 +21284,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the horizontal pod autoscaler that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the horizontal pod autoscaler that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the horizontal pod autoscaler.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the horizontal pod autoscaler.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the horizontal pod autoscaler, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the horizontal pod autoscaler must be unique.<br/>__*Optional*__
 
@@ -21271,7 +21364,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressions](#cdktf-provider-kubernetes-horizontalpodautoscalerspecmetricexternalmetricselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -21360,7 +21453,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressions](#cdktf-provider-kubernetes-horizontalpodautoscalerspecmetricobjectmetricselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -21433,7 +21526,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressions](#cdktf-provider-kubernetes-horizontalpodautoscalerspecmetricpodsmetricselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -21528,7 +21621,7 @@ Name | Type | Description
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
-**waitForLoadBalancer**? | <code>boolean</code> | Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created.<br/>__*Optional*__
+**waitForLoadBalancer**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created.<br/>__*Optional*__
 
 
 
@@ -21541,9 +21634,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the ingress that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the ingress that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the ingress.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the ingress.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the ingress, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the ingress must be unique.<br/>__*Optional*__
 
@@ -21664,7 +21757,7 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **timeouts**? | <code>[JobTimeouts](#cdktf-provider-kubernetes-jobtimeouts)</code> | timeouts block.<br/>__*Optional*__
-**waitForCompletion**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#wait_for_completion Job#wait_for_completion}.<br/>__*Optional*__
+**waitForCompletion**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#wait_for_completion Job#wait_for_completion}.<br/>__*Optional*__
 
 
 
@@ -21677,9 +21770,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the job that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the job that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the job.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the job.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the job, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the job must be unique.<br/>__*Optional*__
 
@@ -21698,7 +21791,7 @@ Name | Type | Description
 **activeDeadlineSeconds**? | <code>number</code> | Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers.<br/>__*Optional*__
 **backoffLimit**? | <code>number</code> | Specifies the number of retries before marking this job failed. Defaults to 6.<br/>__*Optional*__
 **completions**? | <code>number</code> | Specifies the desired number of successfully finished pods the job should be run with.<br/>__*Optional*__
-**manualSelector**? | <code>boolean</code> | Controls generation of pod labels and pod selectors.<br/>__*Optional*__
+**manualSelector**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Controls generation of pod labels and pod selectors.<br/>__*Optional*__
 **parallelism**? | <code>number</code> | Specifies the maximum desired number of pods the job should run at any given time.<br/>__*Optional*__
 **selector**? | <code>Array<[JobSpecSelector](#cdktf-provider-kubernetes-jobspecselector)></code> | selector block.<br/>__*Optional*__
 **ttlSecondsAfterFinished**? | <code>string</code> | ttlSecondsAfterFinished limits the lifetime of a Job that has finished execution (either Complete or Failed).<br/>__*Optional*__
@@ -21715,7 +21808,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[JobSpecSelectorMatchExpressions](#cdktf-provider-kubernetes-jobspecselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -21757,9 +21850,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the job that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the job that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the job.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the job.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the job, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -21775,26 +21868,26 @@ Name | Type | Description
 -----|------|-------------
 **activeDeadlineSeconds**? | <code>number</code> | Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers.<br/>__*Optional*__
 **affinity**? | <code>Array<[JobSpecTemplateSpecAffinity](#cdktf-provider-kubernetes-jobspectemplatespecaffinity)></code> | affinity block.<br/>__*Optional*__
-**automountServiceAccountToken**? | <code>boolean</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
+**automountServiceAccountToken**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
 **container**? | <code>Array<[JobSpecTemplateSpecContainer](#cdktf-provider-kubernetes-jobspectemplatespeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[JobSpecTemplateSpecDnsConfig](#cdktf-provider-kubernetes-jobspectemplatespecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[JobSpecTemplateSpecHostAliases](#cdktf-provider-kubernetes-jobspectemplatespechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
-**hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
-**hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
+**hostNetwork**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Host networking requested for this pod.<br/>__*Optional*__
+**hostPid**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
 **imagePullSecrets**? | <code>Array<[JobSpecTemplateSpecImagePullSecrets](#cdktf-provider-kubernetes-jobspectemplatespecimagepullsecrets)></code> | image_pull_secrets block.<br/>__*Optional*__
 **initContainer**? | <code>Array<[JobSpecTemplateSpecInitContainer](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainer)></code> | init_container block.<br/>__*Optional*__
 **nodeName**? | <code>string</code> | NodeName is a request to schedule this pod onto a specific node.<br/>__*Optional*__
-**nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
+**nodeSelector**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[JobSpecTemplateSpecReadinessGate](#cdktf-provider-kubernetes-jobspectemplatespecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
 **restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[JobSpecTemplateSpecSecurityContext](#cdktf-provider-kubernetes-jobspectemplatespecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
-**shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
+**shareProcessNamespace**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
 **toleration**? | <code>Array<[JobSpecTemplateSpecToleration](#cdktf-provider-kubernetes-jobspectemplatespectoleration)></code> | toleration block.<br/>__*Optional*__
@@ -21968,7 +22061,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-jobspectemplatespecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -22012,7 +22105,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-jobspectemplatespecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -22084,7 +22177,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-jobspectemplatespecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -22128,7 +22221,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-jobspectemplatespecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -22170,11 +22263,11 @@ Name | Type | Description
 **resources**? | <code>Array<[JobSpecTemplateSpecContainerResources](#cdktf-provider-kubernetes-jobspectemplatespeccontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[JobSpecTemplateSpecContainerSecurityContext](#cdktf-provider-kubernetes-jobspectemplatespeccontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[JobSpecTemplateSpecContainerStartupProbe](#cdktf-provider-kubernetes-jobspectemplatespeccontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[JobSpecTemplateSpecContainerVolumeMount](#cdktf-provider-kubernetes-jobspectemplatespeccontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -22220,7 +22313,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -22234,7 +22327,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -22265,7 +22358,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -22309,7 +22402,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -22651,8 +22744,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -22665,12 +22758,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[JobSpecTemplateSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-jobspectemplatespeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-jobspectemplatespeccontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -22795,7 +22888,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -22879,11 +22972,11 @@ Name | Type | Description
 **resources**? | <code>Array<[JobSpecTemplateSpecInitContainerResources](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[JobSpecTemplateSpecInitContainerSecurityContext](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[JobSpecTemplateSpecInitContainerStartupProbe](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[JobSpecTemplateSpecInitContainerVolumeMount](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -22929,7 +23022,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -22943,7 +23036,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -22974,7 +23067,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -23018,7 +23111,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -23360,8 +23453,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -23374,12 +23467,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[JobSpecTemplateSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-jobspectemplatespecinitcontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -23504,7 +23597,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -23533,7 +23626,7 @@ Name | Type | Description
 -----|------|-------------
 **fsGroup**? | <code>string</code> | A special supplemental group that applies to all containers in a pod.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[JobSpecTemplateSpecSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-jobspectemplatespecsecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 **supplementalGroups**? | <code>Array<number></code> | A list of groups applied to the first process run in each container, in addition to the container's primary GID.<br/>__*Optional*__
@@ -23614,7 +23707,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[JobSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-jobspectemplatespectopologyspreadconstraintlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -23684,7 +23777,7 @@ Name | Type | Description
 **volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -23702,7 +23795,7 @@ Name | Type | Description
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -23717,7 +23810,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -23733,7 +23826,7 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[JobSpecTemplateSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
 **user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
@@ -23765,7 +23858,7 @@ Name | Type | Description
 -----|------|-------------
 **volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -23781,7 +23874,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[JobSpecTemplateSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-jobspectemplatespecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
 
@@ -23816,8 +23909,8 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[JobSpecTemplateSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[JobSpecTemplateSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
-**volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
+**volumeAttributes**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
 
@@ -23962,7 +24055,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -23977,8 +24070,8 @@ Name | Type | Description
 -----|------|-------------
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**options**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[JobSpecTemplateSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -24023,7 +24116,7 @@ Name | Type | Description
 **pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -24053,7 +24146,7 @@ Name | Type | Description
 -----|------|-------------
 **endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
 **path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -24085,7 +24178,7 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -24113,7 +24206,7 @@ Name | Type | Description
 -----|------|-------------
 **path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
 **server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -24127,7 +24220,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **claimName**? | <code>string</code> | ClaimName is the name of a PersistentVolumeClaim in the same.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
 
 
 
@@ -24186,7 +24279,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[JobSpecTemplateSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-jobspectemplatespecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -24274,7 +24367,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[JobSpecTemplateSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-jobspectemplatespecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -24320,7 +24413,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -24340,7 +24433,7 @@ Name | Type | Description
 **keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[JobSpecTemplateSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-jobspectemplatespecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -24370,7 +24463,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[JobSpecTemplateSpecVolumeSecretItems](#cdktf-provider-kubernetes-jobspectemplatespecvolumesecretitems)></code> | items block.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
 **secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
@@ -24440,7 +24533,7 @@ Name | Type | Description
 **exec**? | <code>Array<[KubernetesProviderExec](#cdktf-provider-kubernetes-kubernetesproviderexec)></code> | exec block.<br/>__*Optional*__
 **experiments**? | <code>Array<[KubernetesProviderExperiments](#cdktf-provider-kubernetes-kubernetesproviderexperiments)></code> | experiments block.<br/>__*Optional*__
 **host**? | <code>string</code> | The hostname (in form of URI) of Kubernetes master.<br/>__*Optional*__
-**insecure**? | <code>boolean</code> | Whether server should be accessed without verifying the TLS certificate.<br/>__*Optional*__
+**insecure**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether server should be accessed without verifying the TLS certificate.<br/>__*Optional*__
 **password**? | <code>string</code> | The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint.<br/>__*Optional*__
 **token**? | <code>string</code> | Token to authenticate an service account.<br/>__*Optional*__
 **username**? | <code>string</code> | The username to use for HTTP basic authentication when accessing the Kubernetes master endpoint.<br/>__*Optional*__
@@ -24459,7 +24552,7 @@ Name | Type | Description
 **apiVersion** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#api_version KubernetesProvider#api_version}.
 **command** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#command KubernetesProvider#command}.
 **args**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#args KubernetesProvider#args}.<br/>__*Optional*__
-**env**? | <code>Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#env KubernetesProvider#env}.<br/>__*Optional*__
+**env**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#env KubernetesProvider#env}.<br/>__*Optional*__
 
 
 
@@ -24472,7 +24565,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**manifestResource**? | <code>boolean</code> | Enable the `kubernetes_manifest` resource.<br/>__*Optional*__
+**manifestResource**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enable the `kubernetes_manifest` resource.<br/>__*Optional*__
 
 
 
@@ -24503,9 +24596,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the limit range that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the limit range that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the limit range.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the limit range.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the limit range, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the limit range must be unique.<br/>__*Optional*__
 
@@ -24533,11 +24626,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**default**? | <code>Map<string, string></code> | Default resource requirement limit value by resource name if resource limit is omitted.<br/>__*Optional*__
-**defaultRequest**? | <code>Map<string, string></code> | The default resource requirement request value by resource name if resource request is omitted.<br/>__*Optional*__
-**max**? | <code>Map<string, string></code> | Max usage constraints on this kind by resource name.<br/>__*Optional*__
-**maxLimitRequestRatio**? | <code>Map<string, string></code> | The named resource must have a request and limit that are both non-zero where limit divided by request is less than or equal to the enumerated value;<br/>__*Optional*__
-**min**? | <code>Map<string, string></code> | Min usage constraints on this kind by resource name.<br/>__*Optional*__
+**default**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Default resource requirement limit value by resource name if resource limit is omitted.<br/>__*Optional*__
+**defaultRequest**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | The default resource requirement request value by resource name if resource request is omitted.<br/>__*Optional*__
+**max**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Max usage constraints on this kind by resource name.<br/>__*Optional*__
+**maxLimitRequestRatio**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | The named resource must have a request and limit that are both non-zero where limit divided by request is less than or equal to the enumerated value;<br/>__*Optional*__
+**min**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Min usage constraints on this kind by resource name.<br/>__*Optional*__
 **type**? | <code>string</code> | Type of resource that this limit applies to.<br/>__*Optional*__
 
 
@@ -24551,13 +24644,45 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**manifest** | <code>Map<string, any></code> | A Kubernetes manifest describing the desired state of the resource in HCL format.
+**manifest** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, any></code> | A Kubernetes manifest describing the desired state of the resource in HCL format.
+**computedFields**? | <code>Array<string></code> | List of manifest fields whose values can be altered by the API server during 'apply'. Defaults to: ["metadata.annotations", "metadata.labels"].<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**fieldManager**? | <code>Array<[ManifestFieldManager](#cdktf-provider-kubernetes-manifestfieldmanager)></code> | field_manager block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
-**object**? | <code>Map<string, any></code> | The resulting resource state, as returned by the API server after applying the desired state from `manifest`.<br/>__*Optional*__
+**object**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, any></code> | The resulting resource state, as returned by the API server after applying the desired state from `manifest`.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**timeouts**? | <code>Array<[ManifestTimeouts](#cdktf-provider-kubernetes-manifesttimeouts)></code> | timeouts block.<br/>__*Optional*__
 **waitFor**? | <code>[ManifestWaitFor](#cdktf-provider-kubernetes-manifestwaitfor)</code> | A map of attribute paths and desired patterns to be matched.<br/>__*Optional*__
+
+
+
+## struct ManifestFieldManager  <a id="cdktf-provider-kubernetes-manifestfieldmanager"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**forceConflicts**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Force changes against conflicts.<br/>__*Optional*__
+**name**? | <code>string</code> | The name to use for the field manager when creating and updating the resource.<br/>__*Optional*__
+
+
+
+## struct ManifestTimeouts  <a id="cdktf-provider-kubernetes-manifesttimeouts"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**create**? | <code>string</code> | Timeout for the create operation.<br/>__*Optional*__
+**delete**? | <code>string</code> | Timeout for the delete operation.<br/>__*Optional*__
+**update**? | <code>string</code> | Timeout for the update operation.<br/>__*Optional*__
 
 
 
@@ -24570,7 +24695,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**fields**? | <code>Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#fields Manifest#fields}.<br/>__*Optional*__
+**fields**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#fields Manifest#fields}.<br/>__*Optional*__
 
 
 
@@ -24601,9 +24726,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the mutating webhook configuration that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the mutating webhook configuration that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the mutating webhook configuration.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the mutating webhook configuration.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the mutating webhook configuration, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -24672,7 +24797,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions](#cdktf-provider-kubernetes-mutatingwebhookconfigurationwebhooknamespaceselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -24701,7 +24826,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressions](#cdktf-provider-kubernetes-mutatingwebhookconfigurationwebhookobjectselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -24764,9 +24889,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the namespace that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the namespace that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the namespace.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the namespace.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the namespace, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -24811,9 +24936,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the network policy that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the network policy that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the network policy.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the network policy.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the network policy, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the network policy must be unique.<br/>__*Optional*__
 
@@ -24902,7 +25027,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[NetworkPolicySpecEgressToNamespaceSelectorMatchExpressions](#cdktf-provider-kubernetes-networkpolicyspecegresstonamespaceselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -24931,7 +25056,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[NetworkPolicySpecEgressToPodSelectorMatchExpressions](#cdktf-provider-kubernetes-networkpolicyspecegresstopodselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -25003,7 +25128,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[NetworkPolicySpecIngressFromNamespaceSelectorMatchExpressions](#cdktf-provider-kubernetes-networkpolicyspecingressfromnamespaceselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -25032,7 +25157,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[NetworkPolicySpecIngressFromPodSelectorMatchExpressions](#cdktf-provider-kubernetes-networkpolicyspecingressfrompodselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -25075,7 +25200,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[NetworkPolicySpecPodSelectorMatchExpressions](#cdktf-provider-kubernetes-networkpolicyspecpodselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -25110,7 +25235,7 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **timeouts**? | <code>[PersistentVolumeClaimTimeouts](#cdktf-provider-kubernetes-persistentvolumeclaimtimeouts)</code> | timeouts block.<br/>__*Optional*__
-**waitUntilBound**? | <code>boolean</code> | Whether to wait for the claim to reach `Bound` state (to find volume in which to claim the space).<br/>__*Optional*__
+**waitUntilBound**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to wait for the claim to reach `Bound` state (to find volume in which to claim the space).<br/>__*Optional*__
 
 
 
@@ -25123,9 +25248,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the persistent volume claim that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the persistent volume claim that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume claim.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume claim.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the persistent volume claim, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the persistent volume claim must be unique.<br/>__*Optional*__
 
@@ -25157,8 +25282,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Map describing the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Map describing the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map describing the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map describing the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -25172,7 +25297,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[PersistentVolumeClaimSpecSelectorMatchExpressions](#cdktf-provider-kubernetes-persistentvolumeclaimspecselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -25232,8 +25357,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the persistent volume that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the persistent volume that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the persistent volume, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -25248,7 +25373,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **accessModes** | <code>Array<string></code> | Contains all ways the volume can be mounted. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#access-modes.
-**capacity** | <code>Map<string, string></code> | A description of the persistent volume's resources and capacity. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#capacity.
+**capacity** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A description of the persistent volume's resources and capacity. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#capacity.
 **persistentVolumeSource** | <code>Array<[PersistentVolumeSpecPersistentVolumeSource](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesource)></code> | persistent_volume_source block.
 **claimRef**? | <code>Array<[PersistentVolumeSpecClaimRef](#cdktf-provider-kubernetes-persistentvolumespecclaimref)></code> | claim_ref block.<br/>__*Optional*__
 **mountOptions**? | <code>Array<string></code> | A list of mount options, e.g. ["ro", "soft"]. Not validated - mount will simply fail if one is invalid.<br/>__*Optional*__
@@ -25386,7 +25511,7 @@ Name | Type | Description
 **volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -25404,7 +25529,7 @@ Name | Type | Description
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -25419,7 +25544,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -25435,7 +25560,7 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesourcecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
 **user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
@@ -25467,7 +25592,7 @@ Name | Type | Description
 -----|------|-------------
 **volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -25487,8 +25612,8 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesourcecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesourcecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
-**volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
+**volumeAttributes**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
 
@@ -25560,7 +25685,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -25575,8 +25700,8 @@ Name | Type | Description
 -----|------|-------------
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**options**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesourceflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -25621,7 +25746,7 @@ Name | Type | Description
 **pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -25636,7 +25761,7 @@ Name | Type | Description
 -----|------|-------------
 **endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
 **path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -25668,7 +25793,7 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -25696,7 +25821,7 @@ Name | Type | Description
 -----|------|-------------
 **path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
 **server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -25726,7 +25851,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -25746,7 +25871,7 @@ Name | Type | Description
 **keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef](#cdktf-provider-kubernetes-persistentvolumespecpersistentvolumesourcerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -25838,9 +25963,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the pod disruption budget that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the pod disruption budget that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the pod disruption budget.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the pod disruption budget.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the pod disruption budget, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the pod disruption budget must be unique.<br/>__*Optional*__
 
@@ -25871,7 +25996,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[PodDisruptionBudgetSpecSelectorMatchExpressions](#cdktf-provider-kubernetes-poddisruptionbudgetspecselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -25899,9 +26024,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the pod that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the pod that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the pod.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the pod.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the pod must be unique.<br/>__*Optional*__
 
@@ -25934,8 +26059,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the podsecuritypolicy that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the podsecuritypolicy.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the podsecuritypolicy that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the podsecuritypolicy.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the podsecuritypolicy, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -25952,21 +26077,21 @@ Name | Type | Description
 **fsGroup** | <code>Array<[PodSecurityPolicySpecFsGroup](#cdktf-provider-kubernetes-podsecuritypolicyspecfsgroup)></code> | fs_group block.
 **runAsUser** | <code>Array<[PodSecurityPolicySpecRunAsUser](#cdktf-provider-kubernetes-podsecuritypolicyspecrunasuser)></code> | run_as_user block.
 **supplementalGroups** | <code>Array<[PodSecurityPolicySpecSupplementalGroups](#cdktf-provider-kubernetes-podsecuritypolicyspecsupplementalgroups)></code> | supplemental_groups block.
-**allowPrivilegeEscalation**? | <code>boolean</code> | allowPrivilegeEscalation determines if a pod can request to allow privilege escalation. If unspecified, defaults to true.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | allowPrivilegeEscalation determines if a pod can request to allow privilege escalation. If unspecified, defaults to true.<br/>__*Optional*__
 **allowedCapabilities**? | <code>Array<string></code> | allowedCapabilities is a list of capabilities that can be requested to add to the container.<br/>__*Optional*__
 **allowedFlexVolumes**? | <code>Array<[PodSecurityPolicySpecAllowedFlexVolumes](#cdktf-provider-kubernetes-podsecuritypolicyspecallowedflexvolumes)></code> | allowed_flex_volumes block.<br/>__*Optional*__
 **allowedHostPaths**? | <code>Array<[PodSecurityPolicySpecAllowedHostPaths](#cdktf-provider-kubernetes-podsecuritypolicyspecallowedhostpaths)></code> | allowed_host_paths block.<br/>__*Optional*__
 **allowedProcMountTypes**? | <code>Array<string></code> | AllowedProcMountTypes is an allowlist of allowed ProcMountTypes.<br/>__*Optional*__
 **allowedUnsafeSysctls**? | <code>Array<string></code> | allowedUnsafeSysctls is a list of explicitly allowed unsafe sysctls, defaults to none.<br/>__*Optional*__
 **defaultAddCapabilities**? | <code>Array<string></code> | defaultAddCapabilities is the default set of capabilities that will be added to the container unless the pod spec specifically drops the capability.<br/>__*Optional*__
-**defaultAllowPrivilegeEscalation**? | <code>boolean</code> | defaultAllowPrivilegeEscalation controls the default setting for whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**defaultAllowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | defaultAllowPrivilegeEscalation controls the default setting for whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **forbiddenSysctls**? | <code>Array<string></code> | forbiddenSysctls is a list of explicitly forbidden sysctls, defaults to none.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | hostIPC determines if the policy allows the use of HostIPC in the pod spec.<br/>__*Optional*__
-**hostNetwork**? | <code>boolean</code> | hostNetwork determines if the policy allows the use of HostNetwork in the pod spec.<br/>__*Optional*__
-**hostPid**? | <code>boolean</code> | hostPID determines if the policy allows the use of HostPID in the pod spec.<br/>__*Optional*__
+**hostIpc**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | hostIPC determines if the policy allows the use of HostIPC in the pod spec.<br/>__*Optional*__
+**hostNetwork**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | hostNetwork determines if the policy allows the use of HostNetwork in the pod spec.<br/>__*Optional*__
+**hostPid**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | hostPID determines if the policy allows the use of HostPID in the pod spec.<br/>__*Optional*__
 **hostPorts**? | <code>Array<[PodSecurityPolicySpecHostPorts](#cdktf-provider-kubernetes-podsecuritypolicyspechostports)></code> | host_ports block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | privileged determines if a pod can request to be run as privileged.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | readOnlyRootFilesystem when set to true will force containers to run with a read only root file system.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | privileged determines if a pod can request to be run as privileged.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | readOnlyRootFilesystem when set to true will force containers to run with a read only root file system.<br/>__*Optional*__
 **requiredDropCapabilities**? | <code>Array<string></code> | requiredDropCapabilities are the capabilities that will be dropped from the container.<br/>__*Optional*__
 **runAsGroup**? | <code>Array<[PodSecurityPolicySpecRunAsGroup](#cdktf-provider-kubernetes-podsecuritypolicyspecrunasgroup)></code> | run_as_group block.<br/>__*Optional*__
 **seLinux**? | <code>Array<[PodSecurityPolicySpecSeLinux](#cdktf-provider-kubernetes-podsecuritypolicyspecselinux)></code> | se_linux block.<br/>__*Optional*__
@@ -25997,7 +26122,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **pathPrefix** | <code>string</code> | pathPrefix is the path prefix that the host volume must match.
-**readOnly**? | <code>boolean</code> | when set to true, will allow host volumes matching the pathPrefix only if all volume mounts are readOnly.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | when set to true, will allow host volumes matching the pathPrefix only if all volume mounts are readOnly.<br/>__*Optional*__
 
 
 
@@ -26168,26 +26293,26 @@ Name | Type | Description
 -----|------|-------------
 **activeDeadlineSeconds**? | <code>number</code> | Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers.<br/>__*Optional*__
 **affinity**? | <code>Array<[PodSpecAffinity](#cdktf-provider-kubernetes-podspecaffinity)></code> | affinity block.<br/>__*Optional*__
-**automountServiceAccountToken**? | <code>boolean</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
+**automountServiceAccountToken**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
 **container**? | <code>Array<[PodSpecContainer](#cdktf-provider-kubernetes-podspeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[PodSpecDnsConfig](#cdktf-provider-kubernetes-podspecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[PodSpecHostAliases](#cdktf-provider-kubernetes-podspechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
-**hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
-**hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
+**hostNetwork**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Host networking requested for this pod.<br/>__*Optional*__
+**hostPid**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
 **imagePullSecrets**? | <code>Array<[PodSpecImagePullSecrets](#cdktf-provider-kubernetes-podspecimagepullsecrets)></code> | image_pull_secrets block.<br/>__*Optional*__
 **initContainer**? | <code>Array<[PodSpecInitContainer](#cdktf-provider-kubernetes-podspecinitcontainer)></code> | init_container block.<br/>__*Optional*__
 **nodeName**? | <code>string</code> | NodeName is a request to schedule this pod onto a specific node.<br/>__*Optional*__
-**nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
+**nodeSelector**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[PodSpecReadinessGate](#cdktf-provider-kubernetes-podspecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
 **restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[PodSpecSecurityContext](#cdktf-provider-kubernetes-podspecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
-**shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
+**shareProcessNamespace**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
 **toleration**? | <code>Array<[PodSpecToleration](#cdktf-provider-kubernetes-podspectoleration)></code> | toleration block.<br/>__*Optional*__
@@ -26361,7 +26486,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-podspecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -26405,7 +26530,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-podspecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -26477,7 +26602,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-podspecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -26521,7 +26646,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-podspecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -26563,11 +26688,11 @@ Name | Type | Description
 **resources**? | <code>Array<[PodSpecContainerResources](#cdktf-provider-kubernetes-podspeccontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[PodSpecContainerSecurityContext](#cdktf-provider-kubernetes-podspeccontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[PodSpecContainerStartupProbe](#cdktf-provider-kubernetes-podspeccontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[PodSpecContainerVolumeMount](#cdktf-provider-kubernetes-podspeccontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -26613,7 +26738,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -26627,7 +26752,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -26658,7 +26783,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -26702,7 +26827,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -27044,8 +27169,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -27058,12 +27183,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[PodSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-podspeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[PodSpecContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-podspeccontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -27188,7 +27313,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -27272,11 +27397,11 @@ Name | Type | Description
 **resources**? | <code>Array<[PodSpecInitContainerResources](#cdktf-provider-kubernetes-podspecinitcontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[PodSpecInitContainerSecurityContext](#cdktf-provider-kubernetes-podspecinitcontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[PodSpecInitContainerStartupProbe](#cdktf-provider-kubernetes-podspecinitcontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[PodSpecInitContainerVolumeMount](#cdktf-provider-kubernetes-podspecinitcontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -27322,7 +27447,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -27336,7 +27461,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -27367,7 +27492,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -27411,7 +27536,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -27753,8 +27878,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -27767,12 +27892,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[PodSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-podspecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[PodSpecInitContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-podspecinitcontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -27897,7 +28022,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -27926,7 +28051,7 @@ Name | Type | Description
 -----|------|-------------
 **fsGroup**? | <code>string</code> | A special supplemental group that applies to all containers in a pod.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[PodSpecSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-podspecsecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 **supplementalGroups**? | <code>Array<number></code> | A list of groups applied to the first process run in each container, in addition to the container's primary GID.<br/>__*Optional*__
@@ -28007,7 +28132,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[PodSpecTopologySpreadConstraintLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-podspectopologyspreadconstraintlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -28077,7 +28202,7 @@ Name | Type | Description
 **volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -28095,7 +28220,7 @@ Name | Type | Description
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -28110,7 +28235,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -28126,7 +28251,7 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[PodSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-podspecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
 **user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
@@ -28158,7 +28283,7 @@ Name | Type | Description
 -----|------|-------------
 **volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -28174,7 +28299,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[PodSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-podspecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
 
@@ -28209,8 +28334,8 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[PodSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-podspecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[PodSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-podspecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
-**volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
+**volumeAttributes**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
 
@@ -28355,7 +28480,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -28370,8 +28495,8 @@ Name | Type | Description
 -----|------|-------------
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**options**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[PodSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-podspecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -28416,7 +28541,7 @@ Name | Type | Description
 **pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -28446,7 +28571,7 @@ Name | Type | Description
 -----|------|-------------
 **endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
 **path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -28478,7 +28603,7 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -28506,7 +28631,7 @@ Name | Type | Description
 -----|------|-------------
 **path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
 **server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -28520,7 +28645,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **claimName**? | <code>string</code> | ClaimName is the name of a PersistentVolumeClaim in the same.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
 
 
 
@@ -28579,7 +28704,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[PodSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-podspecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -28667,7 +28792,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[PodSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-podspecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -28713,7 +28838,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -28733,7 +28858,7 @@ Name | Type | Description
 **keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[PodSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-podspecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -28763,7 +28888,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[PodSpecVolumeSecretItems](#cdktf-provider-kubernetes-podspecvolumesecretitems)></code> | items block.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
 **secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
@@ -28825,7 +28950,7 @@ Name | Type | Description
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **description**? | <code>string</code> | An arbitrary string that usually provides guidelines on when this priority class should be used.<br/>__*Optional*__
-**globalDefault**? | <code>boolean</code> | Specifies whether this PriorityClass should be considered as the default priority for pods that do not have any priority class.<br/>__*Optional*__
+**globalDefault**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specifies whether this PriorityClass should be considered as the default priority for pods that do not have any priority class.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 
@@ -28840,9 +28965,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the priority class that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the priority class that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the priority class.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the priority class.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the priority class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -28875,9 +29000,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the replication controller that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the replication controller that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the replication controller.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the replication controller.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the replication controller, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the replication controller must be unique.<br/>__*Optional*__
 
@@ -28892,7 +29017,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**selector** | <code>Map<string, string></code> | A label query over pods that should match the Replicas count.
+**selector** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A label query over pods that should match the Replicas count.
 **template** | <code>Array<[ReplicationControllerSpecTemplate](#cdktf-provider-kubernetes-replicationcontrollerspectemplate)></code> | template block.
 **minReadySeconds**? | <code>number</code> | Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available.<br/>__*Optional*__
 **replicas**? | <code>number</code> | The number of desired replicas. Defaults to 1. More info: http://kubernetes.io/docs/user-guide/replication-controller#what-is-a-replication-controller.<br/>__*Optional*__
@@ -28922,9 +29047,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the replication controller's template that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the replication controller's template that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the replication controller's template.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the replication controller's template.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the replication controller's template, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the replication controller's template must be unique.<br/>__*Optional*__
 
@@ -28941,26 +29066,26 @@ Name | Type | Description
 -----|------|-------------
 **activeDeadlineSeconds**? | <code>number</code> | Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers.<br/>__*Optional*__
 **affinity**? | <code>Array<[ReplicationControllerSpecTemplateSpecAffinity](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecaffinity)></code> | affinity block.<br/>__*Optional*__
-**automountServiceAccountToken**? | <code>boolean</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
+**automountServiceAccountToken**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
 **container**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainer](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[ReplicationControllerSpecTemplateSpecDnsConfig](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[ReplicationControllerSpecTemplateSpecHostAliases](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
-**hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
-**hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
+**hostNetwork**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Host networking requested for this pod.<br/>__*Optional*__
+**hostPid**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
 **imagePullSecrets**? | <code>Array<[ReplicationControllerSpecTemplateSpecImagePullSecrets](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecimagepullsecrets)></code> | image_pull_secrets block.<br/>__*Optional*__
 **initContainer**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainer](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainer)></code> | init_container block.<br/>__*Optional*__
 **nodeName**? | <code>string</code> | NodeName is a request to schedule this pod onto a specific node.<br/>__*Optional*__
-**nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
+**nodeSelector**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[ReplicationControllerSpecTemplateSpecReadinessGate](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
 **restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[ReplicationControllerSpecTemplateSpecSecurityContext](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
-**shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
+**shareProcessNamespace**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
 **toleration**? | <code>Array<[ReplicationControllerSpecTemplateSpecToleration](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespectoleration)></code> | toleration block.<br/>__*Optional*__
@@ -29134,7 +29259,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[ReplicationControllerSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -29178,7 +29303,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[ReplicationControllerSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -29250,7 +29375,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[ReplicationControllerSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -29294,7 +29419,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[ReplicationControllerSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -29336,11 +29461,11 @@ Name | Type | Description
 **resources**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerResources](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerSecurityContext](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerStartupProbe](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerVolumeMount](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -29386,7 +29511,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -29400,7 +29525,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -29431,7 +29556,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -29475,7 +29600,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -29817,8 +29942,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -29831,12 +29956,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[ReplicationControllerSpecTemplateSpecContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespeccontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -29961,7 +30086,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -30045,11 +30170,11 @@ Name | Type | Description
 **resources**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerResources](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerSecurityContext](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerStartupProbe](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerVolumeMount](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -30095,7 +30220,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -30109,7 +30234,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -30140,7 +30265,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -30184,7 +30309,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -30526,8 +30651,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -30540,12 +30665,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[ReplicationControllerSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecinitcontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -30670,7 +30795,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -30699,7 +30824,7 @@ Name | Type | Description
 -----|------|-------------
 **fsGroup**? | <code>string</code> | A special supplemental group that applies to all containers in a pod.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[ReplicationControllerSpecTemplateSpecSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecsecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 **supplementalGroups**? | <code>Array<number></code> | A list of groups applied to the first process run in each container, in addition to the container's primary GID.<br/>__*Optional*__
@@ -30780,7 +30905,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[ReplicationControllerSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespectopologyspreadconstraintlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -30850,7 +30975,7 @@ Name | Type | Description
 **volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -30868,7 +30993,7 @@ Name | Type | Description
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -30883,7 +31008,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -30899,7 +31024,7 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
 **user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
@@ -30931,7 +31056,7 @@ Name | Type | Description
 -----|------|-------------
 **volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -30947,7 +31072,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
 
@@ -30982,8 +31107,8 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
-**volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
+**volumeAttributes**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
 
@@ -31128,7 +31253,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -31143,8 +31268,8 @@ Name | Type | Description
 -----|------|-------------
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**options**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -31189,7 +31314,7 @@ Name | Type | Description
 **pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -31219,7 +31344,7 @@ Name | Type | Description
 -----|------|-------------
 **endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
 **path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -31251,7 +31376,7 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -31279,7 +31404,7 @@ Name | Type | Description
 -----|------|-------------
 **path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
 **server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -31293,7 +31418,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **claimName**? | <code>string</code> | ClaimName is the name of a PersistentVolumeClaim in the same.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
 
 
 
@@ -31352,7 +31477,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -31440,7 +31565,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -31486,7 +31611,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -31506,7 +31631,7 @@ Name | Type | Description
 **keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -31536,7 +31661,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[ReplicationControllerSpecTemplateSpecVolumeSecretItems](#cdktf-provider-kubernetes-replicationcontrollerspectemplatespecvolumesecretitems)></code> | items block.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
 **secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
@@ -31613,9 +31738,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the resource quota that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the resource quota that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the resource quota.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the resource quota.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the resource quota, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the resource quota must be unique.<br/>__*Optional*__
 
@@ -31630,7 +31755,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**hard**? | <code>Map<string, string></code> | The set of desired hard limits for each named resource. More info: http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota.<br/>__*Optional*__
+**hard**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | The set of desired hard limits for each named resource. More info: http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota.<br/>__*Optional*__
 **scopeSelector**? | <code>Array<[ResourceQuotaSpecScopeSelector](#cdktf-provider-kubernetes-resourcequotaspecscopeselector)></code> | scope_selector block.<br/>__*Optional*__
 **scopes**? | <code>Array<string></code> | A collection of filters that must match each object tracked by a quota.<br/>__*Optional*__
 
@@ -31706,8 +31831,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the roleBinding that may be used to store arbitrary metadata.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the roleBinding.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the roleBinding that may be used to store arbitrary metadata.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the roleBinding.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the roleBinding, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the roleBinding must be unique.<br/>__*Optional*__
 
@@ -31771,9 +31896,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the role that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the role that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the role.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the role.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the role, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the role must be unique.<br/>__*Optional*__
 
@@ -31805,9 +31930,9 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **metadata** | <code>Array<[SecretMetadata](#cdktf-provider-kubernetes-secretmetadata)></code> | metadata block.
-**binaryData**? | <code>Map<string, string></code> | A map of the secret data in base64 encoding. Use this for binary data.<br/>__*Optional*__
+**binaryData**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of the secret data in base64 encoding. Use this for binary data.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
-**data**? | <code>Map<string, string></code> | A map of the secret data.<br/>__*Optional*__
+**data**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of the secret data.<br/>__*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
@@ -31824,9 +31949,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the secret that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the secret that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the secret.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the secret.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the secret, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the secret must be unique.<br/>__*Optional*__
 
@@ -31842,7 +31967,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **metadata** | <code>Array<[ServiceAccountMetadata](#cdktf-provider-kubernetes-serviceaccountmetadata)></code> | metadata block.
-**automountServiceAccountToken**? | <code>boolean</code> | Enable automatic mounting of the service account token.<br/>__*Optional*__
+**automountServiceAccountToken**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enable automatic mounting of the service account token.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **imagePullSecret**? | <code>Array<[ServiceAccountImagePullSecret](#cdktf-provider-kubernetes-serviceaccountimagepullsecret)></code> | image_pull_secret block.<br/>__*Optional*__
@@ -31875,9 +32000,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the service account that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the service account that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service account.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service account.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the service account must be unique.<br/>__*Optional*__
 
@@ -31925,7 +32050,7 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **timeouts**? | <code>[ServiceTimeouts](#cdktf-provider-kubernetes-servicetimeouts)</code> | timeouts block.<br/>__*Optional*__
-**waitForLoadBalancer**? | <code>boolean</code> | Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created.<br/>__*Optional*__
+**waitForLoadBalancer**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created.<br/>__*Optional*__
 
 
 
@@ -31938,9 +32063,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the service that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the service that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the service.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the service must be unique.<br/>__*Optional*__
 
@@ -31963,8 +32088,8 @@ Name | Type | Description
 **loadBalancerIp**? | <code>string</code> | Only applies to `type = LoadBalancer`.<br/>__*Optional*__
 **loadBalancerSourceRanges**? | <code>Array<string></code> | If specified and supported by the platform, this will restrict traffic through the cloud-provider load-balancer will be restricted to the specified client IPs.<br/>__*Optional*__
 **port**? | <code>Array<[ServiceSpecPort](#cdktf-provider-kubernetes-servicespecport)></code> | port block.<br/>__*Optional*__
-**publishNotReadyAddresses**? | <code>boolean</code> | When set to true, indicates that DNS implementations must publish the `notReadyAddresses` of subsets for the Endpoints associated with the Service.<br/>__*Optional*__
-**selector**? | <code>Map<string, string></code> | Route service traffic to pods with label keys and values matching this selector.<br/>__*Optional*__
+**publishNotReadyAddresses**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | When set to true, indicates that DNS implementations must publish the `notReadyAddresses` of subsets for the Endpoints associated with the Service.<br/>__*Optional*__
+**selector**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Route service traffic to pods with label keys and values matching this selector.<br/>__*Optional*__
 **sessionAffinity**? | <code>string</code> | Used to maintain session affinity. Supports `ClientIP` and `None`. Defaults to `None`. More info: http://kubernetes.io/docs/user-guide/services#virtual-ips-and-service-proxies.<br/>__*Optional*__
 **type**? | <code>string</code> | Determines how the service is exposed.<br/>__*Optional*__
 
@@ -32016,7 +32141,7 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **timeouts**? | <code>[StatefulSetTimeouts](#cdktf-provider-kubernetes-statefulsettimeouts)</code> | timeouts block.<br/>__*Optional*__
-**waitForRollout**? | <code>boolean</code> | Wait for the rollout of the stateful set to complete. Defaults to true.<br/>__*Optional*__
+**waitForRollout**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Wait for the rollout of the stateful set to complete. Defaults to true.<br/>__*Optional*__
 
 
 
@@ -32029,9 +32154,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the stateful set.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the stateful set.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the stateful set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the stateful set must be unique.<br/>__*Optional*__
 
@@ -32067,7 +32192,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[StatefulSetSpecSelectorMatchExpressions](#cdktf-provider-kubernetes-statefulsetspecselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -32109,9 +32234,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the stateful set.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the stateful set.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the stateful set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -32127,26 +32252,26 @@ Name | Type | Description
 -----|------|-------------
 **activeDeadlineSeconds**? | <code>number</code> | Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers.<br/>__*Optional*__
 **affinity**? | <code>Array<[StatefulSetSpecTemplateSpecAffinity](#cdktf-provider-kubernetes-statefulsetspectemplatespecaffinity)></code> | affinity block.<br/>__*Optional*__
-**automountServiceAccountToken**? | <code>boolean</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
+**automountServiceAccountToken**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.<br/>__*Optional*__
 **container**? | <code>Array<[StatefulSetSpecTemplateSpecContainer](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainer)></code> | container block.<br/>__*Optional*__
 **dnsConfig**? | <code>Array<[StatefulSetSpecTemplateSpecDnsConfig](#cdktf-provider-kubernetes-statefulsetspectemplatespecdnsconfig)></code> | dns_config block.<br/>__*Optional*__
 **dnsPolicy**? | <code>string</code> | Set DNS policy for containers within the pod.<br/>__*Optional*__
-**enableServiceLinks**? | <code>boolean</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
+**enableServiceLinks**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enables generating environment variables for service discovery. Defaults to true.<br/>__*Optional*__
 **hostAliases**? | <code>Array<[StatefulSetSpecTemplateSpecHostAliases](#cdktf-provider-kubernetes-statefulsetspectemplatespechostaliases)></code> | host_aliases block.<br/>__*Optional*__
-**hostIpc**? | <code>boolean</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
-**hostNetwork**? | <code>boolean</code> | Host networking requested for this pod.<br/>__*Optional*__
-**hostPid**? | <code>boolean</code> | Use the host's pid namespace.<br/>__*Optional*__
+**hostIpc**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's ipc namespace. Optional: Defaults to false.<br/>__*Optional*__
+**hostNetwork**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Host networking requested for this pod.<br/>__*Optional*__
+**hostPid**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Use the host's pid namespace.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.<br/>__*Optional*__
 **imagePullSecrets**? | <code>Array<[StatefulSetSpecTemplateSpecImagePullSecrets](#cdktf-provider-kubernetes-statefulsetspectemplatespecimagepullsecrets)></code> | image_pull_secrets block.<br/>__*Optional*__
 **initContainer**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainer](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainer)></code> | init_container block.<br/>__*Optional*__
 **nodeName**? | <code>string</code> | NodeName is a request to schedule this pod onto a specific node.<br/>__*Optional*__
-**nodeSelector**? | <code>Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
+**nodeSelector**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | NodeSelector is a selector which must be true for the pod to fit on a node.<br/>__*Optional*__
 **priorityClassName**? | <code>string</code> | If specified, indicates the pod's priority.<br/>__*Optional*__
 **readinessGate**? | <code>Array<[StatefulSetSpecTemplateSpecReadinessGate](#cdktf-provider-kubernetes-statefulsetspectemplatespecreadinessgate)></code> | readiness_gate block.<br/>__*Optional*__
 **restartPolicy**? | <code>string</code> | Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.<br/>__*Optional*__
 **securityContext**? | <code>Array<[StatefulSetSpecTemplateSpecSecurityContext](#cdktf-provider-kubernetes-statefulsetspectemplatespecsecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **serviceAccountName**? | <code>string</code> | ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.<br/>__*Optional*__
-**shareProcessNamespace**? | <code>boolean</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
+**shareProcessNamespace**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Share a single process namespace between all of the containers in a pod.<br/>__*Optional*__
 **subdomain**? | <code>string</code> | If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..<br/>__*Optional*__
 **terminationGracePeriodSeconds**? | <code>number</code> | Optional duration in seconds the pod needs to terminate gracefully.<br/>__*Optional*__
 **toleration**? | <code>Array<[StatefulSetSpecTemplateSpecToleration](#cdktf-provider-kubernetes-statefulsetspectemplatespectoleration)></code> | toleration block.<br/>__*Optional*__
@@ -32320,7 +32445,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[StatefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-statefulsetspectemplatespecaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -32364,7 +32489,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[StatefulSetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-statefulsetspectemplatespecaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -32436,7 +32561,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[StatefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-statefulsetspectemplatespecaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -32480,7 +32605,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[StatefulSetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-statefulsetspectemplatespecaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -32522,11 +32647,11 @@ Name | Type | Description
 **resources**? | <code>Array<[StatefulSetSpecTemplateSpecContainerResources](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[StatefulSetSpecTemplateSpecContainerSecurityContext](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[StatefulSetSpecTemplateSpecContainerStartupProbe](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[StatefulSetSpecTemplateSpecContainerVolumeMount](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -32572,7 +32697,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -32586,7 +32711,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -32617,7 +32742,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -32661,7 +32786,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -33003,8 +33128,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -33017,12 +33142,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[StatefulSetSpecTemplateSpecContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[StatefulSetSpecTemplateSpecContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-statefulsetspectemplatespeccontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -33147,7 +33272,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -33231,11 +33356,11 @@ Name | Type | Description
 **resources**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerResources](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerresources)></code> | resources block.<br/>__*Optional*__
 **securityContext**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerSecurityContext](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainersecuritycontext)></code> | security_context block.<br/>__*Optional*__
 **startupProbe**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerStartupProbe](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainerstartupprobe)></code> | startup_probe block.<br/>__*Optional*__
-**stdin**? | <code>boolean</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
-**stdinOnce**? | <code>boolean</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
+**stdin**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a buffer for stdin in the container runtime.<br/>__*Optional*__
+**stdinOnce**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the container runtime should close the stdin channel after it has been opened by a single attach.<br/>__*Optional*__
 **terminationMessagePath**? | <code>string</code> | Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem.<br/>__*Optional*__
 **terminationMessagePolicy**? | <code>string</code> | Optional: Indicate how the termination message should be populated.<br/>__*Optional*__
-**tty**? | <code>boolean</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
+**tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container should allocate a TTY for itself.<br/>__*Optional*__
 **volumeMount**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerVolumeMount](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainervolumemount)></code> | volume_mount block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | Container's working directory.<br/>__*Optional*__
 
@@ -33281,7 +33406,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap must be defined.<br/>__*Optional*__
 
 
 
@@ -33295,7 +33420,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
-**optional**? | <code>boolean</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret must be defined.<br/>__*Optional*__
 
 
 
@@ -33326,7 +33451,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key to select.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the ConfigMap or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -33370,7 +33495,7 @@ Name | Type | Description
 -----|------|-------------
 **key**? | <code>string</code> | The key of the secret to select from. Must be a valid secret key.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Specify whether the Secret or its key must be defined.<br/>__*Optional*__
 
 
 
@@ -33712,8 +33837,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Requests describes the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -33726,12 +33851,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**allowPrivilegeEscalation**? | <code>boolean</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
+**allowPrivilegeEscalation**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process.<br/>__*Optional*__
 **capabilities**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerSecurityContextCapabilities](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainersecuritycontextcapabilities)></code> | capabilities block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | Run container in privileged mode.<br/>__*Optional*__
-**readOnlyRootFilesystem**? | <code>boolean</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
+**privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Run container in privileged mode.<br/>__*Optional*__
+**readOnlyRootFilesystem**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether this container has a read-only root filesystem. Default is false.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[StatefulSetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-statefulsetspectemplatespecinitcontainersecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 
@@ -33856,7 +33981,7 @@ Name | Type | Description
 **mountPath** | <code>string</code> | Path within the container at which the volume should be mounted. Must not contain ':'.
 **name** | <code>string</code> | This must match the Name of a Volume.
 **mountPropagation**? | <code>string</code> | Mount propagation mode.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.<br/>__*Optional*__
 **subPath**? | <code>string</code> | Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).<br/>__*Optional*__
 
 
@@ -33885,7 +34010,7 @@ Name | Type | Description
 -----|------|-------------
 **fsGroup**? | <code>string</code> | A special supplemental group that applies to all containers in a pod.<br/>__*Optional*__
 **runAsGroup**? | <code>string</code> | The GID to run the entrypoint of the container process.<br/>__*Optional*__
-**runAsNonRoot**? | <code>boolean</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
+**runAsNonRoot**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates that the container must run as a non-root user.<br/>__*Optional*__
 **runAsUser**? | <code>string</code> | The UID to run the entrypoint of the container process.<br/>__*Optional*__
 **seLinuxOptions**? | <code>Array<[StatefulSetSpecTemplateSpecSecurityContextSeLinuxOptions](#cdktf-provider-kubernetes-statefulsetspectemplatespecsecuritycontextselinuxoptions)></code> | se_linux_options block.<br/>__*Optional*__
 **supplementalGroups**? | <code>Array<number></code> | A list of groups applied to the first process run in each container, in addition to the container's primary GID.<br/>__*Optional*__
@@ -33966,7 +34091,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[StatefulSetSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions](#cdktf-provider-kubernetes-statefulsetspectemplatespectopologyspreadconstraintlabelselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -34036,7 +34161,7 @@ Name | Type | Description
 **volumeId** | <code>string</code> | Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.<br/>__*Optional*__
 
 
 
@@ -34054,7 +34179,7 @@ Name | Type | Description
 **diskName** | <code>string</code> | The Name of the data disk in the blob storage.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **kind**? | <code>string</code> | The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -34069,7 +34194,7 @@ Name | Type | Description
 -----|------|-------------
 **secretName** | <code>string</code> | The name of secret that contains Azure Storage Account Name and Key.
 **shareName** | <code>string</code> | Share Name.
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretNamespace**? | <code>string</code> | The namespace of the secret that contains Azure Storage Account Name and Key.<br/>__*Optional*__
 
 
@@ -34085,7 +34210,7 @@ Name | Type | Description
 -----|------|-------------
 **monitors** | <code>Array<string></code> | Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 **path**? | <code>string</code> | Used as the mounted root, rather than the full Ceph tree, default is /.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretFile**? | <code>string</code> | The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeCephFsSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumecephfssecretref)></code> | secret_ref block.<br/>__*Optional*__
 **user**? | <code>string</code> | User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.<br/>__*Optional*__
@@ -34117,7 +34242,7 @@ Name | Type | Description
 -----|------|-------------
 **volumeId** | <code>string</code> | Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.<br/>__*Optional*__
 
 
 
@@ -34133,7 +34258,7 @@ Name | Type | Description
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeConfigMapItems](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumeconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or its keys must be defined.<br/>__*Optional*__
 
 
 
@@ -34168,8 +34293,8 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
 **nodePublishSecretRef**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeCsiNodePublishSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumecsinodepublishsecretref)></code> | node_publish_secret_ref block.<br/>__*Optional*__
 **nodeStageSecretRef**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeCsiNodeStageSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumecsinodestagesecretref)></code> | node_stage_secret_ref block.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
-**volumeAttributes**? | <code>Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.<br/>__*Optional*__
+**volumeAttributes**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Attributes of the volume to publish.<br/>__*Optional*__
 
 
 
@@ -34314,7 +34439,7 @@ Name | Type | Description
 **lun** | <code>number</code> | FC target lun number.
 **targetWwNs** | <code>Array<string></code> | FC target worldwide names (WWNs).
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 
 
 
@@ -34329,8 +34454,8 @@ Name | Type | Description
 -----|------|-------------
 **driver** | <code>string</code> | Driver is the name of the driver to use for this volume.
 **fsType**? | <code>string</code> | Filesystem type to mount.<br/>__*Optional*__
-**options**? | <code>Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
+**options**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Extra command options if any.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).<br/>__*Optional*__
 **secretRef**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeFlexVolumeSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumeflexvolumesecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -34375,7 +34500,7 @@ Name | Type | Description
 **pdName** | <code>string</code> | Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **partition**? | <code>number</code> | The partition in the volume that you want to mount.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.<br/>__*Optional*__
 
 
 
@@ -34405,7 +34530,7 @@ Name | Type | Description
 -----|------|-------------
 **endpointsName** | <code>string</code> | The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
 **path** | <code>string</code> | The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
-**readOnly**? | <code>boolean</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.<br/>__*Optional*__
 
 
 
@@ -34437,7 +34562,7 @@ Name | Type | Description
 **fsType**? | <code>string</code> | Filesystem type of the volume that you want to mount.<br/>__*Optional*__
 **iscsiInterface**? | <code>string</code> | iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).<br/>__*Optional*__
 **lun**? | <code>number</code> | iSCSI target lun number.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false.<br/>__*Optional*__
 
 
 
@@ -34465,7 +34590,7 @@ Name | Type | Description
 -----|------|-------------
 **path** | <code>string</code> | Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
 **server** | <code>string</code> | Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
-**readOnly**? | <code>boolean</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.<br/>__*Optional*__
 
 
 
@@ -34479,7 +34604,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **claimName**? | <code>string</code> | ClaimName is the name of a PersistentVolumeClaim in the same.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Will force the ReadOnly setting in VolumeMounts.<br/>__*Optional*__
 
 
 
@@ -34538,7 +34663,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeProjectedSourcesConfigMapItems](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumeprojectedsourcesconfigmapitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the ConfigMap or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -34626,7 +34751,7 @@ Name | Type | Description
 -----|------|-------------
 **items**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeProjectedSourcesSecretItems](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumeprojectedsourcessecretitems)></code> | items block.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or it's keys must be defined.<br/>__*Optional*__
 
 
 
@@ -34672,7 +34797,7 @@ Name | Type | Description
 **registry** | <code>string</code> | Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 **volume** | <code>string</code> | Volume is a string that references an already created Quobyte volume by name.
 **group**? | <code>string</code> | Group to map volume access to Default is no group.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.<br/>__*Optional*__
 **user**? | <code>string</code> | User to map volume access to Defaults to serivceaccount user.<br/>__*Optional*__
 
 
@@ -34692,7 +34817,7 @@ Name | Type | Description
 **keyring**? | <code>string</code> | Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **radosUser**? | <code>string</code> | The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **rbdPool**? | <code>string</code> | The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
-**readOnly**? | <code>boolean</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
+**readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.<br/>__*Optional*__
 **secretRef**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeRbdSecretRef](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumerbdsecretref)></code> | secret_ref block.<br/>__*Optional*__
 
 
@@ -34722,7 +34847,7 @@ Name | Type | Description
 -----|------|-------------
 **defaultMode**? | <code>string</code> | Optional: mode bits to use on created files by default.<br/>__*Optional*__
 **items**? | <code>Array<[StatefulSetSpecTemplateSpecVolumeSecretItems](#cdktf-provider-kubernetes-statefulsetspectemplatespecvolumesecretitems)></code> | items block.<br/>__*Optional*__
-**optional**? | <code>boolean</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
+**optional**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Optional: Specify whether the Secret or its keys must be defined.<br/>__*Optional*__
 **secretName**? | <code>string</code> | Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets.<br/>__*Optional*__
 
 
@@ -34806,9 +34931,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the persistent volume claim that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the persistent volume claim that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume claim.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume claim.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the persistent volume claim, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 **namespace**? | <code>string</code> | Namespace defines the space within which name of the persistent volume claim must be unique.<br/>__*Optional*__
 
@@ -34840,8 +34965,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**limits**? | <code>Map<string, string></code> | Map describing the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
-**requests**? | <code>Map<string, string></code> | Map describing the minimum amount of compute resources required.<br/>__*Optional*__
+**limits**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map describing the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/.<br/>__*Optional*__
+**requests**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map describing the minimum amount of compute resources required.<br/>__*Optional*__
 
 
 
@@ -34855,7 +34980,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[StatefulSetSpecVolumeClaimTemplateSpecSelectorMatchExpressions](#cdktf-provider-kubernetes-statefulsetspecvolumeclaimtemplatespecselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -34928,13 +35053,13 @@ Name | Type | Description
 -----|------|-------------
 **metadata** | <code>Array<[StorageClassMetadata](#cdktf-provider-kubernetes-storageclassmetadata)></code> | metadata block.
 **storageProvisioner** | <code>string</code> | Indicates the type of the provisioner.
-**allowVolumeExpansion**? | <code>boolean</code> | Indicates whether the storage class allow volume expand.<br/>__*Optional*__
+**allowVolumeExpansion**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Indicates whether the storage class allow volume expand.<br/>__*Optional*__
 **allowedTopologies**? | <code>Array<[StorageClassAllowedTopologies](#cdktf-provider-kubernetes-storageclassallowedtopologies)></code> | allowed_topologies block.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **mountOptions**? | <code>Array<string></code> | Persistent Volumes that are dynamically created by a storage class will have the mount options specified.<br/>__*Optional*__
-**parameters**? | <code>Map<string, string></code> | The parameters for the provisioner that should create volumes of this storage class.<br/>__*Optional*__
+**parameters**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | The parameters for the provisioner that should create volumes of this storage class.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **reclaimPolicy**? | <code>string</code> | Indicates the type of the reclaim policy.<br/>__*Optional*__
 **volumeBindingMode**? | <code>string</code> | Indicates when volume binding and dynamic provisioning should occur.<br/>__*Optional*__
@@ -34950,9 +35075,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the storage class that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the storage class that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the storage class.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the storage class.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the storage class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -34984,9 +35109,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**annotations**? | <code>Map<string, string></code> | An unstructured key value map stored with the validating webhook configuration that may be used to store arbitrary metadata.<br/>__*Optional*__
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the validating webhook configuration that may be used to store arbitrary metadata.<br/>__*Optional*__
 **generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the validating webhook configuration.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the validating webhook configuration.<br/>__*Optional*__
 **name**? | <code>string</code> | Name of the validating webhook configuration, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
 
 
@@ -35054,7 +35179,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions](#cdktf-provider-kubernetes-validatingwebhookconfigurationwebhooknamespaceselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 
@@ -35083,7 +35208,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **matchExpressions**? | <code>Array<[ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressions](#cdktf-provider-kubernetes-validatingwebhookconfigurationwebhookobjectselectormatchexpressions)></code> | match_expressions block.<br/>__*Optional*__
-**matchLabels**? | <code>Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
+**matchLabels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of {key,value} pairs.<br/>__*Optional*__
 
 
 

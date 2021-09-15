@@ -27,13 +27,13 @@ export interface DataKubernetesNamespaceMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace.html#annotations DataKubernetesNamespace#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the namespace. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace.html#labels DataKubernetesNamespace#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the namespace, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -56,6 +56,11 @@ function dataKubernetesNamespaceMetadataToTerraform(struct?: DataKubernetesNames
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace.html kubernetes_namespace}
 */
 export class DataKubernetesNamespace extends cdktf.TerraformDataSource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_namespace";
 
   // ===========
   // INITIALIZER

@@ -32,7 +32,7 @@ export interface CronJobMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#annotations CronJob#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -44,7 +44,7 @@ export interface CronJobMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#labels CronJob#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the cronjob, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -76,7 +76,7 @@ export interface CronJobSpecJobTemplateMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#annotations CronJob#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -88,7 +88,7 @@ export interface CronJobSpecJobTemplateMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#labels CronJob#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the jobTemplateSpec, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -143,7 +143,7 @@ export interface CronJobSpecJobTemplateSpecSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#match_labels CronJob#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -166,7 +166,7 @@ export interface CronJobSpecJobTemplateSpecTemplateMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#annotations CronJob#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -178,7 +178,7 @@ export interface CronJobSpecJobTemplateSpecTemplateMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#labels CronJob#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the job, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -387,7 +387,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPrefer
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#match_labels CronJob#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -493,7 +493,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequir
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#match_labels CronJob#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -599,7 +599,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPr
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#match_labels CronJob#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -705,7 +705,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRe
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#match_labels CronJob#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -823,7 +823,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromConf
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#optional CronJob#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef): any {
@@ -902,7 +902,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecr
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#optional CronJob#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef): any {
@@ -993,7 +993,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMap
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#optional CronJob#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRef): any {
@@ -1016,7 +1016,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#optional CronJob#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef): any {
@@ -1716,13 +1716,13 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecContainerResources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#limits CronJob#limits}
   */
-  readonly limits?: { [key: string]: string };
+  readonly limits?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#requests CronJob#requests}
   */
-  readonly requests?: { [key: string]: string };
+  readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecContainerResourcesToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecContainerResources): any {
@@ -1799,19 +1799,19 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContext 
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#allow_privilege_escalation CronJob#allow_privilege_escalation}
   */
-  readonly allowPrivilegeEscalation?: boolean;
+  readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#privileged CronJob#privileged}
   */
-  readonly privileged?: boolean;
+  readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only_root_filesystem CronJob#read_only_root_filesystem}
   */
-  readonly readOnlyRootFilesystem?: boolean;
+  readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -1823,7 +1823,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContext 
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#run_as_non_root CronJob#run_as_non_root}
   */
-  readonly runAsNonRoot?: boolean;
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -2046,7 +2046,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecContainerVolumeMount {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   * 
@@ -2102,13 +2102,13 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#stdin CronJob#stdin}
   */
-  readonly stdin?: boolean;
+  readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#stdin_once CronJob#stdin_once}
   */
-  readonly stdinOnce?: boolean;
+  readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
   * 
@@ -2126,7 +2126,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#tty CronJob#tty}
   */
-  readonly tty?: boolean;
+  readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
   * 
@@ -2332,7 +2332,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#optional CronJob#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef): any {
@@ -2411,7 +2411,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#optional CronJob#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef): any {
@@ -2502,7 +2502,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfi
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#optional CronJob#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRef): any {
@@ -2525,7 +2525,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecre
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#optional CronJob#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef): any {
@@ -3225,13 +3225,13 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecInitContainerResources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#limits CronJob#limits}
   */
-  readonly limits?: { [key: string]: string };
+  readonly limits?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#requests CronJob#requests}
   */
-  readonly requests?: { [key: string]: string };
+  readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecInitContainerResourcesToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecInitContainerResources): any {
@@ -3308,19 +3308,19 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityCont
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#allow_privilege_escalation CronJob#allow_privilege_escalation}
   */
-  readonly allowPrivilegeEscalation?: boolean;
+  readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#privileged CronJob#privileged}
   */
-  readonly privileged?: boolean;
+  readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only_root_filesystem CronJob#read_only_root_filesystem}
   */
-  readonly readOnlyRootFilesystem?: boolean;
+  readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -3332,7 +3332,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityCont
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#run_as_non_root CronJob#run_as_non_root}
   */
-  readonly runAsNonRoot?: boolean;
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -3555,7 +3555,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecInitContainerVolumeMount 
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   * 
@@ -3611,13 +3611,13 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#stdin CronJob#stdin}
   */
-  readonly stdin?: boolean;
+  readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#stdin_once CronJob#stdin_once}
   */
-  readonly stdinOnce?: boolean;
+  readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
   * 
@@ -3635,7 +3635,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#tty CronJob#tty}
   */
-  readonly tty?: boolean;
+  readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
   * 
@@ -3825,7 +3825,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#run_as_non_root CronJob#run_as_non_root}
   */
-  readonly runAsNonRoot?: boolean;
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
   * 
@@ -3945,7 +3945,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecTopologySpreadConstraintL
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#match_labels CronJob#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -4017,7 +4017,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStor
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
   * 
@@ -4072,7 +4072,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureDisk {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecVolumeAzureDiskToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureDisk): any {
@@ -4093,7 +4093,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureFile {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The name of secret that contains Azure Storage Account Name and Key
   * 
@@ -4165,7 +4165,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
   * 
@@ -4210,7 +4210,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeCinder {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
   * 
@@ -4276,7 +4276,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeConfigMap {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#optional CronJob#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
@@ -4405,13 +4405,13 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeCsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Attributes of the volume to publish.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#volume_attributes CronJob#volume_attributes}
   */
-  readonly volumeAttributes?: { [key: string]: string };
+  readonly volumeAttributes?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
   * 
@@ -4609,7 +4609,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeFc {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * FC target worldwide names (WWNs)
   * 
@@ -4669,13 +4669,13 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolume {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#options CronJob#options}
   */
-  readonly options?: { [key: string]: string };
+  readonly options?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
   * 
@@ -4742,7 +4742,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk): any {
@@ -4803,7 +4803,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeGlusterfs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecVolumeGlusterfsToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecVolumeGlusterfs): any {
@@ -4868,7 +4868,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeIscsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
   * 
@@ -4917,7 +4917,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeNfs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
   * 
@@ -4947,7 +4947,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumePersistentVolumeCla
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function cronJobSpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct?: CronJobSpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim): any {
@@ -5023,7 +5023,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesCon
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#optional CronJob#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
@@ -5185,7 +5185,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSec
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#optional CronJob#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
@@ -5305,7 +5305,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeQuobyte {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
   * 
@@ -5402,7 +5402,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeRbd {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#read_only CronJob#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
   * 
@@ -5467,7 +5467,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecVolumeSecret {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#optional CronJob#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets
   * 
@@ -5725,7 +5725,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#automount_service_account_token CronJob#automount_service_account_token}
   */
-  readonly automountServiceAccountToken?: boolean;
+  readonly automountServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
   * Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy).
   * 
@@ -5737,25 +5737,25 @@ export interface CronJobSpecJobTemplateSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#enable_service_links CronJob#enable_service_links}
   */
-  readonly enableServiceLinks?: boolean;
+  readonly enableServiceLinks?: boolean | cdktf.IResolvable;
   /**
   * Use the host's ipc namespace. Optional: Defaults to false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#host_ipc CronJob#host_ipc}
   */
-  readonly hostIpc?: boolean;
+  readonly hostIpc?: boolean | cdktf.IResolvable;
   /**
   * Host networking requested for this pod. Use the host's network namespace. If this option is set, the ports that will be used must be specified.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#host_network CronJob#host_network}
   */
-  readonly hostNetwork?: boolean;
+  readonly hostNetwork?: boolean | cdktf.IResolvable;
   /**
   * Use the host's pid namespace.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#host_pid CronJob#host_pid}
   */
-  readonly hostPid?: boolean;
+  readonly hostPid?: boolean | cdktf.IResolvable;
   /**
   * Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.
   * 
@@ -5773,7 +5773,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#node_selector CronJob#node_selector}
   */
-  readonly nodeSelector?: { [key: string]: string };
+  readonly nodeSelector?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default.
   * 
@@ -5797,7 +5797,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#share_process_namespace CronJob#share_process_namespace}
   */
-  readonly shareProcessNamespace?: boolean;
+  readonly shareProcessNamespace?: boolean | cdktf.IResolvable;
   /**
   * If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..
   * 
@@ -5958,7 +5958,7 @@ export interface CronJobSpecJobTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#manual_selector CronJob#manual_selector}
   */
-  readonly manualSelector?: boolean;
+  readonly manualSelector?: boolean | cdktf.IResolvable;
   /**
   * Specifies the maximum desired number of pods the job should run at any given time. The actual number of pods running in steady state will be less than this number when ((.spec.completions - .status.successful) < .spec.parallelism), i.e. when the work left to do is less than max parallelism. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
   * 
@@ -6058,7 +6058,7 @@ export interface CronJobSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#suspend CronJob#suspend}
   */
-  readonly suspend?: boolean;
+  readonly suspend?: boolean | cdktf.IResolvable;
   /**
   * job_template block
   * 
@@ -6099,6 +6099,11 @@ function cronJobTimeoutsToTerraform(struct?: CronJobTimeouts): any {
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html kubernetes_cron_job}
 */
 export class CronJob extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_cron_job";
 
   // ===========
   // INITIALIZER

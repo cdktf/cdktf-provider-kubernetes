@@ -32,13 +32,13 @@ export interface PersistentVolumeMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#annotations PersistentVolume#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#labels PersistentVolume#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the persistent volume, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -212,7 +212,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore 
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
   * 
@@ -267,7 +267,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceAzureDisk {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function persistentVolumeSpecPersistentVolumeSourceAzureDiskToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceAzureDisk): any {
@@ -288,7 +288,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceAzureFile {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The name of secret that contains Azure Storage Account Name and Key
   * 
@@ -360,7 +360,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCephFs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
   * 
@@ -405,7 +405,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCinder {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
   * 
@@ -533,13 +533,13 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Attributes of the volume to publish.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#volume_attributes PersistentVolume#volume_attributes}
   */
-  readonly volumeAttributes?: { [key: string]: string };
+  readonly volumeAttributes?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
   * 
@@ -605,7 +605,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceFc {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * FC target worldwide names (WWNs)
   * 
@@ -665,13 +665,13 @@ export interface PersistentVolumeSpecPersistentVolumeSourceFlexVolume {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#options PersistentVolume#options}
   */
-  readonly options?: { [key: string]: string };
+  readonly options?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
   * 
@@ -738,7 +738,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function persistentVolumeSpecPersistentVolumeSourceGcePersistentDiskToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk): any {
@@ -769,7 +769,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceGlusterfs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function persistentVolumeSpecPersistentVolumeSourceGlusterfsToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceGlusterfs): any {
@@ -834,7 +834,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceIscsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
   * 
@@ -883,7 +883,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceNfs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
   * 
@@ -936,7 +936,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceQuobyte {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
   * 
@@ -1033,7 +1033,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceRbd {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#read_only PersistentVolume#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
   * 
@@ -1233,7 +1233,7 @@ export interface PersistentVolumeSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html#capacity PersistentVolume#capacity}
   */
-  readonly capacity: { [key: string]: string };
+  readonly capacity: { [key: string]: string } | cdktf.IResolvable;
   /**
   * A list of mount options, e.g. ["ro", "soft"]. Not validated - mount will simply fail if one is invalid.
   * 
@@ -1312,6 +1312,11 @@ function persistentVolumeTimeoutsToTerraform(struct?: PersistentVolumeTimeouts):
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume.html kubernetes_persistent_volume}
 */
 export class PersistentVolume extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_persistent_volume";
 
   // ===========
   // INITIALIZER

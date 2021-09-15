@@ -60,7 +60,7 @@ export interface KubernetesProviderConfig {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#insecure KubernetesProvider#insecure}
   */
-  readonly insecure?: boolean;
+  readonly insecure?: boolean | cdktf.IResolvable;
   /**
   * The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint.
   * 
@@ -114,7 +114,7 @@ export interface KubernetesProviderExec {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#env KubernetesProvider#env}
   */
-  readonly env?: { [key: string]: string };
+  readonly env?: { [key: string]: string } | cdktf.IResolvable;
 }
 
 function kubernetesProviderExecToTerraform(struct?: KubernetesProviderExec): any {
@@ -133,7 +133,7 @@ export interface KubernetesProviderExperiments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#manifest_resource KubernetesProvider#manifest_resource}
   */
-  readonly manifestResource?: boolean;
+  readonly manifestResource?: boolean | cdktf.IResolvable;
 }
 
 function kubernetesProviderExperimentsToTerraform(struct?: KubernetesProviderExperiments): any {
@@ -148,6 +148,11 @@ function kubernetesProviderExperimentsToTerraform(struct?: KubernetesProviderExp
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes kubernetes}
 */
 export class KubernetesProvider extends cdktf.TerraformProvider {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes";
 
   // ===========
   // INITIALIZER
@@ -336,11 +341,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // insecure - computed: false, optional: true, required: false
-  private _insecure?: boolean;
+  private _insecure?: boolean | cdktf.IResolvable;
   public get insecure() {
     return this._insecure;
   }
-  public set insecure(value: boolean  | undefined) {
+  public set insecure(value: boolean | cdktf.IResolvable  | undefined) {
     this._insecure = value;
   }
   public resetInsecure() {

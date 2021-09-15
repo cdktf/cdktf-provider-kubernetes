@@ -26,7 +26,7 @@ export interface ApiServiceMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service.html#annotations ApiService#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -38,7 +38,7 @@ export interface ApiServiceMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service.html#labels ApiService#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the api_service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -111,7 +111,7 @@ export interface ApiServiceSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service.html#insecure_skip_tls_verify ApiService#insecure_skip_tls_verify}
   */
-  readonly insecureSkipTlsVerify?: boolean;
+  readonly insecureSkipTlsVerify?: boolean | cdktf.IResolvable;
   /**
   * Version is the API version this server hosts. For example, `v1`.
   * 
@@ -150,6 +150,11 @@ function apiServiceSpecToTerraform(struct?: ApiServiceSpec): any {
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service.html kubernetes_api_service}
 */
 export class ApiService extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_api_service";
 
   // ===========
   // INITIALIZER

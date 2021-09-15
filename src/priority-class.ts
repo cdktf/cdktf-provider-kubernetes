@@ -18,7 +18,7 @@ export interface PriorityClassConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html#global_default PriorityClass#global_default}
   */
-  readonly globalDefault?: boolean;
+  readonly globalDefault?: boolean | cdktf.IResolvable;
   /**
   * The value of this priority class. This is the actual priority that pods receive when they have the name of this class in their pod spec.
   * 
@@ -38,7 +38,7 @@ export interface PriorityClassMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html#annotations PriorityClass#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -50,7 +50,7 @@ export interface PriorityClassMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html#labels PriorityClass#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the priority class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -74,6 +74,11 @@ function priorityClassMetadataToTerraform(struct?: PriorityClassMetadata): any {
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html kubernetes_priority_class}
 */
 export class PriorityClass extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_priority_class";
 
   // ===========
   // INITIALIZER
@@ -124,11 +129,11 @@ export class PriorityClass extends cdktf.TerraformResource {
   }
 
   // global_default - computed: false, optional: true, required: false
-  private _globalDefault?: boolean;
+  private _globalDefault?: boolean | cdktf.IResolvable;
   public get globalDefault() {
     return this.getBooleanAttribute('global_default');
   }
-  public set globalDefault(value: boolean ) {
+  public set globalDefault(value: boolean | cdktf.IResolvable ) {
     this._globalDefault = value;
   }
   public resetGlobalDefault() {

@@ -12,7 +12,7 @@ export interface DataKubernetesSecretConfig extends cdktf.TerraformMetaArguments
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html#binary_data DataKubernetesSecret#binary_data}
   */
-  readonly binaryData?: { [key: string]: string };
+  readonly binaryData?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * metadata block
   * 
@@ -26,13 +26,13 @@ export interface DataKubernetesSecretMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html#annotations DataKubernetesSecret#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the secret. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html#labels DataKubernetesSecret#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the secret, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -62,6 +62,11 @@ function dataKubernetesSecretMetadataToTerraform(struct?: DataKubernetesSecretMe
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html kubernetes_secret}
 */
 export class DataKubernetesSecret extends cdktf.TerraformDataSource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_secret";
 
   // ===========
   // INITIALIZER
@@ -94,11 +99,11 @@ export class DataKubernetesSecret extends cdktf.TerraformDataSource {
   // ==========
 
   // binary_data - computed: false, optional: true, required: false
-  private _binaryData?: { [key: string]: string };
+  private _binaryData?: { [key: string]: string } | cdktf.IResolvable;
   public get binaryData() {
     return this.interpolationForAttribute('binary_data') as any;
   }
-  public set binaryData(value: { [key: string]: string } ) {
+  public set binaryData(value: { [key: string]: string } | cdktf.IResolvable ) {
     this._binaryData = value;
   }
   public resetBinaryData() {

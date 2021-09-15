@@ -26,7 +26,7 @@ export interface HorizontalPodAutoscalerMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#annotations HorizontalPodAutoscaler#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -38,7 +38,7 @@ export interface HorizontalPodAutoscalerMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#labels HorizontalPodAutoscaler#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the horizontal pod autoscaler, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -100,7 +100,7 @@ export interface HorizontalPodAutoscalerSpecMetricExternalMetricSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#match_labels HorizontalPodAutoscaler#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -266,7 +266,7 @@ export interface HorizontalPodAutoscalerSpecMetricObjectMetricSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#match_labels HorizontalPodAutoscaler#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -409,7 +409,7 @@ export interface HorizontalPodAutoscalerSpecMetricPodsMetricSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#match_labels HorizontalPodAutoscaler#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -692,6 +692,11 @@ function horizontalPodAutoscalerSpecToTerraform(struct?: HorizontalPodAutoscaler
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html kubernetes_horizontal_pod_autoscaler}
 */
 export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_horizontal_pod_autoscaler";
 
   // ===========
   // INITIALIZER

@@ -26,7 +26,7 @@ export interface MutatingWebhookConfigurationMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#annotations MutatingWebhookConfiguration#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -38,7 +38,7 @@ export interface MutatingWebhookConfigurationMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#labels MutatingWebhookConfiguration#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the mutating webhook configuration, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -170,7 +170,7 @@ export interface MutatingWebhookConfigurationWebhookNamespaceSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#match_labels MutatingWebhookConfiguration#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -223,7 +223,7 @@ export interface MutatingWebhookConfigurationWebhookObjectSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#match_labels MutatingWebhookConfiguration#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -379,6 +379,11 @@ function mutatingWebhookConfigurationWebhookToTerraform(struct?: MutatingWebhook
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html kubernetes_mutating_webhook_configuration}
 */
 export class MutatingWebhookConfiguration extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_mutating_webhook_configuration";
 
   // ===========
   // INITIALIZER

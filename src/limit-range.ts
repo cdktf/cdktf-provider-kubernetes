@@ -26,7 +26,7 @@ export interface LimitRangeMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html#annotations LimitRange#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -38,7 +38,7 @@ export interface LimitRangeMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html#labels LimitRange#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the limit range, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -70,31 +70,31 @@ export interface LimitRangeSpecLimit {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html#default LimitRange#default}
   */
-  readonly default?: { [key: string]: string };
+  readonly default?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * The default resource requirement request value by resource name if resource request is omitted.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html#default_request LimitRange#default_request}
   */
-  readonly defaultRequest?: { [key: string]: string };
+  readonly defaultRequest?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Max usage constraints on this kind by resource name.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html#max LimitRange#max}
   */
-  readonly max?: { [key: string]: string };
+  readonly max?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * The named resource must have a request and limit that are both non-zero where limit divided by request is less than or equal to the enumerated value; this represents the max burst for the named resource.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html#max_limit_request_ratio LimitRange#max_limit_request_ratio}
   */
-  readonly maxLimitRequestRatio?: { [key: string]: string };
+  readonly maxLimitRequestRatio?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Min usage constraints on this kind by resource name.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html#min LimitRange#min}
   */
-  readonly min?: { [key: string]: string };
+  readonly min?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Type of resource that this limit applies to.
   * 
@@ -136,6 +136,11 @@ function limitRangeSpecToTerraform(struct?: LimitRangeSpec): any {
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html kubernetes_limit_range}
 */
 export class LimitRange extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_limit_range";
 
   // ===========
   // INITIALIZER

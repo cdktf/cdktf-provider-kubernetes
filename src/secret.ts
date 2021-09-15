@@ -12,13 +12,13 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html#binary_data Secret#binary_data}
   */
-  readonly binaryData?: { [key: string]: string };
+  readonly binaryData?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * A map of the secret data.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html#data Secret#data}
   */
-  readonly data?: { [key: string]: string };
+  readonly data?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Type of secret
   * 
@@ -38,7 +38,7 @@ export interface SecretMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html#annotations Secret#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -50,7 +50,7 @@ export interface SecretMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html#labels Secret#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the secret, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -81,6 +81,11 @@ function secretMetadataToTerraform(struct?: SecretMetadata): any {
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html kubernetes_secret}
 */
 export class Secret extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_secret";
 
   // ===========
   // INITIALIZER
@@ -115,11 +120,11 @@ export class Secret extends cdktf.TerraformResource {
   // ==========
 
   // binary_data - computed: false, optional: true, required: false
-  private _binaryData?: { [key: string]: string };
+  private _binaryData?: { [key: string]: string } | cdktf.IResolvable;
   public get binaryData() {
     return this.interpolationForAttribute('binary_data') as any;
   }
-  public set binaryData(value: { [key: string]: string } ) {
+  public set binaryData(value: { [key: string]: string } | cdktf.IResolvable ) {
     this._binaryData = value;
   }
   public resetBinaryData() {
@@ -131,11 +136,11 @@ export class Secret extends cdktf.TerraformResource {
   }
 
   // data - computed: true, optional: true, required: false
-  private _data?: { [key: string]: string }
-  public get data(): { [key: string]: string } {
+  private _data?: { [key: string]: string } | cdktf.IResolvable
+  public get data(): { [key: string]: string } | cdktf.IResolvable {
     return this.interpolationForAttribute('data') as any; // Getting the computed value is not yet implemented
   }
-  public set data(value: { [key: string]: string }) {
+  public set data(value: { [key: string]: string } | cdktf.IResolvable) {
     this._data = value;
   }
   public resetData() {

@@ -135,13 +135,13 @@ export interface DataKubernetesServiceMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html#annotations DataKubernetesService#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the service. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html#labels DataKubernetesService#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -171,6 +171,11 @@ function dataKubernetesServiceMetadataToTerraform(struct?: DataKubernetesService
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html kubernetes_service}
 */
 export class DataKubernetesService extends cdktf.TerraformDataSource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_service";
 
   // ===========
   // INITIALIZER

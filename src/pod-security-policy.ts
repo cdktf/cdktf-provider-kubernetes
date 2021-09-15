@@ -26,13 +26,13 @@ export interface PodSecurityPolicyMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#annotations PodSecurityPolicy#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the podsecuritypolicy. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#labels PodSecurityPolicy#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the podsecuritypolicy, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -80,7 +80,7 @@ Examples: `/foo` would allow `/foo`, `/foo/` and `/foo/bar` `/foo` would not all
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#read_only PodSecurityPolicy#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function podSecurityPolicySpecAllowedHostPathsToTerraform(struct?: PodSecurityPolicySpecAllowedHostPaths): any {
@@ -356,7 +356,7 @@ export interface PodSecurityPolicySpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#allow_privilege_escalation PodSecurityPolicy#allow_privilege_escalation}
   */
-  readonly allowPrivilegeEscalation?: boolean;
+  readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * allowedCapabilities is a list of capabilities that can be requested to add to the container. Capabilities in this field may be added at the pod author's discretion. You must not list a capability in both allowedCapabilities and requiredDropCapabilities.
   * 
@@ -388,7 +388,7 @@ Examples: e.g. "foo/*" allows "foo/bar", "foo/baz", etc. e.g. "foo.*" allows "fo
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#default_allow_privilege_escalation PodSecurityPolicy#default_allow_privilege_escalation}
   */
-  readonly defaultAllowPrivilegeEscalation?: boolean;
+  readonly defaultAllowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * forbiddenSysctls is a list of explicitly forbidden sysctls, defaults to none. Each entry is either a plain sysctl name or ends in "*" in which case it is considered as a prefix of forbidden sysctls. Single * means all sysctls are forbidden.
 
@@ -402,31 +402,31 @@ Examples: e.g. "foo/*" forbids "foo/bar", "foo/baz", etc. e.g. "foo.*" forbids "
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#host_ipc PodSecurityPolicy#host_ipc}
   */
-  readonly hostIpc?: boolean;
+  readonly hostIpc?: boolean | cdktf.IResolvable;
   /**
   * hostNetwork determines if the policy allows the use of HostNetwork in the pod spec.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#host_network PodSecurityPolicy#host_network}
   */
-  readonly hostNetwork?: boolean;
+  readonly hostNetwork?: boolean | cdktf.IResolvable;
   /**
   * hostPID determines if the policy allows the use of HostPID in the pod spec.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#host_pid PodSecurityPolicy#host_pid}
   */
-  readonly hostPid?: boolean;
+  readonly hostPid?: boolean | cdktf.IResolvable;
   /**
   * privileged determines if a pod can request to be run as privileged.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#privileged PodSecurityPolicy#privileged}
   */
-  readonly privileged?: boolean;
+  readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * readOnlyRootFilesystem when set to true will force containers to run with a read only root file system.  If the container specifically requests to run with a non-read only root file system the PSP should deny the pod. If set to false the container may run with a read only root file system if it wishes but it will not be forced to.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html#read_only_root_filesystem PodSecurityPolicy#read_only_root_filesystem}
   */
-  readonly readOnlyRootFilesystem?: boolean;
+  readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * requiredDropCapabilities are the capabilities that will be dropped from the container.  These are required to be dropped and cannot be added.
   * 
@@ -522,6 +522,11 @@ function podSecurityPolicySpecToTerraform(struct?: PodSecurityPolicySpec): any {
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy.html kubernetes_pod_security_policy}
 */
 export class PodSecurityPolicy extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_pod_security_policy";
 
   // ===========
   // INITIALIZER
