@@ -12,7 +12,7 @@ export interface ServiceAccountConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_account.html#automount_service_account_token ServiceAccount#automount_service_account_token}
   */
-  readonly automountServiceAccountToken?: boolean;
+  readonly automountServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
   * image_pull_secret block
   * 
@@ -60,7 +60,7 @@ export interface ServiceAccountMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_account.html#annotations ServiceAccount#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -72,7 +72,7 @@ export interface ServiceAccountMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_account.html#labels ServiceAccount#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -134,6 +134,11 @@ function serviceAccountTimeoutsToTerraform(struct?: ServiceAccountTimeouts): any
 */
 export class ServiceAccount extends cdktf.TerraformResource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_service_account";
+
   // ===========
   // INITIALIZER
   // ===========
@@ -168,11 +173,11 @@ export class ServiceAccount extends cdktf.TerraformResource {
   // ==========
 
   // automount_service_account_token - computed: false, optional: true, required: false
-  private _automountServiceAccountToken?: boolean;
+  private _automountServiceAccountToken?: boolean | cdktf.IResolvable;
   public get automountServiceAccountToken() {
     return this.getBooleanAttribute('automount_service_account_token');
   }
-  public set automountServiceAccountToken(value: boolean ) {
+  public set automountServiceAccountToken(value: boolean | cdktf.IResolvable ) {
     this._automountServiceAccountToken = value;
   }
   public resetAutomountServiceAccountToken() {

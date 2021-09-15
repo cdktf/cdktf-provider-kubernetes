@@ -26,7 +26,7 @@ export interface ValidatingWebhookConfigurationMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#annotations ValidatingWebhookConfiguration#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -38,7 +38,7 @@ export interface ValidatingWebhookConfigurationMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#labels ValidatingWebhookConfiguration#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the validating webhook configuration, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -170,7 +170,7 @@ export interface ValidatingWebhookConfigurationWebhookNamespaceSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#match_labels ValidatingWebhookConfiguration#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -223,7 +223,7 @@ export interface ValidatingWebhookConfigurationWebhookObjectSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#match_labels ValidatingWebhookConfiguration#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -366,6 +366,11 @@ function validatingWebhookConfigurationWebhookToTerraform(struct?: ValidatingWeb
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html kubernetes_validating_webhook_configuration}
 */
 export class ValidatingWebhookConfiguration extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_validating_webhook_configuration";
 
   // ===========
   // INITIALIZER

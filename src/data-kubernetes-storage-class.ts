@@ -12,7 +12,7 @@ export interface DataKubernetesStorageClassConfig extends cdktf.TerraformMetaArg
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/storage_class.html#allow_volume_expansion DataKubernetesStorageClass#allow_volume_expansion}
   */
-  readonly allowVolumeExpansion?: boolean;
+  readonly allowVolumeExpansion?: boolean | cdktf.IResolvable;
   /**
   * Persistent Volumes that are dynamically created by a storage class will have the mount options specified
   * 
@@ -24,7 +24,7 @@ export interface DataKubernetesStorageClassConfig extends cdktf.TerraformMetaArg
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/storage_class.html#parameters DataKubernetesStorageClass#parameters}
   */
-  readonly parameters?: { [key: string]: string };
+  readonly parameters?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Indicates the type of the reclaim policy
   * 
@@ -95,13 +95,13 @@ export interface DataKubernetesStorageClassMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/storage_class.html#annotations DataKubernetesStorageClass#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the storage class. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/storage_class.html#labels DataKubernetesStorageClass#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the storage class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -124,6 +124,11 @@ function dataKubernetesStorageClassMetadataToTerraform(struct?: DataKubernetesSt
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/storage_class.html kubernetes_storage_class}
 */
 export class DataKubernetesStorageClass extends cdktf.TerraformDataSource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_storage_class";
 
   // ===========
   // INITIALIZER
@@ -161,11 +166,11 @@ export class DataKubernetesStorageClass extends cdktf.TerraformDataSource {
   // ==========
 
   // allow_volume_expansion - computed: true, optional: true, required: false
-  private _allowVolumeExpansion?: boolean;
+  private _allowVolumeExpansion?: boolean | cdktf.IResolvable;
   public get allowVolumeExpansion() {
     return this.getBooleanAttribute('allow_volume_expansion');
   }
-  public set allowVolumeExpansion(value: boolean) {
+  public set allowVolumeExpansion(value: boolean | cdktf.IResolvable) {
     this._allowVolumeExpansion = value;
   }
   public resetAllowVolumeExpansion() {
@@ -198,11 +203,11 @@ export class DataKubernetesStorageClass extends cdktf.TerraformDataSource {
   }
 
   // parameters - computed: true, optional: true, required: false
-  private _parameters?: { [key: string]: string }
-  public get parameters(): { [key: string]: string } {
+  private _parameters?: { [key: string]: string } | cdktf.IResolvable
+  public get parameters(): { [key: string]: string } | cdktf.IResolvable {
     return this.interpolationForAttribute('parameters') as any; // Getting the computed value is not yet implemented
   }
-  public set parameters(value: { [key: string]: string }) {
+  public set parameters(value: { [key: string]: string } | cdktf.IResolvable) {
     this._parameters = value;
   }
   public resetParameters() {

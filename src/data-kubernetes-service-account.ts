@@ -34,13 +34,13 @@ export interface DataKubernetesServiceAccountMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html#annotations DataKubernetesServiceAccount#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the service account. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html#labels DataKubernetesServiceAccount#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -70,6 +70,11 @@ function dataKubernetesServiceAccountMetadataToTerraform(struct?: DataKubernetes
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account.html kubernetes_service_account}
 */
 export class DataKubernetesServiceAccount extends cdktf.TerraformDataSource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_service_account";
 
   // ===========
   // INITIALIZER

@@ -12,7 +12,7 @@ export interface DefaultServiceAccountConfig extends cdktf.TerraformMetaArgument
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account.html#automount_service_account_token DefaultServiceAccount#automount_service_account_token}
   */
-  readonly automountServiceAccountToken?: boolean;
+  readonly automountServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
   * image_pull_secret block
   * 
@@ -60,13 +60,13 @@ export interface DefaultServiceAccountMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account.html#annotations DefaultServiceAccount#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the service account. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account.html#labels DefaultServiceAccount#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -127,6 +127,11 @@ function defaultServiceAccountTimeoutsToTerraform(struct?: DefaultServiceAccount
 */
 export class DefaultServiceAccount extends cdktf.TerraformResource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_default_service_account";
+
   // ===========
   // INITIALIZER
   // ===========
@@ -161,11 +166,11 @@ export class DefaultServiceAccount extends cdktf.TerraformResource {
   // ==========
 
   // automount_service_account_token - computed: false, optional: true, required: false
-  private _automountServiceAccountToken?: boolean;
+  private _automountServiceAccountToken?: boolean | cdktf.IResolvable;
   public get automountServiceAccountToken() {
     return this.getBooleanAttribute('automount_service_account_token');
   }
-  public set automountServiceAccountToken(value: boolean ) {
+  public set automountServiceAccountToken(value: boolean | cdktf.IResolvable ) {
     this._automountServiceAccountToken = value;
   }
   public resetAutomountServiceAccountToken() {

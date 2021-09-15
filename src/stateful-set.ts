@@ -12,7 +12,7 @@ export interface StatefulSetConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#wait_for_rollout StatefulSet#wait_for_rollout}
   */
-  readonly waitForRollout?: boolean;
+  readonly waitForRollout?: boolean | cdktf.IResolvable;
   /**
   * metadata block
   * 
@@ -38,7 +38,7 @@ export interface StatefulSetMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#annotations StatefulSet#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -50,7 +50,7 @@ export interface StatefulSetMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#labels StatefulSet#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the stateful set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -112,7 +112,7 @@ export interface StatefulSetSpecSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -135,7 +135,7 @@ export interface StatefulSetSpecTemplateMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#annotations StatefulSet#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -147,7 +147,7 @@ export interface StatefulSetSpecTemplateMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#labels StatefulSet#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the stateful set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -356,7 +356,7 @@ export interface StatefulSetSpecTemplateSpecAffinityPodAffinityPreferredDuringSc
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -462,7 +462,7 @@ export interface StatefulSetSpecTemplateSpecAffinityPodAffinityRequiredDuringSch
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -568,7 +568,7 @@ export interface StatefulSetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuri
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -674,7 +674,7 @@ export interface StatefulSetSpecTemplateSpecAffinityPodAntiAffinityRequiredDurin
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -792,7 +792,7 @@ export interface StatefulSetSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: StatefulSetSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef): any {
@@ -871,7 +871,7 @@ export interface StatefulSetSpecTemplateSpecContainerEnvValueFromSecretKeyRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?: StatefulSetSpecTemplateSpecContainerEnvValueFromSecretKeyRef): any {
@@ -962,7 +962,7 @@ export interface StatefulSetSpecTemplateSpecContainerEnvFromConfigMapRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(struct?: StatefulSetSpecTemplateSpecContainerEnvFromConfigMapRef): any {
@@ -985,7 +985,7 @@ export interface StatefulSetSpecTemplateSpecContainerEnvFromSecretRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct?: StatefulSetSpecTemplateSpecContainerEnvFromSecretRef): any {
@@ -1685,13 +1685,13 @@ export interface StatefulSetSpecTemplateSpecContainerResources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#limits StatefulSet#limits}
   */
-  readonly limits?: { [key: string]: string };
+  readonly limits?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#requests StatefulSet#requests}
   */
-  readonly requests?: { [key: string]: string };
+  readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecContainerResourcesToTerraform(struct?: StatefulSetSpecTemplateSpecContainerResources): any {
@@ -1768,19 +1768,19 @@ export interface StatefulSetSpecTemplateSpecContainerSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#allow_privilege_escalation StatefulSet#allow_privilege_escalation}
   */
-  readonly allowPrivilegeEscalation?: boolean;
+  readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#privileged StatefulSet#privileged}
   */
-  readonly privileged?: boolean;
+  readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only_root_filesystem StatefulSet#read_only_root_filesystem}
   */
-  readonly readOnlyRootFilesystem?: boolean;
+  readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -1792,7 +1792,7 @@ export interface StatefulSetSpecTemplateSpecContainerSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#run_as_non_root StatefulSet#run_as_non_root}
   */
-  readonly runAsNonRoot?: boolean;
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -2015,7 +2015,7 @@ export interface StatefulSetSpecTemplateSpecContainerVolumeMount {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   * 
@@ -2071,13 +2071,13 @@ export interface StatefulSetSpecTemplateSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#stdin StatefulSet#stdin}
   */
-  readonly stdin?: boolean;
+  readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#stdin_once StatefulSet#stdin_once}
   */
-  readonly stdinOnce?: boolean;
+  readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
   * 
@@ -2095,7 +2095,7 @@ export interface StatefulSetSpecTemplateSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tty StatefulSet#tty}
   */
-  readonly tty?: boolean;
+  readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
   * 
@@ -2301,7 +2301,7 @@ export interface StatefulSetSpecTemplateSpecInitContainerEnvValueFromConfigMapKe
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: StatefulSetSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef): any {
@@ -2380,7 +2380,7 @@ export interface StatefulSetSpecTemplateSpecInitContainerEnvValueFromSecretKeyRe
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct?: StatefulSetSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef): any {
@@ -2471,7 +2471,7 @@ export interface StatefulSetSpecTemplateSpecInitContainerEnvFromConfigMapRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(struct?: StatefulSetSpecTemplateSpecInitContainerEnvFromConfigMapRef): any {
@@ -2494,7 +2494,7 @@ export interface StatefulSetSpecTemplateSpecInitContainerEnvFromSecretRef {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(struct?: StatefulSetSpecTemplateSpecInitContainerEnvFromSecretRef): any {
@@ -3194,13 +3194,13 @@ export interface StatefulSetSpecTemplateSpecInitContainerResources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#limits StatefulSet#limits}
   */
-  readonly limits?: { [key: string]: string };
+  readonly limits?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#requests StatefulSet#requests}
   */
-  readonly requests?: { [key: string]: string };
+  readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecInitContainerResourcesToTerraform(struct?: StatefulSetSpecTemplateSpecInitContainerResources): any {
@@ -3277,19 +3277,19 @@ export interface StatefulSetSpecTemplateSpecInitContainerSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#allow_privilege_escalation StatefulSet#allow_privilege_escalation}
   */
-  readonly allowPrivilegeEscalation?: boolean;
+  readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#privileged StatefulSet#privileged}
   */
-  readonly privileged?: boolean;
+  readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only_root_filesystem StatefulSet#read_only_root_filesystem}
   */
-  readonly readOnlyRootFilesystem?: boolean;
+  readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -3301,7 +3301,7 @@ export interface StatefulSetSpecTemplateSpecInitContainerSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#run_as_non_root StatefulSet#run_as_non_root}
   */
-  readonly runAsNonRoot?: boolean;
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
@@ -3524,7 +3524,7 @@ export interface StatefulSetSpecTemplateSpecInitContainerVolumeMount {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   * 
@@ -3580,13 +3580,13 @@ export interface StatefulSetSpecTemplateSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#stdin StatefulSet#stdin}
   */
-  readonly stdin?: boolean;
+  readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#stdin_once StatefulSet#stdin_once}
   */
-  readonly stdinOnce?: boolean;
+  readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
   * 
@@ -3604,7 +3604,7 @@ export interface StatefulSetSpecTemplateSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#tty StatefulSet#tty}
   */
-  readonly tty?: boolean;
+  readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
   * 
@@ -3794,7 +3794,7 @@ export interface StatefulSetSpecTemplateSpecSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#run_as_non_root StatefulSet#run_as_non_root}
   */
-  readonly runAsNonRoot?: boolean;
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
   * 
@@ -3914,7 +3914,7 @@ export interface StatefulSetSpecTemplateSpecTopologySpreadConstraintLabelSelecto
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -3986,7 +3986,7 @@ export interface StatefulSetSpecTemplateSpecVolumeAwsElasticBlockStore {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
   * 
@@ -4041,7 +4041,7 @@ export interface StatefulSetSpecTemplateSpecVolumeAzureDisk {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecVolumeAzureDiskToTerraform(struct?: StatefulSetSpecTemplateSpecVolumeAzureDisk): any {
@@ -4062,7 +4062,7 @@ export interface StatefulSetSpecTemplateSpecVolumeAzureFile {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The name of secret that contains Azure Storage Account Name and Key
   * 
@@ -4134,7 +4134,7 @@ export interface StatefulSetSpecTemplateSpecVolumeCephFs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
   * 
@@ -4179,7 +4179,7 @@ export interface StatefulSetSpecTemplateSpecVolumeCinder {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
   * 
@@ -4245,7 +4245,7 @@ export interface StatefulSetSpecTemplateSpecVolumeConfigMap {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
@@ -4374,13 +4374,13 @@ export interface StatefulSetSpecTemplateSpecVolumeCsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Attributes of the volume to publish.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#volume_attributes StatefulSet#volume_attributes}
   */
-  readonly volumeAttributes?: { [key: string]: string };
+  readonly volumeAttributes?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
   * 
@@ -4578,7 +4578,7 @@ export interface StatefulSetSpecTemplateSpecVolumeFc {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * FC target worldwide names (WWNs)
   * 
@@ -4638,13 +4638,13 @@ export interface StatefulSetSpecTemplateSpecVolumeFlexVolume {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#options StatefulSet#options}
   */
-  readonly options?: { [key: string]: string };
+  readonly options?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
   * 
@@ -4711,7 +4711,7 @@ export interface StatefulSetSpecTemplateSpecVolumeGcePersistentDisk {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct?: StatefulSetSpecTemplateSpecVolumeGcePersistentDisk): any {
@@ -4772,7 +4772,7 @@ export interface StatefulSetSpecTemplateSpecVolumeGlusterfs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecVolumeGlusterfsToTerraform(struct?: StatefulSetSpecTemplateSpecVolumeGlusterfs): any {
@@ -4837,7 +4837,7 @@ export interface StatefulSetSpecTemplateSpecVolumeIscsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
   * 
@@ -4886,7 +4886,7 @@ export interface StatefulSetSpecTemplateSpecVolumeNfs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
   * 
@@ -4916,7 +4916,7 @@ export interface StatefulSetSpecTemplateSpecVolumePersistentVolumeClaim {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
 function statefulSetSpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct?: StatefulSetSpecTemplateSpecVolumePersistentVolumeClaim): any {
@@ -4992,7 +4992,7 @@ export interface StatefulSetSpecTemplateSpecVolumeProjectedSourcesConfigMap {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
@@ -5154,7 +5154,7 @@ export interface StatefulSetSpecTemplateSpecVolumeProjectedSourcesSecret {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
@@ -5274,7 +5274,7 @@ export interface StatefulSetSpecTemplateSpecVolumeQuobyte {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
   * 
@@ -5371,7 +5371,7 @@ export interface StatefulSetSpecTemplateSpecVolumeRbd {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#read_only StatefulSet#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
   * 
@@ -5436,7 +5436,7 @@ export interface StatefulSetSpecTemplateSpecVolumeSecret {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#optional StatefulSet#optional}
   */
-  readonly optional?: boolean;
+  readonly optional?: boolean | cdktf.IResolvable;
   /**
   * Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets
   * 
@@ -5694,7 +5694,7 @@ export interface StatefulSetSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#automount_service_account_token StatefulSet#automount_service_account_token}
   */
-  readonly automountServiceAccountToken?: boolean;
+  readonly automountServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
   * Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy).
   * 
@@ -5706,25 +5706,25 @@ export interface StatefulSetSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#enable_service_links StatefulSet#enable_service_links}
   */
-  readonly enableServiceLinks?: boolean;
+  readonly enableServiceLinks?: boolean | cdktf.IResolvable;
   /**
   * Use the host's ipc namespace. Optional: Defaults to false.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host_ipc StatefulSet#host_ipc}
   */
-  readonly hostIpc?: boolean;
+  readonly hostIpc?: boolean | cdktf.IResolvable;
   /**
   * Host networking requested for this pod. Use the host's network namespace. If this option is set, the ports that will be used must be specified.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host_network StatefulSet#host_network}
   */
-  readonly hostNetwork?: boolean;
+  readonly hostNetwork?: boolean | cdktf.IResolvable;
   /**
   * Use the host's pid namespace.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#host_pid StatefulSet#host_pid}
   */
-  readonly hostPid?: boolean;
+  readonly hostPid?: boolean | cdktf.IResolvable;
   /**
   * Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.
   * 
@@ -5742,7 +5742,7 @@ export interface StatefulSetSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#node_selector StatefulSet#node_selector}
   */
-  readonly nodeSelector?: { [key: string]: string };
+  readonly nodeSelector?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default.
   * 
@@ -5766,7 +5766,7 @@ export interface StatefulSetSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#share_process_namespace StatefulSet#share_process_namespace}
   */
-  readonly shareProcessNamespace?: boolean;
+  readonly shareProcessNamespace?: boolean | cdktf.IResolvable;
   /**
   * If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..
   * 
@@ -5948,7 +5948,7 @@ export interface StatefulSetSpecVolumeClaimTemplateMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#annotations StatefulSet#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -5960,7 +5960,7 @@ export interface StatefulSetSpecVolumeClaimTemplateMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#labels StatefulSet#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the persistent volume claim, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -5992,13 +5992,13 @@ export interface StatefulSetSpecVolumeClaimTemplateSpecResources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#limits StatefulSet#limits}
   */
-  readonly limits?: { [key: string]: string };
+  readonly limits?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map describing the minimum amount of compute resources required. If this is omitted for a container, it defaults to `limits` if that is explicitly specified, otherwise to an implementation-defined value. More info: http://kubernetes.io/docs/user-guide/compute-resources/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#requests StatefulSet#requests}
   */
-  readonly requests?: { [key: string]: string };
+  readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
 function statefulSetSpecVolumeClaimTemplateSpecResourcesToTerraform(struct?: StatefulSetSpecVolumeClaimTemplateSpecResources): any {
@@ -6045,7 +6045,7 @@ export interface StatefulSetSpecVolumeClaimTemplateSpecSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set.html#match_labels StatefulSet#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string };
+  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
@@ -6229,6 +6229,11 @@ function statefulSetTimeoutsToTerraform(struct?: StatefulSetTimeouts): any {
 */
 export class StatefulSet extends cdktf.TerraformResource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_stateful_set";
+
   // ===========
   // INITIALIZER
   // ===========
@@ -6267,11 +6272,11 @@ export class StatefulSet extends cdktf.TerraformResource {
   }
 
   // wait_for_rollout - computed: false, optional: true, required: false
-  private _waitForRollout?: boolean;
+  private _waitForRollout?: boolean | cdktf.IResolvable;
   public get waitForRollout() {
     return this.getBooleanAttribute('wait_for_rollout');
   }
-  public set waitForRollout(value: boolean ) {
+  public set waitForRollout(value: boolean | cdktf.IResolvable ) {
     this._waitForRollout = value;
   }
   public resetWaitForRollout() {

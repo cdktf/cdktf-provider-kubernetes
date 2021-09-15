@@ -12,7 +12,7 @@ export interface IngressConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress.html#wait_for_load_balancer Ingress#wait_for_load_balancer}
   */
-  readonly waitForLoadBalancer?: boolean;
+  readonly waitForLoadBalancer?: boolean | cdktf.IResolvable;
   /**
   * metadata block
   * 
@@ -58,7 +58,7 @@ export interface IngressMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress.html#annotations Ingress#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -70,7 +70,7 @@ export interface IngressMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress.html#labels Ingress#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the ingress, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -277,6 +277,11 @@ function ingressSpecToTerraform(struct?: IngressSpec): any {
 */
 export class Ingress extends cdktf.TerraformResource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_ingress";
+
   // ===========
   // INITIALIZER
   // ===========
@@ -319,11 +324,11 @@ export class Ingress extends cdktf.TerraformResource {
   }
 
   // wait_for_load_balancer - computed: false, optional: true, required: false
-  private _waitForLoadBalancer?: boolean;
+  private _waitForLoadBalancer?: boolean | cdktf.IResolvable;
   public get waitForLoadBalancer() {
     return this.getBooleanAttribute('wait_for_load_balancer');
   }
-  public set waitForLoadBalancer(value: boolean ) {
+  public set waitForLoadBalancer(value: boolean | cdktf.IResolvable ) {
     this._waitForLoadBalancer = value;
   }
   public resetWaitForLoadBalancer() {

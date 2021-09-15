@@ -32,7 +32,7 @@ export interface ResourceQuotaMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#annotations ResourceQuota#annotations}
   */
-  readonly annotations?: { [key: string]: string };
+  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -44,7 +44,7 @@ export interface ResourceQuotaMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#labels ResourceQuota#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the resource quota, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -122,7 +122,7 @@ export interface ResourceQuotaSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html#hard ResourceQuota#hard}
   */
-  readonly hard?: { [key: string]: string };
+  readonly hard?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects.
   * 
@@ -170,6 +170,11 @@ function resourceQuotaTimeoutsToTerraform(struct?: ResourceQuotaTimeouts): any {
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota.html kubernetes_resource_quota}
 */
 export class ResourceQuota extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_resource_quota";
 
   // ===========
   // INITIALIZER

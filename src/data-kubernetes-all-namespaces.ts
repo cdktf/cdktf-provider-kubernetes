@@ -14,6 +14,11 @@ export interface DataKubernetesAllNamespacesConfig extends cdktf.TerraformMetaAr
 */
 export class DataKubernetesAllNamespaces extends cdktf.TerraformDataSource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "kubernetes_all_namespaces";
+
   // ===========
   // INITIALIZER
   // ===========
