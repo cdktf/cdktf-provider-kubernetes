@@ -20,6 +20,12 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   */
   readonly data?: { [key: string]: string } | cdktf.IResolvable;
   /**
+  * Ensures that data stored in the Secret cannot be updated (only object metadata can be modified).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html#immutable Secret#immutable}
+  */
+  readonly immutable?: boolean | cdktf.IResolvable;
+  /**
   * Type of secret
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html#type Secret#type}
@@ -111,6 +117,7 @@ export class Secret extends cdktf.TerraformResource {
     });
     this._binaryData = config.binaryData;
     this._data = config.data;
+    this._immutable = config.immutable;
     this._type = config.type;
     this._metadata = config.metadata;
   }
@@ -156,6 +163,22 @@ export class Secret extends cdktf.TerraformResource {
     return this.getStringAttribute('id');
   }
 
+  // immutable - computed: false, optional: true, required: false
+  private _immutable?: boolean | cdktf.IResolvable;
+  public get immutable() {
+    return this.getBooleanAttribute('immutable');
+  }
+  public set immutable(value: boolean | cdktf.IResolvable ) {
+    this._immutable = value;
+  }
+  public resetImmutable() {
+    this._immutable = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get immutableInput() {
+    return this._immutable
+  }
+
   // type - computed: false, optional: true, required: false
   private _type?: string;
   public get type() {
@@ -193,6 +216,7 @@ export class Secret extends cdktf.TerraformResource {
     return {
       binary_data: cdktf.hashMapper(cdktf.anyToTerraform)(this._binaryData),
       data: cdktf.hashMapper(cdktf.anyToTerraform)(this._data),
+      immutable: cdktf.booleanToTerraform(this._immutable),
       type: cdktf.stringToTerraform(this._type),
       metadata: cdktf.listMapper(secretMetadataToTerraform)(this._metadata),
     };

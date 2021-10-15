@@ -88,6 +88,11 @@ export class DataKubernetesIngressSpec extends cdktf.ComplexComputedList {
     return this.interpolationForAttribute('backend') as any;
   }
 
+  // ingress_class_name - computed: true, optional: false, required: false
+  public get ingressClassName() {
+    return this.getStringAttribute('ingress_class_name');
+  }
+
   // rule - computed: true, optional: false, required: false
   public get rule() {
     return this.interpolationForAttribute('rule') as any;

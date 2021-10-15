@@ -68,6 +68,12 @@ export interface KubernetesProviderConfig {
   */
   readonly password?: string;
   /**
+  * URL to the proxy to be used for all API requests
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#proxy_url KubernetesProvider#proxy_url}
+  */
+  readonly proxyUrl?: string;
+  /**
   * Token to authenticate an service account
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#token KubernetesProvider#token}
@@ -185,6 +191,7 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
     this._host = config.host;
     this._insecure = config.insecure;
     this._password = config.password;
+    this._proxyUrl = config.proxyUrl;
     this._token = config.token;
     this._username = config.username;
     this._alias = config.alias;
@@ -372,6 +379,22 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
     return this._password
   }
 
+  // proxy_url - computed: false, optional: true, required: false
+  private _proxyUrl?: string;
+  public get proxyUrl() {
+    return this._proxyUrl;
+  }
+  public set proxyUrl(value: string  | undefined) {
+    this._proxyUrl = value;
+  }
+  public resetProxyUrl() {
+    this._proxyUrl = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get proxyUrlInput() {
+    return this._proxyUrl
+  }
+
   // token - computed: false, optional: true, required: false
   private _token?: string;
   public get token() {
@@ -469,6 +492,7 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
       host: cdktf.stringToTerraform(this._host),
       insecure: cdktf.booleanToTerraform(this._insecure),
       password: cdktf.stringToTerraform(this._password),
+      proxy_url: cdktf.stringToTerraform(this._proxyUrl),
       token: cdktf.stringToTerraform(this._token),
       username: cdktf.stringToTerraform(this._username),
       alias: cdktf.stringToTerraform(this._alias),
