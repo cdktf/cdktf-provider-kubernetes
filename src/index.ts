@@ -12,6 +12,7 @@ export * from './deployment';
 export * from './endpoints';
 export * from './horizontal-pod-autoscaler';
 export * from './ingress';
+export * from './ingress-class';
 export * from './job';
 export * from './limit-range';
 export * from './manifest';

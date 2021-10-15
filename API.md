@@ -215,6 +215,7 @@ Name|Description
 [Endpoints](#cdktf-provider-kubernetes-endpoints)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/endpoints.html kubernetes_endpoints}.
 [HorizontalPodAutoscaler](#cdktf-provider-kubernetes-horizontalpodautoscaler)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html kubernetes_horizontal_pod_autoscaler}.
 [Ingress](#cdktf-provider-kubernetes-ingress)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress.html kubernetes_ingress}.
+[IngressClass](#cdktf-provider-kubernetes-ingressclass)|Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class.html kubernetes_ingress_class}.
 [IngressStatus](#cdktf-provider-kubernetes-ingressstatus)|*No description*
 [IngressStatusLoadBalancer](#cdktf-provider-kubernetes-ingressstatusloadbalancer)|*No description*
 [IngressStatusLoadBalancerIngress](#cdktf-provider-kubernetes-ingressstatusloadbalanceringress)|*No description*
@@ -852,6 +853,11 @@ Name|Description
 [HorizontalPodAutoscalerConfig](#cdktf-provider-kubernetes-horizontalpodautoscalerconfig)|*No description*
 [HorizontalPodAutoscalerMetadata](#cdktf-provider-kubernetes-horizontalpodautoscalermetadata)|*No description*
 [HorizontalPodAutoscalerSpec](#cdktf-provider-kubernetes-horizontalpodautoscalerspec)|*No description*
+[HorizontalPodAutoscalerSpecBehavior](#cdktf-provider-kubernetes-horizontalpodautoscalerspecbehavior)|*No description*
+[HorizontalPodAutoscalerSpecBehaviorScaleDown](#cdktf-provider-kubernetes-horizontalpodautoscalerspecbehaviorscaledown)|*No description*
+[HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy](#cdktf-provider-kubernetes-horizontalpodautoscalerspecbehaviorscaledownpolicy)|*No description*
+[HorizontalPodAutoscalerSpecBehaviorScaleUp](#cdktf-provider-kubernetes-horizontalpodautoscalerspecbehaviorscaleup)|*No description*
+[HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy](#cdktf-provider-kubernetes-horizontalpodautoscalerspecbehaviorscaleuppolicy)|*No description*
 [HorizontalPodAutoscalerSpecMetric](#cdktf-provider-kubernetes-horizontalpodautoscalerspecmetric)|*No description*
 [HorizontalPodAutoscalerSpecMetricExternal](#cdktf-provider-kubernetes-horizontalpodautoscalerspecmetricexternal)|*No description*
 [HorizontalPodAutoscalerSpecMetricExternalMetric](#cdktf-provider-kubernetes-horizontalpodautoscalerspecmetricexternalmetric)|*No description*
@@ -872,6 +878,10 @@ Name|Description
 [HorizontalPodAutoscalerSpecMetricResource](#cdktf-provider-kubernetes-horizontalpodautoscalerspecmetricresource)|*No description*
 [HorizontalPodAutoscalerSpecMetricResourceTarget](#cdktf-provider-kubernetes-horizontalpodautoscalerspecmetricresourcetarget)|*No description*
 [HorizontalPodAutoscalerSpecScaleTargetRef](#cdktf-provider-kubernetes-horizontalpodautoscalerspecscaletargetref)|*No description*
+[IngressClassConfig](#cdktf-provider-kubernetes-ingressclassconfig)|*No description*
+[IngressClassMetadata](#cdktf-provider-kubernetes-ingressclassmetadata)|*No description*
+[IngressClassSpec](#cdktf-provider-kubernetes-ingressclassspec)|*No description*
+[IngressClassSpecParameters](#cdktf-provider-kubernetes-ingressclassspecparameters)|*No description*
 [IngressConfig](#cdktf-provider-kubernetes-ingressconfig)|*No description*
 [IngressMetadata](#cdktf-provider-kubernetes-ingressmetadata)|*No description*
 [IngressSpec](#cdktf-provider-kubernetes-ingressspec)|*No description*
@@ -2588,6 +2598,7 @@ new DataKubernetesIngressSpec(terraformResource: ITerraformResource, terraformAt
 Name | Type | Description 
 -----|------|-------------
 **backend** | <code>any</code> | <span></span>
+**ingressClassName** | <code>string</code> | <span></span>
 **rule** | <code>any</code> | <span></span>
 **tls** | <code>any</code> | <span></span>
 
@@ -8668,6 +8679,7 @@ Name | Type | Description
 -----|------|-------------
 **binaryData** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
 **id** | <code>string</code> | <span></span>
+**immutable** | <code>[IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **metadata** | <code>Array<[DataKubernetesSecretMetadata](#cdktf-provider-kubernetes-datakubernetessecretmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[DataKubernetesSecretMetadata](#cdktf-provider-kubernetes-datakubernetessecretmetadata)></code> | <span></span>
 **type** | <code>string</code> | <span></span>
@@ -9662,6 +9674,63 @@ __Returns__:
 
 
 
+## class IngressClass  <a id="cdktf-provider-kubernetes-ingressclass"></a>
+
+Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class.html kubernetes_ingress_class}.
+
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
+__Extends__: [TerraformResource](#cdktf-terraformresource)
+
+### Initializer
+
+
+Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class.html kubernetes_ingress_class} Resource.
+
+```ts
+new IngressClass(scope: Construct, id: string, config: IngressClassConfig)
+```
+
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
+* **config** (<code>[IngressClassConfig](#cdktf-provider-kubernetes-ingressclassconfig)</code>)  *No description*
+  * **count** (<code>number</code>)  *No description* __*Optional*__
+  * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
+  * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **metadata** (<code>Array<[IngressClassMetadata](#cdktf-provider-kubernetes-ingressclassmetadata)></code>)  metadata block. 
+  * **spec** (<code>Array<[IngressClassSpec](#cdktf-provider-kubernetes-ingressclassspec)></code>)  spec block. 
+
+
+
+### Properties
+
+
+Name | Type | Description 
+-----|------|-------------
+**id** | <code>string</code> | <span></span>
+**metadata** | <code>Array<[IngressClassMetadata](#cdktf-provider-kubernetes-ingressclassmetadata)></code> | <span></span>
+**metadataInput** | <code>Array<[IngressClassMetadata](#cdktf-provider-kubernetes-ingressclassmetadata)></code> | <span></span>
+**spec** | <code>Array<[IngressClassSpec](#cdktf-provider-kubernetes-ingressclassspec)></code> | <span></span>
+**specInput** | <code>Array<[IngressClassSpec](#cdktf-provider-kubernetes-ingressclassspec)></code> | <span></span>
+*static* **tfResourceType** | <code>string</code> | <span></span>
+
+### Methods
+
+
+#### protected synthesizeAttributes() <a id="cdktf-provider-kubernetes-ingressclass-synthesizeattributes"></a>
+
+
+
+```ts
+protected synthesizeAttributes(): Map<string, any>
+```
+
+
+__Returns__:
+* <code>Map<string, any></code>
+
+
+
 ## class IngressStatus  <a id="cdktf-provider-kubernetes-ingressstatus"></a>
 
 
@@ -9873,6 +9942,7 @@ new KubernetesProvider(scope: Construct, id: string, config?: KubernetesProvider
   * **host** (<code>string</code>)  The hostname (in form of URI) of Kubernetes master. __*Optional*__
   * **insecure** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Whether server should be accessed without verifying the TLS certificate. __*Optional*__
   * **password** (<code>string</code>)  The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint. __*Optional*__
+  * **proxyUrl** (<code>string</code>)  URL to the proxy to be used for all API requests. __*Optional*__
   * **token** (<code>string</code>)  Token to authenticate an service account. __*Optional*__
   * **username** (<code>string</code>)  The username to use for HTTP basic authentication when accessing the Kubernetes master endpoint. __*Optional*__
 
@@ -9911,6 +9981,8 @@ Name | Type | Description
 **insecureInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **password**? | <code>string</code> | __*Optional*__
 **passwordInput**? | <code>string</code> | __*Optional*__
+**proxyUrl**? | <code>string</code> | __*Optional*__
+**proxyUrlInput**? | <code>string</code> | __*Optional*__
 **token**? | <code>string</code> | __*Optional*__
 **tokenInput**? | <code>string</code> | __*Optional*__
 **username**? | <code>string</code> | __*Optional*__
@@ -10082,6 +10154,18 @@ resetInsecure(): void
 
 ```ts
 resetPassword(): void
+```
+
+
+
+
+
+#### resetProxyUrl() <a id="cdktf-provider-kubernetes-kubernetesprovider-resetproxyurl"></a>
+
+
+
+```ts
+resetProxyUrl(): void
 ```
 
 
@@ -11237,6 +11321,7 @@ new Secret(scope: Construct, id: string, config: SecretConfig)
   * **metadata** (<code>Array<[SecretMetadata](#cdktf-provider-kubernetes-secretmetadata)></code>)  metadata block. 
   * **binaryData** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  A map of the secret data in base64 encoding. Use this for binary data. __*Optional*__
   * **data** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  A map of the secret data. __*Optional*__
+  * **immutable** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Ensures that data stored in the Secret cannot be updated (only object metadata can be modified). __*Optional*__
   * **type** (<code>string</code>)  Type of secret. __*Optional*__
 
 
@@ -11249,11 +11334,13 @@ Name | Type | Description
 **binaryData** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
 **data** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
 **id** | <code>string</code> | <span></span>
+**immutable** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **metadata** | <code>Array<[SecretMetadata](#cdktf-provider-kubernetes-secretmetadata)></code> | <span></span>
 **metadataInput** | <code>Array<[SecretMetadata](#cdktf-provider-kubernetes-secretmetadata)></code> | <span></span>
 **type** | <code>string</code> | <span></span>
 **binaryDataInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
 **dataInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**immutableInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **typeInput**? | <code>string</code> | __*Optional*__
 *static* **tfResourceType** | <code>string</code> | <span></span>
 
@@ -11278,6 +11365,18 @@ resetBinaryData(): void
 
 ```ts
 resetData(): void
+```
+
+
+
+
+
+#### resetImmutable() <a id="cdktf-provider-kubernetes-secret-resetimmutable"></a>
+
+
+
+```ts
+resetImmutable(): void
 ```
 
 
@@ -21303,9 +21402,84 @@ Name | Type | Description
 -----|------|-------------
 **maxReplicas** | <code>number</code> | Upper limit for the number of pods that can be set by the autoscaler.
 **scaleTargetRef** | <code>Array<[HorizontalPodAutoscalerSpecScaleTargetRef](#cdktf-provider-kubernetes-horizontalpodautoscalerspecscaletargetref)></code> | scale_target_ref block.
+**behavior**? | <code>Array<[HorizontalPodAutoscalerSpecBehavior](#cdktf-provider-kubernetes-horizontalpodautoscalerspecbehavior)></code> | behavior block.<br/>__*Optional*__
 **metric**? | <code>Array<[HorizontalPodAutoscalerSpecMetric](#cdktf-provider-kubernetes-horizontalpodautoscalerspecmetric)></code> | metric block.<br/>__*Optional*__
 **minReplicas**? | <code>number</code> | Lower limit for the number of pods that can be set by the autoscaler, defaults to `1`.<br/>__*Optional*__
 **targetCpuUtilizationPercentage**? | <code>number</code> | Target average CPU utilization (represented as a percentage of requested CPU) over all the pods.<br/>__*Optional*__
+
+
+
+## struct HorizontalPodAutoscalerSpecBehavior  <a id="cdktf-provider-kubernetes-horizontalpodautoscalerspecbehavior"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**scaleDown**? | <code>Array<[HorizontalPodAutoscalerSpecBehaviorScaleDown](#cdktf-provider-kubernetes-horizontalpodautoscalerspecbehaviorscaledown)></code> | scale_down block.<br/>__*Optional*__
+**scaleUp**? | <code>Array<[HorizontalPodAutoscalerSpecBehaviorScaleUp](#cdktf-provider-kubernetes-horizontalpodautoscalerspecbehaviorscaleup)></code> | scale_up block.<br/>__*Optional*__
+
+
+
+## struct HorizontalPodAutoscalerSpecBehaviorScaleDown  <a id="cdktf-provider-kubernetes-horizontalpodautoscalerspecbehaviorscaledown"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**policy** | <code>Array<[HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy](#cdktf-provider-kubernetes-horizontalpodautoscalerspecbehaviorscaledownpolicy)></code> | policy block.
+**selectPolicy**? | <code>string</code> | Used to specify which policy should be used. If not set, the default value Max is used.<br/>__*Optional*__
+**stabilizationWindowSeconds**? | <code>number</code> | Number of seconds for which past recommendations should be considered while scaling up or scaling down.<br/>__*Optional*__
+
+
+
+## struct HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy  <a id="cdktf-provider-kubernetes-horizontalpodautoscalerspecbehaviorscaledownpolicy"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**periodSeconds** | <code>number</code> | Period specifies the window of time for which the policy should hold true.
+**type** | <code>string</code> | Type is used to specify the scaling policy: Percent or Pods.
+**value** | <code>number</code> | Value contains the amount of change which is permitted by the policy. It must be greater than zero.
+
+
+
+## struct HorizontalPodAutoscalerSpecBehaviorScaleUp  <a id="cdktf-provider-kubernetes-horizontalpodautoscalerspecbehaviorscaleup"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**policy** | <code>Array<[HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy](#cdktf-provider-kubernetes-horizontalpodautoscalerspecbehaviorscaleuppolicy)></code> | policy block.
+**selectPolicy**? | <code>string</code> | Used to specify which policy should be used. If not set, the default value Max is used.<br/>__*Optional*__
+**stabilizationWindowSeconds**? | <code>number</code> | Number of seconds for which past recommendations should be considered while scaling up or scaling down.<br/>__*Optional*__
+
+
+
+## struct HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy  <a id="cdktf-provider-kubernetes-horizontalpodautoscalerspecbehaviorscaleuppolicy"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**periodSeconds** | <code>number</code> | Period specifies the window of time for which the policy should hold true.
+**type** | <code>string</code> | Type is used to specify the scaling policy: Percent or Pods.
+**value** | <code>number</code> | Value contains the amount of change which is permitted by the policy. It must be greater than zero.
 
 
 
@@ -21603,6 +21777,71 @@ Name | Type | Description
 **kind** | <code>string</code> | Kind of the referent. e.g. `ReplicationController`. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds.
 **name** | <code>string</code> | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 **apiVersion**? | <code>string</code> | API version of the referent.<br/>__*Optional*__
+
+
+
+## struct IngressClassConfig  <a id="cdktf-provider-kubernetes-ingressclassconfig"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**metadata** | <code>Array<[IngressClassMetadata](#cdktf-provider-kubernetes-ingressclassmetadata)></code> | metadata block.
+**spec** | <code>Array<[IngressClassSpec](#cdktf-provider-kubernetes-ingressclassspec)></code> | spec block.
+**count**?🔹 | <code>number</code> | __*Optional*__
+**dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
+**provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+
+
+
+## struct IngressClassMetadata  <a id="cdktf-provider-kubernetes-ingressclassmetadata"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**annotations**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | An unstructured key value map stored with the ingress_class that may be used to store arbitrary metadata.<br/>__*Optional*__
+**generateName**? | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Map of string keys and values that can be used to organize and categorize (scope and select) the ingress_class.<br/>__*Optional*__
+**name**? | <code>string</code> | Name of the ingress_class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.<br/>__*Optional*__
+
+
+
+## struct IngressClassSpec  <a id="cdktf-provider-kubernetes-ingressclassspec"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**controller**? | <code>string</code> | Controller refers to the name of the controller that should handle this class.<br/>__*Optional*__
+**parameters**? | <code>Array<[IngressClassSpecParameters](#cdktf-provider-kubernetes-ingressclassspecparameters)></code> | parameters block.<br/>__*Optional*__
+
+
+
+## struct IngressClassSpecParameters  <a id="cdktf-provider-kubernetes-ingressclassspecparameters"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**kind** | <code>string</code> | Kind is the type of resource being referenced.
+**name** | <code>string</code> | Name is the name of resource being referenced.
+**apiGroup**? | <code>string</code> | APIGroup is the group for the resource being referenced.<br/>__*Optional*__
+**namespace**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class.html#namespace IngressClass#namespace}.<br/>__*Optional*__
+**scope**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class.html#scope IngressClass#scope}.<br/>__*Optional*__
 
 
 
@@ -24535,6 +24774,7 @@ Name | Type | Description
 **host**? | <code>string</code> | The hostname (in form of URI) of Kubernetes master.<br/>__*Optional*__
 **insecure**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether server should be accessed without verifying the TLS certificate.<br/>__*Optional*__
 **password**? | <code>string</code> | The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint.<br/>__*Optional*__
+**proxyUrl**? | <code>string</code> | URL to the proxy to be used for all API requests.<br/>__*Optional*__
 **token**? | <code>string</code> | Token to authenticate an service account.<br/>__*Optional*__
 **username**? | <code>string</code> | The username to use for HTTP basic authentication when accessing the Kubernetes master endpoint.<br/>__*Optional*__
 
@@ -31934,6 +32174,7 @@ Name | Type | Description
 **count**?🔹 | <code>number</code> | __*Optional*__
 **data**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of the secret data.<br/>__*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**immutable**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Ensures that data stored in the Secret cannot be updated (only object metadata can be modified).<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **type**? | <code>string</code> | Type of secret.<br/>__*Optional*__

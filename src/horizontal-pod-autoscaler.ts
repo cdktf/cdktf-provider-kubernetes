@@ -64,6 +64,149 @@ function horizontalPodAutoscalerMetadataToTerraform(struct?: HorizontalPodAutosc
   }
 }
 
+export interface HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy {
+  /**
+  * Period specifies the window of time for which the policy should hold true. PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#period_seconds HorizontalPodAutoscaler#period_seconds}
+  */
+  readonly periodSeconds: number;
+  /**
+  * Type is used to specify the scaling policy: Percent or Pods
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#type HorizontalPodAutoscaler#type}
+  */
+  readonly type: string;
+  /**
+  * Value contains the amount of change which is permitted by the policy. It must be greater than zero.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#value HorizontalPodAutoscaler#value}
+  */
+  readonly value: number;
+}
+
+function horizontalPodAutoscalerSpecBehaviorScaleDownPolicyToTerraform(struct?: HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
+    type: cdktf.stringToTerraform(struct!.type),
+    value: cdktf.numberToTerraform(struct!.value),
+  }
+}
+
+export interface HorizontalPodAutoscalerSpecBehaviorScaleDown {
+  /**
+  * Used to specify which policy should be used. If not set, the default value Max is used.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#select_policy HorizontalPodAutoscaler#select_policy}
+  */
+  readonly selectPolicy?: string;
+  /**
+  * Number of seconds for which past recommendations should be considered while scaling up or scaling down. This value must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#stabilization_window_seconds HorizontalPodAutoscaler#stabilization_window_seconds}
+  */
+  readonly stabilizationWindowSeconds?: number;
+  /**
+  * policy block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#policy HorizontalPodAutoscaler#policy}
+  */
+  readonly policy: HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy[];
+}
+
+function horizontalPodAutoscalerSpecBehaviorScaleDownToTerraform(struct?: HorizontalPodAutoscalerSpecBehaviorScaleDown): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    select_policy: cdktf.stringToTerraform(struct!.selectPolicy),
+    stabilization_window_seconds: cdktf.numberToTerraform(struct!.stabilizationWindowSeconds),
+    policy: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorScaleDownPolicyToTerraform)(struct!.policy),
+  }
+}
+
+export interface HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy {
+  /**
+  * Period specifies the window of time for which the policy should hold true. PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#period_seconds HorizontalPodAutoscaler#period_seconds}
+  */
+  readonly periodSeconds: number;
+  /**
+  * Type is used to specify the scaling policy: Percent or Pods
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#type HorizontalPodAutoscaler#type}
+  */
+  readonly type: string;
+  /**
+  * Value contains the amount of change which is permitted by the policy. It must be greater than zero.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#value HorizontalPodAutoscaler#value}
+  */
+  readonly value: number;
+}
+
+function horizontalPodAutoscalerSpecBehaviorScaleUpPolicyToTerraform(struct?: HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
+    type: cdktf.stringToTerraform(struct!.type),
+    value: cdktf.numberToTerraform(struct!.value),
+  }
+}
+
+export interface HorizontalPodAutoscalerSpecBehaviorScaleUp {
+  /**
+  * Used to specify which policy should be used. If not set, the default value Max is used.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#select_policy HorizontalPodAutoscaler#select_policy}
+  */
+  readonly selectPolicy?: string;
+  /**
+  * Number of seconds for which past recommendations should be considered while scaling up or scaling down. This value must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#stabilization_window_seconds HorizontalPodAutoscaler#stabilization_window_seconds}
+  */
+  readonly stabilizationWindowSeconds?: number;
+  /**
+  * policy block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#policy HorizontalPodAutoscaler#policy}
+  */
+  readonly policy: HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy[];
+}
+
+function horizontalPodAutoscalerSpecBehaviorScaleUpToTerraform(struct?: HorizontalPodAutoscalerSpecBehaviorScaleUp): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    select_policy: cdktf.stringToTerraform(struct!.selectPolicy),
+    stabilization_window_seconds: cdktf.numberToTerraform(struct!.stabilizationWindowSeconds),
+    policy: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorScaleUpPolicyToTerraform)(struct!.policy),
+  }
+}
+
+export interface HorizontalPodAutoscalerSpecBehavior {
+  /**
+  * scale_down block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#scale_down HorizontalPodAutoscaler#scale_down}
+  */
+  readonly scaleDown?: HorizontalPodAutoscalerSpecBehaviorScaleDown[];
+  /**
+  * scale_up block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#scale_up HorizontalPodAutoscaler#scale_up}
+  */
+  readonly scaleUp?: HorizontalPodAutoscalerSpecBehaviorScaleUp[];
+}
+
+function horizontalPodAutoscalerSpecBehaviorToTerraform(struct?: HorizontalPodAutoscalerSpecBehavior): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    scale_down: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorScaleDownToTerraform)(struct!.scaleDown),
+    scale_up: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorScaleUpToTerraform)(struct!.scaleUp),
+  }
+}
+
 export interface HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
@@ -663,6 +806,12 @@ export interface HorizontalPodAutoscalerSpec {
   */
   readonly targetCpuUtilizationPercentage?: number;
   /**
+  * behavior block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#behavior HorizontalPodAutoscaler#behavior}
+  */
+  readonly behavior?: HorizontalPodAutoscalerSpecBehavior[];
+  /**
   * metric block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#metric HorizontalPodAutoscaler#metric}
@@ -682,6 +831,7 @@ function horizontalPodAutoscalerSpecToTerraform(struct?: HorizontalPodAutoscaler
     max_replicas: cdktf.numberToTerraform(struct!.maxReplicas),
     min_replicas: cdktf.numberToTerraform(struct!.minReplicas),
     target_cpu_utilization_percentage: cdktf.numberToTerraform(struct!.targetCpuUtilizationPercentage),
+    behavior: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorToTerraform)(struct!.behavior),
     metric: cdktf.listMapper(horizontalPodAutoscalerSpecMetricToTerraform)(struct!.metric),
     scale_target_ref: cdktf.listMapper(horizontalPodAutoscalerSpecScaleTargetRefToTerraform)(struct!.scaleTargetRef),
   }

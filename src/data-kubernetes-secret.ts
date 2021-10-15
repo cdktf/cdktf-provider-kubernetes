@@ -124,6 +124,11 @@ export class DataKubernetesSecret extends cdktf.TerraformDataSource {
     return this.getStringAttribute('id');
   }
 
+  // immutable - computed: true, optional: false, required: false
+  public get immutable() {
+    return this.getBooleanAttribute('immutable');
+  }
+
   // type - computed: true, optional: false, required: false
   public get type() {
     return this.getStringAttribute('type');
