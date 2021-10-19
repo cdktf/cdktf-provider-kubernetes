@@ -12,7 +12,7 @@ export interface MutatingWebhookConfigurationConfig extends cdktf.TerraformMetaA
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#metadata MutatingWebhookConfiguration#metadata}
   */
-  readonly metadata: MutatingWebhookConfigurationMetadata[];
+  readonly metadata: MutatingWebhookConfigurationMetadata;
   /**
   * webhook block
   * 
@@ -47,8 +47,11 @@ export interface MutatingWebhookConfigurationMetadata {
   readonly name?: string;
 }
 
-function mutatingWebhookConfigurationMetadataToTerraform(struct?: MutatingWebhookConfigurationMetadata): any {
+function mutatingWebhookConfigurationMetadataToTerraform(struct?: MutatingWebhookConfigurationMetadataOutputReference | MutatingWebhookConfigurationMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -57,6 +60,82 @@ function mutatingWebhookConfigurationMetadataToTerraform(struct?: MutatingWebhoo
   }
 }
 
+export class MutatingWebhookConfigurationMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+}
 export interface MutatingWebhookConfigurationWebhookClientConfigService {
   /**
   * `name` is the name of the service. Required
@@ -84,8 +163,11 @@ export interface MutatingWebhookConfigurationWebhookClientConfigService {
   readonly port?: number;
 }
 
-function mutatingWebhookConfigurationWebhookClientConfigServiceToTerraform(struct?: MutatingWebhookConfigurationWebhookClientConfigService): any {
+function mutatingWebhookConfigurationWebhookClientConfigServiceToTerraform(struct?: MutatingWebhookConfigurationWebhookClientConfigServiceOutputReference | MutatingWebhookConfigurationWebhookClientConfigService): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
@@ -94,6 +176,74 @@ function mutatingWebhookConfigurationWebhookClientConfigServiceToTerraform(struc
   }
 }
 
+export class MutatingWebhookConfigurationWebhookClientConfigServiceOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: false, optional: false, required: true
+  private _namespace?: string; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string) {
+    this._namespace = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: number | undefined; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+}
 export interface MutatingWebhookConfigurationWebhookClientConfig {
   /**
   * `caBundle` is a PEM encoded CA bundle which will be used to validate the webhook's server certificate. If unspecified, system trust roots on the apiserver are used.
@@ -122,18 +272,80 @@ Attempting to use a user or basic auth e.g. "user:password@" is not allowed. Fra
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#service MutatingWebhookConfiguration#service}
   */
-  readonly service?: MutatingWebhookConfigurationWebhookClientConfigService[];
+  readonly service?: MutatingWebhookConfigurationWebhookClientConfigService;
 }
 
-function mutatingWebhookConfigurationWebhookClientConfigToTerraform(struct?: MutatingWebhookConfigurationWebhookClientConfig): any {
+function mutatingWebhookConfigurationWebhookClientConfigToTerraform(struct?: MutatingWebhookConfigurationWebhookClientConfigOutputReference | MutatingWebhookConfigurationWebhookClientConfig): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     ca_bundle: cdktf.stringToTerraform(struct!.caBundle),
     url: cdktf.stringToTerraform(struct!.url),
-    service: cdktf.listMapper(mutatingWebhookConfigurationWebhookClientConfigServiceToTerraform)(struct!.service),
+    service: mutatingWebhookConfigurationWebhookClientConfigServiceToTerraform(struct!.service),
   }
 }
 
+export class MutatingWebhookConfigurationWebhookClientConfigOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // ca_bundle - computed: false, optional: true, required: false
+  private _caBundle?: string | undefined; 
+  public get caBundle() {
+    return this.getStringAttribute('ca_bundle');
+  }
+  public set caBundle(value: string | undefined) {
+    this._caBundle = value;
+  }
+  public resetCaBundle() {
+    this._caBundle = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get caBundleInput() {
+    return this._caBundle
+  }
+
+  // url - computed: false, optional: true, required: false
+  private _url?: string | undefined; 
+  public get url() {
+    return this.getStringAttribute('url');
+  }
+  public set url(value: string | undefined) {
+    this._url = value;
+  }
+  public resetUrl() {
+    this._url = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get urlInput() {
+    return this._url
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: MutatingWebhookConfigurationWebhookClientConfigService | undefined; 
+  private __serviceOutput = new MutatingWebhookConfigurationWebhookClientConfigServiceOutputReference(this as any, "service", true);
+  public get service() {
+    return this.__serviceOutput;
+  }
+  public putService(value: MutatingWebhookConfigurationWebhookClientConfigService | undefined) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service
+  }
+}
 export interface MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
@@ -157,6 +369,9 @@ export interface MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpres
 
 function mutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsToTerraform(struct?: MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
@@ -179,14 +394,61 @@ export interface MutatingWebhookConfigurationWebhookNamespaceSelector {
   readonly matchExpressions?: MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions[];
 }
 
-function mutatingWebhookConfigurationWebhookNamespaceSelectorToTerraform(struct?: MutatingWebhookConfigurationWebhookNamespaceSelector): any {
+function mutatingWebhookConfigurationWebhookNamespaceSelectorToTerraform(struct?: MutatingWebhookConfigurationWebhookNamespaceSelectorOutputReference | MutatingWebhookConfigurationWebhookNamespaceSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(mutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
   }
 }
 
+export class MutatingWebhookConfigurationWebhookNamespaceSelectorOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // match_labels - computed: false, optional: true, required: false
+  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get matchLabels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('match_labels') as any;
+  }
+  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._matchLabels = value;
+  }
+  public resetMatchLabels() {
+    this._matchLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchLabelsInput() {
+    return this._matchLabels
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions?: MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions[] | undefined; 
+  public get matchExpressions() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('match_expressions') as any;
+  }
+  public set matchExpressions(value: MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions[] | undefined) {
+    this._matchExpressions = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions
+  }
+}
 export interface MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
@@ -210,6 +472,9 @@ export interface MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressio
 
 function mutatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsToTerraform(struct?: MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
@@ -232,14 +497,61 @@ export interface MutatingWebhookConfigurationWebhookObjectSelector {
   readonly matchExpressions?: MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressions[];
 }
 
-function mutatingWebhookConfigurationWebhookObjectSelectorToTerraform(struct?: MutatingWebhookConfigurationWebhookObjectSelector): any {
+function mutatingWebhookConfigurationWebhookObjectSelectorToTerraform(struct?: MutatingWebhookConfigurationWebhookObjectSelectorOutputReference | MutatingWebhookConfigurationWebhookObjectSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(mutatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
   }
 }
 
+export class MutatingWebhookConfigurationWebhookObjectSelectorOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // match_labels - computed: false, optional: true, required: false
+  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get matchLabels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('match_labels') as any;
+  }
+  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._matchLabels = value;
+  }
+  public resetMatchLabels() {
+    this._matchLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchLabelsInput() {
+    return this._matchLabels
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions?: MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressions[] | undefined; 
+  public get matchExpressions() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('match_expressions') as any;
+  }
+  public set matchExpressions(value: MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressions[] | undefined) {
+    this._matchExpressions = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions
+  }
+}
 export interface MutatingWebhookConfigurationWebhookRule {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#api_groups MutatingWebhookConfiguration#api_groups}
@@ -267,6 +579,9 @@ export interface MutatingWebhookConfigurationWebhookRule {
 
 function mutatingWebhookConfigurationWebhookRuleToTerraform(struct?: MutatingWebhookConfigurationWebhookRule): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     api_groups: cdktf.listMapper(cdktf.stringToTerraform)(struct!.apiGroups),
     api_versions: cdktf.listMapper(cdktf.stringToTerraform)(struct!.apiVersions),
@@ -336,19 +651,19 @@ Defaults to "Never".
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#client_config MutatingWebhookConfiguration#client_config}
   */
-  readonly clientConfig: MutatingWebhookConfigurationWebhookClientConfig[];
+  readonly clientConfig: MutatingWebhookConfigurationWebhookClientConfig;
   /**
   * namespace_selector block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#namespace_selector MutatingWebhookConfiguration#namespace_selector}
   */
-  readonly namespaceSelector?: MutatingWebhookConfigurationWebhookNamespaceSelector[];
+  readonly namespaceSelector?: MutatingWebhookConfigurationWebhookNamespaceSelector;
   /**
   * object_selector block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration.html#object_selector MutatingWebhookConfiguration#object_selector}
   */
-  readonly objectSelector?: MutatingWebhookConfigurationWebhookObjectSelector[];
+  readonly objectSelector?: MutatingWebhookConfigurationWebhookObjectSelector;
   /**
   * rule block
   * 
@@ -359,6 +674,9 @@ Defaults to "Never".
 
 function mutatingWebhookConfigurationWebhookToTerraform(struct?: MutatingWebhookConfigurationWebhook): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     admission_review_versions: cdktf.listMapper(cdktf.stringToTerraform)(struct!.admissionReviewVersions),
     failure_policy: cdktf.stringToTerraform(struct!.failurePolicy),
@@ -367,9 +685,9 @@ function mutatingWebhookConfigurationWebhookToTerraform(struct?: MutatingWebhook
     reinvocation_policy: cdktf.stringToTerraform(struct!.reinvocationPolicy),
     side_effects: cdktf.stringToTerraform(struct!.sideEffects),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
-    client_config: cdktf.listMapper(mutatingWebhookConfigurationWebhookClientConfigToTerraform)(struct!.clientConfig),
-    namespace_selector: cdktf.listMapper(mutatingWebhookConfigurationWebhookNamespaceSelectorToTerraform)(struct!.namespaceSelector),
-    object_selector: cdktf.listMapper(mutatingWebhookConfigurationWebhookObjectSelectorToTerraform)(struct!.objectSelector),
+    client_config: mutatingWebhookConfigurationWebhookClientConfigToTerraform(struct!.clientConfig),
+    namespace_selector: mutatingWebhookConfigurationWebhookNamespaceSelectorToTerraform(struct!.namespaceSelector),
+    object_selector: mutatingWebhookConfigurationWebhookObjectSelectorToTerraform(struct!.objectSelector),
     rule: cdktf.listMapper(mutatingWebhookConfigurationWebhookRuleToTerraform)(struct!.rule),
   }
 }
@@ -421,11 +739,12 @@ export class MutatingWebhookConfiguration extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: MutatingWebhookConfigurationMetadata[];
+  private _metadata?: MutatingWebhookConfigurationMetadata; 
+  private __metadataOutput = new MutatingWebhookConfigurationMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: MutatingWebhookConfigurationMetadata[]) {
+  public putMetadata(value: MutatingWebhookConfigurationMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -434,8 +753,9 @@ export class MutatingWebhookConfiguration extends cdktf.TerraformResource {
   }
 
   // webhook - computed: false, optional: false, required: true
-  private _webhook: MutatingWebhookConfigurationWebhook[];
+  private _webhook?: MutatingWebhookConfigurationWebhook[]; 
   public get webhook() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('webhook') as any;
   }
   public set webhook(value: MutatingWebhookConfigurationWebhook[]) {
@@ -452,7 +772,7 @@ export class MutatingWebhookConfiguration extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: cdktf.listMapper(mutatingWebhookConfigurationMetadataToTerraform)(this._metadata),
+      metadata: mutatingWebhookConfigurationMetadataToTerraform(this._metadata),
       webhook: cdktf.listMapper(mutatingWebhookConfigurationWebhookToTerraform)(this._webhook),
     };
   }

@@ -16,13 +16,13 @@ export interface JobConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#metadata Job#metadata}
   */
-  readonly metadata: JobMetadata[];
+  readonly metadata: JobMetadata;
   /**
   * spec block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#spec Job#spec}
   */
-  readonly spec: JobSpec[];
+  readonly spec: JobSpec;
   /**
   * timeouts block
   * 
@@ -63,8 +63,11 @@ export interface JobMetadata {
   readonly namespace?: string;
 }
 
-function jobMetadataToTerraform(struct?: JobMetadata): any {
+function jobMetadataToTerraform(struct?: JobMetadataOutputReference | JobMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -74,6 +77,98 @@ function jobMetadataToTerraform(struct?: JobMetadata): any {
   }
 }
 
+export class JobMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: true, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: false, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 export interface JobSpecSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
@@ -97,6 +192,9 @@ export interface JobSpecSelectorMatchExpressions {
 
 function jobSpecSelectorMatchExpressionsToTerraform(struct?: JobSpecSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
@@ -119,14 +217,61 @@ export interface JobSpecSelector {
   readonly matchExpressions?: JobSpecSelectorMatchExpressions[];
 }
 
-function jobSpecSelectorToTerraform(struct?: JobSpecSelector): any {
+function jobSpecSelectorToTerraform(struct?: JobSpecSelectorOutputReference | JobSpecSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(jobSpecSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
   }
 }
 
+export class JobSpecSelectorOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // match_labels - computed: false, optional: true, required: false
+  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get matchLabels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('match_labels') as any;
+  }
+  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._matchLabels = value;
+  }
+  public resetMatchLabels() {
+    this._matchLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchLabelsInput() {
+    return this._matchLabels
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions?: JobSpecSelectorMatchExpressions[] | undefined; 
+  public get matchExpressions() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('match_expressions') as any;
+  }
+  public set matchExpressions(value: JobSpecSelectorMatchExpressions[] | undefined) {
+    this._matchExpressions = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions
+  }
+}
 export interface JobSpecTemplateMetadata {
   /**
   * An unstructured key value map stored with the job that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
@@ -154,8 +299,11 @@ export interface JobSpecTemplateMetadata {
   readonly name?: string;
 }
 
-function jobSpecTemplateMetadataToTerraform(struct?: JobSpecTemplateMetadata): any {
+function jobSpecTemplateMetadataToTerraform(struct?: JobSpecTemplateMetadataOutputReference | JobSpecTemplateMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -164,6 +312,82 @@ function jobSpecTemplateMetadataToTerraform(struct?: JobSpecTemplateMetadata): a
   }
 }
 
+export class JobSpecTemplateMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+}
 export interface JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions {
   /**
   * The label key that the selector applies to.
@@ -187,6 +411,9 @@ export interface JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulin
 
 function jobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform(struct?: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
@@ -203,13 +430,43 @@ export interface JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulin
   readonly matchExpressions?: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[];
 }
 
-function jobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToTerraform(struct?: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference): any {
+function jobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToTerraform(struct?: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference | JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     match_expressions: cdktf.listMapper(jobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform)(struct!.matchExpressions),
   }
 }
 
+export class JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions?: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | undefined; 
+  public get matchExpressions() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('match_expressions') as any;
+  }
+  public set matchExpressions(value: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | undefined) {
+    this._matchExpressions = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions
+  }
+}
 export interface JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight is in the range 1-100
@@ -222,14 +479,17 @@ export interface JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulin
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#preference Job#preference}
   */
-  readonly preference: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference[];
+  readonly preference: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference;
 }
 
 function jobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     weight: cdktf.numberToTerraform(struct!.weight),
-    preference: cdktf.listMapper(jobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToTerraform)(struct!.preference),
+    preference: jobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToTerraform(struct!.preference),
   }
 }
 
@@ -256,6 +516,9 @@ export interface JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringScheduling
 
 function jobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform(struct?: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
@@ -274,6 +537,9 @@ export interface JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringScheduling
 
 function jobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform(struct?: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     match_expressions: cdktf.listMapper(jobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform)(struct!.matchExpressions),
   }
@@ -288,13 +554,43 @@ export interface JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringScheduling
   readonly nodeSelectorTerm?: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[];
 }
 
-function jobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
+function jobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference | JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     node_selector_term: cdktf.listMapper(jobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform)(struct!.nodeSelectorTerm),
   }
 }
 
+export class JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // node_selector_term - computed: false, optional: true, required: false
+  private _nodeSelectorTerm?: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | undefined; 
+  public get nodeSelectorTerm() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('node_selector_term') as any;
+  }
+  public set nodeSelectorTerm(value: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | undefined) {
+    this._nodeSelectorTerm = value;
+  }
+  public resetNodeSelectorTerm() {
+    this._nodeSelectorTerm = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nodeSelectorTermInput() {
+    return this._nodeSelectorTerm
+  }
+}
 export interface JobSpecTemplateSpecAffinityNodeAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
@@ -307,17 +603,64 @@ export interface JobSpecTemplateSpecAffinityNodeAffinity {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#required_during_scheduling_ignored_during_execution Job#required_during_scheduling_ignored_during_execution}
   */
-  readonly requiredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
+  readonly requiredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution;
 }
 
-function jobSpecTemplateSpecAffinityNodeAffinityToTerraform(struct?: JobSpecTemplateSpecAffinityNodeAffinity): any {
+function jobSpecTemplateSpecAffinityNodeAffinityToTerraform(struct?: JobSpecTemplateSpecAffinityNodeAffinityOutputReference | JobSpecTemplateSpecAffinityNodeAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(jobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
-    required_during_scheduling_ignored_during_execution: cdktf.listMapper(jobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
+    required_during_scheduling_ignored_during_execution: jobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
 }
 
+export class JobSpecTemplateSpecAffinityNodeAffinityOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // preferred_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
+  private _preferredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  public get preferredDuringSchedulingIgnoredDuringExecution() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
+  }
+  public set preferredDuringSchedulingIgnoredDuringExecution(value: JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+    this._preferredDuringSchedulingIgnoredDuringExecution = value;
+  }
+  public resetPreferredDuringSchedulingIgnoredDuringExecution() {
+    this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get preferredDuringSchedulingIgnoredDuringExecutionInput() {
+    return this._preferredDuringSchedulingIgnoredDuringExecution
+  }
+
+  // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
+  private _requiredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined; 
+  private __requiredDuringSchedulingIgnoredDuringExecutionOutput = new JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this as any, "required_during_scheduling_ignored_during_execution", true);
+  public get requiredDuringSchedulingIgnoredDuringExecution() {
+    return this.__requiredDuringSchedulingIgnoredDuringExecutionOutput;
+  }
+  public putRequiredDuringSchedulingIgnoredDuringExecution(value: JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined) {
+    this._requiredDuringSchedulingIgnoredDuringExecution = value;
+  }
+  public resetRequiredDuringSchedulingIgnoredDuringExecution() {
+    this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get requiredDuringSchedulingIgnoredDuringExecutionInput() {
+    return this._requiredDuringSchedulingIgnoredDuringExecution
+  }
+}
 export interface JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
@@ -341,6 +684,9 @@ export interface JobSpecTemplateSpecAffinityPodAffinityPreferredDuringScheduling
 
 function jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
@@ -365,6 +711,9 @@ export interface JobSpecTemplateSpecAffinityPodAffinityPreferredDuringScheduling
 
 function jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
@@ -392,8 +741,11 @@ export interface JobSpecTemplateSpecAffinityPodAffinityPreferredDuringScheduling
   readonly labelSelector?: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
 }
 
-function jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
+function jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
@@ -401,6 +753,65 @@ function jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredD
   }
 }
 
+export class JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // namespaces - computed: false, optional: true, required: false
+  private _namespaces?: string[] | undefined; 
+  public get namespaces() {
+    return this.getListAttribute('namespaces');
+  }
+  public set namespaces(value: string[] | undefined) {
+    this._namespaces = value;
+  }
+  public resetNamespaces() {
+    this._namespaces = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespacesInput() {
+    return this._namespaces
+  }
+
+  // topology_key - computed: false, optional: true, required: false
+  private _topologyKey?: string | undefined; 
+  public get topologyKey() {
+    return this.getStringAttribute('topology_key');
+  }
+  public set topologyKey(value: string | undefined) {
+    this._topologyKey = value;
+  }
+  public resetTopologyKey() {
+    this._topologyKey = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get topologyKeyInput() {
+    return this._topologyKey
+  }
+
+  // label_selector - computed: false, optional: true, required: false
+  private _labelSelector?: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | undefined; 
+  public get labelSelector() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('label_selector') as any;
+  }
+  public set labelSelector(value: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | undefined) {
+    this._labelSelector = value;
+  }
+  public resetLabelSelector() {
+    this._labelSelector = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelSelectorInput() {
+    return this._labelSelector
+  }
+}
 export interface JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
@@ -413,14 +824,17 @@ export interface JobSpecTemplateSpecAffinityPodAffinityPreferredDuringScheduling
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#pod_affinity_term Job#pod_affinity_term}
   */
-  readonly podAffinityTerm: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm[];
+  readonly podAffinityTerm: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
 
 function jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     weight: cdktf.numberToTerraform(struct!.weight),
-    pod_affinity_term: cdktf.listMapper(jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform)(struct!.podAffinityTerm),
+    pod_affinity_term: jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct!.podAffinityTerm),
   }
 }
 
@@ -447,6 +861,9 @@ export interface JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingI
 
 function jobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
@@ -471,6 +888,9 @@ export interface JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingI
 
 function jobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(jobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
@@ -500,6 +920,9 @@ export interface JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingI
 
 function jobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
@@ -522,14 +945,61 @@ export interface JobSpecTemplateSpecAffinityPodAffinity {
   readonly requiredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
 
-function jobSpecTemplateSpecAffinityPodAffinityToTerraform(struct?: JobSpecTemplateSpecAffinityPodAffinity): any {
+function jobSpecTemplateSpecAffinityPodAffinityToTerraform(struct?: JobSpecTemplateSpecAffinityPodAffinityOutputReference | JobSpecTemplateSpecAffinityPodAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(jobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
     required_during_scheduling_ignored_during_execution: cdktf.listMapper(jobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
 }
 
+export class JobSpecTemplateSpecAffinityPodAffinityOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // preferred_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
+  private _preferredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  public get preferredDuringSchedulingIgnoredDuringExecution() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
+  }
+  public set preferredDuringSchedulingIgnoredDuringExecution(value: JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+    this._preferredDuringSchedulingIgnoredDuringExecution = value;
+  }
+  public resetPreferredDuringSchedulingIgnoredDuringExecution() {
+    this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get preferredDuringSchedulingIgnoredDuringExecutionInput() {
+    return this._preferredDuringSchedulingIgnoredDuringExecution
+  }
+
+  // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
+  private _requiredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  public get requiredDuringSchedulingIgnoredDuringExecution() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution') as any;
+  }
+  public set requiredDuringSchedulingIgnoredDuringExecution(value: JobSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+    this._requiredDuringSchedulingIgnoredDuringExecution = value;
+  }
+  public resetRequiredDuringSchedulingIgnoredDuringExecution() {
+    this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get requiredDuringSchedulingIgnoredDuringExecutionInput() {
+    return this._requiredDuringSchedulingIgnoredDuringExecution
+  }
+}
 export interface JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
@@ -553,6 +1023,9 @@ export interface JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedu
 
 function jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
@@ -577,6 +1050,9 @@ export interface JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedu
 
 function jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
@@ -604,8 +1080,11 @@ export interface JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedu
   readonly labelSelector?: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
 }
 
-function jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
+function jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
@@ -613,6 +1092,65 @@ function jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgno
   }
 }
 
+export class JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // namespaces - computed: false, optional: true, required: false
+  private _namespaces?: string[] | undefined; 
+  public get namespaces() {
+    return this.getListAttribute('namespaces');
+  }
+  public set namespaces(value: string[] | undefined) {
+    this._namespaces = value;
+  }
+  public resetNamespaces() {
+    this._namespaces = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespacesInput() {
+    return this._namespaces
+  }
+
+  // topology_key - computed: false, optional: true, required: false
+  private _topologyKey?: string | undefined; 
+  public get topologyKey() {
+    return this.getStringAttribute('topology_key');
+  }
+  public set topologyKey(value: string | undefined) {
+    this._topologyKey = value;
+  }
+  public resetTopologyKey() {
+    this._topologyKey = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get topologyKeyInput() {
+    return this._topologyKey
+  }
+
+  // label_selector - computed: false, optional: true, required: false
+  private _labelSelector?: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | undefined; 
+  public get labelSelector() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('label_selector') as any;
+  }
+  public set labelSelector(value: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | undefined) {
+    this._labelSelector = value;
+  }
+  public resetLabelSelector() {
+    this._labelSelector = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelSelectorInput() {
+    return this._labelSelector
+  }
+}
 export interface JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
@@ -625,14 +1163,17 @@ export interface JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedu
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#pod_affinity_term Job#pod_affinity_term}
   */
-  readonly podAffinityTerm: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm[];
+  readonly podAffinityTerm: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
 
 function jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     weight: cdktf.numberToTerraform(struct!.weight),
-    pod_affinity_term: cdktf.listMapper(jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform)(struct!.podAffinityTerm),
+    pod_affinity_term: jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct!.podAffinityTerm),
   }
 }
 
@@ -659,6 +1200,9 @@ export interface JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedul
 
 function jobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
@@ -683,6 +1227,9 @@ export interface JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedul
 
 function jobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(jobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
@@ -712,6 +1259,9 @@ export interface JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedul
 
 function jobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
@@ -734,44 +1284,155 @@ export interface JobSpecTemplateSpecAffinityPodAntiAffinity {
   readonly requiredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
 
-function jobSpecTemplateSpecAffinityPodAntiAffinityToTerraform(struct?: JobSpecTemplateSpecAffinityPodAntiAffinity): any {
+function jobSpecTemplateSpecAffinityPodAntiAffinityToTerraform(struct?: JobSpecTemplateSpecAffinityPodAntiAffinityOutputReference | JobSpecTemplateSpecAffinityPodAntiAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(jobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
     required_during_scheduling_ignored_during_execution: cdktf.listMapper(jobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
 }
 
+export class JobSpecTemplateSpecAffinityPodAntiAffinityOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // preferred_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
+  private _preferredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  public get preferredDuringSchedulingIgnoredDuringExecution() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
+  }
+  public set preferredDuringSchedulingIgnoredDuringExecution(value: JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+    this._preferredDuringSchedulingIgnoredDuringExecution = value;
+  }
+  public resetPreferredDuringSchedulingIgnoredDuringExecution() {
+    this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get preferredDuringSchedulingIgnoredDuringExecutionInput() {
+    return this._preferredDuringSchedulingIgnoredDuringExecution
+  }
+
+  // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
+  private _requiredDuringSchedulingIgnoredDuringExecution?: JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  public get requiredDuringSchedulingIgnoredDuringExecution() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution') as any;
+  }
+  public set requiredDuringSchedulingIgnoredDuringExecution(value: JobSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+    this._requiredDuringSchedulingIgnoredDuringExecution = value;
+  }
+  public resetRequiredDuringSchedulingIgnoredDuringExecution() {
+    this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get requiredDuringSchedulingIgnoredDuringExecutionInput() {
+    return this._requiredDuringSchedulingIgnoredDuringExecution
+  }
+}
 export interface JobSpecTemplateSpecAffinity {
   /**
   * node_affinity block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#node_affinity Job#node_affinity}
   */
-  readonly nodeAffinity?: JobSpecTemplateSpecAffinityNodeAffinity[];
+  readonly nodeAffinity?: JobSpecTemplateSpecAffinityNodeAffinity;
   /**
   * pod_affinity block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#pod_affinity Job#pod_affinity}
   */
-  readonly podAffinity?: JobSpecTemplateSpecAffinityPodAffinity[];
+  readonly podAffinity?: JobSpecTemplateSpecAffinityPodAffinity;
   /**
   * pod_anti_affinity block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#pod_anti_affinity Job#pod_anti_affinity}
   */
-  readonly podAntiAffinity?: JobSpecTemplateSpecAffinityPodAntiAffinity[];
+  readonly podAntiAffinity?: JobSpecTemplateSpecAffinityPodAntiAffinity;
 }
 
-function jobSpecTemplateSpecAffinityToTerraform(struct?: JobSpecTemplateSpecAffinity): any {
+function jobSpecTemplateSpecAffinityToTerraform(struct?: JobSpecTemplateSpecAffinityOutputReference | JobSpecTemplateSpecAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
-    node_affinity: cdktf.listMapper(jobSpecTemplateSpecAffinityNodeAffinityToTerraform)(struct!.nodeAffinity),
-    pod_affinity: cdktf.listMapper(jobSpecTemplateSpecAffinityPodAffinityToTerraform)(struct!.podAffinity),
-    pod_anti_affinity: cdktf.listMapper(jobSpecTemplateSpecAffinityPodAntiAffinityToTerraform)(struct!.podAntiAffinity),
+    node_affinity: jobSpecTemplateSpecAffinityNodeAffinityToTerraform(struct!.nodeAffinity),
+    pod_affinity: jobSpecTemplateSpecAffinityPodAffinityToTerraform(struct!.podAffinity),
+    pod_anti_affinity: jobSpecTemplateSpecAffinityPodAntiAffinityToTerraform(struct!.podAntiAffinity),
   }
 }
 
+export class JobSpecTemplateSpecAffinityOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // node_affinity - computed: false, optional: true, required: false
+  private _nodeAffinity?: JobSpecTemplateSpecAffinityNodeAffinity | undefined; 
+  private __nodeAffinityOutput = new JobSpecTemplateSpecAffinityNodeAffinityOutputReference(this as any, "node_affinity", true);
+  public get nodeAffinity() {
+    return this.__nodeAffinityOutput;
+  }
+  public putNodeAffinity(value: JobSpecTemplateSpecAffinityNodeAffinity | undefined) {
+    this._nodeAffinity = value;
+  }
+  public resetNodeAffinity() {
+    this._nodeAffinity = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nodeAffinityInput() {
+    return this._nodeAffinity
+  }
+
+  // pod_affinity - computed: false, optional: true, required: false
+  private _podAffinity?: JobSpecTemplateSpecAffinityPodAffinity | undefined; 
+  private __podAffinityOutput = new JobSpecTemplateSpecAffinityPodAffinityOutputReference(this as any, "pod_affinity", true);
+  public get podAffinity() {
+    return this.__podAffinityOutput;
+  }
+  public putPodAffinity(value: JobSpecTemplateSpecAffinityPodAffinity | undefined) {
+    this._podAffinity = value;
+  }
+  public resetPodAffinity() {
+    this._podAffinity = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get podAffinityInput() {
+    return this._podAffinity
+  }
+
+  // pod_anti_affinity - computed: false, optional: true, required: false
+  private _podAntiAffinity?: JobSpecTemplateSpecAffinityPodAntiAffinity | undefined; 
+  private __podAntiAffinityOutput = new JobSpecTemplateSpecAffinityPodAntiAffinityOutputReference(this as any, "pod_anti_affinity", true);
+  public get podAntiAffinity() {
+    return this.__podAntiAffinityOutput;
+  }
+  public putPodAntiAffinity(value: JobSpecTemplateSpecAffinityPodAntiAffinity | undefined) {
+    this._podAntiAffinity = value;
+  }
+  public resetPodAntiAffinity() {
+    this._podAntiAffinity = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get podAntiAffinityInput() {
+    return this._podAntiAffinity
+  }
+}
 export interface JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef {
   /**
   * The key to select.
@@ -793,8 +1454,11 @@ export interface JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef): any {
+function jobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference | JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     name: cdktf.stringToTerraform(struct!.name),
@@ -802,6 +1466,64 @@ function jobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform(stru
   }
 }
 
+export class JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string | undefined; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string | undefined) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // optional - computed: false, optional: true, required: false
+  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  public get optional() {
+    return this.getBooleanAttribute('optional') as any;
+  }
+  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+    this._optional = value;
+  }
+  public resetOptional() {
+    this._optional = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionalInput() {
+    return this._optional
+  }
+}
 export interface JobSpecTemplateSpecContainerEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
@@ -817,14 +1539,59 @@ export interface JobSpecTemplateSpecContainerEnvValueFromFieldRef {
   readonly fieldPath?: string;
 }
 
-function jobSpecTemplateSpecContainerEnvValueFromFieldRefToTerraform(struct?: JobSpecTemplateSpecContainerEnvValueFromFieldRef): any {
+function jobSpecTemplateSpecContainerEnvValueFromFieldRefToTerraform(struct?: JobSpecTemplateSpecContainerEnvValueFromFieldRefOutputReference | JobSpecTemplateSpecContainerEnvValueFromFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     api_version: cdktf.stringToTerraform(struct!.apiVersion),
     field_path: cdktf.stringToTerraform(struct!.fieldPath),
   }
 }
 
+export class JobSpecTemplateSpecContainerEnvValueFromFieldRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // api_version - computed: false, optional: true, required: false
+  private _apiVersion?: string | undefined; 
+  public get apiVersion() {
+    return this.getStringAttribute('api_version');
+  }
+  public set apiVersion(value: string | undefined) {
+    this._apiVersion = value;
+  }
+  public resetApiVersion() {
+    this._apiVersion = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get apiVersionInput() {
+    return this._apiVersion
+  }
+
+  // field_path - computed: false, optional: true, required: false
+  private _fieldPath?: string | undefined; 
+  public get fieldPath() {
+    return this.getStringAttribute('field_path');
+  }
+  public set fieldPath(value: string | undefined) {
+    this._fieldPath = value;
+  }
+  public resetFieldPath() {
+    this._fieldPath = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fieldPathInput() {
+    return this._fieldPath
+  }
+}
 export interface JobSpecTemplateSpecContainerEnvValueFromResourceFieldRef {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_name Job#container_name}
@@ -842,8 +1609,11 @@ export interface JobSpecTemplateSpecContainerEnvValueFromResourceFieldRef {
   readonly resource: string;
 }
 
-function jobSpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraform(struct?: JobSpecTemplateSpecContainerEnvValueFromResourceFieldRef): any {
+function jobSpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraform(struct?: JobSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference | JobSpecTemplateSpecContainerEnvValueFromResourceFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
     divisor: cdktf.stringToTerraform(struct!.divisor),
@@ -851,6 +1621,61 @@ function jobSpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraform(str
   }
 }
 
+export class JobSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // container_name - computed: false, optional: true, required: false
+  private _containerName?: string | undefined; 
+  public get containerName() {
+    return this.getStringAttribute('container_name');
+  }
+  public set containerName(value: string | undefined) {
+    this._containerName = value;
+  }
+  public resetContainerName() {
+    this._containerName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get containerNameInput() {
+    return this._containerName
+  }
+
+  // divisor - computed: false, optional: true, required: false
+  private _divisor?: string | undefined; 
+  public get divisor() {
+    return this.getStringAttribute('divisor');
+  }
+  public set divisor(value: string | undefined) {
+    this._divisor = value;
+  }
+  public resetDivisor() {
+    this._divisor = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get divisorInput() {
+    return this._divisor
+  }
+
+  // resource - computed: false, optional: false, required: true
+  private _resource?: string; 
+  public get resource() {
+    return this.getStringAttribute('resource');
+  }
+  public set resource(value: string) {
+    this._resource = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourceInput() {
+    return this._resource
+  }
+}
 export interface JobSpecTemplateSpecContainerEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
@@ -872,8 +1697,11 @@ export interface JobSpecTemplateSpecContainerEnvValueFromSecretKeyRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?: JobSpecTemplateSpecContainerEnvValueFromSecretKeyRef): any {
+function jobSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?: JobSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference | JobSpecTemplateSpecContainerEnvValueFromSecretKeyRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     name: cdktf.stringToTerraform(struct!.name),
@@ -881,43 +1709,182 @@ function jobSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?
   }
 }
 
+export class JobSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string | undefined; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string | undefined) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // optional - computed: false, optional: true, required: false
+  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  public get optional() {
+    return this.getBooleanAttribute('optional') as any;
+  }
+  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+    this._optional = value;
+  }
+  public resetOptional() {
+    this._optional = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionalInput() {
+    return this._optional
+  }
+}
 export interface JobSpecTemplateSpecContainerEnvValueFrom {
   /**
   * config_map_key_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#config_map_key_ref Job#config_map_key_ref}
   */
-  readonly configMapKeyRef?: JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef[];
+  readonly configMapKeyRef?: JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#field_ref Job#field_ref}
   */
-  readonly fieldRef?: JobSpecTemplateSpecContainerEnvValueFromFieldRef[];
+  readonly fieldRef?: JobSpecTemplateSpecContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resource_field_ref Job#resource_field_ref}
   */
-  readonly resourceFieldRef?: JobSpecTemplateSpecContainerEnvValueFromResourceFieldRef[];
+  readonly resourceFieldRef?: JobSpecTemplateSpecContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_key_ref Job#secret_key_ref}
   */
-  readonly secretKeyRef?: JobSpecTemplateSpecContainerEnvValueFromSecretKeyRef[];
+  readonly secretKeyRef?: JobSpecTemplateSpecContainerEnvValueFromSecretKeyRef;
 }
 
-function jobSpecTemplateSpecContainerEnvValueFromToTerraform(struct?: JobSpecTemplateSpecContainerEnvValueFrom): any {
+function jobSpecTemplateSpecContainerEnvValueFromToTerraform(struct?: JobSpecTemplateSpecContainerEnvValueFromOutputReference | JobSpecTemplateSpecContainerEnvValueFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
-    config_map_key_ref: cdktf.listMapper(jobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform)(struct!.configMapKeyRef),
-    field_ref: cdktf.listMapper(jobSpecTemplateSpecContainerEnvValueFromFieldRefToTerraform)(struct!.fieldRef),
-    resource_field_ref: cdktf.listMapper(jobSpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraform)(struct!.resourceFieldRef),
-    secret_key_ref: cdktf.listMapper(jobSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform)(struct!.secretKeyRef),
+    config_map_key_ref: jobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct!.configMapKeyRef),
+    field_ref: jobSpecTemplateSpecContainerEnvValueFromFieldRefToTerraform(struct!.fieldRef),
+    resource_field_ref: jobSpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraform(struct!.resourceFieldRef),
+    secret_key_ref: jobSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct!.secretKeyRef),
   }
 }
 
+export class JobSpecTemplateSpecContainerEnvValueFromOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // config_map_key_ref - computed: false, optional: true, required: false
+  private _configMapKeyRef?: JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined; 
+  private __configMapKeyRefOutput = new JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this as any, "config_map_key_ref", true);
+  public get configMapKeyRef() {
+    return this.__configMapKeyRefOutput;
+  }
+  public putConfigMapKeyRef(value: JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined) {
+    this._configMapKeyRef = value;
+  }
+  public resetConfigMapKeyRef() {
+    this._configMapKeyRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get configMapKeyRefInput() {
+    return this._configMapKeyRef
+  }
+
+  // field_ref - computed: false, optional: true, required: false
+  private _fieldRef?: JobSpecTemplateSpecContainerEnvValueFromFieldRef | undefined; 
+  private __fieldRefOutput = new JobSpecTemplateSpecContainerEnvValueFromFieldRefOutputReference(this as any, "field_ref", true);
+  public get fieldRef() {
+    return this.__fieldRefOutput;
+  }
+  public putFieldRef(value: JobSpecTemplateSpecContainerEnvValueFromFieldRef | undefined) {
+    this._fieldRef = value;
+  }
+  public resetFieldRef() {
+    this._fieldRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fieldRefInput() {
+    return this._fieldRef
+  }
+
+  // resource_field_ref - computed: false, optional: true, required: false
+  private _resourceFieldRef?: JobSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined; 
+  private __resourceFieldRefOutput = new JobSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference(this as any, "resource_field_ref", true);
+  public get resourceFieldRef() {
+    return this.__resourceFieldRefOutput;
+  }
+  public putResourceFieldRef(value: JobSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined) {
+    this._resourceFieldRef = value;
+  }
+  public resetResourceFieldRef() {
+    this._resourceFieldRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourceFieldRefInput() {
+    return this._resourceFieldRef
+  }
+
+  // secret_key_ref - computed: false, optional: true, required: false
+  private _secretKeyRef?: JobSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined; 
+  private __secretKeyRefOutput = new JobSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference(this as any, "secret_key_ref", true);
+  public get secretKeyRef() {
+    return this.__secretKeyRefOutput;
+  }
+  public putSecretKeyRef(value: JobSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined) {
+    this._secretKeyRef = value;
+  }
+  public resetSecretKeyRef() {
+    this._secretKeyRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get secretKeyRefInput() {
+    return this._secretKeyRef
+  }
+}
 export interface JobSpecTemplateSpecContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
@@ -936,15 +1903,18 @@ export interface JobSpecTemplateSpecContainerEnv {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value_from Job#value_from}
   */
-  readonly valueFrom?: JobSpecTemplateSpecContainerEnvValueFrom[];
+  readonly valueFrom?: JobSpecTemplateSpecContainerEnvValueFrom;
 }
 
 function jobSpecTemplateSpecContainerEnvToTerraform(struct?: JobSpecTemplateSpecContainerEnv): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
-    value_from: cdktf.listMapper(jobSpecTemplateSpecContainerEnvValueFromToTerraform)(struct!.valueFrom),
+    value_from: jobSpecTemplateSpecContainerEnvValueFromToTerraform(struct!.valueFrom),
   }
 }
 
@@ -963,14 +1933,56 @@ export interface JobSpecTemplateSpecContainerEnvFromConfigMapRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(struct?: JobSpecTemplateSpecContainerEnvFromConfigMapRef): any {
+function jobSpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(struct?: JobSpecTemplateSpecContainerEnvFromConfigMapRefOutputReference | JobSpecTemplateSpecContainerEnvFromConfigMapRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
   }
 }
 
+export class JobSpecTemplateSpecContainerEnvFromConfigMapRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // optional - computed: false, optional: true, required: false
+  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  public get optional() {
+    return this.getBooleanAttribute('optional') as any;
+  }
+  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+    this._optional = value;
+  }
+  public resetOptional() {
+    this._optional = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionalInput() {
+    return this._optional
+  }
+}
 export interface JobSpecTemplateSpecContainerEnvFromSecretRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -986,14 +1998,56 @@ export interface JobSpecTemplateSpecContainerEnvFromSecretRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct?: JobSpecTemplateSpecContainerEnvFromSecretRef): any {
+function jobSpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct?: JobSpecTemplateSpecContainerEnvFromSecretRefOutputReference | JobSpecTemplateSpecContainerEnvFromSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
   }
 }
 
+export class JobSpecTemplateSpecContainerEnvFromSecretRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // optional - computed: false, optional: true, required: false
+  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  public get optional() {
+    return this.getBooleanAttribute('optional') as any;
+  }
+  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+    this._optional = value;
+  }
+  public resetOptional() {
+    this._optional = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionalInput() {
+    return this._optional
+  }
+}
 export interface JobSpecTemplateSpecContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
@@ -1006,21 +2060,24 @@ export interface JobSpecTemplateSpecContainerEnvFrom {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#config_map_ref Job#config_map_ref}
   */
-  readonly configMapRef?: JobSpecTemplateSpecContainerEnvFromConfigMapRef[];
+  readonly configMapRef?: JobSpecTemplateSpecContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_ref Job#secret_ref}
   */
-  readonly secretRef?: JobSpecTemplateSpecContainerEnvFromSecretRef[];
+  readonly secretRef?: JobSpecTemplateSpecContainerEnvFromSecretRef;
 }
 
 function jobSpecTemplateSpecContainerEnvFromToTerraform(struct?: JobSpecTemplateSpecContainerEnvFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     prefix: cdktf.stringToTerraform(struct!.prefix),
-    config_map_ref: cdktf.listMapper(jobSpecTemplateSpecContainerEnvFromConfigMapRefToTerraform)(struct!.configMapRef),
-    secret_ref: cdktf.listMapper(jobSpecTemplateSpecContainerEnvFromSecretRefToTerraform)(struct!.secretRef),
+    config_map_ref: jobSpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(struct!.configMapRef),
+    secret_ref: jobSpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct!.secretRef),
   }
 }
 
@@ -1033,13 +2090,42 @@ export interface JobSpecTemplateSpecContainerLifecyclePostStartExec {
   readonly command?: string[];
 }
 
-function jobSpecTemplateSpecContainerLifecyclePostStartExecToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePostStartExec): any {
+function jobSpecTemplateSpecContainerLifecyclePostStartExecToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePostStartExecOutputReference | JobSpecTemplateSpecContainerLifecyclePostStartExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
   }
 }
 
+export class JobSpecTemplateSpecContainerLifecyclePostStartExecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // command - computed: false, optional: true, required: false
+  private _command?: string[] | undefined; 
+  public get command() {
+    return this.getListAttribute('command');
+  }
+  public set command(value: string[] | undefined) {
+    this._command = value;
+  }
+  public resetCommand() {
+    this._command = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command
+  }
+}
 export interface JobSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader {
   /**
   * The header field name
@@ -1057,6 +2143,9 @@ export interface JobSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader
 
 function jobSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
@@ -1096,8 +2185,11 @@ export interface JobSpecTemplateSpecContainerLifecyclePostStartHttpGet {
   readonly httpHeader?: JobSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[];
 }
 
-function jobSpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePostStartHttpGet): any {
+function jobSpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePostStartHttpGetOutputReference | JobSpecTemplateSpecContainerLifecyclePostStartHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     host: cdktf.stringToTerraform(struct!.host),
     path: cdktf.stringToTerraform(struct!.path),
@@ -1107,6 +2199,97 @@ function jobSpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform(struct
   }
 }
 
+export class JobSpecTemplateSpecContainerLifecyclePostStartHttpGetOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // host - computed: false, optional: true, required: false
+  private _host?: string | undefined; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string | undefined) {
+    this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string | undefined; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+
+  // scheme - computed: false, optional: true, required: false
+  private _scheme?: string | undefined; 
+  public get scheme() {
+    return this.getStringAttribute('scheme');
+  }
+  public set scheme(value: string | undefined) {
+    this._scheme = value;
+  }
+  public resetScheme() {
+    this._scheme = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schemeInput() {
+    return this._scheme
+  }
+
+  // http_header - computed: false, optional: true, required: false
+  private _httpHeader?: JobSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[] | undefined; 
+  public get httpHeader() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('http_header') as any;
+  }
+  public set httpHeader(value: JobSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[] | undefined) {
+    this._httpHeader = value;
+  }
+  public resetHttpHeader() {
+    this._httpHeader = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpHeaderInput() {
+    return this._httpHeader
+  }
+}
 export interface JobSpecTemplateSpecContainerLifecyclePostStartTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
@@ -1118,6 +2301,9 @@ export interface JobSpecTemplateSpecContainerLifecyclePostStartTcpSocket {
 
 function jobSpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePostStartTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     port: cdktf.stringToTerraform(struct!.port),
   }
@@ -1129,13 +2315,13 @@ export interface JobSpecTemplateSpecContainerLifecyclePostStart {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
   */
-  readonly exec?: JobSpecTemplateSpecContainerLifecyclePostStartExec[];
+  readonly exec?: JobSpecTemplateSpecContainerLifecyclePostStartExec;
   /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
   */
-  readonly httpGet?: JobSpecTemplateSpecContainerLifecyclePostStartHttpGet[];
+  readonly httpGet?: JobSpecTemplateSpecContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
   * 
@@ -1146,9 +2332,12 @@ export interface JobSpecTemplateSpecContainerLifecyclePostStart {
 
 function jobSpecTemplateSpecContainerLifecyclePostStartToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePostStart): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
-    exec: cdktf.listMapper(jobSpecTemplateSpecContainerLifecyclePostStartExecToTerraform)(struct!.exec),
-    http_get: cdktf.listMapper(jobSpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform)(struct!.httpGet),
+    exec: jobSpecTemplateSpecContainerLifecyclePostStartExecToTerraform(struct!.exec),
+    http_get: jobSpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(jobSpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraform)(struct!.tcpSocket),
   }
 }
@@ -1162,13 +2351,42 @@ export interface JobSpecTemplateSpecContainerLifecyclePreStopExec {
   readonly command?: string[];
 }
 
-function jobSpecTemplateSpecContainerLifecyclePreStopExecToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePreStopExec): any {
+function jobSpecTemplateSpecContainerLifecyclePreStopExecToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePreStopExecOutputReference | JobSpecTemplateSpecContainerLifecyclePreStopExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
   }
 }
 
+export class JobSpecTemplateSpecContainerLifecyclePreStopExecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // command - computed: false, optional: true, required: false
+  private _command?: string[] | undefined; 
+  public get command() {
+    return this.getListAttribute('command');
+  }
+  public set command(value: string[] | undefined) {
+    this._command = value;
+  }
+  public resetCommand() {
+    this._command = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command
+  }
+}
 export interface JobSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader {
   /**
   * The header field name
@@ -1186,6 +2404,9 @@ export interface JobSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader {
 
 function jobSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
@@ -1225,8 +2446,11 @@ export interface JobSpecTemplateSpecContainerLifecyclePreStopHttpGet {
   readonly httpHeader?: JobSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[];
 }
 
-function jobSpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePreStopHttpGet): any {
+function jobSpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePreStopHttpGetOutputReference | JobSpecTemplateSpecContainerLifecyclePreStopHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     host: cdktf.stringToTerraform(struct!.host),
     path: cdktf.stringToTerraform(struct!.path),
@@ -1236,6 +2460,97 @@ function jobSpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(struct?:
   }
 }
 
+export class JobSpecTemplateSpecContainerLifecyclePreStopHttpGetOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // host - computed: false, optional: true, required: false
+  private _host?: string | undefined; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string | undefined) {
+    this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string | undefined; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+
+  // scheme - computed: false, optional: true, required: false
+  private _scheme?: string | undefined; 
+  public get scheme() {
+    return this.getStringAttribute('scheme');
+  }
+  public set scheme(value: string | undefined) {
+    this._scheme = value;
+  }
+  public resetScheme() {
+    this._scheme = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schemeInput() {
+    return this._scheme
+  }
+
+  // http_header - computed: false, optional: true, required: false
+  private _httpHeader?: JobSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[] | undefined; 
+  public get httpHeader() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('http_header') as any;
+  }
+  public set httpHeader(value: JobSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[] | undefined) {
+    this._httpHeader = value;
+  }
+  public resetHttpHeader() {
+    this._httpHeader = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpHeaderInput() {
+    return this._httpHeader
+  }
+}
 export interface JobSpecTemplateSpecContainerLifecyclePreStopTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
@@ -1247,6 +2562,9 @@ export interface JobSpecTemplateSpecContainerLifecyclePreStopTcpSocket {
 
 function jobSpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePreStopTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     port: cdktf.stringToTerraform(struct!.port),
   }
@@ -1258,13 +2576,13 @@ export interface JobSpecTemplateSpecContainerLifecyclePreStop {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
   */
-  readonly exec?: JobSpecTemplateSpecContainerLifecyclePreStopExec[];
+  readonly exec?: JobSpecTemplateSpecContainerLifecyclePreStopExec;
   /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
   */
-  readonly httpGet?: JobSpecTemplateSpecContainerLifecyclePreStopHttpGet[];
+  readonly httpGet?: JobSpecTemplateSpecContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
   * 
@@ -1275,9 +2593,12 @@ export interface JobSpecTemplateSpecContainerLifecyclePreStop {
 
 function jobSpecTemplateSpecContainerLifecyclePreStopToTerraform(struct?: JobSpecTemplateSpecContainerLifecyclePreStop): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
-    exec: cdktf.listMapper(jobSpecTemplateSpecContainerLifecyclePreStopExecToTerraform)(struct!.exec),
-    http_get: cdktf.listMapper(jobSpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform)(struct!.httpGet),
+    exec: jobSpecTemplateSpecContainerLifecyclePreStopExecToTerraform(struct!.exec),
+    http_get: jobSpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(jobSpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerraform)(struct!.tcpSocket),
   }
 }
@@ -1297,14 +2618,61 @@ export interface JobSpecTemplateSpecContainerLifecycle {
   readonly preStop?: JobSpecTemplateSpecContainerLifecyclePreStop[];
 }
 
-function jobSpecTemplateSpecContainerLifecycleToTerraform(struct?: JobSpecTemplateSpecContainerLifecycle): any {
+function jobSpecTemplateSpecContainerLifecycleToTerraform(struct?: JobSpecTemplateSpecContainerLifecycleOutputReference | JobSpecTemplateSpecContainerLifecycle): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     post_start: cdktf.listMapper(jobSpecTemplateSpecContainerLifecyclePostStartToTerraform)(struct!.postStart),
     pre_stop: cdktf.listMapper(jobSpecTemplateSpecContainerLifecyclePreStopToTerraform)(struct!.preStop),
   }
 }
 
+export class JobSpecTemplateSpecContainerLifecycleOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // post_start - computed: false, optional: true, required: false
+  private _postStart?: JobSpecTemplateSpecContainerLifecyclePostStart[] | undefined; 
+  public get postStart() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('post_start') as any;
+  }
+  public set postStart(value: JobSpecTemplateSpecContainerLifecyclePostStart[] | undefined) {
+    this._postStart = value;
+  }
+  public resetPostStart() {
+    this._postStart = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get postStartInput() {
+    return this._postStart
+  }
+
+  // pre_stop - computed: false, optional: true, required: false
+  private _preStop?: JobSpecTemplateSpecContainerLifecyclePreStop[] | undefined; 
+  public get preStop() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('pre_stop') as any;
+  }
+  public set preStop(value: JobSpecTemplateSpecContainerLifecyclePreStop[] | undefined) {
+    this._preStop = value;
+  }
+  public resetPreStop() {
+    this._preStop = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get preStopInput() {
+    return this._preStop
+  }
+}
 export interface JobSpecTemplateSpecContainerLivenessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
@@ -1314,13 +2682,42 @@ export interface JobSpecTemplateSpecContainerLivenessProbeExec {
   readonly command?: string[];
 }
 
-function jobSpecTemplateSpecContainerLivenessProbeExecToTerraform(struct?: JobSpecTemplateSpecContainerLivenessProbeExec): any {
+function jobSpecTemplateSpecContainerLivenessProbeExecToTerraform(struct?: JobSpecTemplateSpecContainerLivenessProbeExecOutputReference | JobSpecTemplateSpecContainerLivenessProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
   }
 }
 
+export class JobSpecTemplateSpecContainerLivenessProbeExecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // command - computed: false, optional: true, required: false
+  private _command?: string[] | undefined; 
+  public get command() {
+    return this.getListAttribute('command');
+  }
+  public set command(value: string[] | undefined) {
+    this._command = value;
+  }
+  public resetCommand() {
+    this._command = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command
+  }
+}
 export interface JobSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
@@ -1338,6 +2735,9 @@ export interface JobSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader {
 
 function jobSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: JobSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
@@ -1377,8 +2777,11 @@ export interface JobSpecTemplateSpecContainerLivenessProbeHttpGet {
   readonly httpHeader?: JobSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[];
 }
 
-function jobSpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct?: JobSpecTemplateSpecContainerLivenessProbeHttpGet): any {
+function jobSpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct?: JobSpecTemplateSpecContainerLivenessProbeHttpGetOutputReference | JobSpecTemplateSpecContainerLivenessProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     host: cdktf.stringToTerraform(struct!.host),
     path: cdktf.stringToTerraform(struct!.path),
@@ -1388,6 +2791,97 @@ function jobSpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct?: Jo
   }
 }
 
+export class JobSpecTemplateSpecContainerLivenessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // host - computed: false, optional: true, required: false
+  private _host?: string | undefined; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string | undefined) {
+    this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string | undefined; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+
+  // scheme - computed: false, optional: true, required: false
+  private _scheme?: string | undefined; 
+  public get scheme() {
+    return this.getStringAttribute('scheme');
+  }
+  public set scheme(value: string | undefined) {
+    this._scheme = value;
+  }
+  public resetScheme() {
+    this._scheme = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schemeInput() {
+    return this._scheme
+  }
+
+  // http_header - computed: false, optional: true, required: false
+  private _httpHeader?: JobSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[] | undefined; 
+  public get httpHeader() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('http_header') as any;
+  }
+  public set httpHeader(value: JobSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[] | undefined) {
+    this._httpHeader = value;
+  }
+  public resetHttpHeader() {
+    this._httpHeader = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpHeaderInput() {
+    return this._httpHeader
+  }
+}
 export interface JobSpecTemplateSpecContainerLivenessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
@@ -1399,6 +2893,9 @@ export interface JobSpecTemplateSpecContainerLivenessProbeTcpSocket {
 
 function jobSpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform(struct?: JobSpecTemplateSpecContainerLivenessProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     port: cdktf.stringToTerraform(struct!.port),
   }
@@ -1440,13 +2937,13 @@ export interface JobSpecTemplateSpecContainerLivenessProbe {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
   */
-  readonly exec?: JobSpecTemplateSpecContainerLivenessProbeExec[];
+  readonly exec?: JobSpecTemplateSpecContainerLivenessProbeExec;
   /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
   */
-  readonly httpGet?: JobSpecTemplateSpecContainerLivenessProbeHttpGet[];
+  readonly httpGet?: JobSpecTemplateSpecContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
   * 
@@ -1455,20 +2952,164 @@ export interface JobSpecTemplateSpecContainerLivenessProbe {
   readonly tcpSocket?: JobSpecTemplateSpecContainerLivenessProbeTcpSocket[];
 }
 
-function jobSpecTemplateSpecContainerLivenessProbeToTerraform(struct?: JobSpecTemplateSpecContainerLivenessProbe): any {
+function jobSpecTemplateSpecContainerLivenessProbeToTerraform(struct?: JobSpecTemplateSpecContainerLivenessProbeOutputReference | JobSpecTemplateSpecContainerLivenessProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     failure_threshold: cdktf.numberToTerraform(struct!.failureThreshold),
     initial_delay_seconds: cdktf.numberToTerraform(struct!.initialDelaySeconds),
     period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
-    exec: cdktf.listMapper(jobSpecTemplateSpecContainerLivenessProbeExecToTerraform)(struct!.exec),
-    http_get: cdktf.listMapper(jobSpecTemplateSpecContainerLivenessProbeHttpGetToTerraform)(struct!.httpGet),
+    exec: jobSpecTemplateSpecContainerLivenessProbeExecToTerraform(struct!.exec),
+    http_get: jobSpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(jobSpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform)(struct!.tcpSocket),
   }
 }
 
+export class JobSpecTemplateSpecContainerLivenessProbeOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // failure_threshold - computed: false, optional: true, required: false
+  private _failureThreshold?: number | undefined; 
+  public get failureThreshold() {
+    return this.getNumberAttribute('failure_threshold');
+  }
+  public set failureThreshold(value: number | undefined) {
+    this._failureThreshold = value;
+  }
+  public resetFailureThreshold() {
+    this._failureThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get failureThresholdInput() {
+    return this._failureThreshold
+  }
+
+  // initial_delay_seconds - computed: false, optional: true, required: false
+  private _initialDelaySeconds?: number | undefined; 
+  public get initialDelaySeconds() {
+    return this.getNumberAttribute('initial_delay_seconds');
+  }
+  public set initialDelaySeconds(value: number | undefined) {
+    this._initialDelaySeconds = value;
+  }
+  public resetInitialDelaySeconds() {
+    this._initialDelaySeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get initialDelaySecondsInput() {
+    return this._initialDelaySeconds
+  }
+
+  // period_seconds - computed: false, optional: true, required: false
+  private _periodSeconds?: number | undefined; 
+  public get periodSeconds() {
+    return this.getNumberAttribute('period_seconds');
+  }
+  public set periodSeconds(value: number | undefined) {
+    this._periodSeconds = value;
+  }
+  public resetPeriodSeconds() {
+    this._periodSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get periodSecondsInput() {
+    return this._periodSeconds
+  }
+
+  // success_threshold - computed: false, optional: true, required: false
+  private _successThreshold?: number | undefined; 
+  public get successThreshold() {
+    return this.getNumberAttribute('success_threshold');
+  }
+  public set successThreshold(value: number | undefined) {
+    this._successThreshold = value;
+  }
+  public resetSuccessThreshold() {
+    this._successThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get successThresholdInput() {
+    return this._successThreshold
+  }
+
+  // timeout_seconds - computed: false, optional: true, required: false
+  private _timeoutSeconds?: number | undefined; 
+  public get timeoutSeconds() {
+    return this.getNumberAttribute('timeout_seconds');
+  }
+  public set timeoutSeconds(value: number | undefined) {
+    this._timeoutSeconds = value;
+  }
+  public resetTimeoutSeconds() {
+    this._timeoutSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutSecondsInput() {
+    return this._timeoutSeconds
+  }
+
+  // exec - computed: false, optional: true, required: false
+  private _exec?: JobSpecTemplateSpecContainerLivenessProbeExec | undefined; 
+  private __execOutput = new JobSpecTemplateSpecContainerLivenessProbeExecOutputReference(this as any, "exec", true);
+  public get exec() {
+    return this.__execOutput;
+  }
+  public putExec(value: JobSpecTemplateSpecContainerLivenessProbeExec | undefined) {
+    this._exec = value;
+  }
+  public resetExec() {
+    this._exec = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get execInput() {
+    return this._exec
+  }
+
+  // http_get - computed: false, optional: true, required: false
+  private _httpGet?: JobSpecTemplateSpecContainerLivenessProbeHttpGet | undefined; 
+  private __httpGetOutput = new JobSpecTemplateSpecContainerLivenessProbeHttpGetOutputReference(this as any, "http_get", true);
+  public get httpGet() {
+    return this.__httpGetOutput;
+  }
+  public putHttpGet(value: JobSpecTemplateSpecContainerLivenessProbeHttpGet | undefined) {
+    this._httpGet = value;
+  }
+  public resetHttpGet() {
+    this._httpGet = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpGetInput() {
+    return this._httpGet
+  }
+
+  // tcp_socket - computed: false, optional: true, required: false
+  private _tcpSocket?: JobSpecTemplateSpecContainerLivenessProbeTcpSocket[] | undefined; 
+  public get tcpSocket() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('tcp_socket') as any;
+  }
+  public set tcpSocket(value: JobSpecTemplateSpecContainerLivenessProbeTcpSocket[] | undefined) {
+    this._tcpSocket = value;
+  }
+  public resetTcpSocket() {
+    this._tcpSocket = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get tcpSocketInput() {
+    return this._tcpSocket
+  }
+}
 export interface JobSpecTemplateSpecContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
@@ -1504,6 +3145,9 @@ export interface JobSpecTemplateSpecContainerPort {
 
 function jobSpecTemplateSpecContainerPortToTerraform(struct?: JobSpecTemplateSpecContainerPort): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     container_port: cdktf.numberToTerraform(struct!.containerPort),
     host_ip: cdktf.stringToTerraform(struct!.hostIp),
@@ -1522,13 +3166,42 @@ export interface JobSpecTemplateSpecContainerReadinessProbeExec {
   readonly command?: string[];
 }
 
-function jobSpecTemplateSpecContainerReadinessProbeExecToTerraform(struct?: JobSpecTemplateSpecContainerReadinessProbeExec): any {
+function jobSpecTemplateSpecContainerReadinessProbeExecToTerraform(struct?: JobSpecTemplateSpecContainerReadinessProbeExecOutputReference | JobSpecTemplateSpecContainerReadinessProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
   }
 }
 
+export class JobSpecTemplateSpecContainerReadinessProbeExecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // command - computed: false, optional: true, required: false
+  private _command?: string[] | undefined; 
+  public get command() {
+    return this.getListAttribute('command');
+  }
+  public set command(value: string[] | undefined) {
+    this._command = value;
+  }
+  public resetCommand() {
+    this._command = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command
+  }
+}
 export interface JobSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader {
   /**
   * The header field name
@@ -1546,6 +3219,9 @@ export interface JobSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader {
 
 function jobSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: JobSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
@@ -1585,8 +3261,11 @@ export interface JobSpecTemplateSpecContainerReadinessProbeHttpGet {
   readonly httpHeader?: JobSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[];
 }
 
-function jobSpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct?: JobSpecTemplateSpecContainerReadinessProbeHttpGet): any {
+function jobSpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct?: JobSpecTemplateSpecContainerReadinessProbeHttpGetOutputReference | JobSpecTemplateSpecContainerReadinessProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     host: cdktf.stringToTerraform(struct!.host),
     path: cdktf.stringToTerraform(struct!.path),
@@ -1596,6 +3275,97 @@ function jobSpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct?: J
   }
 }
 
+export class JobSpecTemplateSpecContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // host - computed: false, optional: true, required: false
+  private _host?: string | undefined; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string | undefined) {
+    this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string | undefined; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+
+  // scheme - computed: false, optional: true, required: false
+  private _scheme?: string | undefined; 
+  public get scheme() {
+    return this.getStringAttribute('scheme');
+  }
+  public set scheme(value: string | undefined) {
+    this._scheme = value;
+  }
+  public resetScheme() {
+    this._scheme = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schemeInput() {
+    return this._scheme
+  }
+
+  // http_header - computed: false, optional: true, required: false
+  private _httpHeader?: JobSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[] | undefined; 
+  public get httpHeader() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('http_header') as any;
+  }
+  public set httpHeader(value: JobSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[] | undefined) {
+    this._httpHeader = value;
+  }
+  public resetHttpHeader() {
+    this._httpHeader = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpHeaderInput() {
+    return this._httpHeader
+  }
+}
 export interface JobSpecTemplateSpecContainerReadinessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
@@ -1607,6 +3377,9 @@ export interface JobSpecTemplateSpecContainerReadinessProbeTcpSocket {
 
 function jobSpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform(struct?: JobSpecTemplateSpecContainerReadinessProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     port: cdktf.stringToTerraform(struct!.port),
   }
@@ -1648,13 +3421,13 @@ export interface JobSpecTemplateSpecContainerReadinessProbe {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
   */
-  readonly exec?: JobSpecTemplateSpecContainerReadinessProbeExec[];
+  readonly exec?: JobSpecTemplateSpecContainerReadinessProbeExec;
   /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
   */
-  readonly httpGet?: JobSpecTemplateSpecContainerReadinessProbeHttpGet[];
+  readonly httpGet?: JobSpecTemplateSpecContainerReadinessProbeHttpGet;
   /**
   * tcp_socket block
   * 
@@ -1663,20 +3436,164 @@ export interface JobSpecTemplateSpecContainerReadinessProbe {
   readonly tcpSocket?: JobSpecTemplateSpecContainerReadinessProbeTcpSocket[];
 }
 
-function jobSpecTemplateSpecContainerReadinessProbeToTerraform(struct?: JobSpecTemplateSpecContainerReadinessProbe): any {
+function jobSpecTemplateSpecContainerReadinessProbeToTerraform(struct?: JobSpecTemplateSpecContainerReadinessProbeOutputReference | JobSpecTemplateSpecContainerReadinessProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     failure_threshold: cdktf.numberToTerraform(struct!.failureThreshold),
     initial_delay_seconds: cdktf.numberToTerraform(struct!.initialDelaySeconds),
     period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
-    exec: cdktf.listMapper(jobSpecTemplateSpecContainerReadinessProbeExecToTerraform)(struct!.exec),
-    http_get: cdktf.listMapper(jobSpecTemplateSpecContainerReadinessProbeHttpGetToTerraform)(struct!.httpGet),
+    exec: jobSpecTemplateSpecContainerReadinessProbeExecToTerraform(struct!.exec),
+    http_get: jobSpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(jobSpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform)(struct!.tcpSocket),
   }
 }
 
+export class JobSpecTemplateSpecContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // failure_threshold - computed: false, optional: true, required: false
+  private _failureThreshold?: number | undefined; 
+  public get failureThreshold() {
+    return this.getNumberAttribute('failure_threshold');
+  }
+  public set failureThreshold(value: number | undefined) {
+    this._failureThreshold = value;
+  }
+  public resetFailureThreshold() {
+    this._failureThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get failureThresholdInput() {
+    return this._failureThreshold
+  }
+
+  // initial_delay_seconds - computed: false, optional: true, required: false
+  private _initialDelaySeconds?: number | undefined; 
+  public get initialDelaySeconds() {
+    return this.getNumberAttribute('initial_delay_seconds');
+  }
+  public set initialDelaySeconds(value: number | undefined) {
+    this._initialDelaySeconds = value;
+  }
+  public resetInitialDelaySeconds() {
+    this._initialDelaySeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get initialDelaySecondsInput() {
+    return this._initialDelaySeconds
+  }
+
+  // period_seconds - computed: false, optional: true, required: false
+  private _periodSeconds?: number | undefined; 
+  public get periodSeconds() {
+    return this.getNumberAttribute('period_seconds');
+  }
+  public set periodSeconds(value: number | undefined) {
+    this._periodSeconds = value;
+  }
+  public resetPeriodSeconds() {
+    this._periodSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get periodSecondsInput() {
+    return this._periodSeconds
+  }
+
+  // success_threshold - computed: false, optional: true, required: false
+  private _successThreshold?: number | undefined; 
+  public get successThreshold() {
+    return this.getNumberAttribute('success_threshold');
+  }
+  public set successThreshold(value: number | undefined) {
+    this._successThreshold = value;
+  }
+  public resetSuccessThreshold() {
+    this._successThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get successThresholdInput() {
+    return this._successThreshold
+  }
+
+  // timeout_seconds - computed: false, optional: true, required: false
+  private _timeoutSeconds?: number | undefined; 
+  public get timeoutSeconds() {
+    return this.getNumberAttribute('timeout_seconds');
+  }
+  public set timeoutSeconds(value: number | undefined) {
+    this._timeoutSeconds = value;
+  }
+  public resetTimeoutSeconds() {
+    this._timeoutSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutSecondsInput() {
+    return this._timeoutSeconds
+  }
+
+  // exec - computed: false, optional: true, required: false
+  private _exec?: JobSpecTemplateSpecContainerReadinessProbeExec | undefined; 
+  private __execOutput = new JobSpecTemplateSpecContainerReadinessProbeExecOutputReference(this as any, "exec", true);
+  public get exec() {
+    return this.__execOutput;
+  }
+  public putExec(value: JobSpecTemplateSpecContainerReadinessProbeExec | undefined) {
+    this._exec = value;
+  }
+  public resetExec() {
+    this._exec = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get execInput() {
+    return this._exec
+  }
+
+  // http_get - computed: false, optional: true, required: false
+  private _httpGet?: JobSpecTemplateSpecContainerReadinessProbeHttpGet | undefined; 
+  private __httpGetOutput = new JobSpecTemplateSpecContainerReadinessProbeHttpGetOutputReference(this as any, "http_get", true);
+  public get httpGet() {
+    return this.__httpGetOutput;
+  }
+  public putHttpGet(value: JobSpecTemplateSpecContainerReadinessProbeHttpGet | undefined) {
+    this._httpGet = value;
+  }
+  public resetHttpGet() {
+    this._httpGet = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpGetInput() {
+    return this._httpGet
+  }
+
+  // tcp_socket - computed: false, optional: true, required: false
+  private _tcpSocket?: JobSpecTemplateSpecContainerReadinessProbeTcpSocket[] | undefined; 
+  public get tcpSocket() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('tcp_socket') as any;
+  }
+  public set tcpSocket(value: JobSpecTemplateSpecContainerReadinessProbeTcpSocket[] | undefined) {
+    this._tcpSocket = value;
+  }
+  public resetTcpSocket() {
+    this._tcpSocket = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get tcpSocketInput() {
+    return this._tcpSocket
+  }
+}
 export interface JobSpecTemplateSpecContainerResources {
   /**
   * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
@@ -1692,14 +3609,61 @@ export interface JobSpecTemplateSpecContainerResources {
   readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecContainerResourcesToTerraform(struct?: JobSpecTemplateSpecContainerResources): any {
+function jobSpecTemplateSpecContainerResourcesToTerraform(struct?: JobSpecTemplateSpecContainerResourcesOutputReference | JobSpecTemplateSpecContainerResources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     limits: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.limits),
     requests: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.requests),
   }
 }
 
+export class JobSpecTemplateSpecContainerResourcesOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // limits - computed: true, optional: true, required: false
+  private _limits?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get limits() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('limits') as any;
+  }
+  public set limits(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._limits = value;
+  }
+  public resetLimits() {
+    this._limits = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get limitsInput() {
+    return this._limits
+  }
+
+  // requests - computed: true, optional: true, required: false
+  private _requests?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get requests() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('requests') as any;
+  }
+  public set requests(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._requests = value;
+  }
+  public resetRequests() {
+    this._requests = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get requestsInput() {
+    return this._requests
+  }
+}
 export interface JobSpecTemplateSpecContainerSecurityContextCapabilities {
   /**
   * Added capabilities
@@ -1715,14 +3679,59 @@ export interface JobSpecTemplateSpecContainerSecurityContextCapabilities {
   readonly drop?: string[];
 }
 
-function jobSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform(struct?: JobSpecTemplateSpecContainerSecurityContextCapabilities): any {
+function jobSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform(struct?: JobSpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference | JobSpecTemplateSpecContainerSecurityContextCapabilities): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     add: cdktf.listMapper(cdktf.stringToTerraform)(struct!.add),
     drop: cdktf.listMapper(cdktf.stringToTerraform)(struct!.drop),
   }
 }
 
+export class JobSpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // add - computed: false, optional: true, required: false
+  private _add?: string[] | undefined; 
+  public get add() {
+    return this.getListAttribute('add');
+  }
+  public set add(value: string[] | undefined) {
+    this._add = value;
+  }
+  public resetAdd() {
+    this._add = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get addInput() {
+    return this._add
+  }
+
+  // drop - computed: false, optional: true, required: false
+  private _drop?: string[] | undefined; 
+  public get drop() {
+    return this.getListAttribute('drop');
+  }
+  public set drop(value: string[] | undefined) {
+    this._drop = value;
+  }
+  public resetDrop() {
+    this._drop = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get dropInput() {
+    return this._drop
+  }
+}
 export interface JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions {
   /**
   * Level is SELinux level label that applies to the container.
@@ -1750,8 +3759,11 @@ export interface JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions {
   readonly user?: string;
 }
 
-function jobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct?: JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions): any {
+function jobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct?: JobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference | JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     level: cdktf.stringToTerraform(struct!.level),
     role: cdktf.stringToTerraform(struct!.role),
@@ -1760,6 +3772,80 @@ function jobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(st
   }
 }
 
+export class JobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // level - computed: false, optional: true, required: false
+  private _level?: string | undefined; 
+  public get level() {
+    return this.getStringAttribute('level');
+  }
+  public set level(value: string | undefined) {
+    this._level = value;
+  }
+  public resetLevel() {
+    this._level = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get levelInput() {
+    return this._level
+  }
+
+  // role - computed: false, optional: true, required: false
+  private _role?: string | undefined; 
+  public get role() {
+    return this.getStringAttribute('role');
+  }
+  public set role(value: string | undefined) {
+    this._role = value;
+  }
+  public resetRole() {
+    this._role = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get roleInput() {
+    return this._role
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string | undefined; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string | undefined) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type
+  }
+
+  // user - computed: false, optional: true, required: false
+  private _user?: string | undefined; 
+  public get user() {
+    return this.getStringAttribute('user');
+  }
+  public set user(value: string | undefined) {
+    this._user = value;
+  }
+  public resetUser() {
+    this._user = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get userInput() {
+    return this._user
+  }
+}
 export interface JobSpecTemplateSpecContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
@@ -1802,17 +3888,20 @@ export interface JobSpecTemplateSpecContainerSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#capabilities Job#capabilities}
   */
-  readonly capabilities?: JobSpecTemplateSpecContainerSecurityContextCapabilities[];
+  readonly capabilities?: JobSpecTemplateSpecContainerSecurityContextCapabilities;
   /**
   * se_linux_options block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#se_linux_options Job#se_linux_options}
   */
-  readonly seLinuxOptions?: JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions[];
+  readonly seLinuxOptions?: JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions;
 }
 
-function jobSpecTemplateSpecContainerSecurityContextToTerraform(struct?: JobSpecTemplateSpecContainerSecurityContext): any {
+function jobSpecTemplateSpecContainerSecurityContextToTerraform(struct?: JobSpecTemplateSpecContainerSecurityContextOutputReference | JobSpecTemplateSpecContainerSecurityContext): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     allow_privilege_escalation: cdktf.booleanToTerraform(struct!.allowPrivilegeEscalation),
     privileged: cdktf.booleanToTerraform(struct!.privileged),
@@ -1820,11 +3909,151 @@ function jobSpecTemplateSpecContainerSecurityContextToTerraform(struct?: JobSpec
     run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
-    capabilities: cdktf.listMapper(jobSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform)(struct!.capabilities),
-    se_linux_options: cdktf.listMapper(jobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
+    capabilities: jobSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform(struct!.capabilities),
+    se_linux_options: jobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
   }
 }
 
+export class JobSpecTemplateSpecContainerSecurityContextOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // allow_privilege_escalation - computed: false, optional: true, required: false
+  private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable | undefined; 
+  public get allowPrivilegeEscalation() {
+    return this.getBooleanAttribute('allow_privilege_escalation') as any;
+  }
+  public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable | undefined) {
+    this._allowPrivilegeEscalation = value;
+  }
+  public resetAllowPrivilegeEscalation() {
+    this._allowPrivilegeEscalation = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get allowPrivilegeEscalationInput() {
+    return this._allowPrivilegeEscalation
+  }
+
+  // privileged - computed: false, optional: true, required: false
+  private _privileged?: boolean | cdktf.IResolvable | undefined; 
+  public get privileged() {
+    return this.getBooleanAttribute('privileged') as any;
+  }
+  public set privileged(value: boolean | cdktf.IResolvable | undefined) {
+    this._privileged = value;
+  }
+  public resetPrivileged() {
+    this._privileged = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get privilegedInput() {
+    return this._privileged
+  }
+
+  // read_only_root_filesystem - computed: false, optional: true, required: false
+  private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnlyRootFilesystem() {
+    return this.getBooleanAttribute('read_only_root_filesystem') as any;
+  }
+  public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnlyRootFilesystem = value;
+  }
+  public resetReadOnlyRootFilesystem() {
+    this._readOnlyRootFilesystem = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyRootFilesystemInput() {
+    return this._readOnlyRootFilesystem
+  }
+
+  // run_as_group - computed: false, optional: true, required: false
+  private _runAsGroup?: string | undefined; 
+  public get runAsGroup() {
+    return this.getStringAttribute('run_as_group');
+  }
+  public set runAsGroup(value: string | undefined) {
+    this._runAsGroup = value;
+  }
+  public resetRunAsGroup() {
+    this._runAsGroup = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runAsGroupInput() {
+    return this._runAsGroup
+  }
+
+  // run_as_non_root - computed: false, optional: true, required: false
+  private _runAsNonRoot?: boolean | cdktf.IResolvable | undefined; 
+  public get runAsNonRoot() {
+    return this.getBooleanAttribute('run_as_non_root') as any;
+  }
+  public set runAsNonRoot(value: boolean | cdktf.IResolvable | undefined) {
+    this._runAsNonRoot = value;
+  }
+  public resetRunAsNonRoot() {
+    this._runAsNonRoot = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runAsNonRootInput() {
+    return this._runAsNonRoot
+  }
+
+  // run_as_user - computed: false, optional: true, required: false
+  private _runAsUser?: string | undefined; 
+  public get runAsUser() {
+    return this.getStringAttribute('run_as_user');
+  }
+  public set runAsUser(value: string | undefined) {
+    this._runAsUser = value;
+  }
+  public resetRunAsUser() {
+    this._runAsUser = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runAsUserInput() {
+    return this._runAsUser
+  }
+
+  // capabilities - computed: false, optional: true, required: false
+  private _capabilities?: JobSpecTemplateSpecContainerSecurityContextCapabilities | undefined; 
+  private __capabilitiesOutput = new JobSpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference(this as any, "capabilities", true);
+  public get capabilities() {
+    return this.__capabilitiesOutput;
+  }
+  public putCapabilities(value: JobSpecTemplateSpecContainerSecurityContextCapabilities | undefined) {
+    this._capabilities = value;
+  }
+  public resetCapabilities() {
+    this._capabilities = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get capabilitiesInput() {
+    return this._capabilities
+  }
+
+  // se_linux_options - computed: false, optional: true, required: false
+  private _seLinuxOptions?: JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined; 
+  private __seLinuxOptionsOutput = new JobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
+  public get seLinuxOptions() {
+    return this.__seLinuxOptionsOutput;
+  }
+  public putSeLinuxOptions(value: JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined) {
+    this._seLinuxOptions = value;
+  }
+  public resetSeLinuxOptions() {
+    this._seLinuxOptions = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seLinuxOptionsInput() {
+    return this._seLinuxOptions
+  }
+}
 export interface JobSpecTemplateSpecContainerStartupProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
@@ -1834,13 +4063,42 @@ export interface JobSpecTemplateSpecContainerStartupProbeExec {
   readonly command?: string[];
 }
 
-function jobSpecTemplateSpecContainerStartupProbeExecToTerraform(struct?: JobSpecTemplateSpecContainerStartupProbeExec): any {
+function jobSpecTemplateSpecContainerStartupProbeExecToTerraform(struct?: JobSpecTemplateSpecContainerStartupProbeExecOutputReference | JobSpecTemplateSpecContainerStartupProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
   }
 }
 
+export class JobSpecTemplateSpecContainerStartupProbeExecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // command - computed: false, optional: true, required: false
+  private _command?: string[] | undefined; 
+  public get command() {
+    return this.getListAttribute('command');
+  }
+  public set command(value: string[] | undefined) {
+    this._command = value;
+  }
+  public resetCommand() {
+    this._command = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command
+  }
+}
 export interface JobSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader {
   /**
   * The header field name
@@ -1858,6 +4116,9 @@ export interface JobSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader {
 
 function jobSpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: JobSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
@@ -1897,8 +4158,11 @@ export interface JobSpecTemplateSpecContainerStartupProbeHttpGet {
   readonly httpHeader?: JobSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[];
 }
 
-function jobSpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct?: JobSpecTemplateSpecContainerStartupProbeHttpGet): any {
+function jobSpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct?: JobSpecTemplateSpecContainerStartupProbeHttpGetOutputReference | JobSpecTemplateSpecContainerStartupProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     host: cdktf.stringToTerraform(struct!.host),
     path: cdktf.stringToTerraform(struct!.path),
@@ -1908,6 +4172,97 @@ function jobSpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct?: Job
   }
 }
 
+export class JobSpecTemplateSpecContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // host - computed: false, optional: true, required: false
+  private _host?: string | undefined; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string | undefined) {
+    this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string | undefined; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+
+  // scheme - computed: false, optional: true, required: false
+  private _scheme?: string | undefined; 
+  public get scheme() {
+    return this.getStringAttribute('scheme');
+  }
+  public set scheme(value: string | undefined) {
+    this._scheme = value;
+  }
+  public resetScheme() {
+    this._scheme = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schemeInput() {
+    return this._scheme
+  }
+
+  // http_header - computed: false, optional: true, required: false
+  private _httpHeader?: JobSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[] | undefined; 
+  public get httpHeader() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('http_header') as any;
+  }
+  public set httpHeader(value: JobSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[] | undefined) {
+    this._httpHeader = value;
+  }
+  public resetHttpHeader() {
+    this._httpHeader = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpHeaderInput() {
+    return this._httpHeader
+  }
+}
 export interface JobSpecTemplateSpecContainerStartupProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
@@ -1919,6 +4274,9 @@ export interface JobSpecTemplateSpecContainerStartupProbeTcpSocket {
 
 function jobSpecTemplateSpecContainerStartupProbeTcpSocketToTerraform(struct?: JobSpecTemplateSpecContainerStartupProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     port: cdktf.stringToTerraform(struct!.port),
   }
@@ -1960,13 +4318,13 @@ export interface JobSpecTemplateSpecContainerStartupProbe {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
   */
-  readonly exec?: JobSpecTemplateSpecContainerStartupProbeExec[];
+  readonly exec?: JobSpecTemplateSpecContainerStartupProbeExec;
   /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
   */
-  readonly httpGet?: JobSpecTemplateSpecContainerStartupProbeHttpGet[];
+  readonly httpGet?: JobSpecTemplateSpecContainerStartupProbeHttpGet;
   /**
   * tcp_socket block
   * 
@@ -1975,20 +4333,164 @@ export interface JobSpecTemplateSpecContainerStartupProbe {
   readonly tcpSocket?: JobSpecTemplateSpecContainerStartupProbeTcpSocket[];
 }
 
-function jobSpecTemplateSpecContainerStartupProbeToTerraform(struct?: JobSpecTemplateSpecContainerStartupProbe): any {
+function jobSpecTemplateSpecContainerStartupProbeToTerraform(struct?: JobSpecTemplateSpecContainerStartupProbeOutputReference | JobSpecTemplateSpecContainerStartupProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     failure_threshold: cdktf.numberToTerraform(struct!.failureThreshold),
     initial_delay_seconds: cdktf.numberToTerraform(struct!.initialDelaySeconds),
     period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
-    exec: cdktf.listMapper(jobSpecTemplateSpecContainerStartupProbeExecToTerraform)(struct!.exec),
-    http_get: cdktf.listMapper(jobSpecTemplateSpecContainerStartupProbeHttpGetToTerraform)(struct!.httpGet),
+    exec: jobSpecTemplateSpecContainerStartupProbeExecToTerraform(struct!.exec),
+    http_get: jobSpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(jobSpecTemplateSpecContainerStartupProbeTcpSocketToTerraform)(struct!.tcpSocket),
   }
 }
 
+export class JobSpecTemplateSpecContainerStartupProbeOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // failure_threshold - computed: false, optional: true, required: false
+  private _failureThreshold?: number | undefined; 
+  public get failureThreshold() {
+    return this.getNumberAttribute('failure_threshold');
+  }
+  public set failureThreshold(value: number | undefined) {
+    this._failureThreshold = value;
+  }
+  public resetFailureThreshold() {
+    this._failureThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get failureThresholdInput() {
+    return this._failureThreshold
+  }
+
+  // initial_delay_seconds - computed: false, optional: true, required: false
+  private _initialDelaySeconds?: number | undefined; 
+  public get initialDelaySeconds() {
+    return this.getNumberAttribute('initial_delay_seconds');
+  }
+  public set initialDelaySeconds(value: number | undefined) {
+    this._initialDelaySeconds = value;
+  }
+  public resetInitialDelaySeconds() {
+    this._initialDelaySeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get initialDelaySecondsInput() {
+    return this._initialDelaySeconds
+  }
+
+  // period_seconds - computed: false, optional: true, required: false
+  private _periodSeconds?: number | undefined; 
+  public get periodSeconds() {
+    return this.getNumberAttribute('period_seconds');
+  }
+  public set periodSeconds(value: number | undefined) {
+    this._periodSeconds = value;
+  }
+  public resetPeriodSeconds() {
+    this._periodSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get periodSecondsInput() {
+    return this._periodSeconds
+  }
+
+  // success_threshold - computed: false, optional: true, required: false
+  private _successThreshold?: number | undefined; 
+  public get successThreshold() {
+    return this.getNumberAttribute('success_threshold');
+  }
+  public set successThreshold(value: number | undefined) {
+    this._successThreshold = value;
+  }
+  public resetSuccessThreshold() {
+    this._successThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get successThresholdInput() {
+    return this._successThreshold
+  }
+
+  // timeout_seconds - computed: false, optional: true, required: false
+  private _timeoutSeconds?: number | undefined; 
+  public get timeoutSeconds() {
+    return this.getNumberAttribute('timeout_seconds');
+  }
+  public set timeoutSeconds(value: number | undefined) {
+    this._timeoutSeconds = value;
+  }
+  public resetTimeoutSeconds() {
+    this._timeoutSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutSecondsInput() {
+    return this._timeoutSeconds
+  }
+
+  // exec - computed: false, optional: true, required: false
+  private _exec?: JobSpecTemplateSpecContainerStartupProbeExec | undefined; 
+  private __execOutput = new JobSpecTemplateSpecContainerStartupProbeExecOutputReference(this as any, "exec", true);
+  public get exec() {
+    return this.__execOutput;
+  }
+  public putExec(value: JobSpecTemplateSpecContainerStartupProbeExec | undefined) {
+    this._exec = value;
+  }
+  public resetExec() {
+    this._exec = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get execInput() {
+    return this._exec
+  }
+
+  // http_get - computed: false, optional: true, required: false
+  private _httpGet?: JobSpecTemplateSpecContainerStartupProbeHttpGet | undefined; 
+  private __httpGetOutput = new JobSpecTemplateSpecContainerStartupProbeHttpGetOutputReference(this as any, "http_get", true);
+  public get httpGet() {
+    return this.__httpGetOutput;
+  }
+  public putHttpGet(value: JobSpecTemplateSpecContainerStartupProbeHttpGet | undefined) {
+    this._httpGet = value;
+  }
+  public resetHttpGet() {
+    this._httpGet = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpGetInput() {
+    return this._httpGet
+  }
+
+  // tcp_socket - computed: false, optional: true, required: false
+  private _tcpSocket?: JobSpecTemplateSpecContainerStartupProbeTcpSocket[] | undefined; 
+  public get tcpSocket() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('tcp_socket') as any;
+  }
+  public set tcpSocket(value: JobSpecTemplateSpecContainerStartupProbeTcpSocket[] | undefined) {
+    this._tcpSocket = value;
+  }
+  public resetTcpSocket() {
+    this._tcpSocket = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get tcpSocketInput() {
+    return this._tcpSocket
+  }
+}
 export interface JobSpecTemplateSpecContainerVolumeMount {
   /**
   * Path within the container at which the volume should be mounted. Must not contain ':'.
@@ -2024,6 +4526,9 @@ export interface JobSpecTemplateSpecContainerVolumeMount {
 
 function jobSpecTemplateSpecContainerVolumeMountToTerraform(struct?: JobSpecTemplateSpecContainerVolumeMount): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     mount_path: cdktf.stringToTerraform(struct!.mountPath),
     mount_propagation: cdktf.stringToTerraform(struct!.mountPropagation),
@@ -2117,13 +4622,13 @@ export interface JobSpecTemplateSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#lifecycle Job#lifecycle}
   */
-  readonly lifecycle?: JobSpecTemplateSpecContainerLifecycle[];
+  readonly lifecycle?: JobSpecTemplateSpecContainerLifecycle;
   /**
   * liveness_probe block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#liveness_probe Job#liveness_probe}
   */
-  readonly livenessProbe?: JobSpecTemplateSpecContainerLivenessProbe[];
+  readonly livenessProbe?: JobSpecTemplateSpecContainerLivenessProbe;
   /**
   * port block
   * 
@@ -2135,25 +4640,25 @@ export interface JobSpecTemplateSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#readiness_probe Job#readiness_probe}
   */
-  readonly readinessProbe?: JobSpecTemplateSpecContainerReadinessProbe[];
+  readonly readinessProbe?: JobSpecTemplateSpecContainerReadinessProbe;
   /**
   * resources block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resources Job#resources}
   */
-  readonly resources?: JobSpecTemplateSpecContainerResources[];
+  readonly resources?: JobSpecTemplateSpecContainerResources;
   /**
   * security_context block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#security_context Job#security_context}
   */
-  readonly securityContext?: JobSpecTemplateSpecContainerSecurityContext[];
+  readonly securityContext?: JobSpecTemplateSpecContainerSecurityContext;
   /**
   * startup_probe block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#startup_probe Job#startup_probe}
   */
-  readonly startupProbe?: JobSpecTemplateSpecContainerStartupProbe[];
+  readonly startupProbe?: JobSpecTemplateSpecContainerStartupProbe;
   /**
   * volume_mount block
   * 
@@ -2164,6 +4669,9 @@ export interface JobSpecTemplateSpecContainer {
 
 function jobSpecTemplateSpecContainerToTerraform(struct?: JobSpecTemplateSpecContainer): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
     command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
@@ -2178,13 +4686,13 @@ function jobSpecTemplateSpecContainerToTerraform(struct?: JobSpecTemplateSpecCon
     working_dir: cdktf.stringToTerraform(struct!.workingDir),
     env: cdktf.listMapper(jobSpecTemplateSpecContainerEnvToTerraform)(struct!.env),
     env_from: cdktf.listMapper(jobSpecTemplateSpecContainerEnvFromToTerraform)(struct!.envFrom),
-    lifecycle: cdktf.listMapper(jobSpecTemplateSpecContainerLifecycleToTerraform)(struct!.lifecycle),
-    liveness_probe: cdktf.listMapper(jobSpecTemplateSpecContainerLivenessProbeToTerraform)(struct!.livenessProbe),
+    lifecycle: jobSpecTemplateSpecContainerLifecycleToTerraform(struct!.lifecycle),
+    liveness_probe: jobSpecTemplateSpecContainerLivenessProbeToTerraform(struct!.livenessProbe),
     port: cdktf.listMapper(jobSpecTemplateSpecContainerPortToTerraform)(struct!.port),
-    readiness_probe: cdktf.listMapper(jobSpecTemplateSpecContainerReadinessProbeToTerraform)(struct!.readinessProbe),
-    resources: cdktf.listMapper(jobSpecTemplateSpecContainerResourcesToTerraform)(struct!.resources),
-    security_context: cdktf.listMapper(jobSpecTemplateSpecContainerSecurityContextToTerraform)(struct!.securityContext),
-    startup_probe: cdktf.listMapper(jobSpecTemplateSpecContainerStartupProbeToTerraform)(struct!.startupProbe),
+    readiness_probe: jobSpecTemplateSpecContainerReadinessProbeToTerraform(struct!.readinessProbe),
+    resources: jobSpecTemplateSpecContainerResourcesToTerraform(struct!.resources),
+    security_context: jobSpecTemplateSpecContainerSecurityContextToTerraform(struct!.securityContext),
+    startup_probe: jobSpecTemplateSpecContainerStartupProbeToTerraform(struct!.startupProbe),
     volume_mount: cdktf.listMapper(jobSpecTemplateSpecContainerVolumeMountToTerraform)(struct!.volumeMount),
   }
 }
@@ -2206,6 +4714,9 @@ export interface JobSpecTemplateSpecDnsConfigOption {
 
 function jobSpecTemplateSpecDnsConfigOptionToTerraform(struct?: JobSpecTemplateSpecDnsConfigOption): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
@@ -2233,8 +4744,11 @@ export interface JobSpecTemplateSpecDnsConfig {
   readonly option?: JobSpecTemplateSpecDnsConfigOption[];
 }
 
-function jobSpecTemplateSpecDnsConfigToTerraform(struct?: JobSpecTemplateSpecDnsConfig): any {
+function jobSpecTemplateSpecDnsConfigToTerraform(struct?: JobSpecTemplateSpecDnsConfigOutputReference | JobSpecTemplateSpecDnsConfig): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     nameservers: cdktf.listMapper(cdktf.stringToTerraform)(struct!.nameservers),
     searches: cdktf.listMapper(cdktf.stringToTerraform)(struct!.searches),
@@ -2242,6 +4756,65 @@ function jobSpecTemplateSpecDnsConfigToTerraform(struct?: JobSpecTemplateSpecDns
   }
 }
 
+export class JobSpecTemplateSpecDnsConfigOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // nameservers - computed: false, optional: true, required: false
+  private _nameservers?: string[] | undefined; 
+  public get nameservers() {
+    return this.getListAttribute('nameservers');
+  }
+  public set nameservers(value: string[] | undefined) {
+    this._nameservers = value;
+  }
+  public resetNameservers() {
+    this._nameservers = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameserversInput() {
+    return this._nameservers
+  }
+
+  // searches - computed: false, optional: true, required: false
+  private _searches?: string[] | undefined; 
+  public get searches() {
+    return this.getListAttribute('searches');
+  }
+  public set searches(value: string[] | undefined) {
+    this._searches = value;
+  }
+  public resetSearches() {
+    this._searches = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get searchesInput() {
+    return this._searches
+  }
+
+  // option - computed: false, optional: true, required: false
+  private _option?: JobSpecTemplateSpecDnsConfigOption[] | undefined; 
+  public get option() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('option') as any;
+  }
+  public set option(value: JobSpecTemplateSpecDnsConfigOption[] | undefined) {
+    this._option = value;
+  }
+  public resetOption() {
+    this._option = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionInput() {
+    return this._option
+  }
+}
 export interface JobSpecTemplateSpecHostAliases {
   /**
   * Hostnames for the IP address.
@@ -2259,6 +4832,9 @@ export interface JobSpecTemplateSpecHostAliases {
 
 function jobSpecTemplateSpecHostAliasesToTerraform(struct?: JobSpecTemplateSpecHostAliases): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     hostnames: cdktf.listMapper(cdktf.stringToTerraform)(struct!.hostnames),
     ip: cdktf.stringToTerraform(struct!.ip),
@@ -2276,6 +4852,9 @@ export interface JobSpecTemplateSpecImagePullSecrets {
 
 function jobSpecTemplateSpecImagePullSecretsToTerraform(struct?: JobSpecTemplateSpecImagePullSecrets): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
   }
@@ -2302,8 +4881,11 @@ export interface JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef): any {
+function jobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference | JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     name: cdktf.stringToTerraform(struct!.name),
@@ -2311,6 +4893,64 @@ function jobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(
   }
 }
 
+export class JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string | undefined; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string | undefined) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // optional - computed: false, optional: true, required: false
+  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  public get optional() {
+    return this.getBooleanAttribute('optional') as any;
+  }
+  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+    this._optional = value;
+  }
+  public resetOptional() {
+    this._optional = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionalInput() {
+    return this._optional
+  }
+}
 export interface JobSpecTemplateSpecInitContainerEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
@@ -2326,14 +4966,59 @@ export interface JobSpecTemplateSpecInitContainerEnvValueFromFieldRef {
   readonly fieldPath?: string;
 }
 
-function jobSpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvValueFromFieldRef): any {
+function jobSpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference | JobSpecTemplateSpecInitContainerEnvValueFromFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     api_version: cdktf.stringToTerraform(struct!.apiVersion),
     field_path: cdktf.stringToTerraform(struct!.fieldPath),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // api_version - computed: false, optional: true, required: false
+  private _apiVersion?: string | undefined; 
+  public get apiVersion() {
+    return this.getStringAttribute('api_version');
+  }
+  public set apiVersion(value: string | undefined) {
+    this._apiVersion = value;
+  }
+  public resetApiVersion() {
+    this._apiVersion = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get apiVersionInput() {
+    return this._apiVersion
+  }
+
+  // field_path - computed: false, optional: true, required: false
+  private _fieldPath?: string | undefined; 
+  public get fieldPath() {
+    return this.getStringAttribute('field_path');
+  }
+  public set fieldPath(value: string | undefined) {
+    this._fieldPath = value;
+  }
+  public resetFieldPath() {
+    this._fieldPath = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fieldPathInput() {
+    return this._fieldPath
+  }
+}
 export interface JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_name Job#container_name}
@@ -2351,8 +5036,11 @@ export interface JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef {
   readonly resource: string;
 }
 
-function jobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef): any {
+function jobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference | JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
     divisor: cdktf.stringToTerraform(struct!.divisor),
@@ -2360,6 +5048,61 @@ function jobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTerraform
   }
 }
 
+export class JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // container_name - computed: false, optional: true, required: false
+  private _containerName?: string | undefined; 
+  public get containerName() {
+    return this.getStringAttribute('container_name');
+  }
+  public set containerName(value: string | undefined) {
+    this._containerName = value;
+  }
+  public resetContainerName() {
+    this._containerName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get containerNameInput() {
+    return this._containerName
+  }
+
+  // divisor - computed: false, optional: true, required: false
+  private _divisor?: string | undefined; 
+  public get divisor() {
+    return this.getStringAttribute('divisor');
+  }
+  public set divisor(value: string | undefined) {
+    this._divisor = value;
+  }
+  public resetDivisor() {
+    this._divisor = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get divisorInput() {
+    return this._divisor
+  }
+
+  // resource - computed: false, optional: false, required: true
+  private _resource?: string; 
+  public get resource() {
+    return this.getStringAttribute('resource');
+  }
+  public set resource(value: string) {
+    this._resource = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourceInput() {
+    return this._resource
+  }
+}
 export interface JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
@@ -2381,8 +5124,11 @@ export interface JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef): any {
+function jobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference | JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     name: cdktf.stringToTerraform(struct!.name),
@@ -2390,43 +5136,182 @@ function jobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(str
   }
 }
 
+export class JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string | undefined; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string | undefined) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // optional - computed: false, optional: true, required: false
+  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  public get optional() {
+    return this.getBooleanAttribute('optional') as any;
+  }
+  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+    this._optional = value;
+  }
+  public resetOptional() {
+    this._optional = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionalInput() {
+    return this._optional
+  }
+}
 export interface JobSpecTemplateSpecInitContainerEnvValueFrom {
   /**
   * config_map_key_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#config_map_key_ref Job#config_map_key_ref}
   */
-  readonly configMapKeyRef?: JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef[];
+  readonly configMapKeyRef?: JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#field_ref Job#field_ref}
   */
-  readonly fieldRef?: JobSpecTemplateSpecInitContainerEnvValueFromFieldRef[];
+  readonly fieldRef?: JobSpecTemplateSpecInitContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resource_field_ref Job#resource_field_ref}
   */
-  readonly resourceFieldRef?: JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef[];
+  readonly resourceFieldRef?: JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_key_ref Job#secret_key_ref}
   */
-  readonly secretKeyRef?: JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef[];
+  readonly secretKeyRef?: JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef;
 }
 
-function jobSpecTemplateSpecInitContainerEnvValueFromToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvValueFrom): any {
+function jobSpecTemplateSpecInitContainerEnvValueFromToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvValueFromOutputReference | JobSpecTemplateSpecInitContainerEnvValueFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
-    config_map_key_ref: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform)(struct!.configMapKeyRef),
-    field_ref: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform)(struct!.fieldRef),
-    resource_field_ref: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTerraform)(struct!.resourceFieldRef),
-    secret_key_ref: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform)(struct!.secretKeyRef),
+    config_map_key_ref: jobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct!.configMapKeyRef),
+    field_ref: jobSpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform(struct!.fieldRef),
+    resource_field_ref: jobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTerraform(struct!.resourceFieldRef),
+    secret_key_ref: jobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct!.secretKeyRef),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerEnvValueFromOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // config_map_key_ref - computed: false, optional: true, required: false
+  private _configMapKeyRef?: JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined; 
+  private __configMapKeyRefOutput = new JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this as any, "config_map_key_ref", true);
+  public get configMapKeyRef() {
+    return this.__configMapKeyRefOutput;
+  }
+  public putConfigMapKeyRef(value: JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined) {
+    this._configMapKeyRef = value;
+  }
+  public resetConfigMapKeyRef() {
+    this._configMapKeyRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get configMapKeyRefInput() {
+    return this._configMapKeyRef
+  }
+
+  // field_ref - computed: false, optional: true, required: false
+  private _fieldRef?: JobSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined; 
+  private __fieldRefOutput = new JobSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference(this as any, "field_ref", true);
+  public get fieldRef() {
+    return this.__fieldRefOutput;
+  }
+  public putFieldRef(value: JobSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined) {
+    this._fieldRef = value;
+  }
+  public resetFieldRef() {
+    this._fieldRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fieldRefInput() {
+    return this._fieldRef
+  }
+
+  // resource_field_ref - computed: false, optional: true, required: false
+  private _resourceFieldRef?: JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined; 
+  private __resourceFieldRefOutput = new JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this as any, "resource_field_ref", true);
+  public get resourceFieldRef() {
+    return this.__resourceFieldRefOutput;
+  }
+  public putResourceFieldRef(value: JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined) {
+    this._resourceFieldRef = value;
+  }
+  public resetResourceFieldRef() {
+    this._resourceFieldRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourceFieldRefInput() {
+    return this._resourceFieldRef
+  }
+
+  // secret_key_ref - computed: false, optional: true, required: false
+  private _secretKeyRef?: JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined; 
+  private __secretKeyRefOutput = new JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this as any, "secret_key_ref", true);
+  public get secretKeyRef() {
+    return this.__secretKeyRefOutput;
+  }
+  public putSecretKeyRef(value: JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined) {
+    this._secretKeyRef = value;
+  }
+  public resetSecretKeyRef() {
+    this._secretKeyRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get secretKeyRefInput() {
+    return this._secretKeyRef
+  }
+}
 export interface JobSpecTemplateSpecInitContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
@@ -2445,15 +5330,18 @@ export interface JobSpecTemplateSpecInitContainerEnv {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#value_from Job#value_from}
   */
-  readonly valueFrom?: JobSpecTemplateSpecInitContainerEnvValueFrom[];
+  readonly valueFrom?: JobSpecTemplateSpecInitContainerEnvValueFrom;
 }
 
 function jobSpecTemplateSpecInitContainerEnvToTerraform(struct?: JobSpecTemplateSpecInitContainerEnv): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
-    value_from: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvValueFromToTerraform)(struct!.valueFrom),
+    value_from: jobSpecTemplateSpecInitContainerEnvValueFromToTerraform(struct!.valueFrom),
   }
 }
 
@@ -2472,14 +5360,56 @@ export interface JobSpecTemplateSpecInitContainerEnvFromConfigMapRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvFromConfigMapRef): any {
+function jobSpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvFromConfigMapRefOutputReference | JobSpecTemplateSpecInitContainerEnvFromConfigMapRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerEnvFromConfigMapRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // optional - computed: false, optional: true, required: false
+  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  public get optional() {
+    return this.getBooleanAttribute('optional') as any;
+  }
+  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+    this._optional = value;
+  }
+  public resetOptional() {
+    this._optional = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionalInput() {
+    return this._optional
+  }
+}
 export interface JobSpecTemplateSpecInitContainerEnvFromSecretRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -2495,14 +5425,56 @@ export interface JobSpecTemplateSpecInitContainerEnvFromSecretRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvFromSecretRef): any {
+function jobSpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvFromSecretRefOutputReference | JobSpecTemplateSpecInitContainerEnvFromSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerEnvFromSecretRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // optional - computed: false, optional: true, required: false
+  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  public get optional() {
+    return this.getBooleanAttribute('optional') as any;
+  }
+  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+    this._optional = value;
+  }
+  public resetOptional() {
+    this._optional = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionalInput() {
+    return this._optional
+  }
+}
 export interface JobSpecTemplateSpecInitContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
@@ -2515,21 +5487,24 @@ export interface JobSpecTemplateSpecInitContainerEnvFrom {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#config_map_ref Job#config_map_ref}
   */
-  readonly configMapRef?: JobSpecTemplateSpecInitContainerEnvFromConfigMapRef[];
+  readonly configMapRef?: JobSpecTemplateSpecInitContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_ref Job#secret_ref}
   */
-  readonly secretRef?: JobSpecTemplateSpecInitContainerEnvFromSecretRef[];
+  readonly secretRef?: JobSpecTemplateSpecInitContainerEnvFromSecretRef;
 }
 
 function jobSpecTemplateSpecInitContainerEnvFromToTerraform(struct?: JobSpecTemplateSpecInitContainerEnvFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     prefix: cdktf.stringToTerraform(struct!.prefix),
-    config_map_ref: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform)(struct!.configMapRef),
-    secret_ref: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvFromSecretRefToTerraform)(struct!.secretRef),
+    config_map_ref: jobSpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(struct!.configMapRef),
+    secret_ref: jobSpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(struct!.secretRef),
   }
 }
 
@@ -2542,13 +5517,42 @@ export interface JobSpecTemplateSpecInitContainerLifecyclePostStartExec {
   readonly command?: string[];
 }
 
-function jobSpecTemplateSpecInitContainerLifecyclePostStartExecToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePostStartExec): any {
+function jobSpecTemplateSpecInitContainerLifecyclePostStartExecToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePostStartExecOutputReference | JobSpecTemplateSpecInitContainerLifecyclePostStartExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerLifecyclePostStartExecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // command - computed: false, optional: true, required: false
+  private _command?: string[] | undefined; 
+  public get command() {
+    return this.getListAttribute('command');
+  }
+  public set command(value: string[] | undefined) {
+    this._command = value;
+  }
+  public resetCommand() {
+    this._command = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command
+  }
+}
 export interface JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader {
   /**
   * The header field name
@@ -2566,6 +5570,9 @@ export interface JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHe
 
 function jobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
@@ -2605,8 +5612,11 @@ export interface JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGet {
   readonly httpHeader?: JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[];
 }
 
-function jobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGet): any {
+function jobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetOutputReference | JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     host: cdktf.stringToTerraform(struct!.host),
     path: cdktf.stringToTerraform(struct!.path),
@@ -2616,6 +5626,97 @@ function jobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform(st
   }
 }
 
+export class JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // host - computed: false, optional: true, required: false
+  private _host?: string | undefined; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string | undefined) {
+    this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string | undefined; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+
+  // scheme - computed: false, optional: true, required: false
+  private _scheme?: string | undefined; 
+  public get scheme() {
+    return this.getStringAttribute('scheme');
+  }
+  public set scheme(value: string | undefined) {
+    this._scheme = value;
+  }
+  public resetScheme() {
+    this._scheme = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schemeInput() {
+    return this._scheme
+  }
+
+  // http_header - computed: false, optional: true, required: false
+  private _httpHeader?: JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | undefined; 
+  public get httpHeader() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('http_header') as any;
+  }
+  public set httpHeader(value: JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | undefined) {
+    this._httpHeader = value;
+  }
+  public resetHttpHeader() {
+    this._httpHeader = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpHeaderInput() {
+    return this._httpHeader
+  }
+}
 export interface JobSpecTemplateSpecInitContainerLifecyclePostStartTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
@@ -2627,6 +5728,9 @@ export interface JobSpecTemplateSpecInitContainerLifecyclePostStartTcpSocket {
 
 function jobSpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePostStartTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     port: cdktf.stringToTerraform(struct!.port),
   }
@@ -2638,13 +5742,13 @@ export interface JobSpecTemplateSpecInitContainerLifecyclePostStart {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
   */
-  readonly exec?: JobSpecTemplateSpecInitContainerLifecyclePostStartExec[];
+  readonly exec?: JobSpecTemplateSpecInitContainerLifecyclePostStartExec;
   /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
   */
-  readonly httpGet?: JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGet[];
+  readonly httpGet?: JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
   * 
@@ -2655,9 +5759,12 @@ export interface JobSpecTemplateSpecInitContainerLifecyclePostStart {
 
 function jobSpecTemplateSpecInitContainerLifecyclePostStartToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePostStart): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
-    exec: cdktf.listMapper(jobSpecTemplateSpecInitContainerLifecyclePostStartExecToTerraform)(struct!.exec),
-    http_get: cdktf.listMapper(jobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform)(struct!.httpGet),
+    exec: jobSpecTemplateSpecInitContainerLifecyclePostStartExecToTerraform(struct!.exec),
+    http_get: jobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(jobSpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTerraform)(struct!.tcpSocket),
   }
 }
@@ -2671,13 +5778,42 @@ export interface JobSpecTemplateSpecInitContainerLifecyclePreStopExec {
   readonly command?: string[];
 }
 
-function jobSpecTemplateSpecInitContainerLifecyclePreStopExecToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePreStopExec): any {
+function jobSpecTemplateSpecInitContainerLifecyclePreStopExecToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePreStopExecOutputReference | JobSpecTemplateSpecInitContainerLifecyclePreStopExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerLifecyclePreStopExecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // command - computed: false, optional: true, required: false
+  private _command?: string[] | undefined; 
+  public get command() {
+    return this.getListAttribute('command');
+  }
+  public set command(value: string[] | undefined) {
+    this._command = value;
+  }
+  public resetCommand() {
+    this._command = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command
+  }
+}
 export interface JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader {
   /**
   * The header field name
@@ -2695,6 +5831,9 @@ export interface JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHead
 
 function jobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
@@ -2734,8 +5873,11 @@ export interface JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGet {
   readonly httpHeader?: JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[];
 }
 
-function jobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGet): any {
+function jobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutputReference | JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     host: cdktf.stringToTerraform(struct!.host),
     path: cdktf.stringToTerraform(struct!.path),
@@ -2745,6 +5887,97 @@ function jobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform(stru
   }
 }
 
+export class JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // host - computed: false, optional: true, required: false
+  private _host?: string | undefined; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string | undefined) {
+    this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string | undefined; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+
+  // scheme - computed: false, optional: true, required: false
+  private _scheme?: string | undefined; 
+  public get scheme() {
+    return this.getStringAttribute('scheme');
+  }
+  public set scheme(value: string | undefined) {
+    this._scheme = value;
+  }
+  public resetScheme() {
+    this._scheme = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schemeInput() {
+    return this._scheme
+  }
+
+  // http_header - computed: false, optional: true, required: false
+  private _httpHeader?: JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | undefined; 
+  public get httpHeader() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('http_header') as any;
+  }
+  public set httpHeader(value: JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | undefined) {
+    this._httpHeader = value;
+  }
+  public resetHttpHeader() {
+    this._httpHeader = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpHeaderInput() {
+    return this._httpHeader
+  }
+}
 export interface JobSpecTemplateSpecInitContainerLifecyclePreStopTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
@@ -2756,6 +5989,9 @@ export interface JobSpecTemplateSpecInitContainerLifecyclePreStopTcpSocket {
 
 function jobSpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePreStopTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     port: cdktf.stringToTerraform(struct!.port),
   }
@@ -2767,13 +6003,13 @@ export interface JobSpecTemplateSpecInitContainerLifecyclePreStop {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
   */
-  readonly exec?: JobSpecTemplateSpecInitContainerLifecyclePreStopExec[];
+  readonly exec?: JobSpecTemplateSpecInitContainerLifecyclePreStopExec;
   /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
   */
-  readonly httpGet?: JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGet[];
+  readonly httpGet?: JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
   * 
@@ -2784,9 +6020,12 @@ export interface JobSpecTemplateSpecInitContainerLifecyclePreStop {
 
 function jobSpecTemplateSpecInitContainerLifecyclePreStopToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecyclePreStop): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
-    exec: cdktf.listMapper(jobSpecTemplateSpecInitContainerLifecyclePreStopExecToTerraform)(struct!.exec),
-    http_get: cdktf.listMapper(jobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform)(struct!.httpGet),
+    exec: jobSpecTemplateSpecInitContainerLifecyclePreStopExecToTerraform(struct!.exec),
+    http_get: jobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(jobSpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerraform)(struct!.tcpSocket),
   }
 }
@@ -2806,14 +6045,61 @@ export interface JobSpecTemplateSpecInitContainerLifecycle {
   readonly preStop?: JobSpecTemplateSpecInitContainerLifecyclePreStop[];
 }
 
-function jobSpecTemplateSpecInitContainerLifecycleToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecycle): any {
+function jobSpecTemplateSpecInitContainerLifecycleToTerraform(struct?: JobSpecTemplateSpecInitContainerLifecycleOutputReference | JobSpecTemplateSpecInitContainerLifecycle): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     post_start: cdktf.listMapper(jobSpecTemplateSpecInitContainerLifecyclePostStartToTerraform)(struct!.postStart),
     pre_stop: cdktf.listMapper(jobSpecTemplateSpecInitContainerLifecyclePreStopToTerraform)(struct!.preStop),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerLifecycleOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // post_start - computed: false, optional: true, required: false
+  private _postStart?: JobSpecTemplateSpecInitContainerLifecyclePostStart[] | undefined; 
+  public get postStart() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('post_start') as any;
+  }
+  public set postStart(value: JobSpecTemplateSpecInitContainerLifecyclePostStart[] | undefined) {
+    this._postStart = value;
+  }
+  public resetPostStart() {
+    this._postStart = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get postStartInput() {
+    return this._postStart
+  }
+
+  // pre_stop - computed: false, optional: true, required: false
+  private _preStop?: JobSpecTemplateSpecInitContainerLifecyclePreStop[] | undefined; 
+  public get preStop() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('pre_stop') as any;
+  }
+  public set preStop(value: JobSpecTemplateSpecInitContainerLifecyclePreStop[] | undefined) {
+    this._preStop = value;
+  }
+  public resetPreStop() {
+    this._preStop = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get preStopInput() {
+    return this._preStop
+  }
+}
 export interface JobSpecTemplateSpecInitContainerLivenessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
@@ -2823,13 +6109,42 @@ export interface JobSpecTemplateSpecInitContainerLivenessProbeExec {
   readonly command?: string[];
 }
 
-function jobSpecTemplateSpecInitContainerLivenessProbeExecToTerraform(struct?: JobSpecTemplateSpecInitContainerLivenessProbeExec): any {
+function jobSpecTemplateSpecInitContainerLivenessProbeExecToTerraform(struct?: JobSpecTemplateSpecInitContainerLivenessProbeExecOutputReference | JobSpecTemplateSpecInitContainerLivenessProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerLivenessProbeExecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // command - computed: false, optional: true, required: false
+  private _command?: string[] | undefined; 
+  public get command() {
+    return this.getListAttribute('command');
+  }
+  public set command(value: string[] | undefined) {
+    this._command = value;
+  }
+  public resetCommand() {
+    this._command = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command
+  }
+}
 export interface JobSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
@@ -2847,6 +6162,9 @@ export interface JobSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader 
 
 function jobSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: JobSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
@@ -2886,8 +6204,11 @@ export interface JobSpecTemplateSpecInitContainerLivenessProbeHttpGet {
   readonly httpHeader?: JobSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[];
 }
 
-function jobSpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct?: JobSpecTemplateSpecInitContainerLivenessProbeHttpGet): any {
+function jobSpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct?: JobSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference | JobSpecTemplateSpecInitContainerLivenessProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     host: cdktf.stringToTerraform(struct!.host),
     path: cdktf.stringToTerraform(struct!.path),
@@ -2897,6 +6218,97 @@ function jobSpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct?
   }
 }
 
+export class JobSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // host - computed: false, optional: true, required: false
+  private _host?: string | undefined; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string | undefined) {
+    this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string | undefined; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+
+  // scheme - computed: false, optional: true, required: false
+  private _scheme?: string | undefined; 
+  public get scheme() {
+    return this.getStringAttribute('scheme');
+  }
+  public set scheme(value: string | undefined) {
+    this._scheme = value;
+  }
+  public resetScheme() {
+    this._scheme = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schemeInput() {
+    return this._scheme
+  }
+
+  // http_header - computed: false, optional: true, required: false
+  private _httpHeader?: JobSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[] | undefined; 
+  public get httpHeader() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('http_header') as any;
+  }
+  public set httpHeader(value: JobSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[] | undefined) {
+    this._httpHeader = value;
+  }
+  public resetHttpHeader() {
+    this._httpHeader = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpHeaderInput() {
+    return this._httpHeader
+  }
+}
 export interface JobSpecTemplateSpecInitContainerLivenessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
@@ -2908,6 +6320,9 @@ export interface JobSpecTemplateSpecInitContainerLivenessProbeTcpSocket {
 
 function jobSpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform(struct?: JobSpecTemplateSpecInitContainerLivenessProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     port: cdktf.stringToTerraform(struct!.port),
   }
@@ -2949,13 +6364,13 @@ export interface JobSpecTemplateSpecInitContainerLivenessProbe {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
   */
-  readonly exec?: JobSpecTemplateSpecInitContainerLivenessProbeExec[];
+  readonly exec?: JobSpecTemplateSpecInitContainerLivenessProbeExec;
   /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
   */
-  readonly httpGet?: JobSpecTemplateSpecInitContainerLivenessProbeHttpGet[];
+  readonly httpGet?: JobSpecTemplateSpecInitContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
   * 
@@ -2964,20 +6379,164 @@ export interface JobSpecTemplateSpecInitContainerLivenessProbe {
   readonly tcpSocket?: JobSpecTemplateSpecInitContainerLivenessProbeTcpSocket[];
 }
 
-function jobSpecTemplateSpecInitContainerLivenessProbeToTerraform(struct?: JobSpecTemplateSpecInitContainerLivenessProbe): any {
+function jobSpecTemplateSpecInitContainerLivenessProbeToTerraform(struct?: JobSpecTemplateSpecInitContainerLivenessProbeOutputReference | JobSpecTemplateSpecInitContainerLivenessProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     failure_threshold: cdktf.numberToTerraform(struct!.failureThreshold),
     initial_delay_seconds: cdktf.numberToTerraform(struct!.initialDelaySeconds),
     period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
-    exec: cdktf.listMapper(jobSpecTemplateSpecInitContainerLivenessProbeExecToTerraform)(struct!.exec),
-    http_get: cdktf.listMapper(jobSpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform)(struct!.httpGet),
+    exec: jobSpecTemplateSpecInitContainerLivenessProbeExecToTerraform(struct!.exec),
+    http_get: jobSpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(jobSpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform)(struct!.tcpSocket),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerLivenessProbeOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // failure_threshold - computed: false, optional: true, required: false
+  private _failureThreshold?: number | undefined; 
+  public get failureThreshold() {
+    return this.getNumberAttribute('failure_threshold');
+  }
+  public set failureThreshold(value: number | undefined) {
+    this._failureThreshold = value;
+  }
+  public resetFailureThreshold() {
+    this._failureThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get failureThresholdInput() {
+    return this._failureThreshold
+  }
+
+  // initial_delay_seconds - computed: false, optional: true, required: false
+  private _initialDelaySeconds?: number | undefined; 
+  public get initialDelaySeconds() {
+    return this.getNumberAttribute('initial_delay_seconds');
+  }
+  public set initialDelaySeconds(value: number | undefined) {
+    this._initialDelaySeconds = value;
+  }
+  public resetInitialDelaySeconds() {
+    this._initialDelaySeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get initialDelaySecondsInput() {
+    return this._initialDelaySeconds
+  }
+
+  // period_seconds - computed: false, optional: true, required: false
+  private _periodSeconds?: number | undefined; 
+  public get periodSeconds() {
+    return this.getNumberAttribute('period_seconds');
+  }
+  public set periodSeconds(value: number | undefined) {
+    this._periodSeconds = value;
+  }
+  public resetPeriodSeconds() {
+    this._periodSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get periodSecondsInput() {
+    return this._periodSeconds
+  }
+
+  // success_threshold - computed: false, optional: true, required: false
+  private _successThreshold?: number | undefined; 
+  public get successThreshold() {
+    return this.getNumberAttribute('success_threshold');
+  }
+  public set successThreshold(value: number | undefined) {
+    this._successThreshold = value;
+  }
+  public resetSuccessThreshold() {
+    this._successThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get successThresholdInput() {
+    return this._successThreshold
+  }
+
+  // timeout_seconds - computed: false, optional: true, required: false
+  private _timeoutSeconds?: number | undefined; 
+  public get timeoutSeconds() {
+    return this.getNumberAttribute('timeout_seconds');
+  }
+  public set timeoutSeconds(value: number | undefined) {
+    this._timeoutSeconds = value;
+  }
+  public resetTimeoutSeconds() {
+    this._timeoutSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutSecondsInput() {
+    return this._timeoutSeconds
+  }
+
+  // exec - computed: false, optional: true, required: false
+  private _exec?: JobSpecTemplateSpecInitContainerLivenessProbeExec | undefined; 
+  private __execOutput = new JobSpecTemplateSpecInitContainerLivenessProbeExecOutputReference(this as any, "exec", true);
+  public get exec() {
+    return this.__execOutput;
+  }
+  public putExec(value: JobSpecTemplateSpecInitContainerLivenessProbeExec | undefined) {
+    this._exec = value;
+  }
+  public resetExec() {
+    this._exec = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get execInput() {
+    return this._exec
+  }
+
+  // http_get - computed: false, optional: true, required: false
+  private _httpGet?: JobSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined; 
+  private __httpGetOutput = new JobSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference(this as any, "http_get", true);
+  public get httpGet() {
+    return this.__httpGetOutput;
+  }
+  public putHttpGet(value: JobSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined) {
+    this._httpGet = value;
+  }
+  public resetHttpGet() {
+    this._httpGet = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpGetInput() {
+    return this._httpGet
+  }
+
+  // tcp_socket - computed: false, optional: true, required: false
+  private _tcpSocket?: JobSpecTemplateSpecInitContainerLivenessProbeTcpSocket[] | undefined; 
+  public get tcpSocket() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('tcp_socket') as any;
+  }
+  public set tcpSocket(value: JobSpecTemplateSpecInitContainerLivenessProbeTcpSocket[] | undefined) {
+    this._tcpSocket = value;
+  }
+  public resetTcpSocket() {
+    this._tcpSocket = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get tcpSocketInput() {
+    return this._tcpSocket
+  }
+}
 export interface JobSpecTemplateSpecInitContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
@@ -3013,6 +6572,9 @@ export interface JobSpecTemplateSpecInitContainerPort {
 
 function jobSpecTemplateSpecInitContainerPortToTerraform(struct?: JobSpecTemplateSpecInitContainerPort): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     container_port: cdktf.numberToTerraform(struct!.containerPort),
     host_ip: cdktf.stringToTerraform(struct!.hostIp),
@@ -3031,13 +6593,42 @@ export interface JobSpecTemplateSpecInitContainerReadinessProbeExec {
   readonly command?: string[];
 }
 
-function jobSpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct?: JobSpecTemplateSpecInitContainerReadinessProbeExec): any {
+function jobSpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct?: JobSpecTemplateSpecInitContainerReadinessProbeExecOutputReference | JobSpecTemplateSpecInitContainerReadinessProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerReadinessProbeExecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // command - computed: false, optional: true, required: false
+  private _command?: string[] | undefined; 
+  public get command() {
+    return this.getListAttribute('command');
+  }
+  public set command(value: string[] | undefined) {
+    this._command = value;
+  }
+  public resetCommand() {
+    this._command = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command
+  }
+}
 export interface JobSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader {
   /**
   * The header field name
@@ -3055,6 +6646,9 @@ export interface JobSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader
 
 function jobSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: JobSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
@@ -3094,8 +6688,11 @@ export interface JobSpecTemplateSpecInitContainerReadinessProbeHttpGet {
   readonly httpHeader?: JobSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[];
 }
 
-function jobSpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct?: JobSpecTemplateSpecInitContainerReadinessProbeHttpGet): any {
+function jobSpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct?: JobSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference | JobSpecTemplateSpecInitContainerReadinessProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     host: cdktf.stringToTerraform(struct!.host),
     path: cdktf.stringToTerraform(struct!.path),
@@ -3105,6 +6702,97 @@ function jobSpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct
   }
 }
 
+export class JobSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // host - computed: false, optional: true, required: false
+  private _host?: string | undefined; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string | undefined) {
+    this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string | undefined; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+
+  // scheme - computed: false, optional: true, required: false
+  private _scheme?: string | undefined; 
+  public get scheme() {
+    return this.getStringAttribute('scheme');
+  }
+  public set scheme(value: string | undefined) {
+    this._scheme = value;
+  }
+  public resetScheme() {
+    this._scheme = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schemeInput() {
+    return this._scheme
+  }
+
+  // http_header - computed: false, optional: true, required: false
+  private _httpHeader?: JobSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[] | undefined; 
+  public get httpHeader() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('http_header') as any;
+  }
+  public set httpHeader(value: JobSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[] | undefined) {
+    this._httpHeader = value;
+  }
+  public resetHttpHeader() {
+    this._httpHeader = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpHeaderInput() {
+    return this._httpHeader
+  }
+}
 export interface JobSpecTemplateSpecInitContainerReadinessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
@@ -3116,6 +6804,9 @@ export interface JobSpecTemplateSpecInitContainerReadinessProbeTcpSocket {
 
 function jobSpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform(struct?: JobSpecTemplateSpecInitContainerReadinessProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     port: cdktf.stringToTerraform(struct!.port),
   }
@@ -3157,13 +6848,13 @@ export interface JobSpecTemplateSpecInitContainerReadinessProbe {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
   */
-  readonly exec?: JobSpecTemplateSpecInitContainerReadinessProbeExec[];
+  readonly exec?: JobSpecTemplateSpecInitContainerReadinessProbeExec;
   /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
   */
-  readonly httpGet?: JobSpecTemplateSpecInitContainerReadinessProbeHttpGet[];
+  readonly httpGet?: JobSpecTemplateSpecInitContainerReadinessProbeHttpGet;
   /**
   * tcp_socket block
   * 
@@ -3172,20 +6863,164 @@ export interface JobSpecTemplateSpecInitContainerReadinessProbe {
   readonly tcpSocket?: JobSpecTemplateSpecInitContainerReadinessProbeTcpSocket[];
 }
 
-function jobSpecTemplateSpecInitContainerReadinessProbeToTerraform(struct?: JobSpecTemplateSpecInitContainerReadinessProbe): any {
+function jobSpecTemplateSpecInitContainerReadinessProbeToTerraform(struct?: JobSpecTemplateSpecInitContainerReadinessProbeOutputReference | JobSpecTemplateSpecInitContainerReadinessProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     failure_threshold: cdktf.numberToTerraform(struct!.failureThreshold),
     initial_delay_seconds: cdktf.numberToTerraform(struct!.initialDelaySeconds),
     period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
-    exec: cdktf.listMapper(jobSpecTemplateSpecInitContainerReadinessProbeExecToTerraform)(struct!.exec),
-    http_get: cdktf.listMapper(jobSpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform)(struct!.httpGet),
+    exec: jobSpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct!.exec),
+    http_get: jobSpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(jobSpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform)(struct!.tcpSocket),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // failure_threshold - computed: false, optional: true, required: false
+  private _failureThreshold?: number | undefined; 
+  public get failureThreshold() {
+    return this.getNumberAttribute('failure_threshold');
+  }
+  public set failureThreshold(value: number | undefined) {
+    this._failureThreshold = value;
+  }
+  public resetFailureThreshold() {
+    this._failureThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get failureThresholdInput() {
+    return this._failureThreshold
+  }
+
+  // initial_delay_seconds - computed: false, optional: true, required: false
+  private _initialDelaySeconds?: number | undefined; 
+  public get initialDelaySeconds() {
+    return this.getNumberAttribute('initial_delay_seconds');
+  }
+  public set initialDelaySeconds(value: number | undefined) {
+    this._initialDelaySeconds = value;
+  }
+  public resetInitialDelaySeconds() {
+    this._initialDelaySeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get initialDelaySecondsInput() {
+    return this._initialDelaySeconds
+  }
+
+  // period_seconds - computed: false, optional: true, required: false
+  private _periodSeconds?: number | undefined; 
+  public get periodSeconds() {
+    return this.getNumberAttribute('period_seconds');
+  }
+  public set periodSeconds(value: number | undefined) {
+    this._periodSeconds = value;
+  }
+  public resetPeriodSeconds() {
+    this._periodSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get periodSecondsInput() {
+    return this._periodSeconds
+  }
+
+  // success_threshold - computed: false, optional: true, required: false
+  private _successThreshold?: number | undefined; 
+  public get successThreshold() {
+    return this.getNumberAttribute('success_threshold');
+  }
+  public set successThreshold(value: number | undefined) {
+    this._successThreshold = value;
+  }
+  public resetSuccessThreshold() {
+    this._successThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get successThresholdInput() {
+    return this._successThreshold
+  }
+
+  // timeout_seconds - computed: false, optional: true, required: false
+  private _timeoutSeconds?: number | undefined; 
+  public get timeoutSeconds() {
+    return this.getNumberAttribute('timeout_seconds');
+  }
+  public set timeoutSeconds(value: number | undefined) {
+    this._timeoutSeconds = value;
+  }
+  public resetTimeoutSeconds() {
+    this._timeoutSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutSecondsInput() {
+    return this._timeoutSeconds
+  }
+
+  // exec - computed: false, optional: true, required: false
+  private _exec?: JobSpecTemplateSpecInitContainerReadinessProbeExec | undefined; 
+  private __execOutput = new JobSpecTemplateSpecInitContainerReadinessProbeExecOutputReference(this as any, "exec", true);
+  public get exec() {
+    return this.__execOutput;
+  }
+  public putExec(value: JobSpecTemplateSpecInitContainerReadinessProbeExec | undefined) {
+    this._exec = value;
+  }
+  public resetExec() {
+    this._exec = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get execInput() {
+    return this._exec
+  }
+
+  // http_get - computed: false, optional: true, required: false
+  private _httpGet?: JobSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined; 
+  private __httpGetOutput = new JobSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference(this as any, "http_get", true);
+  public get httpGet() {
+    return this.__httpGetOutput;
+  }
+  public putHttpGet(value: JobSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined) {
+    this._httpGet = value;
+  }
+  public resetHttpGet() {
+    this._httpGet = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpGetInput() {
+    return this._httpGet
+  }
+
+  // tcp_socket - computed: false, optional: true, required: false
+  private _tcpSocket?: JobSpecTemplateSpecInitContainerReadinessProbeTcpSocket[] | undefined; 
+  public get tcpSocket() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('tcp_socket') as any;
+  }
+  public set tcpSocket(value: JobSpecTemplateSpecInitContainerReadinessProbeTcpSocket[] | undefined) {
+    this._tcpSocket = value;
+  }
+  public resetTcpSocket() {
+    this._tcpSocket = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get tcpSocketInput() {
+    return this._tcpSocket
+  }
+}
 export interface JobSpecTemplateSpecInitContainerResources {
   /**
   * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
@@ -3201,14 +7036,61 @@ export interface JobSpecTemplateSpecInitContainerResources {
   readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecInitContainerResourcesToTerraform(struct?: JobSpecTemplateSpecInitContainerResources): any {
+function jobSpecTemplateSpecInitContainerResourcesToTerraform(struct?: JobSpecTemplateSpecInitContainerResourcesOutputReference | JobSpecTemplateSpecInitContainerResources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     limits: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.limits),
     requests: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.requests),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerResourcesOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // limits - computed: true, optional: true, required: false
+  private _limits?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get limits() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('limits') as any;
+  }
+  public set limits(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._limits = value;
+  }
+  public resetLimits() {
+    this._limits = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get limitsInput() {
+    return this._limits
+  }
+
+  // requests - computed: true, optional: true, required: false
+  private _requests?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get requests() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('requests') as any;
+  }
+  public set requests(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._requests = value;
+  }
+  public resetRequests() {
+    this._requests = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get requestsInput() {
+    return this._requests
+  }
+}
 export interface JobSpecTemplateSpecInitContainerSecurityContextCapabilities {
   /**
   * Added capabilities
@@ -3224,14 +7106,59 @@ export interface JobSpecTemplateSpecInitContainerSecurityContextCapabilities {
   readonly drop?: string[];
 }
 
-function jobSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct?: JobSpecTemplateSpecInitContainerSecurityContextCapabilities): any {
+function jobSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct?: JobSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference | JobSpecTemplateSpecInitContainerSecurityContextCapabilities): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     add: cdktf.listMapper(cdktf.stringToTerraform)(struct!.add),
     drop: cdktf.listMapper(cdktf.stringToTerraform)(struct!.drop),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // add - computed: false, optional: true, required: false
+  private _add?: string[] | undefined; 
+  public get add() {
+    return this.getListAttribute('add');
+  }
+  public set add(value: string[] | undefined) {
+    this._add = value;
+  }
+  public resetAdd() {
+    this._add = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get addInput() {
+    return this._add
+  }
+
+  // drop - computed: false, optional: true, required: false
+  private _drop?: string[] | undefined; 
+  public get drop() {
+    return this.getListAttribute('drop');
+  }
+  public set drop(value: string[] | undefined) {
+    this._drop = value;
+  }
+  public resetDrop() {
+    this._drop = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get dropInput() {
+    return this._drop
+  }
+}
 export interface JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions {
   /**
   * Level is SELinux level label that applies to the container.
@@ -3259,8 +7186,11 @@ export interface JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions {
   readonly user?: string;
 }
 
-function jobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct?: JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions): any {
+function jobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct?: JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference | JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     level: cdktf.stringToTerraform(struct!.level),
     role: cdktf.stringToTerraform(struct!.role),
@@ -3269,6 +7199,80 @@ function jobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerrafor
   }
 }
 
+export class JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // level - computed: false, optional: true, required: false
+  private _level?: string | undefined; 
+  public get level() {
+    return this.getStringAttribute('level');
+  }
+  public set level(value: string | undefined) {
+    this._level = value;
+  }
+  public resetLevel() {
+    this._level = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get levelInput() {
+    return this._level
+  }
+
+  // role - computed: false, optional: true, required: false
+  private _role?: string | undefined; 
+  public get role() {
+    return this.getStringAttribute('role');
+  }
+  public set role(value: string | undefined) {
+    this._role = value;
+  }
+  public resetRole() {
+    this._role = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get roleInput() {
+    return this._role
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string | undefined; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string | undefined) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type
+  }
+
+  // user - computed: false, optional: true, required: false
+  private _user?: string | undefined; 
+  public get user() {
+    return this.getStringAttribute('user');
+  }
+  public set user(value: string | undefined) {
+    this._user = value;
+  }
+  public resetUser() {
+    this._user = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get userInput() {
+    return this._user
+  }
+}
 export interface JobSpecTemplateSpecInitContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
@@ -3311,17 +7315,20 @@ export interface JobSpecTemplateSpecInitContainerSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#capabilities Job#capabilities}
   */
-  readonly capabilities?: JobSpecTemplateSpecInitContainerSecurityContextCapabilities[];
+  readonly capabilities?: JobSpecTemplateSpecInitContainerSecurityContextCapabilities;
   /**
   * se_linux_options block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#se_linux_options Job#se_linux_options}
   */
-  readonly seLinuxOptions?: JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions[];
+  readonly seLinuxOptions?: JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions;
 }
 
-function jobSpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: JobSpecTemplateSpecInitContainerSecurityContext): any {
+function jobSpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: JobSpecTemplateSpecInitContainerSecurityContextOutputReference | JobSpecTemplateSpecInitContainerSecurityContext): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     allow_privilege_escalation: cdktf.booleanToTerraform(struct!.allowPrivilegeEscalation),
     privileged: cdktf.booleanToTerraform(struct!.privileged),
@@ -3329,11 +7336,151 @@ function jobSpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: Job
     run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
-    capabilities: cdktf.listMapper(jobSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform)(struct!.capabilities),
-    se_linux_options: cdktf.listMapper(jobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
+    capabilities: jobSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct!.capabilities),
+    se_linux_options: jobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerSecurityContextOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // allow_privilege_escalation - computed: false, optional: true, required: false
+  private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable | undefined; 
+  public get allowPrivilegeEscalation() {
+    return this.getBooleanAttribute('allow_privilege_escalation') as any;
+  }
+  public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable | undefined) {
+    this._allowPrivilegeEscalation = value;
+  }
+  public resetAllowPrivilegeEscalation() {
+    this._allowPrivilegeEscalation = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get allowPrivilegeEscalationInput() {
+    return this._allowPrivilegeEscalation
+  }
+
+  // privileged - computed: false, optional: true, required: false
+  private _privileged?: boolean | cdktf.IResolvable | undefined; 
+  public get privileged() {
+    return this.getBooleanAttribute('privileged') as any;
+  }
+  public set privileged(value: boolean | cdktf.IResolvable | undefined) {
+    this._privileged = value;
+  }
+  public resetPrivileged() {
+    this._privileged = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get privilegedInput() {
+    return this._privileged
+  }
+
+  // read_only_root_filesystem - computed: false, optional: true, required: false
+  private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnlyRootFilesystem() {
+    return this.getBooleanAttribute('read_only_root_filesystem') as any;
+  }
+  public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnlyRootFilesystem = value;
+  }
+  public resetReadOnlyRootFilesystem() {
+    this._readOnlyRootFilesystem = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyRootFilesystemInput() {
+    return this._readOnlyRootFilesystem
+  }
+
+  // run_as_group - computed: false, optional: true, required: false
+  private _runAsGroup?: string | undefined; 
+  public get runAsGroup() {
+    return this.getStringAttribute('run_as_group');
+  }
+  public set runAsGroup(value: string | undefined) {
+    this._runAsGroup = value;
+  }
+  public resetRunAsGroup() {
+    this._runAsGroup = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runAsGroupInput() {
+    return this._runAsGroup
+  }
+
+  // run_as_non_root - computed: false, optional: true, required: false
+  private _runAsNonRoot?: boolean | cdktf.IResolvable | undefined; 
+  public get runAsNonRoot() {
+    return this.getBooleanAttribute('run_as_non_root') as any;
+  }
+  public set runAsNonRoot(value: boolean | cdktf.IResolvable | undefined) {
+    this._runAsNonRoot = value;
+  }
+  public resetRunAsNonRoot() {
+    this._runAsNonRoot = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runAsNonRootInput() {
+    return this._runAsNonRoot
+  }
+
+  // run_as_user - computed: false, optional: true, required: false
+  private _runAsUser?: string | undefined; 
+  public get runAsUser() {
+    return this.getStringAttribute('run_as_user');
+  }
+  public set runAsUser(value: string | undefined) {
+    this._runAsUser = value;
+  }
+  public resetRunAsUser() {
+    this._runAsUser = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runAsUserInput() {
+    return this._runAsUser
+  }
+
+  // capabilities - computed: false, optional: true, required: false
+  private _capabilities?: JobSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined; 
+  private __capabilitiesOutput = new JobSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference(this as any, "capabilities", true);
+  public get capabilities() {
+    return this.__capabilitiesOutput;
+  }
+  public putCapabilities(value: JobSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined) {
+    this._capabilities = value;
+  }
+  public resetCapabilities() {
+    this._capabilities = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get capabilitiesInput() {
+    return this._capabilities
+  }
+
+  // se_linux_options - computed: false, optional: true, required: false
+  private _seLinuxOptions?: JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined; 
+  private __seLinuxOptionsOutput = new JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
+  public get seLinuxOptions() {
+    return this.__seLinuxOptionsOutput;
+  }
+  public putSeLinuxOptions(value: JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined) {
+    this._seLinuxOptions = value;
+  }
+  public resetSeLinuxOptions() {
+    this._seLinuxOptions = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seLinuxOptionsInput() {
+    return this._seLinuxOptions
+  }
+}
 export interface JobSpecTemplateSpecInitContainerStartupProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
@@ -3343,13 +7490,42 @@ export interface JobSpecTemplateSpecInitContainerStartupProbeExec {
   readonly command?: string[];
 }
 
-function jobSpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct?: JobSpecTemplateSpecInitContainerStartupProbeExec): any {
+function jobSpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct?: JobSpecTemplateSpecInitContainerStartupProbeExecOutputReference | JobSpecTemplateSpecInitContainerStartupProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerStartupProbeExecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // command - computed: false, optional: true, required: false
+  private _command?: string[] | undefined; 
+  public get command() {
+    return this.getListAttribute('command');
+  }
+  public set command(value: string[] | undefined) {
+    this._command = value;
+  }
+  public resetCommand() {
+    this._command = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command
+  }
+}
 export interface JobSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader {
   /**
   * The header field name
@@ -3367,6 +7543,9 @@ export interface JobSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader {
 
 function jobSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: JobSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
@@ -3406,8 +7585,11 @@ export interface JobSpecTemplateSpecInitContainerStartupProbeHttpGet {
   readonly httpHeader?: JobSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[];
 }
 
-function jobSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct?: JobSpecTemplateSpecInitContainerStartupProbeHttpGet): any {
+function jobSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct?: JobSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference | JobSpecTemplateSpecInitContainerStartupProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     host: cdktf.stringToTerraform(struct!.host),
     path: cdktf.stringToTerraform(struct!.path),
@@ -3417,6 +7599,97 @@ function jobSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct?:
   }
 }
 
+export class JobSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // host - computed: false, optional: true, required: false
+  private _host?: string | undefined; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string | undefined) {
+    this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string | undefined; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+
+  // scheme - computed: false, optional: true, required: false
+  private _scheme?: string | undefined; 
+  public get scheme() {
+    return this.getStringAttribute('scheme');
+  }
+  public set scheme(value: string | undefined) {
+    this._scheme = value;
+  }
+  public resetScheme() {
+    this._scheme = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schemeInput() {
+    return this._scheme
+  }
+
+  // http_header - computed: false, optional: true, required: false
+  private _httpHeader?: JobSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | undefined; 
+  public get httpHeader() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('http_header') as any;
+  }
+  public set httpHeader(value: JobSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | undefined) {
+    this._httpHeader = value;
+  }
+  public resetHttpHeader() {
+    this._httpHeader = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpHeaderInput() {
+    return this._httpHeader
+  }
+}
 export interface JobSpecTemplateSpecInitContainerStartupProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
@@ -3428,6 +7701,9 @@ export interface JobSpecTemplateSpecInitContainerStartupProbeTcpSocket {
 
 function jobSpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform(struct?: JobSpecTemplateSpecInitContainerStartupProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     port: cdktf.stringToTerraform(struct!.port),
   }
@@ -3469,13 +7745,13 @@ export interface JobSpecTemplateSpecInitContainerStartupProbe {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#exec Job#exec}
   */
-  readonly exec?: JobSpecTemplateSpecInitContainerStartupProbeExec[];
+  readonly exec?: JobSpecTemplateSpecInitContainerStartupProbeExec;
   /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#http_get Job#http_get}
   */
-  readonly httpGet?: JobSpecTemplateSpecInitContainerStartupProbeHttpGet[];
+  readonly httpGet?: JobSpecTemplateSpecInitContainerStartupProbeHttpGet;
   /**
   * tcp_socket block
   * 
@@ -3484,20 +7760,164 @@ export interface JobSpecTemplateSpecInitContainerStartupProbe {
   readonly tcpSocket?: JobSpecTemplateSpecInitContainerStartupProbeTcpSocket[];
 }
 
-function jobSpecTemplateSpecInitContainerStartupProbeToTerraform(struct?: JobSpecTemplateSpecInitContainerStartupProbe): any {
+function jobSpecTemplateSpecInitContainerStartupProbeToTerraform(struct?: JobSpecTemplateSpecInitContainerStartupProbeOutputReference | JobSpecTemplateSpecInitContainerStartupProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     failure_threshold: cdktf.numberToTerraform(struct!.failureThreshold),
     initial_delay_seconds: cdktf.numberToTerraform(struct!.initialDelaySeconds),
     period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
-    exec: cdktf.listMapper(jobSpecTemplateSpecInitContainerStartupProbeExecToTerraform)(struct!.exec),
-    http_get: cdktf.listMapper(jobSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform)(struct!.httpGet),
+    exec: jobSpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct!.exec),
+    http_get: jobSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(jobSpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform)(struct!.tcpSocket),
   }
 }
 
+export class JobSpecTemplateSpecInitContainerStartupProbeOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // failure_threshold - computed: false, optional: true, required: false
+  private _failureThreshold?: number | undefined; 
+  public get failureThreshold() {
+    return this.getNumberAttribute('failure_threshold');
+  }
+  public set failureThreshold(value: number | undefined) {
+    this._failureThreshold = value;
+  }
+  public resetFailureThreshold() {
+    this._failureThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get failureThresholdInput() {
+    return this._failureThreshold
+  }
+
+  // initial_delay_seconds - computed: false, optional: true, required: false
+  private _initialDelaySeconds?: number | undefined; 
+  public get initialDelaySeconds() {
+    return this.getNumberAttribute('initial_delay_seconds');
+  }
+  public set initialDelaySeconds(value: number | undefined) {
+    this._initialDelaySeconds = value;
+  }
+  public resetInitialDelaySeconds() {
+    this._initialDelaySeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get initialDelaySecondsInput() {
+    return this._initialDelaySeconds
+  }
+
+  // period_seconds - computed: false, optional: true, required: false
+  private _periodSeconds?: number | undefined; 
+  public get periodSeconds() {
+    return this.getNumberAttribute('period_seconds');
+  }
+  public set periodSeconds(value: number | undefined) {
+    this._periodSeconds = value;
+  }
+  public resetPeriodSeconds() {
+    this._periodSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get periodSecondsInput() {
+    return this._periodSeconds
+  }
+
+  // success_threshold - computed: false, optional: true, required: false
+  private _successThreshold?: number | undefined; 
+  public get successThreshold() {
+    return this.getNumberAttribute('success_threshold');
+  }
+  public set successThreshold(value: number | undefined) {
+    this._successThreshold = value;
+  }
+  public resetSuccessThreshold() {
+    this._successThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get successThresholdInput() {
+    return this._successThreshold
+  }
+
+  // timeout_seconds - computed: false, optional: true, required: false
+  private _timeoutSeconds?: number | undefined; 
+  public get timeoutSeconds() {
+    return this.getNumberAttribute('timeout_seconds');
+  }
+  public set timeoutSeconds(value: number | undefined) {
+    this._timeoutSeconds = value;
+  }
+  public resetTimeoutSeconds() {
+    this._timeoutSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutSecondsInput() {
+    return this._timeoutSeconds
+  }
+
+  // exec - computed: false, optional: true, required: false
+  private _exec?: JobSpecTemplateSpecInitContainerStartupProbeExec | undefined; 
+  private __execOutput = new JobSpecTemplateSpecInitContainerStartupProbeExecOutputReference(this as any, "exec", true);
+  public get exec() {
+    return this.__execOutput;
+  }
+  public putExec(value: JobSpecTemplateSpecInitContainerStartupProbeExec | undefined) {
+    this._exec = value;
+  }
+  public resetExec() {
+    this._exec = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get execInput() {
+    return this._exec
+  }
+
+  // http_get - computed: false, optional: true, required: false
+  private _httpGet?: JobSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined; 
+  private __httpGetOutput = new JobSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference(this as any, "http_get", true);
+  public get httpGet() {
+    return this.__httpGetOutput;
+  }
+  public putHttpGet(value: JobSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined) {
+    this._httpGet = value;
+  }
+  public resetHttpGet() {
+    this._httpGet = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpGetInput() {
+    return this._httpGet
+  }
+
+  // tcp_socket - computed: false, optional: true, required: false
+  private _tcpSocket?: JobSpecTemplateSpecInitContainerStartupProbeTcpSocket[] | undefined; 
+  public get tcpSocket() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('tcp_socket') as any;
+  }
+  public set tcpSocket(value: JobSpecTemplateSpecInitContainerStartupProbeTcpSocket[] | undefined) {
+    this._tcpSocket = value;
+  }
+  public resetTcpSocket() {
+    this._tcpSocket = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get tcpSocketInput() {
+    return this._tcpSocket
+  }
+}
 export interface JobSpecTemplateSpecInitContainerVolumeMount {
   /**
   * Path within the container at which the volume should be mounted. Must not contain ':'.
@@ -3533,6 +7953,9 @@ export interface JobSpecTemplateSpecInitContainerVolumeMount {
 
 function jobSpecTemplateSpecInitContainerVolumeMountToTerraform(struct?: JobSpecTemplateSpecInitContainerVolumeMount): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     mount_path: cdktf.stringToTerraform(struct!.mountPath),
     mount_propagation: cdktf.stringToTerraform(struct!.mountPropagation),
@@ -3626,13 +8049,13 @@ export interface JobSpecTemplateSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#lifecycle Job#lifecycle}
   */
-  readonly lifecycle?: JobSpecTemplateSpecInitContainerLifecycle[];
+  readonly lifecycle?: JobSpecTemplateSpecInitContainerLifecycle;
   /**
   * liveness_probe block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#liveness_probe Job#liveness_probe}
   */
-  readonly livenessProbe?: JobSpecTemplateSpecInitContainerLivenessProbe[];
+  readonly livenessProbe?: JobSpecTemplateSpecInitContainerLivenessProbe;
   /**
   * port block
   * 
@@ -3644,25 +8067,25 @@ export interface JobSpecTemplateSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#readiness_probe Job#readiness_probe}
   */
-  readonly readinessProbe?: JobSpecTemplateSpecInitContainerReadinessProbe[];
+  readonly readinessProbe?: JobSpecTemplateSpecInitContainerReadinessProbe;
   /**
   * resources block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resources Job#resources}
   */
-  readonly resources?: JobSpecTemplateSpecInitContainerResources[];
+  readonly resources?: JobSpecTemplateSpecInitContainerResources;
   /**
   * security_context block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#security_context Job#security_context}
   */
-  readonly securityContext?: JobSpecTemplateSpecInitContainerSecurityContext[];
+  readonly securityContext?: JobSpecTemplateSpecInitContainerSecurityContext;
   /**
   * startup_probe block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#startup_probe Job#startup_probe}
   */
-  readonly startupProbe?: JobSpecTemplateSpecInitContainerStartupProbe[];
+  readonly startupProbe?: JobSpecTemplateSpecInitContainerStartupProbe;
   /**
   * volume_mount block
   * 
@@ -3673,6 +8096,9 @@ export interface JobSpecTemplateSpecInitContainer {
 
 function jobSpecTemplateSpecInitContainerToTerraform(struct?: JobSpecTemplateSpecInitContainer): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
     command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
@@ -3687,13 +8113,13 @@ function jobSpecTemplateSpecInitContainerToTerraform(struct?: JobSpecTemplateSpe
     working_dir: cdktf.stringToTerraform(struct!.workingDir),
     env: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvToTerraform)(struct!.env),
     env_from: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvFromToTerraform)(struct!.envFrom),
-    lifecycle: cdktf.listMapper(jobSpecTemplateSpecInitContainerLifecycleToTerraform)(struct!.lifecycle),
-    liveness_probe: cdktf.listMapper(jobSpecTemplateSpecInitContainerLivenessProbeToTerraform)(struct!.livenessProbe),
+    lifecycle: jobSpecTemplateSpecInitContainerLifecycleToTerraform(struct!.lifecycle),
+    liveness_probe: jobSpecTemplateSpecInitContainerLivenessProbeToTerraform(struct!.livenessProbe),
     port: cdktf.listMapper(jobSpecTemplateSpecInitContainerPortToTerraform)(struct!.port),
-    readiness_probe: cdktf.listMapper(jobSpecTemplateSpecInitContainerReadinessProbeToTerraform)(struct!.readinessProbe),
-    resources: cdktf.listMapper(jobSpecTemplateSpecInitContainerResourcesToTerraform)(struct!.resources),
-    security_context: cdktf.listMapper(jobSpecTemplateSpecInitContainerSecurityContextToTerraform)(struct!.securityContext),
-    startup_probe: cdktf.listMapper(jobSpecTemplateSpecInitContainerStartupProbeToTerraform)(struct!.startupProbe),
+    readiness_probe: jobSpecTemplateSpecInitContainerReadinessProbeToTerraform(struct!.readinessProbe),
+    resources: jobSpecTemplateSpecInitContainerResourcesToTerraform(struct!.resources),
+    security_context: jobSpecTemplateSpecInitContainerSecurityContextToTerraform(struct!.securityContext),
+    startup_probe: jobSpecTemplateSpecInitContainerStartupProbeToTerraform(struct!.startupProbe),
     volume_mount: cdktf.listMapper(jobSpecTemplateSpecInitContainerVolumeMountToTerraform)(struct!.volumeMount),
   }
 }
@@ -3709,6 +8135,9 @@ export interface JobSpecTemplateSpecReadinessGate {
 
 function jobSpecTemplateSpecReadinessGateToTerraform(struct?: JobSpecTemplateSpecReadinessGate): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     condition_type: cdktf.stringToTerraform(struct!.conditionType),
   }
@@ -3741,8 +8170,11 @@ export interface JobSpecTemplateSpecSecurityContextSeLinuxOptions {
   readonly user?: string;
 }
 
-function jobSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct?: JobSpecTemplateSpecSecurityContextSeLinuxOptions): any {
+function jobSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct?: JobSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference | JobSpecTemplateSpecSecurityContextSeLinuxOptions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     level: cdktf.stringToTerraform(struct!.level),
     role: cdktf.stringToTerraform(struct!.role),
@@ -3751,6 +8183,80 @@ function jobSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct?: Jo
   }
 }
 
+export class JobSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // level - computed: false, optional: true, required: false
+  private _level?: string | undefined; 
+  public get level() {
+    return this.getStringAttribute('level');
+  }
+  public set level(value: string | undefined) {
+    this._level = value;
+  }
+  public resetLevel() {
+    this._level = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get levelInput() {
+    return this._level
+  }
+
+  // role - computed: false, optional: true, required: false
+  private _role?: string | undefined; 
+  public get role() {
+    return this.getStringAttribute('role');
+  }
+  public set role(value: string | undefined) {
+    this._role = value;
+  }
+  public resetRole() {
+    this._role = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get roleInput() {
+    return this._role
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string | undefined; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string | undefined) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type
+  }
+
+  // user - computed: false, optional: true, required: false
+  private _user?: string | undefined; 
+  public get user() {
+    return this.getStringAttribute('user');
+  }
+  public set user(value: string | undefined) {
+    this._user = value;
+  }
+  public resetUser() {
+    this._user = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get userInput() {
+    return this._user
+  }
+}
 export interface JobSpecTemplateSpecSecurityContextSysctl {
   /**
   * Name of a property to set.
@@ -3768,6 +8274,9 @@ export interface JobSpecTemplateSpecSecurityContextSysctl {
 
 function jobSpecTemplateSpecSecurityContextSysctlToTerraform(struct?: JobSpecTemplateSpecSecurityContextSysctl): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
@@ -3810,7 +8319,7 @@ export interface JobSpecTemplateSpecSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#se_linux_options Job#se_linux_options}
   */
-  readonly seLinuxOptions?: JobSpecTemplateSpecSecurityContextSeLinuxOptions[];
+  readonly seLinuxOptions?: JobSpecTemplateSpecSecurityContextSeLinuxOptions;
   /**
   * sysctl block
   * 
@@ -3819,19 +8328,147 @@ export interface JobSpecTemplateSpecSecurityContext {
   readonly sysctl?: JobSpecTemplateSpecSecurityContextSysctl[];
 }
 
-function jobSpecTemplateSpecSecurityContextToTerraform(struct?: JobSpecTemplateSpecSecurityContext): any {
+function jobSpecTemplateSpecSecurityContextToTerraform(struct?: JobSpecTemplateSpecSecurityContextOutputReference | JobSpecTemplateSpecSecurityContext): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     fs_group: cdktf.stringToTerraform(struct!.fsGroup),
     run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform)(struct!.supplementalGroups),
-    se_linux_options: cdktf.listMapper(jobSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
+    se_linux_options: jobSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
     sysctl: cdktf.listMapper(jobSpecTemplateSpecSecurityContextSysctlToTerraform)(struct!.sysctl),
   }
 }
 
+export class JobSpecTemplateSpecSecurityContextOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // fs_group - computed: false, optional: true, required: false
+  private _fsGroup?: string | undefined; 
+  public get fsGroup() {
+    return this.getStringAttribute('fs_group');
+  }
+  public set fsGroup(value: string | undefined) {
+    this._fsGroup = value;
+  }
+  public resetFsGroup() {
+    this._fsGroup = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsGroupInput() {
+    return this._fsGroup
+  }
+
+  // run_as_group - computed: false, optional: true, required: false
+  private _runAsGroup?: string | undefined; 
+  public get runAsGroup() {
+    return this.getStringAttribute('run_as_group');
+  }
+  public set runAsGroup(value: string | undefined) {
+    this._runAsGroup = value;
+  }
+  public resetRunAsGroup() {
+    this._runAsGroup = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runAsGroupInput() {
+    return this._runAsGroup
+  }
+
+  // run_as_non_root - computed: false, optional: true, required: false
+  private _runAsNonRoot?: boolean | cdktf.IResolvable | undefined; 
+  public get runAsNonRoot() {
+    return this.getBooleanAttribute('run_as_non_root') as any;
+  }
+  public set runAsNonRoot(value: boolean | cdktf.IResolvable | undefined) {
+    this._runAsNonRoot = value;
+  }
+  public resetRunAsNonRoot() {
+    this._runAsNonRoot = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runAsNonRootInput() {
+    return this._runAsNonRoot
+  }
+
+  // run_as_user - computed: false, optional: true, required: false
+  private _runAsUser?: string | undefined; 
+  public get runAsUser() {
+    return this.getStringAttribute('run_as_user');
+  }
+  public set runAsUser(value: string | undefined) {
+    this._runAsUser = value;
+  }
+  public resetRunAsUser() {
+    this._runAsUser = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runAsUserInput() {
+    return this._runAsUser
+  }
+
+  // supplemental_groups - computed: false, optional: true, required: false
+  private _supplementalGroups?: number[] | undefined; 
+  public get supplementalGroups() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('supplemental_groups') as any;
+  }
+  public set supplementalGroups(value: number[] | undefined) {
+    this._supplementalGroups = value;
+  }
+  public resetSupplementalGroups() {
+    this._supplementalGroups = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get supplementalGroupsInput() {
+    return this._supplementalGroups
+  }
+
+  // se_linux_options - computed: false, optional: true, required: false
+  private _seLinuxOptions?: JobSpecTemplateSpecSecurityContextSeLinuxOptions | undefined; 
+  private __seLinuxOptionsOutput = new JobSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
+  public get seLinuxOptions() {
+    return this.__seLinuxOptionsOutput;
+  }
+  public putSeLinuxOptions(value: JobSpecTemplateSpecSecurityContextSeLinuxOptions | undefined) {
+    this._seLinuxOptions = value;
+  }
+  public resetSeLinuxOptions() {
+    this._seLinuxOptions = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seLinuxOptionsInput() {
+    return this._seLinuxOptions
+  }
+
+  // sysctl - computed: false, optional: true, required: false
+  private _sysctl?: JobSpecTemplateSpecSecurityContextSysctl[] | undefined; 
+  public get sysctl() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('sysctl') as any;
+  }
+  public set sysctl(value: JobSpecTemplateSpecSecurityContextSysctl[] | undefined) {
+    this._sysctl = value;
+  }
+  public resetSysctl() {
+    this._sysctl = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get sysctlInput() {
+    return this._sysctl
+  }
+}
 export interface JobSpecTemplateSpecToleration {
   /**
   * Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.
@@ -3867,6 +8504,9 @@ export interface JobSpecTemplateSpecToleration {
 
 function jobSpecTemplateSpecTolerationToTerraform(struct?: JobSpecTemplateSpecToleration): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     effect: cdktf.stringToTerraform(struct!.effect),
     key: cdktf.stringToTerraform(struct!.key),
@@ -3899,6 +8539,9 @@ export interface JobSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchEx
 
 function jobSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform(struct?: JobSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
@@ -3923,6 +8566,9 @@ export interface JobSpecTemplateSpecTopologySpreadConstraintLabelSelector {
 
 function jobSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform(struct?: JobSpecTemplateSpecTopologySpreadConstraintLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(jobSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
@@ -3958,6 +8604,9 @@ export interface JobSpecTemplateSpecTopologySpreadConstraint {
 
 function jobSpecTemplateSpecTopologySpreadConstraintToTerraform(struct?: JobSpecTemplateSpecTopologySpreadConstraint): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     max_skew: cdktf.numberToTerraform(struct!.maxSkew),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
@@ -3993,8 +8642,11 @@ export interface JobSpecTemplateSpecVolumeAwsElasticBlockStore {
   readonly volumeId: string;
 }
 
-function jobSpecTemplateSpecVolumeAwsElasticBlockStoreToTerraform(struct?: JobSpecTemplateSpecVolumeAwsElasticBlockStore): any {
+function jobSpecTemplateSpecVolumeAwsElasticBlockStoreToTerraform(struct?: JobSpecTemplateSpecVolumeAwsElasticBlockStoreOutputReference | JobSpecTemplateSpecVolumeAwsElasticBlockStore): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     partition: cdktf.numberToTerraform(struct!.partition),
@@ -4003,6 +8655,77 @@ function jobSpecTemplateSpecVolumeAwsElasticBlockStoreToTerraform(struct?: JobSp
   }
 }
 
+export class JobSpecTemplateSpecVolumeAwsElasticBlockStoreOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // fs_type - computed: false, optional: true, required: false
+  private _fsType?: string | undefined; 
+  public get fsType() {
+    return this.getStringAttribute('fs_type');
+  }
+  public set fsType(value: string | undefined) {
+    this._fsType = value;
+  }
+  public resetFsType() {
+    this._fsType = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsTypeInput() {
+    return this._fsType
+  }
+
+  // partition - computed: false, optional: true, required: false
+  private _partition?: number | undefined; 
+  public get partition() {
+    return this.getNumberAttribute('partition');
+  }
+  public set partition(value: number | undefined) {
+    this._partition = value;
+  }
+  public resetPartition() {
+    this._partition = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get partitionInput() {
+    return this._partition
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+
+  // volume_id - computed: false, optional: false, required: true
+  private _volumeId?: string; 
+  public get volumeId() {
+    return this.getStringAttribute('volume_id');
+  }
+  public set volumeId(value: string) {
+    this._volumeId = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get volumeIdInput() {
+    return this._volumeId
+  }
+}
 export interface JobSpecTemplateSpecVolumeAzureDisk {
   /**
   * Host Caching mode: None, Read Only, Read Write.
@@ -4042,8 +8765,11 @@ export interface JobSpecTemplateSpecVolumeAzureDisk {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecVolumeAzureDiskToTerraform(struct?: JobSpecTemplateSpecVolumeAzureDisk): any {
+function jobSpecTemplateSpecVolumeAzureDiskToTerraform(struct?: JobSpecTemplateSpecVolumeAzureDiskOutputReference | JobSpecTemplateSpecVolumeAzureDisk): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     caching_mode: cdktf.stringToTerraform(struct!.cachingMode),
     data_disk_uri: cdktf.stringToTerraform(struct!.dataDiskUri),
@@ -4054,6 +8780,103 @@ function jobSpecTemplateSpecVolumeAzureDiskToTerraform(struct?: JobSpecTemplateS
   }
 }
 
+export class JobSpecTemplateSpecVolumeAzureDiskOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // caching_mode - computed: false, optional: false, required: true
+  private _cachingMode?: string; 
+  public get cachingMode() {
+    return this.getStringAttribute('caching_mode');
+  }
+  public set cachingMode(value: string) {
+    this._cachingMode = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get cachingModeInput() {
+    return this._cachingMode
+  }
+
+  // data_disk_uri - computed: false, optional: false, required: true
+  private _dataDiskUri?: string; 
+  public get dataDiskUri() {
+    return this.getStringAttribute('data_disk_uri');
+  }
+  public set dataDiskUri(value: string) {
+    this._dataDiskUri = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get dataDiskUriInput() {
+    return this._dataDiskUri
+  }
+
+  // disk_name - computed: false, optional: false, required: true
+  private _diskName?: string; 
+  public get diskName() {
+    return this.getStringAttribute('disk_name');
+  }
+  public set diskName(value: string) {
+    this._diskName = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get diskNameInput() {
+    return this._diskName
+  }
+
+  // fs_type - computed: false, optional: true, required: false
+  private _fsType?: string | undefined; 
+  public get fsType() {
+    return this.getStringAttribute('fs_type');
+  }
+  public set fsType(value: string | undefined) {
+    this._fsType = value;
+  }
+  public resetFsType() {
+    this._fsType = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsTypeInput() {
+    return this._fsType
+  }
+
+  // kind - computed: true, optional: true, required: false
+  private _kind?: string | undefined; 
+  public get kind() {
+    return this.getStringAttribute('kind');
+  }
+  public set kind(value: string | undefined) {
+    this._kind = value;
+  }
+  public resetKind() {
+    this._kind = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get kindInput() {
+    return this._kind
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+}
 export interface JobSpecTemplateSpecVolumeAzureFile {
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
@@ -4081,8 +8904,11 @@ export interface JobSpecTemplateSpecVolumeAzureFile {
   readonly shareName: string;
 }
 
-function jobSpecTemplateSpecVolumeAzureFileToTerraform(struct?: JobSpecTemplateSpecVolumeAzureFile): any {
+function jobSpecTemplateSpecVolumeAzureFileToTerraform(struct?: JobSpecTemplateSpecVolumeAzureFileOutputReference | JobSpecTemplateSpecVolumeAzureFile): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_name: cdktf.stringToTerraform(struct!.secretName),
@@ -4091,6 +8917,74 @@ function jobSpecTemplateSpecVolumeAzureFileToTerraform(struct?: JobSpecTemplateS
   }
 }
 
+export class JobSpecTemplateSpecVolumeAzureFileOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+
+  // secret_name - computed: false, optional: false, required: true
+  private _secretName?: string; 
+  public get secretName() {
+    return this.getStringAttribute('secret_name');
+  }
+  public set secretName(value: string) {
+    this._secretName = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get secretNameInput() {
+    return this._secretName
+  }
+
+  // secret_namespace - computed: false, optional: true, required: false
+  private _secretNamespace?: string | undefined; 
+  public get secretNamespace() {
+    return this.getStringAttribute('secret_namespace');
+  }
+  public set secretNamespace(value: string | undefined) {
+    this._secretNamespace = value;
+  }
+  public resetSecretNamespace() {
+    this._secretNamespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get secretNamespaceInput() {
+    return this._secretNamespace
+  }
+
+  // share_name - computed: false, optional: false, required: true
+  private _shareName?: string; 
+  public get shareName() {
+    return this.getStringAttribute('share_name');
+  }
+  public set shareName(value: string) {
+    this._shareName = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get shareNameInput() {
+    return this._shareName
+  }
+}
 export interface JobSpecTemplateSpecVolumeCephFsSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
@@ -4106,14 +9000,59 @@ export interface JobSpecTemplateSpecVolumeCephFsSecretRef {
   readonly namespace?: string;
 }
 
-function jobSpecTemplateSpecVolumeCephFsSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCephFsSecretRef): any {
+function jobSpecTemplateSpecVolumeCephFsSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCephFsSecretRefOutputReference | JobSpecTemplateSpecVolumeCephFsSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
 }
 
+export class JobSpecTemplateSpecVolumeCephFsSecretRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: true, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 export interface JobSpecTemplateSpecVolumeCephFs {
   /**
   * Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
@@ -4150,21 +9089,128 @@ export interface JobSpecTemplateSpecVolumeCephFs {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_ref Job#secret_ref}
   */
-  readonly secretRef?: JobSpecTemplateSpecVolumeCephFsSecretRef[];
+  readonly secretRef?: JobSpecTemplateSpecVolumeCephFsSecretRef;
 }
 
-function jobSpecTemplateSpecVolumeCephFsToTerraform(struct?: JobSpecTemplateSpecVolumeCephFs): any {
+function jobSpecTemplateSpecVolumeCephFsToTerraform(struct?: JobSpecTemplateSpecVolumeCephFsOutputReference | JobSpecTemplateSpecVolumeCephFs): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     monitors: cdktf.listMapper(cdktf.stringToTerraform)(struct!.monitors),
     path: cdktf.stringToTerraform(struct!.path),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_file: cdktf.stringToTerraform(struct!.secretFile),
     user: cdktf.stringToTerraform(struct!.user),
-    secret_ref: cdktf.listMapper(jobSpecTemplateSpecVolumeCephFsSecretRefToTerraform)(struct!.secretRef),
+    secret_ref: jobSpecTemplateSpecVolumeCephFsSecretRefToTerraform(struct!.secretRef),
   }
 }
 
+export class JobSpecTemplateSpecVolumeCephFsOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // monitors - computed: false, optional: false, required: true
+  private _monitors?: string[]; 
+  public get monitors() {
+    return this.getListAttribute('monitors');
+  }
+  public set monitors(value: string[]) {
+    this._monitors = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get monitorsInput() {
+    return this._monitors
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+
+  // secret_file - computed: false, optional: true, required: false
+  private _secretFile?: string | undefined; 
+  public get secretFile() {
+    return this.getStringAttribute('secret_file');
+  }
+  public set secretFile(value: string | undefined) {
+    this._secretFile = value;
+  }
+  public resetSecretFile() {
+    this._secretFile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get secretFileInput() {
+    return this._secretFile
+  }
+
+  // user - computed: false, optional: true, required: false
+  private _user?: string | undefined; 
+  public get user() {
+    return this.getStringAttribute('user');
+  }
+  public set user(value: string | undefined) {
+    this._user = value;
+  }
+  public resetUser() {
+    this._user = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get userInput() {
+    return this._user
+  }
+
+  // secret_ref - computed: false, optional: true, required: false
+  private _secretRef?: JobSpecTemplateSpecVolumeCephFsSecretRef | undefined; 
+  private __secretRefOutput = new JobSpecTemplateSpecVolumeCephFsSecretRefOutputReference(this as any, "secret_ref", true);
+  public get secretRef() {
+    return this.__secretRefOutput;
+  }
+  public putSecretRef(value: JobSpecTemplateSpecVolumeCephFsSecretRef | undefined) {
+    this._secretRef = value;
+  }
+  public resetSecretRef() {
+    this._secretRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get secretRefInput() {
+    return this._secretRef
+  }
+}
 export interface JobSpecTemplateSpecVolumeCinder {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
@@ -4186,8 +9232,11 @@ export interface JobSpecTemplateSpecVolumeCinder {
   readonly volumeId: string;
 }
 
-function jobSpecTemplateSpecVolumeCinderToTerraform(struct?: JobSpecTemplateSpecVolumeCinder): any {
+function jobSpecTemplateSpecVolumeCinderToTerraform(struct?: JobSpecTemplateSpecVolumeCinderOutputReference | JobSpecTemplateSpecVolumeCinder): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
@@ -4195,6 +9244,61 @@ function jobSpecTemplateSpecVolumeCinderToTerraform(struct?: JobSpecTemplateSpec
   }
 }
 
+export class JobSpecTemplateSpecVolumeCinderOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // fs_type - computed: false, optional: true, required: false
+  private _fsType?: string | undefined; 
+  public get fsType() {
+    return this.getStringAttribute('fs_type');
+  }
+  public set fsType(value: string | undefined) {
+    this._fsType = value;
+  }
+  public resetFsType() {
+    this._fsType = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsTypeInput() {
+    return this._fsType
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+
+  // volume_id - computed: false, optional: false, required: true
+  private _volumeId?: string; 
+  public get volumeId() {
+    return this.getStringAttribute('volume_id');
+  }
+  public set volumeId(value: string) {
+    this._volumeId = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get volumeIdInput() {
+    return this._volumeId
+  }
+}
 export interface JobSpecTemplateSpecVolumeConfigMapItems {
   /**
   * The key to project.
@@ -4218,6 +9322,9 @@ export interface JobSpecTemplateSpecVolumeConfigMapItems {
 
 function jobSpecTemplateSpecVolumeConfigMapItemsToTerraform(struct?: JobSpecTemplateSpecVolumeConfigMapItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     mode: cdktf.stringToTerraform(struct!.mode),
@@ -4252,8 +9359,11 @@ export interface JobSpecTemplateSpecVolumeConfigMap {
   readonly items?: JobSpecTemplateSpecVolumeConfigMapItems[];
 }
 
-function jobSpecTemplateSpecVolumeConfigMapToTerraform(struct?: JobSpecTemplateSpecVolumeConfigMap): any {
+function jobSpecTemplateSpecVolumeConfigMapToTerraform(struct?: JobSpecTemplateSpecVolumeConfigMapOutputReference | JobSpecTemplateSpecVolumeConfigMap): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
     name: cdktf.stringToTerraform(struct!.name),
@@ -4262,6 +9372,81 @@ function jobSpecTemplateSpecVolumeConfigMapToTerraform(struct?: JobSpecTemplateS
   }
 }
 
+export class JobSpecTemplateSpecVolumeConfigMapOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // default_mode - computed: false, optional: true, required: false
+  private _defaultMode?: string | undefined; 
+  public get defaultMode() {
+    return this.getStringAttribute('default_mode');
+  }
+  public set defaultMode(value: string | undefined) {
+    this._defaultMode = value;
+  }
+  public resetDefaultMode() {
+    this._defaultMode = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get defaultModeInput() {
+    return this._defaultMode
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // optional - computed: false, optional: true, required: false
+  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  public get optional() {
+    return this.getBooleanAttribute('optional') as any;
+  }
+  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+    this._optional = value;
+  }
+  public resetOptional() {
+    this._optional = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionalInput() {
+    return this._optional
+  }
+
+  // items - computed: false, optional: true, required: false
+  private _items?: JobSpecTemplateSpecVolumeConfigMapItems[] | undefined; 
+  public get items() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('items') as any;
+  }
+  public set items(value: JobSpecTemplateSpecVolumeConfigMapItems[] | undefined) {
+    this._items = value;
+  }
+  public resetItems() {
+    this._items = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get itemsInput() {
+    return this._items
+  }
+}
 export interface JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
@@ -4277,14 +9462,59 @@ export interface JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef {
   readonly namespace?: string;
 }
 
-function jobSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef): any {
+function jobSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference | JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
 }
 
+export class JobSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: true, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 export interface JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
@@ -4300,14 +9530,59 @@ export interface JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef {
   readonly namespace?: string;
 }
 
-function jobSpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef): any {
+function jobSpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference | JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
 }
 
+export class JobSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: true, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 export interface JobSpecTemplateSpecVolumeCsiNodePublishSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
@@ -4323,14 +9598,59 @@ export interface JobSpecTemplateSpecVolumeCsiNodePublishSecretRef {
   readonly namespace?: string;
 }
 
-function jobSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCsiNodePublishSecretRef): any {
+function jobSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference | JobSpecTemplateSpecVolumeCsiNodePublishSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
 }
 
+export class JobSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: true, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 export interface JobSpecTemplateSpecVolumeCsiNodeStageSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
@@ -4346,14 +9666,59 @@ export interface JobSpecTemplateSpecVolumeCsiNodeStageSecretRef {
   readonly namespace?: string;
 }
 
-function jobSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCsiNodeStageSecretRef): any {
+function jobSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference | JobSpecTemplateSpecVolumeCsiNodeStageSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
 }
 
+export class JobSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: true, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 export interface JobSpecTemplateSpecVolumeCsi {
   /**
   * the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
@@ -4390,42 +9755,198 @@ export interface JobSpecTemplateSpecVolumeCsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#controller_expand_secret_ref Job#controller_expand_secret_ref}
   */
-  readonly controllerExpandSecretRef?: JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef[];
+  readonly controllerExpandSecretRef?: JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef;
   /**
   * controller_publish_secret_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#controller_publish_secret_ref Job#controller_publish_secret_ref}
   */
-  readonly controllerPublishSecretRef?: JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef[];
+  readonly controllerPublishSecretRef?: JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef;
   /**
   * node_publish_secret_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#node_publish_secret_ref Job#node_publish_secret_ref}
   */
-  readonly nodePublishSecretRef?: JobSpecTemplateSpecVolumeCsiNodePublishSecretRef[];
+  readonly nodePublishSecretRef?: JobSpecTemplateSpecVolumeCsiNodePublishSecretRef;
   /**
   * node_stage_secret_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#node_stage_secret_ref Job#node_stage_secret_ref}
   */
-  readonly nodeStageSecretRef?: JobSpecTemplateSpecVolumeCsiNodeStageSecretRef[];
+  readonly nodeStageSecretRef?: JobSpecTemplateSpecVolumeCsiNodeStageSecretRef;
 }
 
-function jobSpecTemplateSpecVolumeCsiToTerraform(struct?: JobSpecTemplateSpecVolumeCsi): any {
+function jobSpecTemplateSpecVolumeCsiToTerraform(struct?: JobSpecTemplateSpecVolumeCsiOutputReference | JobSpecTemplateSpecVolumeCsi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     driver: cdktf.stringToTerraform(struct!.driver),
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     volume_attributes: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.volumeAttributes),
     volume_handle: cdktf.stringToTerraform(struct!.volumeHandle),
-    controller_expand_secret_ref: cdktf.listMapper(jobSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform)(struct!.controllerExpandSecretRef),
-    controller_publish_secret_ref: cdktf.listMapper(jobSpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform)(struct!.controllerPublishSecretRef),
-    node_publish_secret_ref: cdktf.listMapper(jobSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform)(struct!.nodePublishSecretRef),
-    node_stage_secret_ref: cdktf.listMapper(jobSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform)(struct!.nodeStageSecretRef),
+    controller_expand_secret_ref: jobSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct!.controllerExpandSecretRef),
+    controller_publish_secret_ref: jobSpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct!.controllerPublishSecretRef),
+    node_publish_secret_ref: jobSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct!.nodePublishSecretRef),
+    node_stage_secret_ref: jobSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct!.nodeStageSecretRef),
   }
 }
 
+export class JobSpecTemplateSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // driver - computed: false, optional: false, required: true
+  private _driver?: string; 
+  public get driver() {
+    return this.getStringAttribute('driver');
+  }
+  public set driver(value: string) {
+    this._driver = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get driverInput() {
+    return this._driver
+  }
+
+  // fs_type - computed: false, optional: true, required: false
+  private _fsType?: string | undefined; 
+  public get fsType() {
+    return this.getStringAttribute('fs_type');
+  }
+  public set fsType(value: string | undefined) {
+    this._fsType = value;
+  }
+  public resetFsType() {
+    this._fsType = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsTypeInput() {
+    return this._fsType
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+
+  // volume_attributes - computed: false, optional: true, required: false
+  private _volumeAttributes?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get volumeAttributes() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('volume_attributes') as any;
+  }
+  public set volumeAttributes(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._volumeAttributes = value;
+  }
+  public resetVolumeAttributes() {
+    this._volumeAttributes = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get volumeAttributesInput() {
+    return this._volumeAttributes
+  }
+
+  // volume_handle - computed: false, optional: false, required: true
+  private _volumeHandle?: string; 
+  public get volumeHandle() {
+    return this.getStringAttribute('volume_handle');
+  }
+  public set volumeHandle(value: string) {
+    this._volumeHandle = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get volumeHandleInput() {
+    return this._volumeHandle
+  }
+
+  // controller_expand_secret_ref - computed: false, optional: true, required: false
+  private _controllerExpandSecretRef?: JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined; 
+  private __controllerExpandSecretRefOutput = new JobSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference(this as any, "controller_expand_secret_ref", true);
+  public get controllerExpandSecretRef() {
+    return this.__controllerExpandSecretRefOutput;
+  }
+  public putControllerExpandSecretRef(value: JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined) {
+    this._controllerExpandSecretRef = value;
+  }
+  public resetControllerExpandSecretRef() {
+    this._controllerExpandSecretRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get controllerExpandSecretRefInput() {
+    return this._controllerExpandSecretRef
+  }
+
+  // controller_publish_secret_ref - computed: false, optional: true, required: false
+  private _controllerPublishSecretRef?: JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined; 
+  private __controllerPublishSecretRefOutput = new JobSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference(this as any, "controller_publish_secret_ref", true);
+  public get controllerPublishSecretRef() {
+    return this.__controllerPublishSecretRefOutput;
+  }
+  public putControllerPublishSecretRef(value: JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined) {
+    this._controllerPublishSecretRef = value;
+  }
+  public resetControllerPublishSecretRef() {
+    this._controllerPublishSecretRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get controllerPublishSecretRefInput() {
+    return this._controllerPublishSecretRef
+  }
+
+  // node_publish_secret_ref - computed: false, optional: true, required: false
+  private _nodePublishSecretRef?: JobSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined; 
+  private __nodePublishSecretRefOutput = new JobSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this as any, "node_publish_secret_ref", true);
+  public get nodePublishSecretRef() {
+    return this.__nodePublishSecretRefOutput;
+  }
+  public putNodePublishSecretRef(value: JobSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined) {
+    this._nodePublishSecretRef = value;
+  }
+  public resetNodePublishSecretRef() {
+    this._nodePublishSecretRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nodePublishSecretRefInput() {
+    return this._nodePublishSecretRef
+  }
+
+  // node_stage_secret_ref - computed: false, optional: true, required: false
+  private _nodeStageSecretRef?: JobSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined; 
+  private __nodeStageSecretRefOutput = new JobSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference(this as any, "node_stage_secret_ref", true);
+  public get nodeStageSecretRef() {
+    return this.__nodeStageSecretRefOutput;
+  }
+  public putNodeStageSecretRef(value: JobSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined) {
+    this._nodeStageSecretRef = value;
+  }
+  public resetNodeStageSecretRef() {
+    this._nodeStageSecretRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nodeStageSecretRefInput() {
+    return this._nodeStageSecretRef
+  }
+}
 export interface JobSpecTemplateSpecVolumeDownwardApiItemsFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
@@ -4441,14 +9962,59 @@ export interface JobSpecTemplateSpecVolumeDownwardApiItemsFieldRef {
   readonly fieldPath?: string;
 }
 
-function jobSpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform(struct?: JobSpecTemplateSpecVolumeDownwardApiItemsFieldRef): any {
+function jobSpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform(struct?: JobSpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputReference | JobSpecTemplateSpecVolumeDownwardApiItemsFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     api_version: cdktf.stringToTerraform(struct!.apiVersion),
     field_path: cdktf.stringToTerraform(struct!.fieldPath),
   }
 }
 
+export class JobSpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // api_version - computed: false, optional: true, required: false
+  private _apiVersion?: string | undefined; 
+  public get apiVersion() {
+    return this.getStringAttribute('api_version');
+  }
+  public set apiVersion(value: string | undefined) {
+    this._apiVersion = value;
+  }
+  public resetApiVersion() {
+    this._apiVersion = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get apiVersionInput() {
+    return this._apiVersion
+  }
+
+  // field_path - computed: false, optional: true, required: false
+  private _fieldPath?: string | undefined; 
+  public get fieldPath() {
+    return this.getStringAttribute('field_path');
+  }
+  public set fieldPath(value: string | undefined) {
+    this._fieldPath = value;
+  }
+  public resetFieldPath() {
+    this._fieldPath = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fieldPathInput() {
+    return this._fieldPath
+  }
+}
 export interface JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_name Job#container_name}
@@ -4466,8 +10032,11 @@ export interface JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef {
   readonly resource: string;
 }
 
-function jobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerraform(struct?: JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef): any {
+function jobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerraform(struct?: JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefOutputReference | JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
     divisor: cdktf.stringToTerraform(struct!.divisor),
@@ -4475,6 +10044,58 @@ function jobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerraform(st
   }
 }
 
+export class JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // container_name - computed: false, optional: false, required: true
+  private _containerName?: string; 
+  public get containerName() {
+    return this.getStringAttribute('container_name');
+  }
+  public set containerName(value: string) {
+    this._containerName = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get containerNameInput() {
+    return this._containerName
+  }
+
+  // divisor - computed: false, optional: true, required: false
+  private _divisor?: string | undefined; 
+  public get divisor() {
+    return this.getStringAttribute('divisor');
+  }
+  public set divisor(value: string | undefined) {
+    this._divisor = value;
+  }
+  public resetDivisor() {
+    this._divisor = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get divisorInput() {
+    return this._divisor
+  }
+
+  // resource - computed: false, optional: false, required: true
+  private _resource?: string; 
+  public get resource() {
+    return this.getStringAttribute('resource');
+  }
+  public set resource(value: string) {
+    this._resource = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourceInput() {
+    return this._resource
+  }
+}
 export interface JobSpecTemplateSpecVolumeDownwardApiItems {
   /**
   * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
@@ -4493,22 +10114,25 @@ export interface JobSpecTemplateSpecVolumeDownwardApiItems {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#field_ref Job#field_ref}
   */
-  readonly fieldRef: JobSpecTemplateSpecVolumeDownwardApiItemsFieldRef[];
+  readonly fieldRef: JobSpecTemplateSpecVolumeDownwardApiItemsFieldRef;
   /**
   * resource_field_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resource_field_ref Job#resource_field_ref}
   */
-  readonly resourceFieldRef?: JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef[];
+  readonly resourceFieldRef?: JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef;
 }
 
 function jobSpecTemplateSpecVolumeDownwardApiItemsToTerraform(struct?: JobSpecTemplateSpecVolumeDownwardApiItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     mode: cdktf.stringToTerraform(struct!.mode),
     path: cdktf.stringToTerraform(struct!.path),
-    field_ref: cdktf.listMapper(jobSpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform)(struct!.fieldRef),
-    resource_field_ref: cdktf.listMapper(jobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerraform)(struct!.resourceFieldRef),
+    field_ref: jobSpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform(struct!.fieldRef),
+    resource_field_ref: jobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerraform(struct!.resourceFieldRef),
   }
 }
 
@@ -4527,14 +10151,60 @@ export interface JobSpecTemplateSpecVolumeDownwardApi {
   readonly items?: JobSpecTemplateSpecVolumeDownwardApiItems[];
 }
 
-function jobSpecTemplateSpecVolumeDownwardApiToTerraform(struct?: JobSpecTemplateSpecVolumeDownwardApi): any {
+function jobSpecTemplateSpecVolumeDownwardApiToTerraform(struct?: JobSpecTemplateSpecVolumeDownwardApiOutputReference | JobSpecTemplateSpecVolumeDownwardApi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
     items: cdktf.listMapper(jobSpecTemplateSpecVolumeDownwardApiItemsToTerraform)(struct!.items),
   }
 }
 
+export class JobSpecTemplateSpecVolumeDownwardApiOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // default_mode - computed: false, optional: true, required: false
+  private _defaultMode?: string | undefined; 
+  public get defaultMode() {
+    return this.getStringAttribute('default_mode');
+  }
+  public set defaultMode(value: string | undefined) {
+    this._defaultMode = value;
+  }
+  public resetDefaultMode() {
+    this._defaultMode = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get defaultModeInput() {
+    return this._defaultMode
+  }
+
+  // items - computed: false, optional: true, required: false
+  private _items?: JobSpecTemplateSpecVolumeDownwardApiItems[] | undefined; 
+  public get items() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('items') as any;
+  }
+  public set items(value: JobSpecTemplateSpecVolumeDownwardApiItems[] | undefined) {
+    this._items = value;
+  }
+  public resetItems() {
+    this._items = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get itemsInput() {
+    return this._items
+  }
+}
 export interface JobSpecTemplateSpecVolumeEmptyDir {
   /**
   * What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir
@@ -4550,14 +10220,59 @@ export interface JobSpecTemplateSpecVolumeEmptyDir {
   readonly sizeLimit?: string;
 }
 
-function jobSpecTemplateSpecVolumeEmptyDirToTerraform(struct?: JobSpecTemplateSpecVolumeEmptyDir): any {
+function jobSpecTemplateSpecVolumeEmptyDirToTerraform(struct?: JobSpecTemplateSpecVolumeEmptyDirOutputReference | JobSpecTemplateSpecVolumeEmptyDir): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     medium: cdktf.stringToTerraform(struct!.medium),
     size_limit: cdktf.stringToTerraform(struct!.sizeLimit),
   }
 }
 
+export class JobSpecTemplateSpecVolumeEmptyDirOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // medium - computed: false, optional: true, required: false
+  private _medium?: string | undefined; 
+  public get medium() {
+    return this.getStringAttribute('medium');
+  }
+  public set medium(value: string | undefined) {
+    this._medium = value;
+  }
+  public resetMedium() {
+    this._medium = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get mediumInput() {
+    return this._medium
+  }
+
+  // size_limit - computed: false, optional: true, required: false
+  private _sizeLimit?: string | undefined; 
+  public get sizeLimit() {
+    return this.getStringAttribute('size_limit');
+  }
+  public set sizeLimit(value: string | undefined) {
+    this._sizeLimit = value;
+  }
+  public resetSizeLimit() {
+    this._sizeLimit = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get sizeLimitInput() {
+    return this._sizeLimit
+  }
+}
 export interface JobSpecTemplateSpecVolumeFc {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
@@ -4585,8 +10300,11 @@ export interface JobSpecTemplateSpecVolumeFc {
   readonly targetWwNs: string[];
 }
 
-function jobSpecTemplateSpecVolumeFcToTerraform(struct?: JobSpecTemplateSpecVolumeFc): any {
+function jobSpecTemplateSpecVolumeFcToTerraform(struct?: JobSpecTemplateSpecVolumeFcOutputReference | JobSpecTemplateSpecVolumeFc): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     lun: cdktf.numberToTerraform(struct!.lun),
@@ -4595,6 +10313,74 @@ function jobSpecTemplateSpecVolumeFcToTerraform(struct?: JobSpecTemplateSpecVolu
   }
 }
 
+export class JobSpecTemplateSpecVolumeFcOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // fs_type - computed: false, optional: true, required: false
+  private _fsType?: string | undefined; 
+  public get fsType() {
+    return this.getStringAttribute('fs_type');
+  }
+  public set fsType(value: string | undefined) {
+    this._fsType = value;
+  }
+  public resetFsType() {
+    this._fsType = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsTypeInput() {
+    return this._fsType
+  }
+
+  // lun - computed: false, optional: false, required: true
+  private _lun?: number; 
+  public get lun() {
+    return this.getNumberAttribute('lun');
+  }
+  public set lun(value: number) {
+    this._lun = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get lunInput() {
+    return this._lun
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+
+  // target_ww_ns - computed: false, optional: false, required: true
+  private _targetWwNs?: string[]; 
+  public get targetWwNs() {
+    return this.getListAttribute('target_ww_ns');
+  }
+  public set targetWwNs(value: string[]) {
+    this._targetWwNs = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get targetWwNsInput() {
+    return this._targetWwNs
+  }
+}
 export interface JobSpecTemplateSpecVolumeFlexVolumeSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
@@ -4610,14 +10396,59 @@ export interface JobSpecTemplateSpecVolumeFlexVolumeSecretRef {
   readonly namespace?: string;
 }
 
-function jobSpecTemplateSpecVolumeFlexVolumeSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeFlexVolumeSecretRef): any {
+function jobSpecTemplateSpecVolumeFlexVolumeSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference | JobSpecTemplateSpecVolumeFlexVolumeSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
 }
 
+export class JobSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: true, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 export interface JobSpecTemplateSpecVolumeFlexVolume {
   /**
   * Driver is the name of the driver to use for this volume.
@@ -4648,20 +10479,112 @@ export interface JobSpecTemplateSpecVolumeFlexVolume {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_ref Job#secret_ref}
   */
-  readonly secretRef?: JobSpecTemplateSpecVolumeFlexVolumeSecretRef[];
+  readonly secretRef?: JobSpecTemplateSpecVolumeFlexVolumeSecretRef;
 }
 
-function jobSpecTemplateSpecVolumeFlexVolumeToTerraform(struct?: JobSpecTemplateSpecVolumeFlexVolume): any {
+function jobSpecTemplateSpecVolumeFlexVolumeToTerraform(struct?: JobSpecTemplateSpecVolumeFlexVolumeOutputReference | JobSpecTemplateSpecVolumeFlexVolume): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     driver: cdktf.stringToTerraform(struct!.driver),
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     options: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.options),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
-    secret_ref: cdktf.listMapper(jobSpecTemplateSpecVolumeFlexVolumeSecretRefToTerraform)(struct!.secretRef),
+    secret_ref: jobSpecTemplateSpecVolumeFlexVolumeSecretRefToTerraform(struct!.secretRef),
   }
 }
 
+export class JobSpecTemplateSpecVolumeFlexVolumeOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // driver - computed: false, optional: false, required: true
+  private _driver?: string; 
+  public get driver() {
+    return this.getStringAttribute('driver');
+  }
+  public set driver(value: string) {
+    this._driver = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get driverInput() {
+    return this._driver
+  }
+
+  // fs_type - computed: false, optional: true, required: false
+  private _fsType?: string | undefined; 
+  public get fsType() {
+    return this.getStringAttribute('fs_type');
+  }
+  public set fsType(value: string | undefined) {
+    this._fsType = value;
+  }
+  public resetFsType() {
+    this._fsType = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsTypeInput() {
+    return this._fsType
+  }
+
+  // options - computed: false, optional: true, required: false
+  private _options?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get options() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('options') as any;
+  }
+  public set options(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._options = value;
+  }
+  public resetOptions() {
+    this._options = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionsInput() {
+    return this._options
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+
+  // secret_ref - computed: false, optional: true, required: false
+  private _secretRef?: JobSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined; 
+  private __secretRefOutput = new JobSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference(this as any, "secret_ref", true);
+  public get secretRef() {
+    return this.__secretRefOutput;
+  }
+  public putSecretRef(value: JobSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined) {
+    this._secretRef = value;
+  }
+  public resetSecretRef() {
+    this._secretRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get secretRefInput() {
+    return this._secretRef
+  }
+}
 export interface JobSpecTemplateSpecVolumeFlocker {
   /**
   * Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated
@@ -4677,14 +10600,59 @@ export interface JobSpecTemplateSpecVolumeFlocker {
   readonly datasetUuid?: string;
 }
 
-function jobSpecTemplateSpecVolumeFlockerToTerraform(struct?: JobSpecTemplateSpecVolumeFlocker): any {
+function jobSpecTemplateSpecVolumeFlockerToTerraform(struct?: JobSpecTemplateSpecVolumeFlockerOutputReference | JobSpecTemplateSpecVolumeFlocker): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     dataset_name: cdktf.stringToTerraform(struct!.datasetName),
     dataset_uuid: cdktf.stringToTerraform(struct!.datasetUuid),
   }
 }
 
+export class JobSpecTemplateSpecVolumeFlockerOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // dataset_name - computed: false, optional: true, required: false
+  private _datasetName?: string | undefined; 
+  public get datasetName() {
+    return this.getStringAttribute('dataset_name');
+  }
+  public set datasetName(value: string | undefined) {
+    this._datasetName = value;
+  }
+  public resetDatasetName() {
+    this._datasetName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get datasetNameInput() {
+    return this._datasetName
+  }
+
+  // dataset_uuid - computed: false, optional: true, required: false
+  private _datasetUuid?: string | undefined; 
+  public get datasetUuid() {
+    return this.getStringAttribute('dataset_uuid');
+  }
+  public set datasetUuid(value: string | undefined) {
+    this._datasetUuid = value;
+  }
+  public resetDatasetUuid() {
+    this._datasetUuid = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get datasetUuidInput() {
+    return this._datasetUuid
+  }
+}
 export interface JobSpecTemplateSpecVolumeGcePersistentDisk {
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
@@ -4712,8 +10680,11 @@ export interface JobSpecTemplateSpecVolumeGcePersistentDisk {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct?: JobSpecTemplateSpecVolumeGcePersistentDisk): any {
+function jobSpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct?: JobSpecTemplateSpecVolumeGcePersistentDiskOutputReference | JobSpecTemplateSpecVolumeGcePersistentDisk): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     partition: cdktf.numberToTerraform(struct!.partition),
@@ -4722,6 +10693,77 @@ function jobSpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct?: JobSpecT
   }
 }
 
+export class JobSpecTemplateSpecVolumeGcePersistentDiskOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // fs_type - computed: false, optional: true, required: false
+  private _fsType?: string | undefined; 
+  public get fsType() {
+    return this.getStringAttribute('fs_type');
+  }
+  public set fsType(value: string | undefined) {
+    this._fsType = value;
+  }
+  public resetFsType() {
+    this._fsType = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsTypeInput() {
+    return this._fsType
+  }
+
+  // partition - computed: false, optional: true, required: false
+  private _partition?: number | undefined; 
+  public get partition() {
+    return this.getNumberAttribute('partition');
+  }
+  public set partition(value: number | undefined) {
+    this._partition = value;
+  }
+  public resetPartition() {
+    this._partition = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get partitionInput() {
+    return this._partition
+  }
+
+  // pd_name - computed: false, optional: false, required: true
+  private _pdName?: string; 
+  public get pdName() {
+    return this.getStringAttribute('pd_name');
+  }
+  public set pdName(value: string) {
+    this._pdName = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pdNameInput() {
+    return this._pdName
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+}
 export interface JobSpecTemplateSpecVolumeGitRepo {
   /**
   * Target directory name. Must not contain or start with '..'. If '.' is supplied, the volume directory will be the git repository. Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.
@@ -4743,8 +10785,11 @@ export interface JobSpecTemplateSpecVolumeGitRepo {
   readonly revision?: string;
 }
 
-function jobSpecTemplateSpecVolumeGitRepoToTerraform(struct?: JobSpecTemplateSpecVolumeGitRepo): any {
+function jobSpecTemplateSpecVolumeGitRepoToTerraform(struct?: JobSpecTemplateSpecVolumeGitRepoOutputReference | JobSpecTemplateSpecVolumeGitRepo): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     directory: cdktf.stringToTerraform(struct!.directory),
     repository: cdktf.stringToTerraform(struct!.repository),
@@ -4752,6 +10797,64 @@ function jobSpecTemplateSpecVolumeGitRepoToTerraform(struct?: JobSpecTemplateSpe
   }
 }
 
+export class JobSpecTemplateSpecVolumeGitRepoOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // directory - computed: false, optional: true, required: false
+  private _directory?: string | undefined; 
+  public get directory() {
+    return this.getStringAttribute('directory');
+  }
+  public set directory(value: string | undefined) {
+    this._directory = value;
+  }
+  public resetDirectory() {
+    this._directory = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get directoryInput() {
+    return this._directory
+  }
+
+  // repository - computed: false, optional: true, required: false
+  private _repository?: string | undefined; 
+  public get repository() {
+    return this.getStringAttribute('repository');
+  }
+  public set repository(value: string | undefined) {
+    this._repository = value;
+  }
+  public resetRepository() {
+    this._repository = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get repositoryInput() {
+    return this._repository
+  }
+
+  // revision - computed: false, optional: true, required: false
+  private _revision?: string | undefined; 
+  public get revision() {
+    return this.getStringAttribute('revision');
+  }
+  public set revision(value: string | undefined) {
+    this._revision = value;
+  }
+  public resetRevision() {
+    this._revision = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get revisionInput() {
+    return this._revision
+  }
+}
 export interface JobSpecTemplateSpecVolumeGlusterfs {
   /**
   * The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
@@ -4773,8 +10876,11 @@ export interface JobSpecTemplateSpecVolumeGlusterfs {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecVolumeGlusterfsToTerraform(struct?: JobSpecTemplateSpecVolumeGlusterfs): any {
+function jobSpecTemplateSpecVolumeGlusterfsToTerraform(struct?: JobSpecTemplateSpecVolumeGlusterfsOutputReference | JobSpecTemplateSpecVolumeGlusterfs): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     endpoints_name: cdktf.stringToTerraform(struct!.endpointsName),
     path: cdktf.stringToTerraform(struct!.path),
@@ -4782,6 +10888,58 @@ function jobSpecTemplateSpecVolumeGlusterfsToTerraform(struct?: JobSpecTemplateS
   }
 }
 
+export class JobSpecTemplateSpecVolumeGlusterfsOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // endpoints_name - computed: false, optional: false, required: true
+  private _endpointsName?: string; 
+  public get endpointsName() {
+    return this.getStringAttribute('endpoints_name');
+  }
+  public set endpointsName(value: string) {
+    this._endpointsName = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get endpointsNameInput() {
+    return this._endpointsName
+  }
+
+  // path - computed: false, optional: false, required: true
+  private _path?: string; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string) {
+    this._path = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+}
 export interface JobSpecTemplateSpecVolumeHostPath {
   /**
   * Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath
@@ -4797,14 +10955,59 @@ export interface JobSpecTemplateSpecVolumeHostPath {
   readonly type?: string;
 }
 
-function jobSpecTemplateSpecVolumeHostPathToTerraform(struct?: JobSpecTemplateSpecVolumeHostPath): any {
+function jobSpecTemplateSpecVolumeHostPathToTerraform(struct?: JobSpecTemplateSpecVolumeHostPathOutputReference | JobSpecTemplateSpecVolumeHostPath): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     path: cdktf.stringToTerraform(struct!.path),
     type: cdktf.stringToTerraform(struct!.type),
   }
 }
 
+export class JobSpecTemplateSpecVolumeHostPathOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string | undefined; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string | undefined) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type
+  }
+}
 export interface JobSpecTemplateSpecVolumeIscsi {
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#iscsi
@@ -4844,8 +11047,11 @@ export interface JobSpecTemplateSpecVolumeIscsi {
   readonly targetPortal: string;
 }
 
-function jobSpecTemplateSpecVolumeIscsiToTerraform(struct?: JobSpecTemplateSpecVolumeIscsi): any {
+function jobSpecTemplateSpecVolumeIscsiToTerraform(struct?: JobSpecTemplateSpecVolumeIscsiOutputReference | JobSpecTemplateSpecVolumeIscsi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     iqn: cdktf.stringToTerraform(struct!.iqn),
@@ -4856,6 +11062,106 @@ function jobSpecTemplateSpecVolumeIscsiToTerraform(struct?: JobSpecTemplateSpecV
   }
 }
 
+export class JobSpecTemplateSpecVolumeIscsiOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // fs_type - computed: false, optional: true, required: false
+  private _fsType?: string | undefined; 
+  public get fsType() {
+    return this.getStringAttribute('fs_type');
+  }
+  public set fsType(value: string | undefined) {
+    this._fsType = value;
+  }
+  public resetFsType() {
+    this._fsType = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsTypeInput() {
+    return this._fsType
+  }
+
+  // iqn - computed: false, optional: false, required: true
+  private _iqn?: string; 
+  public get iqn() {
+    return this.getStringAttribute('iqn');
+  }
+  public set iqn(value: string) {
+    this._iqn = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get iqnInput() {
+    return this._iqn
+  }
+
+  // iscsi_interface - computed: false, optional: true, required: false
+  private _iscsiInterface?: string | undefined; 
+  public get iscsiInterface() {
+    return this.getStringAttribute('iscsi_interface');
+  }
+  public set iscsiInterface(value: string | undefined) {
+    this._iscsiInterface = value;
+  }
+  public resetIscsiInterface() {
+    this._iscsiInterface = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get iscsiInterfaceInput() {
+    return this._iscsiInterface
+  }
+
+  // lun - computed: false, optional: true, required: false
+  private _lun?: number | undefined; 
+  public get lun() {
+    return this.getNumberAttribute('lun');
+  }
+  public set lun(value: number | undefined) {
+    this._lun = value;
+  }
+  public resetLun() {
+    this._lun = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get lunInput() {
+    return this._lun
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+
+  // target_portal - computed: false, optional: false, required: true
+  private _targetPortal?: string; 
+  public get targetPortal() {
+    return this.getStringAttribute('target_portal');
+  }
+  public set targetPortal(value: string) {
+    this._targetPortal = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get targetPortalInput() {
+    return this._targetPortal
+  }
+}
 export interface JobSpecTemplateSpecVolumeLocal {
   /**
   * Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local
@@ -4865,13 +11171,42 @@ export interface JobSpecTemplateSpecVolumeLocal {
   readonly path?: string;
 }
 
-function jobSpecTemplateSpecVolumeLocalToTerraform(struct?: JobSpecTemplateSpecVolumeLocal): any {
+function jobSpecTemplateSpecVolumeLocalToTerraform(struct?: JobSpecTemplateSpecVolumeLocalOutputReference | JobSpecTemplateSpecVolumeLocal): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     path: cdktf.stringToTerraform(struct!.path),
   }
 }
 
+export class JobSpecTemplateSpecVolumeLocalOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string | undefined; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string | undefined) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+}
 export interface JobSpecTemplateSpecVolumeNfs {
   /**
   * Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
@@ -4893,8 +11228,11 @@ export interface JobSpecTemplateSpecVolumeNfs {
   readonly server: string;
 }
 
-function jobSpecTemplateSpecVolumeNfsToTerraform(struct?: JobSpecTemplateSpecVolumeNfs): any {
+function jobSpecTemplateSpecVolumeNfsToTerraform(struct?: JobSpecTemplateSpecVolumeNfsOutputReference | JobSpecTemplateSpecVolumeNfs): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     path: cdktf.stringToTerraform(struct!.path),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
@@ -4902,6 +11240,58 @@ function jobSpecTemplateSpecVolumeNfsToTerraform(struct?: JobSpecTemplateSpecVol
   }
 }
 
+export class JobSpecTemplateSpecVolumeNfsOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // path - computed: false, optional: false, required: true
+  private _path?: string; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string) {
+    this._path = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+
+  // server - computed: false, optional: false, required: true
+  private _server?: string; 
+  public get server() {
+    return this.getStringAttribute('server');
+  }
+  public set server(value: string) {
+    this._server = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serverInput() {
+    return this._server
+  }
+}
 export interface JobSpecTemplateSpecVolumePersistentVolumeClaim {
   /**
   * ClaimName is the name of a PersistentVolumeClaim in the same 
@@ -4917,14 +11307,59 @@ export interface JobSpecTemplateSpecVolumePersistentVolumeClaim {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function jobSpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct?: JobSpecTemplateSpecVolumePersistentVolumeClaim): any {
+function jobSpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct?: JobSpecTemplateSpecVolumePersistentVolumeClaimOutputReference | JobSpecTemplateSpecVolumePersistentVolumeClaim): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     claim_name: cdktf.stringToTerraform(struct!.claimName),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
   }
 }
 
+export class JobSpecTemplateSpecVolumePersistentVolumeClaimOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // claim_name - computed: false, optional: true, required: false
+  private _claimName?: string | undefined; 
+  public get claimName() {
+    return this.getStringAttribute('claim_name');
+  }
+  public set claimName(value: string | undefined) {
+    this._claimName = value;
+  }
+  public resetClaimName() {
+    this._claimName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get claimNameInput() {
+    return this._claimName
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+}
 export interface JobSpecTemplateSpecVolumePhotonPersistentDisk {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
@@ -4940,14 +11375,56 @@ export interface JobSpecTemplateSpecVolumePhotonPersistentDisk {
   readonly pdId: string;
 }
 
-function jobSpecTemplateSpecVolumePhotonPersistentDiskToTerraform(struct?: JobSpecTemplateSpecVolumePhotonPersistentDisk): any {
+function jobSpecTemplateSpecVolumePhotonPersistentDiskToTerraform(struct?: JobSpecTemplateSpecVolumePhotonPersistentDiskOutputReference | JobSpecTemplateSpecVolumePhotonPersistentDisk): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     pd_id: cdktf.stringToTerraform(struct!.pdId),
   }
 }
 
+export class JobSpecTemplateSpecVolumePhotonPersistentDiskOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // fs_type - computed: false, optional: true, required: false
+  private _fsType?: string | undefined; 
+  public get fsType() {
+    return this.getStringAttribute('fs_type');
+  }
+  public set fsType(value: string | undefined) {
+    this._fsType = value;
+  }
+  public resetFsType() {
+    this._fsType = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsTypeInput() {
+    return this._fsType
+  }
+
+  // pd_id - computed: false, optional: false, required: true
+  private _pdId?: string; 
+  public get pdId() {
+    return this.getStringAttribute('pd_id');
+  }
+  public set pdId(value: string) {
+    this._pdId = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pdIdInput() {
+    return this._pdId
+  }
+}
 export interface JobSpecTemplateSpecVolumeProjectedSourcesConfigMapItems {
   /**
   * The key to project.
@@ -4971,6 +11448,9 @@ export interface JobSpecTemplateSpecVolumeProjectedSourcesConfigMapItems {
 
 function jobSpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesConfigMapItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     mode: cdktf.stringToTerraform(struct!.mode),
@@ -5001,6 +11481,9 @@ export interface JobSpecTemplateSpecVolumeProjectedSourcesConfigMap {
 
 function jobSpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesConfigMap): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
@@ -5023,14 +11506,59 @@ export interface JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldR
   readonly fieldPath?: string;
 }
 
-function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef): any {
+function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference | JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     api_version: cdktf.stringToTerraform(struct!.apiVersion),
     field_path: cdktf.stringToTerraform(struct!.fieldPath),
   }
 }
 
+export class JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // api_version - computed: false, optional: true, required: false
+  private _apiVersion?: string | undefined; 
+  public get apiVersion() {
+    return this.getStringAttribute('api_version');
+  }
+  public set apiVersion(value: string | undefined) {
+    this._apiVersion = value;
+  }
+  public resetApiVersion() {
+    this._apiVersion = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get apiVersionInput() {
+    return this._apiVersion
+  }
+
+  // field_path - computed: false, optional: true, required: false
+  private _fieldPath?: string | undefined; 
+  public get fieldPath() {
+    return this.getStringAttribute('field_path');
+  }
+  public set fieldPath(value: string | undefined) {
+    this._fieldPath = value;
+  }
+  public resetFieldPath() {
+    this._fieldPath = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fieldPathInput() {
+    return this._fieldPath
+  }
+}
 export interface JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#container_name Job#container_name}
@@ -5048,8 +11576,11 @@ export interface JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResour
   readonly resource: string;
 }
 
-function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef): any {
+function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference | JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     container_name: cdktf.stringToTerraform(struct!.containerName),
     divisor: cdktf.stringToTerraform(struct!.divisor),
@@ -5057,6 +11588,58 @@ function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldR
   }
 }
 
+export class JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // container_name - computed: false, optional: false, required: true
+  private _containerName?: string; 
+  public get containerName() {
+    return this.getStringAttribute('container_name');
+  }
+  public set containerName(value: string) {
+    this._containerName = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get containerNameInput() {
+    return this._containerName
+  }
+
+  // divisor - computed: false, optional: true, required: false
+  private _divisor?: string | undefined; 
+  public get divisor() {
+    return this.getStringAttribute('divisor');
+  }
+  public set divisor(value: string | undefined) {
+    this._divisor = value;
+  }
+  public resetDivisor() {
+    this._divisor = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get divisorInput() {
+    return this._divisor
+  }
+
+  // resource - computed: false, optional: false, required: true
+  private _resource?: string; 
+  public get resource() {
+    return this.getStringAttribute('resource');
+  }
+  public set resource(value: string) {
+    this._resource = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourceInput() {
+    return this._resource
+  }
+}
 export interface JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems {
   /**
   * Mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
@@ -5075,22 +11658,25 @@ export interface JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#field_ref Job#field_ref}
   */
-  readonly fieldRef?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef[];
+  readonly fieldRef?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef;
   /**
   * resource_field_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#resource_field_ref Job#resource_field_ref}
   */
-  readonly resourceFieldRef?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef[];
+  readonly resourceFieldRef?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef;
 }
 
 function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     mode: cdktf.stringToTerraform(struct!.mode),
     path: cdktf.stringToTerraform(struct!.path),
-    field_ref: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefToTerraform)(struct!.fieldRef),
-    resource_field_ref: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefToTerraform)(struct!.resourceFieldRef),
+    field_ref: jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefToTerraform(struct!.fieldRef),
+    resource_field_ref: jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefToTerraform(struct!.resourceFieldRef),
   }
 }
 
@@ -5103,13 +11689,43 @@ export interface JobSpecTemplateSpecVolumeProjectedSourcesDownwardApi {
   readonly items?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[];
 }
 
-function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApi): any {
+function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiOutputReference | JobSpecTemplateSpecVolumeProjectedSourcesDownwardApi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     items: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform)(struct!.items),
   }
 }
 
+export class JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // items - computed: false, optional: true, required: false
+  private _items?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[] | undefined; 
+  public get items() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('items') as any;
+  }
+  public set items(value: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[] | undefined) {
+    this._items = value;
+  }
+  public resetItems() {
+    this._items = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get itemsInput() {
+    return this._items
+  }
+}
 export interface JobSpecTemplateSpecVolumeProjectedSourcesSecretItems {
   /**
   * The key to project.
@@ -5133,6 +11749,9 @@ export interface JobSpecTemplateSpecVolumeProjectedSourcesSecretItems {
 
 function jobSpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesSecretItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     mode: cdktf.stringToTerraform(struct!.mode),
@@ -5163,6 +11782,9 @@ export interface JobSpecTemplateSpecVolumeProjectedSourcesSecret {
 
 function jobSpecTemplateSpecVolumeProjectedSourcesSecretToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesSecret): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
@@ -5191,8 +11813,11 @@ export interface JobSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken {
   readonly path: string;
 }
 
-function jobSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken): any {
+function jobSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenOutputReference | JobSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     audience: cdktf.stringToTerraform(struct!.audience),
     expiration_seconds: cdktf.numberToTerraform(struct!.expirationSeconds),
@@ -5200,6 +11825,61 @@ function jobSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform
   }
 }
 
+export class JobSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // audience - computed: false, optional: true, required: false
+  private _audience?: string | undefined; 
+  public get audience() {
+    return this.getStringAttribute('audience');
+  }
+  public set audience(value: string | undefined) {
+    this._audience = value;
+  }
+  public resetAudience() {
+    this._audience = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get audienceInput() {
+    return this._audience
+  }
+
+  // expiration_seconds - computed: false, optional: true, required: false
+  private _expirationSeconds?: number | undefined; 
+  public get expirationSeconds() {
+    return this.getNumberAttribute('expiration_seconds');
+  }
+  public set expirationSeconds(value: number | undefined) {
+    this._expirationSeconds = value;
+  }
+  public resetExpirationSeconds() {
+    this._expirationSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get expirationSecondsInput() {
+    return this._expirationSeconds
+  }
+
+  // path - computed: false, optional: false, required: true
+  private _path?: string; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string) {
+    this._path = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path
+  }
+}
 export interface JobSpecTemplateSpecVolumeProjectedSources {
   /**
   * config_map block
@@ -5212,7 +11892,7 @@ export interface JobSpecTemplateSpecVolumeProjectedSources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#downward_api Job#downward_api}
   */
-  readonly downwardApi?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApi[];
+  readonly downwardApi?: JobSpecTemplateSpecVolumeProjectedSourcesDownwardApi;
   /**
   * secret block
   * 
@@ -5224,16 +11904,19 @@ export interface JobSpecTemplateSpecVolumeProjectedSources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#service_account_token Job#service_account_token}
   */
-  readonly serviceAccountToken?: JobSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken[];
+  readonly serviceAccountToken?: JobSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken;
 }
 
 function jobSpecTemplateSpecVolumeProjectedSourcesToTerraform(struct?: JobSpecTemplateSpecVolumeProjectedSources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     config_map: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform)(struct!.configMap),
-    downward_api: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform)(struct!.downwardApi),
+    downward_api: jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform(struct!.downwardApi),
     secret: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesSecretToTerraform)(struct!.secret),
-    service_account_token: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform)(struct!.serviceAccountToken),
+    service_account_token: jobSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct!.serviceAccountToken),
   }
 }
 
@@ -5254,6 +11937,9 @@ export interface JobSpecTemplateSpecVolumeProjected {
 
 function jobSpecTemplateSpecVolumeProjectedToTerraform(struct?: JobSpecTemplateSpecVolumeProjected): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
     sources: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesToTerraform)(struct!.sources),
@@ -5293,8 +11979,11 @@ export interface JobSpecTemplateSpecVolumeQuobyte {
   readonly volume: string;
 }
 
-function jobSpecTemplateSpecVolumeQuobyteToTerraform(struct?: JobSpecTemplateSpecVolumeQuobyte): any {
+function jobSpecTemplateSpecVolumeQuobyteToTerraform(struct?: JobSpecTemplateSpecVolumeQuobyteOutputReference | JobSpecTemplateSpecVolumeQuobyte): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     group: cdktf.stringToTerraform(struct!.group),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
@@ -5304,6 +11993,90 @@ function jobSpecTemplateSpecVolumeQuobyteToTerraform(struct?: JobSpecTemplateSpe
   }
 }
 
+export class JobSpecTemplateSpecVolumeQuobyteOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // group - computed: false, optional: true, required: false
+  private _group?: string | undefined; 
+  public get group() {
+    return this.getStringAttribute('group');
+  }
+  public set group(value: string | undefined) {
+    this._group = value;
+  }
+  public resetGroup() {
+    this._group = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get groupInput() {
+    return this._group
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+
+  // registry - computed: false, optional: false, required: true
+  private _registry?: string; 
+  public get registry() {
+    return this.getStringAttribute('registry');
+  }
+  public set registry(value: string) {
+    this._registry = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get registryInput() {
+    return this._registry
+  }
+
+  // user - computed: false, optional: true, required: false
+  private _user?: string | undefined; 
+  public get user() {
+    return this.getStringAttribute('user');
+  }
+  public set user(value: string | undefined) {
+    this._user = value;
+  }
+  public resetUser() {
+    this._user = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get userInput() {
+    return this._user
+  }
+
+  // volume - computed: false, optional: false, required: true
+  private _volume?: string; 
+  public get volume() {
+    return this.getStringAttribute('volume');
+  }
+  public set volume(value: string) {
+    this._volume = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get volumeInput() {
+    return this._volume
+  }
+}
 export interface JobSpecTemplateSpecVolumeRbdSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
@@ -5319,14 +12092,59 @@ export interface JobSpecTemplateSpecVolumeRbdSecretRef {
   readonly namespace?: string;
 }
 
-function jobSpecTemplateSpecVolumeRbdSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeRbdSecretRef): any {
+function jobSpecTemplateSpecVolumeRbdSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeRbdSecretRefOutputReference | JobSpecTemplateSpecVolumeRbdSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
 }
 
+export class JobSpecTemplateSpecVolumeRbdSecretRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: true, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 export interface JobSpecTemplateSpecVolumeRbd {
   /**
   * A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
@@ -5375,11 +12193,14 @@ export interface JobSpecTemplateSpecVolumeRbd {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret_ref Job#secret_ref}
   */
-  readonly secretRef?: JobSpecTemplateSpecVolumeRbdSecretRef[];
+  readonly secretRef?: JobSpecTemplateSpecVolumeRbdSecretRef;
 }
 
-function jobSpecTemplateSpecVolumeRbdToTerraform(struct?: JobSpecTemplateSpecVolumeRbd): any {
+function jobSpecTemplateSpecVolumeRbdToTerraform(struct?: JobSpecTemplateSpecVolumeRbdOutputReference | JobSpecTemplateSpecVolumeRbd): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     ceph_monitors: cdktf.listMapper(cdktf.stringToTerraform)(struct!.cephMonitors),
     fs_type: cdktf.stringToTerraform(struct!.fsType),
@@ -5388,10 +12209,143 @@ function jobSpecTemplateSpecVolumeRbdToTerraform(struct?: JobSpecTemplateSpecVol
     rbd_image: cdktf.stringToTerraform(struct!.rbdImage),
     rbd_pool: cdktf.stringToTerraform(struct!.rbdPool),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
-    secret_ref: cdktf.listMapper(jobSpecTemplateSpecVolumeRbdSecretRefToTerraform)(struct!.secretRef),
+    secret_ref: jobSpecTemplateSpecVolumeRbdSecretRefToTerraform(struct!.secretRef),
   }
 }
 
+export class JobSpecTemplateSpecVolumeRbdOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // ceph_monitors - computed: false, optional: false, required: true
+  private _cephMonitors?: string[]; 
+  public get cephMonitors() {
+    return this.getListAttribute('ceph_monitors');
+  }
+  public set cephMonitors(value: string[]) {
+    this._cephMonitors = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get cephMonitorsInput() {
+    return this._cephMonitors
+  }
+
+  // fs_type - computed: false, optional: true, required: false
+  private _fsType?: string | undefined; 
+  public get fsType() {
+    return this.getStringAttribute('fs_type');
+  }
+  public set fsType(value: string | undefined) {
+    this._fsType = value;
+  }
+  public resetFsType() {
+    this._fsType = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsTypeInput() {
+    return this._fsType
+  }
+
+  // keyring - computed: true, optional: true, required: false
+  private _keyring?: string | undefined; 
+  public get keyring() {
+    return this.getStringAttribute('keyring');
+  }
+  public set keyring(value: string | undefined) {
+    this._keyring = value;
+  }
+  public resetKeyring() {
+    this._keyring = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyringInput() {
+    return this._keyring
+  }
+
+  // rados_user - computed: false, optional: true, required: false
+  private _radosUser?: string | undefined; 
+  public get radosUser() {
+    return this.getStringAttribute('rados_user');
+  }
+  public set radosUser(value: string | undefined) {
+    this._radosUser = value;
+  }
+  public resetRadosUser() {
+    this._radosUser = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get radosUserInput() {
+    return this._radosUser
+  }
+
+  // rbd_image - computed: false, optional: false, required: true
+  private _rbdImage?: string; 
+  public get rbdImage() {
+    return this.getStringAttribute('rbd_image');
+  }
+  public set rbdImage(value: string) {
+    this._rbdImage = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get rbdImageInput() {
+    return this._rbdImage
+  }
+
+  // rbd_pool - computed: false, optional: true, required: false
+  private _rbdPool?: string | undefined; 
+  public get rbdPool() {
+    return this.getStringAttribute('rbd_pool');
+  }
+  public set rbdPool(value: string | undefined) {
+    this._rbdPool = value;
+  }
+  public resetRbdPool() {
+    this._rbdPool = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get rbdPoolInput() {
+    return this._rbdPool
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only') as any;
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly
+  }
+
+  // secret_ref - computed: false, optional: true, required: false
+  private _secretRef?: JobSpecTemplateSpecVolumeRbdSecretRef | undefined; 
+  private __secretRefOutput = new JobSpecTemplateSpecVolumeRbdSecretRefOutputReference(this as any, "secret_ref", true);
+  public get secretRef() {
+    return this.__secretRefOutput;
+  }
+  public putSecretRef(value: JobSpecTemplateSpecVolumeRbdSecretRef | undefined) {
+    this._secretRef = value;
+  }
+  public resetSecretRef() {
+    this._secretRef = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get secretRefInput() {
+    return this._secretRef
+  }
+}
 export interface JobSpecTemplateSpecVolumeSecretItems {
   /**
   * The key to project.
@@ -5415,6 +12369,9 @@ export interface JobSpecTemplateSpecVolumeSecretItems {
 
 function jobSpecTemplateSpecVolumeSecretItemsToTerraform(struct?: JobSpecTemplateSpecVolumeSecretItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     mode: cdktf.stringToTerraform(struct!.mode),
@@ -5449,8 +12406,11 @@ export interface JobSpecTemplateSpecVolumeSecret {
   readonly items?: JobSpecTemplateSpecVolumeSecretItems[];
 }
 
-function jobSpecTemplateSpecVolumeSecretToTerraform(struct?: JobSpecTemplateSpecVolumeSecret): any {
+function jobSpecTemplateSpecVolumeSecretToTerraform(struct?: JobSpecTemplateSpecVolumeSecretOutputReference | JobSpecTemplateSpecVolumeSecret): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
     optional: cdktf.booleanToTerraform(struct!.optional),
@@ -5459,6 +12419,81 @@ function jobSpecTemplateSpecVolumeSecretToTerraform(struct?: JobSpecTemplateSpec
   }
 }
 
+export class JobSpecTemplateSpecVolumeSecretOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // default_mode - computed: false, optional: true, required: false
+  private _defaultMode?: string | undefined; 
+  public get defaultMode() {
+    return this.getStringAttribute('default_mode');
+  }
+  public set defaultMode(value: string | undefined) {
+    this._defaultMode = value;
+  }
+  public resetDefaultMode() {
+    this._defaultMode = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get defaultModeInput() {
+    return this._defaultMode
+  }
+
+  // optional - computed: false, optional: true, required: false
+  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  public get optional() {
+    return this.getBooleanAttribute('optional') as any;
+  }
+  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+    this._optional = value;
+  }
+  public resetOptional() {
+    this._optional = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionalInput() {
+    return this._optional
+  }
+
+  // secret_name - computed: false, optional: true, required: false
+  private _secretName?: string | undefined; 
+  public get secretName() {
+    return this.getStringAttribute('secret_name');
+  }
+  public set secretName(value: string | undefined) {
+    this._secretName = value;
+  }
+  public resetSecretName() {
+    this._secretName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get secretNameInput() {
+    return this._secretName
+  }
+
+  // items - computed: false, optional: true, required: false
+  private _items?: JobSpecTemplateSpecVolumeSecretItems[] | undefined; 
+  public get items() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('items') as any;
+  }
+  public set items(value: JobSpecTemplateSpecVolumeSecretItems[] | undefined) {
+    this._items = value;
+  }
+  public resetItems() {
+    this._items = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get itemsInput() {
+    return this._items
+  }
+}
 export interface JobSpecTemplateSpecVolumeVsphereVolume {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
@@ -5474,14 +12509,56 @@ export interface JobSpecTemplateSpecVolumeVsphereVolume {
   readonly volumePath: string;
 }
 
-function jobSpecTemplateSpecVolumeVsphereVolumeToTerraform(struct?: JobSpecTemplateSpecVolumeVsphereVolume): any {
+function jobSpecTemplateSpecVolumeVsphereVolumeToTerraform(struct?: JobSpecTemplateSpecVolumeVsphereVolumeOutputReference | JobSpecTemplateSpecVolumeVsphereVolume): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     volume_path: cdktf.stringToTerraform(struct!.volumePath),
   }
 }
 
+export class JobSpecTemplateSpecVolumeVsphereVolumeOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // fs_type - computed: false, optional: true, required: false
+  private _fsType?: string | undefined; 
+  public get fsType() {
+    return this.getStringAttribute('fs_type');
+  }
+  public set fsType(value: string | undefined) {
+    this._fsType = value;
+  }
+  public resetFsType() {
+    this._fsType = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsTypeInput() {
+    return this._fsType
+  }
+
+  // volume_path - computed: false, optional: false, required: true
+  private _volumePath?: string; 
+  public get volumePath() {
+    return this.getStringAttribute('volume_path');
+  }
+  public set volumePath(value: string) {
+    this._volumePath = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get volumePathInput() {
+    return this._volumePath
+  }
+}
 export interface JobSpecTemplateSpecVolume {
   /**
   * Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names
@@ -5494,127 +12571,127 @@ export interface JobSpecTemplateSpecVolume {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#aws_elastic_block_store Job#aws_elastic_block_store}
   */
-  readonly awsElasticBlockStore?: JobSpecTemplateSpecVolumeAwsElasticBlockStore[];
+  readonly awsElasticBlockStore?: JobSpecTemplateSpecVolumeAwsElasticBlockStore;
   /**
   * azure_disk block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#azure_disk Job#azure_disk}
   */
-  readonly azureDisk?: JobSpecTemplateSpecVolumeAzureDisk[];
+  readonly azureDisk?: JobSpecTemplateSpecVolumeAzureDisk;
   /**
   * azure_file block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#azure_file Job#azure_file}
   */
-  readonly azureFile?: JobSpecTemplateSpecVolumeAzureFile[];
+  readonly azureFile?: JobSpecTemplateSpecVolumeAzureFile;
   /**
   * ceph_fs block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#ceph_fs Job#ceph_fs}
   */
-  readonly cephFs?: JobSpecTemplateSpecVolumeCephFs[];
+  readonly cephFs?: JobSpecTemplateSpecVolumeCephFs;
   /**
   * cinder block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#cinder Job#cinder}
   */
-  readonly cinder?: JobSpecTemplateSpecVolumeCinder[];
+  readonly cinder?: JobSpecTemplateSpecVolumeCinder;
   /**
   * config_map block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#config_map Job#config_map}
   */
-  readonly configMap?: JobSpecTemplateSpecVolumeConfigMap[];
+  readonly configMap?: JobSpecTemplateSpecVolumeConfigMap;
   /**
   * csi block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#csi Job#csi}
   */
-  readonly csi?: JobSpecTemplateSpecVolumeCsi[];
+  readonly csi?: JobSpecTemplateSpecVolumeCsi;
   /**
   * downward_api block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#downward_api Job#downward_api}
   */
-  readonly downwardApi?: JobSpecTemplateSpecVolumeDownwardApi[];
+  readonly downwardApi?: JobSpecTemplateSpecVolumeDownwardApi;
   /**
   * empty_dir block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#empty_dir Job#empty_dir}
   */
-  readonly emptyDir?: JobSpecTemplateSpecVolumeEmptyDir[];
+  readonly emptyDir?: JobSpecTemplateSpecVolumeEmptyDir;
   /**
   * fc block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#fc Job#fc}
   */
-  readonly fc?: JobSpecTemplateSpecVolumeFc[];
+  readonly fc?: JobSpecTemplateSpecVolumeFc;
   /**
   * flex_volume block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#flex_volume Job#flex_volume}
   */
-  readonly flexVolume?: JobSpecTemplateSpecVolumeFlexVolume[];
+  readonly flexVolume?: JobSpecTemplateSpecVolumeFlexVolume;
   /**
   * flocker block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#flocker Job#flocker}
   */
-  readonly flocker?: JobSpecTemplateSpecVolumeFlocker[];
+  readonly flocker?: JobSpecTemplateSpecVolumeFlocker;
   /**
   * gce_persistent_disk block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#gce_persistent_disk Job#gce_persistent_disk}
   */
-  readonly gcePersistentDisk?: JobSpecTemplateSpecVolumeGcePersistentDisk[];
+  readonly gcePersistentDisk?: JobSpecTemplateSpecVolumeGcePersistentDisk;
   /**
   * git_repo block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#git_repo Job#git_repo}
   */
-  readonly gitRepo?: JobSpecTemplateSpecVolumeGitRepo[];
+  readonly gitRepo?: JobSpecTemplateSpecVolumeGitRepo;
   /**
   * glusterfs block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#glusterfs Job#glusterfs}
   */
-  readonly glusterfs?: JobSpecTemplateSpecVolumeGlusterfs[];
+  readonly glusterfs?: JobSpecTemplateSpecVolumeGlusterfs;
   /**
   * host_path block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#host_path Job#host_path}
   */
-  readonly hostPath?: JobSpecTemplateSpecVolumeHostPath[];
+  readonly hostPath?: JobSpecTemplateSpecVolumeHostPath;
   /**
   * iscsi block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#iscsi Job#iscsi}
   */
-  readonly iscsi?: JobSpecTemplateSpecVolumeIscsi[];
+  readonly iscsi?: JobSpecTemplateSpecVolumeIscsi;
   /**
   * local block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#local Job#local}
   */
-  readonly local?: JobSpecTemplateSpecVolumeLocal[];
+  readonly local?: JobSpecTemplateSpecVolumeLocal;
   /**
   * nfs block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#nfs Job#nfs}
   */
-  readonly nfs?: JobSpecTemplateSpecVolumeNfs[];
+  readonly nfs?: JobSpecTemplateSpecVolumeNfs;
   /**
   * persistent_volume_claim block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#persistent_volume_claim Job#persistent_volume_claim}
   */
-  readonly persistentVolumeClaim?: JobSpecTemplateSpecVolumePersistentVolumeClaim[];
+  readonly persistentVolumeClaim?: JobSpecTemplateSpecVolumePersistentVolumeClaim;
   /**
   * photon_persistent_disk block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#photon_persistent_disk Job#photon_persistent_disk}
   */
-  readonly photonPersistentDisk?: JobSpecTemplateSpecVolumePhotonPersistentDisk[];
+  readonly photonPersistentDisk?: JobSpecTemplateSpecVolumePhotonPersistentDisk;
   /**
   * projected block
   * 
@@ -5626,57 +12703,60 @@ export interface JobSpecTemplateSpecVolume {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#quobyte Job#quobyte}
   */
-  readonly quobyte?: JobSpecTemplateSpecVolumeQuobyte[];
+  readonly quobyte?: JobSpecTemplateSpecVolumeQuobyte;
   /**
   * rbd block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#rbd Job#rbd}
   */
-  readonly rbd?: JobSpecTemplateSpecVolumeRbd[];
+  readonly rbd?: JobSpecTemplateSpecVolumeRbd;
   /**
   * secret block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#secret Job#secret}
   */
-  readonly secret?: JobSpecTemplateSpecVolumeSecret[];
+  readonly secret?: JobSpecTemplateSpecVolumeSecret;
   /**
   * vsphere_volume block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#vsphere_volume Job#vsphere_volume}
   */
-  readonly vsphereVolume?: JobSpecTemplateSpecVolumeVsphereVolume[];
+  readonly vsphereVolume?: JobSpecTemplateSpecVolumeVsphereVolume;
 }
 
 function jobSpecTemplateSpecVolumeToTerraform(struct?: JobSpecTemplateSpecVolume): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
-    aws_elastic_block_store: cdktf.listMapper(jobSpecTemplateSpecVolumeAwsElasticBlockStoreToTerraform)(struct!.awsElasticBlockStore),
-    azure_disk: cdktf.listMapper(jobSpecTemplateSpecVolumeAzureDiskToTerraform)(struct!.azureDisk),
-    azure_file: cdktf.listMapper(jobSpecTemplateSpecVolumeAzureFileToTerraform)(struct!.azureFile),
-    ceph_fs: cdktf.listMapper(jobSpecTemplateSpecVolumeCephFsToTerraform)(struct!.cephFs),
-    cinder: cdktf.listMapper(jobSpecTemplateSpecVolumeCinderToTerraform)(struct!.cinder),
-    config_map: cdktf.listMapper(jobSpecTemplateSpecVolumeConfigMapToTerraform)(struct!.configMap),
-    csi: cdktf.listMapper(jobSpecTemplateSpecVolumeCsiToTerraform)(struct!.csi),
-    downward_api: cdktf.listMapper(jobSpecTemplateSpecVolumeDownwardApiToTerraform)(struct!.downwardApi),
-    empty_dir: cdktf.listMapper(jobSpecTemplateSpecVolumeEmptyDirToTerraform)(struct!.emptyDir),
-    fc: cdktf.listMapper(jobSpecTemplateSpecVolumeFcToTerraform)(struct!.fc),
-    flex_volume: cdktf.listMapper(jobSpecTemplateSpecVolumeFlexVolumeToTerraform)(struct!.flexVolume),
-    flocker: cdktf.listMapper(jobSpecTemplateSpecVolumeFlockerToTerraform)(struct!.flocker),
-    gce_persistent_disk: cdktf.listMapper(jobSpecTemplateSpecVolumeGcePersistentDiskToTerraform)(struct!.gcePersistentDisk),
-    git_repo: cdktf.listMapper(jobSpecTemplateSpecVolumeGitRepoToTerraform)(struct!.gitRepo),
-    glusterfs: cdktf.listMapper(jobSpecTemplateSpecVolumeGlusterfsToTerraform)(struct!.glusterfs),
-    host_path: cdktf.listMapper(jobSpecTemplateSpecVolumeHostPathToTerraform)(struct!.hostPath),
-    iscsi: cdktf.listMapper(jobSpecTemplateSpecVolumeIscsiToTerraform)(struct!.iscsi),
-    local: cdktf.listMapper(jobSpecTemplateSpecVolumeLocalToTerraform)(struct!.local),
-    nfs: cdktf.listMapper(jobSpecTemplateSpecVolumeNfsToTerraform)(struct!.nfs),
-    persistent_volume_claim: cdktf.listMapper(jobSpecTemplateSpecVolumePersistentVolumeClaimToTerraform)(struct!.persistentVolumeClaim),
-    photon_persistent_disk: cdktf.listMapper(jobSpecTemplateSpecVolumePhotonPersistentDiskToTerraform)(struct!.photonPersistentDisk),
+    aws_elastic_block_store: jobSpecTemplateSpecVolumeAwsElasticBlockStoreToTerraform(struct!.awsElasticBlockStore),
+    azure_disk: jobSpecTemplateSpecVolumeAzureDiskToTerraform(struct!.azureDisk),
+    azure_file: jobSpecTemplateSpecVolumeAzureFileToTerraform(struct!.azureFile),
+    ceph_fs: jobSpecTemplateSpecVolumeCephFsToTerraform(struct!.cephFs),
+    cinder: jobSpecTemplateSpecVolumeCinderToTerraform(struct!.cinder),
+    config_map: jobSpecTemplateSpecVolumeConfigMapToTerraform(struct!.configMap),
+    csi: jobSpecTemplateSpecVolumeCsiToTerraform(struct!.csi),
+    downward_api: jobSpecTemplateSpecVolumeDownwardApiToTerraform(struct!.downwardApi),
+    empty_dir: jobSpecTemplateSpecVolumeEmptyDirToTerraform(struct!.emptyDir),
+    fc: jobSpecTemplateSpecVolumeFcToTerraform(struct!.fc),
+    flex_volume: jobSpecTemplateSpecVolumeFlexVolumeToTerraform(struct!.flexVolume),
+    flocker: jobSpecTemplateSpecVolumeFlockerToTerraform(struct!.flocker),
+    gce_persistent_disk: jobSpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct!.gcePersistentDisk),
+    git_repo: jobSpecTemplateSpecVolumeGitRepoToTerraform(struct!.gitRepo),
+    glusterfs: jobSpecTemplateSpecVolumeGlusterfsToTerraform(struct!.glusterfs),
+    host_path: jobSpecTemplateSpecVolumeHostPathToTerraform(struct!.hostPath),
+    iscsi: jobSpecTemplateSpecVolumeIscsiToTerraform(struct!.iscsi),
+    local: jobSpecTemplateSpecVolumeLocalToTerraform(struct!.local),
+    nfs: jobSpecTemplateSpecVolumeNfsToTerraform(struct!.nfs),
+    persistent_volume_claim: jobSpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct!.persistentVolumeClaim),
+    photon_persistent_disk: jobSpecTemplateSpecVolumePhotonPersistentDiskToTerraform(struct!.photonPersistentDisk),
     projected: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedToTerraform)(struct!.projected),
-    quobyte: cdktf.listMapper(jobSpecTemplateSpecVolumeQuobyteToTerraform)(struct!.quobyte),
-    rbd: cdktf.listMapper(jobSpecTemplateSpecVolumeRbdToTerraform)(struct!.rbd),
-    secret: cdktf.listMapper(jobSpecTemplateSpecVolumeSecretToTerraform)(struct!.secret),
-    vsphere_volume: cdktf.listMapper(jobSpecTemplateSpecVolumeVsphereVolumeToTerraform)(struct!.vsphereVolume),
+    quobyte: jobSpecTemplateSpecVolumeQuobyteToTerraform(struct!.quobyte),
+    rbd: jobSpecTemplateSpecVolumeRbdToTerraform(struct!.rbd),
+    secret: jobSpecTemplateSpecVolumeSecretToTerraform(struct!.secret),
+    vsphere_volume: jobSpecTemplateSpecVolumeVsphereVolumeToTerraform(struct!.vsphereVolume),
   }
 }
 
@@ -5782,7 +12862,7 @@ export interface JobSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#affinity Job#affinity}
   */
-  readonly affinity?: JobSpecTemplateSpecAffinity[];
+  readonly affinity?: JobSpecTemplateSpecAffinity;
   /**
   * container block
   * 
@@ -5794,7 +12874,7 @@ export interface JobSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#dns_config Job#dns_config}
   */
-  readonly dnsConfig?: JobSpecTemplateSpecDnsConfig[];
+  readonly dnsConfig?: JobSpecTemplateSpecDnsConfig;
   /**
   * host_aliases block
   * 
@@ -5824,7 +12904,7 @@ export interface JobSpecTemplateSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#security_context Job#security_context}
   */
-  readonly securityContext?: JobSpecTemplateSpecSecurityContext[];
+  readonly securityContext?: JobSpecTemplateSpecSecurityContext;
   /**
   * toleration block
   * 
@@ -5845,8 +12925,11 @@ export interface JobSpecTemplateSpec {
   readonly volume?: JobSpecTemplateSpecVolume[];
 }
 
-function jobSpecTemplateSpecToTerraform(struct?: JobSpecTemplateSpec): any {
+function jobSpecTemplateSpecToTerraform(struct?: JobSpecTemplateSpecOutputReference | JobSpecTemplateSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     active_deadline_seconds: cdktf.numberToTerraform(struct!.activeDeadlineSeconds),
     automount_service_account_token: cdktf.booleanToTerraform(struct!.automountServiceAccountToken),
@@ -5864,43 +12947,541 @@ function jobSpecTemplateSpecToTerraform(struct?: JobSpecTemplateSpec): any {
     share_process_namespace: cdktf.booleanToTerraform(struct!.shareProcessNamespace),
     subdomain: cdktf.stringToTerraform(struct!.subdomain),
     termination_grace_period_seconds: cdktf.numberToTerraform(struct!.terminationGracePeriodSeconds),
-    affinity: cdktf.listMapper(jobSpecTemplateSpecAffinityToTerraform)(struct!.affinity),
+    affinity: jobSpecTemplateSpecAffinityToTerraform(struct!.affinity),
     container: cdktf.listMapper(jobSpecTemplateSpecContainerToTerraform)(struct!.container),
-    dns_config: cdktf.listMapper(jobSpecTemplateSpecDnsConfigToTerraform)(struct!.dnsConfig),
+    dns_config: jobSpecTemplateSpecDnsConfigToTerraform(struct!.dnsConfig),
     host_aliases: cdktf.listMapper(jobSpecTemplateSpecHostAliasesToTerraform)(struct!.hostAliases),
     image_pull_secrets: cdktf.listMapper(jobSpecTemplateSpecImagePullSecretsToTerraform)(struct!.imagePullSecrets),
     init_container: cdktf.listMapper(jobSpecTemplateSpecInitContainerToTerraform)(struct!.initContainer),
     readiness_gate: cdktf.listMapper(jobSpecTemplateSpecReadinessGateToTerraform)(struct!.readinessGate),
-    security_context: cdktf.listMapper(jobSpecTemplateSpecSecurityContextToTerraform)(struct!.securityContext),
+    security_context: jobSpecTemplateSpecSecurityContextToTerraform(struct!.securityContext),
     toleration: cdktf.listMapper(jobSpecTemplateSpecTolerationToTerraform)(struct!.toleration),
     topology_spread_constraint: cdktf.listMapper(jobSpecTemplateSpecTopologySpreadConstraintToTerraform)(struct!.topologySpreadConstraint),
     volume: cdktf.listMapper(jobSpecTemplateSpecVolumeToTerraform)(struct!.volume),
   }
 }
 
+export class JobSpecTemplateSpecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // active_deadline_seconds - computed: false, optional: true, required: false
+  private _activeDeadlineSeconds?: number | undefined; 
+  public get activeDeadlineSeconds() {
+    return this.getNumberAttribute('active_deadline_seconds');
+  }
+  public set activeDeadlineSeconds(value: number | undefined) {
+    this._activeDeadlineSeconds = value;
+  }
+  public resetActiveDeadlineSeconds() {
+    this._activeDeadlineSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get activeDeadlineSecondsInput() {
+    return this._activeDeadlineSeconds
+  }
+
+  // automount_service_account_token - computed: false, optional: true, required: false
+  private _automountServiceAccountToken?: boolean | cdktf.IResolvable | undefined; 
+  public get automountServiceAccountToken() {
+    return this.getBooleanAttribute('automount_service_account_token') as any;
+  }
+  public set automountServiceAccountToken(value: boolean | cdktf.IResolvable | undefined) {
+    this._automountServiceAccountToken = value;
+  }
+  public resetAutomountServiceAccountToken() {
+    this._automountServiceAccountToken = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get automountServiceAccountTokenInput() {
+    return this._automountServiceAccountToken
+  }
+
+  // dns_policy - computed: false, optional: true, required: false
+  private _dnsPolicy?: string | undefined; 
+  public get dnsPolicy() {
+    return this.getStringAttribute('dns_policy');
+  }
+  public set dnsPolicy(value: string | undefined) {
+    this._dnsPolicy = value;
+  }
+  public resetDnsPolicy() {
+    this._dnsPolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get dnsPolicyInput() {
+    return this._dnsPolicy
+  }
+
+  // enable_service_links - computed: false, optional: true, required: false
+  private _enableServiceLinks?: boolean | cdktf.IResolvable | undefined; 
+  public get enableServiceLinks() {
+    return this.getBooleanAttribute('enable_service_links') as any;
+  }
+  public set enableServiceLinks(value: boolean | cdktf.IResolvable | undefined) {
+    this._enableServiceLinks = value;
+  }
+  public resetEnableServiceLinks() {
+    this._enableServiceLinks = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get enableServiceLinksInput() {
+    return this._enableServiceLinks
+  }
+
+  // host_ipc - computed: false, optional: true, required: false
+  private _hostIpc?: boolean | cdktf.IResolvable | undefined; 
+  public get hostIpc() {
+    return this.getBooleanAttribute('host_ipc') as any;
+  }
+  public set hostIpc(value: boolean | cdktf.IResolvable | undefined) {
+    this._hostIpc = value;
+  }
+  public resetHostIpc() {
+    this._hostIpc = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostIpcInput() {
+    return this._hostIpc
+  }
+
+  // host_network - computed: false, optional: true, required: false
+  private _hostNetwork?: boolean | cdktf.IResolvable | undefined; 
+  public get hostNetwork() {
+    return this.getBooleanAttribute('host_network') as any;
+  }
+  public set hostNetwork(value: boolean | cdktf.IResolvable | undefined) {
+    this._hostNetwork = value;
+  }
+  public resetHostNetwork() {
+    this._hostNetwork = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostNetworkInput() {
+    return this._hostNetwork
+  }
+
+  // host_pid - computed: false, optional: true, required: false
+  private _hostPid?: boolean | cdktf.IResolvable | undefined; 
+  public get hostPid() {
+    return this.getBooleanAttribute('host_pid') as any;
+  }
+  public set hostPid(value: boolean | cdktf.IResolvable | undefined) {
+    this._hostPid = value;
+  }
+  public resetHostPid() {
+    this._hostPid = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostPidInput() {
+    return this._hostPid
+  }
+
+  // hostname - computed: true, optional: true, required: false
+  private _hostname?: string | undefined; 
+  public get hostname() {
+    return this.getStringAttribute('hostname');
+  }
+  public set hostname(value: string | undefined) {
+    this._hostname = value;
+  }
+  public resetHostname() {
+    this._hostname = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostnameInput() {
+    return this._hostname
+  }
+
+  // node_name - computed: true, optional: true, required: false
+  private _nodeName?: string | undefined; 
+  public get nodeName() {
+    return this.getStringAttribute('node_name');
+  }
+  public set nodeName(value: string | undefined) {
+    this._nodeName = value;
+  }
+  public resetNodeName() {
+    this._nodeName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nodeNameInput() {
+    return this._nodeName
+  }
+
+  // node_selector - computed: false, optional: true, required: false
+  private _nodeSelector?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get nodeSelector() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('node_selector') as any;
+  }
+  public set nodeSelector(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._nodeSelector = value;
+  }
+  public resetNodeSelector() {
+    this._nodeSelector = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nodeSelectorInput() {
+    return this._nodeSelector
+  }
+
+  // priority_class_name - computed: false, optional: true, required: false
+  private _priorityClassName?: string | undefined; 
+  public get priorityClassName() {
+    return this.getStringAttribute('priority_class_name');
+  }
+  public set priorityClassName(value: string | undefined) {
+    this._priorityClassName = value;
+  }
+  public resetPriorityClassName() {
+    this._priorityClassName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get priorityClassNameInput() {
+    return this._priorityClassName
+  }
+
+  // restart_policy - computed: false, optional: true, required: false
+  private _restartPolicy?: string | undefined; 
+  public get restartPolicy() {
+    return this.getStringAttribute('restart_policy');
+  }
+  public set restartPolicy(value: string | undefined) {
+    this._restartPolicy = value;
+  }
+  public resetRestartPolicy() {
+    this._restartPolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get restartPolicyInput() {
+    return this._restartPolicy
+  }
+
+  // service_account_name - computed: true, optional: true, required: false
+  private _serviceAccountName?: string | undefined; 
+  public get serviceAccountName() {
+    return this.getStringAttribute('service_account_name');
+  }
+  public set serviceAccountName(value: string | undefined) {
+    this._serviceAccountName = value;
+  }
+  public resetServiceAccountName() {
+    this._serviceAccountName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceAccountNameInput() {
+    return this._serviceAccountName
+  }
+
+  // share_process_namespace - computed: false, optional: true, required: false
+  private _shareProcessNamespace?: boolean | cdktf.IResolvable | undefined; 
+  public get shareProcessNamespace() {
+    return this.getBooleanAttribute('share_process_namespace') as any;
+  }
+  public set shareProcessNamespace(value: boolean | cdktf.IResolvable | undefined) {
+    this._shareProcessNamespace = value;
+  }
+  public resetShareProcessNamespace() {
+    this._shareProcessNamespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get shareProcessNamespaceInput() {
+    return this._shareProcessNamespace
+  }
+
+  // subdomain - computed: false, optional: true, required: false
+  private _subdomain?: string | undefined; 
+  public get subdomain() {
+    return this.getStringAttribute('subdomain');
+  }
+  public set subdomain(value: string | undefined) {
+    this._subdomain = value;
+  }
+  public resetSubdomain() {
+    this._subdomain = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get subdomainInput() {
+    return this._subdomain
+  }
+
+  // termination_grace_period_seconds - computed: false, optional: true, required: false
+  private _terminationGracePeriodSeconds?: number | undefined; 
+  public get terminationGracePeriodSeconds() {
+    return this.getNumberAttribute('termination_grace_period_seconds');
+  }
+  public set terminationGracePeriodSeconds(value: number | undefined) {
+    this._terminationGracePeriodSeconds = value;
+  }
+  public resetTerminationGracePeriodSeconds() {
+    this._terminationGracePeriodSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get terminationGracePeriodSecondsInput() {
+    return this._terminationGracePeriodSeconds
+  }
+
+  // affinity - computed: false, optional: true, required: false
+  private _affinity?: JobSpecTemplateSpecAffinity | undefined; 
+  private __affinityOutput = new JobSpecTemplateSpecAffinityOutputReference(this as any, "affinity", true);
+  public get affinity() {
+    return this.__affinityOutput;
+  }
+  public putAffinity(value: JobSpecTemplateSpecAffinity | undefined) {
+    this._affinity = value;
+  }
+  public resetAffinity() {
+    this._affinity = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get affinityInput() {
+    return this._affinity
+  }
+
+  // container - computed: false, optional: true, required: false
+  private _container?: JobSpecTemplateSpecContainer[] | undefined; 
+  public get container() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('container') as any;
+  }
+  public set container(value: JobSpecTemplateSpecContainer[] | undefined) {
+    this._container = value;
+  }
+  public resetContainer() {
+    this._container = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get containerInput() {
+    return this._container
+  }
+
+  // dns_config - computed: false, optional: true, required: false
+  private _dnsConfig?: JobSpecTemplateSpecDnsConfig | undefined; 
+  private __dnsConfigOutput = new JobSpecTemplateSpecDnsConfigOutputReference(this as any, "dns_config", true);
+  public get dnsConfig() {
+    return this.__dnsConfigOutput;
+  }
+  public putDnsConfig(value: JobSpecTemplateSpecDnsConfig | undefined) {
+    this._dnsConfig = value;
+  }
+  public resetDnsConfig() {
+    this._dnsConfig = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get dnsConfigInput() {
+    return this._dnsConfig
+  }
+
+  // host_aliases - computed: false, optional: true, required: false
+  private _hostAliases?: JobSpecTemplateSpecHostAliases[] | undefined; 
+  public get hostAliases() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('host_aliases') as any;
+  }
+  public set hostAliases(value: JobSpecTemplateSpecHostAliases[] | undefined) {
+    this._hostAliases = value;
+  }
+  public resetHostAliases() {
+    this._hostAliases = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostAliasesInput() {
+    return this._hostAliases
+  }
+
+  // image_pull_secrets - computed: false, optional: true, required: false
+  private _imagePullSecrets?: JobSpecTemplateSpecImagePullSecrets[] | undefined; 
+  public get imagePullSecrets() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('image_pull_secrets') as any;
+  }
+  public set imagePullSecrets(value: JobSpecTemplateSpecImagePullSecrets[] | undefined) {
+    this._imagePullSecrets = value;
+  }
+  public resetImagePullSecrets() {
+    this._imagePullSecrets = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get imagePullSecretsInput() {
+    return this._imagePullSecrets
+  }
+
+  // init_container - computed: false, optional: true, required: false
+  private _initContainer?: JobSpecTemplateSpecInitContainer[] | undefined; 
+  public get initContainer() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('init_container') as any;
+  }
+  public set initContainer(value: JobSpecTemplateSpecInitContainer[] | undefined) {
+    this._initContainer = value;
+  }
+  public resetInitContainer() {
+    this._initContainer = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get initContainerInput() {
+    return this._initContainer
+  }
+
+  // readiness_gate - computed: false, optional: true, required: false
+  private _readinessGate?: JobSpecTemplateSpecReadinessGate[] | undefined; 
+  public get readinessGate() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('readiness_gate') as any;
+  }
+  public set readinessGate(value: JobSpecTemplateSpecReadinessGate[] | undefined) {
+    this._readinessGate = value;
+  }
+  public resetReadinessGate() {
+    this._readinessGate = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readinessGateInput() {
+    return this._readinessGate
+  }
+
+  // security_context - computed: false, optional: true, required: false
+  private _securityContext?: JobSpecTemplateSpecSecurityContext | undefined; 
+  private __securityContextOutput = new JobSpecTemplateSpecSecurityContextOutputReference(this as any, "security_context", true);
+  public get securityContext() {
+    return this.__securityContextOutput;
+  }
+  public putSecurityContext(value: JobSpecTemplateSpecSecurityContext | undefined) {
+    this._securityContext = value;
+  }
+  public resetSecurityContext() {
+    this._securityContext = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get securityContextInput() {
+    return this._securityContext
+  }
+
+  // toleration - computed: false, optional: true, required: false
+  private _toleration?: JobSpecTemplateSpecToleration[] | undefined; 
+  public get toleration() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('toleration') as any;
+  }
+  public set toleration(value: JobSpecTemplateSpecToleration[] | undefined) {
+    this._toleration = value;
+  }
+  public resetToleration() {
+    this._toleration = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get tolerationInput() {
+    return this._toleration
+  }
+
+  // topology_spread_constraint - computed: false, optional: true, required: false
+  private _topologySpreadConstraint?: JobSpecTemplateSpecTopologySpreadConstraint[] | undefined; 
+  public get topologySpreadConstraint() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('topology_spread_constraint') as any;
+  }
+  public set topologySpreadConstraint(value: JobSpecTemplateSpecTopologySpreadConstraint[] | undefined) {
+    this._topologySpreadConstraint = value;
+  }
+  public resetTopologySpreadConstraint() {
+    this._topologySpreadConstraint = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get topologySpreadConstraintInput() {
+    return this._topologySpreadConstraint
+  }
+
+  // volume - computed: false, optional: true, required: false
+  private _volume?: JobSpecTemplateSpecVolume[] | undefined; 
+  public get volume() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('volume') as any;
+  }
+  public set volume(value: JobSpecTemplateSpecVolume[] | undefined) {
+    this._volume = value;
+  }
+  public resetVolume() {
+    this._volume = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get volumeInput() {
+    return this._volume
+  }
+}
 export interface JobSpecTemplate {
   /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#metadata Job#metadata}
   */
-  readonly metadata: JobSpecTemplateMetadata[];
+  readonly metadata: JobSpecTemplateMetadata;
   /**
   * spec block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#spec Job#spec}
   */
-  readonly spec?: JobSpecTemplateSpec[];
+  readonly spec?: JobSpecTemplateSpec;
 }
 
-function jobSpecTemplateToTerraform(struct?: JobSpecTemplate): any {
+function jobSpecTemplateToTerraform(struct?: JobSpecTemplateOutputReference | JobSpecTemplate): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
-    metadata: cdktf.listMapper(jobSpecTemplateMetadataToTerraform)(struct!.metadata),
-    spec: cdktf.listMapper(jobSpecTemplateSpecToTerraform)(struct!.spec),
+    metadata: jobSpecTemplateMetadataToTerraform(struct!.metadata),
+    spec: jobSpecTemplateSpecToTerraform(struct!.spec),
   }
 }
 
+export class JobSpecTemplateOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // metadata - computed: false, optional: false, required: true
+  private _metadata?: JobSpecTemplateMetadata; 
+  private __metadataOutput = new JobSpecTemplateMetadataOutputReference(this as any, "metadata", true);
+  public get metadata() {
+    return this.__metadataOutput;
+  }
+  public putMetadata(value: JobSpecTemplateMetadata) {
+    this._metadata = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get metadataInput() {
+    return this._metadata
+  }
+
+  // spec - computed: false, optional: true, required: false
+  private _spec?: JobSpecTemplateSpec | undefined; 
+  private __specOutput = new JobSpecTemplateSpecOutputReference(this as any, "spec", true);
+  public get spec() {
+    return this.__specOutput;
+  }
+  public putSpec(value: JobSpecTemplateSpec | undefined) {
+    this._spec = value;
+  }
+  public resetSpec() {
+    this._spec = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get specInput() {
+    return this._spec
+  }
+}
 export interface JobSpec {
   /**
   * Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.
@@ -5943,17 +13524,20 @@ export interface JobSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#selector Job#selector}
   */
-  readonly selector?: JobSpecSelector[];
+  readonly selector?: JobSpecSelector;
   /**
   * template block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#template Job#template}
   */
-  readonly template: JobSpecTemplate[];
+  readonly template: JobSpecTemplate;
 }
 
-function jobSpecToTerraform(struct?: JobSpec): any {
+function jobSpecToTerraform(struct?: JobSpecOutputReference | JobSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     active_deadline_seconds: cdktf.numberToTerraform(struct!.activeDeadlineSeconds),
     backoff_limit: cdktf.numberToTerraform(struct!.backoffLimit),
@@ -5961,11 +13545,148 @@ function jobSpecToTerraform(struct?: JobSpec): any {
     manual_selector: cdktf.booleanToTerraform(struct!.manualSelector),
     parallelism: cdktf.numberToTerraform(struct!.parallelism),
     ttl_seconds_after_finished: cdktf.stringToTerraform(struct!.ttlSecondsAfterFinished),
-    selector: cdktf.listMapper(jobSpecSelectorToTerraform)(struct!.selector),
-    template: cdktf.listMapper(jobSpecTemplateToTerraform)(struct!.template),
+    selector: jobSpecSelectorToTerraform(struct!.selector),
+    template: jobSpecTemplateToTerraform(struct!.template),
   }
 }
 
+export class JobSpecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // active_deadline_seconds - computed: false, optional: true, required: false
+  private _activeDeadlineSeconds?: number | undefined; 
+  public get activeDeadlineSeconds() {
+    return this.getNumberAttribute('active_deadline_seconds');
+  }
+  public set activeDeadlineSeconds(value: number | undefined) {
+    this._activeDeadlineSeconds = value;
+  }
+  public resetActiveDeadlineSeconds() {
+    this._activeDeadlineSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get activeDeadlineSecondsInput() {
+    return this._activeDeadlineSeconds
+  }
+
+  // backoff_limit - computed: false, optional: true, required: false
+  private _backoffLimit?: number | undefined; 
+  public get backoffLimit() {
+    return this.getNumberAttribute('backoff_limit');
+  }
+  public set backoffLimit(value: number | undefined) {
+    this._backoffLimit = value;
+  }
+  public resetBackoffLimit() {
+    this._backoffLimit = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get backoffLimitInput() {
+    return this._backoffLimit
+  }
+
+  // completions - computed: false, optional: true, required: false
+  private _completions?: number | undefined; 
+  public get completions() {
+    return this.getNumberAttribute('completions');
+  }
+  public set completions(value: number | undefined) {
+    this._completions = value;
+  }
+  public resetCompletions() {
+    this._completions = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get completionsInput() {
+    return this._completions
+  }
+
+  // manual_selector - computed: false, optional: true, required: false
+  private _manualSelector?: boolean | cdktf.IResolvable | undefined; 
+  public get manualSelector() {
+    return this.getBooleanAttribute('manual_selector') as any;
+  }
+  public set manualSelector(value: boolean | cdktf.IResolvable | undefined) {
+    this._manualSelector = value;
+  }
+  public resetManualSelector() {
+    this._manualSelector = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get manualSelectorInput() {
+    return this._manualSelector
+  }
+
+  // parallelism - computed: false, optional: true, required: false
+  private _parallelism?: number | undefined; 
+  public get parallelism() {
+    return this.getNumberAttribute('parallelism');
+  }
+  public set parallelism(value: number | undefined) {
+    this._parallelism = value;
+  }
+  public resetParallelism() {
+    this._parallelism = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get parallelismInput() {
+    return this._parallelism
+  }
+
+  // ttl_seconds_after_finished - computed: false, optional: true, required: false
+  private _ttlSecondsAfterFinished?: string | undefined; 
+  public get ttlSecondsAfterFinished() {
+    return this.getStringAttribute('ttl_seconds_after_finished');
+  }
+  public set ttlSecondsAfterFinished(value: string | undefined) {
+    this._ttlSecondsAfterFinished = value;
+  }
+  public resetTtlSecondsAfterFinished() {
+    this._ttlSecondsAfterFinished = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ttlSecondsAfterFinishedInput() {
+    return this._ttlSecondsAfterFinished
+  }
+
+  // selector - computed: false, optional: true, required: false
+  private _selector?: JobSpecSelector | undefined; 
+  private __selectorOutput = new JobSpecSelectorOutputReference(this as any, "selector", true);
+  public get selector() {
+    return this.__selectorOutput;
+  }
+  public putSelector(value: JobSpecSelector | undefined) {
+    this._selector = value;
+  }
+  public resetSelector() {
+    this._selector = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get selectorInput() {
+    return this._selector
+  }
+
+  // template - computed: false, optional: false, required: true
+  private _template?: JobSpecTemplate; 
+  private __templateOutput = new JobSpecTemplateOutputReference(this as any, "template", true);
+  public get template() {
+    return this.__templateOutput;
+  }
+  public putTemplate(value: JobSpecTemplate) {
+    this._template = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get templateInput() {
+    return this._template
+  }
+}
 export interface JobTimeouts {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html#create Job#create}
@@ -5981,8 +13702,11 @@ export interface JobTimeouts {
   readonly update?: string;
 }
 
-function jobTimeoutsToTerraform(struct?: JobTimeouts): any {
+function jobTimeoutsToTerraform(struct?: JobTimeoutsOutputReference | JobTimeouts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     create: cdktf.stringToTerraform(struct!.create),
     delete: cdktf.stringToTerraform(struct!.delete),
@@ -5990,6 +13714,64 @@ function jobTimeoutsToTerraform(struct?: JobTimeouts): any {
   }
 }
 
+export class JobTimeoutsOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // create - computed: false, optional: true, required: false
+  private _create?: string | undefined; 
+  public get create() {
+    return this.getStringAttribute('create');
+  }
+  public set create(value: string | undefined) {
+    this._create = value;
+  }
+  public resetCreate() {
+    this._create = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get createInput() {
+    return this._create
+  }
+
+  // delete - computed: false, optional: true, required: false
+  private _delete?: string | undefined; 
+  public get delete() {
+    return this.getStringAttribute('delete');
+  }
+  public set delete(value: string | undefined) {
+    this._delete = value;
+  }
+  public resetDelete() {
+    this._delete = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get deleteInput() {
+    return this._delete
+  }
+
+  // update - computed: false, optional: true, required: false
+  private _update?: string | undefined; 
+  public get update() {
+    return this.getStringAttribute('update');
+  }
+  public set update(value: string | undefined) {
+    this._update = value;
+  }
+  public resetUpdate() {
+    this._update = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get updateInput() {
+    return this._update
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/job.html kubernetes_job}
@@ -6039,11 +13821,11 @@ export class Job extends cdktf.TerraformResource {
   }
 
   // wait_for_completion - computed: false, optional: true, required: false
-  private _waitForCompletion?: boolean | cdktf.IResolvable;
+  private _waitForCompletion?: boolean | cdktf.IResolvable | undefined; 
   public get waitForCompletion() {
-    return this.getBooleanAttribute('wait_for_completion');
+    return this.getBooleanAttribute('wait_for_completion') as any;
   }
-  public set waitForCompletion(value: boolean | cdktf.IResolvable ) {
+  public set waitForCompletion(value: boolean | cdktf.IResolvable | undefined) {
     this._waitForCompletion = value;
   }
   public resetWaitForCompletion() {
@@ -6055,11 +13837,12 @@ export class Job extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: JobMetadata[];
+  private _metadata?: JobMetadata; 
+  private __metadataOutput = new JobMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: JobMetadata[]) {
+  public putMetadata(value: JobMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -6068,11 +13851,12 @@ export class Job extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec: JobSpec[];
+  private _spec?: JobSpec; 
+  private __specOutput = new JobSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.interpolationForAttribute('spec') as any;
+    return this.__specOutput;
   }
-  public set spec(value: JobSpec[]) {
+  public putSpec(value: JobSpec) {
     this._spec = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -6081,11 +13865,12 @@ export class Job extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts?: JobTimeouts;
+  private _timeouts?: JobTimeouts | undefined; 
+  private __timeoutsOutput = new JobTimeoutsOutputReference(this as any, "timeouts", true);
   public get timeouts() {
-    return this.interpolationForAttribute('timeouts') as any;
+    return this.__timeoutsOutput;
   }
-  public set timeouts(value: JobTimeouts ) {
+  public putTimeouts(value: JobTimeouts | undefined) {
     this._timeouts = value;
   }
   public resetTimeouts() {
@@ -6103,8 +13888,8 @@ export class Job extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       wait_for_completion: cdktf.booleanToTerraform(this._waitForCompletion),
-      metadata: cdktf.listMapper(jobMetadataToTerraform)(this._metadata),
-      spec: cdktf.listMapper(jobSpecToTerraform)(this._spec),
+      metadata: jobMetadataToTerraform(this._metadata),
+      spec: jobSpecToTerraform(this._spec),
       timeouts: jobTimeoutsToTerraform(this._timeouts),
     };
   }

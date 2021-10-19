@@ -12,13 +12,13 @@ export interface PodDisruptionBudgetConfig extends cdktf.TerraformMetaArguments 
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget.html#metadata PodDisruptionBudget#metadata}
   */
-  readonly metadata: PodDisruptionBudgetMetadata[];
+  readonly metadata: PodDisruptionBudgetMetadata;
   /**
   * spec block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget.html#spec PodDisruptionBudget#spec}
   */
-  readonly spec: PodDisruptionBudgetSpec[];
+  readonly spec: PodDisruptionBudgetSpec;
 }
 export interface PodDisruptionBudgetMetadata {
   /**
@@ -53,8 +53,11 @@ export interface PodDisruptionBudgetMetadata {
   readonly namespace?: string;
 }
 
-function podDisruptionBudgetMetadataToTerraform(struct?: PodDisruptionBudgetMetadata): any {
+function podDisruptionBudgetMetadataToTerraform(struct?: PodDisruptionBudgetMetadataOutputReference | PodDisruptionBudgetMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -64,6 +67,98 @@ function podDisruptionBudgetMetadataToTerraform(struct?: PodDisruptionBudgetMeta
   }
 }
 
+export class PodDisruptionBudgetMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: false, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 export interface PodDisruptionBudgetSpecSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
@@ -87,6 +182,9 @@ export interface PodDisruptionBudgetSpecSelectorMatchExpressions {
 
 function podDisruptionBudgetSpecSelectorMatchExpressionsToTerraform(struct?: PodDisruptionBudgetSpecSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
@@ -109,14 +207,61 @@ export interface PodDisruptionBudgetSpecSelector {
   readonly matchExpressions?: PodDisruptionBudgetSpecSelectorMatchExpressions[];
 }
 
-function podDisruptionBudgetSpecSelectorToTerraform(struct?: PodDisruptionBudgetSpecSelector): any {
+function podDisruptionBudgetSpecSelectorToTerraform(struct?: PodDisruptionBudgetSpecSelectorOutputReference | PodDisruptionBudgetSpecSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(podDisruptionBudgetSpecSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
   }
 }
 
+export class PodDisruptionBudgetSpecSelectorOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // match_labels - computed: false, optional: true, required: false
+  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get matchLabels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('match_labels') as any;
+  }
+  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._matchLabels = value;
+  }
+  public resetMatchLabels() {
+    this._matchLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchLabelsInput() {
+    return this._matchLabels
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions?: PodDisruptionBudgetSpecSelectorMatchExpressions[] | undefined; 
+  public get matchExpressions() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('match_expressions') as any;
+  }
+  public set matchExpressions(value: PodDisruptionBudgetSpecSelectorMatchExpressions[] | undefined) {
+    this._matchExpressions = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions
+  }
+}
 export interface PodDisruptionBudgetSpec {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget.html#max_unavailable PodDisruptionBudget#max_unavailable}
@@ -131,18 +276,77 @@ export interface PodDisruptionBudgetSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget.html#selector PodDisruptionBudget#selector}
   */
-  readonly selector: PodDisruptionBudgetSpecSelector[];
+  readonly selector: PodDisruptionBudgetSpecSelector;
 }
 
-function podDisruptionBudgetSpecToTerraform(struct?: PodDisruptionBudgetSpec): any {
+function podDisruptionBudgetSpecToTerraform(struct?: PodDisruptionBudgetSpecOutputReference | PodDisruptionBudgetSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     max_unavailable: cdktf.stringToTerraform(struct!.maxUnavailable),
     min_available: cdktf.stringToTerraform(struct!.minAvailable),
-    selector: cdktf.listMapper(podDisruptionBudgetSpecSelectorToTerraform)(struct!.selector),
+    selector: podDisruptionBudgetSpecSelectorToTerraform(struct!.selector),
   }
 }
 
+export class PodDisruptionBudgetSpecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // max_unavailable - computed: false, optional: true, required: false
+  private _maxUnavailable?: string | undefined; 
+  public get maxUnavailable() {
+    return this.getStringAttribute('max_unavailable');
+  }
+  public set maxUnavailable(value: string | undefined) {
+    this._maxUnavailable = value;
+  }
+  public resetMaxUnavailable() {
+    this._maxUnavailable = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get maxUnavailableInput() {
+    return this._maxUnavailable
+  }
+
+  // min_available - computed: false, optional: true, required: false
+  private _minAvailable?: string | undefined; 
+  public get minAvailable() {
+    return this.getStringAttribute('min_available');
+  }
+  public set minAvailable(value: string | undefined) {
+    this._minAvailable = value;
+  }
+  public resetMinAvailable() {
+    this._minAvailable = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get minAvailableInput() {
+    return this._minAvailable
+  }
+
+  // selector - computed: false, optional: false, required: true
+  private _selector?: PodDisruptionBudgetSpecSelector; 
+  private __selectorOutput = new PodDisruptionBudgetSpecSelectorOutputReference(this as any, "selector", true);
+  public get selector() {
+    return this.__selectorOutput;
+  }
+  public putSelector(value: PodDisruptionBudgetSpecSelector) {
+    this._selector = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get selectorInput() {
+    return this._selector
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget.html kubernetes_pod_disruption_budget}
@@ -190,11 +394,12 @@ export class PodDisruptionBudget extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: PodDisruptionBudgetMetadata[];
+  private _metadata?: PodDisruptionBudgetMetadata; 
+  private __metadataOutput = new PodDisruptionBudgetMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: PodDisruptionBudgetMetadata[]) {
+  public putMetadata(value: PodDisruptionBudgetMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -203,11 +408,12 @@ export class PodDisruptionBudget extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec: PodDisruptionBudgetSpec[];
+  private _spec?: PodDisruptionBudgetSpec; 
+  private __specOutput = new PodDisruptionBudgetSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.interpolationForAttribute('spec') as any;
+    return this.__specOutput;
   }
-  public set spec(value: PodDisruptionBudgetSpec[]) {
+  public putSpec(value: PodDisruptionBudgetSpec) {
     this._spec = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -221,8 +427,8 @@ export class PodDisruptionBudget extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: cdktf.listMapper(podDisruptionBudgetMetadataToTerraform)(this._metadata),
-      spec: cdktf.listMapper(podDisruptionBudgetSpecToTerraform)(this._spec),
+      metadata: podDisruptionBudgetMetadataToTerraform(this._metadata),
+      spec: podDisruptionBudgetSpecToTerraform(this._spec),
     };
   }
 }

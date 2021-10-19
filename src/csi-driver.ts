@@ -12,13 +12,13 @@ export interface CsiDriverConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/csi_driver.html#metadata CsiDriver#metadata}
   */
-  readonly metadata: CsiDriverMetadata[];
+  readonly metadata: CsiDriverMetadata;
   /**
   * spec block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/csi_driver.html#spec CsiDriver#spec}
   */
-  readonly spec?: CsiDriverSpec[];
+  readonly spec?: CsiDriverSpec;
 }
 export interface CsiDriverMetadata {
   /**
@@ -47,8 +47,11 @@ export interface CsiDriverMetadata {
   readonly name?: string;
 }
 
-function csiDriverMetadataToTerraform(struct?: CsiDriverMetadata): any {
+function csiDriverMetadataToTerraform(struct?: CsiDriverMetadataOutputReference | CsiDriverMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -57,6 +60,82 @@ function csiDriverMetadataToTerraform(struct?: CsiDriverMetadata): any {
   }
 }
 
+export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+}
 export interface CsiDriverSpec {
   /**
   * Indicates if the CSI volume driver requires an attach operation
@@ -78,8 +157,11 @@ export interface CsiDriverSpec {
   readonly volumeLifecycleModes?: string[];
 }
 
-function csiDriverSpecToTerraform(struct?: CsiDriverSpec): any {
+function csiDriverSpecToTerraform(struct?: CsiDriverSpecOutputReference | CsiDriverSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     attach_required: cdktf.booleanToTerraform(struct!.attachRequired),
     pod_info_on_mount: cdktf.booleanToTerraform(struct!.podInfoOnMount),
@@ -87,6 +169,61 @@ function csiDriverSpecToTerraform(struct?: CsiDriverSpec): any {
   }
 }
 
+export class CsiDriverSpecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // attach_required - computed: false, optional: false, required: true
+  private _attachRequired?: boolean | cdktf.IResolvable; 
+  public get attachRequired() {
+    return this.getBooleanAttribute('attach_required') as any;
+  }
+  public set attachRequired(value: boolean | cdktf.IResolvable) {
+    this._attachRequired = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get attachRequiredInput() {
+    return this._attachRequired
+  }
+
+  // pod_info_on_mount - computed: false, optional: true, required: false
+  private _podInfoOnMount?: boolean | cdktf.IResolvable | undefined; 
+  public get podInfoOnMount() {
+    return this.getBooleanAttribute('pod_info_on_mount') as any;
+  }
+  public set podInfoOnMount(value: boolean | cdktf.IResolvable | undefined) {
+    this._podInfoOnMount = value;
+  }
+  public resetPodInfoOnMount() {
+    this._podInfoOnMount = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get podInfoOnMountInput() {
+    return this._podInfoOnMount
+  }
+
+  // volume_lifecycle_modes - computed: false, optional: true, required: false
+  private _volumeLifecycleModes?: string[] | undefined; 
+  public get volumeLifecycleModes() {
+    return this.getListAttribute('volume_lifecycle_modes');
+  }
+  public set volumeLifecycleModes(value: string[] | undefined) {
+    this._volumeLifecycleModes = value;
+  }
+  public resetVolumeLifecycleModes() {
+    this._volumeLifecycleModes = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get volumeLifecycleModesInput() {
+    return this._volumeLifecycleModes
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/csi_driver.html kubernetes_csi_driver}
@@ -134,11 +271,12 @@ export class CsiDriver extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: CsiDriverMetadata[];
+  private _metadata?: CsiDriverMetadata; 
+  private __metadataOutput = new CsiDriverMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: CsiDriverMetadata[]) {
+  public putMetadata(value: CsiDriverMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -147,11 +285,12 @@ export class CsiDriver extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: true, required: false
-  private _spec?: CsiDriverSpec[];
+  private _spec?: CsiDriverSpec | undefined; 
+  private __specOutput = new CsiDriverSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.interpolationForAttribute('spec') as any;
+    return this.__specOutput;
   }
-  public set spec(value: CsiDriverSpec[] ) {
+  public putSpec(value: CsiDriverSpec | undefined) {
     this._spec = value;
   }
   public resetSpec() {
@@ -168,8 +307,8 @@ export class CsiDriver extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: cdktf.listMapper(csiDriverMetadataToTerraform)(this._metadata),
-      spec: cdktf.listMapper(csiDriverSpecToTerraform)(this._spec),
+      metadata: csiDriverMetadataToTerraform(this._metadata),
+      spec: csiDriverSpecToTerraform(this._spec),
     };
   }
 }
