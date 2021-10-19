@@ -12,13 +12,13 @@ export interface ApiServiceConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service.html#metadata ApiService#metadata}
   */
-  readonly metadata: ApiServiceMetadata[];
+  readonly metadata: ApiServiceMetadata;
   /**
   * spec block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service.html#spec ApiService#spec}
   */
-  readonly spec: ApiServiceSpec[];
+  readonly spec: ApiServiceSpec;
 }
 export interface ApiServiceMetadata {
   /**
@@ -47,8 +47,11 @@ export interface ApiServiceMetadata {
   readonly name?: string;
 }
 
-function apiServiceMetadataToTerraform(struct?: ApiServiceMetadata): any {
+function apiServiceMetadataToTerraform(struct?: ApiServiceMetadataOutputReference | ApiServiceMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -57,6 +60,82 @@ function apiServiceMetadataToTerraform(struct?: ApiServiceMetadata): any {
   }
 }
 
+export class ApiServiceMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+}
 export interface ApiServiceSpecService {
   /**
   * Name is the name of the service.
@@ -78,8 +157,11 @@ export interface ApiServiceSpecService {
   readonly port?: number;
 }
 
-function apiServiceSpecServiceToTerraform(struct?: ApiServiceSpecService): any {
+function apiServiceSpecServiceToTerraform(struct?: ApiServiceSpecServiceOutputReference | ApiServiceSpecService): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
@@ -87,6 +169,58 @@ function apiServiceSpecServiceToTerraform(struct?: ApiServiceSpecService): any {
   }
 }
 
+export class ApiServiceSpecServiceOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: false, optional: false, required: true
+  private _namespace?: string; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string) {
+    this._namespace = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: number | undefined; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+}
 export interface ApiServiceSpec {
   /**
   * CABundle is a PEM encoded CA bundle which will be used to validate an API server's serving certificate. If unspecified, system trust roots on the apiserver are used.
@@ -129,11 +263,14 @@ export interface ApiServiceSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service.html#service ApiService#service}
   */
-  readonly service?: ApiServiceSpecService[];
+  readonly service?: ApiServiceSpecService;
 }
 
-function apiServiceSpecToTerraform(struct?: ApiServiceSpec): any {
+function apiServiceSpecToTerraform(struct?: ApiServiceSpecOutputReference | ApiServiceSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     ca_bundle: cdktf.stringToTerraform(struct!.caBundle),
     group: cdktf.stringToTerraform(struct!.group),
@@ -141,10 +278,121 @@ function apiServiceSpecToTerraform(struct?: ApiServiceSpec): any {
     insecure_skip_tls_verify: cdktf.booleanToTerraform(struct!.insecureSkipTlsVerify),
     version: cdktf.stringToTerraform(struct!.version),
     version_priority: cdktf.numberToTerraform(struct!.versionPriority),
-    service: cdktf.listMapper(apiServiceSpecServiceToTerraform)(struct!.service),
+    service: apiServiceSpecServiceToTerraform(struct!.service),
   }
 }
 
+export class ApiServiceSpecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // ca_bundle - computed: false, optional: true, required: false
+  private _caBundle?: string | undefined; 
+  public get caBundle() {
+    return this.getStringAttribute('ca_bundle');
+  }
+  public set caBundle(value: string | undefined) {
+    this._caBundle = value;
+  }
+  public resetCaBundle() {
+    this._caBundle = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get caBundleInput() {
+    return this._caBundle
+  }
+
+  // group - computed: false, optional: false, required: true
+  private _group?: string; 
+  public get group() {
+    return this.getStringAttribute('group');
+  }
+  public set group(value: string) {
+    this._group = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get groupInput() {
+    return this._group
+  }
+
+  // group_priority_minimum - computed: false, optional: false, required: true
+  private _groupPriorityMinimum?: number; 
+  public get groupPriorityMinimum() {
+    return this.getNumberAttribute('group_priority_minimum');
+  }
+  public set groupPriorityMinimum(value: number) {
+    this._groupPriorityMinimum = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get groupPriorityMinimumInput() {
+    return this._groupPriorityMinimum
+  }
+
+  // insecure_skip_tls_verify - computed: false, optional: true, required: false
+  private _insecureSkipTlsVerify?: boolean | cdktf.IResolvable | undefined; 
+  public get insecureSkipTlsVerify() {
+    return this.getBooleanAttribute('insecure_skip_tls_verify') as any;
+  }
+  public set insecureSkipTlsVerify(value: boolean | cdktf.IResolvable | undefined) {
+    this._insecureSkipTlsVerify = value;
+  }
+  public resetInsecureSkipTlsVerify() {
+    this._insecureSkipTlsVerify = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get insecureSkipTlsVerifyInput() {
+    return this._insecureSkipTlsVerify
+  }
+
+  // version - computed: false, optional: false, required: true
+  private _version?: string; 
+  public get version() {
+    return this.getStringAttribute('version');
+  }
+  public set version(value: string) {
+    this._version = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get versionInput() {
+    return this._version
+  }
+
+  // version_priority - computed: false, optional: false, required: true
+  private _versionPriority?: number; 
+  public get versionPriority() {
+    return this.getNumberAttribute('version_priority');
+  }
+  public set versionPriority(value: number) {
+    this._versionPriority = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get versionPriorityInput() {
+    return this._versionPriority
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: ApiServiceSpecService | undefined; 
+  private __serviceOutput = new ApiServiceSpecServiceOutputReference(this as any, "service", true);
+  public get service() {
+    return this.__serviceOutput;
+  }
+  public putService(value: ApiServiceSpecService | undefined) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service.html kubernetes_api_service}
@@ -192,11 +440,12 @@ export class ApiService extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: ApiServiceMetadata[];
+  private _metadata?: ApiServiceMetadata; 
+  private __metadataOutput = new ApiServiceMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: ApiServiceMetadata[]) {
+  public putMetadata(value: ApiServiceMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -205,11 +454,12 @@ export class ApiService extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec: ApiServiceSpec[];
+  private _spec?: ApiServiceSpec; 
+  private __specOutput = new ApiServiceSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.interpolationForAttribute('spec') as any;
+    return this.__specOutput;
   }
-  public set spec(value: ApiServiceSpec[]) {
+  public putSpec(value: ApiServiceSpec) {
     this._spec = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -223,8 +473,8 @@ export class ApiService extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: cdktf.listMapper(apiServiceMetadataToTerraform)(this._metadata),
-      spec: cdktf.listMapper(apiServiceSpecToTerraform)(this._spec),
+      metadata: apiServiceMetadataToTerraform(this._metadata),
+      spec: apiServiceSpecToTerraform(this._spec),
     };
   }
 }

@@ -12,7 +12,7 @@ export interface DataKubernetesPodConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html#metadata DataKubernetesPod#metadata}
   */
-  readonly metadata: DataKubernetesPodMetadata[];
+  readonly metadata: DataKubernetesPodMetadata;
 }
 export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions extends cdktf.ComplexComputedList {
 
@@ -35,6 +35,7 @@ export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingI
 
   // match_expressions - computed: true, optional: false, required: false
   public get matchExpressions() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
 }
@@ -42,6 +43,7 @@ export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingI
 
   // preference - computed: true, optional: false, required: false
   public get preference() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('preference') as any;
   }
 
@@ -71,6 +73,7 @@ export class DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIg
 
   // match_expressions - computed: true, optional: false, required: false
   public get matchExpressions() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
 }
@@ -78,6 +81,7 @@ export class DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIg
 
   // node_selector_term - computed: true, optional: false, required: false
   public get nodeSelectorTerm() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('node_selector_term') as any;
   }
 }
@@ -85,11 +89,13 @@ export class DataKubernetesPodSpecAffinityNodeAffinity extends cdktf.ComplexComp
 
   // preferred_during_scheduling_ignored_during_execution - computed: true, optional: false, required: false
   public get preferredDuringSchedulingIgnoredDuringExecution() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
   }
 
   // required_during_scheduling_ignored_during_execution - computed: true, optional: false, required: false
   public get requiredDuringSchedulingIgnoredDuringExecution() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution') as any;
   }
 }
@@ -114,11 +120,13 @@ export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIg
 
   // match_expressions - computed: true, optional: false, required: false
   public get matchExpressions() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
 
   // match_labels - computed: true, optional: false, required: false
   public get matchLabels() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
 }
@@ -126,6 +134,7 @@ export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIg
 
   // label_selector - computed: true, optional: false, required: false
   public get labelSelector() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('label_selector') as any;
   }
 
@@ -143,6 +152,7 @@ export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIg
 
   // pod_affinity_term - computed: true, optional: false, required: false
   public get podAffinityTerm() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('pod_affinity_term') as any;
   }
 
@@ -172,11 +182,13 @@ export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgn
 
   // match_expressions - computed: true, optional: false, required: false
   public get matchExpressions() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
 
   // match_labels - computed: true, optional: false, required: false
   public get matchLabels() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
 }
@@ -184,6 +196,7 @@ export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgn
 
   // label_selector - computed: true, optional: false, required: false
   public get labelSelector() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('label_selector') as any;
   }
 
@@ -201,11 +214,13 @@ export class DataKubernetesPodSpecAffinityPodAffinity extends cdktf.ComplexCompu
 
   // preferred_during_scheduling_ignored_during_execution - computed: true, optional: false, required: false
   public get preferredDuringSchedulingIgnoredDuringExecution() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
   }
 
   // required_during_scheduling_ignored_during_execution - computed: true, optional: false, required: false
   public get requiredDuringSchedulingIgnoredDuringExecution() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution') as any;
   }
 }
@@ -230,11 +245,13 @@ export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringScheduli
 
   // match_expressions - computed: true, optional: false, required: false
   public get matchExpressions() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
 
   // match_labels - computed: true, optional: false, required: false
   public get matchLabels() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
 }
@@ -242,6 +259,7 @@ export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringScheduli
 
   // label_selector - computed: true, optional: false, required: false
   public get labelSelector() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('label_selector') as any;
   }
 
@@ -259,6 +277,7 @@ export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringScheduli
 
   // pod_affinity_term - computed: true, optional: false, required: false
   public get podAffinityTerm() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('pod_affinity_term') as any;
   }
 
@@ -288,11 +307,13 @@ export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulin
 
   // match_expressions - computed: true, optional: false, required: false
   public get matchExpressions() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
 
   // match_labels - computed: true, optional: false, required: false
   public get matchLabels() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
 }
@@ -300,6 +321,7 @@ export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulin
 
   // label_selector - computed: true, optional: false, required: false
   public get labelSelector() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('label_selector') as any;
   }
 
@@ -317,11 +339,13 @@ export class DataKubernetesPodSpecAffinityPodAntiAffinity extends cdktf.ComplexC
 
   // preferred_during_scheduling_ignored_during_execution - computed: true, optional: false, required: false
   public get preferredDuringSchedulingIgnoredDuringExecution() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
   }
 
   // required_during_scheduling_ignored_during_execution - computed: true, optional: false, required: false
   public get requiredDuringSchedulingIgnoredDuringExecution() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution') as any;
   }
 }
@@ -329,16 +353,19 @@ export class DataKubernetesPodSpecAffinity extends cdktf.ComplexComputedList {
 
   // node_affinity - computed: true, optional: false, required: false
   public get nodeAffinity() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('node_affinity') as any;
   }
 
   // pod_affinity - computed: true, optional: false, required: false
   public get podAffinity() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('pod_affinity') as any;
   }
 
   // pod_anti_affinity - computed: true, optional: false, required: false
   public get podAntiAffinity() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('pod_anti_affinity') as any;
   }
 }
@@ -356,7 +383,7 @@ export class DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRef extends c
 
   // optional - computed: true, optional: false, required: false
   public get optional() {
-    return this.getBooleanAttribute('optional');
+    return this.getBooleanAttribute('optional') as any;
   }
 }
 export class DataKubernetesPodSpecContainerEnvValueFromFieldRef extends cdktf.ComplexComputedList {
@@ -402,28 +429,32 @@ export class DataKubernetesPodSpecContainerEnvValueFromSecretKeyRef extends cdkt
 
   // optional - computed: true, optional: false, required: false
   public get optional() {
-    return this.getBooleanAttribute('optional');
+    return this.getBooleanAttribute('optional') as any;
   }
 }
 export class DataKubernetesPodSpecContainerEnvValueFrom extends cdktf.ComplexComputedList {
 
   // config_map_key_ref - computed: true, optional: false, required: false
   public get configMapKeyRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('config_map_key_ref') as any;
   }
 
   // field_ref - computed: true, optional: false, required: false
   public get fieldRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('field_ref') as any;
   }
 
   // resource_field_ref - computed: true, optional: false, required: false
   public get resourceFieldRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('resource_field_ref') as any;
   }
 
   // secret_key_ref - computed: true, optional: false, required: false
   public get secretKeyRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('secret_key_ref') as any;
   }
 }
@@ -441,6 +472,7 @@ export class DataKubernetesPodSpecContainerEnv extends cdktf.ComplexComputedList
 
   // value_from - computed: true, optional: false, required: false
   public get valueFrom() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('value_from') as any;
   }
 }
@@ -453,7 +485,7 @@ export class DataKubernetesPodSpecContainerEnvFromConfigMapRef extends cdktf.Com
 
   // optional - computed: true, optional: false, required: false
   public get optional() {
-    return this.getBooleanAttribute('optional');
+    return this.getBooleanAttribute('optional') as any;
   }
 }
 export class DataKubernetesPodSpecContainerEnvFromSecretRef extends cdktf.ComplexComputedList {
@@ -465,13 +497,14 @@ export class DataKubernetesPodSpecContainerEnvFromSecretRef extends cdktf.Comple
 
   // optional - computed: true, optional: false, required: false
   public get optional() {
-    return this.getBooleanAttribute('optional');
+    return this.getBooleanAttribute('optional') as any;
   }
 }
 export class DataKubernetesPodSpecContainerEnvFrom extends cdktf.ComplexComputedList {
 
   // config_map_ref - computed: true, optional: false, required: false
   public get configMapRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('config_map_ref') as any;
   }
 
@@ -482,6 +515,7 @@ export class DataKubernetesPodSpecContainerEnvFrom extends cdktf.ComplexComputed
 
   // secret_ref - computed: true, optional: false, required: false
   public get secretRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('secret_ref') as any;
   }
 }
@@ -513,6 +547,7 @@ export class DataKubernetesPodSpecContainerLifecyclePostStartHttpGet extends cdk
 
   // http_header - computed: true, optional: false, required: false
   public get httpHeader() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
 
@@ -542,16 +577,19 @@ export class DataKubernetesPodSpecContainerLifecyclePostStart extends cdktf.Comp
 
   // exec - computed: true, optional: false, required: false
   public get exec() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('exec') as any;
   }
 
   // http_get - computed: true, optional: false, required: false
   public get httpGet() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_get') as any;
   }
 
   // tcp_socket - computed: true, optional: false, required: false
   public get tcpSocket() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
 }
@@ -583,6 +621,7 @@ export class DataKubernetesPodSpecContainerLifecyclePreStopHttpGet extends cdktf
 
   // http_header - computed: true, optional: false, required: false
   public get httpHeader() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
 
@@ -612,16 +651,19 @@ export class DataKubernetesPodSpecContainerLifecyclePreStop extends cdktf.Comple
 
   // exec - computed: true, optional: false, required: false
   public get exec() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('exec') as any;
   }
 
   // http_get - computed: true, optional: false, required: false
   public get httpGet() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_get') as any;
   }
 
   // tcp_socket - computed: true, optional: false, required: false
   public get tcpSocket() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
 }
@@ -629,11 +671,13 @@ export class DataKubernetesPodSpecContainerLifecycle extends cdktf.ComplexComput
 
   // post_start - computed: true, optional: false, required: false
   public get postStart() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('post_start') as any;
   }
 
   // pre_stop - computed: true, optional: false, required: false
   public get preStop() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('pre_stop') as any;
   }
 }
@@ -665,6 +709,7 @@ export class DataKubernetesPodSpecContainerLivenessProbeHttpGet extends cdktf.Co
 
   // http_header - computed: true, optional: false, required: false
   public get httpHeader() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
 
@@ -694,6 +739,7 @@ export class DataKubernetesPodSpecContainerLivenessProbe extends cdktf.ComplexCo
 
   // exec - computed: true, optional: false, required: false
   public get exec() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('exec') as any;
   }
 
@@ -704,6 +750,7 @@ export class DataKubernetesPodSpecContainerLivenessProbe extends cdktf.ComplexCo
 
   // http_get - computed: true, optional: false, required: false
   public get httpGet() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_get') as any;
   }
 
@@ -724,6 +771,7 @@ export class DataKubernetesPodSpecContainerLivenessProbe extends cdktf.ComplexCo
 
   // tcp_socket - computed: true, optional: false, required: false
   public get tcpSocket() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
 
@@ -787,6 +835,7 @@ export class DataKubernetesPodSpecContainerReadinessProbeHttpGet extends cdktf.C
 
   // http_header - computed: true, optional: false, required: false
   public get httpHeader() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
 
@@ -816,6 +865,7 @@ export class DataKubernetesPodSpecContainerReadinessProbe extends cdktf.ComplexC
 
   // exec - computed: true, optional: false, required: false
   public get exec() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('exec') as any;
   }
 
@@ -826,6 +876,7 @@ export class DataKubernetesPodSpecContainerReadinessProbe extends cdktf.ComplexC
 
   // http_get - computed: true, optional: false, required: false
   public get httpGet() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_get') as any;
   }
 
@@ -846,6 +897,7 @@ export class DataKubernetesPodSpecContainerReadinessProbe extends cdktf.ComplexC
 
   // tcp_socket - computed: true, optional: false, required: false
   public get tcpSocket() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
 
@@ -858,11 +910,13 @@ export class DataKubernetesPodSpecContainerResources extends cdktf.ComplexComput
 
   // limits - computed: true, optional: false, required: false
   public get limits() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('limits') as any;
   }
 
   // requests - computed: true, optional: false, required: false
   public get requests() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('requests') as any;
   }
 }
@@ -904,22 +958,23 @@ export class DataKubernetesPodSpecContainerSecurityContext extends cdktf.Complex
 
   // allow_privilege_escalation - computed: true, optional: false, required: false
   public get allowPrivilegeEscalation() {
-    return this.getBooleanAttribute('allow_privilege_escalation');
+    return this.getBooleanAttribute('allow_privilege_escalation') as any;
   }
 
   // capabilities - computed: true, optional: false, required: false
   public get capabilities() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('capabilities') as any;
   }
 
   // privileged - computed: true, optional: false, required: false
   public get privileged() {
-    return this.getBooleanAttribute('privileged');
+    return this.getBooleanAttribute('privileged') as any;
   }
 
   // read_only_root_filesystem - computed: true, optional: false, required: false
   public get readOnlyRootFilesystem() {
-    return this.getBooleanAttribute('read_only_root_filesystem');
+    return this.getBooleanAttribute('read_only_root_filesystem') as any;
   }
 
   // run_as_group - computed: true, optional: false, required: false
@@ -929,7 +984,7 @@ export class DataKubernetesPodSpecContainerSecurityContext extends cdktf.Complex
 
   // run_as_non_root - computed: true, optional: false, required: false
   public get runAsNonRoot() {
-    return this.getBooleanAttribute('run_as_non_root');
+    return this.getBooleanAttribute('run_as_non_root') as any;
   }
 
   // run_as_user - computed: true, optional: false, required: false
@@ -939,6 +994,7 @@ export class DataKubernetesPodSpecContainerSecurityContext extends cdktf.Complex
 
   // se_linux_options - computed: true, optional: false, required: false
   public get seLinuxOptions() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('se_linux_options') as any;
   }
 }
@@ -970,6 +1026,7 @@ export class DataKubernetesPodSpecContainerStartupProbeHttpGet extends cdktf.Com
 
   // http_header - computed: true, optional: false, required: false
   public get httpHeader() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
 
@@ -999,6 +1056,7 @@ export class DataKubernetesPodSpecContainerStartupProbe extends cdktf.ComplexCom
 
   // exec - computed: true, optional: false, required: false
   public get exec() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('exec') as any;
   }
 
@@ -1009,6 +1067,7 @@ export class DataKubernetesPodSpecContainerStartupProbe extends cdktf.ComplexCom
 
   // http_get - computed: true, optional: false, required: false
   public get httpGet() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_get') as any;
   }
 
@@ -1029,6 +1088,7 @@ export class DataKubernetesPodSpecContainerStartupProbe extends cdktf.ComplexCom
 
   // tcp_socket - computed: true, optional: false, required: false
   public get tcpSocket() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
 
@@ -1056,7 +1116,7 @@ export class DataKubernetesPodSpecContainerVolumeMount extends cdktf.ComplexComp
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // sub_path - computed: true, optional: false, required: false
@@ -1078,11 +1138,13 @@ export class DataKubernetesPodSpecContainer extends cdktf.ComplexComputedList {
 
   // env - computed: true, optional: false, required: false
   public get env() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('env') as any;
   }
 
   // env_from - computed: true, optional: false, required: false
   public get envFrom() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('env_from') as any;
   }
 
@@ -1098,11 +1160,13 @@ export class DataKubernetesPodSpecContainer extends cdktf.ComplexComputedList {
 
   // lifecycle - computed: true, optional: false, required: false
   public get lifecycle() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('lifecycle') as any;
   }
 
   // liveness_probe - computed: true, optional: false, required: false
   public get livenessProbe() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('liveness_probe') as any;
   }
 
@@ -1113,37 +1177,42 @@ export class DataKubernetesPodSpecContainer extends cdktf.ComplexComputedList {
 
   // port - computed: true, optional: false, required: false
   public get port() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('port') as any;
   }
 
   // readiness_probe - computed: true, optional: false, required: false
   public get readinessProbe() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('readiness_probe') as any;
   }
 
   // resources - computed: true, optional: false, required: false
   public get resources() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('resources') as any;
   }
 
   // security_context - computed: true, optional: false, required: false
   public get securityContext() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('security_context') as any;
   }
 
   // startup_probe - computed: true, optional: false, required: false
   public get startupProbe() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('startup_probe') as any;
   }
 
   // stdin - computed: true, optional: false, required: false
   public get stdin() {
-    return this.getBooleanAttribute('stdin');
+    return this.getBooleanAttribute('stdin') as any;
   }
 
   // stdin_once - computed: true, optional: false, required: false
   public get stdinOnce() {
-    return this.getBooleanAttribute('stdin_once');
+    return this.getBooleanAttribute('stdin_once') as any;
   }
 
   // termination_message_path - computed: true, optional: false, required: false
@@ -1158,11 +1227,12 @@ export class DataKubernetesPodSpecContainer extends cdktf.ComplexComputedList {
 
   // tty - computed: true, optional: false, required: false
   public get tty() {
-    return this.getBooleanAttribute('tty');
+    return this.getBooleanAttribute('tty') as any;
   }
 
   // volume_mount - computed: true, optional: false, required: false
   public get volumeMount() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('volume_mount') as any;
   }
 
@@ -1192,6 +1262,7 @@ export class DataKubernetesPodSpecDnsConfig extends cdktf.ComplexComputedList {
 
   // option - computed: true, optional: false, required: false
   public get option() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('option') as any;
   }
 
@@ -1233,7 +1304,7 @@ export class DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRef exten
 
   // optional - computed: true, optional: false, required: false
   public get optional() {
-    return this.getBooleanAttribute('optional');
+    return this.getBooleanAttribute('optional') as any;
   }
 }
 export class DataKubernetesPodSpecInitContainerEnvValueFromFieldRef extends cdktf.ComplexComputedList {
@@ -1279,28 +1350,32 @@ export class DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRef extends 
 
   // optional - computed: true, optional: false, required: false
   public get optional() {
-    return this.getBooleanAttribute('optional');
+    return this.getBooleanAttribute('optional') as any;
   }
 }
 export class DataKubernetesPodSpecInitContainerEnvValueFrom extends cdktf.ComplexComputedList {
 
   // config_map_key_ref - computed: true, optional: false, required: false
   public get configMapKeyRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('config_map_key_ref') as any;
   }
 
   // field_ref - computed: true, optional: false, required: false
   public get fieldRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('field_ref') as any;
   }
 
   // resource_field_ref - computed: true, optional: false, required: false
   public get resourceFieldRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('resource_field_ref') as any;
   }
 
   // secret_key_ref - computed: true, optional: false, required: false
   public get secretKeyRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('secret_key_ref') as any;
   }
 }
@@ -1318,6 +1393,7 @@ export class DataKubernetesPodSpecInitContainerEnv extends cdktf.ComplexComputed
 
   // value_from - computed: true, optional: false, required: false
   public get valueFrom() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('value_from') as any;
   }
 }
@@ -1330,7 +1406,7 @@ export class DataKubernetesPodSpecInitContainerEnvFromConfigMapRef extends cdktf
 
   // optional - computed: true, optional: false, required: false
   public get optional() {
-    return this.getBooleanAttribute('optional');
+    return this.getBooleanAttribute('optional') as any;
   }
 }
 export class DataKubernetesPodSpecInitContainerEnvFromSecretRef extends cdktf.ComplexComputedList {
@@ -1342,13 +1418,14 @@ export class DataKubernetesPodSpecInitContainerEnvFromSecretRef extends cdktf.Co
 
   // optional - computed: true, optional: false, required: false
   public get optional() {
-    return this.getBooleanAttribute('optional');
+    return this.getBooleanAttribute('optional') as any;
   }
 }
 export class DataKubernetesPodSpecInitContainerEnvFrom extends cdktf.ComplexComputedList {
 
   // config_map_ref - computed: true, optional: false, required: false
   public get configMapRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('config_map_ref') as any;
   }
 
@@ -1359,6 +1436,7 @@ export class DataKubernetesPodSpecInitContainerEnvFrom extends cdktf.ComplexComp
 
   // secret_ref - computed: true, optional: false, required: false
   public get secretRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('secret_ref') as any;
   }
 }
@@ -1390,6 +1468,7 @@ export class DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGet extends
 
   // http_header - computed: true, optional: false, required: false
   public get httpHeader() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
 
@@ -1419,16 +1498,19 @@ export class DataKubernetesPodSpecInitContainerLifecyclePostStart extends cdktf.
 
   // exec - computed: true, optional: false, required: false
   public get exec() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('exec') as any;
   }
 
   // http_get - computed: true, optional: false, required: false
   public get httpGet() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_get') as any;
   }
 
   // tcp_socket - computed: true, optional: false, required: false
   public get tcpSocket() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
 }
@@ -1460,6 +1542,7 @@ export class DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGet extends c
 
   // http_header - computed: true, optional: false, required: false
   public get httpHeader() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
 
@@ -1489,16 +1572,19 @@ export class DataKubernetesPodSpecInitContainerLifecyclePreStop extends cdktf.Co
 
   // exec - computed: true, optional: false, required: false
   public get exec() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('exec') as any;
   }
 
   // http_get - computed: true, optional: false, required: false
   public get httpGet() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_get') as any;
   }
 
   // tcp_socket - computed: true, optional: false, required: false
   public get tcpSocket() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
 }
@@ -1506,11 +1592,13 @@ export class DataKubernetesPodSpecInitContainerLifecycle extends cdktf.ComplexCo
 
   // post_start - computed: true, optional: false, required: false
   public get postStart() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('post_start') as any;
   }
 
   // pre_stop - computed: true, optional: false, required: false
   public get preStop() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('pre_stop') as any;
   }
 }
@@ -1542,6 +1630,7 @@ export class DataKubernetesPodSpecInitContainerLivenessProbeHttpGet extends cdkt
 
   // http_header - computed: true, optional: false, required: false
   public get httpHeader() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
 
@@ -1571,6 +1660,7 @@ export class DataKubernetesPodSpecInitContainerLivenessProbe extends cdktf.Compl
 
   // exec - computed: true, optional: false, required: false
   public get exec() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('exec') as any;
   }
 
@@ -1581,6 +1671,7 @@ export class DataKubernetesPodSpecInitContainerLivenessProbe extends cdktf.Compl
 
   // http_get - computed: true, optional: false, required: false
   public get httpGet() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_get') as any;
   }
 
@@ -1601,6 +1692,7 @@ export class DataKubernetesPodSpecInitContainerLivenessProbe extends cdktf.Compl
 
   // tcp_socket - computed: true, optional: false, required: false
   public get tcpSocket() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
 
@@ -1664,6 +1756,7 @@ export class DataKubernetesPodSpecInitContainerReadinessProbeHttpGet extends cdk
 
   // http_header - computed: true, optional: false, required: false
   public get httpHeader() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
 
@@ -1693,6 +1786,7 @@ export class DataKubernetesPodSpecInitContainerReadinessProbe extends cdktf.Comp
 
   // exec - computed: true, optional: false, required: false
   public get exec() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('exec') as any;
   }
 
@@ -1703,6 +1797,7 @@ export class DataKubernetesPodSpecInitContainerReadinessProbe extends cdktf.Comp
 
   // http_get - computed: true, optional: false, required: false
   public get httpGet() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_get') as any;
   }
 
@@ -1723,6 +1818,7 @@ export class DataKubernetesPodSpecInitContainerReadinessProbe extends cdktf.Comp
 
   // tcp_socket - computed: true, optional: false, required: false
   public get tcpSocket() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
 
@@ -1735,11 +1831,13 @@ export class DataKubernetesPodSpecInitContainerResources extends cdktf.ComplexCo
 
   // limits - computed: true, optional: false, required: false
   public get limits() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('limits') as any;
   }
 
   // requests - computed: true, optional: false, required: false
   public get requests() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('requests') as any;
   }
 }
@@ -1781,22 +1879,23 @@ export class DataKubernetesPodSpecInitContainerSecurityContext extends cdktf.Com
 
   // allow_privilege_escalation - computed: true, optional: false, required: false
   public get allowPrivilegeEscalation() {
-    return this.getBooleanAttribute('allow_privilege_escalation');
+    return this.getBooleanAttribute('allow_privilege_escalation') as any;
   }
 
   // capabilities - computed: true, optional: false, required: false
   public get capabilities() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('capabilities') as any;
   }
 
   // privileged - computed: true, optional: false, required: false
   public get privileged() {
-    return this.getBooleanAttribute('privileged');
+    return this.getBooleanAttribute('privileged') as any;
   }
 
   // read_only_root_filesystem - computed: true, optional: false, required: false
   public get readOnlyRootFilesystem() {
-    return this.getBooleanAttribute('read_only_root_filesystem');
+    return this.getBooleanAttribute('read_only_root_filesystem') as any;
   }
 
   // run_as_group - computed: true, optional: false, required: false
@@ -1806,7 +1905,7 @@ export class DataKubernetesPodSpecInitContainerSecurityContext extends cdktf.Com
 
   // run_as_non_root - computed: true, optional: false, required: false
   public get runAsNonRoot() {
-    return this.getBooleanAttribute('run_as_non_root');
+    return this.getBooleanAttribute('run_as_non_root') as any;
   }
 
   // run_as_user - computed: true, optional: false, required: false
@@ -1816,6 +1915,7 @@ export class DataKubernetesPodSpecInitContainerSecurityContext extends cdktf.Com
 
   // se_linux_options - computed: true, optional: false, required: false
   public get seLinuxOptions() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('se_linux_options') as any;
   }
 }
@@ -1847,6 +1947,7 @@ export class DataKubernetesPodSpecInitContainerStartupProbeHttpGet extends cdktf
 
   // http_header - computed: true, optional: false, required: false
   public get httpHeader() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
 
@@ -1876,6 +1977,7 @@ export class DataKubernetesPodSpecInitContainerStartupProbe extends cdktf.Comple
 
   // exec - computed: true, optional: false, required: false
   public get exec() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('exec') as any;
   }
 
@@ -1886,6 +1988,7 @@ export class DataKubernetesPodSpecInitContainerStartupProbe extends cdktf.Comple
 
   // http_get - computed: true, optional: false, required: false
   public get httpGet() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_get') as any;
   }
 
@@ -1906,6 +2009,7 @@ export class DataKubernetesPodSpecInitContainerStartupProbe extends cdktf.Comple
 
   // tcp_socket - computed: true, optional: false, required: false
   public get tcpSocket() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
 
@@ -1933,7 +2037,7 @@ export class DataKubernetesPodSpecInitContainerVolumeMount extends cdktf.Complex
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // sub_path - computed: true, optional: false, required: false
@@ -1955,11 +2059,13 @@ export class DataKubernetesPodSpecInitContainer extends cdktf.ComplexComputedLis
 
   // env - computed: true, optional: false, required: false
   public get env() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('env') as any;
   }
 
   // env_from - computed: true, optional: false, required: false
   public get envFrom() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('env_from') as any;
   }
 
@@ -1975,11 +2081,13 @@ export class DataKubernetesPodSpecInitContainer extends cdktf.ComplexComputedLis
 
   // lifecycle - computed: true, optional: false, required: false
   public get lifecycle() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('lifecycle') as any;
   }
 
   // liveness_probe - computed: true, optional: false, required: false
   public get livenessProbe() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('liveness_probe') as any;
   }
 
@@ -1990,37 +2098,42 @@ export class DataKubernetesPodSpecInitContainer extends cdktf.ComplexComputedLis
 
   // port - computed: true, optional: false, required: false
   public get port() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('port') as any;
   }
 
   // readiness_probe - computed: true, optional: false, required: false
   public get readinessProbe() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('readiness_probe') as any;
   }
 
   // resources - computed: true, optional: false, required: false
   public get resources() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('resources') as any;
   }
 
   // security_context - computed: true, optional: false, required: false
   public get securityContext() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('security_context') as any;
   }
 
   // startup_probe - computed: true, optional: false, required: false
   public get startupProbe() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('startup_probe') as any;
   }
 
   // stdin - computed: true, optional: false, required: false
   public get stdin() {
-    return this.getBooleanAttribute('stdin');
+    return this.getBooleanAttribute('stdin') as any;
   }
 
   // stdin_once - computed: true, optional: false, required: false
   public get stdinOnce() {
-    return this.getBooleanAttribute('stdin_once');
+    return this.getBooleanAttribute('stdin_once') as any;
   }
 
   // termination_message_path - computed: true, optional: false, required: false
@@ -2035,11 +2148,12 @@ export class DataKubernetesPodSpecInitContainer extends cdktf.ComplexComputedLis
 
   // tty - computed: true, optional: false, required: false
   public get tty() {
-    return this.getBooleanAttribute('tty');
+    return this.getBooleanAttribute('tty') as any;
   }
 
   // volume_mount - computed: true, optional: false, required: false
   public get volumeMount() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('volume_mount') as any;
   }
 
@@ -2103,7 +2217,7 @@ export class DataKubernetesPodSpecSecurityContext extends cdktf.ComplexComputedL
 
   // run_as_non_root - computed: true, optional: false, required: false
   public get runAsNonRoot() {
-    return this.getBooleanAttribute('run_as_non_root');
+    return this.getBooleanAttribute('run_as_non_root') as any;
   }
 
   // run_as_user - computed: true, optional: false, required: false
@@ -2113,16 +2227,19 @@ export class DataKubernetesPodSpecSecurityContext extends cdktf.ComplexComputedL
 
   // se_linux_options - computed: true, optional: false, required: false
   public get seLinuxOptions() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('se_linux_options') as any;
   }
 
   // supplemental_groups - computed: true, optional: false, required: false
   public get supplementalGroups() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('supplemental_groups') as any;
   }
 
   // sysctl - computed: true, optional: false, required: false
   public get sysctl() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('sysctl') as any;
   }
 }
@@ -2174,11 +2291,13 @@ export class DataKubernetesPodSpecTopologySpreadConstraintLabelSelector extends 
 
   // match_expressions - computed: true, optional: false, required: false
   public get matchExpressions() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
 
   // match_labels - computed: true, optional: false, required: false
   public get matchLabels() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
 }
@@ -2186,6 +2305,7 @@ export class DataKubernetesPodSpecTopologySpreadConstraint extends cdktf.Complex
 
   // label_selector - computed: true, optional: false, required: false
   public get labelSelector() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('label_selector') as any;
   }
 
@@ -2218,7 +2338,7 @@ export class DataKubernetesPodSpecVolumeAwsElasticBlockStore extends cdktf.Compl
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // volume_id - computed: true, optional: false, required: false
@@ -2255,14 +2375,14 @@ export class DataKubernetesPodSpecVolumeAzureDisk extends cdktf.ComplexComputedL
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 }
 export class DataKubernetesPodSpecVolumeAzureFile extends cdktf.ComplexComputedList {
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // secret_name - computed: true, optional: false, required: false
@@ -2306,7 +2426,7 @@ export class DataKubernetesPodSpecVolumeCephFs extends cdktf.ComplexComputedList
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // secret_file - computed: true, optional: false, required: false
@@ -2316,6 +2436,7 @@ export class DataKubernetesPodSpecVolumeCephFs extends cdktf.ComplexComputedList
 
   // secret_ref - computed: true, optional: false, required: false
   public get secretRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('secret_ref') as any;
   }
 
@@ -2333,7 +2454,7 @@ export class DataKubernetesPodSpecVolumeCinder extends cdktf.ComplexComputedList
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // volume_id - computed: true, optional: false, required: false
@@ -2367,6 +2488,7 @@ export class DataKubernetesPodSpecVolumeConfigMap extends cdktf.ComplexComputedL
 
   // items - computed: true, optional: false, required: false
   public get items() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
 
@@ -2377,7 +2499,7 @@ export class DataKubernetesPodSpecVolumeConfigMap extends cdktf.ComplexComputedL
 
   // optional - computed: true, optional: false, required: false
   public get optional() {
-    return this.getBooleanAttribute('optional');
+    return this.getBooleanAttribute('optional') as any;
   }
 }
 export class DataKubernetesPodSpecVolumeCsiControllerExpandSecretRef extends cdktf.ComplexComputedList {
@@ -2432,11 +2554,13 @@ export class DataKubernetesPodSpecVolumeCsi extends cdktf.ComplexComputedList {
 
   // controller_expand_secret_ref - computed: true, optional: false, required: false
   public get controllerExpandSecretRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('controller_expand_secret_ref') as any;
   }
 
   // controller_publish_secret_ref - computed: true, optional: false, required: false
   public get controllerPublishSecretRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('controller_publish_secret_ref') as any;
   }
 
@@ -2452,21 +2576,24 @@ export class DataKubernetesPodSpecVolumeCsi extends cdktf.ComplexComputedList {
 
   // node_publish_secret_ref - computed: true, optional: false, required: false
   public get nodePublishSecretRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('node_publish_secret_ref') as any;
   }
 
   // node_stage_secret_ref - computed: true, optional: false, required: false
   public get nodeStageSecretRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('node_stage_secret_ref') as any;
   }
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // volume_attributes - computed: true, optional: false, required: false
   public get volumeAttributes() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('volume_attributes') as any;
   }
 
@@ -2508,6 +2635,7 @@ export class DataKubernetesPodSpecVolumeDownwardApiItems extends cdktf.ComplexCo
 
   // field_ref - computed: true, optional: false, required: false
   public get fieldRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('field_ref') as any;
   }
 
@@ -2523,6 +2651,7 @@ export class DataKubernetesPodSpecVolumeDownwardApiItems extends cdktf.ComplexCo
 
   // resource_field_ref - computed: true, optional: false, required: false
   public get resourceFieldRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('resource_field_ref') as any;
   }
 }
@@ -2535,6 +2664,7 @@ export class DataKubernetesPodSpecVolumeDownwardApi extends cdktf.ComplexCompute
 
   // items - computed: true, optional: false, required: false
   public get items() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
 }
@@ -2564,7 +2694,7 @@ export class DataKubernetesPodSpecVolumeFc extends cdktf.ComplexComputedList {
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // target_ww_ns - computed: true, optional: false, required: false
@@ -2598,16 +2728,18 @@ export class DataKubernetesPodSpecVolumeFlexVolume extends cdktf.ComplexComputed
 
   // options - computed: true, optional: false, required: false
   public get options() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('options') as any;
   }
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // secret_ref - computed: true, optional: false, required: false
   public get secretRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('secret_ref') as any;
   }
 }
@@ -2642,7 +2774,7 @@ export class DataKubernetesPodSpecVolumeGcePersistentDisk extends cdktf.ComplexC
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 }
 export class DataKubernetesPodSpecVolumeGitRepo extends cdktf.ComplexComputedList {
@@ -2676,7 +2808,7 @@ export class DataKubernetesPodSpecVolumeGlusterfs extends cdktf.ComplexComputedL
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 }
 export class DataKubernetesPodSpecVolumeHostPath extends cdktf.ComplexComputedList {
@@ -2715,7 +2847,7 @@ export class DataKubernetesPodSpecVolumeIscsi extends cdktf.ComplexComputedList 
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // target_portal - computed: true, optional: false, required: false
@@ -2739,7 +2871,7 @@ export class DataKubernetesPodSpecVolumeNfs extends cdktf.ComplexComputedList {
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // server - computed: true, optional: false, required: false
@@ -2756,7 +2888,7 @@ export class DataKubernetesPodSpecVolumePersistentVolumeClaim extends cdktf.Comp
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 }
 export class DataKubernetesPodSpecVolumePhotonPersistentDisk extends cdktf.ComplexComputedList {
@@ -2792,6 +2924,7 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesConfigMap extends cdktf.
 
   // items - computed: true, optional: false, required: false
   public get items() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
 
@@ -2802,7 +2935,7 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesConfigMap extends cdktf.
 
   // optional - computed: true, optional: false, required: false
   public get optional() {
-    return this.getBooleanAttribute('optional');
+    return this.getBooleanAttribute('optional') as any;
   }
 }
 export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef extends cdktf.ComplexComputedList {
@@ -2838,6 +2971,7 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItems extends
 
   // field_ref - computed: true, optional: false, required: false
   public get fieldRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('field_ref') as any;
   }
 
@@ -2853,6 +2987,7 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItems extends
 
   // resource_field_ref - computed: true, optional: false, required: false
   public get resourceFieldRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('resource_field_ref') as any;
   }
 }
@@ -2860,6 +2995,7 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApi extends cdkt
 
   // items - computed: true, optional: false, required: false
   public get items() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
 }
@@ -2884,6 +3020,7 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesSecret extends cdktf.Com
 
   // items - computed: true, optional: false, required: false
   public get items() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
 
@@ -2894,7 +3031,7 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesSecret extends cdktf.Com
 
   // optional - computed: true, optional: false, required: false
   public get optional() {
-    return this.getBooleanAttribute('optional');
+    return this.getBooleanAttribute('optional') as any;
   }
 }
 export class DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountToken extends cdktf.ComplexComputedList {
@@ -2918,21 +3055,25 @@ export class DataKubernetesPodSpecVolumeProjectedSources extends cdktf.ComplexCo
 
   // config_map - computed: true, optional: false, required: false
   public get configMap() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('config_map') as any;
   }
 
   // downward_api - computed: true, optional: false, required: false
   public get downwardApi() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('downward_api') as any;
   }
 
   // secret - computed: true, optional: false, required: false
   public get secret() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('secret') as any;
   }
 
   // service_account_token - computed: true, optional: false, required: false
   public get serviceAccountToken() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('service_account_token') as any;
   }
 }
@@ -2945,6 +3086,7 @@ export class DataKubernetesPodSpecVolumeProjected extends cdktf.ComplexComputedL
 
   // sources - computed: true, optional: false, required: false
   public get sources() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('sources') as any;
   }
 }
@@ -2957,7 +3099,7 @@ export class DataKubernetesPodSpecVolumeQuobyte extends cdktf.ComplexComputedLis
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // registry - computed: true, optional: false, required: false
@@ -3021,11 +3163,12 @@ export class DataKubernetesPodSpecVolumeRbd extends cdktf.ComplexComputedList {
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
-    return this.getBooleanAttribute('read_only');
+    return this.getBooleanAttribute('read_only') as any;
   }
 
   // secret_ref - computed: true, optional: false, required: false
   public get secretRef() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('secret_ref') as any;
   }
 }
@@ -3055,12 +3198,13 @@ export class DataKubernetesPodSpecVolumeSecret extends cdktf.ComplexComputedList
 
   // items - computed: true, optional: false, required: false
   public get items() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
 
   // optional - computed: true, optional: false, required: false
   public get optional() {
-    return this.getBooleanAttribute('optional');
+    return this.getBooleanAttribute('optional') as any;
   }
 
   // secret_name - computed: true, optional: false, required: false
@@ -3084,91 +3228,109 @@ export class DataKubernetesPodSpecVolume extends cdktf.ComplexComputedList {
 
   // aws_elastic_block_store - computed: true, optional: false, required: false
   public get awsElasticBlockStore() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('aws_elastic_block_store') as any;
   }
 
   // azure_disk - computed: true, optional: false, required: false
   public get azureDisk() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('azure_disk') as any;
   }
 
   // azure_file - computed: true, optional: false, required: false
   public get azureFile() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('azure_file') as any;
   }
 
   // ceph_fs - computed: true, optional: false, required: false
   public get cephFs() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('ceph_fs') as any;
   }
 
   // cinder - computed: true, optional: false, required: false
   public get cinder() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('cinder') as any;
   }
 
   // config_map - computed: true, optional: false, required: false
   public get configMap() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('config_map') as any;
   }
 
   // csi - computed: true, optional: false, required: false
   public get csi() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('csi') as any;
   }
 
   // downward_api - computed: true, optional: false, required: false
   public get downwardApi() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('downward_api') as any;
   }
 
   // empty_dir - computed: true, optional: false, required: false
   public get emptyDir() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('empty_dir') as any;
   }
 
   // fc - computed: true, optional: false, required: false
   public get fc() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('fc') as any;
   }
 
   // flex_volume - computed: true, optional: false, required: false
   public get flexVolume() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('flex_volume') as any;
   }
 
   // flocker - computed: true, optional: false, required: false
   public get flocker() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('flocker') as any;
   }
 
   // gce_persistent_disk - computed: true, optional: false, required: false
   public get gcePersistentDisk() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('gce_persistent_disk') as any;
   }
 
   // git_repo - computed: true, optional: false, required: false
   public get gitRepo() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('git_repo') as any;
   }
 
   // glusterfs - computed: true, optional: false, required: false
   public get glusterfs() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('glusterfs') as any;
   }
 
   // host_path - computed: true, optional: false, required: false
   public get hostPath() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('host_path') as any;
   }
 
   // iscsi - computed: true, optional: false, required: false
   public get iscsi() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('iscsi') as any;
   }
 
   // local - computed: true, optional: false, required: false
   public get local() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('local') as any;
   }
 
@@ -3179,41 +3341,49 @@ export class DataKubernetesPodSpecVolume extends cdktf.ComplexComputedList {
 
   // nfs - computed: true, optional: false, required: false
   public get nfs() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('nfs') as any;
   }
 
   // persistent_volume_claim - computed: true, optional: false, required: false
   public get persistentVolumeClaim() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('persistent_volume_claim') as any;
   }
 
   // photon_persistent_disk - computed: true, optional: false, required: false
   public get photonPersistentDisk() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('photon_persistent_disk') as any;
   }
 
   // projected - computed: true, optional: false, required: false
   public get projected() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('projected') as any;
   }
 
   // quobyte - computed: true, optional: false, required: false
   public get quobyte() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('quobyte') as any;
   }
 
   // rbd - computed: true, optional: false, required: false
   public get rbd() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('rbd') as any;
   }
 
   // secret - computed: true, optional: false, required: false
   public get secret() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('secret') as any;
   }
 
   // vsphere_volume - computed: true, optional: false, required: false
   public get vsphereVolume() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('vsphere_volume') as any;
   }
 }
@@ -3226,21 +3396,24 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
 
   // affinity - computed: true, optional: false, required: false
   public get affinity() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('affinity') as any;
   }
 
   // automount_service_account_token - computed: true, optional: false, required: false
   public get automountServiceAccountToken() {
-    return this.getBooleanAttribute('automount_service_account_token');
+    return this.getBooleanAttribute('automount_service_account_token') as any;
   }
 
   // container - computed: true, optional: false, required: false
   public get container() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('container') as any;
   }
 
   // dns_config - computed: true, optional: false, required: false
   public get dnsConfig() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('dns_config') as any;
   }
 
@@ -3251,27 +3424,28 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
 
   // enable_service_links - computed: true, optional: false, required: false
   public get enableServiceLinks() {
-    return this.getBooleanAttribute('enable_service_links');
+    return this.getBooleanAttribute('enable_service_links') as any;
   }
 
   // host_aliases - computed: true, optional: false, required: false
   public get hostAliases() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('host_aliases') as any;
   }
 
   // host_ipc - computed: true, optional: false, required: false
   public get hostIpc() {
-    return this.getBooleanAttribute('host_ipc');
+    return this.getBooleanAttribute('host_ipc') as any;
   }
 
   // host_network - computed: true, optional: false, required: false
   public get hostNetwork() {
-    return this.getBooleanAttribute('host_network');
+    return this.getBooleanAttribute('host_network') as any;
   }
 
   // host_pid - computed: true, optional: false, required: false
   public get hostPid() {
-    return this.getBooleanAttribute('host_pid');
+    return this.getBooleanAttribute('host_pid') as any;
   }
 
   // hostname - computed: true, optional: false, required: false
@@ -3281,11 +3455,13 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
 
   // image_pull_secrets - computed: true, optional: false, required: false
   public get imagePullSecrets() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('image_pull_secrets') as any;
   }
 
   // init_container - computed: true, optional: false, required: false
   public get initContainer() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('init_container') as any;
   }
 
@@ -3296,6 +3472,7 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
 
   // node_selector - computed: true, optional: false, required: false
   public get nodeSelector() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('node_selector') as any;
   }
 
@@ -3306,6 +3483,7 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
 
   // readiness_gate - computed: true, optional: false, required: false
   public get readinessGate() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('readiness_gate') as any;
   }
 
@@ -3316,6 +3494,7 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
 
   // security_context - computed: true, optional: false, required: false
   public get securityContext() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('security_context') as any;
   }
 
@@ -3326,7 +3505,7 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
 
   // share_process_namespace - computed: true, optional: false, required: false
   public get shareProcessNamespace() {
-    return this.getBooleanAttribute('share_process_namespace');
+    return this.getBooleanAttribute('share_process_namespace') as any;
   }
 
   // subdomain - computed: true, optional: false, required: false
@@ -3341,16 +3520,19 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
 
   // toleration - computed: true, optional: false, required: false
   public get toleration() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('toleration') as any;
   }
 
   // topology_spread_constraint - computed: true, optional: false, required: false
   public get topologySpreadConstraint() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('topology_spread_constraint') as any;
   }
 
   // volume - computed: true, optional: false, required: false
   public get volume() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('volume') as any;
   }
 }
@@ -3387,8 +3569,11 @@ export interface DataKubernetesPodMetadata {
   readonly namespace?: string;
 }
 
-function dataKubernetesPodMetadataToTerraform(struct?: DataKubernetesPodMetadata): any {
+function dataKubernetesPodMetadataToTerraform(struct?: DataKubernetesPodMetadataOutputReference | DataKubernetesPodMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -3398,6 +3583,98 @@ function dataKubernetesPodMetadataToTerraform(struct?: DataKubernetesPodMetadata
   }
 }
 
+export class DataKubernetesPodMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: false, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/pod.html kubernetes_pod}
@@ -3454,11 +3731,12 @@ export class DataKubernetesPod extends cdktf.TerraformDataSource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: DataKubernetesPodMetadata[];
+  private _metadata?: DataKubernetesPodMetadata; 
+  private __metadataOutput = new DataKubernetesPodMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: DataKubernetesPodMetadata[]) {
+  public putMetadata(value: DataKubernetesPodMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -3472,7 +3750,7 @@ export class DataKubernetesPod extends cdktf.TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: cdktf.listMapper(dataKubernetesPodMetadataToTerraform)(this._metadata),
+      metadata: dataKubernetesPodMetadataToTerraform(this._metadata),
     };
   }
 }

@@ -96,13 +96,13 @@ export interface KubernetesProviderConfig {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#exec KubernetesProvider#exec}
   */
-  readonly exec?: KubernetesProviderExec[];
+  readonly exec?: KubernetesProviderExec;
   /**
   * experiments block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#experiments KubernetesProvider#experiments}
   */
-  readonly experiments?: KubernetesProviderExperiments[];
+  readonly experiments?: KubernetesProviderExperiments;
 }
 export interface KubernetesProviderExec {
   /**
@@ -123,8 +123,11 @@ export interface KubernetesProviderExec {
   readonly env?: { [key: string]: string } | cdktf.IResolvable;
 }
 
-function kubernetesProviderExecToTerraform(struct?: KubernetesProviderExec): any {
+function kubernetesProviderExecToTerraform(struct?: KubernetesProviderExecOutputReference | KubernetesProviderExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     api_version: cdktf.stringToTerraform(struct!.apiVersion),
     args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
@@ -133,6 +136,74 @@ function kubernetesProviderExecToTerraform(struct?: KubernetesProviderExec): any
   }
 }
 
+export class KubernetesProviderExecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // api_version - computed: false, optional: false, required: true
+  private _apiVersion?: string; 
+  public get apiVersion() {
+    return this._apiVersion;
+  }
+  public set apiVersion(value: string| undefined) {
+    this._apiVersion = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get apiVersionInput() {
+    return this._apiVersion
+  }
+
+  // args - computed: false, optional: true, required: false
+  private _args?: string[] | undefined; 
+  public get args() {
+    return this._args;
+  }
+  public set args(value: string[] | undefined| undefined) {
+    this._args = value;
+  }
+  public resetArgs() {
+    this._args = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get argsInput() {
+    return this._args
+  }
+
+  // command - computed: false, optional: false, required: true
+  private _command?: string; 
+  public get command() {
+    return this._command;
+  }
+  public set command(value: string| undefined) {
+    this._command = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command
+  }
+
+  // env - computed: false, optional: true, required: false
+  private _env?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get env() {
+    return this._env;
+  }
+  public set env(value: { [key: string]: string } | cdktf.IResolvable | undefined| undefined) {
+    this._env = value;
+  }
+  public resetEnv() {
+    this._env = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get envInput() {
+    return this._env
+  }
+}
 export interface KubernetesProviderExperiments {
   /**
   * Enable the `kubernetes_manifest` resource.
@@ -142,13 +213,42 @@ export interface KubernetesProviderExperiments {
   readonly manifestResource?: boolean | cdktf.IResolvable;
 }
 
-function kubernetesProviderExperimentsToTerraform(struct?: KubernetesProviderExperiments): any {
+function kubernetesProviderExperimentsToTerraform(struct?: KubernetesProviderExperimentsOutputReference | KubernetesProviderExperiments): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     manifest_resource: cdktf.booleanToTerraform(struct!.manifestResource),
   }
 }
 
+export class KubernetesProviderExperimentsOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // manifest_resource - computed: false, optional: true, required: false
+  private _manifestResource?: boolean | cdktf.IResolvable | undefined; 
+  public get manifestResource() {
+    return this._manifestResource;
+  }
+  public set manifestResource(value: boolean | cdktf.IResolvable | undefined| undefined) {
+    this._manifestResource = value;
+  }
+  public resetManifestResource() {
+    this._manifestResource = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get manifestResourceInput() {
+    return this._manifestResource
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes kubernetes}
@@ -204,11 +304,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   // ==========
 
   // client_certificate - computed: false, optional: true, required: false
-  private _clientCertificate?: string;
+  private _clientCertificate?: string | undefined; 
   public get clientCertificate() {
     return this._clientCertificate;
   }
-  public set clientCertificate(value: string  | undefined) {
+  public set clientCertificate(value: string | undefined| undefined) {
     this._clientCertificate = value;
   }
   public resetClientCertificate() {
@@ -220,11 +320,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // client_key - computed: false, optional: true, required: false
-  private _clientKey?: string;
+  private _clientKey?: string | undefined; 
   public get clientKey() {
     return this._clientKey;
   }
-  public set clientKey(value: string  | undefined) {
+  public set clientKey(value: string | undefined| undefined) {
     this._clientKey = value;
   }
   public resetClientKey() {
@@ -236,11 +336,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // cluster_ca_certificate - computed: false, optional: true, required: false
-  private _clusterCaCertificate?: string;
+  private _clusterCaCertificate?: string | undefined; 
   public get clusterCaCertificate() {
     return this._clusterCaCertificate;
   }
-  public set clusterCaCertificate(value: string  | undefined) {
+  public set clusterCaCertificate(value: string | undefined| undefined) {
     this._clusterCaCertificate = value;
   }
   public resetClusterCaCertificate() {
@@ -252,11 +352,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // config_context - computed: false, optional: true, required: false
-  private _configContext?: string;
+  private _configContext?: string | undefined; 
   public get configContext() {
     return this._configContext;
   }
-  public set configContext(value: string  | undefined) {
+  public set configContext(value: string | undefined| undefined) {
     this._configContext = value;
   }
   public resetConfigContext() {
@@ -268,11 +368,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // config_context_auth_info - computed: false, optional: true, required: false
-  private _configContextAuthInfo?: string;
+  private _configContextAuthInfo?: string | undefined; 
   public get configContextAuthInfo() {
     return this._configContextAuthInfo;
   }
-  public set configContextAuthInfo(value: string  | undefined) {
+  public set configContextAuthInfo(value: string | undefined| undefined) {
     this._configContextAuthInfo = value;
   }
   public resetConfigContextAuthInfo() {
@@ -284,11 +384,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // config_context_cluster - computed: false, optional: true, required: false
-  private _configContextCluster?: string;
+  private _configContextCluster?: string | undefined; 
   public get configContextCluster() {
     return this._configContextCluster;
   }
-  public set configContextCluster(value: string  | undefined) {
+  public set configContextCluster(value: string | undefined| undefined) {
     this._configContextCluster = value;
   }
   public resetConfigContextCluster() {
@@ -300,11 +400,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // config_path - computed: false, optional: true, required: false
-  private _configPath?: string;
+  private _configPath?: string | undefined; 
   public get configPath() {
     return this._configPath;
   }
-  public set configPath(value: string  | undefined) {
+  public set configPath(value: string | undefined| undefined) {
     this._configPath = value;
   }
   public resetConfigPath() {
@@ -316,11 +416,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // config_paths - computed: false, optional: true, required: false
-  private _configPaths?: string[];
+  private _configPaths?: string[] | undefined; 
   public get configPaths() {
     return this._configPaths;
   }
-  public set configPaths(value: string[]  | undefined) {
+  public set configPaths(value: string[] | undefined| undefined) {
     this._configPaths = value;
   }
   public resetConfigPaths() {
@@ -332,11 +432,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // host - computed: false, optional: true, required: false
-  private _host?: string;
+  private _host?: string | undefined; 
   public get host() {
     return this._host;
   }
-  public set host(value: string  | undefined) {
+  public set host(value: string | undefined| undefined) {
     this._host = value;
   }
   public resetHost() {
@@ -348,11 +448,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // insecure - computed: false, optional: true, required: false
-  private _insecure?: boolean | cdktf.IResolvable;
+  private _insecure?: boolean | cdktf.IResolvable | undefined; 
   public get insecure() {
     return this._insecure;
   }
-  public set insecure(value: boolean | cdktf.IResolvable  | undefined) {
+  public set insecure(value: boolean | cdktf.IResolvable | undefined| undefined) {
     this._insecure = value;
   }
   public resetInsecure() {
@@ -364,11 +464,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // password - computed: false, optional: true, required: false
-  private _password?: string;
+  private _password?: string | undefined; 
   public get password() {
     return this._password;
   }
-  public set password(value: string  | undefined) {
+  public set password(value: string | undefined| undefined) {
     this._password = value;
   }
   public resetPassword() {
@@ -380,11 +480,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // proxy_url - computed: false, optional: true, required: false
-  private _proxyUrl?: string;
+  private _proxyUrl?: string | undefined; 
   public get proxyUrl() {
     return this._proxyUrl;
   }
-  public set proxyUrl(value: string  | undefined) {
+  public set proxyUrl(value: string | undefined| undefined) {
     this._proxyUrl = value;
   }
   public resetProxyUrl() {
@@ -396,11 +496,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // token - computed: false, optional: true, required: false
-  private _token?: string;
+  private _token?: string | undefined; 
   public get token() {
     return this._token;
   }
-  public set token(value: string  | undefined) {
+  public set token(value: string | undefined| undefined) {
     this._token = value;
   }
   public resetToken() {
@@ -412,11 +512,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // username - computed: false, optional: true, required: false
-  private _username?: string;
+  private _username?: string | undefined; 
   public get username() {
     return this._username;
   }
-  public set username(value: string  | undefined) {
+  public set username(value: string | undefined| undefined) {
     this._username = value;
   }
   public resetUsername() {
@@ -428,11 +528,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // alias - computed: false, optional: true, required: false
-  private _alias?: string;
+  private _alias?: string | undefined; 
   public get alias() {
     return this._alias;
   }
-  public set alias(value: string  | undefined) {
+  public set alias(value: string | undefined| undefined) {
     this._alias = value;
   }
   public resetAlias() {
@@ -444,11 +544,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: KubernetesProviderExec[];
+  private _exec?: KubernetesProviderExec | undefined; 
   public get exec() {
     return this._exec;
   }
-  public set exec(value: KubernetesProviderExec[]  | undefined) {
+  public set exec(value: KubernetesProviderExec | undefined| undefined) {
     this._exec = value;
   }
   public resetExec() {
@@ -460,11 +560,11 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   }
 
   // experiments - computed: false, optional: true, required: false
-  private _experiments?: KubernetesProviderExperiments[];
+  private _experiments?: KubernetesProviderExperiments | undefined; 
   public get experiments() {
     return this._experiments;
   }
-  public set experiments(value: KubernetesProviderExperiments[]  | undefined) {
+  public set experiments(value: KubernetesProviderExperiments | undefined| undefined) {
     this._experiments = value;
   }
   public resetExperiments() {
@@ -496,8 +596,8 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
       token: cdktf.stringToTerraform(this._token),
       username: cdktf.stringToTerraform(this._username),
       alias: cdktf.stringToTerraform(this._alias),
-      exec: cdktf.listMapper(kubernetesProviderExecToTerraform)(this._exec),
-      experiments: cdktf.listMapper(kubernetesProviderExperimentsToTerraform)(this._experiments),
+      exec: kubernetesProviderExecToTerraform(this._exec),
+      experiments: kubernetesProviderExperimentsToTerraform(this._experiments),
     };
   }
 }

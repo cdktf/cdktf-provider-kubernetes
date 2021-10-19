@@ -24,7 +24,7 @@ export interface ConfigMapConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/config_map.html#metadata ConfigMap#metadata}
   */
-  readonly metadata: ConfigMapMetadata[];
+  readonly metadata: ConfigMapMetadata;
 }
 export interface ConfigMapMetadata {
   /**
@@ -59,8 +59,11 @@ export interface ConfigMapMetadata {
   readonly namespace?: string;
 }
 
-function configMapMetadataToTerraform(struct?: ConfigMapMetadata): any {
+function configMapMetadataToTerraform(struct?: ConfigMapMetadataOutputReference | ConfigMapMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -70,6 +73,98 @@ function configMapMetadataToTerraform(struct?: ConfigMapMetadata): any {
   }
 }
 
+export class ConfigMapMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: false, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/config_map.html kubernetes_config_map}
@@ -113,11 +208,12 @@ export class ConfigMap extends cdktf.TerraformResource {
   // ==========
 
   // binary_data - computed: false, optional: true, required: false
-  private _binaryData?: { [key: string]: string } | cdktf.IResolvable;
+  private _binaryData?: { [key: string]: string } | cdktf.IResolvable | undefined; 
   public get binaryData() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('binary_data') as any;
   }
-  public set binaryData(value: { [key: string]: string } | cdktf.IResolvable ) {
+  public set binaryData(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
     this._binaryData = value;
   }
   public resetBinaryData() {
@@ -129,11 +225,12 @@ export class ConfigMap extends cdktf.TerraformResource {
   }
 
   // data - computed: false, optional: true, required: false
-  private _data?: { [key: string]: string } | cdktf.IResolvable;
+  private _data?: { [key: string]: string } | cdktf.IResolvable | undefined; 
   public get data() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('data') as any;
   }
-  public set data(value: { [key: string]: string } | cdktf.IResolvable ) {
+  public set data(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
     this._data = value;
   }
   public resetData() {
@@ -150,11 +247,12 @@ export class ConfigMap extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: ConfigMapMetadata[];
+  private _metadata?: ConfigMapMetadata; 
+  private __metadataOutput = new ConfigMapMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: ConfigMapMetadata[]) {
+  public putMetadata(value: ConfigMapMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -170,7 +268,7 @@ export class ConfigMap extends cdktf.TerraformResource {
     return {
       binary_data: cdktf.hashMapper(cdktf.anyToTerraform)(this._binaryData),
       data: cdktf.hashMapper(cdktf.anyToTerraform)(this._data),
-      metadata: cdktf.listMapper(configMapMetadataToTerraform)(this._metadata),
+      metadata: configMapMetadataToTerraform(this._metadata),
     };
   }
 }

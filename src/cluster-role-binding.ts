@@ -12,13 +12,13 @@ export interface ClusterRoleBindingConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#metadata ClusterRoleBinding#metadata}
   */
-  readonly metadata: ClusterRoleBindingMetadata[];
+  readonly metadata: ClusterRoleBindingMetadata;
   /**
   * role_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#role_ref ClusterRoleBinding#role_ref}
   */
-  readonly roleRef: ClusterRoleBindingRoleRef[];
+  readonly roleRef: ClusterRoleBindingRoleRef;
   /**
   * subject block
   * 
@@ -47,8 +47,11 @@ export interface ClusterRoleBindingMetadata {
   readonly name?: string;
 }
 
-function clusterRoleBindingMetadataToTerraform(struct?: ClusterRoleBindingMetadata): any {
+function clusterRoleBindingMetadataToTerraform(struct?: ClusterRoleBindingMetadataOutputReference | ClusterRoleBindingMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
@@ -56,6 +59,66 @@ function clusterRoleBindingMetadataToTerraform(struct?: ClusterRoleBindingMetada
   }
 }
 
+export class ClusterRoleBindingMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+}
 export interface ClusterRoleBindingRoleRef {
   /**
   * The API group of the user. The only value possible at the moment is `rbac.authorization.k8s.io`.
@@ -77,8 +140,11 @@ export interface ClusterRoleBindingRoleRef {
   readonly name: string;
 }
 
-function clusterRoleBindingRoleRefToTerraform(struct?: ClusterRoleBindingRoleRef): any {
+function clusterRoleBindingRoleRefToTerraform(struct?: ClusterRoleBindingRoleRefOutputReference | ClusterRoleBindingRoleRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     api_group: cdktf.stringToTerraform(struct!.apiGroup),
     kind: cdktf.stringToTerraform(struct!.kind),
@@ -86,6 +152,55 @@ function clusterRoleBindingRoleRefToTerraform(struct?: ClusterRoleBindingRoleRef
   }
 }
 
+export class ClusterRoleBindingRoleRefOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // api_group - computed: false, optional: false, required: true
+  private _apiGroup?: string; 
+  public get apiGroup() {
+    return this.getStringAttribute('api_group');
+  }
+  public set apiGroup(value: string) {
+    this._apiGroup = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get apiGroupInput() {
+    return this._apiGroup
+  }
+
+  // kind - computed: false, optional: false, required: true
+  private _kind?: string; 
+  public get kind() {
+    return this.getStringAttribute('kind');
+  }
+  public set kind(value: string) {
+    this._kind = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get kindInput() {
+    return this._kind
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+}
 export interface ClusterRoleBindingSubject {
   /**
   * The API group of the subject resource.
@@ -115,6 +230,9 @@ export interface ClusterRoleBindingSubject {
 
 function clusterRoleBindingSubjectToTerraform(struct?: ClusterRoleBindingSubject): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     api_group: cdktf.stringToTerraform(struct!.apiGroup),
     kind: cdktf.stringToTerraform(struct!.kind),
@@ -171,11 +289,12 @@ export class ClusterRoleBinding extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: ClusterRoleBindingMetadata[];
+  private _metadata?: ClusterRoleBindingMetadata; 
+  private __metadataOutput = new ClusterRoleBindingMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: ClusterRoleBindingMetadata[]) {
+  public putMetadata(value: ClusterRoleBindingMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -184,11 +303,12 @@ export class ClusterRoleBinding extends cdktf.TerraformResource {
   }
 
   // role_ref - computed: false, optional: false, required: true
-  private _roleRef: ClusterRoleBindingRoleRef[];
+  private _roleRef?: ClusterRoleBindingRoleRef; 
+  private __roleRefOutput = new ClusterRoleBindingRoleRefOutputReference(this as any, "role_ref", true);
   public get roleRef() {
-    return this.interpolationForAttribute('role_ref') as any;
+    return this.__roleRefOutput;
   }
-  public set roleRef(value: ClusterRoleBindingRoleRef[]) {
+  public putRoleRef(value: ClusterRoleBindingRoleRef) {
     this._roleRef = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -197,8 +317,9 @@ export class ClusterRoleBinding extends cdktf.TerraformResource {
   }
 
   // subject - computed: false, optional: false, required: true
-  private _subject: ClusterRoleBindingSubject[];
+  private _subject?: ClusterRoleBindingSubject[]; 
   public get subject() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('subject') as any;
   }
   public set subject(value: ClusterRoleBindingSubject[]) {
@@ -215,8 +336,8 @@ export class ClusterRoleBinding extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: cdktf.listMapper(clusterRoleBindingMetadataToTerraform)(this._metadata),
-      role_ref: cdktf.listMapper(clusterRoleBindingRoleRefToTerraform)(this._roleRef),
+      metadata: clusterRoleBindingMetadataToTerraform(this._metadata),
+      role_ref: clusterRoleBindingRoleRefToTerraform(this._roleRef),
       subject: cdktf.listMapper(clusterRoleBindingSubjectToTerraform)(this._subject),
     };
   }

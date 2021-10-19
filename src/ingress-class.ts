@@ -12,13 +12,13 @@ export interface IngressClassConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class.html#metadata IngressClass#metadata}
   */
-  readonly metadata: IngressClassMetadata[];
+  readonly metadata: IngressClassMetadata;
   /**
   * spec block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class.html#spec IngressClass#spec}
   */
-  readonly spec: IngressClassSpec[];
+  readonly spec: IngressClassSpec;
 }
 export interface IngressClassMetadata {
   /**
@@ -47,8 +47,11 @@ export interface IngressClassMetadata {
   readonly name?: string;
 }
 
-function ingressClassMetadataToTerraform(struct?: IngressClassMetadata): any {
+function ingressClassMetadataToTerraform(struct?: IngressClassMetadataOutputReference | IngressClassMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -57,6 +60,82 @@ function ingressClassMetadataToTerraform(struct?: IngressClassMetadata): any {
   }
 }
 
+export class IngressClassMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+}
 export interface IngressClassSpecParameters {
   /**
   * APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
@@ -88,6 +167,9 @@ export interface IngressClassSpecParameters {
 
 function ingressClassSpecParametersToTerraform(struct?: IngressClassSpecParameters): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     api_group: cdktf.stringToTerraform(struct!.apiGroup),
     kind: cdktf.stringToTerraform(struct!.kind),
@@ -112,14 +194,60 @@ export interface IngressClassSpec {
   readonly parameters?: IngressClassSpecParameters[];
 }
 
-function ingressClassSpecToTerraform(struct?: IngressClassSpec): any {
+function ingressClassSpecToTerraform(struct?: IngressClassSpecOutputReference | IngressClassSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     controller: cdktf.stringToTerraform(struct!.controller),
     parameters: cdktf.listMapper(ingressClassSpecParametersToTerraform)(struct!.parameters),
   }
 }
 
+export class IngressClassSpecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // controller - computed: false, optional: true, required: false
+  private _controller?: string | undefined; 
+  public get controller() {
+    return this.getStringAttribute('controller');
+  }
+  public set controller(value: string | undefined) {
+    this._controller = value;
+  }
+  public resetController() {
+    this._controller = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get controllerInput() {
+    return this._controller
+  }
+
+  // parameters - computed: false, optional: true, required: false
+  private _parameters?: IngressClassSpecParameters[] | undefined; 
+  public get parameters() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('parameters') as any;
+  }
+  public set parameters(value: IngressClassSpecParameters[] | undefined) {
+    this._parameters = value;
+  }
+  public resetParameters() {
+    this._parameters = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get parametersInput() {
+    return this._parameters
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class.html kubernetes_ingress_class}
@@ -167,11 +295,12 @@ export class IngressClass extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: IngressClassMetadata[];
+  private _metadata?: IngressClassMetadata; 
+  private __metadataOutput = new IngressClassMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: IngressClassMetadata[]) {
+  public putMetadata(value: IngressClassMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -180,11 +309,12 @@ export class IngressClass extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec: IngressClassSpec[];
+  private _spec?: IngressClassSpec; 
+  private __specOutput = new IngressClassSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.interpolationForAttribute('spec') as any;
+    return this.__specOutput;
   }
-  public set spec(value: IngressClassSpec[]) {
+  public putSpec(value: IngressClassSpec) {
     this._spec = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -198,8 +328,8 @@ export class IngressClass extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: cdktf.listMapper(ingressClassMetadataToTerraform)(this._metadata),
-      spec: cdktf.listMapper(ingressClassSpecToTerraform)(this._spec),
+      metadata: ingressClassMetadataToTerraform(this._metadata),
+      spec: ingressClassSpecToTerraform(this._spec),
     };
   }
 }

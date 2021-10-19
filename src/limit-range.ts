@@ -12,13 +12,13 @@ export interface LimitRangeConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html#metadata LimitRange#metadata}
   */
-  readonly metadata: LimitRangeMetadata[];
+  readonly metadata: LimitRangeMetadata;
   /**
   * spec block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html#spec LimitRange#spec}
   */
-  readonly spec?: LimitRangeSpec[];
+  readonly spec?: LimitRangeSpec;
 }
 export interface LimitRangeMetadata {
   /**
@@ -53,8 +53,11 @@ export interface LimitRangeMetadata {
   readonly namespace?: string;
 }
 
-function limitRangeMetadataToTerraform(struct?: LimitRangeMetadata): any {
+function limitRangeMetadataToTerraform(struct?: LimitRangeMetadataOutputReference | LimitRangeMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -64,6 +67,98 @@ function limitRangeMetadataToTerraform(struct?: LimitRangeMetadata): any {
   }
 }
 
+export class LimitRangeMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: false, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 export interface LimitRangeSpecLimit {
   /**
   * Default resource requirement limit value by resource name if resource limit is omitted.
@@ -105,6 +200,9 @@ export interface LimitRangeSpecLimit {
 
 function limitRangeSpecLimitToTerraform(struct?: LimitRangeSpecLimit): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     default: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.default),
     default_request: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.defaultRequest),
@@ -124,13 +222,43 @@ export interface LimitRangeSpec {
   readonly limit?: LimitRangeSpecLimit[];
 }
 
-function limitRangeSpecToTerraform(struct?: LimitRangeSpec): any {
+function limitRangeSpecToTerraform(struct?: LimitRangeSpecOutputReference | LimitRangeSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     limit: cdktf.listMapper(limitRangeSpecLimitToTerraform)(struct!.limit),
   }
 }
 
+export class LimitRangeSpecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // limit - computed: false, optional: true, required: false
+  private _limit?: LimitRangeSpecLimit[] | undefined; 
+  public get limit() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('limit') as any;
+  }
+  public set limit(value: LimitRangeSpecLimit[] | undefined) {
+    this._limit = value;
+  }
+  public resetLimit() {
+    this._limit = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get limitInput() {
+    return this._limit
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range.html kubernetes_limit_range}
@@ -178,11 +306,12 @@ export class LimitRange extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: LimitRangeMetadata[];
+  private _metadata?: LimitRangeMetadata; 
+  private __metadataOutput = new LimitRangeMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: LimitRangeMetadata[]) {
+  public putMetadata(value: LimitRangeMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -191,11 +320,12 @@ export class LimitRange extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: true, required: false
-  private _spec?: LimitRangeSpec[];
+  private _spec?: LimitRangeSpec | undefined; 
+  private __specOutput = new LimitRangeSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.interpolationForAttribute('spec') as any;
+    return this.__specOutput;
   }
-  public set spec(value: LimitRangeSpec[] ) {
+  public putSpec(value: LimitRangeSpec | undefined) {
     this._spec = value;
   }
   public resetSpec() {
@@ -212,8 +342,8 @@ export class LimitRange extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: cdktf.listMapper(limitRangeMetadataToTerraform)(this._metadata),
-      spec: cdktf.listMapper(limitRangeSpecToTerraform)(this._spec),
+      metadata: limitRangeMetadataToTerraform(this._metadata),
+      spec: limitRangeSpecToTerraform(this._spec),
     };
   }
 }

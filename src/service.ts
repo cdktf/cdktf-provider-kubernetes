@@ -18,13 +18,13 @@ export interface ServiceConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service.html#metadata Service#metadata}
   */
-  readonly metadata: ServiceMetadata[];
+  readonly metadata: ServiceMetadata;
   /**
   * spec block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service.html#spec Service#spec}
   */
-  readonly spec: ServiceSpec[];
+  readonly spec: ServiceSpec;
   /**
   * timeouts block
   * 
@@ -48,6 +48,7 @@ export class ServiceStatusLoadBalancer extends cdktf.ComplexComputedList {
 
   // ingress - computed: true, optional: false, required: false
   public get ingress() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('ingress') as any;
   }
 }
@@ -55,6 +56,7 @@ export class ServiceStatus extends cdktf.ComplexComputedList {
 
   // load_balancer - computed: true, optional: false, required: false
   public get loadBalancer() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('load_balancer') as any;
   }
 }
@@ -91,8 +93,11 @@ export interface ServiceMetadata {
   readonly namespace?: string;
 }
 
-function serviceMetadataToTerraform(struct?: ServiceMetadata): any {
+function serviceMetadataToTerraform(struct?: ServiceMetadataOutputReference | ServiceMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -102,6 +107,98 @@ function serviceMetadataToTerraform(struct?: ServiceMetadata): any {
   }
 }
 
+export class ServiceMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: false, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 export interface ServiceSpecPort {
   /**
   * The name of this port within the service. All ports within the service must have unique names. Optional if only one ServicePort is defined on this service.
@@ -137,6 +234,9 @@ export interface ServiceSpecPort {
 
 function serviceSpecPortToTerraform(struct?: ServiceSpecPort): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     node_port: cdktf.numberToTerraform(struct!.nodePort),
@@ -221,8 +321,11 @@ export interface ServiceSpec {
   readonly port?: ServiceSpecPort[];
 }
 
-function serviceSpecToTerraform(struct?: ServiceSpec): any {
+function serviceSpecToTerraform(struct?: ServiceSpecOutputReference | ServiceSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     cluster_ip: cdktf.stringToTerraform(struct!.clusterIp),
     external_ips: cdktf.listMapper(cdktf.stringToTerraform)(struct!.externalIps),
@@ -239,6 +342,210 @@ function serviceSpecToTerraform(struct?: ServiceSpec): any {
   }
 }
 
+export class ServiceSpecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // cluster_ip - computed: true, optional: true, required: false
+  private _clusterIp?: string | undefined; 
+  public get clusterIp() {
+    return this.getStringAttribute('cluster_ip');
+  }
+  public set clusterIp(value: string | undefined) {
+    this._clusterIp = value;
+  }
+  public resetClusterIp() {
+    this._clusterIp = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get clusterIpInput() {
+    return this._clusterIp
+  }
+
+  // external_ips - computed: false, optional: true, required: false
+  private _externalIps?: string[] | undefined; 
+  public get externalIps() {
+    return this.getListAttribute('external_ips');
+  }
+  public set externalIps(value: string[] | undefined) {
+    this._externalIps = value;
+  }
+  public resetExternalIps() {
+    this._externalIps = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get externalIpsInput() {
+    return this._externalIps
+  }
+
+  // external_name - computed: false, optional: true, required: false
+  private _externalName?: string | undefined; 
+  public get externalName() {
+    return this.getStringAttribute('external_name');
+  }
+  public set externalName(value: string | undefined) {
+    this._externalName = value;
+  }
+  public resetExternalName() {
+    this._externalName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get externalNameInput() {
+    return this._externalName
+  }
+
+  // external_traffic_policy - computed: true, optional: true, required: false
+  private _externalTrafficPolicy?: string | undefined; 
+  public get externalTrafficPolicy() {
+    return this.getStringAttribute('external_traffic_policy');
+  }
+  public set externalTrafficPolicy(value: string | undefined) {
+    this._externalTrafficPolicy = value;
+  }
+  public resetExternalTrafficPolicy() {
+    this._externalTrafficPolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get externalTrafficPolicyInput() {
+    return this._externalTrafficPolicy
+  }
+
+  // health_check_node_port - computed: true, optional: true, required: false
+  private _healthCheckNodePort?: number | undefined; 
+  public get healthCheckNodePort() {
+    return this.getNumberAttribute('health_check_node_port');
+  }
+  public set healthCheckNodePort(value: number | undefined) {
+    this._healthCheckNodePort = value;
+  }
+  public resetHealthCheckNodePort() {
+    this._healthCheckNodePort = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get healthCheckNodePortInput() {
+    return this._healthCheckNodePort
+  }
+
+  // load_balancer_ip - computed: false, optional: true, required: false
+  private _loadBalancerIp?: string | undefined; 
+  public get loadBalancerIp() {
+    return this.getStringAttribute('load_balancer_ip');
+  }
+  public set loadBalancerIp(value: string | undefined) {
+    this._loadBalancerIp = value;
+  }
+  public resetLoadBalancerIp() {
+    this._loadBalancerIp = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get loadBalancerIpInput() {
+    return this._loadBalancerIp
+  }
+
+  // load_balancer_source_ranges - computed: false, optional: true, required: false
+  private _loadBalancerSourceRanges?: string[] | undefined; 
+  public get loadBalancerSourceRanges() {
+    return this.getListAttribute('load_balancer_source_ranges');
+  }
+  public set loadBalancerSourceRanges(value: string[] | undefined) {
+    this._loadBalancerSourceRanges = value;
+  }
+  public resetLoadBalancerSourceRanges() {
+    this._loadBalancerSourceRanges = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get loadBalancerSourceRangesInput() {
+    return this._loadBalancerSourceRanges
+  }
+
+  // publish_not_ready_addresses - computed: false, optional: true, required: false
+  private _publishNotReadyAddresses?: boolean | cdktf.IResolvable | undefined; 
+  public get publishNotReadyAddresses() {
+    return this.getBooleanAttribute('publish_not_ready_addresses') as any;
+  }
+  public set publishNotReadyAddresses(value: boolean | cdktf.IResolvable | undefined) {
+    this._publishNotReadyAddresses = value;
+  }
+  public resetPublishNotReadyAddresses() {
+    this._publishNotReadyAddresses = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get publishNotReadyAddressesInput() {
+    return this._publishNotReadyAddresses
+  }
+
+  // selector - computed: false, optional: true, required: false
+  private _selector?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get selector() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('selector') as any;
+  }
+  public set selector(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._selector = value;
+  }
+  public resetSelector() {
+    this._selector = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get selectorInput() {
+    return this._selector
+  }
+
+  // session_affinity - computed: false, optional: true, required: false
+  private _sessionAffinity?: string | undefined; 
+  public get sessionAffinity() {
+    return this.getStringAttribute('session_affinity');
+  }
+  public set sessionAffinity(value: string | undefined) {
+    this._sessionAffinity = value;
+  }
+  public resetSessionAffinity() {
+    this._sessionAffinity = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get sessionAffinityInput() {
+    return this._sessionAffinity
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string | undefined; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string | undefined) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: ServiceSpecPort[] | undefined; 
+  public get port() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('port') as any;
+  }
+  public set port(value: ServiceSpecPort[] | undefined) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port
+  }
+}
 export interface ServiceTimeouts {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service.html#create Service#create}
@@ -246,13 +553,42 @@ export interface ServiceTimeouts {
   readonly create?: string;
 }
 
-function serviceTimeoutsToTerraform(struct?: ServiceTimeouts): any {
+function serviceTimeoutsToTerraform(struct?: ServiceTimeoutsOutputReference | ServiceTimeouts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     create: cdktf.stringToTerraform(struct!.create),
   }
 }
 
+export class ServiceTimeoutsOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // create - computed: false, optional: true, required: false
+  private _create?: string | undefined; 
+  public get create() {
+    return this.getStringAttribute('create');
+  }
+  public set create(value: string | undefined) {
+    this._create = value;
+  }
+  public resetCreate() {
+    this._create = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get createInput() {
+    return this._create
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/service.html kubernetes_service}
@@ -307,11 +643,11 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // wait_for_load_balancer - computed: false, optional: true, required: false
-  private _waitForLoadBalancer?: boolean | cdktf.IResolvable;
+  private _waitForLoadBalancer?: boolean | cdktf.IResolvable | undefined; 
   public get waitForLoadBalancer() {
-    return this.getBooleanAttribute('wait_for_load_balancer');
+    return this.getBooleanAttribute('wait_for_load_balancer') as any;
   }
-  public set waitForLoadBalancer(value: boolean | cdktf.IResolvable ) {
+  public set waitForLoadBalancer(value: boolean | cdktf.IResolvable | undefined) {
     this._waitForLoadBalancer = value;
   }
   public resetWaitForLoadBalancer() {
@@ -323,11 +659,12 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: ServiceMetadata[];
+  private _metadata?: ServiceMetadata; 
+  private __metadataOutput = new ServiceMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: ServiceMetadata[]) {
+  public putMetadata(value: ServiceMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -336,11 +673,12 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec: ServiceSpec[];
+  private _spec?: ServiceSpec; 
+  private __specOutput = new ServiceSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.interpolationForAttribute('spec') as any;
+    return this.__specOutput;
   }
-  public set spec(value: ServiceSpec[]) {
+  public putSpec(value: ServiceSpec) {
     this._spec = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -349,11 +687,12 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts?: ServiceTimeouts;
+  private _timeouts?: ServiceTimeouts | undefined; 
+  private __timeoutsOutput = new ServiceTimeoutsOutputReference(this as any, "timeouts", true);
   public get timeouts() {
-    return this.interpolationForAttribute('timeouts') as any;
+    return this.__timeoutsOutput;
   }
-  public set timeouts(value: ServiceTimeouts ) {
+  public putTimeouts(value: ServiceTimeouts | undefined) {
     this._timeouts = value;
   }
   public resetTimeouts() {
@@ -371,8 +710,8 @@ export class Service extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       wait_for_load_balancer: cdktf.booleanToTerraform(this._waitForLoadBalancer),
-      metadata: cdktf.listMapper(serviceMetadataToTerraform)(this._metadata),
-      spec: cdktf.listMapper(serviceSpecToTerraform)(this._spec),
+      metadata: serviceMetadataToTerraform(this._metadata),
+      spec: serviceSpecToTerraform(this._spec),
       timeouts: serviceTimeoutsToTerraform(this._timeouts),
     };
   }

@@ -18,13 +18,13 @@ export interface CertificateSigningRequestConfig extends cdktf.TerraformMetaArgu
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#metadata CertificateSigningRequest#metadata}
   */
-  readonly metadata: CertificateSigningRequestMetadata[];
+  readonly metadata: CertificateSigningRequestMetadata;
   /**
   * spec block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#spec CertificateSigningRequest#spec}
   */
-  readonly spec: CertificateSigningRequestSpec[];
+  readonly spec: CertificateSigningRequestSpec;
   /**
   * timeouts block
   * 
@@ -59,8 +59,11 @@ export interface CertificateSigningRequestMetadata {
   readonly name?: string;
 }
 
-function certificateSigningRequestMetadataToTerraform(struct?: CertificateSigningRequestMetadata): any {
+function certificateSigningRequestMetadataToTerraform(struct?: CertificateSigningRequestMetadataOutputReference | CertificateSigningRequestMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -69,6 +72,82 @@ function certificateSigningRequestMetadataToTerraform(struct?: CertificateSignin
   }
 }
 
+export class CertificateSigningRequestMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+}
 export interface CertificateSigningRequestSpec {
   /**
   * Base64-encoded PKCS#10 CSR data
@@ -115,8 +194,11 @@ Valid values are:
   readonly usages?: string[];
 }
 
-function certificateSigningRequestSpecToTerraform(struct?: CertificateSigningRequestSpec): any {
+function certificateSigningRequestSpecToTerraform(struct?: CertificateSigningRequestSpecOutputReference | CertificateSigningRequestSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     request: cdktf.stringToTerraform(struct!.request),
     signer_name: cdktf.stringToTerraform(struct!.signerName),
@@ -124,6 +206,61 @@ function certificateSigningRequestSpecToTerraform(struct?: CertificateSigningReq
   }
 }
 
+export class CertificateSigningRequestSpecOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // request - computed: false, optional: false, required: true
+  private _request?: string; 
+  public get request() {
+    return this.getStringAttribute('request');
+  }
+  public set request(value: string) {
+    this._request = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get requestInput() {
+    return this._request
+  }
+
+  // signer_name - computed: false, optional: true, required: false
+  private _signerName?: string | undefined; 
+  public get signerName() {
+    return this.getStringAttribute('signer_name');
+  }
+  public set signerName(value: string | undefined) {
+    this._signerName = value;
+  }
+  public resetSignerName() {
+    this._signerName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get signerNameInput() {
+    return this._signerName
+  }
+
+  // usages - computed: false, optional: true, required: false
+  private _usages?: string[] | undefined; 
+  public get usages() {
+    return this.getListAttribute('usages');
+  }
+  public set usages(value: string[] | undefined) {
+    this._usages = value;
+  }
+  public resetUsages() {
+    this._usages = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get usagesInput() {
+    return this._usages
+  }
+}
 export interface CertificateSigningRequestTimeouts {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html#create CertificateSigningRequest#create}
@@ -131,13 +268,42 @@ export interface CertificateSigningRequestTimeouts {
   readonly create?: string;
 }
 
-function certificateSigningRequestTimeoutsToTerraform(struct?: CertificateSigningRequestTimeouts): any {
+function certificateSigningRequestTimeoutsToTerraform(struct?: CertificateSigningRequestTimeoutsOutputReference | CertificateSigningRequestTimeouts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     create: cdktf.stringToTerraform(struct!.create),
   }
 }
 
+export class CertificateSigningRequestTimeoutsOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // create - computed: false, optional: true, required: false
+  private _create?: string | undefined; 
+  public get create() {
+    return this.getStringAttribute('create');
+  }
+  public set create(value: string | undefined) {
+    this._create = value;
+  }
+  public resetCreate() {
+    this._create = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get createInput() {
+    return this._create
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/certificate_signing_request.html kubernetes_certificate_signing_request}
@@ -182,11 +348,11 @@ export class CertificateSigningRequest extends cdktf.TerraformResource {
   // ==========
 
   // auto_approve - computed: false, optional: true, required: false
-  private _autoApprove?: boolean | cdktf.IResolvable;
+  private _autoApprove?: boolean | cdktf.IResolvable | undefined; 
   public get autoApprove() {
-    return this.getBooleanAttribute('auto_approve');
+    return this.getBooleanAttribute('auto_approve') as any;
   }
-  public set autoApprove(value: boolean | cdktf.IResolvable ) {
+  public set autoApprove(value: boolean | cdktf.IResolvable | undefined) {
     this._autoApprove = value;
   }
   public resetAutoApprove() {
@@ -208,11 +374,12 @@ export class CertificateSigningRequest extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: CertificateSigningRequestMetadata[];
+  private _metadata?: CertificateSigningRequestMetadata; 
+  private __metadataOutput = new CertificateSigningRequestMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: CertificateSigningRequestMetadata[]) {
+  public putMetadata(value: CertificateSigningRequestMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -221,11 +388,12 @@ export class CertificateSigningRequest extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec: CertificateSigningRequestSpec[];
+  private _spec?: CertificateSigningRequestSpec; 
+  private __specOutput = new CertificateSigningRequestSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.interpolationForAttribute('spec') as any;
+    return this.__specOutput;
   }
-  public set spec(value: CertificateSigningRequestSpec[]) {
+  public putSpec(value: CertificateSigningRequestSpec) {
     this._spec = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -234,11 +402,12 @@ export class CertificateSigningRequest extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts?: CertificateSigningRequestTimeouts;
+  private _timeouts?: CertificateSigningRequestTimeouts | undefined; 
+  private __timeoutsOutput = new CertificateSigningRequestTimeoutsOutputReference(this as any, "timeouts", true);
   public get timeouts() {
-    return this.interpolationForAttribute('timeouts') as any;
+    return this.__timeoutsOutput;
   }
-  public set timeouts(value: CertificateSigningRequestTimeouts ) {
+  public putTimeouts(value: CertificateSigningRequestTimeouts | undefined) {
     this._timeouts = value;
   }
   public resetTimeouts() {
@@ -256,8 +425,8 @@ export class CertificateSigningRequest extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       auto_approve: cdktf.booleanToTerraform(this._autoApprove),
-      metadata: cdktf.listMapper(certificateSigningRequestMetadataToTerraform)(this._metadata),
-      spec: cdktf.listMapper(certificateSigningRequestSpecToTerraform)(this._spec),
+      metadata: certificateSigningRequestMetadataToTerraform(this._metadata),
+      spec: certificateSigningRequestSpecToTerraform(this._spec),
       timeouts: certificateSigningRequestTimeoutsToTerraform(this._timeouts),
     };
   }

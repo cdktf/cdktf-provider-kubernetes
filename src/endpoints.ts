@@ -12,7 +12,7 @@ export interface EndpointsConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/endpoints.html#metadata Endpoints#metadata}
   */
-  readonly metadata: EndpointsMetadata[];
+  readonly metadata: EndpointsMetadata;
   /**
   * subset block
   * 
@@ -53,8 +53,11 @@ export interface EndpointsMetadata {
   readonly namespace?: string;
 }
 
-function endpointsMetadataToTerraform(struct?: EndpointsMetadata): any {
+function endpointsMetadataToTerraform(struct?: EndpointsMetadataOutputReference | EndpointsMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -64,6 +67,98 @@ function endpointsMetadataToTerraform(struct?: EndpointsMetadata): any {
   }
 }
 
+export class EndpointsMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: false, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 export interface EndpointsSubsetAddress {
   /**
   * The Hostname of this endpoint.
@@ -87,6 +182,9 @@ export interface EndpointsSubsetAddress {
 
 function endpointsSubsetAddressToTerraform(struct?: EndpointsSubsetAddress): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     hostname: cdktf.stringToTerraform(struct!.hostname),
     ip: cdktf.stringToTerraform(struct!.ip),
@@ -117,6 +215,9 @@ export interface EndpointsSubsetNotReadyAddress {
 
 function endpointsSubsetNotReadyAddressToTerraform(struct?: EndpointsSubsetNotReadyAddress): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     hostname: cdktf.stringToTerraform(struct!.hostname),
     ip: cdktf.stringToTerraform(struct!.ip),
@@ -147,6 +248,9 @@ export interface EndpointsSubsetPort {
 
 function endpointsSubsetPortToTerraform(struct?: EndpointsSubsetPort): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     name: cdktf.stringToTerraform(struct!.name),
     port: cdktf.numberToTerraform(struct!.port),
@@ -177,6 +281,9 @@ export interface EndpointsSubset {
 
 function endpointsSubsetToTerraform(struct?: EndpointsSubset): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     address: cdktf.listMapper(endpointsSubsetAddressToTerraform)(struct!.address),
     not_ready_address: cdktf.listMapper(endpointsSubsetNotReadyAddressToTerraform)(struct!.notReadyAddress),
@@ -231,11 +338,12 @@ export class Endpoints extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: EndpointsMetadata[];
+  private _metadata?: EndpointsMetadata; 
+  private __metadataOutput = new EndpointsMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: EndpointsMetadata[]) {
+  public putMetadata(value: EndpointsMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -244,11 +352,12 @@ export class Endpoints extends cdktf.TerraformResource {
   }
 
   // subset - computed: false, optional: true, required: false
-  private _subset?: EndpointsSubset[];
+  private _subset?: EndpointsSubset[] | undefined; 
   public get subset() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('subset') as any;
   }
-  public set subset(value: EndpointsSubset[] ) {
+  public set subset(value: EndpointsSubset[] | undefined) {
     this._subset = value;
   }
   public resetSubset() {
@@ -265,7 +374,7 @@ export class Endpoints extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: cdktf.listMapper(endpointsMetadataToTerraform)(this._metadata),
+      metadata: endpointsMetadataToTerraform(this._metadata),
       subset: cdktf.listMapper(endpointsSubsetToTerraform)(this._subset),
     };
   }

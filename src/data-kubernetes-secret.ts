@@ -18,7 +18,7 @@ export interface DataKubernetesSecretConfig extends cdktf.TerraformMetaArguments
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html#metadata DataKubernetesSecret#metadata}
   */
-  readonly metadata: DataKubernetesSecretMetadata[];
+  readonly metadata: DataKubernetesSecretMetadata;
 }
 export interface DataKubernetesSecretMetadata {
   /**
@@ -47,8 +47,11 @@ export interface DataKubernetesSecretMetadata {
   readonly namespace?: string;
 }
 
-function dataKubernetesSecretMetadataToTerraform(struct?: DataKubernetesSecretMetadata): any {
+function dataKubernetesSecretMetadataToTerraform(struct?: DataKubernetesSecretMetadataOutputReference | DataKubernetesSecretMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
@@ -57,6 +60,82 @@ function dataKubernetesSecretMetadataToTerraform(struct?: DataKubernetesSecretMe
   }
 }
 
+export class DataKubernetesSecretMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: false, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/secret.html kubernetes_secret}
@@ -99,11 +178,12 @@ export class DataKubernetesSecret extends cdktf.TerraformDataSource {
   // ==========
 
   // binary_data - computed: false, optional: true, required: false
-  private _binaryData?: { [key: string]: string } | cdktf.IResolvable;
+  private _binaryData?: { [key: string]: string } | cdktf.IResolvable | undefined; 
   public get binaryData() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('binary_data') as any;
   }
-  public set binaryData(value: { [key: string]: string } | cdktf.IResolvable ) {
+  public set binaryData(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
     this._binaryData = value;
   }
   public resetBinaryData() {
@@ -126,7 +206,7 @@ export class DataKubernetesSecret extends cdktf.TerraformDataSource {
 
   // immutable - computed: true, optional: false, required: false
   public get immutable() {
-    return this.getBooleanAttribute('immutable');
+    return this.getBooleanAttribute('immutable') as any;
   }
 
   // type - computed: true, optional: false, required: false
@@ -135,11 +215,12 @@ export class DataKubernetesSecret extends cdktf.TerraformDataSource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: DataKubernetesSecretMetadata[];
+  private _metadata?: DataKubernetesSecretMetadata; 
+  private __metadataOutput = new DataKubernetesSecretMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: DataKubernetesSecretMetadata[]) {
+  public putMetadata(value: DataKubernetesSecretMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -154,7 +235,7 @@ export class DataKubernetesSecret extends cdktf.TerraformDataSource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       binary_data: cdktf.hashMapper(cdktf.anyToTerraform)(this._binaryData),
-      metadata: cdktf.listMapper(dataKubernetesSecretMetadataToTerraform)(this._metadata),
+      metadata: dataKubernetesSecretMetadataToTerraform(this._metadata),
     };
   }
 }

@@ -36,7 +36,7 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html#metadata Secret#metadata}
   */
-  readonly metadata: SecretMetadata[];
+  readonly metadata: SecretMetadata;
 }
 export interface SecretMetadata {
   /**
@@ -71,8 +71,11 @@ export interface SecretMetadata {
   readonly namespace?: string;
 }
 
-function secretMetadataToTerraform(struct?: SecretMetadata): any {
+function secretMetadataToTerraform(struct?: SecretMetadataOutputReference | SecretMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -82,6 +85,98 @@ function secretMetadataToTerraform(struct?: SecretMetadata): any {
   }
 }
 
+export class SecretMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+
+  // namespace - computed: false, optional: true, required: false
+  private _namespace?: string | undefined; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string | undefined) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/secret.html kubernetes_secret}
@@ -127,11 +222,12 @@ export class Secret extends cdktf.TerraformResource {
   // ==========
 
   // binary_data - computed: false, optional: true, required: false
-  private _binaryData?: { [key: string]: string } | cdktf.IResolvable;
+  private _binaryData?: { [key: string]: string } | cdktf.IResolvable | undefined; 
   public get binaryData() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('binary_data') as any;
   }
-  public set binaryData(value: { [key: string]: string } | cdktf.IResolvable ) {
+  public set binaryData(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
     this._binaryData = value;
   }
   public resetBinaryData() {
@@ -143,11 +239,12 @@ export class Secret extends cdktf.TerraformResource {
   }
 
   // data - computed: true, optional: true, required: false
-  private _data?: { [key: string]: string } | cdktf.IResolvable
-  public get data(): { [key: string]: string } | cdktf.IResolvable {
-    return this.interpolationForAttribute('data') as any; // Getting the computed value is not yet implemented
+  private _data?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get data() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('data') as any;
   }
-  public set data(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set data(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
     this._data = value;
   }
   public resetData() {
@@ -164,11 +261,11 @@ export class Secret extends cdktf.TerraformResource {
   }
 
   // immutable - computed: false, optional: true, required: false
-  private _immutable?: boolean | cdktf.IResolvable;
+  private _immutable?: boolean | cdktf.IResolvable | undefined; 
   public get immutable() {
-    return this.getBooleanAttribute('immutable');
+    return this.getBooleanAttribute('immutable') as any;
   }
-  public set immutable(value: boolean | cdktf.IResolvable ) {
+  public set immutable(value: boolean | cdktf.IResolvable | undefined) {
     this._immutable = value;
   }
   public resetImmutable() {
@@ -180,11 +277,11 @@ export class Secret extends cdktf.TerraformResource {
   }
 
   // type - computed: false, optional: true, required: false
-  private _type?: string;
+  private _type?: string | undefined; 
   public get type() {
     return this.getStringAttribute('type');
   }
-  public set type(value: string ) {
+  public set type(value: string | undefined) {
     this._type = value;
   }
   public resetType() {
@@ -196,11 +293,12 @@ export class Secret extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: SecretMetadata[];
+  private _metadata?: SecretMetadata; 
+  private __metadataOutput = new SecretMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: SecretMetadata[]) {
+  public putMetadata(value: SecretMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -218,7 +316,7 @@ export class Secret extends cdktf.TerraformResource {
       data: cdktf.hashMapper(cdktf.anyToTerraform)(this._data),
       immutable: cdktf.booleanToTerraform(this._immutable),
       type: cdktf.stringToTerraform(this._type),
-      metadata: cdktf.listMapper(secretMetadataToTerraform)(this._metadata),
+      metadata: secretMetadataToTerraform(this._metadata),
     };
   }
 }

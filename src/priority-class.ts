@@ -30,7 +30,7 @@ export interface PriorityClassConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html#metadata PriorityClass#metadata}
   */
-  readonly metadata: PriorityClassMetadata[];
+  readonly metadata: PriorityClassMetadata;
 }
 export interface PriorityClassMetadata {
   /**
@@ -59,8 +59,11 @@ export interface PriorityClassMetadata {
   readonly name?: string;
 }
 
-function priorityClassMetadataToTerraform(struct?: PriorityClassMetadata): any {
+function priorityClassMetadataToTerraform(struct?: PriorityClassMetadataOutputReference | PriorityClassMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
@@ -69,6 +72,82 @@ function priorityClassMetadataToTerraform(struct?: PriorityClassMetadata): any {
   }
 }
 
+export class PriorityClassMetadataOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // annotations - computed: false, optional: true, required: false
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get annotations() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('annotations') as any;
+  }
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get annotationsInput() {
+    return this._annotations
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string | undefined; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string | undefined) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // name - computed: true, optional: true, required: false
+  private _name?: string | undefined; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string | undefined) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class.html kubernetes_priority_class}
@@ -113,11 +192,11 @@ export class PriorityClass extends cdktf.TerraformResource {
   // ==========
 
   // description - computed: false, optional: true, required: false
-  private _description?: string;
+  private _description?: string | undefined; 
   public get description() {
     return this.getStringAttribute('description');
   }
-  public set description(value: string ) {
+  public set description(value: string | undefined) {
     this._description = value;
   }
   public resetDescription() {
@@ -129,11 +208,11 @@ export class PriorityClass extends cdktf.TerraformResource {
   }
 
   // global_default - computed: false, optional: true, required: false
-  private _globalDefault?: boolean | cdktf.IResolvable;
+  private _globalDefault?: boolean | cdktf.IResolvable | undefined; 
   public get globalDefault() {
-    return this.getBooleanAttribute('global_default');
+    return this.getBooleanAttribute('global_default') as any;
   }
-  public set globalDefault(value: boolean | cdktf.IResolvable ) {
+  public set globalDefault(value: boolean | cdktf.IResolvable | undefined) {
     this._globalDefault = value;
   }
   public resetGlobalDefault() {
@@ -150,7 +229,7 @@ export class PriorityClass extends cdktf.TerraformResource {
   }
 
   // value - computed: false, optional: false, required: true
-  private _value: number;
+  private _value?: number; 
   public get value() {
     return this.getNumberAttribute('value');
   }
@@ -163,11 +242,12 @@ export class PriorityClass extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata: PriorityClassMetadata[];
+  private _metadata?: PriorityClassMetadata; 
+  private __metadataOutput = new PriorityClassMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.interpolationForAttribute('metadata') as any;
+    return this.__metadataOutput;
   }
-  public set metadata(value: PriorityClassMetadata[]) {
+  public putMetadata(value: PriorityClassMetadata) {
     this._metadata = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -184,7 +264,7 @@ export class PriorityClass extends cdktf.TerraformResource {
       description: cdktf.stringToTerraform(this._description),
       global_default: cdktf.booleanToTerraform(this._globalDefault),
       value: cdktf.numberToTerraform(this._value),
-      metadata: cdktf.listMapper(priorityClassMetadataToTerraform)(this._metadata),
+      metadata: priorityClassMetadataToTerraform(this._metadata),
     };
   }
 }
