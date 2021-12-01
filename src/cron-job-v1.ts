@@ -59,7 +59,7 @@ export interface CronJobV1Metadata {
   readonly namespace?: string;
 }
 
-function cronJobV1MetadataToTerraform(struct?: CronJobV1MetadataOutputReference | CronJobV1Metadata): any {
+export function cronJobV1MetadataToTerraform(struct?: CronJobV1MetadataOutputReference | CronJobV1Metadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -83,13 +83,56 @@ export class CronJobV1MetadataOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1Metadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1Metadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -97,15 +140,15 @@ export class CronJobV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -113,16 +156,16 @@ export class CronJobV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -130,15 +173,15 @@ export class CronJobV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -146,15 +189,15 @@ export class CronJobV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -162,7 +205,7 @@ export class CronJobV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface CronJobV1SpecJobTemplateMetadata {
@@ -192,7 +235,7 @@ export interface CronJobV1SpecJobTemplateMetadata {
   readonly name?: string;
 }
 
-function cronJobV1SpecJobTemplateMetadataToTerraform(struct?: CronJobV1SpecJobTemplateMetadataOutputReference | CronJobV1SpecJobTemplateMetadata): any {
+export function cronJobV1SpecJobTemplateMetadataToTerraform(struct?: CronJobV1SpecJobTemplateMetadataOutputReference | CronJobV1SpecJobTemplateMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -215,13 +258,50 @@ export class CronJobV1SpecJobTemplateMetadataOutputReference extends cdktf.Compl
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateMetadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateMetadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -229,15 +309,15 @@ export class CronJobV1SpecJobTemplateMetadataOutputReference extends cdktf.Compl
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -245,16 +325,16 @@ export class CronJobV1SpecJobTemplateMetadataOutputReference extends cdktf.Compl
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -262,15 +342,15 @@ export class CronJobV1SpecJobTemplateMetadataOutputReference extends cdktf.Compl
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -278,7 +358,7 @@ export class CronJobV1SpecJobTemplateMetadataOutputReference extends cdktf.Compl
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecSelectorMatchExpressions {
@@ -302,7 +382,7 @@ export interface CronJobV1SpecJobTemplateSpecSelectorMatchExpressions {
   readonly values?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecSelectorMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecSelectorMatchExpressions): any {
+export function cronJobV1SpecJobTemplateSpecSelectorMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -329,7 +409,7 @@ export interface CronJobV1SpecJobTemplateSpecSelector {
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecSelectorMatchExpressions[];
 }
 
-function cronJobV1SpecJobTemplateSpecSelectorToTerraform(struct?: CronJobV1SpecJobTemplateSpecSelectorOutputReference | CronJobV1SpecJobTemplateSpecSelector): any {
+export function cronJobV1SpecJobTemplateSpecSelectorToTerraform(struct?: CronJobV1SpecJobTemplateSpecSelectorOutputReference | CronJobV1SpecJobTemplateSpecSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -350,13 +430,38 @@ export class CronJobV1SpecJobTemplateSpecSelectorOutputReference extends cdktf.C
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecSelector | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._matchLabels) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecSelector | undefined) {
+    if (value === undefined) {
+      this._matchLabels = undefined;
+      this._matchExpressions = undefined;
+    }
+    else {
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions = value.matchExpressions;
+    }
+  }
+
   // match_labels - computed: false, optional: true, required: false
-  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable; 
   public get matchLabels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
-  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._matchLabels = value;
   }
   public resetMatchLabels() {
@@ -364,16 +469,16 @@ export class CronJobV1SpecJobTemplateSpecSelectorOutputReference extends cdktf.C
   }
   // Temporarily expose input value. Use with caution.
   public get matchLabelsInput() {
-    return this._matchLabels
+    return this._matchLabels;
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: CronJobV1SpecJobTemplateSpecSelectorMatchExpressions[] | undefined; 
+  private _matchExpressions?: CronJobV1SpecJobTemplateSpecSelectorMatchExpressions[]; 
   public get matchExpressions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
-  public set matchExpressions(value: CronJobV1SpecJobTemplateSpecSelectorMatchExpressions[] | undefined) {
+  public set matchExpressions(value: CronJobV1SpecJobTemplateSpecSelectorMatchExpressions[]) {
     this._matchExpressions = value;
   }
   public resetMatchExpressions() {
@@ -381,7 +486,7 @@ export class CronJobV1SpecJobTemplateSpecSelectorOutputReference extends cdktf.C
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions
+    return this._matchExpressions;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateMetadata {
@@ -411,7 +516,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateMetadata {
   readonly name?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateMetadataToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference | CronJobV1SpecJobTemplateSpecTemplateMetadata): any {
+export function cronJobV1SpecJobTemplateSpecTemplateMetadataToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference | CronJobV1SpecJobTemplateSpecTemplateMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -434,13 +539,50 @@ export class CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference extends
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateMetadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateMetadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -448,15 +590,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -464,16 +606,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -481,15 +623,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -497,7 +639,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions {
@@ -521,7 +663,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPre
   readonly values?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -542,7 +684,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPre
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -562,13 +704,32 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferr
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._matchExpressions) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined) {
+    if (value === undefined) {
+      this._matchExpressions = undefined;
+    }
+    else {
+      this._matchExpressions = value.matchExpressions;
+    }
+  }
+
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | undefined; 
+  private _matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[]; 
   public get matchExpressions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
-  public set matchExpressions(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | undefined) {
+  public set matchExpressions(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[]) {
     this._matchExpressions = value;
   }
   public resetMatchExpressions() {
@@ -576,7 +737,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferr
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions
+    return this._matchExpressions;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution {
@@ -594,7 +755,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPre
   readonly preference: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -626,7 +787,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityReq
   readonly values?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -647,7 +808,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityReq
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -666,7 +827,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityReq
   readonly nodeSelectorTerm?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -686,13 +847,32 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequire
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._nodeSelectorTerm) {
+      hasAnyValues = true;
+      internalValueResult.nodeSelectorTerm = this._nodeSelectorTerm;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined) {
+    if (value === undefined) {
+      this._nodeSelectorTerm = undefined;
+    }
+    else {
+      this._nodeSelectorTerm = value.nodeSelectorTerm;
+    }
+  }
+
   // node_selector_term - computed: false, optional: true, required: false
-  private _nodeSelectorTerm?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | undefined; 
+  private _nodeSelectorTerm?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[]; 
   public get nodeSelectorTerm() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('node_selector_term') as any;
   }
-  public set nodeSelectorTerm(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | undefined) {
+  public set nodeSelectorTerm(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[]) {
     this._nodeSelectorTerm = value;
   }
   public resetNodeSelectorTerm() {
@@ -700,7 +880,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequire
   }
   // Temporarily expose input value. Use with caution.
   public get nodeSelectorTermInput() {
-    return this._nodeSelectorTerm
+    return this._nodeSelectorTerm;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity {
@@ -718,7 +898,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity {
   readonly requiredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -739,13 +919,38 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputR
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+      hasAnyValues = true;
+      internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
+    }
+    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+      hasAnyValues = true;
+      internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity | undefined) {
+    if (value === undefined) {
+      this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
+      this._requiredDuringSchedulingIgnoredDuringExecution.internalValue = undefined;
+    }
+    else {
+      this._preferredDuringSchedulingIgnoredDuringExecution = value.preferredDuringSchedulingIgnoredDuringExecution;
+      this._requiredDuringSchedulingIgnoredDuringExecution.internalValue = value.requiredDuringSchedulingIgnoredDuringExecution;
+    }
+  }
+
   // preferred_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _preferredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  private _preferredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[]; 
   public get preferredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
   }
-  public set preferredDuringSchedulingIgnoredDuringExecution(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+  public set preferredDuringSchedulingIgnoredDuringExecution(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[]) {
     this._preferredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetPreferredDuringSchedulingIgnoredDuringExecution() {
@@ -753,24 +958,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get preferredDuringSchedulingIgnoredDuringExecutionInput() {
-    return this._preferredDuringSchedulingIgnoredDuringExecution
+    return this._preferredDuringSchedulingIgnoredDuringExecution;
   }
 
   // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _requiredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined; 
-  private __requiredDuringSchedulingIgnoredDuringExecutionOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this as any, "required_during_scheduling_ignored_during_execution", true);
+  private _requiredDuringSchedulingIgnoredDuringExecution = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this as any, "required_during_scheduling_ignored_during_execution", true);
   public get requiredDuringSchedulingIgnoredDuringExecution() {
-    return this.__requiredDuringSchedulingIgnoredDuringExecutionOutput;
+    return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
-  public putRequiredDuringSchedulingIgnoredDuringExecution(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined) {
-    this._requiredDuringSchedulingIgnoredDuringExecution = value;
+  public putRequiredDuringSchedulingIgnoredDuringExecution(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution) {
+    this._requiredDuringSchedulingIgnoredDuringExecution.internalValue = value;
   }
   public resetRequiredDuringSchedulingIgnoredDuringExecution() {
-    this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
+    this._requiredDuringSchedulingIgnoredDuringExecution.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get requiredDuringSchedulingIgnoredDuringExecutionInput() {
-    return this._requiredDuringSchedulingIgnoredDuringExecution
+    return this._requiredDuringSchedulingIgnoredDuringExecution.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
@@ -794,7 +998,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPref
   readonly values?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -821,7 +1025,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPref
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -853,7 +1057,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPref
   readonly labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -875,12 +1079,43 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferre
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._namespaces) {
+      hasAnyValues = true;
+      internalValueResult.namespaces = this._namespaces;
+    }
+    if (this._topologyKey) {
+      hasAnyValues = true;
+      internalValueResult.topologyKey = this._topologyKey;
+    }
+    if (this._labelSelector) {
+      hasAnyValues = true;
+      internalValueResult.labelSelector = this._labelSelector;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined) {
+    if (value === undefined) {
+      this._namespaces = undefined;
+      this._topologyKey = undefined;
+      this._labelSelector = undefined;
+    }
+    else {
+      this._namespaces = value.namespaces;
+      this._topologyKey = value.topologyKey;
+      this._labelSelector = value.labelSelector;
+    }
+  }
+
   // namespaces - computed: false, optional: true, required: false
-  private _namespaces?: string[] | undefined; 
+  private _namespaces?: string[]; 
   public get namespaces() {
     return this.getListAttribute('namespaces');
   }
-  public set namespaces(value: string[] | undefined) {
+  public set namespaces(value: string[]) {
     this._namespaces = value;
   }
   public resetNamespaces() {
@@ -888,15 +1123,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferre
   }
   // Temporarily expose input value. Use with caution.
   public get namespacesInput() {
-    return this._namespaces
+    return this._namespaces;
   }
 
   // topology_key - computed: false, optional: true, required: false
-  private _topologyKey?: string | undefined; 
+  private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
-  public set topologyKey(value: string | undefined) {
+  public set topologyKey(value: string) {
     this._topologyKey = value;
   }
   public resetTopologyKey() {
@@ -904,16 +1139,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferre
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
-    return this._topologyKey
+    return this._topologyKey;
   }
 
   // label_selector - computed: false, optional: true, required: false
-  private _labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | undefined; 
+  private _labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[]; 
   public get labelSelector() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('label_selector') as any;
   }
-  public set labelSelector(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | undefined) {
+  public set labelSelector(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[]) {
     this._labelSelector = value;
   }
   public resetLabelSelector() {
@@ -921,7 +1156,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferre
   }
   // Temporarily expose input value. Use with caution.
   public get labelSelectorInput() {
-    return this._labelSelector
+    return this._labelSelector;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution {
@@ -939,7 +1174,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPref
   readonly podAffinityTerm: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -971,7 +1206,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequ
   readonly values?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -998,7 +1233,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequ
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1030,7 +1265,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequ
   readonly labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1057,7 +1292,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinity {
   readonly requiredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinity): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1078,13 +1313,38 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputRe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinity | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+      hasAnyValues = true;
+      internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
+    }
+    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+      hasAnyValues = true;
+      internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinity | undefined) {
+    if (value === undefined) {
+      this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
+      this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
+    }
+    else {
+      this._preferredDuringSchedulingIgnoredDuringExecution = value.preferredDuringSchedulingIgnoredDuringExecution;
+      this._requiredDuringSchedulingIgnoredDuringExecution = value.requiredDuringSchedulingIgnoredDuringExecution;
+    }
+  }
+
   // preferred_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _preferredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  private _preferredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[]; 
   public get preferredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
   }
-  public set preferredDuringSchedulingIgnoredDuringExecution(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+  public set preferredDuringSchedulingIgnoredDuringExecution(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[]) {
     this._preferredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetPreferredDuringSchedulingIgnoredDuringExecution() {
@@ -1092,16 +1352,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputRe
   }
   // Temporarily expose input value. Use with caution.
   public get preferredDuringSchedulingIgnoredDuringExecutionInput() {
-    return this._preferredDuringSchedulingIgnoredDuringExecution
+    return this._preferredDuringSchedulingIgnoredDuringExecution;
   }
 
   // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _requiredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  private _requiredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[]; 
   public get requiredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution') as any;
   }
-  public set requiredDuringSchedulingIgnoredDuringExecution(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+  public set requiredDuringSchedulingIgnoredDuringExecution(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[]) {
     this._requiredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetRequiredDuringSchedulingIgnoredDuringExecution() {
@@ -1109,7 +1369,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputRe
   }
   // Temporarily expose input value. Use with caution.
   public get requiredDuringSchedulingIgnoredDuringExecutionInput() {
-    return this._requiredDuringSchedulingIgnoredDuringExecution
+    return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
@@ -1133,7 +1393,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   readonly values?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1160,7 +1420,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1192,7 +1452,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   readonly labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1214,12 +1474,43 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPref
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._namespaces) {
+      hasAnyValues = true;
+      internalValueResult.namespaces = this._namespaces;
+    }
+    if (this._topologyKey) {
+      hasAnyValues = true;
+      internalValueResult.topologyKey = this._topologyKey;
+    }
+    if (this._labelSelector) {
+      hasAnyValues = true;
+      internalValueResult.labelSelector = this._labelSelector;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined) {
+    if (value === undefined) {
+      this._namespaces = undefined;
+      this._topologyKey = undefined;
+      this._labelSelector = undefined;
+    }
+    else {
+      this._namespaces = value.namespaces;
+      this._topologyKey = value.topologyKey;
+      this._labelSelector = value.labelSelector;
+    }
+  }
+
   // namespaces - computed: false, optional: true, required: false
-  private _namespaces?: string[] | undefined; 
+  private _namespaces?: string[]; 
   public get namespaces() {
     return this.getListAttribute('namespaces');
   }
-  public set namespaces(value: string[] | undefined) {
+  public set namespaces(value: string[]) {
     this._namespaces = value;
   }
   public resetNamespaces() {
@@ -1227,15 +1518,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPref
   }
   // Temporarily expose input value. Use with caution.
   public get namespacesInput() {
-    return this._namespaces
+    return this._namespaces;
   }
 
   // topology_key - computed: false, optional: true, required: false
-  private _topologyKey?: string | undefined; 
+  private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
-  public set topologyKey(value: string | undefined) {
+  public set topologyKey(value: string) {
     this._topologyKey = value;
   }
   public resetTopologyKey() {
@@ -1243,16 +1534,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPref
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
-    return this._topologyKey
+    return this._topologyKey;
   }
 
   // label_selector - computed: false, optional: true, required: false
-  private _labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | undefined; 
+  private _labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[]; 
   public get labelSelector() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('label_selector') as any;
   }
-  public set labelSelector(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | undefined) {
+  public set labelSelector(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[]) {
     this._labelSelector = value;
   }
   public resetLabelSelector() {
@@ -1260,7 +1551,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPref
   }
   // Temporarily expose input value. Use with caution.
   public get labelSelectorInput() {
-    return this._labelSelector
+    return this._labelSelector;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution {
@@ -1278,7 +1569,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   readonly podAffinityTerm: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1310,7 +1601,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   readonly values?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1337,7 +1628,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1369,7 +1660,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   readonly labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1396,7 +1687,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   readonly requiredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1417,13 +1708,38 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutp
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+      hasAnyValues = true;
+      internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
+    }
+    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+      hasAnyValues = true;
+      internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity | undefined) {
+    if (value === undefined) {
+      this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
+      this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
+    }
+    else {
+      this._preferredDuringSchedulingIgnoredDuringExecution = value.preferredDuringSchedulingIgnoredDuringExecution;
+      this._requiredDuringSchedulingIgnoredDuringExecution = value.requiredDuringSchedulingIgnoredDuringExecution;
+    }
+  }
+
   // preferred_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _preferredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  private _preferredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[]; 
   public get preferredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
   }
-  public set preferredDuringSchedulingIgnoredDuringExecution(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+  public set preferredDuringSchedulingIgnoredDuringExecution(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[]) {
     this._preferredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetPreferredDuringSchedulingIgnoredDuringExecution() {
@@ -1431,16 +1747,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutp
   }
   // Temporarily expose input value. Use with caution.
   public get preferredDuringSchedulingIgnoredDuringExecutionInput() {
-    return this._preferredDuringSchedulingIgnoredDuringExecution
+    return this._preferredDuringSchedulingIgnoredDuringExecution;
   }
 
   // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _requiredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  private _requiredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[]; 
   public get requiredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution') as any;
   }
-  public set requiredDuringSchedulingIgnoredDuringExecution(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+  public set requiredDuringSchedulingIgnoredDuringExecution(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[]) {
     this._requiredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetRequiredDuringSchedulingIgnoredDuringExecution() {
@@ -1448,7 +1764,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutp
   }
   // Temporarily expose input value. Use with caution.
   public get requiredDuringSchedulingIgnoredDuringExecutionInput() {
-    return this._requiredDuringSchedulingIgnoredDuringExecution
+    return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinity {
@@ -1472,7 +1788,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinity {
   readonly podAntiAffinity?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinity): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecAffinityToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1494,55 +1810,83 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityOutputReference ext
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
-  // node_affinity - computed: false, optional: true, required: false
-  private _nodeAffinity?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity | undefined; 
-  private __nodeAffinityOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputReference(this as any, "node_affinity", true);
-  public get nodeAffinity() {
-    return this.__nodeAffinityOutput;
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinity | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._nodeAffinity) {
+      hasAnyValues = true;
+      internalValueResult.nodeAffinity = this._nodeAffinity?.internalValue;
+    }
+    if (this._podAffinity) {
+      hasAnyValues = true;
+      internalValueResult.podAffinity = this._podAffinity?.internalValue;
+    }
+    if (this._podAntiAffinity) {
+      hasAnyValues = true;
+      internalValueResult.podAntiAffinity = this._podAntiAffinity?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
   }
-  public putNodeAffinity(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity | undefined) {
-    this._nodeAffinity = value;
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinity | undefined) {
+    if (value === undefined) {
+      this._nodeAffinity.internalValue = undefined;
+      this._podAffinity.internalValue = undefined;
+      this._podAntiAffinity.internalValue = undefined;
+    }
+    else {
+      this._nodeAffinity.internalValue = value.nodeAffinity;
+      this._podAffinity.internalValue = value.podAffinity;
+      this._podAntiAffinity.internalValue = value.podAntiAffinity;
+    }
+  }
+
+  // node_affinity - computed: false, optional: true, required: false
+  private _nodeAffinity = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputReference(this as any, "node_affinity", true);
+  public get nodeAffinity() {
+    return this._nodeAffinity;
+  }
+  public putNodeAffinity(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity) {
+    this._nodeAffinity.internalValue = value;
   }
   public resetNodeAffinity() {
-    this._nodeAffinity = undefined;
+    this._nodeAffinity.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get nodeAffinityInput() {
-    return this._nodeAffinity
+    return this._nodeAffinity.internalValue;
   }
 
   // pod_affinity - computed: false, optional: true, required: false
-  private _podAffinity?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinity | undefined; 
-  private __podAffinityOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputReference(this as any, "pod_affinity", true);
+  private _podAffinity = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputReference(this as any, "pod_affinity", true);
   public get podAffinity() {
-    return this.__podAffinityOutput;
+    return this._podAffinity;
   }
-  public putPodAffinity(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinity | undefined) {
-    this._podAffinity = value;
+  public putPodAffinity(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinity) {
+    this._podAffinity.internalValue = value;
   }
   public resetPodAffinity() {
-    this._podAffinity = undefined;
+    this._podAffinity.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get podAffinityInput() {
-    return this._podAffinity
+    return this._podAffinity.internalValue;
   }
 
   // pod_anti_affinity - computed: false, optional: true, required: false
-  private _podAntiAffinity?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity | undefined; 
-  private __podAntiAffinityOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutputReference(this as any, "pod_anti_affinity", true);
+  private _podAntiAffinity = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutputReference(this as any, "pod_anti_affinity", true);
   public get podAntiAffinity() {
-    return this.__podAntiAffinityOutput;
+    return this._podAntiAffinity;
   }
-  public putPodAntiAffinity(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity | undefined) {
-    this._podAntiAffinity = value;
+  public putPodAntiAffinity(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity) {
+    this._podAntiAffinity.internalValue = value;
   }
   public resetPodAntiAffinity() {
-    this._podAntiAffinity = undefined;
+    this._podAntiAffinity.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get podAntiAffinityInput() {
-    return this._podAntiAffinity
+    return this._podAntiAffinity.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef {
@@ -1566,7 +1910,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromCo
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1588,12 +1932,43 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfig
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._key) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined) {
+    if (value === undefined) {
+      this._key = undefined;
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._key = value.key;
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // key - computed: false, optional: true, required: false
-  private _key?: string | undefined; 
+  private _key?: string; 
   public get key() {
     return this.getStringAttribute('key');
   }
-  public set key(value: string | undefined) {
+  public set key(value: string) {
     this._key = value;
   }
   public resetKey() {
@@ -1601,15 +1976,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfig
   }
   // Temporarily expose input value. Use with caution.
   public get keyInput() {
-    return this._key
+    return this._key;
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -1617,15 +1992,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfig
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -1633,7 +2008,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfig
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef {
@@ -1651,7 +2026,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFi
   readonly fieldPath?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1672,12 +2047,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldR
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._apiVersion) {
+      hasAnyValues = true;
+      internalValueResult.apiVersion = this._apiVersion;
+    }
+    if (this._fieldPath) {
+      hasAnyValues = true;
+      internalValueResult.fieldPath = this._fieldPath;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef | undefined) {
+    if (value === undefined) {
+      this._apiVersion = undefined;
+      this._fieldPath = undefined;
+    }
+    else {
+      this._apiVersion = value.apiVersion;
+      this._fieldPath = value.fieldPath;
+    }
+  }
+
   // api_version - computed: false, optional: true, required: false
-  private _apiVersion?: string | undefined; 
+  private _apiVersion?: string; 
   public get apiVersion() {
     return this.getStringAttribute('api_version');
   }
-  public set apiVersion(value: string | undefined) {
+  public set apiVersion(value: string) {
     this._apiVersion = value;
   }
   public resetApiVersion() {
@@ -1685,15 +2085,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldR
   }
   // Temporarily expose input value. Use with caution.
   public get apiVersionInput() {
-    return this._apiVersion
+    return this._apiVersion;
   }
 
   // field_path - computed: false, optional: true, required: false
-  private _fieldPath?: string | undefined; 
+  private _fieldPath?: string; 
   public get fieldPath() {
     return this.getStringAttribute('field_path');
   }
-  public set fieldPath(value: string | undefined) {
+  public set fieldPath(value: string) {
     this._fieldPath = value;
   }
   public resetFieldPath() {
@@ -1701,7 +2101,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldR
   }
   // Temporarily expose input value. Use with caution.
   public get fieldPathInput() {
-    return this._fieldPath
+    return this._fieldPath;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef {
@@ -1721,7 +2121,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromRe
   readonly resource: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1743,12 +2143,43 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResour
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._containerName) {
+      hasAnyValues = true;
+      internalValueResult.containerName = this._containerName;
+    }
+    if (this._divisor) {
+      hasAnyValues = true;
+      internalValueResult.divisor = this._divisor;
+    }
+    if (this._resource) {
+      hasAnyValues = true;
+      internalValueResult.resource = this._resource;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined) {
+    if (value === undefined) {
+      this._containerName = undefined;
+      this._divisor = undefined;
+      this._resource = undefined;
+    }
+    else {
+      this._containerName = value.containerName;
+      this._divisor = value.divisor;
+      this._resource = value.resource;
+    }
+  }
+
   // container_name - computed: false, optional: true, required: false
-  private _containerName?: string | undefined; 
+  private _containerName?: string; 
   public get containerName() {
     return this.getStringAttribute('container_name');
   }
-  public set containerName(value: string | undefined) {
+  public set containerName(value: string) {
     this._containerName = value;
   }
   public resetContainerName() {
@@ -1756,15 +2187,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResour
   }
   // Temporarily expose input value. Use with caution.
   public get containerNameInput() {
-    return this._containerName
+    return this._containerName;
   }
 
   // divisor - computed: false, optional: true, required: false
-  private _divisor?: string | undefined; 
+  private _divisor?: string; 
   public get divisor() {
     return this.getStringAttribute('divisor');
   }
-  public set divisor(value: string | undefined) {
+  public set divisor(value: string) {
     this._divisor = value;
   }
   public resetDivisor() {
@@ -1772,7 +2203,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResour
   }
   // Temporarily expose input value. Use with caution.
   public get divisorInput() {
-    return this._divisor
+    return this._divisor;
   }
 
   // resource - computed: false, optional: false, required: true
@@ -1785,7 +2216,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResour
   }
   // Temporarily expose input value. Use with caution.
   public get resourceInput() {
-    return this._resource
+    return this._resource;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef {
@@ -1809,7 +2240,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSe
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1831,12 +2262,43 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecret
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._key) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined) {
+    if (value === undefined) {
+      this._key = undefined;
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._key = value.key;
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // key - computed: false, optional: true, required: false
-  private _key?: string | undefined; 
+  private _key?: string; 
   public get key() {
     return this.getStringAttribute('key');
   }
-  public set key(value: string | undefined) {
+  public set key(value: string) {
     this._key = value;
   }
   public resetKey() {
@@ -1844,15 +2306,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecret
   }
   // Temporarily expose input value. Use with caution.
   public get keyInput() {
-    return this._key
+    return this._key;
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -1860,15 +2322,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecret
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -1876,7 +2338,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecret
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFrom {
@@ -1906,7 +2368,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFrom {
   readonly secretKeyRef?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFrom): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1929,72 +2391,105 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromOutput
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
-  // config_map_key_ref - computed: false, optional: true, required: false
-  private _configMapKeyRef?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined; 
-  private __configMapKeyRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this as any, "config_map_key_ref", true);
-  public get configMapKeyRef() {
-    return this.__configMapKeyRefOutput;
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFrom | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._configMapKeyRef) {
+      hasAnyValues = true;
+      internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
+    }
+    if (this._fieldRef) {
+      hasAnyValues = true;
+      internalValueResult.fieldRef = this._fieldRef?.internalValue;
+    }
+    if (this._resourceFieldRef) {
+      hasAnyValues = true;
+      internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
+    }
+    if (this._secretKeyRef) {
+      hasAnyValues = true;
+      internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
   }
-  public putConfigMapKeyRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined) {
-    this._configMapKeyRef = value;
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFrom | undefined) {
+    if (value === undefined) {
+      this._configMapKeyRef.internalValue = undefined;
+      this._fieldRef.internalValue = undefined;
+      this._resourceFieldRef.internalValue = undefined;
+      this._secretKeyRef.internalValue = undefined;
+    }
+    else {
+      this._configMapKeyRef.internalValue = value.configMapKeyRef;
+      this._fieldRef.internalValue = value.fieldRef;
+      this._resourceFieldRef.internalValue = value.resourceFieldRef;
+      this._secretKeyRef.internalValue = value.secretKeyRef;
+    }
+  }
+
+  // config_map_key_ref - computed: false, optional: true, required: false
+  private _configMapKeyRef = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this as any, "config_map_key_ref", true);
+  public get configMapKeyRef() {
+    return this._configMapKeyRef;
+  }
+  public putConfigMapKeyRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef) {
+    this._configMapKeyRef.internalValue = value;
   }
   public resetConfigMapKeyRef() {
-    this._configMapKeyRef = undefined;
+    this._configMapKeyRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get configMapKeyRefInput() {
-    return this._configMapKeyRef
+    return this._configMapKeyRef.internalValue;
   }
 
   // field_ref - computed: false, optional: true, required: false
-  private _fieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef | undefined; 
-  private __fieldRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRefOutputReference(this as any, "field_ref", true);
+  private _fieldRef = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRefOutputReference(this as any, "field_ref", true);
   public get fieldRef() {
-    return this.__fieldRefOutput;
+    return this._fieldRef;
   }
-  public putFieldRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef | undefined) {
-    this._fieldRef = value;
+  public putFieldRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef) {
+    this._fieldRef.internalValue = value;
   }
   public resetFieldRef() {
-    this._fieldRef = undefined;
+    this._fieldRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get fieldRefInput() {
-    return this._fieldRef
+    return this._fieldRef.internalValue;
   }
 
   // resource_field_ref - computed: false, optional: true, required: false
-  private _resourceFieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined; 
-  private __resourceFieldRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference(this as any, "resource_field_ref", true);
+  private _resourceFieldRef = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference(this as any, "resource_field_ref", true);
   public get resourceFieldRef() {
-    return this.__resourceFieldRefOutput;
+    return this._resourceFieldRef;
   }
-  public putResourceFieldRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined) {
-    this._resourceFieldRef = value;
+  public putResourceFieldRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef) {
+    this._resourceFieldRef.internalValue = value;
   }
   public resetResourceFieldRef() {
-    this._resourceFieldRef = undefined;
+    this._resourceFieldRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get resourceFieldRefInput() {
-    return this._resourceFieldRef
+    return this._resourceFieldRef.internalValue;
   }
 
   // secret_key_ref - computed: false, optional: true, required: false
-  private _secretKeyRef?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined; 
-  private __secretKeyRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference(this as any, "secret_key_ref", true);
+  private _secretKeyRef = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference(this as any, "secret_key_ref", true);
   public get secretKeyRef() {
-    return this.__secretKeyRefOutput;
+    return this._secretKeyRef;
   }
-  public putSecretKeyRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined) {
-    this._secretKeyRef = value;
+  public putSecretKeyRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef) {
+    this._secretKeyRef.internalValue = value;
   }
   public resetSecretKeyRef() {
-    this._secretKeyRef = undefined;
+    this._secretKeyRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretKeyRefInput() {
-    return this._secretKeyRef
+    return this._secretKeyRef.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnv {
@@ -2018,7 +2513,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnv {
   readonly valueFrom?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFrom;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnv): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnv): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2045,7 +2540,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigM
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2066,6 +2561,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -2076,15 +2596,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRe
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -2092,7 +2612,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRe
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef {
@@ -2110,7 +2630,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretR
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2131,6 +2651,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefOu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -2141,15 +2686,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefOu
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -2157,7 +2702,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefOu
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFrom {
@@ -2181,7 +2726,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFrom {
   readonly secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFrom): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2202,7 +2747,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostS
   readonly command?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExec): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2222,12 +2767,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -2235,7 +2799,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader {
@@ -2253,7 +2817,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostS
   readonly value?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2297,7 +2861,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostS
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGet): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2321,12 +2885,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -2334,15 +2941,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -2350,15 +2957,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -2366,15 +2973,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -2382,16 +2989,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -2399,7 +3006,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartTcpSocket {
@@ -2411,7 +3018,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostS
   readonly port: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartTcpSocket): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2442,7 +3049,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostS
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartTcpSocket[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2463,7 +3070,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreSt
   readonly command?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExec): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2483,12 +3090,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopEx
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -2496,7 +3122,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopEx
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader {
@@ -2514,7 +3140,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreSt
   readonly value?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2558,7 +3184,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreSt
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGet): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2582,12 +3208,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHt
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -2595,15 +3264,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHt
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -2611,15 +3280,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHt
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -2627,15 +3296,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHt
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -2643,16 +3312,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHt
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -2660,7 +3329,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHt
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopTcpSocket {
@@ -2672,7 +3341,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreSt
   readonly port: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopTcpSocket): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2703,7 +3372,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreSt
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopTcpSocket[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStop): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStop): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2730,7 +3399,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycle {
   readonly preStop?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStop[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycleToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycleOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycle): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycleToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycleOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycle): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2751,13 +3420,38 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycleOutputRef
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycle | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._postStart) {
+      hasAnyValues = true;
+      internalValueResult.postStart = this._postStart;
+    }
+    if (this._preStop) {
+      hasAnyValues = true;
+      internalValueResult.preStop = this._preStop;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycle | undefined) {
+    if (value === undefined) {
+      this._postStart = undefined;
+      this._preStop = undefined;
+    }
+    else {
+      this._postStart = value.postStart;
+      this._preStop = value.preStop;
+    }
+  }
+
   // post_start - computed: false, optional: true, required: false
-  private _postStart?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart[] | undefined; 
+  private _postStart?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart[]; 
   public get postStart() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('post_start') as any;
   }
-  public set postStart(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart[] | undefined) {
+  public set postStart(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart[]) {
     this._postStart = value;
   }
   public resetPostStart() {
@@ -2765,16 +3459,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycleOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get postStartInput() {
-    return this._postStart
+    return this._postStart;
   }
 
   // pre_stop - computed: false, optional: true, required: false
-  private _preStop?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStop[] | undefined; 
+  private _preStop?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStop[]; 
   public get preStop() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('pre_stop') as any;
   }
-  public set preStop(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStop[] | undefined) {
+  public set preStop(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStop[]) {
     this._preStop = value;
   }
   public resetPreStop() {
@@ -2782,7 +3476,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycleOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get preStopInput() {
-    return this._preStop
+    return this._preStop;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec {
@@ -2794,7 +3488,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeE
   readonly command?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2814,12 +3508,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecO
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -2827,7 +3540,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecO
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader {
@@ -2845,7 +3558,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeH
   readonly value?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2889,7 +3602,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeH
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2913,12 +3626,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpG
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -2926,15 +3682,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpG
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -2942,15 +3698,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpG
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -2958,15 +3714,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpG
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -2974,16 +3730,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpG
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -2991,7 +3747,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpG
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocket {
@@ -3003,7 +3759,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeT
   readonly port: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocket): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3064,7 +3820,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbe 
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocket[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbe): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3091,12 +3847,73 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutpu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbe | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._failureThreshold) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._httpGet) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbe | undefined) {
+    if (value === undefined) {
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket = undefined;
+    }
+    else {
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket = value.tcpSocket;
+    }
+  }
+
   // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number | undefined; 
+  private _failureThreshold?: number; 
   public get failureThreshold() {
     return this.getNumberAttribute('failure_threshold');
   }
-  public set failureThreshold(value: number | undefined) {
+  public set failureThreshold(value: number) {
     this._failureThreshold = value;
   }
   public resetFailureThreshold() {
@@ -3104,15 +3921,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get failureThresholdInput() {
-    return this._failureThreshold
+    return this._failureThreshold;
   }
 
   // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number | undefined; 
+  private _initialDelaySeconds?: number; 
   public get initialDelaySeconds() {
     return this.getNumberAttribute('initial_delay_seconds');
   }
-  public set initialDelaySeconds(value: number | undefined) {
+  public set initialDelaySeconds(value: number) {
     this._initialDelaySeconds = value;
   }
   public resetInitialDelaySeconds() {
@@ -3120,15 +3937,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds
+    return this._initialDelaySeconds;
   }
 
   // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number | undefined; 
+  private _periodSeconds?: number; 
   public get periodSeconds() {
     return this.getNumberAttribute('period_seconds');
   }
-  public set periodSeconds(value: number | undefined) {
+  public set periodSeconds(value: number) {
     this._periodSeconds = value;
   }
   public resetPeriodSeconds() {
@@ -3136,15 +3953,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get periodSecondsInput() {
-    return this._periodSeconds
+    return this._periodSeconds;
   }
 
   // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number | undefined; 
+  private _successThreshold?: number; 
   public get successThreshold() {
     return this.getNumberAttribute('success_threshold');
   }
-  public set successThreshold(value: number | undefined) {
+  public set successThreshold(value: number) {
     this._successThreshold = value;
   }
   public resetSuccessThreshold() {
@@ -3152,15 +3969,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get successThresholdInput() {
-    return this._successThreshold
+    return this._successThreshold;
   }
 
   // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number | undefined; 
+  private _timeoutSeconds?: number; 
   public get timeoutSeconds() {
     return this.getNumberAttribute('timeout_seconds');
   }
-  public set timeoutSeconds(value: number | undefined) {
+  public set timeoutSeconds(value: number) {
     this._timeoutSeconds = value;
   }
   public resetTimeoutSeconds() {
@@ -3168,50 +3985,48 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutSecondsInput() {
-    return this._timeoutSeconds
+    return this._timeoutSeconds;
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec | undefined; 
-  private __execOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecOutputReference(this as any, "exec", true);
   public get exec() {
-    return this.__execOutput;
+    return this._exec;
   }
-  public putExec(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec | undefined) {
-    this._exec = value;
+  public putExec(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec) {
+    this._exec.internalValue = value;
   }
   public resetExec() {
-    this._exec = undefined;
+    this._exec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get execInput() {
-    return this._exec
+    return this._exec.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet | undefined; 
-  private __httpGetOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetOutputReference(this as any, "http_get", true);
   public get httpGet() {
-    return this.__httpGetOutput;
+    return this._httpGet;
   }
-  public putHttpGet(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet | undefined) {
-    this._httpGet = value;
+  public putHttpGet(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet) {
+    this._httpGet.internalValue = value;
   }
   public resetHttpGet() {
-    this._httpGet = undefined;
+    this._httpGet.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get httpGetInput() {
-    return this._httpGet
+    return this._httpGet.internalValue;
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocket[] | undefined; 
+  private _tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocket[]; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
-  public set tcpSocket(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocket[] | undefined) {
+  public set tcpSocket(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocket[]) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -3219,7 +4034,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
-    return this._tcpSocket
+    return this._tcpSocket;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerPort {
@@ -3255,7 +4070,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerPort {
   readonly protocol?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerPortToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerPort): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerPortToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerPort): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3278,7 +4093,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe
   readonly command?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3298,12 +4113,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -3311,7 +4145,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader {
@@ -3329,7 +4163,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe
   readonly value?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3373,7 +4207,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3397,12 +4231,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttp
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -3410,15 +4287,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttp
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -3426,15 +4303,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttp
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -3442,15 +4319,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttp
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -3458,16 +4335,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttp
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -3475,7 +4352,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttp
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocket {
@@ -3487,7 +4364,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe
   readonly port: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocket): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3548,7 +4425,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocket[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3575,12 +4452,73 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutp
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._failureThreshold) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._httpGet) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe | undefined) {
+    if (value === undefined) {
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket = undefined;
+    }
+    else {
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket = value.tcpSocket;
+    }
+  }
+
   // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number | undefined; 
+  private _failureThreshold?: number; 
   public get failureThreshold() {
     return this.getNumberAttribute('failure_threshold');
   }
-  public set failureThreshold(value: number | undefined) {
+  public set failureThreshold(value: number) {
     this._failureThreshold = value;
   }
   public resetFailureThreshold() {
@@ -3588,15 +4526,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutp
   }
   // Temporarily expose input value. Use with caution.
   public get failureThresholdInput() {
-    return this._failureThreshold
+    return this._failureThreshold;
   }
 
   // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number | undefined; 
+  private _initialDelaySeconds?: number; 
   public get initialDelaySeconds() {
     return this.getNumberAttribute('initial_delay_seconds');
   }
-  public set initialDelaySeconds(value: number | undefined) {
+  public set initialDelaySeconds(value: number) {
     this._initialDelaySeconds = value;
   }
   public resetInitialDelaySeconds() {
@@ -3604,15 +4542,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutp
   }
   // Temporarily expose input value. Use with caution.
   public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds
+    return this._initialDelaySeconds;
   }
 
   // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number | undefined; 
+  private _periodSeconds?: number; 
   public get periodSeconds() {
     return this.getNumberAttribute('period_seconds');
   }
-  public set periodSeconds(value: number | undefined) {
+  public set periodSeconds(value: number) {
     this._periodSeconds = value;
   }
   public resetPeriodSeconds() {
@@ -3620,15 +4558,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutp
   }
   // Temporarily expose input value. Use with caution.
   public get periodSecondsInput() {
-    return this._periodSeconds
+    return this._periodSeconds;
   }
 
   // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number | undefined; 
+  private _successThreshold?: number; 
   public get successThreshold() {
     return this.getNumberAttribute('success_threshold');
   }
-  public set successThreshold(value: number | undefined) {
+  public set successThreshold(value: number) {
     this._successThreshold = value;
   }
   public resetSuccessThreshold() {
@@ -3636,15 +4574,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutp
   }
   // Temporarily expose input value. Use with caution.
   public get successThresholdInput() {
-    return this._successThreshold
+    return this._successThreshold;
   }
 
   // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number | undefined; 
+  private _timeoutSeconds?: number; 
   public get timeoutSeconds() {
     return this.getNumberAttribute('timeout_seconds');
   }
-  public set timeoutSeconds(value: number | undefined) {
+  public set timeoutSeconds(value: number) {
     this._timeoutSeconds = value;
   }
   public resetTimeoutSeconds() {
@@ -3652,50 +4590,48 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutp
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutSecondsInput() {
-    return this._timeoutSeconds
+    return this._timeoutSeconds;
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec | undefined; 
-  private __execOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExecOutputReference(this as any, "exec", true);
   public get exec() {
-    return this.__execOutput;
+    return this._exec;
   }
-  public putExec(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec | undefined) {
-    this._exec = value;
+  public putExec(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec) {
+    this._exec.internalValue = value;
   }
   public resetExec() {
-    this._exec = undefined;
+    this._exec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get execInput() {
-    return this._exec
+    return this._exec.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet | undefined; 
-  private __httpGetOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetOutputReference(this as any, "http_get", true);
   public get httpGet() {
-    return this.__httpGetOutput;
+    return this._httpGet;
   }
-  public putHttpGet(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet | undefined) {
-    this._httpGet = value;
+  public putHttpGet(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet) {
+    this._httpGet.internalValue = value;
   }
   public resetHttpGet() {
-    this._httpGet = undefined;
+    this._httpGet.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get httpGetInput() {
-    return this._httpGet
+    return this._httpGet.internalValue;
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocket[] | undefined; 
+  private _tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocket[]; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
-  public set tcpSocket(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocket[] | undefined) {
+  public set tcpSocket(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocket[]) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -3703,7 +4639,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutp
   }
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
-    return this._tcpSocket
+    return this._tcpSocket;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerResources {
@@ -3721,7 +4657,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerResources {
   readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerResourcesToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerResourcesOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerResources): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerResourcesToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerResourcesOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerResources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3742,13 +4678,38 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerResourcesOutputRef
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerResources | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._limits) {
+      hasAnyValues = true;
+      internalValueResult.limits = this._limits;
+    }
+    if (this._requests) {
+      hasAnyValues = true;
+      internalValueResult.requests = this._requests;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerResources | undefined) {
+    if (value === undefined) {
+      this._limits = undefined;
+      this._requests = undefined;
+    }
+    else {
+      this._limits = value.limits;
+      this._requests = value.requests;
+    }
+  }
+
   // limits - computed: true, optional: true, required: false
-  private _limits?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _limits?: { [key: string]: string } | cdktf.IResolvable; 
   public get limits() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('limits') as any;
   }
-  public set limits(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set limits(value: { [key: string]: string } | cdktf.IResolvable) {
     this._limits = value;
   }
   public resetLimits() {
@@ -3756,16 +4717,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerResourcesOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get limitsInput() {
-    return this._limits
+    return this._limits;
   }
 
   // requests - computed: true, optional: true, required: false
-  private _requests?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _requests?: { [key: string]: string } | cdktf.IResolvable; 
   public get requests() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('requests') as any;
   }
-  public set requests(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set requests(value: { [key: string]: string } | cdktf.IResolvable) {
     this._requests = value;
   }
   public resetRequests() {
@@ -3773,7 +4734,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerResourcesOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get requestsInput() {
-    return this._requests
+    return this._requests;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities {
@@ -3791,7 +4752,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContex
   readonly drop?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3812,12 +4773,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCap
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._add) {
+      hasAnyValues = true;
+      internalValueResult.add = this._add;
+    }
+    if (this._drop) {
+      hasAnyValues = true;
+      internalValueResult.drop = this._drop;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities | undefined) {
+    if (value === undefined) {
+      this._add = undefined;
+      this._drop = undefined;
+    }
+    else {
+      this._add = value.add;
+      this._drop = value.drop;
+    }
+  }
+
   // add - computed: false, optional: true, required: false
-  private _add?: string[] | undefined; 
+  private _add?: string[]; 
   public get add() {
     return this.getListAttribute('add');
   }
-  public set add(value: string[] | undefined) {
+  public set add(value: string[]) {
     this._add = value;
   }
   public resetAdd() {
@@ -3825,15 +4811,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCap
   }
   // Temporarily expose input value. Use with caution.
   public get addInput() {
-    return this._add
+    return this._add;
   }
 
   // drop - computed: false, optional: true, required: false
-  private _drop?: string[] | undefined; 
+  private _drop?: string[]; 
   public get drop() {
     return this.getListAttribute('drop');
   }
-  public set drop(value: string[] | undefined) {
+  public set drop(value: string[]) {
     this._drop = value;
   }
   public resetDrop() {
@@ -3841,7 +4827,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCap
   }
   // Temporarily expose input value. Use with caution.
   public get dropInput() {
-    return this._drop
+    return this._drop;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions {
@@ -3871,7 +4857,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContex
   readonly user?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3894,12 +4880,49 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeL
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._level) {
+      hasAnyValues = true;
+      internalValueResult.level = this._level;
+    }
+    if (this._role) {
+      hasAnyValues = true;
+      internalValueResult.role = this._role;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._user) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined) {
+    if (value === undefined) {
+      this._level = undefined;
+      this._role = undefined;
+      this._type = undefined;
+      this._user = undefined;
+    }
+    else {
+      this._level = value.level;
+      this._role = value.role;
+      this._type = value.type;
+      this._user = value.user;
+    }
+  }
+
   // level - computed: false, optional: true, required: false
-  private _level?: string | undefined; 
+  private _level?: string; 
   public get level() {
     return this.getStringAttribute('level');
   }
-  public set level(value: string | undefined) {
+  public set level(value: string) {
     this._level = value;
   }
   public resetLevel() {
@@ -3907,15 +4930,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeL
   }
   // Temporarily expose input value. Use with caution.
   public get levelInput() {
-    return this._level
+    return this._level;
   }
 
   // role - computed: false, optional: true, required: false
-  private _role?: string | undefined; 
+  private _role?: string; 
   public get role() {
     return this.getStringAttribute('role');
   }
-  public set role(value: string | undefined) {
+  public set role(value: string) {
     this._role = value;
   }
   public resetRole() {
@@ -3923,15 +4946,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeL
   }
   // Temporarily expose input value. Use with caution.
   public get roleInput() {
-    return this._role
+    return this._role;
   }
 
   // type - computed: false, optional: true, required: false
-  private _type?: string | undefined; 
+  private _type?: string; 
   public get type() {
     return this.getStringAttribute('type');
   }
-  public set type(value: string | undefined) {
+  public set type(value: string) {
     this._type = value;
   }
   public resetType() {
@@ -3939,15 +4962,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeL
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -3955,7 +4978,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeL
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContext {
@@ -4009,7 +5032,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContex
   readonly seLinuxOptions?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContext): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContext): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4036,12 +5059,73 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContext | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._allowPrivilegeEscalation) {
+      hasAnyValues = true;
+      internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
+    }
+    if (this._privileged) {
+      hasAnyValues = true;
+      internalValueResult.privileged = this._privileged;
+    }
+    if (this._readOnlyRootFilesystem) {
+      hasAnyValues = true;
+      internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
+    }
+    if (this._runAsGroup) {
+      hasAnyValues = true;
+      internalValueResult.runAsGroup = this._runAsGroup;
+    }
+    if (this._runAsNonRoot) {
+      hasAnyValues = true;
+      internalValueResult.runAsNonRoot = this._runAsNonRoot;
+    }
+    if (this._runAsUser) {
+      hasAnyValues = true;
+      internalValueResult.runAsUser = this._runAsUser;
+    }
+    if (this._capabilities) {
+      hasAnyValues = true;
+      internalValueResult.capabilities = this._capabilities?.internalValue;
+    }
+    if (this._seLinuxOptions) {
+      hasAnyValues = true;
+      internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContext | undefined) {
+    if (value === undefined) {
+      this._allowPrivilegeEscalation = undefined;
+      this._privileged = undefined;
+      this._readOnlyRootFilesystem = undefined;
+      this._runAsGroup = undefined;
+      this._runAsNonRoot = undefined;
+      this._runAsUser = undefined;
+      this._capabilities.internalValue = undefined;
+      this._seLinuxOptions.internalValue = undefined;
+    }
+    else {
+      this._allowPrivilegeEscalation = value.allowPrivilegeEscalation;
+      this._privileged = value.privileged;
+      this._readOnlyRootFilesystem = value.readOnlyRootFilesystem;
+      this._runAsGroup = value.runAsGroup;
+      this._runAsNonRoot = value.runAsNonRoot;
+      this._runAsUser = value.runAsUser;
+      this._capabilities.internalValue = value.capabilities;
+      this._seLinuxOptions.internalValue = value.seLinuxOptions;
+    }
+  }
+
   // allow_privilege_escalation - computed: false, optional: true, required: false
-  private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable | undefined; 
+  private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable; 
   public get allowPrivilegeEscalation() {
     return this.getBooleanAttribute('allow_privilege_escalation') as any;
   }
-  public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable | undefined) {
+  public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable) {
     this._allowPrivilegeEscalation = value;
   }
   public resetAllowPrivilegeEscalation() {
@@ -4049,15 +5133,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
   }
   // Temporarily expose input value. Use with caution.
   public get allowPrivilegeEscalationInput() {
-    return this._allowPrivilegeEscalation
+    return this._allowPrivilegeEscalation;
   }
 
   // privileged - computed: false, optional: true, required: false
-  private _privileged?: boolean | cdktf.IResolvable | undefined; 
+  private _privileged?: boolean | cdktf.IResolvable; 
   public get privileged() {
     return this.getBooleanAttribute('privileged') as any;
   }
-  public set privileged(value: boolean | cdktf.IResolvable | undefined) {
+  public set privileged(value: boolean | cdktf.IResolvable) {
     this._privileged = value;
   }
   public resetPrivileged() {
@@ -4065,15 +5149,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
   }
   // Temporarily expose input value. Use with caution.
   public get privilegedInput() {
-    return this._privileged
+    return this._privileged;
   }
 
   // read_only_root_filesystem - computed: false, optional: true, required: false
-  private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable; 
   public get readOnlyRootFilesystem() {
     return this.getBooleanAttribute('read_only_root_filesystem') as any;
   }
-  public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable) {
     this._readOnlyRootFilesystem = value;
   }
   public resetReadOnlyRootFilesystem() {
@@ -4081,15 +5165,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyRootFilesystemInput() {
-    return this._readOnlyRootFilesystem
+    return this._readOnlyRootFilesystem;
   }
 
   // run_as_group - computed: false, optional: true, required: false
-  private _runAsGroup?: string | undefined; 
+  private _runAsGroup?: string; 
   public get runAsGroup() {
     return this.getStringAttribute('run_as_group');
   }
-  public set runAsGroup(value: string | undefined) {
+  public set runAsGroup(value: string) {
     this._runAsGroup = value;
   }
   public resetRunAsGroup() {
@@ -4097,15 +5181,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
   }
   // Temporarily expose input value. Use with caution.
   public get runAsGroupInput() {
-    return this._runAsGroup
+    return this._runAsGroup;
   }
 
   // run_as_non_root - computed: false, optional: true, required: false
-  private _runAsNonRoot?: boolean | cdktf.IResolvable | undefined; 
+  private _runAsNonRoot?: boolean | cdktf.IResolvable; 
   public get runAsNonRoot() {
     return this.getBooleanAttribute('run_as_non_root') as any;
   }
-  public set runAsNonRoot(value: boolean | cdktf.IResolvable | undefined) {
+  public set runAsNonRoot(value: boolean | cdktf.IResolvable) {
     this._runAsNonRoot = value;
   }
   public resetRunAsNonRoot() {
@@ -4113,15 +5197,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
   }
   // Temporarily expose input value. Use with caution.
   public get runAsNonRootInput() {
-    return this._runAsNonRoot
+    return this._runAsNonRoot;
   }
 
   // run_as_user - computed: false, optional: true, required: false
-  private _runAsUser?: string | undefined; 
+  private _runAsUser?: string; 
   public get runAsUser() {
     return this.getStringAttribute('run_as_user');
   }
-  public set runAsUser(value: string | undefined) {
+  public set runAsUser(value: string) {
     this._runAsUser = value;
   }
   public resetRunAsUser() {
@@ -4129,41 +5213,39 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
   }
   // Temporarily expose input value. Use with caution.
   public get runAsUserInput() {
-    return this._runAsUser
+    return this._runAsUser;
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities | undefined; 
-  private __capabilitiesOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference(this as any, "capabilities", true);
+  private _capabilities = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference(this as any, "capabilities", true);
   public get capabilities() {
-    return this.__capabilitiesOutput;
+    return this._capabilities;
   }
-  public putCapabilities(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities | undefined) {
-    this._capabilities = value;
+  public putCapabilities(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities) {
+    this._capabilities.internalValue = value;
   }
   public resetCapabilities() {
-    this._capabilities = undefined;
+    this._capabilities.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get capabilitiesInput() {
-    return this._capabilities
+    return this._capabilities.internalValue;
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined; 
-  private __seLinuxOptionsOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
+  private _seLinuxOptions = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
   public get seLinuxOptions() {
-    return this.__seLinuxOptionsOutput;
+    return this._seLinuxOptions;
   }
-  public putSeLinuxOptions(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined) {
-    this._seLinuxOptions = value;
+  public putSeLinuxOptions(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions) {
+    this._seLinuxOptions.internalValue = value;
   }
   public resetSeLinuxOptions() {
-    this._seLinuxOptions = undefined;
+    this._seLinuxOptions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
-    return this._seLinuxOptions
+    return this._seLinuxOptions.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExec {
@@ -4175,7 +5257,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeEx
   readonly command?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExec): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4195,12 +5277,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -4208,7 +5309,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOu
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader {
@@ -4226,7 +5327,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHt
   readonly value?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4270,7 +5371,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHt
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4294,12 +5395,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -4307,15 +5451,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGe
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -4323,15 +5467,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGe
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -4339,15 +5483,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGe
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -4355,16 +5499,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGe
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -4372,7 +5516,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGe
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocket {
@@ -4384,7 +5528,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTc
   readonly port: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocket): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4445,7 +5589,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbe {
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocket[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbe): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4472,12 +5616,73 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutput
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbe | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._failureThreshold) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._httpGet) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbe | undefined) {
+    if (value === undefined) {
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket = undefined;
+    }
+    else {
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket = value.tcpSocket;
+    }
+  }
+
   // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number | undefined; 
+  private _failureThreshold?: number; 
   public get failureThreshold() {
     return this.getNumberAttribute('failure_threshold');
   }
-  public set failureThreshold(value: number | undefined) {
+  public set failureThreshold(value: number) {
     this._failureThreshold = value;
   }
   public resetFailureThreshold() {
@@ -4485,15 +5690,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutput
   }
   // Temporarily expose input value. Use with caution.
   public get failureThresholdInput() {
-    return this._failureThreshold
+    return this._failureThreshold;
   }
 
   // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number | undefined; 
+  private _initialDelaySeconds?: number; 
   public get initialDelaySeconds() {
     return this.getNumberAttribute('initial_delay_seconds');
   }
-  public set initialDelaySeconds(value: number | undefined) {
+  public set initialDelaySeconds(value: number) {
     this._initialDelaySeconds = value;
   }
   public resetInitialDelaySeconds() {
@@ -4501,15 +5706,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutput
   }
   // Temporarily expose input value. Use with caution.
   public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds
+    return this._initialDelaySeconds;
   }
 
   // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number | undefined; 
+  private _periodSeconds?: number; 
   public get periodSeconds() {
     return this.getNumberAttribute('period_seconds');
   }
-  public set periodSeconds(value: number | undefined) {
+  public set periodSeconds(value: number) {
     this._periodSeconds = value;
   }
   public resetPeriodSeconds() {
@@ -4517,15 +5722,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutput
   }
   // Temporarily expose input value. Use with caution.
   public get periodSecondsInput() {
-    return this._periodSeconds
+    return this._periodSeconds;
   }
 
   // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number | undefined; 
+  private _successThreshold?: number; 
   public get successThreshold() {
     return this.getNumberAttribute('success_threshold');
   }
-  public set successThreshold(value: number | undefined) {
+  public set successThreshold(value: number) {
     this._successThreshold = value;
   }
   public resetSuccessThreshold() {
@@ -4533,15 +5738,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutput
   }
   // Temporarily expose input value. Use with caution.
   public get successThresholdInput() {
-    return this._successThreshold
+    return this._successThreshold;
   }
 
   // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number | undefined; 
+  private _timeoutSeconds?: number; 
   public get timeoutSeconds() {
     return this.getNumberAttribute('timeout_seconds');
   }
-  public set timeoutSeconds(value: number | undefined) {
+  public set timeoutSeconds(value: number) {
     this._timeoutSeconds = value;
   }
   public resetTimeoutSeconds() {
@@ -4549,50 +5754,48 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutput
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutSecondsInput() {
-    return this._timeoutSeconds
+    return this._timeoutSeconds;
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExec | undefined; 
-  private __execOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOutputReference(this as any, "exec", true);
   public get exec() {
-    return this.__execOutput;
+    return this._exec;
   }
-  public putExec(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExec | undefined) {
-    this._exec = value;
+  public putExec(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExec) {
+    this._exec.internalValue = value;
   }
   public resetExec() {
-    this._exec = undefined;
+    this._exec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get execInput() {
-    return this._exec
+    return this._exec.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet | undefined; 
-  private __httpGetOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetOutputReference(this as any, "http_get", true);
   public get httpGet() {
-    return this.__httpGetOutput;
+    return this._httpGet;
   }
-  public putHttpGet(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet | undefined) {
-    this._httpGet = value;
+  public putHttpGet(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet) {
+    this._httpGet.internalValue = value;
   }
   public resetHttpGet() {
-    this._httpGet = undefined;
+    this._httpGet.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get httpGetInput() {
-    return this._httpGet
+    return this._httpGet.internalValue;
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocket[] | undefined; 
+  private _tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocket[]; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
-  public set tcpSocket(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocket[] | undefined) {
+  public set tcpSocket(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocket[]) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -4600,7 +5803,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutput
   }
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
-    return this._tcpSocket
+    return this._tcpSocket;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerVolumeMount {
@@ -4636,7 +5839,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerVolumeMount {
   readonly subPath?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerVolumeMountToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerVolumeMount): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerVolumeMountToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerVolumeMount): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4779,7 +5982,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainer {
   readonly volumeMount?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerVolumeMount[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecContainerToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainer): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainer): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4824,7 +6027,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOption {
   readonly value?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOptionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOption): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOptionToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOption): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4856,7 +6059,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfig {
   readonly option?: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOption[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfig): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfig): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4878,12 +6081,43 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOutputReference ex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfig | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._nameservers) {
+      hasAnyValues = true;
+      internalValueResult.nameservers = this._nameservers;
+    }
+    if (this._searches) {
+      hasAnyValues = true;
+      internalValueResult.searches = this._searches;
+    }
+    if (this._option) {
+      hasAnyValues = true;
+      internalValueResult.option = this._option;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfig | undefined) {
+    if (value === undefined) {
+      this._nameservers = undefined;
+      this._searches = undefined;
+      this._option = undefined;
+    }
+    else {
+      this._nameservers = value.nameservers;
+      this._searches = value.searches;
+      this._option = value.option;
+    }
+  }
+
   // nameservers - computed: false, optional: true, required: false
-  private _nameservers?: string[] | undefined; 
+  private _nameservers?: string[]; 
   public get nameservers() {
     return this.getListAttribute('nameservers');
   }
-  public set nameservers(value: string[] | undefined) {
+  public set nameservers(value: string[]) {
     this._nameservers = value;
   }
   public resetNameservers() {
@@ -4891,15 +6125,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get nameserversInput() {
-    return this._nameservers
+    return this._nameservers;
   }
 
   // searches - computed: false, optional: true, required: false
-  private _searches?: string[] | undefined; 
+  private _searches?: string[]; 
   public get searches() {
     return this.getListAttribute('searches');
   }
-  public set searches(value: string[] | undefined) {
+  public set searches(value: string[]) {
     this._searches = value;
   }
   public resetSearches() {
@@ -4907,16 +6141,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get searchesInput() {
-    return this._searches
+    return this._searches;
   }
 
   // option - computed: false, optional: true, required: false
-  private _option?: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOption[] | undefined; 
+  private _option?: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOption[]; 
   public get option() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('option') as any;
   }
-  public set option(value: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOption[] | undefined) {
+  public set option(value: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOption[]) {
     this._option = value;
   }
   public resetOption() {
@@ -4924,7 +6158,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get optionInput() {
-    return this._option
+    return this._option;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecHostAliases {
@@ -4942,7 +6176,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecHostAliases {
   readonly ip: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecHostAliasesToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecHostAliases): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecHostAliasesToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecHostAliases): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4962,7 +6196,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecrets {
   readonly name: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecretsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecrets): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecretsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecrets): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4993,7 +6227,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFr
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5015,12 +6249,43 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromCo
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._key) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined) {
+    if (value === undefined) {
+      this._key = undefined;
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._key = value.key;
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // key - computed: false, optional: true, required: false
-  private _key?: string | undefined; 
+  private _key?: string; 
   public get key() {
     return this.getStringAttribute('key');
   }
-  public set key(value: string | undefined) {
+  public set key(value: string) {
     this._key = value;
   }
   public resetKey() {
@@ -5028,15 +6293,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromCo
   }
   // Temporarily expose input value. Use with caution.
   public get keyInput() {
-    return this._key
+    return this._key;
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -5044,15 +6309,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromCo
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -5060,7 +6325,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromCo
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef {
@@ -5078,7 +6343,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFr
   readonly fieldPath?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5099,12 +6364,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFi
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._apiVersion) {
+      hasAnyValues = true;
+      internalValueResult.apiVersion = this._apiVersion;
+    }
+    if (this._fieldPath) {
+      hasAnyValues = true;
+      internalValueResult.fieldPath = this._fieldPath;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined) {
+    if (value === undefined) {
+      this._apiVersion = undefined;
+      this._fieldPath = undefined;
+    }
+    else {
+      this._apiVersion = value.apiVersion;
+      this._fieldPath = value.fieldPath;
+    }
+  }
+
   // api_version - computed: false, optional: true, required: false
-  private _apiVersion?: string | undefined; 
+  private _apiVersion?: string; 
   public get apiVersion() {
     return this.getStringAttribute('api_version');
   }
-  public set apiVersion(value: string | undefined) {
+  public set apiVersion(value: string) {
     this._apiVersion = value;
   }
   public resetApiVersion() {
@@ -5112,15 +6402,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFi
   }
   // Temporarily expose input value. Use with caution.
   public get apiVersionInput() {
-    return this._apiVersion
+    return this._apiVersion;
   }
 
   // field_path - computed: false, optional: true, required: false
-  private _fieldPath?: string | undefined; 
+  private _fieldPath?: string; 
   public get fieldPath() {
     return this.getStringAttribute('field_path');
   }
-  public set fieldPath(value: string | undefined) {
+  public set fieldPath(value: string) {
     this._fieldPath = value;
   }
   public resetFieldPath() {
@@ -5128,7 +6418,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFi
   }
   // Temporarily expose input value. Use with caution.
   public get fieldPathInput() {
-    return this._fieldPath
+    return this._fieldPath;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef {
@@ -5148,7 +6438,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFr
   readonly resource: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5170,12 +6460,43 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromRe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._containerName) {
+      hasAnyValues = true;
+      internalValueResult.containerName = this._containerName;
+    }
+    if (this._divisor) {
+      hasAnyValues = true;
+      internalValueResult.divisor = this._divisor;
+    }
+    if (this._resource) {
+      hasAnyValues = true;
+      internalValueResult.resource = this._resource;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined) {
+    if (value === undefined) {
+      this._containerName = undefined;
+      this._divisor = undefined;
+      this._resource = undefined;
+    }
+    else {
+      this._containerName = value.containerName;
+      this._divisor = value.divisor;
+      this._resource = value.resource;
+    }
+  }
+
   // container_name - computed: false, optional: true, required: false
-  private _containerName?: string | undefined; 
+  private _containerName?: string; 
   public get containerName() {
     return this.getStringAttribute('container_name');
   }
-  public set containerName(value: string | undefined) {
+  public set containerName(value: string) {
     this._containerName = value;
   }
   public resetContainerName() {
@@ -5183,15 +6504,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromRe
   }
   // Temporarily expose input value. Use with caution.
   public get containerNameInput() {
-    return this._containerName
+    return this._containerName;
   }
 
   // divisor - computed: false, optional: true, required: false
-  private _divisor?: string | undefined; 
+  private _divisor?: string; 
   public get divisor() {
     return this.getStringAttribute('divisor');
   }
-  public set divisor(value: string | undefined) {
+  public set divisor(value: string) {
     this._divisor = value;
   }
   public resetDivisor() {
@@ -5199,7 +6520,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromRe
   }
   // Temporarily expose input value. Use with caution.
   public get divisorInput() {
-    return this._divisor
+    return this._divisor;
   }
 
   // resource - computed: false, optional: false, required: true
@@ -5212,7 +6533,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromRe
   }
   // Temporarily expose input value. Use with caution.
   public get resourceInput() {
-    return this._resource
+    return this._resource;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef {
@@ -5236,7 +6557,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFr
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5258,12 +6579,43 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._key) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined) {
+    if (value === undefined) {
+      this._key = undefined;
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._key = value.key;
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // key - computed: false, optional: true, required: false
-  private _key?: string | undefined; 
+  private _key?: string; 
   public get key() {
     return this.getStringAttribute('key');
   }
-  public set key(value: string | undefined) {
+  public set key(value: string) {
     this._key = value;
   }
   public resetKey() {
@@ -5271,15 +6623,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSe
   }
   // Temporarily expose input value. Use with caution.
   public get keyInput() {
-    return this._key
+    return this._key;
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -5287,15 +6639,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSe
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -5303,7 +6655,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSe
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom {
@@ -5333,7 +6685,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFr
   readonly secretKeyRef?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5356,72 +6708,105 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromOu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
-  // config_map_key_ref - computed: false, optional: true, required: false
-  private _configMapKeyRef?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined; 
-  private __configMapKeyRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this as any, "config_map_key_ref", true);
-  public get configMapKeyRef() {
-    return this.__configMapKeyRefOutput;
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._configMapKeyRef) {
+      hasAnyValues = true;
+      internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
+    }
+    if (this._fieldRef) {
+      hasAnyValues = true;
+      internalValueResult.fieldRef = this._fieldRef?.internalValue;
+    }
+    if (this._resourceFieldRef) {
+      hasAnyValues = true;
+      internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
+    }
+    if (this._secretKeyRef) {
+      hasAnyValues = true;
+      internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
   }
-  public putConfigMapKeyRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined) {
-    this._configMapKeyRef = value;
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom | undefined) {
+    if (value === undefined) {
+      this._configMapKeyRef.internalValue = undefined;
+      this._fieldRef.internalValue = undefined;
+      this._resourceFieldRef.internalValue = undefined;
+      this._secretKeyRef.internalValue = undefined;
+    }
+    else {
+      this._configMapKeyRef.internalValue = value.configMapKeyRef;
+      this._fieldRef.internalValue = value.fieldRef;
+      this._resourceFieldRef.internalValue = value.resourceFieldRef;
+      this._secretKeyRef.internalValue = value.secretKeyRef;
+    }
+  }
+
+  // config_map_key_ref - computed: false, optional: true, required: false
+  private _configMapKeyRef = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this as any, "config_map_key_ref", true);
+  public get configMapKeyRef() {
+    return this._configMapKeyRef;
+  }
+  public putConfigMapKeyRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef) {
+    this._configMapKeyRef.internalValue = value;
   }
   public resetConfigMapKeyRef() {
-    this._configMapKeyRef = undefined;
+    this._configMapKeyRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get configMapKeyRefInput() {
-    return this._configMapKeyRef
+    return this._configMapKeyRef.internalValue;
   }
 
   // field_ref - computed: false, optional: true, required: false
-  private _fieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined; 
-  private __fieldRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference(this as any, "field_ref", true);
+  private _fieldRef = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference(this as any, "field_ref", true);
   public get fieldRef() {
-    return this.__fieldRefOutput;
+    return this._fieldRef;
   }
-  public putFieldRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined) {
-    this._fieldRef = value;
+  public putFieldRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef) {
+    this._fieldRef.internalValue = value;
   }
   public resetFieldRef() {
-    this._fieldRef = undefined;
+    this._fieldRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get fieldRefInput() {
-    return this._fieldRef
+    return this._fieldRef.internalValue;
   }
 
   // resource_field_ref - computed: false, optional: true, required: false
-  private _resourceFieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined; 
-  private __resourceFieldRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this as any, "resource_field_ref", true);
+  private _resourceFieldRef = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this as any, "resource_field_ref", true);
   public get resourceFieldRef() {
-    return this.__resourceFieldRefOutput;
+    return this._resourceFieldRef;
   }
-  public putResourceFieldRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined) {
-    this._resourceFieldRef = value;
+  public putResourceFieldRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef) {
+    this._resourceFieldRef.internalValue = value;
   }
   public resetResourceFieldRef() {
-    this._resourceFieldRef = undefined;
+    this._resourceFieldRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get resourceFieldRefInput() {
-    return this._resourceFieldRef
+    return this._resourceFieldRef.internalValue;
   }
 
   // secret_key_ref - computed: false, optional: true, required: false
-  private _secretKeyRef?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined; 
-  private __secretKeyRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this as any, "secret_key_ref", true);
+  private _secretKeyRef = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this as any, "secret_key_ref", true);
   public get secretKeyRef() {
-    return this.__secretKeyRefOutput;
+    return this._secretKeyRef;
   }
-  public putSecretKeyRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined) {
-    this._secretKeyRef = value;
+  public putSecretKeyRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef) {
+    this._secretKeyRef.internalValue = value;
   }
   public resetSecretKeyRef() {
-    this._secretKeyRef = undefined;
+    this._secretKeyRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretKeyRefInput() {
-    return this._secretKeyRef
+    return this._secretKeyRef.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnv {
@@ -5445,7 +6830,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnv {
   readonly valueFrom?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnv): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnv): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5472,7 +6857,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromCon
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5493,6 +6878,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigM
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -5503,15 +6913,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigM
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -5519,7 +6929,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigM
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef {
@@ -5537,7 +6947,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSec
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5558,6 +6968,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretR
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -5568,15 +7003,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretR
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -5584,7 +7019,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretR
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFrom {
@@ -5608,7 +7043,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFrom {
   readonly secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFrom): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5629,7 +7064,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   readonly command?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExec): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5649,12 +7084,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostS
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -5662,7 +7116,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostS
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader {
@@ -5680,7 +7134,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   readonly value?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5724,7 +7178,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGet): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5748,12 +7202,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostS
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -5761,15 +7258,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostS
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -5777,15 +7274,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostS
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -5793,15 +7290,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostS
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -5809,16 +7306,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostS
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -5826,7 +7323,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostS
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartTcpSocket {
@@ -5838,7 +7335,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   readonly port: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartTcpSocket): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5869,7 +7366,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartTcpSocket[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStart): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStart): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5890,7 +7387,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   readonly command?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExec): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5910,12 +7407,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreSt
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -5923,7 +7439,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreSt
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader {
@@ -5941,7 +7457,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   readonly value?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5985,7 +7501,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGet): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6009,12 +7525,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreSt
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -6022,15 +7581,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreSt
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -6038,15 +7597,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreSt
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -6054,15 +7613,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreSt
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -6070,16 +7629,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreSt
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -6087,7 +7646,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreSt
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopTcpSocket {
@@ -6099,7 +7658,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   readonly port: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopTcpSocket): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6130,7 +7689,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopTcpSocket[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6157,7 +7716,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycle 
   readonly preStop?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycle): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycle): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6178,13 +7737,38 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleOutpu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycle | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._postStart) {
+      hasAnyValues = true;
+      internalValueResult.postStart = this._postStart;
+    }
+    if (this._preStop) {
+      hasAnyValues = true;
+      internalValueResult.preStop = this._preStop;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycle | undefined) {
+    if (value === undefined) {
+      this._postStart = undefined;
+      this._preStop = undefined;
+    }
+    else {
+      this._postStart = value.postStart;
+      this._preStop = value.preStop;
+    }
+  }
+
   // post_start - computed: false, optional: true, required: false
-  private _postStart?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStart[] | undefined; 
+  private _postStart?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStart[]; 
   public get postStart() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('post_start') as any;
   }
-  public set postStart(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStart[] | undefined) {
+  public set postStart(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStart[]) {
     this._postStart = value;
   }
   public resetPostStart() {
@@ -6192,16 +7776,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get postStartInput() {
-    return this._postStart
+    return this._postStart;
   }
 
   // pre_stop - computed: false, optional: true, required: false
-  private _preStop?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop[] | undefined; 
+  private _preStop?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop[]; 
   public get preStop() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('pre_stop') as any;
   }
-  public set preStop(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop[] | undefined) {
+  public set preStop(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop[]) {
     this._preStop = value;
   }
   public resetPreStop() {
@@ -6209,7 +7793,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get preStopInput() {
-    return this._preStop
+    return this._preStop;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec {
@@ -6221,7 +7805,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessPr
   readonly command?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6241,12 +7825,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeE
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -6254,7 +7857,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeE
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader {
@@ -6272,7 +7875,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessPr
   readonly value?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6316,7 +7919,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessPr
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6340,12 +7943,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeH
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -6353,15 +7999,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeH
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -6369,15 +8015,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeH
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -6385,15 +8031,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeH
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -6401,16 +8047,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeH
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -6418,7 +8064,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeH
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocket {
@@ -6430,7 +8076,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessPr
   readonly port: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocket): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6491,7 +8137,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessPr
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocket[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6518,12 +8164,73 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeO
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._failureThreshold) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._httpGet) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe | undefined) {
+    if (value === undefined) {
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket = undefined;
+    }
+    else {
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket = value.tcpSocket;
+    }
+  }
+
   // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number | undefined; 
+  private _failureThreshold?: number; 
   public get failureThreshold() {
     return this.getNumberAttribute('failure_threshold');
   }
-  public set failureThreshold(value: number | undefined) {
+  public set failureThreshold(value: number) {
     this._failureThreshold = value;
   }
   public resetFailureThreshold() {
@@ -6531,15 +8238,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeO
   }
   // Temporarily expose input value. Use with caution.
   public get failureThresholdInput() {
-    return this._failureThreshold
+    return this._failureThreshold;
   }
 
   // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number | undefined; 
+  private _initialDelaySeconds?: number; 
   public get initialDelaySeconds() {
     return this.getNumberAttribute('initial_delay_seconds');
   }
-  public set initialDelaySeconds(value: number | undefined) {
+  public set initialDelaySeconds(value: number) {
     this._initialDelaySeconds = value;
   }
   public resetInitialDelaySeconds() {
@@ -6547,15 +8254,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeO
   }
   // Temporarily expose input value. Use with caution.
   public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds
+    return this._initialDelaySeconds;
   }
 
   // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number | undefined; 
+  private _periodSeconds?: number; 
   public get periodSeconds() {
     return this.getNumberAttribute('period_seconds');
   }
-  public set periodSeconds(value: number | undefined) {
+  public set periodSeconds(value: number) {
     this._periodSeconds = value;
   }
   public resetPeriodSeconds() {
@@ -6563,15 +8270,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeO
   }
   // Temporarily expose input value. Use with caution.
   public get periodSecondsInput() {
-    return this._periodSeconds
+    return this._periodSeconds;
   }
 
   // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number | undefined; 
+  private _successThreshold?: number; 
   public get successThreshold() {
     return this.getNumberAttribute('success_threshold');
   }
-  public set successThreshold(value: number | undefined) {
+  public set successThreshold(value: number) {
     this._successThreshold = value;
   }
   public resetSuccessThreshold() {
@@ -6579,15 +8286,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeO
   }
   // Temporarily expose input value. Use with caution.
   public get successThresholdInput() {
-    return this._successThreshold
+    return this._successThreshold;
   }
 
   // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number | undefined; 
+  private _timeoutSeconds?: number; 
   public get timeoutSeconds() {
     return this.getNumberAttribute('timeout_seconds');
   }
-  public set timeoutSeconds(value: number | undefined) {
+  public set timeoutSeconds(value: number) {
     this._timeoutSeconds = value;
   }
   public resetTimeoutSeconds() {
@@ -6595,50 +8302,48 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeO
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutSecondsInput() {
-    return this._timeoutSeconds
+    return this._timeoutSeconds;
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec | undefined; 
-  private __execOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExecOutputReference(this as any, "exec", true);
   public get exec() {
-    return this.__execOutput;
+    return this._exec;
   }
-  public putExec(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec | undefined) {
-    this._exec = value;
+  public putExec(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec) {
+    this._exec.internalValue = value;
   }
   public resetExec() {
-    this._exec = undefined;
+    this._exec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get execInput() {
-    return this._exec
+    return this._exec.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined; 
-  private __httpGetOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference(this as any, "http_get", true);
   public get httpGet() {
-    return this.__httpGetOutput;
+    return this._httpGet;
   }
-  public putHttpGet(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined) {
-    this._httpGet = value;
+  public putHttpGet(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet) {
+    this._httpGet.internalValue = value;
   }
   public resetHttpGet() {
-    this._httpGet = undefined;
+    this._httpGet.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get httpGetInput() {
-    return this._httpGet
+    return this._httpGet.internalValue;
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocket[] | undefined; 
+  private _tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocket[]; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
-  public set tcpSocket(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocket[] | undefined) {
+  public set tcpSocket(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocket[]) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -6646,7 +8351,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeO
   }
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
-    return this._tcpSocket
+    return this._tcpSocket;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerPort {
@@ -6682,7 +8387,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerPort {
   readonly protocol?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerPortToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerPort): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerPortToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerPort): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6705,7 +8410,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessP
   readonly command?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6725,12 +8430,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -6738,7 +8462,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader {
@@ -6756,7 +8480,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessP
   readonly value?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6800,7 +8524,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessP
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6824,12 +8548,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -6837,15 +8604,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -6853,15 +8620,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -6869,15 +8636,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -6885,16 +8652,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -6902,7 +8669,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocket {
@@ -6914,7 +8681,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessP
   readonly port: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocket): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6975,7 +8742,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessP
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocket[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7002,12 +8769,73 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._failureThreshold) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._httpGet) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe | undefined) {
+    if (value === undefined) {
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket = undefined;
+    }
+    else {
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket = value.tcpSocket;
+    }
+  }
+
   // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number | undefined; 
+  private _failureThreshold?: number; 
   public get failureThreshold() {
     return this.getNumberAttribute('failure_threshold');
   }
-  public set failureThreshold(value: number | undefined) {
+  public set failureThreshold(value: number) {
     this._failureThreshold = value;
   }
   public resetFailureThreshold() {
@@ -7015,15 +8843,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
   // Temporarily expose input value. Use with caution.
   public get failureThresholdInput() {
-    return this._failureThreshold
+    return this._failureThreshold;
   }
 
   // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number | undefined; 
+  private _initialDelaySeconds?: number; 
   public get initialDelaySeconds() {
     return this.getNumberAttribute('initial_delay_seconds');
   }
-  public set initialDelaySeconds(value: number | undefined) {
+  public set initialDelaySeconds(value: number) {
     this._initialDelaySeconds = value;
   }
   public resetInitialDelaySeconds() {
@@ -7031,15 +8859,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
   // Temporarily expose input value. Use with caution.
   public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds
+    return this._initialDelaySeconds;
   }
 
   // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number | undefined; 
+  private _periodSeconds?: number; 
   public get periodSeconds() {
     return this.getNumberAttribute('period_seconds');
   }
-  public set periodSeconds(value: number | undefined) {
+  public set periodSeconds(value: number) {
     this._periodSeconds = value;
   }
   public resetPeriodSeconds() {
@@ -7047,15 +8875,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
   // Temporarily expose input value. Use with caution.
   public get periodSecondsInput() {
-    return this._periodSeconds
+    return this._periodSeconds;
   }
 
   // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number | undefined; 
+  private _successThreshold?: number; 
   public get successThreshold() {
     return this.getNumberAttribute('success_threshold');
   }
-  public set successThreshold(value: number | undefined) {
+  public set successThreshold(value: number) {
     this._successThreshold = value;
   }
   public resetSuccessThreshold() {
@@ -7063,15 +8891,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
   // Temporarily expose input value. Use with caution.
   public get successThresholdInput() {
-    return this._successThreshold
+    return this._successThreshold;
   }
 
   // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number | undefined; 
+  private _timeoutSeconds?: number; 
   public get timeoutSeconds() {
     return this.getNumberAttribute('timeout_seconds');
   }
-  public set timeoutSeconds(value: number | undefined) {
+  public set timeoutSeconds(value: number) {
     this._timeoutSeconds = value;
   }
   public resetTimeoutSeconds() {
@@ -7079,50 +8907,48 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutSecondsInput() {
-    return this._timeoutSeconds
+    return this._timeoutSeconds;
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec | undefined; 
-  private __execOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExecOutputReference(this as any, "exec", true);
   public get exec() {
-    return this.__execOutput;
+    return this._exec;
   }
-  public putExec(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec | undefined) {
-    this._exec = value;
+  public putExec(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec) {
+    this._exec.internalValue = value;
   }
   public resetExec() {
-    this._exec = undefined;
+    this._exec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get execInput() {
-    return this._exec
+    return this._exec.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined; 
-  private __httpGetOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference(this as any, "http_get", true);
   public get httpGet() {
-    return this.__httpGetOutput;
+    return this._httpGet;
   }
-  public putHttpGet(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined) {
-    this._httpGet = value;
+  public putHttpGet(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet) {
+    this._httpGet.internalValue = value;
   }
   public resetHttpGet() {
-    this._httpGet = undefined;
+    this._httpGet.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get httpGetInput() {
-    return this._httpGet
+    return this._httpGet.internalValue;
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocket[] | undefined; 
+  private _tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocket[]; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
-  public set tcpSocket(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocket[] | undefined) {
+  public set tcpSocket(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocket[]) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -7130,7 +8956,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
-    return this._tcpSocket
+    return this._tcpSocket;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResources {
@@ -7148,7 +8974,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResources 
   readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResourcesToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResourcesOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResources): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResourcesToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResourcesOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7169,13 +8995,38 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResourcesOutpu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResources | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._limits) {
+      hasAnyValues = true;
+      internalValueResult.limits = this._limits;
+    }
+    if (this._requests) {
+      hasAnyValues = true;
+      internalValueResult.requests = this._requests;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResources | undefined) {
+    if (value === undefined) {
+      this._limits = undefined;
+      this._requests = undefined;
+    }
+    else {
+      this._limits = value.limits;
+      this._requests = value.requests;
+    }
+  }
+
   // limits - computed: true, optional: true, required: false
-  private _limits?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _limits?: { [key: string]: string } | cdktf.IResolvable; 
   public get limits() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('limits') as any;
   }
-  public set limits(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set limits(value: { [key: string]: string } | cdktf.IResolvable) {
     this._limits = value;
   }
   public resetLimits() {
@@ -7183,16 +9034,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResourcesOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get limitsInput() {
-    return this._limits
+    return this._limits;
   }
 
   // requests - computed: true, optional: true, required: false
-  private _requests?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _requests?: { [key: string]: string } | cdktf.IResolvable; 
   public get requests() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('requests') as any;
   }
-  public set requests(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set requests(value: { [key: string]: string } | cdktf.IResolvable) {
     this._requests = value;
   }
   public resetRequests() {
@@ -7200,7 +9051,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResourcesOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get requestsInput() {
-    return this._requests
+    return this._requests;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities {
@@ -7218,7 +9069,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityCo
   readonly drop?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7239,12 +9090,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._add) {
+      hasAnyValues = true;
+      internalValueResult.add = this._add;
+    }
+    if (this._drop) {
+      hasAnyValues = true;
+      internalValueResult.drop = this._drop;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined) {
+    if (value === undefined) {
+      this._add = undefined;
+      this._drop = undefined;
+    }
+    else {
+      this._add = value.add;
+      this._drop = value.drop;
+    }
+  }
+
   // add - computed: false, optional: true, required: false
-  private _add?: string[] | undefined; 
+  private _add?: string[]; 
   public get add() {
     return this.getListAttribute('add');
   }
-  public set add(value: string[] | undefined) {
+  public set add(value: string[]) {
     this._add = value;
   }
   public resetAdd() {
@@ -7252,15 +9128,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
   // Temporarily expose input value. Use with caution.
   public get addInput() {
-    return this._add
+    return this._add;
   }
 
   // drop - computed: false, optional: true, required: false
-  private _drop?: string[] | undefined; 
+  private _drop?: string[]; 
   public get drop() {
     return this.getListAttribute('drop');
   }
-  public set drop(value: string[] | undefined) {
+  public set drop(value: string[]) {
     this._drop = value;
   }
   public resetDrop() {
@@ -7268,7 +9144,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
   // Temporarily expose input value. Use with caution.
   public get dropInput() {
-    return this._drop
+    return this._drop;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions {
@@ -7298,7 +9174,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityCo
   readonly user?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7321,12 +9197,49 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._level) {
+      hasAnyValues = true;
+      internalValueResult.level = this._level;
+    }
+    if (this._role) {
+      hasAnyValues = true;
+      internalValueResult.role = this._role;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._user) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined) {
+    if (value === undefined) {
+      this._level = undefined;
+      this._role = undefined;
+      this._type = undefined;
+      this._user = undefined;
+    }
+    else {
+      this._level = value.level;
+      this._role = value.role;
+      this._type = value.type;
+      this._user = value.user;
+    }
+  }
+
   // level - computed: false, optional: true, required: false
-  private _level?: string | undefined; 
+  private _level?: string; 
   public get level() {
     return this.getStringAttribute('level');
   }
-  public set level(value: string | undefined) {
+  public set level(value: string) {
     this._level = value;
   }
   public resetLevel() {
@@ -7334,15 +9247,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
   // Temporarily expose input value. Use with caution.
   public get levelInput() {
-    return this._level
+    return this._level;
   }
 
   // role - computed: false, optional: true, required: false
-  private _role?: string | undefined; 
+  private _role?: string; 
   public get role() {
     return this.getStringAttribute('role');
   }
-  public set role(value: string | undefined) {
+  public set role(value: string) {
     this._role = value;
   }
   public resetRole() {
@@ -7350,15 +9263,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
   // Temporarily expose input value. Use with caution.
   public get roleInput() {
-    return this._role
+    return this._role;
   }
 
   // type - computed: false, optional: true, required: false
-  private _type?: string | undefined; 
+  private _type?: string; 
   public get type() {
     return this.getStringAttribute('type');
   }
-  public set type(value: string | undefined) {
+  public set type(value: string) {
     this._type = value;
   }
   public resetType() {
@@ -7366,15 +9279,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -7382,7 +9295,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContext {
@@ -7436,7 +9349,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityCo
   readonly seLinuxOptions?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContext): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContext): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7463,12 +9376,73 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContext | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._allowPrivilegeEscalation) {
+      hasAnyValues = true;
+      internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
+    }
+    if (this._privileged) {
+      hasAnyValues = true;
+      internalValueResult.privileged = this._privileged;
+    }
+    if (this._readOnlyRootFilesystem) {
+      hasAnyValues = true;
+      internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
+    }
+    if (this._runAsGroup) {
+      hasAnyValues = true;
+      internalValueResult.runAsGroup = this._runAsGroup;
+    }
+    if (this._runAsNonRoot) {
+      hasAnyValues = true;
+      internalValueResult.runAsNonRoot = this._runAsNonRoot;
+    }
+    if (this._runAsUser) {
+      hasAnyValues = true;
+      internalValueResult.runAsUser = this._runAsUser;
+    }
+    if (this._capabilities) {
+      hasAnyValues = true;
+      internalValueResult.capabilities = this._capabilities?.internalValue;
+    }
+    if (this._seLinuxOptions) {
+      hasAnyValues = true;
+      internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContext | undefined) {
+    if (value === undefined) {
+      this._allowPrivilegeEscalation = undefined;
+      this._privileged = undefined;
+      this._readOnlyRootFilesystem = undefined;
+      this._runAsGroup = undefined;
+      this._runAsNonRoot = undefined;
+      this._runAsUser = undefined;
+      this._capabilities.internalValue = undefined;
+      this._seLinuxOptions.internalValue = undefined;
+    }
+    else {
+      this._allowPrivilegeEscalation = value.allowPrivilegeEscalation;
+      this._privileged = value.privileged;
+      this._readOnlyRootFilesystem = value.readOnlyRootFilesystem;
+      this._runAsGroup = value.runAsGroup;
+      this._runAsNonRoot = value.runAsNonRoot;
+      this._runAsUser = value.runAsUser;
+      this._capabilities.internalValue = value.capabilities;
+      this._seLinuxOptions.internalValue = value.seLinuxOptions;
+    }
+  }
+
   // allow_privilege_escalation - computed: false, optional: true, required: false
-  private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable | undefined; 
+  private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable; 
   public get allowPrivilegeEscalation() {
     return this.getBooleanAttribute('allow_privilege_escalation') as any;
   }
-  public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable | undefined) {
+  public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable) {
     this._allowPrivilegeEscalation = value;
   }
   public resetAllowPrivilegeEscalation() {
@@ -7476,15 +9450,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
   // Temporarily expose input value. Use with caution.
   public get allowPrivilegeEscalationInput() {
-    return this._allowPrivilegeEscalation
+    return this._allowPrivilegeEscalation;
   }
 
   // privileged - computed: false, optional: true, required: false
-  private _privileged?: boolean | cdktf.IResolvable | undefined; 
+  private _privileged?: boolean | cdktf.IResolvable; 
   public get privileged() {
     return this.getBooleanAttribute('privileged') as any;
   }
-  public set privileged(value: boolean | cdktf.IResolvable | undefined) {
+  public set privileged(value: boolean | cdktf.IResolvable) {
     this._privileged = value;
   }
   public resetPrivileged() {
@@ -7492,15 +9466,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
   // Temporarily expose input value. Use with caution.
   public get privilegedInput() {
-    return this._privileged
+    return this._privileged;
   }
 
   // read_only_root_filesystem - computed: false, optional: true, required: false
-  private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable; 
   public get readOnlyRootFilesystem() {
     return this.getBooleanAttribute('read_only_root_filesystem') as any;
   }
-  public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable) {
     this._readOnlyRootFilesystem = value;
   }
   public resetReadOnlyRootFilesystem() {
@@ -7508,15 +9482,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyRootFilesystemInput() {
-    return this._readOnlyRootFilesystem
+    return this._readOnlyRootFilesystem;
   }
 
   // run_as_group - computed: false, optional: true, required: false
-  private _runAsGroup?: string | undefined; 
+  private _runAsGroup?: string; 
   public get runAsGroup() {
     return this.getStringAttribute('run_as_group');
   }
-  public set runAsGroup(value: string | undefined) {
+  public set runAsGroup(value: string) {
     this._runAsGroup = value;
   }
   public resetRunAsGroup() {
@@ -7524,15 +9498,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
   // Temporarily expose input value. Use with caution.
   public get runAsGroupInput() {
-    return this._runAsGroup
+    return this._runAsGroup;
   }
 
   // run_as_non_root - computed: false, optional: true, required: false
-  private _runAsNonRoot?: boolean | cdktf.IResolvable | undefined; 
+  private _runAsNonRoot?: boolean | cdktf.IResolvable; 
   public get runAsNonRoot() {
     return this.getBooleanAttribute('run_as_non_root') as any;
   }
-  public set runAsNonRoot(value: boolean | cdktf.IResolvable | undefined) {
+  public set runAsNonRoot(value: boolean | cdktf.IResolvable) {
     this._runAsNonRoot = value;
   }
   public resetRunAsNonRoot() {
@@ -7540,15 +9514,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
   // Temporarily expose input value. Use with caution.
   public get runAsNonRootInput() {
-    return this._runAsNonRoot
+    return this._runAsNonRoot;
   }
 
   // run_as_user - computed: false, optional: true, required: false
-  private _runAsUser?: string | undefined; 
+  private _runAsUser?: string; 
   public get runAsUser() {
     return this.getStringAttribute('run_as_user');
   }
-  public set runAsUser(value: string | undefined) {
+  public set runAsUser(value: string) {
     this._runAsUser = value;
   }
   public resetRunAsUser() {
@@ -7556,41 +9530,39 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
   // Temporarily expose input value. Use with caution.
   public get runAsUserInput() {
-    return this._runAsUser
+    return this._runAsUser;
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined; 
-  private __capabilitiesOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference(this as any, "capabilities", true);
+  private _capabilities = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference(this as any, "capabilities", true);
   public get capabilities() {
-    return this.__capabilitiesOutput;
+    return this._capabilities;
   }
-  public putCapabilities(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined) {
-    this._capabilities = value;
+  public putCapabilities(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities) {
+    this._capabilities.internalValue = value;
   }
   public resetCapabilities() {
-    this._capabilities = undefined;
+    this._capabilities.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get capabilitiesInput() {
-    return this._capabilities
+    return this._capabilities.internalValue;
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined; 
-  private __seLinuxOptionsOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
+  private _seLinuxOptions = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
   public get seLinuxOptions() {
-    return this.__seLinuxOptionsOutput;
+    return this._seLinuxOptions;
   }
-  public putSeLinuxOptions(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined) {
-    this._seLinuxOptions = value;
+  public putSeLinuxOptions(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions) {
+    this._seLinuxOptions.internalValue = value;
   }
   public resetSeLinuxOptions() {
-    this._seLinuxOptions = undefined;
+    this._seLinuxOptions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
-    return this._seLinuxOptions
+    return this._seLinuxOptions.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec {
@@ -7602,7 +9574,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupPro
   readonly command?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7622,12 +9594,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeEx
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -7635,7 +9626,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeEx
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader {
@@ -7653,7 +9644,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupPro
   readonly value?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7697,7 +9688,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupPro
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7721,12 +9712,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHt
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -7734,15 +9768,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHt
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -7750,15 +9784,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHt
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -7766,15 +9800,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHt
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -7782,16 +9816,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHt
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -7799,7 +9833,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHt
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocket {
@@ -7811,7 +9845,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupPro
   readonly port: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocket): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7872,7 +9906,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupPro
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocket[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbe): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7899,12 +9933,73 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbe | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._failureThreshold) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._httpGet) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbe | undefined) {
+    if (value === undefined) {
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket = undefined;
+    }
+    else {
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket = value.tcpSocket;
+    }
+  }
+
   // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number | undefined; 
+  private _failureThreshold?: number; 
   public get failureThreshold() {
     return this.getNumberAttribute('failure_threshold');
   }
-  public set failureThreshold(value: number | undefined) {
+  public set failureThreshold(value: number) {
     this._failureThreshold = value;
   }
   public resetFailureThreshold() {
@@ -7912,15 +10007,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOu
   }
   // Temporarily expose input value. Use with caution.
   public get failureThresholdInput() {
-    return this._failureThreshold
+    return this._failureThreshold;
   }
 
   // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number | undefined; 
+  private _initialDelaySeconds?: number; 
   public get initialDelaySeconds() {
     return this.getNumberAttribute('initial_delay_seconds');
   }
-  public set initialDelaySeconds(value: number | undefined) {
+  public set initialDelaySeconds(value: number) {
     this._initialDelaySeconds = value;
   }
   public resetInitialDelaySeconds() {
@@ -7928,15 +10023,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOu
   }
   // Temporarily expose input value. Use with caution.
   public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds
+    return this._initialDelaySeconds;
   }
 
   // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number | undefined; 
+  private _periodSeconds?: number; 
   public get periodSeconds() {
     return this.getNumberAttribute('period_seconds');
   }
-  public set periodSeconds(value: number | undefined) {
+  public set periodSeconds(value: number) {
     this._periodSeconds = value;
   }
   public resetPeriodSeconds() {
@@ -7944,15 +10039,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOu
   }
   // Temporarily expose input value. Use with caution.
   public get periodSecondsInput() {
-    return this._periodSeconds
+    return this._periodSeconds;
   }
 
   // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number | undefined; 
+  private _successThreshold?: number; 
   public get successThreshold() {
     return this.getNumberAttribute('success_threshold');
   }
-  public set successThreshold(value: number | undefined) {
+  public set successThreshold(value: number) {
     this._successThreshold = value;
   }
   public resetSuccessThreshold() {
@@ -7960,15 +10055,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOu
   }
   // Temporarily expose input value. Use with caution.
   public get successThresholdInput() {
-    return this._successThreshold
+    return this._successThreshold;
   }
 
   // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number | undefined; 
+  private _timeoutSeconds?: number; 
   public get timeoutSeconds() {
     return this.getNumberAttribute('timeout_seconds');
   }
-  public set timeoutSeconds(value: number | undefined) {
+  public set timeoutSeconds(value: number) {
     this._timeoutSeconds = value;
   }
   public resetTimeoutSeconds() {
@@ -7976,50 +10071,48 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOu
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutSecondsInput() {
-    return this._timeoutSeconds
+    return this._timeoutSeconds;
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec | undefined; 
-  private __execOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExecOutputReference(this as any, "exec", true);
   public get exec() {
-    return this.__execOutput;
+    return this._exec;
   }
-  public putExec(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec | undefined) {
-    this._exec = value;
+  public putExec(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec) {
+    this._exec.internalValue = value;
   }
   public resetExec() {
-    this._exec = undefined;
+    this._exec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get execInput() {
-    return this._exec
+    return this._exec.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined; 
-  private __httpGetOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference(this as any, "http_get", true);
   public get httpGet() {
-    return this.__httpGetOutput;
+    return this._httpGet;
   }
-  public putHttpGet(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined) {
-    this._httpGet = value;
+  public putHttpGet(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet) {
+    this._httpGet.internalValue = value;
   }
   public resetHttpGet() {
-    this._httpGet = undefined;
+    this._httpGet.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get httpGetInput() {
-    return this._httpGet
+    return this._httpGet.internalValue;
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocket[] | undefined; 
+  private _tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocket[]; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
-  public set tcpSocket(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocket[] | undefined) {
+  public set tcpSocket(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocket[]) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -8027,7 +10120,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOu
   }
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
-    return this._tcpSocket
+    return this._tcpSocket;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerVolumeMount {
@@ -8063,7 +10156,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerVolumeMoun
   readonly subPath?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerVolumeMountToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerVolumeMount): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerVolumeMountToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerVolumeMount): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8206,7 +10299,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainer {
   readonly volumeMount?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerVolumeMount[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainer): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainer): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8245,7 +10338,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecReadinessGate {
   readonly conditionType: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecReadinessGateToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecReadinessGate): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecReadinessGateToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecReadinessGate): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8282,7 +10375,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxO
   readonly user?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8305,12 +10398,49 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptio
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._level) {
+      hasAnyValues = true;
+      internalValueResult.level = this._level;
+    }
+    if (this._role) {
+      hasAnyValues = true;
+      internalValueResult.role = this._role;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._user) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions | undefined) {
+    if (value === undefined) {
+      this._level = undefined;
+      this._role = undefined;
+      this._type = undefined;
+      this._user = undefined;
+    }
+    else {
+      this._level = value.level;
+      this._role = value.role;
+      this._type = value.type;
+      this._user = value.user;
+    }
+  }
+
   // level - computed: false, optional: true, required: false
-  private _level?: string | undefined; 
+  private _level?: string; 
   public get level() {
     return this.getStringAttribute('level');
   }
-  public set level(value: string | undefined) {
+  public set level(value: string) {
     this._level = value;
   }
   public resetLevel() {
@@ -8318,15 +10448,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptio
   }
   // Temporarily expose input value. Use with caution.
   public get levelInput() {
-    return this._level
+    return this._level;
   }
 
   // role - computed: false, optional: true, required: false
-  private _role?: string | undefined; 
+  private _role?: string; 
   public get role() {
     return this.getStringAttribute('role');
   }
-  public set role(value: string | undefined) {
+  public set role(value: string) {
     this._role = value;
   }
   public resetRole() {
@@ -8334,15 +10464,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptio
   }
   // Temporarily expose input value. Use with caution.
   public get roleInput() {
-    return this._role
+    return this._role;
   }
 
   // type - computed: false, optional: true, required: false
-  private _type?: string | undefined; 
+  private _type?: string; 
   public get type() {
     return this.getStringAttribute('type');
   }
-  public set type(value: string | undefined) {
+  public set type(value: string) {
     this._type = value;
   }
   public resetType() {
@@ -8350,15 +10480,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptio
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -8366,7 +10496,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptio
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctl {
@@ -8384,7 +10514,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctl {
   readonly value: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctlToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctl): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctlToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctl): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8440,7 +10570,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext {
   readonly sysctl?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctl[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8466,12 +10596,67 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsGroup) {
+      hasAnyValues = true;
+      internalValueResult.fsGroup = this._fsGroup;
+    }
+    if (this._runAsGroup) {
+      hasAnyValues = true;
+      internalValueResult.runAsGroup = this._runAsGroup;
+    }
+    if (this._runAsNonRoot) {
+      hasAnyValues = true;
+      internalValueResult.runAsNonRoot = this._runAsNonRoot;
+    }
+    if (this._runAsUser) {
+      hasAnyValues = true;
+      internalValueResult.runAsUser = this._runAsUser;
+    }
+    if (this._supplementalGroups) {
+      hasAnyValues = true;
+      internalValueResult.supplementalGroups = this._supplementalGroups;
+    }
+    if (this._seLinuxOptions) {
+      hasAnyValues = true;
+      internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
+    }
+    if (this._sysctl) {
+      hasAnyValues = true;
+      internalValueResult.sysctl = this._sysctl;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext | undefined) {
+    if (value === undefined) {
+      this._fsGroup = undefined;
+      this._runAsGroup = undefined;
+      this._runAsNonRoot = undefined;
+      this._runAsUser = undefined;
+      this._supplementalGroups = undefined;
+      this._seLinuxOptions.internalValue = undefined;
+      this._sysctl = undefined;
+    }
+    else {
+      this._fsGroup = value.fsGroup;
+      this._runAsGroup = value.runAsGroup;
+      this._runAsNonRoot = value.runAsNonRoot;
+      this._runAsUser = value.runAsUser;
+      this._supplementalGroups = value.supplementalGroups;
+      this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._sysctl = value.sysctl;
+    }
+  }
+
   // fs_group - computed: false, optional: true, required: false
-  private _fsGroup?: string | undefined; 
+  private _fsGroup?: string; 
   public get fsGroup() {
     return this.getStringAttribute('fs_group');
   }
-  public set fsGroup(value: string | undefined) {
+  public set fsGroup(value: string) {
     this._fsGroup = value;
   }
   public resetFsGroup() {
@@ -8479,15 +10664,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get fsGroupInput() {
-    return this._fsGroup
+    return this._fsGroup;
   }
 
   // run_as_group - computed: false, optional: true, required: false
-  private _runAsGroup?: string | undefined; 
+  private _runAsGroup?: string; 
   public get runAsGroup() {
     return this.getStringAttribute('run_as_group');
   }
-  public set runAsGroup(value: string | undefined) {
+  public set runAsGroup(value: string) {
     this._runAsGroup = value;
   }
   public resetRunAsGroup() {
@@ -8495,15 +10680,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get runAsGroupInput() {
-    return this._runAsGroup
+    return this._runAsGroup;
   }
 
   // run_as_non_root - computed: false, optional: true, required: false
-  private _runAsNonRoot?: boolean | cdktf.IResolvable | undefined; 
+  private _runAsNonRoot?: boolean | cdktf.IResolvable; 
   public get runAsNonRoot() {
     return this.getBooleanAttribute('run_as_non_root') as any;
   }
-  public set runAsNonRoot(value: boolean | cdktf.IResolvable | undefined) {
+  public set runAsNonRoot(value: boolean | cdktf.IResolvable) {
     this._runAsNonRoot = value;
   }
   public resetRunAsNonRoot() {
@@ -8511,15 +10696,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get runAsNonRootInput() {
-    return this._runAsNonRoot
+    return this._runAsNonRoot;
   }
 
   // run_as_user - computed: false, optional: true, required: false
-  private _runAsUser?: string | undefined; 
+  private _runAsUser?: string; 
   public get runAsUser() {
     return this.getStringAttribute('run_as_user');
   }
-  public set runAsUser(value: string | undefined) {
+  public set runAsUser(value: string) {
     this._runAsUser = value;
   }
   public resetRunAsUser() {
@@ -8527,16 +10712,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get runAsUserInput() {
-    return this._runAsUser
+    return this._runAsUser;
   }
 
   // supplemental_groups - computed: false, optional: true, required: false
-  private _supplementalGroups?: number[] | undefined; 
+  private _supplementalGroups?: number[]; 
   public get supplementalGroups() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('supplemental_groups') as any;
   }
-  public set supplementalGroups(value: number[] | undefined) {
+  public set supplementalGroups(value: number[]) {
     this._supplementalGroups = value;
   }
   public resetSupplementalGroups() {
@@ -8544,33 +10729,32 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get supplementalGroupsInput() {
-    return this._supplementalGroups
+    return this._supplementalGroups;
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions | undefined; 
-  private __seLinuxOptionsOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
+  private _seLinuxOptions = new CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
   public get seLinuxOptions() {
-    return this.__seLinuxOptionsOutput;
+    return this._seLinuxOptions;
   }
-  public putSeLinuxOptions(value: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions | undefined) {
-    this._seLinuxOptions = value;
+  public putSeLinuxOptions(value: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions) {
+    this._seLinuxOptions.internalValue = value;
   }
   public resetSeLinuxOptions() {
-    this._seLinuxOptions = undefined;
+    this._seLinuxOptions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
-    return this._seLinuxOptions
+    return this._seLinuxOptions.internalValue;
   }
 
   // sysctl - computed: false, optional: true, required: false
-  private _sysctl?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctl[] | undefined; 
+  private _sysctl?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctl[]; 
   public get sysctl() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('sysctl') as any;
   }
-  public set sysctl(value: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctl[] | undefined) {
+  public set sysctl(value: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctl[]) {
     this._sysctl = value;
   }
   public resetSysctl() {
@@ -8578,7 +10762,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get sysctlInput() {
-    return this._sysctl
+    return this._sysctl;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecToleration {
@@ -8614,7 +10798,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecToleration {
   readonly value?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecTolerationToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecToleration): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecTolerationToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecToleration): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8649,7 +10833,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstrain
   readonly values?: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8676,7 +10860,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstrain
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelector): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8714,7 +10898,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstrain
   readonly labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelector[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraint): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraint): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8754,7 +10938,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockSt
   readonly volumeId: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStore): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStore): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8777,12 +10961,49 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreO
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStore | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._partition) {
+      hasAnyValues = true;
+      internalValueResult.partition = this._partition;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._volumeId) {
+      hasAnyValues = true;
+      internalValueResult.volumeId = this._volumeId;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStore | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._partition = undefined;
+      this._readOnly = undefined;
+      this._volumeId = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._partition = value.partition;
+      this._readOnly = value.readOnly;
+      this._volumeId = value.volumeId;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -8790,15 +11011,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreO
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // partition - computed: false, optional: true, required: false
-  private _partition?: number | undefined; 
+  private _partition?: number; 
   public get partition() {
     return this.getNumberAttribute('partition');
   }
-  public set partition(value: number | undefined) {
+  public set partition(value: number) {
     this._partition = value;
   }
   public resetPartition() {
@@ -8806,15 +11027,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreO
   }
   // Temporarily expose input value. Use with caution.
   public get partitionInput() {
-    return this._partition
+    return this._partition;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -8822,7 +11043,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreO
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // volume_id - computed: false, optional: false, required: true
@@ -8835,7 +11056,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreO
   }
   // Temporarily expose input value. Use with caution.
   public get volumeIdInput() {
-    return this._volumeId
+    return this._volumeId;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDisk {
@@ -8877,7 +11098,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDisk {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDisk): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDisk): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8902,6 +11123,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputRefere
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDisk | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._cachingMode) {
+      hasAnyValues = true;
+      internalValueResult.cachingMode = this._cachingMode;
+    }
+    if (this._dataDiskUri) {
+      hasAnyValues = true;
+      internalValueResult.dataDiskUri = this._dataDiskUri;
+    }
+    if (this._diskName) {
+      hasAnyValues = true;
+      internalValueResult.diskName = this._diskName;
+    }
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._kind) {
+      hasAnyValues = true;
+      internalValueResult.kind = this._kind;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDisk | undefined) {
+    if (value === undefined) {
+      this._cachingMode = undefined;
+      this._dataDiskUri = undefined;
+      this._diskName = undefined;
+      this._fsType = undefined;
+      this._kind = undefined;
+      this._readOnly = undefined;
+    }
+    else {
+      this._cachingMode = value.cachingMode;
+      this._dataDiskUri = value.dataDiskUri;
+      this._diskName = value.diskName;
+      this._fsType = value.fsType;
+      this._kind = value.kind;
+      this._readOnly = value.readOnly;
+    }
+  }
+
   // caching_mode - computed: false, optional: false, required: true
   private _cachingMode?: string; 
   public get cachingMode() {
@@ -8912,7 +11182,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get cachingModeInput() {
-    return this._cachingMode
+    return this._cachingMode;
   }
 
   // data_disk_uri - computed: false, optional: false, required: true
@@ -8925,7 +11195,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get dataDiskUriInput() {
-    return this._dataDiskUri
+    return this._dataDiskUri;
   }
 
   // disk_name - computed: false, optional: false, required: true
@@ -8938,15 +11208,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get diskNameInput() {
-    return this._diskName
+    return this._diskName;
   }
 
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -8954,15 +11224,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // kind - computed: true, optional: true, required: false
-  private _kind?: string | undefined; 
+  private _kind?: string; 
   public get kind() {
     return this.getStringAttribute('kind');
   }
-  public set kind(value: string | undefined) {
+  public set kind(value: string) {
     this._kind = value;
   }
   public resetKind() {
@@ -8970,15 +11240,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get kindInput() {
-    return this._kind
+    return this._kind;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -8986,7 +11256,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFile {
@@ -9016,7 +11286,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFile {
   readonly shareName: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFileToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFileOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFile): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFileToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFileOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFile): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9039,12 +11309,49 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFileOutputRefere
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFile | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._secretName) {
+      hasAnyValues = true;
+      internalValueResult.secretName = this._secretName;
+    }
+    if (this._secretNamespace) {
+      hasAnyValues = true;
+      internalValueResult.secretNamespace = this._secretNamespace;
+    }
+    if (this._shareName) {
+      hasAnyValues = true;
+      internalValueResult.shareName = this._shareName;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFile | undefined) {
+    if (value === undefined) {
+      this._readOnly = undefined;
+      this._secretName = undefined;
+      this._secretNamespace = undefined;
+      this._shareName = undefined;
+    }
+    else {
+      this._readOnly = value.readOnly;
+      this._secretName = value.secretName;
+      this._secretNamespace = value.secretNamespace;
+      this._shareName = value.shareName;
+    }
+  }
+
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -9052,7 +11359,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFileOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // secret_name - computed: false, optional: false, required: true
@@ -9065,15 +11372,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFileOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get secretNameInput() {
-    return this._secretName
+    return this._secretName;
   }
 
   // secret_namespace - computed: false, optional: true, required: false
-  private _secretNamespace?: string | undefined; 
+  private _secretNamespace?: string; 
   public get secretNamespace() {
     return this.getStringAttribute('secret_namespace');
   }
-  public set secretNamespace(value: string | undefined) {
+  public set secretNamespace(value: string) {
     this._secretNamespace = value;
   }
   public resetSecretNamespace() {
@@ -9081,7 +11388,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFileOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get secretNamespaceInput() {
-    return this._secretNamespace
+    return this._secretNamespace;
   }
 
   // share_name - computed: false, optional: false, required: true
@@ -9094,7 +11401,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFileOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get shareNameInput() {
-    return this._shareName
+    return this._shareName;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef {
@@ -9112,7 +11419,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef {
   readonly namespace?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9133,12 +11440,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutput
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -9146,15 +11478,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutput
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -9162,7 +11494,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutput
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFs {
@@ -9204,7 +11536,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFs {
   readonly secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFs): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFs): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9229,6 +11561,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFs | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._monitors) {
+      hasAnyValues = true;
+      internalValueResult.monitors = this._monitors;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._secretFile) {
+      hasAnyValues = true;
+      internalValueResult.secretFile = this._secretFile;
+    }
+    if (this._user) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    if (this._secretRef) {
+      hasAnyValues = true;
+      internalValueResult.secretRef = this._secretRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFs | undefined) {
+    if (value === undefined) {
+      this._monitors = undefined;
+      this._path = undefined;
+      this._readOnly = undefined;
+      this._secretFile = undefined;
+      this._user = undefined;
+      this._secretRef.internalValue = undefined;
+    }
+    else {
+      this._monitors = value.monitors;
+      this._path = value.path;
+      this._readOnly = value.readOnly;
+      this._secretFile = value.secretFile;
+      this._user = value.user;
+      this._secretRef.internalValue = value.secretRef;
+    }
+  }
+
   // monitors - computed: false, optional: false, required: true
   private _monitors?: string[]; 
   public get monitors() {
@@ -9239,15 +11620,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get monitorsInput() {
-    return this._monitors
+    return this._monitors;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -9255,15 +11636,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -9271,15 +11652,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // secret_file - computed: false, optional: true, required: false
-  private _secretFile?: string | undefined; 
+  private _secretFile?: string; 
   public get secretFile() {
     return this.getStringAttribute('secret_file');
   }
-  public set secretFile(value: string | undefined) {
+  public set secretFile(value: string) {
     this._secretFile = value;
   }
   public resetSecretFile() {
@@ -9287,15 +11668,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get secretFileInput() {
-    return this._secretFile
+    return this._secretFile;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -9303,24 +11684,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef | undefined; 
-  private __secretRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutputReference(this as any, "secret_ref", true);
   public get secretRef() {
-    return this.__secretRefOutput;
+    return this._secretRef;
   }
-  public putSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef | undefined) {
-    this._secretRef = value;
+  public putSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef) {
+    this._secretRef.internalValue = value;
   }
   public resetSecretRef() {
-    this._secretRef = undefined;
+    this._secretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretRefInput() {
-    return this._secretRef
+    return this._secretRef.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinder {
@@ -9344,7 +11724,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinder {
   readonly volumeId: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinderOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinder): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinderToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinderOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinder): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9366,12 +11746,43 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinderOutputReference
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinder | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._volumeId) {
+      hasAnyValues = true;
+      internalValueResult.volumeId = this._volumeId;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinder | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._readOnly = undefined;
+      this._volumeId = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._readOnly = value.readOnly;
+      this._volumeId = value.volumeId;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -9379,15 +11790,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinderOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -9395,7 +11806,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinderOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // volume_id - computed: false, optional: false, required: true
@@ -9408,7 +11819,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinderOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get volumeIdInput() {
-    return this._volumeId
+    return this._volumeId;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItems {
@@ -9432,7 +11843,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItems {
   readonly path?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItemsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItems): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItemsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9471,7 +11882,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMap {
   readonly items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItems[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMap): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMap): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9494,12 +11905,49 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputRefere
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMap | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._defaultMode) {
+      hasAnyValues = true;
+      internalValueResult.defaultMode = this._defaultMode;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    if (this._items) {
+      hasAnyValues = true;
+      internalValueResult.items = this._items;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMap | undefined) {
+    if (value === undefined) {
+      this._defaultMode = undefined;
+      this._name = undefined;
+      this._optional = undefined;
+      this._items = undefined;
+    }
+    else {
+      this._defaultMode = value.defaultMode;
+      this._name = value.name;
+      this._optional = value.optional;
+      this._items = value.items;
+    }
+  }
+
   // default_mode - computed: false, optional: true, required: false
-  private _defaultMode?: string | undefined; 
+  private _defaultMode?: string; 
   public get defaultMode() {
     return this.getStringAttribute('default_mode');
   }
-  public set defaultMode(value: string | undefined) {
+  public set defaultMode(value: string) {
     this._defaultMode = value;
   }
   public resetDefaultMode() {
@@ -9507,15 +11955,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get defaultModeInput() {
-    return this._defaultMode
+    return this._defaultMode;
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -9523,15 +11971,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -9539,16 +11987,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 
   // items - computed: false, optional: true, required: false
-  private _items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItems[] | undefined; 
+  private _items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItems[]; 
   public get items() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
-  public set items(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItems[] | undefined) {
+  public set items(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItems[]) {
     this._items = value;
   }
   public resetItems() {
@@ -9556,7 +12004,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get itemsInput() {
-    return this._items
+    return this._items;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef {
@@ -9574,7 +12022,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpa
   readonly namespace?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9595,12 +12043,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -9608,15 +12081,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSe
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -9624,7 +12097,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSe
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef {
@@ -9642,7 +12115,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPubl
   readonly namespace?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9663,12 +12136,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishS
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -9676,15 +12174,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishS
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -9692,7 +12190,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishS
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef {
@@ -9710,7 +12208,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSec
   readonly namespace?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9731,12 +12229,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretR
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -9744,15 +12267,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretR
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -9760,7 +12283,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretR
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef {
@@ -9778,7 +12301,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecre
   readonly namespace?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9799,12 +12322,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -9812,15 +12360,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -9828,7 +12376,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi {
@@ -9888,7 +12436,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi {
   readonly nodeStageSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9916,6 +12464,73 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._driver) {
+      hasAnyValues = true;
+      internalValueResult.driver = this._driver;
+    }
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._volumeAttributes) {
+      hasAnyValues = true;
+      internalValueResult.volumeAttributes = this._volumeAttributes;
+    }
+    if (this._volumeHandle) {
+      hasAnyValues = true;
+      internalValueResult.volumeHandle = this._volumeHandle;
+    }
+    if (this._controllerExpandSecretRef) {
+      hasAnyValues = true;
+      internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
+    }
+    if (this._controllerPublishSecretRef) {
+      hasAnyValues = true;
+      internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
+    }
+    if (this._nodePublishSecretRef) {
+      hasAnyValues = true;
+      internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
+    }
+    if (this._nodeStageSecretRef) {
+      hasAnyValues = true;
+      internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi | undefined) {
+    if (value === undefined) {
+      this._driver = undefined;
+      this._fsType = undefined;
+      this._readOnly = undefined;
+      this._volumeAttributes = undefined;
+      this._volumeHandle = undefined;
+      this._controllerExpandSecretRef.internalValue = undefined;
+      this._controllerPublishSecretRef.internalValue = undefined;
+      this._nodePublishSecretRef.internalValue = undefined;
+      this._nodeStageSecretRef.internalValue = undefined;
+    }
+    else {
+      this._driver = value.driver;
+      this._fsType = value.fsType;
+      this._readOnly = value.readOnly;
+      this._volumeAttributes = value.volumeAttributes;
+      this._volumeHandle = value.volumeHandle;
+      this._controllerExpandSecretRef.internalValue = value.controllerExpandSecretRef;
+      this._controllerPublishSecretRef.internalValue = value.controllerPublishSecretRef;
+      this._nodePublishSecretRef.internalValue = value.nodePublishSecretRef;
+      this._nodeStageSecretRef.internalValue = value.nodeStageSecretRef;
+    }
+  }
+
   // driver - computed: false, optional: false, required: true
   private _driver?: string; 
   public get driver() {
@@ -9926,15 +12541,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get driverInput() {
-    return this._driver
+    return this._driver;
   }
 
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -9942,15 +12557,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -9958,16 +12573,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // volume_attributes - computed: false, optional: true, required: false
-  private _volumeAttributes?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _volumeAttributes?: { [key: string]: string } | cdktf.IResolvable; 
   public get volumeAttributes() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('volume_attributes') as any;
   }
-  public set volumeAttributes(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set volumeAttributes(value: { [key: string]: string } | cdktf.IResolvable) {
     this._volumeAttributes = value;
   }
   public resetVolumeAttributes() {
@@ -9975,7 +12590,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get volumeAttributesInput() {
-    return this._volumeAttributes
+    return this._volumeAttributes;
   }
 
   // volume_handle - computed: false, optional: false, required: true
@@ -9988,75 +12603,71 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get volumeHandleInput() {
-    return this._volumeHandle
+    return this._volumeHandle;
   }
 
   // controller_expand_secret_ref - computed: false, optional: true, required: false
-  private _controllerExpandSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined; 
-  private __controllerExpandSecretRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference(this as any, "controller_expand_secret_ref", true);
+  private _controllerExpandSecretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference(this as any, "controller_expand_secret_ref", true);
   public get controllerExpandSecretRef() {
-    return this.__controllerExpandSecretRefOutput;
+    return this._controllerExpandSecretRef;
   }
-  public putControllerExpandSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined) {
-    this._controllerExpandSecretRef = value;
+  public putControllerExpandSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef) {
+    this._controllerExpandSecretRef.internalValue = value;
   }
   public resetControllerExpandSecretRef() {
-    this._controllerExpandSecretRef = undefined;
+    this._controllerExpandSecretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get controllerExpandSecretRefInput() {
-    return this._controllerExpandSecretRef
+    return this._controllerExpandSecretRef.internalValue;
   }
 
   // controller_publish_secret_ref - computed: false, optional: true, required: false
-  private _controllerPublishSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined; 
-  private __controllerPublishSecretRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference(this as any, "controller_publish_secret_ref", true);
+  private _controllerPublishSecretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference(this as any, "controller_publish_secret_ref", true);
   public get controllerPublishSecretRef() {
-    return this.__controllerPublishSecretRefOutput;
+    return this._controllerPublishSecretRef;
   }
-  public putControllerPublishSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined) {
-    this._controllerPublishSecretRef = value;
+  public putControllerPublishSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef) {
+    this._controllerPublishSecretRef.internalValue = value;
   }
   public resetControllerPublishSecretRef() {
-    this._controllerPublishSecretRef = undefined;
+    this._controllerPublishSecretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get controllerPublishSecretRefInput() {
-    return this._controllerPublishSecretRef
+    return this._controllerPublishSecretRef.internalValue;
   }
 
   // node_publish_secret_ref - computed: false, optional: true, required: false
-  private _nodePublishSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined; 
-  private __nodePublishSecretRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this as any, "node_publish_secret_ref", true);
+  private _nodePublishSecretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this as any, "node_publish_secret_ref", true);
   public get nodePublishSecretRef() {
-    return this.__nodePublishSecretRefOutput;
+    return this._nodePublishSecretRef;
   }
-  public putNodePublishSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined) {
-    this._nodePublishSecretRef = value;
+  public putNodePublishSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef) {
+    this._nodePublishSecretRef.internalValue = value;
   }
   public resetNodePublishSecretRef() {
-    this._nodePublishSecretRef = undefined;
+    this._nodePublishSecretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get nodePublishSecretRefInput() {
-    return this._nodePublishSecretRef
+    return this._nodePublishSecretRef.internalValue;
   }
 
   // node_stage_secret_ref - computed: false, optional: true, required: false
-  private _nodeStageSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined; 
-  private __nodeStageSecretRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference(this as any, "node_stage_secret_ref", true);
+  private _nodeStageSecretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference(this as any, "node_stage_secret_ref", true);
   public get nodeStageSecretRef() {
-    return this.__nodeStageSecretRefOutput;
+    return this._nodeStageSecretRef;
   }
-  public putNodeStageSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined) {
-    this._nodeStageSecretRef = value;
+  public putNodeStageSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef) {
+    this._nodeStageSecretRef.internalValue = value;
   }
   public resetNodeStageSecretRef() {
-    this._nodeStageSecretRef = undefined;
+    this._nodeStageSecretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get nodeStageSecretRefInput() {
-    return this._nodeStageSecretRef
+    return this._nodeStageSecretRef.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRef {
@@ -10074,7 +12685,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsF
   readonly fieldPath?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10095,12 +12706,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsField
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._apiVersion) {
+      hasAnyValues = true;
+      internalValueResult.apiVersion = this._apiVersion;
+    }
+    if (this._fieldPath) {
+      hasAnyValues = true;
+      internalValueResult.fieldPath = this._fieldPath;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined) {
+    if (value === undefined) {
+      this._apiVersion = undefined;
+      this._fieldPath = undefined;
+    }
+    else {
+      this._apiVersion = value.apiVersion;
+      this._fieldPath = value.fieldPath;
+    }
+  }
+
   // api_version - computed: false, optional: true, required: false
-  private _apiVersion?: string | undefined; 
+  private _apiVersion?: string; 
   public get apiVersion() {
     return this.getStringAttribute('api_version');
   }
-  public set apiVersion(value: string | undefined) {
+  public set apiVersion(value: string) {
     this._apiVersion = value;
   }
   public resetApiVersion() {
@@ -10108,15 +12744,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsField
   }
   // Temporarily expose input value. Use with caution.
   public get apiVersionInput() {
-    return this._apiVersion
+    return this._apiVersion;
   }
 
   // field_path - computed: false, optional: true, required: false
-  private _fieldPath?: string | undefined; 
+  private _fieldPath?: string; 
   public get fieldPath() {
     return this.getStringAttribute('field_path');
   }
-  public set fieldPath(value: string | undefined) {
+  public set fieldPath(value: string) {
     this._fieldPath = value;
   }
   public resetFieldPath() {
@@ -10124,7 +12760,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsField
   }
   // Temporarily expose input value. Use with caution.
   public get fieldPathInput() {
-    return this._fieldPath
+    return this._fieldPath;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef {
@@ -10144,7 +12780,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsR
   readonly resource: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10166,6 +12802,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResou
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._containerName) {
+      hasAnyValues = true;
+      internalValueResult.containerName = this._containerName;
+    }
+    if (this._divisor) {
+      hasAnyValues = true;
+      internalValueResult.divisor = this._divisor;
+    }
+    if (this._resource) {
+      hasAnyValues = true;
+      internalValueResult.resource = this._resource;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined) {
+    if (value === undefined) {
+      this._containerName = undefined;
+      this._divisor = undefined;
+      this._resource = undefined;
+    }
+    else {
+      this._containerName = value.containerName;
+      this._divisor = value.divisor;
+      this._resource = value.resource;
+    }
+  }
+
   // container_name - computed: false, optional: false, required: true
   private _containerName?: string; 
   public get containerName() {
@@ -10176,15 +12843,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResou
   }
   // Temporarily expose input value. Use with caution.
   public get containerNameInput() {
-    return this._containerName
+    return this._containerName;
   }
 
   // divisor - computed: false, optional: true, required: false
-  private _divisor?: string | undefined; 
+  private _divisor?: string; 
   public get divisor() {
     return this.getStringAttribute('divisor');
   }
-  public set divisor(value: string | undefined) {
+  public set divisor(value: string) {
     this._divisor = value;
   }
   public resetDivisor() {
@@ -10192,7 +12859,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResou
   }
   // Temporarily expose input value. Use with caution.
   public get divisorInput() {
-    return this._divisor
+    return this._divisor;
   }
 
   // resource - computed: false, optional: false, required: true
@@ -10205,7 +12872,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResou
   }
   // Temporarily expose input value. Use with caution.
   public get resourceInput() {
-    return this._resource
+    return this._resource;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItems {
@@ -10235,7 +12902,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItems 
   readonly resourceFieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItems): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10263,7 +12930,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApi {
   readonly items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItems[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApi): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10284,12 +12951,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiOutputRefe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApi | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._defaultMode) {
+      hasAnyValues = true;
+      internalValueResult.defaultMode = this._defaultMode;
+    }
+    if (this._items) {
+      hasAnyValues = true;
+      internalValueResult.items = this._items;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApi | undefined) {
+    if (value === undefined) {
+      this._defaultMode = undefined;
+      this._items = undefined;
+    }
+    else {
+      this._defaultMode = value.defaultMode;
+      this._items = value.items;
+    }
+  }
+
   // default_mode - computed: false, optional: true, required: false
-  private _defaultMode?: string | undefined; 
+  private _defaultMode?: string; 
   public get defaultMode() {
     return this.getStringAttribute('default_mode');
   }
-  public set defaultMode(value: string | undefined) {
+  public set defaultMode(value: string) {
     this._defaultMode = value;
   }
   public resetDefaultMode() {
@@ -10297,16 +12989,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get defaultModeInput() {
-    return this._defaultMode
+    return this._defaultMode;
   }
 
   // items - computed: false, optional: true, required: false
-  private _items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItems[] | undefined; 
+  private _items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItems[]; 
   public get items() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
-  public set items(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItems[] | undefined) {
+  public set items(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItems[]) {
     this._items = value;
   }
   public resetItems() {
@@ -10314,7 +13006,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get itemsInput() {
-    return this._items
+    return this._items;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDir {
@@ -10332,7 +13024,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDir {
   readonly sizeLimit?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDirToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDirOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDir): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDirToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDirOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDir): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10353,12 +13045,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDirOutputReferen
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDir | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._medium) {
+      hasAnyValues = true;
+      internalValueResult.medium = this._medium;
+    }
+    if (this._sizeLimit) {
+      hasAnyValues = true;
+      internalValueResult.sizeLimit = this._sizeLimit;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDir | undefined) {
+    if (value === undefined) {
+      this._medium = undefined;
+      this._sizeLimit = undefined;
+    }
+    else {
+      this._medium = value.medium;
+      this._sizeLimit = value.sizeLimit;
+    }
+  }
+
   // medium - computed: false, optional: true, required: false
-  private _medium?: string | undefined; 
+  private _medium?: string; 
   public get medium() {
     return this.getStringAttribute('medium');
   }
-  public set medium(value: string | undefined) {
+  public set medium(value: string) {
     this._medium = value;
   }
   public resetMedium() {
@@ -10366,15 +13083,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDirOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get mediumInput() {
-    return this._medium
+    return this._medium;
   }
 
   // size_limit - computed: false, optional: true, required: false
-  private _sizeLimit?: string | undefined; 
+  private _sizeLimit?: string; 
   public get sizeLimit() {
     return this.getStringAttribute('size_limit');
   }
-  public set sizeLimit(value: string | undefined) {
+  public set sizeLimit(value: string) {
     this._sizeLimit = value;
   }
   public resetSizeLimit() {
@@ -10382,7 +13099,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDirOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get sizeLimitInput() {
-    return this._sizeLimit
+    return this._sizeLimit;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFc {
@@ -10412,7 +13129,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFc {
   readonly targetWwNs: string[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeFcToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFcOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFc): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeFcToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFcOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFc): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10435,12 +13152,49 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFcOutputReference ext
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFc | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._lun) {
+      hasAnyValues = true;
+      internalValueResult.lun = this._lun;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._targetWwNs) {
+      hasAnyValues = true;
+      internalValueResult.targetWwNs = this._targetWwNs;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFc | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._lun = undefined;
+      this._readOnly = undefined;
+      this._targetWwNs = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._lun = value.lun;
+      this._readOnly = value.readOnly;
+      this._targetWwNs = value.targetWwNs;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -10448,7 +13202,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFcOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // lun - computed: false, optional: false, required: true
@@ -10461,15 +13215,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFcOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get lunInput() {
-    return this._lun
+    return this._lun;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -10477,7 +13231,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFcOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // target_ww_ns - computed: false, optional: false, required: true
@@ -10490,7 +13244,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFcOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get targetWwNsInput() {
-    return this._targetWwNs
+    return this._targetWwNs;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef {
@@ -10508,7 +13262,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretR
   readonly namespace?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10529,12 +13283,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -10542,15 +13321,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOu
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -10558,7 +13337,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOu
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolume {
@@ -10594,7 +13373,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolume {
   readonly secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolume): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolume): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10618,6 +13397,49 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputRefer
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolume | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._driver) {
+      hasAnyValues = true;
+      internalValueResult.driver = this._driver;
+    }
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._options) {
+      hasAnyValues = true;
+      internalValueResult.options = this._options;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._secretRef) {
+      hasAnyValues = true;
+      internalValueResult.secretRef = this._secretRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolume | undefined) {
+    if (value === undefined) {
+      this._driver = undefined;
+      this._fsType = undefined;
+      this._options = undefined;
+      this._readOnly = undefined;
+      this._secretRef.internalValue = undefined;
+    }
+    else {
+      this._driver = value.driver;
+      this._fsType = value.fsType;
+      this._options = value.options;
+      this._readOnly = value.readOnly;
+      this._secretRef.internalValue = value.secretRef;
+    }
+  }
+
   // driver - computed: false, optional: false, required: true
   private _driver?: string; 
   public get driver() {
@@ -10628,15 +13450,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get driverInput() {
-    return this._driver
+    return this._driver;
   }
 
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -10644,16 +13466,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // options - computed: false, optional: true, required: false
-  private _options?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _options?: { [key: string]: string } | cdktf.IResolvable; 
   public get options() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('options') as any;
   }
-  public set options(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set options(value: { [key: string]: string } | cdktf.IResolvable) {
     this._options = value;
   }
   public resetOptions() {
@@ -10661,15 +13483,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get optionsInput() {
-    return this._options
+    return this._options;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -10677,24 +13499,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined; 
-  private __secretRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference(this as any, "secret_ref", true);
   public get secretRef() {
-    return this.__secretRefOutput;
+    return this._secretRef;
   }
-  public putSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined) {
-    this._secretRef = value;
+  public putSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef) {
+    this._secretRef.internalValue = value;
   }
   public resetSecretRef() {
-    this._secretRef = undefined;
+    this._secretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretRefInput() {
-    return this._secretRef
+    return this._secretRef.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlocker {
@@ -10712,7 +13533,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlocker {
   readonly datasetUuid?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlockerToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlockerOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlocker): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlockerToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlockerOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlocker): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10733,12 +13554,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlockerOutputReferenc
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlocker | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._datasetName) {
+      hasAnyValues = true;
+      internalValueResult.datasetName = this._datasetName;
+    }
+    if (this._datasetUuid) {
+      hasAnyValues = true;
+      internalValueResult.datasetUuid = this._datasetUuid;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlocker | undefined) {
+    if (value === undefined) {
+      this._datasetName = undefined;
+      this._datasetUuid = undefined;
+    }
+    else {
+      this._datasetName = value.datasetName;
+      this._datasetUuid = value.datasetUuid;
+    }
+  }
+
   // dataset_name - computed: false, optional: true, required: false
-  private _datasetName?: string | undefined; 
+  private _datasetName?: string; 
   public get datasetName() {
     return this.getStringAttribute('dataset_name');
   }
-  public set datasetName(value: string | undefined) {
+  public set datasetName(value: string) {
     this._datasetName = value;
   }
   public resetDatasetName() {
@@ -10746,15 +13592,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlockerOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get datasetNameInput() {
-    return this._datasetName
+    return this._datasetName;
   }
 
   // dataset_uuid - computed: false, optional: true, required: false
-  private _datasetUuid?: string | undefined; 
+  private _datasetUuid?: string; 
   public get datasetUuid() {
     return this.getStringAttribute('dataset_uuid');
   }
-  public set datasetUuid(value: string | undefined) {
+  public set datasetUuid(value: string) {
     this._datasetUuid = value;
   }
   public resetDatasetUuid() {
@@ -10762,7 +13608,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlockerOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get datasetUuidInput() {
-    return this._datasetUuid
+    return this._datasetUuid;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk {
@@ -10792,7 +13638,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10815,12 +13661,49 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskOutp
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._partition) {
+      hasAnyValues = true;
+      internalValueResult.partition = this._partition;
+    }
+    if (this._pdName) {
+      hasAnyValues = true;
+      internalValueResult.pdName = this._pdName;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._partition = undefined;
+      this._pdName = undefined;
+      this._readOnly = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._partition = value.partition;
+      this._pdName = value.pdName;
+      this._readOnly = value.readOnly;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -10828,15 +13711,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskOutp
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // partition - computed: false, optional: true, required: false
-  private _partition?: number | undefined; 
+  private _partition?: number; 
   public get partition() {
     return this.getNumberAttribute('partition');
   }
-  public set partition(value: number | undefined) {
+  public set partition(value: number) {
     this._partition = value;
   }
   public resetPartition() {
@@ -10844,7 +13727,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskOutp
   }
   // Temporarily expose input value. Use with caution.
   public get partitionInput() {
-    return this._partition
+    return this._partition;
   }
 
   // pd_name - computed: false, optional: false, required: true
@@ -10857,15 +13740,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskOutp
   }
   // Temporarily expose input value. Use with caution.
   public get pdNameInput() {
-    return this._pdName
+    return this._pdName;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -10873,7 +13756,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskOutp
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepo {
@@ -10897,7 +13780,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepo {
   readonly revision?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepoToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepoOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepo): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepoToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepoOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepo): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10919,12 +13802,43 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepoOutputReferenc
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepo | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._directory) {
+      hasAnyValues = true;
+      internalValueResult.directory = this._directory;
+    }
+    if (this._repository) {
+      hasAnyValues = true;
+      internalValueResult.repository = this._repository;
+    }
+    if (this._revision) {
+      hasAnyValues = true;
+      internalValueResult.revision = this._revision;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepo | undefined) {
+    if (value === undefined) {
+      this._directory = undefined;
+      this._repository = undefined;
+      this._revision = undefined;
+    }
+    else {
+      this._directory = value.directory;
+      this._repository = value.repository;
+      this._revision = value.revision;
+    }
+  }
+
   // directory - computed: false, optional: true, required: false
-  private _directory?: string | undefined; 
+  private _directory?: string; 
   public get directory() {
     return this.getStringAttribute('directory');
   }
-  public set directory(value: string | undefined) {
+  public set directory(value: string) {
     this._directory = value;
   }
   public resetDirectory() {
@@ -10932,15 +13846,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepoOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get directoryInput() {
-    return this._directory
+    return this._directory;
   }
 
   // repository - computed: false, optional: true, required: false
-  private _repository?: string | undefined; 
+  private _repository?: string; 
   public get repository() {
     return this.getStringAttribute('repository');
   }
-  public set repository(value: string | undefined) {
+  public set repository(value: string) {
     this._repository = value;
   }
   public resetRepository() {
@@ -10948,15 +13862,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepoOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get repositoryInput() {
-    return this._repository
+    return this._repository;
   }
 
   // revision - computed: false, optional: true, required: false
-  private _revision?: string | undefined; 
+  private _revision?: string; 
   public get revision() {
     return this.getStringAttribute('revision');
   }
-  public set revision(value: string | undefined) {
+  public set revision(value: string) {
     this._revision = value;
   }
   public resetRevision() {
@@ -10964,7 +13878,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepoOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get revisionInput() {
-    return this._revision
+    return this._revision;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfs {
@@ -10988,7 +13902,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfs {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfsOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfs): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfsOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfs): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11010,6 +13924,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfsOutputRefere
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfs | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._endpointsName) {
+      hasAnyValues = true;
+      internalValueResult.endpointsName = this._endpointsName;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfs | undefined) {
+    if (value === undefined) {
+      this._endpointsName = undefined;
+      this._path = undefined;
+      this._readOnly = undefined;
+    }
+    else {
+      this._endpointsName = value.endpointsName;
+      this._path = value.path;
+      this._readOnly = value.readOnly;
+    }
+  }
+
   // endpoints_name - computed: false, optional: false, required: true
   private _endpointsName?: string; 
   public get endpointsName() {
@@ -11020,7 +13965,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfsOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get endpointsNameInput() {
-    return this._endpointsName
+    return this._endpointsName;
   }
 
   // path - computed: false, optional: false, required: true
@@ -11033,15 +13978,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfsOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -11049,7 +13994,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfsOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPath {
@@ -11067,7 +14012,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPath {
   readonly type?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPathToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPathOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPath): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPathToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPathOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPath): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11088,12 +14033,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPathOutputReferen
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPath | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPath | undefined) {
+    if (value === undefined) {
+      this._path = undefined;
+      this._type = undefined;
+    }
+    else {
+      this._path = value.path;
+      this._type = value.type;
+    }
+  }
+
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -11101,15 +14071,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPathOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // type - computed: false, optional: true, required: false
-  private _type?: string | undefined; 
+  private _type?: string; 
   public get type() {
     return this.getStringAttribute('type');
   }
-  public set type(value: string | undefined) {
+  public set type(value: string) {
     this._type = value;
   }
   public resetType() {
@@ -11117,7 +14087,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPathOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsi {
@@ -11159,7 +14129,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsi {
   readonly targetPortal: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsi): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11184,12 +14154,61 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsi | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._iqn) {
+      hasAnyValues = true;
+      internalValueResult.iqn = this._iqn;
+    }
+    if (this._iscsiInterface) {
+      hasAnyValues = true;
+      internalValueResult.iscsiInterface = this._iscsiInterface;
+    }
+    if (this._lun) {
+      hasAnyValues = true;
+      internalValueResult.lun = this._lun;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._targetPortal) {
+      hasAnyValues = true;
+      internalValueResult.targetPortal = this._targetPortal;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsi | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._iqn = undefined;
+      this._iscsiInterface = undefined;
+      this._lun = undefined;
+      this._readOnly = undefined;
+      this._targetPortal = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._iqn = value.iqn;
+      this._iscsiInterface = value.iscsiInterface;
+      this._lun = value.lun;
+      this._readOnly = value.readOnly;
+      this._targetPortal = value.targetPortal;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -11197,7 +14216,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // iqn - computed: false, optional: false, required: true
@@ -11210,15 +14229,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get iqnInput() {
-    return this._iqn
+    return this._iqn;
   }
 
   // iscsi_interface - computed: false, optional: true, required: false
-  private _iscsiInterface?: string | undefined; 
+  private _iscsiInterface?: string; 
   public get iscsiInterface() {
     return this.getStringAttribute('iscsi_interface');
   }
-  public set iscsiInterface(value: string | undefined) {
+  public set iscsiInterface(value: string) {
     this._iscsiInterface = value;
   }
   public resetIscsiInterface() {
@@ -11226,15 +14245,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get iscsiInterfaceInput() {
-    return this._iscsiInterface
+    return this._iscsiInterface;
   }
 
   // lun - computed: false, optional: true, required: false
-  private _lun?: number | undefined; 
+  private _lun?: number; 
   public get lun() {
     return this.getNumberAttribute('lun');
   }
-  public set lun(value: number | undefined) {
+  public set lun(value: number) {
     this._lun = value;
   }
   public resetLun() {
@@ -11242,15 +14261,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get lunInput() {
-    return this._lun
+    return this._lun;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -11258,7 +14277,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // target_portal - computed: false, optional: false, required: true
@@ -11271,7 +14290,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get targetPortalInput() {
-    return this._targetPortal
+    return this._targetPortal;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocal {
@@ -11283,7 +14302,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocal {
   readonly path?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocalToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocalOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocal): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocalToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocalOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocal): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11303,12 +14322,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocalOutputReference 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocal | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocal | undefined) {
+    if (value === undefined) {
+      this._path = undefined;
+    }
+    else {
+      this._path = value.path;
+    }
+  }
+
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -11316,7 +14354,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocalOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfs {
@@ -11340,7 +14378,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfs {
   readonly server: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfsOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfs): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfsOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfs): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11362,6 +14400,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfsOutputReference ex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfs | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._server) {
+      hasAnyValues = true;
+      internalValueResult.server = this._server;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfs | undefined) {
+    if (value === undefined) {
+      this._path = undefined;
+      this._readOnly = undefined;
+      this._server = undefined;
+    }
+    else {
+      this._path = value.path;
+      this._readOnly = value.readOnly;
+      this._server = value.server;
+    }
+  }
+
   // path - computed: false, optional: false, required: true
   private _path?: string; 
   public get path() {
@@ -11372,15 +14441,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfsOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -11388,7 +14457,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfsOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // server - computed: false, optional: false, required: true
@@ -11401,7 +14470,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfsOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get serverInput() {
-    return this._server
+    return this._server;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim {
@@ -11419,7 +14488,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeC
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaimOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaimOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11440,12 +14509,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._claimName) {
+      hasAnyValues = true;
+      internalValueResult.claimName = this._claimName;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim | undefined) {
+    if (value === undefined) {
+      this._claimName = undefined;
+      this._readOnly = undefined;
+    }
+    else {
+      this._claimName = value.claimName;
+      this._readOnly = value.readOnly;
+    }
+  }
+
   // claim_name - computed: false, optional: true, required: false
-  private _claimName?: string | undefined; 
+  private _claimName?: string; 
   public get claimName() {
     return this.getStringAttribute('claim_name');
   }
-  public set claimName(value: string | undefined) {
+  public set claimName(value: string) {
     this._claimName = value;
   }
   public resetClaimName() {
@@ -11453,15 +14547,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim
   }
   // Temporarily expose input value. Use with caution.
   public get claimNameInput() {
-    return this._claimName
+    return this._claimName;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -11469,7 +14563,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDisk {
@@ -11487,7 +14581,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentD
   readonly pdId: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDisk): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDisk): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11508,12 +14602,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskO
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDisk | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._pdId) {
+      hasAnyValues = true;
+      internalValueResult.pdId = this._pdId;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDisk | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._pdId = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._pdId = value.pdId;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -11521,7 +14640,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskO
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // pd_id - computed: false, optional: false, required: true
@@ -11534,7 +14653,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskO
   }
   // Temporarily expose input value. Use with caution.
   public get pdIdInput() {
-    return this._pdId
+    return this._pdId;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapItems {
@@ -11558,7 +14677,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesC
   readonly path?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapItems): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11591,7 +14710,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesC
   readonly items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapItems[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMap): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMap): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11618,7 +14737,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesD
   readonly fieldPath?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11639,12 +14758,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._apiVersion) {
+      hasAnyValues = true;
+      internalValueResult.apiVersion = this._apiVersion;
+    }
+    if (this._fieldPath) {
+      hasAnyValues = true;
+      internalValueResult.fieldPath = this._fieldPath;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined) {
+    if (value === undefined) {
+      this._apiVersion = undefined;
+      this._fieldPath = undefined;
+    }
+    else {
+      this._apiVersion = value.apiVersion;
+      this._fieldPath = value.fieldPath;
+    }
+  }
+
   // api_version - computed: false, optional: true, required: false
-  private _apiVersion?: string | undefined; 
+  private _apiVersion?: string; 
   public get apiVersion() {
     return this.getStringAttribute('api_version');
   }
-  public set apiVersion(value: string | undefined) {
+  public set apiVersion(value: string) {
     this._apiVersion = value;
   }
   public resetApiVersion() {
@@ -11652,15 +14796,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
   }
   // Temporarily expose input value. Use with caution.
   public get apiVersionInput() {
-    return this._apiVersion
+    return this._apiVersion;
   }
 
   // field_path - computed: false, optional: true, required: false
-  private _fieldPath?: string | undefined; 
+  private _fieldPath?: string; 
   public get fieldPath() {
     return this.getStringAttribute('field_path');
   }
-  public set fieldPath(value: string | undefined) {
+  public set fieldPath(value: string) {
     this._fieldPath = value;
   }
   public resetFieldPath() {
@@ -11668,7 +14812,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
   }
   // Temporarily expose input value. Use with caution.
   public get fieldPathInput() {
-    return this._fieldPath
+    return this._fieldPath;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
@@ -11688,7 +14832,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesD
   readonly resource: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11710,6 +14854,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._containerName) {
+      hasAnyValues = true;
+      internalValueResult.containerName = this._containerName;
+    }
+    if (this._divisor) {
+      hasAnyValues = true;
+      internalValueResult.divisor = this._divisor;
+    }
+    if (this._resource) {
+      hasAnyValues = true;
+      internalValueResult.resource = this._resource;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined) {
+    if (value === undefined) {
+      this._containerName = undefined;
+      this._divisor = undefined;
+      this._resource = undefined;
+    }
+    else {
+      this._containerName = value.containerName;
+      this._divisor = value.divisor;
+      this._resource = value.resource;
+    }
+  }
+
   // container_name - computed: false, optional: false, required: true
   private _containerName?: string; 
   public get containerName() {
@@ -11720,15 +14895,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
   }
   // Temporarily expose input value. Use with caution.
   public get containerNameInput() {
-    return this._containerName
+    return this._containerName;
   }
 
   // divisor - computed: false, optional: true, required: false
-  private _divisor?: string | undefined; 
+  private _divisor?: string; 
   public get divisor() {
     return this.getStringAttribute('divisor');
   }
-  public set divisor(value: string | undefined) {
+  public set divisor(value: string) {
     this._divisor = value;
   }
   public resetDivisor() {
@@ -11736,7 +14911,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
   }
   // Temporarily expose input value. Use with caution.
   public get divisorInput() {
-    return this._divisor
+    return this._divisor;
   }
 
   // resource - computed: false, optional: false, required: true
@@ -11749,7 +14924,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
   }
   // Temporarily expose input value. Use with caution.
   public get resourceInput() {
-    return this._resource
+    return this._resource;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems {
@@ -11779,7 +14954,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesD
   readonly resourceFieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11801,7 +14976,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesD
   readonly items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApi): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11821,13 +14996,32 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._items) {
+      hasAnyValues = true;
+      internalValueResult.items = this._items;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined) {
+    if (value === undefined) {
+      this._items = undefined;
+    }
+    else {
+      this._items = value.items;
+    }
+  }
+
   // items - computed: false, optional: true, required: false
-  private _items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[] | undefined; 
+  private _items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[]; 
   public get items() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
-  public set items(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[] | undefined) {
+  public set items(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[]) {
     this._items = value;
   }
   public resetItems() {
@@ -11835,7 +15029,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
   }
   // Temporarily expose input value. Use with caution.
   public get itemsInput() {
-    return this._items
+    return this._items;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretItems {
@@ -11859,7 +15053,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesS
   readonly path?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretItems): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11892,7 +15086,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesS
   readonly items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretItems[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecret): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecret): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11925,7 +15119,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesS
   readonly path: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11947,12 +15141,43 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServi
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._audience) {
+      hasAnyValues = true;
+      internalValueResult.audience = this._audience;
+    }
+    if (this._expirationSeconds) {
+      hasAnyValues = true;
+      internalValueResult.expirationSeconds = this._expirationSeconds;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined) {
+    if (value === undefined) {
+      this._audience = undefined;
+      this._expirationSeconds = undefined;
+      this._path = undefined;
+    }
+    else {
+      this._audience = value.audience;
+      this._expirationSeconds = value.expirationSeconds;
+      this._path = value.path;
+    }
+  }
+
   // audience - computed: false, optional: true, required: false
-  private _audience?: string | undefined; 
+  private _audience?: string; 
   public get audience() {
     return this.getStringAttribute('audience');
   }
-  public set audience(value: string | undefined) {
+  public set audience(value: string) {
     this._audience = value;
   }
   public resetAudience() {
@@ -11960,15 +15185,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServi
   }
   // Temporarily expose input value. Use with caution.
   public get audienceInput() {
-    return this._audience
+    return this._audience;
   }
 
   // expiration_seconds - computed: false, optional: true, required: false
-  private _expirationSeconds?: number | undefined; 
+  private _expirationSeconds?: number; 
   public get expirationSeconds() {
     return this.getNumberAttribute('expiration_seconds');
   }
-  public set expirationSeconds(value: number | undefined) {
+  public set expirationSeconds(value: number) {
     this._expirationSeconds = value;
   }
   public resetExpirationSeconds() {
@@ -11976,7 +15201,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServi
   }
   // Temporarily expose input value. Use with caution.
   public get expirationSecondsInput() {
-    return this._expirationSeconds
+    return this._expirationSeconds;
   }
 
   // path - computed: false, optional: false, required: true
@@ -11989,7 +15214,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServi
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSources {
@@ -12019,7 +15244,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSources 
   readonly serviceAccountToken?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSources): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12047,7 +15272,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjected {
   readonly sources: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSources[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjected): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjected): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12091,7 +15316,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyte {
   readonly volume: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyte): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyte): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12115,12 +15340,55 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReferenc
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyte | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._group) {
+      hasAnyValues = true;
+      internalValueResult.group = this._group;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._registry) {
+      hasAnyValues = true;
+      internalValueResult.registry = this._registry;
+    }
+    if (this._user) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    if (this._volume) {
+      hasAnyValues = true;
+      internalValueResult.volume = this._volume;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyte | undefined) {
+    if (value === undefined) {
+      this._group = undefined;
+      this._readOnly = undefined;
+      this._registry = undefined;
+      this._user = undefined;
+      this._volume = undefined;
+    }
+    else {
+      this._group = value.group;
+      this._readOnly = value.readOnly;
+      this._registry = value.registry;
+      this._user = value.user;
+      this._volume = value.volume;
+    }
+  }
+
   // group - computed: false, optional: true, required: false
-  private _group?: string | undefined; 
+  private _group?: string; 
   public get group() {
     return this.getStringAttribute('group');
   }
-  public set group(value: string | undefined) {
+  public set group(value: string) {
     this._group = value;
   }
   public resetGroup() {
@@ -12128,15 +15396,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get groupInput() {
-    return this._group
+    return this._group;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -12144,7 +15412,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // registry - computed: false, optional: false, required: true
@@ -12157,15 +15425,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get registryInput() {
-    return this._registry
+    return this._registry;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -12173,7 +15441,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 
   // volume - computed: false, optional: false, required: true
@@ -12186,7 +15454,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get volumeInput() {
-    return this._volume
+    return this._volume;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef {
@@ -12204,7 +15472,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef {
   readonly namespace?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12225,12 +15493,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputRef
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -12238,15 +15531,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -12254,7 +15547,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbd {
@@ -12308,7 +15601,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbd {
   readonly secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbd): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbd): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12335,6 +15628,67 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference ex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbd | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._cephMonitors) {
+      hasAnyValues = true;
+      internalValueResult.cephMonitors = this._cephMonitors;
+    }
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._keyring) {
+      hasAnyValues = true;
+      internalValueResult.keyring = this._keyring;
+    }
+    if (this._radosUser) {
+      hasAnyValues = true;
+      internalValueResult.radosUser = this._radosUser;
+    }
+    if (this._rbdImage) {
+      hasAnyValues = true;
+      internalValueResult.rbdImage = this._rbdImage;
+    }
+    if (this._rbdPool) {
+      hasAnyValues = true;
+      internalValueResult.rbdPool = this._rbdPool;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._secretRef) {
+      hasAnyValues = true;
+      internalValueResult.secretRef = this._secretRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbd | undefined) {
+    if (value === undefined) {
+      this._cephMonitors = undefined;
+      this._fsType = undefined;
+      this._keyring = undefined;
+      this._radosUser = undefined;
+      this._rbdImage = undefined;
+      this._rbdPool = undefined;
+      this._readOnly = undefined;
+      this._secretRef.internalValue = undefined;
+    }
+    else {
+      this._cephMonitors = value.cephMonitors;
+      this._fsType = value.fsType;
+      this._keyring = value.keyring;
+      this._radosUser = value.radosUser;
+      this._rbdImage = value.rbdImage;
+      this._rbdPool = value.rbdPool;
+      this._readOnly = value.readOnly;
+      this._secretRef.internalValue = value.secretRef;
+    }
+  }
+
   // ceph_monitors - computed: false, optional: false, required: true
   private _cephMonitors?: string[]; 
   public get cephMonitors() {
@@ -12345,15 +15699,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get cephMonitorsInput() {
-    return this._cephMonitors
+    return this._cephMonitors;
   }
 
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -12361,15 +15715,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // keyring - computed: true, optional: true, required: false
-  private _keyring?: string | undefined; 
+  private _keyring?: string; 
   public get keyring() {
     return this.getStringAttribute('keyring');
   }
-  public set keyring(value: string | undefined) {
+  public set keyring(value: string) {
     this._keyring = value;
   }
   public resetKeyring() {
@@ -12377,15 +15731,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get keyringInput() {
-    return this._keyring
+    return this._keyring;
   }
 
   // rados_user - computed: false, optional: true, required: false
-  private _radosUser?: string | undefined; 
+  private _radosUser?: string; 
   public get radosUser() {
     return this.getStringAttribute('rados_user');
   }
-  public set radosUser(value: string | undefined) {
+  public set radosUser(value: string) {
     this._radosUser = value;
   }
   public resetRadosUser() {
@@ -12393,7 +15747,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get radosUserInput() {
-    return this._radosUser
+    return this._radosUser;
   }
 
   // rbd_image - computed: false, optional: false, required: true
@@ -12406,15 +15760,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get rbdImageInput() {
-    return this._rbdImage
+    return this._rbdImage;
   }
 
   // rbd_pool - computed: false, optional: true, required: false
-  private _rbdPool?: string | undefined; 
+  private _rbdPool?: string; 
   public get rbdPool() {
     return this.getStringAttribute('rbd_pool');
   }
-  public set rbdPool(value: string | undefined) {
+  public set rbdPool(value: string) {
     this._rbdPool = value;
   }
   public resetRbdPool() {
@@ -12422,15 +15776,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get rbdPoolInput() {
-    return this._rbdPool
+    return this._rbdPool;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -12438,24 +15792,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef | undefined; 
-  private __secretRefOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputReference(this as any, "secret_ref", true);
   public get secretRef() {
-    return this.__secretRefOutput;
+    return this._secretRef;
   }
-  public putSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef | undefined) {
-    this._secretRef = value;
+  public putSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef) {
+    this._secretRef.internalValue = value;
   }
   public resetSecretRef() {
-    this._secretRef = undefined;
+    this._secretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretRefInput() {
-    return this._secretRef
+    return this._secretRef.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItems {
@@ -12479,7 +15832,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItems {
   readonly path?: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItemsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItems): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItemsToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12518,7 +15871,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecret {
   readonly items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItems[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecret): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecret): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12541,12 +15894,49 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretOutputReference
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecret | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._defaultMode) {
+      hasAnyValues = true;
+      internalValueResult.defaultMode = this._defaultMode;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    if (this._secretName) {
+      hasAnyValues = true;
+      internalValueResult.secretName = this._secretName;
+    }
+    if (this._items) {
+      hasAnyValues = true;
+      internalValueResult.items = this._items;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecret | undefined) {
+    if (value === undefined) {
+      this._defaultMode = undefined;
+      this._optional = undefined;
+      this._secretName = undefined;
+      this._items = undefined;
+    }
+    else {
+      this._defaultMode = value.defaultMode;
+      this._optional = value.optional;
+      this._secretName = value.secretName;
+      this._items = value.items;
+    }
+  }
+
   // default_mode - computed: false, optional: true, required: false
-  private _defaultMode?: string | undefined; 
+  private _defaultMode?: string; 
   public get defaultMode() {
     return this.getStringAttribute('default_mode');
   }
-  public set defaultMode(value: string | undefined) {
+  public set defaultMode(value: string) {
     this._defaultMode = value;
   }
   public resetDefaultMode() {
@@ -12554,15 +15944,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get defaultModeInput() {
-    return this._defaultMode
+    return this._defaultMode;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -12570,15 +15960,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 
   // secret_name - computed: false, optional: true, required: false
-  private _secretName?: string | undefined; 
+  private _secretName?: string; 
   public get secretName() {
     return this.getStringAttribute('secret_name');
   }
-  public set secretName(value: string | undefined) {
+  public set secretName(value: string) {
     this._secretName = value;
   }
   public resetSecretName() {
@@ -12586,16 +15976,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get secretNameInput() {
-    return this._secretName
+    return this._secretName;
   }
 
   // items - computed: false, optional: true, required: false
-  private _items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItems[] | undefined; 
+  private _items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItems[]; 
   public get items() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
-  public set items(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItems[] | undefined) {
+  public set items(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItems[]) {
     this._items = value;
   }
   public resetItems() {
@@ -12603,7 +15993,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get itemsInput() {
-    return this._items
+    return this._items;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolume {
@@ -12621,7 +16011,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolume {
   readonly volumePath: string;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolume): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolume): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12642,12 +16032,37 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeOutputRe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolume | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._volumePath) {
+      hasAnyValues = true;
+      internalValueResult.volumePath = this._volumePath;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolume | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._volumePath = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._volumePath = value.volumePath;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -12655,7 +16070,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeOutputRe
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // volume_path - computed: false, optional: false, required: true
@@ -12668,7 +16083,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeOutputRe
   }
   // Temporarily expose input value. Use with caution.
   public get volumePathInput() {
-    return this._volumePath
+    return this._volumePath;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolume {
@@ -12836,7 +16251,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolume {
   readonly vsphereVolume?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolume;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolume): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolume): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -13037,7 +16452,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpec {
   readonly volume?: CronJobV1SpecJobTemplateSpecTemplateSpecVolume[];
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateSpecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpec): any {
+export function cronJobV1SpecJobTemplateSpecTemplateSpecToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -13083,12 +16498,187 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._activeDeadlineSeconds) {
+      hasAnyValues = true;
+      internalValueResult.activeDeadlineSeconds = this._activeDeadlineSeconds;
+    }
+    if (this._automountServiceAccountToken) {
+      hasAnyValues = true;
+      internalValueResult.automountServiceAccountToken = this._automountServiceAccountToken;
+    }
+    if (this._dnsPolicy) {
+      hasAnyValues = true;
+      internalValueResult.dnsPolicy = this._dnsPolicy;
+    }
+    if (this._enableServiceLinks) {
+      hasAnyValues = true;
+      internalValueResult.enableServiceLinks = this._enableServiceLinks;
+    }
+    if (this._hostIpc) {
+      hasAnyValues = true;
+      internalValueResult.hostIpc = this._hostIpc;
+    }
+    if (this._hostNetwork) {
+      hasAnyValues = true;
+      internalValueResult.hostNetwork = this._hostNetwork;
+    }
+    if (this._hostPid) {
+      hasAnyValues = true;
+      internalValueResult.hostPid = this._hostPid;
+    }
+    if (this._hostname) {
+      hasAnyValues = true;
+      internalValueResult.hostname = this._hostname;
+    }
+    if (this._nodeName) {
+      hasAnyValues = true;
+      internalValueResult.nodeName = this._nodeName;
+    }
+    if (this._nodeSelector) {
+      hasAnyValues = true;
+      internalValueResult.nodeSelector = this._nodeSelector;
+    }
+    if (this._priorityClassName) {
+      hasAnyValues = true;
+      internalValueResult.priorityClassName = this._priorityClassName;
+    }
+    if (this._restartPolicy) {
+      hasAnyValues = true;
+      internalValueResult.restartPolicy = this._restartPolicy;
+    }
+    if (this._serviceAccountName) {
+      hasAnyValues = true;
+      internalValueResult.serviceAccountName = this._serviceAccountName;
+    }
+    if (this._shareProcessNamespace) {
+      hasAnyValues = true;
+      internalValueResult.shareProcessNamespace = this._shareProcessNamespace;
+    }
+    if (this._subdomain) {
+      hasAnyValues = true;
+      internalValueResult.subdomain = this._subdomain;
+    }
+    if (this._terminationGracePeriodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.terminationGracePeriodSeconds = this._terminationGracePeriodSeconds;
+    }
+    if (this._affinity) {
+      hasAnyValues = true;
+      internalValueResult.affinity = this._affinity?.internalValue;
+    }
+    if (this._container) {
+      hasAnyValues = true;
+      internalValueResult.container = this._container;
+    }
+    if (this._dnsConfig) {
+      hasAnyValues = true;
+      internalValueResult.dnsConfig = this._dnsConfig?.internalValue;
+    }
+    if (this._hostAliases) {
+      hasAnyValues = true;
+      internalValueResult.hostAliases = this._hostAliases;
+    }
+    if (this._imagePullSecrets) {
+      hasAnyValues = true;
+      internalValueResult.imagePullSecrets = this._imagePullSecrets;
+    }
+    if (this._initContainer) {
+      hasAnyValues = true;
+      internalValueResult.initContainer = this._initContainer;
+    }
+    if (this._readinessGate) {
+      hasAnyValues = true;
+      internalValueResult.readinessGate = this._readinessGate;
+    }
+    if (this._securityContext) {
+      hasAnyValues = true;
+      internalValueResult.securityContext = this._securityContext?.internalValue;
+    }
+    if (this._toleration) {
+      hasAnyValues = true;
+      internalValueResult.toleration = this._toleration;
+    }
+    if (this._topologySpreadConstraint) {
+      hasAnyValues = true;
+      internalValueResult.topologySpreadConstraint = this._topologySpreadConstraint;
+    }
+    if (this._volume) {
+      hasAnyValues = true;
+      internalValueResult.volume = this._volume;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpec | undefined) {
+    if (value === undefined) {
+      this._activeDeadlineSeconds = undefined;
+      this._automountServiceAccountToken = undefined;
+      this._dnsPolicy = undefined;
+      this._enableServiceLinks = undefined;
+      this._hostIpc = undefined;
+      this._hostNetwork = undefined;
+      this._hostPid = undefined;
+      this._hostname = undefined;
+      this._nodeName = undefined;
+      this._nodeSelector = undefined;
+      this._priorityClassName = undefined;
+      this._restartPolicy = undefined;
+      this._serviceAccountName = undefined;
+      this._shareProcessNamespace = undefined;
+      this._subdomain = undefined;
+      this._terminationGracePeriodSeconds = undefined;
+      this._affinity.internalValue = undefined;
+      this._container = undefined;
+      this._dnsConfig.internalValue = undefined;
+      this._hostAliases = undefined;
+      this._imagePullSecrets = undefined;
+      this._initContainer = undefined;
+      this._readinessGate = undefined;
+      this._securityContext.internalValue = undefined;
+      this._toleration = undefined;
+      this._topologySpreadConstraint = undefined;
+      this._volume = undefined;
+    }
+    else {
+      this._activeDeadlineSeconds = value.activeDeadlineSeconds;
+      this._automountServiceAccountToken = value.automountServiceAccountToken;
+      this._dnsPolicy = value.dnsPolicy;
+      this._enableServiceLinks = value.enableServiceLinks;
+      this._hostIpc = value.hostIpc;
+      this._hostNetwork = value.hostNetwork;
+      this._hostPid = value.hostPid;
+      this._hostname = value.hostname;
+      this._nodeName = value.nodeName;
+      this._nodeSelector = value.nodeSelector;
+      this._priorityClassName = value.priorityClassName;
+      this._restartPolicy = value.restartPolicy;
+      this._serviceAccountName = value.serviceAccountName;
+      this._shareProcessNamespace = value.shareProcessNamespace;
+      this._subdomain = value.subdomain;
+      this._terminationGracePeriodSeconds = value.terminationGracePeriodSeconds;
+      this._affinity.internalValue = value.affinity;
+      this._container = value.container;
+      this._dnsConfig.internalValue = value.dnsConfig;
+      this._hostAliases = value.hostAliases;
+      this._imagePullSecrets = value.imagePullSecrets;
+      this._initContainer = value.initContainer;
+      this._readinessGate = value.readinessGate;
+      this._securityContext.internalValue = value.securityContext;
+      this._toleration = value.toleration;
+      this._topologySpreadConstraint = value.topologySpreadConstraint;
+      this._volume = value.volume;
+    }
+  }
+
   // active_deadline_seconds - computed: false, optional: true, required: false
-  private _activeDeadlineSeconds?: number | undefined; 
+  private _activeDeadlineSeconds?: number; 
   public get activeDeadlineSeconds() {
     return this.getNumberAttribute('active_deadline_seconds');
   }
-  public set activeDeadlineSeconds(value: number | undefined) {
+  public set activeDeadlineSeconds(value: number) {
     this._activeDeadlineSeconds = value;
   }
   public resetActiveDeadlineSeconds() {
@@ -13096,15 +16686,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get activeDeadlineSecondsInput() {
-    return this._activeDeadlineSeconds
+    return this._activeDeadlineSeconds;
   }
 
   // automount_service_account_token - computed: false, optional: true, required: false
-  private _automountServiceAccountToken?: boolean | cdktf.IResolvable | undefined; 
+  private _automountServiceAccountToken?: boolean | cdktf.IResolvable; 
   public get automountServiceAccountToken() {
     return this.getBooleanAttribute('automount_service_account_token') as any;
   }
-  public set automountServiceAccountToken(value: boolean | cdktf.IResolvable | undefined) {
+  public set automountServiceAccountToken(value: boolean | cdktf.IResolvable) {
     this._automountServiceAccountToken = value;
   }
   public resetAutomountServiceAccountToken() {
@@ -13112,15 +16702,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get automountServiceAccountTokenInput() {
-    return this._automountServiceAccountToken
+    return this._automountServiceAccountToken;
   }
 
   // dns_policy - computed: false, optional: true, required: false
-  private _dnsPolicy?: string | undefined; 
+  private _dnsPolicy?: string; 
   public get dnsPolicy() {
     return this.getStringAttribute('dns_policy');
   }
-  public set dnsPolicy(value: string | undefined) {
+  public set dnsPolicy(value: string) {
     this._dnsPolicy = value;
   }
   public resetDnsPolicy() {
@@ -13128,15 +16718,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get dnsPolicyInput() {
-    return this._dnsPolicy
+    return this._dnsPolicy;
   }
 
   // enable_service_links - computed: false, optional: true, required: false
-  private _enableServiceLinks?: boolean | cdktf.IResolvable | undefined; 
+  private _enableServiceLinks?: boolean | cdktf.IResolvable; 
   public get enableServiceLinks() {
     return this.getBooleanAttribute('enable_service_links') as any;
   }
-  public set enableServiceLinks(value: boolean | cdktf.IResolvable | undefined) {
+  public set enableServiceLinks(value: boolean | cdktf.IResolvable) {
     this._enableServiceLinks = value;
   }
   public resetEnableServiceLinks() {
@@ -13144,15 +16734,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get enableServiceLinksInput() {
-    return this._enableServiceLinks
+    return this._enableServiceLinks;
   }
 
   // host_ipc - computed: false, optional: true, required: false
-  private _hostIpc?: boolean | cdktf.IResolvable | undefined; 
+  private _hostIpc?: boolean | cdktf.IResolvable; 
   public get hostIpc() {
     return this.getBooleanAttribute('host_ipc') as any;
   }
-  public set hostIpc(value: boolean | cdktf.IResolvable | undefined) {
+  public set hostIpc(value: boolean | cdktf.IResolvable) {
     this._hostIpc = value;
   }
   public resetHostIpc() {
@@ -13160,15 +16750,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get hostIpcInput() {
-    return this._hostIpc
+    return this._hostIpc;
   }
 
   // host_network - computed: false, optional: true, required: false
-  private _hostNetwork?: boolean | cdktf.IResolvable | undefined; 
+  private _hostNetwork?: boolean | cdktf.IResolvable; 
   public get hostNetwork() {
     return this.getBooleanAttribute('host_network') as any;
   }
-  public set hostNetwork(value: boolean | cdktf.IResolvable | undefined) {
+  public set hostNetwork(value: boolean | cdktf.IResolvable) {
     this._hostNetwork = value;
   }
   public resetHostNetwork() {
@@ -13176,15 +16766,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get hostNetworkInput() {
-    return this._hostNetwork
+    return this._hostNetwork;
   }
 
   // host_pid - computed: false, optional: true, required: false
-  private _hostPid?: boolean | cdktf.IResolvable | undefined; 
+  private _hostPid?: boolean | cdktf.IResolvable; 
   public get hostPid() {
     return this.getBooleanAttribute('host_pid') as any;
   }
-  public set hostPid(value: boolean | cdktf.IResolvable | undefined) {
+  public set hostPid(value: boolean | cdktf.IResolvable) {
     this._hostPid = value;
   }
   public resetHostPid() {
@@ -13192,15 +16782,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get hostPidInput() {
-    return this._hostPid
+    return this._hostPid;
   }
 
   // hostname - computed: true, optional: true, required: false
-  private _hostname?: string | undefined; 
+  private _hostname?: string; 
   public get hostname() {
     return this.getStringAttribute('hostname');
   }
-  public set hostname(value: string | undefined) {
+  public set hostname(value: string) {
     this._hostname = value;
   }
   public resetHostname() {
@@ -13208,15 +16798,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get hostnameInput() {
-    return this._hostname
+    return this._hostname;
   }
 
   // node_name - computed: true, optional: true, required: false
-  private _nodeName?: string | undefined; 
+  private _nodeName?: string; 
   public get nodeName() {
     return this.getStringAttribute('node_name');
   }
-  public set nodeName(value: string | undefined) {
+  public set nodeName(value: string) {
     this._nodeName = value;
   }
   public resetNodeName() {
@@ -13224,16 +16814,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get nodeNameInput() {
-    return this._nodeName
+    return this._nodeName;
   }
 
   // node_selector - computed: false, optional: true, required: false
-  private _nodeSelector?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _nodeSelector?: { [key: string]: string } | cdktf.IResolvable; 
   public get nodeSelector() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('node_selector') as any;
   }
-  public set nodeSelector(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set nodeSelector(value: { [key: string]: string } | cdktf.IResolvable) {
     this._nodeSelector = value;
   }
   public resetNodeSelector() {
@@ -13241,15 +16831,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get nodeSelectorInput() {
-    return this._nodeSelector
+    return this._nodeSelector;
   }
 
   // priority_class_name - computed: false, optional: true, required: false
-  private _priorityClassName?: string | undefined; 
+  private _priorityClassName?: string; 
   public get priorityClassName() {
     return this.getStringAttribute('priority_class_name');
   }
-  public set priorityClassName(value: string | undefined) {
+  public set priorityClassName(value: string) {
     this._priorityClassName = value;
   }
   public resetPriorityClassName() {
@@ -13257,15 +16847,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get priorityClassNameInput() {
-    return this._priorityClassName
+    return this._priorityClassName;
   }
 
   // restart_policy - computed: false, optional: true, required: false
-  private _restartPolicy?: string | undefined; 
+  private _restartPolicy?: string; 
   public get restartPolicy() {
     return this.getStringAttribute('restart_policy');
   }
-  public set restartPolicy(value: string | undefined) {
+  public set restartPolicy(value: string) {
     this._restartPolicy = value;
   }
   public resetRestartPolicy() {
@@ -13273,15 +16863,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get restartPolicyInput() {
-    return this._restartPolicy
+    return this._restartPolicy;
   }
 
   // service_account_name - computed: true, optional: true, required: false
-  private _serviceAccountName?: string | undefined; 
+  private _serviceAccountName?: string; 
   public get serviceAccountName() {
     return this.getStringAttribute('service_account_name');
   }
-  public set serviceAccountName(value: string | undefined) {
+  public set serviceAccountName(value: string) {
     this._serviceAccountName = value;
   }
   public resetServiceAccountName() {
@@ -13289,15 +16879,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get serviceAccountNameInput() {
-    return this._serviceAccountName
+    return this._serviceAccountName;
   }
 
   // share_process_namespace - computed: false, optional: true, required: false
-  private _shareProcessNamespace?: boolean | cdktf.IResolvable | undefined; 
+  private _shareProcessNamespace?: boolean | cdktf.IResolvable; 
   public get shareProcessNamespace() {
     return this.getBooleanAttribute('share_process_namespace') as any;
   }
-  public set shareProcessNamespace(value: boolean | cdktf.IResolvable | undefined) {
+  public set shareProcessNamespace(value: boolean | cdktf.IResolvable) {
     this._shareProcessNamespace = value;
   }
   public resetShareProcessNamespace() {
@@ -13305,15 +16895,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get shareProcessNamespaceInput() {
-    return this._shareProcessNamespace
+    return this._shareProcessNamespace;
   }
 
   // subdomain - computed: false, optional: true, required: false
-  private _subdomain?: string | undefined; 
+  private _subdomain?: string; 
   public get subdomain() {
     return this.getStringAttribute('subdomain');
   }
-  public set subdomain(value: string | undefined) {
+  public set subdomain(value: string) {
     this._subdomain = value;
   }
   public resetSubdomain() {
@@ -13321,15 +16911,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get subdomainInput() {
-    return this._subdomain
+    return this._subdomain;
   }
 
   // termination_grace_period_seconds - computed: false, optional: true, required: false
-  private _terminationGracePeriodSeconds?: number | undefined; 
+  private _terminationGracePeriodSeconds?: number; 
   public get terminationGracePeriodSeconds() {
     return this.getNumberAttribute('termination_grace_period_seconds');
   }
-  public set terminationGracePeriodSeconds(value: number | undefined) {
+  public set terminationGracePeriodSeconds(value: number) {
     this._terminationGracePeriodSeconds = value;
   }
   public resetTerminationGracePeriodSeconds() {
@@ -13337,33 +16927,32 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get terminationGracePeriodSecondsInput() {
-    return this._terminationGracePeriodSeconds
+    return this._terminationGracePeriodSeconds;
   }
 
   // affinity - computed: false, optional: true, required: false
-  private _affinity?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinity | undefined; 
-  private __affinityOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityOutputReference(this as any, "affinity", true);
+  private _affinity = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityOutputReference(this as any, "affinity", true);
   public get affinity() {
-    return this.__affinityOutput;
+    return this._affinity;
   }
-  public putAffinity(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinity | undefined) {
-    this._affinity = value;
+  public putAffinity(value: CronJobV1SpecJobTemplateSpecTemplateSpecAffinity) {
+    this._affinity.internalValue = value;
   }
   public resetAffinity() {
-    this._affinity = undefined;
+    this._affinity.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get affinityInput() {
-    return this._affinity
+    return this._affinity.internalValue;
   }
 
   // container - computed: false, optional: true, required: false
-  private _container?: CronJobV1SpecJobTemplateSpecTemplateSpecContainer[] | undefined; 
+  private _container?: CronJobV1SpecJobTemplateSpecTemplateSpecContainer[]; 
   public get container() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('container') as any;
   }
-  public set container(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainer[] | undefined) {
+  public set container(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainer[]) {
     this._container = value;
   }
   public resetContainer() {
@@ -13371,33 +16960,32 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get containerInput() {
-    return this._container
+    return this._container;
   }
 
   // dns_config - computed: false, optional: true, required: false
-  private _dnsConfig?: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfig | undefined; 
-  private __dnsConfigOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOutputReference(this as any, "dns_config", true);
+  private _dnsConfig = new CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOutputReference(this as any, "dns_config", true);
   public get dnsConfig() {
-    return this.__dnsConfigOutput;
+    return this._dnsConfig;
   }
-  public putDnsConfig(value: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfig | undefined) {
-    this._dnsConfig = value;
+  public putDnsConfig(value: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfig) {
+    this._dnsConfig.internalValue = value;
   }
   public resetDnsConfig() {
-    this._dnsConfig = undefined;
+    this._dnsConfig.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get dnsConfigInput() {
-    return this._dnsConfig
+    return this._dnsConfig.internalValue;
   }
 
   // host_aliases - computed: false, optional: true, required: false
-  private _hostAliases?: CronJobV1SpecJobTemplateSpecTemplateSpecHostAliases[] | undefined; 
+  private _hostAliases?: CronJobV1SpecJobTemplateSpecTemplateSpecHostAliases[]; 
   public get hostAliases() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('host_aliases') as any;
   }
-  public set hostAliases(value: CronJobV1SpecJobTemplateSpecTemplateSpecHostAliases[] | undefined) {
+  public set hostAliases(value: CronJobV1SpecJobTemplateSpecTemplateSpecHostAliases[]) {
     this._hostAliases = value;
   }
   public resetHostAliases() {
@@ -13405,16 +16993,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get hostAliasesInput() {
-    return this._hostAliases
+    return this._hostAliases;
   }
 
   // image_pull_secrets - computed: false, optional: true, required: false
-  private _imagePullSecrets?: CronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecrets[] | undefined; 
+  private _imagePullSecrets?: CronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecrets[]; 
   public get imagePullSecrets() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('image_pull_secrets') as any;
   }
-  public set imagePullSecrets(value: CronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecrets[] | undefined) {
+  public set imagePullSecrets(value: CronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecrets[]) {
     this._imagePullSecrets = value;
   }
   public resetImagePullSecrets() {
@@ -13422,16 +17010,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get imagePullSecretsInput() {
-    return this._imagePullSecrets
+    return this._imagePullSecrets;
   }
 
   // init_container - computed: false, optional: true, required: false
-  private _initContainer?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainer[] | undefined; 
+  private _initContainer?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainer[]; 
   public get initContainer() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('init_container') as any;
   }
-  public set initContainer(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainer[] | undefined) {
+  public set initContainer(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainer[]) {
     this._initContainer = value;
   }
   public resetInitContainer() {
@@ -13439,16 +17027,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get initContainerInput() {
-    return this._initContainer
+    return this._initContainer;
   }
 
   // readiness_gate - computed: false, optional: true, required: false
-  private _readinessGate?: CronJobV1SpecJobTemplateSpecTemplateSpecReadinessGate[] | undefined; 
+  private _readinessGate?: CronJobV1SpecJobTemplateSpecTemplateSpecReadinessGate[]; 
   public get readinessGate() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('readiness_gate') as any;
   }
-  public set readinessGate(value: CronJobV1SpecJobTemplateSpecTemplateSpecReadinessGate[] | undefined) {
+  public set readinessGate(value: CronJobV1SpecJobTemplateSpecTemplateSpecReadinessGate[]) {
     this._readinessGate = value;
   }
   public resetReadinessGate() {
@@ -13456,33 +17044,32 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get readinessGateInput() {
-    return this._readinessGate
+    return this._readinessGate;
   }
 
   // security_context - computed: false, optional: true, required: false
-  private _securityContext?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext | undefined; 
-  private __securityContextOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputReference(this as any, "security_context", true);
+  private _securityContext = new CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputReference(this as any, "security_context", true);
   public get securityContext() {
-    return this.__securityContextOutput;
+    return this._securityContext;
   }
-  public putSecurityContext(value: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext | undefined) {
-    this._securityContext = value;
+  public putSecurityContext(value: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext) {
+    this._securityContext.internalValue = value;
   }
   public resetSecurityContext() {
-    this._securityContext = undefined;
+    this._securityContext.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get securityContextInput() {
-    return this._securityContext
+    return this._securityContext.internalValue;
   }
 
   // toleration - computed: false, optional: true, required: false
-  private _toleration?: CronJobV1SpecJobTemplateSpecTemplateSpecToleration[] | undefined; 
+  private _toleration?: CronJobV1SpecJobTemplateSpecTemplateSpecToleration[]; 
   public get toleration() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('toleration') as any;
   }
-  public set toleration(value: CronJobV1SpecJobTemplateSpecTemplateSpecToleration[] | undefined) {
+  public set toleration(value: CronJobV1SpecJobTemplateSpecTemplateSpecToleration[]) {
     this._toleration = value;
   }
   public resetToleration() {
@@ -13490,16 +17077,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get tolerationInput() {
-    return this._toleration
+    return this._toleration;
   }
 
   // topology_spread_constraint - computed: false, optional: true, required: false
-  private _topologySpreadConstraint?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraint[] | undefined; 
+  private _topologySpreadConstraint?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraint[]; 
   public get topologySpreadConstraint() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('topology_spread_constraint') as any;
   }
-  public set topologySpreadConstraint(value: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraint[] | undefined) {
+  public set topologySpreadConstraint(value: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraint[]) {
     this._topologySpreadConstraint = value;
   }
   public resetTopologySpreadConstraint() {
@@ -13507,16 +17094,16 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get topologySpreadConstraintInput() {
-    return this._topologySpreadConstraint
+    return this._topologySpreadConstraint;
   }
 
   // volume - computed: false, optional: true, required: false
-  private _volume?: CronJobV1SpecJobTemplateSpecTemplateSpecVolume[] | undefined; 
+  private _volume?: CronJobV1SpecJobTemplateSpecTemplateSpecVolume[]; 
   public get volume() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('volume') as any;
   }
-  public set volume(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolume[] | undefined) {
+  public set volume(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolume[]) {
     this._volume = value;
   }
   public resetVolume() {
@@ -13524,7 +17111,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get volumeInput() {
-    return this._volume
+    return this._volume;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplate {
@@ -13542,7 +17129,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplate {
   readonly spec?: CronJobV1SpecJobTemplateSpecTemplateSpec;
 }
 
-function cronJobV1SpecJobTemplateSpecTemplateToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateOutputReference | CronJobV1SpecJobTemplateSpecTemplate): any {
+export function cronJobV1SpecJobTemplateSpecTemplateToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateOutputReference | CronJobV1SpecJobTemplateSpecTemplate): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -13563,35 +17150,58 @@ export class CronJobV1SpecJobTemplateSpecTemplateOutputReference extends cdktf.C
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplate | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._metadata) {
+      hasAnyValues = true;
+      internalValueResult.metadata = this._metadata?.internalValue;
+    }
+    if (this._spec) {
+      hasAnyValues = true;
+      internalValueResult.spec = this._spec?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplate | undefined) {
+    if (value === undefined) {
+      this._metadata.internalValue = undefined;
+      this._spec.internalValue = undefined;
+    }
+    else {
+      this._metadata.internalValue = value.metadata;
+      this._spec.internalValue = value.spec;
+    }
+  }
+
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: CronJobV1SpecJobTemplateSpecTemplateMetadata; 
-  private __metadataOutput = new CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: CronJobV1SpecJobTemplateSpecTemplateMetadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: true, required: false
-  private _spec?: CronJobV1SpecJobTemplateSpecTemplateSpec | undefined; 
-  private __specOutput = new CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference(this as any, "spec", true);
+  private _spec = new CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
-  public putSpec(value: CronJobV1SpecJobTemplateSpecTemplateSpec | undefined) {
-    this._spec = value;
+  public putSpec(value: CronJobV1SpecJobTemplateSpecTemplateSpec) {
+    this._spec.internalValue = value;
   }
   public resetSpec() {
-    this._spec = undefined;
+    this._spec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpec {
@@ -13651,7 +17261,7 @@ export interface CronJobV1SpecJobTemplateSpec {
   readonly template: CronJobV1SpecJobTemplateSpecTemplate;
 }
 
-function cronJobV1SpecJobTemplateSpecToTerraform(struct?: CronJobV1SpecJobTemplateSpecOutputReference | CronJobV1SpecJobTemplateSpec): any {
+export function cronJobV1SpecJobTemplateSpecToTerraform(struct?: CronJobV1SpecJobTemplateSpecOutputReference | CronJobV1SpecJobTemplateSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -13679,12 +17289,79 @@ export class CronJobV1SpecJobTemplateSpecOutputReference extends cdktf.ComplexOb
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplateSpec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._activeDeadlineSeconds) {
+      hasAnyValues = true;
+      internalValueResult.activeDeadlineSeconds = this._activeDeadlineSeconds;
+    }
+    if (this._backoffLimit) {
+      hasAnyValues = true;
+      internalValueResult.backoffLimit = this._backoffLimit;
+    }
+    if (this._completionMode) {
+      hasAnyValues = true;
+      internalValueResult.completionMode = this._completionMode;
+    }
+    if (this._completions) {
+      hasAnyValues = true;
+      internalValueResult.completions = this._completions;
+    }
+    if (this._manualSelector) {
+      hasAnyValues = true;
+      internalValueResult.manualSelector = this._manualSelector;
+    }
+    if (this._parallelism) {
+      hasAnyValues = true;
+      internalValueResult.parallelism = this._parallelism;
+    }
+    if (this._ttlSecondsAfterFinished) {
+      hasAnyValues = true;
+      internalValueResult.ttlSecondsAfterFinished = this._ttlSecondsAfterFinished;
+    }
+    if (this._selector) {
+      hasAnyValues = true;
+      internalValueResult.selector = this._selector?.internalValue;
+    }
+    if (this._template) {
+      hasAnyValues = true;
+      internalValueResult.template = this._template?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpec | undefined) {
+    if (value === undefined) {
+      this._activeDeadlineSeconds = undefined;
+      this._backoffLimit = undefined;
+      this._completionMode = undefined;
+      this._completions = undefined;
+      this._manualSelector = undefined;
+      this._parallelism = undefined;
+      this._ttlSecondsAfterFinished = undefined;
+      this._selector.internalValue = undefined;
+      this._template.internalValue = undefined;
+    }
+    else {
+      this._activeDeadlineSeconds = value.activeDeadlineSeconds;
+      this._backoffLimit = value.backoffLimit;
+      this._completionMode = value.completionMode;
+      this._completions = value.completions;
+      this._manualSelector = value.manualSelector;
+      this._parallelism = value.parallelism;
+      this._ttlSecondsAfterFinished = value.ttlSecondsAfterFinished;
+      this._selector.internalValue = value.selector;
+      this._template.internalValue = value.template;
+    }
+  }
+
   // active_deadline_seconds - computed: false, optional: true, required: false
-  private _activeDeadlineSeconds?: number | undefined; 
+  private _activeDeadlineSeconds?: number; 
   public get activeDeadlineSeconds() {
     return this.getNumberAttribute('active_deadline_seconds');
   }
-  public set activeDeadlineSeconds(value: number | undefined) {
+  public set activeDeadlineSeconds(value: number) {
     this._activeDeadlineSeconds = value;
   }
   public resetActiveDeadlineSeconds() {
@@ -13692,15 +17369,15 @@ export class CronJobV1SpecJobTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get activeDeadlineSecondsInput() {
-    return this._activeDeadlineSeconds
+    return this._activeDeadlineSeconds;
   }
 
   // backoff_limit - computed: false, optional: true, required: false
-  private _backoffLimit?: number | undefined; 
+  private _backoffLimit?: number; 
   public get backoffLimit() {
     return this.getNumberAttribute('backoff_limit');
   }
-  public set backoffLimit(value: number | undefined) {
+  public set backoffLimit(value: number) {
     this._backoffLimit = value;
   }
   public resetBackoffLimit() {
@@ -13708,15 +17385,15 @@ export class CronJobV1SpecJobTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get backoffLimitInput() {
-    return this._backoffLimit
+    return this._backoffLimit;
   }
 
   // completion_mode - computed: true, optional: true, required: false
-  private _completionMode?: string | undefined; 
+  private _completionMode?: string; 
   public get completionMode() {
     return this.getStringAttribute('completion_mode');
   }
-  public set completionMode(value: string | undefined) {
+  public set completionMode(value: string) {
     this._completionMode = value;
   }
   public resetCompletionMode() {
@@ -13724,15 +17401,15 @@ export class CronJobV1SpecJobTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get completionModeInput() {
-    return this._completionMode
+    return this._completionMode;
   }
 
   // completions - computed: false, optional: true, required: false
-  private _completions?: number | undefined; 
+  private _completions?: number; 
   public get completions() {
     return this.getNumberAttribute('completions');
   }
-  public set completions(value: number | undefined) {
+  public set completions(value: number) {
     this._completions = value;
   }
   public resetCompletions() {
@@ -13740,15 +17417,15 @@ export class CronJobV1SpecJobTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get completionsInput() {
-    return this._completions
+    return this._completions;
   }
 
   // manual_selector - computed: false, optional: true, required: false
-  private _manualSelector?: boolean | cdktf.IResolvable | undefined; 
+  private _manualSelector?: boolean | cdktf.IResolvable; 
   public get manualSelector() {
     return this.getBooleanAttribute('manual_selector') as any;
   }
-  public set manualSelector(value: boolean | cdktf.IResolvable | undefined) {
+  public set manualSelector(value: boolean | cdktf.IResolvable) {
     this._manualSelector = value;
   }
   public resetManualSelector() {
@@ -13756,15 +17433,15 @@ export class CronJobV1SpecJobTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get manualSelectorInput() {
-    return this._manualSelector
+    return this._manualSelector;
   }
 
   // parallelism - computed: false, optional: true, required: false
-  private _parallelism?: number | undefined; 
+  private _parallelism?: number; 
   public get parallelism() {
     return this.getNumberAttribute('parallelism');
   }
-  public set parallelism(value: number | undefined) {
+  public set parallelism(value: number) {
     this._parallelism = value;
   }
   public resetParallelism() {
@@ -13772,15 +17449,15 @@ export class CronJobV1SpecJobTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get parallelismInput() {
-    return this._parallelism
+    return this._parallelism;
   }
 
   // ttl_seconds_after_finished - computed: false, optional: true, required: false
-  private _ttlSecondsAfterFinished?: string | undefined; 
+  private _ttlSecondsAfterFinished?: string; 
   public get ttlSecondsAfterFinished() {
     return this.getStringAttribute('ttl_seconds_after_finished');
   }
-  public set ttlSecondsAfterFinished(value: string | undefined) {
+  public set ttlSecondsAfterFinished(value: string) {
     this._ttlSecondsAfterFinished = value;
   }
   public resetTtlSecondsAfterFinished() {
@@ -13788,38 +17465,36 @@ export class CronJobV1SpecJobTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get ttlSecondsAfterFinishedInput() {
-    return this._ttlSecondsAfterFinished
+    return this._ttlSecondsAfterFinished;
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector?: CronJobV1SpecJobTemplateSpecSelector | undefined; 
-  private __selectorOutput = new CronJobV1SpecJobTemplateSpecSelectorOutputReference(this as any, "selector", true);
+  private _selector = new CronJobV1SpecJobTemplateSpecSelectorOutputReference(this as any, "selector", true);
   public get selector() {
-    return this.__selectorOutput;
+    return this._selector;
   }
-  public putSelector(value: CronJobV1SpecJobTemplateSpecSelector | undefined) {
-    this._selector = value;
+  public putSelector(value: CronJobV1SpecJobTemplateSpecSelector) {
+    this._selector.internalValue = value;
   }
   public resetSelector() {
-    this._selector = undefined;
+    this._selector.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get selectorInput() {
-    return this._selector
+    return this._selector.internalValue;
   }
 
   // template - computed: false, optional: false, required: true
-  private _template?: CronJobV1SpecJobTemplateSpecTemplate; 
-  private __templateOutput = new CronJobV1SpecJobTemplateSpecTemplateOutputReference(this as any, "template", true);
+  private _template = new CronJobV1SpecJobTemplateSpecTemplateOutputReference(this as any, "template", true);
   public get template() {
-    return this.__templateOutput;
+    return this._template;
   }
   public putTemplate(value: CronJobV1SpecJobTemplateSpecTemplate) {
-    this._template = value;
+    this._template.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get templateInput() {
-    return this._template
+    return this._template.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplate {
@@ -13837,7 +17512,7 @@ export interface CronJobV1SpecJobTemplate {
   readonly spec: CronJobV1SpecJobTemplateSpec;
 }
 
-function cronJobV1SpecJobTemplateToTerraform(struct?: CronJobV1SpecJobTemplateOutputReference | CronJobV1SpecJobTemplate): any {
+export function cronJobV1SpecJobTemplateToTerraform(struct?: CronJobV1SpecJobTemplateOutputReference | CronJobV1SpecJobTemplate): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -13858,32 +17533,55 @@ export class CronJobV1SpecJobTemplateOutputReference extends cdktf.ComplexObject
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1SpecJobTemplate | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._metadata) {
+      hasAnyValues = true;
+      internalValueResult.metadata = this._metadata?.internalValue;
+    }
+    if (this._spec) {
+      hasAnyValues = true;
+      internalValueResult.spec = this._spec?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplate | undefined) {
+    if (value === undefined) {
+      this._metadata.internalValue = undefined;
+      this._spec.internalValue = undefined;
+    }
+    else {
+      this._metadata.internalValue = value.metadata;
+      this._spec.internalValue = value.spec;
+    }
+  }
+
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: CronJobV1SpecJobTemplateMetadata; 
-  private __metadataOutput = new CronJobV1SpecJobTemplateMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new CronJobV1SpecJobTemplateMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: CronJobV1SpecJobTemplateMetadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: CronJobV1SpecJobTemplateSpec; 
-  private __specOutput = new CronJobV1SpecJobTemplateSpecOutputReference(this as any, "spec", true);
+  private _spec = new CronJobV1SpecJobTemplateSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
   public putSpec(value: CronJobV1SpecJobTemplateSpec) {
-    this._spec = value;
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 }
 export interface CronJobV1Spec {
@@ -13931,7 +17629,7 @@ export interface CronJobV1Spec {
   readonly jobTemplate: CronJobV1SpecJobTemplate;
 }
 
-function cronJobV1SpecToTerraform(struct?: CronJobV1SpecOutputReference | CronJobV1Spec): any {
+export function cronJobV1SpecToTerraform(struct?: CronJobV1SpecOutputReference | CronJobV1Spec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -13957,12 +17655,67 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1Spec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._concurrencyPolicy) {
+      hasAnyValues = true;
+      internalValueResult.concurrencyPolicy = this._concurrencyPolicy;
+    }
+    if (this._failedJobsHistoryLimit) {
+      hasAnyValues = true;
+      internalValueResult.failedJobsHistoryLimit = this._failedJobsHistoryLimit;
+    }
+    if (this._schedule) {
+      hasAnyValues = true;
+      internalValueResult.schedule = this._schedule;
+    }
+    if (this._startingDeadlineSeconds) {
+      hasAnyValues = true;
+      internalValueResult.startingDeadlineSeconds = this._startingDeadlineSeconds;
+    }
+    if (this._successfulJobsHistoryLimit) {
+      hasAnyValues = true;
+      internalValueResult.successfulJobsHistoryLimit = this._successfulJobsHistoryLimit;
+    }
+    if (this._suspend) {
+      hasAnyValues = true;
+      internalValueResult.suspend = this._suspend;
+    }
+    if (this._jobTemplate) {
+      hasAnyValues = true;
+      internalValueResult.jobTemplate = this._jobTemplate?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1Spec | undefined) {
+    if (value === undefined) {
+      this._concurrencyPolicy = undefined;
+      this._failedJobsHistoryLimit = undefined;
+      this._schedule = undefined;
+      this._startingDeadlineSeconds = undefined;
+      this._successfulJobsHistoryLimit = undefined;
+      this._suspend = undefined;
+      this._jobTemplate.internalValue = undefined;
+    }
+    else {
+      this._concurrencyPolicy = value.concurrencyPolicy;
+      this._failedJobsHistoryLimit = value.failedJobsHistoryLimit;
+      this._schedule = value.schedule;
+      this._startingDeadlineSeconds = value.startingDeadlineSeconds;
+      this._successfulJobsHistoryLimit = value.successfulJobsHistoryLimit;
+      this._suspend = value.suspend;
+      this._jobTemplate.internalValue = value.jobTemplate;
+    }
+  }
+
   // concurrency_policy - computed: false, optional: true, required: false
-  private _concurrencyPolicy?: string | undefined; 
+  private _concurrencyPolicy?: string; 
   public get concurrencyPolicy() {
     return this.getStringAttribute('concurrency_policy');
   }
-  public set concurrencyPolicy(value: string | undefined) {
+  public set concurrencyPolicy(value: string) {
     this._concurrencyPolicy = value;
   }
   public resetConcurrencyPolicy() {
@@ -13970,15 +17723,15 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get concurrencyPolicyInput() {
-    return this._concurrencyPolicy
+    return this._concurrencyPolicy;
   }
 
   // failed_jobs_history_limit - computed: false, optional: true, required: false
-  private _failedJobsHistoryLimit?: number | undefined; 
+  private _failedJobsHistoryLimit?: number; 
   public get failedJobsHistoryLimit() {
     return this.getNumberAttribute('failed_jobs_history_limit');
   }
-  public set failedJobsHistoryLimit(value: number | undefined) {
+  public set failedJobsHistoryLimit(value: number) {
     this._failedJobsHistoryLimit = value;
   }
   public resetFailedJobsHistoryLimit() {
@@ -13986,7 +17739,7 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get failedJobsHistoryLimitInput() {
-    return this._failedJobsHistoryLimit
+    return this._failedJobsHistoryLimit;
   }
 
   // schedule - computed: false, optional: false, required: true
@@ -13999,15 +17752,15 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get scheduleInput() {
-    return this._schedule
+    return this._schedule;
   }
 
   // starting_deadline_seconds - computed: false, optional: true, required: false
-  private _startingDeadlineSeconds?: number | undefined; 
+  private _startingDeadlineSeconds?: number; 
   public get startingDeadlineSeconds() {
     return this.getNumberAttribute('starting_deadline_seconds');
   }
-  public set startingDeadlineSeconds(value: number | undefined) {
+  public set startingDeadlineSeconds(value: number) {
     this._startingDeadlineSeconds = value;
   }
   public resetStartingDeadlineSeconds() {
@@ -14015,15 +17768,15 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get startingDeadlineSecondsInput() {
-    return this._startingDeadlineSeconds
+    return this._startingDeadlineSeconds;
   }
 
   // successful_jobs_history_limit - computed: false, optional: true, required: false
-  private _successfulJobsHistoryLimit?: number | undefined; 
+  private _successfulJobsHistoryLimit?: number; 
   public get successfulJobsHistoryLimit() {
     return this.getNumberAttribute('successful_jobs_history_limit');
   }
-  public set successfulJobsHistoryLimit(value: number | undefined) {
+  public set successfulJobsHistoryLimit(value: number) {
     this._successfulJobsHistoryLimit = value;
   }
   public resetSuccessfulJobsHistoryLimit() {
@@ -14031,15 +17784,15 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get successfulJobsHistoryLimitInput() {
-    return this._successfulJobsHistoryLimit
+    return this._successfulJobsHistoryLimit;
   }
 
   // suspend - computed: false, optional: true, required: false
-  private _suspend?: boolean | cdktf.IResolvable | undefined; 
+  private _suspend?: boolean | cdktf.IResolvable; 
   public get suspend() {
     return this.getBooleanAttribute('suspend') as any;
   }
-  public set suspend(value: boolean | cdktf.IResolvable | undefined) {
+  public set suspend(value: boolean | cdktf.IResolvable) {
     this._suspend = value;
   }
   public resetSuspend() {
@@ -14047,21 +17800,20 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get suspendInput() {
-    return this._suspend
+    return this._suspend;
   }
 
   // job_template - computed: false, optional: false, required: true
-  private _jobTemplate?: CronJobV1SpecJobTemplate; 
-  private __jobTemplateOutput = new CronJobV1SpecJobTemplateOutputReference(this as any, "job_template", true);
+  private _jobTemplate = new CronJobV1SpecJobTemplateOutputReference(this as any, "job_template", true);
   public get jobTemplate() {
-    return this.__jobTemplateOutput;
+    return this._jobTemplate;
   }
   public putJobTemplate(value: CronJobV1SpecJobTemplate) {
-    this._jobTemplate = value;
+    this._jobTemplate.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get jobTemplateInput() {
-    return this._jobTemplate
+    return this._jobTemplate.internalValue;
   }
 }
 export interface CronJobV1Timeouts {
@@ -14071,7 +17823,7 @@ export interface CronJobV1Timeouts {
   readonly delete?: string;
 }
 
-function cronJobV1TimeoutsToTerraform(struct?: CronJobV1TimeoutsOutputReference | CronJobV1Timeouts): any {
+export function cronJobV1TimeoutsToTerraform(struct?: CronJobV1TimeoutsOutputReference | CronJobV1Timeouts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -14091,12 +17843,31 @@ export class CronJobV1TimeoutsOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CronJobV1Timeouts | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._delete) {
+      hasAnyValues = true;
+      internalValueResult.delete = this._delete;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1Timeouts | undefined) {
+    if (value === undefined) {
+      this._delete = undefined;
+    }
+    else {
+      this._delete = value.delete;
+    }
+  }
+
   // delete - computed: false, optional: true, required: false
-  private _delete?: string | undefined; 
+  private _delete?: string; 
   public get delete() {
     return this.getStringAttribute('delete');
   }
-  public set delete(value: string | undefined) {
+  public set delete(value: string) {
     this._delete = value;
   }
   public resetDelete() {
@@ -14104,7 +17875,7 @@ export class CronJobV1TimeoutsOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get deleteInput() {
-    return this._delete
+    return this._delete;
   }
 }
 
@@ -14140,9 +17911,9 @@ export class CronJobV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._metadata = config.metadata;
-    this._spec = config.spec;
-    this._timeouts = config.timeouts;
+    this._metadata.internalValue = config.metadata;
+    this._spec.internalValue = config.spec;
+    this._timeouts.internalValue = config.timeouts;
   }
 
   // ==========
@@ -14155,48 +17926,45 @@ export class CronJobV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: CronJobV1Metadata; 
-  private __metadataOutput = new CronJobV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new CronJobV1MetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: CronJobV1Metadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: CronJobV1Spec; 
-  private __specOutput = new CronJobV1SpecOutputReference(this as any, "spec", true);
+  private _spec = new CronJobV1SpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
   public putSpec(value: CronJobV1Spec) {
-    this._spec = value;
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts?: CronJobV1Timeouts | undefined; 
-  private __timeoutsOutput = new CronJobV1TimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new CronJobV1TimeoutsOutputReference(this as any, "timeouts", true);
   public get timeouts() {
-    return this.__timeoutsOutput;
+    return this._timeouts;
   }
-  public putTimeouts(value: CronJobV1Timeouts | undefined) {
-    this._timeouts = value;
+  public putTimeouts(value: CronJobV1Timeouts) {
+    this._timeouts.internalValue = value;
   }
   public resetTimeouts() {
-    this._timeouts = undefined;
+    this._timeouts.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutsInput() {
-    return this._timeouts
+    return this._timeouts.internalValue;
   }
 
   // =========
@@ -14205,9 +17973,9 @@ export class CronJobV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: cronJobV1MetadataToTerraform(this._metadata),
-      spec: cronJobV1SpecToTerraform(this._spec),
-      timeouts: cronJobV1TimeoutsToTerraform(this._timeouts),
+      metadata: cronJobV1MetadataToTerraform(this._metadata.internalValue),
+      spec: cronJobV1SpecToTerraform(this._spec.internalValue),
+      timeouts: cronJobV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
   }
 }

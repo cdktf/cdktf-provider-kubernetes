@@ -53,7 +53,7 @@ export interface DataKubernetesPersistentVolumeClaimMetadata {
   readonly namespace?: string;
 }
 
-function dataKubernetesPersistentVolumeClaimMetadataToTerraform(struct?: DataKubernetesPersistentVolumeClaimMetadataOutputReference | DataKubernetesPersistentVolumeClaimMetadata): any {
+export function dataKubernetesPersistentVolumeClaimMetadataToTerraform(struct?: DataKubernetesPersistentVolumeClaimMetadataOutputReference | DataKubernetesPersistentVolumeClaimMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -77,13 +77,56 @@ export class DataKubernetesPersistentVolumeClaimMetadataOutputReference extends 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DataKubernetesPersistentVolumeClaimMetadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPersistentVolumeClaimMetadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -91,15 +134,15 @@ export class DataKubernetesPersistentVolumeClaimMetadataOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -107,16 +150,16 @@ export class DataKubernetesPersistentVolumeClaimMetadataOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -124,15 +167,15 @@ export class DataKubernetesPersistentVolumeClaimMetadataOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -140,15 +183,15 @@ export class DataKubernetesPersistentVolumeClaimMetadataOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -156,7 +199,7 @@ export class DataKubernetesPersistentVolumeClaimMetadataOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface DataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressions {
@@ -180,7 +223,7 @@ export interface DataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressions
   readonly values?: string[];
 }
 
-function dataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressionsToTerraform(struct?: DataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressions): any {
+export function dataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressionsToTerraform(struct?: DataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -207,7 +250,7 @@ export interface DataKubernetesPersistentVolumeClaimSpecSelector {
   readonly matchExpressions?: DataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressions[];
 }
 
-function dataKubernetesPersistentVolumeClaimSpecSelectorToTerraform(struct?: DataKubernetesPersistentVolumeClaimSpecSelector): any {
+export function dataKubernetesPersistentVolumeClaimSpecSelectorToTerraform(struct?: DataKubernetesPersistentVolumeClaimSpecSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -239,7 +282,7 @@ export interface DataKubernetesPersistentVolumeClaimSpec {
   readonly selector?: DataKubernetesPersistentVolumeClaimSpecSelector[];
 }
 
-function dataKubernetesPersistentVolumeClaimSpecToTerraform(struct?: DataKubernetesPersistentVolumeClaimSpec): any {
+export function dataKubernetesPersistentVolumeClaimSpecToTerraform(struct?: DataKubernetesPersistentVolumeClaimSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -284,7 +327,7 @@ export class DataKubernetesPersistentVolumeClaim extends cdktf.TerraformDataSour
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._metadata = config.metadata;
+    this._metadata.internalValue = config.metadata;
     this._spec = config.spec;
   }
 
@@ -298,26 +341,25 @@ export class DataKubernetesPersistentVolumeClaim extends cdktf.TerraformDataSour
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: DataKubernetesPersistentVolumeClaimMetadata; 
-  private __metadataOutput = new DataKubernetesPersistentVolumeClaimMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new DataKubernetesPersistentVolumeClaimMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: DataKubernetesPersistentVolumeClaimMetadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: true, required: false
-  private _spec?: DataKubernetesPersistentVolumeClaimSpec[] | undefined; 
+  private _spec?: DataKubernetesPersistentVolumeClaimSpec[]; 
   public get spec() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('spec') as any;
   }
-  public set spec(value: DataKubernetesPersistentVolumeClaimSpec[] | undefined) {
+  public set spec(value: DataKubernetesPersistentVolumeClaimSpec[]) {
     this._spec = value;
   }
   public resetSpec() {
@@ -325,7 +367,7 @@ export class DataKubernetesPersistentVolumeClaim extends cdktf.TerraformDataSour
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec;
   }
 
   // =========
@@ -334,7 +376,7 @@ export class DataKubernetesPersistentVolumeClaim extends cdktf.TerraformDataSour
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: dataKubernetesPersistentVolumeClaimMetadataToTerraform(this._metadata),
+      metadata: dataKubernetesPersistentVolumeClaimMetadataToTerraform(this._metadata.internalValue),
       spec: cdktf.listMapper(dataKubernetesPersistentVolumeClaimSpecToTerraform)(this._spec),
     };
   }

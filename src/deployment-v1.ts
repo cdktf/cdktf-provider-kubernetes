@@ -65,7 +65,7 @@ export interface DeploymentV1Metadata {
   readonly namespace?: string;
 }
 
-function deploymentV1MetadataToTerraform(struct?: DeploymentV1MetadataOutputReference | DeploymentV1Metadata): any {
+export function deploymentV1MetadataToTerraform(struct?: DeploymentV1MetadataOutputReference | DeploymentV1Metadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -89,13 +89,56 @@ export class DeploymentV1MetadataOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1Metadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1Metadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -103,15 +146,15 @@ export class DeploymentV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -119,16 +162,16 @@ export class DeploymentV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -136,15 +179,15 @@ export class DeploymentV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -152,15 +195,15 @@ export class DeploymentV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -168,7 +211,7 @@ export class DeploymentV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface DeploymentV1SpecSelectorMatchExpressions {
@@ -192,7 +235,7 @@ export interface DeploymentV1SpecSelectorMatchExpressions {
   readonly values?: string[];
 }
 
-function deploymentV1SpecSelectorMatchExpressionsToTerraform(struct?: DeploymentV1SpecSelectorMatchExpressions): any {
+export function deploymentV1SpecSelectorMatchExpressionsToTerraform(struct?: DeploymentV1SpecSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -219,7 +262,7 @@ export interface DeploymentV1SpecSelector {
   readonly matchExpressions?: DeploymentV1SpecSelectorMatchExpressions[];
 }
 
-function deploymentV1SpecSelectorToTerraform(struct?: DeploymentV1SpecSelectorOutputReference | DeploymentV1SpecSelector): any {
+export function deploymentV1SpecSelectorToTerraform(struct?: DeploymentV1SpecSelectorOutputReference | DeploymentV1SpecSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -240,13 +283,38 @@ export class DeploymentV1SpecSelectorOutputReference extends cdktf.ComplexObject
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecSelector | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._matchLabels) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecSelector | undefined) {
+    if (value === undefined) {
+      this._matchLabels = undefined;
+      this._matchExpressions = undefined;
+    }
+    else {
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions = value.matchExpressions;
+    }
+  }
+
   // match_labels - computed: false, optional: true, required: false
-  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable; 
   public get matchLabels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
-  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._matchLabels = value;
   }
   public resetMatchLabels() {
@@ -254,16 +322,16 @@ export class DeploymentV1SpecSelectorOutputReference extends cdktf.ComplexObject
   }
   // Temporarily expose input value. Use with caution.
   public get matchLabelsInput() {
-    return this._matchLabels
+    return this._matchLabels;
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: DeploymentV1SpecSelectorMatchExpressions[] | undefined; 
+  private _matchExpressions?: DeploymentV1SpecSelectorMatchExpressions[]; 
   public get matchExpressions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
-  public set matchExpressions(value: DeploymentV1SpecSelectorMatchExpressions[] | undefined) {
+  public set matchExpressions(value: DeploymentV1SpecSelectorMatchExpressions[]) {
     this._matchExpressions = value;
   }
   public resetMatchExpressions() {
@@ -271,7 +339,7 @@ export class DeploymentV1SpecSelectorOutputReference extends cdktf.ComplexObject
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions
+    return this._matchExpressions;
   }
 }
 export interface DeploymentV1SpecStrategyRollingUpdate {
@@ -289,7 +357,7 @@ export interface DeploymentV1SpecStrategyRollingUpdate {
   readonly maxUnavailable?: string;
 }
 
-function deploymentV1SpecStrategyRollingUpdateToTerraform(struct?: DeploymentV1SpecStrategyRollingUpdateOutputReference | DeploymentV1SpecStrategyRollingUpdate): any {
+export function deploymentV1SpecStrategyRollingUpdateToTerraform(struct?: DeploymentV1SpecStrategyRollingUpdateOutputReference | DeploymentV1SpecStrategyRollingUpdate): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -310,12 +378,37 @@ export class DeploymentV1SpecStrategyRollingUpdateOutputReference extends cdktf.
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecStrategyRollingUpdate | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._maxSurge) {
+      hasAnyValues = true;
+      internalValueResult.maxSurge = this._maxSurge;
+    }
+    if (this._maxUnavailable) {
+      hasAnyValues = true;
+      internalValueResult.maxUnavailable = this._maxUnavailable;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecStrategyRollingUpdate | undefined) {
+    if (value === undefined) {
+      this._maxSurge = undefined;
+      this._maxUnavailable = undefined;
+    }
+    else {
+      this._maxSurge = value.maxSurge;
+      this._maxUnavailable = value.maxUnavailable;
+    }
+  }
+
   // max_surge - computed: false, optional: true, required: false
-  private _maxSurge?: string | undefined; 
+  private _maxSurge?: string; 
   public get maxSurge() {
     return this.getStringAttribute('max_surge');
   }
-  public set maxSurge(value: string | undefined) {
+  public set maxSurge(value: string) {
     this._maxSurge = value;
   }
   public resetMaxSurge() {
@@ -323,15 +416,15 @@ export class DeploymentV1SpecStrategyRollingUpdateOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get maxSurgeInput() {
-    return this._maxSurge
+    return this._maxSurge;
   }
 
   // max_unavailable - computed: false, optional: true, required: false
-  private _maxUnavailable?: string | undefined; 
+  private _maxUnavailable?: string; 
   public get maxUnavailable() {
     return this.getStringAttribute('max_unavailable');
   }
-  public set maxUnavailable(value: string | undefined) {
+  public set maxUnavailable(value: string) {
     this._maxUnavailable = value;
   }
   public resetMaxUnavailable() {
@@ -339,7 +432,7 @@ export class DeploymentV1SpecStrategyRollingUpdateOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get maxUnavailableInput() {
-    return this._maxUnavailable
+    return this._maxUnavailable;
   }
 }
 export interface DeploymentV1SpecStrategy {
@@ -357,7 +450,7 @@ export interface DeploymentV1SpecStrategy {
   readonly rollingUpdate?: DeploymentV1SpecStrategyRollingUpdate;
 }
 
-function deploymentV1SpecStrategyToTerraform(struct?: DeploymentV1SpecStrategyOutputReference | DeploymentV1SpecStrategy): any {
+export function deploymentV1SpecStrategyToTerraform(struct?: DeploymentV1SpecStrategyOutputReference | DeploymentV1SpecStrategy): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -378,12 +471,37 @@ export class DeploymentV1SpecStrategyOutputReference extends cdktf.ComplexObject
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecStrategy | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._rollingUpdate) {
+      hasAnyValues = true;
+      internalValueResult.rollingUpdate = this._rollingUpdate?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecStrategy | undefined) {
+    if (value === undefined) {
+      this._type = undefined;
+      this._rollingUpdate.internalValue = undefined;
+    }
+    else {
+      this._type = value.type;
+      this._rollingUpdate.internalValue = value.rollingUpdate;
+    }
+  }
+
   // type - computed: false, optional: true, required: false
-  private _type?: string | undefined; 
+  private _type?: string; 
   public get type() {
     return this.getStringAttribute('type');
   }
-  public set type(value: string | undefined) {
+  public set type(value: string) {
     this._type = value;
   }
   public resetType() {
@@ -391,24 +509,23 @@ export class DeploymentV1SpecStrategyOutputReference extends cdktf.ComplexObject
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 
   // rolling_update - computed: false, optional: true, required: false
-  private _rollingUpdate?: DeploymentV1SpecStrategyRollingUpdate | undefined; 
-  private __rollingUpdateOutput = new DeploymentV1SpecStrategyRollingUpdateOutputReference(this as any, "rolling_update", true);
+  private _rollingUpdate = new DeploymentV1SpecStrategyRollingUpdateOutputReference(this as any, "rolling_update", true);
   public get rollingUpdate() {
-    return this.__rollingUpdateOutput;
+    return this._rollingUpdate;
   }
-  public putRollingUpdate(value: DeploymentV1SpecStrategyRollingUpdate | undefined) {
-    this._rollingUpdate = value;
+  public putRollingUpdate(value: DeploymentV1SpecStrategyRollingUpdate) {
+    this._rollingUpdate.internalValue = value;
   }
   public resetRollingUpdate() {
-    this._rollingUpdate = undefined;
+    this._rollingUpdate.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get rollingUpdateInput() {
-    return this._rollingUpdate
+    return this._rollingUpdate.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateMetadata {
@@ -444,7 +561,7 @@ export interface DeploymentV1SpecTemplateMetadata {
   readonly namespace?: string;
 }
 
-function deploymentV1SpecTemplateMetadataToTerraform(struct?: DeploymentV1SpecTemplateMetadataOutputReference | DeploymentV1SpecTemplateMetadata): any {
+export function deploymentV1SpecTemplateMetadataToTerraform(struct?: DeploymentV1SpecTemplateMetadataOutputReference | DeploymentV1SpecTemplateMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -468,13 +585,56 @@ export class DeploymentV1SpecTemplateMetadataOutputReference extends cdktf.Compl
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateMetadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateMetadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -482,15 +642,15 @@ export class DeploymentV1SpecTemplateMetadataOutputReference extends cdktf.Compl
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -498,16 +658,16 @@ export class DeploymentV1SpecTemplateMetadataOutputReference extends cdktf.Compl
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -515,15 +675,15 @@ export class DeploymentV1SpecTemplateMetadataOutputReference extends cdktf.Compl
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -531,15 +691,15 @@ export class DeploymentV1SpecTemplateMetadataOutputReference extends cdktf.Compl
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -547,7 +707,7 @@ export class DeploymentV1SpecTemplateMetadataOutputReference extends cdktf.Compl
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions {
@@ -571,7 +731,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuring
   readonly values?: string[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions): any {
+export function deploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -592,7 +752,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuring
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference | DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference): any {
+export function deploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference | DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -612,13 +772,32 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSche
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._matchExpressions) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined) {
+    if (value === undefined) {
+      this._matchExpressions = undefined;
+    }
+    else {
+      this._matchExpressions = value.matchExpressions;
+    }
+  }
+
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | undefined; 
+  private _matchExpressions?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[]; 
   public get matchExpressions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
-  public set matchExpressions(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | undefined) {
+  public set matchExpressions(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[]) {
     this._matchExpressions = value;
   }
   public resetMatchExpressions() {
@@ -626,7 +805,7 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSche
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions
+    return this._matchExpressions;
   }
 }
 export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution {
@@ -644,7 +823,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuring
   readonly preference: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference;
 }
 
-function deploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
+export function deploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -676,7 +855,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringS
   readonly values?: string[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions): any {
+export function deploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -697,7 +876,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringS
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm): any {
+export function deploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -716,7 +895,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringS
   readonly nodeSelectorTerm?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference | DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
+export function deploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference | DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -736,13 +915,32 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSched
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._nodeSelectorTerm) {
+      hasAnyValues = true;
+      internalValueResult.nodeSelectorTerm = this._nodeSelectorTerm;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined) {
+    if (value === undefined) {
+      this._nodeSelectorTerm = undefined;
+    }
+    else {
+      this._nodeSelectorTerm = value.nodeSelectorTerm;
+    }
+  }
+
   // node_selector_term - computed: false, optional: true, required: false
-  private _nodeSelectorTerm?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | undefined; 
+  private _nodeSelectorTerm?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[]; 
   public get nodeSelectorTerm() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('node_selector_term') as any;
   }
-  public set nodeSelectorTerm(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | undefined) {
+  public set nodeSelectorTerm(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[]) {
     this._nodeSelectorTerm = value;
   }
   public resetNodeSelectorTerm() {
@@ -750,7 +948,7 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSched
   }
   // Temporarily expose input value. Use with caution.
   public get nodeSelectorTermInput() {
-    return this._nodeSelectorTerm
+    return this._nodeSelectorTerm;
   }
 }
 export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinity {
@@ -768,7 +966,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinity {
   readonly requiredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution;
 }
 
-function deploymentV1SpecTemplateSpecAffinityNodeAffinityToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityOutputReference | DeploymentV1SpecTemplateSpecAffinityNodeAffinity): any {
+export function deploymentV1SpecTemplateSpecAffinityNodeAffinityToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityOutputReference | DeploymentV1SpecTemplateSpecAffinityNodeAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -789,13 +987,38 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityOutputReference ext
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecAffinityNodeAffinity | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+      hasAnyValues = true;
+      internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
+    }
+    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+      hasAnyValues = true;
+      internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinity | undefined) {
+    if (value === undefined) {
+      this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
+      this._requiredDuringSchedulingIgnoredDuringExecution.internalValue = undefined;
+    }
+    else {
+      this._preferredDuringSchedulingIgnoredDuringExecution = value.preferredDuringSchedulingIgnoredDuringExecution;
+      this._requiredDuringSchedulingIgnoredDuringExecution.internalValue = value.requiredDuringSchedulingIgnoredDuringExecution;
+    }
+  }
+
   // preferred_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _preferredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  private _preferredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[]; 
   public get preferredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
   }
-  public set preferredDuringSchedulingIgnoredDuringExecution(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+  public set preferredDuringSchedulingIgnoredDuringExecution(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[]) {
     this._preferredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetPreferredDuringSchedulingIgnoredDuringExecution() {
@@ -803,24 +1026,23 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get preferredDuringSchedulingIgnoredDuringExecutionInput() {
-    return this._preferredDuringSchedulingIgnoredDuringExecution
+    return this._preferredDuringSchedulingIgnoredDuringExecution;
   }
 
   // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _requiredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined; 
-  private __requiredDuringSchedulingIgnoredDuringExecutionOutput = new DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this as any, "required_during_scheduling_ignored_during_execution", true);
+  private _requiredDuringSchedulingIgnoredDuringExecution = new DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this as any, "required_during_scheduling_ignored_during_execution", true);
   public get requiredDuringSchedulingIgnoredDuringExecution() {
-    return this.__requiredDuringSchedulingIgnoredDuringExecutionOutput;
+    return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
-  public putRequiredDuringSchedulingIgnoredDuringExecution(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined) {
-    this._requiredDuringSchedulingIgnoredDuringExecution = value;
+  public putRequiredDuringSchedulingIgnoredDuringExecution(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution) {
+    this._requiredDuringSchedulingIgnoredDuringExecution.internalValue = value;
   }
   public resetRequiredDuringSchedulingIgnoredDuringExecution() {
-    this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
+    this._requiredDuringSchedulingIgnoredDuringExecution.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get requiredDuringSchedulingIgnoredDuringExecutionInput() {
-    return this._requiredDuringSchedulingIgnoredDuringExecution
+    return this._requiredDuringSchedulingIgnoredDuringExecution.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
@@ -844,7 +1066,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringS
   readonly values?: string[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -871,7 +1093,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringS
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -903,7 +1125,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringS
   readonly labelSelector?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -925,12 +1147,43 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSched
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._namespaces) {
+      hasAnyValues = true;
+      internalValueResult.namespaces = this._namespaces;
+    }
+    if (this._topologyKey) {
+      hasAnyValues = true;
+      internalValueResult.topologyKey = this._topologyKey;
+    }
+    if (this._labelSelector) {
+      hasAnyValues = true;
+      internalValueResult.labelSelector = this._labelSelector;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined) {
+    if (value === undefined) {
+      this._namespaces = undefined;
+      this._topologyKey = undefined;
+      this._labelSelector = undefined;
+    }
+    else {
+      this._namespaces = value.namespaces;
+      this._topologyKey = value.topologyKey;
+      this._labelSelector = value.labelSelector;
+    }
+  }
+
   // namespaces - computed: false, optional: true, required: false
-  private _namespaces?: string[] | undefined; 
+  private _namespaces?: string[]; 
   public get namespaces() {
     return this.getListAttribute('namespaces');
   }
-  public set namespaces(value: string[] | undefined) {
+  public set namespaces(value: string[]) {
     this._namespaces = value;
   }
   public resetNamespaces() {
@@ -938,15 +1191,15 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSched
   }
   // Temporarily expose input value. Use with caution.
   public get namespacesInput() {
-    return this._namespaces
+    return this._namespaces;
   }
 
   // topology_key - computed: false, optional: true, required: false
-  private _topologyKey?: string | undefined; 
+  private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
-  public set topologyKey(value: string | undefined) {
+  public set topologyKey(value: string) {
     this._topologyKey = value;
   }
   public resetTopologyKey() {
@@ -954,16 +1207,16 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSched
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
-    return this._topologyKey
+    return this._topologyKey;
   }
 
   // label_selector - computed: false, optional: true, required: false
-  private _labelSelector?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | undefined; 
+  private _labelSelector?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[]; 
   public get labelSelector() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('label_selector') as any;
   }
-  public set labelSelector(value: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | undefined) {
+  public set labelSelector(value: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[]) {
     this._labelSelector = value;
   }
   public resetLabelSelector() {
@@ -971,7 +1224,7 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSched
   }
   // Temporarily expose input value. Use with caution.
   public get labelSelectorInput() {
-    return this._labelSelector
+    return this._labelSelector;
   }
 }
 export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution {
@@ -989,7 +1242,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringS
   readonly podAffinityTerm: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1021,7 +1274,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSc
   readonly values?: string[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1048,7 +1301,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSc
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1080,7 +1333,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSc
   readonly labelSelector?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1107,7 +1360,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAffinity {
   readonly requiredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAffinityToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityOutputReference | DeploymentV1SpecTemplateSpecAffinityPodAffinity): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAffinityToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAffinityOutputReference | DeploymentV1SpecTemplateSpecAffinityPodAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1128,13 +1381,38 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityOutputReference exte
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecAffinityPodAffinity | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+      hasAnyValues = true;
+      internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
+    }
+    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+      hasAnyValues = true;
+      internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecAffinityPodAffinity | undefined) {
+    if (value === undefined) {
+      this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
+      this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
+    }
+    else {
+      this._preferredDuringSchedulingIgnoredDuringExecution = value.preferredDuringSchedulingIgnoredDuringExecution;
+      this._requiredDuringSchedulingIgnoredDuringExecution = value.requiredDuringSchedulingIgnoredDuringExecution;
+    }
+  }
+
   // preferred_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _preferredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  private _preferredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[]; 
   public get preferredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
   }
-  public set preferredDuringSchedulingIgnoredDuringExecution(value: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+  public set preferredDuringSchedulingIgnoredDuringExecution(value: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[]) {
     this._preferredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetPreferredDuringSchedulingIgnoredDuringExecution() {
@@ -1142,16 +1420,16 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get preferredDuringSchedulingIgnoredDuringExecutionInput() {
-    return this._preferredDuringSchedulingIgnoredDuringExecution
+    return this._preferredDuringSchedulingIgnoredDuringExecution;
   }
 
   // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _requiredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  private _requiredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[]; 
   public get requiredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution') as any;
   }
-  public set requiredDuringSchedulingIgnoredDuringExecution(value: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+  public set requiredDuringSchedulingIgnoredDuringExecution(value: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[]) {
     this._requiredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetRequiredDuringSchedulingIgnoredDuringExecution() {
@@ -1159,7 +1437,7 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get requiredDuringSchedulingIgnoredDuringExecutionInput() {
-    return this._requiredDuringSchedulingIgnoredDuringExecution
+    return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
 }
 export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
@@ -1183,7 +1461,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDur
   readonly values?: string[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1210,7 +1488,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDur
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1242,7 +1520,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDur
   readonly labelSelector?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1264,12 +1542,43 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringS
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._namespaces) {
+      hasAnyValues = true;
+      internalValueResult.namespaces = this._namespaces;
+    }
+    if (this._topologyKey) {
+      hasAnyValues = true;
+      internalValueResult.topologyKey = this._topologyKey;
+    }
+    if (this._labelSelector) {
+      hasAnyValues = true;
+      internalValueResult.labelSelector = this._labelSelector;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined) {
+    if (value === undefined) {
+      this._namespaces = undefined;
+      this._topologyKey = undefined;
+      this._labelSelector = undefined;
+    }
+    else {
+      this._namespaces = value.namespaces;
+      this._topologyKey = value.topologyKey;
+      this._labelSelector = value.labelSelector;
+    }
+  }
+
   // namespaces - computed: false, optional: true, required: false
-  private _namespaces?: string[] | undefined; 
+  private _namespaces?: string[]; 
   public get namespaces() {
     return this.getListAttribute('namespaces');
   }
-  public set namespaces(value: string[] | undefined) {
+  public set namespaces(value: string[]) {
     this._namespaces = value;
   }
   public resetNamespaces() {
@@ -1277,15 +1586,15 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringS
   }
   // Temporarily expose input value. Use with caution.
   public get namespacesInput() {
-    return this._namespaces
+    return this._namespaces;
   }
 
   // topology_key - computed: false, optional: true, required: false
-  private _topologyKey?: string | undefined; 
+  private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
-  public set topologyKey(value: string | undefined) {
+  public set topologyKey(value: string) {
     this._topologyKey = value;
   }
   public resetTopologyKey() {
@@ -1293,16 +1602,16 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringS
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
-    return this._topologyKey
+    return this._topologyKey;
   }
 
   // label_selector - computed: false, optional: true, required: false
-  private _labelSelector?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | undefined; 
+  private _labelSelector?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[]; 
   public get labelSelector() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('label_selector') as any;
   }
-  public set labelSelector(value: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | undefined) {
+  public set labelSelector(value: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[]) {
     this._labelSelector = value;
   }
   public resetLabelSelector() {
@@ -1310,7 +1619,7 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringS
   }
   // Temporarily expose input value. Use with caution.
   public get labelSelectorInput() {
-    return this._labelSelector
+    return this._labelSelector;
   }
 }
 export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution {
@@ -1328,7 +1637,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDur
   readonly podAffinityTerm: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1360,7 +1669,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuri
   readonly values?: string[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1387,7 +1696,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuri
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1419,7 +1728,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuri
   readonly labelSelector?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1446,7 +1755,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinity {
   readonly requiredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
 
-function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference | DeploymentV1SpecTemplateSpecAffinityPodAntiAffinity): any {
+export function deploymentV1SpecTemplateSpecAffinityPodAntiAffinityToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference | DeploymentV1SpecTemplateSpecAffinityPodAntiAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1467,13 +1776,38 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecAffinityPodAntiAffinity | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+      hasAnyValues = true;
+      internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
+    }
+    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+      hasAnyValues = true;
+      internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinity | undefined) {
+    if (value === undefined) {
+      this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
+      this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
+    }
+    else {
+      this._preferredDuringSchedulingIgnoredDuringExecution = value.preferredDuringSchedulingIgnoredDuringExecution;
+      this._requiredDuringSchedulingIgnoredDuringExecution = value.requiredDuringSchedulingIgnoredDuringExecution;
+    }
+  }
+
   // preferred_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _preferredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  private _preferredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[]; 
   public get preferredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
   }
-  public set preferredDuringSchedulingIgnoredDuringExecution(value: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+  public set preferredDuringSchedulingIgnoredDuringExecution(value: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[]) {
     this._preferredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetPreferredDuringSchedulingIgnoredDuringExecution() {
@@ -1481,16 +1815,16 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get preferredDuringSchedulingIgnoredDuringExecutionInput() {
-    return this._preferredDuringSchedulingIgnoredDuringExecution
+    return this._preferredDuringSchedulingIgnoredDuringExecution;
   }
 
   // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _requiredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | undefined; 
+  private _requiredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[]; 
   public get requiredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution') as any;
   }
-  public set requiredDuringSchedulingIgnoredDuringExecution(value: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | undefined) {
+  public set requiredDuringSchedulingIgnoredDuringExecution(value: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[]) {
     this._requiredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetRequiredDuringSchedulingIgnoredDuringExecution() {
@@ -1498,7 +1832,7 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get requiredDuringSchedulingIgnoredDuringExecutionInput() {
-    return this._requiredDuringSchedulingIgnoredDuringExecution
+    return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
 }
 export interface DeploymentV1SpecTemplateSpecAffinity {
@@ -1522,7 +1856,7 @@ export interface DeploymentV1SpecTemplateSpecAffinity {
   readonly podAntiAffinity?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinity;
 }
 
-function deploymentV1SpecTemplateSpecAffinityToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityOutputReference | DeploymentV1SpecTemplateSpecAffinity): any {
+export function deploymentV1SpecTemplateSpecAffinityToTerraform(struct?: DeploymentV1SpecTemplateSpecAffinityOutputReference | DeploymentV1SpecTemplateSpecAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1544,55 +1878,83 @@ export class DeploymentV1SpecTemplateSpecAffinityOutputReference extends cdktf.C
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
-  // node_affinity - computed: false, optional: true, required: false
-  private _nodeAffinity?: DeploymentV1SpecTemplateSpecAffinityNodeAffinity | undefined; 
-  private __nodeAffinityOutput = new DeploymentV1SpecTemplateSpecAffinityNodeAffinityOutputReference(this as any, "node_affinity", true);
-  public get nodeAffinity() {
-    return this.__nodeAffinityOutput;
+  public get internalValue(): DeploymentV1SpecTemplateSpecAffinity | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._nodeAffinity) {
+      hasAnyValues = true;
+      internalValueResult.nodeAffinity = this._nodeAffinity?.internalValue;
+    }
+    if (this._podAffinity) {
+      hasAnyValues = true;
+      internalValueResult.podAffinity = this._podAffinity?.internalValue;
+    }
+    if (this._podAntiAffinity) {
+      hasAnyValues = true;
+      internalValueResult.podAntiAffinity = this._podAntiAffinity?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
   }
-  public putNodeAffinity(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinity | undefined) {
-    this._nodeAffinity = value;
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecAffinity | undefined) {
+    if (value === undefined) {
+      this._nodeAffinity.internalValue = undefined;
+      this._podAffinity.internalValue = undefined;
+      this._podAntiAffinity.internalValue = undefined;
+    }
+    else {
+      this._nodeAffinity.internalValue = value.nodeAffinity;
+      this._podAffinity.internalValue = value.podAffinity;
+      this._podAntiAffinity.internalValue = value.podAntiAffinity;
+    }
+  }
+
+  // node_affinity - computed: false, optional: true, required: false
+  private _nodeAffinity = new DeploymentV1SpecTemplateSpecAffinityNodeAffinityOutputReference(this as any, "node_affinity", true);
+  public get nodeAffinity() {
+    return this._nodeAffinity;
+  }
+  public putNodeAffinity(value: DeploymentV1SpecTemplateSpecAffinityNodeAffinity) {
+    this._nodeAffinity.internalValue = value;
   }
   public resetNodeAffinity() {
-    this._nodeAffinity = undefined;
+    this._nodeAffinity.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get nodeAffinityInput() {
-    return this._nodeAffinity
+    return this._nodeAffinity.internalValue;
   }
 
   // pod_affinity - computed: false, optional: true, required: false
-  private _podAffinity?: DeploymentV1SpecTemplateSpecAffinityPodAffinity | undefined; 
-  private __podAffinityOutput = new DeploymentV1SpecTemplateSpecAffinityPodAffinityOutputReference(this as any, "pod_affinity", true);
+  private _podAffinity = new DeploymentV1SpecTemplateSpecAffinityPodAffinityOutputReference(this as any, "pod_affinity", true);
   public get podAffinity() {
-    return this.__podAffinityOutput;
+    return this._podAffinity;
   }
-  public putPodAffinity(value: DeploymentV1SpecTemplateSpecAffinityPodAffinity | undefined) {
-    this._podAffinity = value;
+  public putPodAffinity(value: DeploymentV1SpecTemplateSpecAffinityPodAffinity) {
+    this._podAffinity.internalValue = value;
   }
   public resetPodAffinity() {
-    this._podAffinity = undefined;
+    this._podAffinity.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get podAffinityInput() {
-    return this._podAffinity
+    return this._podAffinity.internalValue;
   }
 
   // pod_anti_affinity - computed: false, optional: true, required: false
-  private _podAntiAffinity?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinity | undefined; 
-  private __podAntiAffinityOutput = new DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference(this as any, "pod_anti_affinity", true);
+  private _podAntiAffinity = new DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference(this as any, "pod_anti_affinity", true);
   public get podAntiAffinity() {
-    return this.__podAntiAffinityOutput;
+    return this._podAntiAffinity;
   }
-  public putPodAntiAffinity(value: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinity | undefined) {
-    this._podAntiAffinity = value;
+  public putPodAntiAffinity(value: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinity) {
+    this._podAntiAffinity.internalValue = value;
   }
   public resetPodAntiAffinity() {
-    this._podAntiAffinity = undefined;
+    this._podAntiAffinity.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get podAntiAffinityInput() {
-    return this._podAntiAffinity
+    return this._podAntiAffinity.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef {
@@ -1616,7 +1978,7 @@ export interface DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRe
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference | DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef): any {
+export function deploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference | DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1638,12 +2000,43 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOut
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._key) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined) {
+    if (value === undefined) {
+      this._key = undefined;
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._key = value.key;
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // key - computed: false, optional: true, required: false
-  private _key?: string | undefined; 
+  private _key?: string; 
   public get key() {
     return this.getStringAttribute('key');
   }
-  public set key(value: string | undefined) {
+  public set key(value: string) {
     this._key = value;
   }
   public resetKey() {
@@ -1651,15 +2044,15 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOut
   }
   // Temporarily expose input value. Use with caution.
   public get keyInput() {
-    return this._key
+    return this._key;
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -1667,15 +2060,15 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOut
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -1683,7 +2076,7 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOut
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRef {
@@ -1701,7 +2094,7 @@ export interface DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRef {
   readonly fieldPath?: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerEnvValueFromFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputReference | DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRef): any {
+export function deploymentV1SpecTemplateSpecContainerEnvValueFromFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputReference | DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1722,12 +2115,37 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputRefe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._apiVersion) {
+      hasAnyValues = true;
+      internalValueResult.apiVersion = this._apiVersion;
+    }
+    if (this._fieldPath) {
+      hasAnyValues = true;
+      internalValueResult.fieldPath = this._fieldPath;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRef | undefined) {
+    if (value === undefined) {
+      this._apiVersion = undefined;
+      this._fieldPath = undefined;
+    }
+    else {
+      this._apiVersion = value.apiVersion;
+      this._fieldPath = value.fieldPath;
+    }
+  }
+
   // api_version - computed: false, optional: true, required: false
-  private _apiVersion?: string | undefined; 
+  private _apiVersion?: string; 
   public get apiVersion() {
     return this.getStringAttribute('api_version');
   }
-  public set apiVersion(value: string | undefined) {
+  public set apiVersion(value: string) {
     this._apiVersion = value;
   }
   public resetApiVersion() {
@@ -1735,15 +2153,15 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get apiVersionInput() {
-    return this._apiVersion
+    return this._apiVersion;
   }
 
   // field_path - computed: false, optional: true, required: false
-  private _fieldPath?: string | undefined; 
+  private _fieldPath?: string; 
   public get fieldPath() {
     return this.getStringAttribute('field_path');
   }
-  public set fieldPath(value: string | undefined) {
+  public set fieldPath(value: string) {
     this._fieldPath = value;
   }
   public resetFieldPath() {
@@ -1751,7 +2169,7 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get fieldPathInput() {
-    return this._fieldPath
+    return this._fieldPath;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef {
@@ -1771,7 +2189,7 @@ export interface DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldR
   readonly resource: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference | DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef): any {
+export function deploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference | DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1793,12 +2211,43 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._containerName) {
+      hasAnyValues = true;
+      internalValueResult.containerName = this._containerName;
+    }
+    if (this._divisor) {
+      hasAnyValues = true;
+      internalValueResult.divisor = this._divisor;
+    }
+    if (this._resource) {
+      hasAnyValues = true;
+      internalValueResult.resource = this._resource;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined) {
+    if (value === undefined) {
+      this._containerName = undefined;
+      this._divisor = undefined;
+      this._resource = undefined;
+    }
+    else {
+      this._containerName = value.containerName;
+      this._divisor = value.divisor;
+      this._resource = value.resource;
+    }
+  }
+
   // container_name - computed: false, optional: true, required: false
-  private _containerName?: string | undefined; 
+  private _containerName?: string; 
   public get containerName() {
     return this.getStringAttribute('container_name');
   }
-  public set containerName(value: string | undefined) {
+  public set containerName(value: string) {
     this._containerName = value;
   }
   public resetContainerName() {
@@ -1806,15 +2255,15 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOu
   }
   // Temporarily expose input value. Use with caution.
   public get containerNameInput() {
-    return this._containerName
+    return this._containerName;
   }
 
   // divisor - computed: false, optional: true, required: false
-  private _divisor?: string | undefined; 
+  private _divisor?: string; 
   public get divisor() {
     return this.getStringAttribute('divisor');
   }
-  public set divisor(value: string | undefined) {
+  public set divisor(value: string) {
     this._divisor = value;
   }
   public resetDivisor() {
@@ -1822,7 +2271,7 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOu
   }
   // Temporarily expose input value. Use with caution.
   public get divisorInput() {
-    return this._divisor
+    return this._divisor;
   }
 
   // resource - computed: false, optional: false, required: true
@@ -1835,7 +2284,7 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOu
   }
   // Temporarily expose input value. Use with caution.
   public get resourceInput() {
-    return this._resource
+    return this._resource;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef {
@@ -1859,7 +2308,7 @@ export interface DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference | DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef): any {
+export function deploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference | DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1881,12 +2330,43 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutput
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._key) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined) {
+    if (value === undefined) {
+      this._key = undefined;
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._key = value.key;
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // key - computed: false, optional: true, required: false
-  private _key?: string | undefined; 
+  private _key?: string; 
   public get key() {
     return this.getStringAttribute('key');
   }
-  public set key(value: string | undefined) {
+  public set key(value: string) {
     this._key = value;
   }
   public resetKey() {
@@ -1894,15 +2374,15 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutput
   }
   // Temporarily expose input value. Use with caution.
   public get keyInput() {
-    return this._key
+    return this._key;
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -1910,15 +2390,15 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutput
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -1926,7 +2406,7 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutput
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerEnvValueFrom {
@@ -1956,7 +2436,7 @@ export interface DeploymentV1SpecTemplateSpecContainerEnvValueFrom {
   readonly secretKeyRef?: DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef;
 }
 
-function deploymentV1SpecTemplateSpecContainerEnvValueFromToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvValueFromOutputReference | DeploymentV1SpecTemplateSpecContainerEnvValueFrom): any {
+export function deploymentV1SpecTemplateSpecContainerEnvValueFromToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvValueFromOutputReference | DeploymentV1SpecTemplateSpecContainerEnvValueFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1979,72 +2459,105 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromOutputReference ex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
-  // config_map_key_ref - computed: false, optional: true, required: false
-  private _configMapKeyRef?: DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined; 
-  private __configMapKeyRefOutput = new DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this as any, "config_map_key_ref", true);
-  public get configMapKeyRef() {
-    return this.__configMapKeyRefOutput;
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvValueFrom | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._configMapKeyRef) {
+      hasAnyValues = true;
+      internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
+    }
+    if (this._fieldRef) {
+      hasAnyValues = true;
+      internalValueResult.fieldRef = this._fieldRef?.internalValue;
+    }
+    if (this._resourceFieldRef) {
+      hasAnyValues = true;
+      internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
+    }
+    if (this._secretKeyRef) {
+      hasAnyValues = true;
+      internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
   }
-  public putConfigMapKeyRef(value: DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined) {
-    this._configMapKeyRef = value;
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerEnvValueFrom | undefined) {
+    if (value === undefined) {
+      this._configMapKeyRef.internalValue = undefined;
+      this._fieldRef.internalValue = undefined;
+      this._resourceFieldRef.internalValue = undefined;
+      this._secretKeyRef.internalValue = undefined;
+    }
+    else {
+      this._configMapKeyRef.internalValue = value.configMapKeyRef;
+      this._fieldRef.internalValue = value.fieldRef;
+      this._resourceFieldRef.internalValue = value.resourceFieldRef;
+      this._secretKeyRef.internalValue = value.secretKeyRef;
+    }
+  }
+
+  // config_map_key_ref - computed: false, optional: true, required: false
+  private _configMapKeyRef = new DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this as any, "config_map_key_ref", true);
+  public get configMapKeyRef() {
+    return this._configMapKeyRef;
+  }
+  public putConfigMapKeyRef(value: DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef) {
+    this._configMapKeyRef.internalValue = value;
   }
   public resetConfigMapKeyRef() {
-    this._configMapKeyRef = undefined;
+    this._configMapKeyRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get configMapKeyRefInput() {
-    return this._configMapKeyRef
+    return this._configMapKeyRef.internalValue;
   }
 
   // field_ref - computed: false, optional: true, required: false
-  private _fieldRef?: DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRef | undefined; 
-  private __fieldRefOutput = new DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputReference(this as any, "field_ref", true);
+  private _fieldRef = new DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputReference(this as any, "field_ref", true);
   public get fieldRef() {
-    return this.__fieldRefOutput;
+    return this._fieldRef;
   }
-  public putFieldRef(value: DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRef | undefined) {
-    this._fieldRef = value;
+  public putFieldRef(value: DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRef) {
+    this._fieldRef.internalValue = value;
   }
   public resetFieldRef() {
-    this._fieldRef = undefined;
+    this._fieldRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get fieldRefInput() {
-    return this._fieldRef
+    return this._fieldRef.internalValue;
   }
 
   // resource_field_ref - computed: false, optional: true, required: false
-  private _resourceFieldRef?: DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined; 
-  private __resourceFieldRefOutput = new DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference(this as any, "resource_field_ref", true);
+  private _resourceFieldRef = new DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference(this as any, "resource_field_ref", true);
   public get resourceFieldRef() {
-    return this.__resourceFieldRefOutput;
+    return this._resourceFieldRef;
   }
-  public putResourceFieldRef(value: DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined) {
-    this._resourceFieldRef = value;
+  public putResourceFieldRef(value: DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef) {
+    this._resourceFieldRef.internalValue = value;
   }
   public resetResourceFieldRef() {
-    this._resourceFieldRef = undefined;
+    this._resourceFieldRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get resourceFieldRefInput() {
-    return this._resourceFieldRef
+    return this._resourceFieldRef.internalValue;
   }
 
   // secret_key_ref - computed: false, optional: true, required: false
-  private _secretKeyRef?: DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined; 
-  private __secretKeyRefOutput = new DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference(this as any, "secret_key_ref", true);
+  private _secretKeyRef = new DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference(this as any, "secret_key_ref", true);
   public get secretKeyRef() {
-    return this.__secretKeyRefOutput;
+    return this._secretKeyRef;
   }
-  public putSecretKeyRef(value: DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined) {
-    this._secretKeyRef = value;
+  public putSecretKeyRef(value: DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef) {
+    this._secretKeyRef.internalValue = value;
   }
   public resetSecretKeyRef() {
-    this._secretKeyRef = undefined;
+    this._secretKeyRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretKeyRefInput() {
-    return this._secretKeyRef
+    return this._secretKeyRef.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerEnv {
@@ -2068,7 +2581,7 @@ export interface DeploymentV1SpecTemplateSpecContainerEnv {
   readonly valueFrom?: DeploymentV1SpecTemplateSpecContainerEnvValueFrom;
 }
 
-function deploymentV1SpecTemplateSpecContainerEnvToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnv): any {
+export function deploymentV1SpecTemplateSpecContainerEnvToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnv): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2095,7 +2608,7 @@ export interface DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRefOutputReference | DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRef): any {
+export function deploymentV1SpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRefOutputReference | DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2116,6 +2629,31 @@ export class DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRefOutputRefer
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -2126,15 +2664,15 @@ export class DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRefOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -2142,7 +2680,7 @@ export class DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRefOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerEnvFromSecretRef {
@@ -2160,7 +2698,7 @@ export interface DeploymentV1SpecTemplateSpecContainerEnvFromSecretRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvFromSecretRefOutputReference | DeploymentV1SpecTemplateSpecContainerEnvFromSecretRef): any {
+export function deploymentV1SpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvFromSecretRefOutputReference | DeploymentV1SpecTemplateSpecContainerEnvFromSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2181,6 +2719,31 @@ export class DeploymentV1SpecTemplateSpecContainerEnvFromSecretRefOutputReferenc
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvFromSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerEnvFromSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -2191,15 +2754,15 @@ export class DeploymentV1SpecTemplateSpecContainerEnvFromSecretRefOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -2207,7 +2770,7 @@ export class DeploymentV1SpecTemplateSpecContainerEnvFromSecretRefOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerEnvFrom {
@@ -2231,7 +2794,7 @@ export interface DeploymentV1SpecTemplateSpecContainerEnvFrom {
   readonly secretRef?: DeploymentV1SpecTemplateSpecContainerEnvFromSecretRef;
 }
 
-function deploymentV1SpecTemplateSpecContainerEnvFromToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvFrom): any {
+export function deploymentV1SpecTemplateSpecContainerEnvFromToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerEnvFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2252,7 +2815,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExec {
   readonly command?: string[];
 }
 
-function deploymentV1SpecTemplateSpecContainerLifecyclePostStartExecToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExecOutputReference | DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExec): any {
+export function deploymentV1SpecTemplateSpecContainerLifecyclePostStartExecToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExecOutputReference | DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2272,12 +2835,31 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExecOutputRe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -2285,7 +2867,7 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExecOutputRe
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader {
@@ -2303,7 +2885,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetH
   readonly value?: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader): any {
+export function deploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2347,7 +2929,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGet 
   readonly httpHeader?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[];
 }
 
-function deploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutputReference | DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGet): any {
+export function deploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutputReference | DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2371,12 +2953,55 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutpu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -2384,15 +3009,15 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -2400,15 +3025,15 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -2416,15 +3041,15 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -2432,16 +3057,16 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -2449,7 +3074,7 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePostStartTcpSocket {
@@ -2461,7 +3086,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLifecyclePostStartTcpSocke
   readonly port: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartTcpSocket): any {
+export function deploymentV1SpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2492,7 +3117,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLifecyclePostStart {
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartTcpSocket[];
 }
 
-function deploymentV1SpecTemplateSpecContainerLifecyclePostStartToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStart): any {
+export function deploymentV1SpecTemplateSpecContainerLifecyclePostStartToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStart): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2513,7 +3138,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExec {
   readonly command?: string[];
 }
 
-function deploymentV1SpecTemplateSpecContainerLifecyclePreStopExecToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExecOutputReference | DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExec): any {
+export function deploymentV1SpecTemplateSpecContainerLifecyclePreStopExecToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExecOutputReference | DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2533,12 +3158,31 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExecOutputRefe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -2546,7 +3190,7 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExecOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader {
@@ -2564,7 +3208,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHtt
   readonly value?: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader): any {
+export function deploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2608,7 +3252,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGet {
   readonly httpHeader?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[];
 }
 
-function deploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutputReference | DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGet): any {
+export function deploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutputReference | DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2632,12 +3276,55 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutputR
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -2645,15 +3332,15 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -2661,15 +3348,15 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -2677,15 +3364,15 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -2693,16 +3380,16 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -2710,7 +3397,7 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePreStopTcpSocket {
@@ -2722,7 +3409,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLifecyclePreStopTcpSocket 
   readonly port: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopTcpSocket): any {
+export function deploymentV1SpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2753,7 +3440,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLifecyclePreStop {
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopTcpSocket[];
 }
 
-function deploymentV1SpecTemplateSpecContainerLifecyclePreStopToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStop): any {
+export function deploymentV1SpecTemplateSpecContainerLifecyclePreStopToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStop): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2780,7 +3467,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLifecycle {
   readonly preStop?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStop[];
 }
 
-function deploymentV1SpecTemplateSpecContainerLifecycleToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecycleOutputReference | DeploymentV1SpecTemplateSpecContainerLifecycle): any {
+export function deploymentV1SpecTemplateSpecContainerLifecycleToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLifecycleOutputReference | DeploymentV1SpecTemplateSpecContainerLifecycle): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2801,13 +3488,38 @@ export class DeploymentV1SpecTemplateSpecContainerLifecycleOutputReference exten
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerLifecycle | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._postStart) {
+      hasAnyValues = true;
+      internalValueResult.postStart = this._postStart;
+    }
+    if (this._preStop) {
+      hasAnyValues = true;
+      internalValueResult.preStop = this._preStop;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerLifecycle | undefined) {
+    if (value === undefined) {
+      this._postStart = undefined;
+      this._preStop = undefined;
+    }
+    else {
+      this._postStart = value.postStart;
+      this._preStop = value.preStop;
+    }
+  }
+
   // post_start - computed: false, optional: true, required: false
-  private _postStart?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStart[] | undefined; 
+  private _postStart?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStart[]; 
   public get postStart() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('post_start') as any;
   }
-  public set postStart(value: DeploymentV1SpecTemplateSpecContainerLifecyclePostStart[] | undefined) {
+  public set postStart(value: DeploymentV1SpecTemplateSpecContainerLifecyclePostStart[]) {
     this._postStart = value;
   }
   public resetPostStart() {
@@ -2815,16 +3527,16 @@ export class DeploymentV1SpecTemplateSpecContainerLifecycleOutputReference exten
   }
   // Temporarily expose input value. Use with caution.
   public get postStartInput() {
-    return this._postStart
+    return this._postStart;
   }
 
   // pre_stop - computed: false, optional: true, required: false
-  private _preStop?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStop[] | undefined; 
+  private _preStop?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStop[]; 
   public get preStop() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('pre_stop') as any;
   }
-  public set preStop(value: DeploymentV1SpecTemplateSpecContainerLifecyclePreStop[] | undefined) {
+  public set preStop(value: DeploymentV1SpecTemplateSpecContainerLifecyclePreStop[]) {
     this._preStop = value;
   }
   public resetPreStop() {
@@ -2832,7 +3544,7 @@ export class DeploymentV1SpecTemplateSpecContainerLifecycleOutputReference exten
   }
   // Temporarily expose input value. Use with caution.
   public get preStopInput() {
-    return this._preStop
+    return this._preStop;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerLivenessProbeExec {
@@ -2844,7 +3556,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLivenessProbeExec {
   readonly command?: string[];
 }
 
-function deploymentV1SpecTemplateSpecContainerLivenessProbeExecToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLivenessProbeExecOutputReference | DeploymentV1SpecTemplateSpecContainerLivenessProbeExec): any {
+export function deploymentV1SpecTemplateSpecContainerLivenessProbeExecToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLivenessProbeExecOutputReference | DeploymentV1SpecTemplateSpecContainerLivenessProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2864,12 +3576,31 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeExecOutputReferen
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerLivenessProbeExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerLivenessProbeExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -2877,7 +3608,7 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeExecOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader {
@@ -2895,7 +3626,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHe
   readonly value?: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader): any {
+export function deploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2939,7 +3670,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGet {
   readonly httpHeader?: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[];
 }
 
-function deploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputReference | DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGet): any {
+export function deploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputReference | DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2963,12 +3694,55 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputRefe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -2976,15 +3750,15 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -2992,15 +3766,15 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -3008,15 +3782,15 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -3024,16 +3798,16 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -3041,7 +3815,7 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocket {
@@ -3053,7 +3827,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocket {
   readonly port: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocket): any {
+export function deploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3114,7 +3888,7 @@ export interface DeploymentV1SpecTemplateSpecContainerLivenessProbe {
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocket[];
 }
 
-function deploymentV1SpecTemplateSpecContainerLivenessProbeToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference | DeploymentV1SpecTemplateSpecContainerLivenessProbe): any {
+export function deploymentV1SpecTemplateSpecContainerLivenessProbeToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference | DeploymentV1SpecTemplateSpecContainerLivenessProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3141,12 +3915,73 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference e
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerLivenessProbe | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._failureThreshold) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._httpGet) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerLivenessProbe | undefined) {
+    if (value === undefined) {
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket = undefined;
+    }
+    else {
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket = value.tcpSocket;
+    }
+  }
+
   // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number | undefined; 
+  private _failureThreshold?: number; 
   public get failureThreshold() {
     return this.getNumberAttribute('failure_threshold');
   }
-  public set failureThreshold(value: number | undefined) {
+  public set failureThreshold(value: number) {
     this._failureThreshold = value;
   }
   public resetFailureThreshold() {
@@ -3154,15 +3989,15 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get failureThresholdInput() {
-    return this._failureThreshold
+    return this._failureThreshold;
   }
 
   // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number | undefined; 
+  private _initialDelaySeconds?: number; 
   public get initialDelaySeconds() {
     return this.getNumberAttribute('initial_delay_seconds');
   }
-  public set initialDelaySeconds(value: number | undefined) {
+  public set initialDelaySeconds(value: number) {
     this._initialDelaySeconds = value;
   }
   public resetInitialDelaySeconds() {
@@ -3170,15 +4005,15 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds
+    return this._initialDelaySeconds;
   }
 
   // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number | undefined; 
+  private _periodSeconds?: number; 
   public get periodSeconds() {
     return this.getNumberAttribute('period_seconds');
   }
-  public set periodSeconds(value: number | undefined) {
+  public set periodSeconds(value: number) {
     this._periodSeconds = value;
   }
   public resetPeriodSeconds() {
@@ -3186,15 +4021,15 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get periodSecondsInput() {
-    return this._periodSeconds
+    return this._periodSeconds;
   }
 
   // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number | undefined; 
+  private _successThreshold?: number; 
   public get successThreshold() {
     return this.getNumberAttribute('success_threshold');
   }
-  public set successThreshold(value: number | undefined) {
+  public set successThreshold(value: number) {
     this._successThreshold = value;
   }
   public resetSuccessThreshold() {
@@ -3202,15 +4037,15 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get successThresholdInput() {
-    return this._successThreshold
+    return this._successThreshold;
   }
 
   // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number | undefined; 
+  private _timeoutSeconds?: number; 
   public get timeoutSeconds() {
     return this.getNumberAttribute('timeout_seconds');
   }
-  public set timeoutSeconds(value: number | undefined) {
+  public set timeoutSeconds(value: number) {
     this._timeoutSeconds = value;
   }
   public resetTimeoutSeconds() {
@@ -3218,50 +4053,48 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutSecondsInput() {
-    return this._timeoutSeconds
+    return this._timeoutSeconds;
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: DeploymentV1SpecTemplateSpecContainerLivenessProbeExec | undefined; 
-  private __execOutput = new DeploymentV1SpecTemplateSpecContainerLivenessProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new DeploymentV1SpecTemplateSpecContainerLivenessProbeExecOutputReference(this as any, "exec", true);
   public get exec() {
-    return this.__execOutput;
+    return this._exec;
   }
-  public putExec(value: DeploymentV1SpecTemplateSpecContainerLivenessProbeExec | undefined) {
-    this._exec = value;
+  public putExec(value: DeploymentV1SpecTemplateSpecContainerLivenessProbeExec) {
+    this._exec.internalValue = value;
   }
   public resetExec() {
-    this._exec = undefined;
+    this._exec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get execInput() {
-    return this._exec
+    return this._exec.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet?: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGet | undefined; 
-  private __httpGetOutput = new DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputReference(this as any, "http_get", true);
   public get httpGet() {
-    return this.__httpGetOutput;
+    return this._httpGet;
   }
-  public putHttpGet(value: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGet | undefined) {
-    this._httpGet = value;
+  public putHttpGet(value: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGet) {
+    this._httpGet.internalValue = value;
   }
   public resetHttpGet() {
-    this._httpGet = undefined;
+    this._httpGet.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get httpGetInput() {
-    return this._httpGet
+    return this._httpGet.internalValue;
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: DeploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocket[] | undefined; 
+  private _tcpSocket?: DeploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocket[]; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
-  public set tcpSocket(value: DeploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocket[] | undefined) {
+  public set tcpSocket(value: DeploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocket[]) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -3269,7 +4102,7 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
-    return this._tcpSocket
+    return this._tcpSocket;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerPort {
@@ -3305,7 +4138,7 @@ export interface DeploymentV1SpecTemplateSpecContainerPort {
   readonly protocol?: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerPortToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerPort): any {
+export function deploymentV1SpecTemplateSpecContainerPortToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerPort): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3328,7 +4161,7 @@ export interface DeploymentV1SpecTemplateSpecContainerReadinessProbeExec {
   readonly command?: string[];
 }
 
-function deploymentV1SpecTemplateSpecContainerReadinessProbeExecToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerReadinessProbeExecOutputReference | DeploymentV1SpecTemplateSpecContainerReadinessProbeExec): any {
+export function deploymentV1SpecTemplateSpecContainerReadinessProbeExecToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerReadinessProbeExecOutputReference | DeploymentV1SpecTemplateSpecContainerReadinessProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3348,12 +4181,31 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeExecOutputRefere
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerReadinessProbeExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerReadinessProbeExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -3361,7 +4213,7 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeExecOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader {
@@ -3379,7 +4231,7 @@ export interface DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpH
   readonly value?: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader): any {
+export function deploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3423,7 +4275,7 @@ export interface DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGet {
   readonly httpHeader?: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[];
 }
 
-function deploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputReference | DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGet): any {
+export function deploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputReference | DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3447,12 +4299,55 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputRef
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -3460,15 +4355,15 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -3476,15 +4371,15 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -3492,15 +4387,15 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -3508,16 +4403,16 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -3525,7 +4420,7 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocket {
@@ -3537,7 +4432,7 @@ export interface DeploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocket {
   readonly port: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocket): any {
+export function deploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3598,7 +4493,7 @@ export interface DeploymentV1SpecTemplateSpecContainerReadinessProbe {
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocket[];
 }
 
-function deploymentV1SpecTemplateSpecContainerReadinessProbeToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference | DeploymentV1SpecTemplateSpecContainerReadinessProbe): any {
+export function deploymentV1SpecTemplateSpecContainerReadinessProbeToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference | DeploymentV1SpecTemplateSpecContainerReadinessProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3625,12 +4520,73 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerReadinessProbe | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._failureThreshold) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._httpGet) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerReadinessProbe | undefined) {
+    if (value === undefined) {
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket = undefined;
+    }
+    else {
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket = value.tcpSocket;
+    }
+  }
+
   // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number | undefined; 
+  private _failureThreshold?: number; 
   public get failureThreshold() {
     return this.getNumberAttribute('failure_threshold');
   }
-  public set failureThreshold(value: number | undefined) {
+  public set failureThreshold(value: number) {
     this._failureThreshold = value;
   }
   public resetFailureThreshold() {
@@ -3638,15 +4594,15 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get failureThresholdInput() {
-    return this._failureThreshold
+    return this._failureThreshold;
   }
 
   // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number | undefined; 
+  private _initialDelaySeconds?: number; 
   public get initialDelaySeconds() {
     return this.getNumberAttribute('initial_delay_seconds');
   }
-  public set initialDelaySeconds(value: number | undefined) {
+  public set initialDelaySeconds(value: number) {
     this._initialDelaySeconds = value;
   }
   public resetInitialDelaySeconds() {
@@ -3654,15 +4610,15 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds
+    return this._initialDelaySeconds;
   }
 
   // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number | undefined; 
+  private _periodSeconds?: number; 
   public get periodSeconds() {
     return this.getNumberAttribute('period_seconds');
   }
-  public set periodSeconds(value: number | undefined) {
+  public set periodSeconds(value: number) {
     this._periodSeconds = value;
   }
   public resetPeriodSeconds() {
@@ -3670,15 +4626,15 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get periodSecondsInput() {
-    return this._periodSeconds
+    return this._periodSeconds;
   }
 
   // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number | undefined; 
+  private _successThreshold?: number; 
   public get successThreshold() {
     return this.getNumberAttribute('success_threshold');
   }
-  public set successThreshold(value: number | undefined) {
+  public set successThreshold(value: number) {
     this._successThreshold = value;
   }
   public resetSuccessThreshold() {
@@ -3686,15 +4642,15 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get successThresholdInput() {
-    return this._successThreshold
+    return this._successThreshold;
   }
 
   // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number | undefined; 
+  private _timeoutSeconds?: number; 
   public get timeoutSeconds() {
     return this.getNumberAttribute('timeout_seconds');
   }
-  public set timeoutSeconds(value: number | undefined) {
+  public set timeoutSeconds(value: number) {
     this._timeoutSeconds = value;
   }
   public resetTimeoutSeconds() {
@@ -3702,50 +4658,48 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutSecondsInput() {
-    return this._timeoutSeconds
+    return this._timeoutSeconds;
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: DeploymentV1SpecTemplateSpecContainerReadinessProbeExec | undefined; 
-  private __execOutput = new DeploymentV1SpecTemplateSpecContainerReadinessProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new DeploymentV1SpecTemplateSpecContainerReadinessProbeExecOutputReference(this as any, "exec", true);
   public get exec() {
-    return this.__execOutput;
+    return this._exec;
   }
-  public putExec(value: DeploymentV1SpecTemplateSpecContainerReadinessProbeExec | undefined) {
-    this._exec = value;
+  public putExec(value: DeploymentV1SpecTemplateSpecContainerReadinessProbeExec) {
+    this._exec.internalValue = value;
   }
   public resetExec() {
-    this._exec = undefined;
+    this._exec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get execInput() {
-    return this._exec
+    return this._exec.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet?: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGet | undefined; 
-  private __httpGetOutput = new DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputReference(this as any, "http_get", true);
   public get httpGet() {
-    return this.__httpGetOutput;
+    return this._httpGet;
   }
-  public putHttpGet(value: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGet | undefined) {
-    this._httpGet = value;
+  public putHttpGet(value: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGet) {
+    this._httpGet.internalValue = value;
   }
   public resetHttpGet() {
-    this._httpGet = undefined;
+    this._httpGet.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get httpGetInput() {
-    return this._httpGet
+    return this._httpGet.internalValue;
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: DeploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocket[] | undefined; 
+  private _tcpSocket?: DeploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocket[]; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
-  public set tcpSocket(value: DeploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocket[] | undefined) {
+  public set tcpSocket(value: DeploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocket[]) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -3753,7 +4707,7 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
-    return this._tcpSocket
+    return this._tcpSocket;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerResources {
@@ -3771,7 +4725,7 @@ export interface DeploymentV1SpecTemplateSpecContainerResources {
   readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecContainerResourcesToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerResourcesOutputReference | DeploymentV1SpecTemplateSpecContainerResources): any {
+export function deploymentV1SpecTemplateSpecContainerResourcesToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerResourcesOutputReference | DeploymentV1SpecTemplateSpecContainerResources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3792,13 +4746,38 @@ export class DeploymentV1SpecTemplateSpecContainerResourcesOutputReference exten
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerResources | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._limits) {
+      hasAnyValues = true;
+      internalValueResult.limits = this._limits;
+    }
+    if (this._requests) {
+      hasAnyValues = true;
+      internalValueResult.requests = this._requests;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerResources | undefined) {
+    if (value === undefined) {
+      this._limits = undefined;
+      this._requests = undefined;
+    }
+    else {
+      this._limits = value.limits;
+      this._requests = value.requests;
+    }
+  }
+
   // limits - computed: true, optional: true, required: false
-  private _limits?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _limits?: { [key: string]: string } | cdktf.IResolvable; 
   public get limits() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('limits') as any;
   }
-  public set limits(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set limits(value: { [key: string]: string } | cdktf.IResolvable) {
     this._limits = value;
   }
   public resetLimits() {
@@ -3806,16 +4785,16 @@ export class DeploymentV1SpecTemplateSpecContainerResourcesOutputReference exten
   }
   // Temporarily expose input value. Use with caution.
   public get limitsInput() {
-    return this._limits
+    return this._limits;
   }
 
   // requests - computed: true, optional: true, required: false
-  private _requests?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _requests?: { [key: string]: string } | cdktf.IResolvable; 
   public get requests() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('requests') as any;
   }
-  public set requests(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set requests(value: { [key: string]: string } | cdktf.IResolvable) {
     this._requests = value;
   }
   public resetRequests() {
@@ -3823,7 +4802,7 @@ export class DeploymentV1SpecTemplateSpecContainerResourcesOutputReference exten
   }
   // Temporarily expose input value. Use with caution.
   public get requestsInput() {
-    return this._requests
+    return this._requests;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilities {
@@ -3841,7 +4820,7 @@ export interface DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilitie
   readonly drop?: string[];
 }
 
-function deploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference | DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilities): any {
+export function deploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference | DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilities): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3862,12 +4841,37 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesOut
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilities | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._add) {
+      hasAnyValues = true;
+      internalValueResult.add = this._add;
+    }
+    if (this._drop) {
+      hasAnyValues = true;
+      internalValueResult.drop = this._drop;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilities | undefined) {
+    if (value === undefined) {
+      this._add = undefined;
+      this._drop = undefined;
+    }
+    else {
+      this._add = value.add;
+      this._drop = value.drop;
+    }
+  }
+
   // add - computed: false, optional: true, required: false
-  private _add?: string[] | undefined; 
+  private _add?: string[]; 
   public get add() {
     return this.getListAttribute('add');
   }
-  public set add(value: string[] | undefined) {
+  public set add(value: string[]) {
     this._add = value;
   }
   public resetAdd() {
@@ -3875,15 +4879,15 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesOut
   }
   // Temporarily expose input value. Use with caution.
   public get addInput() {
-    return this._add
+    return this._add;
   }
 
   // drop - computed: false, optional: true, required: false
-  private _drop?: string[] | undefined; 
+  private _drop?: string[]; 
   public get drop() {
     return this.getListAttribute('drop');
   }
-  public set drop(value: string[] | undefined) {
+  public set drop(value: string[]) {
     this._drop = value;
   }
   public resetDrop() {
@@ -3891,7 +4895,7 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesOut
   }
   // Temporarily expose input value. Use with caution.
   public get dropInput() {
-    return this._drop
+    return this._drop;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions {
@@ -3921,7 +4925,7 @@ export interface DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOpti
   readonly user?: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference | DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions): any {
+export function deploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference | DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3944,12 +4948,49 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsO
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._level) {
+      hasAnyValues = true;
+      internalValueResult.level = this._level;
+    }
+    if (this._role) {
+      hasAnyValues = true;
+      internalValueResult.role = this._role;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._user) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined) {
+    if (value === undefined) {
+      this._level = undefined;
+      this._role = undefined;
+      this._type = undefined;
+      this._user = undefined;
+    }
+    else {
+      this._level = value.level;
+      this._role = value.role;
+      this._type = value.type;
+      this._user = value.user;
+    }
+  }
+
   // level - computed: false, optional: true, required: false
-  private _level?: string | undefined; 
+  private _level?: string; 
   public get level() {
     return this.getStringAttribute('level');
   }
-  public set level(value: string | undefined) {
+  public set level(value: string) {
     this._level = value;
   }
   public resetLevel() {
@@ -3957,15 +4998,15 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsO
   }
   // Temporarily expose input value. Use with caution.
   public get levelInput() {
-    return this._level
+    return this._level;
   }
 
   // role - computed: false, optional: true, required: false
-  private _role?: string | undefined; 
+  private _role?: string; 
   public get role() {
     return this.getStringAttribute('role');
   }
-  public set role(value: string | undefined) {
+  public set role(value: string) {
     this._role = value;
   }
   public resetRole() {
@@ -3973,15 +5014,15 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsO
   }
   // Temporarily expose input value. Use with caution.
   public get roleInput() {
-    return this._role
+    return this._role;
   }
 
   // type - computed: false, optional: true, required: false
-  private _type?: string | undefined; 
+  private _type?: string; 
   public get type() {
     return this.getStringAttribute('type');
   }
-  public set type(value: string | undefined) {
+  public set type(value: string) {
     this._type = value;
   }
   public resetType() {
@@ -3989,15 +5030,15 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsO
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -4005,7 +5046,7 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsO
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerSecurityContext {
@@ -4059,7 +5100,7 @@ export interface DeploymentV1SpecTemplateSpecContainerSecurityContext {
   readonly seLinuxOptions?: DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions;
 }
 
-function deploymentV1SpecTemplateSpecContainerSecurityContextToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference | DeploymentV1SpecTemplateSpecContainerSecurityContext): any {
+export function deploymentV1SpecTemplateSpecContainerSecurityContextToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference | DeploymentV1SpecTemplateSpecContainerSecurityContext): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4086,12 +5127,73 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerSecurityContext | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._allowPrivilegeEscalation) {
+      hasAnyValues = true;
+      internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
+    }
+    if (this._privileged) {
+      hasAnyValues = true;
+      internalValueResult.privileged = this._privileged;
+    }
+    if (this._readOnlyRootFilesystem) {
+      hasAnyValues = true;
+      internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
+    }
+    if (this._runAsGroup) {
+      hasAnyValues = true;
+      internalValueResult.runAsGroup = this._runAsGroup;
+    }
+    if (this._runAsNonRoot) {
+      hasAnyValues = true;
+      internalValueResult.runAsNonRoot = this._runAsNonRoot;
+    }
+    if (this._runAsUser) {
+      hasAnyValues = true;
+      internalValueResult.runAsUser = this._runAsUser;
+    }
+    if (this._capabilities) {
+      hasAnyValues = true;
+      internalValueResult.capabilities = this._capabilities?.internalValue;
+    }
+    if (this._seLinuxOptions) {
+      hasAnyValues = true;
+      internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerSecurityContext | undefined) {
+    if (value === undefined) {
+      this._allowPrivilegeEscalation = undefined;
+      this._privileged = undefined;
+      this._readOnlyRootFilesystem = undefined;
+      this._runAsGroup = undefined;
+      this._runAsNonRoot = undefined;
+      this._runAsUser = undefined;
+      this._capabilities.internalValue = undefined;
+      this._seLinuxOptions.internalValue = undefined;
+    }
+    else {
+      this._allowPrivilegeEscalation = value.allowPrivilegeEscalation;
+      this._privileged = value.privileged;
+      this._readOnlyRootFilesystem = value.readOnlyRootFilesystem;
+      this._runAsGroup = value.runAsGroup;
+      this._runAsNonRoot = value.runAsNonRoot;
+      this._runAsUser = value.runAsUser;
+      this._capabilities.internalValue = value.capabilities;
+      this._seLinuxOptions.internalValue = value.seLinuxOptions;
+    }
+  }
+
   // allow_privilege_escalation - computed: false, optional: true, required: false
-  private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable | undefined; 
+  private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable; 
   public get allowPrivilegeEscalation() {
     return this.getBooleanAttribute('allow_privilege_escalation') as any;
   }
-  public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable | undefined) {
+  public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable) {
     this._allowPrivilegeEscalation = value;
   }
   public resetAllowPrivilegeEscalation() {
@@ -4099,15 +5201,15 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get allowPrivilegeEscalationInput() {
-    return this._allowPrivilegeEscalation
+    return this._allowPrivilegeEscalation;
   }
 
   // privileged - computed: false, optional: true, required: false
-  private _privileged?: boolean | cdktf.IResolvable | undefined; 
+  private _privileged?: boolean | cdktf.IResolvable; 
   public get privileged() {
     return this.getBooleanAttribute('privileged') as any;
   }
-  public set privileged(value: boolean | cdktf.IResolvable | undefined) {
+  public set privileged(value: boolean | cdktf.IResolvable) {
     this._privileged = value;
   }
   public resetPrivileged() {
@@ -4115,15 +5217,15 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get privilegedInput() {
-    return this._privileged
+    return this._privileged;
   }
 
   // read_only_root_filesystem - computed: false, optional: true, required: false
-  private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable; 
   public get readOnlyRootFilesystem() {
     return this.getBooleanAttribute('read_only_root_filesystem') as any;
   }
-  public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable) {
     this._readOnlyRootFilesystem = value;
   }
   public resetReadOnlyRootFilesystem() {
@@ -4131,15 +5233,15 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyRootFilesystemInput() {
-    return this._readOnlyRootFilesystem
+    return this._readOnlyRootFilesystem;
   }
 
   // run_as_group - computed: false, optional: true, required: false
-  private _runAsGroup?: string | undefined; 
+  private _runAsGroup?: string; 
   public get runAsGroup() {
     return this.getStringAttribute('run_as_group');
   }
-  public set runAsGroup(value: string | undefined) {
+  public set runAsGroup(value: string) {
     this._runAsGroup = value;
   }
   public resetRunAsGroup() {
@@ -4147,15 +5249,15 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get runAsGroupInput() {
-    return this._runAsGroup
+    return this._runAsGroup;
   }
 
   // run_as_non_root - computed: false, optional: true, required: false
-  private _runAsNonRoot?: boolean | cdktf.IResolvable | undefined; 
+  private _runAsNonRoot?: boolean | cdktf.IResolvable; 
   public get runAsNonRoot() {
     return this.getBooleanAttribute('run_as_non_root') as any;
   }
-  public set runAsNonRoot(value: boolean | cdktf.IResolvable | undefined) {
+  public set runAsNonRoot(value: boolean | cdktf.IResolvable) {
     this._runAsNonRoot = value;
   }
   public resetRunAsNonRoot() {
@@ -4163,15 +5265,15 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get runAsNonRootInput() {
-    return this._runAsNonRoot
+    return this._runAsNonRoot;
   }
 
   // run_as_user - computed: false, optional: true, required: false
-  private _runAsUser?: string | undefined; 
+  private _runAsUser?: string; 
   public get runAsUser() {
     return this.getStringAttribute('run_as_user');
   }
-  public set runAsUser(value: string | undefined) {
+  public set runAsUser(value: string) {
     this._runAsUser = value;
   }
   public resetRunAsUser() {
@@ -4179,41 +5281,39 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get runAsUserInput() {
-    return this._runAsUser
+    return this._runAsUser;
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities?: DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilities | undefined; 
-  private __capabilitiesOutput = new DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference(this as any, "capabilities", true);
+  private _capabilities = new DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference(this as any, "capabilities", true);
   public get capabilities() {
-    return this.__capabilitiesOutput;
+    return this._capabilities;
   }
-  public putCapabilities(value: DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilities | undefined) {
-    this._capabilities = value;
+  public putCapabilities(value: DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilities) {
+    this._capabilities.internalValue = value;
   }
   public resetCapabilities() {
-    this._capabilities = undefined;
+    this._capabilities.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get capabilitiesInput() {
-    return this._capabilities
+    return this._capabilities.internalValue;
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions?: DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined; 
-  private __seLinuxOptionsOutput = new DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
+  private _seLinuxOptions = new DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
   public get seLinuxOptions() {
-    return this.__seLinuxOptionsOutput;
+    return this._seLinuxOptions;
   }
-  public putSeLinuxOptions(value: DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined) {
-    this._seLinuxOptions = value;
+  public putSeLinuxOptions(value: DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions) {
+    this._seLinuxOptions.internalValue = value;
   }
   public resetSeLinuxOptions() {
-    this._seLinuxOptions = undefined;
+    this._seLinuxOptions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
-    return this._seLinuxOptions
+    return this._seLinuxOptions.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerStartupProbeExec {
@@ -4225,7 +5325,7 @@ export interface DeploymentV1SpecTemplateSpecContainerStartupProbeExec {
   readonly command?: string[];
 }
 
-function deploymentV1SpecTemplateSpecContainerStartupProbeExecToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerStartupProbeExecOutputReference | DeploymentV1SpecTemplateSpecContainerStartupProbeExec): any {
+export function deploymentV1SpecTemplateSpecContainerStartupProbeExecToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerStartupProbeExecOutputReference | DeploymentV1SpecTemplateSpecContainerStartupProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4245,12 +5345,31 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeExecOutputReferenc
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerStartupProbeExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerStartupProbeExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -4258,7 +5377,7 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeExecOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader {
@@ -4276,7 +5395,7 @@ export interface DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHea
   readonly value?: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader): any {
+export function deploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4320,7 +5439,7 @@ export interface DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGet {
   readonly httpHeader?: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[];
 }
 
-function deploymentV1SpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputReference | DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGet): any {
+export function deploymentV1SpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputReference | DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4344,12 +5463,55 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputRefer
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -4357,15 +5519,15 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -4373,15 +5535,15 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -4389,15 +5551,15 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -4405,16 +5567,16 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -4422,7 +5584,7 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerStartupProbeTcpSocket {
@@ -4434,7 +5596,7 @@ export interface DeploymentV1SpecTemplateSpecContainerStartupProbeTcpSocket {
   readonly port: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerStartupProbeTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerStartupProbeTcpSocket): any {
+export function deploymentV1SpecTemplateSpecContainerStartupProbeTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerStartupProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4495,7 +5657,7 @@ export interface DeploymentV1SpecTemplateSpecContainerStartupProbe {
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecContainerStartupProbeTcpSocket[];
 }
 
-function deploymentV1SpecTemplateSpecContainerStartupProbeToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference | DeploymentV1SpecTemplateSpecContainerStartupProbe): any {
+export function deploymentV1SpecTemplateSpecContainerStartupProbeToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference | DeploymentV1SpecTemplateSpecContainerStartupProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4522,12 +5684,73 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference ex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerStartupProbe | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._failureThreshold) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._httpGet) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerStartupProbe | undefined) {
+    if (value === undefined) {
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket = undefined;
+    }
+    else {
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket = value.tcpSocket;
+    }
+  }
+
   // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number | undefined; 
+  private _failureThreshold?: number; 
   public get failureThreshold() {
     return this.getNumberAttribute('failure_threshold');
   }
-  public set failureThreshold(value: number | undefined) {
+  public set failureThreshold(value: number) {
     this._failureThreshold = value;
   }
   public resetFailureThreshold() {
@@ -4535,15 +5758,15 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get failureThresholdInput() {
-    return this._failureThreshold
+    return this._failureThreshold;
   }
 
   // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number | undefined; 
+  private _initialDelaySeconds?: number; 
   public get initialDelaySeconds() {
     return this.getNumberAttribute('initial_delay_seconds');
   }
-  public set initialDelaySeconds(value: number | undefined) {
+  public set initialDelaySeconds(value: number) {
     this._initialDelaySeconds = value;
   }
   public resetInitialDelaySeconds() {
@@ -4551,15 +5774,15 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds
+    return this._initialDelaySeconds;
   }
 
   // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number | undefined; 
+  private _periodSeconds?: number; 
   public get periodSeconds() {
     return this.getNumberAttribute('period_seconds');
   }
-  public set periodSeconds(value: number | undefined) {
+  public set periodSeconds(value: number) {
     this._periodSeconds = value;
   }
   public resetPeriodSeconds() {
@@ -4567,15 +5790,15 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get periodSecondsInput() {
-    return this._periodSeconds
+    return this._periodSeconds;
   }
 
   // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number | undefined; 
+  private _successThreshold?: number; 
   public get successThreshold() {
     return this.getNumberAttribute('success_threshold');
   }
-  public set successThreshold(value: number | undefined) {
+  public set successThreshold(value: number) {
     this._successThreshold = value;
   }
   public resetSuccessThreshold() {
@@ -4583,15 +5806,15 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get successThresholdInput() {
-    return this._successThreshold
+    return this._successThreshold;
   }
 
   // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number | undefined; 
+  private _timeoutSeconds?: number; 
   public get timeoutSeconds() {
     return this.getNumberAttribute('timeout_seconds');
   }
-  public set timeoutSeconds(value: number | undefined) {
+  public set timeoutSeconds(value: number) {
     this._timeoutSeconds = value;
   }
   public resetTimeoutSeconds() {
@@ -4599,50 +5822,48 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutSecondsInput() {
-    return this._timeoutSeconds
+    return this._timeoutSeconds;
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: DeploymentV1SpecTemplateSpecContainerStartupProbeExec | undefined; 
-  private __execOutput = new DeploymentV1SpecTemplateSpecContainerStartupProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new DeploymentV1SpecTemplateSpecContainerStartupProbeExecOutputReference(this as any, "exec", true);
   public get exec() {
-    return this.__execOutput;
+    return this._exec;
   }
-  public putExec(value: DeploymentV1SpecTemplateSpecContainerStartupProbeExec | undefined) {
-    this._exec = value;
+  public putExec(value: DeploymentV1SpecTemplateSpecContainerStartupProbeExec) {
+    this._exec.internalValue = value;
   }
   public resetExec() {
-    this._exec = undefined;
+    this._exec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get execInput() {
-    return this._exec
+    return this._exec.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet?: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGet | undefined; 
-  private __httpGetOutput = new DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputReference(this as any, "http_get", true);
   public get httpGet() {
-    return this.__httpGetOutput;
+    return this._httpGet;
   }
-  public putHttpGet(value: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGet | undefined) {
-    this._httpGet = value;
+  public putHttpGet(value: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGet) {
+    this._httpGet.internalValue = value;
   }
   public resetHttpGet() {
-    this._httpGet = undefined;
+    this._httpGet.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get httpGetInput() {
-    return this._httpGet
+    return this._httpGet.internalValue;
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: DeploymentV1SpecTemplateSpecContainerStartupProbeTcpSocket[] | undefined; 
+  private _tcpSocket?: DeploymentV1SpecTemplateSpecContainerStartupProbeTcpSocket[]; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
-  public set tcpSocket(value: DeploymentV1SpecTemplateSpecContainerStartupProbeTcpSocket[] | undefined) {
+  public set tcpSocket(value: DeploymentV1SpecTemplateSpecContainerStartupProbeTcpSocket[]) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -4650,7 +5871,7 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
-    return this._tcpSocket
+    return this._tcpSocket;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerVolumeMount {
@@ -4686,7 +5907,7 @@ export interface DeploymentV1SpecTemplateSpecContainerVolumeMount {
   readonly subPath?: string;
 }
 
-function deploymentV1SpecTemplateSpecContainerVolumeMountToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerVolumeMount): any {
+export function deploymentV1SpecTemplateSpecContainerVolumeMountToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerVolumeMount): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4829,7 +6050,7 @@ export interface DeploymentV1SpecTemplateSpecContainer {
   readonly volumeMount?: DeploymentV1SpecTemplateSpecContainerVolumeMount[];
 }
 
-function deploymentV1SpecTemplateSpecContainerToTerraform(struct?: DeploymentV1SpecTemplateSpecContainer): any {
+export function deploymentV1SpecTemplateSpecContainerToTerraform(struct?: DeploymentV1SpecTemplateSpecContainer): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4874,7 +6095,7 @@ export interface DeploymentV1SpecTemplateSpecDnsConfigOption {
   readonly value?: string;
 }
 
-function deploymentV1SpecTemplateSpecDnsConfigOptionToTerraform(struct?: DeploymentV1SpecTemplateSpecDnsConfigOption): any {
+export function deploymentV1SpecTemplateSpecDnsConfigOptionToTerraform(struct?: DeploymentV1SpecTemplateSpecDnsConfigOption): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4906,7 +6127,7 @@ export interface DeploymentV1SpecTemplateSpecDnsConfig {
   readonly option?: DeploymentV1SpecTemplateSpecDnsConfigOption[];
 }
 
-function deploymentV1SpecTemplateSpecDnsConfigToTerraform(struct?: DeploymentV1SpecTemplateSpecDnsConfigOutputReference | DeploymentV1SpecTemplateSpecDnsConfig): any {
+export function deploymentV1SpecTemplateSpecDnsConfigToTerraform(struct?: DeploymentV1SpecTemplateSpecDnsConfigOutputReference | DeploymentV1SpecTemplateSpecDnsConfig): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -4928,12 +6149,43 @@ export class DeploymentV1SpecTemplateSpecDnsConfigOutputReference extends cdktf.
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecDnsConfig | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._nameservers) {
+      hasAnyValues = true;
+      internalValueResult.nameservers = this._nameservers;
+    }
+    if (this._searches) {
+      hasAnyValues = true;
+      internalValueResult.searches = this._searches;
+    }
+    if (this._option) {
+      hasAnyValues = true;
+      internalValueResult.option = this._option;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecDnsConfig | undefined) {
+    if (value === undefined) {
+      this._nameservers = undefined;
+      this._searches = undefined;
+      this._option = undefined;
+    }
+    else {
+      this._nameservers = value.nameservers;
+      this._searches = value.searches;
+      this._option = value.option;
+    }
+  }
+
   // nameservers - computed: false, optional: true, required: false
-  private _nameservers?: string[] | undefined; 
+  private _nameservers?: string[]; 
   public get nameservers() {
     return this.getListAttribute('nameservers');
   }
-  public set nameservers(value: string[] | undefined) {
+  public set nameservers(value: string[]) {
     this._nameservers = value;
   }
   public resetNameservers() {
@@ -4941,15 +6193,15 @@ export class DeploymentV1SpecTemplateSpecDnsConfigOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get nameserversInput() {
-    return this._nameservers
+    return this._nameservers;
   }
 
   // searches - computed: false, optional: true, required: false
-  private _searches?: string[] | undefined; 
+  private _searches?: string[]; 
   public get searches() {
     return this.getListAttribute('searches');
   }
-  public set searches(value: string[] | undefined) {
+  public set searches(value: string[]) {
     this._searches = value;
   }
   public resetSearches() {
@@ -4957,16 +6209,16 @@ export class DeploymentV1SpecTemplateSpecDnsConfigOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get searchesInput() {
-    return this._searches
+    return this._searches;
   }
 
   // option - computed: false, optional: true, required: false
-  private _option?: DeploymentV1SpecTemplateSpecDnsConfigOption[] | undefined; 
+  private _option?: DeploymentV1SpecTemplateSpecDnsConfigOption[]; 
   public get option() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('option') as any;
   }
-  public set option(value: DeploymentV1SpecTemplateSpecDnsConfigOption[] | undefined) {
+  public set option(value: DeploymentV1SpecTemplateSpecDnsConfigOption[]) {
     this._option = value;
   }
   public resetOption() {
@@ -4974,7 +6226,7 @@ export class DeploymentV1SpecTemplateSpecDnsConfigOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get optionInput() {
-    return this._option
+    return this._option;
   }
 }
 export interface DeploymentV1SpecTemplateSpecHostAliases {
@@ -4992,7 +6244,7 @@ export interface DeploymentV1SpecTemplateSpecHostAliases {
   readonly ip: string;
 }
 
-function deploymentV1SpecTemplateSpecHostAliasesToTerraform(struct?: DeploymentV1SpecTemplateSpecHostAliases): any {
+export function deploymentV1SpecTemplateSpecHostAliasesToTerraform(struct?: DeploymentV1SpecTemplateSpecHostAliases): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5012,7 +6264,7 @@ export interface DeploymentV1SpecTemplateSpecImagePullSecrets {
   readonly name: string;
 }
 
-function deploymentV1SpecTemplateSpecImagePullSecretsToTerraform(struct?: DeploymentV1SpecTemplateSpecImagePullSecrets): any {
+export function deploymentV1SpecTemplateSpecImagePullSecretsToTerraform(struct?: DeploymentV1SpecTemplateSpecImagePullSecrets): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5043,7 +6295,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapK
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef): any {
+export function deploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5065,12 +6317,43 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._key) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined) {
+    if (value === undefined) {
+      this._key = undefined;
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._key = value.key;
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // key - computed: false, optional: true, required: false
-  private _key?: string | undefined; 
+  private _key?: string; 
   public get key() {
     return this.getStringAttribute('key');
   }
-  public set key(value: string | undefined) {
+  public set key(value: string) {
     this._key = value;
   }
   public resetKey() {
@@ -5078,15 +6361,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRe
   }
   // Temporarily expose input value. Use with caution.
   public get keyInput() {
-    return this._key
+    return this._key;
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -5094,15 +6377,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRe
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -5110,7 +6393,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRe
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRef {
@@ -5128,7 +6411,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRef {
   readonly fieldPath?: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRef): any {
+export function deploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5149,12 +6432,37 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutput
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._apiVersion) {
+      hasAnyValues = true;
+      internalValueResult.apiVersion = this._apiVersion;
+    }
+    if (this._fieldPath) {
+      hasAnyValues = true;
+      internalValueResult.fieldPath = this._fieldPath;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined) {
+    if (value === undefined) {
+      this._apiVersion = undefined;
+      this._fieldPath = undefined;
+    }
+    else {
+      this._apiVersion = value.apiVersion;
+      this._fieldPath = value.fieldPath;
+    }
+  }
+
   // api_version - computed: false, optional: true, required: false
-  private _apiVersion?: string | undefined; 
+  private _apiVersion?: string; 
   public get apiVersion() {
     return this.getStringAttribute('api_version');
   }
-  public set apiVersion(value: string | undefined) {
+  public set apiVersion(value: string) {
     this._apiVersion = value;
   }
   public resetApiVersion() {
@@ -5162,15 +6470,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutput
   }
   // Temporarily expose input value. Use with caution.
   public get apiVersionInput() {
-    return this._apiVersion
+    return this._apiVersion;
   }
 
   // field_path - computed: false, optional: true, required: false
-  private _fieldPath?: string | undefined; 
+  private _fieldPath?: string; 
   public get fieldPath() {
     return this.getStringAttribute('field_path');
   }
-  public set fieldPath(value: string | undefined) {
+  public set fieldPath(value: string) {
     this._fieldPath = value;
   }
   public resetFieldPath() {
@@ -5178,7 +6486,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutput
   }
   // Temporarily expose input value. Use with caution.
   public get fieldPathInput() {
-    return this._fieldPath
+    return this._fieldPath;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef {
@@ -5198,7 +6506,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFi
   readonly resource: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef): any {
+export function deploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5220,12 +6528,43 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldR
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._containerName) {
+      hasAnyValues = true;
+      internalValueResult.containerName = this._containerName;
+    }
+    if (this._divisor) {
+      hasAnyValues = true;
+      internalValueResult.divisor = this._divisor;
+    }
+    if (this._resource) {
+      hasAnyValues = true;
+      internalValueResult.resource = this._resource;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined) {
+    if (value === undefined) {
+      this._containerName = undefined;
+      this._divisor = undefined;
+      this._resource = undefined;
+    }
+    else {
+      this._containerName = value.containerName;
+      this._divisor = value.divisor;
+      this._resource = value.resource;
+    }
+  }
+
   // container_name - computed: false, optional: true, required: false
-  private _containerName?: string | undefined; 
+  private _containerName?: string; 
   public get containerName() {
     return this.getStringAttribute('container_name');
   }
-  public set containerName(value: string | undefined) {
+  public set containerName(value: string) {
     this._containerName = value;
   }
   public resetContainerName() {
@@ -5233,15 +6572,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldR
   }
   // Temporarily expose input value. Use with caution.
   public get containerNameInput() {
-    return this._containerName
+    return this._containerName;
   }
 
   // divisor - computed: false, optional: true, required: false
-  private _divisor?: string | undefined; 
+  private _divisor?: string; 
   public get divisor() {
     return this.getStringAttribute('divisor');
   }
-  public set divisor(value: string | undefined) {
+  public set divisor(value: string) {
     this._divisor = value;
   }
   public resetDivisor() {
@@ -5249,7 +6588,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldR
   }
   // Temporarily expose input value. Use with caution.
   public get divisorInput() {
-    return this._divisor
+    return this._divisor;
   }
 
   // resource - computed: false, optional: false, required: true
@@ -5262,7 +6601,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldR
   }
   // Temporarily expose input value. Use with caution.
   public get resourceInput() {
-    return this._resource
+    return this._resource;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef {
@@ -5286,7 +6625,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyR
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef): any {
+export function deploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5308,12 +6647,43 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._key) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined) {
+    if (value === undefined) {
+      this._key = undefined;
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._key = value.key;
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // key - computed: false, optional: true, required: false
-  private _key?: string | undefined; 
+  private _key?: string; 
   public get key() {
     return this.getStringAttribute('key');
   }
-  public set key(value: string | undefined) {
+  public set key(value: string) {
     this._key = value;
   }
   public resetKey() {
@@ -5321,15 +6691,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOu
   }
   // Temporarily expose input value. Use with caution.
   public get keyInput() {
-    return this._key
+    return this._key;
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -5337,15 +6707,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOu
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -5353,7 +6723,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOu
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFrom {
@@ -5383,7 +6753,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFrom {
   readonly secretKeyRef?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerEnvValueFromToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvValueFrom): any {
+export function deploymentV1SpecTemplateSpecInitContainerEnvValueFromToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvValueFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5406,72 +6776,105 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromOutputReferenc
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
-  // config_map_key_ref - computed: false, optional: true, required: false
-  private _configMapKeyRef?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined; 
-  private __configMapKeyRefOutput = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this as any, "config_map_key_ref", true);
-  public get configMapKeyRef() {
-    return this.__configMapKeyRefOutput;
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvValueFrom | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._configMapKeyRef) {
+      hasAnyValues = true;
+      internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
+    }
+    if (this._fieldRef) {
+      hasAnyValues = true;
+      internalValueResult.fieldRef = this._fieldRef?.internalValue;
+    }
+    if (this._resourceFieldRef) {
+      hasAnyValues = true;
+      internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
+    }
+    if (this._secretKeyRef) {
+      hasAnyValues = true;
+      internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
   }
-  public putConfigMapKeyRef(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined) {
-    this._configMapKeyRef = value;
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFrom | undefined) {
+    if (value === undefined) {
+      this._configMapKeyRef.internalValue = undefined;
+      this._fieldRef.internalValue = undefined;
+      this._resourceFieldRef.internalValue = undefined;
+      this._secretKeyRef.internalValue = undefined;
+    }
+    else {
+      this._configMapKeyRef.internalValue = value.configMapKeyRef;
+      this._fieldRef.internalValue = value.fieldRef;
+      this._resourceFieldRef.internalValue = value.resourceFieldRef;
+      this._secretKeyRef.internalValue = value.secretKeyRef;
+    }
+  }
+
+  // config_map_key_ref - computed: false, optional: true, required: false
+  private _configMapKeyRef = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this as any, "config_map_key_ref", true);
+  public get configMapKeyRef() {
+    return this._configMapKeyRef;
+  }
+  public putConfigMapKeyRef(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef) {
+    this._configMapKeyRef.internalValue = value;
   }
   public resetConfigMapKeyRef() {
-    this._configMapKeyRef = undefined;
+    this._configMapKeyRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get configMapKeyRefInput() {
-    return this._configMapKeyRef
+    return this._configMapKeyRef.internalValue;
   }
 
   // field_ref - computed: false, optional: true, required: false
-  private _fieldRef?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined; 
-  private __fieldRefOutput = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference(this as any, "field_ref", true);
+  private _fieldRef = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference(this as any, "field_ref", true);
   public get fieldRef() {
-    return this.__fieldRefOutput;
+    return this._fieldRef;
   }
-  public putFieldRef(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined) {
-    this._fieldRef = value;
+  public putFieldRef(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRef) {
+    this._fieldRef.internalValue = value;
   }
   public resetFieldRef() {
-    this._fieldRef = undefined;
+    this._fieldRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get fieldRefInput() {
-    return this._fieldRef
+    return this._fieldRef.internalValue;
   }
 
   // resource_field_ref - computed: false, optional: true, required: false
-  private _resourceFieldRef?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined; 
-  private __resourceFieldRefOutput = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this as any, "resource_field_ref", true);
+  private _resourceFieldRef = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this as any, "resource_field_ref", true);
   public get resourceFieldRef() {
-    return this.__resourceFieldRefOutput;
+    return this._resourceFieldRef;
   }
-  public putResourceFieldRef(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined) {
-    this._resourceFieldRef = value;
+  public putResourceFieldRef(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef) {
+    this._resourceFieldRef.internalValue = value;
   }
   public resetResourceFieldRef() {
-    this._resourceFieldRef = undefined;
+    this._resourceFieldRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get resourceFieldRefInput() {
-    return this._resourceFieldRef
+    return this._resourceFieldRef.internalValue;
   }
 
   // secret_key_ref - computed: false, optional: true, required: false
-  private _secretKeyRef?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined; 
-  private __secretKeyRefOutput = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this as any, "secret_key_ref", true);
+  private _secretKeyRef = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this as any, "secret_key_ref", true);
   public get secretKeyRef() {
-    return this.__secretKeyRefOutput;
+    return this._secretKeyRef;
   }
-  public putSecretKeyRef(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined) {
-    this._secretKeyRef = value;
+  public putSecretKeyRef(value: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef) {
+    this._secretKeyRef.internalValue = value;
   }
   public resetSecretKeyRef() {
-    this._secretKeyRef = undefined;
+    this._secretKeyRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretKeyRefInput() {
-    return this._secretKeyRef
+    return this._secretKeyRef.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerEnv {
@@ -5495,7 +6898,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerEnv {
   readonly valueFrom?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFrom;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerEnvToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnv): any {
+export function deploymentV1SpecTemplateSpecInitContainerEnvToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnv): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5522,7 +6925,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRefOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRef): any {
+export function deploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRefOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5543,6 +6946,31 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRefOutputR
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -5553,15 +6981,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRefOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -5569,7 +6997,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRefOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRef {
@@ -5587,7 +7015,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRef {
   readonly optional?: boolean | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRefOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRef): any {
+export function deploymentV1SpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRefOutputReference | DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5608,6 +7036,31 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRefOutputRefe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._optional = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._optional = value.optional;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -5618,15 +7071,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRefOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -5634,7 +7087,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRefOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvFrom {
@@ -5658,7 +7111,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerEnvFrom {
   readonly secretRef?: DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRef;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerEnvFromToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvFrom): any {
+export function deploymentV1SpecTemplateSpecInitContainerEnvFromToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerEnvFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5679,7 +7132,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExec
   readonly command?: string[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExecToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExecOutputReference | DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExec): any {
+export function deploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExecToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExecOutputReference | DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5699,12 +7152,31 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExecOutp
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -5712,7 +7184,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExecOutp
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader {
@@ -5730,7 +7202,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttp
   readonly value?: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader): any {
+export function deploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5774,7 +7246,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttp
   readonly httpHeader?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetOutputReference | DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet): any {
+export function deploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetOutputReference | DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5798,12 +7270,55 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetO
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -5811,15 +7326,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetO
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -5827,15 +7342,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetO
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -5843,15 +7358,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetO
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -5859,16 +7374,16 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetO
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -5876,7 +7391,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetO
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocket {
@@ -5888,7 +7403,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartTcpS
   readonly port: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocket): any {
+export function deploymentV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5919,7 +7434,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStart {
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocket[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLifecyclePostStartToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStart): any {
+export function deploymentV1SpecTemplateSpecInitContainerLifecyclePostStartToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStart): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5940,7 +7455,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExec {
   readonly command?: string[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExecToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExecOutputReference | DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExec): any {
+export function deploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExecToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExecOutputReference | DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -5960,12 +7475,31 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExecOutput
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -5973,7 +7507,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExecOutput
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader {
@@ -5991,7 +7525,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGe
   readonly value?: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader): any {
+export function deploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6035,7 +7569,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGe
   readonly httpHeader?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutputReference | DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGet): any {
+export function deploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutputReference | DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6059,12 +7593,55 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOut
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -6072,15 +7649,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOut
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -6088,15 +7665,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOut
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -6104,15 +7681,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOut
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -6120,16 +7697,16 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOut
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -6137,7 +7714,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOut
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocket {
@@ -6149,7 +7726,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSoc
   readonly port: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocket): any {
+export function deploymentV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6180,7 +7757,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStop {
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocket[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLifecyclePreStopToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStop): any {
+export function deploymentV1SpecTemplateSpecInitContainerLifecyclePreStopToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStop): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6207,7 +7784,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLifecycle {
   readonly preStop?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStop[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLifecycleToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecycleOutputReference | DeploymentV1SpecTemplateSpecInitContainerLifecycle): any {
+export function deploymentV1SpecTemplateSpecInitContainerLifecycleToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLifecycleOutputReference | DeploymentV1SpecTemplateSpecInitContainerLifecycle): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6228,13 +7805,38 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecycleOutputReference e
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLifecycle | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._postStart) {
+      hasAnyValues = true;
+      internalValueResult.postStart = this._postStart;
+    }
+    if (this._preStop) {
+      hasAnyValues = true;
+      internalValueResult.preStop = this._preStop;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerLifecycle | undefined) {
+    if (value === undefined) {
+      this._postStart = undefined;
+      this._preStop = undefined;
+    }
+    else {
+      this._postStart = value.postStart;
+      this._preStop = value.preStop;
+    }
+  }
+
   // post_start - computed: false, optional: true, required: false
-  private _postStart?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStart[] | undefined; 
+  private _postStart?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStart[]; 
   public get postStart() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('post_start') as any;
   }
-  public set postStart(value: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStart[] | undefined) {
+  public set postStart(value: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStart[]) {
     this._postStart = value;
   }
   public resetPostStart() {
@@ -6242,16 +7844,16 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecycleOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get postStartInput() {
-    return this._postStart
+    return this._postStart;
   }
 
   // pre_stop - computed: false, optional: true, required: false
-  private _preStop?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStop[] | undefined; 
+  private _preStop?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStop[]; 
   public get preStop() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('pre_stop') as any;
   }
-  public set preStop(value: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStop[] | undefined) {
+  public set preStop(value: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStop[]) {
     this._preStop = value;
   }
   public resetPreStop() {
@@ -6259,7 +7861,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecycleOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get preStopInput() {
-    return this._preStop
+    return this._preStop;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExec {
@@ -6271,7 +7873,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExec {
   readonly command?: string[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLivenessProbeExecToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExecOutputReference | DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExec): any {
+export function deploymentV1SpecTemplateSpecInitContainerLivenessProbeExecToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExecOutputReference | DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6291,12 +7893,31 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExecOutputRef
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -6304,7 +7925,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExecOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader {
@@ -6322,7 +7943,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHt
   readonly value?: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader): any {
+export function deploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6366,7 +7987,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGet {
   readonly httpHeader?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference | DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGet): any {
+export function deploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference | DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6390,12 +8011,55 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutput
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -6403,15 +8067,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutput
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -6419,15 +8083,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutput
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -6435,15 +8099,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutput
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -6451,16 +8115,16 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutput
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -6468,7 +8132,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutput
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket {
@@ -6480,7 +8144,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket
   readonly port: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket): any {
+export function deploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6541,7 +8205,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbe {
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerLivenessProbeToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReference | DeploymentV1SpecTemplateSpecInitContainerLivenessProbe): any {
+export function deploymentV1SpecTemplateSpecInitContainerLivenessProbeToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReference | DeploymentV1SpecTemplateSpecInitContainerLivenessProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6568,12 +8232,73 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReferen
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLivenessProbe | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._failureThreshold) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._httpGet) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerLivenessProbe | undefined) {
+    if (value === undefined) {
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket = undefined;
+    }
+    else {
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket = value.tcpSocket;
+    }
+  }
+
   // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number | undefined; 
+  private _failureThreshold?: number; 
   public get failureThreshold() {
     return this.getNumberAttribute('failure_threshold');
   }
-  public set failureThreshold(value: number | undefined) {
+  public set failureThreshold(value: number) {
     this._failureThreshold = value;
   }
   public resetFailureThreshold() {
@@ -6581,15 +8306,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get failureThresholdInput() {
-    return this._failureThreshold
+    return this._failureThreshold;
   }
 
   // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number | undefined; 
+  private _initialDelaySeconds?: number; 
   public get initialDelaySeconds() {
     return this.getNumberAttribute('initial_delay_seconds');
   }
-  public set initialDelaySeconds(value: number | undefined) {
+  public set initialDelaySeconds(value: number) {
     this._initialDelaySeconds = value;
   }
   public resetInitialDelaySeconds() {
@@ -6597,15 +8322,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds
+    return this._initialDelaySeconds;
   }
 
   // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number | undefined; 
+  private _periodSeconds?: number; 
   public get periodSeconds() {
     return this.getNumberAttribute('period_seconds');
   }
-  public set periodSeconds(value: number | undefined) {
+  public set periodSeconds(value: number) {
     this._periodSeconds = value;
   }
   public resetPeriodSeconds() {
@@ -6613,15 +8338,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get periodSecondsInput() {
-    return this._periodSeconds
+    return this._periodSeconds;
   }
 
   // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number | undefined; 
+  private _successThreshold?: number; 
   public get successThreshold() {
     return this.getNumberAttribute('success_threshold');
   }
-  public set successThreshold(value: number | undefined) {
+  public set successThreshold(value: number) {
     this._successThreshold = value;
   }
   public resetSuccessThreshold() {
@@ -6629,15 +8354,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get successThresholdInput() {
-    return this._successThreshold
+    return this._successThreshold;
   }
 
   // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number | undefined; 
+  private _timeoutSeconds?: number; 
   public get timeoutSeconds() {
     return this.getNumberAttribute('timeout_seconds');
   }
-  public set timeoutSeconds(value: number | undefined) {
+  public set timeoutSeconds(value: number) {
     this._timeoutSeconds = value;
   }
   public resetTimeoutSeconds() {
@@ -6645,50 +8370,48 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutSecondsInput() {
-    return this._timeoutSeconds
+    return this._timeoutSeconds;
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExec | undefined; 
-  private __execOutput = new DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExecOutputReference(this as any, "exec", true);
   public get exec() {
-    return this.__execOutput;
+    return this._exec;
   }
-  public putExec(value: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExec | undefined) {
-    this._exec = value;
+  public putExec(value: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExec) {
+    this._exec.internalValue = value;
   }
   public resetExec() {
-    this._exec = undefined;
+    this._exec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get execInput() {
-    return this._exec
+    return this._exec.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined; 
-  private __httpGetOutput = new DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference(this as any, "http_get", true);
   public get httpGet() {
-    return this.__httpGetOutput;
+    return this._httpGet;
   }
-  public putHttpGet(value: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined) {
-    this._httpGet = value;
+  public putHttpGet(value: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGet) {
+    this._httpGet.internalValue = value;
   }
   public resetHttpGet() {
-    this._httpGet = undefined;
+    this._httpGet.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get httpGetInput() {
-    return this._httpGet
+    return this._httpGet.internalValue;
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket[] | undefined; 
+  private _tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket[]; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
-  public set tcpSocket(value: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket[] | undefined) {
+  public set tcpSocket(value: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket[]) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -6696,7 +8419,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
-    return this._tcpSocket
+    return this._tcpSocket;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerPort {
@@ -6732,7 +8455,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerPort {
   readonly protocol?: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerPortToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerPort): any {
+export function deploymentV1SpecTemplateSpecInitContainerPortToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerPort): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6755,7 +8478,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExec {
   readonly command?: string[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExecOutputReference | DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExec): any {
+export function deploymentV1SpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExecOutputReference | DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6775,12 +8498,31 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExecOutputRe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -6788,7 +8530,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExecOutputRe
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader {
@@ -6806,7 +8548,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetH
   readonly value?: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader): any {
+export function deploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6850,7 +8592,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGet 
   readonly httpHeader?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference | DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGet): any {
+export function deploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference | DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -6874,12 +8616,55 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutpu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -6887,15 +8672,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -6903,15 +8688,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -6919,15 +8704,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -6935,16 +8720,16 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -6952,7 +8737,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket {
@@ -6964,7 +8749,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocke
   readonly port: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket): any {
+export function deploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7025,7 +8810,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbe {
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerReadinessProbeToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputReference | DeploymentV1SpecTemplateSpecInitContainerReadinessProbe): any {
+export function deploymentV1SpecTemplateSpecInitContainerReadinessProbeToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputReference | DeploymentV1SpecTemplateSpecInitContainerReadinessProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7052,12 +8837,73 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputRefere
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerReadinessProbe | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._failureThreshold) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._httpGet) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerReadinessProbe | undefined) {
+    if (value === undefined) {
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket = undefined;
+    }
+    else {
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket = value.tcpSocket;
+    }
+  }
+
   // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number | undefined; 
+  private _failureThreshold?: number; 
   public get failureThreshold() {
     return this.getNumberAttribute('failure_threshold');
   }
-  public set failureThreshold(value: number | undefined) {
+  public set failureThreshold(value: number) {
     this._failureThreshold = value;
   }
   public resetFailureThreshold() {
@@ -7065,15 +8911,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get failureThresholdInput() {
-    return this._failureThreshold
+    return this._failureThreshold;
   }
 
   // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number | undefined; 
+  private _initialDelaySeconds?: number; 
   public get initialDelaySeconds() {
     return this.getNumberAttribute('initial_delay_seconds');
   }
-  public set initialDelaySeconds(value: number | undefined) {
+  public set initialDelaySeconds(value: number) {
     this._initialDelaySeconds = value;
   }
   public resetInitialDelaySeconds() {
@@ -7081,15 +8927,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds
+    return this._initialDelaySeconds;
   }
 
   // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number | undefined; 
+  private _periodSeconds?: number; 
   public get periodSeconds() {
     return this.getNumberAttribute('period_seconds');
   }
-  public set periodSeconds(value: number | undefined) {
+  public set periodSeconds(value: number) {
     this._periodSeconds = value;
   }
   public resetPeriodSeconds() {
@@ -7097,15 +8943,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get periodSecondsInput() {
-    return this._periodSeconds
+    return this._periodSeconds;
   }
 
   // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number | undefined; 
+  private _successThreshold?: number; 
   public get successThreshold() {
     return this.getNumberAttribute('success_threshold');
   }
-  public set successThreshold(value: number | undefined) {
+  public set successThreshold(value: number) {
     this._successThreshold = value;
   }
   public resetSuccessThreshold() {
@@ -7113,15 +8959,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get successThresholdInput() {
-    return this._successThreshold
+    return this._successThreshold;
   }
 
   // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number | undefined; 
+  private _timeoutSeconds?: number; 
   public get timeoutSeconds() {
     return this.getNumberAttribute('timeout_seconds');
   }
-  public set timeoutSeconds(value: number | undefined) {
+  public set timeoutSeconds(value: number) {
     this._timeoutSeconds = value;
   }
   public resetTimeoutSeconds() {
@@ -7129,50 +8975,48 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutSecondsInput() {
-    return this._timeoutSeconds
+    return this._timeoutSeconds;
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExec | undefined; 
-  private __execOutput = new DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExecOutputReference(this as any, "exec", true);
   public get exec() {
-    return this.__execOutput;
+    return this._exec;
   }
-  public putExec(value: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExec | undefined) {
-    this._exec = value;
+  public putExec(value: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExec) {
+    this._exec.internalValue = value;
   }
   public resetExec() {
-    this._exec = undefined;
+    this._exec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get execInput() {
-    return this._exec
+    return this._exec.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined; 
-  private __httpGetOutput = new DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference(this as any, "http_get", true);
   public get httpGet() {
-    return this.__httpGetOutput;
+    return this._httpGet;
   }
-  public putHttpGet(value: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined) {
-    this._httpGet = value;
+  public putHttpGet(value: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGet) {
+    this._httpGet.internalValue = value;
   }
   public resetHttpGet() {
-    this._httpGet = undefined;
+    this._httpGet.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get httpGetInput() {
-    return this._httpGet
+    return this._httpGet.internalValue;
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket[] | undefined; 
+  private _tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket[]; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
-  public set tcpSocket(value: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket[] | undefined) {
+  public set tcpSocket(value: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket[]) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -7180,7 +9024,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
-    return this._tcpSocket
+    return this._tcpSocket;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerResources {
@@ -7198,7 +9042,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerResources {
   readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerResourcesToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerResourcesOutputReference | DeploymentV1SpecTemplateSpecInitContainerResources): any {
+export function deploymentV1SpecTemplateSpecInitContainerResourcesToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerResourcesOutputReference | DeploymentV1SpecTemplateSpecInitContainerResources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7219,13 +9063,38 @@ export class DeploymentV1SpecTemplateSpecInitContainerResourcesOutputReference e
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerResources | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._limits) {
+      hasAnyValues = true;
+      internalValueResult.limits = this._limits;
+    }
+    if (this._requests) {
+      hasAnyValues = true;
+      internalValueResult.requests = this._requests;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerResources | undefined) {
+    if (value === undefined) {
+      this._limits = undefined;
+      this._requests = undefined;
+    }
+    else {
+      this._limits = value.limits;
+      this._requests = value.requests;
+    }
+  }
+
   // limits - computed: true, optional: true, required: false
-  private _limits?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _limits?: { [key: string]: string } | cdktf.IResolvable; 
   public get limits() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('limits') as any;
   }
-  public set limits(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set limits(value: { [key: string]: string } | cdktf.IResolvable) {
     this._limits = value;
   }
   public resetLimits() {
@@ -7233,16 +9102,16 @@ export class DeploymentV1SpecTemplateSpecInitContainerResourcesOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get limitsInput() {
-    return this._limits
+    return this._limits;
   }
 
   // requests - computed: true, optional: true, required: false
-  private _requests?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _requests?: { [key: string]: string } | cdktf.IResolvable; 
   public get requests() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('requests') as any;
   }
-  public set requests(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set requests(value: { [key: string]: string } | cdktf.IResolvable) {
     this._requests = value;
   }
   public resetRequests() {
@@ -7250,7 +9119,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerResourcesOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get requestsInput() {
-    return this._requests
+    return this._requests;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilities {
@@ -7268,7 +9137,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabil
   readonly drop?: string[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference | DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilities): any {
+export function deploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference | DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilities): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7289,12 +9158,37 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitie
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilities | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._add) {
+      hasAnyValues = true;
+      internalValueResult.add = this._add;
+    }
+    if (this._drop) {
+      hasAnyValues = true;
+      internalValueResult.drop = this._drop;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilities | undefined) {
+    if (value === undefined) {
+      this._add = undefined;
+      this._drop = undefined;
+    }
+    else {
+      this._add = value.add;
+      this._drop = value.drop;
+    }
+  }
+
   // add - computed: false, optional: true, required: false
-  private _add?: string[] | undefined; 
+  private _add?: string[]; 
   public get add() {
     return this.getListAttribute('add');
   }
-  public set add(value: string[] | undefined) {
+  public set add(value: string[]) {
     this._add = value;
   }
   public resetAdd() {
@@ -7302,15 +9196,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitie
   }
   // Temporarily expose input value. Use with caution.
   public get addInput() {
-    return this._add
+    return this._add;
   }
 
   // drop - computed: false, optional: true, required: false
-  private _drop?: string[] | undefined; 
+  private _drop?: string[]; 
   public get drop() {
     return this.getListAttribute('drop');
   }
-  public set drop(value: string[] | undefined) {
+  public set drop(value: string[]) {
     this._drop = value;
   }
   public resetDrop() {
@@ -7318,7 +9212,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitie
   }
   // Temporarily expose input value. Use with caution.
   public get dropInput() {
-    return this._drop
+    return this._drop;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions {
@@ -7348,7 +9242,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinux
   readonly user?: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference | DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions): any {
+export function deploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference | DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7371,12 +9265,49 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOpti
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._level) {
+      hasAnyValues = true;
+      internalValueResult.level = this._level;
+    }
+    if (this._role) {
+      hasAnyValues = true;
+      internalValueResult.role = this._role;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._user) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined) {
+    if (value === undefined) {
+      this._level = undefined;
+      this._role = undefined;
+      this._type = undefined;
+      this._user = undefined;
+    }
+    else {
+      this._level = value.level;
+      this._role = value.role;
+      this._type = value.type;
+      this._user = value.user;
+    }
+  }
+
   // level - computed: false, optional: true, required: false
-  private _level?: string | undefined; 
+  private _level?: string; 
   public get level() {
     return this.getStringAttribute('level');
   }
-  public set level(value: string | undefined) {
+  public set level(value: string) {
     this._level = value;
   }
   public resetLevel() {
@@ -7384,15 +9315,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOpti
   }
   // Temporarily expose input value. Use with caution.
   public get levelInput() {
-    return this._level
+    return this._level;
   }
 
   // role - computed: false, optional: true, required: false
-  private _role?: string | undefined; 
+  private _role?: string; 
   public get role() {
     return this.getStringAttribute('role');
   }
-  public set role(value: string | undefined) {
+  public set role(value: string) {
     this._role = value;
   }
   public resetRole() {
@@ -7400,15 +9331,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOpti
   }
   // Temporarily expose input value. Use with caution.
   public get roleInput() {
-    return this._role
+    return this._role;
   }
 
   // type - computed: false, optional: true, required: false
-  private _type?: string | undefined; 
+  private _type?: string; 
   public get type() {
     return this.getStringAttribute('type');
   }
-  public set type(value: string | undefined) {
+  public set type(value: string) {
     this._type = value;
   }
   public resetType() {
@@ -7416,15 +9347,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOpti
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -7432,7 +9363,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOpti
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerSecurityContext {
@@ -7486,7 +9417,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerSecurityContext {
   readonly seLinuxOptions?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputReference | DeploymentV1SpecTemplateSpecInitContainerSecurityContext): any {
+export function deploymentV1SpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputReference | DeploymentV1SpecTemplateSpecInitContainerSecurityContext): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7513,12 +9444,73 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerSecurityContext | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._allowPrivilegeEscalation) {
+      hasAnyValues = true;
+      internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
+    }
+    if (this._privileged) {
+      hasAnyValues = true;
+      internalValueResult.privileged = this._privileged;
+    }
+    if (this._readOnlyRootFilesystem) {
+      hasAnyValues = true;
+      internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
+    }
+    if (this._runAsGroup) {
+      hasAnyValues = true;
+      internalValueResult.runAsGroup = this._runAsGroup;
+    }
+    if (this._runAsNonRoot) {
+      hasAnyValues = true;
+      internalValueResult.runAsNonRoot = this._runAsNonRoot;
+    }
+    if (this._runAsUser) {
+      hasAnyValues = true;
+      internalValueResult.runAsUser = this._runAsUser;
+    }
+    if (this._capabilities) {
+      hasAnyValues = true;
+      internalValueResult.capabilities = this._capabilities?.internalValue;
+    }
+    if (this._seLinuxOptions) {
+      hasAnyValues = true;
+      internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerSecurityContext | undefined) {
+    if (value === undefined) {
+      this._allowPrivilegeEscalation = undefined;
+      this._privileged = undefined;
+      this._readOnlyRootFilesystem = undefined;
+      this._runAsGroup = undefined;
+      this._runAsNonRoot = undefined;
+      this._runAsUser = undefined;
+      this._capabilities.internalValue = undefined;
+      this._seLinuxOptions.internalValue = undefined;
+    }
+    else {
+      this._allowPrivilegeEscalation = value.allowPrivilegeEscalation;
+      this._privileged = value.privileged;
+      this._readOnlyRootFilesystem = value.readOnlyRootFilesystem;
+      this._runAsGroup = value.runAsGroup;
+      this._runAsNonRoot = value.runAsNonRoot;
+      this._runAsUser = value.runAsUser;
+      this._capabilities.internalValue = value.capabilities;
+      this._seLinuxOptions.internalValue = value.seLinuxOptions;
+    }
+  }
+
   // allow_privilege_escalation - computed: false, optional: true, required: false
-  private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable | undefined; 
+  private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable; 
   public get allowPrivilegeEscalation() {
     return this.getBooleanAttribute('allow_privilege_escalation') as any;
   }
-  public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable | undefined) {
+  public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable) {
     this._allowPrivilegeEscalation = value;
   }
   public resetAllowPrivilegeEscalation() {
@@ -7526,15 +9518,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get allowPrivilegeEscalationInput() {
-    return this._allowPrivilegeEscalation
+    return this._allowPrivilegeEscalation;
   }
 
   // privileged - computed: false, optional: true, required: false
-  private _privileged?: boolean | cdktf.IResolvable | undefined; 
+  private _privileged?: boolean | cdktf.IResolvable; 
   public get privileged() {
     return this.getBooleanAttribute('privileged') as any;
   }
-  public set privileged(value: boolean | cdktf.IResolvable | undefined) {
+  public set privileged(value: boolean | cdktf.IResolvable) {
     this._privileged = value;
   }
   public resetPrivileged() {
@@ -7542,15 +9534,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get privilegedInput() {
-    return this._privileged
+    return this._privileged;
   }
 
   // read_only_root_filesystem - computed: false, optional: true, required: false
-  private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable; 
   public get readOnlyRootFilesystem() {
     return this.getBooleanAttribute('read_only_root_filesystem') as any;
   }
-  public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable) {
     this._readOnlyRootFilesystem = value;
   }
   public resetReadOnlyRootFilesystem() {
@@ -7558,15 +9550,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyRootFilesystemInput() {
-    return this._readOnlyRootFilesystem
+    return this._readOnlyRootFilesystem;
   }
 
   // run_as_group - computed: false, optional: true, required: false
-  private _runAsGroup?: string | undefined; 
+  private _runAsGroup?: string; 
   public get runAsGroup() {
     return this.getStringAttribute('run_as_group');
   }
-  public set runAsGroup(value: string | undefined) {
+  public set runAsGroup(value: string) {
     this._runAsGroup = value;
   }
   public resetRunAsGroup() {
@@ -7574,15 +9566,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get runAsGroupInput() {
-    return this._runAsGroup
+    return this._runAsGroup;
   }
 
   // run_as_non_root - computed: false, optional: true, required: false
-  private _runAsNonRoot?: boolean | cdktf.IResolvable | undefined; 
+  private _runAsNonRoot?: boolean | cdktf.IResolvable; 
   public get runAsNonRoot() {
     return this.getBooleanAttribute('run_as_non_root') as any;
   }
-  public set runAsNonRoot(value: boolean | cdktf.IResolvable | undefined) {
+  public set runAsNonRoot(value: boolean | cdktf.IResolvable) {
     this._runAsNonRoot = value;
   }
   public resetRunAsNonRoot() {
@@ -7590,15 +9582,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get runAsNonRootInput() {
-    return this._runAsNonRoot
+    return this._runAsNonRoot;
   }
 
   // run_as_user - computed: false, optional: true, required: false
-  private _runAsUser?: string | undefined; 
+  private _runAsUser?: string; 
   public get runAsUser() {
     return this.getStringAttribute('run_as_user');
   }
-  public set runAsUser(value: string | undefined) {
+  public set runAsUser(value: string) {
     this._runAsUser = value;
   }
   public resetRunAsUser() {
@@ -7606,41 +9598,39 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
   }
   // Temporarily expose input value. Use with caution.
   public get runAsUserInput() {
-    return this._runAsUser
+    return this._runAsUser;
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilities | undefined; 
-  private __capabilitiesOutput = new DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference(this as any, "capabilities", true);
+  private _capabilities = new DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference(this as any, "capabilities", true);
   public get capabilities() {
-    return this.__capabilitiesOutput;
+    return this._capabilities;
   }
-  public putCapabilities(value: DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilities | undefined) {
-    this._capabilities = value;
+  public putCapabilities(value: DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilities) {
+    this._capabilities.internalValue = value;
   }
   public resetCapabilities() {
-    this._capabilities = undefined;
+    this._capabilities.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get capabilitiesInput() {
-    return this._capabilities
+    return this._capabilities.internalValue;
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined; 
-  private __seLinuxOptionsOutput = new DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
+  private _seLinuxOptions = new DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
   public get seLinuxOptions() {
-    return this.__seLinuxOptionsOutput;
+    return this._seLinuxOptions;
   }
-  public putSeLinuxOptions(value: DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined) {
-    this._seLinuxOptions = value;
+  public putSeLinuxOptions(value: DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions) {
+    this._seLinuxOptions.internalValue = value;
   }
   public resetSeLinuxOptions() {
-    this._seLinuxOptions = undefined;
+    this._seLinuxOptions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
-    return this._seLinuxOptions
+    return this._seLinuxOptions.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerStartupProbeExec {
@@ -7652,7 +9642,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerStartupProbeExec {
   readonly command?: string[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeExecOutputReference | DeploymentV1SpecTemplateSpecInitContainerStartupProbeExec): any {
+export function deploymentV1SpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeExecOutputReference | DeploymentV1SpecTemplateSpecInitContainerStartupProbeExec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7672,12 +9662,31 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeExecOutputRefe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerStartupProbeExec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._command) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerStartupProbeExec | undefined) {
+    if (value === undefined) {
+      this._command = undefined;
+    }
+    else {
+      this._command = value.command;
+    }
+  }
+
   // command - computed: false, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -7685,7 +9694,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeExecOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader {
@@ -7703,7 +9712,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetHtt
   readonly value?: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader): any {
+export function deploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7747,7 +9756,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGet {
   readonly httpHeader?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference | DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGet): any {
+export function deploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference | DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGet): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7771,12 +9780,55 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputR
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGet | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._host) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader = undefined;
+    }
+    else {
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader = value.httpHeader;
+    }
+  }
+
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this.getStringAttribute('host');
   }
-  public set host(value: string | undefined) {
+  public set host(value: string) {
     this._host = value;
   }
   public resetHost() {
@@ -7784,15 +9836,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -7800,15 +9852,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: string | undefined; 
+  private _port?: string; 
   public get port() {
     return this.getStringAttribute('port');
   }
-  public set port(value: string | undefined) {
+  public set port(value: string) {
     this._port = value;
   }
   public resetPort() {
@@ -7816,15 +9868,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 
   // scheme - computed: false, optional: true, required: false
-  private _scheme?: string | undefined; 
+  private _scheme?: string; 
   public get scheme() {
     return this.getStringAttribute('scheme');
   }
-  public set scheme(value: string | undefined) {
+  public set scheme(value: string) {
     this._scheme = value;
   }
   public resetScheme() {
@@ -7832,16 +9884,16 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get schemeInput() {
-    return this._scheme
+    return this._scheme;
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | undefined; 
+  private _httpHeader?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[]; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('http_header') as any;
   }
-  public set httpHeader(value: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | undefined) {
+  public set httpHeader(value: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[]) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -7849,7 +9901,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputR
   }
   // Temporarily expose input value. Use with caution.
   public get httpHeaderInput() {
-    return this._httpHeader
+    return this._httpHeader;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerStartupProbeTcpSocket {
@@ -7861,7 +9913,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerStartupProbeTcpSocket 
   readonly port: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeTcpSocket): any {
+export function deploymentV1SpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeTcpSocket): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7922,7 +9974,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerStartupProbe {
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeTcpSocket[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerStartupProbeToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeOutputReference | DeploymentV1SpecTemplateSpecInitContainerStartupProbe): any {
+export function deploymentV1SpecTemplateSpecInitContainerStartupProbeToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeOutputReference | DeploymentV1SpecTemplateSpecInitContainerStartupProbe): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -7949,12 +10001,73 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeOutputReferenc
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerStartupProbe | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._failureThreshold) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._httpGet) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerStartupProbe | undefined) {
+    if (value === undefined) {
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket = undefined;
+    }
+    else {
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket = value.tcpSocket;
+    }
+  }
+
   // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number | undefined; 
+  private _failureThreshold?: number; 
   public get failureThreshold() {
     return this.getNumberAttribute('failure_threshold');
   }
-  public set failureThreshold(value: number | undefined) {
+  public set failureThreshold(value: number) {
     this._failureThreshold = value;
   }
   public resetFailureThreshold() {
@@ -7962,15 +10075,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get failureThresholdInput() {
-    return this._failureThreshold
+    return this._failureThreshold;
   }
 
   // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number | undefined; 
+  private _initialDelaySeconds?: number; 
   public get initialDelaySeconds() {
     return this.getNumberAttribute('initial_delay_seconds');
   }
-  public set initialDelaySeconds(value: number | undefined) {
+  public set initialDelaySeconds(value: number) {
     this._initialDelaySeconds = value;
   }
   public resetInitialDelaySeconds() {
@@ -7978,15 +10091,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds
+    return this._initialDelaySeconds;
   }
 
   // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number | undefined; 
+  private _periodSeconds?: number; 
   public get periodSeconds() {
     return this.getNumberAttribute('period_seconds');
   }
-  public set periodSeconds(value: number | undefined) {
+  public set periodSeconds(value: number) {
     this._periodSeconds = value;
   }
   public resetPeriodSeconds() {
@@ -7994,15 +10107,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get periodSecondsInput() {
-    return this._periodSeconds
+    return this._periodSeconds;
   }
 
   // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number | undefined; 
+  private _successThreshold?: number; 
   public get successThreshold() {
     return this.getNumberAttribute('success_threshold');
   }
-  public set successThreshold(value: number | undefined) {
+  public set successThreshold(value: number) {
     this._successThreshold = value;
   }
   public resetSuccessThreshold() {
@@ -8010,15 +10123,15 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get successThresholdInput() {
-    return this._successThreshold
+    return this._successThreshold;
   }
 
   // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number | undefined; 
+  private _timeoutSeconds?: number; 
   public get timeoutSeconds() {
     return this.getNumberAttribute('timeout_seconds');
   }
-  public set timeoutSeconds(value: number | undefined) {
+  public set timeoutSeconds(value: number) {
     this._timeoutSeconds = value;
   }
   public resetTimeoutSeconds() {
@@ -8026,50 +10139,48 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutSecondsInput() {
-    return this._timeoutSeconds
+    return this._timeoutSeconds;
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeExec | undefined; 
-  private __execOutput = new DeploymentV1SpecTemplateSpecInitContainerStartupProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new DeploymentV1SpecTemplateSpecInitContainerStartupProbeExecOutputReference(this as any, "exec", true);
   public get exec() {
-    return this.__execOutput;
+    return this._exec;
   }
-  public putExec(value: DeploymentV1SpecTemplateSpecInitContainerStartupProbeExec | undefined) {
-    this._exec = value;
+  public putExec(value: DeploymentV1SpecTemplateSpecInitContainerStartupProbeExec) {
+    this._exec.internalValue = value;
   }
   public resetExec() {
-    this._exec = undefined;
+    this._exec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get execInput() {
-    return this._exec
+    return this._exec.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGet | undefined; 
-  private __httpGetOutput = new DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference(this as any, "http_get", true);
   public get httpGet() {
-    return this.__httpGetOutput;
+    return this._httpGet;
   }
-  public putHttpGet(value: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGet | undefined) {
-    this._httpGet = value;
+  public putHttpGet(value: DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGet) {
+    this._httpGet.internalValue = value;
   }
   public resetHttpGet() {
-    this._httpGet = undefined;
+    this._httpGet.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get httpGetInput() {
-    return this._httpGet
+    return this._httpGet.internalValue;
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeTcpSocket[] | undefined; 
+  private _tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerStartupProbeTcpSocket[]; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tcp_socket') as any;
   }
-  public set tcpSocket(value: DeploymentV1SpecTemplateSpecInitContainerStartupProbeTcpSocket[] | undefined) {
+  public set tcpSocket(value: DeploymentV1SpecTemplateSpecInitContainerStartupProbeTcpSocket[]) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -8077,7 +10188,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
-    return this._tcpSocket
+    return this._tcpSocket;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerVolumeMount {
@@ -8113,7 +10224,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerVolumeMount {
   readonly subPath?: string;
 }
 
-function deploymentV1SpecTemplateSpecInitContainerVolumeMountToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerVolumeMount): any {
+export function deploymentV1SpecTemplateSpecInitContainerVolumeMountToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerVolumeMount): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8256,7 +10367,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainer {
   readonly volumeMount?: DeploymentV1SpecTemplateSpecInitContainerVolumeMount[];
 }
 
-function deploymentV1SpecTemplateSpecInitContainerToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainer): any {
+export function deploymentV1SpecTemplateSpecInitContainerToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainer): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8295,7 +10406,7 @@ export interface DeploymentV1SpecTemplateSpecReadinessGate {
   readonly conditionType: string;
 }
 
-function deploymentV1SpecTemplateSpecReadinessGateToTerraform(struct?: DeploymentV1SpecTemplateSpecReadinessGate): any {
+export function deploymentV1SpecTemplateSpecReadinessGateToTerraform(struct?: DeploymentV1SpecTemplateSpecReadinessGate): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8332,7 +10443,7 @@ export interface DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptions {
   readonly user?: string;
 }
 
-function deploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct?: DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference | DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptions): any {
+export function deploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct?: DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference | DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8355,12 +10466,49 @@ export class DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputRefe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptions | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._level) {
+      hasAnyValues = true;
+      internalValueResult.level = this._level;
+    }
+    if (this._role) {
+      hasAnyValues = true;
+      internalValueResult.role = this._role;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._user) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptions | undefined) {
+    if (value === undefined) {
+      this._level = undefined;
+      this._role = undefined;
+      this._type = undefined;
+      this._user = undefined;
+    }
+    else {
+      this._level = value.level;
+      this._role = value.role;
+      this._type = value.type;
+      this._user = value.user;
+    }
+  }
+
   // level - computed: false, optional: true, required: false
-  private _level?: string | undefined; 
+  private _level?: string; 
   public get level() {
     return this.getStringAttribute('level');
   }
-  public set level(value: string | undefined) {
+  public set level(value: string) {
     this._level = value;
   }
   public resetLevel() {
@@ -8368,15 +10516,15 @@ export class DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get levelInput() {
-    return this._level
+    return this._level;
   }
 
   // role - computed: false, optional: true, required: false
-  private _role?: string | undefined; 
+  private _role?: string; 
   public get role() {
     return this.getStringAttribute('role');
   }
-  public set role(value: string | undefined) {
+  public set role(value: string) {
     this._role = value;
   }
   public resetRole() {
@@ -8384,15 +10532,15 @@ export class DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get roleInput() {
-    return this._role
+    return this._role;
   }
 
   // type - computed: false, optional: true, required: false
-  private _type?: string | undefined; 
+  private _type?: string; 
   public get type() {
     return this.getStringAttribute('type');
   }
-  public set type(value: string | undefined) {
+  public set type(value: string) {
     this._type = value;
   }
   public resetType() {
@@ -8400,15 +10548,15 @@ export class DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -8416,7 +10564,7 @@ export class DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 }
 export interface DeploymentV1SpecTemplateSpecSecurityContextSysctl {
@@ -8434,7 +10582,7 @@ export interface DeploymentV1SpecTemplateSpecSecurityContextSysctl {
   readonly value: string;
 }
 
-function deploymentV1SpecTemplateSpecSecurityContextSysctlToTerraform(struct?: DeploymentV1SpecTemplateSpecSecurityContextSysctl): any {
+export function deploymentV1SpecTemplateSpecSecurityContextSysctlToTerraform(struct?: DeploymentV1SpecTemplateSpecSecurityContextSysctl): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8490,7 +10638,7 @@ export interface DeploymentV1SpecTemplateSpecSecurityContext {
   readonly sysctl?: DeploymentV1SpecTemplateSpecSecurityContextSysctl[];
 }
 
-function deploymentV1SpecTemplateSpecSecurityContextToTerraform(struct?: DeploymentV1SpecTemplateSpecSecurityContextOutputReference | DeploymentV1SpecTemplateSpecSecurityContext): any {
+export function deploymentV1SpecTemplateSpecSecurityContextToTerraform(struct?: DeploymentV1SpecTemplateSpecSecurityContextOutputReference | DeploymentV1SpecTemplateSpecSecurityContext): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8516,12 +10664,67 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecSecurityContext | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsGroup) {
+      hasAnyValues = true;
+      internalValueResult.fsGroup = this._fsGroup;
+    }
+    if (this._runAsGroup) {
+      hasAnyValues = true;
+      internalValueResult.runAsGroup = this._runAsGroup;
+    }
+    if (this._runAsNonRoot) {
+      hasAnyValues = true;
+      internalValueResult.runAsNonRoot = this._runAsNonRoot;
+    }
+    if (this._runAsUser) {
+      hasAnyValues = true;
+      internalValueResult.runAsUser = this._runAsUser;
+    }
+    if (this._supplementalGroups) {
+      hasAnyValues = true;
+      internalValueResult.supplementalGroups = this._supplementalGroups;
+    }
+    if (this._seLinuxOptions) {
+      hasAnyValues = true;
+      internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
+    }
+    if (this._sysctl) {
+      hasAnyValues = true;
+      internalValueResult.sysctl = this._sysctl;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecSecurityContext | undefined) {
+    if (value === undefined) {
+      this._fsGroup = undefined;
+      this._runAsGroup = undefined;
+      this._runAsNonRoot = undefined;
+      this._runAsUser = undefined;
+      this._supplementalGroups = undefined;
+      this._seLinuxOptions.internalValue = undefined;
+      this._sysctl = undefined;
+    }
+    else {
+      this._fsGroup = value.fsGroup;
+      this._runAsGroup = value.runAsGroup;
+      this._runAsNonRoot = value.runAsNonRoot;
+      this._runAsUser = value.runAsUser;
+      this._supplementalGroups = value.supplementalGroups;
+      this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._sysctl = value.sysctl;
+    }
+  }
+
   // fs_group - computed: false, optional: true, required: false
-  private _fsGroup?: string | undefined; 
+  private _fsGroup?: string; 
   public get fsGroup() {
     return this.getStringAttribute('fs_group');
   }
-  public set fsGroup(value: string | undefined) {
+  public set fsGroup(value: string) {
     this._fsGroup = value;
   }
   public resetFsGroup() {
@@ -8529,15 +10732,15 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get fsGroupInput() {
-    return this._fsGroup
+    return this._fsGroup;
   }
 
   // run_as_group - computed: false, optional: true, required: false
-  private _runAsGroup?: string | undefined; 
+  private _runAsGroup?: string; 
   public get runAsGroup() {
     return this.getStringAttribute('run_as_group');
   }
-  public set runAsGroup(value: string | undefined) {
+  public set runAsGroup(value: string) {
     this._runAsGroup = value;
   }
   public resetRunAsGroup() {
@@ -8545,15 +10748,15 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get runAsGroupInput() {
-    return this._runAsGroup
+    return this._runAsGroup;
   }
 
   // run_as_non_root - computed: false, optional: true, required: false
-  private _runAsNonRoot?: boolean | cdktf.IResolvable | undefined; 
+  private _runAsNonRoot?: boolean | cdktf.IResolvable; 
   public get runAsNonRoot() {
     return this.getBooleanAttribute('run_as_non_root') as any;
   }
-  public set runAsNonRoot(value: boolean | cdktf.IResolvable | undefined) {
+  public set runAsNonRoot(value: boolean | cdktf.IResolvable) {
     this._runAsNonRoot = value;
   }
   public resetRunAsNonRoot() {
@@ -8561,15 +10764,15 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get runAsNonRootInput() {
-    return this._runAsNonRoot
+    return this._runAsNonRoot;
   }
 
   // run_as_user - computed: false, optional: true, required: false
-  private _runAsUser?: string | undefined; 
+  private _runAsUser?: string; 
   public get runAsUser() {
     return this.getStringAttribute('run_as_user');
   }
-  public set runAsUser(value: string | undefined) {
+  public set runAsUser(value: string) {
     this._runAsUser = value;
   }
   public resetRunAsUser() {
@@ -8577,16 +10780,16 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get runAsUserInput() {
-    return this._runAsUser
+    return this._runAsUser;
   }
 
   // supplemental_groups - computed: false, optional: true, required: false
-  private _supplementalGroups?: number[] | undefined; 
+  private _supplementalGroups?: number[]; 
   public get supplementalGroups() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('supplemental_groups') as any;
   }
-  public set supplementalGroups(value: number[] | undefined) {
+  public set supplementalGroups(value: number[]) {
     this._supplementalGroups = value;
   }
   public resetSupplementalGroups() {
@@ -8594,33 +10797,32 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get supplementalGroupsInput() {
-    return this._supplementalGroups
+    return this._supplementalGroups;
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions?: DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptions | undefined; 
-  private __seLinuxOptionsOutput = new DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
+  private _seLinuxOptions = new DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
   public get seLinuxOptions() {
-    return this.__seLinuxOptionsOutput;
+    return this._seLinuxOptions;
   }
-  public putSeLinuxOptions(value: DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptions | undefined) {
-    this._seLinuxOptions = value;
+  public putSeLinuxOptions(value: DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptions) {
+    this._seLinuxOptions.internalValue = value;
   }
   public resetSeLinuxOptions() {
-    this._seLinuxOptions = undefined;
+    this._seLinuxOptions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
-    return this._seLinuxOptions
+    return this._seLinuxOptions.internalValue;
   }
 
   // sysctl - computed: false, optional: true, required: false
-  private _sysctl?: DeploymentV1SpecTemplateSpecSecurityContextSysctl[] | undefined; 
+  private _sysctl?: DeploymentV1SpecTemplateSpecSecurityContextSysctl[]; 
   public get sysctl() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('sysctl') as any;
   }
-  public set sysctl(value: DeploymentV1SpecTemplateSpecSecurityContextSysctl[] | undefined) {
+  public set sysctl(value: DeploymentV1SpecTemplateSpecSecurityContextSysctl[]) {
     this._sysctl = value;
   }
   public resetSysctl() {
@@ -8628,7 +10830,7 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get sysctlInput() {
-    return this._sysctl
+    return this._sysctl;
   }
 }
 export interface DeploymentV1SpecTemplateSpecToleration {
@@ -8664,7 +10866,7 @@ export interface DeploymentV1SpecTemplateSpecToleration {
   readonly value?: string;
 }
 
-function deploymentV1SpecTemplateSpecTolerationToTerraform(struct?: DeploymentV1SpecTemplateSpecToleration): any {
+export function deploymentV1SpecTemplateSpecTolerationToTerraform(struct?: DeploymentV1SpecTemplateSpecToleration): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8699,7 +10901,7 @@ export interface DeploymentV1SpecTemplateSpecTopologySpreadConstraintLabelSelect
   readonly values?: string[];
 }
 
-function deploymentV1SpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions): any {
+export function deploymentV1SpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform(struct?: DeploymentV1SpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8726,7 +10928,7 @@ export interface DeploymentV1SpecTemplateSpecTopologySpreadConstraintLabelSelect
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions[];
 }
 
-function deploymentV1SpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform(struct?: DeploymentV1SpecTemplateSpecTopologySpreadConstraintLabelSelector): any {
+export function deploymentV1SpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform(struct?: DeploymentV1SpecTemplateSpecTopologySpreadConstraintLabelSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8764,7 +10966,7 @@ export interface DeploymentV1SpecTemplateSpecTopologySpreadConstraint {
   readonly labelSelector?: DeploymentV1SpecTemplateSpecTopologySpreadConstraintLabelSelector[];
 }
 
-function deploymentV1SpecTemplateSpecTopologySpreadConstraintToTerraform(struct?: DeploymentV1SpecTemplateSpecTopologySpreadConstraint): any {
+export function deploymentV1SpecTemplateSpecTopologySpreadConstraintToTerraform(struct?: DeploymentV1SpecTemplateSpecTopologySpreadConstraint): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8804,7 +11006,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStore {
   readonly volumeId: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeAwsElasticBlockStoreToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStoreOutputReference | DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStore): any {
+export function deploymentV1SpecTemplateSpecVolumeAwsElasticBlockStoreToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStoreOutputReference | DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStore): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8827,12 +11029,49 @@ export class DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStoreOutputReferen
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStore | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._partition) {
+      hasAnyValues = true;
+      internalValueResult.partition = this._partition;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._volumeId) {
+      hasAnyValues = true;
+      internalValueResult.volumeId = this._volumeId;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStore | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._partition = undefined;
+      this._readOnly = undefined;
+      this._volumeId = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._partition = value.partition;
+      this._readOnly = value.readOnly;
+      this._volumeId = value.volumeId;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -8840,15 +11079,15 @@ export class DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStoreOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // partition - computed: false, optional: true, required: false
-  private _partition?: number | undefined; 
+  private _partition?: number; 
   public get partition() {
     return this.getNumberAttribute('partition');
   }
-  public set partition(value: number | undefined) {
+  public set partition(value: number) {
     this._partition = value;
   }
   public resetPartition() {
@@ -8856,15 +11095,15 @@ export class DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStoreOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get partitionInput() {
-    return this._partition
+    return this._partition;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -8872,7 +11111,7 @@ export class DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStoreOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // volume_id - computed: false, optional: false, required: true
@@ -8885,7 +11124,7 @@ export class DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStoreOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get volumeIdInput() {
-    return this._volumeId
+    return this._volumeId;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeAzureDisk {
@@ -8927,7 +11166,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeAzureDisk {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecVolumeAzureDiskToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeAzureDiskOutputReference | DeploymentV1SpecTemplateSpecVolumeAzureDisk): any {
+export function deploymentV1SpecTemplateSpecVolumeAzureDiskToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeAzureDiskOutputReference | DeploymentV1SpecTemplateSpecVolumeAzureDisk): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -8952,6 +11191,55 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureDiskOutputReference extends 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeAzureDisk | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._cachingMode) {
+      hasAnyValues = true;
+      internalValueResult.cachingMode = this._cachingMode;
+    }
+    if (this._dataDiskUri) {
+      hasAnyValues = true;
+      internalValueResult.dataDiskUri = this._dataDiskUri;
+    }
+    if (this._diskName) {
+      hasAnyValues = true;
+      internalValueResult.diskName = this._diskName;
+    }
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._kind) {
+      hasAnyValues = true;
+      internalValueResult.kind = this._kind;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeAzureDisk | undefined) {
+    if (value === undefined) {
+      this._cachingMode = undefined;
+      this._dataDiskUri = undefined;
+      this._diskName = undefined;
+      this._fsType = undefined;
+      this._kind = undefined;
+      this._readOnly = undefined;
+    }
+    else {
+      this._cachingMode = value.cachingMode;
+      this._dataDiskUri = value.dataDiskUri;
+      this._diskName = value.diskName;
+      this._fsType = value.fsType;
+      this._kind = value.kind;
+      this._readOnly = value.readOnly;
+    }
+  }
+
   // caching_mode - computed: false, optional: false, required: true
   private _cachingMode?: string; 
   public get cachingMode() {
@@ -8962,7 +11250,7 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureDiskOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get cachingModeInput() {
-    return this._cachingMode
+    return this._cachingMode;
   }
 
   // data_disk_uri - computed: false, optional: false, required: true
@@ -8975,7 +11263,7 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureDiskOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get dataDiskUriInput() {
-    return this._dataDiskUri
+    return this._dataDiskUri;
   }
 
   // disk_name - computed: false, optional: false, required: true
@@ -8988,15 +11276,15 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureDiskOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get diskNameInput() {
-    return this._diskName
+    return this._diskName;
   }
 
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -9004,15 +11292,15 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureDiskOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // kind - computed: true, optional: true, required: false
-  private _kind?: string | undefined; 
+  private _kind?: string; 
   public get kind() {
     return this.getStringAttribute('kind');
   }
-  public set kind(value: string | undefined) {
+  public set kind(value: string) {
     this._kind = value;
   }
   public resetKind() {
@@ -9020,15 +11308,15 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureDiskOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get kindInput() {
-    return this._kind
+    return this._kind;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -9036,7 +11324,7 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureDiskOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeAzureFile {
@@ -9066,7 +11354,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeAzureFile {
   readonly shareName: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeAzureFileToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeAzureFileOutputReference | DeploymentV1SpecTemplateSpecVolumeAzureFile): any {
+export function deploymentV1SpecTemplateSpecVolumeAzureFileToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeAzureFileOutputReference | DeploymentV1SpecTemplateSpecVolumeAzureFile): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9089,12 +11377,49 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureFileOutputReference extends 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeAzureFile | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._secretName) {
+      hasAnyValues = true;
+      internalValueResult.secretName = this._secretName;
+    }
+    if (this._secretNamespace) {
+      hasAnyValues = true;
+      internalValueResult.secretNamespace = this._secretNamespace;
+    }
+    if (this._shareName) {
+      hasAnyValues = true;
+      internalValueResult.shareName = this._shareName;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeAzureFile | undefined) {
+    if (value === undefined) {
+      this._readOnly = undefined;
+      this._secretName = undefined;
+      this._secretNamespace = undefined;
+      this._shareName = undefined;
+    }
+    else {
+      this._readOnly = value.readOnly;
+      this._secretName = value.secretName;
+      this._secretNamespace = value.secretNamespace;
+      this._shareName = value.shareName;
+    }
+  }
+
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -9102,7 +11427,7 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureFileOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // secret_name - computed: false, optional: false, required: true
@@ -9115,15 +11440,15 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureFileOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get secretNameInput() {
-    return this._secretName
+    return this._secretName;
   }
 
   // secret_namespace - computed: false, optional: true, required: false
-  private _secretNamespace?: string | undefined; 
+  private _secretNamespace?: string; 
   public get secretNamespace() {
     return this.getStringAttribute('secret_namespace');
   }
-  public set secretNamespace(value: string | undefined) {
+  public set secretNamespace(value: string) {
     this._secretNamespace = value;
   }
   public resetSecretNamespace() {
@@ -9131,7 +11456,7 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureFileOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get secretNamespaceInput() {
-    return this._secretNamespace
+    return this._secretNamespace;
   }
 
   // share_name - computed: false, optional: false, required: true
@@ -9144,7 +11469,7 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureFileOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get shareNameInput() {
-    return this._shareName
+    return this._shareName;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeCephFsSecretRef {
@@ -9162,7 +11487,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeCephFsSecretRef {
   readonly namespace?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeCephFsSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCephFsSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCephFsSecretRef): any {
+export function deploymentV1SpecTemplateSpecVolumeCephFsSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCephFsSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCephFsSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9183,12 +11508,37 @@ export class DeploymentV1SpecTemplateSpecVolumeCephFsSecretRefOutputReference ex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCephFsSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeCephFsSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -9196,15 +11546,15 @@ export class DeploymentV1SpecTemplateSpecVolumeCephFsSecretRefOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -9212,7 +11562,7 @@ export class DeploymentV1SpecTemplateSpecVolumeCephFsSecretRefOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeCephFs {
@@ -9254,7 +11604,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeCephFs {
   readonly secretRef?: DeploymentV1SpecTemplateSpecVolumeCephFsSecretRef;
 }
 
-function deploymentV1SpecTemplateSpecVolumeCephFsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCephFsOutputReference | DeploymentV1SpecTemplateSpecVolumeCephFs): any {
+export function deploymentV1SpecTemplateSpecVolumeCephFsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCephFsOutputReference | DeploymentV1SpecTemplateSpecVolumeCephFs): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9279,6 +11629,55 @@ export class DeploymentV1SpecTemplateSpecVolumeCephFsOutputReference extends cdk
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCephFs | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._monitors) {
+      hasAnyValues = true;
+      internalValueResult.monitors = this._monitors;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._secretFile) {
+      hasAnyValues = true;
+      internalValueResult.secretFile = this._secretFile;
+    }
+    if (this._user) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    if (this._secretRef) {
+      hasAnyValues = true;
+      internalValueResult.secretRef = this._secretRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeCephFs | undefined) {
+    if (value === undefined) {
+      this._monitors = undefined;
+      this._path = undefined;
+      this._readOnly = undefined;
+      this._secretFile = undefined;
+      this._user = undefined;
+      this._secretRef.internalValue = undefined;
+    }
+    else {
+      this._monitors = value.monitors;
+      this._path = value.path;
+      this._readOnly = value.readOnly;
+      this._secretFile = value.secretFile;
+      this._user = value.user;
+      this._secretRef.internalValue = value.secretRef;
+    }
+  }
+
   // monitors - computed: false, optional: false, required: true
   private _monitors?: string[]; 
   public get monitors() {
@@ -9289,15 +11688,15 @@ export class DeploymentV1SpecTemplateSpecVolumeCephFsOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get monitorsInput() {
-    return this._monitors
+    return this._monitors;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -9305,15 +11704,15 @@ export class DeploymentV1SpecTemplateSpecVolumeCephFsOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -9321,15 +11720,15 @@ export class DeploymentV1SpecTemplateSpecVolumeCephFsOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // secret_file - computed: false, optional: true, required: false
-  private _secretFile?: string | undefined; 
+  private _secretFile?: string; 
   public get secretFile() {
     return this.getStringAttribute('secret_file');
   }
-  public set secretFile(value: string | undefined) {
+  public set secretFile(value: string) {
     this._secretFile = value;
   }
   public resetSecretFile() {
@@ -9337,15 +11736,15 @@ export class DeploymentV1SpecTemplateSpecVolumeCephFsOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get secretFileInput() {
-    return this._secretFile
+    return this._secretFile;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -9353,24 +11752,23 @@ export class DeploymentV1SpecTemplateSpecVolumeCephFsOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef?: DeploymentV1SpecTemplateSpecVolumeCephFsSecretRef | undefined; 
-  private __secretRefOutput = new DeploymentV1SpecTemplateSpecVolumeCephFsSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new DeploymentV1SpecTemplateSpecVolumeCephFsSecretRefOutputReference(this as any, "secret_ref", true);
   public get secretRef() {
-    return this.__secretRefOutput;
+    return this._secretRef;
   }
-  public putSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCephFsSecretRef | undefined) {
-    this._secretRef = value;
+  public putSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCephFsSecretRef) {
+    this._secretRef.internalValue = value;
   }
   public resetSecretRef() {
-    this._secretRef = undefined;
+    this._secretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretRefInput() {
-    return this._secretRef
+    return this._secretRef.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeCinder {
@@ -9394,7 +11792,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeCinder {
   readonly volumeId: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeCinderToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCinderOutputReference | DeploymentV1SpecTemplateSpecVolumeCinder): any {
+export function deploymentV1SpecTemplateSpecVolumeCinderToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCinderOutputReference | DeploymentV1SpecTemplateSpecVolumeCinder): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9416,12 +11814,43 @@ export class DeploymentV1SpecTemplateSpecVolumeCinderOutputReference extends cdk
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCinder | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._volumeId) {
+      hasAnyValues = true;
+      internalValueResult.volumeId = this._volumeId;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeCinder | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._readOnly = undefined;
+      this._volumeId = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._readOnly = value.readOnly;
+      this._volumeId = value.volumeId;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -9429,15 +11858,15 @@ export class DeploymentV1SpecTemplateSpecVolumeCinderOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -9445,7 +11874,7 @@ export class DeploymentV1SpecTemplateSpecVolumeCinderOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // volume_id - computed: false, optional: false, required: true
@@ -9458,7 +11887,7 @@ export class DeploymentV1SpecTemplateSpecVolumeCinderOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get volumeIdInput() {
-    return this._volumeId
+    return this._volumeId;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeConfigMapItems {
@@ -9482,7 +11911,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeConfigMapItems {
   readonly path?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeConfigMapItemsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeConfigMapItems): any {
+export function deploymentV1SpecTemplateSpecVolumeConfigMapItemsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeConfigMapItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9521,7 +11950,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeConfigMap {
   readonly items?: DeploymentV1SpecTemplateSpecVolumeConfigMapItems[];
 }
 
-function deploymentV1SpecTemplateSpecVolumeConfigMapToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeConfigMapOutputReference | DeploymentV1SpecTemplateSpecVolumeConfigMap): any {
+export function deploymentV1SpecTemplateSpecVolumeConfigMapToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeConfigMapOutputReference | DeploymentV1SpecTemplateSpecVolumeConfigMap): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9544,12 +11973,49 @@ export class DeploymentV1SpecTemplateSpecVolumeConfigMapOutputReference extends 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeConfigMap | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._defaultMode) {
+      hasAnyValues = true;
+      internalValueResult.defaultMode = this._defaultMode;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    if (this._items) {
+      hasAnyValues = true;
+      internalValueResult.items = this._items;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeConfigMap | undefined) {
+    if (value === undefined) {
+      this._defaultMode = undefined;
+      this._name = undefined;
+      this._optional = undefined;
+      this._items = undefined;
+    }
+    else {
+      this._defaultMode = value.defaultMode;
+      this._name = value.name;
+      this._optional = value.optional;
+      this._items = value.items;
+    }
+  }
+
   // default_mode - computed: false, optional: true, required: false
-  private _defaultMode?: string | undefined; 
+  private _defaultMode?: string; 
   public get defaultMode() {
     return this.getStringAttribute('default_mode');
   }
-  public set defaultMode(value: string | undefined) {
+  public set defaultMode(value: string) {
     this._defaultMode = value;
   }
   public resetDefaultMode() {
@@ -9557,15 +12023,15 @@ export class DeploymentV1SpecTemplateSpecVolumeConfigMapOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get defaultModeInput() {
-    return this._defaultMode
+    return this._defaultMode;
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -9573,15 +12039,15 @@ export class DeploymentV1SpecTemplateSpecVolumeConfigMapOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -9589,16 +12055,16 @@ export class DeploymentV1SpecTemplateSpecVolumeConfigMapOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 
   // items - computed: false, optional: true, required: false
-  private _items?: DeploymentV1SpecTemplateSpecVolumeConfigMapItems[] | undefined; 
+  private _items?: DeploymentV1SpecTemplateSpecVolumeConfigMapItems[]; 
   public get items() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
-  public set items(value: DeploymentV1SpecTemplateSpecVolumeConfigMapItems[] | undefined) {
+  public set items(value: DeploymentV1SpecTemplateSpecVolumeConfigMapItems[]) {
     this._items = value;
   }
   public resetItems() {
@@ -9606,7 +12072,7 @@ export class DeploymentV1SpecTemplateSpecVolumeConfigMapOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get itemsInput() {
-    return this._items
+    return this._items;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef {
@@ -9624,7 +12090,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef 
   readonly namespace?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef): any {
+export function deploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9645,12 +12111,37 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutpu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -9658,15 +12149,15 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -9674,7 +12165,7 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef {
@@ -9692,7 +12183,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef
   readonly namespace?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef): any {
+export function deploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9713,12 +12204,37 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutp
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -9726,15 +12242,15 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutp
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -9742,7 +12258,7 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutp
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef {
@@ -9760,7 +12276,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef {
   readonly namespace?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef): any {
+export function deploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9781,12 +12297,37 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputRefe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -9794,15 +12335,15 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -9810,7 +12351,7 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef {
@@ -9828,7 +12369,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef {
   readonly namespace?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef): any {
+export function deploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9849,12 +12390,37 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputRefere
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -9862,15 +12428,15 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -9878,7 +12444,7 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeCsi {
@@ -9938,7 +12504,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeCsi {
   readonly nodeStageSecretRef?: DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef;
 }
 
-function deploymentV1SpecTemplateSpecVolumeCsiToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiOutputReference | DeploymentV1SpecTemplateSpecVolumeCsi): any {
+export function deploymentV1SpecTemplateSpecVolumeCsiToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiOutputReference | DeploymentV1SpecTemplateSpecVolumeCsi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -9966,6 +12532,73 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCsi | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._driver) {
+      hasAnyValues = true;
+      internalValueResult.driver = this._driver;
+    }
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._volumeAttributes) {
+      hasAnyValues = true;
+      internalValueResult.volumeAttributes = this._volumeAttributes;
+    }
+    if (this._volumeHandle) {
+      hasAnyValues = true;
+      internalValueResult.volumeHandle = this._volumeHandle;
+    }
+    if (this._controllerExpandSecretRef) {
+      hasAnyValues = true;
+      internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
+    }
+    if (this._controllerPublishSecretRef) {
+      hasAnyValues = true;
+      internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
+    }
+    if (this._nodePublishSecretRef) {
+      hasAnyValues = true;
+      internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
+    }
+    if (this._nodeStageSecretRef) {
+      hasAnyValues = true;
+      internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeCsi | undefined) {
+    if (value === undefined) {
+      this._driver = undefined;
+      this._fsType = undefined;
+      this._readOnly = undefined;
+      this._volumeAttributes = undefined;
+      this._volumeHandle = undefined;
+      this._controllerExpandSecretRef.internalValue = undefined;
+      this._controllerPublishSecretRef.internalValue = undefined;
+      this._nodePublishSecretRef.internalValue = undefined;
+      this._nodeStageSecretRef.internalValue = undefined;
+    }
+    else {
+      this._driver = value.driver;
+      this._fsType = value.fsType;
+      this._readOnly = value.readOnly;
+      this._volumeAttributes = value.volumeAttributes;
+      this._volumeHandle = value.volumeHandle;
+      this._controllerExpandSecretRef.internalValue = value.controllerExpandSecretRef;
+      this._controllerPublishSecretRef.internalValue = value.controllerPublishSecretRef;
+      this._nodePublishSecretRef.internalValue = value.nodePublishSecretRef;
+      this._nodeStageSecretRef.internalValue = value.nodeStageSecretRef;
+    }
+  }
+
   // driver - computed: false, optional: false, required: true
   private _driver?: string; 
   public get driver() {
@@ -9976,15 +12609,15 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get driverInput() {
-    return this._driver
+    return this._driver;
   }
 
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -9992,15 +12625,15 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -10008,16 +12641,16 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // volume_attributes - computed: false, optional: true, required: false
-  private _volumeAttributes?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _volumeAttributes?: { [key: string]: string } | cdktf.IResolvable; 
   public get volumeAttributes() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('volume_attributes') as any;
   }
-  public set volumeAttributes(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set volumeAttributes(value: { [key: string]: string } | cdktf.IResolvable) {
     this._volumeAttributes = value;
   }
   public resetVolumeAttributes() {
@@ -10025,7 +12658,7 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get volumeAttributesInput() {
-    return this._volumeAttributes
+    return this._volumeAttributes;
   }
 
   // volume_handle - computed: false, optional: false, required: true
@@ -10038,75 +12671,71 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get volumeHandleInput() {
-    return this._volumeHandle
+    return this._volumeHandle;
   }
 
   // controller_expand_secret_ref - computed: false, optional: true, required: false
-  private _controllerExpandSecretRef?: DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined; 
-  private __controllerExpandSecretRefOutput = new DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference(this as any, "controller_expand_secret_ref", true);
+  private _controllerExpandSecretRef = new DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference(this as any, "controller_expand_secret_ref", true);
   public get controllerExpandSecretRef() {
-    return this.__controllerExpandSecretRefOutput;
+    return this._controllerExpandSecretRef;
   }
-  public putControllerExpandSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined) {
-    this._controllerExpandSecretRef = value;
+  public putControllerExpandSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef) {
+    this._controllerExpandSecretRef.internalValue = value;
   }
   public resetControllerExpandSecretRef() {
-    this._controllerExpandSecretRef = undefined;
+    this._controllerExpandSecretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get controllerExpandSecretRefInput() {
-    return this._controllerExpandSecretRef
+    return this._controllerExpandSecretRef.internalValue;
   }
 
   // controller_publish_secret_ref - computed: false, optional: true, required: false
-  private _controllerPublishSecretRef?: DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined; 
-  private __controllerPublishSecretRefOutput = new DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference(this as any, "controller_publish_secret_ref", true);
+  private _controllerPublishSecretRef = new DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference(this as any, "controller_publish_secret_ref", true);
   public get controllerPublishSecretRef() {
-    return this.__controllerPublishSecretRefOutput;
+    return this._controllerPublishSecretRef;
   }
-  public putControllerPublishSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined) {
-    this._controllerPublishSecretRef = value;
+  public putControllerPublishSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef) {
+    this._controllerPublishSecretRef.internalValue = value;
   }
   public resetControllerPublishSecretRef() {
-    this._controllerPublishSecretRef = undefined;
+    this._controllerPublishSecretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get controllerPublishSecretRefInput() {
-    return this._controllerPublishSecretRef
+    return this._controllerPublishSecretRef.internalValue;
   }
 
   // node_publish_secret_ref - computed: false, optional: true, required: false
-  private _nodePublishSecretRef?: DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined; 
-  private __nodePublishSecretRefOutput = new DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this as any, "node_publish_secret_ref", true);
+  private _nodePublishSecretRef = new DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this as any, "node_publish_secret_ref", true);
   public get nodePublishSecretRef() {
-    return this.__nodePublishSecretRefOutput;
+    return this._nodePublishSecretRef;
   }
-  public putNodePublishSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined) {
-    this._nodePublishSecretRef = value;
+  public putNodePublishSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef) {
+    this._nodePublishSecretRef.internalValue = value;
   }
   public resetNodePublishSecretRef() {
-    this._nodePublishSecretRef = undefined;
+    this._nodePublishSecretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get nodePublishSecretRefInput() {
-    return this._nodePublishSecretRef
+    return this._nodePublishSecretRef.internalValue;
   }
 
   // node_stage_secret_ref - computed: false, optional: true, required: false
-  private _nodeStageSecretRef?: DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined; 
-  private __nodeStageSecretRefOutput = new DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference(this as any, "node_stage_secret_ref", true);
+  private _nodeStageSecretRef = new DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference(this as any, "node_stage_secret_ref", true);
   public get nodeStageSecretRef() {
-    return this.__nodeStageSecretRefOutput;
+    return this._nodeStageSecretRef;
   }
-  public putNodeStageSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined) {
-    this._nodeStageSecretRef = value;
+  public putNodeStageSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef) {
+    this._nodeStageSecretRef.internalValue = value;
   }
   public resetNodeStageSecretRef() {
-    this._nodeStageSecretRef = undefined;
+    this._nodeStageSecretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get nodeStageSecretRefInput() {
-    return this._nodeStageSecretRef
+    return this._nodeStageSecretRef.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRef {
@@ -10124,7 +12753,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRef {
   readonly fieldPath?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputReference | DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRef): any {
+export function deploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputReference | DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10145,12 +12774,37 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputRef
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._apiVersion) {
+      hasAnyValues = true;
+      internalValueResult.apiVersion = this._apiVersion;
+    }
+    if (this._fieldPath) {
+      hasAnyValues = true;
+      internalValueResult.fieldPath = this._fieldPath;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined) {
+    if (value === undefined) {
+      this._apiVersion = undefined;
+      this._fieldPath = undefined;
+    }
+    else {
+      this._apiVersion = value.apiVersion;
+      this._fieldPath = value.fieldPath;
+    }
+  }
+
   // api_version - computed: false, optional: true, required: false
-  private _apiVersion?: string | undefined; 
+  private _apiVersion?: string; 
   public get apiVersion() {
     return this.getStringAttribute('api_version');
   }
-  public set apiVersion(value: string | undefined) {
+  public set apiVersion(value: string) {
     this._apiVersion = value;
   }
   public resetApiVersion() {
@@ -10158,15 +12812,15 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get apiVersionInput() {
-    return this._apiVersion
+    return this._apiVersion;
   }
 
   // field_path - computed: false, optional: true, required: false
-  private _fieldPath?: string | undefined; 
+  private _fieldPath?: string; 
   public get fieldPath() {
     return this.getStringAttribute('field_path');
   }
-  public set fieldPath(value: string | undefined) {
+  public set fieldPath(value: string) {
     this._fieldPath = value;
   }
   public resetFieldPath() {
@@ -10174,7 +12828,7 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputRef
   }
   // Temporarily expose input value. Use with caution.
   public get fieldPathInput() {
-    return this._fieldPath
+    return this._fieldPath;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef {
@@ -10194,7 +12848,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceField
   readonly resource: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefOutputReference | DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef): any {
+export function deploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefOutputReference | DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10216,6 +12870,37 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefO
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._containerName) {
+      hasAnyValues = true;
+      internalValueResult.containerName = this._containerName;
+    }
+    if (this._divisor) {
+      hasAnyValues = true;
+      internalValueResult.divisor = this._divisor;
+    }
+    if (this._resource) {
+      hasAnyValues = true;
+      internalValueResult.resource = this._resource;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined) {
+    if (value === undefined) {
+      this._containerName = undefined;
+      this._divisor = undefined;
+      this._resource = undefined;
+    }
+    else {
+      this._containerName = value.containerName;
+      this._divisor = value.divisor;
+      this._resource = value.resource;
+    }
+  }
+
   // container_name - computed: false, optional: false, required: true
   private _containerName?: string; 
   public get containerName() {
@@ -10226,15 +12911,15 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefO
   }
   // Temporarily expose input value. Use with caution.
   public get containerNameInput() {
-    return this._containerName
+    return this._containerName;
   }
 
   // divisor - computed: false, optional: true, required: false
-  private _divisor?: string | undefined; 
+  private _divisor?: string; 
   public get divisor() {
     return this.getStringAttribute('divisor');
   }
-  public set divisor(value: string | undefined) {
+  public set divisor(value: string) {
     this._divisor = value;
   }
   public resetDivisor() {
@@ -10242,7 +12927,7 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefO
   }
   // Temporarily expose input value. Use with caution.
   public get divisorInput() {
-    return this._divisor
+    return this._divisor;
   }
 
   // resource - computed: false, optional: false, required: true
@@ -10255,7 +12940,7 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefO
   }
   // Temporarily expose input value. Use with caution.
   public get resourceInput() {
-    return this._resource
+    return this._resource;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeDownwardApiItems {
@@ -10285,7 +12970,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeDownwardApiItems {
   readonly resourceFieldRef?: DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef;
 }
 
-function deploymentV1SpecTemplateSpecVolumeDownwardApiItemsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeDownwardApiItems): any {
+export function deploymentV1SpecTemplateSpecVolumeDownwardApiItemsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeDownwardApiItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10313,7 +12998,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeDownwardApi {
   readonly items?: DeploymentV1SpecTemplateSpecVolumeDownwardApiItems[];
 }
 
-function deploymentV1SpecTemplateSpecVolumeDownwardApiToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeDownwardApiOutputReference | DeploymentV1SpecTemplateSpecVolumeDownwardApi): any {
+export function deploymentV1SpecTemplateSpecVolumeDownwardApiToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeDownwardApiOutputReference | DeploymentV1SpecTemplateSpecVolumeDownwardApi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10334,12 +13019,37 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiOutputReference extend
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeDownwardApi | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._defaultMode) {
+      hasAnyValues = true;
+      internalValueResult.defaultMode = this._defaultMode;
+    }
+    if (this._items) {
+      hasAnyValues = true;
+      internalValueResult.items = this._items;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeDownwardApi | undefined) {
+    if (value === undefined) {
+      this._defaultMode = undefined;
+      this._items = undefined;
+    }
+    else {
+      this._defaultMode = value.defaultMode;
+      this._items = value.items;
+    }
+  }
+
   // default_mode - computed: false, optional: true, required: false
-  private _defaultMode?: string | undefined; 
+  private _defaultMode?: string; 
   public get defaultMode() {
     return this.getStringAttribute('default_mode');
   }
-  public set defaultMode(value: string | undefined) {
+  public set defaultMode(value: string) {
     this._defaultMode = value;
   }
   public resetDefaultMode() {
@@ -10347,16 +13057,16 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get defaultModeInput() {
-    return this._defaultMode
+    return this._defaultMode;
   }
 
   // items - computed: false, optional: true, required: false
-  private _items?: DeploymentV1SpecTemplateSpecVolumeDownwardApiItems[] | undefined; 
+  private _items?: DeploymentV1SpecTemplateSpecVolumeDownwardApiItems[]; 
   public get items() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
-  public set items(value: DeploymentV1SpecTemplateSpecVolumeDownwardApiItems[] | undefined) {
+  public set items(value: DeploymentV1SpecTemplateSpecVolumeDownwardApiItems[]) {
     this._items = value;
   }
   public resetItems() {
@@ -10364,7 +13074,7 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get itemsInput() {
-    return this._items
+    return this._items;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeEmptyDir {
@@ -10382,7 +13092,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeEmptyDir {
   readonly sizeLimit?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeEmptyDirToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeEmptyDirOutputReference | DeploymentV1SpecTemplateSpecVolumeEmptyDir): any {
+export function deploymentV1SpecTemplateSpecVolumeEmptyDirToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeEmptyDirOutputReference | DeploymentV1SpecTemplateSpecVolumeEmptyDir): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10403,12 +13113,37 @@ export class DeploymentV1SpecTemplateSpecVolumeEmptyDirOutputReference extends c
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeEmptyDir | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._medium) {
+      hasAnyValues = true;
+      internalValueResult.medium = this._medium;
+    }
+    if (this._sizeLimit) {
+      hasAnyValues = true;
+      internalValueResult.sizeLimit = this._sizeLimit;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeEmptyDir | undefined) {
+    if (value === undefined) {
+      this._medium = undefined;
+      this._sizeLimit = undefined;
+    }
+    else {
+      this._medium = value.medium;
+      this._sizeLimit = value.sizeLimit;
+    }
+  }
+
   // medium - computed: false, optional: true, required: false
-  private _medium?: string | undefined; 
+  private _medium?: string; 
   public get medium() {
     return this.getStringAttribute('medium');
   }
-  public set medium(value: string | undefined) {
+  public set medium(value: string) {
     this._medium = value;
   }
   public resetMedium() {
@@ -10416,15 +13151,15 @@ export class DeploymentV1SpecTemplateSpecVolumeEmptyDirOutputReference extends c
   }
   // Temporarily expose input value. Use with caution.
   public get mediumInput() {
-    return this._medium
+    return this._medium;
   }
 
   // size_limit - computed: false, optional: true, required: false
-  private _sizeLimit?: string | undefined; 
+  private _sizeLimit?: string; 
   public get sizeLimit() {
     return this.getStringAttribute('size_limit');
   }
-  public set sizeLimit(value: string | undefined) {
+  public set sizeLimit(value: string) {
     this._sizeLimit = value;
   }
   public resetSizeLimit() {
@@ -10432,7 +13167,7 @@ export class DeploymentV1SpecTemplateSpecVolumeEmptyDirOutputReference extends c
   }
   // Temporarily expose input value. Use with caution.
   public get sizeLimitInput() {
-    return this._sizeLimit
+    return this._sizeLimit;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeFc {
@@ -10462,7 +13197,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeFc {
   readonly targetWwNs: string[];
 }
 
-function deploymentV1SpecTemplateSpecVolumeFcToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeFcOutputReference | DeploymentV1SpecTemplateSpecVolumeFc): any {
+export function deploymentV1SpecTemplateSpecVolumeFcToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeFcOutputReference | DeploymentV1SpecTemplateSpecVolumeFc): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10485,12 +13220,49 @@ export class DeploymentV1SpecTemplateSpecVolumeFcOutputReference extends cdktf.C
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeFc | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._lun) {
+      hasAnyValues = true;
+      internalValueResult.lun = this._lun;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._targetWwNs) {
+      hasAnyValues = true;
+      internalValueResult.targetWwNs = this._targetWwNs;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeFc | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._lun = undefined;
+      this._readOnly = undefined;
+      this._targetWwNs = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._lun = value.lun;
+      this._readOnly = value.readOnly;
+      this._targetWwNs = value.targetWwNs;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -10498,7 +13270,7 @@ export class DeploymentV1SpecTemplateSpecVolumeFcOutputReference extends cdktf.C
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // lun - computed: false, optional: false, required: true
@@ -10511,15 +13283,15 @@ export class DeploymentV1SpecTemplateSpecVolumeFcOutputReference extends cdktf.C
   }
   // Temporarily expose input value. Use with caution.
   public get lunInput() {
-    return this._lun
+    return this._lun;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -10527,7 +13299,7 @@ export class DeploymentV1SpecTemplateSpecVolumeFcOutputReference extends cdktf.C
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // target_ww_ns - computed: false, optional: false, required: true
@@ -10540,7 +13312,7 @@ export class DeploymentV1SpecTemplateSpecVolumeFcOutputReference extends cdktf.C
   }
   // Temporarily expose input value. Use with caution.
   public get targetWwNsInput() {
-    return this._targetWwNs
+    return this._targetWwNs;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRef {
@@ -10558,7 +13330,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRef {
   readonly namespace?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRef): any {
+export function deploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10579,12 +13351,37 @@ export class DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRefOutputReferenc
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -10592,15 +13389,15 @@ export class DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRefOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -10608,7 +13405,7 @@ export class DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRefOutputReferenc
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeFlexVolume {
@@ -10644,7 +13441,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeFlexVolume {
   readonly secretRef?: DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRef;
 }
 
-function deploymentV1SpecTemplateSpecVolumeFlexVolumeToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeFlexVolumeOutputReference | DeploymentV1SpecTemplateSpecVolumeFlexVolume): any {
+export function deploymentV1SpecTemplateSpecVolumeFlexVolumeToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeFlexVolumeOutputReference | DeploymentV1SpecTemplateSpecVolumeFlexVolume): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10668,6 +13465,49 @@ export class DeploymentV1SpecTemplateSpecVolumeFlexVolumeOutputReference extends
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeFlexVolume | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._driver) {
+      hasAnyValues = true;
+      internalValueResult.driver = this._driver;
+    }
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._options) {
+      hasAnyValues = true;
+      internalValueResult.options = this._options;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._secretRef) {
+      hasAnyValues = true;
+      internalValueResult.secretRef = this._secretRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeFlexVolume | undefined) {
+    if (value === undefined) {
+      this._driver = undefined;
+      this._fsType = undefined;
+      this._options = undefined;
+      this._readOnly = undefined;
+      this._secretRef.internalValue = undefined;
+    }
+    else {
+      this._driver = value.driver;
+      this._fsType = value.fsType;
+      this._options = value.options;
+      this._readOnly = value.readOnly;
+      this._secretRef.internalValue = value.secretRef;
+    }
+  }
+
   // driver - computed: false, optional: false, required: true
   private _driver?: string; 
   public get driver() {
@@ -10678,15 +13518,15 @@ export class DeploymentV1SpecTemplateSpecVolumeFlexVolumeOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get driverInput() {
-    return this._driver
+    return this._driver;
   }
 
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -10694,16 +13534,16 @@ export class DeploymentV1SpecTemplateSpecVolumeFlexVolumeOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // options - computed: false, optional: true, required: false
-  private _options?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _options?: { [key: string]: string } | cdktf.IResolvable; 
   public get options() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('options') as any;
   }
-  public set options(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set options(value: { [key: string]: string } | cdktf.IResolvable) {
     this._options = value;
   }
   public resetOptions() {
@@ -10711,15 +13551,15 @@ export class DeploymentV1SpecTemplateSpecVolumeFlexVolumeOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get optionsInput() {
-    return this._options
+    return this._options;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -10727,24 +13567,23 @@ export class DeploymentV1SpecTemplateSpecVolumeFlexVolumeOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef?: DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRef | undefined; 
-  private __secretRefOutput = new DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference(this as any, "secret_ref", true);
   public get secretRef() {
-    return this.__secretRefOutput;
+    return this._secretRef;
   }
-  public putSecretRef(value: DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRef | undefined) {
-    this._secretRef = value;
+  public putSecretRef(value: DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRef) {
+    this._secretRef.internalValue = value;
   }
   public resetSecretRef() {
-    this._secretRef = undefined;
+    this._secretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretRefInput() {
-    return this._secretRef
+    return this._secretRef.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeFlocker {
@@ -10762,7 +13601,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeFlocker {
   readonly datasetUuid?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeFlockerToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeFlockerOutputReference | DeploymentV1SpecTemplateSpecVolumeFlocker): any {
+export function deploymentV1SpecTemplateSpecVolumeFlockerToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeFlockerOutputReference | DeploymentV1SpecTemplateSpecVolumeFlocker): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10783,12 +13622,37 @@ export class DeploymentV1SpecTemplateSpecVolumeFlockerOutputReference extends cd
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeFlocker | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._datasetName) {
+      hasAnyValues = true;
+      internalValueResult.datasetName = this._datasetName;
+    }
+    if (this._datasetUuid) {
+      hasAnyValues = true;
+      internalValueResult.datasetUuid = this._datasetUuid;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeFlocker | undefined) {
+    if (value === undefined) {
+      this._datasetName = undefined;
+      this._datasetUuid = undefined;
+    }
+    else {
+      this._datasetName = value.datasetName;
+      this._datasetUuid = value.datasetUuid;
+    }
+  }
+
   // dataset_name - computed: false, optional: true, required: false
-  private _datasetName?: string | undefined; 
+  private _datasetName?: string; 
   public get datasetName() {
     return this.getStringAttribute('dataset_name');
   }
-  public set datasetName(value: string | undefined) {
+  public set datasetName(value: string) {
     this._datasetName = value;
   }
   public resetDatasetName() {
@@ -10796,15 +13660,15 @@ export class DeploymentV1SpecTemplateSpecVolumeFlockerOutputReference extends cd
   }
   // Temporarily expose input value. Use with caution.
   public get datasetNameInput() {
-    return this._datasetName
+    return this._datasetName;
   }
 
   // dataset_uuid - computed: false, optional: true, required: false
-  private _datasetUuid?: string | undefined; 
+  private _datasetUuid?: string; 
   public get datasetUuid() {
     return this.getStringAttribute('dataset_uuid');
   }
-  public set datasetUuid(value: string | undefined) {
+  public set datasetUuid(value: string) {
     this._datasetUuid = value;
   }
   public resetDatasetUuid() {
@@ -10812,7 +13676,7 @@ export class DeploymentV1SpecTemplateSpecVolumeFlockerOutputReference extends cd
   }
   // Temporarily expose input value. Use with caution.
   public get datasetUuidInput() {
-    return this._datasetUuid
+    return this._datasetUuid;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeGcePersistentDisk {
@@ -10842,7 +13706,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeGcePersistentDisk {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeGcePersistentDiskOutputReference | DeploymentV1SpecTemplateSpecVolumeGcePersistentDisk): any {
+export function deploymentV1SpecTemplateSpecVolumeGcePersistentDiskToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeGcePersistentDiskOutputReference | DeploymentV1SpecTemplateSpecVolumeGcePersistentDisk): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10865,12 +13729,49 @@ export class DeploymentV1SpecTemplateSpecVolumeGcePersistentDiskOutputReference 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeGcePersistentDisk | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._partition) {
+      hasAnyValues = true;
+      internalValueResult.partition = this._partition;
+    }
+    if (this._pdName) {
+      hasAnyValues = true;
+      internalValueResult.pdName = this._pdName;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeGcePersistentDisk | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._partition = undefined;
+      this._pdName = undefined;
+      this._readOnly = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._partition = value.partition;
+      this._pdName = value.pdName;
+      this._readOnly = value.readOnly;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -10878,15 +13779,15 @@ export class DeploymentV1SpecTemplateSpecVolumeGcePersistentDiskOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // partition - computed: false, optional: true, required: false
-  private _partition?: number | undefined; 
+  private _partition?: number; 
   public get partition() {
     return this.getNumberAttribute('partition');
   }
-  public set partition(value: number | undefined) {
+  public set partition(value: number) {
     this._partition = value;
   }
   public resetPartition() {
@@ -10894,7 +13795,7 @@ export class DeploymentV1SpecTemplateSpecVolumeGcePersistentDiskOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get partitionInput() {
-    return this._partition
+    return this._partition;
   }
 
   // pd_name - computed: false, optional: false, required: true
@@ -10907,15 +13808,15 @@ export class DeploymentV1SpecTemplateSpecVolumeGcePersistentDiskOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get pdNameInput() {
-    return this._pdName
+    return this._pdName;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -10923,7 +13824,7 @@ export class DeploymentV1SpecTemplateSpecVolumeGcePersistentDiskOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeGitRepo {
@@ -10947,7 +13848,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeGitRepo {
   readonly revision?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeGitRepoToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeGitRepoOutputReference | DeploymentV1SpecTemplateSpecVolumeGitRepo): any {
+export function deploymentV1SpecTemplateSpecVolumeGitRepoToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeGitRepoOutputReference | DeploymentV1SpecTemplateSpecVolumeGitRepo): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -10969,12 +13870,43 @@ export class DeploymentV1SpecTemplateSpecVolumeGitRepoOutputReference extends cd
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeGitRepo | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._directory) {
+      hasAnyValues = true;
+      internalValueResult.directory = this._directory;
+    }
+    if (this._repository) {
+      hasAnyValues = true;
+      internalValueResult.repository = this._repository;
+    }
+    if (this._revision) {
+      hasAnyValues = true;
+      internalValueResult.revision = this._revision;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeGitRepo | undefined) {
+    if (value === undefined) {
+      this._directory = undefined;
+      this._repository = undefined;
+      this._revision = undefined;
+    }
+    else {
+      this._directory = value.directory;
+      this._repository = value.repository;
+      this._revision = value.revision;
+    }
+  }
+
   // directory - computed: false, optional: true, required: false
-  private _directory?: string | undefined; 
+  private _directory?: string; 
   public get directory() {
     return this.getStringAttribute('directory');
   }
-  public set directory(value: string | undefined) {
+  public set directory(value: string) {
     this._directory = value;
   }
   public resetDirectory() {
@@ -10982,15 +13914,15 @@ export class DeploymentV1SpecTemplateSpecVolumeGitRepoOutputReference extends cd
   }
   // Temporarily expose input value. Use with caution.
   public get directoryInput() {
-    return this._directory
+    return this._directory;
   }
 
   // repository - computed: false, optional: true, required: false
-  private _repository?: string | undefined; 
+  private _repository?: string; 
   public get repository() {
     return this.getStringAttribute('repository');
   }
-  public set repository(value: string | undefined) {
+  public set repository(value: string) {
     this._repository = value;
   }
   public resetRepository() {
@@ -10998,15 +13930,15 @@ export class DeploymentV1SpecTemplateSpecVolumeGitRepoOutputReference extends cd
   }
   // Temporarily expose input value. Use with caution.
   public get repositoryInput() {
-    return this._repository
+    return this._repository;
   }
 
   // revision - computed: false, optional: true, required: false
-  private _revision?: string | undefined; 
+  private _revision?: string; 
   public get revision() {
     return this.getStringAttribute('revision');
   }
-  public set revision(value: string | undefined) {
+  public set revision(value: string) {
     this._revision = value;
   }
   public resetRevision() {
@@ -11014,7 +13946,7 @@ export class DeploymentV1SpecTemplateSpecVolumeGitRepoOutputReference extends cd
   }
   // Temporarily expose input value. Use with caution.
   public get revisionInput() {
-    return this._revision
+    return this._revision;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeGlusterfs {
@@ -11038,7 +13970,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeGlusterfs {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecVolumeGlusterfsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeGlusterfsOutputReference | DeploymentV1SpecTemplateSpecVolumeGlusterfs): any {
+export function deploymentV1SpecTemplateSpecVolumeGlusterfsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeGlusterfsOutputReference | DeploymentV1SpecTemplateSpecVolumeGlusterfs): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11060,6 +13992,37 @@ export class DeploymentV1SpecTemplateSpecVolumeGlusterfsOutputReference extends 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeGlusterfs | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._endpointsName) {
+      hasAnyValues = true;
+      internalValueResult.endpointsName = this._endpointsName;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeGlusterfs | undefined) {
+    if (value === undefined) {
+      this._endpointsName = undefined;
+      this._path = undefined;
+      this._readOnly = undefined;
+    }
+    else {
+      this._endpointsName = value.endpointsName;
+      this._path = value.path;
+      this._readOnly = value.readOnly;
+    }
+  }
+
   // endpoints_name - computed: false, optional: false, required: true
   private _endpointsName?: string; 
   public get endpointsName() {
@@ -11070,7 +14033,7 @@ export class DeploymentV1SpecTemplateSpecVolumeGlusterfsOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get endpointsNameInput() {
-    return this._endpointsName
+    return this._endpointsName;
   }
 
   // path - computed: false, optional: false, required: true
@@ -11083,15 +14046,15 @@ export class DeploymentV1SpecTemplateSpecVolumeGlusterfsOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -11099,7 +14062,7 @@ export class DeploymentV1SpecTemplateSpecVolumeGlusterfsOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeHostPath {
@@ -11117,7 +14080,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeHostPath {
   readonly type?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeHostPathToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeHostPathOutputReference | DeploymentV1SpecTemplateSpecVolumeHostPath): any {
+export function deploymentV1SpecTemplateSpecVolumeHostPathToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeHostPathOutputReference | DeploymentV1SpecTemplateSpecVolumeHostPath): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11138,12 +14101,37 @@ export class DeploymentV1SpecTemplateSpecVolumeHostPathOutputReference extends c
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeHostPath | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeHostPath | undefined) {
+    if (value === undefined) {
+      this._path = undefined;
+      this._type = undefined;
+    }
+    else {
+      this._path = value.path;
+      this._type = value.type;
+    }
+  }
+
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -11151,15 +14139,15 @@ export class DeploymentV1SpecTemplateSpecVolumeHostPathOutputReference extends c
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // type - computed: false, optional: true, required: false
-  private _type?: string | undefined; 
+  private _type?: string; 
   public get type() {
     return this.getStringAttribute('type');
   }
-  public set type(value: string | undefined) {
+  public set type(value: string) {
     this._type = value;
   }
   public resetType() {
@@ -11167,7 +14155,7 @@ export class DeploymentV1SpecTemplateSpecVolumeHostPathOutputReference extends c
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeIscsi {
@@ -11209,7 +14197,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeIscsi {
   readonly targetPortal: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeIscsiToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeIscsiOutputReference | DeploymentV1SpecTemplateSpecVolumeIscsi): any {
+export function deploymentV1SpecTemplateSpecVolumeIscsiToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeIscsiOutputReference | DeploymentV1SpecTemplateSpecVolumeIscsi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11234,12 +14222,61 @@ export class DeploymentV1SpecTemplateSpecVolumeIscsiOutputReference extends cdkt
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeIscsi | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._iqn) {
+      hasAnyValues = true;
+      internalValueResult.iqn = this._iqn;
+    }
+    if (this._iscsiInterface) {
+      hasAnyValues = true;
+      internalValueResult.iscsiInterface = this._iscsiInterface;
+    }
+    if (this._lun) {
+      hasAnyValues = true;
+      internalValueResult.lun = this._lun;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._targetPortal) {
+      hasAnyValues = true;
+      internalValueResult.targetPortal = this._targetPortal;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeIscsi | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._iqn = undefined;
+      this._iscsiInterface = undefined;
+      this._lun = undefined;
+      this._readOnly = undefined;
+      this._targetPortal = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._iqn = value.iqn;
+      this._iscsiInterface = value.iscsiInterface;
+      this._lun = value.lun;
+      this._readOnly = value.readOnly;
+      this._targetPortal = value.targetPortal;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -11247,7 +14284,7 @@ export class DeploymentV1SpecTemplateSpecVolumeIscsiOutputReference extends cdkt
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // iqn - computed: false, optional: false, required: true
@@ -11260,15 +14297,15 @@ export class DeploymentV1SpecTemplateSpecVolumeIscsiOutputReference extends cdkt
   }
   // Temporarily expose input value. Use with caution.
   public get iqnInput() {
-    return this._iqn
+    return this._iqn;
   }
 
   // iscsi_interface - computed: false, optional: true, required: false
-  private _iscsiInterface?: string | undefined; 
+  private _iscsiInterface?: string; 
   public get iscsiInterface() {
     return this.getStringAttribute('iscsi_interface');
   }
-  public set iscsiInterface(value: string | undefined) {
+  public set iscsiInterface(value: string) {
     this._iscsiInterface = value;
   }
   public resetIscsiInterface() {
@@ -11276,15 +14313,15 @@ export class DeploymentV1SpecTemplateSpecVolumeIscsiOutputReference extends cdkt
   }
   // Temporarily expose input value. Use with caution.
   public get iscsiInterfaceInput() {
-    return this._iscsiInterface
+    return this._iscsiInterface;
   }
 
   // lun - computed: false, optional: true, required: false
-  private _lun?: number | undefined; 
+  private _lun?: number; 
   public get lun() {
     return this.getNumberAttribute('lun');
   }
-  public set lun(value: number | undefined) {
+  public set lun(value: number) {
     this._lun = value;
   }
   public resetLun() {
@@ -11292,15 +14329,15 @@ export class DeploymentV1SpecTemplateSpecVolumeIscsiOutputReference extends cdkt
   }
   // Temporarily expose input value. Use with caution.
   public get lunInput() {
-    return this._lun
+    return this._lun;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -11308,7 +14345,7 @@ export class DeploymentV1SpecTemplateSpecVolumeIscsiOutputReference extends cdkt
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // target_portal - computed: false, optional: false, required: true
@@ -11321,7 +14358,7 @@ export class DeploymentV1SpecTemplateSpecVolumeIscsiOutputReference extends cdkt
   }
   // Temporarily expose input value. Use with caution.
   public get targetPortalInput() {
-    return this._targetPortal
+    return this._targetPortal;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeLocal {
@@ -11333,7 +14370,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeLocal {
   readonly path?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeLocalToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeLocalOutputReference | DeploymentV1SpecTemplateSpecVolumeLocal): any {
+export function deploymentV1SpecTemplateSpecVolumeLocalToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeLocalOutputReference | DeploymentV1SpecTemplateSpecVolumeLocal): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11353,12 +14390,31 @@ export class DeploymentV1SpecTemplateSpecVolumeLocalOutputReference extends cdkt
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeLocal | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeLocal | undefined) {
+    if (value === undefined) {
+      this._path = undefined;
+    }
+    else {
+      this._path = value.path;
+    }
+  }
+
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -11366,7 +14422,7 @@ export class DeploymentV1SpecTemplateSpecVolumeLocalOutputReference extends cdkt
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeNfs {
@@ -11390,7 +14446,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeNfs {
   readonly server: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeNfsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeNfsOutputReference | DeploymentV1SpecTemplateSpecVolumeNfs): any {
+export function deploymentV1SpecTemplateSpecVolumeNfsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeNfsOutputReference | DeploymentV1SpecTemplateSpecVolumeNfs): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11412,6 +14468,37 @@ export class DeploymentV1SpecTemplateSpecVolumeNfsOutputReference extends cdktf.
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeNfs | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._server) {
+      hasAnyValues = true;
+      internalValueResult.server = this._server;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeNfs | undefined) {
+    if (value === undefined) {
+      this._path = undefined;
+      this._readOnly = undefined;
+      this._server = undefined;
+    }
+    else {
+      this._path = value.path;
+      this._readOnly = value.readOnly;
+      this._server = value.server;
+    }
+  }
+
   // path - computed: false, optional: false, required: true
   private _path?: string; 
   public get path() {
@@ -11422,15 +14509,15 @@ export class DeploymentV1SpecTemplateSpecVolumeNfsOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -11438,7 +14525,7 @@ export class DeploymentV1SpecTemplateSpecVolumeNfsOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // server - computed: false, optional: false, required: true
@@ -11451,7 +14538,7 @@ export class DeploymentV1SpecTemplateSpecVolumeNfsOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get serverInput() {
-    return this._server
+    return this._server;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaim {
@@ -11469,7 +14556,7 @@ export interface DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaim {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function deploymentV1SpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaimOutputReference | DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaim): any {
+export function deploymentV1SpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaimOutputReference | DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaim): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11490,12 +14577,37 @@ export class DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaimOutputRefere
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaim | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._claimName) {
+      hasAnyValues = true;
+      internalValueResult.claimName = this._claimName;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaim | undefined) {
+    if (value === undefined) {
+      this._claimName = undefined;
+      this._readOnly = undefined;
+    }
+    else {
+      this._claimName = value.claimName;
+      this._readOnly = value.readOnly;
+    }
+  }
+
   // claim_name - computed: false, optional: true, required: false
-  private _claimName?: string | undefined; 
+  private _claimName?: string; 
   public get claimName() {
     return this.getStringAttribute('claim_name');
   }
-  public set claimName(value: string | undefined) {
+  public set claimName(value: string) {
     this._claimName = value;
   }
   public resetClaimName() {
@@ -11503,15 +14615,15 @@ export class DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaimOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get claimNameInput() {
-    return this._claimName
+    return this._claimName;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -11519,7 +14631,7 @@ export class DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaimOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumePhotonPersistentDisk {
@@ -11537,7 +14649,7 @@ export interface DeploymentV1SpecTemplateSpecVolumePhotonPersistentDisk {
   readonly pdId: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumePhotonPersistentDiskToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumePhotonPersistentDiskOutputReference | DeploymentV1SpecTemplateSpecVolumePhotonPersistentDisk): any {
+export function deploymentV1SpecTemplateSpecVolumePhotonPersistentDiskToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumePhotonPersistentDiskOutputReference | DeploymentV1SpecTemplateSpecVolumePhotonPersistentDisk): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11558,12 +14670,37 @@ export class DeploymentV1SpecTemplateSpecVolumePhotonPersistentDiskOutputReferen
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumePhotonPersistentDisk | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._pdId) {
+      hasAnyValues = true;
+      internalValueResult.pdId = this._pdId;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumePhotonPersistentDisk | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._pdId = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._pdId = value.pdId;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -11571,7 +14708,7 @@ export class DeploymentV1SpecTemplateSpecVolumePhotonPersistentDiskOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // pd_id - computed: false, optional: false, required: true
@@ -11584,7 +14721,7 @@ export class DeploymentV1SpecTemplateSpecVolumePhotonPersistentDiskOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get pdIdInput() {
-    return this._pdId
+    return this._pdId;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesConfigMapItems {
@@ -11608,7 +14745,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesConfigMapItem
   readonly path?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesConfigMapItems): any {
+export function deploymentV1SpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesConfigMapItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11641,7 +14778,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesConfigMap {
   readonly items?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesConfigMapItems[];
 }
 
-function deploymentV1SpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesConfigMap): any {
+export function deploymentV1SpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesConfigMap): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11668,7 +14805,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiIt
   readonly fieldPath?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference | DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef): any {
+export function deploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference | DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11689,12 +14826,37 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsF
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._apiVersion) {
+      hasAnyValues = true;
+      internalValueResult.apiVersion = this._apiVersion;
+    }
+    if (this._fieldPath) {
+      hasAnyValues = true;
+      internalValueResult.fieldPath = this._fieldPath;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined) {
+    if (value === undefined) {
+      this._apiVersion = undefined;
+      this._fieldPath = undefined;
+    }
+    else {
+      this._apiVersion = value.apiVersion;
+      this._fieldPath = value.fieldPath;
+    }
+  }
+
   // api_version - computed: false, optional: true, required: false
-  private _apiVersion?: string | undefined; 
+  private _apiVersion?: string; 
   public get apiVersion() {
     return this.getStringAttribute('api_version');
   }
-  public set apiVersion(value: string | undefined) {
+  public set apiVersion(value: string) {
     this._apiVersion = value;
   }
   public resetApiVersion() {
@@ -11702,15 +14864,15 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsF
   }
   // Temporarily expose input value. Use with caution.
   public get apiVersionInput() {
-    return this._apiVersion
+    return this._apiVersion;
   }
 
   // field_path - computed: false, optional: true, required: false
-  private _fieldPath?: string | undefined; 
+  private _fieldPath?: string; 
   public get fieldPath() {
     return this.getStringAttribute('field_path');
   }
-  public set fieldPath(value: string | undefined) {
+  public set fieldPath(value: string) {
     this._fieldPath = value;
   }
   public resetFieldPath() {
@@ -11718,7 +14880,7 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsF
   }
   // Temporarily expose input value. Use with caution.
   public get fieldPathInput() {
-    return this._fieldPath
+    return this._fieldPath;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
@@ -11738,7 +14900,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiIt
   readonly resource: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference | DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef): any {
+export function deploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference | DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11760,6 +14922,37 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsR
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._containerName) {
+      hasAnyValues = true;
+      internalValueResult.containerName = this._containerName;
+    }
+    if (this._divisor) {
+      hasAnyValues = true;
+      internalValueResult.divisor = this._divisor;
+    }
+    if (this._resource) {
+      hasAnyValues = true;
+      internalValueResult.resource = this._resource;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined) {
+    if (value === undefined) {
+      this._containerName = undefined;
+      this._divisor = undefined;
+      this._resource = undefined;
+    }
+    else {
+      this._containerName = value.containerName;
+      this._divisor = value.divisor;
+      this._resource = value.resource;
+    }
+  }
+
   // container_name - computed: false, optional: false, required: true
   private _containerName?: string; 
   public get containerName() {
@@ -11770,15 +14963,15 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsR
   }
   // Temporarily expose input value. Use with caution.
   public get containerNameInput() {
-    return this._containerName
+    return this._containerName;
   }
 
   // divisor - computed: false, optional: true, required: false
-  private _divisor?: string | undefined; 
+  private _divisor?: string; 
   public get divisor() {
     return this.getStringAttribute('divisor');
   }
-  public set divisor(value: string | undefined) {
+  public set divisor(value: string) {
     this._divisor = value;
   }
   public resetDivisor() {
@@ -11786,7 +14979,7 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsR
   }
   // Temporarily expose input value. Use with caution.
   public get divisorInput() {
-    return this._divisor
+    return this._divisor;
   }
 
   // resource - computed: false, optional: false, required: true
@@ -11799,7 +14992,7 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsR
   }
   // Temporarily expose input value. Use with caution.
   public get resourceInput() {
-    return this._resource
+    return this._resource;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItems {
@@ -11829,7 +15022,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiIt
   readonly resourceFieldRef?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef;
 }
 
-function deploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItems): any {
+export function deploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11851,7 +15044,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApi {
   readonly items?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[];
 }
 
-function deploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiOutputReference | DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApi): any {
+export function deploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiOutputReference | DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11871,13 +15064,32 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiOutput
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._items) {
+      hasAnyValues = true;
+      internalValueResult.items = this._items;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined) {
+    if (value === undefined) {
+      this._items = undefined;
+    }
+    else {
+      this._items = value.items;
+    }
+  }
+
   // items - computed: false, optional: true, required: false
-  private _items?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[] | undefined; 
+  private _items?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[]; 
   public get items() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
-  public set items(value: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[] | undefined) {
+  public set items(value: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[]) {
     this._items = value;
   }
   public resetItems() {
@@ -11885,7 +15097,7 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiOutput
   }
   // Temporarily expose input value. Use with caution.
   public get itemsInput() {
-    return this._items
+    return this._items;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesSecretItems {
@@ -11909,7 +15121,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesSecretItems {
   readonly path?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesSecretItems): any {
+export function deploymentV1SpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesSecretItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11942,7 +15154,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesSecret {
   readonly items?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesSecretItems[];
 }
 
-function deploymentV1SpecTemplateSpecVolumeProjectedSourcesSecretToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesSecret): any {
+export function deploymentV1SpecTemplateSpecVolumeProjectedSourcesSecretToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesSecret): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11975,7 +15187,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccoun
   readonly path: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenOutputReference | DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountToken): any {
+export function deploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenOutputReference | DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountToken): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -11997,12 +15209,43 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountTok
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._audience) {
+      hasAnyValues = true;
+      internalValueResult.audience = this._audience;
+    }
+    if (this._expirationSeconds) {
+      hasAnyValues = true;
+      internalValueResult.expirationSeconds = this._expirationSeconds;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined) {
+    if (value === undefined) {
+      this._audience = undefined;
+      this._expirationSeconds = undefined;
+      this._path = undefined;
+    }
+    else {
+      this._audience = value.audience;
+      this._expirationSeconds = value.expirationSeconds;
+      this._path = value.path;
+    }
+  }
+
   // audience - computed: false, optional: true, required: false
-  private _audience?: string | undefined; 
+  private _audience?: string; 
   public get audience() {
     return this.getStringAttribute('audience');
   }
-  public set audience(value: string | undefined) {
+  public set audience(value: string) {
     this._audience = value;
   }
   public resetAudience() {
@@ -12010,15 +15253,15 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountTok
   }
   // Temporarily expose input value. Use with caution.
   public get audienceInput() {
-    return this._audience
+    return this._audience;
   }
 
   // expiration_seconds - computed: false, optional: true, required: false
-  private _expirationSeconds?: number | undefined; 
+  private _expirationSeconds?: number; 
   public get expirationSeconds() {
     return this.getNumberAttribute('expiration_seconds');
   }
-  public set expirationSeconds(value: number | undefined) {
+  public set expirationSeconds(value: number) {
     this._expirationSeconds = value;
   }
   public resetExpirationSeconds() {
@@ -12026,7 +15269,7 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountTok
   }
   // Temporarily expose input value. Use with caution.
   public get expirationSecondsInput() {
-    return this._expirationSeconds
+    return this._expirationSeconds;
   }
 
   // path - computed: false, optional: false, required: true
@@ -12039,7 +15282,7 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountTok
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeProjectedSources {
@@ -12069,7 +15312,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeProjectedSources {
   readonly serviceAccountToken?: DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountToken;
 }
 
-function deploymentV1SpecTemplateSpecVolumeProjectedSourcesToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSources): any {
+export function deploymentV1SpecTemplateSpecVolumeProjectedSourcesToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjectedSources): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12097,7 +15340,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeProjected {
   readonly sources: DeploymentV1SpecTemplateSpecVolumeProjectedSources[];
 }
 
-function deploymentV1SpecTemplateSpecVolumeProjectedToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjected): any {
+export function deploymentV1SpecTemplateSpecVolumeProjectedToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeProjected): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12141,7 +15384,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeQuobyte {
   readonly volume: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeQuobyteToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeQuobyteOutputReference | DeploymentV1SpecTemplateSpecVolumeQuobyte): any {
+export function deploymentV1SpecTemplateSpecVolumeQuobyteToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeQuobyteOutputReference | DeploymentV1SpecTemplateSpecVolumeQuobyte): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12165,12 +15408,55 @@ export class DeploymentV1SpecTemplateSpecVolumeQuobyteOutputReference extends cd
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeQuobyte | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._group) {
+      hasAnyValues = true;
+      internalValueResult.group = this._group;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._registry) {
+      hasAnyValues = true;
+      internalValueResult.registry = this._registry;
+    }
+    if (this._user) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    if (this._volume) {
+      hasAnyValues = true;
+      internalValueResult.volume = this._volume;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeQuobyte | undefined) {
+    if (value === undefined) {
+      this._group = undefined;
+      this._readOnly = undefined;
+      this._registry = undefined;
+      this._user = undefined;
+      this._volume = undefined;
+    }
+    else {
+      this._group = value.group;
+      this._readOnly = value.readOnly;
+      this._registry = value.registry;
+      this._user = value.user;
+      this._volume = value.volume;
+    }
+  }
+
   // group - computed: false, optional: true, required: false
-  private _group?: string | undefined; 
+  private _group?: string; 
   public get group() {
     return this.getStringAttribute('group');
   }
-  public set group(value: string | undefined) {
+  public set group(value: string) {
     this._group = value;
   }
   public resetGroup() {
@@ -12178,15 +15464,15 @@ export class DeploymentV1SpecTemplateSpecVolumeQuobyteOutputReference extends cd
   }
   // Temporarily expose input value. Use with caution.
   public get groupInput() {
-    return this._group
+    return this._group;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -12194,7 +15480,7 @@ export class DeploymentV1SpecTemplateSpecVolumeQuobyteOutputReference extends cd
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // registry - computed: false, optional: false, required: true
@@ -12207,15 +15493,15 @@ export class DeploymentV1SpecTemplateSpecVolumeQuobyteOutputReference extends cd
   }
   // Temporarily expose input value. Use with caution.
   public get registryInput() {
-    return this._registry
+    return this._registry;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -12223,7 +15509,7 @@ export class DeploymentV1SpecTemplateSpecVolumeQuobyteOutputReference extends cd
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 
   // volume - computed: false, optional: false, required: true
@@ -12236,7 +15522,7 @@ export class DeploymentV1SpecTemplateSpecVolumeQuobyteOutputReference extends cd
   }
   // Temporarily expose input value. Use with caution.
   public get volumeInput() {
-    return this._volume
+    return this._volume;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeRbdSecretRef {
@@ -12254,7 +15540,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeRbdSecretRef {
   readonly namespace?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeRbdSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeRbdSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeRbdSecretRef): any {
+export function deploymentV1SpecTemplateSpecVolumeRbdSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeRbdSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeRbdSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12275,12 +15561,37 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdSecretRefOutputReference exten
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeRbdSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeRbdSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -12288,15 +15599,15 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdSecretRefOutputReference exten
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -12304,7 +15615,7 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdSecretRefOutputReference exten
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeRbd {
@@ -12358,7 +15669,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeRbd {
   readonly secretRef?: DeploymentV1SpecTemplateSpecVolumeRbdSecretRef;
 }
 
-function deploymentV1SpecTemplateSpecVolumeRbdToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeRbdOutputReference | DeploymentV1SpecTemplateSpecVolumeRbd): any {
+export function deploymentV1SpecTemplateSpecVolumeRbdToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeRbdOutputReference | DeploymentV1SpecTemplateSpecVolumeRbd): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12385,6 +15696,67 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdOutputReference extends cdktf.
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeRbd | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._cephMonitors) {
+      hasAnyValues = true;
+      internalValueResult.cephMonitors = this._cephMonitors;
+    }
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._keyring) {
+      hasAnyValues = true;
+      internalValueResult.keyring = this._keyring;
+    }
+    if (this._radosUser) {
+      hasAnyValues = true;
+      internalValueResult.radosUser = this._radosUser;
+    }
+    if (this._rbdImage) {
+      hasAnyValues = true;
+      internalValueResult.rbdImage = this._rbdImage;
+    }
+    if (this._rbdPool) {
+      hasAnyValues = true;
+      internalValueResult.rbdPool = this._rbdPool;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._secretRef) {
+      hasAnyValues = true;
+      internalValueResult.secretRef = this._secretRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeRbd | undefined) {
+    if (value === undefined) {
+      this._cephMonitors = undefined;
+      this._fsType = undefined;
+      this._keyring = undefined;
+      this._radosUser = undefined;
+      this._rbdImage = undefined;
+      this._rbdPool = undefined;
+      this._readOnly = undefined;
+      this._secretRef.internalValue = undefined;
+    }
+    else {
+      this._cephMonitors = value.cephMonitors;
+      this._fsType = value.fsType;
+      this._keyring = value.keyring;
+      this._radosUser = value.radosUser;
+      this._rbdImage = value.rbdImage;
+      this._rbdPool = value.rbdPool;
+      this._readOnly = value.readOnly;
+      this._secretRef.internalValue = value.secretRef;
+    }
+  }
+
   // ceph_monitors - computed: false, optional: false, required: true
   private _cephMonitors?: string[]; 
   public get cephMonitors() {
@@ -12395,15 +15767,15 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get cephMonitorsInput() {
-    return this._cephMonitors
+    return this._cephMonitors;
   }
 
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -12411,15 +15783,15 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // keyring - computed: true, optional: true, required: false
-  private _keyring?: string | undefined; 
+  private _keyring?: string; 
   public get keyring() {
     return this.getStringAttribute('keyring');
   }
-  public set keyring(value: string | undefined) {
+  public set keyring(value: string) {
     this._keyring = value;
   }
   public resetKeyring() {
@@ -12427,15 +15799,15 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get keyringInput() {
-    return this._keyring
+    return this._keyring;
   }
 
   // rados_user - computed: false, optional: true, required: false
-  private _radosUser?: string | undefined; 
+  private _radosUser?: string; 
   public get radosUser() {
     return this.getStringAttribute('rados_user');
   }
-  public set radosUser(value: string | undefined) {
+  public set radosUser(value: string) {
     this._radosUser = value;
   }
   public resetRadosUser() {
@@ -12443,7 +15815,7 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get radosUserInput() {
-    return this._radosUser
+    return this._radosUser;
   }
 
   // rbd_image - computed: false, optional: false, required: true
@@ -12456,15 +15828,15 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get rbdImageInput() {
-    return this._rbdImage
+    return this._rbdImage;
   }
 
   // rbd_pool - computed: false, optional: true, required: false
-  private _rbdPool?: string | undefined; 
+  private _rbdPool?: string; 
   public get rbdPool() {
     return this.getStringAttribute('rbd_pool');
   }
-  public set rbdPool(value: string | undefined) {
+  public set rbdPool(value: string) {
     this._rbdPool = value;
   }
   public resetRbdPool() {
@@ -12472,15 +15844,15 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get rbdPoolInput() {
-    return this._rbdPool
+    return this._rbdPool;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -12488,24 +15860,23 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef?: DeploymentV1SpecTemplateSpecVolumeRbdSecretRef | undefined; 
-  private __secretRefOutput = new DeploymentV1SpecTemplateSpecVolumeRbdSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new DeploymentV1SpecTemplateSpecVolumeRbdSecretRefOutputReference(this as any, "secret_ref", true);
   public get secretRef() {
-    return this.__secretRefOutput;
+    return this._secretRef;
   }
-  public putSecretRef(value: DeploymentV1SpecTemplateSpecVolumeRbdSecretRef | undefined) {
-    this._secretRef = value;
+  public putSecretRef(value: DeploymentV1SpecTemplateSpecVolumeRbdSecretRef) {
+    this._secretRef.internalValue = value;
   }
   public resetSecretRef() {
-    this._secretRef = undefined;
+    this._secretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretRefInput() {
-    return this._secretRef
+    return this._secretRef.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeSecretItems {
@@ -12529,7 +15900,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeSecretItems {
   readonly path?: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeSecretItemsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeSecretItems): any {
+export function deploymentV1SpecTemplateSpecVolumeSecretItemsToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeSecretItems): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12568,7 +15939,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeSecret {
   readonly items?: DeploymentV1SpecTemplateSpecVolumeSecretItems[];
 }
 
-function deploymentV1SpecTemplateSpecVolumeSecretToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeSecretOutputReference | DeploymentV1SpecTemplateSpecVolumeSecret): any {
+export function deploymentV1SpecTemplateSpecVolumeSecretToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeSecretOutputReference | DeploymentV1SpecTemplateSpecVolumeSecret): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12591,12 +15962,49 @@ export class DeploymentV1SpecTemplateSpecVolumeSecretOutputReference extends cdk
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeSecret | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._defaultMode) {
+      hasAnyValues = true;
+      internalValueResult.defaultMode = this._defaultMode;
+    }
+    if (this._optional) {
+      hasAnyValues = true;
+      internalValueResult.optional = this._optional;
+    }
+    if (this._secretName) {
+      hasAnyValues = true;
+      internalValueResult.secretName = this._secretName;
+    }
+    if (this._items) {
+      hasAnyValues = true;
+      internalValueResult.items = this._items;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeSecret | undefined) {
+    if (value === undefined) {
+      this._defaultMode = undefined;
+      this._optional = undefined;
+      this._secretName = undefined;
+      this._items = undefined;
+    }
+    else {
+      this._defaultMode = value.defaultMode;
+      this._optional = value.optional;
+      this._secretName = value.secretName;
+      this._items = value.items;
+    }
+  }
+
   // default_mode - computed: false, optional: true, required: false
-  private _defaultMode?: string | undefined; 
+  private _defaultMode?: string; 
   public get defaultMode() {
     return this.getStringAttribute('default_mode');
   }
-  public set defaultMode(value: string | undefined) {
+  public set defaultMode(value: string) {
     this._defaultMode = value;
   }
   public resetDefaultMode() {
@@ -12604,15 +16012,15 @@ export class DeploymentV1SpecTemplateSpecVolumeSecretOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get defaultModeInput() {
-    return this._defaultMode
+    return this._defaultMode;
   }
 
   // optional - computed: false, optional: true, required: false
-  private _optional?: boolean | cdktf.IResolvable | undefined; 
+  private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
     return this.getBooleanAttribute('optional') as any;
   }
-  public set optional(value: boolean | cdktf.IResolvable | undefined) {
+  public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
   }
   public resetOptional() {
@@ -12620,15 +16028,15 @@ export class DeploymentV1SpecTemplateSpecVolumeSecretOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get optionalInput() {
-    return this._optional
+    return this._optional;
   }
 
   // secret_name - computed: false, optional: true, required: false
-  private _secretName?: string | undefined; 
+  private _secretName?: string; 
   public get secretName() {
     return this.getStringAttribute('secret_name');
   }
-  public set secretName(value: string | undefined) {
+  public set secretName(value: string) {
     this._secretName = value;
   }
   public resetSecretName() {
@@ -12636,16 +16044,16 @@ export class DeploymentV1SpecTemplateSpecVolumeSecretOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get secretNameInput() {
-    return this._secretName
+    return this._secretName;
   }
 
   // items - computed: false, optional: true, required: false
-  private _items?: DeploymentV1SpecTemplateSpecVolumeSecretItems[] | undefined; 
+  private _items?: DeploymentV1SpecTemplateSpecVolumeSecretItems[]; 
   public get items() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('items') as any;
   }
-  public set items(value: DeploymentV1SpecTemplateSpecVolumeSecretItems[] | undefined) {
+  public set items(value: DeploymentV1SpecTemplateSpecVolumeSecretItems[]) {
     this._items = value;
   }
   public resetItems() {
@@ -12653,7 +16061,7 @@ export class DeploymentV1SpecTemplateSpecVolumeSecretOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get itemsInput() {
-    return this._items
+    return this._items;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeVsphereVolume {
@@ -12671,7 +16079,7 @@ export interface DeploymentV1SpecTemplateSpecVolumeVsphereVolume {
   readonly volumePath: string;
 }
 
-function deploymentV1SpecTemplateSpecVolumeVsphereVolumeToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeVsphereVolumeOutputReference | DeploymentV1SpecTemplateSpecVolumeVsphereVolume): any {
+export function deploymentV1SpecTemplateSpecVolumeVsphereVolumeToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeVsphereVolumeOutputReference | DeploymentV1SpecTemplateSpecVolumeVsphereVolume): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -12692,12 +16100,37 @@ export class DeploymentV1SpecTemplateSpecVolumeVsphereVolumeOutputReference exte
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeVsphereVolume | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._volumePath) {
+      hasAnyValues = true;
+      internalValueResult.volumePath = this._volumePath;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeVsphereVolume | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._volumePath = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._volumePath = value.volumePath;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -12705,7 +16138,7 @@ export class DeploymentV1SpecTemplateSpecVolumeVsphereVolumeOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // volume_path - computed: false, optional: false, required: true
@@ -12718,7 +16151,7 @@ export class DeploymentV1SpecTemplateSpecVolumeVsphereVolumeOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get volumePathInput() {
-    return this._volumePath
+    return this._volumePath;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolume {
@@ -12886,7 +16319,7 @@ export interface DeploymentV1SpecTemplateSpecVolume {
   readonly vsphereVolume?: DeploymentV1SpecTemplateSpecVolumeVsphereVolume;
 }
 
-function deploymentV1SpecTemplateSpecVolumeToTerraform(struct?: DeploymentV1SpecTemplateSpecVolume): any {
+export function deploymentV1SpecTemplateSpecVolumeToTerraform(struct?: DeploymentV1SpecTemplateSpecVolume): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -13087,7 +16520,7 @@ export interface DeploymentV1SpecTemplateSpec {
   readonly volume?: DeploymentV1SpecTemplateSpecVolume[];
 }
 
-function deploymentV1SpecTemplateSpecToTerraform(struct?: DeploymentV1SpecTemplateSpecOutputReference | DeploymentV1SpecTemplateSpec): any {
+export function deploymentV1SpecTemplateSpecToTerraform(struct?: DeploymentV1SpecTemplateSpecOutputReference | DeploymentV1SpecTemplateSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -13133,12 +16566,187 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplateSpec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._activeDeadlineSeconds) {
+      hasAnyValues = true;
+      internalValueResult.activeDeadlineSeconds = this._activeDeadlineSeconds;
+    }
+    if (this._automountServiceAccountToken) {
+      hasAnyValues = true;
+      internalValueResult.automountServiceAccountToken = this._automountServiceAccountToken;
+    }
+    if (this._dnsPolicy) {
+      hasAnyValues = true;
+      internalValueResult.dnsPolicy = this._dnsPolicy;
+    }
+    if (this._enableServiceLinks) {
+      hasAnyValues = true;
+      internalValueResult.enableServiceLinks = this._enableServiceLinks;
+    }
+    if (this._hostIpc) {
+      hasAnyValues = true;
+      internalValueResult.hostIpc = this._hostIpc;
+    }
+    if (this._hostNetwork) {
+      hasAnyValues = true;
+      internalValueResult.hostNetwork = this._hostNetwork;
+    }
+    if (this._hostPid) {
+      hasAnyValues = true;
+      internalValueResult.hostPid = this._hostPid;
+    }
+    if (this._hostname) {
+      hasAnyValues = true;
+      internalValueResult.hostname = this._hostname;
+    }
+    if (this._nodeName) {
+      hasAnyValues = true;
+      internalValueResult.nodeName = this._nodeName;
+    }
+    if (this._nodeSelector) {
+      hasAnyValues = true;
+      internalValueResult.nodeSelector = this._nodeSelector;
+    }
+    if (this._priorityClassName) {
+      hasAnyValues = true;
+      internalValueResult.priorityClassName = this._priorityClassName;
+    }
+    if (this._restartPolicy) {
+      hasAnyValues = true;
+      internalValueResult.restartPolicy = this._restartPolicy;
+    }
+    if (this._serviceAccountName) {
+      hasAnyValues = true;
+      internalValueResult.serviceAccountName = this._serviceAccountName;
+    }
+    if (this._shareProcessNamespace) {
+      hasAnyValues = true;
+      internalValueResult.shareProcessNamespace = this._shareProcessNamespace;
+    }
+    if (this._subdomain) {
+      hasAnyValues = true;
+      internalValueResult.subdomain = this._subdomain;
+    }
+    if (this._terminationGracePeriodSeconds) {
+      hasAnyValues = true;
+      internalValueResult.terminationGracePeriodSeconds = this._terminationGracePeriodSeconds;
+    }
+    if (this._affinity) {
+      hasAnyValues = true;
+      internalValueResult.affinity = this._affinity?.internalValue;
+    }
+    if (this._container) {
+      hasAnyValues = true;
+      internalValueResult.container = this._container;
+    }
+    if (this._dnsConfig) {
+      hasAnyValues = true;
+      internalValueResult.dnsConfig = this._dnsConfig?.internalValue;
+    }
+    if (this._hostAliases) {
+      hasAnyValues = true;
+      internalValueResult.hostAliases = this._hostAliases;
+    }
+    if (this._imagePullSecrets) {
+      hasAnyValues = true;
+      internalValueResult.imagePullSecrets = this._imagePullSecrets;
+    }
+    if (this._initContainer) {
+      hasAnyValues = true;
+      internalValueResult.initContainer = this._initContainer;
+    }
+    if (this._readinessGate) {
+      hasAnyValues = true;
+      internalValueResult.readinessGate = this._readinessGate;
+    }
+    if (this._securityContext) {
+      hasAnyValues = true;
+      internalValueResult.securityContext = this._securityContext?.internalValue;
+    }
+    if (this._toleration) {
+      hasAnyValues = true;
+      internalValueResult.toleration = this._toleration;
+    }
+    if (this._topologySpreadConstraint) {
+      hasAnyValues = true;
+      internalValueResult.topologySpreadConstraint = this._topologySpreadConstraint;
+    }
+    if (this._volume) {
+      hasAnyValues = true;
+      internalValueResult.volume = this._volume;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpec | undefined) {
+    if (value === undefined) {
+      this._activeDeadlineSeconds = undefined;
+      this._automountServiceAccountToken = undefined;
+      this._dnsPolicy = undefined;
+      this._enableServiceLinks = undefined;
+      this._hostIpc = undefined;
+      this._hostNetwork = undefined;
+      this._hostPid = undefined;
+      this._hostname = undefined;
+      this._nodeName = undefined;
+      this._nodeSelector = undefined;
+      this._priorityClassName = undefined;
+      this._restartPolicy = undefined;
+      this._serviceAccountName = undefined;
+      this._shareProcessNamespace = undefined;
+      this._subdomain = undefined;
+      this._terminationGracePeriodSeconds = undefined;
+      this._affinity.internalValue = undefined;
+      this._container = undefined;
+      this._dnsConfig.internalValue = undefined;
+      this._hostAliases = undefined;
+      this._imagePullSecrets = undefined;
+      this._initContainer = undefined;
+      this._readinessGate = undefined;
+      this._securityContext.internalValue = undefined;
+      this._toleration = undefined;
+      this._topologySpreadConstraint = undefined;
+      this._volume = undefined;
+    }
+    else {
+      this._activeDeadlineSeconds = value.activeDeadlineSeconds;
+      this._automountServiceAccountToken = value.automountServiceAccountToken;
+      this._dnsPolicy = value.dnsPolicy;
+      this._enableServiceLinks = value.enableServiceLinks;
+      this._hostIpc = value.hostIpc;
+      this._hostNetwork = value.hostNetwork;
+      this._hostPid = value.hostPid;
+      this._hostname = value.hostname;
+      this._nodeName = value.nodeName;
+      this._nodeSelector = value.nodeSelector;
+      this._priorityClassName = value.priorityClassName;
+      this._restartPolicy = value.restartPolicy;
+      this._serviceAccountName = value.serviceAccountName;
+      this._shareProcessNamespace = value.shareProcessNamespace;
+      this._subdomain = value.subdomain;
+      this._terminationGracePeriodSeconds = value.terminationGracePeriodSeconds;
+      this._affinity.internalValue = value.affinity;
+      this._container = value.container;
+      this._dnsConfig.internalValue = value.dnsConfig;
+      this._hostAliases = value.hostAliases;
+      this._imagePullSecrets = value.imagePullSecrets;
+      this._initContainer = value.initContainer;
+      this._readinessGate = value.readinessGate;
+      this._securityContext.internalValue = value.securityContext;
+      this._toleration = value.toleration;
+      this._topologySpreadConstraint = value.topologySpreadConstraint;
+      this._volume = value.volume;
+    }
+  }
+
   // active_deadline_seconds - computed: false, optional: true, required: false
-  private _activeDeadlineSeconds?: number | undefined; 
+  private _activeDeadlineSeconds?: number; 
   public get activeDeadlineSeconds() {
     return this.getNumberAttribute('active_deadline_seconds');
   }
-  public set activeDeadlineSeconds(value: number | undefined) {
+  public set activeDeadlineSeconds(value: number) {
     this._activeDeadlineSeconds = value;
   }
   public resetActiveDeadlineSeconds() {
@@ -13146,15 +16754,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get activeDeadlineSecondsInput() {
-    return this._activeDeadlineSeconds
+    return this._activeDeadlineSeconds;
   }
 
   // automount_service_account_token - computed: false, optional: true, required: false
-  private _automountServiceAccountToken?: boolean | cdktf.IResolvable | undefined; 
+  private _automountServiceAccountToken?: boolean | cdktf.IResolvable; 
   public get automountServiceAccountToken() {
     return this.getBooleanAttribute('automount_service_account_token') as any;
   }
-  public set automountServiceAccountToken(value: boolean | cdktf.IResolvable | undefined) {
+  public set automountServiceAccountToken(value: boolean | cdktf.IResolvable) {
     this._automountServiceAccountToken = value;
   }
   public resetAutomountServiceAccountToken() {
@@ -13162,15 +16770,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get automountServiceAccountTokenInput() {
-    return this._automountServiceAccountToken
+    return this._automountServiceAccountToken;
   }
 
   // dns_policy - computed: false, optional: true, required: false
-  private _dnsPolicy?: string | undefined; 
+  private _dnsPolicy?: string; 
   public get dnsPolicy() {
     return this.getStringAttribute('dns_policy');
   }
-  public set dnsPolicy(value: string | undefined) {
+  public set dnsPolicy(value: string) {
     this._dnsPolicy = value;
   }
   public resetDnsPolicy() {
@@ -13178,15 +16786,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get dnsPolicyInput() {
-    return this._dnsPolicy
+    return this._dnsPolicy;
   }
 
   // enable_service_links - computed: false, optional: true, required: false
-  private _enableServiceLinks?: boolean | cdktf.IResolvable | undefined; 
+  private _enableServiceLinks?: boolean | cdktf.IResolvable; 
   public get enableServiceLinks() {
     return this.getBooleanAttribute('enable_service_links') as any;
   }
-  public set enableServiceLinks(value: boolean | cdktf.IResolvable | undefined) {
+  public set enableServiceLinks(value: boolean | cdktf.IResolvable) {
     this._enableServiceLinks = value;
   }
   public resetEnableServiceLinks() {
@@ -13194,15 +16802,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get enableServiceLinksInput() {
-    return this._enableServiceLinks
+    return this._enableServiceLinks;
   }
 
   // host_ipc - computed: false, optional: true, required: false
-  private _hostIpc?: boolean | cdktf.IResolvable | undefined; 
+  private _hostIpc?: boolean | cdktf.IResolvable; 
   public get hostIpc() {
     return this.getBooleanAttribute('host_ipc') as any;
   }
-  public set hostIpc(value: boolean | cdktf.IResolvable | undefined) {
+  public set hostIpc(value: boolean | cdktf.IResolvable) {
     this._hostIpc = value;
   }
   public resetHostIpc() {
@@ -13210,15 +16818,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get hostIpcInput() {
-    return this._hostIpc
+    return this._hostIpc;
   }
 
   // host_network - computed: false, optional: true, required: false
-  private _hostNetwork?: boolean | cdktf.IResolvable | undefined; 
+  private _hostNetwork?: boolean | cdktf.IResolvable; 
   public get hostNetwork() {
     return this.getBooleanAttribute('host_network') as any;
   }
-  public set hostNetwork(value: boolean | cdktf.IResolvable | undefined) {
+  public set hostNetwork(value: boolean | cdktf.IResolvable) {
     this._hostNetwork = value;
   }
   public resetHostNetwork() {
@@ -13226,15 +16834,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get hostNetworkInput() {
-    return this._hostNetwork
+    return this._hostNetwork;
   }
 
   // host_pid - computed: false, optional: true, required: false
-  private _hostPid?: boolean | cdktf.IResolvable | undefined; 
+  private _hostPid?: boolean | cdktf.IResolvable; 
   public get hostPid() {
     return this.getBooleanAttribute('host_pid') as any;
   }
-  public set hostPid(value: boolean | cdktf.IResolvable | undefined) {
+  public set hostPid(value: boolean | cdktf.IResolvable) {
     this._hostPid = value;
   }
   public resetHostPid() {
@@ -13242,15 +16850,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get hostPidInput() {
-    return this._hostPid
+    return this._hostPid;
   }
 
   // hostname - computed: true, optional: true, required: false
-  private _hostname?: string | undefined; 
+  private _hostname?: string; 
   public get hostname() {
     return this.getStringAttribute('hostname');
   }
-  public set hostname(value: string | undefined) {
+  public set hostname(value: string) {
     this._hostname = value;
   }
   public resetHostname() {
@@ -13258,15 +16866,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get hostnameInput() {
-    return this._hostname
+    return this._hostname;
   }
 
   // node_name - computed: true, optional: true, required: false
-  private _nodeName?: string | undefined; 
+  private _nodeName?: string; 
   public get nodeName() {
     return this.getStringAttribute('node_name');
   }
-  public set nodeName(value: string | undefined) {
+  public set nodeName(value: string) {
     this._nodeName = value;
   }
   public resetNodeName() {
@@ -13274,16 +16882,16 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get nodeNameInput() {
-    return this._nodeName
+    return this._nodeName;
   }
 
   // node_selector - computed: false, optional: true, required: false
-  private _nodeSelector?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _nodeSelector?: { [key: string]: string } | cdktf.IResolvable; 
   public get nodeSelector() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('node_selector') as any;
   }
-  public set nodeSelector(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set nodeSelector(value: { [key: string]: string } | cdktf.IResolvable) {
     this._nodeSelector = value;
   }
   public resetNodeSelector() {
@@ -13291,15 +16899,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get nodeSelectorInput() {
-    return this._nodeSelector
+    return this._nodeSelector;
   }
 
   // priority_class_name - computed: false, optional: true, required: false
-  private _priorityClassName?: string | undefined; 
+  private _priorityClassName?: string; 
   public get priorityClassName() {
     return this.getStringAttribute('priority_class_name');
   }
-  public set priorityClassName(value: string | undefined) {
+  public set priorityClassName(value: string) {
     this._priorityClassName = value;
   }
   public resetPriorityClassName() {
@@ -13307,15 +16915,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get priorityClassNameInput() {
-    return this._priorityClassName
+    return this._priorityClassName;
   }
 
   // restart_policy - computed: false, optional: true, required: false
-  private _restartPolicy?: string | undefined; 
+  private _restartPolicy?: string; 
   public get restartPolicy() {
     return this.getStringAttribute('restart_policy');
   }
-  public set restartPolicy(value: string | undefined) {
+  public set restartPolicy(value: string) {
     this._restartPolicy = value;
   }
   public resetRestartPolicy() {
@@ -13323,15 +16931,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get restartPolicyInput() {
-    return this._restartPolicy
+    return this._restartPolicy;
   }
 
   // service_account_name - computed: true, optional: true, required: false
-  private _serviceAccountName?: string | undefined; 
+  private _serviceAccountName?: string; 
   public get serviceAccountName() {
     return this.getStringAttribute('service_account_name');
   }
-  public set serviceAccountName(value: string | undefined) {
+  public set serviceAccountName(value: string) {
     this._serviceAccountName = value;
   }
   public resetServiceAccountName() {
@@ -13339,15 +16947,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get serviceAccountNameInput() {
-    return this._serviceAccountName
+    return this._serviceAccountName;
   }
 
   // share_process_namespace - computed: false, optional: true, required: false
-  private _shareProcessNamespace?: boolean | cdktf.IResolvable | undefined; 
+  private _shareProcessNamespace?: boolean | cdktf.IResolvable; 
   public get shareProcessNamespace() {
     return this.getBooleanAttribute('share_process_namespace') as any;
   }
-  public set shareProcessNamespace(value: boolean | cdktf.IResolvable | undefined) {
+  public set shareProcessNamespace(value: boolean | cdktf.IResolvable) {
     this._shareProcessNamespace = value;
   }
   public resetShareProcessNamespace() {
@@ -13355,15 +16963,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get shareProcessNamespaceInput() {
-    return this._shareProcessNamespace
+    return this._shareProcessNamespace;
   }
 
   // subdomain - computed: false, optional: true, required: false
-  private _subdomain?: string | undefined; 
+  private _subdomain?: string; 
   public get subdomain() {
     return this.getStringAttribute('subdomain');
   }
-  public set subdomain(value: string | undefined) {
+  public set subdomain(value: string) {
     this._subdomain = value;
   }
   public resetSubdomain() {
@@ -13371,15 +16979,15 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get subdomainInput() {
-    return this._subdomain
+    return this._subdomain;
   }
 
   // termination_grace_period_seconds - computed: false, optional: true, required: false
-  private _terminationGracePeriodSeconds?: number | undefined; 
+  private _terminationGracePeriodSeconds?: number; 
   public get terminationGracePeriodSeconds() {
     return this.getNumberAttribute('termination_grace_period_seconds');
   }
-  public set terminationGracePeriodSeconds(value: number | undefined) {
+  public set terminationGracePeriodSeconds(value: number) {
     this._terminationGracePeriodSeconds = value;
   }
   public resetTerminationGracePeriodSeconds() {
@@ -13387,33 +16995,32 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get terminationGracePeriodSecondsInput() {
-    return this._terminationGracePeriodSeconds
+    return this._terminationGracePeriodSeconds;
   }
 
   // affinity - computed: false, optional: true, required: false
-  private _affinity?: DeploymentV1SpecTemplateSpecAffinity | undefined; 
-  private __affinityOutput = new DeploymentV1SpecTemplateSpecAffinityOutputReference(this as any, "affinity", true);
+  private _affinity = new DeploymentV1SpecTemplateSpecAffinityOutputReference(this as any, "affinity", true);
   public get affinity() {
-    return this.__affinityOutput;
+    return this._affinity;
   }
-  public putAffinity(value: DeploymentV1SpecTemplateSpecAffinity | undefined) {
-    this._affinity = value;
+  public putAffinity(value: DeploymentV1SpecTemplateSpecAffinity) {
+    this._affinity.internalValue = value;
   }
   public resetAffinity() {
-    this._affinity = undefined;
+    this._affinity.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get affinityInput() {
-    return this._affinity
+    return this._affinity.internalValue;
   }
 
   // container - computed: false, optional: true, required: false
-  private _container?: DeploymentV1SpecTemplateSpecContainer[] | undefined; 
+  private _container?: DeploymentV1SpecTemplateSpecContainer[]; 
   public get container() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('container') as any;
   }
-  public set container(value: DeploymentV1SpecTemplateSpecContainer[] | undefined) {
+  public set container(value: DeploymentV1SpecTemplateSpecContainer[]) {
     this._container = value;
   }
   public resetContainer() {
@@ -13421,33 +17028,32 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get containerInput() {
-    return this._container
+    return this._container;
   }
 
   // dns_config - computed: false, optional: true, required: false
-  private _dnsConfig?: DeploymentV1SpecTemplateSpecDnsConfig | undefined; 
-  private __dnsConfigOutput = new DeploymentV1SpecTemplateSpecDnsConfigOutputReference(this as any, "dns_config", true);
+  private _dnsConfig = new DeploymentV1SpecTemplateSpecDnsConfigOutputReference(this as any, "dns_config", true);
   public get dnsConfig() {
-    return this.__dnsConfigOutput;
+    return this._dnsConfig;
   }
-  public putDnsConfig(value: DeploymentV1SpecTemplateSpecDnsConfig | undefined) {
-    this._dnsConfig = value;
+  public putDnsConfig(value: DeploymentV1SpecTemplateSpecDnsConfig) {
+    this._dnsConfig.internalValue = value;
   }
   public resetDnsConfig() {
-    this._dnsConfig = undefined;
+    this._dnsConfig.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get dnsConfigInput() {
-    return this._dnsConfig
+    return this._dnsConfig.internalValue;
   }
 
   // host_aliases - computed: false, optional: true, required: false
-  private _hostAliases?: DeploymentV1SpecTemplateSpecHostAliases[] | undefined; 
+  private _hostAliases?: DeploymentV1SpecTemplateSpecHostAliases[]; 
   public get hostAliases() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('host_aliases') as any;
   }
-  public set hostAliases(value: DeploymentV1SpecTemplateSpecHostAliases[] | undefined) {
+  public set hostAliases(value: DeploymentV1SpecTemplateSpecHostAliases[]) {
     this._hostAliases = value;
   }
   public resetHostAliases() {
@@ -13455,16 +17061,16 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get hostAliasesInput() {
-    return this._hostAliases
+    return this._hostAliases;
   }
 
   // image_pull_secrets - computed: false, optional: true, required: false
-  private _imagePullSecrets?: DeploymentV1SpecTemplateSpecImagePullSecrets[] | undefined; 
+  private _imagePullSecrets?: DeploymentV1SpecTemplateSpecImagePullSecrets[]; 
   public get imagePullSecrets() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('image_pull_secrets') as any;
   }
-  public set imagePullSecrets(value: DeploymentV1SpecTemplateSpecImagePullSecrets[] | undefined) {
+  public set imagePullSecrets(value: DeploymentV1SpecTemplateSpecImagePullSecrets[]) {
     this._imagePullSecrets = value;
   }
   public resetImagePullSecrets() {
@@ -13472,16 +17078,16 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get imagePullSecretsInput() {
-    return this._imagePullSecrets
+    return this._imagePullSecrets;
   }
 
   // init_container - computed: false, optional: true, required: false
-  private _initContainer?: DeploymentV1SpecTemplateSpecInitContainer[] | undefined; 
+  private _initContainer?: DeploymentV1SpecTemplateSpecInitContainer[]; 
   public get initContainer() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('init_container') as any;
   }
-  public set initContainer(value: DeploymentV1SpecTemplateSpecInitContainer[] | undefined) {
+  public set initContainer(value: DeploymentV1SpecTemplateSpecInitContainer[]) {
     this._initContainer = value;
   }
   public resetInitContainer() {
@@ -13489,16 +17095,16 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get initContainerInput() {
-    return this._initContainer
+    return this._initContainer;
   }
 
   // readiness_gate - computed: false, optional: true, required: false
-  private _readinessGate?: DeploymentV1SpecTemplateSpecReadinessGate[] | undefined; 
+  private _readinessGate?: DeploymentV1SpecTemplateSpecReadinessGate[]; 
   public get readinessGate() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('readiness_gate') as any;
   }
-  public set readinessGate(value: DeploymentV1SpecTemplateSpecReadinessGate[] | undefined) {
+  public set readinessGate(value: DeploymentV1SpecTemplateSpecReadinessGate[]) {
     this._readinessGate = value;
   }
   public resetReadinessGate() {
@@ -13506,33 +17112,32 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get readinessGateInput() {
-    return this._readinessGate
+    return this._readinessGate;
   }
 
   // security_context - computed: false, optional: true, required: false
-  private _securityContext?: DeploymentV1SpecTemplateSpecSecurityContext | undefined; 
-  private __securityContextOutput = new DeploymentV1SpecTemplateSpecSecurityContextOutputReference(this as any, "security_context", true);
+  private _securityContext = new DeploymentV1SpecTemplateSpecSecurityContextOutputReference(this as any, "security_context", true);
   public get securityContext() {
-    return this.__securityContextOutput;
+    return this._securityContext;
   }
-  public putSecurityContext(value: DeploymentV1SpecTemplateSpecSecurityContext | undefined) {
-    this._securityContext = value;
+  public putSecurityContext(value: DeploymentV1SpecTemplateSpecSecurityContext) {
+    this._securityContext.internalValue = value;
   }
   public resetSecurityContext() {
-    this._securityContext = undefined;
+    this._securityContext.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get securityContextInput() {
-    return this._securityContext
+    return this._securityContext.internalValue;
   }
 
   // toleration - computed: false, optional: true, required: false
-  private _toleration?: DeploymentV1SpecTemplateSpecToleration[] | undefined; 
+  private _toleration?: DeploymentV1SpecTemplateSpecToleration[]; 
   public get toleration() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('toleration') as any;
   }
-  public set toleration(value: DeploymentV1SpecTemplateSpecToleration[] | undefined) {
+  public set toleration(value: DeploymentV1SpecTemplateSpecToleration[]) {
     this._toleration = value;
   }
   public resetToleration() {
@@ -13540,16 +17145,16 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get tolerationInput() {
-    return this._toleration
+    return this._toleration;
   }
 
   // topology_spread_constraint - computed: false, optional: true, required: false
-  private _topologySpreadConstraint?: DeploymentV1SpecTemplateSpecTopologySpreadConstraint[] | undefined; 
+  private _topologySpreadConstraint?: DeploymentV1SpecTemplateSpecTopologySpreadConstraint[]; 
   public get topologySpreadConstraint() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('topology_spread_constraint') as any;
   }
-  public set topologySpreadConstraint(value: DeploymentV1SpecTemplateSpecTopologySpreadConstraint[] | undefined) {
+  public set topologySpreadConstraint(value: DeploymentV1SpecTemplateSpecTopologySpreadConstraint[]) {
     this._topologySpreadConstraint = value;
   }
   public resetTopologySpreadConstraint() {
@@ -13557,16 +17162,16 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get topologySpreadConstraintInput() {
-    return this._topologySpreadConstraint
+    return this._topologySpreadConstraint;
   }
 
   // volume - computed: false, optional: true, required: false
-  private _volume?: DeploymentV1SpecTemplateSpecVolume[] | undefined; 
+  private _volume?: DeploymentV1SpecTemplateSpecVolume[]; 
   public get volume() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('volume') as any;
   }
-  public set volume(value: DeploymentV1SpecTemplateSpecVolume[] | undefined) {
+  public set volume(value: DeploymentV1SpecTemplateSpecVolume[]) {
     this._volume = value;
   }
   public resetVolume() {
@@ -13574,7 +17179,7 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get volumeInput() {
-    return this._volume
+    return this._volume;
   }
 }
 export interface DeploymentV1SpecTemplate {
@@ -13592,7 +17197,7 @@ export interface DeploymentV1SpecTemplate {
   readonly spec: DeploymentV1SpecTemplateSpec;
 }
 
-function deploymentV1SpecTemplateToTerraform(struct?: DeploymentV1SpecTemplateOutputReference | DeploymentV1SpecTemplate): any {
+export function deploymentV1SpecTemplateToTerraform(struct?: DeploymentV1SpecTemplateOutputReference | DeploymentV1SpecTemplate): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -13613,32 +17218,55 @@ export class DeploymentV1SpecTemplateOutputReference extends cdktf.ComplexObject
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1SpecTemplate | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._metadata) {
+      hasAnyValues = true;
+      internalValueResult.metadata = this._metadata?.internalValue;
+    }
+    if (this._spec) {
+      hasAnyValues = true;
+      internalValueResult.spec = this._spec?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplate | undefined) {
+    if (value === undefined) {
+      this._metadata.internalValue = undefined;
+      this._spec.internalValue = undefined;
+    }
+    else {
+      this._metadata.internalValue = value.metadata;
+      this._spec.internalValue = value.spec;
+    }
+  }
+
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: DeploymentV1SpecTemplateMetadata; 
-  private __metadataOutput = new DeploymentV1SpecTemplateMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new DeploymentV1SpecTemplateMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: DeploymentV1SpecTemplateMetadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: DeploymentV1SpecTemplateSpec; 
-  private __specOutput = new DeploymentV1SpecTemplateSpecOutputReference(this as any, "spec", true);
+  private _spec = new DeploymentV1SpecTemplateSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
   public putSpec(value: DeploymentV1SpecTemplateSpec) {
-    this._spec = value;
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 }
 export interface DeploymentV1Spec {
@@ -13692,7 +17320,7 @@ export interface DeploymentV1Spec {
   readonly template: DeploymentV1SpecTemplate;
 }
 
-function deploymentV1SpecToTerraform(struct?: DeploymentV1SpecOutputReference | DeploymentV1Spec): any {
+export function deploymentV1SpecToTerraform(struct?: DeploymentV1SpecOutputReference | DeploymentV1Spec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -13719,12 +17347,73 @@ export class DeploymentV1SpecOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1Spec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._minReadySeconds) {
+      hasAnyValues = true;
+      internalValueResult.minReadySeconds = this._minReadySeconds;
+    }
+    if (this._paused) {
+      hasAnyValues = true;
+      internalValueResult.paused = this._paused;
+    }
+    if (this._progressDeadlineSeconds) {
+      hasAnyValues = true;
+      internalValueResult.progressDeadlineSeconds = this._progressDeadlineSeconds;
+    }
+    if (this._replicas) {
+      hasAnyValues = true;
+      internalValueResult.replicas = this._replicas;
+    }
+    if (this._revisionHistoryLimit) {
+      hasAnyValues = true;
+      internalValueResult.revisionHistoryLimit = this._revisionHistoryLimit;
+    }
+    if (this._selector) {
+      hasAnyValues = true;
+      internalValueResult.selector = this._selector?.internalValue;
+    }
+    if (this._strategy) {
+      hasAnyValues = true;
+      internalValueResult.strategy = this._strategy?.internalValue;
+    }
+    if (this._template) {
+      hasAnyValues = true;
+      internalValueResult.template = this._template?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1Spec | undefined) {
+    if (value === undefined) {
+      this._minReadySeconds = undefined;
+      this._paused = undefined;
+      this._progressDeadlineSeconds = undefined;
+      this._replicas = undefined;
+      this._revisionHistoryLimit = undefined;
+      this._selector.internalValue = undefined;
+      this._strategy.internalValue = undefined;
+      this._template.internalValue = undefined;
+    }
+    else {
+      this._minReadySeconds = value.minReadySeconds;
+      this._paused = value.paused;
+      this._progressDeadlineSeconds = value.progressDeadlineSeconds;
+      this._replicas = value.replicas;
+      this._revisionHistoryLimit = value.revisionHistoryLimit;
+      this._selector.internalValue = value.selector;
+      this._strategy.internalValue = value.strategy;
+      this._template.internalValue = value.template;
+    }
+  }
+
   // min_ready_seconds - computed: false, optional: true, required: false
-  private _minReadySeconds?: number | undefined; 
+  private _minReadySeconds?: number; 
   public get minReadySeconds() {
     return this.getNumberAttribute('min_ready_seconds');
   }
-  public set minReadySeconds(value: number | undefined) {
+  public set minReadySeconds(value: number) {
     this._minReadySeconds = value;
   }
   public resetMinReadySeconds() {
@@ -13732,15 +17421,15 @@ export class DeploymentV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get minReadySecondsInput() {
-    return this._minReadySeconds
+    return this._minReadySeconds;
   }
 
   // paused - computed: false, optional: true, required: false
-  private _paused?: boolean | cdktf.IResolvable | undefined; 
+  private _paused?: boolean | cdktf.IResolvable; 
   public get paused() {
     return this.getBooleanAttribute('paused') as any;
   }
-  public set paused(value: boolean | cdktf.IResolvable | undefined) {
+  public set paused(value: boolean | cdktf.IResolvable) {
     this._paused = value;
   }
   public resetPaused() {
@@ -13748,15 +17437,15 @@ export class DeploymentV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get pausedInput() {
-    return this._paused
+    return this._paused;
   }
 
   // progress_deadline_seconds - computed: false, optional: true, required: false
-  private _progressDeadlineSeconds?: number | undefined; 
+  private _progressDeadlineSeconds?: number; 
   public get progressDeadlineSeconds() {
     return this.getNumberAttribute('progress_deadline_seconds');
   }
-  public set progressDeadlineSeconds(value: number | undefined) {
+  public set progressDeadlineSeconds(value: number) {
     this._progressDeadlineSeconds = value;
   }
   public resetProgressDeadlineSeconds() {
@@ -13764,15 +17453,15 @@ export class DeploymentV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get progressDeadlineSecondsInput() {
-    return this._progressDeadlineSeconds
+    return this._progressDeadlineSeconds;
   }
 
   // replicas - computed: true, optional: true, required: false
-  private _replicas?: string | undefined; 
+  private _replicas?: string; 
   public get replicas() {
     return this.getStringAttribute('replicas');
   }
-  public set replicas(value: string | undefined) {
+  public set replicas(value: string) {
     this._replicas = value;
   }
   public resetReplicas() {
@@ -13780,15 +17469,15 @@ export class DeploymentV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get replicasInput() {
-    return this._replicas
+    return this._replicas;
   }
 
   // revision_history_limit - computed: false, optional: true, required: false
-  private _revisionHistoryLimit?: number | undefined; 
+  private _revisionHistoryLimit?: number; 
   public get revisionHistoryLimit() {
     return this.getNumberAttribute('revision_history_limit');
   }
-  public set revisionHistoryLimit(value: number | undefined) {
+  public set revisionHistoryLimit(value: number) {
     this._revisionHistoryLimit = value;
   }
   public resetRevisionHistoryLimit() {
@@ -13796,55 +17485,52 @@ export class DeploymentV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get revisionHistoryLimitInput() {
-    return this._revisionHistoryLimit
+    return this._revisionHistoryLimit;
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector?: DeploymentV1SpecSelector | undefined; 
-  private __selectorOutput = new DeploymentV1SpecSelectorOutputReference(this as any, "selector", true);
+  private _selector = new DeploymentV1SpecSelectorOutputReference(this as any, "selector", true);
   public get selector() {
-    return this.__selectorOutput;
+    return this._selector;
   }
-  public putSelector(value: DeploymentV1SpecSelector | undefined) {
-    this._selector = value;
+  public putSelector(value: DeploymentV1SpecSelector) {
+    this._selector.internalValue = value;
   }
   public resetSelector() {
-    this._selector = undefined;
+    this._selector.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get selectorInput() {
-    return this._selector
+    return this._selector.internalValue;
   }
 
   // strategy - computed: false, optional: true, required: false
-  private _strategy?: DeploymentV1SpecStrategy | undefined; 
-  private __strategyOutput = new DeploymentV1SpecStrategyOutputReference(this as any, "strategy", true);
+  private _strategy = new DeploymentV1SpecStrategyOutputReference(this as any, "strategy", true);
   public get strategy() {
-    return this.__strategyOutput;
+    return this._strategy;
   }
-  public putStrategy(value: DeploymentV1SpecStrategy | undefined) {
-    this._strategy = value;
+  public putStrategy(value: DeploymentV1SpecStrategy) {
+    this._strategy.internalValue = value;
   }
   public resetStrategy() {
-    this._strategy = undefined;
+    this._strategy.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get strategyInput() {
-    return this._strategy
+    return this._strategy.internalValue;
   }
 
   // template - computed: false, optional: false, required: true
-  private _template?: DeploymentV1SpecTemplate; 
-  private __templateOutput = new DeploymentV1SpecTemplateOutputReference(this as any, "template", true);
+  private _template = new DeploymentV1SpecTemplateOutputReference(this as any, "template", true);
   public get template() {
-    return this.__templateOutput;
+    return this._template;
   }
   public putTemplate(value: DeploymentV1SpecTemplate) {
-    this._template = value;
+    this._template.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get templateInput() {
-    return this._template
+    return this._template.internalValue;
   }
 }
 export interface DeploymentV1Timeouts {
@@ -13862,7 +17548,7 @@ export interface DeploymentV1Timeouts {
   readonly update?: string;
 }
 
-function deploymentV1TimeoutsToTerraform(struct?: DeploymentV1TimeoutsOutputReference | DeploymentV1Timeouts): any {
+export function deploymentV1TimeoutsToTerraform(struct?: DeploymentV1TimeoutsOutputReference | DeploymentV1Timeouts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -13884,12 +17570,43 @@ export class DeploymentV1TimeoutsOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DeploymentV1Timeouts | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._create) {
+      hasAnyValues = true;
+      internalValueResult.create = this._create;
+    }
+    if (this._delete) {
+      hasAnyValues = true;
+      internalValueResult.delete = this._delete;
+    }
+    if (this._update) {
+      hasAnyValues = true;
+      internalValueResult.update = this._update;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1Timeouts | undefined) {
+    if (value === undefined) {
+      this._create = undefined;
+      this._delete = undefined;
+      this._update = undefined;
+    }
+    else {
+      this._create = value.create;
+      this._delete = value.delete;
+      this._update = value.update;
+    }
+  }
+
   // create - computed: false, optional: true, required: false
-  private _create?: string | undefined; 
+  private _create?: string; 
   public get create() {
     return this.getStringAttribute('create');
   }
-  public set create(value: string | undefined) {
+  public set create(value: string) {
     this._create = value;
   }
   public resetCreate() {
@@ -13897,15 +17614,15 @@ export class DeploymentV1TimeoutsOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get createInput() {
-    return this._create
+    return this._create;
   }
 
   // delete - computed: false, optional: true, required: false
-  private _delete?: string | undefined; 
+  private _delete?: string; 
   public get delete() {
     return this.getStringAttribute('delete');
   }
-  public set delete(value: string | undefined) {
+  public set delete(value: string) {
     this._delete = value;
   }
   public resetDelete() {
@@ -13913,15 +17630,15 @@ export class DeploymentV1TimeoutsOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get deleteInput() {
-    return this._delete
+    return this._delete;
   }
 
   // update - computed: false, optional: true, required: false
-  private _update?: string | undefined; 
+  private _update?: string; 
   public get update() {
     return this.getStringAttribute('update');
   }
-  public set update(value: string | undefined) {
+  public set update(value: string) {
     this._update = value;
   }
   public resetUpdate() {
@@ -13929,7 +17646,7 @@ export class DeploymentV1TimeoutsOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get updateInput() {
-    return this._update
+    return this._update;
   }
 }
 
@@ -13966,9 +17683,9 @@ export class DeploymentV1 extends cdktf.TerraformResource {
       lifecycle: config.lifecycle
     });
     this._waitForRollout = config.waitForRollout;
-    this._metadata = config.metadata;
-    this._spec = config.spec;
-    this._timeouts = config.timeouts;
+    this._metadata.internalValue = config.metadata;
+    this._spec.internalValue = config.spec;
+    this._timeouts.internalValue = config.timeouts;
   }
 
   // ==========
@@ -13981,11 +17698,11 @@ export class DeploymentV1 extends cdktf.TerraformResource {
   }
 
   // wait_for_rollout - computed: false, optional: true, required: false
-  private _waitForRollout?: boolean | cdktf.IResolvable | undefined; 
+  private _waitForRollout?: boolean | cdktf.IResolvable; 
   public get waitForRollout() {
     return this.getBooleanAttribute('wait_for_rollout') as any;
   }
-  public set waitForRollout(value: boolean | cdktf.IResolvable | undefined) {
+  public set waitForRollout(value: boolean | cdktf.IResolvable) {
     this._waitForRollout = value;
   }
   public resetWaitForRollout() {
@@ -13993,52 +17710,49 @@ export class DeploymentV1 extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get waitForRolloutInput() {
-    return this._waitForRollout
+    return this._waitForRollout;
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: DeploymentV1Metadata; 
-  private __metadataOutput = new DeploymentV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new DeploymentV1MetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: DeploymentV1Metadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: DeploymentV1Spec; 
-  private __specOutput = new DeploymentV1SpecOutputReference(this as any, "spec", true);
+  private _spec = new DeploymentV1SpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
   public putSpec(value: DeploymentV1Spec) {
-    this._spec = value;
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts?: DeploymentV1Timeouts | undefined; 
-  private __timeoutsOutput = new DeploymentV1TimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new DeploymentV1TimeoutsOutputReference(this as any, "timeouts", true);
   public get timeouts() {
-    return this.__timeoutsOutput;
+    return this._timeouts;
   }
-  public putTimeouts(value: DeploymentV1Timeouts | undefined) {
-    this._timeouts = value;
+  public putTimeouts(value: DeploymentV1Timeouts) {
+    this._timeouts.internalValue = value;
   }
   public resetTimeouts() {
-    this._timeouts = undefined;
+    this._timeouts.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutsInput() {
-    return this._timeouts
+    return this._timeouts.internalValue;
   }
 
   // =========
@@ -14048,9 +17762,9 @@ export class DeploymentV1 extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       wait_for_rollout: cdktf.booleanToTerraform(this._waitForRollout),
-      metadata: deploymentV1MetadataToTerraform(this._metadata),
-      spec: deploymentV1SpecToTerraform(this._spec),
-      timeouts: deploymentV1TimeoutsToTerraform(this._timeouts),
+      metadata: deploymentV1MetadataToTerraform(this._metadata.internalValue),
+      spec: deploymentV1SpecToTerraform(this._spec.internalValue),
+      timeouts: deploymentV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
   }
 }

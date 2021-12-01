@@ -47,7 +47,7 @@ export interface DefaultServiceAccountV1ImagePullSecret {
   readonly name?: string;
 }
 
-function defaultServiceAccountV1ImagePullSecretToTerraform(struct?: DefaultServiceAccountV1ImagePullSecret): any {
+export function defaultServiceAccountV1ImagePullSecretToTerraform(struct?: DefaultServiceAccountV1ImagePullSecret): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -84,7 +84,7 @@ export interface DefaultServiceAccountV1Metadata {
   readonly namespace?: string;
 }
 
-function defaultServiceAccountV1MetadataToTerraform(struct?: DefaultServiceAccountV1MetadataOutputReference | DefaultServiceAccountV1Metadata): any {
+export function defaultServiceAccountV1MetadataToTerraform(struct?: DefaultServiceAccountV1MetadataOutputReference | DefaultServiceAccountV1Metadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -107,13 +107,50 @@ export class DefaultServiceAccountV1MetadataOutputReference extends cdktf.Comple
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DefaultServiceAccountV1Metadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DefaultServiceAccountV1Metadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -121,16 +158,16 @@ export class DefaultServiceAccountV1MetadataOutputReference extends cdktf.Comple
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -138,15 +175,15 @@ export class DefaultServiceAccountV1MetadataOutputReference extends cdktf.Comple
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -154,15 +191,15 @@ export class DefaultServiceAccountV1MetadataOutputReference extends cdktf.Comple
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -170,7 +207,7 @@ export class DefaultServiceAccountV1MetadataOutputReference extends cdktf.Comple
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface DefaultServiceAccountV1Secret {
@@ -182,7 +219,7 @@ export interface DefaultServiceAccountV1Secret {
   readonly name?: string;
 }
 
-function defaultServiceAccountV1SecretToTerraform(struct?: DefaultServiceAccountV1Secret): any {
+export function defaultServiceAccountV1SecretToTerraform(struct?: DefaultServiceAccountV1Secret): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -199,7 +236,7 @@ export interface DefaultServiceAccountV1Timeouts {
   readonly create?: string;
 }
 
-function defaultServiceAccountV1TimeoutsToTerraform(struct?: DefaultServiceAccountV1TimeoutsOutputReference | DefaultServiceAccountV1Timeouts): any {
+export function defaultServiceAccountV1TimeoutsToTerraform(struct?: DefaultServiceAccountV1TimeoutsOutputReference | DefaultServiceAccountV1Timeouts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -219,12 +256,31 @@ export class DefaultServiceAccountV1TimeoutsOutputReference extends cdktf.Comple
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DefaultServiceAccountV1Timeouts | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._create) {
+      hasAnyValues = true;
+      internalValueResult.create = this._create;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DefaultServiceAccountV1Timeouts | undefined) {
+    if (value === undefined) {
+      this._create = undefined;
+    }
+    else {
+      this._create = value.create;
+    }
+  }
+
   // create - computed: false, optional: true, required: false
-  private _create?: string | undefined; 
+  private _create?: string; 
   public get create() {
     return this.getStringAttribute('create');
   }
-  public set create(value: string | undefined) {
+  public set create(value: string) {
     this._create = value;
   }
   public resetCreate() {
@@ -232,7 +288,7 @@ export class DefaultServiceAccountV1TimeoutsOutputReference extends cdktf.Comple
   }
   // Temporarily expose input value. Use with caution.
   public get createInput() {
-    return this._create
+    return this._create;
   }
 }
 
@@ -270,9 +326,9 @@ export class DefaultServiceAccountV1 extends cdktf.TerraformResource {
     });
     this._automountServiceAccountToken = config.automountServiceAccountToken;
     this._imagePullSecret = config.imagePullSecret;
-    this._metadata = config.metadata;
+    this._metadata.internalValue = config.metadata;
     this._secret = config.secret;
-    this._timeouts = config.timeouts;
+    this._timeouts.internalValue = config.timeouts;
   }
 
   // ==========
@@ -280,11 +336,11 @@ export class DefaultServiceAccountV1 extends cdktf.TerraformResource {
   // ==========
 
   // automount_service_account_token - computed: false, optional: true, required: false
-  private _automountServiceAccountToken?: boolean | cdktf.IResolvable | undefined; 
+  private _automountServiceAccountToken?: boolean | cdktf.IResolvable; 
   public get automountServiceAccountToken() {
     return this.getBooleanAttribute('automount_service_account_token') as any;
   }
-  public set automountServiceAccountToken(value: boolean | cdktf.IResolvable | undefined) {
+  public set automountServiceAccountToken(value: boolean | cdktf.IResolvable) {
     this._automountServiceAccountToken = value;
   }
   public resetAutomountServiceAccountToken() {
@@ -292,7 +348,7 @@ export class DefaultServiceAccountV1 extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get automountServiceAccountTokenInput() {
-    return this._automountServiceAccountToken
+    return this._automountServiceAccountToken;
   }
 
   // default_secret_name - computed: true, optional: false, required: false
@@ -306,12 +362,12 @@ export class DefaultServiceAccountV1 extends cdktf.TerraformResource {
   }
 
   // image_pull_secret - computed: false, optional: true, required: false
-  private _imagePullSecret?: DefaultServiceAccountV1ImagePullSecret[] | undefined; 
+  private _imagePullSecret?: DefaultServiceAccountV1ImagePullSecret[]; 
   public get imagePullSecret() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('image_pull_secret') as any;
   }
-  public set imagePullSecret(value: DefaultServiceAccountV1ImagePullSecret[] | undefined) {
+  public set imagePullSecret(value: DefaultServiceAccountV1ImagePullSecret[]) {
     this._imagePullSecret = value;
   }
   public resetImagePullSecret() {
@@ -319,30 +375,29 @@ export class DefaultServiceAccountV1 extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get imagePullSecretInput() {
-    return this._imagePullSecret
+    return this._imagePullSecret;
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: DefaultServiceAccountV1Metadata; 
-  private __metadataOutput = new DefaultServiceAccountV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new DefaultServiceAccountV1MetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: DefaultServiceAccountV1Metadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // secret - computed: false, optional: true, required: false
-  private _secret?: DefaultServiceAccountV1Secret[] | undefined; 
+  private _secret?: DefaultServiceAccountV1Secret[]; 
   public get secret() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('secret') as any;
   }
-  public set secret(value: DefaultServiceAccountV1Secret[] | undefined) {
+  public set secret(value: DefaultServiceAccountV1Secret[]) {
     this._secret = value;
   }
   public resetSecret() {
@@ -350,24 +405,23 @@ export class DefaultServiceAccountV1 extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get secretInput() {
-    return this._secret
+    return this._secret;
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts?: DefaultServiceAccountV1Timeouts | undefined; 
-  private __timeoutsOutput = new DefaultServiceAccountV1TimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new DefaultServiceAccountV1TimeoutsOutputReference(this as any, "timeouts", true);
   public get timeouts() {
-    return this.__timeoutsOutput;
+    return this._timeouts;
   }
-  public putTimeouts(value: DefaultServiceAccountV1Timeouts | undefined) {
-    this._timeouts = value;
+  public putTimeouts(value: DefaultServiceAccountV1Timeouts) {
+    this._timeouts.internalValue = value;
   }
   public resetTimeouts() {
-    this._timeouts = undefined;
+    this._timeouts.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutsInput() {
-    return this._timeouts
+    return this._timeouts.internalValue;
   }
 
   // =========
@@ -378,9 +432,9 @@ export class DefaultServiceAccountV1 extends cdktf.TerraformResource {
     return {
       automount_service_account_token: cdktf.booleanToTerraform(this._automountServiceAccountToken),
       image_pull_secret: cdktf.listMapper(defaultServiceAccountV1ImagePullSecretToTerraform)(this._imagePullSecret),
-      metadata: defaultServiceAccountV1MetadataToTerraform(this._metadata),
+      metadata: defaultServiceAccountV1MetadataToTerraform(this._metadata.internalValue),
       secret: cdktf.listMapper(defaultServiceAccountV1SecretToTerraform)(this._secret),
-      timeouts: defaultServiceAccountV1TimeoutsToTerraform(this._timeouts),
+      timeouts: defaultServiceAccountV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
   }
 }

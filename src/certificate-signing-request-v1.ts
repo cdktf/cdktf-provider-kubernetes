@@ -59,7 +59,7 @@ export interface CertificateSigningRequestV1Metadata {
   readonly name?: string;
 }
 
-function certificateSigningRequestV1MetadataToTerraform(struct?: CertificateSigningRequestV1MetadataOutputReference | CertificateSigningRequestV1Metadata): any {
+export function certificateSigningRequestV1MetadataToTerraform(struct?: CertificateSigningRequestV1MetadataOutputReference | CertificateSigningRequestV1Metadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -82,13 +82,50 @@ export class CertificateSigningRequestV1MetadataOutputReference extends cdktf.Co
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CertificateSigningRequestV1Metadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CertificateSigningRequestV1Metadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -96,15 +133,15 @@ export class CertificateSigningRequestV1MetadataOutputReference extends cdktf.Co
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -112,16 +149,16 @@ export class CertificateSigningRequestV1MetadataOutputReference extends cdktf.Co
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -129,15 +166,15 @@ export class CertificateSigningRequestV1MetadataOutputReference extends cdktf.Co
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -145,7 +182,7 @@ export class CertificateSigningRequestV1MetadataOutputReference extends cdktf.Co
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 export interface CertificateSigningRequestV1Spec {
@@ -202,7 +239,7 @@ Valid values are:
   readonly usages?: string[];
 }
 
-function certificateSigningRequestV1SpecToTerraform(struct?: CertificateSigningRequestV1SpecOutputReference | CertificateSigningRequestV1Spec): any {
+export function certificateSigningRequestV1SpecToTerraform(struct?: CertificateSigningRequestV1SpecOutputReference | CertificateSigningRequestV1Spec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -224,6 +261,37 @@ export class CertificateSigningRequestV1SpecOutputReference extends cdktf.Comple
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CertificateSigningRequestV1Spec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._request) {
+      hasAnyValues = true;
+      internalValueResult.request = this._request;
+    }
+    if (this._signerName) {
+      hasAnyValues = true;
+      internalValueResult.signerName = this._signerName;
+    }
+    if (this._usages) {
+      hasAnyValues = true;
+      internalValueResult.usages = this._usages;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CertificateSigningRequestV1Spec | undefined) {
+    if (value === undefined) {
+      this._request = undefined;
+      this._signerName = undefined;
+      this._usages = undefined;
+    }
+    else {
+      this._request = value.request;
+      this._signerName = value.signerName;
+      this._usages = value.usages;
+    }
+  }
+
   // request - computed: false, optional: false, required: true
   private _request?: string; 
   public get request() {
@@ -234,7 +302,7 @@ export class CertificateSigningRequestV1SpecOutputReference extends cdktf.Comple
   }
   // Temporarily expose input value. Use with caution.
   public get requestInput() {
-    return this._request
+    return this._request;
   }
 
   // signer_name - computed: false, optional: false, required: true
@@ -247,15 +315,15 @@ export class CertificateSigningRequestV1SpecOutputReference extends cdktf.Comple
   }
   // Temporarily expose input value. Use with caution.
   public get signerNameInput() {
-    return this._signerName
+    return this._signerName;
   }
 
   // usages - computed: false, optional: true, required: false
-  private _usages?: string[] | undefined; 
+  private _usages?: string[]; 
   public get usages() {
     return this.getListAttribute('usages');
   }
-  public set usages(value: string[] | undefined) {
+  public set usages(value: string[]) {
     this._usages = value;
   }
   public resetUsages() {
@@ -263,7 +331,7 @@ export class CertificateSigningRequestV1SpecOutputReference extends cdktf.Comple
   }
   // Temporarily expose input value. Use with caution.
   public get usagesInput() {
-    return this._usages
+    return this._usages;
   }
 }
 export interface CertificateSigningRequestV1Timeouts {
@@ -273,7 +341,7 @@ export interface CertificateSigningRequestV1Timeouts {
   readonly create?: string;
 }
 
-function certificateSigningRequestV1TimeoutsToTerraform(struct?: CertificateSigningRequestV1TimeoutsOutputReference | CertificateSigningRequestV1Timeouts): any {
+export function certificateSigningRequestV1TimeoutsToTerraform(struct?: CertificateSigningRequestV1TimeoutsOutputReference | CertificateSigningRequestV1Timeouts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -293,12 +361,31 @@ export class CertificateSigningRequestV1TimeoutsOutputReference extends cdktf.Co
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CertificateSigningRequestV1Timeouts | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._create) {
+      hasAnyValues = true;
+      internalValueResult.create = this._create;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CertificateSigningRequestV1Timeouts | undefined) {
+    if (value === undefined) {
+      this._create = undefined;
+    }
+    else {
+      this._create = value.create;
+    }
+  }
+
   // create - computed: false, optional: true, required: false
-  private _create?: string | undefined; 
+  private _create?: string; 
   public get create() {
     return this.getStringAttribute('create');
   }
-  public set create(value: string | undefined) {
+  public set create(value: string) {
     this._create = value;
   }
   public resetCreate() {
@@ -306,7 +393,7 @@ export class CertificateSigningRequestV1TimeoutsOutputReference extends cdktf.Co
   }
   // Temporarily expose input value. Use with caution.
   public get createInput() {
-    return this._create
+    return this._create;
   }
 }
 
@@ -343,9 +430,9 @@ export class CertificateSigningRequestV1 extends cdktf.TerraformResource {
       lifecycle: config.lifecycle
     });
     this._autoApprove = config.autoApprove;
-    this._metadata = config.metadata;
-    this._spec = config.spec;
-    this._timeouts = config.timeouts;
+    this._metadata.internalValue = config.metadata;
+    this._spec.internalValue = config.spec;
+    this._timeouts.internalValue = config.timeouts;
   }
 
   // ==========
@@ -353,11 +440,11 @@ export class CertificateSigningRequestV1 extends cdktf.TerraformResource {
   // ==========
 
   // auto_approve - computed: false, optional: true, required: false
-  private _autoApprove?: boolean | cdktf.IResolvable | undefined; 
+  private _autoApprove?: boolean | cdktf.IResolvable; 
   public get autoApprove() {
     return this.getBooleanAttribute('auto_approve') as any;
   }
-  public set autoApprove(value: boolean | cdktf.IResolvable | undefined) {
+  public set autoApprove(value: boolean | cdktf.IResolvable) {
     this._autoApprove = value;
   }
   public resetAutoApprove() {
@@ -365,7 +452,7 @@ export class CertificateSigningRequestV1 extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get autoApproveInput() {
-    return this._autoApprove
+    return this._autoApprove;
   }
 
   // certificate - computed: true, optional: false, required: false
@@ -379,48 +466,45 @@ export class CertificateSigningRequestV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: CertificateSigningRequestV1Metadata; 
-  private __metadataOutput = new CertificateSigningRequestV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new CertificateSigningRequestV1MetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: CertificateSigningRequestV1Metadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: CertificateSigningRequestV1Spec; 
-  private __specOutput = new CertificateSigningRequestV1SpecOutputReference(this as any, "spec", true);
+  private _spec = new CertificateSigningRequestV1SpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
   public putSpec(value: CertificateSigningRequestV1Spec) {
-    this._spec = value;
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts?: CertificateSigningRequestV1Timeouts | undefined; 
-  private __timeoutsOutput = new CertificateSigningRequestV1TimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new CertificateSigningRequestV1TimeoutsOutputReference(this as any, "timeouts", true);
   public get timeouts() {
-    return this.__timeoutsOutput;
+    return this._timeouts;
   }
-  public putTimeouts(value: CertificateSigningRequestV1Timeouts | undefined) {
-    this._timeouts = value;
+  public putTimeouts(value: CertificateSigningRequestV1Timeouts) {
+    this._timeouts.internalValue = value;
   }
   public resetTimeouts() {
-    this._timeouts = undefined;
+    this._timeouts.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutsInput() {
-    return this._timeouts
+    return this._timeouts.internalValue;
   }
 
   // =========
@@ -430,9 +514,9 @@ export class CertificateSigningRequestV1 extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       auto_approve: cdktf.booleanToTerraform(this._autoApprove),
-      metadata: certificateSigningRequestV1MetadataToTerraform(this._metadata),
-      spec: certificateSigningRequestV1SpecToTerraform(this._spec),
-      timeouts: certificateSigningRequestV1TimeoutsToTerraform(this._timeouts),
+      metadata: certificateSigningRequestV1MetadataToTerraform(this._metadata.internalValue),
+      spec: certificateSigningRequestV1SpecToTerraform(this._spec.internalValue),
+      timeouts: certificateSigningRequestV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
   }
 }

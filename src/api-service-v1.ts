@@ -47,7 +47,7 @@ export interface ApiServiceV1Metadata {
   readonly name?: string;
 }
 
-function apiServiceV1MetadataToTerraform(struct?: ApiServiceV1MetadataOutputReference | ApiServiceV1Metadata): any {
+export function apiServiceV1MetadataToTerraform(struct?: ApiServiceV1MetadataOutputReference | ApiServiceV1Metadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -70,13 +70,50 @@ export class ApiServiceV1MetadataOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ApiServiceV1Metadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ApiServiceV1Metadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -84,15 +121,15 @@ export class ApiServiceV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -100,16 +137,16 @@ export class ApiServiceV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -117,15 +154,15 @@ export class ApiServiceV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -133,7 +170,7 @@ export class ApiServiceV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 export interface ApiServiceV1SpecService {
@@ -157,7 +194,7 @@ export interface ApiServiceV1SpecService {
   readonly port?: number;
 }
 
-function apiServiceV1SpecServiceToTerraform(struct?: ApiServiceV1SpecServiceOutputReference | ApiServiceV1SpecService): any {
+export function apiServiceV1SpecServiceToTerraform(struct?: ApiServiceV1SpecServiceOutputReference | ApiServiceV1SpecService): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -179,6 +216,37 @@ export class ApiServiceV1SpecServiceOutputReference extends cdktf.ComplexObject 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ApiServiceV1SpecService | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ApiServiceV1SpecService | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+      this._port = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+      this._port = value.port;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -189,7 +257,7 @@ export class ApiServiceV1SpecServiceOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: false, required: true
@@ -202,15 +270,15 @@ export class ApiServiceV1SpecServiceOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: number | undefined; 
+  private _port?: number; 
   public get port() {
     return this.getNumberAttribute('port');
   }
-  public set port(value: number | undefined) {
+  public set port(value: number) {
     this._port = value;
   }
   public resetPort() {
@@ -218,7 +286,7 @@ export class ApiServiceV1SpecServiceOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 }
 export interface ApiServiceV1Spec {
@@ -266,7 +334,7 @@ export interface ApiServiceV1Spec {
   readonly service?: ApiServiceV1SpecService;
 }
 
-function apiServiceV1SpecToTerraform(struct?: ApiServiceV1SpecOutputReference | ApiServiceV1Spec): any {
+export function apiServiceV1SpecToTerraform(struct?: ApiServiceV1SpecOutputReference | ApiServiceV1Spec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -292,12 +360,67 @@ export class ApiServiceV1SpecOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ApiServiceV1Spec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._caBundle) {
+      hasAnyValues = true;
+      internalValueResult.caBundle = this._caBundle;
+    }
+    if (this._group) {
+      hasAnyValues = true;
+      internalValueResult.group = this._group;
+    }
+    if (this._groupPriorityMinimum) {
+      hasAnyValues = true;
+      internalValueResult.groupPriorityMinimum = this._groupPriorityMinimum;
+    }
+    if (this._insecureSkipTlsVerify) {
+      hasAnyValues = true;
+      internalValueResult.insecureSkipTlsVerify = this._insecureSkipTlsVerify;
+    }
+    if (this._version) {
+      hasAnyValues = true;
+      internalValueResult.version = this._version;
+    }
+    if (this._versionPriority) {
+      hasAnyValues = true;
+      internalValueResult.versionPriority = this._versionPriority;
+    }
+    if (this._service) {
+      hasAnyValues = true;
+      internalValueResult.service = this._service?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ApiServiceV1Spec | undefined) {
+    if (value === undefined) {
+      this._caBundle = undefined;
+      this._group = undefined;
+      this._groupPriorityMinimum = undefined;
+      this._insecureSkipTlsVerify = undefined;
+      this._version = undefined;
+      this._versionPriority = undefined;
+      this._service.internalValue = undefined;
+    }
+    else {
+      this._caBundle = value.caBundle;
+      this._group = value.group;
+      this._groupPriorityMinimum = value.groupPriorityMinimum;
+      this._insecureSkipTlsVerify = value.insecureSkipTlsVerify;
+      this._version = value.version;
+      this._versionPriority = value.versionPriority;
+      this._service.internalValue = value.service;
+    }
+  }
+
   // ca_bundle - computed: false, optional: true, required: false
-  private _caBundle?: string | undefined; 
+  private _caBundle?: string; 
   public get caBundle() {
     return this.getStringAttribute('ca_bundle');
   }
-  public set caBundle(value: string | undefined) {
+  public set caBundle(value: string) {
     this._caBundle = value;
   }
   public resetCaBundle() {
@@ -305,7 +428,7 @@ export class ApiServiceV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get caBundleInput() {
-    return this._caBundle
+    return this._caBundle;
   }
 
   // group - computed: false, optional: false, required: true
@@ -318,7 +441,7 @@ export class ApiServiceV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get groupInput() {
-    return this._group
+    return this._group;
   }
 
   // group_priority_minimum - computed: false, optional: false, required: true
@@ -331,15 +454,15 @@ export class ApiServiceV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get groupPriorityMinimumInput() {
-    return this._groupPriorityMinimum
+    return this._groupPriorityMinimum;
   }
 
   // insecure_skip_tls_verify - computed: false, optional: true, required: false
-  private _insecureSkipTlsVerify?: boolean | cdktf.IResolvable | undefined; 
+  private _insecureSkipTlsVerify?: boolean | cdktf.IResolvable; 
   public get insecureSkipTlsVerify() {
     return this.getBooleanAttribute('insecure_skip_tls_verify') as any;
   }
-  public set insecureSkipTlsVerify(value: boolean | cdktf.IResolvable | undefined) {
+  public set insecureSkipTlsVerify(value: boolean | cdktf.IResolvable) {
     this._insecureSkipTlsVerify = value;
   }
   public resetInsecureSkipTlsVerify() {
@@ -347,7 +470,7 @@ export class ApiServiceV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get insecureSkipTlsVerifyInput() {
-    return this._insecureSkipTlsVerify
+    return this._insecureSkipTlsVerify;
   }
 
   // version - computed: false, optional: false, required: true
@@ -360,7 +483,7 @@ export class ApiServiceV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get versionInput() {
-    return this._version
+    return this._version;
   }
 
   // version_priority - computed: false, optional: false, required: true
@@ -373,24 +496,23 @@ export class ApiServiceV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get versionPriorityInput() {
-    return this._versionPriority
+    return this._versionPriority;
   }
 
   // service - computed: false, optional: true, required: false
-  private _service?: ApiServiceV1SpecService | undefined; 
-  private __serviceOutput = new ApiServiceV1SpecServiceOutputReference(this as any, "service", true);
+  private _service = new ApiServiceV1SpecServiceOutputReference(this as any, "service", true);
   public get service() {
-    return this.__serviceOutput;
+    return this._service;
   }
-  public putService(value: ApiServiceV1SpecService | undefined) {
-    this._service = value;
+  public putService(value: ApiServiceV1SpecService) {
+    this._service.internalValue = value;
   }
   public resetService() {
-    this._service = undefined;
+    this._service.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get serviceInput() {
-    return this._service
+    return this._service.internalValue;
   }
 }
 
@@ -426,8 +548,8 @@ export class ApiServiceV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._metadata = config.metadata;
-    this._spec = config.spec;
+    this._metadata.internalValue = config.metadata;
+    this._spec.internalValue = config.spec;
   }
 
   // ==========
@@ -440,31 +562,29 @@ export class ApiServiceV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: ApiServiceV1Metadata; 
-  private __metadataOutput = new ApiServiceV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new ApiServiceV1MetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: ApiServiceV1Metadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: ApiServiceV1Spec; 
-  private __specOutput = new ApiServiceV1SpecOutputReference(this as any, "spec", true);
+  private _spec = new ApiServiceV1SpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
   public putSpec(value: ApiServiceV1Spec) {
-    this._spec = value;
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 
   // =========
@@ -473,8 +593,8 @@ export class ApiServiceV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: apiServiceV1MetadataToTerraform(this._metadata),
-      spec: apiServiceV1SpecToTerraform(this._spec),
+      metadata: apiServiceV1MetadataToTerraform(this._metadata.internalValue),
+      spec: apiServiceV1SpecToTerraform(this._spec.internalValue),
     };
   }
 }

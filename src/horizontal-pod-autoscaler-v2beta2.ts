@@ -53,7 +53,7 @@ export interface HorizontalPodAutoscalerV2Beta2Metadata {
   readonly namespace?: string;
 }
 
-function horizontalPodAutoscalerV2Beta2MetadataToTerraform(struct?: HorizontalPodAutoscalerV2Beta2MetadataOutputReference | HorizontalPodAutoscalerV2Beta2Metadata): any {
+export function horizontalPodAutoscalerV2Beta2MetadataToTerraform(struct?: HorizontalPodAutoscalerV2Beta2MetadataOutputReference | HorizontalPodAutoscalerV2Beta2Metadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -77,13 +77,56 @@ export class HorizontalPodAutoscalerV2Beta2MetadataOutputReference extends cdktf
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2Metadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2Metadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -91,15 +134,15 @@ export class HorizontalPodAutoscalerV2Beta2MetadataOutputReference extends cdktf
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -107,16 +150,16 @@ export class HorizontalPodAutoscalerV2Beta2MetadataOutputReference extends cdktf
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -124,15 +167,15 @@ export class HorizontalPodAutoscalerV2Beta2MetadataOutputReference extends cdktf
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -140,15 +183,15 @@ export class HorizontalPodAutoscalerV2Beta2MetadataOutputReference extends cdktf
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -156,7 +199,7 @@ export class HorizontalPodAutoscalerV2Beta2MetadataOutputReference extends cdktf
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleDownPolicy {
@@ -180,7 +223,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleDownPolicy {
   readonly value: number;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecBehaviorScaleDownPolicyToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleDownPolicy): any {
+export function horizontalPodAutoscalerV2Beta2SpecBehaviorScaleDownPolicyToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleDownPolicy): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -213,7 +256,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleDown {
   readonly policy: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleDownPolicy[];
 }
 
-function horizontalPodAutoscalerV2Beta2SpecBehaviorScaleDownToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleDown): any {
+export function horizontalPodAutoscalerV2Beta2SpecBehaviorScaleDownToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleDown): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -246,7 +289,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleUpPolicy {
   readonly value: number;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecBehaviorScaleUpPolicyToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleUpPolicy): any {
+export function horizontalPodAutoscalerV2Beta2SpecBehaviorScaleUpPolicyToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleUpPolicy): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -279,7 +322,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleUp {
   readonly policy: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleUpPolicy[];
 }
 
-function horizontalPodAutoscalerV2Beta2SpecBehaviorScaleUpToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleUp): any {
+export function horizontalPodAutoscalerV2Beta2SpecBehaviorScaleUpToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleUp): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -306,7 +349,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecBehavior {
   readonly scaleUp?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleUp[];
 }
 
-function horizontalPodAutoscalerV2Beta2SpecBehaviorToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecBehaviorOutputReference | HorizontalPodAutoscalerV2Beta2SpecBehavior): any {
+export function horizontalPodAutoscalerV2Beta2SpecBehaviorToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecBehaviorOutputReference | HorizontalPodAutoscalerV2Beta2SpecBehavior): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -327,13 +370,38 @@ export class HorizontalPodAutoscalerV2Beta2SpecBehaviorOutputReference extends c
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecBehavior | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._scaleDown) {
+      hasAnyValues = true;
+      internalValueResult.scaleDown = this._scaleDown;
+    }
+    if (this._scaleUp) {
+      hasAnyValues = true;
+      internalValueResult.scaleUp = this._scaleUp;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecBehavior | undefined) {
+    if (value === undefined) {
+      this._scaleDown = undefined;
+      this._scaleUp = undefined;
+    }
+    else {
+      this._scaleDown = value.scaleDown;
+      this._scaleUp = value.scaleUp;
+    }
+  }
+
   // scale_down - computed: false, optional: true, required: false
-  private _scaleDown?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleDown[] | undefined; 
+  private _scaleDown?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleDown[]; 
   public get scaleDown() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('scale_down') as any;
   }
-  public set scaleDown(value: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleDown[] | undefined) {
+  public set scaleDown(value: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleDown[]) {
     this._scaleDown = value;
   }
   public resetScaleDown() {
@@ -341,16 +409,16 @@ export class HorizontalPodAutoscalerV2Beta2SpecBehaviorOutputReference extends c
   }
   // Temporarily expose input value. Use with caution.
   public get scaleDownInput() {
-    return this._scaleDown
+    return this._scaleDown;
   }
 
   // scale_up - computed: false, optional: true, required: false
-  private _scaleUp?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleUp[] | undefined; 
+  private _scaleUp?: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleUp[]; 
   public get scaleUp() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('scale_up') as any;
   }
-  public set scaleUp(value: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleUp[] | undefined) {
+  public set scaleUp(value: HorizontalPodAutoscalerV2Beta2SpecBehaviorScaleUp[]) {
     this._scaleUp = value;
   }
   public resetScaleUp() {
@@ -358,7 +426,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecBehaviorOutputReference extends c
   }
   // Temporarily expose input value. Use with caution.
   public get scaleUpInput() {
-    return this._scaleUp
+    return this._scaleUp;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelectorMatchExpressions {
@@ -382,7 +450,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelectorM
   readonly values?: string[];
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelectorMatchExpressionsToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelectorMatchExpressions): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelectorMatchExpressionsToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -409,7 +477,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelector 
   readonly matchExpressions?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelectorMatchExpressions[];
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelectorToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelector): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelectorToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -435,7 +503,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetric {
   readonly selector?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelector[];
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricExternalMetricToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetric): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricExternalMetricToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetric): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -456,6 +524,31 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricOutputReferen
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetric | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._selector) {
+      hasAnyValues = true;
+      internalValueResult.selector = this._selector;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetric | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._selector = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._selector = value.selector;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -466,16 +559,16 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelector[] | undefined; 
+  private _selector?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelector[]; 
   public get selector() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('selector') as any;
   }
-  public set selector(value: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelector[] | undefined) {
+  public set selector(value: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricSelector[]) {
     this._selector = value;
   }
   public resetSelector() {
@@ -483,7 +576,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get selectorInput() {
-    return this._selector
+    return this._selector;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetricExternalTarget {
@@ -513,7 +606,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricExternalTarget {
   readonly value?: string;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricExternalTargetToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalTargetOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricExternalTarget): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricExternalTargetToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalTargetOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricExternalTarget): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -536,12 +629,49 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricExternalTargetOutputReferen
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricExternalTarget | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._averageUtilization) {
+      hasAnyValues = true;
+      internalValueResult.averageUtilization = this._averageUtilization;
+    }
+    if (this._averageValue) {
+      hasAnyValues = true;
+      internalValueResult.averageValue = this._averageValue;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._value) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecMetricExternalTarget | undefined) {
+    if (value === undefined) {
+      this._averageUtilization = undefined;
+      this._averageValue = undefined;
+      this._type = undefined;
+      this._value = undefined;
+    }
+    else {
+      this._averageUtilization = value.averageUtilization;
+      this._averageValue = value.averageValue;
+      this._type = value.type;
+      this._value = value.value;
+    }
+  }
+
   // average_utilization - computed: false, optional: true, required: false
-  private _averageUtilization?: number | undefined; 
+  private _averageUtilization?: number; 
   public get averageUtilization() {
     return this.getNumberAttribute('average_utilization');
   }
-  public set averageUtilization(value: number | undefined) {
+  public set averageUtilization(value: number) {
     this._averageUtilization = value;
   }
   public resetAverageUtilization() {
@@ -549,15 +679,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricExternalTargetOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get averageUtilizationInput() {
-    return this._averageUtilization
+    return this._averageUtilization;
   }
 
   // average_value - computed: false, optional: true, required: false
-  private _averageValue?: string | undefined; 
+  private _averageValue?: string; 
   public get averageValue() {
     return this.getStringAttribute('average_value');
   }
-  public set averageValue(value: string | undefined) {
+  public set averageValue(value: string) {
     this._averageValue = value;
   }
   public resetAverageValue() {
@@ -565,7 +695,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricExternalTargetOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get averageValueInput() {
-    return this._averageValue
+    return this._averageValue;
   }
 
   // type - computed: false, optional: false, required: true
@@ -578,15 +708,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricExternalTargetOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 
   // value - computed: false, optional: true, required: false
-  private _value?: string | undefined; 
+  private _value?: string; 
   public get value() {
     return this.getStringAttribute('value');
   }
-  public set value(value: string | undefined) {
+  public set value(value: string) {
     this._value = value;
   }
   public resetValue() {
@@ -594,7 +724,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricExternalTargetOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get valueInput() {
-    return this._value
+    return this._value;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetricExternal {
@@ -612,7 +742,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricExternal {
   readonly target?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalTarget;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricExternalToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricExternal): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricExternalToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricExternal): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -633,35 +763,58 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricExternalOutputReference ext
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricExternal | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._metric) {
+      hasAnyValues = true;
+      internalValueResult.metric = this._metric?.internalValue;
+    }
+    if (this._target) {
+      hasAnyValues = true;
+      internalValueResult.target = this._target?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecMetricExternal | undefined) {
+    if (value === undefined) {
+      this._metric.internalValue = undefined;
+      this._target.internalValue = undefined;
+    }
+    else {
+      this._metric.internalValue = value.metric;
+      this._target.internalValue = value.target;
+    }
+  }
+
   // metric - computed: false, optional: false, required: true
-  private _metric?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetric; 
-  private __metricOutput = new HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricOutputReference(this as any, "metric", true);
+  private _metric = new HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricOutputReference(this as any, "metric", true);
   public get metric() {
-    return this.__metricOutput;
+    return this._metric;
   }
   public putMetric(value: HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetric) {
-    this._metric = value;
+    this._metric.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metricInput() {
-    return this._metric
+    return this._metric.internalValue;
   }
 
   // target - computed: false, optional: true, required: false
-  private _target?: HorizontalPodAutoscalerV2Beta2SpecMetricExternalTarget | undefined; 
-  private __targetOutput = new HorizontalPodAutoscalerV2Beta2SpecMetricExternalTargetOutputReference(this as any, "target", true);
+  private _target = new HorizontalPodAutoscalerV2Beta2SpecMetricExternalTargetOutputReference(this as any, "target", true);
   public get target() {
-    return this.__targetOutput;
+    return this._target;
   }
-  public putTarget(value: HorizontalPodAutoscalerV2Beta2SpecMetricExternalTarget | undefined) {
-    this._target = value;
+  public putTarget(value: HorizontalPodAutoscalerV2Beta2SpecMetricExternalTarget) {
+    this._target.internalValue = value;
   }
   public resetTarget() {
-    this._target = undefined;
+    this._target.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get targetInput() {
-    return this._target
+    return this._target.internalValue;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObject {
@@ -685,7 +838,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObject {
   readonly name: string;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObjectToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObjectOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObject): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObjectToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObjectOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObject): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -707,6 +860,37 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObjectOutput
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObject | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._apiVersion) {
+      hasAnyValues = true;
+      internalValueResult.apiVersion = this._apiVersion;
+    }
+    if (this._kind) {
+      hasAnyValues = true;
+      internalValueResult.kind = this._kind;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObject | undefined) {
+    if (value === undefined) {
+      this._apiVersion = undefined;
+      this._kind = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._apiVersion = value.apiVersion;
+      this._kind = value.kind;
+      this._name = value.name;
+    }
+  }
+
   // api_version - computed: false, optional: false, required: true
   private _apiVersion?: string; 
   public get apiVersion() {
@@ -717,7 +901,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObjectOutput
   }
   // Temporarily expose input value. Use with caution.
   public get apiVersionInput() {
-    return this._apiVersion
+    return this._apiVersion;
   }
 
   // kind - computed: false, optional: false, required: true
@@ -730,7 +914,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObjectOutput
   }
   // Temporarily expose input value. Use with caution.
   public get kindInput() {
-    return this._kind
+    return this._kind;
   }
 
   // name - computed: false, optional: false, required: true
@@ -743,7 +927,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObjectOutput
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelectorMatchExpressions {
@@ -767,7 +951,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelectorMat
   readonly values?: string[];
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelectorMatchExpressionsToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelectorMatchExpressions): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelectorMatchExpressionsToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -794,7 +978,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelector {
   readonly matchExpressions?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelectorMatchExpressions[];
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelectorToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelector): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelectorToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -820,7 +1004,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetric {
   readonly selector?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelector[];
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricObjectMetricToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetric): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricObjectMetricToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetric): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -841,6 +1025,31 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricOutputReference
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetric | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._selector) {
+      hasAnyValues = true;
+      internalValueResult.selector = this._selector;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetric | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._selector = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._selector = value.selector;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -851,16 +1060,16 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelector[] | undefined; 
+  private _selector?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelector[]; 
   public get selector() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('selector') as any;
   }
-  public set selector(value: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelector[] | undefined) {
+  public set selector(value: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricSelector[]) {
     this._selector = value;
   }
   public resetSelector() {
@@ -868,7 +1077,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get selectorInput() {
-    return this._selector
+    return this._selector;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetricObjectTarget {
@@ -898,7 +1107,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricObjectTarget {
   readonly value?: string;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricObjectTargetToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectTargetOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricObjectTarget): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricObjectTargetToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectTargetOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricObjectTarget): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -921,12 +1130,49 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectTargetOutputReference
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricObjectTarget | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._averageUtilization) {
+      hasAnyValues = true;
+      internalValueResult.averageUtilization = this._averageUtilization;
+    }
+    if (this._averageValue) {
+      hasAnyValues = true;
+      internalValueResult.averageValue = this._averageValue;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._value) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecMetricObjectTarget | undefined) {
+    if (value === undefined) {
+      this._averageUtilization = undefined;
+      this._averageValue = undefined;
+      this._type = undefined;
+      this._value = undefined;
+    }
+    else {
+      this._averageUtilization = value.averageUtilization;
+      this._averageValue = value.averageValue;
+      this._type = value.type;
+      this._value = value.value;
+    }
+  }
+
   // average_utilization - computed: false, optional: true, required: false
-  private _averageUtilization?: number | undefined; 
+  private _averageUtilization?: number; 
   public get averageUtilization() {
     return this.getNumberAttribute('average_utilization');
   }
-  public set averageUtilization(value: number | undefined) {
+  public set averageUtilization(value: number) {
     this._averageUtilization = value;
   }
   public resetAverageUtilization() {
@@ -934,15 +1180,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectTargetOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get averageUtilizationInput() {
-    return this._averageUtilization
+    return this._averageUtilization;
   }
 
   // average_value - computed: false, optional: true, required: false
-  private _averageValue?: string | undefined; 
+  private _averageValue?: string; 
   public get averageValue() {
     return this.getStringAttribute('average_value');
   }
-  public set averageValue(value: string | undefined) {
+  public set averageValue(value: string) {
     this._averageValue = value;
   }
   public resetAverageValue() {
@@ -950,7 +1196,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectTargetOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get averageValueInput() {
-    return this._averageValue
+    return this._averageValue;
   }
 
   // type - computed: false, optional: false, required: true
@@ -963,15 +1209,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectTargetOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 
   // value - computed: false, optional: true, required: false
-  private _value?: string | undefined; 
+  private _value?: string; 
   public get value() {
     return this.getStringAttribute('value');
   }
-  public set value(value: string | undefined) {
+  public set value(value: string) {
     this._value = value;
   }
   public resetValue() {
@@ -979,7 +1225,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectTargetOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get valueInput() {
-    return this._value
+    return this._value;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetricObject {
@@ -1003,7 +1249,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricObject {
   readonly target?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectTarget;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricObjectToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricObject): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricObjectToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricObject): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1025,49 +1271,77 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectOutputReference exten
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricObject | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._describedObject) {
+      hasAnyValues = true;
+      internalValueResult.describedObject = this._describedObject?.internalValue;
+    }
+    if (this._metric) {
+      hasAnyValues = true;
+      internalValueResult.metric = this._metric?.internalValue;
+    }
+    if (this._target) {
+      hasAnyValues = true;
+      internalValueResult.target = this._target?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecMetricObject | undefined) {
+    if (value === undefined) {
+      this._describedObject.internalValue = undefined;
+      this._metric.internalValue = undefined;
+      this._target.internalValue = undefined;
+    }
+    else {
+      this._describedObject.internalValue = value.describedObject;
+      this._metric.internalValue = value.metric;
+      this._target.internalValue = value.target;
+    }
+  }
+
   // described_object - computed: false, optional: false, required: true
-  private _describedObject?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObject; 
-  private __describedObjectOutput = new HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObjectOutputReference(this as any, "described_object", true);
+  private _describedObject = new HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObjectOutputReference(this as any, "described_object", true);
   public get describedObject() {
-    return this.__describedObjectOutput;
+    return this._describedObject;
   }
   public putDescribedObject(value: HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObject) {
-    this._describedObject = value;
+    this._describedObject.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get describedObjectInput() {
-    return this._describedObject
+    return this._describedObject.internalValue;
   }
 
   // metric - computed: false, optional: false, required: true
-  private _metric?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetric; 
-  private __metricOutput = new HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricOutputReference(this as any, "metric", true);
+  private _metric = new HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricOutputReference(this as any, "metric", true);
   public get metric() {
-    return this.__metricOutput;
+    return this._metric;
   }
   public putMetric(value: HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetric) {
-    this._metric = value;
+    this._metric.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metricInput() {
-    return this._metric
+    return this._metric.internalValue;
   }
 
   // target - computed: false, optional: true, required: false
-  private _target?: HorizontalPodAutoscalerV2Beta2SpecMetricObjectTarget | undefined; 
-  private __targetOutput = new HorizontalPodAutoscalerV2Beta2SpecMetricObjectTargetOutputReference(this as any, "target", true);
+  private _target = new HorizontalPodAutoscalerV2Beta2SpecMetricObjectTargetOutputReference(this as any, "target", true);
   public get target() {
-    return this.__targetOutput;
+    return this._target;
   }
-  public putTarget(value: HorizontalPodAutoscalerV2Beta2SpecMetricObjectTarget | undefined) {
-    this._target = value;
+  public putTarget(value: HorizontalPodAutoscalerV2Beta2SpecMetricObjectTarget) {
+    this._target.internalValue = value;
   }
   public resetTarget() {
-    this._target = undefined;
+    this._target.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get targetInput() {
-    return this._target
+    return this._target.internalValue;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelectorMatchExpressions {
@@ -1091,7 +1365,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelectorMatch
   readonly values?: string[];
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelectorMatchExpressionsToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelectorMatchExpressions): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelectorMatchExpressionsToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1118,7 +1392,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelector {
   readonly matchExpressions?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelectorMatchExpressions[];
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelectorToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelector): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelectorToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1144,7 +1418,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetric {
   readonly selector?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelector[];
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricPodsMetricToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetric): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricPodsMetricToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetric): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1165,6 +1439,31 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricOutputReference e
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetric | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._selector) {
+      hasAnyValues = true;
+      internalValueResult.selector = this._selector;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetric | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._selector = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._selector = value.selector;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -1175,16 +1474,16 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelector[] | undefined; 
+  private _selector?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelector[]; 
   public get selector() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('selector') as any;
   }
-  public set selector(value: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelector[] | undefined) {
+  public set selector(value: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricSelector[]) {
     this._selector = value;
   }
   public resetSelector() {
@@ -1192,7 +1491,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get selectorInput() {
-    return this._selector
+    return this._selector;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetricPodsTarget {
@@ -1222,7 +1521,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricPodsTarget {
   readonly value?: string;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricPodsTargetToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsTargetOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricPodsTarget): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricPodsTargetToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsTargetOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricPodsTarget): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1245,12 +1544,49 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricPodsTargetOutputReference e
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricPodsTarget | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._averageUtilization) {
+      hasAnyValues = true;
+      internalValueResult.averageUtilization = this._averageUtilization;
+    }
+    if (this._averageValue) {
+      hasAnyValues = true;
+      internalValueResult.averageValue = this._averageValue;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._value) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecMetricPodsTarget | undefined) {
+    if (value === undefined) {
+      this._averageUtilization = undefined;
+      this._averageValue = undefined;
+      this._type = undefined;
+      this._value = undefined;
+    }
+    else {
+      this._averageUtilization = value.averageUtilization;
+      this._averageValue = value.averageValue;
+      this._type = value.type;
+      this._value = value.value;
+    }
+  }
+
   // average_utilization - computed: false, optional: true, required: false
-  private _averageUtilization?: number | undefined; 
+  private _averageUtilization?: number; 
   public get averageUtilization() {
     return this.getNumberAttribute('average_utilization');
   }
-  public set averageUtilization(value: number | undefined) {
+  public set averageUtilization(value: number) {
     this._averageUtilization = value;
   }
   public resetAverageUtilization() {
@@ -1258,15 +1594,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricPodsTargetOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get averageUtilizationInput() {
-    return this._averageUtilization
+    return this._averageUtilization;
   }
 
   // average_value - computed: false, optional: true, required: false
-  private _averageValue?: string | undefined; 
+  private _averageValue?: string; 
   public get averageValue() {
     return this.getStringAttribute('average_value');
   }
-  public set averageValue(value: string | undefined) {
+  public set averageValue(value: string) {
     this._averageValue = value;
   }
   public resetAverageValue() {
@@ -1274,7 +1610,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricPodsTargetOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get averageValueInput() {
-    return this._averageValue
+    return this._averageValue;
   }
 
   // type - computed: false, optional: false, required: true
@@ -1287,15 +1623,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricPodsTargetOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 
   // value - computed: false, optional: true, required: false
-  private _value?: string | undefined; 
+  private _value?: string; 
   public get value() {
     return this.getStringAttribute('value');
   }
-  public set value(value: string | undefined) {
+  public set value(value: string) {
     this._value = value;
   }
   public resetValue() {
@@ -1303,7 +1639,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricPodsTargetOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get valueInput() {
-    return this._value
+    return this._value;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetricPods {
@@ -1321,7 +1657,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricPods {
   readonly target?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsTarget;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricPodsToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricPods): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricPodsToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricPods): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1342,35 +1678,58 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricPodsOutputReference extends
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricPods | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._metric) {
+      hasAnyValues = true;
+      internalValueResult.metric = this._metric?.internalValue;
+    }
+    if (this._target) {
+      hasAnyValues = true;
+      internalValueResult.target = this._target?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecMetricPods | undefined) {
+    if (value === undefined) {
+      this._metric.internalValue = undefined;
+      this._target.internalValue = undefined;
+    }
+    else {
+      this._metric.internalValue = value.metric;
+      this._target.internalValue = value.target;
+    }
+  }
+
   // metric - computed: false, optional: false, required: true
-  private _metric?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetric; 
-  private __metricOutput = new HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricOutputReference(this as any, "metric", true);
+  private _metric = new HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricOutputReference(this as any, "metric", true);
   public get metric() {
-    return this.__metricOutput;
+    return this._metric;
   }
   public putMetric(value: HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetric) {
-    this._metric = value;
+    this._metric.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metricInput() {
-    return this._metric
+    return this._metric.internalValue;
   }
 
   // target - computed: false, optional: true, required: false
-  private _target?: HorizontalPodAutoscalerV2Beta2SpecMetricPodsTarget | undefined; 
-  private __targetOutput = new HorizontalPodAutoscalerV2Beta2SpecMetricPodsTargetOutputReference(this as any, "target", true);
+  private _target = new HorizontalPodAutoscalerV2Beta2SpecMetricPodsTargetOutputReference(this as any, "target", true);
   public get target() {
-    return this.__targetOutput;
+    return this._target;
   }
-  public putTarget(value: HorizontalPodAutoscalerV2Beta2SpecMetricPodsTarget | undefined) {
-    this._target = value;
+  public putTarget(value: HorizontalPodAutoscalerV2Beta2SpecMetricPodsTarget) {
+    this._target.internalValue = value;
   }
   public resetTarget() {
-    this._target = undefined;
+    this._target.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get targetInput() {
-    return this._target
+    return this._target.internalValue;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetricResourceTarget {
@@ -1400,7 +1759,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricResourceTarget {
   readonly value?: string;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricResourceTargetToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricResourceTargetOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricResourceTarget): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricResourceTargetToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricResourceTargetOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricResourceTarget): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1423,12 +1782,49 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricResourceTargetOutputReferen
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricResourceTarget | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._averageUtilization) {
+      hasAnyValues = true;
+      internalValueResult.averageUtilization = this._averageUtilization;
+    }
+    if (this._averageValue) {
+      hasAnyValues = true;
+      internalValueResult.averageValue = this._averageValue;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._value) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecMetricResourceTarget | undefined) {
+    if (value === undefined) {
+      this._averageUtilization = undefined;
+      this._averageValue = undefined;
+      this._type = undefined;
+      this._value = undefined;
+    }
+    else {
+      this._averageUtilization = value.averageUtilization;
+      this._averageValue = value.averageValue;
+      this._type = value.type;
+      this._value = value.value;
+    }
+  }
+
   // average_utilization - computed: false, optional: true, required: false
-  private _averageUtilization?: number | undefined; 
+  private _averageUtilization?: number; 
   public get averageUtilization() {
     return this.getNumberAttribute('average_utilization');
   }
-  public set averageUtilization(value: number | undefined) {
+  public set averageUtilization(value: number) {
     this._averageUtilization = value;
   }
   public resetAverageUtilization() {
@@ -1436,15 +1832,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricResourceTargetOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get averageUtilizationInput() {
-    return this._averageUtilization
+    return this._averageUtilization;
   }
 
   // average_value - computed: false, optional: true, required: false
-  private _averageValue?: string | undefined; 
+  private _averageValue?: string; 
   public get averageValue() {
     return this.getStringAttribute('average_value');
   }
-  public set averageValue(value: string | undefined) {
+  public set averageValue(value: string) {
     this._averageValue = value;
   }
   public resetAverageValue() {
@@ -1452,7 +1848,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricResourceTargetOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get averageValueInput() {
-    return this._averageValue
+    return this._averageValue;
   }
 
   // type - computed: false, optional: false, required: true
@@ -1465,15 +1861,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricResourceTargetOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 
   // value - computed: false, optional: true, required: false
-  private _value?: string | undefined; 
+  private _value?: string; 
   public get value() {
     return this.getStringAttribute('value');
   }
-  public set value(value: string | undefined) {
+  public set value(value: string) {
     this._value = value;
   }
   public resetValue() {
@@ -1481,7 +1877,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricResourceTargetOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get valueInput() {
-    return this._value
+    return this._value;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetricResource {
@@ -1499,7 +1895,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetricResource {
   readonly target?: HorizontalPodAutoscalerV2Beta2SpecMetricResourceTarget;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricResourceToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricResourceOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricResource): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricResourceToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetricResourceOutputReference | HorizontalPodAutoscalerV2Beta2SpecMetricResource): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1520,6 +1916,31 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricResourceOutputReference ext
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricResource | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._target) {
+      hasAnyValues = true;
+      internalValueResult.target = this._target?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecMetricResource | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._target.internalValue = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._target.internalValue = value.target;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -1530,24 +1951,23 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricResourceOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // target - computed: false, optional: true, required: false
-  private _target?: HorizontalPodAutoscalerV2Beta2SpecMetricResourceTarget | undefined; 
-  private __targetOutput = new HorizontalPodAutoscalerV2Beta2SpecMetricResourceTargetOutputReference(this as any, "target", true);
+  private _target = new HorizontalPodAutoscalerV2Beta2SpecMetricResourceTargetOutputReference(this as any, "target", true);
   public get target() {
-    return this.__targetOutput;
+    return this._target;
   }
-  public putTarget(value: HorizontalPodAutoscalerV2Beta2SpecMetricResourceTarget | undefined) {
-    this._target = value;
+  public putTarget(value: HorizontalPodAutoscalerV2Beta2SpecMetricResourceTarget) {
+    this._target.internalValue = value;
   }
   public resetTarget() {
-    this._target = undefined;
+    this._target.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get targetInput() {
-    return this._target
+    return this._target.internalValue;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2SpecMetric {
@@ -1583,7 +2003,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecMetric {
   readonly resource?: HorizontalPodAutoscalerV2Beta2SpecMetricResource;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecMetricToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetric): any {
+export function horizontalPodAutoscalerV2Beta2SpecMetricToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecMetric): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1618,7 +2038,7 @@ export interface HorizontalPodAutoscalerV2Beta2SpecScaleTargetRef {
   readonly name: string;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecScaleTargetRefToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecScaleTargetRefOutputReference | HorizontalPodAutoscalerV2Beta2SpecScaleTargetRef): any {
+export function horizontalPodAutoscalerV2Beta2SpecScaleTargetRefToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecScaleTargetRefOutputReference | HorizontalPodAutoscalerV2Beta2SpecScaleTargetRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1640,12 +2060,43 @@ export class HorizontalPodAutoscalerV2Beta2SpecScaleTargetRefOutputReference ext
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecScaleTargetRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._apiVersion) {
+      hasAnyValues = true;
+      internalValueResult.apiVersion = this._apiVersion;
+    }
+    if (this._kind) {
+      hasAnyValues = true;
+      internalValueResult.kind = this._kind;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2SpecScaleTargetRef | undefined) {
+    if (value === undefined) {
+      this._apiVersion = undefined;
+      this._kind = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._apiVersion = value.apiVersion;
+      this._kind = value.kind;
+      this._name = value.name;
+    }
+  }
+
   // api_version - computed: false, optional: true, required: false
-  private _apiVersion?: string | undefined; 
+  private _apiVersion?: string; 
   public get apiVersion() {
     return this.getStringAttribute('api_version');
   }
-  public set apiVersion(value: string | undefined) {
+  public set apiVersion(value: string) {
     this._apiVersion = value;
   }
   public resetApiVersion() {
@@ -1653,7 +2104,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecScaleTargetRefOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get apiVersionInput() {
-    return this._apiVersion
+    return this._apiVersion;
   }
 
   // kind - computed: false, optional: false, required: true
@@ -1666,7 +2117,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecScaleTargetRefOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get kindInput() {
-    return this._kind
+    return this._kind;
   }
 
   // name - computed: false, optional: false, required: true
@@ -1679,7 +2130,7 @@ export class HorizontalPodAutoscalerV2Beta2SpecScaleTargetRefOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 export interface HorizontalPodAutoscalerV2Beta2Spec {
@@ -1721,7 +2172,7 @@ export interface HorizontalPodAutoscalerV2Beta2Spec {
   readonly scaleTargetRef: HorizontalPodAutoscalerV2Beta2SpecScaleTargetRef;
 }
 
-function horizontalPodAutoscalerV2Beta2SpecToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecOutputReference | HorizontalPodAutoscalerV2Beta2Spec): any {
+export function horizontalPodAutoscalerV2Beta2SpecToTerraform(struct?: HorizontalPodAutoscalerV2Beta2SpecOutputReference | HorizontalPodAutoscalerV2Beta2Spec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1746,6 +2197,55 @@ export class HorizontalPodAutoscalerV2Beta2SpecOutputReference extends cdktf.Com
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV2Beta2Spec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._maxReplicas) {
+      hasAnyValues = true;
+      internalValueResult.maxReplicas = this._maxReplicas;
+    }
+    if (this._minReplicas) {
+      hasAnyValues = true;
+      internalValueResult.minReplicas = this._minReplicas;
+    }
+    if (this._targetCpuUtilizationPercentage) {
+      hasAnyValues = true;
+      internalValueResult.targetCpuUtilizationPercentage = this._targetCpuUtilizationPercentage;
+    }
+    if (this._behavior) {
+      hasAnyValues = true;
+      internalValueResult.behavior = this._behavior?.internalValue;
+    }
+    if (this._metric) {
+      hasAnyValues = true;
+      internalValueResult.metric = this._metric;
+    }
+    if (this._scaleTargetRef) {
+      hasAnyValues = true;
+      internalValueResult.scaleTargetRef = this._scaleTargetRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV2Beta2Spec | undefined) {
+    if (value === undefined) {
+      this._maxReplicas = undefined;
+      this._minReplicas = undefined;
+      this._targetCpuUtilizationPercentage = undefined;
+      this._behavior.internalValue = undefined;
+      this._metric = undefined;
+      this._scaleTargetRef.internalValue = undefined;
+    }
+    else {
+      this._maxReplicas = value.maxReplicas;
+      this._minReplicas = value.minReplicas;
+      this._targetCpuUtilizationPercentage = value.targetCpuUtilizationPercentage;
+      this._behavior.internalValue = value.behavior;
+      this._metric = value.metric;
+      this._scaleTargetRef.internalValue = value.scaleTargetRef;
+    }
+  }
+
   // max_replicas - computed: false, optional: false, required: true
   private _maxReplicas?: number; 
   public get maxReplicas() {
@@ -1756,15 +2256,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecOutputReference extends cdktf.Com
   }
   // Temporarily expose input value. Use with caution.
   public get maxReplicasInput() {
-    return this._maxReplicas
+    return this._maxReplicas;
   }
 
   // min_replicas - computed: false, optional: true, required: false
-  private _minReplicas?: number | undefined; 
+  private _minReplicas?: number; 
   public get minReplicas() {
     return this.getNumberAttribute('min_replicas');
   }
-  public set minReplicas(value: number | undefined) {
+  public set minReplicas(value: number) {
     this._minReplicas = value;
   }
   public resetMinReplicas() {
@@ -1772,15 +2272,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecOutputReference extends cdktf.Com
   }
   // Temporarily expose input value. Use with caution.
   public get minReplicasInput() {
-    return this._minReplicas
+    return this._minReplicas;
   }
 
   // target_cpu_utilization_percentage - computed: true, optional: true, required: false
-  private _targetCpuUtilizationPercentage?: number | undefined; 
+  private _targetCpuUtilizationPercentage?: number; 
   public get targetCpuUtilizationPercentage() {
     return this.getNumberAttribute('target_cpu_utilization_percentage');
   }
-  public set targetCpuUtilizationPercentage(value: number | undefined) {
+  public set targetCpuUtilizationPercentage(value: number) {
     this._targetCpuUtilizationPercentage = value;
   }
   public resetTargetCpuUtilizationPercentage() {
@@ -1788,33 +2288,32 @@ export class HorizontalPodAutoscalerV2Beta2SpecOutputReference extends cdktf.Com
   }
   // Temporarily expose input value. Use with caution.
   public get targetCpuUtilizationPercentageInput() {
-    return this._targetCpuUtilizationPercentage
+    return this._targetCpuUtilizationPercentage;
   }
 
   // behavior - computed: false, optional: true, required: false
-  private _behavior?: HorizontalPodAutoscalerV2Beta2SpecBehavior | undefined; 
-  private __behaviorOutput = new HorizontalPodAutoscalerV2Beta2SpecBehaviorOutputReference(this as any, "behavior", true);
+  private _behavior = new HorizontalPodAutoscalerV2Beta2SpecBehaviorOutputReference(this as any, "behavior", true);
   public get behavior() {
-    return this.__behaviorOutput;
+    return this._behavior;
   }
-  public putBehavior(value: HorizontalPodAutoscalerV2Beta2SpecBehavior | undefined) {
-    this._behavior = value;
+  public putBehavior(value: HorizontalPodAutoscalerV2Beta2SpecBehavior) {
+    this._behavior.internalValue = value;
   }
   public resetBehavior() {
-    this._behavior = undefined;
+    this._behavior.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get behaviorInput() {
-    return this._behavior
+    return this._behavior.internalValue;
   }
 
   // metric - computed: false, optional: true, required: false
-  private _metric?: HorizontalPodAutoscalerV2Beta2SpecMetric[] | undefined; 
+  private _metric?: HorizontalPodAutoscalerV2Beta2SpecMetric[]; 
   public get metric() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('metric') as any;
   }
-  public set metric(value: HorizontalPodAutoscalerV2Beta2SpecMetric[] | undefined) {
+  public set metric(value: HorizontalPodAutoscalerV2Beta2SpecMetric[]) {
     this._metric = value;
   }
   public resetMetric() {
@@ -1822,21 +2321,20 @@ export class HorizontalPodAutoscalerV2Beta2SpecOutputReference extends cdktf.Com
   }
   // Temporarily expose input value. Use with caution.
   public get metricInput() {
-    return this._metric
+    return this._metric;
   }
 
   // scale_target_ref - computed: false, optional: false, required: true
-  private _scaleTargetRef?: HorizontalPodAutoscalerV2Beta2SpecScaleTargetRef; 
-  private __scaleTargetRefOutput = new HorizontalPodAutoscalerV2Beta2SpecScaleTargetRefOutputReference(this as any, "scale_target_ref", true);
+  private _scaleTargetRef = new HorizontalPodAutoscalerV2Beta2SpecScaleTargetRefOutputReference(this as any, "scale_target_ref", true);
   public get scaleTargetRef() {
-    return this.__scaleTargetRefOutput;
+    return this._scaleTargetRef;
   }
   public putScaleTargetRef(value: HorizontalPodAutoscalerV2Beta2SpecScaleTargetRef) {
-    this._scaleTargetRef = value;
+    this._scaleTargetRef.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get scaleTargetRefInput() {
-    return this._scaleTargetRef
+    return this._scaleTargetRef.internalValue;
   }
 }
 
@@ -1872,8 +2370,8 @@ export class HorizontalPodAutoscalerV2Beta2 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._metadata = config.metadata;
-    this._spec = config.spec;
+    this._metadata.internalValue = config.metadata;
+    this._spec.internalValue = config.spec;
   }
 
   // ==========
@@ -1886,31 +2384,29 @@ export class HorizontalPodAutoscalerV2Beta2 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: HorizontalPodAutoscalerV2Beta2Metadata; 
-  private __metadataOutput = new HorizontalPodAutoscalerV2Beta2MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new HorizontalPodAutoscalerV2Beta2MetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: HorizontalPodAutoscalerV2Beta2Metadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: HorizontalPodAutoscalerV2Beta2Spec; 
-  private __specOutput = new HorizontalPodAutoscalerV2Beta2SpecOutputReference(this as any, "spec", true);
+  private _spec = new HorizontalPodAutoscalerV2Beta2SpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
   public putSpec(value: HorizontalPodAutoscalerV2Beta2Spec) {
-    this._spec = value;
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 
   // =========
@@ -1919,8 +2415,8 @@ export class HorizontalPodAutoscalerV2Beta2 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: horizontalPodAutoscalerV2Beta2MetadataToTerraform(this._metadata),
-      spec: horizontalPodAutoscalerV2Beta2SpecToTerraform(this._spec),
+      metadata: horizontalPodAutoscalerV2Beta2MetadataToTerraform(this._metadata.internalValue),
+      spec: horizontalPodAutoscalerV2Beta2SpecToTerraform(this._spec.internalValue),
     };
   }
 }

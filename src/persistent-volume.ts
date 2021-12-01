@@ -47,7 +47,7 @@ export interface PersistentVolumeMetadata {
   readonly name?: string;
 }
 
-function persistentVolumeMetadataToTerraform(struct?: PersistentVolumeMetadataOutputReference | PersistentVolumeMetadata): any {
+export function persistentVolumeMetadataToTerraform(struct?: PersistentVolumeMetadataOutputReference | PersistentVolumeMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -69,13 +69,44 @@ export class PersistentVolumeMetadataOutputReference extends cdktf.ComplexObject
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeMetadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeMetadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._labels = value.labels;
+      this._name = value.name;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -83,16 +114,16 @@ export class PersistentVolumeMetadataOutputReference extends cdktf.ComplexObject
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -100,15 +131,15 @@ export class PersistentVolumeMetadataOutputReference extends cdktf.ComplexObject
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -116,7 +147,7 @@ export class PersistentVolumeMetadataOutputReference extends cdktf.ComplexObject
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 export interface PersistentVolumeSpecClaimRef {
@@ -134,7 +165,7 @@ export interface PersistentVolumeSpecClaimRef {
   readonly namespace?: string;
 }
 
-function persistentVolumeSpecClaimRefToTerraform(struct?: PersistentVolumeSpecClaimRefOutputReference | PersistentVolumeSpecClaimRef): any {
+export function persistentVolumeSpecClaimRefToTerraform(struct?: PersistentVolumeSpecClaimRefOutputReference | PersistentVolumeSpecClaimRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -155,6 +186,31 @@ export class PersistentVolumeSpecClaimRefOutputReference extends cdktf.ComplexOb
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecClaimRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecClaimRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -165,15 +221,15 @@ export class PersistentVolumeSpecClaimRefOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -181,7 +237,7 @@ export class PersistentVolumeSpecClaimRefOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressions {
@@ -205,7 +261,7 @@ export interface PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchEx
   readonly values?: string[];
 }
 
-function persistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressions): any {
+export function persistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -238,7 +294,7 @@ export interface PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFi
   readonly values?: string[];
 }
 
-function persistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFields): any {
+export function persistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFields): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -265,7 +321,7 @@ export interface PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm {
   readonly matchFields?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFields[];
 }
 
-function persistentVolumeSpecNodeAffinityRequiredNodeSelectorTermToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm): any {
+export function persistentVolumeSpecNodeAffinityRequiredNodeSelectorTermToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -285,7 +341,7 @@ export interface PersistentVolumeSpecNodeAffinityRequired {
   readonly nodeSelectorTerm: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm[];
 }
 
-function persistentVolumeSpecNodeAffinityRequiredToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredOutputReference | PersistentVolumeSpecNodeAffinityRequired): any {
+export function persistentVolumeSpecNodeAffinityRequiredToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredOutputReference | PersistentVolumeSpecNodeAffinityRequired): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -305,6 +361,25 @@ export class PersistentVolumeSpecNodeAffinityRequiredOutputReference extends cdk
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecNodeAffinityRequired | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._nodeSelectorTerm) {
+      hasAnyValues = true;
+      internalValueResult.nodeSelectorTerm = this._nodeSelectorTerm;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecNodeAffinityRequired | undefined) {
+    if (value === undefined) {
+      this._nodeSelectorTerm = undefined;
+    }
+    else {
+      this._nodeSelectorTerm = value.nodeSelectorTerm;
+    }
+  }
+
   // node_selector_term - computed: false, optional: false, required: true
   private _nodeSelectorTerm?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm[]; 
   public get nodeSelectorTerm() {
@@ -316,7 +391,7 @@ export class PersistentVolumeSpecNodeAffinityRequiredOutputReference extends cdk
   }
   // Temporarily expose input value. Use with caution.
   public get nodeSelectorTermInput() {
-    return this._nodeSelectorTerm
+    return this._nodeSelectorTerm;
   }
 }
 export interface PersistentVolumeSpecNodeAffinity {
@@ -328,7 +403,7 @@ export interface PersistentVolumeSpecNodeAffinity {
   readonly required?: PersistentVolumeSpecNodeAffinityRequired;
 }
 
-function persistentVolumeSpecNodeAffinityToTerraform(struct?: PersistentVolumeSpecNodeAffinityOutputReference | PersistentVolumeSpecNodeAffinity): any {
+export function persistentVolumeSpecNodeAffinityToTerraform(struct?: PersistentVolumeSpecNodeAffinityOutputReference | PersistentVolumeSpecNodeAffinity): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -348,21 +423,39 @@ export class PersistentVolumeSpecNodeAffinityOutputReference extends cdktf.Compl
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
-  // required - computed: false, optional: true, required: false
-  private _required?: PersistentVolumeSpecNodeAffinityRequired | undefined; 
-  private __requiredOutput = new PersistentVolumeSpecNodeAffinityRequiredOutputReference(this as any, "required", true);
-  public get required() {
-    return this.__requiredOutput;
+  public get internalValue(): PersistentVolumeSpecNodeAffinity | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._required) {
+      hasAnyValues = true;
+      internalValueResult.required = this._required?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
   }
-  public putRequired(value: PersistentVolumeSpecNodeAffinityRequired | undefined) {
-    this._required = value;
+
+  public set internalValue(value: PersistentVolumeSpecNodeAffinity | undefined) {
+    if (value === undefined) {
+      this._required.internalValue = undefined;
+    }
+    else {
+      this._required.internalValue = value.required;
+    }
+  }
+
+  // required - computed: false, optional: true, required: false
+  private _required = new PersistentVolumeSpecNodeAffinityRequiredOutputReference(this as any, "required", true);
+  public get required() {
+    return this._required;
+  }
+  public putRequired(value: PersistentVolumeSpecNodeAffinityRequired) {
+    this._required.internalValue = value;
   }
   public resetRequired() {
-    this._required = undefined;
+    this._required.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get requiredInput() {
-    return this._required
+    return this._required.internalValue;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore {
@@ -392,7 +485,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore 
   readonly volumeId: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference | PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore): any {
+export function persistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference | PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -415,12 +508,49 @@ export class PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutpu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._partition) {
+      hasAnyValues = true;
+      internalValueResult.partition = this._partition;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._volumeId) {
+      hasAnyValues = true;
+      internalValueResult.volumeId = this._volumeId;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._partition = undefined;
+      this._readOnly = undefined;
+      this._volumeId = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._partition = value.partition;
+      this._readOnly = value.readOnly;
+      this._volumeId = value.volumeId;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -428,15 +558,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // partition - computed: false, optional: true, required: false
-  private _partition?: number | undefined; 
+  private _partition?: number; 
   public get partition() {
     return this.getNumberAttribute('partition');
   }
-  public set partition(value: number | undefined) {
+  public set partition(value: number) {
     this._partition = value;
   }
   public resetPartition() {
@@ -444,15 +574,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get partitionInput() {
-    return this._partition
+    return this._partition;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -460,7 +590,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // volume_id - computed: false, optional: false, required: true
@@ -473,7 +603,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get volumeIdInput() {
-    return this._volumeId
+    return this._volumeId;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceAzureDisk {
@@ -515,7 +645,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceAzureDisk {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceAzureDiskToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference | PersistentVolumeSpecPersistentVolumeSourceAzureDisk): any {
+export function persistentVolumeSpecPersistentVolumeSourceAzureDiskToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference | PersistentVolumeSpecPersistentVolumeSourceAzureDisk): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -540,6 +670,55 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceAzureDisk | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._cachingMode) {
+      hasAnyValues = true;
+      internalValueResult.cachingMode = this._cachingMode;
+    }
+    if (this._dataDiskUri) {
+      hasAnyValues = true;
+      internalValueResult.dataDiskUri = this._dataDiskUri;
+    }
+    if (this._diskName) {
+      hasAnyValues = true;
+      internalValueResult.diskName = this._diskName;
+    }
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._kind) {
+      hasAnyValues = true;
+      internalValueResult.kind = this._kind;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceAzureDisk | undefined) {
+    if (value === undefined) {
+      this._cachingMode = undefined;
+      this._dataDiskUri = undefined;
+      this._diskName = undefined;
+      this._fsType = undefined;
+      this._kind = undefined;
+      this._readOnly = undefined;
+    }
+    else {
+      this._cachingMode = value.cachingMode;
+      this._dataDiskUri = value.dataDiskUri;
+      this._diskName = value.diskName;
+      this._fsType = value.fsType;
+      this._kind = value.kind;
+      this._readOnly = value.readOnly;
+    }
+  }
+
   // caching_mode - computed: false, optional: false, required: true
   private _cachingMode?: string; 
   public get cachingMode() {
@@ -550,7 +729,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get cachingModeInput() {
-    return this._cachingMode
+    return this._cachingMode;
   }
 
   // data_disk_uri - computed: false, optional: false, required: true
@@ -563,7 +742,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get dataDiskUriInput() {
-    return this._dataDiskUri
+    return this._dataDiskUri;
   }
 
   // disk_name - computed: false, optional: false, required: true
@@ -576,15 +755,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get diskNameInput() {
-    return this._diskName
+    return this._diskName;
   }
 
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -592,15 +771,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // kind - computed: true, optional: true, required: false
-  private _kind?: string | undefined; 
+  private _kind?: string; 
   public get kind() {
     return this.getStringAttribute('kind');
   }
-  public set kind(value: string | undefined) {
+  public set kind(value: string) {
     this._kind = value;
   }
   public resetKind() {
@@ -608,15 +787,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get kindInput() {
-    return this._kind
+    return this._kind;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -624,7 +803,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceAzureFile {
@@ -654,7 +833,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceAzureFile {
   readonly shareName: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceAzureFileToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference | PersistentVolumeSpecPersistentVolumeSourceAzureFile): any {
+export function persistentVolumeSpecPersistentVolumeSourceAzureFileToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference | PersistentVolumeSpecPersistentVolumeSourceAzureFile): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -677,12 +856,49 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceAzureFile | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._secretName) {
+      hasAnyValues = true;
+      internalValueResult.secretName = this._secretName;
+    }
+    if (this._secretNamespace) {
+      hasAnyValues = true;
+      internalValueResult.secretNamespace = this._secretNamespace;
+    }
+    if (this._shareName) {
+      hasAnyValues = true;
+      internalValueResult.shareName = this._shareName;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceAzureFile | undefined) {
+    if (value === undefined) {
+      this._readOnly = undefined;
+      this._secretName = undefined;
+      this._secretNamespace = undefined;
+      this._shareName = undefined;
+    }
+    else {
+      this._readOnly = value.readOnly;
+      this._secretName = value.secretName;
+      this._secretNamespace = value.secretNamespace;
+      this._shareName = value.shareName;
+    }
+  }
+
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -690,7 +906,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // secret_name - computed: false, optional: false, required: true
@@ -703,15 +919,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get secretNameInput() {
-    return this._secretName
+    return this._secretName;
   }
 
   // secret_namespace - computed: false, optional: true, required: false
-  private _secretNamespace?: string | undefined; 
+  private _secretNamespace?: string; 
   public get secretNamespace() {
     return this.getStringAttribute('secret_namespace');
   }
-  public set secretNamespace(value: string | undefined) {
+  public set secretNamespace(value: string) {
     this._secretNamespace = value;
   }
   public resetSecretNamespace() {
@@ -719,7 +935,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get secretNamespaceInput() {
-    return this._secretNamespace
+    return this._secretNamespace;
   }
 
   // share_name - computed: false, optional: false, required: true
@@ -732,7 +948,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get shareNameInput() {
-    return this._shareName
+    return this._shareName;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef {
@@ -750,7 +966,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef {
   readonly namespace?: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceCephFsSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef): any {
+export function persistentVolumeSpecPersistentVolumeSourceCephFsSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -771,12 +987,37 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputRefe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -784,15 +1025,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -800,7 +1041,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputRefe
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceCephFs {
@@ -842,7 +1083,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCephFs {
   readonly secretRef?: PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceCephFsToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference | PersistentVolumeSpecPersistentVolumeSourceCephFs): any {
+export function persistentVolumeSpecPersistentVolumeSourceCephFsToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference | PersistentVolumeSpecPersistentVolumeSourceCephFs): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -867,6 +1108,55 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCephFs | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._monitors) {
+      hasAnyValues = true;
+      internalValueResult.monitors = this._monitors;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._secretFile) {
+      hasAnyValues = true;
+      internalValueResult.secretFile = this._secretFile;
+    }
+    if (this._user) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    if (this._secretRef) {
+      hasAnyValues = true;
+      internalValueResult.secretRef = this._secretRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceCephFs | undefined) {
+    if (value === undefined) {
+      this._monitors = undefined;
+      this._path = undefined;
+      this._readOnly = undefined;
+      this._secretFile = undefined;
+      this._user = undefined;
+      this._secretRef.internalValue = undefined;
+    }
+    else {
+      this._monitors = value.monitors;
+      this._path = value.path;
+      this._readOnly = value.readOnly;
+      this._secretFile = value.secretFile;
+      this._user = value.user;
+      this._secretRef.internalValue = value.secretRef;
+    }
+  }
+
   // monitors - computed: false, optional: false, required: true
   private _monitors?: string[]; 
   public get monitors() {
@@ -877,15 +1167,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get monitorsInput() {
-    return this._monitors
+    return this._monitors;
   }
 
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -893,15 +1183,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -909,15 +1199,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // secret_file - computed: false, optional: true, required: false
-  private _secretFile?: string | undefined; 
+  private _secretFile?: string; 
   public get secretFile() {
     return this.getStringAttribute('secret_file');
   }
-  public set secretFile(value: string | undefined) {
+  public set secretFile(value: string) {
     this._secretFile = value;
   }
   public resetSecretFile() {
@@ -925,15 +1215,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get secretFileInput() {
-    return this._secretFile
+    return this._secretFile;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -941,24 +1231,23 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef?: PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef | undefined; 
-  private __secretRefOutput = new PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputReference(this as any, "secret_ref", true);
   public get secretRef() {
-    return this.__secretRefOutput;
+    return this._secretRef;
   }
-  public putSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef | undefined) {
-    this._secretRef = value;
+  public putSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef) {
+    this._secretRef.internalValue = value;
   }
   public resetSecretRef() {
-    this._secretRef = undefined;
+    this._secretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretRefInput() {
-    return this._secretRef
+    return this._secretRef.internalValue;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceCinder {
@@ -982,7 +1271,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCinder {
   readonly volumeId: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceCinderToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference | PersistentVolumeSpecPersistentVolumeSourceCinder): any {
+export function persistentVolumeSpecPersistentVolumeSourceCinderToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference | PersistentVolumeSpecPersistentVolumeSourceCinder): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1004,12 +1293,43 @@ export class PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference ext
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCinder | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._volumeId) {
+      hasAnyValues = true;
+      internalValueResult.volumeId = this._volumeId;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceCinder | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._readOnly = undefined;
+      this._volumeId = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._readOnly = value.readOnly;
+      this._volumeId = value.volumeId;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -1017,15 +1337,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -1033,7 +1353,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // volume_id - computed: false, optional: false, required: true
@@ -1046,7 +1366,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference ext
   }
   // Temporarily expose input value. Use with caution.
   public get volumeIdInput() {
-    return this._volumeId
+    return this._volumeId;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef {
@@ -1064,7 +1384,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSe
   readonly namespace?: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef): any {
+export function persistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1085,12 +1405,37 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecret
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -1098,15 +1443,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecret
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -1114,7 +1459,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecret
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef {
@@ -1132,7 +1477,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishS
   readonly namespace?: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef): any {
+export function persistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1153,12 +1498,37 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecre
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -1166,15 +1536,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecre
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -1182,7 +1552,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecre
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef {
@@ -1200,7 +1570,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretR
   readonly namespace?: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef): any {
+export function persistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1221,12 +1591,37 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -1234,15 +1629,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOu
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -1250,7 +1645,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOu
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef {
@@ -1268,7 +1663,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef
   readonly namespace?: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef): any {
+export function persistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1289,12 +1684,37 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutp
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -1302,15 +1722,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutp
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -1318,7 +1738,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutp
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceCsi {
@@ -1378,7 +1798,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCsi {
   readonly nodeStageSecretRef?: PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceCsiToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsi): any {
+export function persistentVolumeSpecPersistentVolumeSourceCsiToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1406,6 +1826,73 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsi | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._driver) {
+      hasAnyValues = true;
+      internalValueResult.driver = this._driver;
+    }
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._volumeAttributes) {
+      hasAnyValues = true;
+      internalValueResult.volumeAttributes = this._volumeAttributes;
+    }
+    if (this._volumeHandle) {
+      hasAnyValues = true;
+      internalValueResult.volumeHandle = this._volumeHandle;
+    }
+    if (this._controllerExpandSecretRef) {
+      hasAnyValues = true;
+      internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
+    }
+    if (this._controllerPublishSecretRef) {
+      hasAnyValues = true;
+      internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
+    }
+    if (this._nodePublishSecretRef) {
+      hasAnyValues = true;
+      internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
+    }
+    if (this._nodeStageSecretRef) {
+      hasAnyValues = true;
+      internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceCsi | undefined) {
+    if (value === undefined) {
+      this._driver = undefined;
+      this._fsType = undefined;
+      this._readOnly = undefined;
+      this._volumeAttributes = undefined;
+      this._volumeHandle = undefined;
+      this._controllerExpandSecretRef.internalValue = undefined;
+      this._controllerPublishSecretRef.internalValue = undefined;
+      this._nodePublishSecretRef.internalValue = undefined;
+      this._nodeStageSecretRef.internalValue = undefined;
+    }
+    else {
+      this._driver = value.driver;
+      this._fsType = value.fsType;
+      this._readOnly = value.readOnly;
+      this._volumeAttributes = value.volumeAttributes;
+      this._volumeHandle = value.volumeHandle;
+      this._controllerExpandSecretRef.internalValue = value.controllerExpandSecretRef;
+      this._controllerPublishSecretRef.internalValue = value.controllerPublishSecretRef;
+      this._nodePublishSecretRef.internalValue = value.nodePublishSecretRef;
+      this._nodeStageSecretRef.internalValue = value.nodeStageSecretRef;
+    }
+  }
+
   // driver - computed: false, optional: false, required: true
   private _driver?: string; 
   public get driver() {
@@ -1416,15 +1903,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get driverInput() {
-    return this._driver
+    return this._driver;
   }
 
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -1432,15 +1919,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -1448,16 +1935,16 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // volume_attributes - computed: false, optional: true, required: false
-  private _volumeAttributes?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _volumeAttributes?: { [key: string]: string } | cdktf.IResolvable; 
   public get volumeAttributes() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('volume_attributes') as any;
   }
-  public set volumeAttributes(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set volumeAttributes(value: { [key: string]: string } | cdktf.IResolvable) {
     this._volumeAttributes = value;
   }
   public resetVolumeAttributes() {
@@ -1465,7 +1952,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get volumeAttributesInput() {
-    return this._volumeAttributes
+    return this._volumeAttributes;
   }
 
   // volume_handle - computed: false, optional: false, required: true
@@ -1478,75 +1965,71 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get volumeHandleInput() {
-    return this._volumeHandle
+    return this._volumeHandle;
   }
 
   // controller_expand_secret_ref - computed: false, optional: true, required: false
-  private _controllerExpandSecretRef?: PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef | undefined; 
-  private __controllerExpandSecretRefOutput = new PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference(this as any, "controller_expand_secret_ref", true);
+  private _controllerExpandSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference(this as any, "controller_expand_secret_ref", true);
   public get controllerExpandSecretRef() {
-    return this.__controllerExpandSecretRefOutput;
+    return this._controllerExpandSecretRef;
   }
-  public putControllerExpandSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef | undefined) {
-    this._controllerExpandSecretRef = value;
+  public putControllerExpandSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef) {
+    this._controllerExpandSecretRef.internalValue = value;
   }
   public resetControllerExpandSecretRef() {
-    this._controllerExpandSecretRef = undefined;
+    this._controllerExpandSecretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get controllerExpandSecretRefInput() {
-    return this._controllerExpandSecretRef
+    return this._controllerExpandSecretRef.internalValue;
   }
 
   // controller_publish_secret_ref - computed: false, optional: true, required: false
-  private _controllerPublishSecretRef?: PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef | undefined; 
-  private __controllerPublishSecretRefOutput = new PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference(this as any, "controller_publish_secret_ref", true);
+  private _controllerPublishSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference(this as any, "controller_publish_secret_ref", true);
   public get controllerPublishSecretRef() {
-    return this.__controllerPublishSecretRefOutput;
+    return this._controllerPublishSecretRef;
   }
-  public putControllerPublishSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef | undefined) {
-    this._controllerPublishSecretRef = value;
+  public putControllerPublishSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef) {
+    this._controllerPublishSecretRef.internalValue = value;
   }
   public resetControllerPublishSecretRef() {
-    this._controllerPublishSecretRef = undefined;
+    this._controllerPublishSecretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get controllerPublishSecretRefInput() {
-    return this._controllerPublishSecretRef
+    return this._controllerPublishSecretRef.internalValue;
   }
 
   // node_publish_secret_ref - computed: false, optional: true, required: false
-  private _nodePublishSecretRef?: PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef | undefined; 
-  private __nodePublishSecretRefOutput = new PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference(this as any, "node_publish_secret_ref", true);
+  private _nodePublishSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference(this as any, "node_publish_secret_ref", true);
   public get nodePublishSecretRef() {
-    return this.__nodePublishSecretRefOutput;
+    return this._nodePublishSecretRef;
   }
-  public putNodePublishSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef | undefined) {
-    this._nodePublishSecretRef = value;
+  public putNodePublishSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef) {
+    this._nodePublishSecretRef.internalValue = value;
   }
   public resetNodePublishSecretRef() {
-    this._nodePublishSecretRef = undefined;
+    this._nodePublishSecretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get nodePublishSecretRefInput() {
-    return this._nodePublishSecretRef
+    return this._nodePublishSecretRef.internalValue;
   }
 
   // node_stage_secret_ref - computed: false, optional: true, required: false
-  private _nodeStageSecretRef?: PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef | undefined; 
-  private __nodeStageSecretRefOutput = new PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference(this as any, "node_stage_secret_ref", true);
+  private _nodeStageSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference(this as any, "node_stage_secret_ref", true);
   public get nodeStageSecretRef() {
-    return this.__nodeStageSecretRefOutput;
+    return this._nodeStageSecretRef;
   }
-  public putNodeStageSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef | undefined) {
-    this._nodeStageSecretRef = value;
+  public putNodeStageSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef) {
+    this._nodeStageSecretRef.internalValue = value;
   }
   public resetNodeStageSecretRef() {
-    this._nodeStageSecretRef = undefined;
+    this._nodeStageSecretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get nodeStageSecretRefInput() {
-    return this._nodeStageSecretRef
+    return this._nodeStageSecretRef.internalValue;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceFc {
@@ -1576,7 +2059,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceFc {
   readonly targetWwNs: string[];
 }
 
-function persistentVolumeSpecPersistentVolumeSourceFcToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceFcOutputReference | PersistentVolumeSpecPersistentVolumeSourceFc): any {
+export function persistentVolumeSpecPersistentVolumeSourceFcToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceFcOutputReference | PersistentVolumeSpecPersistentVolumeSourceFc): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1599,12 +2082,49 @@ export class PersistentVolumeSpecPersistentVolumeSourceFcOutputReference extends
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceFc | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._lun) {
+      hasAnyValues = true;
+      internalValueResult.lun = this._lun;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._targetWwNs) {
+      hasAnyValues = true;
+      internalValueResult.targetWwNs = this._targetWwNs;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceFc | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._lun = undefined;
+      this._readOnly = undefined;
+      this._targetWwNs = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._lun = value.lun;
+      this._readOnly = value.readOnly;
+      this._targetWwNs = value.targetWwNs;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -1612,7 +2132,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFcOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // lun - computed: false, optional: false, required: true
@@ -1625,15 +2145,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceFcOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get lunInput() {
-    return this._lun
+    return this._lun;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -1641,7 +2161,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFcOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // target_ww_ns - computed: false, optional: false, required: true
@@ -1654,7 +2174,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFcOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get targetWwNsInput() {
-    return this._targetWwNs
+    return this._targetWwNs;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef {
@@ -1672,7 +2192,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef {
   readonly namespace?: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef): any {
+export function persistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1693,12 +2213,37 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutput
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -1706,15 +2251,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutput
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -1722,7 +2267,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutput
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceFlexVolume {
@@ -1758,7 +2303,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceFlexVolume {
   readonly secretRef?: PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceFlexVolumeToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference | PersistentVolumeSpecPersistentVolumeSourceFlexVolume): any {
+export function persistentVolumeSpecPersistentVolumeSourceFlexVolumeToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference | PersistentVolumeSpecPersistentVolumeSourceFlexVolume): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1782,6 +2327,49 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceFlexVolume | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._driver) {
+      hasAnyValues = true;
+      internalValueResult.driver = this._driver;
+    }
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._options) {
+      hasAnyValues = true;
+      internalValueResult.options = this._options;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._secretRef) {
+      hasAnyValues = true;
+      internalValueResult.secretRef = this._secretRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceFlexVolume | undefined) {
+    if (value === undefined) {
+      this._driver = undefined;
+      this._fsType = undefined;
+      this._options = undefined;
+      this._readOnly = undefined;
+      this._secretRef.internalValue = undefined;
+    }
+    else {
+      this._driver = value.driver;
+      this._fsType = value.fsType;
+      this._options = value.options;
+      this._readOnly = value.readOnly;
+      this._secretRef.internalValue = value.secretRef;
+    }
+  }
+
   // driver - computed: false, optional: false, required: true
   private _driver?: string; 
   public get driver() {
@@ -1792,15 +2380,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get driverInput() {
-    return this._driver
+    return this._driver;
   }
 
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -1808,16 +2396,16 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // options - computed: false, optional: true, required: false
-  private _options?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _options?: { [key: string]: string } | cdktf.IResolvable; 
   public get options() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('options') as any;
   }
-  public set options(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set options(value: { [key: string]: string } | cdktf.IResolvable) {
     this._options = value;
   }
   public resetOptions() {
@@ -1825,15 +2413,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get optionsInput() {
-    return this._options
+    return this._options;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -1841,24 +2429,23 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef?: PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef | undefined; 
-  private __secretRefOutput = new PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference(this as any, "secret_ref", true);
   public get secretRef() {
-    return this.__secretRefOutput;
+    return this._secretRef;
   }
-  public putSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef | undefined) {
-    this._secretRef = value;
+  public putSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef) {
+    this._secretRef.internalValue = value;
   }
   public resetSecretRef() {
-    this._secretRef = undefined;
+    this._secretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretRefInput() {
-    return this._secretRef
+    return this._secretRef.internalValue;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceFlocker {
@@ -1876,7 +2463,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceFlocker {
   readonly datasetUuid?: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceFlockerToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference | PersistentVolumeSpecPersistentVolumeSourceFlocker): any {
+export function persistentVolumeSpecPersistentVolumeSourceFlockerToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference | PersistentVolumeSpecPersistentVolumeSourceFlocker): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1897,12 +2484,37 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference ex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceFlocker | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._datasetName) {
+      hasAnyValues = true;
+      internalValueResult.datasetName = this._datasetName;
+    }
+    if (this._datasetUuid) {
+      hasAnyValues = true;
+      internalValueResult.datasetUuid = this._datasetUuid;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceFlocker | undefined) {
+    if (value === undefined) {
+      this._datasetName = undefined;
+      this._datasetUuid = undefined;
+    }
+    else {
+      this._datasetName = value.datasetName;
+      this._datasetUuid = value.datasetUuid;
+    }
+  }
+
   // dataset_name - computed: false, optional: true, required: false
-  private _datasetName?: string | undefined; 
+  private _datasetName?: string; 
   public get datasetName() {
     return this.getStringAttribute('dataset_name');
   }
-  public set datasetName(value: string | undefined) {
+  public set datasetName(value: string) {
     this._datasetName = value;
   }
   public resetDatasetName() {
@@ -1910,15 +2522,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get datasetNameInput() {
-    return this._datasetName
+    return this._datasetName;
   }
 
   // dataset_uuid - computed: false, optional: true, required: false
-  private _datasetUuid?: string | undefined; 
+  private _datasetUuid?: string; 
   public get datasetUuid() {
     return this.getStringAttribute('dataset_uuid');
   }
-  public set datasetUuid(value: string | undefined) {
+  public set datasetUuid(value: string) {
     this._datasetUuid = value;
   }
   public resetDatasetUuid() {
@@ -1926,7 +2538,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get datasetUuidInput() {
-    return this._datasetUuid
+    return this._datasetUuid;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk {
@@ -1956,7 +2568,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceGcePersistentDiskToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputReference | PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk): any {
+export function persistentVolumeSpecPersistentVolumeSourceGcePersistentDiskToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputReference | PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1979,12 +2591,49 @@ export class PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputRe
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._partition) {
+      hasAnyValues = true;
+      internalValueResult.partition = this._partition;
+    }
+    if (this._pdName) {
+      hasAnyValues = true;
+      internalValueResult.pdName = this._pdName;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._partition = undefined;
+      this._pdName = undefined;
+      this._readOnly = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._partition = value.partition;
+      this._pdName = value.pdName;
+      this._readOnly = value.readOnly;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -1992,15 +2641,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputRe
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // partition - computed: false, optional: true, required: false
-  private _partition?: number | undefined; 
+  private _partition?: number; 
   public get partition() {
     return this.getNumberAttribute('partition');
   }
-  public set partition(value: number | undefined) {
+  public set partition(value: number) {
     this._partition = value;
   }
   public resetPartition() {
@@ -2008,7 +2657,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputRe
   }
   // Temporarily expose input value. Use with caution.
   public get partitionInput() {
-    return this._partition
+    return this._partition;
   }
 
   // pd_name - computed: false, optional: false, required: true
@@ -2021,15 +2670,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputRe
   }
   // Temporarily expose input value. Use with caution.
   public get pdNameInput() {
-    return this._pdName
+    return this._pdName;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -2037,7 +2686,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputRe
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceGlusterfs {
@@ -2061,7 +2710,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceGlusterfs {
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceGlusterfsToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference | PersistentVolumeSpecPersistentVolumeSourceGlusterfs): any {
+export function persistentVolumeSpecPersistentVolumeSourceGlusterfsToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference | PersistentVolumeSpecPersistentVolumeSourceGlusterfs): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2083,6 +2732,37 @@ export class PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceGlusterfs | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._endpointsName) {
+      hasAnyValues = true;
+      internalValueResult.endpointsName = this._endpointsName;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceGlusterfs | undefined) {
+    if (value === undefined) {
+      this._endpointsName = undefined;
+      this._path = undefined;
+      this._readOnly = undefined;
+    }
+    else {
+      this._endpointsName = value.endpointsName;
+      this._path = value.path;
+      this._readOnly = value.readOnly;
+    }
+  }
+
   // endpoints_name - computed: false, optional: false, required: true
   private _endpointsName?: string; 
   public get endpointsName() {
@@ -2093,7 +2773,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get endpointsNameInput() {
-    return this._endpointsName
+    return this._endpointsName;
   }
 
   // path - computed: false, optional: false, required: true
@@ -2106,15 +2786,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -2122,7 +2802,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference 
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceHostPath {
@@ -2140,7 +2820,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceHostPath {
   readonly type?: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceHostPathToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference | PersistentVolumeSpecPersistentVolumeSourceHostPath): any {
+export function persistentVolumeSpecPersistentVolumeSourceHostPathToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference | PersistentVolumeSpecPersistentVolumeSourceHostPath): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2161,12 +2841,37 @@ export class PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference e
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceHostPath | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceHostPath | undefined) {
+    if (value === undefined) {
+      this._path = undefined;
+      this._type = undefined;
+    }
+    else {
+      this._path = value.path;
+      this._type = value.type;
+    }
+  }
+
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -2174,15 +2879,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // type - computed: false, optional: true, required: false
-  private _type?: string | undefined; 
+  private _type?: string; 
   public get type() {
     return this.getStringAttribute('type');
   }
-  public set type(value: string | undefined) {
+  public set type(value: string) {
     this._type = value;
   }
   public resetType() {
@@ -2190,7 +2895,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference e
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceIscsi {
@@ -2232,7 +2937,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceIscsi {
   readonly targetPortal: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceIscsiToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference | PersistentVolumeSpecPersistentVolumeSourceIscsi): any {
+export function persistentVolumeSpecPersistentVolumeSourceIscsiToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference | PersistentVolumeSpecPersistentVolumeSourceIscsi): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2257,12 +2962,61 @@ export class PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference exte
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceIscsi | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._iqn) {
+      hasAnyValues = true;
+      internalValueResult.iqn = this._iqn;
+    }
+    if (this._iscsiInterface) {
+      hasAnyValues = true;
+      internalValueResult.iscsiInterface = this._iscsiInterface;
+    }
+    if (this._lun) {
+      hasAnyValues = true;
+      internalValueResult.lun = this._lun;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._targetPortal) {
+      hasAnyValues = true;
+      internalValueResult.targetPortal = this._targetPortal;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceIscsi | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._iqn = undefined;
+      this._iscsiInterface = undefined;
+      this._lun = undefined;
+      this._readOnly = undefined;
+      this._targetPortal = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._iqn = value.iqn;
+      this._iscsiInterface = value.iscsiInterface;
+      this._lun = value.lun;
+      this._readOnly = value.readOnly;
+      this._targetPortal = value.targetPortal;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -2270,7 +3024,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // iqn - computed: false, optional: false, required: true
@@ -2283,15 +3037,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get iqnInput() {
-    return this._iqn
+    return this._iqn;
   }
 
   // iscsi_interface - computed: false, optional: true, required: false
-  private _iscsiInterface?: string | undefined; 
+  private _iscsiInterface?: string; 
   public get iscsiInterface() {
     return this.getStringAttribute('iscsi_interface');
   }
-  public set iscsiInterface(value: string | undefined) {
+  public set iscsiInterface(value: string) {
     this._iscsiInterface = value;
   }
   public resetIscsiInterface() {
@@ -2299,15 +3053,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get iscsiInterfaceInput() {
-    return this._iscsiInterface
+    return this._iscsiInterface;
   }
 
   // lun - computed: false, optional: true, required: false
-  private _lun?: number | undefined; 
+  private _lun?: number; 
   public get lun() {
     return this.getNumberAttribute('lun');
   }
-  public set lun(value: number | undefined) {
+  public set lun(value: number) {
     this._lun = value;
   }
   public resetLun() {
@@ -2315,15 +3069,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get lunInput() {
-    return this._lun
+    return this._lun;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -2331,7 +3085,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // target_portal - computed: false, optional: false, required: true
@@ -2344,7 +3098,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get targetPortalInput() {
-    return this._targetPortal
+    return this._targetPortal;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceLocal {
@@ -2356,7 +3110,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceLocal {
   readonly path?: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceLocalToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference | PersistentVolumeSpecPersistentVolumeSourceLocal): any {
+export function persistentVolumeSpecPersistentVolumeSourceLocalToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference | PersistentVolumeSpecPersistentVolumeSourceLocal): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2376,12 +3130,31 @@ export class PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference exte
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceLocal | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceLocal | undefined) {
+    if (value === undefined) {
+      this._path = undefined;
+    }
+    else {
+      this._path = value.path;
+    }
+  }
+
   // path - computed: false, optional: true, required: false
-  private _path?: string | undefined; 
+  private _path?: string; 
   public get path() {
     return this.getStringAttribute('path');
   }
-  public set path(value: string | undefined) {
+  public set path(value: string) {
     this._path = value;
   }
   public resetPath() {
@@ -2389,7 +3162,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceNfs {
@@ -2413,7 +3186,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceNfs {
   readonly server: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceNfsToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference | PersistentVolumeSpecPersistentVolumeSourceNfs): any {
+export function persistentVolumeSpecPersistentVolumeSourceNfsToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference | PersistentVolumeSpecPersistentVolumeSourceNfs): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2435,6 +3208,37 @@ export class PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference extend
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceNfs | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._server) {
+      hasAnyValues = true;
+      internalValueResult.server = this._server;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceNfs | undefined) {
+    if (value === undefined) {
+      this._path = undefined;
+      this._readOnly = undefined;
+      this._server = undefined;
+    }
+    else {
+      this._path = value.path;
+      this._readOnly = value.readOnly;
+      this._server = value.server;
+    }
+  }
+
   // path - computed: false, optional: false, required: true
   private _path?: string; 
   public get path() {
@@ -2445,15 +3249,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -2461,7 +3265,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // server - computed: false, optional: false, required: true
@@ -2474,7 +3278,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get serverInput() {
-    return this._server
+    return this._server;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk {
@@ -2492,7 +3296,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk 
   readonly pdId: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutputReference | PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk): any {
+export function persistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutputReference | PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2513,12 +3317,37 @@ export class PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutpu
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._pdId) {
+      hasAnyValues = true;
+      internalValueResult.pdId = this._pdId;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._pdId = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._pdId = value.pdId;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -2526,7 +3355,7 @@ export class PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // pd_id - computed: false, optional: false, required: true
@@ -2539,7 +3368,7 @@ export class PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutpu
   }
   // Temporarily expose input value. Use with caution.
   public get pdIdInput() {
-    return this._pdId
+    return this._pdId;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceQuobyte {
@@ -2575,7 +3404,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceQuobyte {
   readonly volume: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceQuobyteToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference | PersistentVolumeSpecPersistentVolumeSourceQuobyte): any {
+export function persistentVolumeSpecPersistentVolumeSourceQuobyteToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference | PersistentVolumeSpecPersistentVolumeSourceQuobyte): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2599,12 +3428,55 @@ export class PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference ex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceQuobyte | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._group) {
+      hasAnyValues = true;
+      internalValueResult.group = this._group;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._registry) {
+      hasAnyValues = true;
+      internalValueResult.registry = this._registry;
+    }
+    if (this._user) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    if (this._volume) {
+      hasAnyValues = true;
+      internalValueResult.volume = this._volume;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceQuobyte | undefined) {
+    if (value === undefined) {
+      this._group = undefined;
+      this._readOnly = undefined;
+      this._registry = undefined;
+      this._user = undefined;
+      this._volume = undefined;
+    }
+    else {
+      this._group = value.group;
+      this._readOnly = value.readOnly;
+      this._registry = value.registry;
+      this._user = value.user;
+      this._volume = value.volume;
+    }
+  }
+
   // group - computed: false, optional: true, required: false
-  private _group?: string | undefined; 
+  private _group?: string; 
   public get group() {
     return this.getStringAttribute('group');
   }
-  public set group(value: string | undefined) {
+  public set group(value: string) {
     this._group = value;
   }
   public resetGroup() {
@@ -2612,15 +3484,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get groupInput() {
-    return this._group
+    return this._group;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -2628,7 +3500,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // registry - computed: false, optional: false, required: true
@@ -2641,15 +3513,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get registryInput() {
-    return this._registry
+    return this._registry;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -2657,7 +3529,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 
   // volume - computed: false, optional: false, required: true
@@ -2670,7 +3542,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference ex
   }
   // Temporarily expose input value. Use with caution.
   public get volumeInput() {
-    return this._volume
+    return this._volume;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef {
@@ -2688,7 +3560,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef {
   readonly namespace?: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceRbdSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef): any {
+export function persistentVolumeSpecPersistentVolumeSourceRbdSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2709,12 +3581,37 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReferen
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef | undefined) {
+    if (value === undefined) {
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -2722,15 +3619,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: true, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -2738,7 +3635,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReferen
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceRbd {
@@ -2792,7 +3689,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceRbd {
   readonly secretRef?: PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceRbdToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference | PersistentVolumeSpecPersistentVolumeSourceRbd): any {
+export function persistentVolumeSpecPersistentVolumeSourceRbdToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference | PersistentVolumeSpecPersistentVolumeSourceRbd): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2819,6 +3716,67 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceRbd | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._cephMonitors) {
+      hasAnyValues = true;
+      internalValueResult.cephMonitors = this._cephMonitors;
+    }
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._keyring) {
+      hasAnyValues = true;
+      internalValueResult.keyring = this._keyring;
+    }
+    if (this._radosUser) {
+      hasAnyValues = true;
+      internalValueResult.radosUser = this._radosUser;
+    }
+    if (this._rbdImage) {
+      hasAnyValues = true;
+      internalValueResult.rbdImage = this._rbdImage;
+    }
+    if (this._rbdPool) {
+      hasAnyValues = true;
+      internalValueResult.rbdPool = this._rbdPool;
+    }
+    if (this._readOnly) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._secretRef) {
+      hasAnyValues = true;
+      internalValueResult.secretRef = this._secretRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceRbd | undefined) {
+    if (value === undefined) {
+      this._cephMonitors = undefined;
+      this._fsType = undefined;
+      this._keyring = undefined;
+      this._radosUser = undefined;
+      this._rbdImage = undefined;
+      this._rbdPool = undefined;
+      this._readOnly = undefined;
+      this._secretRef.internalValue = undefined;
+    }
+    else {
+      this._cephMonitors = value.cephMonitors;
+      this._fsType = value.fsType;
+      this._keyring = value.keyring;
+      this._radosUser = value.radosUser;
+      this._rbdImage = value.rbdImage;
+      this._rbdPool = value.rbdPool;
+      this._readOnly = value.readOnly;
+      this._secretRef.internalValue = value.secretRef;
+    }
+  }
+
   // ceph_monitors - computed: false, optional: false, required: true
   private _cephMonitors?: string[]; 
   public get cephMonitors() {
@@ -2829,15 +3787,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get cephMonitorsInput() {
-    return this._cephMonitors
+    return this._cephMonitors;
   }
 
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -2845,15 +3803,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // keyring - computed: true, optional: true, required: false
-  private _keyring?: string | undefined; 
+  private _keyring?: string; 
   public get keyring() {
     return this.getStringAttribute('keyring');
   }
-  public set keyring(value: string | undefined) {
+  public set keyring(value: string) {
     this._keyring = value;
   }
   public resetKeyring() {
@@ -2861,15 +3819,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get keyringInput() {
-    return this._keyring
+    return this._keyring;
   }
 
   // rados_user - computed: false, optional: true, required: false
-  private _radosUser?: string | undefined; 
+  private _radosUser?: string; 
   public get radosUser() {
     return this.getStringAttribute('rados_user');
   }
-  public set radosUser(value: string | undefined) {
+  public set radosUser(value: string) {
     this._radosUser = value;
   }
   public resetRadosUser() {
@@ -2877,7 +3835,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get radosUserInput() {
-    return this._radosUser
+    return this._radosUser;
   }
 
   // rbd_image - computed: false, optional: false, required: true
@@ -2890,15 +3848,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get rbdImageInput() {
-    return this._rbdImage
+    return this._rbdImage;
   }
 
   // rbd_pool - computed: false, optional: true, required: false
-  private _rbdPool?: string | undefined; 
+  private _rbdPool?: string; 
   public get rbdPool() {
     return this.getStringAttribute('rbd_pool');
   }
-  public set rbdPool(value: string | undefined) {
+  public set rbdPool(value: string) {
     this._rbdPool = value;
   }
   public resetRbdPool() {
@@ -2906,15 +3864,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get rbdPoolInput() {
-    return this._rbdPool
+    return this._rbdPool;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -2922,24 +3880,23 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef?: PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef | undefined; 
-  private __secretRefOutput = new PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReference(this as any, "secret_ref", true);
   public get secretRef() {
-    return this.__secretRefOutput;
+    return this._secretRef;
   }
-  public putSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef | undefined) {
-    this._secretRef = value;
+  public putSecretRef(value: PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef) {
+    this._secretRef.internalValue = value;
   }
   public resetSecretRef() {
-    this._secretRef = undefined;
+    this._secretRef.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretRefInput() {
-    return this._secretRef
+    return this._secretRef.internalValue;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSourceVsphereVolume {
@@ -2957,7 +3914,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceVsphereVolume {
   readonly volumePath: string;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceVsphereVolumeToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputReference | PersistentVolumeSpecPersistentVolumeSourceVsphereVolume): any {
+export function persistentVolumeSpecPersistentVolumeSourceVsphereVolumeToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputReference | PersistentVolumeSpecPersistentVolumeSourceVsphereVolume): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -2978,12 +3935,37 @@ export class PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputRefere
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceVsphereVolume | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._fsType) {
+      hasAnyValues = true;
+      internalValueResult.fsType = this._fsType;
+    }
+    if (this._volumePath) {
+      hasAnyValues = true;
+      internalValueResult.volumePath = this._volumePath;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSourceVsphereVolume | undefined) {
+    if (value === undefined) {
+      this._fsType = undefined;
+      this._volumePath = undefined;
+    }
+    else {
+      this._fsType = value.fsType;
+      this._volumePath = value.volumePath;
+    }
+  }
+
   // fs_type - computed: false, optional: true, required: false
-  private _fsType?: string | undefined; 
+  private _fsType?: string; 
   public get fsType() {
     return this.getStringAttribute('fs_type');
   }
-  public set fsType(value: string | undefined) {
+  public set fsType(value: string) {
     this._fsType = value;
   }
   public resetFsType() {
@@ -2991,7 +3973,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get fsTypeInput() {
-    return this._fsType
+    return this._fsType;
   }
 
   // volume_path - computed: false, optional: false, required: true
@@ -3004,7 +3986,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputRefere
   }
   // Temporarily expose input value. Use with caution.
   public get volumePathInput() {
-    return this._volumePath
+    return this._volumePath;
   }
 }
 export interface PersistentVolumeSpecPersistentVolumeSource {
@@ -3124,7 +4106,7 @@ export interface PersistentVolumeSpecPersistentVolumeSource {
   readonly vsphereVolume?: PersistentVolumeSpecPersistentVolumeSourceVsphereVolume;
 }
 
-function persistentVolumeSpecPersistentVolumeSourceToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceOutputReference | PersistentVolumeSpecPersistentVolumeSource): any {
+export function persistentVolumeSpecPersistentVolumeSourceToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceOutputReference | PersistentVolumeSpecPersistentVolumeSource): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3162,327 +4144,435 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
-  // aws_elastic_block_store - computed: false, optional: true, required: false
-  private _awsElasticBlockStore?: PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore | undefined; 
-  private __awsElasticBlockStoreOutput = new PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference(this as any, "aws_elastic_block_store", true);
-  public get awsElasticBlockStore() {
-    return this.__awsElasticBlockStoreOutput;
+  public get internalValue(): PersistentVolumeSpecPersistentVolumeSource | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._awsElasticBlockStore) {
+      hasAnyValues = true;
+      internalValueResult.awsElasticBlockStore = this._awsElasticBlockStore?.internalValue;
+    }
+    if (this._azureDisk) {
+      hasAnyValues = true;
+      internalValueResult.azureDisk = this._azureDisk?.internalValue;
+    }
+    if (this._azureFile) {
+      hasAnyValues = true;
+      internalValueResult.azureFile = this._azureFile?.internalValue;
+    }
+    if (this._cephFs) {
+      hasAnyValues = true;
+      internalValueResult.cephFs = this._cephFs?.internalValue;
+    }
+    if (this._cinder) {
+      hasAnyValues = true;
+      internalValueResult.cinder = this._cinder?.internalValue;
+    }
+    if (this._csi) {
+      hasAnyValues = true;
+      internalValueResult.csi = this._csi?.internalValue;
+    }
+    if (this._fc) {
+      hasAnyValues = true;
+      internalValueResult.fc = this._fc?.internalValue;
+    }
+    if (this._flexVolume) {
+      hasAnyValues = true;
+      internalValueResult.flexVolume = this._flexVolume?.internalValue;
+    }
+    if (this._flocker) {
+      hasAnyValues = true;
+      internalValueResult.flocker = this._flocker?.internalValue;
+    }
+    if (this._gcePersistentDisk) {
+      hasAnyValues = true;
+      internalValueResult.gcePersistentDisk = this._gcePersistentDisk?.internalValue;
+    }
+    if (this._glusterfs) {
+      hasAnyValues = true;
+      internalValueResult.glusterfs = this._glusterfs?.internalValue;
+    }
+    if (this._hostPath) {
+      hasAnyValues = true;
+      internalValueResult.hostPath = this._hostPath?.internalValue;
+    }
+    if (this._iscsi) {
+      hasAnyValues = true;
+      internalValueResult.iscsi = this._iscsi?.internalValue;
+    }
+    if (this._local) {
+      hasAnyValues = true;
+      internalValueResult.local = this._local?.internalValue;
+    }
+    if (this._nfs) {
+      hasAnyValues = true;
+      internalValueResult.nfs = this._nfs?.internalValue;
+    }
+    if (this._photonPersistentDisk) {
+      hasAnyValues = true;
+      internalValueResult.photonPersistentDisk = this._photonPersistentDisk?.internalValue;
+    }
+    if (this._quobyte) {
+      hasAnyValues = true;
+      internalValueResult.quobyte = this._quobyte?.internalValue;
+    }
+    if (this._rbd) {
+      hasAnyValues = true;
+      internalValueResult.rbd = this._rbd?.internalValue;
+    }
+    if (this._vsphereVolume) {
+      hasAnyValues = true;
+      internalValueResult.vsphereVolume = this._vsphereVolume?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
   }
-  public putAwsElasticBlockStore(value: PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore | undefined) {
-    this._awsElasticBlockStore = value;
+
+  public set internalValue(value: PersistentVolumeSpecPersistentVolumeSource | undefined) {
+    if (value === undefined) {
+      this._awsElasticBlockStore.internalValue = undefined;
+      this._azureDisk.internalValue = undefined;
+      this._azureFile.internalValue = undefined;
+      this._cephFs.internalValue = undefined;
+      this._cinder.internalValue = undefined;
+      this._csi.internalValue = undefined;
+      this._fc.internalValue = undefined;
+      this._flexVolume.internalValue = undefined;
+      this._flocker.internalValue = undefined;
+      this._gcePersistentDisk.internalValue = undefined;
+      this._glusterfs.internalValue = undefined;
+      this._hostPath.internalValue = undefined;
+      this._iscsi.internalValue = undefined;
+      this._local.internalValue = undefined;
+      this._nfs.internalValue = undefined;
+      this._photonPersistentDisk.internalValue = undefined;
+      this._quobyte.internalValue = undefined;
+      this._rbd.internalValue = undefined;
+      this._vsphereVolume.internalValue = undefined;
+    }
+    else {
+      this._awsElasticBlockStore.internalValue = value.awsElasticBlockStore;
+      this._azureDisk.internalValue = value.azureDisk;
+      this._azureFile.internalValue = value.azureFile;
+      this._cephFs.internalValue = value.cephFs;
+      this._cinder.internalValue = value.cinder;
+      this._csi.internalValue = value.csi;
+      this._fc.internalValue = value.fc;
+      this._flexVolume.internalValue = value.flexVolume;
+      this._flocker.internalValue = value.flocker;
+      this._gcePersistentDisk.internalValue = value.gcePersistentDisk;
+      this._glusterfs.internalValue = value.glusterfs;
+      this._hostPath.internalValue = value.hostPath;
+      this._iscsi.internalValue = value.iscsi;
+      this._local.internalValue = value.local;
+      this._nfs.internalValue = value.nfs;
+      this._photonPersistentDisk.internalValue = value.photonPersistentDisk;
+      this._quobyte.internalValue = value.quobyte;
+      this._rbd.internalValue = value.rbd;
+      this._vsphereVolume.internalValue = value.vsphereVolume;
+    }
+  }
+
+  // aws_elastic_block_store - computed: false, optional: true, required: false
+  private _awsElasticBlockStore = new PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference(this as any, "aws_elastic_block_store", true);
+  public get awsElasticBlockStore() {
+    return this._awsElasticBlockStore;
+  }
+  public putAwsElasticBlockStore(value: PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore) {
+    this._awsElasticBlockStore.internalValue = value;
   }
   public resetAwsElasticBlockStore() {
-    this._awsElasticBlockStore = undefined;
+    this._awsElasticBlockStore.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get awsElasticBlockStoreInput() {
-    return this._awsElasticBlockStore
+    return this._awsElasticBlockStore.internalValue;
   }
 
   // azure_disk - computed: false, optional: true, required: false
-  private _azureDisk?: PersistentVolumeSpecPersistentVolumeSourceAzureDisk | undefined; 
-  private __azureDiskOutput = new PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference(this as any, "azure_disk", true);
+  private _azureDisk = new PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference(this as any, "azure_disk", true);
   public get azureDisk() {
-    return this.__azureDiskOutput;
+    return this._azureDisk;
   }
-  public putAzureDisk(value: PersistentVolumeSpecPersistentVolumeSourceAzureDisk | undefined) {
-    this._azureDisk = value;
+  public putAzureDisk(value: PersistentVolumeSpecPersistentVolumeSourceAzureDisk) {
+    this._azureDisk.internalValue = value;
   }
   public resetAzureDisk() {
-    this._azureDisk = undefined;
+    this._azureDisk.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get azureDiskInput() {
-    return this._azureDisk
+    return this._azureDisk.internalValue;
   }
 
   // azure_file - computed: false, optional: true, required: false
-  private _azureFile?: PersistentVolumeSpecPersistentVolumeSourceAzureFile | undefined; 
-  private __azureFileOutput = new PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference(this as any, "azure_file", true);
+  private _azureFile = new PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference(this as any, "azure_file", true);
   public get azureFile() {
-    return this.__azureFileOutput;
+    return this._azureFile;
   }
-  public putAzureFile(value: PersistentVolumeSpecPersistentVolumeSourceAzureFile | undefined) {
-    this._azureFile = value;
+  public putAzureFile(value: PersistentVolumeSpecPersistentVolumeSourceAzureFile) {
+    this._azureFile.internalValue = value;
   }
   public resetAzureFile() {
-    this._azureFile = undefined;
+    this._azureFile.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get azureFileInput() {
-    return this._azureFile
+    return this._azureFile.internalValue;
   }
 
   // ceph_fs - computed: false, optional: true, required: false
-  private _cephFs?: PersistentVolumeSpecPersistentVolumeSourceCephFs | undefined; 
-  private __cephFsOutput = new PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference(this as any, "ceph_fs", true);
+  private _cephFs = new PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference(this as any, "ceph_fs", true);
   public get cephFs() {
-    return this.__cephFsOutput;
+    return this._cephFs;
   }
-  public putCephFs(value: PersistentVolumeSpecPersistentVolumeSourceCephFs | undefined) {
-    this._cephFs = value;
+  public putCephFs(value: PersistentVolumeSpecPersistentVolumeSourceCephFs) {
+    this._cephFs.internalValue = value;
   }
   public resetCephFs() {
-    this._cephFs = undefined;
+    this._cephFs.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get cephFsInput() {
-    return this._cephFs
+    return this._cephFs.internalValue;
   }
 
   // cinder - computed: false, optional: true, required: false
-  private _cinder?: PersistentVolumeSpecPersistentVolumeSourceCinder | undefined; 
-  private __cinderOutput = new PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference(this as any, "cinder", true);
+  private _cinder = new PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference(this as any, "cinder", true);
   public get cinder() {
-    return this.__cinderOutput;
+    return this._cinder;
   }
-  public putCinder(value: PersistentVolumeSpecPersistentVolumeSourceCinder | undefined) {
-    this._cinder = value;
+  public putCinder(value: PersistentVolumeSpecPersistentVolumeSourceCinder) {
+    this._cinder.internalValue = value;
   }
   public resetCinder() {
-    this._cinder = undefined;
+    this._cinder.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get cinderInput() {
-    return this._cinder
+    return this._cinder.internalValue;
   }
 
   // csi - computed: false, optional: true, required: false
-  private _csi?: PersistentVolumeSpecPersistentVolumeSourceCsi | undefined; 
-  private __csiOutput = new PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference(this as any, "csi", true);
+  private _csi = new PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference(this as any, "csi", true);
   public get csi() {
-    return this.__csiOutput;
+    return this._csi;
   }
-  public putCsi(value: PersistentVolumeSpecPersistentVolumeSourceCsi | undefined) {
-    this._csi = value;
+  public putCsi(value: PersistentVolumeSpecPersistentVolumeSourceCsi) {
+    this._csi.internalValue = value;
   }
   public resetCsi() {
-    this._csi = undefined;
+    this._csi.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get csiInput() {
-    return this._csi
+    return this._csi.internalValue;
   }
 
   // fc - computed: false, optional: true, required: false
-  private _fc?: PersistentVolumeSpecPersistentVolumeSourceFc | undefined; 
-  private __fcOutput = new PersistentVolumeSpecPersistentVolumeSourceFcOutputReference(this as any, "fc", true);
+  private _fc = new PersistentVolumeSpecPersistentVolumeSourceFcOutputReference(this as any, "fc", true);
   public get fc() {
-    return this.__fcOutput;
+    return this._fc;
   }
-  public putFc(value: PersistentVolumeSpecPersistentVolumeSourceFc | undefined) {
-    this._fc = value;
+  public putFc(value: PersistentVolumeSpecPersistentVolumeSourceFc) {
+    this._fc.internalValue = value;
   }
   public resetFc() {
-    this._fc = undefined;
+    this._fc.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get fcInput() {
-    return this._fc
+    return this._fc.internalValue;
   }
 
   // flex_volume - computed: false, optional: true, required: false
-  private _flexVolume?: PersistentVolumeSpecPersistentVolumeSourceFlexVolume | undefined; 
-  private __flexVolumeOutput = new PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference(this as any, "flex_volume", true);
+  private _flexVolume = new PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference(this as any, "flex_volume", true);
   public get flexVolume() {
-    return this.__flexVolumeOutput;
+    return this._flexVolume;
   }
-  public putFlexVolume(value: PersistentVolumeSpecPersistentVolumeSourceFlexVolume | undefined) {
-    this._flexVolume = value;
+  public putFlexVolume(value: PersistentVolumeSpecPersistentVolumeSourceFlexVolume) {
+    this._flexVolume.internalValue = value;
   }
   public resetFlexVolume() {
-    this._flexVolume = undefined;
+    this._flexVolume.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get flexVolumeInput() {
-    return this._flexVolume
+    return this._flexVolume.internalValue;
   }
 
   // flocker - computed: false, optional: true, required: false
-  private _flocker?: PersistentVolumeSpecPersistentVolumeSourceFlocker | undefined; 
-  private __flockerOutput = new PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference(this as any, "flocker", true);
+  private _flocker = new PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference(this as any, "flocker", true);
   public get flocker() {
-    return this.__flockerOutput;
+    return this._flocker;
   }
-  public putFlocker(value: PersistentVolumeSpecPersistentVolumeSourceFlocker | undefined) {
-    this._flocker = value;
+  public putFlocker(value: PersistentVolumeSpecPersistentVolumeSourceFlocker) {
+    this._flocker.internalValue = value;
   }
   public resetFlocker() {
-    this._flocker = undefined;
+    this._flocker.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get flockerInput() {
-    return this._flocker
+    return this._flocker.internalValue;
   }
 
   // gce_persistent_disk - computed: false, optional: true, required: false
-  private _gcePersistentDisk?: PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk | undefined; 
-  private __gcePersistentDiskOutput = new PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputReference(this as any, "gce_persistent_disk", true);
+  private _gcePersistentDisk = new PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputReference(this as any, "gce_persistent_disk", true);
   public get gcePersistentDisk() {
-    return this.__gcePersistentDiskOutput;
+    return this._gcePersistentDisk;
   }
-  public putGcePersistentDisk(value: PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk | undefined) {
-    this._gcePersistentDisk = value;
+  public putGcePersistentDisk(value: PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk) {
+    this._gcePersistentDisk.internalValue = value;
   }
   public resetGcePersistentDisk() {
-    this._gcePersistentDisk = undefined;
+    this._gcePersistentDisk.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get gcePersistentDiskInput() {
-    return this._gcePersistentDisk
+    return this._gcePersistentDisk.internalValue;
   }
 
   // glusterfs - computed: false, optional: true, required: false
-  private _glusterfs?: PersistentVolumeSpecPersistentVolumeSourceGlusterfs | undefined; 
-  private __glusterfsOutput = new PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference(this as any, "glusterfs", true);
+  private _glusterfs = new PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference(this as any, "glusterfs", true);
   public get glusterfs() {
-    return this.__glusterfsOutput;
+    return this._glusterfs;
   }
-  public putGlusterfs(value: PersistentVolumeSpecPersistentVolumeSourceGlusterfs | undefined) {
-    this._glusterfs = value;
+  public putGlusterfs(value: PersistentVolumeSpecPersistentVolumeSourceGlusterfs) {
+    this._glusterfs.internalValue = value;
   }
   public resetGlusterfs() {
-    this._glusterfs = undefined;
+    this._glusterfs.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get glusterfsInput() {
-    return this._glusterfs
+    return this._glusterfs.internalValue;
   }
 
   // host_path - computed: false, optional: true, required: false
-  private _hostPath?: PersistentVolumeSpecPersistentVolumeSourceHostPath | undefined; 
-  private __hostPathOutput = new PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference(this as any, "host_path", true);
+  private _hostPath = new PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference(this as any, "host_path", true);
   public get hostPath() {
-    return this.__hostPathOutput;
+    return this._hostPath;
   }
-  public putHostPath(value: PersistentVolumeSpecPersistentVolumeSourceHostPath | undefined) {
-    this._hostPath = value;
+  public putHostPath(value: PersistentVolumeSpecPersistentVolumeSourceHostPath) {
+    this._hostPath.internalValue = value;
   }
   public resetHostPath() {
-    this._hostPath = undefined;
+    this._hostPath.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get hostPathInput() {
-    return this._hostPath
+    return this._hostPath.internalValue;
   }
 
   // iscsi - computed: false, optional: true, required: false
-  private _iscsi?: PersistentVolumeSpecPersistentVolumeSourceIscsi | undefined; 
-  private __iscsiOutput = new PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference(this as any, "iscsi", true);
+  private _iscsi = new PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference(this as any, "iscsi", true);
   public get iscsi() {
-    return this.__iscsiOutput;
+    return this._iscsi;
   }
-  public putIscsi(value: PersistentVolumeSpecPersistentVolumeSourceIscsi | undefined) {
-    this._iscsi = value;
+  public putIscsi(value: PersistentVolumeSpecPersistentVolumeSourceIscsi) {
+    this._iscsi.internalValue = value;
   }
   public resetIscsi() {
-    this._iscsi = undefined;
+    this._iscsi.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get iscsiInput() {
-    return this._iscsi
+    return this._iscsi.internalValue;
   }
 
   // local - computed: false, optional: true, required: false
-  private _local?: PersistentVolumeSpecPersistentVolumeSourceLocal | undefined; 
-  private __localOutput = new PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference(this as any, "local", true);
+  private _local = new PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference(this as any, "local", true);
   public get local() {
-    return this.__localOutput;
+    return this._local;
   }
-  public putLocal(value: PersistentVolumeSpecPersistentVolumeSourceLocal | undefined) {
-    this._local = value;
+  public putLocal(value: PersistentVolumeSpecPersistentVolumeSourceLocal) {
+    this._local.internalValue = value;
   }
   public resetLocal() {
-    this._local = undefined;
+    this._local.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get localInput() {
-    return this._local
+    return this._local.internalValue;
   }
 
   // nfs - computed: false, optional: true, required: false
-  private _nfs?: PersistentVolumeSpecPersistentVolumeSourceNfs | undefined; 
-  private __nfsOutput = new PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference(this as any, "nfs", true);
+  private _nfs = new PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference(this as any, "nfs", true);
   public get nfs() {
-    return this.__nfsOutput;
+    return this._nfs;
   }
-  public putNfs(value: PersistentVolumeSpecPersistentVolumeSourceNfs | undefined) {
-    this._nfs = value;
+  public putNfs(value: PersistentVolumeSpecPersistentVolumeSourceNfs) {
+    this._nfs.internalValue = value;
   }
   public resetNfs() {
-    this._nfs = undefined;
+    this._nfs.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get nfsInput() {
-    return this._nfs
+    return this._nfs.internalValue;
   }
 
   // photon_persistent_disk - computed: false, optional: true, required: false
-  private _photonPersistentDisk?: PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk | undefined; 
-  private __photonPersistentDiskOutput = new PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutputReference(this as any, "photon_persistent_disk", true);
+  private _photonPersistentDisk = new PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutputReference(this as any, "photon_persistent_disk", true);
   public get photonPersistentDisk() {
-    return this.__photonPersistentDiskOutput;
+    return this._photonPersistentDisk;
   }
-  public putPhotonPersistentDisk(value: PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk | undefined) {
-    this._photonPersistentDisk = value;
+  public putPhotonPersistentDisk(value: PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk) {
+    this._photonPersistentDisk.internalValue = value;
   }
   public resetPhotonPersistentDisk() {
-    this._photonPersistentDisk = undefined;
+    this._photonPersistentDisk.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get photonPersistentDiskInput() {
-    return this._photonPersistentDisk
+    return this._photonPersistentDisk.internalValue;
   }
 
   // quobyte - computed: false, optional: true, required: false
-  private _quobyte?: PersistentVolumeSpecPersistentVolumeSourceQuobyte | undefined; 
-  private __quobyteOutput = new PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference(this as any, "quobyte", true);
+  private _quobyte = new PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference(this as any, "quobyte", true);
   public get quobyte() {
-    return this.__quobyteOutput;
+    return this._quobyte;
   }
-  public putQuobyte(value: PersistentVolumeSpecPersistentVolumeSourceQuobyte | undefined) {
-    this._quobyte = value;
+  public putQuobyte(value: PersistentVolumeSpecPersistentVolumeSourceQuobyte) {
+    this._quobyte.internalValue = value;
   }
   public resetQuobyte() {
-    this._quobyte = undefined;
+    this._quobyte.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get quobyteInput() {
-    return this._quobyte
+    return this._quobyte.internalValue;
   }
 
   // rbd - computed: false, optional: true, required: false
-  private _rbd?: PersistentVolumeSpecPersistentVolumeSourceRbd | undefined; 
-  private __rbdOutput = new PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference(this as any, "rbd", true);
+  private _rbd = new PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference(this as any, "rbd", true);
   public get rbd() {
-    return this.__rbdOutput;
+    return this._rbd;
   }
-  public putRbd(value: PersistentVolumeSpecPersistentVolumeSourceRbd | undefined) {
-    this._rbd = value;
+  public putRbd(value: PersistentVolumeSpecPersistentVolumeSourceRbd) {
+    this._rbd.internalValue = value;
   }
   public resetRbd() {
-    this._rbd = undefined;
+    this._rbd.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get rbdInput() {
-    return this._rbd
+    return this._rbd.internalValue;
   }
 
   // vsphere_volume - computed: false, optional: true, required: false
-  private _vsphereVolume?: PersistentVolumeSpecPersistentVolumeSourceVsphereVolume | undefined; 
-  private __vsphereVolumeOutput = new PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputReference(this as any, "vsphere_volume", true);
+  private _vsphereVolume = new PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputReference(this as any, "vsphere_volume", true);
   public get vsphereVolume() {
-    return this.__vsphereVolumeOutput;
+    return this._vsphereVolume;
   }
-  public putVsphereVolume(value: PersistentVolumeSpecPersistentVolumeSourceVsphereVolume | undefined) {
-    this._vsphereVolume = value;
+  public putVsphereVolume(value: PersistentVolumeSpecPersistentVolumeSourceVsphereVolume) {
+    this._vsphereVolume.internalValue = value;
   }
   public resetVsphereVolume() {
-    this._vsphereVolume = undefined;
+    this._vsphereVolume.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get vsphereVolumeInput() {
-    return this._vsphereVolume
+    return this._vsphereVolume.internalValue;
   }
 }
 export interface PersistentVolumeSpec {
@@ -3542,7 +4632,7 @@ export interface PersistentVolumeSpec {
   readonly persistentVolumeSource: PersistentVolumeSpecPersistentVolumeSource;
 }
 
-function persistentVolumeSpecToTerraform(struct?: PersistentVolumeSpec): any {
+export function persistentVolumeSpecToTerraform(struct?: PersistentVolumeSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3567,7 +4657,7 @@ export interface PersistentVolumeTimeouts {
   readonly create?: string;
 }
 
-function persistentVolumeTimeoutsToTerraform(struct?: PersistentVolumeTimeoutsOutputReference | PersistentVolumeTimeouts): any {
+export function persistentVolumeTimeoutsToTerraform(struct?: PersistentVolumeTimeoutsOutputReference | PersistentVolumeTimeouts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -3587,12 +4677,31 @@ export class PersistentVolumeTimeoutsOutputReference extends cdktf.ComplexObject
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PersistentVolumeTimeouts | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._create) {
+      hasAnyValues = true;
+      internalValueResult.create = this._create;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeTimeouts | undefined) {
+    if (value === undefined) {
+      this._create = undefined;
+    }
+    else {
+      this._create = value.create;
+    }
+  }
+
   // create - computed: false, optional: true, required: false
-  private _create?: string | undefined; 
+  private _create?: string; 
   public get create() {
     return this.getStringAttribute('create');
   }
-  public set create(value: string | undefined) {
+  public set create(value: string) {
     this._create = value;
   }
   public resetCreate() {
@@ -3600,7 +4709,7 @@ export class PersistentVolumeTimeoutsOutputReference extends cdktf.ComplexObject
   }
   // Temporarily expose input value. Use with caution.
   public get createInput() {
-    return this._create
+    return this._create;
   }
 }
 
@@ -3636,9 +4745,9 @@ export class PersistentVolume extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._metadata = config.metadata;
+    this._metadata.internalValue = config.metadata;
     this._spec = config.spec;
-    this._timeouts = config.timeouts;
+    this._timeouts.internalValue = config.timeouts;
   }
 
   // ==========
@@ -3651,17 +4760,16 @@ export class PersistentVolume extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: PersistentVolumeMetadata; 
-  private __metadataOutput = new PersistentVolumeMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new PersistentVolumeMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: PersistentVolumeMetadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
@@ -3675,24 +4783,23 @@ export class PersistentVolume extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec;
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts?: PersistentVolumeTimeouts | undefined; 
-  private __timeoutsOutput = new PersistentVolumeTimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new PersistentVolumeTimeoutsOutputReference(this as any, "timeouts", true);
   public get timeouts() {
-    return this.__timeoutsOutput;
+    return this._timeouts;
   }
-  public putTimeouts(value: PersistentVolumeTimeouts | undefined) {
-    this._timeouts = value;
+  public putTimeouts(value: PersistentVolumeTimeouts) {
+    this._timeouts.internalValue = value;
   }
   public resetTimeouts() {
-    this._timeouts = undefined;
+    this._timeouts.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutsInput() {
-    return this._timeouts
+    return this._timeouts.internalValue;
   }
 
   // =========
@@ -3701,9 +4808,9 @@ export class PersistentVolume extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: persistentVolumeMetadataToTerraform(this._metadata),
+      metadata: persistentVolumeMetadataToTerraform(this._metadata.internalValue),
       spec: cdktf.listMapper(persistentVolumeSpecToTerraform)(this._spec),
-      timeouts: persistentVolumeTimeoutsToTerraform(this._timeouts),
+      timeouts: persistentVolumeTimeoutsToTerraform(this._timeouts.internalValue),
     };
   }
 }

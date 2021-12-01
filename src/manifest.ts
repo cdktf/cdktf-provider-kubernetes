@@ -51,7 +51,7 @@ export interface ManifestWaitFor {
   readonly fields?: { [key: string]: string } | cdktf.IResolvable;
 }
 
-function manifestWaitForToTerraform(struct?: ManifestWaitFor): any {
+export function manifestWaitForToTerraform(struct?: ManifestWaitFor): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -76,7 +76,7 @@ export interface ManifestFieldManager {
   readonly name?: string;
 }
 
-function manifestFieldManagerToTerraform(struct?: ManifestFieldManagerOutputReference | ManifestFieldManager): any {
+export function manifestFieldManagerToTerraform(struct?: ManifestFieldManagerOutputReference | ManifestFieldManager): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -97,12 +97,37 @@ export class ManifestFieldManagerOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ManifestFieldManager | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._forceConflicts) {
+      hasAnyValues = true;
+      internalValueResult.forceConflicts = this._forceConflicts;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ManifestFieldManager | undefined) {
+    if (value === undefined) {
+      this._forceConflicts = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._forceConflicts = value.forceConflicts;
+      this._name = value.name;
+    }
+  }
+
   // force_conflicts - computed: false, optional: true, required: false
-  private _forceConflicts?: boolean | cdktf.IResolvable | undefined; 
+  private _forceConflicts?: boolean | cdktf.IResolvable; 
   public get forceConflicts() {
     return this.getBooleanAttribute('force_conflicts') as any;
   }
-  public set forceConflicts(value: boolean | cdktf.IResolvable | undefined) {
+  public set forceConflicts(value: boolean | cdktf.IResolvable) {
     this._forceConflicts = value;
   }
   public resetForceConflicts() {
@@ -110,15 +135,15 @@ export class ManifestFieldManagerOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get forceConflictsInput() {
-    return this._forceConflicts
+    return this._forceConflicts;
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -126,7 +151,7 @@ export class ManifestFieldManagerOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 export interface ManifestTimeouts {
@@ -150,7 +175,7 @@ export interface ManifestTimeouts {
   readonly update?: string;
 }
 
-function manifestTimeoutsToTerraform(struct?: ManifestTimeoutsOutputReference | ManifestTimeouts): any {
+export function manifestTimeoutsToTerraform(struct?: ManifestTimeoutsOutputReference | ManifestTimeouts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -172,12 +197,43 @@ export class ManifestTimeoutsOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ManifestTimeouts | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._create) {
+      hasAnyValues = true;
+      internalValueResult.create = this._create;
+    }
+    if (this._delete) {
+      hasAnyValues = true;
+      internalValueResult.delete = this._delete;
+    }
+    if (this._update) {
+      hasAnyValues = true;
+      internalValueResult.update = this._update;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ManifestTimeouts | undefined) {
+    if (value === undefined) {
+      this._create = undefined;
+      this._delete = undefined;
+      this._update = undefined;
+    }
+    else {
+      this._create = value.create;
+      this._delete = value.delete;
+      this._update = value.update;
+    }
+  }
+
   // create - computed: false, optional: true, required: false
-  private _create?: string | undefined; 
+  private _create?: string; 
   public get create() {
     return this.getStringAttribute('create');
   }
-  public set create(value: string | undefined) {
+  public set create(value: string) {
     this._create = value;
   }
   public resetCreate() {
@@ -185,15 +241,15 @@ export class ManifestTimeoutsOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get createInput() {
-    return this._create
+    return this._create;
   }
 
   // delete - computed: false, optional: true, required: false
-  private _delete?: string | undefined; 
+  private _delete?: string; 
   public get delete() {
     return this.getStringAttribute('delete');
   }
-  public set delete(value: string | undefined) {
+  public set delete(value: string) {
     this._delete = value;
   }
   public resetDelete() {
@@ -201,15 +257,15 @@ export class ManifestTimeoutsOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get deleteInput() {
-    return this._delete
+    return this._delete;
   }
 
   // update - computed: false, optional: true, required: false
-  private _update?: string | undefined; 
+  private _update?: string; 
   public get update() {
     return this.getStringAttribute('update');
   }
-  public set update(value: string | undefined) {
+  public set update(value: string) {
     this._update = value;
   }
   public resetUpdate() {
@@ -217,7 +273,7 @@ export class ManifestTimeoutsOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get updateInput() {
-    return this._update
+    return this._update;
   }
 }
 
@@ -257,8 +313,8 @@ export class Manifest extends cdktf.TerraformResource {
     this._manifest = config.manifest;
     this._object = config.object;
     this._waitFor = config.waitFor;
-    this._fieldManager = config.fieldManager;
-    this._timeouts = config.timeouts;
+    this._fieldManager.internalValue = config.fieldManager;
+    this._timeouts.internalValue = config.timeouts;
   }
 
   // ==========
@@ -266,11 +322,11 @@ export class Manifest extends cdktf.TerraformResource {
   // ==========
 
   // computed_fields - computed: false, optional: true, required: false
-  private _computedFields?: string[] | undefined; 
+  private _computedFields?: string[]; 
   public get computedFields() {
     return this.getListAttribute('computed_fields');
   }
-  public set computedFields(value: string[] | undefined) {
+  public set computedFields(value: string[]) {
     this._computedFields = value;
   }
   public resetComputedFields() {
@@ -278,7 +334,7 @@ export class Manifest extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get computedFieldsInput() {
-    return this._computedFields
+    return this._computedFields;
   }
 
   // manifest - computed: false, optional: false, required: true
@@ -292,16 +348,16 @@ export class Manifest extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get manifestInput() {
-    return this._manifest
+    return this._manifest;
   }
 
   // object - computed: true, optional: true, required: false
-  private _object?: { [key: string]: any } | cdktf.IResolvable | undefined; 
+  private _object?: { [key: string]: any } | cdktf.IResolvable; 
   public get object() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('object') as any;
   }
-  public set object(value: { [key: string]: any } | cdktf.IResolvable | undefined) {
+  public set object(value: { [key: string]: any } | cdktf.IResolvable) {
     this._object = value;
   }
   public resetObject() {
@@ -309,16 +365,16 @@ export class Manifest extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get objectInput() {
-    return this._object
+    return this._object;
   }
 
   // wait_for - computed: false, optional: true, required: false
-  private _waitFor?: ManifestWaitFor | undefined; 
+  private _waitFor?: ManifestWaitFor; 
   public get waitFor() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('wait_for') as any;
   }
-  public set waitFor(value: ManifestWaitFor | undefined) {
+  public set waitFor(value: ManifestWaitFor) {
     this._waitFor = value;
   }
   public resetWaitFor() {
@@ -326,41 +382,39 @@ export class Manifest extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get waitForInput() {
-    return this._waitFor
+    return this._waitFor;
   }
 
   // field_manager - computed: false, optional: true, required: false
-  private _fieldManager?: ManifestFieldManager | undefined; 
-  private __fieldManagerOutput = new ManifestFieldManagerOutputReference(this as any, "field_manager", true);
+  private _fieldManager = new ManifestFieldManagerOutputReference(this as any, "field_manager", true);
   public get fieldManager() {
-    return this.__fieldManagerOutput;
+    return this._fieldManager;
   }
-  public putFieldManager(value: ManifestFieldManager | undefined) {
-    this._fieldManager = value;
+  public putFieldManager(value: ManifestFieldManager) {
+    this._fieldManager.internalValue = value;
   }
   public resetFieldManager() {
-    this._fieldManager = undefined;
+    this._fieldManager.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get fieldManagerInput() {
-    return this._fieldManager
+    return this._fieldManager.internalValue;
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts?: ManifestTimeouts | undefined; 
-  private __timeoutsOutput = new ManifestTimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new ManifestTimeoutsOutputReference(this as any, "timeouts", true);
   public get timeouts() {
-    return this.__timeoutsOutput;
+    return this._timeouts;
   }
-  public putTimeouts(value: ManifestTimeouts | undefined) {
-    this._timeouts = value;
+  public putTimeouts(value: ManifestTimeouts) {
+    this._timeouts.internalValue = value;
   }
   public resetTimeouts() {
-    this._timeouts = undefined;
+    this._timeouts.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutsInput() {
-    return this._timeouts
+    return this._timeouts.internalValue;
   }
 
   // =========
@@ -373,8 +427,8 @@ export class Manifest extends cdktf.TerraformResource {
       manifest: cdktf.hashMapper(cdktf.anyToTerraform)(this._manifest),
       object: cdktf.hashMapper(cdktf.anyToTerraform)(this._object),
       wait_for: manifestWaitForToTerraform(this._waitFor),
-      field_manager: manifestFieldManagerToTerraform(this._fieldManager),
-      timeouts: manifestTimeoutsToTerraform(this._timeouts),
+      field_manager: manifestFieldManagerToTerraform(this._fieldManager.internalValue),
+      timeouts: manifestTimeoutsToTerraform(this._timeouts.internalValue),
     };
   }
 }

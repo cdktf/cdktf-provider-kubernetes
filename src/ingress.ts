@@ -87,7 +87,7 @@ export interface IngressMetadata {
   readonly namespace?: string;
 }
 
-function ingressMetadataToTerraform(struct?: IngressMetadataOutputReference | IngressMetadata): any {
+export function ingressMetadataToTerraform(struct?: IngressMetadataOutputReference | IngressMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -111,13 +111,56 @@ export class IngressMetadataOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): IngressMetadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: IngressMetadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -125,15 +168,15 @@ export class IngressMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -141,16 +184,16 @@ export class IngressMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -158,15 +201,15 @@ export class IngressMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -174,15 +217,15 @@ export class IngressMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -190,7 +233,7 @@ export class IngressMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface IngressSpecBackend {
@@ -208,7 +251,7 @@ export interface IngressSpecBackend {
   readonly servicePort?: string;
 }
 
-function ingressSpecBackendToTerraform(struct?: IngressSpecBackendOutputReference | IngressSpecBackend): any {
+export function ingressSpecBackendToTerraform(struct?: IngressSpecBackendOutputReference | IngressSpecBackend): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -229,12 +272,37 @@ export class IngressSpecBackendOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): IngressSpecBackend | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._serviceName) {
+      hasAnyValues = true;
+      internalValueResult.serviceName = this._serviceName;
+    }
+    if (this._servicePort) {
+      hasAnyValues = true;
+      internalValueResult.servicePort = this._servicePort;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: IngressSpecBackend | undefined) {
+    if (value === undefined) {
+      this._serviceName = undefined;
+      this._servicePort = undefined;
+    }
+    else {
+      this._serviceName = value.serviceName;
+      this._servicePort = value.servicePort;
+    }
+  }
+
   // service_name - computed: false, optional: true, required: false
-  private _serviceName?: string | undefined; 
+  private _serviceName?: string; 
   public get serviceName() {
     return this.getStringAttribute('service_name');
   }
-  public set serviceName(value: string | undefined) {
+  public set serviceName(value: string) {
     this._serviceName = value;
   }
   public resetServiceName() {
@@ -242,15 +310,15 @@ export class IngressSpecBackendOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get serviceNameInput() {
-    return this._serviceName
+    return this._serviceName;
   }
 
   // service_port - computed: true, optional: true, required: false
-  private _servicePort?: string | undefined; 
+  private _servicePort?: string; 
   public get servicePort() {
     return this.getStringAttribute('service_port');
   }
-  public set servicePort(value: string | undefined) {
+  public set servicePort(value: string) {
     this._servicePort = value;
   }
   public resetServicePort() {
@@ -258,7 +326,7 @@ export class IngressSpecBackendOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get servicePortInput() {
-    return this._servicePort
+    return this._servicePort;
   }
 }
 export interface IngressSpecRuleHttpPathBackend {
@@ -276,7 +344,7 @@ export interface IngressSpecRuleHttpPathBackend {
   readonly servicePort?: string;
 }
 
-function ingressSpecRuleHttpPathBackendToTerraform(struct?: IngressSpecRuleHttpPathBackendOutputReference | IngressSpecRuleHttpPathBackend): any {
+export function ingressSpecRuleHttpPathBackendToTerraform(struct?: IngressSpecRuleHttpPathBackendOutputReference | IngressSpecRuleHttpPathBackend): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -297,12 +365,37 @@ export class IngressSpecRuleHttpPathBackendOutputReference extends cdktf.Complex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): IngressSpecRuleHttpPathBackend | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._serviceName) {
+      hasAnyValues = true;
+      internalValueResult.serviceName = this._serviceName;
+    }
+    if (this._servicePort) {
+      hasAnyValues = true;
+      internalValueResult.servicePort = this._servicePort;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: IngressSpecRuleHttpPathBackend | undefined) {
+    if (value === undefined) {
+      this._serviceName = undefined;
+      this._servicePort = undefined;
+    }
+    else {
+      this._serviceName = value.serviceName;
+      this._servicePort = value.servicePort;
+    }
+  }
+
   // service_name - computed: false, optional: true, required: false
-  private _serviceName?: string | undefined; 
+  private _serviceName?: string; 
   public get serviceName() {
     return this.getStringAttribute('service_name');
   }
-  public set serviceName(value: string | undefined) {
+  public set serviceName(value: string) {
     this._serviceName = value;
   }
   public resetServiceName() {
@@ -310,15 +403,15 @@ export class IngressSpecRuleHttpPathBackendOutputReference extends cdktf.Complex
   }
   // Temporarily expose input value. Use with caution.
   public get serviceNameInput() {
-    return this._serviceName
+    return this._serviceName;
   }
 
   // service_port - computed: true, optional: true, required: false
-  private _servicePort?: string | undefined; 
+  private _servicePort?: string; 
   public get servicePort() {
     return this.getStringAttribute('service_port');
   }
-  public set servicePort(value: string | undefined) {
+  public set servicePort(value: string) {
     this._servicePort = value;
   }
   public resetServicePort() {
@@ -326,7 +419,7 @@ export class IngressSpecRuleHttpPathBackendOutputReference extends cdktf.Complex
   }
   // Temporarily expose input value. Use with caution.
   public get servicePortInput() {
-    return this._servicePort
+    return this._servicePort;
   }
 }
 export interface IngressSpecRuleHttpPath {
@@ -344,7 +437,7 @@ export interface IngressSpecRuleHttpPath {
   readonly backend?: IngressSpecRuleHttpPathBackend;
 }
 
-function ingressSpecRuleHttpPathToTerraform(struct?: IngressSpecRuleHttpPath): any {
+export function ingressSpecRuleHttpPathToTerraform(struct?: IngressSpecRuleHttpPath): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -364,7 +457,7 @@ export interface IngressSpecRuleHttp {
   readonly path: IngressSpecRuleHttpPath[];
 }
 
-function ingressSpecRuleHttpToTerraform(struct?: IngressSpecRuleHttpOutputReference | IngressSpecRuleHttp): any {
+export function ingressSpecRuleHttpToTerraform(struct?: IngressSpecRuleHttpOutputReference | IngressSpecRuleHttp): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -384,6 +477,25 @@ export class IngressSpecRuleHttpOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): IngressSpecRuleHttp | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: IngressSpecRuleHttp | undefined) {
+    if (value === undefined) {
+      this._path = undefined;
+    }
+    else {
+      this._path = value.path;
+    }
+  }
+
   // path - computed: false, optional: false, required: true
   private _path?: IngressSpecRuleHttpPath[]; 
   public get path() {
@@ -395,7 +507,7 @@ export class IngressSpecRuleHttpOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 }
 export interface IngressSpecRule {
@@ -420,7 +532,7 @@ Host can be "precise" which is a domain name without the terminating dot of a ne
   readonly http: IngressSpecRuleHttp;
 }
 
-function ingressSpecRuleToTerraform(struct?: IngressSpecRule): any {
+export function ingressSpecRuleToTerraform(struct?: IngressSpecRule): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -446,7 +558,7 @@ export interface IngressSpecTls {
   readonly secretName?: string;
 }
 
-function ingressSpecTlsToTerraform(struct?: IngressSpecTls): any {
+export function ingressSpecTlsToTerraform(struct?: IngressSpecTls): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -484,7 +596,7 @@ export interface IngressSpec {
   readonly tls?: IngressSpecTls[];
 }
 
-function ingressSpecToTerraform(struct?: IngressSpecOutputReference | IngressSpec): any {
+export function ingressSpecToTerraform(struct?: IngressSpecOutputReference | IngressSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -507,12 +619,49 @@ export class IngressSpecOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): IngressSpec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._ingressClassName) {
+      hasAnyValues = true;
+      internalValueResult.ingressClassName = this._ingressClassName;
+    }
+    if (this._backend) {
+      hasAnyValues = true;
+      internalValueResult.backend = this._backend?.internalValue;
+    }
+    if (this._rule) {
+      hasAnyValues = true;
+      internalValueResult.rule = this._rule;
+    }
+    if (this._tls) {
+      hasAnyValues = true;
+      internalValueResult.tls = this._tls;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: IngressSpec | undefined) {
+    if (value === undefined) {
+      this._ingressClassName = undefined;
+      this._backend.internalValue = undefined;
+      this._rule = undefined;
+      this._tls = undefined;
+    }
+    else {
+      this._ingressClassName = value.ingressClassName;
+      this._backend.internalValue = value.backend;
+      this._rule = value.rule;
+      this._tls = value.tls;
+    }
+  }
+
   // ingress_class_name - computed: false, optional: true, required: false
-  private _ingressClassName?: string | undefined; 
+  private _ingressClassName?: string; 
   public get ingressClassName() {
     return this.getStringAttribute('ingress_class_name');
   }
-  public set ingressClassName(value: string | undefined) {
+  public set ingressClassName(value: string) {
     this._ingressClassName = value;
   }
   public resetIngressClassName() {
@@ -520,33 +669,32 @@ export class IngressSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get ingressClassNameInput() {
-    return this._ingressClassName
+    return this._ingressClassName;
   }
 
   // backend - computed: false, optional: true, required: false
-  private _backend?: IngressSpecBackend | undefined; 
-  private __backendOutput = new IngressSpecBackendOutputReference(this as any, "backend", true);
+  private _backend = new IngressSpecBackendOutputReference(this as any, "backend", true);
   public get backend() {
-    return this.__backendOutput;
+    return this._backend;
   }
-  public putBackend(value: IngressSpecBackend | undefined) {
-    this._backend = value;
+  public putBackend(value: IngressSpecBackend) {
+    this._backend.internalValue = value;
   }
   public resetBackend() {
-    this._backend = undefined;
+    this._backend.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get backendInput() {
-    return this._backend
+    return this._backend.internalValue;
   }
 
   // rule - computed: false, optional: true, required: false
-  private _rule?: IngressSpecRule[] | undefined; 
+  private _rule?: IngressSpecRule[]; 
   public get rule() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('rule') as any;
   }
-  public set rule(value: IngressSpecRule[] | undefined) {
+  public set rule(value: IngressSpecRule[]) {
     this._rule = value;
   }
   public resetRule() {
@@ -554,16 +702,16 @@ export class IngressSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get ruleInput() {
-    return this._rule
+    return this._rule;
   }
 
   // tls - computed: false, optional: true, required: false
-  private _tls?: IngressSpecTls[] | undefined; 
+  private _tls?: IngressSpecTls[]; 
   public get tls() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tls') as any;
   }
-  public set tls(value: IngressSpecTls[] | undefined) {
+  public set tls(value: IngressSpecTls[]) {
     this._tls = value;
   }
   public resetTls() {
@@ -571,7 +719,7 @@ export class IngressSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get tlsInput() {
-    return this._tls
+    return this._tls;
   }
 }
 
@@ -608,8 +756,8 @@ export class Ingress extends cdktf.TerraformResource {
       lifecycle: config.lifecycle
     });
     this._waitForLoadBalancer = config.waitForLoadBalancer;
-    this._metadata = config.metadata;
-    this._spec = config.spec;
+    this._metadata.internalValue = config.metadata;
+    this._spec.internalValue = config.spec;
   }
 
   // ==========
@@ -627,11 +775,11 @@ export class Ingress extends cdktf.TerraformResource {
   }
 
   // wait_for_load_balancer - computed: false, optional: true, required: false
-  private _waitForLoadBalancer?: boolean | cdktf.IResolvable | undefined; 
+  private _waitForLoadBalancer?: boolean | cdktf.IResolvable; 
   public get waitForLoadBalancer() {
     return this.getBooleanAttribute('wait_for_load_balancer') as any;
   }
-  public set waitForLoadBalancer(value: boolean | cdktf.IResolvable | undefined) {
+  public set waitForLoadBalancer(value: boolean | cdktf.IResolvable) {
     this._waitForLoadBalancer = value;
   }
   public resetWaitForLoadBalancer() {
@@ -639,35 +787,33 @@ export class Ingress extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get waitForLoadBalancerInput() {
-    return this._waitForLoadBalancer
+    return this._waitForLoadBalancer;
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: IngressMetadata; 
-  private __metadataOutput = new IngressMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new IngressMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: IngressMetadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: IngressSpec; 
-  private __specOutput = new IngressSpecOutputReference(this as any, "spec", true);
+  private _spec = new IngressSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
   public putSpec(value: IngressSpec) {
-    this._spec = value;
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 
   // =========
@@ -677,8 +823,8 @@ export class Ingress extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       wait_for_load_balancer: cdktf.booleanToTerraform(this._waitForLoadBalancer),
-      metadata: ingressMetadataToTerraform(this._metadata),
-      spec: ingressSpecToTerraform(this._spec),
+      metadata: ingressMetadataToTerraform(this._metadata.internalValue),
+      spec: ingressSpecToTerraform(this._spec.internalValue),
     };
   }
 }

@@ -53,7 +53,7 @@ export interface RoleBindingMetadata {
   readonly namespace?: string;
 }
 
-function roleBindingMetadataToTerraform(struct?: RoleBindingMetadataOutputReference | RoleBindingMetadata): any {
+export function roleBindingMetadataToTerraform(struct?: RoleBindingMetadataOutputReference | RoleBindingMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -76,13 +76,50 @@ export class RoleBindingMetadataOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): RoleBindingMetadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: RoleBindingMetadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -90,16 +127,16 @@ export class RoleBindingMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -107,15 +144,15 @@ export class RoleBindingMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -123,15 +160,15 @@ export class RoleBindingMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -139,7 +176,7 @@ export class RoleBindingMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface RoleBindingRoleRef {
@@ -163,7 +200,7 @@ export interface RoleBindingRoleRef {
   readonly name: string;
 }
 
-function roleBindingRoleRefToTerraform(struct?: RoleBindingRoleRefOutputReference | RoleBindingRoleRef): any {
+export function roleBindingRoleRefToTerraform(struct?: RoleBindingRoleRefOutputReference | RoleBindingRoleRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -185,6 +222,37 @@ export class RoleBindingRoleRefOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): RoleBindingRoleRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._apiGroup) {
+      hasAnyValues = true;
+      internalValueResult.apiGroup = this._apiGroup;
+    }
+    if (this._kind) {
+      hasAnyValues = true;
+      internalValueResult.kind = this._kind;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: RoleBindingRoleRef | undefined) {
+    if (value === undefined) {
+      this._apiGroup = undefined;
+      this._kind = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._apiGroup = value.apiGroup;
+      this._kind = value.kind;
+      this._name = value.name;
+    }
+  }
+
   // api_group - computed: false, optional: false, required: true
   private _apiGroup?: string; 
   public get apiGroup() {
@@ -195,7 +263,7 @@ export class RoleBindingRoleRefOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get apiGroupInput() {
-    return this._apiGroup
+    return this._apiGroup;
   }
 
   // kind - computed: false, optional: false, required: true
@@ -208,7 +276,7 @@ export class RoleBindingRoleRefOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get kindInput() {
-    return this._kind
+    return this._kind;
   }
 
   // name - computed: false, optional: false, required: true
@@ -221,7 +289,7 @@ export class RoleBindingRoleRefOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 export interface RoleBindingSubject {
@@ -251,7 +319,7 @@ export interface RoleBindingSubject {
   readonly namespace?: string;
 }
 
-function roleBindingSubjectToTerraform(struct?: RoleBindingSubject): any {
+export function roleBindingSubjectToTerraform(struct?: RoleBindingSubject): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -297,8 +365,8 @@ export class RoleBinding extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._metadata = config.metadata;
-    this._roleRef = config.roleRef;
+    this._metadata.internalValue = config.metadata;
+    this._roleRef.internalValue = config.roleRef;
     this._subject = config.subject;
   }
 
@@ -312,31 +380,29 @@ export class RoleBinding extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: RoleBindingMetadata; 
-  private __metadataOutput = new RoleBindingMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new RoleBindingMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: RoleBindingMetadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // role_ref - computed: false, optional: false, required: true
-  private _roleRef?: RoleBindingRoleRef; 
-  private __roleRefOutput = new RoleBindingRoleRefOutputReference(this as any, "role_ref", true);
+  private _roleRef = new RoleBindingRoleRefOutputReference(this as any, "role_ref", true);
   public get roleRef() {
-    return this.__roleRefOutput;
+    return this._roleRef;
   }
   public putRoleRef(value: RoleBindingRoleRef) {
-    this._roleRef = value;
+    this._roleRef.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get roleRefInput() {
-    return this._roleRef
+    return this._roleRef.internalValue;
   }
 
   // subject - computed: false, optional: false, required: true
@@ -350,7 +416,7 @@ export class RoleBinding extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get subjectInput() {
-    return this._subject
+    return this._subject;
   }
 
   // =========
@@ -359,8 +425,8 @@ export class RoleBinding extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: roleBindingMetadataToTerraform(this._metadata),
-      role_ref: roleBindingRoleRefToTerraform(this._roleRef),
+      metadata: roleBindingMetadataToTerraform(this._metadata.internalValue),
+      role_ref: roleBindingRoleRefToTerraform(this._roleRef.internalValue),
       subject: cdktf.listMapper(roleBindingSubjectToTerraform)(this._subject),
     };
   }
