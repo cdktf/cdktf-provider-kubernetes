@@ -59,7 +59,7 @@ export interface ResourceQuotaV1Metadata {
   readonly namespace?: string;
 }
 
-function resourceQuotaV1MetadataToTerraform(struct?: ResourceQuotaV1MetadataOutputReference | ResourceQuotaV1Metadata): any {
+export function resourceQuotaV1MetadataToTerraform(struct?: ResourceQuotaV1MetadataOutputReference | ResourceQuotaV1Metadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -83,13 +83,56 @@ export class ResourceQuotaV1MetadataOutputReference extends cdktf.ComplexObject 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ResourceQuotaV1Metadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ResourceQuotaV1Metadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -97,15 +140,15 @@ export class ResourceQuotaV1MetadataOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -113,16 +156,16 @@ export class ResourceQuotaV1MetadataOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -130,15 +173,15 @@ export class ResourceQuotaV1MetadataOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -146,15 +189,15 @@ export class ResourceQuotaV1MetadataOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -162,7 +205,7 @@ export class ResourceQuotaV1MetadataOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface ResourceQuotaV1SpecScopeSelectorMatchExpression {
@@ -186,7 +229,7 @@ export interface ResourceQuotaV1SpecScopeSelectorMatchExpression {
   readonly values?: string[];
 }
 
-function resourceQuotaV1SpecScopeSelectorMatchExpressionToTerraform(struct?: ResourceQuotaV1SpecScopeSelectorMatchExpression): any {
+export function resourceQuotaV1SpecScopeSelectorMatchExpressionToTerraform(struct?: ResourceQuotaV1SpecScopeSelectorMatchExpression): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -207,7 +250,7 @@ export interface ResourceQuotaV1SpecScopeSelector {
   readonly matchExpression?: ResourceQuotaV1SpecScopeSelectorMatchExpression[];
 }
 
-function resourceQuotaV1SpecScopeSelectorToTerraform(struct?: ResourceQuotaV1SpecScopeSelectorOutputReference | ResourceQuotaV1SpecScopeSelector): any {
+export function resourceQuotaV1SpecScopeSelectorToTerraform(struct?: ResourceQuotaV1SpecScopeSelectorOutputReference | ResourceQuotaV1SpecScopeSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -227,13 +270,32 @@ export class ResourceQuotaV1SpecScopeSelectorOutputReference extends cdktf.Compl
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ResourceQuotaV1SpecScopeSelector | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._matchExpression) {
+      hasAnyValues = true;
+      internalValueResult.matchExpression = this._matchExpression;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ResourceQuotaV1SpecScopeSelector | undefined) {
+    if (value === undefined) {
+      this._matchExpression = undefined;
+    }
+    else {
+      this._matchExpression = value.matchExpression;
+    }
+  }
+
   // match_expression - computed: false, optional: true, required: false
-  private _matchExpression?: ResourceQuotaV1SpecScopeSelectorMatchExpression[] | undefined; 
+  private _matchExpression?: ResourceQuotaV1SpecScopeSelectorMatchExpression[]; 
   public get matchExpression() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expression') as any;
   }
-  public set matchExpression(value: ResourceQuotaV1SpecScopeSelectorMatchExpression[] | undefined) {
+  public set matchExpression(value: ResourceQuotaV1SpecScopeSelectorMatchExpression[]) {
     this._matchExpression = value;
   }
   public resetMatchExpression() {
@@ -241,7 +303,7 @@ export class ResourceQuotaV1SpecScopeSelectorOutputReference extends cdktf.Compl
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionInput() {
-    return this._matchExpression
+    return this._matchExpression;
   }
 }
 export interface ResourceQuotaV1Spec {
@@ -265,7 +327,7 @@ export interface ResourceQuotaV1Spec {
   readonly scopeSelector?: ResourceQuotaV1SpecScopeSelector;
 }
 
-function resourceQuotaV1SpecToTerraform(struct?: ResourceQuotaV1SpecOutputReference | ResourceQuotaV1Spec): any {
+export function resourceQuotaV1SpecToTerraform(struct?: ResourceQuotaV1SpecOutputReference | ResourceQuotaV1Spec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -287,13 +349,44 @@ export class ResourceQuotaV1SpecOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ResourceQuotaV1Spec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._hard) {
+      hasAnyValues = true;
+      internalValueResult.hard = this._hard;
+    }
+    if (this._scopes) {
+      hasAnyValues = true;
+      internalValueResult.scopes = this._scopes;
+    }
+    if (this._scopeSelector) {
+      hasAnyValues = true;
+      internalValueResult.scopeSelector = this._scopeSelector?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ResourceQuotaV1Spec | undefined) {
+    if (value === undefined) {
+      this._hard = undefined;
+      this._scopes = undefined;
+      this._scopeSelector.internalValue = undefined;
+    }
+    else {
+      this._hard = value.hard;
+      this._scopes = value.scopes;
+      this._scopeSelector.internalValue = value.scopeSelector;
+    }
+  }
+
   // hard - computed: false, optional: true, required: false
-  private _hard?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _hard?: { [key: string]: string } | cdktf.IResolvable; 
   public get hard() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('hard') as any;
   }
-  public set hard(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set hard(value: { [key: string]: string } | cdktf.IResolvable) {
     this._hard = value;
   }
   public resetHard() {
@@ -301,15 +394,15 @@ export class ResourceQuotaV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get hardInput() {
-    return this._hard
+    return this._hard;
   }
 
   // scopes - computed: false, optional: true, required: false
-  private _scopes?: string[] | undefined; 
+  private _scopes?: string[]; 
   public get scopes() {
     return this.getListAttribute('scopes');
   }
-  public set scopes(value: string[] | undefined) {
+  public set scopes(value: string[]) {
     this._scopes = value;
   }
   public resetScopes() {
@@ -317,24 +410,23 @@ export class ResourceQuotaV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get scopesInput() {
-    return this._scopes
+    return this._scopes;
   }
 
   // scope_selector - computed: false, optional: true, required: false
-  private _scopeSelector?: ResourceQuotaV1SpecScopeSelector | undefined; 
-  private __scopeSelectorOutput = new ResourceQuotaV1SpecScopeSelectorOutputReference(this as any, "scope_selector", true);
+  private _scopeSelector = new ResourceQuotaV1SpecScopeSelectorOutputReference(this as any, "scope_selector", true);
   public get scopeSelector() {
-    return this.__scopeSelectorOutput;
+    return this._scopeSelector;
   }
-  public putScopeSelector(value: ResourceQuotaV1SpecScopeSelector | undefined) {
-    this._scopeSelector = value;
+  public putScopeSelector(value: ResourceQuotaV1SpecScopeSelector) {
+    this._scopeSelector.internalValue = value;
   }
   public resetScopeSelector() {
-    this._scopeSelector = undefined;
+    this._scopeSelector.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get scopeSelectorInput() {
-    return this._scopeSelector
+    return this._scopeSelector.internalValue;
   }
 }
 export interface ResourceQuotaV1Timeouts {
@@ -348,7 +440,7 @@ export interface ResourceQuotaV1Timeouts {
   readonly update?: string;
 }
 
-function resourceQuotaV1TimeoutsToTerraform(struct?: ResourceQuotaV1TimeoutsOutputReference | ResourceQuotaV1Timeouts): any {
+export function resourceQuotaV1TimeoutsToTerraform(struct?: ResourceQuotaV1TimeoutsOutputReference | ResourceQuotaV1Timeouts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -369,12 +461,37 @@ export class ResourceQuotaV1TimeoutsOutputReference extends cdktf.ComplexObject 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ResourceQuotaV1Timeouts | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._create) {
+      hasAnyValues = true;
+      internalValueResult.create = this._create;
+    }
+    if (this._update) {
+      hasAnyValues = true;
+      internalValueResult.update = this._update;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ResourceQuotaV1Timeouts | undefined) {
+    if (value === undefined) {
+      this._create = undefined;
+      this._update = undefined;
+    }
+    else {
+      this._create = value.create;
+      this._update = value.update;
+    }
+  }
+
   // create - computed: false, optional: true, required: false
-  private _create?: string | undefined; 
+  private _create?: string; 
   public get create() {
     return this.getStringAttribute('create');
   }
-  public set create(value: string | undefined) {
+  public set create(value: string) {
     this._create = value;
   }
   public resetCreate() {
@@ -382,15 +499,15 @@ export class ResourceQuotaV1TimeoutsOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get createInput() {
-    return this._create
+    return this._create;
   }
 
   // update - computed: false, optional: true, required: false
-  private _update?: string | undefined; 
+  private _update?: string; 
   public get update() {
     return this.getStringAttribute('update');
   }
-  public set update(value: string | undefined) {
+  public set update(value: string) {
     this._update = value;
   }
   public resetUpdate() {
@@ -398,7 +515,7 @@ export class ResourceQuotaV1TimeoutsOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get updateInput() {
-    return this._update
+    return this._update;
   }
 }
 
@@ -434,9 +551,9 @@ export class ResourceQuotaV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._metadata = config.metadata;
-    this._spec = config.spec;
-    this._timeouts = config.timeouts;
+    this._metadata.internalValue = config.metadata;
+    this._spec.internalValue = config.spec;
+    this._timeouts.internalValue = config.timeouts;
   }
 
   // ==========
@@ -449,51 +566,48 @@ export class ResourceQuotaV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: ResourceQuotaV1Metadata; 
-  private __metadataOutput = new ResourceQuotaV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new ResourceQuotaV1MetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: ResourceQuotaV1Metadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: true, required: false
-  private _spec?: ResourceQuotaV1Spec | undefined; 
-  private __specOutput = new ResourceQuotaV1SpecOutputReference(this as any, "spec", true);
+  private _spec = new ResourceQuotaV1SpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
-  public putSpec(value: ResourceQuotaV1Spec | undefined) {
-    this._spec = value;
+  public putSpec(value: ResourceQuotaV1Spec) {
+    this._spec.internalValue = value;
   }
   public resetSpec() {
-    this._spec = undefined;
+    this._spec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts?: ResourceQuotaV1Timeouts | undefined; 
-  private __timeoutsOutput = new ResourceQuotaV1TimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new ResourceQuotaV1TimeoutsOutputReference(this as any, "timeouts", true);
   public get timeouts() {
-    return this.__timeoutsOutput;
+    return this._timeouts;
   }
-  public putTimeouts(value: ResourceQuotaV1Timeouts | undefined) {
-    this._timeouts = value;
+  public putTimeouts(value: ResourceQuotaV1Timeouts) {
+    this._timeouts.internalValue = value;
   }
   public resetTimeouts() {
-    this._timeouts = undefined;
+    this._timeouts.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutsInput() {
-    return this._timeouts
+    return this._timeouts.internalValue;
   }
 
   // =========
@@ -502,9 +616,9 @@ export class ResourceQuotaV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: resourceQuotaV1MetadataToTerraform(this._metadata),
-      spec: resourceQuotaV1SpecToTerraform(this._spec),
-      timeouts: resourceQuotaV1TimeoutsToTerraform(this._timeouts),
+      metadata: resourceQuotaV1MetadataToTerraform(this._metadata.internalValue),
+      spec: resourceQuotaV1SpecToTerraform(this._spec.internalValue),
+      timeouts: resourceQuotaV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
   }
 }

@@ -53,7 +53,7 @@ export interface NetworkPolicyV1Metadata {
   readonly namespace?: string;
 }
 
-function networkPolicyV1MetadataToTerraform(struct?: NetworkPolicyV1MetadataOutputReference | NetworkPolicyV1Metadata): any {
+export function networkPolicyV1MetadataToTerraform(struct?: NetworkPolicyV1MetadataOutputReference | NetworkPolicyV1Metadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -77,13 +77,56 @@ export class NetworkPolicyV1MetadataOutputReference extends cdktf.ComplexObject 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): NetworkPolicyV1Metadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1Metadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -91,15 +134,15 @@ export class NetworkPolicyV1MetadataOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -107,16 +150,16 @@ export class NetworkPolicyV1MetadataOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -124,15 +167,15 @@ export class NetworkPolicyV1MetadataOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -140,15 +183,15 @@ export class NetworkPolicyV1MetadataOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -156,7 +199,7 @@ export class NetworkPolicyV1MetadataOutputReference extends cdktf.ComplexObject 
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface NetworkPolicyV1SpecEgressPorts {
@@ -174,7 +217,7 @@ export interface NetworkPolicyV1SpecEgressPorts {
   readonly protocol?: string;
 }
 
-function networkPolicyV1SpecEgressPortsToTerraform(struct?: NetworkPolicyV1SpecEgressPorts): any {
+export function networkPolicyV1SpecEgressPortsToTerraform(struct?: NetworkPolicyV1SpecEgressPorts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -200,7 +243,7 @@ export interface NetworkPolicyV1SpecEgressToIpBlock {
   readonly except?: string[];
 }
 
-function networkPolicyV1SpecEgressToIpBlockToTerraform(struct?: NetworkPolicyV1SpecEgressToIpBlockOutputReference | NetworkPolicyV1SpecEgressToIpBlock): any {
+export function networkPolicyV1SpecEgressToIpBlockToTerraform(struct?: NetworkPolicyV1SpecEgressToIpBlockOutputReference | NetworkPolicyV1SpecEgressToIpBlock): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -221,12 +264,37 @@ export class NetworkPolicyV1SpecEgressToIpBlockOutputReference extends cdktf.Com
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): NetworkPolicyV1SpecEgressToIpBlock | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._cidr) {
+      hasAnyValues = true;
+      internalValueResult.cidr = this._cidr;
+    }
+    if (this._except) {
+      hasAnyValues = true;
+      internalValueResult.except = this._except;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecEgressToIpBlock | undefined) {
+    if (value === undefined) {
+      this._cidr = undefined;
+      this._except = undefined;
+    }
+    else {
+      this._cidr = value.cidr;
+      this._except = value.except;
+    }
+  }
+
   // cidr - computed: false, optional: true, required: false
-  private _cidr?: string | undefined; 
+  private _cidr?: string; 
   public get cidr() {
     return this.getStringAttribute('cidr');
   }
-  public set cidr(value: string | undefined) {
+  public set cidr(value: string) {
     this._cidr = value;
   }
   public resetCidr() {
@@ -234,15 +302,15 @@ export class NetworkPolicyV1SpecEgressToIpBlockOutputReference extends cdktf.Com
   }
   // Temporarily expose input value. Use with caution.
   public get cidrInput() {
-    return this._cidr
+    return this._cidr;
   }
 
   // except - computed: false, optional: true, required: false
-  private _except?: string[] | undefined; 
+  private _except?: string[]; 
   public get except() {
     return this.getListAttribute('except');
   }
-  public set except(value: string[] | undefined) {
+  public set except(value: string[]) {
     this._except = value;
   }
   public resetExcept() {
@@ -250,7 +318,7 @@ export class NetworkPolicyV1SpecEgressToIpBlockOutputReference extends cdktf.Com
   }
   // Temporarily expose input value. Use with caution.
   public get exceptInput() {
-    return this._except
+    return this._except;
   }
 }
 export interface NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions {
@@ -274,7 +342,7 @@ export interface NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions {
   readonly values?: string[];
 }
 
-function networkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsToTerraform(struct?: NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions): any {
+export function networkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsToTerraform(struct?: NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -301,7 +369,7 @@ export interface NetworkPolicyV1SpecEgressToNamespaceSelector {
   readonly matchExpressions?: NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions[];
 }
 
-function networkPolicyV1SpecEgressToNamespaceSelectorToTerraform(struct?: NetworkPolicyV1SpecEgressToNamespaceSelectorOutputReference | NetworkPolicyV1SpecEgressToNamespaceSelector): any {
+export function networkPolicyV1SpecEgressToNamespaceSelectorToTerraform(struct?: NetworkPolicyV1SpecEgressToNamespaceSelectorOutputReference | NetworkPolicyV1SpecEgressToNamespaceSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -322,13 +390,38 @@ export class NetworkPolicyV1SpecEgressToNamespaceSelectorOutputReference extends
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): NetworkPolicyV1SpecEgressToNamespaceSelector | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._matchLabels) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecEgressToNamespaceSelector | undefined) {
+    if (value === undefined) {
+      this._matchLabels = undefined;
+      this._matchExpressions = undefined;
+    }
+    else {
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions = value.matchExpressions;
+    }
+  }
+
   // match_labels - computed: false, optional: true, required: false
-  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable; 
   public get matchLabels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
-  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._matchLabels = value;
   }
   public resetMatchLabels() {
@@ -336,16 +429,16 @@ export class NetworkPolicyV1SpecEgressToNamespaceSelectorOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get matchLabelsInput() {
-    return this._matchLabels
+    return this._matchLabels;
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions[] | undefined; 
+  private _matchExpressions?: NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions[]; 
   public get matchExpressions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
-  public set matchExpressions(value: NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions[] | undefined) {
+  public set matchExpressions(value: NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions[]) {
     this._matchExpressions = value;
   }
   public resetMatchExpressions() {
@@ -353,7 +446,7 @@ export class NetworkPolicyV1SpecEgressToNamespaceSelectorOutputReference extends
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions
+    return this._matchExpressions;
   }
 }
 export interface NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions {
@@ -377,7 +470,7 @@ export interface NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions {
   readonly values?: string[];
 }
 
-function networkPolicyV1SpecEgressToPodSelectorMatchExpressionsToTerraform(struct?: NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions): any {
+export function networkPolicyV1SpecEgressToPodSelectorMatchExpressionsToTerraform(struct?: NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -404,7 +497,7 @@ export interface NetworkPolicyV1SpecEgressToPodSelector {
   readonly matchExpressions?: NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions[];
 }
 
-function networkPolicyV1SpecEgressToPodSelectorToTerraform(struct?: NetworkPolicyV1SpecEgressToPodSelectorOutputReference | NetworkPolicyV1SpecEgressToPodSelector): any {
+export function networkPolicyV1SpecEgressToPodSelectorToTerraform(struct?: NetworkPolicyV1SpecEgressToPodSelectorOutputReference | NetworkPolicyV1SpecEgressToPodSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -425,13 +518,38 @@ export class NetworkPolicyV1SpecEgressToPodSelectorOutputReference extends cdktf
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): NetworkPolicyV1SpecEgressToPodSelector | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._matchLabels) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecEgressToPodSelector | undefined) {
+    if (value === undefined) {
+      this._matchLabels = undefined;
+      this._matchExpressions = undefined;
+    }
+    else {
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions = value.matchExpressions;
+    }
+  }
+
   // match_labels - computed: false, optional: true, required: false
-  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable; 
   public get matchLabels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
-  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._matchLabels = value;
   }
   public resetMatchLabels() {
@@ -439,16 +557,16 @@ export class NetworkPolicyV1SpecEgressToPodSelectorOutputReference extends cdktf
   }
   // Temporarily expose input value. Use with caution.
   public get matchLabelsInput() {
-    return this._matchLabels
+    return this._matchLabels;
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions[] | undefined; 
+  private _matchExpressions?: NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions[]; 
   public get matchExpressions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
-  public set matchExpressions(value: NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions[] | undefined) {
+  public set matchExpressions(value: NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions[]) {
     this._matchExpressions = value;
   }
   public resetMatchExpressions() {
@@ -456,7 +574,7 @@ export class NetworkPolicyV1SpecEgressToPodSelectorOutputReference extends cdktf
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions
+    return this._matchExpressions;
   }
 }
 export interface NetworkPolicyV1SpecEgressTo {
@@ -480,7 +598,7 @@ export interface NetworkPolicyV1SpecEgressTo {
   readonly podSelector?: NetworkPolicyV1SpecEgressToPodSelector;
 }
 
-function networkPolicyV1SpecEgressToToTerraform(struct?: NetworkPolicyV1SpecEgressTo): any {
+export function networkPolicyV1SpecEgressToToTerraform(struct?: NetworkPolicyV1SpecEgressTo): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -507,7 +625,7 @@ export interface NetworkPolicyV1SpecEgress {
   readonly to?: NetworkPolicyV1SpecEgressTo[];
 }
 
-function networkPolicyV1SpecEgressToTerraform(struct?: NetworkPolicyV1SpecEgress): any {
+export function networkPolicyV1SpecEgressToTerraform(struct?: NetworkPolicyV1SpecEgress): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -533,7 +651,7 @@ export interface NetworkPolicyV1SpecIngressFromIpBlock {
   readonly except?: string[];
 }
 
-function networkPolicyV1SpecIngressFromIpBlockToTerraform(struct?: NetworkPolicyV1SpecIngressFromIpBlockOutputReference | NetworkPolicyV1SpecIngressFromIpBlock): any {
+export function networkPolicyV1SpecIngressFromIpBlockToTerraform(struct?: NetworkPolicyV1SpecIngressFromIpBlockOutputReference | NetworkPolicyV1SpecIngressFromIpBlock): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -554,12 +672,37 @@ export class NetworkPolicyV1SpecIngressFromIpBlockOutputReference extends cdktf.
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): NetworkPolicyV1SpecIngressFromIpBlock | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._cidr) {
+      hasAnyValues = true;
+      internalValueResult.cidr = this._cidr;
+    }
+    if (this._except) {
+      hasAnyValues = true;
+      internalValueResult.except = this._except;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecIngressFromIpBlock | undefined) {
+    if (value === undefined) {
+      this._cidr = undefined;
+      this._except = undefined;
+    }
+    else {
+      this._cidr = value.cidr;
+      this._except = value.except;
+    }
+  }
+
   // cidr - computed: false, optional: true, required: false
-  private _cidr?: string | undefined; 
+  private _cidr?: string; 
   public get cidr() {
     return this.getStringAttribute('cidr');
   }
-  public set cidr(value: string | undefined) {
+  public set cidr(value: string) {
     this._cidr = value;
   }
   public resetCidr() {
@@ -567,15 +710,15 @@ export class NetworkPolicyV1SpecIngressFromIpBlockOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get cidrInput() {
-    return this._cidr
+    return this._cidr;
   }
 
   // except - computed: false, optional: true, required: false
-  private _except?: string[] | undefined; 
+  private _except?: string[]; 
   public get except() {
     return this.getListAttribute('except');
   }
-  public set except(value: string[] | undefined) {
+  public set except(value: string[]) {
     this._except = value;
   }
   public resetExcept() {
@@ -583,7 +726,7 @@ export class NetworkPolicyV1SpecIngressFromIpBlockOutputReference extends cdktf.
   }
   // Temporarily expose input value. Use with caution.
   public get exceptInput() {
-    return this._except
+    return this._except;
   }
 }
 export interface NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions {
@@ -607,7 +750,7 @@ export interface NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions
   readonly values?: string[];
 }
 
-function networkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsToTerraform(struct?: NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions): any {
+export function networkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsToTerraform(struct?: NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -634,7 +777,7 @@ export interface NetworkPolicyV1SpecIngressFromNamespaceSelector {
   readonly matchExpressions?: NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions[];
 }
 
-function networkPolicyV1SpecIngressFromNamespaceSelectorToTerraform(struct?: NetworkPolicyV1SpecIngressFromNamespaceSelectorOutputReference | NetworkPolicyV1SpecIngressFromNamespaceSelector): any {
+export function networkPolicyV1SpecIngressFromNamespaceSelectorToTerraform(struct?: NetworkPolicyV1SpecIngressFromNamespaceSelectorOutputReference | NetworkPolicyV1SpecIngressFromNamespaceSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -655,13 +798,38 @@ export class NetworkPolicyV1SpecIngressFromNamespaceSelectorOutputReference exte
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): NetworkPolicyV1SpecIngressFromNamespaceSelector | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._matchLabels) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecIngressFromNamespaceSelector | undefined) {
+    if (value === undefined) {
+      this._matchLabels = undefined;
+      this._matchExpressions = undefined;
+    }
+    else {
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions = value.matchExpressions;
+    }
+  }
+
   // match_labels - computed: false, optional: true, required: false
-  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable; 
   public get matchLabels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
-  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._matchLabels = value;
   }
   public resetMatchLabels() {
@@ -669,16 +837,16 @@ export class NetworkPolicyV1SpecIngressFromNamespaceSelectorOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get matchLabelsInput() {
-    return this._matchLabels
+    return this._matchLabels;
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions[] | undefined; 
+  private _matchExpressions?: NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions[]; 
   public get matchExpressions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
-  public set matchExpressions(value: NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions[] | undefined) {
+  public set matchExpressions(value: NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions[]) {
     this._matchExpressions = value;
   }
   public resetMatchExpressions() {
@@ -686,7 +854,7 @@ export class NetworkPolicyV1SpecIngressFromNamespaceSelectorOutputReference exte
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions
+    return this._matchExpressions;
   }
 }
 export interface NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions {
@@ -710,7 +878,7 @@ export interface NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions {
   readonly values?: string[];
 }
 
-function networkPolicyV1SpecIngressFromPodSelectorMatchExpressionsToTerraform(struct?: NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions): any {
+export function networkPolicyV1SpecIngressFromPodSelectorMatchExpressionsToTerraform(struct?: NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -737,7 +905,7 @@ export interface NetworkPolicyV1SpecIngressFromPodSelector {
   readonly matchExpressions?: NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions[];
 }
 
-function networkPolicyV1SpecIngressFromPodSelectorToTerraform(struct?: NetworkPolicyV1SpecIngressFromPodSelectorOutputReference | NetworkPolicyV1SpecIngressFromPodSelector): any {
+export function networkPolicyV1SpecIngressFromPodSelectorToTerraform(struct?: NetworkPolicyV1SpecIngressFromPodSelectorOutputReference | NetworkPolicyV1SpecIngressFromPodSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -758,13 +926,38 @@ export class NetworkPolicyV1SpecIngressFromPodSelectorOutputReference extends cd
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): NetworkPolicyV1SpecIngressFromPodSelector | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._matchLabels) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecIngressFromPodSelector | undefined) {
+    if (value === undefined) {
+      this._matchLabels = undefined;
+      this._matchExpressions = undefined;
+    }
+    else {
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions = value.matchExpressions;
+    }
+  }
+
   // match_labels - computed: false, optional: true, required: false
-  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable; 
   public get matchLabels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
-  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._matchLabels = value;
   }
   public resetMatchLabels() {
@@ -772,16 +965,16 @@ export class NetworkPolicyV1SpecIngressFromPodSelectorOutputReference extends cd
   }
   // Temporarily expose input value. Use with caution.
   public get matchLabelsInput() {
-    return this._matchLabels
+    return this._matchLabels;
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions[] | undefined; 
+  private _matchExpressions?: NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions[]; 
   public get matchExpressions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
-  public set matchExpressions(value: NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions[] | undefined) {
+  public set matchExpressions(value: NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions[]) {
     this._matchExpressions = value;
   }
   public resetMatchExpressions() {
@@ -789,7 +982,7 @@ export class NetworkPolicyV1SpecIngressFromPodSelectorOutputReference extends cd
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions
+    return this._matchExpressions;
   }
 }
 export interface NetworkPolicyV1SpecIngressFrom {
@@ -813,7 +1006,7 @@ export interface NetworkPolicyV1SpecIngressFrom {
   readonly podSelector?: NetworkPolicyV1SpecIngressFromPodSelector;
 }
 
-function networkPolicyV1SpecIngressFromToTerraform(struct?: NetworkPolicyV1SpecIngressFrom): any {
+export function networkPolicyV1SpecIngressFromToTerraform(struct?: NetworkPolicyV1SpecIngressFrom): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -840,7 +1033,7 @@ export interface NetworkPolicyV1SpecIngressPorts {
   readonly protocol?: string;
 }
 
-function networkPolicyV1SpecIngressPortsToTerraform(struct?: NetworkPolicyV1SpecIngressPorts): any {
+export function networkPolicyV1SpecIngressPortsToTerraform(struct?: NetworkPolicyV1SpecIngressPorts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -866,7 +1059,7 @@ export interface NetworkPolicyV1SpecIngress {
   readonly ports?: NetworkPolicyV1SpecIngressPorts[];
 }
 
-function networkPolicyV1SpecIngressToTerraform(struct?: NetworkPolicyV1SpecIngress): any {
+export function networkPolicyV1SpecIngressToTerraform(struct?: NetworkPolicyV1SpecIngress): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -898,7 +1091,7 @@ export interface NetworkPolicyV1SpecPodSelectorMatchExpressions {
   readonly values?: string[];
 }
 
-function networkPolicyV1SpecPodSelectorMatchExpressionsToTerraform(struct?: NetworkPolicyV1SpecPodSelectorMatchExpressions): any {
+export function networkPolicyV1SpecPodSelectorMatchExpressionsToTerraform(struct?: NetworkPolicyV1SpecPodSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -925,7 +1118,7 @@ export interface NetworkPolicyV1SpecPodSelector {
   readonly matchExpressions?: NetworkPolicyV1SpecPodSelectorMatchExpressions[];
 }
 
-function networkPolicyV1SpecPodSelectorToTerraform(struct?: NetworkPolicyV1SpecPodSelectorOutputReference | NetworkPolicyV1SpecPodSelector): any {
+export function networkPolicyV1SpecPodSelectorToTerraform(struct?: NetworkPolicyV1SpecPodSelectorOutputReference | NetworkPolicyV1SpecPodSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -946,13 +1139,38 @@ export class NetworkPolicyV1SpecPodSelectorOutputReference extends cdktf.Complex
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): NetworkPolicyV1SpecPodSelector | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._matchLabels) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecPodSelector | undefined) {
+    if (value === undefined) {
+      this._matchLabels = undefined;
+      this._matchExpressions = undefined;
+    }
+    else {
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions = value.matchExpressions;
+    }
+  }
+
   // match_labels - computed: false, optional: true, required: false
-  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable; 
   public get matchLabels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
-  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._matchLabels = value;
   }
   public resetMatchLabels() {
@@ -960,16 +1178,16 @@ export class NetworkPolicyV1SpecPodSelectorOutputReference extends cdktf.Complex
   }
   // Temporarily expose input value. Use with caution.
   public get matchLabelsInput() {
-    return this._matchLabels
+    return this._matchLabels;
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: NetworkPolicyV1SpecPodSelectorMatchExpressions[] | undefined; 
+  private _matchExpressions?: NetworkPolicyV1SpecPodSelectorMatchExpressions[]; 
   public get matchExpressions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
-  public set matchExpressions(value: NetworkPolicyV1SpecPodSelectorMatchExpressions[] | undefined) {
+  public set matchExpressions(value: NetworkPolicyV1SpecPodSelectorMatchExpressions[]) {
     this._matchExpressions = value;
   }
   public resetMatchExpressions() {
@@ -977,7 +1195,7 @@ export class NetworkPolicyV1SpecPodSelectorOutputReference extends cdktf.Complex
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions
+    return this._matchExpressions;
   }
 }
 export interface NetworkPolicyV1Spec {
@@ -1007,7 +1225,7 @@ export interface NetworkPolicyV1Spec {
   readonly podSelector: NetworkPolicyV1SpecPodSelector;
 }
 
-function networkPolicyV1SpecToTerraform(struct?: NetworkPolicyV1SpecOutputReference | NetworkPolicyV1Spec): any {
+export function networkPolicyV1SpecToTerraform(struct?: NetworkPolicyV1SpecOutputReference | NetworkPolicyV1Spec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1030,6 +1248,43 @@ export class NetworkPolicyV1SpecOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): NetworkPolicyV1Spec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._policyTypes) {
+      hasAnyValues = true;
+      internalValueResult.policyTypes = this._policyTypes;
+    }
+    if (this._egress) {
+      hasAnyValues = true;
+      internalValueResult.egress = this._egress;
+    }
+    if (this._ingress) {
+      hasAnyValues = true;
+      internalValueResult.ingress = this._ingress;
+    }
+    if (this._podSelector) {
+      hasAnyValues = true;
+      internalValueResult.podSelector = this._podSelector?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1Spec | undefined) {
+    if (value === undefined) {
+      this._policyTypes = undefined;
+      this._egress = undefined;
+      this._ingress = undefined;
+      this._podSelector.internalValue = undefined;
+    }
+    else {
+      this._policyTypes = value.policyTypes;
+      this._egress = value.egress;
+      this._ingress = value.ingress;
+      this._podSelector.internalValue = value.podSelector;
+    }
+  }
+
   // policy_types - computed: false, optional: false, required: true
   private _policyTypes?: string[]; 
   public get policyTypes() {
@@ -1040,16 +1295,16 @@ export class NetworkPolicyV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get policyTypesInput() {
-    return this._policyTypes
+    return this._policyTypes;
   }
 
   // egress - computed: false, optional: true, required: false
-  private _egress?: NetworkPolicyV1SpecEgress[] | undefined; 
+  private _egress?: NetworkPolicyV1SpecEgress[]; 
   public get egress() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('egress') as any;
   }
-  public set egress(value: NetworkPolicyV1SpecEgress[] | undefined) {
+  public set egress(value: NetworkPolicyV1SpecEgress[]) {
     this._egress = value;
   }
   public resetEgress() {
@@ -1057,16 +1312,16 @@ export class NetworkPolicyV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get egressInput() {
-    return this._egress
+    return this._egress;
   }
 
   // ingress - computed: false, optional: true, required: false
-  private _ingress?: NetworkPolicyV1SpecIngress[] | undefined; 
+  private _ingress?: NetworkPolicyV1SpecIngress[]; 
   public get ingress() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('ingress') as any;
   }
-  public set ingress(value: NetworkPolicyV1SpecIngress[] | undefined) {
+  public set ingress(value: NetworkPolicyV1SpecIngress[]) {
     this._ingress = value;
   }
   public resetIngress() {
@@ -1074,21 +1329,20 @@ export class NetworkPolicyV1SpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get ingressInput() {
-    return this._ingress
+    return this._ingress;
   }
 
   // pod_selector - computed: false, optional: false, required: true
-  private _podSelector?: NetworkPolicyV1SpecPodSelector; 
-  private __podSelectorOutput = new NetworkPolicyV1SpecPodSelectorOutputReference(this as any, "pod_selector", true);
+  private _podSelector = new NetworkPolicyV1SpecPodSelectorOutputReference(this as any, "pod_selector", true);
   public get podSelector() {
-    return this.__podSelectorOutput;
+    return this._podSelector;
   }
   public putPodSelector(value: NetworkPolicyV1SpecPodSelector) {
-    this._podSelector = value;
+    this._podSelector.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get podSelectorInput() {
-    return this._podSelector
+    return this._podSelector.internalValue;
   }
 }
 
@@ -1124,8 +1378,8 @@ export class NetworkPolicyV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._metadata = config.metadata;
-    this._spec = config.spec;
+    this._metadata.internalValue = config.metadata;
+    this._spec.internalValue = config.spec;
   }
 
   // ==========
@@ -1138,31 +1392,29 @@ export class NetworkPolicyV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: NetworkPolicyV1Metadata; 
-  private __metadataOutput = new NetworkPolicyV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new NetworkPolicyV1MetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: NetworkPolicyV1Metadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: NetworkPolicyV1Spec; 
-  private __specOutput = new NetworkPolicyV1SpecOutputReference(this as any, "spec", true);
+  private _spec = new NetworkPolicyV1SpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
   public putSpec(value: NetworkPolicyV1Spec) {
-    this._spec = value;
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 
   // =========
@@ -1171,8 +1423,8 @@ export class NetworkPolicyV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: networkPolicyV1MetadataToTerraform(this._metadata),
-      spec: networkPolicyV1SpecToTerraform(this._spec),
+      metadata: networkPolicyV1MetadataToTerraform(this._metadata.internalValue),
+      spec: networkPolicyV1SpecToTerraform(this._spec.internalValue),
     };
   }
 }

@@ -93,7 +93,7 @@ export interface ServiceMetadata {
   readonly namespace?: string;
 }
 
-function serviceMetadataToTerraform(struct?: ServiceMetadataOutputReference | ServiceMetadata): any {
+export function serviceMetadataToTerraform(struct?: ServiceMetadataOutputReference | ServiceMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -117,13 +117,56 @@ export class ServiceMetadataOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ServiceMetadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceMetadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -131,15 +174,15 @@ export class ServiceMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -147,16 +190,16 @@ export class ServiceMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -164,15 +207,15 @@ export class ServiceMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -180,15 +223,15 @@ export class ServiceMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -196,7 +239,7 @@ export class ServiceMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface ServiceSpecPort {
@@ -232,7 +275,7 @@ export interface ServiceSpecPort {
   readonly targetPort?: string;
 }
 
-function serviceSpecPortToTerraform(struct?: ServiceSpecPort): any {
+export function serviceSpecPortToTerraform(struct?: ServiceSpecPort): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -321,7 +364,7 @@ export interface ServiceSpec {
   readonly port?: ServiceSpecPort[];
 }
 
-function serviceSpecToTerraform(struct?: ServiceSpecOutputReference | ServiceSpec): any {
+export function serviceSpecToTerraform(struct?: ServiceSpecOutputReference | ServiceSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -352,12 +395,97 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ServiceSpec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._clusterIp) {
+      hasAnyValues = true;
+      internalValueResult.clusterIp = this._clusterIp;
+    }
+    if (this._externalIps) {
+      hasAnyValues = true;
+      internalValueResult.externalIps = this._externalIps;
+    }
+    if (this._externalName) {
+      hasAnyValues = true;
+      internalValueResult.externalName = this._externalName;
+    }
+    if (this._externalTrafficPolicy) {
+      hasAnyValues = true;
+      internalValueResult.externalTrafficPolicy = this._externalTrafficPolicy;
+    }
+    if (this._healthCheckNodePort) {
+      hasAnyValues = true;
+      internalValueResult.healthCheckNodePort = this._healthCheckNodePort;
+    }
+    if (this._loadBalancerIp) {
+      hasAnyValues = true;
+      internalValueResult.loadBalancerIp = this._loadBalancerIp;
+    }
+    if (this._loadBalancerSourceRanges) {
+      hasAnyValues = true;
+      internalValueResult.loadBalancerSourceRanges = this._loadBalancerSourceRanges;
+    }
+    if (this._publishNotReadyAddresses) {
+      hasAnyValues = true;
+      internalValueResult.publishNotReadyAddresses = this._publishNotReadyAddresses;
+    }
+    if (this._selector) {
+      hasAnyValues = true;
+      internalValueResult.selector = this._selector;
+    }
+    if (this._sessionAffinity) {
+      hasAnyValues = true;
+      internalValueResult.sessionAffinity = this._sessionAffinity;
+    }
+    if (this._type) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._port) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceSpec | undefined) {
+    if (value === undefined) {
+      this._clusterIp = undefined;
+      this._externalIps = undefined;
+      this._externalName = undefined;
+      this._externalTrafficPolicy = undefined;
+      this._healthCheckNodePort = undefined;
+      this._loadBalancerIp = undefined;
+      this._loadBalancerSourceRanges = undefined;
+      this._publishNotReadyAddresses = undefined;
+      this._selector = undefined;
+      this._sessionAffinity = undefined;
+      this._type = undefined;
+      this._port = undefined;
+    }
+    else {
+      this._clusterIp = value.clusterIp;
+      this._externalIps = value.externalIps;
+      this._externalName = value.externalName;
+      this._externalTrafficPolicy = value.externalTrafficPolicy;
+      this._healthCheckNodePort = value.healthCheckNodePort;
+      this._loadBalancerIp = value.loadBalancerIp;
+      this._loadBalancerSourceRanges = value.loadBalancerSourceRanges;
+      this._publishNotReadyAddresses = value.publishNotReadyAddresses;
+      this._selector = value.selector;
+      this._sessionAffinity = value.sessionAffinity;
+      this._type = value.type;
+      this._port = value.port;
+    }
+  }
+
   // cluster_ip - computed: true, optional: true, required: false
-  private _clusterIp?: string | undefined; 
+  private _clusterIp?: string; 
   public get clusterIp() {
     return this.getStringAttribute('cluster_ip');
   }
-  public set clusterIp(value: string | undefined) {
+  public set clusterIp(value: string) {
     this._clusterIp = value;
   }
   public resetClusterIp() {
@@ -365,15 +493,15 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get clusterIpInput() {
-    return this._clusterIp
+    return this._clusterIp;
   }
 
   // external_ips - computed: false, optional: true, required: false
-  private _externalIps?: string[] | undefined; 
+  private _externalIps?: string[]; 
   public get externalIps() {
     return this.getListAttribute('external_ips');
   }
-  public set externalIps(value: string[] | undefined) {
+  public set externalIps(value: string[]) {
     this._externalIps = value;
   }
   public resetExternalIps() {
@@ -381,15 +509,15 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get externalIpsInput() {
-    return this._externalIps
+    return this._externalIps;
   }
 
   // external_name - computed: false, optional: true, required: false
-  private _externalName?: string | undefined; 
+  private _externalName?: string; 
   public get externalName() {
     return this.getStringAttribute('external_name');
   }
-  public set externalName(value: string | undefined) {
+  public set externalName(value: string) {
     this._externalName = value;
   }
   public resetExternalName() {
@@ -397,15 +525,15 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get externalNameInput() {
-    return this._externalName
+    return this._externalName;
   }
 
   // external_traffic_policy - computed: true, optional: true, required: false
-  private _externalTrafficPolicy?: string | undefined; 
+  private _externalTrafficPolicy?: string; 
   public get externalTrafficPolicy() {
     return this.getStringAttribute('external_traffic_policy');
   }
-  public set externalTrafficPolicy(value: string | undefined) {
+  public set externalTrafficPolicy(value: string) {
     this._externalTrafficPolicy = value;
   }
   public resetExternalTrafficPolicy() {
@@ -413,15 +541,15 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get externalTrafficPolicyInput() {
-    return this._externalTrafficPolicy
+    return this._externalTrafficPolicy;
   }
 
   // health_check_node_port - computed: true, optional: true, required: false
-  private _healthCheckNodePort?: number | undefined; 
+  private _healthCheckNodePort?: number; 
   public get healthCheckNodePort() {
     return this.getNumberAttribute('health_check_node_port');
   }
-  public set healthCheckNodePort(value: number | undefined) {
+  public set healthCheckNodePort(value: number) {
     this._healthCheckNodePort = value;
   }
   public resetHealthCheckNodePort() {
@@ -429,15 +557,15 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get healthCheckNodePortInput() {
-    return this._healthCheckNodePort
+    return this._healthCheckNodePort;
   }
 
   // load_balancer_ip - computed: false, optional: true, required: false
-  private _loadBalancerIp?: string | undefined; 
+  private _loadBalancerIp?: string; 
   public get loadBalancerIp() {
     return this.getStringAttribute('load_balancer_ip');
   }
-  public set loadBalancerIp(value: string | undefined) {
+  public set loadBalancerIp(value: string) {
     this._loadBalancerIp = value;
   }
   public resetLoadBalancerIp() {
@@ -445,15 +573,15 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get loadBalancerIpInput() {
-    return this._loadBalancerIp
+    return this._loadBalancerIp;
   }
 
   // load_balancer_source_ranges - computed: false, optional: true, required: false
-  private _loadBalancerSourceRanges?: string[] | undefined; 
+  private _loadBalancerSourceRanges?: string[]; 
   public get loadBalancerSourceRanges() {
     return this.getListAttribute('load_balancer_source_ranges');
   }
-  public set loadBalancerSourceRanges(value: string[] | undefined) {
+  public set loadBalancerSourceRanges(value: string[]) {
     this._loadBalancerSourceRanges = value;
   }
   public resetLoadBalancerSourceRanges() {
@@ -461,15 +589,15 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get loadBalancerSourceRangesInput() {
-    return this._loadBalancerSourceRanges
+    return this._loadBalancerSourceRanges;
   }
 
   // publish_not_ready_addresses - computed: false, optional: true, required: false
-  private _publishNotReadyAddresses?: boolean | cdktf.IResolvable | undefined; 
+  private _publishNotReadyAddresses?: boolean | cdktf.IResolvable; 
   public get publishNotReadyAddresses() {
     return this.getBooleanAttribute('publish_not_ready_addresses') as any;
   }
-  public set publishNotReadyAddresses(value: boolean | cdktf.IResolvable | undefined) {
+  public set publishNotReadyAddresses(value: boolean | cdktf.IResolvable) {
     this._publishNotReadyAddresses = value;
   }
   public resetPublishNotReadyAddresses() {
@@ -477,16 +605,16 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get publishNotReadyAddressesInput() {
-    return this._publishNotReadyAddresses
+    return this._publishNotReadyAddresses;
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _selector?: { [key: string]: string } | cdktf.IResolvable; 
   public get selector() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('selector') as any;
   }
-  public set selector(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set selector(value: { [key: string]: string } | cdktf.IResolvable) {
     this._selector = value;
   }
   public resetSelector() {
@@ -494,15 +622,15 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get selectorInput() {
-    return this._selector
+    return this._selector;
   }
 
   // session_affinity - computed: false, optional: true, required: false
-  private _sessionAffinity?: string | undefined; 
+  private _sessionAffinity?: string; 
   public get sessionAffinity() {
     return this.getStringAttribute('session_affinity');
   }
-  public set sessionAffinity(value: string | undefined) {
+  public set sessionAffinity(value: string) {
     this._sessionAffinity = value;
   }
   public resetSessionAffinity() {
@@ -510,15 +638,15 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get sessionAffinityInput() {
-    return this._sessionAffinity
+    return this._sessionAffinity;
   }
 
   // type - computed: false, optional: true, required: false
-  private _type?: string | undefined; 
+  private _type?: string; 
   public get type() {
     return this.getStringAttribute('type');
   }
-  public set type(value: string | undefined) {
+  public set type(value: string) {
     this._type = value;
   }
   public resetType() {
@@ -526,16 +654,16 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get typeInput() {
-    return this._type
+    return this._type;
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: ServiceSpecPort[] | undefined; 
+  private _port?: ServiceSpecPort[]; 
   public get port() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('port') as any;
   }
-  public set port(value: ServiceSpecPort[] | undefined) {
+  public set port(value: ServiceSpecPort[]) {
     this._port = value;
   }
   public resetPort() {
@@ -543,7 +671,7 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port
+    return this._port;
   }
 }
 export interface ServiceTimeouts {
@@ -553,7 +681,7 @@ export interface ServiceTimeouts {
   readonly create?: string;
 }
 
-function serviceTimeoutsToTerraform(struct?: ServiceTimeoutsOutputReference | ServiceTimeouts): any {
+export function serviceTimeoutsToTerraform(struct?: ServiceTimeoutsOutputReference | ServiceTimeouts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -573,12 +701,31 @@ export class ServiceTimeoutsOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ServiceTimeouts | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._create) {
+      hasAnyValues = true;
+      internalValueResult.create = this._create;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceTimeouts | undefined) {
+    if (value === undefined) {
+      this._create = undefined;
+    }
+    else {
+      this._create = value.create;
+    }
+  }
+
   // create - computed: false, optional: true, required: false
-  private _create?: string | undefined; 
+  private _create?: string; 
   public get create() {
     return this.getStringAttribute('create');
   }
-  public set create(value: string | undefined) {
+  public set create(value: string) {
     this._create = value;
   }
   public resetCreate() {
@@ -586,7 +733,7 @@ export class ServiceTimeoutsOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get createInput() {
-    return this._create
+    return this._create;
   }
 }
 
@@ -623,9 +770,9 @@ export class Service extends cdktf.TerraformResource {
       lifecycle: config.lifecycle
     });
     this._waitForLoadBalancer = config.waitForLoadBalancer;
-    this._metadata = config.metadata;
-    this._spec = config.spec;
-    this._timeouts = config.timeouts;
+    this._metadata.internalValue = config.metadata;
+    this._spec.internalValue = config.spec;
+    this._timeouts.internalValue = config.timeouts;
   }
 
   // ==========
@@ -643,11 +790,11 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // wait_for_load_balancer - computed: false, optional: true, required: false
-  private _waitForLoadBalancer?: boolean | cdktf.IResolvable | undefined; 
+  private _waitForLoadBalancer?: boolean | cdktf.IResolvable; 
   public get waitForLoadBalancer() {
     return this.getBooleanAttribute('wait_for_load_balancer') as any;
   }
-  public set waitForLoadBalancer(value: boolean | cdktf.IResolvable | undefined) {
+  public set waitForLoadBalancer(value: boolean | cdktf.IResolvable) {
     this._waitForLoadBalancer = value;
   }
   public resetWaitForLoadBalancer() {
@@ -655,52 +802,49 @@ export class Service extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get waitForLoadBalancerInput() {
-    return this._waitForLoadBalancer
+    return this._waitForLoadBalancer;
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: ServiceMetadata; 
-  private __metadataOutput = new ServiceMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new ServiceMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: ServiceMetadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: ServiceSpec; 
-  private __specOutput = new ServiceSpecOutputReference(this as any, "spec", true);
+  private _spec = new ServiceSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
   public putSpec(value: ServiceSpec) {
-    this._spec = value;
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts?: ServiceTimeouts | undefined; 
-  private __timeoutsOutput = new ServiceTimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new ServiceTimeoutsOutputReference(this as any, "timeouts", true);
   public get timeouts() {
-    return this.__timeoutsOutput;
+    return this._timeouts;
   }
-  public putTimeouts(value: ServiceTimeouts | undefined) {
-    this._timeouts = value;
+  public putTimeouts(value: ServiceTimeouts) {
+    this._timeouts.internalValue = value;
   }
   public resetTimeouts() {
-    this._timeouts = undefined;
+    this._timeouts.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutsInput() {
-    return this._timeouts
+    return this._timeouts.internalValue;
   }
 
   // =========
@@ -710,9 +854,9 @@ export class Service extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       wait_for_load_balancer: cdktf.booleanToTerraform(this._waitForLoadBalancer),
-      metadata: serviceMetadataToTerraform(this._metadata),
-      spec: serviceSpecToTerraform(this._spec),
-      timeouts: serviceTimeoutsToTerraform(this._timeouts),
+      metadata: serviceMetadataToTerraform(this._metadata.internalValue),
+      spec: serviceSpecToTerraform(this._spec.internalValue),
+      timeouts: serviceTimeoutsToTerraform(this._timeouts.internalValue),
     };
   }
 }

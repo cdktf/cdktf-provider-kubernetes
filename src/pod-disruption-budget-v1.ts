@@ -53,7 +53,7 @@ export interface PodDisruptionBudgetV1Metadata {
   readonly namespace?: string;
 }
 
-function podDisruptionBudgetV1MetadataToTerraform(struct?: PodDisruptionBudgetV1MetadataOutputReference | PodDisruptionBudgetV1Metadata): any {
+export function podDisruptionBudgetV1MetadataToTerraform(struct?: PodDisruptionBudgetV1MetadataOutputReference | PodDisruptionBudgetV1Metadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -77,13 +77,56 @@ export class PodDisruptionBudgetV1MetadataOutputReference extends cdktf.ComplexO
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PodDisruptionBudgetV1Metadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodDisruptionBudgetV1Metadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -91,15 +134,15 @@ export class PodDisruptionBudgetV1MetadataOutputReference extends cdktf.ComplexO
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -107,16 +150,16 @@ export class PodDisruptionBudgetV1MetadataOutputReference extends cdktf.ComplexO
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -124,15 +167,15 @@ export class PodDisruptionBudgetV1MetadataOutputReference extends cdktf.ComplexO
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -140,15 +183,15 @@ export class PodDisruptionBudgetV1MetadataOutputReference extends cdktf.ComplexO
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -156,7 +199,7 @@ export class PodDisruptionBudgetV1MetadataOutputReference extends cdktf.ComplexO
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface PodDisruptionBudgetV1SpecSelectorMatchExpressions {
@@ -180,7 +223,7 @@ export interface PodDisruptionBudgetV1SpecSelectorMatchExpressions {
   readonly values?: string[];
 }
 
-function podDisruptionBudgetV1SpecSelectorMatchExpressionsToTerraform(struct?: PodDisruptionBudgetV1SpecSelectorMatchExpressions): any {
+export function podDisruptionBudgetV1SpecSelectorMatchExpressionsToTerraform(struct?: PodDisruptionBudgetV1SpecSelectorMatchExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -207,7 +250,7 @@ export interface PodDisruptionBudgetV1SpecSelector {
   readonly matchExpressions?: PodDisruptionBudgetV1SpecSelectorMatchExpressions[];
 }
 
-function podDisruptionBudgetV1SpecSelectorToTerraform(struct?: PodDisruptionBudgetV1SpecSelectorOutputReference | PodDisruptionBudgetV1SpecSelector): any {
+export function podDisruptionBudgetV1SpecSelectorToTerraform(struct?: PodDisruptionBudgetV1SpecSelectorOutputReference | PodDisruptionBudgetV1SpecSelector): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -228,13 +271,38 @@ export class PodDisruptionBudgetV1SpecSelectorOutputReference extends cdktf.Comp
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PodDisruptionBudgetV1SpecSelector | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._matchLabels) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodDisruptionBudgetV1SpecSelector | undefined) {
+    if (value === undefined) {
+      this._matchLabels = undefined;
+      this._matchExpressions = undefined;
+    }
+    else {
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions = value.matchExpressions;
+    }
+  }
+
   // match_labels - computed: false, optional: true, required: false
-  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _matchLabels?: { [key: string]: string } | cdktf.IResolvable; 
   public get matchLabels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_labels') as any;
   }
-  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set matchLabels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._matchLabels = value;
   }
   public resetMatchLabels() {
@@ -242,16 +310,16 @@ export class PodDisruptionBudgetV1SpecSelectorOutputReference extends cdktf.Comp
   }
   // Temporarily expose input value. Use with caution.
   public get matchLabelsInput() {
-    return this._matchLabels
+    return this._matchLabels;
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: PodDisruptionBudgetV1SpecSelectorMatchExpressions[] | undefined; 
+  private _matchExpressions?: PodDisruptionBudgetV1SpecSelectorMatchExpressions[]; 
   public get matchExpressions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_expressions') as any;
   }
-  public set matchExpressions(value: PodDisruptionBudgetV1SpecSelectorMatchExpressions[] | undefined) {
+  public set matchExpressions(value: PodDisruptionBudgetV1SpecSelectorMatchExpressions[]) {
     this._matchExpressions = value;
   }
   public resetMatchExpressions() {
@@ -259,7 +327,7 @@ export class PodDisruptionBudgetV1SpecSelectorOutputReference extends cdktf.Comp
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions
+    return this._matchExpressions;
   }
 }
 export interface PodDisruptionBudgetV1Spec {
@@ -279,7 +347,7 @@ export interface PodDisruptionBudgetV1Spec {
   readonly selector: PodDisruptionBudgetV1SpecSelector;
 }
 
-function podDisruptionBudgetV1SpecToTerraform(struct?: PodDisruptionBudgetV1SpecOutputReference | PodDisruptionBudgetV1Spec): any {
+export function podDisruptionBudgetV1SpecToTerraform(struct?: PodDisruptionBudgetV1SpecOutputReference | PodDisruptionBudgetV1Spec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -301,12 +369,43 @@ export class PodDisruptionBudgetV1SpecOutputReference extends cdktf.ComplexObjec
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): PodDisruptionBudgetV1Spec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._maxUnavailable) {
+      hasAnyValues = true;
+      internalValueResult.maxUnavailable = this._maxUnavailable;
+    }
+    if (this._minAvailable) {
+      hasAnyValues = true;
+      internalValueResult.minAvailable = this._minAvailable;
+    }
+    if (this._selector) {
+      hasAnyValues = true;
+      internalValueResult.selector = this._selector?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodDisruptionBudgetV1Spec | undefined) {
+    if (value === undefined) {
+      this._maxUnavailable = undefined;
+      this._minAvailable = undefined;
+      this._selector.internalValue = undefined;
+    }
+    else {
+      this._maxUnavailable = value.maxUnavailable;
+      this._minAvailable = value.minAvailable;
+      this._selector.internalValue = value.selector;
+    }
+  }
+
   // max_unavailable - computed: false, optional: true, required: false
-  private _maxUnavailable?: string | undefined; 
+  private _maxUnavailable?: string; 
   public get maxUnavailable() {
     return this.getStringAttribute('max_unavailable');
   }
-  public set maxUnavailable(value: string | undefined) {
+  public set maxUnavailable(value: string) {
     this._maxUnavailable = value;
   }
   public resetMaxUnavailable() {
@@ -314,15 +413,15 @@ export class PodDisruptionBudgetV1SpecOutputReference extends cdktf.ComplexObjec
   }
   // Temporarily expose input value. Use with caution.
   public get maxUnavailableInput() {
-    return this._maxUnavailable
+    return this._maxUnavailable;
   }
 
   // min_available - computed: false, optional: true, required: false
-  private _minAvailable?: string | undefined; 
+  private _minAvailable?: string; 
   public get minAvailable() {
     return this.getStringAttribute('min_available');
   }
-  public set minAvailable(value: string | undefined) {
+  public set minAvailable(value: string) {
     this._minAvailable = value;
   }
   public resetMinAvailable() {
@@ -330,21 +429,20 @@ export class PodDisruptionBudgetV1SpecOutputReference extends cdktf.ComplexObjec
   }
   // Temporarily expose input value. Use with caution.
   public get minAvailableInput() {
-    return this._minAvailable
+    return this._minAvailable;
   }
 
   // selector - computed: false, optional: false, required: true
-  private _selector?: PodDisruptionBudgetV1SpecSelector; 
-  private __selectorOutput = new PodDisruptionBudgetV1SpecSelectorOutputReference(this as any, "selector", true);
+  private _selector = new PodDisruptionBudgetV1SpecSelectorOutputReference(this as any, "selector", true);
   public get selector() {
-    return this.__selectorOutput;
+    return this._selector;
   }
   public putSelector(value: PodDisruptionBudgetV1SpecSelector) {
-    this._selector = value;
+    this._selector.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get selectorInput() {
-    return this._selector
+    return this._selector.internalValue;
   }
 }
 
@@ -380,8 +478,8 @@ export class PodDisruptionBudgetV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._metadata = config.metadata;
-    this._spec = config.spec;
+    this._metadata.internalValue = config.metadata;
+    this._spec.internalValue = config.spec;
   }
 
   // ==========
@@ -394,31 +492,29 @@ export class PodDisruptionBudgetV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: PodDisruptionBudgetV1Metadata; 
-  private __metadataOutput = new PodDisruptionBudgetV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new PodDisruptionBudgetV1MetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: PodDisruptionBudgetV1Metadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: PodDisruptionBudgetV1Spec; 
-  private __specOutput = new PodDisruptionBudgetV1SpecOutputReference(this as any, "spec", true);
+  private _spec = new PodDisruptionBudgetV1SpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
   public putSpec(value: PodDisruptionBudgetV1Spec) {
-    this._spec = value;
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 
   // =========
@@ -427,8 +523,8 @@ export class PodDisruptionBudgetV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: podDisruptionBudgetV1MetadataToTerraform(this._metadata),
-      spec: podDisruptionBudgetV1SpecToTerraform(this._spec),
+      metadata: podDisruptionBudgetV1MetadataToTerraform(this._metadata.internalValue),
+      spec: podDisruptionBudgetV1SpecToTerraform(this._spec.internalValue),
     };
   }
 }

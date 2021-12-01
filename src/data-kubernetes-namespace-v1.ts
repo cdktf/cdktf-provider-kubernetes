@@ -42,7 +42,7 @@ export interface DataKubernetesNamespaceV1Metadata {
   readonly name?: string;
 }
 
-function dataKubernetesNamespaceV1MetadataToTerraform(struct?: DataKubernetesNamespaceV1MetadataOutputReference | DataKubernetesNamespaceV1Metadata): any {
+export function dataKubernetesNamespaceV1MetadataToTerraform(struct?: DataKubernetesNamespaceV1MetadataOutputReference | DataKubernetesNamespaceV1Metadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -64,13 +64,44 @@ export class DataKubernetesNamespaceV1MetadataOutputReference extends cdktf.Comp
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): DataKubernetesNamespaceV1Metadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesNamespaceV1Metadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._labels = value.labels;
+      this._name = value.name;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -78,16 +109,16 @@ export class DataKubernetesNamespaceV1MetadataOutputReference extends cdktf.Comp
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -95,15 +126,15 @@ export class DataKubernetesNamespaceV1MetadataOutputReference extends cdktf.Comp
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -111,7 +142,7 @@ export class DataKubernetesNamespaceV1MetadataOutputReference extends cdktf.Comp
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 
@@ -147,7 +178,7 @@ export class DataKubernetesNamespaceV1 extends cdktf.TerraformDataSource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._metadata = config.metadata;
+    this._metadata.internalValue = config.metadata;
   }
 
   // ==========
@@ -165,17 +196,16 @@ export class DataKubernetesNamespaceV1 extends cdktf.TerraformDataSource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: DataKubernetesNamespaceV1Metadata; 
-  private __metadataOutput = new DataKubernetesNamespaceV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new DataKubernetesNamespaceV1MetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: DataKubernetesNamespaceV1Metadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // =========
@@ -184,7 +214,7 @@ export class DataKubernetesNamespaceV1 extends cdktf.TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: dataKubernetesNamespaceV1MetadataToTerraform(this._metadata),
+      metadata: dataKubernetesNamespaceV1MetadataToTerraform(this._metadata.internalValue),
     };
   }
 }

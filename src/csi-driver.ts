@@ -47,7 +47,7 @@ export interface CsiDriverMetadata {
   readonly name?: string;
 }
 
-function csiDriverMetadataToTerraform(struct?: CsiDriverMetadataOutputReference | CsiDriverMetadata): any {
+export function csiDriverMetadataToTerraform(struct?: CsiDriverMetadataOutputReference | CsiDriverMetadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -70,13 +70,50 @@ export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CsiDriverMetadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CsiDriverMetadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -84,15 +121,15 @@ export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -100,16 +137,16 @@ export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -117,15 +154,15 @@ export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -133,7 +170,7 @@ export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 export interface CsiDriverSpec {
@@ -157,7 +194,7 @@ export interface CsiDriverSpec {
   readonly volumeLifecycleModes?: string[];
 }
 
-function csiDriverSpecToTerraform(struct?: CsiDriverSpecOutputReference | CsiDriverSpec): any {
+export function csiDriverSpecToTerraform(struct?: CsiDriverSpecOutputReference | CsiDriverSpec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -179,6 +216,37 @@ export class CsiDriverSpecOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): CsiDriverSpec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._attachRequired) {
+      hasAnyValues = true;
+      internalValueResult.attachRequired = this._attachRequired;
+    }
+    if (this._podInfoOnMount) {
+      hasAnyValues = true;
+      internalValueResult.podInfoOnMount = this._podInfoOnMount;
+    }
+    if (this._volumeLifecycleModes) {
+      hasAnyValues = true;
+      internalValueResult.volumeLifecycleModes = this._volumeLifecycleModes;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CsiDriverSpec | undefined) {
+    if (value === undefined) {
+      this._attachRequired = undefined;
+      this._podInfoOnMount = undefined;
+      this._volumeLifecycleModes = undefined;
+    }
+    else {
+      this._attachRequired = value.attachRequired;
+      this._podInfoOnMount = value.podInfoOnMount;
+      this._volumeLifecycleModes = value.volumeLifecycleModes;
+    }
+  }
+
   // attach_required - computed: false, optional: false, required: true
   private _attachRequired?: boolean | cdktf.IResolvable; 
   public get attachRequired() {
@@ -189,15 +257,15 @@ export class CsiDriverSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get attachRequiredInput() {
-    return this._attachRequired
+    return this._attachRequired;
   }
 
   // pod_info_on_mount - computed: false, optional: true, required: false
-  private _podInfoOnMount?: boolean | cdktf.IResolvable | undefined; 
+  private _podInfoOnMount?: boolean | cdktf.IResolvable; 
   public get podInfoOnMount() {
     return this.getBooleanAttribute('pod_info_on_mount') as any;
   }
-  public set podInfoOnMount(value: boolean | cdktf.IResolvable | undefined) {
+  public set podInfoOnMount(value: boolean | cdktf.IResolvable) {
     this._podInfoOnMount = value;
   }
   public resetPodInfoOnMount() {
@@ -205,15 +273,15 @@ export class CsiDriverSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get podInfoOnMountInput() {
-    return this._podInfoOnMount
+    return this._podInfoOnMount;
   }
 
   // volume_lifecycle_modes - computed: false, optional: true, required: false
-  private _volumeLifecycleModes?: string[] | undefined; 
+  private _volumeLifecycleModes?: string[]; 
   public get volumeLifecycleModes() {
     return this.getListAttribute('volume_lifecycle_modes');
   }
-  public set volumeLifecycleModes(value: string[] | undefined) {
+  public set volumeLifecycleModes(value: string[]) {
     this._volumeLifecycleModes = value;
   }
   public resetVolumeLifecycleModes() {
@@ -221,7 +289,7 @@ export class CsiDriverSpecOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get volumeLifecycleModesInput() {
-    return this._volumeLifecycleModes
+    return this._volumeLifecycleModes;
   }
 }
 
@@ -257,8 +325,8 @@ export class CsiDriver extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._metadata = config.metadata;
-    this._spec = config.spec;
+    this._metadata.internalValue = config.metadata;
+    this._spec.internalValue = config.spec;
   }
 
   // ==========
@@ -271,34 +339,32 @@ export class CsiDriver extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: CsiDriverMetadata; 
-  private __metadataOutput = new CsiDriverMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new CsiDriverMetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: CsiDriverMetadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: true, required: false
-  private _spec?: CsiDriverSpec | undefined; 
-  private __specOutput = new CsiDriverSpecOutputReference(this as any, "spec", true);
+  private _spec = new CsiDriverSpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
-  public putSpec(value: CsiDriverSpec | undefined) {
-    this._spec = value;
+  public putSpec(value: CsiDriverSpec) {
+    this._spec.internalValue = value;
   }
   public resetSpec() {
-    this._spec = undefined;
+    this._spec.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 
   // =========
@@ -307,8 +373,8 @@ export class CsiDriver extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: csiDriverMetadataToTerraform(this._metadata),
-      spec: csiDriverSpecToTerraform(this._spec),
+      metadata: csiDriverMetadataToTerraform(this._metadata.internalValue),
+      spec: csiDriverSpecToTerraform(this._spec.internalValue),
     };
   }
 }

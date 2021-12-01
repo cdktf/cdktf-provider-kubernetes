@@ -53,7 +53,7 @@ export interface HorizontalPodAutoscalerV1Metadata {
   readonly namespace?: string;
 }
 
-function horizontalPodAutoscalerV1MetadataToTerraform(struct?: HorizontalPodAutoscalerV1MetadataOutputReference | HorizontalPodAutoscalerV1Metadata): any {
+export function horizontalPodAutoscalerV1MetadataToTerraform(struct?: HorizontalPodAutoscalerV1MetadataOutputReference | HorizontalPodAutoscalerV1Metadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -77,13 +77,56 @@ export class HorizontalPodAutoscalerV1MetadataOutputReference extends cdktf.Comp
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV1Metadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV1Metadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -91,15 +134,15 @@ export class HorizontalPodAutoscalerV1MetadataOutputReference extends cdktf.Comp
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -107,16 +150,16 @@ export class HorizontalPodAutoscalerV1MetadataOutputReference extends cdktf.Comp
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -124,15 +167,15 @@ export class HorizontalPodAutoscalerV1MetadataOutputReference extends cdktf.Comp
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -140,15 +183,15 @@ export class HorizontalPodAutoscalerV1MetadataOutputReference extends cdktf.Comp
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // namespace - computed: false, optional: true, required: false
-  private _namespace?: string | undefined; 
+  private _namespace?: string; 
   public get namespace() {
     return this.getStringAttribute('namespace');
   }
-  public set namespace(value: string | undefined) {
+  public set namespace(value: string) {
     this._namespace = value;
   }
   public resetNamespace() {
@@ -156,7 +199,7 @@ export class HorizontalPodAutoscalerV1MetadataOutputReference extends cdktf.Comp
   }
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
-    return this._namespace
+    return this._namespace;
   }
 }
 export interface HorizontalPodAutoscalerV1SpecScaleTargetRef {
@@ -180,7 +223,7 @@ export interface HorizontalPodAutoscalerV1SpecScaleTargetRef {
   readonly name: string;
 }
 
-function horizontalPodAutoscalerV1SpecScaleTargetRefToTerraform(struct?: HorizontalPodAutoscalerV1SpecScaleTargetRefOutputReference | HorizontalPodAutoscalerV1SpecScaleTargetRef): any {
+export function horizontalPodAutoscalerV1SpecScaleTargetRefToTerraform(struct?: HorizontalPodAutoscalerV1SpecScaleTargetRefOutputReference | HorizontalPodAutoscalerV1SpecScaleTargetRef): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -202,12 +245,43 @@ export class HorizontalPodAutoscalerV1SpecScaleTargetRefOutputReference extends 
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV1SpecScaleTargetRef | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._apiVersion) {
+      hasAnyValues = true;
+      internalValueResult.apiVersion = this._apiVersion;
+    }
+    if (this._kind) {
+      hasAnyValues = true;
+      internalValueResult.kind = this._kind;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV1SpecScaleTargetRef | undefined) {
+    if (value === undefined) {
+      this._apiVersion = undefined;
+      this._kind = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._apiVersion = value.apiVersion;
+      this._kind = value.kind;
+      this._name = value.name;
+    }
+  }
+
   // api_version - computed: false, optional: true, required: false
-  private _apiVersion?: string | undefined; 
+  private _apiVersion?: string; 
   public get apiVersion() {
     return this.getStringAttribute('api_version');
   }
-  public set apiVersion(value: string | undefined) {
+  public set apiVersion(value: string) {
     this._apiVersion = value;
   }
   public resetApiVersion() {
@@ -215,7 +289,7 @@ export class HorizontalPodAutoscalerV1SpecScaleTargetRefOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get apiVersionInput() {
-    return this._apiVersion
+    return this._apiVersion;
   }
 
   // kind - computed: false, optional: false, required: true
@@ -228,7 +302,7 @@ export class HorizontalPodAutoscalerV1SpecScaleTargetRefOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get kindInput() {
-    return this._kind
+    return this._kind;
   }
 
   // name - computed: false, optional: false, required: true
@@ -241,7 +315,7 @@ export class HorizontalPodAutoscalerV1SpecScaleTargetRefOutputReference extends 
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 export interface HorizontalPodAutoscalerV1Spec {
@@ -271,7 +345,7 @@ export interface HorizontalPodAutoscalerV1Spec {
   readonly scaleTargetRef: HorizontalPodAutoscalerV1SpecScaleTargetRef;
 }
 
-function horizontalPodAutoscalerV1SpecToTerraform(struct?: HorizontalPodAutoscalerV1SpecOutputReference | HorizontalPodAutoscalerV1Spec): any {
+export function horizontalPodAutoscalerV1SpecToTerraform(struct?: HorizontalPodAutoscalerV1SpecOutputReference | HorizontalPodAutoscalerV1Spec): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -294,6 +368,43 @@ export class HorizontalPodAutoscalerV1SpecOutputReference extends cdktf.ComplexO
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): HorizontalPodAutoscalerV1Spec | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._maxReplicas) {
+      hasAnyValues = true;
+      internalValueResult.maxReplicas = this._maxReplicas;
+    }
+    if (this._minReplicas) {
+      hasAnyValues = true;
+      internalValueResult.minReplicas = this._minReplicas;
+    }
+    if (this._targetCpuUtilizationPercentage) {
+      hasAnyValues = true;
+      internalValueResult.targetCpuUtilizationPercentage = this._targetCpuUtilizationPercentage;
+    }
+    if (this._scaleTargetRef) {
+      hasAnyValues = true;
+      internalValueResult.scaleTargetRef = this._scaleTargetRef?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerV1Spec | undefined) {
+    if (value === undefined) {
+      this._maxReplicas = undefined;
+      this._minReplicas = undefined;
+      this._targetCpuUtilizationPercentage = undefined;
+      this._scaleTargetRef.internalValue = undefined;
+    }
+    else {
+      this._maxReplicas = value.maxReplicas;
+      this._minReplicas = value.minReplicas;
+      this._targetCpuUtilizationPercentage = value.targetCpuUtilizationPercentage;
+      this._scaleTargetRef.internalValue = value.scaleTargetRef;
+    }
+  }
+
   // max_replicas - computed: false, optional: false, required: true
   private _maxReplicas?: number; 
   public get maxReplicas() {
@@ -304,15 +415,15 @@ export class HorizontalPodAutoscalerV1SpecOutputReference extends cdktf.ComplexO
   }
   // Temporarily expose input value. Use with caution.
   public get maxReplicasInput() {
-    return this._maxReplicas
+    return this._maxReplicas;
   }
 
   // min_replicas - computed: false, optional: true, required: false
-  private _minReplicas?: number | undefined; 
+  private _minReplicas?: number; 
   public get minReplicas() {
     return this.getNumberAttribute('min_replicas');
   }
-  public set minReplicas(value: number | undefined) {
+  public set minReplicas(value: number) {
     this._minReplicas = value;
   }
   public resetMinReplicas() {
@@ -320,15 +431,15 @@ export class HorizontalPodAutoscalerV1SpecOutputReference extends cdktf.ComplexO
   }
   // Temporarily expose input value. Use with caution.
   public get minReplicasInput() {
-    return this._minReplicas
+    return this._minReplicas;
   }
 
   // target_cpu_utilization_percentage - computed: true, optional: true, required: false
-  private _targetCpuUtilizationPercentage?: number | undefined; 
+  private _targetCpuUtilizationPercentage?: number; 
   public get targetCpuUtilizationPercentage() {
     return this.getNumberAttribute('target_cpu_utilization_percentage');
   }
-  public set targetCpuUtilizationPercentage(value: number | undefined) {
+  public set targetCpuUtilizationPercentage(value: number) {
     this._targetCpuUtilizationPercentage = value;
   }
   public resetTargetCpuUtilizationPercentage() {
@@ -336,21 +447,20 @@ export class HorizontalPodAutoscalerV1SpecOutputReference extends cdktf.ComplexO
   }
   // Temporarily expose input value. Use with caution.
   public get targetCpuUtilizationPercentageInput() {
-    return this._targetCpuUtilizationPercentage
+    return this._targetCpuUtilizationPercentage;
   }
 
   // scale_target_ref - computed: false, optional: false, required: true
-  private _scaleTargetRef?: HorizontalPodAutoscalerV1SpecScaleTargetRef; 
-  private __scaleTargetRefOutput = new HorizontalPodAutoscalerV1SpecScaleTargetRefOutputReference(this as any, "scale_target_ref", true);
+  private _scaleTargetRef = new HorizontalPodAutoscalerV1SpecScaleTargetRefOutputReference(this as any, "scale_target_ref", true);
   public get scaleTargetRef() {
-    return this.__scaleTargetRefOutput;
+    return this._scaleTargetRef;
   }
   public putScaleTargetRef(value: HorizontalPodAutoscalerV1SpecScaleTargetRef) {
-    this._scaleTargetRef = value;
+    this._scaleTargetRef.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get scaleTargetRefInput() {
-    return this._scaleTargetRef
+    return this._scaleTargetRef.internalValue;
   }
 }
 
@@ -386,8 +496,8 @@ export class HorizontalPodAutoscalerV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._metadata = config.metadata;
-    this._spec = config.spec;
+    this._metadata.internalValue = config.metadata;
+    this._spec.internalValue = config.spec;
   }
 
   // ==========
@@ -400,31 +510,29 @@ export class HorizontalPodAutoscalerV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: HorizontalPodAutoscalerV1Metadata; 
-  private __metadataOutput = new HorizontalPodAutoscalerV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new HorizontalPodAutoscalerV1MetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: HorizontalPodAutoscalerV1Metadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: HorizontalPodAutoscalerV1Spec; 
-  private __specOutput = new HorizontalPodAutoscalerV1SpecOutputReference(this as any, "spec", true);
+  private _spec = new HorizontalPodAutoscalerV1SpecOutputReference(this as any, "spec", true);
   public get spec() {
-    return this.__specOutput;
+    return this._spec;
   }
   public putSpec(value: HorizontalPodAutoscalerV1Spec) {
-    this._spec = value;
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec
+    return this._spec.internalValue;
   }
 
   // =========
@@ -433,8 +541,8 @@ export class HorizontalPodAutoscalerV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      metadata: horizontalPodAutoscalerV1MetadataToTerraform(this._metadata),
-      spec: horizontalPodAutoscalerV1SpecToTerraform(this._spec),
+      metadata: horizontalPodAutoscalerV1MetadataToTerraform(this._metadata.internalValue),
+      spec: horizontalPodAutoscalerV1SpecToTerraform(this._spec.internalValue),
     };
   }
 }

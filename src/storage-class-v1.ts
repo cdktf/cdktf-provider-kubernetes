@@ -71,7 +71,7 @@ export interface StorageClassV1AllowedTopologiesMatchLabelExpressions {
   readonly values?: string[];
 }
 
-function storageClassV1AllowedTopologiesMatchLabelExpressionsToTerraform(struct?: StorageClassV1AllowedTopologiesMatchLabelExpressions): any {
+export function storageClassV1AllowedTopologiesMatchLabelExpressionsToTerraform(struct?: StorageClassV1AllowedTopologiesMatchLabelExpressions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -91,7 +91,7 @@ export interface StorageClassV1AllowedTopologies {
   readonly matchLabelExpressions?: StorageClassV1AllowedTopologiesMatchLabelExpressions[];
 }
 
-function storageClassV1AllowedTopologiesToTerraform(struct?: StorageClassV1AllowedTopologiesOutputReference | StorageClassV1AllowedTopologies): any {
+export function storageClassV1AllowedTopologiesToTerraform(struct?: StorageClassV1AllowedTopologiesOutputReference | StorageClassV1AllowedTopologies): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -111,13 +111,32 @@ export class StorageClassV1AllowedTopologiesOutputReference extends cdktf.Comple
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): StorageClassV1AllowedTopologies | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._matchLabelExpressions) {
+      hasAnyValues = true;
+      internalValueResult.matchLabelExpressions = this._matchLabelExpressions;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: StorageClassV1AllowedTopologies | undefined) {
+    if (value === undefined) {
+      this._matchLabelExpressions = undefined;
+    }
+    else {
+      this._matchLabelExpressions = value.matchLabelExpressions;
+    }
+  }
+
   // match_label_expressions - computed: false, optional: true, required: false
-  private _matchLabelExpressions?: StorageClassV1AllowedTopologiesMatchLabelExpressions[] | undefined; 
+  private _matchLabelExpressions?: StorageClassV1AllowedTopologiesMatchLabelExpressions[]; 
   public get matchLabelExpressions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('match_label_expressions') as any;
   }
-  public set matchLabelExpressions(value: StorageClassV1AllowedTopologiesMatchLabelExpressions[] | undefined) {
+  public set matchLabelExpressions(value: StorageClassV1AllowedTopologiesMatchLabelExpressions[]) {
     this._matchLabelExpressions = value;
   }
   public resetMatchLabelExpressions() {
@@ -125,7 +144,7 @@ export class StorageClassV1AllowedTopologiesOutputReference extends cdktf.Comple
   }
   // Temporarily expose input value. Use with caution.
   public get matchLabelExpressionsInput() {
-    return this._matchLabelExpressions
+    return this._matchLabelExpressions;
   }
 }
 export interface StorageClassV1Metadata {
@@ -155,7 +174,7 @@ export interface StorageClassV1Metadata {
   readonly name?: string;
 }
 
-function storageClassV1MetadataToTerraform(struct?: StorageClassV1MetadataOutputReference | StorageClassV1Metadata): any {
+export function storageClassV1MetadataToTerraform(struct?: StorageClassV1MetadataOutputReference | StorageClassV1Metadata): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -178,13 +197,50 @@ export class StorageClassV1MetadataOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): StorageClassV1Metadata | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._annotations) {
+      hasAnyValues = true;
+      internalValueResult.annotations = this._annotations;
+    }
+    if (this._generateName) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._name) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: StorageClassV1Metadata | undefined) {
+    if (value === undefined) {
+      this._annotations = undefined;
+      this._generateName = undefined;
+      this._labels = undefined;
+      this._name = undefined;
+    }
+    else {
+      this._annotations = value.annotations;
+      this._generateName = value.generateName;
+      this._labels = value.labels;
+      this._name = value.name;
+    }
+  }
+
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
   public get annotations() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('annotations') as any;
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -192,15 +248,15 @@ export class StorageClassV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
-    return this._annotations
+    return this._annotations;
   }
 
   // generate_name - computed: false, optional: true, required: false
-  private _generateName?: string | undefined; 
+  private _generateName?: string; 
   public get generateName() {
     return this.getStringAttribute('generate_name');
   }
-  public set generateName(value: string | undefined) {
+  public set generateName(value: string) {
     this._generateName = value;
   }
   public resetGenerateName() {
@@ -208,16 +264,16 @@ export class StorageClassV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get generateNameInput() {
-    return this._generateName
+    return this._generateName;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -225,15 +281,15 @@ export class StorageClassV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string | undefined; 
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -241,7 +297,7 @@ export class StorageClassV1MetadataOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 }
 
@@ -283,8 +339,8 @@ export class StorageClassV1 extends cdktf.TerraformResource {
     this._reclaimPolicy = config.reclaimPolicy;
     this._storageProvisioner = config.storageProvisioner;
     this._volumeBindingMode = config.volumeBindingMode;
-    this._allowedTopologies = config.allowedTopologies;
-    this._metadata = config.metadata;
+    this._allowedTopologies.internalValue = config.allowedTopologies;
+    this._metadata.internalValue = config.metadata;
   }
 
   // ==========
@@ -292,11 +348,11 @@ export class StorageClassV1 extends cdktf.TerraformResource {
   // ==========
 
   // allow_volume_expansion - computed: false, optional: true, required: false
-  private _allowVolumeExpansion?: boolean | cdktf.IResolvable | undefined; 
+  private _allowVolumeExpansion?: boolean | cdktf.IResolvable; 
   public get allowVolumeExpansion() {
     return this.getBooleanAttribute('allow_volume_expansion') as any;
   }
-  public set allowVolumeExpansion(value: boolean | cdktf.IResolvable | undefined) {
+  public set allowVolumeExpansion(value: boolean | cdktf.IResolvable) {
     this._allowVolumeExpansion = value;
   }
   public resetAllowVolumeExpansion() {
@@ -304,7 +360,7 @@ export class StorageClassV1 extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get allowVolumeExpansionInput() {
-    return this._allowVolumeExpansion
+    return this._allowVolumeExpansion;
   }
 
   // id - computed: true, optional: true, required: false
@@ -313,11 +369,11 @@ export class StorageClassV1 extends cdktf.TerraformResource {
   }
 
   // mount_options - computed: false, optional: true, required: false
-  private _mountOptions?: string[] | undefined; 
+  private _mountOptions?: string[]; 
   public get mountOptions() {
     return this.getListAttribute('mount_options');
   }
-  public set mountOptions(value: string[] | undefined) {
+  public set mountOptions(value: string[]) {
     this._mountOptions = value;
   }
   public resetMountOptions() {
@@ -325,16 +381,16 @@ export class StorageClassV1 extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get mountOptionsInput() {
-    return this._mountOptions
+    return this._mountOptions;
   }
 
   // parameters - computed: false, optional: true, required: false
-  private _parameters?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _parameters?: { [key: string]: string } | cdktf.IResolvable; 
   public get parameters() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('parameters') as any;
   }
-  public set parameters(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set parameters(value: { [key: string]: string } | cdktf.IResolvable) {
     this._parameters = value;
   }
   public resetParameters() {
@@ -342,15 +398,15 @@ export class StorageClassV1 extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get parametersInput() {
-    return this._parameters
+    return this._parameters;
   }
 
   // reclaim_policy - computed: false, optional: true, required: false
-  private _reclaimPolicy?: string | undefined; 
+  private _reclaimPolicy?: string; 
   public get reclaimPolicy() {
     return this.getStringAttribute('reclaim_policy');
   }
-  public set reclaimPolicy(value: string | undefined) {
+  public set reclaimPolicy(value: string) {
     this._reclaimPolicy = value;
   }
   public resetReclaimPolicy() {
@@ -358,7 +414,7 @@ export class StorageClassV1 extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get reclaimPolicyInput() {
-    return this._reclaimPolicy
+    return this._reclaimPolicy;
   }
 
   // storage_provisioner - computed: false, optional: false, required: true
@@ -371,15 +427,15 @@ export class StorageClassV1 extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get storageProvisionerInput() {
-    return this._storageProvisioner
+    return this._storageProvisioner;
   }
 
   // volume_binding_mode - computed: false, optional: true, required: false
-  private _volumeBindingMode?: string | undefined; 
+  private _volumeBindingMode?: string; 
   public get volumeBindingMode() {
     return this.getStringAttribute('volume_binding_mode');
   }
-  public set volumeBindingMode(value: string | undefined) {
+  public set volumeBindingMode(value: string) {
     this._volumeBindingMode = value;
   }
   public resetVolumeBindingMode() {
@@ -387,38 +443,36 @@ export class StorageClassV1 extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get volumeBindingModeInput() {
-    return this._volumeBindingMode
+    return this._volumeBindingMode;
   }
 
   // allowed_topologies - computed: false, optional: true, required: false
-  private _allowedTopologies?: StorageClassV1AllowedTopologies | undefined; 
-  private __allowedTopologiesOutput = new StorageClassV1AllowedTopologiesOutputReference(this as any, "allowed_topologies", true);
+  private _allowedTopologies = new StorageClassV1AllowedTopologiesOutputReference(this as any, "allowed_topologies", true);
   public get allowedTopologies() {
-    return this.__allowedTopologiesOutput;
+    return this._allowedTopologies;
   }
-  public putAllowedTopologies(value: StorageClassV1AllowedTopologies | undefined) {
-    this._allowedTopologies = value;
+  public putAllowedTopologies(value: StorageClassV1AllowedTopologies) {
+    this._allowedTopologies.internalValue = value;
   }
   public resetAllowedTopologies() {
-    this._allowedTopologies = undefined;
+    this._allowedTopologies.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get allowedTopologiesInput() {
-    return this._allowedTopologies
+    return this._allowedTopologies.internalValue;
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata?: StorageClassV1Metadata; 
-  private __metadataOutput = new StorageClassV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new StorageClassV1MetadataOutputReference(this as any, "metadata", true);
   public get metadata() {
-    return this.__metadataOutput;
+    return this._metadata;
   }
   public putMetadata(value: StorageClassV1Metadata) {
-    this._metadata = value;
+    this._metadata.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get metadataInput() {
-    return this._metadata
+    return this._metadata.internalValue;
   }
 
   // =========
@@ -433,8 +487,8 @@ export class StorageClassV1 extends cdktf.TerraformResource {
       reclaim_policy: cdktf.stringToTerraform(this._reclaimPolicy),
       storage_provisioner: cdktf.stringToTerraform(this._storageProvisioner),
       volume_binding_mode: cdktf.stringToTerraform(this._volumeBindingMode),
-      allowed_topologies: storageClassV1AllowedTopologiesToTerraform(this._allowedTopologies),
-      metadata: storageClassV1MetadataToTerraform(this._metadata),
+      allowed_topologies: storageClassV1AllowedTopologiesToTerraform(this._allowedTopologies.internalValue),
+      metadata: storageClassV1MetadataToTerraform(this._metadata.internalValue),
     };
   }
 }
