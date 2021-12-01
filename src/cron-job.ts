@@ -13608,6 +13608,12 @@ export interface CronJobSpecJobTemplateSpec {
   */
   readonly backoffLimit?: number;
   /**
+  * CompletionMode specifies how Pod completions are tracked.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#completion_mode CronJob#completion_mode}
+  */
+  readonly completionMode?: string;
+  /**
   * Specifies the desired number of successfully finished pods the job should be run with. Setting to nil means that the success of any pod signals the success of all pods, and allows parallelism to have any positive value. Setting to 1 means that parallelism is limited to 1 and the success of that pod signals the success of the job. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job.html#completions CronJob#completions}
@@ -13653,6 +13659,7 @@ function cronJobSpecJobTemplateSpecToTerraform(struct?: CronJobSpecJobTemplateSp
   return {
     active_deadline_seconds: cdktf.numberToTerraform(struct!.activeDeadlineSeconds),
     backoff_limit: cdktf.numberToTerraform(struct!.backoffLimit),
+    completion_mode: cdktf.stringToTerraform(struct!.completionMode),
     completions: cdktf.numberToTerraform(struct!.completions),
     manual_selector: cdktf.booleanToTerraform(struct!.manualSelector),
     parallelism: cdktf.numberToTerraform(struct!.parallelism),
@@ -13702,6 +13709,22 @@ export class CronJobSpecJobTemplateSpecOutputReference extends cdktf.ComplexObje
   // Temporarily expose input value. Use with caution.
   public get backoffLimitInput() {
     return this._backoffLimit
+  }
+
+  // completion_mode - computed: true, optional: true, required: false
+  private _completionMode?: string | undefined; 
+  public get completionMode() {
+    return this.getStringAttribute('completion_mode');
+  }
+  public set completionMode(value: string | undefined) {
+    this._completionMode = value;
+  }
+  public resetCompletionMode() {
+    this._completionMode = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get completionModeInput() {
+    return this._completionMode
   }
 
   // completions - computed: false, optional: true, required: false
