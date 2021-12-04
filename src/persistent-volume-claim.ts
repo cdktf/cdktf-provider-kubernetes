@@ -80,6 +80,8 @@ export function persistentVolumeClaimMetadataToTerraform(struct?: PersistentVolu
 }
 
 export class PersistentVolumeClaimMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -90,7 +92,7 @@ export class PersistentVolumeClaimMetadataOutputReference extends cdktf.ComplexO
   }
 
   public get internalValue(): PersistentVolumeClaimMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -117,6 +119,7 @@ export class PersistentVolumeClaimMetadataOutputReference extends cdktf.ComplexO
 
   public set internalValue(value: PersistentVolumeClaimMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -124,6 +127,7 @@ export class PersistentVolumeClaimMetadataOutputReference extends cdktf.ComplexO
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -241,6 +245,8 @@ export function persistentVolumeClaimSpecResourcesToTerraform(struct?: Persisten
 }
 
 export class PersistentVolumeClaimSpecResourcesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -251,7 +257,7 @@ export class PersistentVolumeClaimSpecResourcesOutputReference extends cdktf.Com
   }
 
   public get internalValue(): PersistentVolumeClaimSpecResources | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._limits) {
       hasAnyValues = true;
@@ -266,10 +272,12 @@ export class PersistentVolumeClaimSpecResourcesOutputReference extends cdktf.Com
 
   public set internalValue(value: PersistentVolumeClaimSpecResources | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._limits = undefined;
       this._requests = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._limits = value.limits;
       this._requests = value.requests;
     }
@@ -369,6 +377,8 @@ export function persistentVolumeClaimSpecSelectorToTerraform(struct?: Persistent
 }
 
 export class PersistentVolumeClaimSpecSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -379,7 +389,7 @@ export class PersistentVolumeClaimSpecSelectorOutputReference extends cdktf.Comp
   }
 
   public get internalValue(): PersistentVolumeClaimSpecSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -394,10 +404,12 @@ export class PersistentVolumeClaimSpecSelectorOutputReference extends cdktf.Comp
 
   public set internalValue(value: PersistentVolumeClaimSpecSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }
@@ -485,6 +497,8 @@ export function persistentVolumeClaimSpecToTerraform(struct?: PersistentVolumeCl
 }
 
 export class PersistentVolumeClaimSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -495,7 +509,7 @@ export class PersistentVolumeClaimSpecOutputReference extends cdktf.ComplexObjec
   }
 
   public get internalValue(): PersistentVolumeClaimSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._accessModes) {
       hasAnyValues = true;
@@ -509,11 +523,11 @@ export class PersistentVolumeClaimSpecOutputReference extends cdktf.ComplexObjec
       hasAnyValues = true;
       internalValueResult.volumeName = this._volumeName;
     }
-    if (this._resources) {
+    if (this._resources?.internalValue) {
       hasAnyValues = true;
       internalValueResult.resources = this._resources?.internalValue;
     }
-    if (this._selector) {
+    if (this._selector?.internalValue) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector?.internalValue;
     }
@@ -522,6 +536,7 @@ export class PersistentVolumeClaimSpecOutputReference extends cdktf.ComplexObjec
 
   public set internalValue(value: PersistentVolumeClaimSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._accessModes = undefined;
       this._storageClassName = undefined;
       this._volumeName = undefined;
@@ -529,6 +544,7 @@ export class PersistentVolumeClaimSpecOutputReference extends cdktf.ComplexObjec
       this._selector.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._accessModes = value.accessModes;
       this._storageClassName = value.storageClassName;
       this._volumeName = value.volumeName;
@@ -629,6 +645,8 @@ export function persistentVolumeClaimTimeoutsToTerraform(struct?: PersistentVolu
 }
 
 export class PersistentVolumeClaimTimeoutsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -639,7 +657,7 @@ export class PersistentVolumeClaimTimeoutsOutputReference extends cdktf.ComplexO
   }
 
   public get internalValue(): PersistentVolumeClaimTimeouts | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._create) {
       hasAnyValues = true;
@@ -650,9 +668,11 @@ export class PersistentVolumeClaimTimeoutsOutputReference extends cdktf.ComplexO
 
   public set internalValue(value: PersistentVolumeClaimTimeouts | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._create = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._create = value.create;
     }
   }

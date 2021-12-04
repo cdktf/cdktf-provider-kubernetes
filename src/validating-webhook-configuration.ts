@@ -61,6 +61,8 @@ export function validatingWebhookConfigurationMetadataToTerraform(struct?: Valid
 }
 
 export class ValidatingWebhookConfigurationMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -71,7 +73,7 @@ export class ValidatingWebhookConfigurationMetadataOutputReference extends cdktf
   }
 
   public get internalValue(): ValidatingWebhookConfigurationMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -94,12 +96,14 @@ export class ValidatingWebhookConfigurationMetadataOutputReference extends cdktf
 
   public set internalValue(value: ValidatingWebhookConfigurationMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -214,6 +218,8 @@ export function validatingWebhookConfigurationWebhookClientConfigServiceToTerraf
 }
 
 export class ValidatingWebhookConfigurationWebhookClientConfigServiceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -224,7 +230,7 @@ export class ValidatingWebhookConfigurationWebhookClientConfigServiceOutputRefer
   }
 
   public get internalValue(): ValidatingWebhookConfigurationWebhookClientConfigService | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -247,12 +253,14 @@ export class ValidatingWebhookConfigurationWebhookClientConfigServiceOutputRefer
 
   public set internalValue(value: ValidatingWebhookConfigurationWebhookClientConfigService | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
       this._path = undefined;
       this._port = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
       this._path = value.path;
@@ -362,6 +370,8 @@ export function validatingWebhookConfigurationWebhookClientConfigToTerraform(str
 }
 
 export class ValidatingWebhookConfigurationWebhookClientConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -372,7 +382,7 @@ export class ValidatingWebhookConfigurationWebhookClientConfigOutputReference ex
   }
 
   public get internalValue(): ValidatingWebhookConfigurationWebhookClientConfig | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._caBundle) {
       hasAnyValues = true;
@@ -382,7 +392,7 @@ export class ValidatingWebhookConfigurationWebhookClientConfigOutputReference ex
       hasAnyValues = true;
       internalValueResult.url = this._url;
     }
-    if (this._service) {
+    if (this._service?.internalValue) {
       hasAnyValues = true;
       internalValueResult.service = this._service?.internalValue;
     }
@@ -391,11 +401,13 @@ export class ValidatingWebhookConfigurationWebhookClientConfigOutputReference ex
 
   public set internalValue(value: ValidatingWebhookConfigurationWebhookClientConfig | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._caBundle = undefined;
       this._url = undefined;
       this._service.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._caBundle = value.caBundle;
       this._url = value.url;
       this._service.internalValue = value.service;
@@ -510,6 +522,8 @@ export function validatingWebhookConfigurationWebhookNamespaceSelectorToTerrafor
 }
 
 export class ValidatingWebhookConfigurationWebhookNamespaceSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -520,7 +534,7 @@ export class ValidatingWebhookConfigurationWebhookNamespaceSelectorOutputReferen
   }
 
   public get internalValue(): ValidatingWebhookConfigurationWebhookNamespaceSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -535,10 +549,12 @@ export class ValidatingWebhookConfigurationWebhookNamespaceSelectorOutputReferen
 
   public set internalValue(value: ValidatingWebhookConfigurationWebhookNamespaceSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }
@@ -638,6 +654,8 @@ export function validatingWebhookConfigurationWebhookObjectSelectorToTerraform(s
 }
 
 export class ValidatingWebhookConfigurationWebhookObjectSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -648,7 +666,7 @@ export class ValidatingWebhookConfigurationWebhookObjectSelectorOutputReference 
   }
 
   public get internalValue(): ValidatingWebhookConfigurationWebhookObjectSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -663,10 +681,12 @@ export class ValidatingWebhookConfigurationWebhookObjectSelectorOutputReference 
 
   public set internalValue(value: ValidatingWebhookConfigurationWebhookObjectSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }

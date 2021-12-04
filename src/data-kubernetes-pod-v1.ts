@@ -3584,6 +3584,8 @@ export function dataKubernetesPodV1MetadataToTerraform(struct?: DataKubernetesPo
 }
 
 export class DataKubernetesPodV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3594,7 +3596,7 @@ export class DataKubernetesPodV1MetadataOutputReference extends cdktf.ComplexObj
   }
 
   public get internalValue(): DataKubernetesPodV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -3621,6 +3623,7 @@ export class DataKubernetesPodV1MetadataOutputReference extends cdktf.ComplexObj
 
   public set internalValue(value: DataKubernetesPodV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -3628,6 +3631,7 @@ export class DataKubernetesPodV1MetadataOutputReference extends cdktf.ComplexObj
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;

@@ -68,6 +68,8 @@ export function networkPolicyMetadataToTerraform(struct?: NetworkPolicyMetadataO
 }
 
 export class NetworkPolicyMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -78,7 +80,7 @@ export class NetworkPolicyMetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): NetworkPolicyMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -105,6 +107,7 @@ export class NetworkPolicyMetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: NetworkPolicyMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -112,6 +115,7 @@ export class NetworkPolicyMetadataOutputReference extends cdktf.ComplexObject {
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -255,6 +259,8 @@ export function networkPolicySpecEgressToIpBlockToTerraform(struct?: NetworkPoli
 }
 
 export class NetworkPolicySpecEgressToIpBlockOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -265,7 +271,7 @@ export class NetworkPolicySpecEgressToIpBlockOutputReference extends cdktf.Compl
   }
 
   public get internalValue(): NetworkPolicySpecEgressToIpBlock | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._cidr) {
       hasAnyValues = true;
@@ -280,10 +286,12 @@ export class NetworkPolicySpecEgressToIpBlockOutputReference extends cdktf.Compl
 
   public set internalValue(value: NetworkPolicySpecEgressToIpBlock | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._cidr = undefined;
       this._except = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._cidr = value.cidr;
       this._except = value.except;
     }
@@ -381,6 +389,8 @@ export function networkPolicySpecEgressToNamespaceSelectorToTerraform(struct?: N
 }
 
 export class NetworkPolicySpecEgressToNamespaceSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -391,7 +401,7 @@ export class NetworkPolicySpecEgressToNamespaceSelectorOutputReference extends c
   }
 
   public get internalValue(): NetworkPolicySpecEgressToNamespaceSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -406,10 +416,12 @@ export class NetworkPolicySpecEgressToNamespaceSelectorOutputReference extends c
 
   public set internalValue(value: NetworkPolicySpecEgressToNamespaceSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }
@@ -509,6 +521,8 @@ export function networkPolicySpecEgressToPodSelectorToTerraform(struct?: Network
 }
 
 export class NetworkPolicySpecEgressToPodSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -519,7 +533,7 @@ export class NetworkPolicySpecEgressToPodSelectorOutputReference extends cdktf.C
   }
 
   public get internalValue(): NetworkPolicySpecEgressToPodSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -534,10 +548,12 @@ export class NetworkPolicySpecEgressToPodSelectorOutputReference extends cdktf.C
 
   public set internalValue(value: NetworkPolicySpecEgressToPodSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }
@@ -663,6 +679,8 @@ export function networkPolicySpecIngressFromIpBlockToTerraform(struct?: NetworkP
 }
 
 export class NetworkPolicySpecIngressFromIpBlockOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -673,7 +691,7 @@ export class NetworkPolicySpecIngressFromIpBlockOutputReference extends cdktf.Co
   }
 
   public get internalValue(): NetworkPolicySpecIngressFromIpBlock | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._cidr) {
       hasAnyValues = true;
@@ -688,10 +706,12 @@ export class NetworkPolicySpecIngressFromIpBlockOutputReference extends cdktf.Co
 
   public set internalValue(value: NetworkPolicySpecIngressFromIpBlock | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._cidr = undefined;
       this._except = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._cidr = value.cidr;
       this._except = value.except;
     }
@@ -789,6 +809,8 @@ export function networkPolicySpecIngressFromNamespaceSelectorToTerraform(struct?
 }
 
 export class NetworkPolicySpecIngressFromNamespaceSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -799,7 +821,7 @@ export class NetworkPolicySpecIngressFromNamespaceSelectorOutputReference extend
   }
 
   public get internalValue(): NetworkPolicySpecIngressFromNamespaceSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -814,10 +836,12 @@ export class NetworkPolicySpecIngressFromNamespaceSelectorOutputReference extend
 
   public set internalValue(value: NetworkPolicySpecIngressFromNamespaceSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }
@@ -917,6 +941,8 @@ export function networkPolicySpecIngressFromPodSelectorToTerraform(struct?: Netw
 }
 
 export class NetworkPolicySpecIngressFromPodSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -927,7 +953,7 @@ export class NetworkPolicySpecIngressFromPodSelectorOutputReference extends cdkt
   }
 
   public get internalValue(): NetworkPolicySpecIngressFromPodSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -942,10 +968,12 @@ export class NetworkPolicySpecIngressFromPodSelectorOutputReference extends cdkt
 
   public set internalValue(value: NetworkPolicySpecIngressFromPodSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }
@@ -1130,6 +1158,8 @@ export function networkPolicySpecPodSelectorToTerraform(struct?: NetworkPolicySp
 }
 
 export class NetworkPolicySpecPodSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1140,7 +1170,7 @@ export class NetworkPolicySpecPodSelectorOutputReference extends cdktf.ComplexOb
   }
 
   public get internalValue(): NetworkPolicySpecPodSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -1155,10 +1185,12 @@ export class NetworkPolicySpecPodSelectorOutputReference extends cdktf.ComplexOb
 
   public set internalValue(value: NetworkPolicySpecPodSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }
@@ -1239,6 +1271,8 @@ export function networkPolicySpecToTerraform(struct?: NetworkPolicySpecOutputRef
 }
 
 export class NetworkPolicySpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1249,7 +1283,7 @@ export class NetworkPolicySpecOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): NetworkPolicySpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._policyTypes) {
       hasAnyValues = true;
@@ -1263,7 +1297,7 @@ export class NetworkPolicySpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.ingress = this._ingress;
     }
-    if (this._podSelector) {
+    if (this._podSelector?.internalValue) {
       hasAnyValues = true;
       internalValueResult.podSelector = this._podSelector?.internalValue;
     }
@@ -1272,12 +1306,14 @@ export class NetworkPolicySpecOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: NetworkPolicySpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._policyTypes = undefined;
       this._egress = undefined;
       this._ingress = undefined;
       this._podSelector.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._policyTypes = value.policyTypes;
       this._egress = value.egress;
       this._ingress = value.ingress;

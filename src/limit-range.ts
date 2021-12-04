@@ -68,6 +68,8 @@ export function limitRangeMetadataToTerraform(struct?: LimitRangeMetadataOutputR
 }
 
 export class LimitRangeMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -78,7 +80,7 @@ export class LimitRangeMetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): LimitRangeMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -105,6 +107,7 @@ export class LimitRangeMetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: LimitRangeMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -112,6 +115,7 @@ export class LimitRangeMetadataOutputReference extends cdktf.ComplexObject {
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -276,6 +280,8 @@ export function limitRangeSpecToTerraform(struct?: LimitRangeSpecOutputReference
 }
 
 export class LimitRangeSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -286,7 +292,7 @@ export class LimitRangeSpecOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): LimitRangeSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._limit) {
       hasAnyValues = true;
@@ -297,9 +303,11 @@ export class LimitRangeSpecOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: LimitRangeSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._limit = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._limit = value.limit;
     }
   }

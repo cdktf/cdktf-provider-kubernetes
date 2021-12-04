@@ -73,6 +73,8 @@ export function priorityClassV1MetadataToTerraform(struct?: PriorityClassV1Metad
 }
 
 export class PriorityClassV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -83,7 +85,7 @@ export class PriorityClassV1MetadataOutputReference extends cdktf.ComplexObject 
   }
 
   public get internalValue(): PriorityClassV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -106,12 +108,14 @@ export class PriorityClassV1MetadataOutputReference extends cdktf.ComplexObject 
 
   public set internalValue(value: PriorityClassV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;

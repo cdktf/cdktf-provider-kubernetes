@@ -60,6 +60,8 @@ export function clusterRoleBindingV1MetadataToTerraform(struct?: ClusterRoleBind
 }
 
 export class ClusterRoleBindingV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -70,7 +72,7 @@ export class ClusterRoleBindingV1MetadataOutputReference extends cdktf.ComplexOb
   }
 
   public get internalValue(): ClusterRoleBindingV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -89,11 +91,13 @@ export class ClusterRoleBindingV1MetadataOutputReference extends cdktf.ComplexOb
 
   public set internalValue(value: ClusterRoleBindingV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._labels = value.labels;
       this._name = value.name;
@@ -184,6 +188,8 @@ export function clusterRoleBindingV1RoleRefToTerraform(struct?: ClusterRoleBindi
 }
 
 export class ClusterRoleBindingV1RoleRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -194,7 +200,7 @@ export class ClusterRoleBindingV1RoleRefOutputReference extends cdktf.ComplexObj
   }
 
   public get internalValue(): ClusterRoleBindingV1RoleRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiGroup) {
       hasAnyValues = true;
@@ -213,11 +219,13 @@ export class ClusterRoleBindingV1RoleRefOutputReference extends cdktf.ComplexObj
 
   public set internalValue(value: ClusterRoleBindingV1RoleRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiGroup = undefined;
       this._kind = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiGroup = value.apiGroup;
       this._kind = value.kind;
       this._name = value.name;

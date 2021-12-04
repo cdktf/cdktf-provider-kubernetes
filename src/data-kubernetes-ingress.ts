@@ -178,6 +178,8 @@ export function dataKubernetesIngressMetadataToTerraform(struct?: DataKubernetes
 }
 
 export class DataKubernetesIngressMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -188,7 +190,7 @@ export class DataKubernetesIngressMetadataOutputReference extends cdktf.ComplexO
   }
 
   public get internalValue(): DataKubernetesIngressMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -211,12 +213,14 @@ export class DataKubernetesIngressMetadataOutputReference extends cdktf.ComplexO
 
   public set internalValue(value: DataKubernetesIngressMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._labels = undefined;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._labels = value.labels;
       this._name = value.name;

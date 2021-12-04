@@ -61,6 +61,8 @@ export function mutatingWebhookConfigurationV1MetadataToTerraform(struct?: Mutat
 }
 
 export class MutatingWebhookConfigurationV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -71,7 +73,7 @@ export class MutatingWebhookConfigurationV1MetadataOutputReference extends cdktf
   }
 
   public get internalValue(): MutatingWebhookConfigurationV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -94,12 +96,14 @@ export class MutatingWebhookConfigurationV1MetadataOutputReference extends cdktf
 
   public set internalValue(value: MutatingWebhookConfigurationV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -214,6 +218,8 @@ export function mutatingWebhookConfigurationV1WebhookClientConfigServiceToTerraf
 }
 
 export class MutatingWebhookConfigurationV1WebhookClientConfigServiceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -224,7 +230,7 @@ export class MutatingWebhookConfigurationV1WebhookClientConfigServiceOutputRefer
   }
 
   public get internalValue(): MutatingWebhookConfigurationV1WebhookClientConfigService | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -247,12 +253,14 @@ export class MutatingWebhookConfigurationV1WebhookClientConfigServiceOutputRefer
 
   public set internalValue(value: MutatingWebhookConfigurationV1WebhookClientConfigService | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
       this._path = undefined;
       this._port = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
       this._path = value.path;
@@ -362,6 +370,8 @@ export function mutatingWebhookConfigurationV1WebhookClientConfigToTerraform(str
 }
 
 export class MutatingWebhookConfigurationV1WebhookClientConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -372,7 +382,7 @@ export class MutatingWebhookConfigurationV1WebhookClientConfigOutputReference ex
   }
 
   public get internalValue(): MutatingWebhookConfigurationV1WebhookClientConfig | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._caBundle) {
       hasAnyValues = true;
@@ -382,7 +392,7 @@ export class MutatingWebhookConfigurationV1WebhookClientConfigOutputReference ex
       hasAnyValues = true;
       internalValueResult.url = this._url;
     }
-    if (this._service) {
+    if (this._service?.internalValue) {
       hasAnyValues = true;
       internalValueResult.service = this._service?.internalValue;
     }
@@ -391,11 +401,13 @@ export class MutatingWebhookConfigurationV1WebhookClientConfigOutputReference ex
 
   public set internalValue(value: MutatingWebhookConfigurationV1WebhookClientConfig | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._caBundle = undefined;
       this._url = undefined;
       this._service.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._caBundle = value.caBundle;
       this._url = value.url;
       this._service.internalValue = value.service;
@@ -510,6 +522,8 @@ export function mutatingWebhookConfigurationV1WebhookNamespaceSelectorToTerrafor
 }
 
 export class MutatingWebhookConfigurationV1WebhookNamespaceSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -520,7 +534,7 @@ export class MutatingWebhookConfigurationV1WebhookNamespaceSelectorOutputReferen
   }
 
   public get internalValue(): MutatingWebhookConfigurationV1WebhookNamespaceSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -535,10 +549,12 @@ export class MutatingWebhookConfigurationV1WebhookNamespaceSelectorOutputReferen
 
   public set internalValue(value: MutatingWebhookConfigurationV1WebhookNamespaceSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }
@@ -638,6 +654,8 @@ export function mutatingWebhookConfigurationV1WebhookObjectSelectorToTerraform(s
 }
 
 export class MutatingWebhookConfigurationV1WebhookObjectSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -648,7 +666,7 @@ export class MutatingWebhookConfigurationV1WebhookObjectSelectorOutputReference 
   }
 
   public get internalValue(): MutatingWebhookConfigurationV1WebhookObjectSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -663,10 +681,12 @@ export class MutatingWebhookConfigurationV1WebhookObjectSelectorOutputReference 
 
   public set internalValue(value: MutatingWebhookConfigurationV1WebhookObjectSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }

@@ -74,6 +74,8 @@ export function resourceQuotaV1MetadataToTerraform(struct?: ResourceQuotaV1Metad
 }
 
 export class ResourceQuotaV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -84,7 +86,7 @@ export class ResourceQuotaV1MetadataOutputReference extends cdktf.ComplexObject 
   }
 
   public get internalValue(): ResourceQuotaV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -111,6 +113,7 @@ export class ResourceQuotaV1MetadataOutputReference extends cdktf.ComplexObject 
 
   public set internalValue(value: ResourceQuotaV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -118,6 +121,7 @@ export class ResourceQuotaV1MetadataOutputReference extends cdktf.ComplexObject 
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -261,6 +265,8 @@ export function resourceQuotaV1SpecScopeSelectorToTerraform(struct?: ResourceQuo
 }
 
 export class ResourceQuotaV1SpecScopeSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -271,7 +277,7 @@ export class ResourceQuotaV1SpecScopeSelectorOutputReference extends cdktf.Compl
   }
 
   public get internalValue(): ResourceQuotaV1SpecScopeSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchExpression) {
       hasAnyValues = true;
@@ -282,9 +288,11 @@ export class ResourceQuotaV1SpecScopeSelectorOutputReference extends cdktf.Compl
 
   public set internalValue(value: ResourceQuotaV1SpecScopeSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchExpression = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchExpression = value.matchExpression;
     }
   }
@@ -340,6 +348,8 @@ export function resourceQuotaV1SpecToTerraform(struct?: ResourceQuotaV1SpecOutpu
 }
 
 export class ResourceQuotaV1SpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -350,7 +360,7 @@ export class ResourceQuotaV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ResourceQuotaV1Spec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._hard) {
       hasAnyValues = true;
@@ -360,7 +370,7 @@ export class ResourceQuotaV1SpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.scopes = this._scopes;
     }
-    if (this._scopeSelector) {
+    if (this._scopeSelector?.internalValue) {
       hasAnyValues = true;
       internalValueResult.scopeSelector = this._scopeSelector?.internalValue;
     }
@@ -369,11 +379,13 @@ export class ResourceQuotaV1SpecOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ResourceQuotaV1Spec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._hard = undefined;
       this._scopes = undefined;
       this._scopeSelector.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._hard = value.hard;
       this._scopes = value.scopes;
       this._scopeSelector.internalValue = value.scopeSelector;
@@ -452,6 +464,8 @@ export function resourceQuotaV1TimeoutsToTerraform(struct?: ResourceQuotaV1Timeo
 }
 
 export class ResourceQuotaV1TimeoutsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -462,7 +476,7 @@ export class ResourceQuotaV1TimeoutsOutputReference extends cdktf.ComplexObject 
   }
 
   public get internalValue(): ResourceQuotaV1Timeouts | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._create) {
       hasAnyValues = true;
@@ -477,10 +491,12 @@ export class ResourceQuotaV1TimeoutsOutputReference extends cdktf.ComplexObject 
 
   public set internalValue(value: ResourceQuotaV1Timeouts | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._create = undefined;
       this._update = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._create = value.create;
       this._update = value.update;
     }

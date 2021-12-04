@@ -68,6 +68,8 @@ export function podDisruptionBudgetV1MetadataToTerraform(struct?: PodDisruptionB
 }
 
 export class PodDisruptionBudgetV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -78,7 +80,7 @@ export class PodDisruptionBudgetV1MetadataOutputReference extends cdktf.ComplexO
   }
 
   public get internalValue(): PodDisruptionBudgetV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -105,6 +107,7 @@ export class PodDisruptionBudgetV1MetadataOutputReference extends cdktf.ComplexO
 
   public set internalValue(value: PodDisruptionBudgetV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -112,6 +115,7 @@ export class PodDisruptionBudgetV1MetadataOutputReference extends cdktf.ComplexO
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -262,6 +266,8 @@ export function podDisruptionBudgetV1SpecSelectorToTerraform(struct?: PodDisrupt
 }
 
 export class PodDisruptionBudgetV1SpecSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -272,7 +278,7 @@ export class PodDisruptionBudgetV1SpecSelectorOutputReference extends cdktf.Comp
   }
 
   public get internalValue(): PodDisruptionBudgetV1SpecSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -287,10 +293,12 @@ export class PodDisruptionBudgetV1SpecSelectorOutputReference extends cdktf.Comp
 
   public set internalValue(value: PodDisruptionBudgetV1SpecSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }
@@ -360,6 +368,8 @@ export function podDisruptionBudgetV1SpecToTerraform(struct?: PodDisruptionBudge
 }
 
 export class PodDisruptionBudgetV1SpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -370,7 +380,7 @@ export class PodDisruptionBudgetV1SpecOutputReference extends cdktf.ComplexObjec
   }
 
   public get internalValue(): PodDisruptionBudgetV1Spec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._maxUnavailable) {
       hasAnyValues = true;
@@ -380,7 +390,7 @@ export class PodDisruptionBudgetV1SpecOutputReference extends cdktf.ComplexObjec
       hasAnyValues = true;
       internalValueResult.minAvailable = this._minAvailable;
     }
-    if (this._selector) {
+    if (this._selector?.internalValue) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector?.internalValue;
     }
@@ -389,11 +399,13 @@ export class PodDisruptionBudgetV1SpecOutputReference extends cdktf.ComplexObjec
 
   public set internalValue(value: PodDisruptionBudgetV1Spec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._maxUnavailable = undefined;
       this._minAvailable = undefined;
       this._selector.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._maxUnavailable = value.maxUnavailable;
       this._minAvailable = value.minAvailable;
       this._selector.internalValue = value.selector;

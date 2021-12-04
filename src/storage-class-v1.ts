@@ -102,6 +102,8 @@ export function storageClassV1AllowedTopologiesToTerraform(struct?: StorageClass
 }
 
 export class StorageClassV1AllowedTopologiesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -112,7 +114,7 @@ export class StorageClassV1AllowedTopologiesOutputReference extends cdktf.Comple
   }
 
   public get internalValue(): StorageClassV1AllowedTopologies | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabelExpressions) {
       hasAnyValues = true;
@@ -123,9 +125,11 @@ export class StorageClassV1AllowedTopologiesOutputReference extends cdktf.Comple
 
   public set internalValue(value: StorageClassV1AllowedTopologies | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabelExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabelExpressions = value.matchLabelExpressions;
     }
   }
@@ -188,6 +192,8 @@ export function storageClassV1MetadataToTerraform(struct?: StorageClassV1Metadat
 }
 
 export class StorageClassV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -198,7 +204,7 @@ export class StorageClassV1MetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): StorageClassV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -221,12 +227,14 @@ export class StorageClassV1MetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: StorageClassV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;

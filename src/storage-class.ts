@@ -102,6 +102,8 @@ export function storageClassAllowedTopologiesToTerraform(struct?: StorageClassAl
 }
 
 export class StorageClassAllowedTopologiesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -112,7 +114,7 @@ export class StorageClassAllowedTopologiesOutputReference extends cdktf.ComplexO
   }
 
   public get internalValue(): StorageClassAllowedTopologies | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabelExpressions) {
       hasAnyValues = true;
@@ -123,9 +125,11 @@ export class StorageClassAllowedTopologiesOutputReference extends cdktf.ComplexO
 
   public set internalValue(value: StorageClassAllowedTopologies | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabelExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabelExpressions = value.matchLabelExpressions;
     }
   }
@@ -188,6 +192,8 @@ export function storageClassMetadataToTerraform(struct?: StorageClassMetadataOut
 }
 
 export class StorageClassMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -198,7 +204,7 @@ export class StorageClassMetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): StorageClassMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -221,12 +227,14 @@ export class StorageClassMetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: StorageClassMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;

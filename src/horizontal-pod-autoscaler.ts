@@ -68,6 +68,8 @@ export function horizontalPodAutoscalerMetadataToTerraform(struct?: HorizontalPo
 }
 
 export class HorizontalPodAutoscalerMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -78,7 +80,7 @@ export class HorizontalPodAutoscalerMetadataOutputReference extends cdktf.Comple
   }
 
   public get internalValue(): HorizontalPodAutoscalerMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -105,6 +107,7 @@ export class HorizontalPodAutoscalerMetadataOutputReference extends cdktf.Comple
 
   public set internalValue(value: HorizontalPodAutoscalerMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -112,6 +115,7 @@ export class HorizontalPodAutoscalerMetadataOutputReference extends cdktf.Comple
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -361,6 +365,8 @@ export function horizontalPodAutoscalerSpecBehaviorToTerraform(struct?: Horizont
 }
 
 export class HorizontalPodAutoscalerSpecBehaviorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -371,7 +377,7 @@ export class HorizontalPodAutoscalerSpecBehaviorOutputReference extends cdktf.Co
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecBehavior | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._scaleDown) {
       hasAnyValues = true;
@@ -386,10 +392,12 @@ export class HorizontalPodAutoscalerSpecBehaviorOutputReference extends cdktf.Co
 
   public set internalValue(value: HorizontalPodAutoscalerSpecBehavior | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._scaleDown = undefined;
       this._scaleUp = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._scaleDown = value.scaleDown;
       this._scaleUp = value.scaleUp;
     }
@@ -515,6 +523,8 @@ export function horizontalPodAutoscalerSpecMetricExternalMetricToTerraform(struc
 }
 
 export class HorizontalPodAutoscalerSpecMetricExternalMetricOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -525,7 +535,7 @@ export class HorizontalPodAutoscalerSpecMetricExternalMetricOutputReference exte
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricExternalMetric | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -540,10 +550,12 @@ export class HorizontalPodAutoscalerSpecMetricExternalMetricOutputReference exte
 
   public set internalValue(value: HorizontalPodAutoscalerSpecMetricExternalMetric | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._selector = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._selector = value.selector;
     }
@@ -620,6 +632,8 @@ export function horizontalPodAutoscalerSpecMetricExternalTargetToTerraform(struc
 }
 
 export class HorizontalPodAutoscalerSpecMetricExternalTargetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -630,7 +644,7 @@ export class HorizontalPodAutoscalerSpecMetricExternalTargetOutputReference exte
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricExternalTarget | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._averageUtilization) {
       hasAnyValues = true;
@@ -653,12 +667,14 @@ export class HorizontalPodAutoscalerSpecMetricExternalTargetOutputReference exte
 
   public set internalValue(value: HorizontalPodAutoscalerSpecMetricExternalTarget | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._averageUtilization = undefined;
       this._averageValue = undefined;
       this._type = undefined;
       this._value = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._averageUtilization = value.averageUtilization;
       this._averageValue = value.averageValue;
       this._type = value.type;
@@ -754,6 +770,8 @@ export function horizontalPodAutoscalerSpecMetricExternalToTerraform(struct?: Ho
 }
 
 export class HorizontalPodAutoscalerSpecMetricExternalOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -764,13 +782,13 @@ export class HorizontalPodAutoscalerSpecMetricExternalOutputReference extends cd
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricExternal | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._metric) {
+    if (this._metric?.internalValue) {
       hasAnyValues = true;
       internalValueResult.metric = this._metric?.internalValue;
     }
-    if (this._target) {
+    if (this._target?.internalValue) {
       hasAnyValues = true;
       internalValueResult.target = this._target?.internalValue;
     }
@@ -779,10 +797,12 @@ export class HorizontalPodAutoscalerSpecMetricExternalOutputReference extends cd
 
   public set internalValue(value: HorizontalPodAutoscalerSpecMetricExternal | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._metric.internalValue = undefined;
       this._target.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._metric.internalValue = value.metric;
       this._target.internalValue = value.target;
     }
@@ -851,6 +871,8 @@ export function horizontalPodAutoscalerSpecMetricObjectDescribedObjectToTerrafor
 }
 
 export class HorizontalPodAutoscalerSpecMetricObjectDescribedObjectOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -861,7 +883,7 @@ export class HorizontalPodAutoscalerSpecMetricObjectDescribedObjectOutputReferen
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricObjectDescribedObject | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiVersion) {
       hasAnyValues = true;
@@ -880,11 +902,13 @@ export class HorizontalPodAutoscalerSpecMetricObjectDescribedObjectOutputReferen
 
   public set internalValue(value: HorizontalPodAutoscalerSpecMetricObjectDescribedObject | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiVersion = undefined;
       this._kind = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiVersion = value.apiVersion;
       this._kind = value.kind;
       this._name = value.name;
@@ -1016,6 +1040,8 @@ export function horizontalPodAutoscalerSpecMetricObjectMetricToTerraform(struct?
 }
 
 export class HorizontalPodAutoscalerSpecMetricObjectMetricOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1026,7 +1052,7 @@ export class HorizontalPodAutoscalerSpecMetricObjectMetricOutputReference extend
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricObjectMetric | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -1041,10 +1067,12 @@ export class HorizontalPodAutoscalerSpecMetricObjectMetricOutputReference extend
 
   public set internalValue(value: HorizontalPodAutoscalerSpecMetricObjectMetric | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._selector = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._selector = value.selector;
     }
@@ -1121,6 +1149,8 @@ export function horizontalPodAutoscalerSpecMetricObjectTargetToTerraform(struct?
 }
 
 export class HorizontalPodAutoscalerSpecMetricObjectTargetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1131,7 +1161,7 @@ export class HorizontalPodAutoscalerSpecMetricObjectTargetOutputReference extend
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricObjectTarget | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._averageUtilization) {
       hasAnyValues = true;
@@ -1154,12 +1184,14 @@ export class HorizontalPodAutoscalerSpecMetricObjectTargetOutputReference extend
 
   public set internalValue(value: HorizontalPodAutoscalerSpecMetricObjectTarget | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._averageUtilization = undefined;
       this._averageValue = undefined;
       this._type = undefined;
       this._value = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._averageUtilization = value.averageUtilization;
       this._averageValue = value.averageValue;
       this._type = value.type;
@@ -1262,6 +1294,8 @@ export function horizontalPodAutoscalerSpecMetricObjectToTerraform(struct?: Hori
 }
 
 export class HorizontalPodAutoscalerSpecMetricObjectOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1272,17 +1306,17 @@ export class HorizontalPodAutoscalerSpecMetricObjectOutputReference extends cdkt
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricObject | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._describedObject) {
+    if (this._describedObject?.internalValue) {
       hasAnyValues = true;
       internalValueResult.describedObject = this._describedObject?.internalValue;
     }
-    if (this._metric) {
+    if (this._metric?.internalValue) {
       hasAnyValues = true;
       internalValueResult.metric = this._metric?.internalValue;
     }
-    if (this._target) {
+    if (this._target?.internalValue) {
       hasAnyValues = true;
       internalValueResult.target = this._target?.internalValue;
     }
@@ -1291,11 +1325,13 @@ export class HorizontalPodAutoscalerSpecMetricObjectOutputReference extends cdkt
 
   public set internalValue(value: HorizontalPodAutoscalerSpecMetricObject | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._describedObject.internalValue = undefined;
       this._metric.internalValue = undefined;
       this._target.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._describedObject.internalValue = value.describedObject;
       this._metric.internalValue = value.metric;
       this._target.internalValue = value.target;
@@ -1430,6 +1466,8 @@ export function horizontalPodAutoscalerSpecMetricPodsMetricToTerraform(struct?: 
 }
 
 export class HorizontalPodAutoscalerSpecMetricPodsMetricOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1440,7 +1478,7 @@ export class HorizontalPodAutoscalerSpecMetricPodsMetricOutputReference extends 
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricPodsMetric | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -1455,10 +1493,12 @@ export class HorizontalPodAutoscalerSpecMetricPodsMetricOutputReference extends 
 
   public set internalValue(value: HorizontalPodAutoscalerSpecMetricPodsMetric | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._selector = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._selector = value.selector;
     }
@@ -1535,6 +1575,8 @@ export function horizontalPodAutoscalerSpecMetricPodsTargetToTerraform(struct?: 
 }
 
 export class HorizontalPodAutoscalerSpecMetricPodsTargetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1545,7 +1587,7 @@ export class HorizontalPodAutoscalerSpecMetricPodsTargetOutputReference extends 
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricPodsTarget | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._averageUtilization) {
       hasAnyValues = true;
@@ -1568,12 +1610,14 @@ export class HorizontalPodAutoscalerSpecMetricPodsTargetOutputReference extends 
 
   public set internalValue(value: HorizontalPodAutoscalerSpecMetricPodsTarget | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._averageUtilization = undefined;
       this._averageValue = undefined;
       this._type = undefined;
       this._value = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._averageUtilization = value.averageUtilization;
       this._averageValue = value.averageValue;
       this._type = value.type;
@@ -1669,6 +1713,8 @@ export function horizontalPodAutoscalerSpecMetricPodsToTerraform(struct?: Horizo
 }
 
 export class HorizontalPodAutoscalerSpecMetricPodsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1679,13 +1725,13 @@ export class HorizontalPodAutoscalerSpecMetricPodsOutputReference extends cdktf.
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricPods | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._metric) {
+    if (this._metric?.internalValue) {
       hasAnyValues = true;
       internalValueResult.metric = this._metric?.internalValue;
     }
-    if (this._target) {
+    if (this._target?.internalValue) {
       hasAnyValues = true;
       internalValueResult.target = this._target?.internalValue;
     }
@@ -1694,10 +1740,12 @@ export class HorizontalPodAutoscalerSpecMetricPodsOutputReference extends cdktf.
 
   public set internalValue(value: HorizontalPodAutoscalerSpecMetricPods | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._metric.internalValue = undefined;
       this._target.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._metric.internalValue = value.metric;
       this._target.internalValue = value.target;
     }
@@ -1773,6 +1821,8 @@ export function horizontalPodAutoscalerSpecMetricResourceTargetToTerraform(struc
 }
 
 export class HorizontalPodAutoscalerSpecMetricResourceTargetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1783,7 +1833,7 @@ export class HorizontalPodAutoscalerSpecMetricResourceTargetOutputReference exte
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricResourceTarget | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._averageUtilization) {
       hasAnyValues = true;
@@ -1806,12 +1856,14 @@ export class HorizontalPodAutoscalerSpecMetricResourceTargetOutputReference exte
 
   public set internalValue(value: HorizontalPodAutoscalerSpecMetricResourceTarget | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._averageUtilization = undefined;
       this._averageValue = undefined;
       this._type = undefined;
       this._value = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._averageUtilization = value.averageUtilization;
       this._averageValue = value.averageValue;
       this._type = value.type;
@@ -1907,6 +1959,8 @@ export function horizontalPodAutoscalerSpecMetricResourceToTerraform(struct?: Ho
 }
 
 export class HorizontalPodAutoscalerSpecMetricResourceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1917,13 +1971,13 @@ export class HorizontalPodAutoscalerSpecMetricResourceOutputReference extends cd
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricResource | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._target) {
+    if (this._target?.internalValue) {
       hasAnyValues = true;
       internalValueResult.target = this._target?.internalValue;
     }
@@ -1932,10 +1986,12 @@ export class HorizontalPodAutoscalerSpecMetricResourceOutputReference extends cd
 
   public set internalValue(value: HorizontalPodAutoscalerSpecMetricResource | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._target.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._target.internalValue = value.target;
     }
@@ -2051,6 +2107,8 @@ export function horizontalPodAutoscalerSpecScaleTargetRefToTerraform(struct?: Ho
 }
 
 export class HorizontalPodAutoscalerSpecScaleTargetRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2061,7 +2119,7 @@ export class HorizontalPodAutoscalerSpecScaleTargetRefOutputReference extends cd
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecScaleTargetRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiVersion) {
       hasAnyValues = true;
@@ -2080,11 +2138,13 @@ export class HorizontalPodAutoscalerSpecScaleTargetRefOutputReference extends cd
 
   public set internalValue(value: HorizontalPodAutoscalerSpecScaleTargetRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiVersion = undefined;
       this._kind = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiVersion = value.apiVersion;
       this._kind = value.kind;
       this._name = value.name;
@@ -2188,6 +2248,8 @@ export function horizontalPodAutoscalerSpecToTerraform(struct?: HorizontalPodAut
 }
 
 export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2198,7 +2260,7 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._maxReplicas) {
       hasAnyValues = true;
@@ -2212,7 +2274,7 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
       hasAnyValues = true;
       internalValueResult.targetCpuUtilizationPercentage = this._targetCpuUtilizationPercentage;
     }
-    if (this._behavior) {
+    if (this._behavior?.internalValue) {
       hasAnyValues = true;
       internalValueResult.behavior = this._behavior?.internalValue;
     }
@@ -2220,7 +2282,7 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
       hasAnyValues = true;
       internalValueResult.metric = this._metric;
     }
-    if (this._scaleTargetRef) {
+    if (this._scaleTargetRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.scaleTargetRef = this._scaleTargetRef?.internalValue;
     }
@@ -2229,6 +2291,7 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
 
   public set internalValue(value: HorizontalPodAutoscalerSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._maxReplicas = undefined;
       this._minReplicas = undefined;
       this._targetCpuUtilizationPercentage = undefined;
@@ -2237,6 +2300,7 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
       this._scaleTargetRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._maxReplicas = value.maxReplicas;
       this._minReplicas = value.minReplicas;
       this._targetCpuUtilizationPercentage = value.targetCpuUtilizationPercentage;

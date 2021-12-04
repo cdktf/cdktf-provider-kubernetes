@@ -67,6 +67,8 @@ export function roleBindingV1MetadataToTerraform(struct?: RoleBindingV1MetadataO
 }
 
 export class RoleBindingV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -77,7 +79,7 @@ export class RoleBindingV1MetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): RoleBindingV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -100,12 +102,14 @@ export class RoleBindingV1MetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: RoleBindingV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._labels = undefined;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._labels = value.labels;
       this._name = value.name;
@@ -213,6 +217,8 @@ export function roleBindingV1RoleRefToTerraform(struct?: RoleBindingV1RoleRefOut
 }
 
 export class RoleBindingV1RoleRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -223,7 +229,7 @@ export class RoleBindingV1RoleRefOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): RoleBindingV1RoleRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiGroup) {
       hasAnyValues = true;
@@ -242,11 +248,13 @@ export class RoleBindingV1RoleRefOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: RoleBindingV1RoleRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiGroup = undefined;
       this._kind = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiGroup = value.apiGroup;
       this._kind = value.kind;
       this._name = value.name;

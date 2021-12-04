@@ -108,6 +108,8 @@ export function serviceV1MetadataToTerraform(struct?: ServiceV1MetadataOutputRef
 }
 
 export class ServiceV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -118,7 +120,7 @@ export class ServiceV1MetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ServiceV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -145,6 +147,7 @@ export class ServiceV1MetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ServiceV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -152,6 +155,7 @@ export class ServiceV1MetadataOutputReference extends cdktf.ComplexObject {
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -386,6 +390,8 @@ export function serviceV1SpecToTerraform(struct?: ServiceV1SpecOutputReference |
 }
 
 export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -396,7 +402,7 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ServiceV1Spec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._clusterIp) {
       hasAnyValues = true;
@@ -451,6 +457,7 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ServiceV1Spec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._clusterIp = undefined;
       this._externalIps = undefined;
       this._externalName = undefined;
@@ -465,6 +472,7 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
       this._port = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._clusterIp = value.clusterIp;
       this._externalIps = value.externalIps;
       this._externalName = value.externalName;
@@ -692,6 +700,8 @@ export function serviceV1TimeoutsToTerraform(struct?: ServiceV1TimeoutsOutputRef
 }
 
 export class ServiceV1TimeoutsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -702,7 +712,7 @@ export class ServiceV1TimeoutsOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ServiceV1Timeouts | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._create) {
       hasAnyValues = true;
@@ -713,9 +723,11 @@ export class ServiceV1TimeoutsOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ServiceV1Timeouts | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._create = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._create = value.create;
     }
   }

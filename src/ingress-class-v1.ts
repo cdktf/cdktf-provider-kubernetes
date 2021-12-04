@@ -61,6 +61,8 @@ export function ingressClassV1MetadataToTerraform(struct?: IngressClassV1Metadat
 }
 
 export class IngressClassV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -71,7 +73,7 @@ export class IngressClassV1MetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): IngressClassV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -94,12 +96,14 @@ export class IngressClassV1MetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: IngressClassV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -243,6 +247,8 @@ export function ingressClassV1SpecToTerraform(struct?: IngressClassV1SpecOutputR
 }
 
 export class IngressClassV1SpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -253,7 +259,7 @@ export class IngressClassV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): IngressClassV1Spec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._controller) {
       hasAnyValues = true;
@@ -268,10 +274,12 @@ export class IngressClassV1SpecOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: IngressClassV1Spec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._controller = undefined;
       this._parameters = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._controller = value.controller;
       this._parameters = value.parameters;
     }
