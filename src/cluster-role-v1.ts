@@ -105,6 +105,8 @@ export function clusterRoleV1AggregationRuleToTerraform(struct?: ClusterRoleV1Ag
 }
 
 export class ClusterRoleV1AggregationRuleOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -115,7 +117,7 @@ export class ClusterRoleV1AggregationRuleOutputReference extends cdktf.ComplexOb
   }
 
   public get internalValue(): ClusterRoleV1AggregationRule | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._clusterRoleSelectors) {
       hasAnyValues = true;
@@ -126,9 +128,11 @@ export class ClusterRoleV1AggregationRuleOutputReference extends cdktf.ComplexOb
 
   public set internalValue(value: ClusterRoleV1AggregationRule | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._clusterRoleSelectors = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._clusterRoleSelectors = value.clusterRoleSelectors;
     }
   }
@@ -184,6 +188,8 @@ export function clusterRoleV1MetadataToTerraform(struct?: ClusterRoleV1MetadataO
 }
 
 export class ClusterRoleV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -194,7 +200,7 @@ export class ClusterRoleV1MetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ClusterRoleV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -213,11 +219,13 @@ export class ClusterRoleV1MetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ClusterRoleV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._labels = value.labels;
       this._name = value.name;

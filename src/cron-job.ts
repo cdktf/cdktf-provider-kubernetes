@@ -74,6 +74,8 @@ export function cronJobMetadataToTerraform(struct?: CronJobMetadataOutputReferen
 }
 
 export class CronJobMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -84,7 +86,7 @@ export class CronJobMetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): CronJobMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -111,6 +113,7 @@ export class CronJobMetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: CronJobMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -118,6 +121,7 @@ export class CronJobMetadataOutputReference extends cdktf.ComplexObject {
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -249,6 +253,8 @@ export function cronJobSpecJobTemplateMetadataToTerraform(struct?: CronJobSpecJo
 }
 
 export class CronJobSpecJobTemplateMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -259,7 +265,7 @@ export class CronJobSpecJobTemplateMetadataOutputReference extends cdktf.Complex
   }
 
   public get internalValue(): CronJobSpecJobTemplateMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -282,12 +288,14 @@ export class CronJobSpecJobTemplateMetadataOutputReference extends cdktf.Complex
 
   public set internalValue(value: CronJobSpecJobTemplateMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -421,6 +429,8 @@ export function cronJobSpecJobTemplateSpecSelectorToTerraform(struct?: CronJobSp
 }
 
 export class CronJobSpecJobTemplateSpecSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -431,7 +441,7 @@ export class CronJobSpecJobTemplateSpecSelectorOutputReference extends cdktf.Com
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -446,10 +456,12 @@ export class CronJobSpecJobTemplateSpecSelectorOutputReference extends cdktf.Com
 
   public set internalValue(value: CronJobSpecJobTemplateSpecSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }
@@ -530,6 +542,8 @@ export function cronJobSpecJobTemplateSpecTemplateMetadataToTerraform(struct?: C
 }
 
 export class CronJobSpecJobTemplateSpecTemplateMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -540,7 +554,7 @@ export class CronJobSpecJobTemplateSpecTemplateMetadataOutputReference extends c
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -563,12 +577,14 @@ export class CronJobSpecJobTemplateSpecTemplateMetadataOutputReference extends c
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -695,6 +711,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPrefer
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -705,7 +723,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferred
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchExpressions) {
       hasAnyValues = true;
@@ -716,9 +734,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferred
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchExpressions = value.matchExpressions;
     }
   }
@@ -838,6 +858,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequir
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -848,7 +870,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredD
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._nodeSelectorTerm) {
       hasAnyValues = true;
@@ -859,9 +881,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredD
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._nodeSelectorTerm = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._nodeSelectorTerm = value.nodeSelectorTerm;
     }
   }
@@ -910,6 +934,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityToTerr
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -920,13 +946,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputRef
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinity | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._preferredDuringSchedulingIgnoredDuringExecution) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue;
     }
@@ -935,10 +961,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputRef
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinity | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
       this._requiredDuringSchedulingIgnoredDuringExecution.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._preferredDuringSchedulingIgnoredDuringExecution = value.preferredDuringSchedulingIgnoredDuringExecution;
       this._requiredDuringSchedulingIgnoredDuringExecution.internalValue = value.requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1070,6 +1098,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferr
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1080,7 +1110,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredD
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._namespaces) {
       hasAnyValues = true;
@@ -1099,11 +1129,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredD
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._namespaces = undefined;
       this._topologyKey = undefined;
       this._labelSelector = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._namespaces = value.namespaces;
       this._topologyKey = value.topologyKey;
       this._labelSelector = value.labelSelector;
@@ -1304,6 +1336,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityToTerra
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1314,7 +1348,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputRefe
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinity | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._preferredDuringSchedulingIgnoredDuringExecution) {
       hasAnyValues = true;
@@ -1329,10 +1363,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputRefe
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinity | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
       this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._preferredDuringSchedulingIgnoredDuringExecution = value.preferredDuringSchedulingIgnoredDuringExecution;
       this._requiredDuringSchedulingIgnoredDuringExecution = value.requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1465,6 +1501,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPre
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1475,7 +1513,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPrefer
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._namespaces) {
       hasAnyValues = true;
@@ -1494,11 +1532,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPrefer
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._namespaces = undefined;
       this._topologyKey = undefined;
       this._labelSelector = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._namespaces = value.namespaces;
       this._topologyKey = value.topologyKey;
       this._labelSelector = value.labelSelector;
@@ -1699,6 +1739,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityToT
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1709,7 +1751,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutput
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._preferredDuringSchedulingIgnoredDuringExecution) {
       hasAnyValues = true;
@@ -1724,10 +1766,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutput
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
       this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._preferredDuringSchedulingIgnoredDuringExecution = value.preferredDuringSchedulingIgnoredDuringExecution;
       this._requiredDuringSchedulingIgnoredDuringExecution = value.requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1801,6 +1845,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityToTerraform(struct
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1811,17 +1857,17 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityOutputReference exten
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecAffinity | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nodeAffinity) {
+    if (this._nodeAffinity?.internalValue) {
       hasAnyValues = true;
       internalValueResult.nodeAffinity = this._nodeAffinity?.internalValue;
     }
-    if (this._podAffinity) {
+    if (this._podAffinity?.internalValue) {
       hasAnyValues = true;
       internalValueResult.podAffinity = this._podAffinity?.internalValue;
     }
-    if (this._podAntiAffinity) {
+    if (this._podAntiAffinity?.internalValue) {
       hasAnyValues = true;
       internalValueResult.podAntiAffinity = this._podAntiAffinity?.internalValue;
     }
@@ -1830,11 +1876,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityOutputReference exten
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecAffinity | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._nodeAffinity.internalValue = undefined;
       this._podAffinity.internalValue = undefined;
       this._podAntiAffinity.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._nodeAffinity.internalValue = value.nodeAffinity;
       this._podAffinity.internalValue = value.podAffinity;
       this._podAntiAffinity.internalValue = value.podAntiAffinity;
@@ -1923,6 +1971,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfi
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1933,7 +1983,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMa
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._key) {
       hasAnyValues = true;
@@ -1952,11 +2002,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMa
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._key = undefined;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._key = value.key;
       this._name = value.name;
       this._optional = value.optional;
@@ -2038,6 +2090,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromField
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2048,7 +2102,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiVersion) {
       hasAnyValues = true;
@@ -2063,10 +2117,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiVersion = undefined;
       this._fieldPath = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiVersion = value.apiVersion;
       this._fieldPath = value.fieldPath;
     }
@@ -2134,6 +2190,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromResou
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2144,7 +2202,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromResource
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._containerName) {
       hasAnyValues = true;
@@ -2163,11 +2221,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromResource
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._containerName = undefined;
       this._divisor = undefined;
       this._resource = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._containerName = value.containerName;
       this._divisor = value.divisor;
       this._resource = value.resource;
@@ -2253,6 +2313,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecre
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2263,7 +2325,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKe
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._key) {
       hasAnyValues = true;
@@ -2282,11 +2344,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKe
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._key = undefined;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._key = value.key;
       this._name = value.name;
       this._optional = value.optional;
@@ -2382,6 +2446,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromToTer
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2392,21 +2458,21 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromOutputRe
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFrom | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._configMapKeyRef) {
+    if (this._configMapKeyRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
     }
-    if (this._fieldRef) {
+    if (this._fieldRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.fieldRef = this._fieldRef?.internalValue;
     }
-    if (this._resourceFieldRef) {
+    if (this._resourceFieldRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
     }
-    if (this._secretKeyRef) {
+    if (this._secretKeyRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
     }
@@ -2415,12 +2481,14 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFromOutputRe
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerEnvValueFrom | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._configMapKeyRef.internalValue = undefined;
       this._fieldRef.internalValue = undefined;
       this._resourceFieldRef.internalValue = undefined;
       this._secretKeyRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._configMapKeyRef.internalValue = value.configMapKeyRef;
       this._fieldRef.internalValue = value.fieldRef;
       this._resourceFieldRef.internalValue = value.resourceFieldRef;
@@ -2552,6 +2620,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapR
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2562,7 +2632,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRefO
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -2577,10 +2647,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRefO
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._optional = value.optional;
     }
@@ -2642,6 +2714,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefT
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2652,7 +2726,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefOutp
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -2667,10 +2741,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefOutp
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._optional = value.optional;
     }
@@ -2758,6 +2834,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStar
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2768,7 +2846,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartEx
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -2779,9 +2857,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartEx
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -2876,6 +2956,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStar
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2886,7 +2968,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHt
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -2913,6 +2995,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHt
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -2920,6 +3003,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHt
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -3081,6 +3165,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopE
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3091,7 +3177,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExec
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -3102,9 +3188,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExec
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -3199,6 +3287,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopH
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3209,7 +3299,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttp
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -3236,6 +3326,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttp
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -3243,6 +3334,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttp
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -3411,6 +3503,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLifecycleToTerraf
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecycleOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3421,7 +3515,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecycleOutputRefer
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerLifecycle | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._postStart) {
       hasAnyValues = true;
@@ -3436,10 +3530,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLifecycleOutputRefer
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerLifecycle | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._postStart = undefined;
       this._preStop = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._postStart = value.postStart;
       this._preStop = value.preStop;
     }
@@ -3499,6 +3595,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3509,7 +3607,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecOut
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -3520,9 +3618,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecOut
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -3617,6 +3717,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttp
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3627,7 +3729,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -3654,6 +3756,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -3661,6 +3764,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -3838,6 +3942,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeToTe
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3848,7 +3954,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutputR
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbe | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._failureThreshold) {
       hasAnyValues = true;
@@ -3870,11 +3976,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutputR
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec) {
+    if (this._exec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet) {
+    if (this._httpGet?.internalValue) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
@@ -3887,6 +3993,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutputR
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbe | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._failureThreshold = undefined;
       this._initialDelaySeconds = undefined;
       this._periodSeconds = undefined;
@@ -3897,6 +4004,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutputR
       this._tcpSocket = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._failureThreshold = value.failureThreshold;
       this._initialDelaySeconds = value.initialDelaySeconds;
       this._periodSeconds = value.periodSeconds;
@@ -4104,6 +4212,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeExe
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4114,7 +4224,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeExecOu
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -4125,9 +4235,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeExecOu
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -4222,6 +4334,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHtt
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4232,7 +4346,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGe
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -4259,6 +4373,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGe
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -4266,6 +4381,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGe
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -4443,6 +4559,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeToT
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4453,7 +4571,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutput
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbe | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._failureThreshold) {
       hasAnyValues = true;
@@ -4475,11 +4593,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutput
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec) {
+    if (this._exec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet) {
+    if (this._httpGet?.internalValue) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
@@ -4492,6 +4610,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutput
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbe | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._failureThreshold = undefined;
       this._initialDelaySeconds = undefined;
       this._periodSeconds = undefined;
@@ -4502,6 +4621,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutput
       this._tcpSocket = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._failureThreshold = value.failureThreshold;
       this._initialDelaySeconds = value.initialDelaySeconds;
       this._periodSeconds = value.periodSeconds;
@@ -4669,6 +4789,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerResourcesToTerraf
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerResourcesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4679,7 +4801,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerResourcesOutputRefer
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerResources | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._limits) {
       hasAnyValues = true;
@@ -4694,10 +4816,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerResourcesOutputRefer
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerResources | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._limits = undefined;
       this._requests = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._limits = value.limits;
       this._requests = value.requests;
     }
@@ -4764,6 +4888,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextCa
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4774,7 +4900,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextCapab
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._add) {
       hasAnyValues = true;
@@ -4789,10 +4915,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextCapab
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._add = undefined;
       this._drop = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._add = value.add;
       this._drop = value.drop;
     }
@@ -4871,6 +4999,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextSe
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4881,7 +5011,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLin
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._level) {
       hasAnyValues = true;
@@ -4904,12 +5034,14 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLin
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._level = undefined;
       this._role = undefined;
       this._type = undefined;
       this._user = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._level = value.level;
       this._role = value.role;
       this._type = value.type;
@@ -5050,6 +5182,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextTo
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -5060,7 +5194,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextOutpu
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContext | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._allowPrivilegeEscalation) {
       hasAnyValues = true;
@@ -5086,11 +5220,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextOutpu
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._capabilities) {
+    if (this._capabilities?.internalValue) {
       hasAnyValues = true;
       internalValueResult.capabilities = this._capabilities?.internalValue;
     }
-    if (this._seLinuxOptions) {
+    if (this._seLinuxOptions?.internalValue) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -5099,6 +5233,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextOutpu
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContext | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._allowPrivilegeEscalation = undefined;
       this._privileged = undefined;
       this._readOnlyRootFilesystem = undefined;
@@ -5109,6 +5244,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextOutpu
       this._seLinuxOptions.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._allowPrivilegeEscalation = value.allowPrivilegeEscalation;
       this._privileged = value.privileged;
       this._readOnlyRootFilesystem = value.readOnlyRootFilesystem;
@@ -5268,6 +5404,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeExecT
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -5278,7 +5416,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOutp
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -5289,9 +5427,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOutp
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -5386,6 +5526,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpG
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -5396,7 +5538,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetO
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -5423,6 +5565,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetO
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -5430,6 +5573,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetO
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -5607,6 +5751,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeToTer
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -5617,7 +5763,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeOutputRe
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbe | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._failureThreshold) {
       hasAnyValues = true;
@@ -5639,11 +5785,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeOutputRe
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec) {
+    if (this._exec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet) {
+    if (this._httpGet?.internalValue) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
@@ -5656,6 +5802,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeOutputRe
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbe | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._failureThreshold = undefined;
       this._initialDelaySeconds = undefined;
       this._periodSeconds = undefined;
@@ -5666,6 +5813,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeOutputRe
       this._tcpSocket = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._failureThreshold = value.failureThreshold;
       this._initialDelaySeconds = value.initialDelaySeconds;
       this._periodSeconds = value.periodSeconds;
@@ -6072,6 +6220,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecDnsConfigToTerraform(struc
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecDnsConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6082,7 +6232,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecDnsConfigOutputReference exte
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecDnsConfig | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._nameservers) {
       hasAnyValues = true;
@@ -6101,11 +6251,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecDnsConfigOutputReference exte
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecDnsConfig | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._nameservers = undefined;
       this._searches = undefined;
       this._option = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._nameservers = value.nameservers;
       this._searches = value.searches;
       this._option = value.option;
@@ -6240,6 +6392,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromC
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6250,7 +6404,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConf
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._key) {
       hasAnyValues = true;
@@ -6269,11 +6423,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConf
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._key = undefined;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._key = value.key;
       this._name = value.name;
       this._optional = value.optional;
@@ -6355,6 +6511,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromF
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6365,7 +6523,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFiel
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiVersion) {
       hasAnyValues = true;
@@ -6380,10 +6538,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFiel
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiVersion = undefined;
       this._fieldPath = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiVersion = value.apiVersion;
       this._fieldPath = value.fieldPath;
     }
@@ -6451,6 +6611,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromR
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6461,7 +6623,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromReso
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._containerName) {
       hasAnyValues = true;
@@ -6480,11 +6642,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromReso
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._containerName = undefined;
       this._divisor = undefined;
       this._resource = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._containerName = value.containerName;
       this._divisor = value.divisor;
       this._resource = value.resource;
@@ -6570,6 +6734,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromS
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6580,7 +6746,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecr
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._key) {
       hasAnyValues = true;
@@ -6599,11 +6765,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecr
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._key = undefined;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._key = value.key;
       this._name = value.name;
       this._optional = value.optional;
@@ -6699,6 +6867,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromT
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6709,21 +6879,21 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromOutp
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._configMapKeyRef) {
+    if (this._configMapKeyRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
     }
-    if (this._fieldRef) {
+    if (this._fieldRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.fieldRef = this._fieldRef?.internalValue;
     }
-    if (this._resourceFieldRef) {
+    if (this._resourceFieldRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
     }
-    if (this._secretKeyRef) {
+    if (this._secretKeyRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
     }
@@ -6732,12 +6902,14 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromOutp
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._configMapKeyRef.internalValue = undefined;
       this._fieldRef.internalValue = undefined;
       this._resourceFieldRef.internalValue = undefined;
       this._secretKeyRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._configMapKeyRef.internalValue = value.configMapKeyRef;
       this._fieldRef.internalValue = value.fieldRef;
       this._resourceFieldRef.internalValue = value.resourceFieldRef;
@@ -6869,6 +7041,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfig
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6879,7 +7053,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMap
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -6894,10 +7068,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMap
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._optional = value.optional;
     }
@@ -6959,6 +7135,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecret
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6969,7 +7147,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -6984,10 +7162,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._optional = value.optional;
     }
@@ -7075,6 +7255,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePost
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7085,7 +7267,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostSta
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -7096,9 +7278,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostSta
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -7193,6 +7377,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePost
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7203,7 +7389,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostSta
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -7230,6 +7416,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostSta
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -7237,6 +7424,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostSta
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -7398,6 +7586,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreS
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7408,7 +7598,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -7419,9 +7609,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -7516,6 +7708,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreS
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7526,7 +7720,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -7553,6 +7747,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -7560,6 +7755,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -7728,6 +7924,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecycleToTe
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecycleOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7738,7 +7936,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecycleOutputR
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecycle | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._postStart) {
       hasAnyValues = true;
@@ -7753,10 +7951,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecycleOutputR
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecycle | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._postStart = undefined;
       this._preStop = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._postStart = value.postStart;
       this._preStop = value.preStop;
     }
@@ -7816,6 +8016,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7826,7 +8028,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExe
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -7837,9 +8039,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExe
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -7934,6 +8138,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7944,7 +8150,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHtt
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -7971,6 +8177,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHtt
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -7978,6 +8185,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHtt
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -8155,6 +8363,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -8165,7 +8375,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeOut
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._failureThreshold) {
       hasAnyValues = true;
@@ -8187,11 +8397,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeOut
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec) {
+    if (this._exec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet) {
+    if (this._httpGet?.internalValue) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
@@ -8204,6 +8414,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeOut
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._failureThreshold = undefined;
       this._initialDelaySeconds = undefined;
       this._periodSeconds = undefined;
@@ -8214,6 +8425,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeOut
       this._tcpSocket = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._failureThreshold = value.failureThreshold;
       this._initialDelaySeconds = value.initialDelaySeconds;
       this._periodSeconds = value.periodSeconds;
@@ -8421,6 +8633,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProb
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -8431,7 +8645,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeEx
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -8442,9 +8656,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeEx
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -8539,6 +8755,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProb
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -8549,7 +8767,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHt
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -8576,6 +8794,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHt
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -8583,6 +8802,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHt
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -8760,6 +8980,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProb
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -8770,7 +8992,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeOu
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._failureThreshold) {
       hasAnyValues = true;
@@ -8792,11 +9014,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeOu
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec) {
+    if (this._exec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet) {
+    if (this._httpGet?.internalValue) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
@@ -8809,6 +9031,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeOu
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._failureThreshold = undefined;
       this._initialDelaySeconds = undefined;
       this._periodSeconds = undefined;
@@ -8819,6 +9042,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeOu
       this._tcpSocket = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._failureThreshold = value.failureThreshold;
       this._initialDelaySeconds = value.initialDelaySeconds;
       this._periodSeconds = value.periodSeconds;
@@ -8986,6 +9210,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerResourcesToTe
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerResourcesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -8996,7 +9222,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerResourcesOutputR
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerResources | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._limits) {
       hasAnyValues = true;
@@ -9011,10 +9237,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerResourcesOutputR
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerResources | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._limits = undefined;
       this._requests = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._limits = value.limits;
       this._requests = value.requests;
     }
@@ -9081,6 +9309,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityConte
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -9091,7 +9321,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextC
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._add) {
       hasAnyValues = true;
@@ -9106,10 +9336,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextC
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._add = undefined;
       this._drop = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._add = value.add;
       this._drop = value.drop;
     }
@@ -9188,6 +9420,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityConte
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -9198,7 +9432,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextS
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._level) {
       hasAnyValues = true;
@@ -9221,12 +9455,14 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextS
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._level = undefined;
       this._role = undefined;
       this._type = undefined;
       this._user = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._level = value.level;
       this._role = value.role;
       this._type = value.type;
@@ -9367,6 +9603,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityConte
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -9377,7 +9615,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextO
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContext | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._allowPrivilegeEscalation) {
       hasAnyValues = true;
@@ -9403,11 +9641,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextO
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._capabilities) {
+    if (this._capabilities?.internalValue) {
       hasAnyValues = true;
       internalValueResult.capabilities = this._capabilities?.internalValue;
     }
-    if (this._seLinuxOptions) {
+    if (this._seLinuxOptions?.internalValue) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -9416,6 +9654,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextO
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContext | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._allowPrivilegeEscalation = undefined;
       this._privileged = undefined;
       this._readOnlyRootFilesystem = undefined;
@@ -9426,6 +9665,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityContextO
       this._seLinuxOptions.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._allowPrivilegeEscalation = value.allowPrivilegeEscalation;
       this._privileged = value.privileged;
       this._readOnlyRootFilesystem = value.readOnlyRootFilesystem;
@@ -9585,6 +9825,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeE
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -9595,7 +9837,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -9606,9 +9848,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -9703,6 +9947,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeH
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -9713,7 +9959,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttp
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -9740,6 +9986,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttp
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -9747,6 +9994,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttp
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -9924,6 +10172,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeT
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -9934,7 +10184,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOutp
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbe | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._failureThreshold) {
       hasAnyValues = true;
@@ -9956,11 +10206,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOutp
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec) {
+    if (this._exec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet) {
+    if (this._httpGet?.internalValue) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
@@ -9973,6 +10223,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOutp
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbe | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._failureThreshold = undefined;
       this._initialDelaySeconds = undefined;
       this._periodSeconds = undefined;
@@ -9983,6 +10234,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOutp
       this._tcpSocket = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._failureThreshold = value.failureThreshold;
       this._initialDelaySeconds = value.initialDelaySeconds;
       this._periodSeconds = value.periodSeconds;
@@ -10389,6 +10641,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOpti
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -10399,7 +10653,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._level) {
       hasAnyValues = true;
@@ -10422,12 +10676,14 @@ export class CronJobSpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._level = undefined;
       this._role = undefined;
       this._type = undefined;
       this._user = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._level = value.level;
       this._role = value.role;
       this._type = value.type;
@@ -10587,6 +10843,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecSecurityContextToTerraform
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecSecurityContextOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -10597,7 +10855,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecSecurityContextOutputReferenc
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecSecurityContext | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsGroup) {
       hasAnyValues = true;
@@ -10619,7 +10877,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecSecurityContextOutputReferenc
       hasAnyValues = true;
       internalValueResult.supplementalGroups = this._supplementalGroups;
     }
-    if (this._seLinuxOptions) {
+    if (this._seLinuxOptions?.internalValue) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -10632,6 +10890,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecSecurityContextOutputReferenc
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecSecurityContext | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsGroup = undefined;
       this._runAsGroup = undefined;
       this._runAsNonRoot = undefined;
@@ -10641,6 +10900,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecSecurityContextOutputReferenc
       this._sysctl = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsGroup = value.fsGroup;
       this._runAsGroup = value.runAsGroup;
       this._runAsNonRoot = value.runAsNonRoot;
@@ -10952,6 +11212,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStore
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -10962,7 +11224,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreOut
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStore | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -10985,12 +11247,14 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreOut
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStore | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._partition = undefined;
       this._readOnly = undefined;
       this._volumeId = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._partition = value.partition;
       this._readOnly = value.readOnly;
@@ -11114,6 +11378,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeAzureDiskToTerraform
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11124,7 +11390,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputReferenc
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureDisk | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._cachingMode) {
       hasAnyValues = true;
@@ -11155,6 +11421,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputReferenc
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureDisk | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._cachingMode = undefined;
       this._dataDiskUri = undefined;
       this._diskName = undefined;
@@ -11163,6 +11430,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputReferenc
       this._readOnly = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._cachingMode = value.cachingMode;
       this._dataDiskUri = value.dataDiskUri;
       this._diskName = value.diskName;
@@ -11300,6 +11568,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeAzureFileToTerraform
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureFileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11310,7 +11580,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureFileOutputReferenc
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureFile | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._readOnly) {
       hasAnyValues = true;
@@ -11333,12 +11603,14 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureFileOutputReferenc
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeAzureFile | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._readOnly = undefined;
       this._secretName = undefined;
       this._secretNamespace = undefined;
       this._shareName = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._readOnly = value.readOnly;
       this._secretName = value.secretName;
       this._secretNamespace = value.secretNamespace;
@@ -11431,6 +11703,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefToTer
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11441,7 +11715,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutputRe
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -11456,10 +11730,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutputRe
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -11552,6 +11828,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsToTerraform(st
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11562,7 +11840,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference e
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFs | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._monitors) {
       hasAnyValues = true;
@@ -11584,7 +11862,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference e
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._secretRef) {
+    if (this._secretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -11593,6 +11871,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference e
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFs | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._monitors = undefined;
       this._path = undefined;
       this._readOnly = undefined;
@@ -11601,6 +11880,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference e
       this._secretRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._monitors = value.monitors;
       this._path = value.path;
       this._readOnly = value.readOnly;
@@ -11737,6 +12017,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeCinderToTerraform(st
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCinderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11747,7 +12029,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCinderOutputReference e
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeCinder | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -11766,11 +12048,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCinderOutputReference e
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeCinder | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._readOnly = undefined;
       this._volumeId = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._readOnly = value.readOnly;
       this._volumeId = value.volumeId;
@@ -11896,6 +12180,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeConfigMapToTerraform
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11906,7 +12192,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputReferenc
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeConfigMap | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._defaultMode) {
       hasAnyValues = true;
@@ -11929,12 +12215,14 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputReferenc
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeConfigMap | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._defaultMode = undefined;
       this._name = undefined;
       this._optional = undefined;
       this._items = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._defaultMode = value.defaultMode;
       this._name = value.name;
       this._optional = value.optional;
@@ -12034,6 +12322,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandS
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12044,7 +12334,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecr
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -12059,10 +12349,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecr
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -12127,6 +12419,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublish
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12137,7 +12431,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSec
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -12152,10 +12446,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSec
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -12220,6 +12516,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecret
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12230,7 +12528,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -12245,10 +12543,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -12313,6 +12613,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRe
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12323,7 +12625,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefOu
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -12338,10 +12640,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefOu
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -12455,6 +12759,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeCsiToTerraform(struc
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12465,7 +12771,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference exte
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeCsi | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._driver) {
       hasAnyValues = true;
@@ -12487,19 +12793,19 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference exte
       hasAnyValues = true;
       internalValueResult.volumeHandle = this._volumeHandle;
     }
-    if (this._controllerExpandSecretRef) {
+    if (this._controllerExpandSecretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
     }
-    if (this._controllerPublishSecretRef) {
+    if (this._controllerPublishSecretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
     }
-    if (this._nodePublishSecretRef) {
+    if (this._nodePublishSecretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
     }
-    if (this._nodeStageSecretRef) {
+    if (this._nodeStageSecretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
     }
@@ -12508,6 +12814,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference exte
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeCsi | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._driver = undefined;
       this._fsType = undefined;
       this._readOnly = undefined;
@@ -12519,6 +12826,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference exte
       this._nodeStageSecretRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._driver = value.driver;
       this._fsType = value.fsType;
       this._readOnly = value.readOnly;
@@ -12697,6 +13005,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFiel
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12707,7 +13017,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRe
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiVersion) {
       hasAnyValues = true;
@@ -12722,10 +13032,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRe
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiVersion = undefined;
       this._fieldPath = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiVersion = value.apiVersion;
       this._fieldPath = value.fieldPath;
     }
@@ -12793,6 +13105,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsReso
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12803,7 +13117,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourc
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._containerName) {
       hasAnyValues = true;
@@ -12822,11 +13136,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourc
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._containerName = undefined;
       this._divisor = undefined;
       this._resource = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._containerName = value.containerName;
       this._divisor = value.divisor;
       this._resource = value.resource;
@@ -12942,6 +13258,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiToTerrafo
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12952,7 +13270,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiOutputRefere
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApi | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._defaultMode) {
       hasAnyValues = true;
@@ -12967,10 +13285,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApiOutputRefere
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeDownwardApi | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._defaultMode = undefined;
       this._items = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._defaultMode = value.defaultMode;
       this._items = value.items;
     }
@@ -13036,6 +13356,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeEmptyDirToTerraform(
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeEmptyDirOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13046,7 +13368,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeEmptyDirOutputReference
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeEmptyDir | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._medium) {
       hasAnyValues = true;
@@ -13061,10 +13383,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeEmptyDirOutputReference
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeEmptyDir | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._medium = undefined;
       this._sizeLimit = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._medium = value.medium;
       this._sizeLimit = value.sizeLimit;
     }
@@ -13143,6 +13467,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeFcToTerraform(struct
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13153,7 +13479,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFcOutputReference exten
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeFc | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -13176,12 +13502,14 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFcOutputReference exten
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeFc | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._lun = undefined;
       this._readOnly = undefined;
       this._targetWwNs = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._lun = value.lun;
       this._readOnly = value.readOnly;
@@ -13274,6 +13602,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefT
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13284,7 +13614,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOutp
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -13299,10 +13629,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOutp
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -13388,6 +13720,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeToTerrafor
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13398,7 +13732,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputReferen
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolume | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._driver) {
       hasAnyValues = true;
@@ -13416,7 +13750,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputReferen
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef) {
+    if (this._secretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -13425,6 +13759,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputReferen
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolume | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._driver = undefined;
       this._fsType = undefined;
       this._options = undefined;
@@ -13432,6 +13767,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputReferen
       this._secretRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._driver = value.driver;
       this._fsType = value.fsType;
       this._options = value.options;
@@ -13545,6 +13881,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeFlockerToTerraform(s
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFlockerOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13555,7 +13893,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFlockerOutputReference 
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeFlocker | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._datasetName) {
       hasAnyValues = true;
@@ -13570,10 +13908,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeFlockerOutputReference 
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeFlocker | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._datasetName = undefined;
       this._datasetUuid = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._datasetName = value.datasetName;
       this._datasetUuid = value.datasetUuid;
     }
@@ -13652,6 +13992,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskToT
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13662,7 +14004,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskOutput
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -13685,12 +14027,14 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskOutput
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._partition = undefined;
       this._pdName = undefined;
       this._readOnly = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._partition = value.partition;
       this._pdName = value.pdName;
@@ -13793,6 +14137,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeGitRepoToTerraform(s
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeGitRepoOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13803,7 +14149,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeGitRepoOutputReference 
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeGitRepo | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._directory) {
       hasAnyValues = true;
@@ -13822,11 +14168,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeGitRepoOutputReference 
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeGitRepo | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._directory = undefined;
       this._repository = undefined;
       this._revision = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._directory = value.directory;
       this._repository = value.repository;
       this._revision = value.revision;
@@ -13915,6 +14263,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeGlusterfsToTerraform
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeGlusterfsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13925,7 +14275,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeGlusterfsOutputReferenc
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeGlusterfs | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._endpointsName) {
       hasAnyValues = true;
@@ -13944,11 +14294,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeGlusterfsOutputReferenc
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeGlusterfs | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._endpointsName = undefined;
       this._path = undefined;
       this._readOnly = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._endpointsName = value.endpointsName;
       this._path = value.path;
       this._readOnly = value.readOnly;
@@ -14024,6 +14376,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeHostPathToTerraform(
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeHostPathOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14034,7 +14388,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeHostPathOutputReference
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeHostPath | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._path) {
       hasAnyValues = true;
@@ -14049,10 +14403,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeHostPathOutputReference
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeHostPath | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._path = undefined;
       this._type = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._path = value.path;
       this._type = value.type;
     }
@@ -14145,6 +14501,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeIscsiToTerraform(str
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14155,7 +14513,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference ex
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeIscsi | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -14186,6 +14544,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference ex
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeIscsi | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._iqn = undefined;
       this._iscsiInterface = undefined;
@@ -14194,6 +14553,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference ex
       this._targetPortal = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._iqn = value.iqn;
       this._iscsiInterface = value.iscsiInterface;
@@ -14313,6 +14673,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeLocalToTerraform(str
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeLocalOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14323,7 +14685,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeLocalOutputReference ex
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeLocal | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._path) {
       hasAnyValues = true;
@@ -14334,9 +14696,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeLocalOutputReference ex
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeLocal | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._path = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._path = value.path;
     }
   }
@@ -14391,6 +14755,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeNfsToTerraform(struc
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeNfsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14401,7 +14767,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeNfsOutputReference exte
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeNfs | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._path) {
       hasAnyValues = true;
@@ -14420,11 +14786,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeNfsOutputReference exte
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeNfs | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._path = undefined;
       this._readOnly = undefined;
       this._server = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._path = value.path;
       this._readOnly = value.readOnly;
       this._server = value.server;
@@ -14500,6 +14868,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClai
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaimOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14510,7 +14880,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaimOu
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._claimName) {
       hasAnyValues = true;
@@ -14525,10 +14895,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaimOu
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._claimName = undefined;
       this._readOnly = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._claimName = value.claimName;
       this._readOnly = value.readOnly;
     }
@@ -14593,6 +14965,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDisk
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14603,7 +14977,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskOut
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDisk | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -14618,10 +14992,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskOut
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDisk | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._pdId = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._pdId = value.pdId;
     }
@@ -14749,6 +15125,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDown
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14759,7 +15137,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwar
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiVersion) {
       hasAnyValues = true;
@@ -14774,10 +15152,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwar
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiVersion = undefined;
       this._fieldPath = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiVersion = value.apiVersion;
       this._fieldPath = value.fieldPath;
     }
@@ -14845,6 +15225,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDown
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14855,7 +15237,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwar
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._containerName) {
       hasAnyValues = true;
@@ -14874,11 +15256,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwar
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._containerName = undefined;
       this._divisor = undefined;
       this._resource = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._containerName = value.containerName;
       this._divisor = value.divisor;
       this._resource = value.resource;
@@ -14987,6 +15371,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDown
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14997,7 +15383,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwar
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._items) {
       hasAnyValues = true;
@@ -15008,9 +15394,11 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwar
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._items = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._items = value.items;
     }
   }
@@ -15132,6 +15520,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServ
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -15142,7 +15532,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesService
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._audience) {
       hasAnyValues = true;
@@ -15161,11 +15551,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesService
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._audience = undefined;
       this._expirationSeconds = undefined;
       this._path = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._audience = value.audience;
       this._expirationSeconds = value.expirationSeconds;
       this._path = value.path;
@@ -15331,6 +15723,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeQuobyteToTerraform(s
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -15341,7 +15735,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReference 
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeQuobyte | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._group) {
       hasAnyValues = true;
@@ -15368,6 +15762,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReference 
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeQuobyte | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._group = undefined;
       this._readOnly = undefined;
       this._registry = undefined;
@@ -15375,6 +15770,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReference 
       this._volume = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._group = value.group;
       this._readOnly = value.readOnly;
       this._registry = value.registry;
@@ -15484,6 +15880,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefToTerraf
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -15494,7 +15892,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputRefer
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -15509,10 +15907,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputRefer
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -15619,6 +16019,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeRbdToTerraform(struc
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -15629,7 +16031,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference exte
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeRbd | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._cephMonitors) {
       hasAnyValues = true;
@@ -15659,7 +16061,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference exte
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef) {
+    if (this._secretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -15668,6 +16070,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference exte
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeRbd | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._cephMonitors = undefined;
       this._fsType = undefined;
       this._keyring = undefined;
@@ -15678,6 +16081,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference exte
       this._secretRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._cephMonitors = value.cephMonitors;
       this._fsType = value.fsType;
       this._keyring = value.keyring;
@@ -15885,6 +16289,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeSecretToTerraform(st
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeSecretOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -15895,7 +16301,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeSecretOutputReference e
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeSecret | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._defaultMode) {
       hasAnyValues = true;
@@ -15918,12 +16324,14 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeSecretOutputReference e
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeSecret | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._defaultMode = undefined;
       this._optional = undefined;
       this._secretName = undefined;
       this._items = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._defaultMode = value.defaultMode;
       this._optional = value.optional;
       this._secretName = value.secretName;
@@ -16023,6 +16431,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeToTerra
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -16033,7 +16443,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeOutputRefe
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpecVolumeVsphereVolume | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -16048,10 +16458,12 @@ export class CronJobSpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeOutputRefe
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpecVolumeVsphereVolume | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._volumePath = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._volumePath = value.volumePath;
     }
@@ -16489,6 +16901,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecToTerraform(struct?: CronJ
 }
 
 export class CronJobSpecJobTemplateSpecTemplateSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -16499,7 +16913,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecOutputReference extends cdktf
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplateSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._activeDeadlineSeconds) {
       hasAnyValues = true;
@@ -16565,7 +16979,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecOutputReference extends cdktf
       hasAnyValues = true;
       internalValueResult.terminationGracePeriodSeconds = this._terminationGracePeriodSeconds;
     }
-    if (this._affinity) {
+    if (this._affinity?.internalValue) {
       hasAnyValues = true;
       internalValueResult.affinity = this._affinity?.internalValue;
     }
@@ -16573,7 +16987,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecOutputReference extends cdktf
       hasAnyValues = true;
       internalValueResult.container = this._container;
     }
-    if (this._dnsConfig) {
+    if (this._dnsConfig?.internalValue) {
       hasAnyValues = true;
       internalValueResult.dnsConfig = this._dnsConfig?.internalValue;
     }
@@ -16593,7 +17007,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecOutputReference extends cdktf
       hasAnyValues = true;
       internalValueResult.readinessGate = this._readinessGate;
     }
-    if (this._securityContext) {
+    if (this._securityContext?.internalValue) {
       hasAnyValues = true;
       internalValueResult.securityContext = this._securityContext?.internalValue;
     }
@@ -16614,6 +17028,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecOutputReference extends cdktf
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplateSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._activeDeadlineSeconds = undefined;
       this._automountServiceAccountToken = undefined;
       this._dnsPolicy = undefined;
@@ -16643,6 +17058,7 @@ export class CronJobSpecJobTemplateSpecTemplateSpecOutputReference extends cdktf
       this._volume = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._activeDeadlineSeconds = value.activeDeadlineSeconds;
       this._automountServiceAccountToken = value.automountServiceAccountToken;
       this._dnsPolicy = value.dnsPolicy;
@@ -17141,6 +17557,8 @@ export function cronJobSpecJobTemplateSpecTemplateToTerraform(struct?: CronJobSp
 }
 
 export class CronJobSpecJobTemplateSpecTemplateOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -17151,13 +17569,13 @@ export class CronJobSpecJobTemplateSpecTemplateOutputReference extends cdktf.Com
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpecTemplate | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._metadata) {
+    if (this._metadata?.internalValue) {
       hasAnyValues = true;
       internalValueResult.metadata = this._metadata?.internalValue;
     }
-    if (this._spec) {
+    if (this._spec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.spec = this._spec?.internalValue;
     }
@@ -17166,10 +17584,12 @@ export class CronJobSpecJobTemplateSpecTemplateOutputReference extends cdktf.Com
 
   public set internalValue(value: CronJobSpecJobTemplateSpecTemplate | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._metadata.internalValue = undefined;
       this._spec.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._metadata.internalValue = value.metadata;
       this._spec.internalValue = value.spec;
     }
@@ -17280,6 +17700,8 @@ export function cronJobSpecJobTemplateSpecToTerraform(struct?: CronJobSpecJobTem
 }
 
 export class CronJobSpecJobTemplateSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -17290,7 +17712,7 @@ export class CronJobSpecJobTemplateSpecOutputReference extends cdktf.ComplexObje
   }
 
   public get internalValue(): CronJobSpecJobTemplateSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._activeDeadlineSeconds) {
       hasAnyValues = true;
@@ -17320,11 +17742,11 @@ export class CronJobSpecJobTemplateSpecOutputReference extends cdktf.ComplexObje
       hasAnyValues = true;
       internalValueResult.ttlSecondsAfterFinished = this._ttlSecondsAfterFinished;
     }
-    if (this._selector) {
+    if (this._selector?.internalValue) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector?.internalValue;
     }
-    if (this._template) {
+    if (this._template?.internalValue) {
       hasAnyValues = true;
       internalValueResult.template = this._template?.internalValue;
     }
@@ -17333,6 +17755,7 @@ export class CronJobSpecJobTemplateSpecOutputReference extends cdktf.ComplexObje
 
   public set internalValue(value: CronJobSpecJobTemplateSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._activeDeadlineSeconds = undefined;
       this._backoffLimit = undefined;
       this._completionMode = undefined;
@@ -17344,6 +17767,7 @@ export class CronJobSpecJobTemplateSpecOutputReference extends cdktf.ComplexObje
       this._template.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._activeDeadlineSeconds = value.activeDeadlineSeconds;
       this._backoffLimit = value.backoffLimit;
       this._completionMode = value.completionMode;
@@ -17524,6 +17948,8 @@ export function cronJobSpecJobTemplateToTerraform(struct?: CronJobSpecJobTemplat
 }
 
 export class CronJobSpecJobTemplateOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -17534,13 +17960,13 @@ export class CronJobSpecJobTemplateOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): CronJobSpecJobTemplate | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._metadata) {
+    if (this._metadata?.internalValue) {
       hasAnyValues = true;
       internalValueResult.metadata = this._metadata?.internalValue;
     }
-    if (this._spec) {
+    if (this._spec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.spec = this._spec?.internalValue;
     }
@@ -17549,10 +17975,12 @@ export class CronJobSpecJobTemplateOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: CronJobSpecJobTemplate | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._metadata.internalValue = undefined;
       this._spec.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._metadata.internalValue = value.metadata;
       this._spec.internalValue = value.spec;
     }
@@ -17646,6 +18074,8 @@ export function cronJobSpecToTerraform(struct?: CronJobSpecOutputReference | Cro
 }
 
 export class CronJobSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -17656,7 +18086,7 @@ export class CronJobSpecOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): CronJobSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._concurrencyPolicy) {
       hasAnyValues = true;
@@ -17682,7 +18112,7 @@ export class CronJobSpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.suspend = this._suspend;
     }
-    if (this._jobTemplate) {
+    if (this._jobTemplate?.internalValue) {
       hasAnyValues = true;
       internalValueResult.jobTemplate = this._jobTemplate?.internalValue;
     }
@@ -17691,6 +18121,7 @@ export class CronJobSpecOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: CronJobSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._concurrencyPolicy = undefined;
       this._failedJobsHistoryLimit = undefined;
       this._schedule = undefined;
@@ -17700,6 +18131,7 @@ export class CronJobSpecOutputReference extends cdktf.ComplexObject {
       this._jobTemplate.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._concurrencyPolicy = value.concurrencyPolicy;
       this._failedJobsHistoryLimit = value.failedJobsHistoryLimit;
       this._schedule = value.schedule;
@@ -17834,6 +18266,8 @@ export function cronJobTimeoutsToTerraform(struct?: CronJobTimeoutsOutputReferen
 }
 
 export class CronJobTimeoutsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -17844,7 +18278,7 @@ export class CronJobTimeoutsOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): CronJobTimeouts | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._delete) {
       hasAnyValues = true;
@@ -17855,9 +18289,11 @@ export class CronJobTimeoutsOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: CronJobTimeouts | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._delete = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._delete = value.delete;
     }
   }

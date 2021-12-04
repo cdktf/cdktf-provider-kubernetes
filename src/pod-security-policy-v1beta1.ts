@@ -54,6 +54,8 @@ export function podSecurityPolicyV1Beta1MetadataToTerraform(struct?: PodSecurity
 }
 
 export class PodSecurityPolicyV1Beta1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -64,7 +66,7 @@ export class PodSecurityPolicyV1Beta1MetadataOutputReference extends cdktf.Compl
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -83,11 +85,13 @@ export class PodSecurityPolicyV1Beta1MetadataOutputReference extends cdktf.Compl
 
   public set internalValue(value: PodSecurityPolicyV1Beta1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._labels = value.labels;
       this._name = value.name;
@@ -244,6 +248,8 @@ export function podSecurityPolicyV1Beta1SpecFsGroupToTerraform(struct?: PodSecur
 }
 
 export class PodSecurityPolicyV1Beta1SpecFsGroupOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -254,7 +260,7 @@ export class PodSecurityPolicyV1Beta1SpecFsGroupOutputReference extends cdktf.Co
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1SpecFsGroup | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._rule) {
       hasAnyValues = true;
@@ -269,10 +275,12 @@ export class PodSecurityPolicyV1Beta1SpecFsGroupOutputReference extends cdktf.Co
 
   public set internalValue(value: PodSecurityPolicyV1Beta1SpecFsGroup | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._rule = undefined;
       this._range = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._rule = value.rule;
       this._range = value.range;
     }
@@ -387,6 +395,8 @@ export function podSecurityPolicyV1Beta1SpecRunAsGroupToTerraform(struct?: PodSe
 }
 
 export class PodSecurityPolicyV1Beta1SpecRunAsGroupOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -397,7 +407,7 @@ export class PodSecurityPolicyV1Beta1SpecRunAsGroupOutputReference extends cdktf
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1SpecRunAsGroup | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._rule) {
       hasAnyValues = true;
@@ -412,10 +422,12 @@ export class PodSecurityPolicyV1Beta1SpecRunAsGroupOutputReference extends cdktf
 
   public set internalValue(value: PodSecurityPolicyV1Beta1SpecRunAsGroup | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._rule = undefined;
       this._range = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._rule = value.rule;
       this._range = value.range;
     }
@@ -504,6 +516,8 @@ export function podSecurityPolicyV1Beta1SpecRunAsUserToTerraform(struct?: PodSec
 }
 
 export class PodSecurityPolicyV1Beta1SpecRunAsUserOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -514,7 +528,7 @@ export class PodSecurityPolicyV1Beta1SpecRunAsUserOutputReference extends cdktf.
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1SpecRunAsUser | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._rule) {
       hasAnyValues = true;
@@ -529,10 +543,12 @@ export class PodSecurityPolicyV1Beta1SpecRunAsUserOutputReference extends cdktf.
 
   public set internalValue(value: PodSecurityPolicyV1Beta1SpecRunAsUser | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._rule = undefined;
       this._range = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._rule = value.rule;
       this._range = value.range;
     }
@@ -627,6 +643,8 @@ export function podSecurityPolicyV1Beta1SpecSeLinuxToTerraform(struct?: PodSecur
 }
 
 export class PodSecurityPolicyV1Beta1SpecSeLinuxOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -637,7 +655,7 @@ export class PodSecurityPolicyV1Beta1SpecSeLinuxOutputReference extends cdktf.Co
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1SpecSeLinux | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._rule) {
       hasAnyValues = true;
@@ -652,10 +670,12 @@ export class PodSecurityPolicyV1Beta1SpecSeLinuxOutputReference extends cdktf.Co
 
   public set internalValue(value: PodSecurityPolicyV1Beta1SpecSeLinux | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._rule = undefined;
       this._seLinuxOptions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._rule = value.rule;
       this._seLinuxOptions = value.seLinuxOptions;
     }
@@ -744,6 +764,8 @@ export function podSecurityPolicyV1Beta1SpecSupplementalGroupsToTerraform(struct
 }
 
 export class PodSecurityPolicyV1Beta1SpecSupplementalGroupsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -754,7 +776,7 @@ export class PodSecurityPolicyV1Beta1SpecSupplementalGroupsOutputReference exten
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1SpecSupplementalGroups | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._rule) {
       hasAnyValues = true;
@@ -769,10 +791,12 @@ export class PodSecurityPolicyV1Beta1SpecSupplementalGroupsOutputReference exten
 
   public set internalValue(value: PodSecurityPolicyV1Beta1SpecSupplementalGroups | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._rule = undefined;
       this._range = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._rule = value.rule;
       this._range = value.range;
     }
@@ -979,6 +1003,8 @@ export function podSecurityPolicyV1Beta1SpecToTerraform(struct?: PodSecurityPoli
 }
 
 export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -989,7 +1015,7 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1Spec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._allowPrivilegeEscalation) {
       hasAnyValues = true;
@@ -1055,7 +1081,7 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
       hasAnyValues = true;
       internalValueResult.allowedHostPaths = this._allowedHostPaths;
     }
-    if (this._fsGroup) {
+    if (this._fsGroup?.internalValue) {
       hasAnyValues = true;
       internalValueResult.fsGroup = this._fsGroup?.internalValue;
     }
@@ -1063,19 +1089,19 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
       hasAnyValues = true;
       internalValueResult.hostPorts = this._hostPorts;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup?.internalValue) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup?.internalValue;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser?.internalValue) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser?.internalValue;
     }
-    if (this._seLinux) {
+    if (this._seLinux?.internalValue) {
       hasAnyValues = true;
       internalValueResult.seLinux = this._seLinux?.internalValue;
     }
-    if (this._supplementalGroups) {
+    if (this._supplementalGroups?.internalValue) {
       hasAnyValues = true;
       internalValueResult.supplementalGroups = this._supplementalGroups?.internalValue;
     }
@@ -1084,6 +1110,7 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
 
   public set internalValue(value: PodSecurityPolicyV1Beta1Spec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._allowPrivilegeEscalation = undefined;
       this._allowedCapabilities = undefined;
       this._allowedProcMountTypes = undefined;
@@ -1108,6 +1135,7 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
       this._supplementalGroups.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._allowPrivilegeEscalation = value.allowPrivilegeEscalation;
       this._allowedCapabilities = value.allowedCapabilities;
       this._allowedProcMountTypes = value.allowedProcMountTypes;

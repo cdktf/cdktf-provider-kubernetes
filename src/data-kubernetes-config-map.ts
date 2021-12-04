@@ -55,6 +55,8 @@ export function dataKubernetesConfigMapMetadataToTerraform(struct?: DataKubernet
 }
 
 export class DataKubernetesConfigMapMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -65,7 +67,7 @@ export class DataKubernetesConfigMapMetadataOutputReference extends cdktf.Comple
   }
 
   public get internalValue(): DataKubernetesConfigMapMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -88,12 +90,14 @@ export class DataKubernetesConfigMapMetadataOutputReference extends cdktf.Comple
 
   public set internalValue(value: DataKubernetesConfigMapMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._labels = undefined;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._labels = value.labels;
       this._name = value.name;

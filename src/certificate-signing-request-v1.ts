@@ -73,6 +73,8 @@ export function certificateSigningRequestV1MetadataToTerraform(struct?: Certific
 }
 
 export class CertificateSigningRequestV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -83,7 +85,7 @@ export class CertificateSigningRequestV1MetadataOutputReference extends cdktf.Co
   }
 
   public get internalValue(): CertificateSigningRequestV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -106,12 +108,14 @@ export class CertificateSigningRequestV1MetadataOutputReference extends cdktf.Co
 
   public set internalValue(value: CertificateSigningRequestV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -252,6 +256,8 @@ export function certificateSigningRequestV1SpecToTerraform(struct?: CertificateS
 }
 
 export class CertificateSigningRequestV1SpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -262,7 +268,7 @@ export class CertificateSigningRequestV1SpecOutputReference extends cdktf.Comple
   }
 
   public get internalValue(): CertificateSigningRequestV1Spec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._request) {
       hasAnyValues = true;
@@ -281,11 +287,13 @@ export class CertificateSigningRequestV1SpecOutputReference extends cdktf.Comple
 
   public set internalValue(value: CertificateSigningRequestV1Spec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._request = undefined;
       this._signerName = undefined;
       this._usages = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._request = value.request;
       this._signerName = value.signerName;
       this._usages = value.usages;
@@ -352,6 +360,8 @@ export function certificateSigningRequestV1TimeoutsToTerraform(struct?: Certific
 }
 
 export class CertificateSigningRequestV1TimeoutsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -362,7 +372,7 @@ export class CertificateSigningRequestV1TimeoutsOutputReference extends cdktf.Co
   }
 
   public get internalValue(): CertificateSigningRequestV1Timeouts | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._create) {
       hasAnyValues = true;
@@ -373,9 +383,11 @@ export class CertificateSigningRequestV1TimeoutsOutputReference extends cdktf.Co
 
   public set internalValue(value: CertificateSigningRequestV1Timeouts | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._create = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._create = value.create;
     }
   }

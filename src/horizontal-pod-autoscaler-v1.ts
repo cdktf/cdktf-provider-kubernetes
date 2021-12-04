@@ -68,6 +68,8 @@ export function horizontalPodAutoscalerV1MetadataToTerraform(struct?: Horizontal
 }
 
 export class HorizontalPodAutoscalerV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -78,7 +80,7 @@ export class HorizontalPodAutoscalerV1MetadataOutputReference extends cdktf.Comp
   }
 
   public get internalValue(): HorizontalPodAutoscalerV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -105,6 +107,7 @@ export class HorizontalPodAutoscalerV1MetadataOutputReference extends cdktf.Comp
 
   public set internalValue(value: HorizontalPodAutoscalerV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -112,6 +115,7 @@ export class HorizontalPodAutoscalerV1MetadataOutputReference extends cdktf.Comp
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -236,6 +240,8 @@ export function horizontalPodAutoscalerV1SpecScaleTargetRefToTerraform(struct?: 
 }
 
 export class HorizontalPodAutoscalerV1SpecScaleTargetRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -246,7 +252,7 @@ export class HorizontalPodAutoscalerV1SpecScaleTargetRefOutputReference extends 
   }
 
   public get internalValue(): HorizontalPodAutoscalerV1SpecScaleTargetRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiVersion) {
       hasAnyValues = true;
@@ -265,11 +271,13 @@ export class HorizontalPodAutoscalerV1SpecScaleTargetRefOutputReference extends 
 
   public set internalValue(value: HorizontalPodAutoscalerV1SpecScaleTargetRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiVersion = undefined;
       this._kind = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiVersion = value.apiVersion;
       this._kind = value.kind;
       this._name = value.name;
@@ -359,6 +367,8 @@ export function horizontalPodAutoscalerV1SpecToTerraform(struct?: HorizontalPodA
 }
 
 export class HorizontalPodAutoscalerV1SpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -369,7 +379,7 @@ export class HorizontalPodAutoscalerV1SpecOutputReference extends cdktf.ComplexO
   }
 
   public get internalValue(): HorizontalPodAutoscalerV1Spec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._maxReplicas) {
       hasAnyValues = true;
@@ -383,7 +393,7 @@ export class HorizontalPodAutoscalerV1SpecOutputReference extends cdktf.ComplexO
       hasAnyValues = true;
       internalValueResult.targetCpuUtilizationPercentage = this._targetCpuUtilizationPercentage;
     }
-    if (this._scaleTargetRef) {
+    if (this._scaleTargetRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.scaleTargetRef = this._scaleTargetRef?.internalValue;
     }
@@ -392,12 +402,14 @@ export class HorizontalPodAutoscalerV1SpecOutputReference extends cdktf.ComplexO
 
   public set internalValue(value: HorizontalPodAutoscalerV1Spec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._maxReplicas = undefined;
       this._minReplicas = undefined;
       this._targetCpuUtilizationPercentage = undefined;
       this._scaleTargetRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._maxReplicas = value.maxReplicas;
       this._minReplicas = value.minReplicas;
       this._targetCpuUtilizationPercentage = value.targetCpuUtilizationPercentage;

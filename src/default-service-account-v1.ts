@@ -98,6 +98,8 @@ export function defaultServiceAccountV1MetadataToTerraform(struct?: DefaultServi
 }
 
 export class DefaultServiceAccountV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -108,7 +110,7 @@ export class DefaultServiceAccountV1MetadataOutputReference extends cdktf.Comple
   }
 
   public get internalValue(): DefaultServiceAccountV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -131,12 +133,14 @@ export class DefaultServiceAccountV1MetadataOutputReference extends cdktf.Comple
 
   public set internalValue(value: DefaultServiceAccountV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._labels = undefined;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._labels = value.labels;
       this._name = value.name;
@@ -247,6 +251,8 @@ export function defaultServiceAccountV1TimeoutsToTerraform(struct?: DefaultServi
 }
 
 export class DefaultServiceAccountV1TimeoutsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -257,7 +263,7 @@ export class DefaultServiceAccountV1TimeoutsOutputReference extends cdktf.Comple
   }
 
   public get internalValue(): DefaultServiceAccountV1Timeouts | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._create) {
       hasAnyValues = true;
@@ -268,9 +274,11 @@ export class DefaultServiceAccountV1TimeoutsOutputReference extends cdktf.Comple
 
   public set internalValue(value: DefaultServiceAccountV1Timeouts | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._create = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._create = value.create;
     }
   }

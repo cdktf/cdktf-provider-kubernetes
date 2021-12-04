@@ -86,6 +86,8 @@ export function secretV1MetadataToTerraform(struct?: SecretV1MetadataOutputRefer
 }
 
 export class SecretV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -96,7 +98,7 @@ export class SecretV1MetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): SecretV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -123,6 +125,7 @@ export class SecretV1MetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: SecretV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -130,6 +133,7 @@ export class SecretV1MetadataOutputReference extends cdktf.ComplexObject {
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;

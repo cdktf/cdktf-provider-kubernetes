@@ -69,6 +69,8 @@ export function dataKubernetesServiceAccountMetadataToTerraform(struct?: DataKub
 }
 
 export class DataKubernetesServiceAccountMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -79,7 +81,7 @@ export class DataKubernetesServiceAccountMetadataOutputReference extends cdktf.C
   }
 
   public get internalValue(): DataKubernetesServiceAccountMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -102,12 +104,14 @@ export class DataKubernetesServiceAccountMetadataOutputReference extends cdktf.C
 
   public set internalValue(value: DataKubernetesServiceAccountMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._labels = undefined;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._labels = value.labels;
       this._name = value.name;

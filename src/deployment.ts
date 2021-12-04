@@ -80,6 +80,8 @@ export function deploymentMetadataToTerraform(struct?: DeploymentMetadataOutputR
 }
 
 export class DeploymentMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -90,7 +92,7 @@ export class DeploymentMetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): DeploymentMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -117,6 +119,7 @@ export class DeploymentMetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: DeploymentMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -124,6 +127,7 @@ export class DeploymentMetadataOutputReference extends cdktf.ComplexObject {
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -274,6 +278,8 @@ export function deploymentSpecSelectorToTerraform(struct?: DeploymentSpecSelecto
 }
 
 export class DeploymentSpecSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -284,7 +290,7 @@ export class DeploymentSpecSelectorOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): DeploymentSpecSelector | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabels) {
       hasAnyValues = true;
@@ -299,10 +305,12 @@ export class DeploymentSpecSelectorOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: DeploymentSpecSelector | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabels = undefined;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
       this._matchExpressions = value.matchExpressions;
     }
@@ -369,6 +377,8 @@ export function deploymentSpecStrategyRollingUpdateToTerraform(struct?: Deployme
 }
 
 export class DeploymentSpecStrategyRollingUpdateOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -379,7 +389,7 @@ export class DeploymentSpecStrategyRollingUpdateOutputReference extends cdktf.Co
   }
 
   public get internalValue(): DeploymentSpecStrategyRollingUpdate | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._maxSurge) {
       hasAnyValues = true;
@@ -394,10 +404,12 @@ export class DeploymentSpecStrategyRollingUpdateOutputReference extends cdktf.Co
 
   public set internalValue(value: DeploymentSpecStrategyRollingUpdate | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._maxSurge = undefined;
       this._maxUnavailable = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._maxSurge = value.maxSurge;
       this._maxUnavailable = value.maxUnavailable;
     }
@@ -462,6 +474,8 @@ export function deploymentSpecStrategyToTerraform(struct?: DeploymentSpecStrateg
 }
 
 export class DeploymentSpecStrategyOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -472,13 +486,13 @@ export class DeploymentSpecStrategyOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): DeploymentSpecStrategy | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._type) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._rollingUpdate) {
+    if (this._rollingUpdate?.internalValue) {
       hasAnyValues = true;
       internalValueResult.rollingUpdate = this._rollingUpdate?.internalValue;
     }
@@ -487,10 +501,12 @@ export class DeploymentSpecStrategyOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: DeploymentSpecStrategy | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._type = undefined;
       this._rollingUpdate.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._type = value.type;
       this._rollingUpdate.internalValue = value.rollingUpdate;
     }
@@ -576,6 +592,8 @@ export function deploymentSpecTemplateMetadataToTerraform(struct?: DeploymentSpe
 }
 
 export class DeploymentSpecTemplateMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -586,7 +604,7 @@ export class DeploymentSpecTemplateMetadataOutputReference extends cdktf.Complex
   }
 
   public get internalValue(): DeploymentSpecTemplateMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -613,6 +631,7 @@ export class DeploymentSpecTemplateMetadataOutputReference extends cdktf.Complex
 
   public set internalValue(value: DeploymentSpecTemplateMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -620,6 +639,7 @@ export class DeploymentSpecTemplateMetadataOutputReference extends cdktf.Complex
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -763,6 +783,8 @@ export function deploymentSpecTemplateSpecAffinityNodeAffinityPreferredDuringSch
 }
 
 export class DeploymentSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -773,7 +795,7 @@ export class DeploymentSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedu
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchExpressions) {
       hasAnyValues = true;
@@ -784,9 +806,11 @@ export class DeploymentSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedu
 
   public set internalValue(value: DeploymentSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchExpressions = value.matchExpressions;
     }
   }
@@ -906,6 +930,8 @@ export function deploymentSpecTemplateSpecAffinityNodeAffinityRequiredDuringSche
 }
 
 export class DeploymentSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -916,7 +942,7 @@ export class DeploymentSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedul
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._nodeSelectorTerm) {
       hasAnyValues = true;
@@ -927,9 +953,11 @@ export class DeploymentSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedul
 
   public set internalValue(value: DeploymentSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._nodeSelectorTerm = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._nodeSelectorTerm = value.nodeSelectorTerm;
     }
   }
@@ -978,6 +1006,8 @@ export function deploymentSpecTemplateSpecAffinityNodeAffinityToTerraform(struct
 }
 
 export class DeploymentSpecTemplateSpecAffinityNodeAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -988,13 +1018,13 @@ export class DeploymentSpecTemplateSpecAffinityNodeAffinityOutputReference exten
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecAffinityNodeAffinity | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._preferredDuringSchedulingIgnoredDuringExecution) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue;
     }
@@ -1003,10 +1033,12 @@ export class DeploymentSpecTemplateSpecAffinityNodeAffinityOutputReference exten
 
   public set internalValue(value: DeploymentSpecTemplateSpecAffinityNodeAffinity | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
       this._requiredDuringSchedulingIgnoredDuringExecution.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._preferredDuringSchedulingIgnoredDuringExecution = value.preferredDuringSchedulingIgnoredDuringExecution;
       this._requiredDuringSchedulingIgnoredDuringExecution.internalValue = value.requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1138,6 +1170,8 @@ export function deploymentSpecTemplateSpecAffinityPodAffinityPreferredDuringSche
 }
 
 export class DeploymentSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1148,7 +1182,7 @@ export class DeploymentSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedul
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._namespaces) {
       hasAnyValues = true;
@@ -1167,11 +1201,13 @@ export class DeploymentSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedul
 
   public set internalValue(value: DeploymentSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._namespaces = undefined;
       this._topologyKey = undefined;
       this._labelSelector = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._namespaces = value.namespaces;
       this._topologyKey = value.topologyKey;
       this._labelSelector = value.labelSelector;
@@ -1372,6 +1408,8 @@ export function deploymentSpecTemplateSpecAffinityPodAffinityToTerraform(struct?
 }
 
 export class DeploymentSpecTemplateSpecAffinityPodAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1382,7 +1420,7 @@ export class DeploymentSpecTemplateSpecAffinityPodAffinityOutputReference extend
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecAffinityPodAffinity | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._preferredDuringSchedulingIgnoredDuringExecution) {
       hasAnyValues = true;
@@ -1397,10 +1435,12 @@ export class DeploymentSpecTemplateSpecAffinityPodAffinityOutputReference extend
 
   public set internalValue(value: DeploymentSpecTemplateSpecAffinityPodAffinity | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
       this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._preferredDuringSchedulingIgnoredDuringExecution = value.preferredDuringSchedulingIgnoredDuringExecution;
       this._requiredDuringSchedulingIgnoredDuringExecution = value.requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1533,6 +1573,8 @@ export function deploymentSpecTemplateSpecAffinityPodAntiAffinityPreferredDuring
 }
 
 export class DeploymentSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1543,7 +1585,7 @@ export class DeploymentSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSch
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._namespaces) {
       hasAnyValues = true;
@@ -1562,11 +1604,13 @@ export class DeploymentSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSch
 
   public set internalValue(value: DeploymentSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._namespaces = undefined;
       this._topologyKey = undefined;
       this._labelSelector = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._namespaces = value.namespaces;
       this._topologyKey = value.topologyKey;
       this._labelSelector = value.labelSelector;
@@ -1767,6 +1811,8 @@ export function deploymentSpecTemplateSpecAffinityPodAntiAffinityToTerraform(str
 }
 
 export class DeploymentSpecTemplateSpecAffinityPodAntiAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1777,7 +1823,7 @@ export class DeploymentSpecTemplateSpecAffinityPodAntiAffinityOutputReference ex
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecAffinityPodAntiAffinity | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._preferredDuringSchedulingIgnoredDuringExecution) {
       hasAnyValues = true;
@@ -1792,10 +1838,12 @@ export class DeploymentSpecTemplateSpecAffinityPodAntiAffinityOutputReference ex
 
   public set internalValue(value: DeploymentSpecTemplateSpecAffinityPodAntiAffinity | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._preferredDuringSchedulingIgnoredDuringExecution = undefined;
       this._requiredDuringSchedulingIgnoredDuringExecution = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._preferredDuringSchedulingIgnoredDuringExecution = value.preferredDuringSchedulingIgnoredDuringExecution;
       this._requiredDuringSchedulingIgnoredDuringExecution = value.requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1869,6 +1917,8 @@ export function deploymentSpecTemplateSpecAffinityToTerraform(struct?: Deploymen
 }
 
 export class DeploymentSpecTemplateSpecAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1879,17 +1929,17 @@ export class DeploymentSpecTemplateSpecAffinityOutputReference extends cdktf.Com
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecAffinity | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nodeAffinity) {
+    if (this._nodeAffinity?.internalValue) {
       hasAnyValues = true;
       internalValueResult.nodeAffinity = this._nodeAffinity?.internalValue;
     }
-    if (this._podAffinity) {
+    if (this._podAffinity?.internalValue) {
       hasAnyValues = true;
       internalValueResult.podAffinity = this._podAffinity?.internalValue;
     }
-    if (this._podAntiAffinity) {
+    if (this._podAntiAffinity?.internalValue) {
       hasAnyValues = true;
       internalValueResult.podAntiAffinity = this._podAntiAffinity?.internalValue;
     }
@@ -1898,11 +1948,13 @@ export class DeploymentSpecTemplateSpecAffinityOutputReference extends cdktf.Com
 
   public set internalValue(value: DeploymentSpecTemplateSpecAffinity | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._nodeAffinity.internalValue = undefined;
       this._podAffinity.internalValue = undefined;
       this._podAntiAffinity.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._nodeAffinity.internalValue = value.nodeAffinity;
       this._podAffinity.internalValue = value.podAffinity;
       this._podAntiAffinity.internalValue = value.podAntiAffinity;
@@ -1991,6 +2043,8 @@ export function deploymentSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefTo
 }
 
 export class DeploymentSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2001,7 +2055,7 @@ export class DeploymentSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutpu
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._key) {
       hasAnyValues = true;
@@ -2020,11 +2074,13 @@ export class DeploymentSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutpu
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._key = undefined;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._key = value.key;
       this._name = value.name;
       this._optional = value.optional;
@@ -2106,6 +2162,8 @@ export function deploymentSpecTemplateSpecContainerEnvValueFromFieldRefToTerrafo
 }
 
 export class DeploymentSpecTemplateSpecContainerEnvValueFromFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2116,7 +2174,7 @@ export class DeploymentSpecTemplateSpecContainerEnvValueFromFieldRefOutputRefere
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerEnvValueFromFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiVersion) {
       hasAnyValues = true;
@@ -2131,10 +2189,12 @@ export class DeploymentSpecTemplateSpecContainerEnvValueFromFieldRefOutputRefere
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerEnvValueFromFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiVersion = undefined;
       this._fieldPath = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiVersion = value.apiVersion;
       this._fieldPath = value.fieldPath;
     }
@@ -2202,6 +2262,8 @@ export function deploymentSpecTemplateSpecContainerEnvValueFromResourceFieldRefT
 }
 
 export class DeploymentSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2212,7 +2274,7 @@ export class DeploymentSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutp
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._containerName) {
       hasAnyValues = true;
@@ -2231,11 +2293,13 @@ export class DeploymentSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutp
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._containerName = undefined;
       this._divisor = undefined;
       this._resource = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._containerName = value.containerName;
       this._divisor = value.divisor;
       this._resource = value.resource;
@@ -2321,6 +2385,8 @@ export function deploymentSpecTemplateSpecContainerEnvValueFromSecretKeyRefToTer
 }
 
 export class DeploymentSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2331,7 +2397,7 @@ export class DeploymentSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputRe
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._key) {
       hasAnyValues = true;
@@ -2350,11 +2416,13 @@ export class DeploymentSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputRe
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._key = undefined;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._key = value.key;
       this._name = value.name;
       this._optional = value.optional;
@@ -2450,6 +2518,8 @@ export function deploymentSpecTemplateSpecContainerEnvValueFromToTerraform(struc
 }
 
 export class DeploymentSpecTemplateSpecContainerEnvValueFromOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2460,21 +2530,21 @@ export class DeploymentSpecTemplateSpecContainerEnvValueFromOutputReference exte
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerEnvValueFrom | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._configMapKeyRef) {
+    if (this._configMapKeyRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
     }
-    if (this._fieldRef) {
+    if (this._fieldRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.fieldRef = this._fieldRef?.internalValue;
     }
-    if (this._resourceFieldRef) {
+    if (this._resourceFieldRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
     }
-    if (this._secretKeyRef) {
+    if (this._secretKeyRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
     }
@@ -2483,12 +2553,14 @@ export class DeploymentSpecTemplateSpecContainerEnvValueFromOutputReference exte
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerEnvValueFrom | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._configMapKeyRef.internalValue = undefined;
       this._fieldRef.internalValue = undefined;
       this._resourceFieldRef.internalValue = undefined;
       this._secretKeyRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._configMapKeyRef.internalValue = value.configMapKeyRef;
       this._fieldRef.internalValue = value.fieldRef;
       this._resourceFieldRef.internalValue = value.resourceFieldRef;
@@ -2620,6 +2692,8 @@ export function deploymentSpecTemplateSpecContainerEnvFromConfigMapRefToTerrafor
 }
 
 export class DeploymentSpecTemplateSpecContainerEnvFromConfigMapRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2630,7 +2704,7 @@ export class DeploymentSpecTemplateSpecContainerEnvFromConfigMapRefOutputReferen
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerEnvFromConfigMapRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -2645,10 +2719,12 @@ export class DeploymentSpecTemplateSpecContainerEnvFromConfigMapRefOutputReferen
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerEnvFromConfigMapRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._optional = value.optional;
     }
@@ -2710,6 +2786,8 @@ export function deploymentSpecTemplateSpecContainerEnvFromSecretRefToTerraform(s
 }
 
 export class DeploymentSpecTemplateSpecContainerEnvFromSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2720,7 +2798,7 @@ export class DeploymentSpecTemplateSpecContainerEnvFromSecretRefOutputReference 
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerEnvFromSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -2735,10 +2813,12 @@ export class DeploymentSpecTemplateSpecContainerEnvFromSecretRefOutputReference 
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerEnvFromSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._optional = value.optional;
     }
@@ -2826,6 +2906,8 @@ export function deploymentSpecTemplateSpecContainerLifecyclePostStartExecToTerra
 }
 
 export class DeploymentSpecTemplateSpecContainerLifecyclePostStartExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2836,7 +2918,7 @@ export class DeploymentSpecTemplateSpecContainerLifecyclePostStartExecOutputRefe
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerLifecyclePostStartExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -2847,9 +2929,11 @@ export class DeploymentSpecTemplateSpecContainerLifecyclePostStartExecOutputRefe
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerLifecyclePostStartExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -2944,6 +3028,8 @@ export function deploymentSpecTemplateSpecContainerLifecyclePostStartHttpGetToTe
 }
 
 export class DeploymentSpecTemplateSpecContainerLifecyclePostStartHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2954,7 +3040,7 @@ export class DeploymentSpecTemplateSpecContainerLifecyclePostStartHttpGetOutputR
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -2981,6 +3067,7 @@ export class DeploymentSpecTemplateSpecContainerLifecyclePostStartHttpGetOutputR
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -2988,6 +3075,7 @@ export class DeploymentSpecTemplateSpecContainerLifecyclePostStartHttpGetOutputR
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -3149,6 +3237,8 @@ export function deploymentSpecTemplateSpecContainerLifecyclePreStopExecToTerrafo
 }
 
 export class DeploymentSpecTemplateSpecContainerLifecyclePreStopExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3159,7 +3249,7 @@ export class DeploymentSpecTemplateSpecContainerLifecyclePreStopExecOutputRefere
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerLifecyclePreStopExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -3170,9 +3260,11 @@ export class DeploymentSpecTemplateSpecContainerLifecyclePreStopExecOutputRefere
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerLifecyclePreStopExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -3267,6 +3359,8 @@ export function deploymentSpecTemplateSpecContainerLifecyclePreStopHttpGetToTerr
 }
 
 export class DeploymentSpecTemplateSpecContainerLifecyclePreStopHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3277,7 +3371,7 @@ export class DeploymentSpecTemplateSpecContainerLifecyclePreStopHttpGetOutputRef
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -3304,6 +3398,7 @@ export class DeploymentSpecTemplateSpecContainerLifecyclePreStopHttpGetOutputRef
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -3311,6 +3406,7 @@ export class DeploymentSpecTemplateSpecContainerLifecyclePreStopHttpGetOutputRef
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -3479,6 +3575,8 @@ export function deploymentSpecTemplateSpecContainerLifecycleToTerraform(struct?:
 }
 
 export class DeploymentSpecTemplateSpecContainerLifecycleOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3489,7 +3587,7 @@ export class DeploymentSpecTemplateSpecContainerLifecycleOutputReference extends
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerLifecycle | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._postStart) {
       hasAnyValues = true;
@@ -3504,10 +3602,12 @@ export class DeploymentSpecTemplateSpecContainerLifecycleOutputReference extends
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerLifecycle | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._postStart = undefined;
       this._preStop = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._postStart = value.postStart;
       this._preStop = value.preStop;
     }
@@ -3567,6 +3667,8 @@ export function deploymentSpecTemplateSpecContainerLivenessProbeExecToTerraform(
 }
 
 export class DeploymentSpecTemplateSpecContainerLivenessProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3577,7 +3679,7 @@ export class DeploymentSpecTemplateSpecContainerLivenessProbeExecOutputReference
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerLivenessProbeExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -3588,9 +3690,11 @@ export class DeploymentSpecTemplateSpecContainerLivenessProbeExecOutputReference
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerLivenessProbeExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -3685,6 +3789,8 @@ export function deploymentSpecTemplateSpecContainerLivenessProbeHttpGetToTerrafo
 }
 
 export class DeploymentSpecTemplateSpecContainerLivenessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3695,7 +3801,7 @@ export class DeploymentSpecTemplateSpecContainerLivenessProbeHttpGetOutputRefere
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerLivenessProbeHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -3722,6 +3828,7 @@ export class DeploymentSpecTemplateSpecContainerLivenessProbeHttpGetOutputRefere
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerLivenessProbeHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -3729,6 +3836,7 @@ export class DeploymentSpecTemplateSpecContainerLivenessProbeHttpGetOutputRefere
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -3906,6 +4014,8 @@ export function deploymentSpecTemplateSpecContainerLivenessProbeToTerraform(stru
 }
 
 export class DeploymentSpecTemplateSpecContainerLivenessProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3916,7 +4026,7 @@ export class DeploymentSpecTemplateSpecContainerLivenessProbeOutputReference ext
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerLivenessProbe | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._failureThreshold) {
       hasAnyValues = true;
@@ -3938,11 +4048,11 @@ export class DeploymentSpecTemplateSpecContainerLivenessProbeOutputReference ext
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec) {
+    if (this._exec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet) {
+    if (this._httpGet?.internalValue) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
@@ -3955,6 +4065,7 @@ export class DeploymentSpecTemplateSpecContainerLivenessProbeOutputReference ext
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerLivenessProbe | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._failureThreshold = undefined;
       this._initialDelaySeconds = undefined;
       this._periodSeconds = undefined;
@@ -3965,6 +4076,7 @@ export class DeploymentSpecTemplateSpecContainerLivenessProbeOutputReference ext
       this._tcpSocket = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._failureThreshold = value.failureThreshold;
       this._initialDelaySeconds = value.initialDelaySeconds;
       this._periodSeconds = value.periodSeconds;
@@ -4172,6 +4284,8 @@ export function deploymentSpecTemplateSpecContainerReadinessProbeExecToTerraform
 }
 
 export class DeploymentSpecTemplateSpecContainerReadinessProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4182,7 +4296,7 @@ export class DeploymentSpecTemplateSpecContainerReadinessProbeExecOutputReferenc
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerReadinessProbeExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -4193,9 +4307,11 @@ export class DeploymentSpecTemplateSpecContainerReadinessProbeExecOutputReferenc
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerReadinessProbeExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -4290,6 +4406,8 @@ export function deploymentSpecTemplateSpecContainerReadinessProbeHttpGetToTerraf
 }
 
 export class DeploymentSpecTemplateSpecContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4300,7 +4418,7 @@ export class DeploymentSpecTemplateSpecContainerReadinessProbeHttpGetOutputRefer
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerReadinessProbeHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -4327,6 +4445,7 @@ export class DeploymentSpecTemplateSpecContainerReadinessProbeHttpGetOutputRefer
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerReadinessProbeHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -4334,6 +4453,7 @@ export class DeploymentSpecTemplateSpecContainerReadinessProbeHttpGetOutputRefer
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -4511,6 +4631,8 @@ export function deploymentSpecTemplateSpecContainerReadinessProbeToTerraform(str
 }
 
 export class DeploymentSpecTemplateSpecContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4521,7 +4643,7 @@ export class DeploymentSpecTemplateSpecContainerReadinessProbeOutputReference ex
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerReadinessProbe | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._failureThreshold) {
       hasAnyValues = true;
@@ -4543,11 +4665,11 @@ export class DeploymentSpecTemplateSpecContainerReadinessProbeOutputReference ex
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec) {
+    if (this._exec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet) {
+    if (this._httpGet?.internalValue) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
@@ -4560,6 +4682,7 @@ export class DeploymentSpecTemplateSpecContainerReadinessProbeOutputReference ex
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerReadinessProbe | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._failureThreshold = undefined;
       this._initialDelaySeconds = undefined;
       this._periodSeconds = undefined;
@@ -4570,6 +4693,7 @@ export class DeploymentSpecTemplateSpecContainerReadinessProbeOutputReference ex
       this._tcpSocket = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._failureThreshold = value.failureThreshold;
       this._initialDelaySeconds = value.initialDelaySeconds;
       this._periodSeconds = value.periodSeconds;
@@ -4737,6 +4861,8 @@ export function deploymentSpecTemplateSpecContainerResourcesToTerraform(struct?:
 }
 
 export class DeploymentSpecTemplateSpecContainerResourcesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4747,7 +4873,7 @@ export class DeploymentSpecTemplateSpecContainerResourcesOutputReference extends
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerResources | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._limits) {
       hasAnyValues = true;
@@ -4762,10 +4888,12 @@ export class DeploymentSpecTemplateSpecContainerResourcesOutputReference extends
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerResources | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._limits = undefined;
       this._requests = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._limits = value.limits;
       this._requests = value.requests;
     }
@@ -4832,6 +4960,8 @@ export function deploymentSpecTemplateSpecContainerSecurityContextCapabilitiesTo
 }
 
 export class DeploymentSpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4842,7 +4972,7 @@ export class DeploymentSpecTemplateSpecContainerSecurityContextCapabilitiesOutpu
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerSecurityContextCapabilities | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._add) {
       hasAnyValues = true;
@@ -4857,10 +4987,12 @@ export class DeploymentSpecTemplateSpecContainerSecurityContextCapabilitiesOutpu
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerSecurityContextCapabilities | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._add = undefined;
       this._drop = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._add = value.add;
       this._drop = value.drop;
     }
@@ -4939,6 +5071,8 @@ export function deploymentSpecTemplateSpecContainerSecurityContextSeLinuxOptions
 }
 
 export class DeploymentSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4949,7 +5083,7 @@ export class DeploymentSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOut
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._level) {
       hasAnyValues = true;
@@ -4972,12 +5106,14 @@ export class DeploymentSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOut
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._level = undefined;
       this._role = undefined;
       this._type = undefined;
       this._user = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._level = value.level;
       this._role = value.role;
       this._type = value.type;
@@ -5118,6 +5254,8 @@ export function deploymentSpecTemplateSpecContainerSecurityContextToTerraform(st
 }
 
 export class DeploymentSpecTemplateSpecContainerSecurityContextOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -5128,7 +5266,7 @@ export class DeploymentSpecTemplateSpecContainerSecurityContextOutputReference e
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerSecurityContext | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._allowPrivilegeEscalation) {
       hasAnyValues = true;
@@ -5154,11 +5292,11 @@ export class DeploymentSpecTemplateSpecContainerSecurityContextOutputReference e
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._capabilities) {
+    if (this._capabilities?.internalValue) {
       hasAnyValues = true;
       internalValueResult.capabilities = this._capabilities?.internalValue;
     }
-    if (this._seLinuxOptions) {
+    if (this._seLinuxOptions?.internalValue) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -5167,6 +5305,7 @@ export class DeploymentSpecTemplateSpecContainerSecurityContextOutputReference e
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerSecurityContext | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._allowPrivilegeEscalation = undefined;
       this._privileged = undefined;
       this._readOnlyRootFilesystem = undefined;
@@ -5177,6 +5316,7 @@ export class DeploymentSpecTemplateSpecContainerSecurityContextOutputReference e
       this._seLinuxOptions.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._allowPrivilegeEscalation = value.allowPrivilegeEscalation;
       this._privileged = value.privileged;
       this._readOnlyRootFilesystem = value.readOnlyRootFilesystem;
@@ -5336,6 +5476,8 @@ export function deploymentSpecTemplateSpecContainerStartupProbeExecToTerraform(s
 }
 
 export class DeploymentSpecTemplateSpecContainerStartupProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -5346,7 +5488,7 @@ export class DeploymentSpecTemplateSpecContainerStartupProbeExecOutputReference 
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerStartupProbeExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -5357,9 +5499,11 @@ export class DeploymentSpecTemplateSpecContainerStartupProbeExecOutputReference 
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerStartupProbeExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -5454,6 +5598,8 @@ export function deploymentSpecTemplateSpecContainerStartupProbeHttpGetToTerrafor
 }
 
 export class DeploymentSpecTemplateSpecContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -5464,7 +5610,7 @@ export class DeploymentSpecTemplateSpecContainerStartupProbeHttpGetOutputReferen
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerStartupProbeHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -5491,6 +5637,7 @@ export class DeploymentSpecTemplateSpecContainerStartupProbeHttpGetOutputReferen
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerStartupProbeHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -5498,6 +5645,7 @@ export class DeploymentSpecTemplateSpecContainerStartupProbeHttpGetOutputReferen
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -5675,6 +5823,8 @@ export function deploymentSpecTemplateSpecContainerStartupProbeToTerraform(struc
 }
 
 export class DeploymentSpecTemplateSpecContainerStartupProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -5685,7 +5835,7 @@ export class DeploymentSpecTemplateSpecContainerStartupProbeOutputReference exte
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecContainerStartupProbe | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._failureThreshold) {
       hasAnyValues = true;
@@ -5707,11 +5857,11 @@ export class DeploymentSpecTemplateSpecContainerStartupProbeOutputReference exte
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec) {
+    if (this._exec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet) {
+    if (this._httpGet?.internalValue) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
@@ -5724,6 +5874,7 @@ export class DeploymentSpecTemplateSpecContainerStartupProbeOutputReference exte
 
   public set internalValue(value: DeploymentSpecTemplateSpecContainerStartupProbe | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._failureThreshold = undefined;
       this._initialDelaySeconds = undefined;
       this._periodSeconds = undefined;
@@ -5734,6 +5885,7 @@ export class DeploymentSpecTemplateSpecContainerStartupProbeOutputReference exte
       this._tcpSocket = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._failureThreshold = value.failureThreshold;
       this._initialDelaySeconds = value.initialDelaySeconds;
       this._periodSeconds = value.periodSeconds;
@@ -6140,6 +6292,8 @@ export function deploymentSpecTemplateSpecDnsConfigToTerraform(struct?: Deployme
 }
 
 export class DeploymentSpecTemplateSpecDnsConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6150,7 +6304,7 @@ export class DeploymentSpecTemplateSpecDnsConfigOutputReference extends cdktf.Co
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecDnsConfig | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._nameservers) {
       hasAnyValues = true;
@@ -6169,11 +6323,13 @@ export class DeploymentSpecTemplateSpecDnsConfigOutputReference extends cdktf.Co
 
   public set internalValue(value: DeploymentSpecTemplateSpecDnsConfig | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._nameservers = undefined;
       this._searches = undefined;
       this._option = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._nameservers = value.nameservers;
       this._searches = value.searches;
       this._option = value.option;
@@ -6308,6 +6464,8 @@ export function deploymentSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyR
 }
 
 export class DeploymentSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6318,7 +6476,7 @@ export class DeploymentSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefO
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._key) {
       hasAnyValues = true;
@@ -6337,11 +6495,13 @@ export class DeploymentSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefO
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._key = undefined;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._key = value.key;
       this._name = value.name;
       this._optional = value.optional;
@@ -6423,6 +6583,8 @@ export function deploymentSpecTemplateSpecInitContainerEnvValueFromFieldRefToTer
 }
 
 export class DeploymentSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6433,7 +6595,7 @@ export class DeploymentSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputRe
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiVersion) {
       hasAnyValues = true;
@@ -6448,10 +6610,12 @@ export class DeploymentSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputRe
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiVersion = undefined;
       this._fieldPath = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiVersion = value.apiVersion;
       this._fieldPath = value.fieldPath;
     }
@@ -6519,6 +6683,8 @@ export function deploymentSpecTemplateSpecInitContainerEnvValueFromResourceField
 }
 
 export class DeploymentSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6529,7 +6695,7 @@ export class DeploymentSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._containerName) {
       hasAnyValues = true;
@@ -6548,11 +6714,13 @@ export class DeploymentSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._containerName = undefined;
       this._divisor = undefined;
       this._resource = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._containerName = value.containerName;
       this._divisor = value.divisor;
       this._resource = value.resource;
@@ -6638,6 +6806,8 @@ export function deploymentSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefT
 }
 
 export class DeploymentSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6648,7 +6818,7 @@ export class DeploymentSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutp
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._key) {
       hasAnyValues = true;
@@ -6667,11 +6837,13 @@ export class DeploymentSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutp
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._key = undefined;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._key = value.key;
       this._name = value.name;
       this._optional = value.optional;
@@ -6767,6 +6939,8 @@ export function deploymentSpecTemplateSpecInitContainerEnvValueFromToTerraform(s
 }
 
 export class DeploymentSpecTemplateSpecInitContainerEnvValueFromOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6777,21 +6951,21 @@ export class DeploymentSpecTemplateSpecInitContainerEnvValueFromOutputReference 
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerEnvValueFrom | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._configMapKeyRef) {
+    if (this._configMapKeyRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
     }
-    if (this._fieldRef) {
+    if (this._fieldRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.fieldRef = this._fieldRef?.internalValue;
     }
-    if (this._resourceFieldRef) {
+    if (this._resourceFieldRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
     }
-    if (this._secretKeyRef) {
+    if (this._secretKeyRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
     }
@@ -6800,12 +6974,14 @@ export class DeploymentSpecTemplateSpecInitContainerEnvValueFromOutputReference 
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerEnvValueFrom | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._configMapKeyRef.internalValue = undefined;
       this._fieldRef.internalValue = undefined;
       this._resourceFieldRef.internalValue = undefined;
       this._secretKeyRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._configMapKeyRef.internalValue = value.configMapKeyRef;
       this._fieldRef.internalValue = value.fieldRef;
       this._resourceFieldRef.internalValue = value.resourceFieldRef;
@@ -6937,6 +7113,8 @@ export function deploymentSpecTemplateSpecInitContainerEnvFromConfigMapRefToTerr
 }
 
 export class DeploymentSpecTemplateSpecInitContainerEnvFromConfigMapRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -6947,7 +7125,7 @@ export class DeploymentSpecTemplateSpecInitContainerEnvFromConfigMapRefOutputRef
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -6962,10 +7140,12 @@ export class DeploymentSpecTemplateSpecInitContainerEnvFromConfigMapRefOutputRef
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._optional = value.optional;
     }
@@ -7027,6 +7207,8 @@ export function deploymentSpecTemplateSpecInitContainerEnvFromSecretRefToTerrafo
 }
 
 export class DeploymentSpecTemplateSpecInitContainerEnvFromSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7037,7 +7219,7 @@ export class DeploymentSpecTemplateSpecInitContainerEnvFromSecretRefOutputRefere
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerEnvFromSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -7052,10 +7234,12 @@ export class DeploymentSpecTemplateSpecInitContainerEnvFromSecretRefOutputRefere
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerEnvFromSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._optional = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._optional = value.optional;
     }
@@ -7143,6 +7327,8 @@ export function deploymentSpecTemplateSpecInitContainerLifecyclePostStartExecToT
 }
 
 export class DeploymentSpecTemplateSpecInitContainerLifecyclePostStartExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7153,7 +7339,7 @@ export class DeploymentSpecTemplateSpecInitContainerLifecyclePostStartExecOutput
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerLifecyclePostStartExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -7164,9 +7350,11 @@ export class DeploymentSpecTemplateSpecInitContainerLifecyclePostStartExecOutput
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerLifecyclePostStartExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -7261,6 +7449,8 @@ export function deploymentSpecTemplateSpecInitContainerLifecyclePostStartHttpGet
 }
 
 export class DeploymentSpecTemplateSpecInitContainerLifecyclePostStartHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7271,7 +7461,7 @@ export class DeploymentSpecTemplateSpecInitContainerLifecyclePostStartHttpGetOut
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -7298,6 +7488,7 @@ export class DeploymentSpecTemplateSpecInitContainerLifecyclePostStartHttpGetOut
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -7305,6 +7496,7 @@ export class DeploymentSpecTemplateSpecInitContainerLifecyclePostStartHttpGetOut
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -7466,6 +7658,8 @@ export function deploymentSpecTemplateSpecInitContainerLifecyclePreStopExecToTer
 }
 
 export class DeploymentSpecTemplateSpecInitContainerLifecyclePreStopExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7476,7 +7670,7 @@ export class DeploymentSpecTemplateSpecInitContainerLifecyclePreStopExecOutputRe
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerLifecyclePreStopExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -7487,9 +7681,11 @@ export class DeploymentSpecTemplateSpecInitContainerLifecyclePreStopExecOutputRe
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerLifecyclePreStopExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -7584,6 +7780,8 @@ export function deploymentSpecTemplateSpecInitContainerLifecyclePreStopHttpGetTo
 }
 
 export class DeploymentSpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7594,7 +7792,7 @@ export class DeploymentSpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutpu
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -7621,6 +7819,7 @@ export class DeploymentSpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutpu
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -7628,6 +7827,7 @@ export class DeploymentSpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutpu
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -7796,6 +7996,8 @@ export function deploymentSpecTemplateSpecInitContainerLifecycleToTerraform(stru
 }
 
 export class DeploymentSpecTemplateSpecInitContainerLifecycleOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7806,7 +8008,7 @@ export class DeploymentSpecTemplateSpecInitContainerLifecycleOutputReference ext
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerLifecycle | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._postStart) {
       hasAnyValues = true;
@@ -7821,10 +8023,12 @@ export class DeploymentSpecTemplateSpecInitContainerLifecycleOutputReference ext
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerLifecycle | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._postStart = undefined;
       this._preStop = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._postStart = value.postStart;
       this._preStop = value.preStop;
     }
@@ -7884,6 +8088,8 @@ export function deploymentSpecTemplateSpecInitContainerLivenessProbeExecToTerraf
 }
 
 export class DeploymentSpecTemplateSpecInitContainerLivenessProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -7894,7 +8100,7 @@ export class DeploymentSpecTemplateSpecInitContainerLivenessProbeExecOutputRefer
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerLivenessProbeExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -7905,9 +8111,11 @@ export class DeploymentSpecTemplateSpecInitContainerLivenessProbeExecOutputRefer
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerLivenessProbeExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -8002,6 +8210,8 @@ export function deploymentSpecTemplateSpecInitContainerLivenessProbeHttpGetToTer
 }
 
 export class DeploymentSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -8012,7 +8222,7 @@ export class DeploymentSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputRe
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -8039,6 +8249,7 @@ export class DeploymentSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputRe
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -8046,6 +8257,7 @@ export class DeploymentSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputRe
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -8223,6 +8435,8 @@ export function deploymentSpecTemplateSpecInitContainerLivenessProbeToTerraform(
 }
 
 export class DeploymentSpecTemplateSpecInitContainerLivenessProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -8233,7 +8447,7 @@ export class DeploymentSpecTemplateSpecInitContainerLivenessProbeOutputReference
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerLivenessProbe | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._failureThreshold) {
       hasAnyValues = true;
@@ -8255,11 +8469,11 @@ export class DeploymentSpecTemplateSpecInitContainerLivenessProbeOutputReference
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec) {
+    if (this._exec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet) {
+    if (this._httpGet?.internalValue) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
@@ -8272,6 +8486,7 @@ export class DeploymentSpecTemplateSpecInitContainerLivenessProbeOutputReference
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerLivenessProbe | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._failureThreshold = undefined;
       this._initialDelaySeconds = undefined;
       this._periodSeconds = undefined;
@@ -8282,6 +8497,7 @@ export class DeploymentSpecTemplateSpecInitContainerLivenessProbeOutputReference
       this._tcpSocket = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._failureThreshold = value.failureThreshold;
       this._initialDelaySeconds = value.initialDelaySeconds;
       this._periodSeconds = value.periodSeconds;
@@ -8489,6 +8705,8 @@ export function deploymentSpecTemplateSpecInitContainerReadinessProbeExecToTerra
 }
 
 export class DeploymentSpecTemplateSpecInitContainerReadinessProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -8499,7 +8717,7 @@ export class DeploymentSpecTemplateSpecInitContainerReadinessProbeExecOutputRefe
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerReadinessProbeExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -8510,9 +8728,11 @@ export class DeploymentSpecTemplateSpecInitContainerReadinessProbeExecOutputRefe
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerReadinessProbeExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -8607,6 +8827,8 @@ export function deploymentSpecTemplateSpecInitContainerReadinessProbeHttpGetToTe
 }
 
 export class DeploymentSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -8617,7 +8839,7 @@ export class DeploymentSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputR
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -8644,6 +8866,7 @@ export class DeploymentSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputR
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -8651,6 +8874,7 @@ export class DeploymentSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputR
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -8828,6 +9052,8 @@ export function deploymentSpecTemplateSpecInitContainerReadinessProbeToTerraform
 }
 
 export class DeploymentSpecTemplateSpecInitContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -8838,7 +9064,7 @@ export class DeploymentSpecTemplateSpecInitContainerReadinessProbeOutputReferenc
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerReadinessProbe | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._failureThreshold) {
       hasAnyValues = true;
@@ -8860,11 +9086,11 @@ export class DeploymentSpecTemplateSpecInitContainerReadinessProbeOutputReferenc
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec) {
+    if (this._exec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet) {
+    if (this._httpGet?.internalValue) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
@@ -8877,6 +9103,7 @@ export class DeploymentSpecTemplateSpecInitContainerReadinessProbeOutputReferenc
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerReadinessProbe | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._failureThreshold = undefined;
       this._initialDelaySeconds = undefined;
       this._periodSeconds = undefined;
@@ -8887,6 +9114,7 @@ export class DeploymentSpecTemplateSpecInitContainerReadinessProbeOutputReferenc
       this._tcpSocket = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._failureThreshold = value.failureThreshold;
       this._initialDelaySeconds = value.initialDelaySeconds;
       this._periodSeconds = value.periodSeconds;
@@ -9054,6 +9282,8 @@ export function deploymentSpecTemplateSpecInitContainerResourcesToTerraform(stru
 }
 
 export class DeploymentSpecTemplateSpecInitContainerResourcesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -9064,7 +9294,7 @@ export class DeploymentSpecTemplateSpecInitContainerResourcesOutputReference ext
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerResources | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._limits) {
       hasAnyValues = true;
@@ -9079,10 +9309,12 @@ export class DeploymentSpecTemplateSpecInitContainerResourcesOutputReference ext
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerResources | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._limits = undefined;
       this._requests = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._limits = value.limits;
       this._requests = value.requests;
     }
@@ -9149,6 +9381,8 @@ export function deploymentSpecTemplateSpecInitContainerSecurityContextCapabiliti
 }
 
 export class DeploymentSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -9159,7 +9393,7 @@ export class DeploymentSpecTemplateSpecInitContainerSecurityContextCapabilitiesO
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._add) {
       hasAnyValues = true;
@@ -9174,10 +9408,12 @@ export class DeploymentSpecTemplateSpecInitContainerSecurityContextCapabilitiesO
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._add = undefined;
       this._drop = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._add = value.add;
       this._drop = value.drop;
     }
@@ -9256,6 +9492,8 @@ export function deploymentSpecTemplateSpecInitContainerSecurityContextSeLinuxOpt
 }
 
 export class DeploymentSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -9266,7 +9504,7 @@ export class DeploymentSpecTemplateSpecInitContainerSecurityContextSeLinuxOption
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._level) {
       hasAnyValues = true;
@@ -9289,12 +9527,14 @@ export class DeploymentSpecTemplateSpecInitContainerSecurityContextSeLinuxOption
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._level = undefined;
       this._role = undefined;
       this._type = undefined;
       this._user = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._level = value.level;
       this._role = value.role;
       this._type = value.type;
@@ -9435,6 +9675,8 @@ export function deploymentSpecTemplateSpecInitContainerSecurityContextToTerrafor
 }
 
 export class DeploymentSpecTemplateSpecInitContainerSecurityContextOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -9445,7 +9687,7 @@ export class DeploymentSpecTemplateSpecInitContainerSecurityContextOutputReferen
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerSecurityContext | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._allowPrivilegeEscalation) {
       hasAnyValues = true;
@@ -9471,11 +9713,11 @@ export class DeploymentSpecTemplateSpecInitContainerSecurityContextOutputReferen
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._capabilities) {
+    if (this._capabilities?.internalValue) {
       hasAnyValues = true;
       internalValueResult.capabilities = this._capabilities?.internalValue;
     }
-    if (this._seLinuxOptions) {
+    if (this._seLinuxOptions?.internalValue) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -9484,6 +9726,7 @@ export class DeploymentSpecTemplateSpecInitContainerSecurityContextOutputReferen
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerSecurityContext | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._allowPrivilegeEscalation = undefined;
       this._privileged = undefined;
       this._readOnlyRootFilesystem = undefined;
@@ -9494,6 +9737,7 @@ export class DeploymentSpecTemplateSpecInitContainerSecurityContextOutputReferen
       this._seLinuxOptions.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._allowPrivilegeEscalation = value.allowPrivilegeEscalation;
       this._privileged = value.privileged;
       this._readOnlyRootFilesystem = value.readOnlyRootFilesystem;
@@ -9653,6 +9897,8 @@ export function deploymentSpecTemplateSpecInitContainerStartupProbeExecToTerrafo
 }
 
 export class DeploymentSpecTemplateSpecInitContainerStartupProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -9663,7 +9909,7 @@ export class DeploymentSpecTemplateSpecInitContainerStartupProbeExecOutputRefere
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerStartupProbeExec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._command) {
       hasAnyValues = true;
@@ -9674,9 +9920,11 @@ export class DeploymentSpecTemplateSpecInitContainerStartupProbeExecOutputRefere
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerStartupProbeExec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._command = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._command = value.command;
     }
   }
@@ -9771,6 +10019,8 @@ export function deploymentSpecTemplateSpecInitContainerStartupProbeHttpGetToTerr
 }
 
 export class DeploymentSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -9781,7 +10031,7 @@ export class DeploymentSpecTemplateSpecInitContainerStartupProbeHttpGetOutputRef
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._host) {
       hasAnyValues = true;
@@ -9808,6 +10058,7 @@ export class DeploymentSpecTemplateSpecInitContainerStartupProbeHttpGetOutputRef
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._host = undefined;
       this._path = undefined;
       this._port = undefined;
@@ -9815,6 +10066,7 @@ export class DeploymentSpecTemplateSpecInitContainerStartupProbeHttpGetOutputRef
       this._httpHeader = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._host = value.host;
       this._path = value.path;
       this._port = value.port;
@@ -9992,6 +10244,8 @@ export function deploymentSpecTemplateSpecInitContainerStartupProbeToTerraform(s
 }
 
 export class DeploymentSpecTemplateSpecInitContainerStartupProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -10002,7 +10256,7 @@ export class DeploymentSpecTemplateSpecInitContainerStartupProbeOutputReference 
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecInitContainerStartupProbe | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._failureThreshold) {
       hasAnyValues = true;
@@ -10024,11 +10278,11 @@ export class DeploymentSpecTemplateSpecInitContainerStartupProbeOutputReference 
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec) {
+    if (this._exec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet) {
+    if (this._httpGet?.internalValue) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
@@ -10041,6 +10295,7 @@ export class DeploymentSpecTemplateSpecInitContainerStartupProbeOutputReference 
 
   public set internalValue(value: DeploymentSpecTemplateSpecInitContainerStartupProbe | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._failureThreshold = undefined;
       this._initialDelaySeconds = undefined;
       this._periodSeconds = undefined;
@@ -10051,6 +10306,7 @@ export class DeploymentSpecTemplateSpecInitContainerStartupProbeOutputReference 
       this._tcpSocket = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._failureThreshold = value.failureThreshold;
       this._initialDelaySeconds = value.initialDelaySeconds;
       this._periodSeconds = value.periodSeconds;
@@ -10457,6 +10713,8 @@ export function deploymentSpecTemplateSpecSecurityContextSeLinuxOptionsToTerrafo
 }
 
 export class DeploymentSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -10467,7 +10725,7 @@ export class DeploymentSpecTemplateSpecSecurityContextSeLinuxOptionsOutputRefere
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecSecurityContextSeLinuxOptions | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._level) {
       hasAnyValues = true;
@@ -10490,12 +10748,14 @@ export class DeploymentSpecTemplateSpecSecurityContextSeLinuxOptionsOutputRefere
 
   public set internalValue(value: DeploymentSpecTemplateSpecSecurityContextSeLinuxOptions | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._level = undefined;
       this._role = undefined;
       this._type = undefined;
       this._user = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._level = value.level;
       this._role = value.role;
       this._type = value.type;
@@ -10655,6 +10915,8 @@ export function deploymentSpecTemplateSpecSecurityContextToTerraform(struct?: De
 }
 
 export class DeploymentSpecTemplateSpecSecurityContextOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -10665,7 +10927,7 @@ export class DeploymentSpecTemplateSpecSecurityContextOutputReference extends cd
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecSecurityContext | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsGroup) {
       hasAnyValues = true;
@@ -10687,7 +10949,7 @@ export class DeploymentSpecTemplateSpecSecurityContextOutputReference extends cd
       hasAnyValues = true;
       internalValueResult.supplementalGroups = this._supplementalGroups;
     }
-    if (this._seLinuxOptions) {
+    if (this._seLinuxOptions?.internalValue) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -10700,6 +10962,7 @@ export class DeploymentSpecTemplateSpecSecurityContextOutputReference extends cd
 
   public set internalValue(value: DeploymentSpecTemplateSpecSecurityContext | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsGroup = undefined;
       this._runAsGroup = undefined;
       this._runAsNonRoot = undefined;
@@ -10709,6 +10972,7 @@ export class DeploymentSpecTemplateSpecSecurityContextOutputReference extends cd
       this._sysctl = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsGroup = value.fsGroup;
       this._runAsGroup = value.runAsGroup;
       this._runAsNonRoot = value.runAsNonRoot;
@@ -11020,6 +11284,8 @@ export function deploymentSpecTemplateSpecVolumeAwsElasticBlockStoreToTerraform(
 }
 
 export class DeploymentSpecTemplateSpecVolumeAwsElasticBlockStoreOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11030,7 +11296,7 @@ export class DeploymentSpecTemplateSpecVolumeAwsElasticBlockStoreOutputReference
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeAwsElasticBlockStore | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -11053,12 +11319,14 @@ export class DeploymentSpecTemplateSpecVolumeAwsElasticBlockStoreOutputReference
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeAwsElasticBlockStore | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._partition = undefined;
       this._readOnly = undefined;
       this._volumeId = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._partition = value.partition;
       this._readOnly = value.readOnly;
@@ -11182,6 +11450,8 @@ export function deploymentSpecTemplateSpecVolumeAzureDiskToTerraform(struct?: De
 }
 
 export class DeploymentSpecTemplateSpecVolumeAzureDiskOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11192,7 +11462,7 @@ export class DeploymentSpecTemplateSpecVolumeAzureDiskOutputReference extends cd
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeAzureDisk | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._cachingMode) {
       hasAnyValues = true;
@@ -11223,6 +11493,7 @@ export class DeploymentSpecTemplateSpecVolumeAzureDiskOutputReference extends cd
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeAzureDisk | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._cachingMode = undefined;
       this._dataDiskUri = undefined;
       this._diskName = undefined;
@@ -11231,6 +11502,7 @@ export class DeploymentSpecTemplateSpecVolumeAzureDiskOutputReference extends cd
       this._readOnly = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._cachingMode = value.cachingMode;
       this._dataDiskUri = value.dataDiskUri;
       this._diskName = value.diskName;
@@ -11368,6 +11640,8 @@ export function deploymentSpecTemplateSpecVolumeAzureFileToTerraform(struct?: De
 }
 
 export class DeploymentSpecTemplateSpecVolumeAzureFileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11378,7 +11652,7 @@ export class DeploymentSpecTemplateSpecVolumeAzureFileOutputReference extends cd
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeAzureFile | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._readOnly) {
       hasAnyValues = true;
@@ -11401,12 +11675,14 @@ export class DeploymentSpecTemplateSpecVolumeAzureFileOutputReference extends cd
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeAzureFile | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._readOnly = undefined;
       this._secretName = undefined;
       this._secretNamespace = undefined;
       this._shareName = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._readOnly = value.readOnly;
       this._secretName = value.secretName;
       this._secretNamespace = value.secretNamespace;
@@ -11499,6 +11775,8 @@ export function deploymentSpecTemplateSpecVolumeCephFsSecretRefToTerraform(struc
 }
 
 export class DeploymentSpecTemplateSpecVolumeCephFsSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11509,7 +11787,7 @@ export class DeploymentSpecTemplateSpecVolumeCephFsSecretRefOutputReference exte
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeCephFsSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -11524,10 +11802,12 @@ export class DeploymentSpecTemplateSpecVolumeCephFsSecretRefOutputReference exte
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeCephFsSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -11620,6 +11900,8 @@ export function deploymentSpecTemplateSpecVolumeCephFsToTerraform(struct?: Deplo
 }
 
 export class DeploymentSpecTemplateSpecVolumeCephFsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11630,7 +11912,7 @@ export class DeploymentSpecTemplateSpecVolumeCephFsOutputReference extends cdktf
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeCephFs | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._monitors) {
       hasAnyValues = true;
@@ -11652,7 +11934,7 @@ export class DeploymentSpecTemplateSpecVolumeCephFsOutputReference extends cdktf
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._secretRef) {
+    if (this._secretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -11661,6 +11943,7 @@ export class DeploymentSpecTemplateSpecVolumeCephFsOutputReference extends cdktf
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeCephFs | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._monitors = undefined;
       this._path = undefined;
       this._readOnly = undefined;
@@ -11669,6 +11952,7 @@ export class DeploymentSpecTemplateSpecVolumeCephFsOutputReference extends cdktf
       this._secretRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._monitors = value.monitors;
       this._path = value.path;
       this._readOnly = value.readOnly;
@@ -11805,6 +12089,8 @@ export function deploymentSpecTemplateSpecVolumeCinderToTerraform(struct?: Deplo
 }
 
 export class DeploymentSpecTemplateSpecVolumeCinderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11815,7 +12101,7 @@ export class DeploymentSpecTemplateSpecVolumeCinderOutputReference extends cdktf
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeCinder | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -11834,11 +12120,13 @@ export class DeploymentSpecTemplateSpecVolumeCinderOutputReference extends cdktf
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeCinder | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._readOnly = undefined;
       this._volumeId = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._readOnly = value.readOnly;
       this._volumeId = value.volumeId;
@@ -11964,6 +12252,8 @@ export function deploymentSpecTemplateSpecVolumeConfigMapToTerraform(struct?: De
 }
 
 export class DeploymentSpecTemplateSpecVolumeConfigMapOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -11974,7 +12264,7 @@ export class DeploymentSpecTemplateSpecVolumeConfigMapOutputReference extends cd
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeConfigMap | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._defaultMode) {
       hasAnyValues = true;
@@ -11997,12 +12287,14 @@ export class DeploymentSpecTemplateSpecVolumeConfigMapOutputReference extends cd
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeConfigMap | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._defaultMode = undefined;
       this._name = undefined;
       this._optional = undefined;
       this._items = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._defaultMode = value.defaultMode;
       this._name = value.name;
       this._optional = value.optional;
@@ -12102,6 +12394,8 @@ export function deploymentSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTe
 }
 
 export class DeploymentSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12112,7 +12406,7 @@ export class DeploymentSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputR
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -12127,10 +12421,12 @@ export class DeploymentSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputR
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -12195,6 +12491,8 @@ export function deploymentSpecTemplateSpecVolumeCsiControllerPublishSecretRefToT
 }
 
 export class DeploymentSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12205,7 +12503,7 @@ export class DeploymentSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutput
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -12220,10 +12518,12 @@ export class DeploymentSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutput
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -12288,6 +12588,8 @@ export function deploymentSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerrafo
 }
 
 export class DeploymentSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12298,7 +12600,7 @@ export class DeploymentSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputRefere
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -12313,10 +12615,12 @@ export class DeploymentSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputRefere
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -12381,6 +12685,8 @@ export function deploymentSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform
 }
 
 export class DeploymentSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12391,7 +12697,7 @@ export class DeploymentSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReferenc
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -12406,10 +12712,12 @@ export class DeploymentSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReferenc
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -12523,6 +12831,8 @@ export function deploymentSpecTemplateSpecVolumeCsiToTerraform(struct?: Deployme
 }
 
 export class DeploymentSpecTemplateSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12533,7 +12843,7 @@ export class DeploymentSpecTemplateSpecVolumeCsiOutputReference extends cdktf.Co
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeCsi | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._driver) {
       hasAnyValues = true;
@@ -12555,19 +12865,19 @@ export class DeploymentSpecTemplateSpecVolumeCsiOutputReference extends cdktf.Co
       hasAnyValues = true;
       internalValueResult.volumeHandle = this._volumeHandle;
     }
-    if (this._controllerExpandSecretRef) {
+    if (this._controllerExpandSecretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
     }
-    if (this._controllerPublishSecretRef) {
+    if (this._controllerPublishSecretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
     }
-    if (this._nodePublishSecretRef) {
+    if (this._nodePublishSecretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
     }
-    if (this._nodeStageSecretRef) {
+    if (this._nodeStageSecretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
     }
@@ -12576,6 +12886,7 @@ export class DeploymentSpecTemplateSpecVolumeCsiOutputReference extends cdktf.Co
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeCsi | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._driver = undefined;
       this._fsType = undefined;
       this._readOnly = undefined;
@@ -12587,6 +12898,7 @@ export class DeploymentSpecTemplateSpecVolumeCsiOutputReference extends cdktf.Co
       this._nodeStageSecretRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._driver = value.driver;
       this._fsType = value.fsType;
       this._readOnly = value.readOnly;
@@ -12765,6 +13077,8 @@ export function deploymentSpecTemplateSpecVolumeDownwardApiItemsFieldRefToTerraf
 }
 
 export class DeploymentSpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12775,7 +13089,7 @@ export class DeploymentSpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputRefer
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiVersion) {
       hasAnyValues = true;
@@ -12790,10 +13104,12 @@ export class DeploymentSpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputRefer
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiVersion = undefined;
       this._fieldPath = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiVersion = value.apiVersion;
       this._fieldPath = value.fieldPath;
     }
@@ -12861,6 +13177,8 @@ export function deploymentSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef
 }
 
 export class DeploymentSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -12871,7 +13189,7 @@ export class DeploymentSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefOut
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._containerName) {
       hasAnyValues = true;
@@ -12890,11 +13208,13 @@ export class DeploymentSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefOut
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._containerName = undefined;
       this._divisor = undefined;
       this._resource = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._containerName = value.containerName;
       this._divisor = value.divisor;
       this._resource = value.resource;
@@ -13010,6 +13330,8 @@ export function deploymentSpecTemplateSpecVolumeDownwardApiToTerraform(struct?: 
 }
 
 export class DeploymentSpecTemplateSpecVolumeDownwardApiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13020,7 +13342,7 @@ export class DeploymentSpecTemplateSpecVolumeDownwardApiOutputReference extends 
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeDownwardApi | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._defaultMode) {
       hasAnyValues = true;
@@ -13035,10 +13357,12 @@ export class DeploymentSpecTemplateSpecVolumeDownwardApiOutputReference extends 
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeDownwardApi | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._defaultMode = undefined;
       this._items = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._defaultMode = value.defaultMode;
       this._items = value.items;
     }
@@ -13104,6 +13428,8 @@ export function deploymentSpecTemplateSpecVolumeEmptyDirToTerraform(struct?: Dep
 }
 
 export class DeploymentSpecTemplateSpecVolumeEmptyDirOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13114,7 +13440,7 @@ export class DeploymentSpecTemplateSpecVolumeEmptyDirOutputReference extends cdk
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeEmptyDir | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._medium) {
       hasAnyValues = true;
@@ -13129,10 +13455,12 @@ export class DeploymentSpecTemplateSpecVolumeEmptyDirOutputReference extends cdk
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeEmptyDir | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._medium = undefined;
       this._sizeLimit = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._medium = value.medium;
       this._sizeLimit = value.sizeLimit;
     }
@@ -13211,6 +13539,8 @@ export function deploymentSpecTemplateSpecVolumeFcToTerraform(struct?: Deploymen
 }
 
 export class DeploymentSpecTemplateSpecVolumeFcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13221,7 +13551,7 @@ export class DeploymentSpecTemplateSpecVolumeFcOutputReference extends cdktf.Com
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeFc | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -13244,12 +13574,14 @@ export class DeploymentSpecTemplateSpecVolumeFcOutputReference extends cdktf.Com
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeFc | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._lun = undefined;
       this._readOnly = undefined;
       this._targetWwNs = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._lun = value.lun;
       this._readOnly = value.readOnly;
@@ -13342,6 +13674,8 @@ export function deploymentSpecTemplateSpecVolumeFlexVolumeSecretRefToTerraform(s
 }
 
 export class DeploymentSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13352,7 +13686,7 @@ export class DeploymentSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference 
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -13367,10 +13701,12 @@ export class DeploymentSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference 
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -13456,6 +13792,8 @@ export function deploymentSpecTemplateSpecVolumeFlexVolumeToTerraform(struct?: D
 }
 
 export class DeploymentSpecTemplateSpecVolumeFlexVolumeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13466,7 +13804,7 @@ export class DeploymentSpecTemplateSpecVolumeFlexVolumeOutputReference extends c
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeFlexVolume | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._driver) {
       hasAnyValues = true;
@@ -13484,7 +13822,7 @@ export class DeploymentSpecTemplateSpecVolumeFlexVolumeOutputReference extends c
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef) {
+    if (this._secretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -13493,6 +13831,7 @@ export class DeploymentSpecTemplateSpecVolumeFlexVolumeOutputReference extends c
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeFlexVolume | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._driver = undefined;
       this._fsType = undefined;
       this._options = undefined;
@@ -13500,6 +13839,7 @@ export class DeploymentSpecTemplateSpecVolumeFlexVolumeOutputReference extends c
       this._secretRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._driver = value.driver;
       this._fsType = value.fsType;
       this._options = value.options;
@@ -13613,6 +13953,8 @@ export function deploymentSpecTemplateSpecVolumeFlockerToTerraform(struct?: Depl
 }
 
 export class DeploymentSpecTemplateSpecVolumeFlockerOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13623,7 +13965,7 @@ export class DeploymentSpecTemplateSpecVolumeFlockerOutputReference extends cdkt
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeFlocker | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._datasetName) {
       hasAnyValues = true;
@@ -13638,10 +13980,12 @@ export class DeploymentSpecTemplateSpecVolumeFlockerOutputReference extends cdkt
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeFlocker | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._datasetName = undefined;
       this._datasetUuid = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._datasetName = value.datasetName;
       this._datasetUuid = value.datasetUuid;
     }
@@ -13720,6 +14064,8 @@ export function deploymentSpecTemplateSpecVolumeGcePersistentDiskToTerraform(str
 }
 
 export class DeploymentSpecTemplateSpecVolumeGcePersistentDiskOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13730,7 +14076,7 @@ export class DeploymentSpecTemplateSpecVolumeGcePersistentDiskOutputReference ex
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeGcePersistentDisk | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -13753,12 +14099,14 @@ export class DeploymentSpecTemplateSpecVolumeGcePersistentDiskOutputReference ex
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeGcePersistentDisk | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._partition = undefined;
       this._pdName = undefined;
       this._readOnly = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._partition = value.partition;
       this._pdName = value.pdName;
@@ -13861,6 +14209,8 @@ export function deploymentSpecTemplateSpecVolumeGitRepoToTerraform(struct?: Depl
 }
 
 export class DeploymentSpecTemplateSpecVolumeGitRepoOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13871,7 +14221,7 @@ export class DeploymentSpecTemplateSpecVolumeGitRepoOutputReference extends cdkt
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeGitRepo | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._directory) {
       hasAnyValues = true;
@@ -13890,11 +14240,13 @@ export class DeploymentSpecTemplateSpecVolumeGitRepoOutputReference extends cdkt
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeGitRepo | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._directory = undefined;
       this._repository = undefined;
       this._revision = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._directory = value.directory;
       this._repository = value.repository;
       this._revision = value.revision;
@@ -13983,6 +14335,8 @@ export function deploymentSpecTemplateSpecVolumeGlusterfsToTerraform(struct?: De
 }
 
 export class DeploymentSpecTemplateSpecVolumeGlusterfsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -13993,7 +14347,7 @@ export class DeploymentSpecTemplateSpecVolumeGlusterfsOutputReference extends cd
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeGlusterfs | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._endpointsName) {
       hasAnyValues = true;
@@ -14012,11 +14366,13 @@ export class DeploymentSpecTemplateSpecVolumeGlusterfsOutputReference extends cd
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeGlusterfs | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._endpointsName = undefined;
       this._path = undefined;
       this._readOnly = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._endpointsName = value.endpointsName;
       this._path = value.path;
       this._readOnly = value.readOnly;
@@ -14092,6 +14448,8 @@ export function deploymentSpecTemplateSpecVolumeHostPathToTerraform(struct?: Dep
 }
 
 export class DeploymentSpecTemplateSpecVolumeHostPathOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14102,7 +14460,7 @@ export class DeploymentSpecTemplateSpecVolumeHostPathOutputReference extends cdk
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeHostPath | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._path) {
       hasAnyValues = true;
@@ -14117,10 +14475,12 @@ export class DeploymentSpecTemplateSpecVolumeHostPathOutputReference extends cdk
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeHostPath | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._path = undefined;
       this._type = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._path = value.path;
       this._type = value.type;
     }
@@ -14213,6 +14573,8 @@ export function deploymentSpecTemplateSpecVolumeIscsiToTerraform(struct?: Deploy
 }
 
 export class DeploymentSpecTemplateSpecVolumeIscsiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14223,7 +14585,7 @@ export class DeploymentSpecTemplateSpecVolumeIscsiOutputReference extends cdktf.
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeIscsi | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -14254,6 +14616,7 @@ export class DeploymentSpecTemplateSpecVolumeIscsiOutputReference extends cdktf.
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeIscsi | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._iqn = undefined;
       this._iscsiInterface = undefined;
@@ -14262,6 +14625,7 @@ export class DeploymentSpecTemplateSpecVolumeIscsiOutputReference extends cdktf.
       this._targetPortal = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._iqn = value.iqn;
       this._iscsiInterface = value.iscsiInterface;
@@ -14381,6 +14745,8 @@ export function deploymentSpecTemplateSpecVolumeLocalToTerraform(struct?: Deploy
 }
 
 export class DeploymentSpecTemplateSpecVolumeLocalOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14391,7 +14757,7 @@ export class DeploymentSpecTemplateSpecVolumeLocalOutputReference extends cdktf.
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeLocal | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._path) {
       hasAnyValues = true;
@@ -14402,9 +14768,11 @@ export class DeploymentSpecTemplateSpecVolumeLocalOutputReference extends cdktf.
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeLocal | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._path = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._path = value.path;
     }
   }
@@ -14459,6 +14827,8 @@ export function deploymentSpecTemplateSpecVolumeNfsToTerraform(struct?: Deployme
 }
 
 export class DeploymentSpecTemplateSpecVolumeNfsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14469,7 +14839,7 @@ export class DeploymentSpecTemplateSpecVolumeNfsOutputReference extends cdktf.Co
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeNfs | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._path) {
       hasAnyValues = true;
@@ -14488,11 +14858,13 @@ export class DeploymentSpecTemplateSpecVolumeNfsOutputReference extends cdktf.Co
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeNfs | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._path = undefined;
       this._readOnly = undefined;
       this._server = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._path = value.path;
       this._readOnly = value.readOnly;
       this._server = value.server;
@@ -14568,6 +14940,8 @@ export function deploymentSpecTemplateSpecVolumePersistentVolumeClaimToTerraform
 }
 
 export class DeploymentSpecTemplateSpecVolumePersistentVolumeClaimOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14578,7 +14952,7 @@ export class DeploymentSpecTemplateSpecVolumePersistentVolumeClaimOutputReferenc
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumePersistentVolumeClaim | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._claimName) {
       hasAnyValues = true;
@@ -14593,10 +14967,12 @@ export class DeploymentSpecTemplateSpecVolumePersistentVolumeClaimOutputReferenc
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumePersistentVolumeClaim | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._claimName = undefined;
       this._readOnly = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._claimName = value.claimName;
       this._readOnly = value.readOnly;
     }
@@ -14661,6 +15037,8 @@ export function deploymentSpecTemplateSpecVolumePhotonPersistentDiskToTerraform(
 }
 
 export class DeploymentSpecTemplateSpecVolumePhotonPersistentDiskOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14671,7 +15049,7 @@ export class DeploymentSpecTemplateSpecVolumePhotonPersistentDiskOutputReference
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumePhotonPersistentDisk | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -14686,10 +15064,12 @@ export class DeploymentSpecTemplateSpecVolumePhotonPersistentDiskOutputReference
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumePhotonPersistentDisk | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._pdId = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._pdId = value.pdId;
     }
@@ -14817,6 +15197,8 @@ export function deploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems
 }
 
 export class DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14827,7 +15209,7 @@ export class DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFie
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiVersion) {
       hasAnyValues = true;
@@ -14842,10 +15224,12 @@ export class DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFie
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiVersion = undefined;
       this._fieldPath = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiVersion = value.apiVersion;
       this._fieldPath = value.fieldPath;
     }
@@ -14913,6 +15297,8 @@ export function deploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems
 }
 
 export class DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -14923,7 +15309,7 @@ export class DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsRes
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._containerName) {
       hasAnyValues = true;
@@ -14942,11 +15328,13 @@ export class DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsRes
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._containerName = undefined;
       this._divisor = undefined;
       this._resource = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._containerName = value.containerName;
       this._divisor = value.divisor;
       this._resource = value.resource;
@@ -15055,6 +15443,8 @@ export function deploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiToTer
 }
 
 export class DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -15065,7 +15455,7 @@ export class DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiOutputRe
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._items) {
       hasAnyValues = true;
@@ -15076,9 +15466,11 @@ export class DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApiOutputRe
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._items = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._items = value.items;
     }
   }
@@ -15200,6 +15592,8 @@ export function deploymentSpecTemplateSpecVolumeProjectedSourcesServiceAccountTo
 }
 
 export class DeploymentSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -15210,7 +15604,7 @@ export class DeploymentSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._audience) {
       hasAnyValues = true;
@@ -15229,11 +15623,13 @@ export class DeploymentSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._audience = undefined;
       this._expirationSeconds = undefined;
       this._path = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._audience = value.audience;
       this._expirationSeconds = value.expirationSeconds;
       this._path = value.path;
@@ -15399,6 +15795,8 @@ export function deploymentSpecTemplateSpecVolumeQuobyteToTerraform(struct?: Depl
 }
 
 export class DeploymentSpecTemplateSpecVolumeQuobyteOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -15409,7 +15807,7 @@ export class DeploymentSpecTemplateSpecVolumeQuobyteOutputReference extends cdkt
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeQuobyte | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._group) {
       hasAnyValues = true;
@@ -15436,6 +15834,7 @@ export class DeploymentSpecTemplateSpecVolumeQuobyteOutputReference extends cdkt
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeQuobyte | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._group = undefined;
       this._readOnly = undefined;
       this._registry = undefined;
@@ -15443,6 +15842,7 @@ export class DeploymentSpecTemplateSpecVolumeQuobyteOutputReference extends cdkt
       this._volume = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._group = value.group;
       this._readOnly = value.readOnly;
       this._registry = value.registry;
@@ -15552,6 +15952,8 @@ export function deploymentSpecTemplateSpecVolumeRbdSecretRefToTerraform(struct?:
 }
 
 export class DeploymentSpecTemplateSpecVolumeRbdSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -15562,7 +15964,7 @@ export class DeploymentSpecTemplateSpecVolumeRbdSecretRefOutputReference extends
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeRbdSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -15577,10 +15979,12 @@ export class DeploymentSpecTemplateSpecVolumeRbdSecretRefOutputReference extends
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeRbdSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -15687,6 +16091,8 @@ export function deploymentSpecTemplateSpecVolumeRbdToTerraform(struct?: Deployme
 }
 
 export class DeploymentSpecTemplateSpecVolumeRbdOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -15697,7 +16103,7 @@ export class DeploymentSpecTemplateSpecVolumeRbdOutputReference extends cdktf.Co
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeRbd | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._cephMonitors) {
       hasAnyValues = true;
@@ -15727,7 +16133,7 @@ export class DeploymentSpecTemplateSpecVolumeRbdOutputReference extends cdktf.Co
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef) {
+    if (this._secretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -15736,6 +16142,7 @@ export class DeploymentSpecTemplateSpecVolumeRbdOutputReference extends cdktf.Co
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeRbd | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._cephMonitors = undefined;
       this._fsType = undefined;
       this._keyring = undefined;
@@ -15746,6 +16153,7 @@ export class DeploymentSpecTemplateSpecVolumeRbdOutputReference extends cdktf.Co
       this._secretRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._cephMonitors = value.cephMonitors;
       this._fsType = value.fsType;
       this._keyring = value.keyring;
@@ -15953,6 +16361,8 @@ export function deploymentSpecTemplateSpecVolumeSecretToTerraform(struct?: Deplo
 }
 
 export class DeploymentSpecTemplateSpecVolumeSecretOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -15963,7 +16373,7 @@ export class DeploymentSpecTemplateSpecVolumeSecretOutputReference extends cdktf
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeSecret | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._defaultMode) {
       hasAnyValues = true;
@@ -15986,12 +16396,14 @@ export class DeploymentSpecTemplateSpecVolumeSecretOutputReference extends cdktf
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeSecret | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._defaultMode = undefined;
       this._optional = undefined;
       this._secretName = undefined;
       this._items = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._defaultMode = value.defaultMode;
       this._optional = value.optional;
       this._secretName = value.secretName;
@@ -16091,6 +16503,8 @@ export function deploymentSpecTemplateSpecVolumeVsphereVolumeToTerraform(struct?
 }
 
 export class DeploymentSpecTemplateSpecVolumeVsphereVolumeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -16101,7 +16515,7 @@ export class DeploymentSpecTemplateSpecVolumeVsphereVolumeOutputReference extend
   }
 
   public get internalValue(): DeploymentSpecTemplateSpecVolumeVsphereVolume | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -16116,10 +16530,12 @@ export class DeploymentSpecTemplateSpecVolumeVsphereVolumeOutputReference extend
 
   public set internalValue(value: DeploymentSpecTemplateSpecVolumeVsphereVolume | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._volumePath = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._volumePath = value.volumePath;
     }
@@ -16557,6 +16973,8 @@ export function deploymentSpecTemplateSpecToTerraform(struct?: DeploymentSpecTem
 }
 
 export class DeploymentSpecTemplateSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -16567,7 +16985,7 @@ export class DeploymentSpecTemplateSpecOutputReference extends cdktf.ComplexObje
   }
 
   public get internalValue(): DeploymentSpecTemplateSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._activeDeadlineSeconds) {
       hasAnyValues = true;
@@ -16633,7 +17051,7 @@ export class DeploymentSpecTemplateSpecOutputReference extends cdktf.ComplexObje
       hasAnyValues = true;
       internalValueResult.terminationGracePeriodSeconds = this._terminationGracePeriodSeconds;
     }
-    if (this._affinity) {
+    if (this._affinity?.internalValue) {
       hasAnyValues = true;
       internalValueResult.affinity = this._affinity?.internalValue;
     }
@@ -16641,7 +17059,7 @@ export class DeploymentSpecTemplateSpecOutputReference extends cdktf.ComplexObje
       hasAnyValues = true;
       internalValueResult.container = this._container;
     }
-    if (this._dnsConfig) {
+    if (this._dnsConfig?.internalValue) {
       hasAnyValues = true;
       internalValueResult.dnsConfig = this._dnsConfig?.internalValue;
     }
@@ -16661,7 +17079,7 @@ export class DeploymentSpecTemplateSpecOutputReference extends cdktf.ComplexObje
       hasAnyValues = true;
       internalValueResult.readinessGate = this._readinessGate;
     }
-    if (this._securityContext) {
+    if (this._securityContext?.internalValue) {
       hasAnyValues = true;
       internalValueResult.securityContext = this._securityContext?.internalValue;
     }
@@ -16682,6 +17100,7 @@ export class DeploymentSpecTemplateSpecOutputReference extends cdktf.ComplexObje
 
   public set internalValue(value: DeploymentSpecTemplateSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._activeDeadlineSeconds = undefined;
       this._automountServiceAccountToken = undefined;
       this._dnsPolicy = undefined;
@@ -16711,6 +17130,7 @@ export class DeploymentSpecTemplateSpecOutputReference extends cdktf.ComplexObje
       this._volume = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._activeDeadlineSeconds = value.activeDeadlineSeconds;
       this._automountServiceAccountToken = value.automountServiceAccountToken;
       this._dnsPolicy = value.dnsPolicy;
@@ -17209,6 +17629,8 @@ export function deploymentSpecTemplateToTerraform(struct?: DeploymentSpecTemplat
 }
 
 export class DeploymentSpecTemplateOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -17219,13 +17641,13 @@ export class DeploymentSpecTemplateOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): DeploymentSpecTemplate | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._metadata) {
+    if (this._metadata?.internalValue) {
       hasAnyValues = true;
       internalValueResult.metadata = this._metadata?.internalValue;
     }
-    if (this._spec) {
+    if (this._spec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.spec = this._spec?.internalValue;
     }
@@ -17234,10 +17656,12 @@ export class DeploymentSpecTemplateOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: DeploymentSpecTemplate | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._metadata.internalValue = undefined;
       this._spec.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._metadata.internalValue = value.metadata;
       this._spec.internalValue = value.spec;
     }
@@ -17338,6 +17762,8 @@ export function deploymentSpecToTerraform(struct?: DeploymentSpecOutputReference
 }
 
 export class DeploymentSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -17348,7 +17774,7 @@ export class DeploymentSpecOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): DeploymentSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._minReadySeconds) {
       hasAnyValues = true;
@@ -17370,15 +17796,15 @@ export class DeploymentSpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.revisionHistoryLimit = this._revisionHistoryLimit;
     }
-    if (this._selector) {
+    if (this._selector?.internalValue) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector?.internalValue;
     }
-    if (this._strategy) {
+    if (this._strategy?.internalValue) {
       hasAnyValues = true;
       internalValueResult.strategy = this._strategy?.internalValue;
     }
-    if (this._template) {
+    if (this._template?.internalValue) {
       hasAnyValues = true;
       internalValueResult.template = this._template?.internalValue;
     }
@@ -17387,6 +17813,7 @@ export class DeploymentSpecOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: DeploymentSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._minReadySeconds = undefined;
       this._paused = undefined;
       this._progressDeadlineSeconds = undefined;
@@ -17397,6 +17824,7 @@ export class DeploymentSpecOutputReference extends cdktf.ComplexObject {
       this._template.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._minReadySeconds = value.minReadySeconds;
       this._paused = value.paused;
       this._progressDeadlineSeconds = value.progressDeadlineSeconds;
@@ -17561,6 +17989,8 @@ export function deploymentTimeoutsToTerraform(struct?: DeploymentTimeoutsOutputR
 }
 
 export class DeploymentTimeoutsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -17571,7 +18001,7 @@ export class DeploymentTimeoutsOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): DeploymentTimeouts | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._create) {
       hasAnyValues = true;
@@ -17590,11 +18020,13 @@ export class DeploymentTimeoutsOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: DeploymentTimeouts | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._create = undefined;
       this._delete = undefined;
       this._update = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._create = value.create;
       this._delete = value.delete;
       this._update = value.update;

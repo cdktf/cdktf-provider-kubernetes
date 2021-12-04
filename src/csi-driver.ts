@@ -61,6 +61,8 @@ export function csiDriverMetadataToTerraform(struct?: CsiDriverMetadataOutputRef
 }
 
 export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -71,7 +73,7 @@ export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): CsiDriverMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -94,12 +96,14 @@ export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: CsiDriverMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -207,6 +211,8 @@ export function csiDriverSpecToTerraform(struct?: CsiDriverSpecOutputReference |
 }
 
 export class CsiDriverSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -217,7 +223,7 @@ export class CsiDriverSpecOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): CsiDriverSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._attachRequired) {
       hasAnyValues = true;
@@ -236,11 +242,13 @@ export class CsiDriverSpecOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: CsiDriverSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._attachRequired = undefined;
       this._podInfoOnMount = undefined;
       this._volumeLifecycleModes = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._attachRequired = value.attachRequired;
       this._podInfoOnMount = value.podInfoOnMount;
       this._volumeLifecycleModes = value.volumeLifecycleModes;

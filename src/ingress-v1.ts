@@ -102,6 +102,8 @@ export function ingressV1MetadataToTerraform(struct?: IngressV1MetadataOutputRef
 }
 
 export class IngressV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -112,7 +114,7 @@ export class IngressV1MetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): IngressV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -139,6 +141,7 @@ export class IngressV1MetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: IngressV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
@@ -146,6 +149,7 @@ export class IngressV1MetadataOutputReference extends cdktf.ComplexObject {
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -270,6 +274,8 @@ export function ingressV1SpecDefaultBackendResourceToTerraform(struct?: IngressV
 }
 
 export class IngressV1SpecDefaultBackendResourceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -280,7 +286,7 @@ export class IngressV1SpecDefaultBackendResourceOutputReference extends cdktf.Co
   }
 
   public get internalValue(): IngressV1SpecDefaultBackendResource | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiGroup) {
       hasAnyValues = true;
@@ -299,11 +305,13 @@ export class IngressV1SpecDefaultBackendResourceOutputReference extends cdktf.Co
 
   public set internalValue(value: IngressV1SpecDefaultBackendResource | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiGroup = undefined;
       this._kind = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiGroup = value.apiGroup;
       this._kind = value.kind;
       this._name = value.name;
@@ -376,6 +384,8 @@ export function ingressV1SpecDefaultBackendServicePortToTerraform(struct?: Ingre
 }
 
 export class IngressV1SpecDefaultBackendServicePortOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -386,7 +396,7 @@ export class IngressV1SpecDefaultBackendServicePortOutputReference extends cdktf
   }
 
   public get internalValue(): IngressV1SpecDefaultBackendServicePort | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -401,10 +411,12 @@ export class IngressV1SpecDefaultBackendServicePortOutputReference extends cdktf
 
   public set internalValue(value: IngressV1SpecDefaultBackendServicePort | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._number = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._number = value.number;
     }
@@ -469,6 +481,8 @@ export function ingressV1SpecDefaultBackendServiceToTerraform(struct?: IngressV1
 }
 
 export class IngressV1SpecDefaultBackendServiceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -479,13 +493,13 @@ export class IngressV1SpecDefaultBackendServiceOutputReference extends cdktf.Com
   }
 
   public get internalValue(): IngressV1SpecDefaultBackendService | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._port) {
+    if (this._port?.internalValue) {
       hasAnyValues = true;
       internalValueResult.port = this._port?.internalValue;
     }
@@ -494,10 +508,12 @@ export class IngressV1SpecDefaultBackendServiceOutputReference extends cdktf.Com
 
   public set internalValue(value: IngressV1SpecDefaultBackendService | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._port.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._port.internalValue = value.port;
     }
@@ -556,6 +572,8 @@ export function ingressV1SpecDefaultBackendToTerraform(struct?: IngressV1SpecDef
 }
 
 export class IngressV1SpecDefaultBackendOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -566,13 +584,13 @@ export class IngressV1SpecDefaultBackendOutputReference extends cdktf.ComplexObj
   }
 
   public get internalValue(): IngressV1SpecDefaultBackend | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._resource) {
+    if (this._resource?.internalValue) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource?.internalValue;
     }
-    if (this._service) {
+    if (this._service?.internalValue) {
       hasAnyValues = true;
       internalValueResult.service = this._service?.internalValue;
     }
@@ -581,10 +599,12 @@ export class IngressV1SpecDefaultBackendOutputReference extends cdktf.ComplexObj
 
   public set internalValue(value: IngressV1SpecDefaultBackend | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._resource.internalValue = undefined;
       this._service.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._resource.internalValue = value.resource;
       this._service.internalValue = value.service;
     }
@@ -656,6 +676,8 @@ export function ingressV1SpecRuleHttpPathBackendResourceToTerraform(struct?: Ing
 }
 
 export class IngressV1SpecRuleHttpPathBackendResourceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -666,7 +688,7 @@ export class IngressV1SpecRuleHttpPathBackendResourceOutputReference extends cdk
   }
 
   public get internalValue(): IngressV1SpecRuleHttpPathBackendResource | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._apiGroup) {
       hasAnyValues = true;
@@ -685,11 +707,13 @@ export class IngressV1SpecRuleHttpPathBackendResourceOutputReference extends cdk
 
   public set internalValue(value: IngressV1SpecRuleHttpPathBackendResource | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._apiGroup = undefined;
       this._kind = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._apiGroup = value.apiGroup;
       this._kind = value.kind;
       this._name = value.name;
@@ -762,6 +786,8 @@ export function ingressV1SpecRuleHttpPathBackendServicePortToTerraform(struct?: 
 }
 
 export class IngressV1SpecRuleHttpPathBackendServicePortOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -772,7 +798,7 @@ export class IngressV1SpecRuleHttpPathBackendServicePortOutputReference extends 
   }
 
   public get internalValue(): IngressV1SpecRuleHttpPathBackendServicePort | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -787,10 +813,12 @@ export class IngressV1SpecRuleHttpPathBackendServicePortOutputReference extends 
 
   public set internalValue(value: IngressV1SpecRuleHttpPathBackendServicePort | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._number = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._number = value.number;
     }
@@ -855,6 +883,8 @@ export function ingressV1SpecRuleHttpPathBackendServiceToTerraform(struct?: Ingr
 }
 
 export class IngressV1SpecRuleHttpPathBackendServiceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -865,13 +895,13 @@ export class IngressV1SpecRuleHttpPathBackendServiceOutputReference extends cdkt
   }
 
   public get internalValue(): IngressV1SpecRuleHttpPathBackendService | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._port) {
+    if (this._port?.internalValue) {
       hasAnyValues = true;
       internalValueResult.port = this._port?.internalValue;
     }
@@ -880,10 +910,12 @@ export class IngressV1SpecRuleHttpPathBackendServiceOutputReference extends cdkt
 
   public set internalValue(value: IngressV1SpecRuleHttpPathBackendService | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._port.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._port.internalValue = value.port;
     }
@@ -942,6 +974,8 @@ export function ingressV1SpecRuleHttpPathBackendToTerraform(struct?: IngressV1Sp
 }
 
 export class IngressV1SpecRuleHttpPathBackendOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -952,13 +986,13 @@ export class IngressV1SpecRuleHttpPathBackendOutputReference extends cdktf.Compl
   }
 
   public get internalValue(): IngressV1SpecRuleHttpPathBackend | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._resource) {
+    if (this._resource?.internalValue) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource?.internalValue;
     }
-    if (this._service) {
+    if (this._service?.internalValue) {
       hasAnyValues = true;
       internalValueResult.service = this._service?.internalValue;
     }
@@ -967,10 +1001,12 @@ export class IngressV1SpecRuleHttpPathBackendOutputReference extends cdktf.Compl
 
   public set internalValue(value: IngressV1SpecRuleHttpPathBackend | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._resource.internalValue = undefined;
       this._service.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._resource.internalValue = value.resource;
       this._service.internalValue = value.service;
     }
@@ -1071,6 +1107,8 @@ export function ingressV1SpecRuleHttpToTerraform(struct?: IngressV1SpecRuleHttpO
 }
 
 export class IngressV1SpecRuleHttpOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1081,7 +1119,7 @@ export class IngressV1SpecRuleHttpOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): IngressV1SpecRuleHttp | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._path) {
       hasAnyValues = true;
@@ -1092,9 +1130,11 @@ export class IngressV1SpecRuleHttpOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: IngressV1SpecRuleHttp | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._path = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._path = value.path;
     }
   }
@@ -1213,6 +1253,8 @@ export function ingressV1SpecToTerraform(struct?: IngressV1SpecOutputReference |
 }
 
 export class IngressV1SpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1223,13 +1265,13 @@ export class IngressV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): IngressV1Spec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._ingressClassName) {
       hasAnyValues = true;
       internalValueResult.ingressClassName = this._ingressClassName;
     }
-    if (this._defaultBackend) {
+    if (this._defaultBackend?.internalValue) {
       hasAnyValues = true;
       internalValueResult.defaultBackend = this._defaultBackend?.internalValue;
     }
@@ -1246,12 +1288,14 @@ export class IngressV1SpecOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: IngressV1Spec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._ingressClassName = undefined;
       this._defaultBackend.internalValue = undefined;
       this._rule = undefined;
       this._tls = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._ingressClassName = value.ingressClassName;
       this._defaultBackend.internalValue = value.defaultBackend;
       this._rule = value.rule;

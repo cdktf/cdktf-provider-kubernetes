@@ -96,6 +96,8 @@ export function dataKubernetesStorageClassAllowedTopologiesToTerraform(struct?: 
 }
 
 export class DataKubernetesStorageClassAllowedTopologiesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -106,7 +108,7 @@ export class DataKubernetesStorageClassAllowedTopologiesOutputReference extends 
   }
 
   public get internalValue(): DataKubernetesStorageClassAllowedTopologies | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._matchLabelExpressions) {
       hasAnyValues = true;
@@ -117,9 +119,11 @@ export class DataKubernetesStorageClassAllowedTopologiesOutputReference extends 
 
   public set internalValue(value: DataKubernetesStorageClassAllowedTopologies | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._matchLabelExpressions = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabelExpressions = value.matchLabelExpressions;
     }
   }
@@ -175,6 +179,8 @@ export function dataKubernetesStorageClassMetadataToTerraform(struct?: DataKuber
 }
 
 export class DataKubernetesStorageClassMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -185,7 +191,7 @@ export class DataKubernetesStorageClassMetadataOutputReference extends cdktf.Com
   }
 
   public get internalValue(): DataKubernetesStorageClassMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -204,11 +210,13 @@ export class DataKubernetesStorageClassMetadataOutputReference extends cdktf.Com
 
   public set internalValue(value: DataKubernetesStorageClassMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._labels = value.labels;
       this._name = value.name;

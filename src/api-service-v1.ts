@@ -61,6 +61,8 @@ export function apiServiceV1MetadataToTerraform(struct?: ApiServiceV1MetadataOut
 }
 
 export class ApiServiceV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -71,7 +73,7 @@ export class ApiServiceV1MetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ApiServiceV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -94,12 +96,14 @@ export class ApiServiceV1MetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ApiServiceV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -207,6 +211,8 @@ export function apiServiceV1SpecServiceToTerraform(struct?: ApiServiceV1SpecServ
 }
 
 export class ApiServiceV1SpecServiceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -217,7 +223,7 @@ export class ApiServiceV1SpecServiceOutputReference extends cdktf.ComplexObject 
   }
 
   public get internalValue(): ApiServiceV1SpecService | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -236,11 +242,13 @@ export class ApiServiceV1SpecServiceOutputReference extends cdktf.ComplexObject 
 
   public set internalValue(value: ApiServiceV1SpecService | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
       this._port = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
       this._port = value.port;
@@ -351,6 +359,8 @@ export function apiServiceV1SpecToTerraform(struct?: ApiServiceV1SpecOutputRefer
 }
 
 export class ApiServiceV1SpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -361,7 +371,7 @@ export class ApiServiceV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ApiServiceV1Spec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._caBundle) {
       hasAnyValues = true;
@@ -387,7 +397,7 @@ export class ApiServiceV1SpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.versionPriority = this._versionPriority;
     }
-    if (this._service) {
+    if (this._service?.internalValue) {
       hasAnyValues = true;
       internalValueResult.service = this._service?.internalValue;
     }
@@ -396,6 +406,7 @@ export class ApiServiceV1SpecOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ApiServiceV1Spec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._caBundle = undefined;
       this._group = undefined;
       this._groupPriorityMinimum = undefined;
@@ -405,6 +416,7 @@ export class ApiServiceV1SpecOutputReference extends cdktf.ComplexObject {
       this._service.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._caBundle = value.caBundle;
       this._group = value.group;
       this._groupPriorityMinimum = value.groupPriorityMinimum;

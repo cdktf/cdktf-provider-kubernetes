@@ -55,6 +55,8 @@ export function dataKubernetesNamespaceV1MetadataToTerraform(struct?: DataKubern
 }
 
 export class DataKubernetesNamespaceV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -65,7 +67,7 @@ export class DataKubernetesNamespaceV1MetadataOutputReference extends cdktf.Comp
   }
 
   public get internalValue(): DataKubernetesNamespaceV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -84,11 +86,13 @@ export class DataKubernetesNamespaceV1MetadataOutputReference extends cdktf.Comp
 
   public set internalValue(value: DataKubernetesNamespaceV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._labels = value.labels;
       this._name = value.name;

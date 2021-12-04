@@ -61,6 +61,8 @@ export function namespaceMetadataToTerraform(struct?: NamespaceMetadataOutputRef
 }
 
 export class NamespaceMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -71,7 +73,7 @@ export class NamespaceMetadataOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): NamespaceMetadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -94,12 +96,14 @@ export class NamespaceMetadataOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: NamespaceMetadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._generateName = value.generateName;
       this._labels = value.labels;
@@ -191,6 +195,8 @@ export function namespaceTimeoutsToTerraform(struct?: NamespaceTimeoutsOutputRef
 }
 
 export class NamespaceTimeoutsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -201,7 +207,7 @@ export class NamespaceTimeoutsOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): NamespaceTimeouts | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._delete) {
       hasAnyValues = true;
@@ -212,9 +218,11 @@ export class NamespaceTimeoutsOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: NamespaceTimeouts | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._delete = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._delete = value.delete;
     }
   }

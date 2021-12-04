@@ -60,6 +60,8 @@ export function persistentVolumeV1MetadataToTerraform(struct?: PersistentVolumeV
 }
 
 export class PersistentVolumeV1MetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -70,7 +72,7 @@ export class PersistentVolumeV1MetadataOutputReference extends cdktf.ComplexObje
   }
 
   public get internalValue(): PersistentVolumeV1Metadata | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._annotations) {
       hasAnyValues = true;
@@ -89,11 +91,13 @@ export class PersistentVolumeV1MetadataOutputReference extends cdktf.ComplexObje
 
   public set internalValue(value: PersistentVolumeV1Metadata | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._annotations = undefined;
       this._labels = undefined;
       this._name = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
       this._labels = value.labels;
       this._name = value.name;
@@ -177,6 +181,8 @@ export function persistentVolumeV1SpecClaimRefToTerraform(struct?: PersistentVol
 }
 
 export class PersistentVolumeV1SpecClaimRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -187,7 +193,7 @@ export class PersistentVolumeV1SpecClaimRefOutputReference extends cdktf.Complex
   }
 
   public get internalValue(): PersistentVolumeV1SpecClaimRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -202,10 +208,12 @@ export class PersistentVolumeV1SpecClaimRefOutputReference extends cdktf.Complex
 
   public set internalValue(value: PersistentVolumeV1SpecClaimRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -352,6 +360,8 @@ export function persistentVolumeV1SpecNodeAffinityRequiredToTerraform(struct?: P
 }
 
 export class PersistentVolumeV1SpecNodeAffinityRequiredOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -362,7 +372,7 @@ export class PersistentVolumeV1SpecNodeAffinityRequiredOutputReference extends c
   }
 
   public get internalValue(): PersistentVolumeV1SpecNodeAffinityRequired | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._nodeSelectorTerm) {
       hasAnyValues = true;
@@ -373,9 +383,11 @@ export class PersistentVolumeV1SpecNodeAffinityRequiredOutputReference extends c
 
   public set internalValue(value: PersistentVolumeV1SpecNodeAffinityRequired | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._nodeSelectorTerm = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._nodeSelectorTerm = value.nodeSelectorTerm;
     }
   }
@@ -414,6 +426,8 @@ export function persistentVolumeV1SpecNodeAffinityToTerraform(struct?: Persisten
 }
 
 export class PersistentVolumeV1SpecNodeAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -424,9 +438,9 @@ export class PersistentVolumeV1SpecNodeAffinityOutputReference extends cdktf.Com
   }
 
   public get internalValue(): PersistentVolumeV1SpecNodeAffinity | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._required) {
+    if (this._required?.internalValue) {
       hasAnyValues = true;
       internalValueResult.required = this._required?.internalValue;
     }
@@ -435,9 +449,11 @@ export class PersistentVolumeV1SpecNodeAffinityOutputReference extends cdktf.Com
 
   public set internalValue(value: PersistentVolumeV1SpecNodeAffinity | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._required.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._required.internalValue = value.required;
     }
   }
@@ -499,6 +515,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStore
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -509,7 +527,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStoreOut
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStore | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -532,12 +550,14 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStoreOut
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStore | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._partition = undefined;
       this._readOnly = undefined;
       this._volumeId = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._partition = value.partition;
       this._readOnly = value.readOnly;
@@ -661,6 +681,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceAzureDiskToTerraform
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceAzureDiskOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -671,7 +693,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceAzureDiskOutputReferenc
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceAzureDisk | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._cachingMode) {
       hasAnyValues = true;
@@ -702,6 +724,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceAzureDiskOutputReferenc
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceAzureDisk | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._cachingMode = undefined;
       this._dataDiskUri = undefined;
       this._diskName = undefined;
@@ -710,6 +733,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceAzureDiskOutputReferenc
       this._readOnly = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._cachingMode = value.cachingMode;
       this._dataDiskUri = value.dataDiskUri;
       this._diskName = value.diskName;
@@ -847,6 +871,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceAzureFileToTerraform
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceAzureFileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -857,7 +883,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceAzureFileOutputReferenc
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceAzureFile | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._readOnly) {
       hasAnyValues = true;
@@ -880,12 +906,14 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceAzureFileOutputReferenc
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceAzureFile | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._readOnly = undefined;
       this._secretName = undefined;
       this._secretNamespace = undefined;
       this._shareName = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._readOnly = value.readOnly;
       this._secretName = value.secretName;
       this._secretNamespace = value.secretNamespace;
@@ -978,6 +1006,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefToTer
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -988,7 +1018,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefOutputRe
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -1003,10 +1033,12 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefOutputRe
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -1099,6 +1131,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceCephFsToTerraform(st
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceCephFsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1109,7 +1143,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCephFsOutputReference e
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceCephFs | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._monitors) {
       hasAnyValues = true;
@@ -1131,7 +1165,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCephFsOutputReference e
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._secretRef) {
+    if (this._secretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -1140,6 +1174,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCephFsOutputReference e
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceCephFs | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._monitors = undefined;
       this._path = undefined;
       this._readOnly = undefined;
@@ -1148,6 +1183,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCephFsOutputReference e
       this._secretRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._monitors = value.monitors;
       this._path = value.path;
       this._readOnly = value.readOnly;
@@ -1284,6 +1320,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceCinderToTerraform(st
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceCinderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1294,7 +1332,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCinderOutputReference e
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceCinder | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -1313,11 +1351,13 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCinderOutputReference e
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceCinder | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._readOnly = undefined;
       this._volumeId = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._readOnly = value.readOnly;
       this._volumeId = value.volumeId;
@@ -1396,6 +1436,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandS
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1406,7 +1448,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecr
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -1421,10 +1463,12 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecr
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -1489,6 +1533,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublish
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1499,7 +1545,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSec
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -1514,10 +1560,12 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSec
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -1582,6 +1630,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecret
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1592,7 +1642,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRef
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -1607,10 +1657,12 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRef
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -1675,6 +1727,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRe
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1685,7 +1739,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRefOu
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -1700,10 +1754,12 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRefOu
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -1817,6 +1873,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceCsiToTerraform(struc
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceCsiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1827,7 +1885,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCsiOutputReference exte
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceCsi | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._driver) {
       hasAnyValues = true;
@@ -1849,19 +1907,19 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCsiOutputReference exte
       hasAnyValues = true;
       internalValueResult.volumeHandle = this._volumeHandle;
     }
-    if (this._controllerExpandSecretRef) {
+    if (this._controllerExpandSecretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
     }
-    if (this._controllerPublishSecretRef) {
+    if (this._controllerPublishSecretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
     }
-    if (this._nodePublishSecretRef) {
+    if (this._nodePublishSecretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
     }
-    if (this._nodeStageSecretRef) {
+    if (this._nodeStageSecretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
     }
@@ -1870,6 +1928,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCsiOutputReference exte
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceCsi | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._driver = undefined;
       this._fsType = undefined;
       this._readOnly = undefined;
@@ -1881,6 +1940,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceCsiOutputReference exte
       this._nodeStageSecretRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._driver = value.driver;
       this._fsType = value.fsType;
       this._readOnly = value.readOnly;
@@ -2073,6 +2133,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceFcToTerraform(struct
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceFcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2083,7 +2145,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceFcOutputReference exten
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceFc | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -2106,12 +2168,14 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceFcOutputReference exten
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceFc | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._lun = undefined;
       this._readOnly = undefined;
       this._targetWwNs = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._lun = value.lun;
       this._readOnly = value.readOnly;
@@ -2204,6 +2268,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefT
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2214,7 +2280,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefOutp
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -2229,10 +2295,12 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefOutp
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -2318,6 +2386,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceFlexVolumeToTerrafor
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2328,7 +2398,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeOutputReferen
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceFlexVolume | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._driver) {
       hasAnyValues = true;
@@ -2346,7 +2416,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeOutputReferen
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef) {
+    if (this._secretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -2355,6 +2425,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeOutputReferen
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceFlexVolume | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._driver = undefined;
       this._fsType = undefined;
       this._options = undefined;
@@ -2362,6 +2433,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeOutputReferen
       this._secretRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._driver = value.driver;
       this._fsType = value.fsType;
       this._options = value.options;
@@ -2475,6 +2547,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceFlockerToTerraform(s
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceFlockerOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2485,7 +2559,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceFlockerOutputReference 
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceFlocker | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._datasetName) {
       hasAnyValues = true;
@@ -2500,10 +2574,12 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceFlockerOutputReference 
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceFlocker | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._datasetName = undefined;
       this._datasetUuid = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._datasetName = value.datasetName;
       this._datasetUuid = value.datasetUuid;
     }
@@ -2582,6 +2658,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceGcePersistentDiskToT
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDiskOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2592,7 +2670,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDiskOutput
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDisk | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -2615,12 +2693,14 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDiskOutput
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDisk | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._partition = undefined;
       this._pdName = undefined;
       this._readOnly = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._partition = value.partition;
       this._pdName = value.pdName;
@@ -2723,6 +2803,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceGlusterfsToTerraform
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceGlusterfsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2733,7 +2815,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceGlusterfsOutputReferenc
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceGlusterfs | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._endpointsName) {
       hasAnyValues = true;
@@ -2752,11 +2834,13 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceGlusterfsOutputReferenc
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceGlusterfs | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._endpointsName = undefined;
       this._path = undefined;
       this._readOnly = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._endpointsName = value.endpointsName;
       this._path = value.path;
       this._readOnly = value.readOnly;
@@ -2832,6 +2916,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceHostPathToTerraform(
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceHostPathOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2842,7 +2928,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceHostPathOutputReference
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceHostPath | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._path) {
       hasAnyValues = true;
@@ -2857,10 +2943,12 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceHostPathOutputReference
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceHostPath | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._path = undefined;
       this._type = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._path = value.path;
       this._type = value.type;
     }
@@ -2953,6 +3041,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceIscsiToTerraform(str
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceIscsiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2963,7 +3053,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceIscsiOutputReference ex
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceIscsi | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -2994,6 +3084,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceIscsiOutputReference ex
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceIscsi | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._iqn = undefined;
       this._iscsiInterface = undefined;
@@ -3002,6 +3093,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceIscsiOutputReference ex
       this._targetPortal = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._iqn = value.iqn;
       this._iscsiInterface = value.iscsiInterface;
@@ -3121,6 +3213,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceLocalToTerraform(str
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceLocalOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3131,7 +3225,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceLocalOutputReference ex
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceLocal | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._path) {
       hasAnyValues = true;
@@ -3142,9 +3236,11 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceLocalOutputReference ex
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceLocal | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._path = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._path = value.path;
     }
   }
@@ -3199,6 +3295,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceNfsToTerraform(struc
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceNfsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3209,7 +3307,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceNfsOutputReference exte
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceNfs | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._path) {
       hasAnyValues = true;
@@ -3228,11 +3326,13 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceNfsOutputReference exte
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceNfs | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._path = undefined;
       this._readOnly = undefined;
       this._server = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._path = value.path;
       this._readOnly = value.readOnly;
       this._server = value.server;
@@ -3308,6 +3408,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDisk
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDiskOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3318,7 +3420,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDiskOut
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDisk | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -3333,10 +3435,12 @@ export class PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDiskOut
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDisk | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._pdId = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._pdId = value.pdId;
     }
@@ -3419,6 +3523,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceQuobyteToTerraform(s
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceQuobyteOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3429,7 +3535,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceQuobyteOutputReference 
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceQuobyte | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._group) {
       hasAnyValues = true;
@@ -3456,6 +3562,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceQuobyteOutputReference 
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceQuobyte | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._group = undefined;
       this._readOnly = undefined;
       this._registry = undefined;
@@ -3463,6 +3570,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceQuobyteOutputReference 
       this._volume = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._group = value.group;
       this._readOnly = value.readOnly;
       this._registry = value.registry;
@@ -3572,6 +3680,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefToTerraf
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3582,7 +3692,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefOutputRefer
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRef | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -3597,10 +3707,12 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefOutputRefer
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRef | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._namespace = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._namespace = value.namespace;
     }
@@ -3707,6 +3819,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceRbdToTerraform(struc
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceRbdOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3717,7 +3831,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceRbdOutputReference exte
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceRbd | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._cephMonitors) {
       hasAnyValues = true;
@@ -3747,7 +3861,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceRbdOutputReference exte
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef) {
+    if (this._secretRef?.internalValue) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -3756,6 +3870,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceRbdOutputReference exte
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceRbd | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._cephMonitors = undefined;
       this._fsType = undefined;
       this._keyring = undefined;
@@ -3766,6 +3881,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceRbdOutputReference exte
       this._secretRef.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._cephMonitors = value.cephMonitors;
       this._fsType = value.fsType;
       this._keyring = value.keyring;
@@ -3926,6 +4042,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeToTerra
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3936,7 +4054,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeOutputRefe
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolume | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._fsType) {
       hasAnyValues = true;
@@ -3951,10 +4069,12 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeOutputRefe
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolume | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._fsType = undefined;
       this._volumePath = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._fsType = value.fsType;
       this._volumePath = value.volumePath;
     }
@@ -4135,6 +4255,8 @@ export function persistentVolumeV1SpecPersistentVolumeSourceToTerraform(struct?:
 }
 
 export class PersistentVolumeV1SpecPersistentVolumeSourceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4145,81 +4267,81 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceOutputReference extends
   }
 
   public get internalValue(): PersistentVolumeV1SpecPersistentVolumeSource | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._awsElasticBlockStore) {
+    if (this._awsElasticBlockStore?.internalValue) {
       hasAnyValues = true;
       internalValueResult.awsElasticBlockStore = this._awsElasticBlockStore?.internalValue;
     }
-    if (this._azureDisk) {
+    if (this._azureDisk?.internalValue) {
       hasAnyValues = true;
       internalValueResult.azureDisk = this._azureDisk?.internalValue;
     }
-    if (this._azureFile) {
+    if (this._azureFile?.internalValue) {
       hasAnyValues = true;
       internalValueResult.azureFile = this._azureFile?.internalValue;
     }
-    if (this._cephFs) {
+    if (this._cephFs?.internalValue) {
       hasAnyValues = true;
       internalValueResult.cephFs = this._cephFs?.internalValue;
     }
-    if (this._cinder) {
+    if (this._cinder?.internalValue) {
       hasAnyValues = true;
       internalValueResult.cinder = this._cinder?.internalValue;
     }
-    if (this._csi) {
+    if (this._csi?.internalValue) {
       hasAnyValues = true;
       internalValueResult.csi = this._csi?.internalValue;
     }
-    if (this._fc) {
+    if (this._fc?.internalValue) {
       hasAnyValues = true;
       internalValueResult.fc = this._fc?.internalValue;
     }
-    if (this._flexVolume) {
+    if (this._flexVolume?.internalValue) {
       hasAnyValues = true;
       internalValueResult.flexVolume = this._flexVolume?.internalValue;
     }
-    if (this._flocker) {
+    if (this._flocker?.internalValue) {
       hasAnyValues = true;
       internalValueResult.flocker = this._flocker?.internalValue;
     }
-    if (this._gcePersistentDisk) {
+    if (this._gcePersistentDisk?.internalValue) {
       hasAnyValues = true;
       internalValueResult.gcePersistentDisk = this._gcePersistentDisk?.internalValue;
     }
-    if (this._glusterfs) {
+    if (this._glusterfs?.internalValue) {
       hasAnyValues = true;
       internalValueResult.glusterfs = this._glusterfs?.internalValue;
     }
-    if (this._hostPath) {
+    if (this._hostPath?.internalValue) {
       hasAnyValues = true;
       internalValueResult.hostPath = this._hostPath?.internalValue;
     }
-    if (this._iscsi) {
+    if (this._iscsi?.internalValue) {
       hasAnyValues = true;
       internalValueResult.iscsi = this._iscsi?.internalValue;
     }
-    if (this._local) {
+    if (this._local?.internalValue) {
       hasAnyValues = true;
       internalValueResult.local = this._local?.internalValue;
     }
-    if (this._nfs) {
+    if (this._nfs?.internalValue) {
       hasAnyValues = true;
       internalValueResult.nfs = this._nfs?.internalValue;
     }
-    if (this._photonPersistentDisk) {
+    if (this._photonPersistentDisk?.internalValue) {
       hasAnyValues = true;
       internalValueResult.photonPersistentDisk = this._photonPersistentDisk?.internalValue;
     }
-    if (this._quobyte) {
+    if (this._quobyte?.internalValue) {
       hasAnyValues = true;
       internalValueResult.quobyte = this._quobyte?.internalValue;
     }
-    if (this._rbd) {
+    if (this._rbd?.internalValue) {
       hasAnyValues = true;
       internalValueResult.rbd = this._rbd?.internalValue;
     }
-    if (this._vsphereVolume) {
+    if (this._vsphereVolume?.internalValue) {
       hasAnyValues = true;
       internalValueResult.vsphereVolume = this._vsphereVolume?.internalValue;
     }
@@ -4228,6 +4350,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceOutputReference extends
 
   public set internalValue(value: PersistentVolumeV1SpecPersistentVolumeSource | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._awsElasticBlockStore.internalValue = undefined;
       this._azureDisk.internalValue = undefined;
       this._azureFile.internalValue = undefined;
@@ -4249,6 +4372,7 @@ export class PersistentVolumeV1SpecPersistentVolumeSourceOutputReference extends
       this._vsphereVolume.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._awsElasticBlockStore.internalValue = value.awsElasticBlockStore;
       this._azureDisk.internalValue = value.azureDisk;
       this._azureFile.internalValue = value.azureFile;
@@ -4668,6 +4792,8 @@ export function persistentVolumeV1TimeoutsToTerraform(struct?: PersistentVolumeV
 }
 
 export class PersistentVolumeV1TimeoutsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -4678,7 +4804,7 @@ export class PersistentVolumeV1TimeoutsOutputReference extends cdktf.ComplexObje
   }
 
   public get internalValue(): PersistentVolumeV1Timeouts | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._create) {
       hasAnyValues = true;
@@ -4689,9 +4815,11 @@ export class PersistentVolumeV1TimeoutsOutputReference extends cdktf.ComplexObje
 
   public set internalValue(value: PersistentVolumeV1Timeouts | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._create = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._create = value.create;
     }
   }
