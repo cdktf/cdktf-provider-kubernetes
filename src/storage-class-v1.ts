@@ -116,7 +116,7 @@ export class StorageClassV1AllowedTopologiesOutputReference extends cdktf.Comple
   public get internalValue(): StorageClassV1AllowedTopologies | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabelExpressions) {
+    if (this._matchLabelExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabelExpressions = this._matchLabelExpressions;
     }
@@ -206,19 +206,19 @@ export class StorageClassV1MetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): StorageClassV1Metadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }

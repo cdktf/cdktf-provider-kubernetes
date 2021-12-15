@@ -94,23 +94,23 @@ export class DaemonsetMetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): DaemonsetMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -292,11 +292,11 @@ export class DaemonsetSpecSelectorOutputReference extends cdktf.ComplexObject {
   public get internalValue(): DaemonsetSpecSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabels) {
+    if (this._matchLabels !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -384,7 +384,7 @@ export class DaemonsetSpecStrategyRollingUpdateOutputReference extends cdktf.Com
   public get internalValue(): DaemonsetSpecStrategyRollingUpdate | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._maxUnavailable) {
+    if (this._maxUnavailable !== undefined) {
       hasAnyValues = true;
       internalValueResult.maxUnavailable = this._maxUnavailable;
     }
@@ -459,11 +459,11 @@ export class DaemonsetSpecStrategyOutputReference extends cdktf.ComplexObject {
   public get internalValue(): DaemonsetSpecStrategy | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._rollingUpdate?.internalValue) {
+    if (this._rollingUpdate?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.rollingUpdate = this._rollingUpdate?.internalValue;
     }
@@ -570,19 +570,19 @@ export class DaemonsetSpecTemplateMetadataOutputReference extends cdktf.ComplexO
   public get internalValue(): DaemonsetSpecTemplateMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -739,7 +739,7 @@ export class DaemonsetSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedul
   public get internalValue(): DaemonsetSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -886,7 +886,7 @@ export class DaemonsetSpecTemplateSpecAffinityNodeAffinityRequiredDuringScheduli
   public get internalValue(): DaemonsetSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nodeSelectorTerm) {
+    if (this._nodeSelectorTerm !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeSelectorTerm = this._nodeSelectorTerm;
     }
@@ -962,11 +962,11 @@ export class DaemonsetSpecTemplateSpecAffinityNodeAffinityOutputReference extend
   public get internalValue(): DaemonsetSpecTemplateSpecAffinityNodeAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+    if (this._preferredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue;
     }
@@ -1126,15 +1126,15 @@ export class DaemonsetSpecTemplateSpecAffinityPodAffinityPreferredDuringScheduli
   public get internalValue(): DaemonsetSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._namespaces) {
+    if (this._namespaces !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespaces = this._namespaces;
     }
-    if (this._topologyKey) {
+    if (this._topologyKey !== undefined) {
       hasAnyValues = true;
       internalValueResult.topologyKey = this._topologyKey;
     }
-    if (this._labelSelector) {
+    if (this._labelSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.labelSelector = this._labelSelector;
     }
@@ -1364,11 +1364,11 @@ export class DaemonsetSpecTemplateSpecAffinityPodAffinityOutputReference extends
   public get internalValue(): DaemonsetSpecTemplateSpecAffinityPodAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+    if (this._preferredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1529,15 +1529,15 @@ export class DaemonsetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSche
   public get internalValue(): DaemonsetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._namespaces) {
+    if (this._namespaces !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespaces = this._namespaces;
     }
-    if (this._topologyKey) {
+    if (this._topologyKey !== undefined) {
       hasAnyValues = true;
       internalValueResult.topologyKey = this._topologyKey;
     }
-    if (this._labelSelector) {
+    if (this._labelSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.labelSelector = this._labelSelector;
     }
@@ -1767,11 +1767,11 @@ export class DaemonsetSpecTemplateSpecAffinityPodAntiAffinityOutputReference ext
   public get internalValue(): DaemonsetSpecTemplateSpecAffinityPodAntiAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+    if (this._preferredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1873,15 +1873,15 @@ export class DaemonsetSpecTemplateSpecAffinityOutputReference extends cdktf.Comp
   public get internalValue(): DaemonsetSpecTemplateSpecAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nodeAffinity?.internalValue) {
+    if (this._nodeAffinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeAffinity = this._nodeAffinity?.internalValue;
     }
-    if (this._podAffinity?.internalValue) {
+    if (this._podAffinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.podAffinity = this._podAffinity?.internalValue;
     }
-    if (this._podAntiAffinity?.internalValue) {
+    if (this._podAntiAffinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.podAntiAffinity = this._podAntiAffinity?.internalValue;
     }
@@ -1999,15 +1999,15 @@ export class DaemonsetSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutput
   public get internalValue(): DaemonsetSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2118,11 +2118,11 @@ export class DaemonsetSpecTemplateSpecContainerEnvValueFromFieldRefOutputReferen
   public get internalValue(): DaemonsetSpecTemplateSpecContainerEnvValueFromFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -2218,15 +2218,15 @@ export class DaemonsetSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutpu
   public get internalValue(): DaemonsetSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -2341,15 +2341,15 @@ export class DaemonsetSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputRef
   public get internalValue(): DaemonsetSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2474,19 +2474,19 @@ export class DaemonsetSpecTemplateSpecContainerEnvValueFromOutputReference exten
   public get internalValue(): DaemonsetSpecTemplateSpecContainerEnvValueFrom | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._configMapKeyRef?.internalValue) {
+    if (this._configMapKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
     }
-    if (this._fieldRef?.internalValue) {
+    if (this._fieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldRef = this._fieldRef?.internalValue;
     }
-    if (this._resourceFieldRef?.internalValue) {
+    if (this._resourceFieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
     }
-    if (this._secretKeyRef?.internalValue) {
+    if (this._secretKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
     }
@@ -2648,11 +2648,11 @@ export class DaemonsetSpecTemplateSpecContainerEnvFromConfigMapRefOutputReferenc
   public get internalValue(): DaemonsetSpecTemplateSpecContainerEnvFromConfigMapRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2742,11 +2742,11 @@ export class DaemonsetSpecTemplateSpecContainerEnvFromSecretRefOutputReference e
   public get internalValue(): DaemonsetSpecTemplateSpecContainerEnvFromSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2862,7 +2862,7 @@ export class DaemonsetSpecTemplateSpecContainerLifecyclePostStartExecOutputRefer
   public get internalValue(): DaemonsetSpecTemplateSpecContainerLifecyclePostStartExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -2984,23 +2984,23 @@ export class DaemonsetSpecTemplateSpecContainerLifecyclePostStartHttpGetOutputRe
   public get internalValue(): DaemonsetSpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -3193,7 +3193,7 @@ export class DaemonsetSpecTemplateSpecContainerLifecyclePreStopExecOutputReferen
   public get internalValue(): DaemonsetSpecTemplateSpecContainerLifecyclePreStopExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -3315,23 +3315,23 @@ export class DaemonsetSpecTemplateSpecContainerLifecyclePreStopHttpGetOutputRefe
   public get internalValue(): DaemonsetSpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -3531,11 +3531,11 @@ export class DaemonsetSpecTemplateSpecContainerLifecycleOutputReference extends 
   public get internalValue(): DaemonsetSpecTemplateSpecContainerLifecycle | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._postStart) {
+    if (this._postStart !== undefined) {
       hasAnyValues = true;
       internalValueResult.postStart = this._postStart;
     }
-    if (this._preStop) {
+    if (this._preStop !== undefined) {
       hasAnyValues = true;
       internalValueResult.preStop = this._preStop;
     }
@@ -3623,7 +3623,7 @@ export class DaemonsetSpecTemplateSpecContainerLivenessProbeExecOutputReference 
   public get internalValue(): DaemonsetSpecTemplateSpecContainerLivenessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -3745,23 +3745,23 @@ export class DaemonsetSpecTemplateSpecContainerLivenessProbeHttpGetOutputReferen
   public get internalValue(): DaemonsetSpecTemplateSpecContainerLivenessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -3970,35 +3970,35 @@ export class DaemonsetSpecTemplateSpecContainerLivenessProbeOutputReference exte
   public get internalValue(): DaemonsetSpecTemplateSpecContainerLivenessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -4240,7 +4240,7 @@ export class DaemonsetSpecTemplateSpecContainerReadinessProbeExecOutputReference
   public get internalValue(): DaemonsetSpecTemplateSpecContainerReadinessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -4362,23 +4362,23 @@ export class DaemonsetSpecTemplateSpecContainerReadinessProbeHttpGetOutputRefere
   public get internalValue(): DaemonsetSpecTemplateSpecContainerReadinessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -4587,35 +4587,35 @@ export class DaemonsetSpecTemplateSpecContainerReadinessProbeOutputReference ext
   public get internalValue(): DaemonsetSpecTemplateSpecContainerReadinessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -4817,11 +4817,11 @@ export class DaemonsetSpecTemplateSpecContainerResourcesOutputReference extends 
   public get internalValue(): DaemonsetSpecTemplateSpecContainerResources | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._limits) {
+    if (this._limits !== undefined) {
       hasAnyValues = true;
       internalValueResult.limits = this._limits;
     }
-    if (this._requests) {
+    if (this._requests !== undefined) {
       hasAnyValues = true;
       internalValueResult.requests = this._requests;
     }
@@ -4916,11 +4916,11 @@ export class DaemonsetSpecTemplateSpecContainerSecurityContextCapabilitiesOutput
   public get internalValue(): DaemonsetSpecTemplateSpecContainerSecurityContextCapabilities | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._add) {
+    if (this._add !== undefined) {
       hasAnyValues = true;
       internalValueResult.add = this._add;
     }
-    if (this._drop) {
+    if (this._drop !== undefined) {
       hasAnyValues = true;
       internalValueResult.drop = this._drop;
     }
@@ -5027,19 +5027,19 @@ export class DaemonsetSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutp
   public get internalValue(): DaemonsetSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -5210,35 +5210,35 @@ export class DaemonsetSpecTemplateSpecContainerSecurityContextOutputReference ex
   public get internalValue(): DaemonsetSpecTemplateSpecContainerSecurityContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._allowPrivilegeEscalation) {
+    if (this._allowPrivilegeEscalation !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
     }
-    if (this._privileged) {
+    if (this._privileged !== undefined) {
       hasAnyValues = true;
       internalValueResult.privileged = this._privileged;
     }
-    if (this._readOnlyRootFilesystem) {
+    if (this._readOnlyRootFilesystem !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup;
     }
-    if (this._runAsNonRoot) {
+    if (this._runAsNonRoot !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsNonRoot = this._runAsNonRoot;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._capabilities?.internalValue) {
+    if (this._capabilities?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.capabilities = this._capabilities?.internalValue;
     }
-    if (this._seLinuxOptions?.internalValue) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -5432,7 +5432,7 @@ export class DaemonsetSpecTemplateSpecContainerStartupProbeExecOutputReference e
   public get internalValue(): DaemonsetSpecTemplateSpecContainerStartupProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -5554,23 +5554,23 @@ export class DaemonsetSpecTemplateSpecContainerStartupProbeHttpGetOutputReferenc
   public get internalValue(): DaemonsetSpecTemplateSpecContainerStartupProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -5779,35 +5779,35 @@ export class DaemonsetSpecTemplateSpecContainerStartupProbeOutputReference exten
   public get internalValue(): DaemonsetSpecTemplateSpecContainerStartupProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -6248,15 +6248,15 @@ export class DaemonsetSpecTemplateSpecDnsConfigOutputReference extends cdktf.Com
   public get internalValue(): DaemonsetSpecTemplateSpecDnsConfig | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nameservers) {
+    if (this._nameservers !== undefined) {
       hasAnyValues = true;
       internalValueResult.nameservers = this._nameservers;
     }
-    if (this._searches) {
+    if (this._searches !== undefined) {
       hasAnyValues = true;
       internalValueResult.searches = this._searches;
     }
-    if (this._option) {
+    if (this._option !== undefined) {
       hasAnyValues = true;
       internalValueResult.option = this._option;
     }
@@ -6420,15 +6420,15 @@ export class DaemonsetSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOu
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -6539,11 +6539,11 @@ export class DaemonsetSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputRef
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -6639,15 +6639,15 @@ export class DaemonsetSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefO
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -6762,15 +6762,15 @@ export class DaemonsetSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutpu
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -6895,19 +6895,19 @@ export class DaemonsetSpecTemplateSpecInitContainerEnvValueFromOutputReference e
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerEnvValueFrom | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._configMapKeyRef?.internalValue) {
+    if (this._configMapKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
     }
-    if (this._fieldRef?.internalValue) {
+    if (this._fieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldRef = this._fieldRef?.internalValue;
     }
-    if (this._resourceFieldRef?.internalValue) {
+    if (this._resourceFieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
     }
-    if (this._secretKeyRef?.internalValue) {
+    if (this._secretKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
     }
@@ -7069,11 +7069,11 @@ export class DaemonsetSpecTemplateSpecInitContainerEnvFromConfigMapRefOutputRefe
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -7163,11 +7163,11 @@ export class DaemonsetSpecTemplateSpecInitContainerEnvFromSecretRefOutputReferen
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerEnvFromSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -7283,7 +7283,7 @@ export class DaemonsetSpecTemplateSpecInitContainerLifecyclePostStartExecOutputR
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerLifecyclePostStartExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -7405,23 +7405,23 @@ export class DaemonsetSpecTemplateSpecInitContainerLifecyclePostStartHttpGetOutp
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -7614,7 +7614,7 @@ export class DaemonsetSpecTemplateSpecInitContainerLifecyclePreStopExecOutputRef
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerLifecyclePreStopExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -7736,23 +7736,23 @@ export class DaemonsetSpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutput
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -7952,11 +7952,11 @@ export class DaemonsetSpecTemplateSpecInitContainerLifecycleOutputReference exte
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerLifecycle | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._postStart) {
+    if (this._postStart !== undefined) {
       hasAnyValues = true;
       internalValueResult.postStart = this._postStart;
     }
-    if (this._preStop) {
+    if (this._preStop !== undefined) {
       hasAnyValues = true;
       internalValueResult.preStop = this._preStop;
     }
@@ -8044,7 +8044,7 @@ export class DaemonsetSpecTemplateSpecInitContainerLivenessProbeExecOutputRefere
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerLivenessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -8166,23 +8166,23 @@ export class DaemonsetSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputRef
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -8391,35 +8391,35 @@ export class DaemonsetSpecTemplateSpecInitContainerLivenessProbeOutputReference 
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerLivenessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -8661,7 +8661,7 @@ export class DaemonsetSpecTemplateSpecInitContainerReadinessProbeExecOutputRefer
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerReadinessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -8783,23 +8783,23 @@ export class DaemonsetSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputRe
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -9008,35 +9008,35 @@ export class DaemonsetSpecTemplateSpecInitContainerReadinessProbeOutputReference
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerReadinessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -9238,11 +9238,11 @@ export class DaemonsetSpecTemplateSpecInitContainerResourcesOutputReference exte
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerResources | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._limits) {
+    if (this._limits !== undefined) {
       hasAnyValues = true;
       internalValueResult.limits = this._limits;
     }
-    if (this._requests) {
+    if (this._requests !== undefined) {
       hasAnyValues = true;
       internalValueResult.requests = this._requests;
     }
@@ -9337,11 +9337,11 @@ export class DaemonsetSpecTemplateSpecInitContainerSecurityContextCapabilitiesOu
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._add) {
+    if (this._add !== undefined) {
       hasAnyValues = true;
       internalValueResult.add = this._add;
     }
-    if (this._drop) {
+    if (this._drop !== undefined) {
       hasAnyValues = true;
       internalValueResult.drop = this._drop;
     }
@@ -9448,19 +9448,19 @@ export class DaemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -9631,35 +9631,35 @@ export class DaemonsetSpecTemplateSpecInitContainerSecurityContextOutputReferenc
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerSecurityContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._allowPrivilegeEscalation) {
+    if (this._allowPrivilegeEscalation !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
     }
-    if (this._privileged) {
+    if (this._privileged !== undefined) {
       hasAnyValues = true;
       internalValueResult.privileged = this._privileged;
     }
-    if (this._readOnlyRootFilesystem) {
+    if (this._readOnlyRootFilesystem !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup;
     }
-    if (this._runAsNonRoot) {
+    if (this._runAsNonRoot !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsNonRoot = this._runAsNonRoot;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._capabilities?.internalValue) {
+    if (this._capabilities?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.capabilities = this._capabilities?.internalValue;
     }
-    if (this._seLinuxOptions?.internalValue) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -9853,7 +9853,7 @@ export class DaemonsetSpecTemplateSpecInitContainerStartupProbeExecOutputReferen
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerStartupProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -9975,23 +9975,23 @@ export class DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetOutputRefe
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -10200,35 +10200,35 @@ export class DaemonsetSpecTemplateSpecInitContainerStartupProbeOutputReference e
   public get internalValue(): DaemonsetSpecTemplateSpecInitContainerStartupProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -10669,19 +10669,19 @@ export class DaemonsetSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReferen
   public get internalValue(): DaemonsetSpecTemplateSpecSecurityContextSeLinuxOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -10871,31 +10871,31 @@ export class DaemonsetSpecTemplateSpecSecurityContextOutputReference extends cdk
   public get internalValue(): DaemonsetSpecTemplateSpecSecurityContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsGroup) {
+    if (this._fsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsGroup = this._fsGroup;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup;
     }
-    if (this._runAsNonRoot) {
+    if (this._runAsNonRoot !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsNonRoot = this._runAsNonRoot;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._supplementalGroups) {
+    if (this._supplementalGroups !== undefined) {
       hasAnyValues = true;
       internalValueResult.supplementalGroups = this._supplementalGroups;
     }
-    if (this._seLinuxOptions?.internalValue) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
-    if (this._sysctl) {
+    if (this._sysctl !== undefined) {
       hasAnyValues = true;
       internalValueResult.sysctl = this._sysctl;
     }
@@ -11240,19 +11240,19 @@ export class DaemonsetSpecTemplateSpecVolumeAwsElasticBlockStoreOutputReference 
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeAwsElasticBlockStore | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._partition) {
+    if (this._partition !== undefined) {
       hasAnyValues = true;
       internalValueResult.partition = this._partition;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeId) {
+    if (this._volumeId !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeId = this._volumeId;
     }
@@ -11406,27 +11406,27 @@ export class DaemonsetSpecTemplateSpecVolumeAzureDiskOutputReference extends cdk
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeAzureDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._cachingMode) {
+    if (this._cachingMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.cachingMode = this._cachingMode;
     }
-    if (this._dataDiskUri) {
+    if (this._dataDiskUri !== undefined) {
       hasAnyValues = true;
       internalValueResult.dataDiskUri = this._dataDiskUri;
     }
-    if (this._diskName) {
+    if (this._diskName !== undefined) {
       hasAnyValues = true;
       internalValueResult.diskName = this._diskName;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._kind) {
+    if (this._kind !== undefined) {
       hasAnyValues = true;
       internalValueResult.kind = this._kind;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -11596,19 +11596,19 @@ export class DaemonsetSpecTemplateSpecVolumeAzureFileOutputReference extends cdk
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeAzureFile | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretName) {
+    if (this._secretName !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretName = this._secretName;
     }
-    if (this._secretNamespace) {
+    if (this._secretNamespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretNamespace = this._secretNamespace;
     }
-    if (this._shareName) {
+    if (this._shareName !== undefined) {
       hasAnyValues = true;
       internalValueResult.shareName = this._shareName;
     }
@@ -11731,11 +11731,11 @@ export class DaemonsetSpecTemplateSpecVolumeCephFsSecretRefOutputReference exten
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeCephFsSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -11856,27 +11856,27 @@ export class DaemonsetSpecTemplateSpecVolumeCephFsOutputReference extends cdktf.
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeCephFs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._monitors) {
+    if (this._monitors !== undefined) {
       hasAnyValues = true;
       internalValueResult.monitors = this._monitors;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretFile) {
+    if (this._secretFile !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretFile = this._secretFile;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -12045,15 +12045,15 @@ export class DaemonsetSpecTemplateSpecVolumeCinderOutputReference extends cdktf.
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeCinder | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeId) {
+    if (this._volumeId !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeId = this._volumeId;
     }
@@ -12208,19 +12208,19 @@ export class DaemonsetSpecTemplateSpecVolumeConfigMapOutputReference extends cdk
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeConfigMap | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._defaultMode) {
+    if (this._defaultMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultMode = this._defaultMode;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -12350,11 +12350,11 @@ export class DaemonsetSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputRe
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12447,11 +12447,11 @@ export class DaemonsetSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputR
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12544,11 +12544,11 @@ export class DaemonsetSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReferen
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12641,11 +12641,11 @@ export class DaemonsetSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12787,39 +12787,39 @@ export class DaemonsetSpecTemplateSpecVolumeCsiOutputReference extends cdktf.Com
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeCsi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._driver) {
+    if (this._driver !== undefined) {
       hasAnyValues = true;
       internalValueResult.driver = this._driver;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeAttributes) {
+    if (this._volumeAttributes !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeAttributes = this._volumeAttributes;
     }
-    if (this._volumeHandle) {
+    if (this._volumeHandle !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeHandle = this._volumeHandle;
     }
-    if (this._controllerExpandSecretRef?.internalValue) {
+    if (this._controllerExpandSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
     }
-    if (this._controllerPublishSecretRef?.internalValue) {
+    if (this._controllerPublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
     }
-    if (this._nodePublishSecretRef?.internalValue) {
+    if (this._nodePublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
     }
-    if (this._nodeStageSecretRef?.internalValue) {
+    if (this._nodeStageSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
     }
@@ -13033,11 +13033,11 @@ export class DaemonsetSpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputRefere
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -13133,15 +13133,15 @@ export class DaemonsetSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefOutp
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -13286,11 +13286,11 @@ export class DaemonsetSpecTemplateSpecVolumeDownwardApiOutputReference extends c
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeDownwardApi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._defaultMode) {
+    if (this._defaultMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultMode = this._defaultMode;
     }
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -13384,11 +13384,11 @@ export class DaemonsetSpecTemplateSpecVolumeEmptyDirOutputReference extends cdkt
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeEmptyDir | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._medium) {
+    if (this._medium !== undefined) {
       hasAnyValues = true;
       internalValueResult.medium = this._medium;
     }
-    if (this._sizeLimit) {
+    if (this._sizeLimit !== undefined) {
       hasAnyValues = true;
       internalValueResult.sizeLimit = this._sizeLimit;
     }
@@ -13495,19 +13495,19 @@ export class DaemonsetSpecTemplateSpecVolumeFcOutputReference extends cdktf.Comp
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeFc | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._lun) {
+    if (this._lun !== undefined) {
       hasAnyValues = true;
       internalValueResult.lun = this._lun;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._targetWwNs) {
+    if (this._targetWwNs !== undefined) {
       hasAnyValues = true;
       internalValueResult.targetWwNs = this._targetWwNs;
     }
@@ -13630,11 +13630,11 @@ export class DaemonsetSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference e
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -13748,23 +13748,23 @@ export class DaemonsetSpecTemplateSpecVolumeFlexVolumeOutputReference extends cd
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeFlexVolume | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._driver) {
+    if (this._driver !== undefined) {
       hasAnyValues = true;
       internalValueResult.driver = this._driver;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._options) {
+    if (this._options !== undefined) {
       hasAnyValues = true;
       internalValueResult.options = this._options;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -13909,11 +13909,11 @@ export class DaemonsetSpecTemplateSpecVolumeFlockerOutputReference extends cdktf
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeFlocker | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._datasetName) {
+    if (this._datasetName !== undefined) {
       hasAnyValues = true;
       internalValueResult.datasetName = this._datasetName;
     }
-    if (this._datasetUuid) {
+    if (this._datasetUuid !== undefined) {
       hasAnyValues = true;
       internalValueResult.datasetUuid = this._datasetUuid;
     }
@@ -14020,19 +14020,19 @@ export class DaemonsetSpecTemplateSpecVolumeGcePersistentDiskOutputReference ext
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeGcePersistentDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._partition) {
+    if (this._partition !== undefined) {
       hasAnyValues = true;
       internalValueResult.partition = this._partition;
     }
-    if (this._pdName) {
+    if (this._pdName !== undefined) {
       hasAnyValues = true;
       internalValueResult.pdName = this._pdName;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -14165,15 +14165,15 @@ export class DaemonsetSpecTemplateSpecVolumeGitRepoOutputReference extends cdktf
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeGitRepo | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._directory) {
+    if (this._directory !== undefined) {
       hasAnyValues = true;
       internalValueResult.directory = this._directory;
     }
-    if (this._repository) {
+    if (this._repository !== undefined) {
       hasAnyValues = true;
       internalValueResult.repository = this._repository;
     }
-    if (this._revision) {
+    if (this._revision !== undefined) {
       hasAnyValues = true;
       internalValueResult.revision = this._revision;
     }
@@ -14291,15 +14291,15 @@ export class DaemonsetSpecTemplateSpecVolumeGlusterfsOutputReference extends cdk
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeGlusterfs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._endpointsName) {
+    if (this._endpointsName !== undefined) {
       hasAnyValues = true;
       internalValueResult.endpointsName = this._endpointsName;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -14404,11 +14404,11 @@ export class DaemonsetSpecTemplateSpecVolumeHostPathOutputReference extends cdkt
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeHostPath | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
@@ -14529,27 +14529,27 @@ export class DaemonsetSpecTemplateSpecVolumeIscsiOutputReference extends cdktf.C
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeIscsi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._iqn) {
+    if (this._iqn !== undefined) {
       hasAnyValues = true;
       internalValueResult.iqn = this._iqn;
     }
-    if (this._iscsiInterface) {
+    if (this._iscsiInterface !== undefined) {
       hasAnyValues = true;
       internalValueResult.iscsiInterface = this._iscsiInterface;
     }
-    if (this._lun) {
+    if (this._lun !== undefined) {
       hasAnyValues = true;
       internalValueResult.lun = this._lun;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._targetPortal) {
+    if (this._targetPortal !== undefined) {
       hasAnyValues = true;
       internalValueResult.targetPortal = this._targetPortal;
     }
@@ -14701,7 +14701,7 @@ export class DaemonsetSpecTemplateSpecVolumeLocalOutputReference extends cdktf.C
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeLocal | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
@@ -14783,15 +14783,15 @@ export class DaemonsetSpecTemplateSpecVolumeNfsOutputReference extends cdktf.Com
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeNfs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._server) {
+    if (this._server !== undefined) {
       hasAnyValues = true;
       internalValueResult.server = this._server;
     }
@@ -14896,11 +14896,11 @@ export class DaemonsetSpecTemplateSpecVolumePersistentVolumeClaimOutputReference
   public get internalValue(): DaemonsetSpecTemplateSpecVolumePersistentVolumeClaim | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._claimName) {
+    if (this._claimName !== undefined) {
       hasAnyValues = true;
       internalValueResult.claimName = this._claimName;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -14993,11 +14993,11 @@ export class DaemonsetSpecTemplateSpecVolumePhotonPersistentDiskOutputReference 
   public get internalValue(): DaemonsetSpecTemplateSpecVolumePhotonPersistentDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._pdId) {
+    if (this._pdId !== undefined) {
       hasAnyValues = true;
       internalValueResult.pdId = this._pdId;
     }
@@ -15153,11 +15153,11 @@ export class DaemonsetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFiel
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -15253,15 +15253,15 @@ export class DaemonsetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsReso
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -15399,7 +15399,7 @@ export class DaemonsetSpecTemplateSpecVolumeProjectedSourcesDownwardApiOutputRef
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -15548,15 +15548,15 @@ export class DaemonsetSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenO
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._audience) {
+    if (this._audience !== undefined) {
       hasAnyValues = true;
       internalValueResult.audience = this._audience;
     }
-    if (this._expirationSeconds) {
+    if (this._expirationSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.expirationSeconds = this._expirationSeconds;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
@@ -15751,23 +15751,23 @@ export class DaemonsetSpecTemplateSpecVolumeQuobyteOutputReference extends cdktf
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeQuobyte | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._group) {
+    if (this._group !== undefined) {
       hasAnyValues = true;
       internalValueResult.group = this._group;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._registry) {
+    if (this._registry !== undefined) {
       hasAnyValues = true;
       internalValueResult.registry = this._registry;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._volume) {
+    if (this._volume !== undefined) {
       hasAnyValues = true;
       internalValueResult.volume = this._volume;
     }
@@ -15908,11 +15908,11 @@ export class DaemonsetSpecTemplateSpecVolumeRbdSecretRefOutputReference extends 
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeRbdSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -16047,35 +16047,35 @@ export class DaemonsetSpecTemplateSpecVolumeRbdOutputReference extends cdktf.Com
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeRbd | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._cephMonitors) {
+    if (this._cephMonitors !== undefined) {
       hasAnyValues = true;
       internalValueResult.cephMonitors = this._cephMonitors;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._keyring) {
+    if (this._keyring !== undefined) {
       hasAnyValues = true;
       internalValueResult.keyring = this._keyring;
     }
-    if (this._radosUser) {
+    if (this._radosUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.radosUser = this._radosUser;
     }
-    if (this._rbdImage) {
+    if (this._rbdImage !== undefined) {
       hasAnyValues = true;
       internalValueResult.rbdImage = this._rbdImage;
     }
-    if (this._rbdPool) {
+    if (this._rbdPool !== undefined) {
       hasAnyValues = true;
       internalValueResult.rbdPool = this._rbdPool;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -16317,19 +16317,19 @@ export class DaemonsetSpecTemplateSpecVolumeSecretOutputReference extends cdktf.
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeSecret | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._defaultMode) {
+    if (this._defaultMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultMode = this._defaultMode;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
-    if (this._secretName) {
+    if (this._secretName !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretName = this._secretName;
     }
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -16459,11 +16459,11 @@ export class DaemonsetSpecTemplateSpecVolumeVsphereVolumeOutputReference extends
   public get internalValue(): DaemonsetSpecTemplateSpecVolumeVsphereVolume | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._volumePath) {
+    if (this._volumePath !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumePath = this._volumePath;
     }
@@ -16929,111 +16929,111 @@ export class DaemonsetSpecTemplateSpecOutputReference extends cdktf.ComplexObjec
   public get internalValue(): DaemonsetSpecTemplateSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._activeDeadlineSeconds) {
+    if (this._activeDeadlineSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.activeDeadlineSeconds = this._activeDeadlineSeconds;
     }
-    if (this._automountServiceAccountToken) {
+    if (this._automountServiceAccountToken !== undefined) {
       hasAnyValues = true;
       internalValueResult.automountServiceAccountToken = this._automountServiceAccountToken;
     }
-    if (this._dnsPolicy) {
+    if (this._dnsPolicy !== undefined) {
       hasAnyValues = true;
       internalValueResult.dnsPolicy = this._dnsPolicy;
     }
-    if (this._enableServiceLinks) {
+    if (this._enableServiceLinks !== undefined) {
       hasAnyValues = true;
       internalValueResult.enableServiceLinks = this._enableServiceLinks;
     }
-    if (this._hostIpc) {
+    if (this._hostIpc !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostIpc = this._hostIpc;
     }
-    if (this._hostNetwork) {
+    if (this._hostNetwork !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostNetwork = this._hostNetwork;
     }
-    if (this._hostPid) {
+    if (this._hostPid !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostPid = this._hostPid;
     }
-    if (this._hostname) {
+    if (this._hostname !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostname = this._hostname;
     }
-    if (this._nodeName) {
+    if (this._nodeName !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeName = this._nodeName;
     }
-    if (this._nodeSelector) {
+    if (this._nodeSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeSelector = this._nodeSelector;
     }
-    if (this._priorityClassName) {
+    if (this._priorityClassName !== undefined) {
       hasAnyValues = true;
       internalValueResult.priorityClassName = this._priorityClassName;
     }
-    if (this._restartPolicy) {
+    if (this._restartPolicy !== undefined) {
       hasAnyValues = true;
       internalValueResult.restartPolicy = this._restartPolicy;
     }
-    if (this._serviceAccountName) {
+    if (this._serviceAccountName !== undefined) {
       hasAnyValues = true;
       internalValueResult.serviceAccountName = this._serviceAccountName;
     }
-    if (this._shareProcessNamespace) {
+    if (this._shareProcessNamespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.shareProcessNamespace = this._shareProcessNamespace;
     }
-    if (this._subdomain) {
+    if (this._subdomain !== undefined) {
       hasAnyValues = true;
       internalValueResult.subdomain = this._subdomain;
     }
-    if (this._terminationGracePeriodSeconds) {
+    if (this._terminationGracePeriodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.terminationGracePeriodSeconds = this._terminationGracePeriodSeconds;
     }
-    if (this._affinity?.internalValue) {
+    if (this._affinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.affinity = this._affinity?.internalValue;
     }
-    if (this._container) {
+    if (this._container !== undefined) {
       hasAnyValues = true;
       internalValueResult.container = this._container;
     }
-    if (this._dnsConfig?.internalValue) {
+    if (this._dnsConfig?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.dnsConfig = this._dnsConfig?.internalValue;
     }
-    if (this._hostAliases) {
+    if (this._hostAliases !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostAliases = this._hostAliases;
     }
-    if (this._imagePullSecrets) {
+    if (this._imagePullSecrets !== undefined) {
       hasAnyValues = true;
       internalValueResult.imagePullSecrets = this._imagePullSecrets;
     }
-    if (this._initContainer) {
+    if (this._initContainer !== undefined) {
       hasAnyValues = true;
       internalValueResult.initContainer = this._initContainer;
     }
-    if (this._readinessGate) {
+    if (this._readinessGate !== undefined) {
       hasAnyValues = true;
       internalValueResult.readinessGate = this._readinessGate;
     }
-    if (this._securityContext?.internalValue) {
+    if (this._securityContext?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.securityContext = this._securityContext?.internalValue;
     }
-    if (this._toleration) {
+    if (this._toleration !== undefined) {
       hasAnyValues = true;
       internalValueResult.toleration = this._toleration;
     }
-    if (this._topologySpreadConstraint) {
+    if (this._topologySpreadConstraint !== undefined) {
       hasAnyValues = true;
       internalValueResult.topologySpreadConstraint = this._topologySpreadConstraint;
     }
-    if (this._volume) {
+    if (this._volume !== undefined) {
       hasAnyValues = true;
       internalValueResult.volume = this._volume;
     }
@@ -17585,11 +17585,11 @@ export class DaemonsetSpecTemplateOutputReference extends cdktf.ComplexObject {
   public get internalValue(): DaemonsetSpecTemplate | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._metadata?.internalValue) {
+    if (this._metadata?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.metadata = this._metadata?.internalValue;
     }
-    if (this._spec?.internalValue) {
+    if (this._spec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.spec = this._spec?.internalValue;
     }
@@ -17700,23 +17700,23 @@ export class DaemonsetSpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): DaemonsetSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._minReadySeconds) {
+    if (this._minReadySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.minReadySeconds = this._minReadySeconds;
     }
-    if (this._revisionHistoryLimit) {
+    if (this._revisionHistoryLimit !== undefined) {
       hasAnyValues = true;
       internalValueResult.revisionHistoryLimit = this._revisionHistoryLimit;
     }
-    if (this._selector?.internalValue) {
+    if (this._selector?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector?.internalValue;
     }
-    if (this._strategy?.internalValue) {
+    if (this._strategy?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.strategy = this._strategy?.internalValue;
     }
-    if (this._template?.internalValue) {
+    if (this._template?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.template = this._template?.internalValue;
     }
@@ -17861,15 +17861,15 @@ export class DaemonsetTimeoutsOutputReference extends cdktf.ComplexObject {
   public get internalValue(): DaemonsetTimeouts | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._create) {
+    if (this._create !== undefined) {
       hasAnyValues = true;
       internalValueResult.create = this._create;
     }
-    if (this._delete) {
+    if (this._delete !== undefined) {
       hasAnyValues = true;
       internalValueResult.delete = this._delete;
     }
-    if (this._update) {
+    if (this._update !== undefined) {
       hasAnyValues = true;
       internalValueResult.update = this._update;
     }

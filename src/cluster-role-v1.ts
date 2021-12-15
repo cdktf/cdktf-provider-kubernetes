@@ -119,7 +119,7 @@ export class ClusterRoleV1AggregationRuleOutputReference extends cdktf.ComplexOb
   public get internalValue(): ClusterRoleV1AggregationRule | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._clusterRoleSelectors) {
+    if (this._clusterRoleSelectors !== undefined) {
       hasAnyValues = true;
       internalValueResult.clusterRoleSelectors = this._clusterRoleSelectors;
     }
@@ -202,15 +202,15 @@ export class ClusterRoleV1MetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ClusterRoleV1Metadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }

@@ -102,11 +102,11 @@ export class ManifestFieldManagerOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ManifestFieldManager | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._forceConflicts) {
+    if (this._forceConflicts !== undefined) {
       hasAnyValues = true;
       internalValueResult.forceConflicts = this._forceConflicts;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -206,15 +206,15 @@ export class ManifestTimeoutsOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ManifestTimeouts | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._create) {
+    if (this._create !== undefined) {
       hasAnyValues = true;
       internalValueResult.create = this._create;
     }
-    if (this._delete) {
+    if (this._delete !== undefined) {
       hasAnyValues = true;
       internalValueResult.delete = this._delete;
     }
-    if (this._update) {
+    if (this._update !== undefined) {
       hasAnyValues = true;
       internalValueResult.update = this._update;
     }

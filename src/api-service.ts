@@ -75,19 +75,19 @@ export class ApiServiceMetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ApiServiceMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -225,15 +225,15 @@ export class ApiServiceSpecServiceOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ApiServiceSpecService | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
@@ -373,31 +373,31 @@ export class ApiServiceSpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ApiServiceSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._caBundle) {
+    if (this._caBundle !== undefined) {
       hasAnyValues = true;
       internalValueResult.caBundle = this._caBundle;
     }
-    if (this._group) {
+    if (this._group !== undefined) {
       hasAnyValues = true;
       internalValueResult.group = this._group;
     }
-    if (this._groupPriorityMinimum) {
+    if (this._groupPriorityMinimum !== undefined) {
       hasAnyValues = true;
       internalValueResult.groupPriorityMinimum = this._groupPriorityMinimum;
     }
-    if (this._insecureSkipTlsVerify) {
+    if (this._insecureSkipTlsVerify !== undefined) {
       hasAnyValues = true;
       internalValueResult.insecureSkipTlsVerify = this._insecureSkipTlsVerify;
     }
-    if (this._version) {
+    if (this._version !== undefined) {
       hasAnyValues = true;
       internalValueResult.version = this._version;
     }
-    if (this._versionPriority) {
+    if (this._versionPriority !== undefined) {
       hasAnyValues = true;
       internalValueResult.versionPriority = this._versionPriority;
     }
-    if (this._service?.internalValue) {
+    if (this._service?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.service = this._service?.internalValue;
     }

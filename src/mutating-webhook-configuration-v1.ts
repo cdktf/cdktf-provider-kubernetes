@@ -75,19 +75,19 @@ export class MutatingWebhookConfigurationV1MetadataOutputReference extends cdktf
   public get internalValue(): MutatingWebhookConfigurationV1Metadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -232,19 +232,19 @@ export class MutatingWebhookConfigurationV1WebhookClientConfigServiceOutputRefer
   public get internalValue(): MutatingWebhookConfigurationV1WebhookClientConfigService | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
@@ -384,15 +384,15 @@ export class MutatingWebhookConfigurationV1WebhookClientConfigOutputReference ex
   public get internalValue(): MutatingWebhookConfigurationV1WebhookClientConfig | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._caBundle) {
+    if (this._caBundle !== undefined) {
       hasAnyValues = true;
       internalValueResult.caBundle = this._caBundle;
     }
-    if (this._url) {
+    if (this._url !== undefined) {
       hasAnyValues = true;
       internalValueResult.url = this._url;
     }
-    if (this._service?.internalValue) {
+    if (this._service?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.service = this._service?.internalValue;
     }
@@ -536,11 +536,11 @@ export class MutatingWebhookConfigurationV1WebhookNamespaceSelectorOutputReferen
   public get internalValue(): MutatingWebhookConfigurationV1WebhookNamespaceSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabels) {
+    if (this._matchLabels !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -668,11 +668,11 @@ export class MutatingWebhookConfigurationV1WebhookObjectSelectorOutputReference 
   public get internalValue(): MutatingWebhookConfigurationV1WebhookObjectSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabels) {
+    if (this._matchLabels !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }

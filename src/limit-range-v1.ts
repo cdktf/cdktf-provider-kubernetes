@@ -82,23 +82,23 @@ export class LimitRangeV1MetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): LimitRangeV1Metadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -294,7 +294,7 @@ export class LimitRangeV1SpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): LimitRangeV1Spec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._limit) {
+    if (this._limit !== undefined) {
       hasAnyValues = true;
       internalValueResult.limit = this._limit;
     }

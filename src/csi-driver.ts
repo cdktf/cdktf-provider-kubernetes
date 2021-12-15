@@ -75,19 +75,19 @@ export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): CsiDriverMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -225,15 +225,15 @@ export class CsiDriverSpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): CsiDriverSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._attachRequired) {
+    if (this._attachRequired !== undefined) {
       hasAnyValues = true;
       internalValueResult.attachRequired = this._attachRequired;
     }
-    if (this._podInfoOnMount) {
+    if (this._podInfoOnMount !== undefined) {
       hasAnyValues = true;
       internalValueResult.podInfoOnMount = this._podInfoOnMount;
     }
-    if (this._volumeLifecycleModes) {
+    if (this._volumeLifecycleModes !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeLifecycleModes = this._volumeLifecycleModes;
     }

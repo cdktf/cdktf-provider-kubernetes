@@ -82,23 +82,23 @@ export class PodDisruptionBudgetMetadataOutputReference extends cdktf.ComplexObj
   public get internalValue(): PodDisruptionBudgetMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -280,11 +280,11 @@ export class PodDisruptionBudgetSpecSelectorOutputReference extends cdktf.Comple
   public get internalValue(): PodDisruptionBudgetSpecSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabels) {
+    if (this._matchLabels !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -382,15 +382,15 @@ export class PodDisruptionBudgetSpecOutputReference extends cdktf.ComplexObject 
   public get internalValue(): PodDisruptionBudgetSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._maxUnavailable) {
+    if (this._maxUnavailable !== undefined) {
       hasAnyValues = true;
       internalValueResult.maxUnavailable = this._maxUnavailable;
     }
-    if (this._minAvailable) {
+    if (this._minAvailable !== undefined) {
       hasAnyValues = true;
       internalValueResult.minAvailable = this._minAvailable;
     }
-    if (this._selector?.internalValue) {
+    if (this._selector?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector?.internalValue;
     }

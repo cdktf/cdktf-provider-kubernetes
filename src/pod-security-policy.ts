@@ -68,15 +68,15 @@ export class PodSecurityPolicyMetadataOutputReference extends cdktf.ComplexObjec
   public get internalValue(): PodSecurityPolicyMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -262,11 +262,11 @@ export class PodSecurityPolicySpecFsGroupOutputReference extends cdktf.ComplexOb
   public get internalValue(): PodSecurityPolicySpecFsGroup | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._rule) {
+    if (this._rule !== undefined) {
       hasAnyValues = true;
       internalValueResult.rule = this._rule;
     }
-    if (this._range) {
+    if (this._range !== undefined) {
       hasAnyValues = true;
       internalValueResult.range = this._range;
     }
@@ -409,11 +409,11 @@ export class PodSecurityPolicySpecRunAsGroupOutputReference extends cdktf.Comple
   public get internalValue(): PodSecurityPolicySpecRunAsGroup | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._rule) {
+    if (this._rule !== undefined) {
       hasAnyValues = true;
       internalValueResult.rule = this._rule;
     }
-    if (this._range) {
+    if (this._range !== undefined) {
       hasAnyValues = true;
       internalValueResult.range = this._range;
     }
@@ -530,11 +530,11 @@ export class PodSecurityPolicySpecRunAsUserOutputReference extends cdktf.Complex
   public get internalValue(): PodSecurityPolicySpecRunAsUser | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._rule) {
+    if (this._rule !== undefined) {
       hasAnyValues = true;
       internalValueResult.rule = this._rule;
     }
-    if (this._range) {
+    if (this._range !== undefined) {
       hasAnyValues = true;
       internalValueResult.range = this._range;
     }
@@ -657,11 +657,11 @@ export class PodSecurityPolicySpecSeLinuxOutputReference extends cdktf.ComplexOb
   public get internalValue(): PodSecurityPolicySpecSeLinux | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._rule) {
+    if (this._rule !== undefined) {
       hasAnyValues = true;
       internalValueResult.rule = this._rule;
     }
-    if (this._seLinuxOptions) {
+    if (this._seLinuxOptions !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions;
     }
@@ -778,11 +778,11 @@ export class PodSecurityPolicySpecSupplementalGroupsOutputReference extends cdkt
   public get internalValue(): PodSecurityPolicySpecSupplementalGroups | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._rule) {
+    if (this._rule !== undefined) {
       hasAnyValues = true;
       internalValueResult.rule = this._rule;
     }
-    if (this._range) {
+    if (this._range !== undefined) {
       hasAnyValues = true;
       internalValueResult.range = this._range;
     }
@@ -1017,91 +1017,91 @@ export class PodSecurityPolicySpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodSecurityPolicySpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._allowPrivilegeEscalation) {
+    if (this._allowPrivilegeEscalation !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
     }
-    if (this._allowedCapabilities) {
+    if (this._allowedCapabilities !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowedCapabilities = this._allowedCapabilities;
     }
-    if (this._allowedProcMountTypes) {
+    if (this._allowedProcMountTypes !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowedProcMountTypes = this._allowedProcMountTypes;
     }
-    if (this._allowedUnsafeSysctls) {
+    if (this._allowedUnsafeSysctls !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowedUnsafeSysctls = this._allowedUnsafeSysctls;
     }
-    if (this._defaultAddCapabilities) {
+    if (this._defaultAddCapabilities !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultAddCapabilities = this._defaultAddCapabilities;
     }
-    if (this._defaultAllowPrivilegeEscalation) {
+    if (this._defaultAllowPrivilegeEscalation !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultAllowPrivilegeEscalation = this._defaultAllowPrivilegeEscalation;
     }
-    if (this._forbiddenSysctls) {
+    if (this._forbiddenSysctls !== undefined) {
       hasAnyValues = true;
       internalValueResult.forbiddenSysctls = this._forbiddenSysctls;
     }
-    if (this._hostIpc) {
+    if (this._hostIpc !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostIpc = this._hostIpc;
     }
-    if (this._hostNetwork) {
+    if (this._hostNetwork !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostNetwork = this._hostNetwork;
     }
-    if (this._hostPid) {
+    if (this._hostPid !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostPid = this._hostPid;
     }
-    if (this._privileged) {
+    if (this._privileged !== undefined) {
       hasAnyValues = true;
       internalValueResult.privileged = this._privileged;
     }
-    if (this._readOnlyRootFilesystem) {
+    if (this._readOnlyRootFilesystem !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
     }
-    if (this._requiredDropCapabilities) {
+    if (this._requiredDropCapabilities !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDropCapabilities = this._requiredDropCapabilities;
     }
-    if (this._volumes) {
+    if (this._volumes !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumes = this._volumes;
     }
-    if (this._allowedFlexVolumes) {
+    if (this._allowedFlexVolumes !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowedFlexVolumes = this._allowedFlexVolumes;
     }
-    if (this._allowedHostPaths) {
+    if (this._allowedHostPaths !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowedHostPaths = this._allowedHostPaths;
     }
-    if (this._fsGroup?.internalValue) {
+    if (this._fsGroup?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsGroup = this._fsGroup?.internalValue;
     }
-    if (this._hostPorts) {
+    if (this._hostPorts !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostPorts = this._hostPorts;
     }
-    if (this._runAsGroup?.internalValue) {
+    if (this._runAsGroup?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup?.internalValue;
     }
-    if (this._runAsUser?.internalValue) {
+    if (this._runAsUser?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser?.internalValue;
     }
-    if (this._seLinux?.internalValue) {
+    if (this._seLinux?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinux = this._seLinux?.internalValue;
     }
-    if (this._supplementalGroups?.internalValue) {
+    if (this._supplementalGroups?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.supplementalGroups = this._supplementalGroups?.internalValue;
     }

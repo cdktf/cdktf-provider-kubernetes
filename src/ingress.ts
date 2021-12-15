@@ -116,23 +116,23 @@ export class IngressMetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): IngressMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -281,11 +281,11 @@ export class IngressSpecBackendOutputReference extends cdktf.ComplexObject {
   public get internalValue(): IngressSpecBackend | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._serviceName) {
+    if (this._serviceName !== undefined) {
       hasAnyValues = true;
       internalValueResult.serviceName = this._serviceName;
     }
-    if (this._servicePort) {
+    if (this._servicePort !== undefined) {
       hasAnyValues = true;
       internalValueResult.servicePort = this._servicePort;
     }
@@ -378,11 +378,11 @@ export class IngressSpecRuleHttpPathBackendOutputReference extends cdktf.Complex
   public get internalValue(): IngressSpecRuleHttpPathBackend | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._serviceName) {
+    if (this._serviceName !== undefined) {
       hasAnyValues = true;
       internalValueResult.serviceName = this._serviceName;
     }
-    if (this._servicePort) {
+    if (this._servicePort !== undefined) {
       hasAnyValues = true;
       internalValueResult.servicePort = this._servicePort;
     }
@@ -494,7 +494,7 @@ export class IngressSpecRuleHttpOutputReference extends cdktf.ComplexObject {
   public get internalValue(): IngressSpecRuleHttp | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
@@ -640,19 +640,19 @@ export class IngressSpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): IngressSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._ingressClassName) {
+    if (this._ingressClassName !== undefined) {
       hasAnyValues = true;
       internalValueResult.ingressClassName = this._ingressClassName;
     }
-    if (this._backend?.internalValue) {
+    if (this._backend?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.backend = this._backend?.internalValue;
     }
-    if (this._rule) {
+    if (this._rule !== undefined) {
       hasAnyValues = true;
       internalValueResult.rule = this._rule;
     }
-    if (this._tls) {
+    if (this._tls !== undefined) {
       hasAnyValues = true;
       internalValueResult.tls = this._tls;
     }
