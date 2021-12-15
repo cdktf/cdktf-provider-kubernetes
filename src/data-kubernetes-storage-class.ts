@@ -110,7 +110,7 @@ export class DataKubernetesStorageClassAllowedTopologiesOutputReference extends 
   public get internalValue(): DataKubernetesStorageClassAllowedTopologies | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabelExpressions) {
+    if (this._matchLabelExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabelExpressions = this._matchLabelExpressions;
     }
@@ -193,15 +193,15 @@ export class DataKubernetesStorageClassMetadataOutputReference extends cdktf.Com
   public get internalValue(): DataKubernetesStorageClassMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }

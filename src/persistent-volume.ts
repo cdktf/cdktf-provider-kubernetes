@@ -74,15 +74,15 @@ export class PersistentVolumeMetadataOutputReference extends cdktf.ComplexObject
   public get internalValue(): PersistentVolumeMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -195,11 +195,11 @@ export class PersistentVolumeSpecClaimRefOutputReference extends cdktf.ComplexOb
   public get internalValue(): PersistentVolumeSpecClaimRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -374,7 +374,7 @@ export class PersistentVolumeSpecNodeAffinityRequiredOutputReference extends cdk
   public get internalValue(): PersistentVolumeSpecNodeAffinityRequired | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nodeSelectorTerm) {
+    if (this._nodeSelectorTerm !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeSelectorTerm = this._nodeSelectorTerm;
     }
@@ -440,7 +440,7 @@ export class PersistentVolumeSpecNodeAffinityOutputReference extends cdktf.Compl
   public get internalValue(): PersistentVolumeSpecNodeAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._required?.internalValue) {
+    if (this._required?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.required = this._required?.internalValue;
     }
@@ -529,19 +529,19 @@ export class PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutpu
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._partition) {
+    if (this._partition !== undefined) {
       hasAnyValues = true;
       internalValueResult.partition = this._partition;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeId) {
+    if (this._volumeId !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeId = this._volumeId;
     }
@@ -695,27 +695,27 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceAzureDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._cachingMode) {
+    if (this._cachingMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.cachingMode = this._cachingMode;
     }
-    if (this._dataDiskUri) {
+    if (this._dataDiskUri !== undefined) {
       hasAnyValues = true;
       internalValueResult.dataDiskUri = this._dataDiskUri;
     }
-    if (this._diskName) {
+    if (this._diskName !== undefined) {
       hasAnyValues = true;
       internalValueResult.diskName = this._diskName;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._kind) {
+    if (this._kind !== undefined) {
       hasAnyValues = true;
       internalValueResult.kind = this._kind;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -885,19 +885,19 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceAzureFile | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretName) {
+    if (this._secretName !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretName = this._secretName;
     }
-    if (this._secretNamespace) {
+    if (this._secretNamespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretNamespace = this._secretNamespace;
     }
-    if (this._shareName) {
+    if (this._shareName !== undefined) {
       hasAnyValues = true;
       internalValueResult.shareName = this._shareName;
     }
@@ -1020,11 +1020,11 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputRefe
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -1145,27 +1145,27 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCephFs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._monitors) {
+    if (this._monitors !== undefined) {
       hasAnyValues = true;
       internalValueResult.monitors = this._monitors;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretFile) {
+    if (this._secretFile !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretFile = this._secretFile;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -1334,15 +1334,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference ext
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCinder | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeId) {
+    if (this._volumeId !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeId = this._volumeId;
     }
@@ -1450,11 +1450,11 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecret
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -1547,11 +1547,11 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecre
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -1644,11 +1644,11 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOu
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -1741,11 +1741,11 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutp
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -1887,39 +1887,39 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._driver) {
+    if (this._driver !== undefined) {
       hasAnyValues = true;
       internalValueResult.driver = this._driver;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeAttributes) {
+    if (this._volumeAttributes !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeAttributes = this._volumeAttributes;
     }
-    if (this._volumeHandle) {
+    if (this._volumeHandle !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeHandle = this._volumeHandle;
     }
-    if (this._controllerExpandSecretRef?.internalValue) {
+    if (this._controllerExpandSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
     }
-    if (this._controllerPublishSecretRef?.internalValue) {
+    if (this._controllerPublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
     }
-    if (this._nodePublishSecretRef?.internalValue) {
+    if (this._nodePublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
     }
-    if (this._nodeStageSecretRef?.internalValue) {
+    if (this._nodeStageSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
     }
@@ -2147,19 +2147,19 @@ export class PersistentVolumeSpecPersistentVolumeSourceFcOutputReference extends
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceFc | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._lun) {
+    if (this._lun !== undefined) {
       hasAnyValues = true;
       internalValueResult.lun = this._lun;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._targetWwNs) {
+    if (this._targetWwNs !== undefined) {
       hasAnyValues = true;
       internalValueResult.targetWwNs = this._targetWwNs;
     }
@@ -2282,11 +2282,11 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutput
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -2400,23 +2400,23 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceFlexVolume | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._driver) {
+    if (this._driver !== undefined) {
       hasAnyValues = true;
       internalValueResult.driver = this._driver;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._options) {
+    if (this._options !== undefined) {
       hasAnyValues = true;
       internalValueResult.options = this._options;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -2561,11 +2561,11 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference ex
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceFlocker | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._datasetName) {
+    if (this._datasetName !== undefined) {
       hasAnyValues = true;
       internalValueResult.datasetName = this._datasetName;
     }
-    if (this._datasetUuid) {
+    if (this._datasetUuid !== undefined) {
       hasAnyValues = true;
       internalValueResult.datasetUuid = this._datasetUuid;
     }
@@ -2672,19 +2672,19 @@ export class PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputRe
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._partition) {
+    if (this._partition !== undefined) {
       hasAnyValues = true;
       internalValueResult.partition = this._partition;
     }
-    if (this._pdName) {
+    if (this._pdName !== undefined) {
       hasAnyValues = true;
       internalValueResult.pdName = this._pdName;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -2817,15 +2817,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceGlusterfs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._endpointsName) {
+    if (this._endpointsName !== undefined) {
       hasAnyValues = true;
       internalValueResult.endpointsName = this._endpointsName;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -2930,11 +2930,11 @@ export class PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference e
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceHostPath | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
@@ -3055,27 +3055,27 @@ export class PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference exte
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceIscsi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._iqn) {
+    if (this._iqn !== undefined) {
       hasAnyValues = true;
       internalValueResult.iqn = this._iqn;
     }
-    if (this._iscsiInterface) {
+    if (this._iscsiInterface !== undefined) {
       hasAnyValues = true;
       internalValueResult.iscsiInterface = this._iscsiInterface;
     }
-    if (this._lun) {
+    if (this._lun !== undefined) {
       hasAnyValues = true;
       internalValueResult.lun = this._lun;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._targetPortal) {
+    if (this._targetPortal !== undefined) {
       hasAnyValues = true;
       internalValueResult.targetPortal = this._targetPortal;
     }
@@ -3227,7 +3227,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference exte
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceLocal | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
@@ -3309,15 +3309,15 @@ export class PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference extend
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceNfs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._server) {
+    if (this._server !== undefined) {
       hasAnyValues = true;
       internalValueResult.server = this._server;
     }
@@ -3422,11 +3422,11 @@ export class PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutpu
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._pdId) {
+    if (this._pdId !== undefined) {
       hasAnyValues = true;
       internalValueResult.pdId = this._pdId;
     }
@@ -3537,23 +3537,23 @@ export class PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference ex
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceQuobyte | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._group) {
+    if (this._group !== undefined) {
       hasAnyValues = true;
       internalValueResult.group = this._group;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._registry) {
+    if (this._registry !== undefined) {
       hasAnyValues = true;
       internalValueResult.registry = this._registry;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._volume) {
+    if (this._volume !== undefined) {
       hasAnyValues = true;
       internalValueResult.volume = this._volume;
     }
@@ -3694,11 +3694,11 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReferen
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -3833,35 +3833,35 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceRbd | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._cephMonitors) {
+    if (this._cephMonitors !== undefined) {
       hasAnyValues = true;
       internalValueResult.cephMonitors = this._cephMonitors;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._keyring) {
+    if (this._keyring !== undefined) {
       hasAnyValues = true;
       internalValueResult.keyring = this._keyring;
     }
-    if (this._radosUser) {
+    if (this._radosUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.radosUser = this._radosUser;
     }
-    if (this._rbdImage) {
+    if (this._rbdImage !== undefined) {
       hasAnyValues = true;
       internalValueResult.rbdImage = this._rbdImage;
     }
-    if (this._rbdPool) {
+    if (this._rbdPool !== undefined) {
       hasAnyValues = true;
       internalValueResult.rbdPool = this._rbdPool;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -4056,11 +4056,11 @@ export class PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputRefere
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceVsphereVolume | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._volumePath) {
+    if (this._volumePath !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumePath = this._volumePath;
     }
@@ -4269,79 +4269,79 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSource | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._awsElasticBlockStore?.internalValue) {
+    if (this._awsElasticBlockStore?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.awsElasticBlockStore = this._awsElasticBlockStore?.internalValue;
     }
-    if (this._azureDisk?.internalValue) {
+    if (this._azureDisk?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.azureDisk = this._azureDisk?.internalValue;
     }
-    if (this._azureFile?.internalValue) {
+    if (this._azureFile?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.azureFile = this._azureFile?.internalValue;
     }
-    if (this._cephFs?.internalValue) {
+    if (this._cephFs?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.cephFs = this._cephFs?.internalValue;
     }
-    if (this._cinder?.internalValue) {
+    if (this._cinder?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.cinder = this._cinder?.internalValue;
     }
-    if (this._csi?.internalValue) {
+    if (this._csi?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.csi = this._csi?.internalValue;
     }
-    if (this._fc?.internalValue) {
+    if (this._fc?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.fc = this._fc?.internalValue;
     }
-    if (this._flexVolume?.internalValue) {
+    if (this._flexVolume?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.flexVolume = this._flexVolume?.internalValue;
     }
-    if (this._flocker?.internalValue) {
+    if (this._flocker?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.flocker = this._flocker?.internalValue;
     }
-    if (this._gcePersistentDisk?.internalValue) {
+    if (this._gcePersistentDisk?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.gcePersistentDisk = this._gcePersistentDisk?.internalValue;
     }
-    if (this._glusterfs?.internalValue) {
+    if (this._glusterfs?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.glusterfs = this._glusterfs?.internalValue;
     }
-    if (this._hostPath?.internalValue) {
+    if (this._hostPath?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostPath = this._hostPath?.internalValue;
     }
-    if (this._iscsi?.internalValue) {
+    if (this._iscsi?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.iscsi = this._iscsi?.internalValue;
     }
-    if (this._local?.internalValue) {
+    if (this._local?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.local = this._local?.internalValue;
     }
-    if (this._nfs?.internalValue) {
+    if (this._nfs?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nfs = this._nfs?.internalValue;
     }
-    if (this._photonPersistentDisk?.internalValue) {
+    if (this._photonPersistentDisk?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.photonPersistentDisk = this._photonPersistentDisk?.internalValue;
     }
-    if (this._quobyte?.internalValue) {
+    if (this._quobyte?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.quobyte = this._quobyte?.internalValue;
     }
-    if (this._rbd?.internalValue) {
+    if (this._rbd?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.rbd = this._rbd?.internalValue;
     }
-    if (this._vsphereVolume?.internalValue) {
+    if (this._vsphereVolume?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.vsphereVolume = this._vsphereVolume?.internalValue;
     }
@@ -4806,7 +4806,7 @@ export class PersistentVolumeTimeoutsOutputReference extends cdktf.ComplexObject
   public get internalValue(): PersistentVolumeTimeouts | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._create) {
+    if (this._create !== undefined) {
       hasAnyValues = true;
       internalValueResult.create = this._create;
     }

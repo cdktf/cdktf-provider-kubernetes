@@ -88,23 +88,23 @@ export class CronJobV1MetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): CronJobV1Metadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -267,19 +267,19 @@ export class CronJobV1SpecJobTemplateMetadataOutputReference extends cdktf.Compl
   public get internalValue(): CronJobV1SpecJobTemplateMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -443,11 +443,11 @@ export class CronJobV1SpecJobTemplateSpecSelectorOutputReference extends cdktf.C
   public get internalValue(): CronJobV1SpecJobTemplateSpecSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabels) {
+    if (this._matchLabels !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -556,19 +556,19 @@ export class CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference extends
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -725,7 +725,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferr
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -872,7 +872,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequire
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nodeSelectorTerm) {
+    if (this._nodeSelectorTerm !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeSelectorTerm = this._nodeSelectorTerm;
     }
@@ -948,11 +948,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputR
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+    if (this._preferredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue;
     }
@@ -1112,15 +1112,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferre
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._namespaces) {
+    if (this._namespaces !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespaces = this._namespaces;
     }
-    if (this._topologyKey) {
+    if (this._topologyKey !== undefined) {
       hasAnyValues = true;
       internalValueResult.topologyKey = this._topologyKey;
     }
-    if (this._labelSelector) {
+    if (this._labelSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.labelSelector = this._labelSelector;
     }
@@ -1350,11 +1350,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputRe
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+    if (this._preferredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1515,15 +1515,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPref
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._namespaces) {
+    if (this._namespaces !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespaces = this._namespaces;
     }
-    if (this._topologyKey) {
+    if (this._topologyKey !== undefined) {
       hasAnyValues = true;
       internalValueResult.topologyKey = this._topologyKey;
     }
-    if (this._labelSelector) {
+    if (this._labelSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.labelSelector = this._labelSelector;
     }
@@ -1753,11 +1753,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutp
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+    if (this._preferredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1859,15 +1859,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityOutputReference ext
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nodeAffinity?.internalValue) {
+    if (this._nodeAffinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeAffinity = this._nodeAffinity?.internalValue;
     }
-    if (this._podAffinity?.internalValue) {
+    if (this._podAffinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.podAffinity = this._podAffinity?.internalValue;
     }
-    if (this._podAntiAffinity?.internalValue) {
+    if (this._podAntiAffinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.podAntiAffinity = this._podAntiAffinity?.internalValue;
     }
@@ -1985,15 +1985,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfig
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2104,11 +2104,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldR
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -2204,15 +2204,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResour
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -2327,15 +2327,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecret
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2460,19 +2460,19 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromOutput
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFrom | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._configMapKeyRef?.internalValue) {
+    if (this._configMapKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
     }
-    if (this._fieldRef?.internalValue) {
+    if (this._fieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldRef = this._fieldRef?.internalValue;
     }
-    if (this._resourceFieldRef?.internalValue) {
+    if (this._resourceFieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
     }
-    if (this._secretKeyRef?.internalValue) {
+    if (this._secretKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
     }
@@ -2634,11 +2634,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRe
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2728,11 +2728,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefOu
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2848,7 +2848,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -2970,23 +2970,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -3179,7 +3179,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopEx
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -3301,23 +3301,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHt
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -3517,11 +3517,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycleOutputRef
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycle | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._postStart) {
+    if (this._postStart !== undefined) {
       hasAnyValues = true;
       internalValueResult.postStart = this._postStart;
     }
-    if (this._preStop) {
+    if (this._preStop !== undefined) {
       hasAnyValues = true;
       internalValueResult.preStop = this._preStop;
     }
@@ -3609,7 +3609,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecO
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -3731,23 +3731,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpG
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -3956,35 +3956,35 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutpu
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -4226,7 +4226,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -4348,23 +4348,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttp
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -4573,35 +4573,35 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutp
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -4803,11 +4803,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerResourcesOutputRef
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerResources | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._limits) {
+    if (this._limits !== undefined) {
       hasAnyValues = true;
       internalValueResult.limits = this._limits;
     }
-    if (this._requests) {
+    if (this._requests !== undefined) {
       hasAnyValues = true;
       internalValueResult.requests = this._requests;
     }
@@ -4902,11 +4902,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCap
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._add) {
+    if (this._add !== undefined) {
       hasAnyValues = true;
       internalValueResult.add = this._add;
     }
-    if (this._drop) {
+    if (this._drop !== undefined) {
       hasAnyValues = true;
       internalValueResult.drop = this._drop;
     }
@@ -5013,19 +5013,19 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeL
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -5196,35 +5196,35 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._allowPrivilegeEscalation) {
+    if (this._allowPrivilegeEscalation !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
     }
-    if (this._privileged) {
+    if (this._privileged !== undefined) {
       hasAnyValues = true;
       internalValueResult.privileged = this._privileged;
     }
-    if (this._readOnlyRootFilesystem) {
+    if (this._readOnlyRootFilesystem !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup;
     }
-    if (this._runAsNonRoot) {
+    if (this._runAsNonRoot !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsNonRoot = this._runAsNonRoot;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._capabilities?.internalValue) {
+    if (this._capabilities?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.capabilities = this._capabilities?.internalValue;
     }
-    if (this._seLinuxOptions?.internalValue) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -5418,7 +5418,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOu
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -5540,23 +5540,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGe
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -5765,35 +5765,35 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutput
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -6234,15 +6234,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOutputReference ex
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfig | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nameservers) {
+    if (this._nameservers !== undefined) {
       hasAnyValues = true;
       internalValueResult.nameservers = this._nameservers;
     }
-    if (this._searches) {
+    if (this._searches !== undefined) {
       hasAnyValues = true;
       internalValueResult.searches = this._searches;
     }
-    if (this._option) {
+    if (this._option !== undefined) {
       hasAnyValues = true;
       internalValueResult.option = this._option;
     }
@@ -6406,15 +6406,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromCo
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -6525,11 +6525,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFi
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -6625,15 +6625,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromRe
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -6748,15 +6748,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSe
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -6881,19 +6881,19 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromOu
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._configMapKeyRef?.internalValue) {
+    if (this._configMapKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
     }
-    if (this._fieldRef?.internalValue) {
+    if (this._fieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldRef = this._fieldRef?.internalValue;
     }
-    if (this._resourceFieldRef?.internalValue) {
+    if (this._resourceFieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
     }
-    if (this._secretKeyRef?.internalValue) {
+    if (this._secretKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
     }
@@ -7055,11 +7055,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigM
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -7149,11 +7149,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretR
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -7269,7 +7269,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostS
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -7391,23 +7391,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostS
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -7600,7 +7600,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreSt
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -7722,23 +7722,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreSt
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -7938,11 +7938,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleOutpu
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycle | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._postStart) {
+    if (this._postStart !== undefined) {
       hasAnyValues = true;
       internalValueResult.postStart = this._postStart;
     }
-    if (this._preStop) {
+    if (this._preStop !== undefined) {
       hasAnyValues = true;
       internalValueResult.preStop = this._preStop;
     }
@@ -8030,7 +8030,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeE
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -8152,23 +8152,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeH
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -8377,35 +8377,35 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeO
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -8647,7 +8647,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -8769,23 +8769,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -8994,35 +8994,35 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -9224,11 +9224,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResourcesOutpu
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResources | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._limits) {
+    if (this._limits !== undefined) {
       hasAnyValues = true;
       internalValueResult.limits = this._limits;
     }
-    if (this._requests) {
+    if (this._requests !== undefined) {
       hasAnyValues = true;
       internalValueResult.requests = this._requests;
     }
@@ -9323,11 +9323,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._add) {
+    if (this._add !== undefined) {
       hasAnyValues = true;
       internalValueResult.add = this._add;
     }
-    if (this._drop) {
+    if (this._drop !== undefined) {
       hasAnyValues = true;
       internalValueResult.drop = this._drop;
     }
@@ -9434,19 +9434,19 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -9617,35 +9617,35 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._allowPrivilegeEscalation) {
+    if (this._allowPrivilegeEscalation !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
     }
-    if (this._privileged) {
+    if (this._privileged !== undefined) {
       hasAnyValues = true;
       internalValueResult.privileged = this._privileged;
     }
-    if (this._readOnlyRootFilesystem) {
+    if (this._readOnlyRootFilesystem !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup;
     }
-    if (this._runAsNonRoot) {
+    if (this._runAsNonRoot !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsNonRoot = this._runAsNonRoot;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._capabilities?.internalValue) {
+    if (this._capabilities?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.capabilities = this._capabilities?.internalValue;
     }
-    if (this._seLinuxOptions?.internalValue) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -9839,7 +9839,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeEx
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -9961,23 +9961,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHt
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -10186,35 +10186,35 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOu
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -10655,19 +10655,19 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptio
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -10857,31 +10857,31 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsGroup) {
+    if (this._fsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsGroup = this._fsGroup;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup;
     }
-    if (this._runAsNonRoot) {
+    if (this._runAsNonRoot !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsNonRoot = this._runAsNonRoot;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._supplementalGroups) {
+    if (this._supplementalGroups !== undefined) {
       hasAnyValues = true;
       internalValueResult.supplementalGroups = this._supplementalGroups;
     }
-    if (this._seLinuxOptions?.internalValue) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
-    if (this._sysctl) {
+    if (this._sysctl !== undefined) {
       hasAnyValues = true;
       internalValueResult.sysctl = this._sysctl;
     }
@@ -11226,19 +11226,19 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreO
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStore | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._partition) {
+    if (this._partition !== undefined) {
       hasAnyValues = true;
       internalValueResult.partition = this._partition;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeId) {
+    if (this._volumeId !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeId = this._volumeId;
     }
@@ -11392,27 +11392,27 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputRefere
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._cachingMode) {
+    if (this._cachingMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.cachingMode = this._cachingMode;
     }
-    if (this._dataDiskUri) {
+    if (this._dataDiskUri !== undefined) {
       hasAnyValues = true;
       internalValueResult.dataDiskUri = this._dataDiskUri;
     }
-    if (this._diskName) {
+    if (this._diskName !== undefined) {
       hasAnyValues = true;
       internalValueResult.diskName = this._diskName;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._kind) {
+    if (this._kind !== undefined) {
       hasAnyValues = true;
       internalValueResult.kind = this._kind;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -11582,19 +11582,19 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFileOutputRefere
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFile | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretName) {
+    if (this._secretName !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretName = this._secretName;
     }
-    if (this._secretNamespace) {
+    if (this._secretNamespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretNamespace = this._secretNamespace;
     }
-    if (this._shareName) {
+    if (this._shareName !== undefined) {
       hasAnyValues = true;
       internalValueResult.shareName = this._shareName;
     }
@@ -11717,11 +11717,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutput
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -11842,27 +11842,27 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._monitors) {
+    if (this._monitors !== undefined) {
       hasAnyValues = true;
       internalValueResult.monitors = this._monitors;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretFile) {
+    if (this._secretFile !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretFile = this._secretFile;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -12031,15 +12031,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinderOutputReference
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinder | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeId) {
+    if (this._volumeId !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeId = this._volumeId;
     }
@@ -12194,19 +12194,19 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputRefere
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMap | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._defaultMode) {
+    if (this._defaultMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultMode = this._defaultMode;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -12336,11 +12336,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSe
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12433,11 +12433,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishS
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12530,11 +12530,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretR
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12627,11 +12627,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12773,39 +12773,39 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._driver) {
+    if (this._driver !== undefined) {
       hasAnyValues = true;
       internalValueResult.driver = this._driver;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeAttributes) {
+    if (this._volumeAttributes !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeAttributes = this._volumeAttributes;
     }
-    if (this._volumeHandle) {
+    if (this._volumeHandle !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeHandle = this._volumeHandle;
     }
-    if (this._controllerExpandSecretRef?.internalValue) {
+    if (this._controllerExpandSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
     }
-    if (this._controllerPublishSecretRef?.internalValue) {
+    if (this._controllerPublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
     }
-    if (this._nodePublishSecretRef?.internalValue) {
+    if (this._nodePublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
     }
-    if (this._nodeStageSecretRef?.internalValue) {
+    if (this._nodeStageSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
     }
@@ -13019,11 +13019,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsField
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -13119,15 +13119,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResou
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -13272,11 +13272,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiOutputRefe
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._defaultMode) {
+    if (this._defaultMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultMode = this._defaultMode;
     }
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -13370,11 +13370,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDirOutputReferen
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDir | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._medium) {
+    if (this._medium !== undefined) {
       hasAnyValues = true;
       internalValueResult.medium = this._medium;
     }
-    if (this._sizeLimit) {
+    if (this._sizeLimit !== undefined) {
       hasAnyValues = true;
       internalValueResult.sizeLimit = this._sizeLimit;
     }
@@ -13481,19 +13481,19 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFcOutputReference ext
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFc | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._lun) {
+    if (this._lun !== undefined) {
       hasAnyValues = true;
       internalValueResult.lun = this._lun;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._targetWwNs) {
+    if (this._targetWwNs !== undefined) {
       hasAnyValues = true;
       internalValueResult.targetWwNs = this._targetWwNs;
     }
@@ -13616,11 +13616,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOu
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -13734,23 +13734,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputRefer
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolume | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._driver) {
+    if (this._driver !== undefined) {
       hasAnyValues = true;
       internalValueResult.driver = this._driver;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._options) {
+    if (this._options !== undefined) {
       hasAnyValues = true;
       internalValueResult.options = this._options;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -13895,11 +13895,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlockerOutputReferenc
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlocker | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._datasetName) {
+    if (this._datasetName !== undefined) {
       hasAnyValues = true;
       internalValueResult.datasetName = this._datasetName;
     }
-    if (this._datasetUuid) {
+    if (this._datasetUuid !== undefined) {
       hasAnyValues = true;
       internalValueResult.datasetUuid = this._datasetUuid;
     }
@@ -14006,19 +14006,19 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskOutp
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._partition) {
+    if (this._partition !== undefined) {
       hasAnyValues = true;
       internalValueResult.partition = this._partition;
     }
-    if (this._pdName) {
+    if (this._pdName !== undefined) {
       hasAnyValues = true;
       internalValueResult.pdName = this._pdName;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -14151,15 +14151,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepoOutputReferenc
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepo | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._directory) {
+    if (this._directory !== undefined) {
       hasAnyValues = true;
       internalValueResult.directory = this._directory;
     }
-    if (this._repository) {
+    if (this._repository !== undefined) {
       hasAnyValues = true;
       internalValueResult.repository = this._repository;
     }
-    if (this._revision) {
+    if (this._revision !== undefined) {
       hasAnyValues = true;
       internalValueResult.revision = this._revision;
     }
@@ -14277,15 +14277,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfsOutputRefere
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._endpointsName) {
+    if (this._endpointsName !== undefined) {
       hasAnyValues = true;
       internalValueResult.endpointsName = this._endpointsName;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -14390,11 +14390,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPathOutputReferen
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPath | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
@@ -14515,27 +14515,27 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._iqn) {
+    if (this._iqn !== undefined) {
       hasAnyValues = true;
       internalValueResult.iqn = this._iqn;
     }
-    if (this._iscsiInterface) {
+    if (this._iscsiInterface !== undefined) {
       hasAnyValues = true;
       internalValueResult.iscsiInterface = this._iscsiInterface;
     }
-    if (this._lun) {
+    if (this._lun !== undefined) {
       hasAnyValues = true;
       internalValueResult.lun = this._lun;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._targetPortal) {
+    if (this._targetPortal !== undefined) {
       hasAnyValues = true;
       internalValueResult.targetPortal = this._targetPortal;
     }
@@ -14687,7 +14687,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocalOutputReference 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocal | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
@@ -14769,15 +14769,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfsOutputReference ex
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._server) {
+    if (this._server !== undefined) {
       hasAnyValues = true;
       internalValueResult.server = this._server;
     }
@@ -14882,11 +14882,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._claimName) {
+    if (this._claimName !== undefined) {
       hasAnyValues = true;
       internalValueResult.claimName = this._claimName;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -14979,11 +14979,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskO
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._pdId) {
+    if (this._pdId !== undefined) {
       hasAnyValues = true;
       internalValueResult.pdId = this._pdId;
     }
@@ -15139,11 +15139,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -15239,15 +15239,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -15385,7 +15385,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -15534,15 +15534,15 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServi
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._audience) {
+    if (this._audience !== undefined) {
       hasAnyValues = true;
       internalValueResult.audience = this._audience;
     }
-    if (this._expirationSeconds) {
+    if (this._expirationSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.expirationSeconds = this._expirationSeconds;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
@@ -15737,23 +15737,23 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReferenc
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyte | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._group) {
+    if (this._group !== undefined) {
       hasAnyValues = true;
       internalValueResult.group = this._group;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._registry) {
+    if (this._registry !== undefined) {
       hasAnyValues = true;
       internalValueResult.registry = this._registry;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._volume) {
+    if (this._volume !== undefined) {
       hasAnyValues = true;
       internalValueResult.volume = this._volume;
     }
@@ -15894,11 +15894,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputRef
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -16033,35 +16033,35 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference ex
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbd | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._cephMonitors) {
+    if (this._cephMonitors !== undefined) {
       hasAnyValues = true;
       internalValueResult.cephMonitors = this._cephMonitors;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._keyring) {
+    if (this._keyring !== undefined) {
       hasAnyValues = true;
       internalValueResult.keyring = this._keyring;
     }
-    if (this._radosUser) {
+    if (this._radosUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.radosUser = this._radosUser;
     }
-    if (this._rbdImage) {
+    if (this._rbdImage !== undefined) {
       hasAnyValues = true;
       internalValueResult.rbdImage = this._rbdImage;
     }
-    if (this._rbdPool) {
+    if (this._rbdPool !== undefined) {
       hasAnyValues = true;
       internalValueResult.rbdPool = this._rbdPool;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -16303,19 +16303,19 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretOutputReference
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecret | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._defaultMode) {
+    if (this._defaultMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultMode = this._defaultMode;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
-    if (this._secretName) {
+    if (this._secretName !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretName = this._secretName;
     }
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -16445,11 +16445,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeOutputRe
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolume | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._volumePath) {
+    if (this._volumePath !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumePath = this._volumePath;
     }
@@ -16915,111 +16915,111 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._activeDeadlineSeconds) {
+    if (this._activeDeadlineSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.activeDeadlineSeconds = this._activeDeadlineSeconds;
     }
-    if (this._automountServiceAccountToken) {
+    if (this._automountServiceAccountToken !== undefined) {
       hasAnyValues = true;
       internalValueResult.automountServiceAccountToken = this._automountServiceAccountToken;
     }
-    if (this._dnsPolicy) {
+    if (this._dnsPolicy !== undefined) {
       hasAnyValues = true;
       internalValueResult.dnsPolicy = this._dnsPolicy;
     }
-    if (this._enableServiceLinks) {
+    if (this._enableServiceLinks !== undefined) {
       hasAnyValues = true;
       internalValueResult.enableServiceLinks = this._enableServiceLinks;
     }
-    if (this._hostIpc) {
+    if (this._hostIpc !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostIpc = this._hostIpc;
     }
-    if (this._hostNetwork) {
+    if (this._hostNetwork !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostNetwork = this._hostNetwork;
     }
-    if (this._hostPid) {
+    if (this._hostPid !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostPid = this._hostPid;
     }
-    if (this._hostname) {
+    if (this._hostname !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostname = this._hostname;
     }
-    if (this._nodeName) {
+    if (this._nodeName !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeName = this._nodeName;
     }
-    if (this._nodeSelector) {
+    if (this._nodeSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeSelector = this._nodeSelector;
     }
-    if (this._priorityClassName) {
+    if (this._priorityClassName !== undefined) {
       hasAnyValues = true;
       internalValueResult.priorityClassName = this._priorityClassName;
     }
-    if (this._restartPolicy) {
+    if (this._restartPolicy !== undefined) {
       hasAnyValues = true;
       internalValueResult.restartPolicy = this._restartPolicy;
     }
-    if (this._serviceAccountName) {
+    if (this._serviceAccountName !== undefined) {
       hasAnyValues = true;
       internalValueResult.serviceAccountName = this._serviceAccountName;
     }
-    if (this._shareProcessNamespace) {
+    if (this._shareProcessNamespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.shareProcessNamespace = this._shareProcessNamespace;
     }
-    if (this._subdomain) {
+    if (this._subdomain !== undefined) {
       hasAnyValues = true;
       internalValueResult.subdomain = this._subdomain;
     }
-    if (this._terminationGracePeriodSeconds) {
+    if (this._terminationGracePeriodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.terminationGracePeriodSeconds = this._terminationGracePeriodSeconds;
     }
-    if (this._affinity?.internalValue) {
+    if (this._affinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.affinity = this._affinity?.internalValue;
     }
-    if (this._container) {
+    if (this._container !== undefined) {
       hasAnyValues = true;
       internalValueResult.container = this._container;
     }
-    if (this._dnsConfig?.internalValue) {
+    if (this._dnsConfig?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.dnsConfig = this._dnsConfig?.internalValue;
     }
-    if (this._hostAliases) {
+    if (this._hostAliases !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostAliases = this._hostAliases;
     }
-    if (this._imagePullSecrets) {
+    if (this._imagePullSecrets !== undefined) {
       hasAnyValues = true;
       internalValueResult.imagePullSecrets = this._imagePullSecrets;
     }
-    if (this._initContainer) {
+    if (this._initContainer !== undefined) {
       hasAnyValues = true;
       internalValueResult.initContainer = this._initContainer;
     }
-    if (this._readinessGate) {
+    if (this._readinessGate !== undefined) {
       hasAnyValues = true;
       internalValueResult.readinessGate = this._readinessGate;
     }
-    if (this._securityContext?.internalValue) {
+    if (this._securityContext?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.securityContext = this._securityContext?.internalValue;
     }
-    if (this._toleration) {
+    if (this._toleration !== undefined) {
       hasAnyValues = true;
       internalValueResult.toleration = this._toleration;
     }
-    if (this._topologySpreadConstraint) {
+    if (this._topologySpreadConstraint !== undefined) {
       hasAnyValues = true;
       internalValueResult.topologySpreadConstraint = this._topologySpreadConstraint;
     }
-    if (this._volume) {
+    if (this._volume !== undefined) {
       hasAnyValues = true;
       internalValueResult.volume = this._volume;
     }
@@ -17571,11 +17571,11 @@ export class CronJobV1SpecJobTemplateSpecTemplateOutputReference extends cdktf.C
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplate | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._metadata?.internalValue) {
+    if (this._metadata?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.metadata = this._metadata?.internalValue;
     }
-    if (this._spec?.internalValue) {
+    if (this._spec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.spec = this._spec?.internalValue;
     }
@@ -17714,39 +17714,39 @@ export class CronJobV1SpecJobTemplateSpecOutputReference extends cdktf.ComplexOb
   public get internalValue(): CronJobV1SpecJobTemplateSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._activeDeadlineSeconds) {
+    if (this._activeDeadlineSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.activeDeadlineSeconds = this._activeDeadlineSeconds;
     }
-    if (this._backoffLimit) {
+    if (this._backoffLimit !== undefined) {
       hasAnyValues = true;
       internalValueResult.backoffLimit = this._backoffLimit;
     }
-    if (this._completionMode) {
+    if (this._completionMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.completionMode = this._completionMode;
     }
-    if (this._completions) {
+    if (this._completions !== undefined) {
       hasAnyValues = true;
       internalValueResult.completions = this._completions;
     }
-    if (this._manualSelector) {
+    if (this._manualSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.manualSelector = this._manualSelector;
     }
-    if (this._parallelism) {
+    if (this._parallelism !== undefined) {
       hasAnyValues = true;
       internalValueResult.parallelism = this._parallelism;
     }
-    if (this._ttlSecondsAfterFinished) {
+    if (this._ttlSecondsAfterFinished !== undefined) {
       hasAnyValues = true;
       internalValueResult.ttlSecondsAfterFinished = this._ttlSecondsAfterFinished;
     }
-    if (this._selector?.internalValue) {
+    if (this._selector?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector?.internalValue;
     }
-    if (this._template?.internalValue) {
+    if (this._template?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.template = this._template?.internalValue;
     }
@@ -17962,11 +17962,11 @@ export class CronJobV1SpecJobTemplateOutputReference extends cdktf.ComplexObject
   public get internalValue(): CronJobV1SpecJobTemplate | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._metadata?.internalValue) {
+    if (this._metadata?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.metadata = this._metadata?.internalValue;
     }
-    if (this._spec?.internalValue) {
+    if (this._spec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.spec = this._spec?.internalValue;
     }
@@ -18088,31 +18088,31 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): CronJobV1Spec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._concurrencyPolicy) {
+    if (this._concurrencyPolicy !== undefined) {
       hasAnyValues = true;
       internalValueResult.concurrencyPolicy = this._concurrencyPolicy;
     }
-    if (this._failedJobsHistoryLimit) {
+    if (this._failedJobsHistoryLimit !== undefined) {
       hasAnyValues = true;
       internalValueResult.failedJobsHistoryLimit = this._failedJobsHistoryLimit;
     }
-    if (this._schedule) {
+    if (this._schedule !== undefined) {
       hasAnyValues = true;
       internalValueResult.schedule = this._schedule;
     }
-    if (this._startingDeadlineSeconds) {
+    if (this._startingDeadlineSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.startingDeadlineSeconds = this._startingDeadlineSeconds;
     }
-    if (this._successfulJobsHistoryLimit) {
+    if (this._successfulJobsHistoryLimit !== undefined) {
       hasAnyValues = true;
       internalValueResult.successfulJobsHistoryLimit = this._successfulJobsHistoryLimit;
     }
-    if (this._suspend) {
+    if (this._suspend !== undefined) {
       hasAnyValues = true;
       internalValueResult.suspend = this._suspend;
     }
-    if (this._jobTemplate?.internalValue) {
+    if (this._jobTemplate?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.jobTemplate = this._jobTemplate?.internalValue;
     }
@@ -18280,7 +18280,7 @@ export class CronJobV1TimeoutsOutputReference extends cdktf.ComplexObject {
   public get internalValue(): CronJobV1Timeouts | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._delete) {
+    if (this._delete !== undefined) {
       hasAnyValues = true;
       internalValueResult.delete = this._delete;
     }

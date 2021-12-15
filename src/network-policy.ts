@@ -82,23 +82,23 @@ export class NetworkPolicyMetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): NetworkPolicyMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -273,11 +273,11 @@ export class NetworkPolicySpecEgressToIpBlockOutputReference extends cdktf.Compl
   public get internalValue(): NetworkPolicySpecEgressToIpBlock | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._cidr) {
+    if (this._cidr !== undefined) {
       hasAnyValues = true;
       internalValueResult.cidr = this._cidr;
     }
-    if (this._except) {
+    if (this._except !== undefined) {
       hasAnyValues = true;
       internalValueResult.except = this._except;
     }
@@ -403,11 +403,11 @@ export class NetworkPolicySpecEgressToNamespaceSelectorOutputReference extends c
   public get internalValue(): NetworkPolicySpecEgressToNamespaceSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabels) {
+    if (this._matchLabels !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -535,11 +535,11 @@ export class NetworkPolicySpecEgressToPodSelectorOutputReference extends cdktf.C
   public get internalValue(): NetworkPolicySpecEgressToPodSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabels) {
+    if (this._matchLabels !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -693,11 +693,11 @@ export class NetworkPolicySpecIngressFromIpBlockOutputReference extends cdktf.Co
   public get internalValue(): NetworkPolicySpecIngressFromIpBlock | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._cidr) {
+    if (this._cidr !== undefined) {
       hasAnyValues = true;
       internalValueResult.cidr = this._cidr;
     }
-    if (this._except) {
+    if (this._except !== undefined) {
       hasAnyValues = true;
       internalValueResult.except = this._except;
     }
@@ -823,11 +823,11 @@ export class NetworkPolicySpecIngressFromNamespaceSelectorOutputReference extend
   public get internalValue(): NetworkPolicySpecIngressFromNamespaceSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabels) {
+    if (this._matchLabels !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -955,11 +955,11 @@ export class NetworkPolicySpecIngressFromPodSelectorOutputReference extends cdkt
   public get internalValue(): NetworkPolicySpecIngressFromPodSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabels) {
+    if (this._matchLabels !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -1172,11 +1172,11 @@ export class NetworkPolicySpecPodSelectorOutputReference extends cdktf.ComplexOb
   public get internalValue(): NetworkPolicySpecPodSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabels) {
+    if (this._matchLabels !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -1285,19 +1285,19 @@ export class NetworkPolicySpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): NetworkPolicySpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._policyTypes) {
+    if (this._policyTypes !== undefined) {
       hasAnyValues = true;
       internalValueResult.policyTypes = this._policyTypes;
     }
-    if (this._egress) {
+    if (this._egress !== undefined) {
       hasAnyValues = true;
       internalValueResult.egress = this._egress;
     }
-    if (this._ingress) {
+    if (this._ingress !== undefined) {
       hasAnyValues = true;
       internalValueResult.ingress = this._ingress;
     }
-    if (this._podSelector?.internalValue) {
+    if (this._podSelector?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.podSelector = this._podSelector?.internalValue;
     }

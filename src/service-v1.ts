@@ -122,23 +122,23 @@ export class ServiceV1MetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ServiceV1Metadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -404,51 +404,51 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ServiceV1Spec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._clusterIp) {
+    if (this._clusterIp !== undefined) {
       hasAnyValues = true;
       internalValueResult.clusterIp = this._clusterIp;
     }
-    if (this._externalIps) {
+    if (this._externalIps !== undefined) {
       hasAnyValues = true;
       internalValueResult.externalIps = this._externalIps;
     }
-    if (this._externalName) {
+    if (this._externalName !== undefined) {
       hasAnyValues = true;
       internalValueResult.externalName = this._externalName;
     }
-    if (this._externalTrafficPolicy) {
+    if (this._externalTrafficPolicy !== undefined) {
       hasAnyValues = true;
       internalValueResult.externalTrafficPolicy = this._externalTrafficPolicy;
     }
-    if (this._healthCheckNodePort) {
+    if (this._healthCheckNodePort !== undefined) {
       hasAnyValues = true;
       internalValueResult.healthCheckNodePort = this._healthCheckNodePort;
     }
-    if (this._loadBalancerIp) {
+    if (this._loadBalancerIp !== undefined) {
       hasAnyValues = true;
       internalValueResult.loadBalancerIp = this._loadBalancerIp;
     }
-    if (this._loadBalancerSourceRanges) {
+    if (this._loadBalancerSourceRanges !== undefined) {
       hasAnyValues = true;
       internalValueResult.loadBalancerSourceRanges = this._loadBalancerSourceRanges;
     }
-    if (this._publishNotReadyAddresses) {
+    if (this._publishNotReadyAddresses !== undefined) {
       hasAnyValues = true;
       internalValueResult.publishNotReadyAddresses = this._publishNotReadyAddresses;
     }
-    if (this._selector) {
+    if (this._selector !== undefined) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector;
     }
-    if (this._sessionAffinity) {
+    if (this._sessionAffinity !== undefined) {
       hasAnyValues = true;
       internalValueResult.sessionAffinity = this._sessionAffinity;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
@@ -714,7 +714,7 @@ export class ServiceV1TimeoutsOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ServiceV1Timeouts | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._create) {
+    if (this._create !== undefined) {
       hasAnyValues = true;
       internalValueResult.create = this._create;
     }

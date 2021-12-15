@@ -94,23 +94,23 @@ export class PersistentVolumeClaimMetadataOutputReference extends cdktf.ComplexO
   public get internalValue(): PersistentVolumeClaimMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -259,11 +259,11 @@ export class PersistentVolumeClaimSpecResourcesOutputReference extends cdktf.Com
   public get internalValue(): PersistentVolumeClaimSpecResources | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._limits) {
+    if (this._limits !== undefined) {
       hasAnyValues = true;
       internalValueResult.limits = this._limits;
     }
-    if (this._requests) {
+    if (this._requests !== undefined) {
       hasAnyValues = true;
       internalValueResult.requests = this._requests;
     }
@@ -391,11 +391,11 @@ export class PersistentVolumeClaimSpecSelectorOutputReference extends cdktf.Comp
   public get internalValue(): PersistentVolumeClaimSpecSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabels) {
+    if (this._matchLabels !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -511,23 +511,23 @@ export class PersistentVolumeClaimSpecOutputReference extends cdktf.ComplexObjec
   public get internalValue(): PersistentVolumeClaimSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._accessModes) {
+    if (this._accessModes !== undefined) {
       hasAnyValues = true;
       internalValueResult.accessModes = this._accessModes;
     }
-    if (this._storageClassName) {
+    if (this._storageClassName !== undefined) {
       hasAnyValues = true;
       internalValueResult.storageClassName = this._storageClassName;
     }
-    if (this._volumeName) {
+    if (this._volumeName !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeName = this._volumeName;
     }
-    if (this._resources?.internalValue) {
+    if (this._resources?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.resources = this._resources?.internalValue;
     }
-    if (this._selector?.internalValue) {
+    if (this._selector?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector?.internalValue;
     }
@@ -659,7 +659,7 @@ export class PersistentVolumeClaimTimeoutsOutputReference extends cdktf.ComplexO
   public get internalValue(): PersistentVolumeClaimTimeouts | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._create) {
+    if (this._create !== undefined) {
       hasAnyValues = true;
       internalValueResult.create = this._create;
     }

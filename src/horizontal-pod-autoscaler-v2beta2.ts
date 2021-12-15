@@ -82,23 +82,23 @@ export class HorizontalPodAutoscalerV2Beta2MetadataOutputReference extends cdktf
   public get internalValue(): HorizontalPodAutoscalerV2Beta2Metadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -379,11 +379,11 @@ export class HorizontalPodAutoscalerV2Beta2SpecBehaviorOutputReference extends c
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecBehavior | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._scaleDown) {
+    if (this._scaleDown !== undefined) {
       hasAnyValues = true;
       internalValueResult.scaleDown = this._scaleDown;
     }
-    if (this._scaleUp) {
+    if (this._scaleUp !== undefined) {
       hasAnyValues = true;
       internalValueResult.scaleUp = this._scaleUp;
     }
@@ -537,11 +537,11 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetricOutputReferen
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricExternalMetric | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._selector) {
+    if (this._selector !== undefined) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector;
     }
@@ -646,19 +646,19 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricExternalTargetOutputReferen
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricExternalTarget | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._averageUtilization) {
+    if (this._averageUtilization !== undefined) {
       hasAnyValues = true;
       internalValueResult.averageUtilization = this._averageUtilization;
     }
-    if (this._averageValue) {
+    if (this._averageValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.averageValue = this._averageValue;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._value) {
+    if (this._value !== undefined) {
       hasAnyValues = true;
       internalValueResult.value = this._value;
     }
@@ -784,11 +784,11 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricExternalOutputReference ext
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricExternal | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._metric?.internalValue) {
+    if (this._metric?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.metric = this._metric?.internalValue;
     }
-    if (this._target?.internalValue) {
+    if (this._target?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.target = this._target?.internalValue;
     }
@@ -885,15 +885,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObjectOutput
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricObjectDescribedObject | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._kind) {
+    if (this._kind !== undefined) {
       hasAnyValues = true;
       internalValueResult.kind = this._kind;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -1054,11 +1054,11 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetricOutputReference
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricObjectMetric | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._selector) {
+    if (this._selector !== undefined) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector;
     }
@@ -1163,19 +1163,19 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectTargetOutputReference
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricObjectTarget | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._averageUtilization) {
+    if (this._averageUtilization !== undefined) {
       hasAnyValues = true;
       internalValueResult.averageUtilization = this._averageUtilization;
     }
-    if (this._averageValue) {
+    if (this._averageValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.averageValue = this._averageValue;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._value) {
+    if (this._value !== undefined) {
       hasAnyValues = true;
       internalValueResult.value = this._value;
     }
@@ -1308,15 +1308,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricObjectOutputReference exten
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricObject | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._describedObject?.internalValue) {
+    if (this._describedObject?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.describedObject = this._describedObject?.internalValue;
     }
-    if (this._metric?.internalValue) {
+    if (this._metric?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.metric = this._metric?.internalValue;
     }
-    if (this._target?.internalValue) {
+    if (this._target?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.target = this._target?.internalValue;
     }
@@ -1480,11 +1480,11 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetricOutputReference e
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricPodsMetric | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._selector) {
+    if (this._selector !== undefined) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector;
     }
@@ -1589,19 +1589,19 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricPodsTargetOutputReference e
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricPodsTarget | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._averageUtilization) {
+    if (this._averageUtilization !== undefined) {
       hasAnyValues = true;
       internalValueResult.averageUtilization = this._averageUtilization;
     }
-    if (this._averageValue) {
+    if (this._averageValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.averageValue = this._averageValue;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._value) {
+    if (this._value !== undefined) {
       hasAnyValues = true;
       internalValueResult.value = this._value;
     }
@@ -1727,11 +1727,11 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricPodsOutputReference extends
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricPods | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._metric?.internalValue) {
+    if (this._metric?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.metric = this._metric?.internalValue;
     }
-    if (this._target?.internalValue) {
+    if (this._target?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.target = this._target?.internalValue;
     }
@@ -1835,19 +1835,19 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricResourceTargetOutputReferen
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricResourceTarget | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._averageUtilization) {
+    if (this._averageUtilization !== undefined) {
       hasAnyValues = true;
       internalValueResult.averageUtilization = this._averageUtilization;
     }
-    if (this._averageValue) {
+    if (this._averageValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.averageValue = this._averageValue;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._value) {
+    if (this._value !== undefined) {
       hasAnyValues = true;
       internalValueResult.value = this._value;
     }
@@ -1973,11 +1973,11 @@ export class HorizontalPodAutoscalerV2Beta2SpecMetricResourceOutputReference ext
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecMetricResource | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._target?.internalValue) {
+    if (this._target?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.target = this._target?.internalValue;
     }
@@ -2121,15 +2121,15 @@ export class HorizontalPodAutoscalerV2Beta2SpecScaleTargetRefOutputReference ext
   public get internalValue(): HorizontalPodAutoscalerV2Beta2SpecScaleTargetRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._kind) {
+    if (this._kind !== undefined) {
       hasAnyValues = true;
       internalValueResult.kind = this._kind;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -2262,27 +2262,27 @@ export class HorizontalPodAutoscalerV2Beta2SpecOutputReference extends cdktf.Com
   public get internalValue(): HorizontalPodAutoscalerV2Beta2Spec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._maxReplicas) {
+    if (this._maxReplicas !== undefined) {
       hasAnyValues = true;
       internalValueResult.maxReplicas = this._maxReplicas;
     }
-    if (this._minReplicas) {
+    if (this._minReplicas !== undefined) {
       hasAnyValues = true;
       internalValueResult.minReplicas = this._minReplicas;
     }
-    if (this._targetCpuUtilizationPercentage) {
+    if (this._targetCpuUtilizationPercentage !== undefined) {
       hasAnyValues = true;
       internalValueResult.targetCpuUtilizationPercentage = this._targetCpuUtilizationPercentage;
     }
-    if (this._behavior?.internalValue) {
+    if (this._behavior?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.behavior = this._behavior?.internalValue;
     }
-    if (this._metric) {
+    if (this._metric !== undefined) {
       hasAnyValues = true;
       internalValueResult.metric = this._metric;
     }
-    if (this._scaleTargetRef?.internalValue) {
+    if (this._scaleTargetRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.scaleTargetRef = this._scaleTargetRef?.internalValue;
     }

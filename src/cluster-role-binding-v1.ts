@@ -74,15 +74,15 @@ export class ClusterRoleBindingV1MetadataOutputReference extends cdktf.ComplexOb
   public get internalValue(): ClusterRoleBindingV1Metadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -202,15 +202,15 @@ export class ClusterRoleBindingV1RoleRefOutputReference extends cdktf.ComplexObj
   public get internalValue(): ClusterRoleBindingV1RoleRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiGroup) {
+    if (this._apiGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiGroup = this._apiGroup;
     }
-    if (this._kind) {
+    if (this._kind !== undefined) {
       hasAnyValues = true;
       internalValueResult.kind = this._kind;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }

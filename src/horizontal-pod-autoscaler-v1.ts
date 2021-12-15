@@ -82,23 +82,23 @@ export class HorizontalPodAutoscalerV1MetadataOutputReference extends cdktf.Comp
   public get internalValue(): HorizontalPodAutoscalerV1Metadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -254,15 +254,15 @@ export class HorizontalPodAutoscalerV1SpecScaleTargetRefOutputReference extends 
   public get internalValue(): HorizontalPodAutoscalerV1SpecScaleTargetRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._kind) {
+    if (this._kind !== undefined) {
       hasAnyValues = true;
       internalValueResult.kind = this._kind;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -381,19 +381,19 @@ export class HorizontalPodAutoscalerV1SpecOutputReference extends cdktf.ComplexO
   public get internalValue(): HorizontalPodAutoscalerV1Spec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._maxReplicas) {
+    if (this._maxReplicas !== undefined) {
       hasAnyValues = true;
       internalValueResult.maxReplicas = this._maxReplicas;
     }
-    if (this._minReplicas) {
+    if (this._minReplicas !== undefined) {
       hasAnyValues = true;
       internalValueResult.minReplicas = this._minReplicas;
     }
-    if (this._targetCpuUtilizationPercentage) {
+    if (this._targetCpuUtilizationPercentage !== undefined) {
       hasAnyValues = true;
       internalValueResult.targetCpuUtilizationPercentage = this._targetCpuUtilizationPercentage;
     }
-    if (this._scaleTargetRef?.internalValue) {
+    if (this._scaleTargetRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.scaleTargetRef = this._scaleTargetRef?.internalValue;
     }

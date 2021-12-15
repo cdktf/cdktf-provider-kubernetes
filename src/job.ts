@@ -92,23 +92,23 @@ export class JobMetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): JobMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -290,11 +290,11 @@ export class JobSpecSelectorOutputReference extends cdktf.ComplexObject {
   public get internalValue(): JobSpecSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabels) {
+    if (this._matchLabels !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -403,19 +403,19 @@ export class JobSpecTemplateMetadataOutputReference extends cdktf.ComplexObject 
   public get internalValue(): JobSpecTemplateMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -572,7 +572,7 @@ export class JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgn
   public get internalValue(): JobSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -719,7 +719,7 @@ export class JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgno
   public get internalValue(): JobSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nodeSelectorTerm) {
+    if (this._nodeSelectorTerm !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeSelectorTerm = this._nodeSelectorTerm;
     }
@@ -795,11 +795,11 @@ export class JobSpecTemplateSpecAffinityNodeAffinityOutputReference extends cdkt
   public get internalValue(): JobSpecTemplateSpecAffinityNodeAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+    if (this._preferredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue;
     }
@@ -959,15 +959,15 @@ export class JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgno
   public get internalValue(): JobSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._namespaces) {
+    if (this._namespaces !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespaces = this._namespaces;
     }
-    if (this._topologyKey) {
+    if (this._topologyKey !== undefined) {
       hasAnyValues = true;
       internalValueResult.topologyKey = this._topologyKey;
     }
-    if (this._labelSelector) {
+    if (this._labelSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.labelSelector = this._labelSelector;
     }
@@ -1197,11 +1197,11 @@ export class JobSpecTemplateSpecAffinityPodAffinityOutputReference extends cdktf
   public get internalValue(): JobSpecTemplateSpecAffinityPodAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+    if (this._preferredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1362,15 +1362,15 @@ export class JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringScheduling
   public get internalValue(): JobSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._namespaces) {
+    if (this._namespaces !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespaces = this._namespaces;
     }
-    if (this._topologyKey) {
+    if (this._topologyKey !== undefined) {
       hasAnyValues = true;
       internalValueResult.topologyKey = this._topologyKey;
     }
-    if (this._labelSelector) {
+    if (this._labelSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.labelSelector = this._labelSelector;
     }
@@ -1600,11 +1600,11 @@ export class JobSpecTemplateSpecAffinityPodAntiAffinityOutputReference extends c
   public get internalValue(): JobSpecTemplateSpecAffinityPodAntiAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+    if (this._preferredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1706,15 +1706,15 @@ export class JobSpecTemplateSpecAffinityOutputReference extends cdktf.ComplexObj
   public get internalValue(): JobSpecTemplateSpecAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nodeAffinity?.internalValue) {
+    if (this._nodeAffinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeAffinity = this._nodeAffinity?.internalValue;
     }
-    if (this._podAffinity?.internalValue) {
+    if (this._podAffinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.podAffinity = this._podAffinity?.internalValue;
     }
-    if (this._podAntiAffinity?.internalValue) {
+    if (this._podAntiAffinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.podAntiAffinity = this._podAntiAffinity?.internalValue;
     }
@@ -1832,15 +1832,15 @@ export class JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputRefere
   public get internalValue(): JobSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -1951,11 +1951,11 @@ export class JobSpecTemplateSpecContainerEnvValueFromFieldRefOutputReference ext
   public get internalValue(): JobSpecTemplateSpecContainerEnvValueFromFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -2051,15 +2051,15 @@ export class JobSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputRefer
   public get internalValue(): JobSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -2174,15 +2174,15 @@ export class JobSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference
   public get internalValue(): JobSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2307,19 +2307,19 @@ export class JobSpecTemplateSpecContainerEnvValueFromOutputReference extends cdk
   public get internalValue(): JobSpecTemplateSpecContainerEnvValueFrom | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._configMapKeyRef?.internalValue) {
+    if (this._configMapKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
     }
-    if (this._fieldRef?.internalValue) {
+    if (this._fieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldRef = this._fieldRef?.internalValue;
     }
-    if (this._resourceFieldRef?.internalValue) {
+    if (this._resourceFieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
     }
-    if (this._secretKeyRef?.internalValue) {
+    if (this._secretKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
     }
@@ -2481,11 +2481,11 @@ export class JobSpecTemplateSpecContainerEnvFromConfigMapRefOutputReference exte
   public get internalValue(): JobSpecTemplateSpecContainerEnvFromConfigMapRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2575,11 +2575,11 @@ export class JobSpecTemplateSpecContainerEnvFromSecretRefOutputReference extends
   public get internalValue(): JobSpecTemplateSpecContainerEnvFromSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2695,7 +2695,7 @@ export class JobSpecTemplateSpecContainerLifecyclePostStartExecOutputReference e
   public get internalValue(): JobSpecTemplateSpecContainerLifecyclePostStartExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -2817,23 +2817,23 @@ export class JobSpecTemplateSpecContainerLifecyclePostStartHttpGetOutputReferenc
   public get internalValue(): JobSpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -3026,7 +3026,7 @@ export class JobSpecTemplateSpecContainerLifecyclePreStopExecOutputReference ext
   public get internalValue(): JobSpecTemplateSpecContainerLifecyclePreStopExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -3148,23 +3148,23 @@ export class JobSpecTemplateSpecContainerLifecyclePreStopHttpGetOutputReference 
   public get internalValue(): JobSpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -3364,11 +3364,11 @@ export class JobSpecTemplateSpecContainerLifecycleOutputReference extends cdktf.
   public get internalValue(): JobSpecTemplateSpecContainerLifecycle | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._postStart) {
+    if (this._postStart !== undefined) {
       hasAnyValues = true;
       internalValueResult.postStart = this._postStart;
     }
-    if (this._preStop) {
+    if (this._preStop !== undefined) {
       hasAnyValues = true;
       internalValueResult.preStop = this._preStop;
     }
@@ -3456,7 +3456,7 @@ export class JobSpecTemplateSpecContainerLivenessProbeExecOutputReference extend
   public get internalValue(): JobSpecTemplateSpecContainerLivenessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -3578,23 +3578,23 @@ export class JobSpecTemplateSpecContainerLivenessProbeHttpGetOutputReference ext
   public get internalValue(): JobSpecTemplateSpecContainerLivenessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -3803,35 +3803,35 @@ export class JobSpecTemplateSpecContainerLivenessProbeOutputReference extends cd
   public get internalValue(): JobSpecTemplateSpecContainerLivenessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -4073,7 +4073,7 @@ export class JobSpecTemplateSpecContainerReadinessProbeExecOutputReference exten
   public get internalValue(): JobSpecTemplateSpecContainerReadinessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -4195,23 +4195,23 @@ export class JobSpecTemplateSpecContainerReadinessProbeHttpGetOutputReference ex
   public get internalValue(): JobSpecTemplateSpecContainerReadinessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -4420,35 +4420,35 @@ export class JobSpecTemplateSpecContainerReadinessProbeOutputReference extends c
   public get internalValue(): JobSpecTemplateSpecContainerReadinessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -4650,11 +4650,11 @@ export class JobSpecTemplateSpecContainerResourcesOutputReference extends cdktf.
   public get internalValue(): JobSpecTemplateSpecContainerResources | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._limits) {
+    if (this._limits !== undefined) {
       hasAnyValues = true;
       internalValueResult.limits = this._limits;
     }
-    if (this._requests) {
+    if (this._requests !== undefined) {
       hasAnyValues = true;
       internalValueResult.requests = this._requests;
     }
@@ -4749,11 +4749,11 @@ export class JobSpecTemplateSpecContainerSecurityContextCapabilitiesOutputRefere
   public get internalValue(): JobSpecTemplateSpecContainerSecurityContextCapabilities | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._add) {
+    if (this._add !== undefined) {
       hasAnyValues = true;
       internalValueResult.add = this._add;
     }
-    if (this._drop) {
+    if (this._drop !== undefined) {
       hasAnyValues = true;
       internalValueResult.drop = this._drop;
     }
@@ -4860,19 +4860,19 @@ export class JobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputRefe
   public get internalValue(): JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -5043,35 +5043,35 @@ export class JobSpecTemplateSpecContainerSecurityContextOutputReference extends 
   public get internalValue(): JobSpecTemplateSpecContainerSecurityContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._allowPrivilegeEscalation) {
+    if (this._allowPrivilegeEscalation !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
     }
-    if (this._privileged) {
+    if (this._privileged !== undefined) {
       hasAnyValues = true;
       internalValueResult.privileged = this._privileged;
     }
-    if (this._readOnlyRootFilesystem) {
+    if (this._readOnlyRootFilesystem !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup;
     }
-    if (this._runAsNonRoot) {
+    if (this._runAsNonRoot !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsNonRoot = this._runAsNonRoot;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._capabilities?.internalValue) {
+    if (this._capabilities?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.capabilities = this._capabilities?.internalValue;
     }
-    if (this._seLinuxOptions?.internalValue) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -5265,7 +5265,7 @@ export class JobSpecTemplateSpecContainerStartupProbeExecOutputReference extends
   public get internalValue(): JobSpecTemplateSpecContainerStartupProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -5387,23 +5387,23 @@ export class JobSpecTemplateSpecContainerStartupProbeHttpGetOutputReference exte
   public get internalValue(): JobSpecTemplateSpecContainerStartupProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -5612,35 +5612,35 @@ export class JobSpecTemplateSpecContainerStartupProbeOutputReference extends cdk
   public get internalValue(): JobSpecTemplateSpecContainerStartupProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -6081,15 +6081,15 @@ export class JobSpecTemplateSpecDnsConfigOutputReference extends cdktf.ComplexOb
   public get internalValue(): JobSpecTemplateSpecDnsConfig | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nameservers) {
+    if (this._nameservers !== undefined) {
       hasAnyValues = true;
       internalValueResult.nameservers = this._nameservers;
     }
-    if (this._searches) {
+    if (this._searches !== undefined) {
       hasAnyValues = true;
       internalValueResult.searches = this._searches;
     }
-    if (this._option) {
+    if (this._option !== undefined) {
       hasAnyValues = true;
       internalValueResult.option = this._option;
     }
@@ -6253,15 +6253,15 @@ export class JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputRe
   public get internalValue(): JobSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -6372,11 +6372,11 @@ export class JobSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference
   public get internalValue(): JobSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -6472,15 +6472,15 @@ export class JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputR
   public get internalValue(): JobSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -6595,15 +6595,15 @@ export class JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputRefer
   public get internalValue(): JobSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -6728,19 +6728,19 @@ export class JobSpecTemplateSpecInitContainerEnvValueFromOutputReference extends
   public get internalValue(): JobSpecTemplateSpecInitContainerEnvValueFrom | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._configMapKeyRef?.internalValue) {
+    if (this._configMapKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
     }
-    if (this._fieldRef?.internalValue) {
+    if (this._fieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldRef = this._fieldRef?.internalValue;
     }
-    if (this._resourceFieldRef?.internalValue) {
+    if (this._resourceFieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
     }
-    if (this._secretKeyRef?.internalValue) {
+    if (this._secretKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
     }
@@ -6902,11 +6902,11 @@ export class JobSpecTemplateSpecInitContainerEnvFromConfigMapRefOutputReference 
   public get internalValue(): JobSpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -6996,11 +6996,11 @@ export class JobSpecTemplateSpecInitContainerEnvFromSecretRefOutputReference ext
   public get internalValue(): JobSpecTemplateSpecInitContainerEnvFromSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -7116,7 +7116,7 @@ export class JobSpecTemplateSpecInitContainerLifecyclePostStartExecOutputReferen
   public get internalValue(): JobSpecTemplateSpecInitContainerLifecyclePostStartExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -7238,23 +7238,23 @@ export class JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGetOutputRefe
   public get internalValue(): JobSpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -7447,7 +7447,7 @@ export class JobSpecTemplateSpecInitContainerLifecyclePreStopExecOutputReference
   public get internalValue(): JobSpecTemplateSpecInitContainerLifecyclePreStopExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -7569,23 +7569,23 @@ export class JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutputRefere
   public get internalValue(): JobSpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -7785,11 +7785,11 @@ export class JobSpecTemplateSpecInitContainerLifecycleOutputReference extends cd
   public get internalValue(): JobSpecTemplateSpecInitContainerLifecycle | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._postStart) {
+    if (this._postStart !== undefined) {
       hasAnyValues = true;
       internalValueResult.postStart = this._postStart;
     }
-    if (this._preStop) {
+    if (this._preStop !== undefined) {
       hasAnyValues = true;
       internalValueResult.preStop = this._preStop;
     }
@@ -7877,7 +7877,7 @@ export class JobSpecTemplateSpecInitContainerLivenessProbeExecOutputReference ex
   public get internalValue(): JobSpecTemplateSpecInitContainerLivenessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -7999,23 +7999,23 @@ export class JobSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference
   public get internalValue(): JobSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -8224,35 +8224,35 @@ export class JobSpecTemplateSpecInitContainerLivenessProbeOutputReference extend
   public get internalValue(): JobSpecTemplateSpecInitContainerLivenessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -8494,7 +8494,7 @@ export class JobSpecTemplateSpecInitContainerReadinessProbeExecOutputReference e
   public get internalValue(): JobSpecTemplateSpecInitContainerReadinessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -8616,23 +8616,23 @@ export class JobSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReferenc
   public get internalValue(): JobSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -8841,35 +8841,35 @@ export class JobSpecTemplateSpecInitContainerReadinessProbeOutputReference exten
   public get internalValue(): JobSpecTemplateSpecInitContainerReadinessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -9071,11 +9071,11 @@ export class JobSpecTemplateSpecInitContainerResourcesOutputReference extends cd
   public get internalValue(): JobSpecTemplateSpecInitContainerResources | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._limits) {
+    if (this._limits !== undefined) {
       hasAnyValues = true;
       internalValueResult.limits = this._limits;
     }
-    if (this._requests) {
+    if (this._requests !== undefined) {
       hasAnyValues = true;
       internalValueResult.requests = this._requests;
     }
@@ -9170,11 +9170,11 @@ export class JobSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputRe
   public get internalValue(): JobSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._add) {
+    if (this._add !== undefined) {
       hasAnyValues = true;
       internalValueResult.add = this._add;
     }
-    if (this._drop) {
+    if (this._drop !== undefined) {
       hasAnyValues = true;
       internalValueResult.drop = this._drop;
     }
@@ -9281,19 +9281,19 @@ export class JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutput
   public get internalValue(): JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -9464,35 +9464,35 @@ export class JobSpecTemplateSpecInitContainerSecurityContextOutputReference exte
   public get internalValue(): JobSpecTemplateSpecInitContainerSecurityContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._allowPrivilegeEscalation) {
+    if (this._allowPrivilegeEscalation !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
     }
-    if (this._privileged) {
+    if (this._privileged !== undefined) {
       hasAnyValues = true;
       internalValueResult.privileged = this._privileged;
     }
-    if (this._readOnlyRootFilesystem) {
+    if (this._readOnlyRootFilesystem !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup;
     }
-    if (this._runAsNonRoot) {
+    if (this._runAsNonRoot !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsNonRoot = this._runAsNonRoot;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._capabilities?.internalValue) {
+    if (this._capabilities?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.capabilities = this._capabilities?.internalValue;
     }
-    if (this._seLinuxOptions?.internalValue) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -9686,7 +9686,7 @@ export class JobSpecTemplateSpecInitContainerStartupProbeExecOutputReference ext
   public get internalValue(): JobSpecTemplateSpecInitContainerStartupProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -9808,23 +9808,23 @@ export class JobSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference 
   public get internalValue(): JobSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -10033,35 +10033,35 @@ export class JobSpecTemplateSpecInitContainerStartupProbeOutputReference extends
   public get internalValue(): JobSpecTemplateSpecInitContainerStartupProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -10502,19 +10502,19 @@ export class JobSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference ext
   public get internalValue(): JobSpecTemplateSpecSecurityContextSeLinuxOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -10704,31 +10704,31 @@ export class JobSpecTemplateSpecSecurityContextOutputReference extends cdktf.Com
   public get internalValue(): JobSpecTemplateSpecSecurityContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsGroup) {
+    if (this._fsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsGroup = this._fsGroup;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup;
     }
-    if (this._runAsNonRoot) {
+    if (this._runAsNonRoot !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsNonRoot = this._runAsNonRoot;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._supplementalGroups) {
+    if (this._supplementalGroups !== undefined) {
       hasAnyValues = true;
       internalValueResult.supplementalGroups = this._supplementalGroups;
     }
-    if (this._seLinuxOptions?.internalValue) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
-    if (this._sysctl) {
+    if (this._sysctl !== undefined) {
       hasAnyValues = true;
       internalValueResult.sysctl = this._sysctl;
     }
@@ -11073,19 +11073,19 @@ export class JobSpecTemplateSpecVolumeAwsElasticBlockStoreOutputReference extend
   public get internalValue(): JobSpecTemplateSpecVolumeAwsElasticBlockStore | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._partition) {
+    if (this._partition !== undefined) {
       hasAnyValues = true;
       internalValueResult.partition = this._partition;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeId) {
+    if (this._volumeId !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeId = this._volumeId;
     }
@@ -11239,27 +11239,27 @@ export class JobSpecTemplateSpecVolumeAzureDiskOutputReference extends cdktf.Com
   public get internalValue(): JobSpecTemplateSpecVolumeAzureDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._cachingMode) {
+    if (this._cachingMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.cachingMode = this._cachingMode;
     }
-    if (this._dataDiskUri) {
+    if (this._dataDiskUri !== undefined) {
       hasAnyValues = true;
       internalValueResult.dataDiskUri = this._dataDiskUri;
     }
-    if (this._diskName) {
+    if (this._diskName !== undefined) {
       hasAnyValues = true;
       internalValueResult.diskName = this._diskName;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._kind) {
+    if (this._kind !== undefined) {
       hasAnyValues = true;
       internalValueResult.kind = this._kind;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -11429,19 +11429,19 @@ export class JobSpecTemplateSpecVolumeAzureFileOutputReference extends cdktf.Com
   public get internalValue(): JobSpecTemplateSpecVolumeAzureFile | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretName) {
+    if (this._secretName !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretName = this._secretName;
     }
-    if (this._secretNamespace) {
+    if (this._secretNamespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretNamespace = this._secretNamespace;
     }
-    if (this._shareName) {
+    if (this._shareName !== undefined) {
       hasAnyValues = true;
       internalValueResult.shareName = this._shareName;
     }
@@ -11564,11 +11564,11 @@ export class JobSpecTemplateSpecVolumeCephFsSecretRefOutputReference extends cdk
   public get internalValue(): JobSpecTemplateSpecVolumeCephFsSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -11689,27 +11689,27 @@ export class JobSpecTemplateSpecVolumeCephFsOutputReference extends cdktf.Comple
   public get internalValue(): JobSpecTemplateSpecVolumeCephFs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._monitors) {
+    if (this._monitors !== undefined) {
       hasAnyValues = true;
       internalValueResult.monitors = this._monitors;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretFile) {
+    if (this._secretFile !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretFile = this._secretFile;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -11878,15 +11878,15 @@ export class JobSpecTemplateSpecVolumeCinderOutputReference extends cdktf.Comple
   public get internalValue(): JobSpecTemplateSpecVolumeCinder | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeId) {
+    if (this._volumeId !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeId = this._volumeId;
     }
@@ -12041,19 +12041,19 @@ export class JobSpecTemplateSpecVolumeConfigMapOutputReference extends cdktf.Com
   public get internalValue(): JobSpecTemplateSpecVolumeConfigMap | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._defaultMode) {
+    if (this._defaultMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultMode = this._defaultMode;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -12183,11 +12183,11 @@ export class JobSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReferenc
   public get internalValue(): JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12280,11 +12280,11 @@ export class JobSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReferen
   public get internalValue(): JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12377,11 +12377,11 @@ export class JobSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference ext
   public get internalValue(): JobSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12474,11 +12474,11 @@ export class JobSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference exten
   public get internalValue(): JobSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12620,39 +12620,39 @@ export class JobSpecTemplateSpecVolumeCsiOutputReference extends cdktf.ComplexOb
   public get internalValue(): JobSpecTemplateSpecVolumeCsi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._driver) {
+    if (this._driver !== undefined) {
       hasAnyValues = true;
       internalValueResult.driver = this._driver;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeAttributes) {
+    if (this._volumeAttributes !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeAttributes = this._volumeAttributes;
     }
-    if (this._volumeHandle) {
+    if (this._volumeHandle !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeHandle = this._volumeHandle;
     }
-    if (this._controllerExpandSecretRef?.internalValue) {
+    if (this._controllerExpandSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
     }
-    if (this._controllerPublishSecretRef?.internalValue) {
+    if (this._controllerPublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
     }
-    if (this._nodePublishSecretRef?.internalValue) {
+    if (this._nodePublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
     }
-    if (this._nodeStageSecretRef?.internalValue) {
+    if (this._nodeStageSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
     }
@@ -12866,11 +12866,11 @@ export class JobSpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputReference ex
   public get internalValue(): JobSpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -12966,15 +12966,15 @@ export class JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefOutputRefe
   public get internalValue(): JobSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -13119,11 +13119,11 @@ export class JobSpecTemplateSpecVolumeDownwardApiOutputReference extends cdktf.C
   public get internalValue(): JobSpecTemplateSpecVolumeDownwardApi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._defaultMode) {
+    if (this._defaultMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultMode = this._defaultMode;
     }
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -13217,11 +13217,11 @@ export class JobSpecTemplateSpecVolumeEmptyDirOutputReference extends cdktf.Comp
   public get internalValue(): JobSpecTemplateSpecVolumeEmptyDir | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._medium) {
+    if (this._medium !== undefined) {
       hasAnyValues = true;
       internalValueResult.medium = this._medium;
     }
-    if (this._sizeLimit) {
+    if (this._sizeLimit !== undefined) {
       hasAnyValues = true;
       internalValueResult.sizeLimit = this._sizeLimit;
     }
@@ -13328,19 +13328,19 @@ export class JobSpecTemplateSpecVolumeFcOutputReference extends cdktf.ComplexObj
   public get internalValue(): JobSpecTemplateSpecVolumeFc | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._lun) {
+    if (this._lun !== undefined) {
       hasAnyValues = true;
       internalValueResult.lun = this._lun;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._targetWwNs) {
+    if (this._targetWwNs !== undefined) {
       hasAnyValues = true;
       internalValueResult.targetWwNs = this._targetWwNs;
     }
@@ -13463,11 +13463,11 @@ export class JobSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference extends
   public get internalValue(): JobSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -13581,23 +13581,23 @@ export class JobSpecTemplateSpecVolumeFlexVolumeOutputReference extends cdktf.Co
   public get internalValue(): JobSpecTemplateSpecVolumeFlexVolume | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._driver) {
+    if (this._driver !== undefined) {
       hasAnyValues = true;
       internalValueResult.driver = this._driver;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._options) {
+    if (this._options !== undefined) {
       hasAnyValues = true;
       internalValueResult.options = this._options;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -13742,11 +13742,11 @@ export class JobSpecTemplateSpecVolumeFlockerOutputReference extends cdktf.Compl
   public get internalValue(): JobSpecTemplateSpecVolumeFlocker | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._datasetName) {
+    if (this._datasetName !== undefined) {
       hasAnyValues = true;
       internalValueResult.datasetName = this._datasetName;
     }
-    if (this._datasetUuid) {
+    if (this._datasetUuid !== undefined) {
       hasAnyValues = true;
       internalValueResult.datasetUuid = this._datasetUuid;
     }
@@ -13853,19 +13853,19 @@ export class JobSpecTemplateSpecVolumeGcePersistentDiskOutputReference extends c
   public get internalValue(): JobSpecTemplateSpecVolumeGcePersistentDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._partition) {
+    if (this._partition !== undefined) {
       hasAnyValues = true;
       internalValueResult.partition = this._partition;
     }
-    if (this._pdName) {
+    if (this._pdName !== undefined) {
       hasAnyValues = true;
       internalValueResult.pdName = this._pdName;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -13998,15 +13998,15 @@ export class JobSpecTemplateSpecVolumeGitRepoOutputReference extends cdktf.Compl
   public get internalValue(): JobSpecTemplateSpecVolumeGitRepo | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._directory) {
+    if (this._directory !== undefined) {
       hasAnyValues = true;
       internalValueResult.directory = this._directory;
     }
-    if (this._repository) {
+    if (this._repository !== undefined) {
       hasAnyValues = true;
       internalValueResult.repository = this._repository;
     }
-    if (this._revision) {
+    if (this._revision !== undefined) {
       hasAnyValues = true;
       internalValueResult.revision = this._revision;
     }
@@ -14124,15 +14124,15 @@ export class JobSpecTemplateSpecVolumeGlusterfsOutputReference extends cdktf.Com
   public get internalValue(): JobSpecTemplateSpecVolumeGlusterfs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._endpointsName) {
+    if (this._endpointsName !== undefined) {
       hasAnyValues = true;
       internalValueResult.endpointsName = this._endpointsName;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -14237,11 +14237,11 @@ export class JobSpecTemplateSpecVolumeHostPathOutputReference extends cdktf.Comp
   public get internalValue(): JobSpecTemplateSpecVolumeHostPath | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
@@ -14362,27 +14362,27 @@ export class JobSpecTemplateSpecVolumeIscsiOutputReference extends cdktf.Complex
   public get internalValue(): JobSpecTemplateSpecVolumeIscsi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._iqn) {
+    if (this._iqn !== undefined) {
       hasAnyValues = true;
       internalValueResult.iqn = this._iqn;
     }
-    if (this._iscsiInterface) {
+    if (this._iscsiInterface !== undefined) {
       hasAnyValues = true;
       internalValueResult.iscsiInterface = this._iscsiInterface;
     }
-    if (this._lun) {
+    if (this._lun !== undefined) {
       hasAnyValues = true;
       internalValueResult.lun = this._lun;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._targetPortal) {
+    if (this._targetPortal !== undefined) {
       hasAnyValues = true;
       internalValueResult.targetPortal = this._targetPortal;
     }
@@ -14534,7 +14534,7 @@ export class JobSpecTemplateSpecVolumeLocalOutputReference extends cdktf.Complex
   public get internalValue(): JobSpecTemplateSpecVolumeLocal | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
@@ -14616,15 +14616,15 @@ export class JobSpecTemplateSpecVolumeNfsOutputReference extends cdktf.ComplexOb
   public get internalValue(): JobSpecTemplateSpecVolumeNfs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._server) {
+    if (this._server !== undefined) {
       hasAnyValues = true;
       internalValueResult.server = this._server;
     }
@@ -14729,11 +14729,11 @@ export class JobSpecTemplateSpecVolumePersistentVolumeClaimOutputReference exten
   public get internalValue(): JobSpecTemplateSpecVolumePersistentVolumeClaim | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._claimName) {
+    if (this._claimName !== undefined) {
       hasAnyValues = true;
       internalValueResult.claimName = this._claimName;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -14826,11 +14826,11 @@ export class JobSpecTemplateSpecVolumePhotonPersistentDiskOutputReference extend
   public get internalValue(): JobSpecTemplateSpecVolumePhotonPersistentDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._pdId) {
+    if (this._pdId !== undefined) {
       hasAnyValues = true;
       internalValueResult.pdId = this._pdId;
     }
@@ -14986,11 +14986,11 @@ export class JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOu
   public get internalValue(): JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -15086,15 +15086,15 @@ export class JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFi
   public get internalValue(): JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -15232,7 +15232,7 @@ export class JobSpecTemplateSpecVolumeProjectedSourcesDownwardApiOutputReference
   public get internalValue(): JobSpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -15381,15 +15381,15 @@ export class JobSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenOutputR
   public get internalValue(): JobSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._audience) {
+    if (this._audience !== undefined) {
       hasAnyValues = true;
       internalValueResult.audience = this._audience;
     }
-    if (this._expirationSeconds) {
+    if (this._expirationSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.expirationSeconds = this._expirationSeconds;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
@@ -15584,23 +15584,23 @@ export class JobSpecTemplateSpecVolumeQuobyteOutputReference extends cdktf.Compl
   public get internalValue(): JobSpecTemplateSpecVolumeQuobyte | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._group) {
+    if (this._group !== undefined) {
       hasAnyValues = true;
       internalValueResult.group = this._group;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._registry) {
+    if (this._registry !== undefined) {
       hasAnyValues = true;
       internalValueResult.registry = this._registry;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._volume) {
+    if (this._volume !== undefined) {
       hasAnyValues = true;
       internalValueResult.volume = this._volume;
     }
@@ -15741,11 +15741,11 @@ export class JobSpecTemplateSpecVolumeRbdSecretRefOutputReference extends cdktf.
   public get internalValue(): JobSpecTemplateSpecVolumeRbdSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -15880,35 +15880,35 @@ export class JobSpecTemplateSpecVolumeRbdOutputReference extends cdktf.ComplexOb
   public get internalValue(): JobSpecTemplateSpecVolumeRbd | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._cephMonitors) {
+    if (this._cephMonitors !== undefined) {
       hasAnyValues = true;
       internalValueResult.cephMonitors = this._cephMonitors;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._keyring) {
+    if (this._keyring !== undefined) {
       hasAnyValues = true;
       internalValueResult.keyring = this._keyring;
     }
-    if (this._radosUser) {
+    if (this._radosUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.radosUser = this._radosUser;
     }
-    if (this._rbdImage) {
+    if (this._rbdImage !== undefined) {
       hasAnyValues = true;
       internalValueResult.rbdImage = this._rbdImage;
     }
-    if (this._rbdPool) {
+    if (this._rbdPool !== undefined) {
       hasAnyValues = true;
       internalValueResult.rbdPool = this._rbdPool;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -16150,19 +16150,19 @@ export class JobSpecTemplateSpecVolumeSecretOutputReference extends cdktf.Comple
   public get internalValue(): JobSpecTemplateSpecVolumeSecret | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._defaultMode) {
+    if (this._defaultMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultMode = this._defaultMode;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
-    if (this._secretName) {
+    if (this._secretName !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretName = this._secretName;
     }
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -16292,11 +16292,11 @@ export class JobSpecTemplateSpecVolumeVsphereVolumeOutputReference extends cdktf
   public get internalValue(): JobSpecTemplateSpecVolumeVsphereVolume | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._volumePath) {
+    if (this._volumePath !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumePath = this._volumePath;
     }
@@ -16762,111 +16762,111 @@ export class JobSpecTemplateSpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): JobSpecTemplateSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._activeDeadlineSeconds) {
+    if (this._activeDeadlineSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.activeDeadlineSeconds = this._activeDeadlineSeconds;
     }
-    if (this._automountServiceAccountToken) {
+    if (this._automountServiceAccountToken !== undefined) {
       hasAnyValues = true;
       internalValueResult.automountServiceAccountToken = this._automountServiceAccountToken;
     }
-    if (this._dnsPolicy) {
+    if (this._dnsPolicy !== undefined) {
       hasAnyValues = true;
       internalValueResult.dnsPolicy = this._dnsPolicy;
     }
-    if (this._enableServiceLinks) {
+    if (this._enableServiceLinks !== undefined) {
       hasAnyValues = true;
       internalValueResult.enableServiceLinks = this._enableServiceLinks;
     }
-    if (this._hostIpc) {
+    if (this._hostIpc !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostIpc = this._hostIpc;
     }
-    if (this._hostNetwork) {
+    if (this._hostNetwork !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostNetwork = this._hostNetwork;
     }
-    if (this._hostPid) {
+    if (this._hostPid !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostPid = this._hostPid;
     }
-    if (this._hostname) {
+    if (this._hostname !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostname = this._hostname;
     }
-    if (this._nodeName) {
+    if (this._nodeName !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeName = this._nodeName;
     }
-    if (this._nodeSelector) {
+    if (this._nodeSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeSelector = this._nodeSelector;
     }
-    if (this._priorityClassName) {
+    if (this._priorityClassName !== undefined) {
       hasAnyValues = true;
       internalValueResult.priorityClassName = this._priorityClassName;
     }
-    if (this._restartPolicy) {
+    if (this._restartPolicy !== undefined) {
       hasAnyValues = true;
       internalValueResult.restartPolicy = this._restartPolicy;
     }
-    if (this._serviceAccountName) {
+    if (this._serviceAccountName !== undefined) {
       hasAnyValues = true;
       internalValueResult.serviceAccountName = this._serviceAccountName;
     }
-    if (this._shareProcessNamespace) {
+    if (this._shareProcessNamespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.shareProcessNamespace = this._shareProcessNamespace;
     }
-    if (this._subdomain) {
+    if (this._subdomain !== undefined) {
       hasAnyValues = true;
       internalValueResult.subdomain = this._subdomain;
     }
-    if (this._terminationGracePeriodSeconds) {
+    if (this._terminationGracePeriodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.terminationGracePeriodSeconds = this._terminationGracePeriodSeconds;
     }
-    if (this._affinity?.internalValue) {
+    if (this._affinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.affinity = this._affinity?.internalValue;
     }
-    if (this._container) {
+    if (this._container !== undefined) {
       hasAnyValues = true;
       internalValueResult.container = this._container;
     }
-    if (this._dnsConfig?.internalValue) {
+    if (this._dnsConfig?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.dnsConfig = this._dnsConfig?.internalValue;
     }
-    if (this._hostAliases) {
+    if (this._hostAliases !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostAliases = this._hostAliases;
     }
-    if (this._imagePullSecrets) {
+    if (this._imagePullSecrets !== undefined) {
       hasAnyValues = true;
       internalValueResult.imagePullSecrets = this._imagePullSecrets;
     }
-    if (this._initContainer) {
+    if (this._initContainer !== undefined) {
       hasAnyValues = true;
       internalValueResult.initContainer = this._initContainer;
     }
-    if (this._readinessGate) {
+    if (this._readinessGate !== undefined) {
       hasAnyValues = true;
       internalValueResult.readinessGate = this._readinessGate;
     }
-    if (this._securityContext?.internalValue) {
+    if (this._securityContext?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.securityContext = this._securityContext?.internalValue;
     }
-    if (this._toleration) {
+    if (this._toleration !== undefined) {
       hasAnyValues = true;
       internalValueResult.toleration = this._toleration;
     }
-    if (this._topologySpreadConstraint) {
+    if (this._topologySpreadConstraint !== undefined) {
       hasAnyValues = true;
       internalValueResult.topologySpreadConstraint = this._topologySpreadConstraint;
     }
-    if (this._volume) {
+    if (this._volume !== undefined) {
       hasAnyValues = true;
       internalValueResult.volume = this._volume;
     }
@@ -17418,11 +17418,11 @@ export class JobSpecTemplateOutputReference extends cdktf.ComplexObject {
   public get internalValue(): JobSpecTemplate | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._metadata?.internalValue) {
+    if (this._metadata?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.metadata = this._metadata?.internalValue;
     }
-    if (this._spec?.internalValue) {
+    if (this._spec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.spec = this._spec?.internalValue;
     }
@@ -17561,39 +17561,39 @@ export class JobSpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): JobSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._activeDeadlineSeconds) {
+    if (this._activeDeadlineSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.activeDeadlineSeconds = this._activeDeadlineSeconds;
     }
-    if (this._backoffLimit) {
+    if (this._backoffLimit !== undefined) {
       hasAnyValues = true;
       internalValueResult.backoffLimit = this._backoffLimit;
     }
-    if (this._completionMode) {
+    if (this._completionMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.completionMode = this._completionMode;
     }
-    if (this._completions) {
+    if (this._completions !== undefined) {
       hasAnyValues = true;
       internalValueResult.completions = this._completions;
     }
-    if (this._manualSelector) {
+    if (this._manualSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.manualSelector = this._manualSelector;
     }
-    if (this._parallelism) {
+    if (this._parallelism !== undefined) {
       hasAnyValues = true;
       internalValueResult.parallelism = this._parallelism;
     }
-    if (this._ttlSecondsAfterFinished) {
+    if (this._ttlSecondsAfterFinished !== undefined) {
       hasAnyValues = true;
       internalValueResult.ttlSecondsAfterFinished = this._ttlSecondsAfterFinished;
     }
-    if (this._selector?.internalValue) {
+    if (this._selector?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.selector = this._selector?.internalValue;
     }
-    if (this._template?.internalValue) {
+    if (this._template?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.template = this._template?.internalValue;
     }
@@ -17810,15 +17810,15 @@ export class JobTimeoutsOutputReference extends cdktf.ComplexObject {
   public get internalValue(): JobTimeouts | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._create) {
+    if (this._create !== undefined) {
       hasAnyValues = true;
       internalValueResult.create = this._create;
     }
-    if (this._delete) {
+    if (this._delete !== undefined) {
       hasAnyValues = true;
       internalValueResult.delete = this._delete;
     }
-    if (this._update) {
+    if (this._update !== undefined) {
       hasAnyValues = true;
       internalValueResult.update = this._update;
     }

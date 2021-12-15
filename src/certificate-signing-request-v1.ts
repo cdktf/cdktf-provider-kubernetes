@@ -87,19 +87,19 @@ export class CertificateSigningRequestV1MetadataOutputReference extends cdktf.Co
   public get internalValue(): CertificateSigningRequestV1Metadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
@@ -270,15 +270,15 @@ export class CertificateSigningRequestV1SpecOutputReference extends cdktf.Comple
   public get internalValue(): CertificateSigningRequestV1Spec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._request) {
+    if (this._request !== undefined) {
       hasAnyValues = true;
       internalValueResult.request = this._request;
     }
-    if (this._signerName) {
+    if (this._signerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.signerName = this._signerName;
     }
-    if (this._usages) {
+    if (this._usages !== undefined) {
       hasAnyValues = true;
       internalValueResult.usages = this._usages;
     }
@@ -374,7 +374,7 @@ export class CertificateSigningRequestV1TimeoutsOutputReference extends cdktf.Co
   public get internalValue(): CertificateSigningRequestV1Timeouts | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._create) {
+    if (this._create !== undefined) {
       hasAnyValues = true;
       internalValueResult.create = this._create;
     }

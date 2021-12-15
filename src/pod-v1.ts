@@ -88,23 +88,23 @@ export class PodV1MetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1Metadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -279,7 +279,7 @@ export class PodV1SpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuring
   public get internalValue(): PodV1SpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchExpressions) {
+    if (this._matchExpressions !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpressions = this._matchExpressions;
     }
@@ -426,7 +426,7 @@ export class PodV1SpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringE
   public get internalValue(): PodV1SpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nodeSelectorTerm) {
+    if (this._nodeSelectorTerm !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeSelectorTerm = this._nodeSelectorTerm;
     }
@@ -502,11 +502,11 @@ export class PodV1SpecAffinityNodeAffinityOutputReference extends cdktf.ComplexO
   public get internalValue(): PodV1SpecAffinityNodeAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+    if (this._preferredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution?.internalValue;
     }
@@ -666,15 +666,15 @@ export class PodV1SpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringE
   public get internalValue(): PodV1SpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._namespaces) {
+    if (this._namespaces !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespaces = this._namespaces;
     }
-    if (this._topologyKey) {
+    if (this._topologyKey !== undefined) {
       hasAnyValues = true;
       internalValueResult.topologyKey = this._topologyKey;
     }
-    if (this._labelSelector) {
+    if (this._labelSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.labelSelector = this._labelSelector;
     }
@@ -904,11 +904,11 @@ export class PodV1SpecAffinityPodAffinityOutputReference extends cdktf.ComplexOb
   public get internalValue(): PodV1SpecAffinityPodAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+    if (this._preferredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1069,15 +1069,15 @@ export class PodV1SpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDur
   public get internalValue(): PodV1SpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._namespaces) {
+    if (this._namespaces !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespaces = this._namespaces;
     }
-    if (this._topologyKey) {
+    if (this._topologyKey !== undefined) {
       hasAnyValues = true;
       internalValueResult.topologyKey = this._topologyKey;
     }
-    if (this._labelSelector) {
+    if (this._labelSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.labelSelector = this._labelSelector;
     }
@@ -1307,11 +1307,11 @@ export class PodV1SpecAffinityPodAntiAffinityOutputReference extends cdktf.Compl
   public get internalValue(): PodV1SpecAffinityPodAntiAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._preferredDuringSchedulingIgnoredDuringExecution) {
+    if (this._preferredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.preferredDuringSchedulingIgnoredDuringExecution = this._preferredDuringSchedulingIgnoredDuringExecution;
     }
-    if (this._requiredDuringSchedulingIgnoredDuringExecution) {
+    if (this._requiredDuringSchedulingIgnoredDuringExecution !== undefined) {
       hasAnyValues = true;
       internalValueResult.requiredDuringSchedulingIgnoredDuringExecution = this._requiredDuringSchedulingIgnoredDuringExecution;
     }
@@ -1413,15 +1413,15 @@ export class PodV1SpecAffinityOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecAffinity | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nodeAffinity?.internalValue) {
+    if (this._nodeAffinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeAffinity = this._nodeAffinity?.internalValue;
     }
-    if (this._podAffinity?.internalValue) {
+    if (this._podAffinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.podAffinity = this._podAffinity?.internalValue;
     }
-    if (this._podAntiAffinity?.internalValue) {
+    if (this._podAntiAffinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.podAntiAffinity = this._podAntiAffinity?.internalValue;
     }
@@ -1539,15 +1539,15 @@ export class PodV1SpecContainerEnvValueFromConfigMapKeyRefOutputReference extend
   public get internalValue(): PodV1SpecContainerEnvValueFromConfigMapKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -1658,11 +1658,11 @@ export class PodV1SpecContainerEnvValueFromFieldRefOutputReference extends cdktf
   public get internalValue(): PodV1SpecContainerEnvValueFromFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -1758,15 +1758,15 @@ export class PodV1SpecContainerEnvValueFromResourceFieldRefOutputReference exten
   public get internalValue(): PodV1SpecContainerEnvValueFromResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -1881,15 +1881,15 @@ export class PodV1SpecContainerEnvValueFromSecretKeyRefOutputReference extends c
   public get internalValue(): PodV1SpecContainerEnvValueFromSecretKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2014,19 +2014,19 @@ export class PodV1SpecContainerEnvValueFromOutputReference extends cdktf.Complex
   public get internalValue(): PodV1SpecContainerEnvValueFrom | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._configMapKeyRef?.internalValue) {
+    if (this._configMapKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
     }
-    if (this._fieldRef?.internalValue) {
+    if (this._fieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldRef = this._fieldRef?.internalValue;
     }
-    if (this._resourceFieldRef?.internalValue) {
+    if (this._resourceFieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
     }
-    if (this._secretKeyRef?.internalValue) {
+    if (this._secretKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
     }
@@ -2188,11 +2188,11 @@ export class PodV1SpecContainerEnvFromConfigMapRefOutputReference extends cdktf.
   public get internalValue(): PodV1SpecContainerEnvFromConfigMapRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2282,11 +2282,11 @@ export class PodV1SpecContainerEnvFromSecretRefOutputReference extends cdktf.Com
   public get internalValue(): PodV1SpecContainerEnvFromSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -2402,7 +2402,7 @@ export class PodV1SpecContainerLifecyclePostStartExecOutputReference extends cdk
   public get internalValue(): PodV1SpecContainerLifecyclePostStartExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -2524,23 +2524,23 @@ export class PodV1SpecContainerLifecyclePostStartHttpGetOutputReference extends 
   public get internalValue(): PodV1SpecContainerLifecyclePostStartHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -2733,7 +2733,7 @@ export class PodV1SpecContainerLifecyclePreStopExecOutputReference extends cdktf
   public get internalValue(): PodV1SpecContainerLifecyclePreStopExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -2855,23 +2855,23 @@ export class PodV1SpecContainerLifecyclePreStopHttpGetOutputReference extends cd
   public get internalValue(): PodV1SpecContainerLifecyclePreStopHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -3071,11 +3071,11 @@ export class PodV1SpecContainerLifecycleOutputReference extends cdktf.ComplexObj
   public get internalValue(): PodV1SpecContainerLifecycle | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._postStart) {
+    if (this._postStart !== undefined) {
       hasAnyValues = true;
       internalValueResult.postStart = this._postStart;
     }
-    if (this._preStop) {
+    if (this._preStop !== undefined) {
       hasAnyValues = true;
       internalValueResult.preStop = this._preStop;
     }
@@ -3163,7 +3163,7 @@ export class PodV1SpecContainerLivenessProbeExecOutputReference extends cdktf.Co
   public get internalValue(): PodV1SpecContainerLivenessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -3285,23 +3285,23 @@ export class PodV1SpecContainerLivenessProbeHttpGetOutputReference extends cdktf
   public get internalValue(): PodV1SpecContainerLivenessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -3510,35 +3510,35 @@ export class PodV1SpecContainerLivenessProbeOutputReference extends cdktf.Comple
   public get internalValue(): PodV1SpecContainerLivenessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -3780,7 +3780,7 @@ export class PodV1SpecContainerReadinessProbeExecOutputReference extends cdktf.C
   public get internalValue(): PodV1SpecContainerReadinessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -3902,23 +3902,23 @@ export class PodV1SpecContainerReadinessProbeHttpGetOutputReference extends cdkt
   public get internalValue(): PodV1SpecContainerReadinessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -4127,35 +4127,35 @@ export class PodV1SpecContainerReadinessProbeOutputReference extends cdktf.Compl
   public get internalValue(): PodV1SpecContainerReadinessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -4357,11 +4357,11 @@ export class PodV1SpecContainerResourcesOutputReference extends cdktf.ComplexObj
   public get internalValue(): PodV1SpecContainerResources | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._limits) {
+    if (this._limits !== undefined) {
       hasAnyValues = true;
       internalValueResult.limits = this._limits;
     }
-    if (this._requests) {
+    if (this._requests !== undefined) {
       hasAnyValues = true;
       internalValueResult.requests = this._requests;
     }
@@ -4456,11 +4456,11 @@ export class PodV1SpecContainerSecurityContextCapabilitiesOutputReference extend
   public get internalValue(): PodV1SpecContainerSecurityContextCapabilities | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._add) {
+    if (this._add !== undefined) {
       hasAnyValues = true;
       internalValueResult.add = this._add;
     }
-    if (this._drop) {
+    if (this._drop !== undefined) {
       hasAnyValues = true;
       internalValueResult.drop = this._drop;
     }
@@ -4567,19 +4567,19 @@ export class PodV1SpecContainerSecurityContextSeLinuxOptionsOutputReference exte
   public get internalValue(): PodV1SpecContainerSecurityContextSeLinuxOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -4750,35 +4750,35 @@ export class PodV1SpecContainerSecurityContextOutputReference extends cdktf.Comp
   public get internalValue(): PodV1SpecContainerSecurityContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._allowPrivilegeEscalation) {
+    if (this._allowPrivilegeEscalation !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
     }
-    if (this._privileged) {
+    if (this._privileged !== undefined) {
       hasAnyValues = true;
       internalValueResult.privileged = this._privileged;
     }
-    if (this._readOnlyRootFilesystem) {
+    if (this._readOnlyRootFilesystem !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup;
     }
-    if (this._runAsNonRoot) {
+    if (this._runAsNonRoot !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsNonRoot = this._runAsNonRoot;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._capabilities?.internalValue) {
+    if (this._capabilities?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.capabilities = this._capabilities?.internalValue;
     }
-    if (this._seLinuxOptions?.internalValue) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -4972,7 +4972,7 @@ export class PodV1SpecContainerStartupProbeExecOutputReference extends cdktf.Com
   public get internalValue(): PodV1SpecContainerStartupProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -5094,23 +5094,23 @@ export class PodV1SpecContainerStartupProbeHttpGetOutputReference extends cdktf.
   public get internalValue(): PodV1SpecContainerStartupProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -5319,35 +5319,35 @@ export class PodV1SpecContainerStartupProbeOutputReference extends cdktf.Complex
   public get internalValue(): PodV1SpecContainerStartupProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -5788,15 +5788,15 @@ export class PodV1SpecDnsConfigOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecDnsConfig | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nameservers) {
+    if (this._nameservers !== undefined) {
       hasAnyValues = true;
       internalValueResult.nameservers = this._nameservers;
     }
-    if (this._searches) {
+    if (this._searches !== undefined) {
       hasAnyValues = true;
       internalValueResult.searches = this._searches;
     }
-    if (this._option) {
+    if (this._option !== undefined) {
       hasAnyValues = true;
       internalValueResult.option = this._option;
     }
@@ -5960,15 +5960,15 @@ export class PodV1SpecInitContainerEnvValueFromConfigMapKeyRefOutputReference ex
   public get internalValue(): PodV1SpecInitContainerEnvValueFromConfigMapKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -6079,11 +6079,11 @@ export class PodV1SpecInitContainerEnvValueFromFieldRefOutputReference extends c
   public get internalValue(): PodV1SpecInitContainerEnvValueFromFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -6179,15 +6179,15 @@ export class PodV1SpecInitContainerEnvValueFromResourceFieldRefOutputReference e
   public get internalValue(): PodV1SpecInitContainerEnvValueFromResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -6302,15 +6302,15 @@ export class PodV1SpecInitContainerEnvValueFromSecretKeyRefOutputReference exten
   public get internalValue(): PodV1SpecInitContainerEnvValueFromSecretKeyRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._key) {
+    if (this._key !== undefined) {
       hasAnyValues = true;
       internalValueResult.key = this._key;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -6435,19 +6435,19 @@ export class PodV1SpecInitContainerEnvValueFromOutputReference extends cdktf.Com
   public get internalValue(): PodV1SpecInitContainerEnvValueFrom | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._configMapKeyRef?.internalValue) {
+    if (this._configMapKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.configMapKeyRef = this._configMapKeyRef?.internalValue;
     }
-    if (this._fieldRef?.internalValue) {
+    if (this._fieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldRef = this._fieldRef?.internalValue;
     }
-    if (this._resourceFieldRef?.internalValue) {
+    if (this._resourceFieldRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.resourceFieldRef = this._resourceFieldRef?.internalValue;
     }
-    if (this._secretKeyRef?.internalValue) {
+    if (this._secretKeyRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretKeyRef = this._secretKeyRef?.internalValue;
     }
@@ -6609,11 +6609,11 @@ export class PodV1SpecInitContainerEnvFromConfigMapRefOutputReference extends cd
   public get internalValue(): PodV1SpecInitContainerEnvFromConfigMapRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -6703,11 +6703,11 @@ export class PodV1SpecInitContainerEnvFromSecretRefOutputReference extends cdktf
   public get internalValue(): PodV1SpecInitContainerEnvFromSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
@@ -6823,7 +6823,7 @@ export class PodV1SpecInitContainerLifecyclePostStartExecOutputReference extends
   public get internalValue(): PodV1SpecInitContainerLifecyclePostStartExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -6945,23 +6945,23 @@ export class PodV1SpecInitContainerLifecyclePostStartHttpGetOutputReference exte
   public get internalValue(): PodV1SpecInitContainerLifecyclePostStartHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -7154,7 +7154,7 @@ export class PodV1SpecInitContainerLifecyclePreStopExecOutputReference extends c
   public get internalValue(): PodV1SpecInitContainerLifecyclePreStopExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -7276,23 +7276,23 @@ export class PodV1SpecInitContainerLifecyclePreStopHttpGetOutputReference extend
   public get internalValue(): PodV1SpecInitContainerLifecyclePreStopHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -7492,11 +7492,11 @@ export class PodV1SpecInitContainerLifecycleOutputReference extends cdktf.Comple
   public get internalValue(): PodV1SpecInitContainerLifecycle | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._postStart) {
+    if (this._postStart !== undefined) {
       hasAnyValues = true;
       internalValueResult.postStart = this._postStart;
     }
-    if (this._preStop) {
+    if (this._preStop !== undefined) {
       hasAnyValues = true;
       internalValueResult.preStop = this._preStop;
     }
@@ -7584,7 +7584,7 @@ export class PodV1SpecInitContainerLivenessProbeExecOutputReference extends cdkt
   public get internalValue(): PodV1SpecInitContainerLivenessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -7706,23 +7706,23 @@ export class PodV1SpecInitContainerLivenessProbeHttpGetOutputReference extends c
   public get internalValue(): PodV1SpecInitContainerLivenessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -7931,35 +7931,35 @@ export class PodV1SpecInitContainerLivenessProbeOutputReference extends cdktf.Co
   public get internalValue(): PodV1SpecInitContainerLivenessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -8201,7 +8201,7 @@ export class PodV1SpecInitContainerReadinessProbeExecOutputReference extends cdk
   public get internalValue(): PodV1SpecInitContainerReadinessProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -8323,23 +8323,23 @@ export class PodV1SpecInitContainerReadinessProbeHttpGetOutputReference extends 
   public get internalValue(): PodV1SpecInitContainerReadinessProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -8548,35 +8548,35 @@ export class PodV1SpecInitContainerReadinessProbeOutputReference extends cdktf.C
   public get internalValue(): PodV1SpecInitContainerReadinessProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -8778,11 +8778,11 @@ export class PodV1SpecInitContainerResourcesOutputReference extends cdktf.Comple
   public get internalValue(): PodV1SpecInitContainerResources | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._limits) {
+    if (this._limits !== undefined) {
       hasAnyValues = true;
       internalValueResult.limits = this._limits;
     }
-    if (this._requests) {
+    if (this._requests !== undefined) {
       hasAnyValues = true;
       internalValueResult.requests = this._requests;
     }
@@ -8877,11 +8877,11 @@ export class PodV1SpecInitContainerSecurityContextCapabilitiesOutputReference ex
   public get internalValue(): PodV1SpecInitContainerSecurityContextCapabilities | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._add) {
+    if (this._add !== undefined) {
       hasAnyValues = true;
       internalValueResult.add = this._add;
     }
-    if (this._drop) {
+    if (this._drop !== undefined) {
       hasAnyValues = true;
       internalValueResult.drop = this._drop;
     }
@@ -8988,19 +8988,19 @@ export class PodV1SpecInitContainerSecurityContextSeLinuxOptionsOutputReference 
   public get internalValue(): PodV1SpecInitContainerSecurityContextSeLinuxOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -9171,35 +9171,35 @@ export class PodV1SpecInitContainerSecurityContextOutputReference extends cdktf.
   public get internalValue(): PodV1SpecInitContainerSecurityContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._allowPrivilegeEscalation) {
+    if (this._allowPrivilegeEscalation !== undefined) {
       hasAnyValues = true;
       internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
     }
-    if (this._privileged) {
+    if (this._privileged !== undefined) {
       hasAnyValues = true;
       internalValueResult.privileged = this._privileged;
     }
-    if (this._readOnlyRootFilesystem) {
+    if (this._readOnlyRootFilesystem !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup;
     }
-    if (this._runAsNonRoot) {
+    if (this._runAsNonRoot !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsNonRoot = this._runAsNonRoot;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._capabilities?.internalValue) {
+    if (this._capabilities?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.capabilities = this._capabilities?.internalValue;
     }
-    if (this._seLinuxOptions?.internalValue) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
@@ -9393,7 +9393,7 @@ export class PodV1SpecInitContainerStartupProbeExecOutputReference extends cdktf
   public get internalValue(): PodV1SpecInitContainerStartupProbeExec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
@@ -9515,23 +9515,23 @@ export class PodV1SpecInitContainerStartupProbeHttpGetOutputReference extends cd
   public get internalValue(): PodV1SpecInitContainerStartupProbeHttpGet | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._host) {
+    if (this._host !== undefined) {
       hasAnyValues = true;
       internalValueResult.host = this._host;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._port) {
+    if (this._port !== undefined) {
       hasAnyValues = true;
       internalValueResult.port = this._port;
     }
-    if (this._scheme) {
+    if (this._scheme !== undefined) {
       hasAnyValues = true;
       internalValueResult.scheme = this._scheme;
     }
-    if (this._httpHeader) {
+    if (this._httpHeader !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpHeader = this._httpHeader;
     }
@@ -9740,35 +9740,35 @@ export class PodV1SpecInitContainerStartupProbeOutputReference extends cdktf.Com
   public get internalValue(): PodV1SpecInitContainerStartupProbe | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._failureThreshold) {
+    if (this._failureThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureThreshold = this._failureThreshold;
     }
-    if (this._initialDelaySeconds) {
+    if (this._initialDelaySeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
     }
-    if (this._periodSeconds) {
+    if (this._periodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.periodSeconds = this._periodSeconds;
     }
-    if (this._successThreshold) {
+    if (this._successThreshold !== undefined) {
       hasAnyValues = true;
       internalValueResult.successThreshold = this._successThreshold;
     }
-    if (this._timeoutSeconds) {
+    if (this._timeoutSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeoutSeconds = this._timeoutSeconds;
     }
-    if (this._exec?.internalValue) {
+    if (this._exec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
-    if (this._httpGet?.internalValue) {
+    if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
     }
-    if (this._tcpSocket) {
+    if (this._tcpSocket !== undefined) {
       hasAnyValues = true;
       internalValueResult.tcpSocket = this._tcpSocket;
     }
@@ -10209,19 +10209,19 @@ export class PodV1SpecSecurityContextSeLinuxOptionsOutputReference extends cdktf
   public get internalValue(): PodV1SpecSecurityContextSeLinuxOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -10411,31 +10411,31 @@ export class PodV1SpecSecurityContextOutputReference extends cdktf.ComplexObject
   public get internalValue(): PodV1SpecSecurityContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsGroup) {
+    if (this._fsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsGroup = this._fsGroup;
     }
-    if (this._runAsGroup) {
+    if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsGroup = this._runAsGroup;
     }
-    if (this._runAsNonRoot) {
+    if (this._runAsNonRoot !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsNonRoot = this._runAsNonRoot;
     }
-    if (this._runAsUser) {
+    if (this._runAsUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.runAsUser = this._runAsUser;
     }
-    if (this._supplementalGroups) {
+    if (this._supplementalGroups !== undefined) {
       hasAnyValues = true;
       internalValueResult.supplementalGroups = this._supplementalGroups;
     }
-    if (this._seLinuxOptions?.internalValue) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
-    if (this._sysctl) {
+    if (this._sysctl !== undefined) {
       hasAnyValues = true;
       internalValueResult.sysctl = this._sysctl;
     }
@@ -10780,19 +10780,19 @@ export class PodV1SpecVolumeAwsElasticBlockStoreOutputReference extends cdktf.Co
   public get internalValue(): PodV1SpecVolumeAwsElasticBlockStore | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._partition) {
+    if (this._partition !== undefined) {
       hasAnyValues = true;
       internalValueResult.partition = this._partition;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeId) {
+    if (this._volumeId !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeId = this._volumeId;
     }
@@ -10946,27 +10946,27 @@ export class PodV1SpecVolumeAzureDiskOutputReference extends cdktf.ComplexObject
   public get internalValue(): PodV1SpecVolumeAzureDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._cachingMode) {
+    if (this._cachingMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.cachingMode = this._cachingMode;
     }
-    if (this._dataDiskUri) {
+    if (this._dataDiskUri !== undefined) {
       hasAnyValues = true;
       internalValueResult.dataDiskUri = this._dataDiskUri;
     }
-    if (this._diskName) {
+    if (this._diskName !== undefined) {
       hasAnyValues = true;
       internalValueResult.diskName = this._diskName;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._kind) {
+    if (this._kind !== undefined) {
       hasAnyValues = true;
       internalValueResult.kind = this._kind;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -11136,19 +11136,19 @@ export class PodV1SpecVolumeAzureFileOutputReference extends cdktf.ComplexObject
   public get internalValue(): PodV1SpecVolumeAzureFile | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretName) {
+    if (this._secretName !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretName = this._secretName;
     }
-    if (this._secretNamespace) {
+    if (this._secretNamespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretNamespace = this._secretNamespace;
     }
-    if (this._shareName) {
+    if (this._shareName !== undefined) {
       hasAnyValues = true;
       internalValueResult.shareName = this._shareName;
     }
@@ -11271,11 +11271,11 @@ export class PodV1SpecVolumeCephFsSecretRefOutputReference extends cdktf.Complex
   public get internalValue(): PodV1SpecVolumeCephFsSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -11396,27 +11396,27 @@ export class PodV1SpecVolumeCephFsOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecVolumeCephFs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._monitors) {
+    if (this._monitors !== undefined) {
       hasAnyValues = true;
       internalValueResult.monitors = this._monitors;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretFile) {
+    if (this._secretFile !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretFile = this._secretFile;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -11585,15 +11585,15 @@ export class PodV1SpecVolumeCinderOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecVolumeCinder | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeId) {
+    if (this._volumeId !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeId = this._volumeId;
     }
@@ -11748,19 +11748,19 @@ export class PodV1SpecVolumeConfigMapOutputReference extends cdktf.ComplexObject
   public get internalValue(): PodV1SpecVolumeConfigMap | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._defaultMode) {
+    if (this._defaultMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultMode = this._defaultMode;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -11890,11 +11890,11 @@ export class PodV1SpecVolumeCsiControllerExpandSecretRefOutputReference extends 
   public get internalValue(): PodV1SpecVolumeCsiControllerExpandSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -11987,11 +11987,11 @@ export class PodV1SpecVolumeCsiControllerPublishSecretRefOutputReference extends
   public get internalValue(): PodV1SpecVolumeCsiControllerPublishSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12084,11 +12084,11 @@ export class PodV1SpecVolumeCsiNodePublishSecretRefOutputReference extends cdktf
   public get internalValue(): PodV1SpecVolumeCsiNodePublishSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12181,11 +12181,11 @@ export class PodV1SpecVolumeCsiNodeStageSecretRefOutputReference extends cdktf.C
   public get internalValue(): PodV1SpecVolumeCsiNodeStageSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -12327,39 +12327,39 @@ export class PodV1SpecVolumeCsiOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecVolumeCsi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._driver) {
+    if (this._driver !== undefined) {
       hasAnyValues = true;
       internalValueResult.driver = this._driver;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._volumeAttributes) {
+    if (this._volumeAttributes !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeAttributes = this._volumeAttributes;
     }
-    if (this._volumeHandle) {
+    if (this._volumeHandle !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeHandle = this._volumeHandle;
     }
-    if (this._controllerExpandSecretRef?.internalValue) {
+    if (this._controllerExpandSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
     }
-    if (this._controllerPublishSecretRef?.internalValue) {
+    if (this._controllerPublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
     }
-    if (this._nodePublishSecretRef?.internalValue) {
+    if (this._nodePublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
     }
-    if (this._nodeStageSecretRef?.internalValue) {
+    if (this._nodeStageSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
     }
@@ -12573,11 +12573,11 @@ export class PodV1SpecVolumeDownwardApiItemsFieldRefOutputReference extends cdkt
   public get internalValue(): PodV1SpecVolumeDownwardApiItemsFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -12673,15 +12673,15 @@ export class PodV1SpecVolumeDownwardApiItemsResourceFieldRefOutputReference exte
   public get internalValue(): PodV1SpecVolumeDownwardApiItemsResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -12826,11 +12826,11 @@ export class PodV1SpecVolumeDownwardApiOutputReference extends cdktf.ComplexObje
   public get internalValue(): PodV1SpecVolumeDownwardApi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._defaultMode) {
+    if (this._defaultMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultMode = this._defaultMode;
     }
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -12924,11 +12924,11 @@ export class PodV1SpecVolumeEmptyDirOutputReference extends cdktf.ComplexObject 
   public get internalValue(): PodV1SpecVolumeEmptyDir | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._medium) {
+    if (this._medium !== undefined) {
       hasAnyValues = true;
       internalValueResult.medium = this._medium;
     }
-    if (this._sizeLimit) {
+    if (this._sizeLimit !== undefined) {
       hasAnyValues = true;
       internalValueResult.sizeLimit = this._sizeLimit;
     }
@@ -13035,19 +13035,19 @@ export class PodV1SpecVolumeFcOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecVolumeFc | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._lun) {
+    if (this._lun !== undefined) {
       hasAnyValues = true;
       internalValueResult.lun = this._lun;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._targetWwNs) {
+    if (this._targetWwNs !== undefined) {
       hasAnyValues = true;
       internalValueResult.targetWwNs = this._targetWwNs;
     }
@@ -13170,11 +13170,11 @@ export class PodV1SpecVolumeFlexVolumeSecretRefOutputReference extends cdktf.Com
   public get internalValue(): PodV1SpecVolumeFlexVolumeSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -13288,23 +13288,23 @@ export class PodV1SpecVolumeFlexVolumeOutputReference extends cdktf.ComplexObjec
   public get internalValue(): PodV1SpecVolumeFlexVolume | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._driver) {
+    if (this._driver !== undefined) {
       hasAnyValues = true;
       internalValueResult.driver = this._driver;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._options) {
+    if (this._options !== undefined) {
       hasAnyValues = true;
       internalValueResult.options = this._options;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -13449,11 +13449,11 @@ export class PodV1SpecVolumeFlockerOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecVolumeFlocker | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._datasetName) {
+    if (this._datasetName !== undefined) {
       hasAnyValues = true;
       internalValueResult.datasetName = this._datasetName;
     }
-    if (this._datasetUuid) {
+    if (this._datasetUuid !== undefined) {
       hasAnyValues = true;
       internalValueResult.datasetUuid = this._datasetUuid;
     }
@@ -13560,19 +13560,19 @@ export class PodV1SpecVolumeGcePersistentDiskOutputReference extends cdktf.Compl
   public get internalValue(): PodV1SpecVolumeGcePersistentDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._partition) {
+    if (this._partition !== undefined) {
       hasAnyValues = true;
       internalValueResult.partition = this._partition;
     }
-    if (this._pdName) {
+    if (this._pdName !== undefined) {
       hasAnyValues = true;
       internalValueResult.pdName = this._pdName;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -13705,15 +13705,15 @@ export class PodV1SpecVolumeGitRepoOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecVolumeGitRepo | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._directory) {
+    if (this._directory !== undefined) {
       hasAnyValues = true;
       internalValueResult.directory = this._directory;
     }
-    if (this._repository) {
+    if (this._repository !== undefined) {
       hasAnyValues = true;
       internalValueResult.repository = this._repository;
     }
-    if (this._revision) {
+    if (this._revision !== undefined) {
       hasAnyValues = true;
       internalValueResult.revision = this._revision;
     }
@@ -13831,15 +13831,15 @@ export class PodV1SpecVolumeGlusterfsOutputReference extends cdktf.ComplexObject
   public get internalValue(): PodV1SpecVolumeGlusterfs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._endpointsName) {
+    if (this._endpointsName !== undefined) {
       hasAnyValues = true;
       internalValueResult.endpointsName = this._endpointsName;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -13944,11 +13944,11 @@ export class PodV1SpecVolumeHostPathOutputReference extends cdktf.ComplexObject 
   public get internalValue(): PodV1SpecVolumeHostPath | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
@@ -14069,27 +14069,27 @@ export class PodV1SpecVolumeIscsiOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecVolumeIscsi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._iqn) {
+    if (this._iqn !== undefined) {
       hasAnyValues = true;
       internalValueResult.iqn = this._iqn;
     }
-    if (this._iscsiInterface) {
+    if (this._iscsiInterface !== undefined) {
       hasAnyValues = true;
       internalValueResult.iscsiInterface = this._iscsiInterface;
     }
-    if (this._lun) {
+    if (this._lun !== undefined) {
       hasAnyValues = true;
       internalValueResult.lun = this._lun;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._targetPortal) {
+    if (this._targetPortal !== undefined) {
       hasAnyValues = true;
       internalValueResult.targetPortal = this._targetPortal;
     }
@@ -14241,7 +14241,7 @@ export class PodV1SpecVolumeLocalOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecVolumeLocal | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
@@ -14323,15 +14323,15 @@ export class PodV1SpecVolumeNfsOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecVolumeNfs | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._server) {
+    if (this._server !== undefined) {
       hasAnyValues = true;
       internalValueResult.server = this._server;
     }
@@ -14436,11 +14436,11 @@ export class PodV1SpecVolumePersistentVolumeClaimOutputReference extends cdktf.C
   public get internalValue(): PodV1SpecVolumePersistentVolumeClaim | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._claimName) {
+    if (this._claimName !== undefined) {
       hasAnyValues = true;
       internalValueResult.claimName = this._claimName;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
@@ -14533,11 +14533,11 @@ export class PodV1SpecVolumePhotonPersistentDiskOutputReference extends cdktf.Co
   public get internalValue(): PodV1SpecVolumePhotonPersistentDisk | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._pdId) {
+    if (this._pdId !== undefined) {
       hasAnyValues = true;
       internalValueResult.pdId = this._pdId;
     }
@@ -14693,11 +14693,11 @@ export class PodV1SpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputRefere
   public get internalValue(): PodV1SpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._apiVersion) {
+    if (this._apiVersion !== undefined) {
       hasAnyValues = true;
       internalValueResult.apiVersion = this._apiVersion;
     }
-    if (this._fieldPath) {
+    if (this._fieldPath !== undefined) {
       hasAnyValues = true;
       internalValueResult.fieldPath = this._fieldPath;
     }
@@ -14793,15 +14793,15 @@ export class PodV1SpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutp
   public get internalValue(): PodV1SpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._containerName) {
+    if (this._containerName !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerName = this._containerName;
     }
-    if (this._divisor) {
+    if (this._divisor !== undefined) {
       hasAnyValues = true;
       internalValueResult.divisor = this._divisor;
     }
-    if (this._resource) {
+    if (this._resource !== undefined) {
       hasAnyValues = true;
       internalValueResult.resource = this._resource;
     }
@@ -14939,7 +14939,7 @@ export class PodV1SpecVolumeProjectedSourcesDownwardApiOutputReference extends c
   public get internalValue(): PodV1SpecVolumeProjectedSourcesDownwardApi | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -15088,15 +15088,15 @@ export class PodV1SpecVolumeProjectedSourcesServiceAccountTokenOutputReference e
   public get internalValue(): PodV1SpecVolumeProjectedSourcesServiceAccountToken | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._audience) {
+    if (this._audience !== undefined) {
       hasAnyValues = true;
       internalValueResult.audience = this._audience;
     }
-    if (this._expirationSeconds) {
+    if (this._expirationSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.expirationSeconds = this._expirationSeconds;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
@@ -15291,23 +15291,23 @@ export class PodV1SpecVolumeQuobyteOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecVolumeQuobyte | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._group) {
+    if (this._group !== undefined) {
       hasAnyValues = true;
       internalValueResult.group = this._group;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._registry) {
+    if (this._registry !== undefined) {
       hasAnyValues = true;
       internalValueResult.registry = this._registry;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._volume) {
+    if (this._volume !== undefined) {
       hasAnyValues = true;
       internalValueResult.volume = this._volume;
     }
@@ -15448,11 +15448,11 @@ export class PodV1SpecVolumeRbdSecretRefOutputReference extends cdktf.ComplexObj
   public get internalValue(): PodV1SpecVolumeRbdSecretRef | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -15587,35 +15587,35 @@ export class PodV1SpecVolumeRbdOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecVolumeRbd | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._cephMonitors) {
+    if (this._cephMonitors !== undefined) {
       hasAnyValues = true;
       internalValueResult.cephMonitors = this._cephMonitors;
     }
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._keyring) {
+    if (this._keyring !== undefined) {
       hasAnyValues = true;
       internalValueResult.keyring = this._keyring;
     }
-    if (this._radosUser) {
+    if (this._radosUser !== undefined) {
       hasAnyValues = true;
       internalValueResult.radosUser = this._radosUser;
     }
-    if (this._rbdImage) {
+    if (this._rbdImage !== undefined) {
       hasAnyValues = true;
       internalValueResult.rbdImage = this._rbdImage;
     }
-    if (this._rbdPool) {
+    if (this._rbdPool !== undefined) {
       hasAnyValues = true;
       internalValueResult.rbdPool = this._rbdPool;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._secretRef?.internalValue) {
+    if (this._secretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretRef = this._secretRef?.internalValue;
     }
@@ -15857,19 +15857,19 @@ export class PodV1SpecVolumeSecretOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1SpecVolumeSecret | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._defaultMode) {
+    if (this._defaultMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.defaultMode = this._defaultMode;
     }
-    if (this._optional) {
+    if (this._optional !== undefined) {
       hasAnyValues = true;
       internalValueResult.optional = this._optional;
     }
-    if (this._secretName) {
+    if (this._secretName !== undefined) {
       hasAnyValues = true;
       internalValueResult.secretName = this._secretName;
     }
-    if (this._items) {
+    if (this._items !== undefined) {
       hasAnyValues = true;
       internalValueResult.items = this._items;
     }
@@ -15999,11 +15999,11 @@ export class PodV1SpecVolumeVsphereVolumeOutputReference extends cdktf.ComplexOb
   public get internalValue(): PodV1SpecVolumeVsphereVolume | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._fsType) {
+    if (this._fsType !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsType = this._fsType;
     }
-    if (this._volumePath) {
+    if (this._volumePath !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumePath = this._volumePath;
     }
@@ -16469,111 +16469,111 @@ export class PodV1SpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1Spec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._activeDeadlineSeconds) {
+    if (this._activeDeadlineSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.activeDeadlineSeconds = this._activeDeadlineSeconds;
     }
-    if (this._automountServiceAccountToken) {
+    if (this._automountServiceAccountToken !== undefined) {
       hasAnyValues = true;
       internalValueResult.automountServiceAccountToken = this._automountServiceAccountToken;
     }
-    if (this._dnsPolicy) {
+    if (this._dnsPolicy !== undefined) {
       hasAnyValues = true;
       internalValueResult.dnsPolicy = this._dnsPolicy;
     }
-    if (this._enableServiceLinks) {
+    if (this._enableServiceLinks !== undefined) {
       hasAnyValues = true;
       internalValueResult.enableServiceLinks = this._enableServiceLinks;
     }
-    if (this._hostIpc) {
+    if (this._hostIpc !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostIpc = this._hostIpc;
     }
-    if (this._hostNetwork) {
+    if (this._hostNetwork !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostNetwork = this._hostNetwork;
     }
-    if (this._hostPid) {
+    if (this._hostPid !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostPid = this._hostPid;
     }
-    if (this._hostname) {
+    if (this._hostname !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostname = this._hostname;
     }
-    if (this._nodeName) {
+    if (this._nodeName !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeName = this._nodeName;
     }
-    if (this._nodeSelector) {
+    if (this._nodeSelector !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodeSelector = this._nodeSelector;
     }
-    if (this._priorityClassName) {
+    if (this._priorityClassName !== undefined) {
       hasAnyValues = true;
       internalValueResult.priorityClassName = this._priorityClassName;
     }
-    if (this._restartPolicy) {
+    if (this._restartPolicy !== undefined) {
       hasAnyValues = true;
       internalValueResult.restartPolicy = this._restartPolicy;
     }
-    if (this._serviceAccountName) {
+    if (this._serviceAccountName !== undefined) {
       hasAnyValues = true;
       internalValueResult.serviceAccountName = this._serviceAccountName;
     }
-    if (this._shareProcessNamespace) {
+    if (this._shareProcessNamespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.shareProcessNamespace = this._shareProcessNamespace;
     }
-    if (this._subdomain) {
+    if (this._subdomain !== undefined) {
       hasAnyValues = true;
       internalValueResult.subdomain = this._subdomain;
     }
-    if (this._terminationGracePeriodSeconds) {
+    if (this._terminationGracePeriodSeconds !== undefined) {
       hasAnyValues = true;
       internalValueResult.terminationGracePeriodSeconds = this._terminationGracePeriodSeconds;
     }
-    if (this._affinity?.internalValue) {
+    if (this._affinity?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.affinity = this._affinity?.internalValue;
     }
-    if (this._container) {
+    if (this._container !== undefined) {
       hasAnyValues = true;
       internalValueResult.container = this._container;
     }
-    if (this._dnsConfig?.internalValue) {
+    if (this._dnsConfig?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.dnsConfig = this._dnsConfig?.internalValue;
     }
-    if (this._hostAliases) {
+    if (this._hostAliases !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostAliases = this._hostAliases;
     }
-    if (this._imagePullSecrets) {
+    if (this._imagePullSecrets !== undefined) {
       hasAnyValues = true;
       internalValueResult.imagePullSecrets = this._imagePullSecrets;
     }
-    if (this._initContainer) {
+    if (this._initContainer !== undefined) {
       hasAnyValues = true;
       internalValueResult.initContainer = this._initContainer;
     }
-    if (this._readinessGate) {
+    if (this._readinessGate !== undefined) {
       hasAnyValues = true;
       internalValueResult.readinessGate = this._readinessGate;
     }
-    if (this._securityContext?.internalValue) {
+    if (this._securityContext?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.securityContext = this._securityContext?.internalValue;
     }
-    if (this._toleration) {
+    if (this._toleration !== undefined) {
       hasAnyValues = true;
       internalValueResult.toleration = this._toleration;
     }
-    if (this._topologySpreadConstraint) {
+    if (this._topologySpreadConstraint !== undefined) {
       hasAnyValues = true;
       internalValueResult.topologySpreadConstraint = this._topologySpreadConstraint;
     }
-    if (this._volume) {
+    if (this._volume !== undefined) {
       hasAnyValues = true;
       internalValueResult.volume = this._volume;
     }
@@ -17121,11 +17121,11 @@ export class PodV1TimeoutsOutputReference extends cdktf.ComplexObject {
   public get internalValue(): PodV1Timeouts | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._create) {
+    if (this._create !== undefined) {
       hasAnyValues = true;
       internalValueResult.create = this._create;
     }
-    if (this._delete) {
+    if (this._delete !== undefined) {
       hasAnyValues = true;
       internalValueResult.delete = this._delete;
     }

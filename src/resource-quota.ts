@@ -88,23 +88,23 @@ export class ResourceQuotaMetadataOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ResourceQuotaMetadata | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._annotations) {
+    if (this._annotations !== undefined) {
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
-    if (this._generateName) {
+    if (this._generateName !== undefined) {
       hasAnyValues = true;
       internalValueResult.generateName = this._generateName;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace) {
+    if (this._namespace !== undefined) {
       hasAnyValues = true;
       internalValueResult.namespace = this._namespace;
     }
@@ -279,7 +279,7 @@ export class ResourceQuotaSpecScopeSelectorOutputReference extends cdktf.Complex
   public get internalValue(): ResourceQuotaSpecScopeSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchExpression) {
+    if (this._matchExpression !== undefined) {
       hasAnyValues = true;
       internalValueResult.matchExpression = this._matchExpression;
     }
@@ -362,15 +362,15 @@ export class ResourceQuotaSpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ResourceQuotaSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._hard) {
+    if (this._hard !== undefined) {
       hasAnyValues = true;
       internalValueResult.hard = this._hard;
     }
-    if (this._scopes) {
+    if (this._scopes !== undefined) {
       hasAnyValues = true;
       internalValueResult.scopes = this._scopes;
     }
-    if (this._scopeSelector?.internalValue) {
+    if (this._scopeSelector?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.scopeSelector = this._scopeSelector?.internalValue;
     }
@@ -478,11 +478,11 @@ export class ResourceQuotaTimeoutsOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ResourceQuotaTimeouts | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._create) {
+    if (this._create !== undefined) {
       hasAnyValues = true;
       internalValueResult.create = this._create;
     }
-    if (this._update) {
+    if (this._update !== undefined) {
       hasAnyValues = true;
       internalValueResult.update = this._update;
     }
