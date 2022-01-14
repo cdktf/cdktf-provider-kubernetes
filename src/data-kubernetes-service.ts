@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/d/service.html
+// https://www.terraform.io/docs/providers/kubernetes/d/service
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,7 +10,7 @@ export interface DataKubernetesServiceConfig extends cdktf.TerraformMetaArgument
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html#metadata DataKubernetesService#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service#metadata DataKubernetesService#metadata}
   */
   readonly metadata: DataKubernetesServiceMetadata;
 }
@@ -137,25 +137,25 @@ export interface DataKubernetesServiceMetadata {
   /**
   * An unstructured key value map stored with the service that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html#annotations DataKubernetesService#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service#annotations DataKubernetesService#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the service. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html#labels DataKubernetesService#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service#labels DataKubernetesService#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html#name DataKubernetesService#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service#name DataKubernetesService#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the service must be unique.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html#namespace DataKubernetesService#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service#namespace DataKubernetesService#namespace}
   */
   readonly namespace?: string;
 }
@@ -292,7 +292,7 @@ export class DataKubernetesServiceMetadataOutputReference extends cdktf.ComplexO
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html kubernetes_service}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/service kubernetes_service}
 */
 export class DataKubernetesService extends cdktf.TerraformDataSource {
 
@@ -306,7 +306,7 @@ export class DataKubernetesService extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/service.html kubernetes_service} Data Source
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/service kubernetes_service} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

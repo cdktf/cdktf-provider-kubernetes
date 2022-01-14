@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/manifest.html
+// https://www.terraform.io/docs/providers/kubernetes/r/manifest
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,43 +10,43 @@ export interface ManifestConfig extends cdktf.TerraformMetaArguments {
   /**
   * List of manifest fields whose values can be altered by the API server during 'apply'. Defaults to: ["metadata.annotations", "metadata.labels"]
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#computed_fields Manifest#computed_fields}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#computed_fields Manifest#computed_fields}
   */
   readonly computedFields?: string[];
   /**
   * A Kubernetes manifest describing the desired state of the resource in HCL format.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#manifest Manifest#manifest}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#manifest Manifest#manifest}
   */
   readonly manifest: { [key: string]: any } | cdktf.IResolvable;
   /**
   * The resulting resource state, as returned by the API server after applying the desired state from `manifest`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#object Manifest#object}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#object Manifest#object}
   */
   readonly object?: { [key: string]: any } | cdktf.IResolvable;
   /**
   * A map of attribute paths and desired patterns to be matched. After each apply the provider will wait for all attributes listed here to reach a value that matches the desired pattern.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#wait_for Manifest#wait_for}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#wait_for Manifest#wait_for}
   */
   readonly waitFor?: ManifestWaitFor;
   /**
   * field_manager block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#field_manager Manifest#field_manager}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#field_manager Manifest#field_manager}
   */
   readonly fieldManager?: ManifestFieldManager;
   /**
   * timeouts block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#timeouts Manifest#timeouts}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#timeouts Manifest#timeouts}
   */
   readonly timeouts?: ManifestTimeouts;
 }
 export interface ManifestWaitFor {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#fields Manifest#fields}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#fields Manifest#fields}
   */
   readonly fields?: { [key: string]: string } | cdktf.IResolvable;
 }
@@ -65,13 +65,13 @@ export interface ManifestFieldManager {
   /**
   * Force changes against conflicts.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#force_conflicts Manifest#force_conflicts}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#force_conflicts Manifest#force_conflicts}
   */
   readonly forceConflicts?: boolean | cdktf.IResolvable;
   /**
   * The name to use for the field manager when creating and updating the resource.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#name Manifest#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#name Manifest#name}
   */
   readonly name?: string;
 }
@@ -162,19 +162,19 @@ export interface ManifestTimeouts {
   /**
   * Timeout for the create operation.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#create Manifest#create}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#create Manifest#create}
   */
   readonly create?: string;
   /**
   * Timeout for the delete operation.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#delete Manifest#delete}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#delete Manifest#delete}
   */
   readonly delete?: string;
   /**
   * Timeout for the update operation.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html#update Manifest#update}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#update Manifest#update}
   */
   readonly update?: string;
 }
@@ -286,7 +286,7 @@ export class ManifestTimeoutsOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html kubernetes_manifest}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest kubernetes_manifest}
 */
 export class Manifest extends cdktf.TerraformResource {
 
@@ -300,7 +300,7 @@ export class Manifest extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest.html kubernetes_manifest} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest kubernetes_manifest} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

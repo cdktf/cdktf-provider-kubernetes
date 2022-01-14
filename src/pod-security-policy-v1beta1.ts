@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html
+// https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,13 +10,13 @@ export interface PodSecurityPolicyV1Beta1Config extends cdktf.TerraformMetaArgum
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#metadata PodSecurityPolicyV1Beta1#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#metadata PodSecurityPolicyV1Beta1#metadata}
   */
   readonly metadata: PodSecurityPolicyV1Beta1Metadata;
   /**
   * spec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#spec PodSecurityPolicyV1Beta1#spec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#spec PodSecurityPolicyV1Beta1#spec}
   */
   readonly spec: PodSecurityPolicyV1Beta1Spec;
 }
@@ -24,19 +24,19 @@ export interface PodSecurityPolicyV1Beta1Metadata {
   /**
   * An unstructured key value map stored with the podsecuritypolicy that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#annotations PodSecurityPolicyV1Beta1#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#annotations PodSecurityPolicyV1Beta1#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the podsecuritypolicy. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#labels PodSecurityPolicyV1Beta1#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#labels PodSecurityPolicyV1Beta1#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the podsecuritypolicy, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#name PodSecurityPolicyV1Beta1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#name PodSecurityPolicyV1Beta1#name}
   */
   readonly name?: string;
 }
@@ -152,7 +152,7 @@ export interface PodSecurityPolicyV1Beta1SpecAllowedFlexVolumes {
   /**
   * driver is the name of the Flexvolume driver.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#driver PodSecurityPolicyV1Beta1#driver}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#driver PodSecurityPolicyV1Beta1#driver}
   */
   readonly driver: string;
 }
@@ -173,13 +173,13 @@ export interface PodSecurityPolicyV1Beta1SpecAllowedHostPaths {
 
 Examples: `/foo` would allow `/foo`, `/foo/` and `/foo/bar` `/foo` would not allow `/food` or `/etc/foo`
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#path_prefix PodSecurityPolicyV1Beta1#path_prefix}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#path_prefix PodSecurityPolicyV1Beta1#path_prefix}
   */
   readonly pathPrefix: string;
   /**
   * when set to true, will allow host volumes matching the pathPrefix only if all volume mounts are readOnly.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#read_only PodSecurityPolicyV1Beta1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#read_only PodSecurityPolicyV1Beta1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
@@ -199,13 +199,13 @@ export interface PodSecurityPolicyV1Beta1SpecFsGroupRange {
   /**
   * max is the end of the range, inclusive.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#max PodSecurityPolicyV1Beta1#max}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#max PodSecurityPolicyV1Beta1#max}
   */
   readonly max: number;
   /**
   * min is the start of the range, inclusive.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#min PodSecurityPolicyV1Beta1#min}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#min PodSecurityPolicyV1Beta1#min}
   */
   readonly min: number;
 }
@@ -225,13 +225,13 @@ export interface PodSecurityPolicyV1Beta1SpecFsGroup {
   /**
   * rule is the strategy that will dictate what FSGroup is used in the SecurityContext.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#rule PodSecurityPolicyV1Beta1#rule}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#rule PodSecurityPolicyV1Beta1#rule}
   */
   readonly rule: string;
   /**
   * range block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#range PodSecurityPolicyV1Beta1#range}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#range PodSecurityPolicyV1Beta1#range}
   */
   readonly range?: PodSecurityPolicyV1Beta1SpecFsGroupRange[];
 }
@@ -320,13 +320,13 @@ export interface PodSecurityPolicyV1Beta1SpecHostPorts {
   /**
   * max is the end of the range, inclusive.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#max PodSecurityPolicyV1Beta1#max}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#max PodSecurityPolicyV1Beta1#max}
   */
   readonly max: number;
   /**
   * min is the start of the range, inclusive.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#min PodSecurityPolicyV1Beta1#min}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#min PodSecurityPolicyV1Beta1#min}
   */
   readonly min: number;
 }
@@ -346,13 +346,13 @@ export interface PodSecurityPolicyV1Beta1SpecRunAsGroupRange {
   /**
   * max is the end of the range, inclusive.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#max PodSecurityPolicyV1Beta1#max}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#max PodSecurityPolicyV1Beta1#max}
   */
   readonly max: number;
   /**
   * min is the start of the range, inclusive.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#min PodSecurityPolicyV1Beta1#min}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#min PodSecurityPolicyV1Beta1#min}
   */
   readonly min: number;
 }
@@ -372,13 +372,13 @@ export interface PodSecurityPolicyV1Beta1SpecRunAsGroup {
   /**
   * rule is the strategy that will dictate the allowable RunAsGroup values that may be set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#rule PodSecurityPolicyV1Beta1#rule}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#rule PodSecurityPolicyV1Beta1#rule}
   */
   readonly rule: string;
   /**
   * range block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#range PodSecurityPolicyV1Beta1#range}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#range PodSecurityPolicyV1Beta1#range}
   */
   readonly range?: PodSecurityPolicyV1Beta1SpecRunAsGroupRange[];
 }
@@ -467,13 +467,13 @@ export interface PodSecurityPolicyV1Beta1SpecRunAsUserRange {
   /**
   * max is the end of the range, inclusive.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#max PodSecurityPolicyV1Beta1#max}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#max PodSecurityPolicyV1Beta1#max}
   */
   readonly max: number;
   /**
   * min is the start of the range, inclusive.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#min PodSecurityPolicyV1Beta1#min}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#min PodSecurityPolicyV1Beta1#min}
   */
   readonly min: number;
 }
@@ -493,13 +493,13 @@ export interface PodSecurityPolicyV1Beta1SpecRunAsUser {
   /**
   * rule is the strategy that will dictate the allowable RunAsUser values that may be set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#rule PodSecurityPolicyV1Beta1#rule}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#rule PodSecurityPolicyV1Beta1#rule}
   */
   readonly rule: string;
   /**
   * range block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#range PodSecurityPolicyV1Beta1#range}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#range PodSecurityPolicyV1Beta1#range}
   */
   readonly range?: PodSecurityPolicyV1Beta1SpecRunAsUserRange[];
 }
@@ -586,19 +586,19 @@ export class PodSecurityPolicyV1Beta1SpecRunAsUserOutputReference extends cdktf.
 }
 export interface PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptions {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#level PodSecurityPolicyV1Beta1#level}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#level PodSecurityPolicyV1Beta1#level}
   */
   readonly level: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#role PodSecurityPolicyV1Beta1#role}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#role PodSecurityPolicyV1Beta1#role}
   */
   readonly role: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#type PodSecurityPolicyV1Beta1#type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#type PodSecurityPolicyV1Beta1#type}
   */
   readonly type: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#user PodSecurityPolicyV1Beta1#user}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#user PodSecurityPolicyV1Beta1#user}
   */
   readonly user: string;
 }
@@ -620,13 +620,13 @@ export interface PodSecurityPolicyV1Beta1SpecSeLinux {
   /**
   * rule is the strategy that will dictate the allowable labels that may be set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#rule PodSecurityPolicyV1Beta1#rule}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#rule PodSecurityPolicyV1Beta1#rule}
   */
   readonly rule: string;
   /**
   * se_linux_options block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#se_linux_options PodSecurityPolicyV1Beta1#se_linux_options}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#se_linux_options PodSecurityPolicyV1Beta1#se_linux_options}
   */
   readonly seLinuxOptions?: PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptions[];
 }
@@ -715,13 +715,13 @@ export interface PodSecurityPolicyV1Beta1SpecSupplementalGroupsRange {
   /**
   * max is the end of the range, inclusive.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#max PodSecurityPolicyV1Beta1#max}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#max PodSecurityPolicyV1Beta1#max}
   */
   readonly max: number;
   /**
   * min is the start of the range, inclusive.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#min PodSecurityPolicyV1Beta1#min}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#min PodSecurityPolicyV1Beta1#min}
   */
   readonly min: number;
 }
@@ -741,13 +741,13 @@ export interface PodSecurityPolicyV1Beta1SpecSupplementalGroups {
   /**
   * rule is the strategy that will dictate what supplemental groups is used in the SecurityContext.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#rule PodSecurityPolicyV1Beta1#rule}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#rule PodSecurityPolicyV1Beta1#rule}
   */
   readonly rule: string;
   /**
   * range block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#range PodSecurityPolicyV1Beta1#range}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#range PodSecurityPolicyV1Beta1#range}
   */
   readonly range?: PodSecurityPolicyV1Beta1SpecSupplementalGroupsRange[];
 }
@@ -836,19 +836,19 @@ export interface PodSecurityPolicyV1Beta1Spec {
   /**
   * allowPrivilegeEscalation determines if a pod can request to allow privilege escalation. If unspecified, defaults to true.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#allow_privilege_escalation PodSecurityPolicyV1Beta1#allow_privilege_escalation}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#allow_privilege_escalation PodSecurityPolicyV1Beta1#allow_privilege_escalation}
   */
   readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * allowedCapabilities is a list of capabilities that can be requested to add to the container. Capabilities in this field may be added at the pod author's discretion. You must not list a capability in both allowedCapabilities and requiredDropCapabilities.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#allowed_capabilities PodSecurityPolicyV1Beta1#allowed_capabilities}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#allowed_capabilities PodSecurityPolicyV1Beta1#allowed_capabilities}
   */
   readonly allowedCapabilities?: string[];
   /**
   * AllowedProcMountTypes is an allowlist of allowed ProcMountTypes. Empty or nil indicates that only the DefaultProcMountType may be used. This requires the ProcMountType feature flag to be enabled.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#allowed_proc_mount_types PodSecurityPolicyV1Beta1#allowed_proc_mount_types}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#allowed_proc_mount_types PodSecurityPolicyV1Beta1#allowed_proc_mount_types}
   */
   readonly allowedProcMountTypes?: string[];
   /**
@@ -856,19 +856,19 @@ export interface PodSecurityPolicyV1Beta1Spec {
 
 Examples: e.g. "foo/*" allows "foo/bar", "foo/baz", etc. e.g. "foo.*" allows "foo.bar", "foo.baz", etc.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#allowed_unsafe_sysctls PodSecurityPolicyV1Beta1#allowed_unsafe_sysctls}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#allowed_unsafe_sysctls PodSecurityPolicyV1Beta1#allowed_unsafe_sysctls}
   */
   readonly allowedUnsafeSysctls?: string[];
   /**
   * defaultAddCapabilities is the default set of capabilities that will be added to the container unless the pod spec specifically drops the capability.  You may not list a capability in both defaultAddCapabilities and requiredDropCapabilities. Capabilities added here are implicitly allowed, and need not be included in the allowedCapabilities list.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#default_add_capabilities PodSecurityPolicyV1Beta1#default_add_capabilities}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#default_add_capabilities PodSecurityPolicyV1Beta1#default_add_capabilities}
   */
   readonly defaultAddCapabilities?: string[];
   /**
   * defaultAllowPrivilegeEscalation controls the default setting for whether a process can gain more privileges than its parent process.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#default_allow_privilege_escalation PodSecurityPolicyV1Beta1#default_allow_privilege_escalation}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#default_allow_privilege_escalation PodSecurityPolicyV1Beta1#default_allow_privilege_escalation}
   */
   readonly defaultAllowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
@@ -876,97 +876,97 @@ Examples: e.g. "foo/*" allows "foo/bar", "foo/baz", etc. e.g. "foo.*" allows "fo
 
 Examples: e.g. "foo/*" forbids "foo/bar", "foo/baz", etc. e.g. "foo.*" forbids "foo.bar", "foo.baz", etc.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#forbidden_sysctls PodSecurityPolicyV1Beta1#forbidden_sysctls}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#forbidden_sysctls PodSecurityPolicyV1Beta1#forbidden_sysctls}
   */
   readonly forbiddenSysctls?: string[];
   /**
   * hostIPC determines if the policy allows the use of HostIPC in the pod spec.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#host_ipc PodSecurityPolicyV1Beta1#host_ipc}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#host_ipc PodSecurityPolicyV1Beta1#host_ipc}
   */
   readonly hostIpc?: boolean | cdktf.IResolvable;
   /**
   * hostNetwork determines if the policy allows the use of HostNetwork in the pod spec.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#host_network PodSecurityPolicyV1Beta1#host_network}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#host_network PodSecurityPolicyV1Beta1#host_network}
   */
   readonly hostNetwork?: boolean | cdktf.IResolvable;
   /**
   * hostPID determines if the policy allows the use of HostPID in the pod spec.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#host_pid PodSecurityPolicyV1Beta1#host_pid}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#host_pid PodSecurityPolicyV1Beta1#host_pid}
   */
   readonly hostPid?: boolean | cdktf.IResolvable;
   /**
   * privileged determines if a pod can request to be run as privileged.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#privileged PodSecurityPolicyV1Beta1#privileged}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#privileged PodSecurityPolicyV1Beta1#privileged}
   */
   readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * readOnlyRootFilesystem when set to true will force containers to run with a read only root file system.  If the container specifically requests to run with a non-read only root file system the PSP should deny the pod. If set to false the container may run with a read only root file system if it wishes but it will not be forced to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#read_only_root_filesystem PodSecurityPolicyV1Beta1#read_only_root_filesystem}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#read_only_root_filesystem PodSecurityPolicyV1Beta1#read_only_root_filesystem}
   */
   readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * requiredDropCapabilities are the capabilities that will be dropped from the container.  These are required to be dropped and cannot be added.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#required_drop_capabilities PodSecurityPolicyV1Beta1#required_drop_capabilities}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#required_drop_capabilities PodSecurityPolicyV1Beta1#required_drop_capabilities}
   */
   readonly requiredDropCapabilities?: string[];
   /**
   * volumes is an allowlist of volume plugins. Empty indicates that no volumes may be used. To allow all volumes you may use '*'.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#volumes PodSecurityPolicyV1Beta1#volumes}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#volumes PodSecurityPolicyV1Beta1#volumes}
   */
   readonly volumes?: string[];
   /**
   * allowed_flex_volumes block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#allowed_flex_volumes PodSecurityPolicyV1Beta1#allowed_flex_volumes}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#allowed_flex_volumes PodSecurityPolicyV1Beta1#allowed_flex_volumes}
   */
   readonly allowedFlexVolumes?: PodSecurityPolicyV1Beta1SpecAllowedFlexVolumes[];
   /**
   * allowed_host_paths block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#allowed_host_paths PodSecurityPolicyV1Beta1#allowed_host_paths}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#allowed_host_paths PodSecurityPolicyV1Beta1#allowed_host_paths}
   */
   readonly allowedHostPaths?: PodSecurityPolicyV1Beta1SpecAllowedHostPaths[];
   /**
   * fs_group block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#fs_group PodSecurityPolicyV1Beta1#fs_group}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#fs_group PodSecurityPolicyV1Beta1#fs_group}
   */
   readonly fsGroup: PodSecurityPolicyV1Beta1SpecFsGroup;
   /**
   * host_ports block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#host_ports PodSecurityPolicyV1Beta1#host_ports}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#host_ports PodSecurityPolicyV1Beta1#host_ports}
   */
   readonly hostPorts?: PodSecurityPolicyV1Beta1SpecHostPorts[];
   /**
   * run_as_group block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#run_as_group PodSecurityPolicyV1Beta1#run_as_group}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#run_as_group PodSecurityPolicyV1Beta1#run_as_group}
   */
   readonly runAsGroup?: PodSecurityPolicyV1Beta1SpecRunAsGroup;
   /**
   * run_as_user block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#run_as_user PodSecurityPolicyV1Beta1#run_as_user}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#run_as_user PodSecurityPolicyV1Beta1#run_as_user}
   */
   readonly runAsUser: PodSecurityPolicyV1Beta1SpecRunAsUser;
   /**
   * se_linux block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#se_linux PodSecurityPolicyV1Beta1#se_linux}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#se_linux PodSecurityPolicyV1Beta1#se_linux}
   */
   readonly seLinux?: PodSecurityPolicyV1Beta1SpecSeLinux;
   /**
   * supplemental_groups block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html#supplemental_groups PodSecurityPolicyV1Beta1#supplemental_groups}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#supplemental_groups PodSecurityPolicyV1Beta1#supplemental_groups}
   */
   readonly supplementalGroups: PodSecurityPolicyV1Beta1SpecSupplementalGroups;
 }
@@ -1509,7 +1509,7 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html kubernetes_pod_security_policy_v1beta1}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1 kubernetes_pod_security_policy_v1beta1}
 */
 export class PodSecurityPolicyV1Beta1 extends cdktf.TerraformResource {
 
@@ -1523,7 +1523,7 @@ export class PodSecurityPolicyV1Beta1 extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1.html kubernetes_pod_security_policy_v1beta1} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1 kubernetes_pod_security_policy_v1beta1} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

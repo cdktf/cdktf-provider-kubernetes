@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/d/pod_v1.html
+// https://www.terraform.io/docs/providers/kubernetes/d/pod_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,7 +10,7 @@ export interface DataKubernetesPodV1Config extends cdktf.TerraformMetaArguments 
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1.html#metadata DataKubernetesPodV1#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1#metadata DataKubernetesPodV1#metadata}
   */
   readonly metadata: DataKubernetesPodV1Metadata;
 }
@@ -3540,31 +3540,31 @@ export interface DataKubernetesPodV1Metadata {
   /**
   * An unstructured key value map stored with the pod that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1.html#annotations DataKubernetesPodV1#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1#annotations DataKubernetesPodV1#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1.html#generate_name DataKubernetesPodV1#generate_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1#generate_name DataKubernetesPodV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the pod. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1.html#labels DataKubernetesPodV1#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1#labels DataKubernetesPodV1#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1.html#name DataKubernetesPodV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1#name DataKubernetesPodV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the pod must be unique.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1.html#namespace DataKubernetesPodV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1#namespace DataKubernetesPodV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -3724,7 +3724,7 @@ export class DataKubernetesPodV1MetadataOutputReference extends cdktf.ComplexObj
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1.html kubernetes_pod_v1}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1 kubernetes_pod_v1}
 */
 export class DataKubernetesPodV1 extends cdktf.TerraformDataSource {
 
@@ -3738,7 +3738,7 @@ export class DataKubernetesPodV1 extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1.html kubernetes_pod_v1} Data Source
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/pod_v1 kubernetes_pod_v1} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/d/all_namespaces.html
+// https://www.terraform.io/docs/providers/kubernetes/d/all_namespaces
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,7 +10,7 @@ export interface DataKubernetesAllNamespacesConfig extends cdktf.TerraformMetaAr
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/all_namespaces.html kubernetes_all_namespaces}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/all_namespaces kubernetes_all_namespaces}
 */
 export class DataKubernetesAllNamespaces extends cdktf.TerraformDataSource {
 
@@ -24,7 +24,7 @@ export class DataKubernetesAllNamespaces extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/all_namespaces.html kubernetes_all_namespaces} Data Source
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/all_namespaces kubernetes_all_namespaces} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html
+// https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,31 +10,31 @@ export interface DefaultServiceAccountV1Config extends cdktf.TerraformMetaArgume
   /**
   * Enable automatic mounting of the service account token
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html#automount_service_account_token DefaultServiceAccountV1#automount_service_account_token}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1#automount_service_account_token DefaultServiceAccountV1#automount_service_account_token}
   */
   readonly automountServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
   * image_pull_secret block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html#image_pull_secret DefaultServiceAccountV1#image_pull_secret}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1#image_pull_secret DefaultServiceAccountV1#image_pull_secret}
   */
   readonly imagePullSecret?: DefaultServiceAccountV1ImagePullSecret[];
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html#metadata DefaultServiceAccountV1#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1#metadata DefaultServiceAccountV1#metadata}
   */
   readonly metadata: DefaultServiceAccountV1Metadata;
   /**
   * secret block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html#secret DefaultServiceAccountV1#secret}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1#secret DefaultServiceAccountV1#secret}
   */
   readonly secret?: DefaultServiceAccountV1Secret[];
   /**
   * timeouts block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html#timeouts DefaultServiceAccountV1#timeouts}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1#timeouts DefaultServiceAccountV1#timeouts}
   */
   readonly timeouts?: DefaultServiceAccountV1Timeouts;
 }
@@ -42,7 +42,7 @@ export interface DefaultServiceAccountV1ImagePullSecret {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html#name DefaultServiceAccountV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1#name DefaultServiceAccountV1#name}
   */
   readonly name?: string;
 }
@@ -61,25 +61,25 @@ export interface DefaultServiceAccountV1Metadata {
   /**
   * An unstructured key value map stored with the service account that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html#annotations DefaultServiceAccountV1#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1#annotations DefaultServiceAccountV1#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the service account. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html#labels DefaultServiceAccountV1#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1#labels DefaultServiceAccountV1#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html#name DefaultServiceAccountV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1#name DefaultServiceAccountV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the service account must be unique.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html#namespace DefaultServiceAccountV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1#namespace DefaultServiceAccountV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -218,7 +218,7 @@ export interface DefaultServiceAccountV1Secret {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html#name DefaultServiceAccountV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1#name DefaultServiceAccountV1#name}
   */
   readonly name?: string;
 }
@@ -235,7 +235,7 @@ export function defaultServiceAccountV1SecretToTerraform(struct?: DefaultService
 
 export interface DefaultServiceAccountV1Timeouts {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html#create DefaultServiceAccountV1#create}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1#create DefaultServiceAccountV1#create}
   */
   readonly create?: string;
 }
@@ -301,7 +301,7 @@ export class DefaultServiceAccountV1TimeoutsOutputReference extends cdktf.Comple
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html kubernetes_default_service_account_v1}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1 kubernetes_default_service_account_v1}
 */
 export class DefaultServiceAccountV1 extends cdktf.TerraformResource {
 
@@ -315,7 +315,7 @@ export class DefaultServiceAccountV1 extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1.html kubernetes_default_service_account_v1} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account_v1 kubernetes_default_service_account_v1} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

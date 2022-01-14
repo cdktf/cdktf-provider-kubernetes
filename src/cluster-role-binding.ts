@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html
+// https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,19 +10,19 @@ export interface ClusterRoleBindingConfig extends cdktf.TerraformMetaArguments {
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#metadata ClusterRoleBinding#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#metadata ClusterRoleBinding#metadata}
   */
   readonly metadata: ClusterRoleBindingMetadata;
   /**
   * role_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#role_ref ClusterRoleBinding#role_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#role_ref ClusterRoleBinding#role_ref}
   */
   readonly roleRef: ClusterRoleBindingRoleRef;
   /**
   * subject block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#subject ClusterRoleBinding#subject}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#subject ClusterRoleBinding#subject}
   */
   readonly subject: ClusterRoleBindingSubject[];
 }
@@ -30,19 +30,19 @@ export interface ClusterRoleBindingMetadata {
   /**
   * An unstructured key value map stored with the clusterRoleBinding that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#annotations ClusterRoleBinding#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#annotations ClusterRoleBinding#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the clusterRoleBinding. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#labels ClusterRoleBinding#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#labels ClusterRoleBinding#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the clusterRoleBinding, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#name ClusterRoleBinding#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#name ClusterRoleBinding#name}
   */
   readonly name?: string;
 }
@@ -158,19 +158,19 @@ export interface ClusterRoleBindingRoleRef {
   /**
   * The API group of the user. The only value possible at the moment is `rbac.authorization.k8s.io`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#api_group ClusterRoleBinding#api_group}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#api_group ClusterRoleBinding#api_group}
   */
   readonly apiGroup: string;
   /**
   * The kind of resource.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#kind ClusterRoleBinding#kind}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#kind ClusterRoleBinding#kind}
   */
   readonly kind: string;
   /**
   * The name of the User to bind to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#name ClusterRoleBinding#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#name ClusterRoleBinding#name}
   */
   readonly name: string;
 }
@@ -275,25 +275,25 @@ export interface ClusterRoleBindingSubject {
   /**
   * The API group of the subject resource.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#api_group ClusterRoleBinding#api_group}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#api_group ClusterRoleBinding#api_group}
   */
   readonly apiGroup?: string;
   /**
   * The kind of resource.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#kind ClusterRoleBinding#kind}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#kind ClusterRoleBinding#kind}
   */
   readonly kind: string;
   /**
   * The name of the resource to bind to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#name ClusterRoleBinding#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#name ClusterRoleBinding#name}
   */
   readonly name: string;
   /**
   * The Namespace of the subject resource.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html#namespace ClusterRoleBinding#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding#namespace ClusterRoleBinding#namespace}
   */
   readonly namespace?: string;
 }
@@ -313,7 +313,7 @@ export function clusterRoleBindingSubjectToTerraform(struct?: ClusterRoleBinding
 
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html kubernetes_cluster_role_binding}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding kubernetes_cluster_role_binding}
 */
 export class ClusterRoleBinding extends cdktf.TerraformResource {
 
@@ -327,7 +327,7 @@ export class ClusterRoleBinding extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding.html kubernetes_cluster_role_binding} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding kubernetes_cluster_role_binding} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

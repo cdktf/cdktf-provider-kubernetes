@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html
+// https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,19 +10,19 @@ export interface RoleBindingV1Config extends cdktf.TerraformMetaArguments {
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#metadata RoleBindingV1#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#metadata RoleBindingV1#metadata}
   */
   readonly metadata: RoleBindingV1Metadata;
   /**
   * role_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#role_ref RoleBindingV1#role_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#role_ref RoleBindingV1#role_ref}
   */
   readonly roleRef: RoleBindingV1RoleRef;
   /**
   * subject block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#subject RoleBindingV1#subject}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#subject RoleBindingV1#subject}
   */
   readonly subject: RoleBindingV1Subject[];
 }
@@ -30,25 +30,25 @@ export interface RoleBindingV1Metadata {
   /**
   * An unstructured key value map stored with the roleBinding that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#annotations RoleBindingV1#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#annotations RoleBindingV1#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the roleBinding. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#labels RoleBindingV1#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#labels RoleBindingV1#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the roleBinding, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#name RoleBindingV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#name RoleBindingV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the roleBinding must be unique.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#namespace RoleBindingV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#namespace RoleBindingV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -187,19 +187,19 @@ export interface RoleBindingV1RoleRef {
   /**
   * The API group of the user. The only value possible at the moment is `rbac.authorization.k8s.io`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#api_group RoleBindingV1#api_group}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#api_group RoleBindingV1#api_group}
   */
   readonly apiGroup: string;
   /**
   * The kind of resource.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#kind RoleBindingV1#kind}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#kind RoleBindingV1#kind}
   */
   readonly kind: string;
   /**
   * The name of the User to bind to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#name RoleBindingV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#name RoleBindingV1#name}
   */
   readonly name: string;
 }
@@ -304,25 +304,25 @@ export interface RoleBindingV1Subject {
   /**
   * The API group of the subject resource.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#api_group RoleBindingV1#api_group}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#api_group RoleBindingV1#api_group}
   */
   readonly apiGroup?: string;
   /**
   * The kind of resource.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#kind RoleBindingV1#kind}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#kind RoleBindingV1#kind}
   */
   readonly kind: string;
   /**
   * The name of the resource to bind to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#name RoleBindingV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#name RoleBindingV1#name}
   */
   readonly name: string;
   /**
   * The Namespace of the subject resource.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html#namespace RoleBindingV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1#namespace RoleBindingV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -342,7 +342,7 @@ export function roleBindingV1SubjectToTerraform(struct?: RoleBindingV1Subject): 
 
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html kubernetes_role_binding_v1}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1 kubernetes_role_binding_v1}
 */
 export class RoleBindingV1 extends cdktf.TerraformResource {
 
@@ -356,7 +356,7 @@ export class RoleBindingV1 extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1.html kubernetes_role_binding_v1} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding_v1 kubernetes_role_binding_v1} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
