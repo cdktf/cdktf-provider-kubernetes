@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/d/secret_v1.html
+// https://www.terraform.io/docs/providers/kubernetes/d/secret_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,13 +10,13 @@ export interface DataKubernetesSecretV1Config extends cdktf.TerraformMetaArgumen
   /**
   * A map of the secret data with values encoded in base64 format
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1.html#binary_data DataKubernetesSecretV1#binary_data}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1#binary_data DataKubernetesSecretV1#binary_data}
   */
   readonly binaryData?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1.html#metadata DataKubernetesSecretV1#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1#metadata DataKubernetesSecretV1#metadata}
   */
   readonly metadata: DataKubernetesSecretV1Metadata;
 }
@@ -24,25 +24,25 @@ export interface DataKubernetesSecretV1Metadata {
   /**
   * An unstructured key value map stored with the secret that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1.html#annotations DataKubernetesSecretV1#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1#annotations DataKubernetesSecretV1#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the secret. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1.html#labels DataKubernetesSecretV1#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1#labels DataKubernetesSecretV1#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the secret, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1.html#name DataKubernetesSecretV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1#name DataKubernetesSecretV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the secret must be unique.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1.html#namespace DataKubernetesSecretV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1#namespace DataKubernetesSecretV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -179,7 +179,7 @@ export class DataKubernetesSecretV1MetadataOutputReference extends cdktf.Complex
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1.html kubernetes_secret_v1}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1 kubernetes_secret_v1}
 */
 export class DataKubernetesSecretV1 extends cdktf.TerraformDataSource {
 
@@ -193,7 +193,7 @@ export class DataKubernetesSecretV1 extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1.html kubernetes_secret_v1} Data Source
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1 kubernetes_secret_v1} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

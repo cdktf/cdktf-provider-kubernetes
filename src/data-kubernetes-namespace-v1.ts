@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1.html
+// https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,7 +10,7 @@ export interface DataKubernetesNamespaceV1Config extends cdktf.TerraformMetaArgu
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1.html#metadata DataKubernetesNamespaceV1#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1#metadata DataKubernetesNamespaceV1#metadata}
   */
   readonly metadata: DataKubernetesNamespaceV1Metadata;
 }
@@ -25,19 +25,19 @@ export interface DataKubernetesNamespaceV1Metadata {
   /**
   * An unstructured key value map stored with the namespace that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1.html#annotations DataKubernetesNamespaceV1#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1#annotations DataKubernetesNamespaceV1#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the namespace. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1.html#labels DataKubernetesNamespaceV1#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1#labels DataKubernetesNamespaceV1#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the namespace, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1.html#name DataKubernetesNamespaceV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1#name DataKubernetesNamespaceV1#name}
   */
   readonly name?: string;
 }
@@ -151,7 +151,7 @@ export class DataKubernetesNamespaceV1MetadataOutputReference extends cdktf.Comp
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1.html kubernetes_namespace_v1}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1 kubernetes_namespace_v1}
 */
 export class DataKubernetesNamespaceV1 extends cdktf.TerraformDataSource {
 
@@ -165,7 +165,7 @@ export class DataKubernetesNamespaceV1 extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1.html kubernetes_namespace_v1} Data Source
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/namespace_v1 kubernetes_namespace_v1} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

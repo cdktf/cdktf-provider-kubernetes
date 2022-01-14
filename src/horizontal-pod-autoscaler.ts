@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html
+// https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,13 +10,13 @@ export interface HorizontalPodAutoscalerConfig extends cdktf.TerraformMetaArgume
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#metadata HorizontalPodAutoscaler#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#metadata HorizontalPodAutoscaler#metadata}
   */
   readonly metadata: HorizontalPodAutoscalerMetadata;
   /**
   * spec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#spec HorizontalPodAutoscaler#spec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#spec HorizontalPodAutoscaler#spec}
   */
   readonly spec: HorizontalPodAutoscalerSpec;
 }
@@ -24,31 +24,31 @@ export interface HorizontalPodAutoscalerMetadata {
   /**
   * An unstructured key value map stored with the horizontal pod autoscaler that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#annotations HorizontalPodAutoscaler#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#annotations HorizontalPodAutoscaler#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#generate_name HorizontalPodAutoscaler#generate_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#generate_name HorizontalPodAutoscaler#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the horizontal pod autoscaler. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#labels HorizontalPodAutoscaler#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#labels HorizontalPodAutoscaler#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the horizontal pod autoscaler, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#name HorizontalPodAutoscaler#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the horizontal pod autoscaler must be unique.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#namespace HorizontalPodAutoscaler#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#namespace HorizontalPodAutoscaler#namespace}
   */
   readonly namespace?: string;
 }
@@ -210,19 +210,19 @@ export interface HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy {
   /**
   * Period specifies the window of time for which the policy should hold true. PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#period_seconds HorizontalPodAutoscaler#period_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#period_seconds HorizontalPodAutoscaler#period_seconds}
   */
   readonly periodSeconds: number;
   /**
   * Type is used to specify the scaling policy: Percent or Pods
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#type HorizontalPodAutoscaler#type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
   */
   readonly type: string;
   /**
   * Value contains the amount of change which is permitted by the policy. It must be greater than zero.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#value HorizontalPodAutoscaler#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
   */
   readonly value: number;
 }
@@ -243,19 +243,19 @@ export interface HorizontalPodAutoscalerSpecBehaviorScaleDown {
   /**
   * Used to specify which policy should be used. If not set, the default value Max is used.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#select_policy HorizontalPodAutoscaler#select_policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#select_policy HorizontalPodAutoscaler#select_policy}
   */
   readonly selectPolicy?: string;
   /**
   * Number of seconds for which past recommendations should be considered while scaling up or scaling down. This value must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#stabilization_window_seconds HorizontalPodAutoscaler#stabilization_window_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#stabilization_window_seconds HorizontalPodAutoscaler#stabilization_window_seconds}
   */
   readonly stabilizationWindowSeconds?: number;
   /**
   * policy block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#policy HorizontalPodAutoscaler#policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#policy HorizontalPodAutoscaler#policy}
   */
   readonly policy: HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy[];
 }
@@ -276,19 +276,19 @@ export interface HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy {
   /**
   * Period specifies the window of time for which the policy should hold true. PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#period_seconds HorizontalPodAutoscaler#period_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#period_seconds HorizontalPodAutoscaler#period_seconds}
   */
   readonly periodSeconds: number;
   /**
   * Type is used to specify the scaling policy: Percent or Pods
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#type HorizontalPodAutoscaler#type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
   */
   readonly type: string;
   /**
   * Value contains the amount of change which is permitted by the policy. It must be greater than zero.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#value HorizontalPodAutoscaler#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
   */
   readonly value: number;
 }
@@ -309,19 +309,19 @@ export interface HorizontalPodAutoscalerSpecBehaviorScaleUp {
   /**
   * Used to specify which policy should be used. If not set, the default value Max is used.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#select_policy HorizontalPodAutoscaler#select_policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#select_policy HorizontalPodAutoscaler#select_policy}
   */
   readonly selectPolicy?: string;
   /**
   * Number of seconds for which past recommendations should be considered while scaling up or scaling down. This value must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#stabilization_window_seconds HorizontalPodAutoscaler#stabilization_window_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#stabilization_window_seconds HorizontalPodAutoscaler#stabilization_window_seconds}
   */
   readonly stabilizationWindowSeconds?: number;
   /**
   * policy block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#policy HorizontalPodAutoscaler#policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#policy HorizontalPodAutoscaler#policy}
   */
   readonly policy: HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy[];
 }
@@ -342,13 +342,13 @@ export interface HorizontalPodAutoscalerSpecBehavior {
   /**
   * scale_down block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#scale_down HorizontalPodAutoscaler#scale_down}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#scale_down HorizontalPodAutoscaler#scale_down}
   */
   readonly scaleDown?: HorizontalPodAutoscalerSpecBehaviorScaleDown[];
   /**
   * scale_up block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#scale_up HorizontalPodAutoscaler#scale_up}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#scale_up HorizontalPodAutoscaler#scale_up}
   */
   readonly scaleUp?: HorizontalPodAutoscalerSpecBehaviorScaleUp[];
 }
@@ -441,19 +441,19 @@ export interface HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExp
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#key HorizontalPodAutoscaler#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#key HorizontalPodAutoscaler#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#operator HorizontalPodAutoscaler#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#operator HorizontalPodAutoscaler#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#values HorizontalPodAutoscaler#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#values HorizontalPodAutoscaler#values}
   */
   readonly values?: string[];
 }
@@ -474,13 +474,13 @@ export interface HorizontalPodAutoscalerSpecMetricExternalMetricSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#match_labels HorizontalPodAutoscaler#match_labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#match_labels HorizontalPodAutoscaler#match_labels}
   */
   readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#match_expressions HorizontalPodAutoscaler#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#match_expressions HorizontalPodAutoscaler#match_expressions}
   */
   readonly matchExpressions?: HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressions[];
 }
@@ -500,13 +500,13 @@ export interface HorizontalPodAutoscalerSpecMetricExternalMetric {
   /**
   * name is the name of the given metric
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#name HorizontalPodAutoscaler#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
   */
   readonly name: string;
   /**
   * selector block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#selector HorizontalPodAutoscaler#selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#selector HorizontalPodAutoscaler#selector}
   */
   readonly selector?: HorizontalPodAutoscalerSpecMetricExternalMetricSelector[];
 }
@@ -595,25 +595,25 @@ export interface HorizontalPodAutoscalerSpecMetricExternalTarget {
   /**
   * averageUtilization is the target value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods. Currently only valid for Resource metric source type
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#average_utilization HorizontalPodAutoscaler#average_utilization}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
   */
   readonly averageUtilization?: number;
   /**
   * averageValue is the target value of the average of the metric across all relevant pods (as a quantity)
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#average_value HorizontalPodAutoscaler#average_value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
   */
   readonly averageValue?: string;
   /**
   * type represents whether the metric type is Utilization, Value, or AverageValue
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#type HorizontalPodAutoscaler#type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
   */
   readonly type: string;
   /**
   * value is the target value of the metric (as a quantity).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#value HorizontalPodAutoscaler#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
   */
   readonly value?: string;
 }
@@ -747,13 +747,13 @@ export interface HorizontalPodAutoscalerSpecMetricExternal {
   /**
   * metric block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#metric HorizontalPodAutoscaler#metric}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#metric HorizontalPodAutoscaler#metric}
   */
   readonly metric: HorizontalPodAutoscalerSpecMetricExternalMetric;
   /**
   * target block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#target HorizontalPodAutoscaler#target}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
   */
   readonly target?: HorizontalPodAutoscalerSpecMetricExternalTarget;
 }
@@ -841,19 +841,19 @@ export interface HorizontalPodAutoscalerSpecMetricObjectDescribedObject {
   /**
   * API version of the referent
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#api_version HorizontalPodAutoscaler#api_version}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#api_version HorizontalPodAutoscaler#api_version}
   */
   readonly apiVersion: string;
   /**
   * Kind of the referent; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#kind HorizontalPodAutoscaler#kind}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#kind HorizontalPodAutoscaler#kind}
   */
   readonly kind: string;
   /**
   * Name of the referent; More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#name HorizontalPodAutoscaler#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
   */
   readonly name: string;
 }
@@ -958,19 +958,19 @@ export interface HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpre
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#key HorizontalPodAutoscaler#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#key HorizontalPodAutoscaler#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#operator HorizontalPodAutoscaler#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#operator HorizontalPodAutoscaler#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#values HorizontalPodAutoscaler#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#values HorizontalPodAutoscaler#values}
   */
   readonly values?: string[];
 }
@@ -991,13 +991,13 @@ export interface HorizontalPodAutoscalerSpecMetricObjectMetricSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#match_labels HorizontalPodAutoscaler#match_labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#match_labels HorizontalPodAutoscaler#match_labels}
   */
   readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#match_expressions HorizontalPodAutoscaler#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#match_expressions HorizontalPodAutoscaler#match_expressions}
   */
   readonly matchExpressions?: HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressions[];
 }
@@ -1017,13 +1017,13 @@ export interface HorizontalPodAutoscalerSpecMetricObjectMetric {
   /**
   * name is the name of the given metric
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#name HorizontalPodAutoscaler#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
   */
   readonly name: string;
   /**
   * selector block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#selector HorizontalPodAutoscaler#selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#selector HorizontalPodAutoscaler#selector}
   */
   readonly selector?: HorizontalPodAutoscalerSpecMetricObjectMetricSelector[];
 }
@@ -1112,25 +1112,25 @@ export interface HorizontalPodAutoscalerSpecMetricObjectTarget {
   /**
   * averageUtilization is the target value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods. Currently only valid for Resource metric source type
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#average_utilization HorizontalPodAutoscaler#average_utilization}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
   */
   readonly averageUtilization?: number;
   /**
   * averageValue is the target value of the average of the metric across all relevant pods (as a quantity)
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#average_value HorizontalPodAutoscaler#average_value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
   */
   readonly averageValue?: string;
   /**
   * type represents whether the metric type is Utilization, Value, or AverageValue
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#type HorizontalPodAutoscaler#type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
   */
   readonly type: string;
   /**
   * value is the target value of the metric (as a quantity).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#value HorizontalPodAutoscaler#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
   */
   readonly value?: string;
 }
@@ -1264,19 +1264,19 @@ export interface HorizontalPodAutoscalerSpecMetricObject {
   /**
   * described_object block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#described_object HorizontalPodAutoscaler#described_object}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#described_object HorizontalPodAutoscaler#described_object}
   */
   readonly describedObject: HorizontalPodAutoscalerSpecMetricObjectDescribedObject;
   /**
   * metric block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#metric HorizontalPodAutoscaler#metric}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#metric HorizontalPodAutoscaler#metric}
   */
   readonly metric: HorizontalPodAutoscalerSpecMetricObjectMetric;
   /**
   * target block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#target HorizontalPodAutoscaler#target}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
   */
   readonly target?: HorizontalPodAutoscalerSpecMetricObjectTarget;
 }
@@ -1384,19 +1384,19 @@ export interface HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpress
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#key HorizontalPodAutoscaler#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#key HorizontalPodAutoscaler#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#operator HorizontalPodAutoscaler#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#operator HorizontalPodAutoscaler#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#values HorizontalPodAutoscaler#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#values HorizontalPodAutoscaler#values}
   */
   readonly values?: string[];
 }
@@ -1417,13 +1417,13 @@ export interface HorizontalPodAutoscalerSpecMetricPodsMetricSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#match_labels HorizontalPodAutoscaler#match_labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#match_labels HorizontalPodAutoscaler#match_labels}
   */
   readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#match_expressions HorizontalPodAutoscaler#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#match_expressions HorizontalPodAutoscaler#match_expressions}
   */
   readonly matchExpressions?: HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressions[];
 }
@@ -1443,13 +1443,13 @@ export interface HorizontalPodAutoscalerSpecMetricPodsMetric {
   /**
   * name is the name of the given metric
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#name HorizontalPodAutoscaler#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
   */
   readonly name: string;
   /**
   * selector block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#selector HorizontalPodAutoscaler#selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#selector HorizontalPodAutoscaler#selector}
   */
   readonly selector?: HorizontalPodAutoscalerSpecMetricPodsMetricSelector[];
 }
@@ -1538,25 +1538,25 @@ export interface HorizontalPodAutoscalerSpecMetricPodsTarget {
   /**
   * averageUtilization is the target value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods. Currently only valid for Resource metric source type
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#average_utilization HorizontalPodAutoscaler#average_utilization}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
   */
   readonly averageUtilization?: number;
   /**
   * averageValue is the target value of the average of the metric across all relevant pods (as a quantity)
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#average_value HorizontalPodAutoscaler#average_value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
   */
   readonly averageValue?: string;
   /**
   * type represents whether the metric type is Utilization, Value, or AverageValue
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#type HorizontalPodAutoscaler#type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
   */
   readonly type: string;
   /**
   * value is the target value of the metric (as a quantity).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#value HorizontalPodAutoscaler#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
   */
   readonly value?: string;
 }
@@ -1690,13 +1690,13 @@ export interface HorizontalPodAutoscalerSpecMetricPods {
   /**
   * metric block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#metric HorizontalPodAutoscaler#metric}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#metric HorizontalPodAutoscaler#metric}
   */
   readonly metric: HorizontalPodAutoscalerSpecMetricPodsMetric;
   /**
   * target block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#target HorizontalPodAutoscaler#target}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
   */
   readonly target?: HorizontalPodAutoscalerSpecMetricPodsTarget;
 }
@@ -1784,25 +1784,25 @@ export interface HorizontalPodAutoscalerSpecMetricResourceTarget {
   /**
   * averageUtilization is the target value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods. Currently only valid for Resource metric source type
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#average_utilization HorizontalPodAutoscaler#average_utilization}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
   */
   readonly averageUtilization?: number;
   /**
   * averageValue is the target value of the average of the metric across all relevant pods (as a quantity)
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#average_value HorizontalPodAutoscaler#average_value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
   */
   readonly averageValue?: string;
   /**
   * type represents whether the metric type is Utilization, Value, or AverageValue
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#type HorizontalPodAutoscaler#type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
   */
   readonly type: string;
   /**
   * value is the target value of the metric (as a quantity).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#value HorizontalPodAutoscaler#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
   */
   readonly value?: string;
 }
@@ -1936,13 +1936,13 @@ export interface HorizontalPodAutoscalerSpecMetricResource {
   /**
   * name is the name of the resource in question.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#name HorizontalPodAutoscaler#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
   */
   readonly name: string;
   /**
   * target block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#target HorizontalPodAutoscaler#target}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
   */
   readonly target?: HorizontalPodAutoscalerSpecMetricResourceTarget;
 }
@@ -2030,31 +2030,31 @@ export interface HorizontalPodAutoscalerSpecMetric {
   /**
   * type is the type of metric source. It should be one of "Object", "Pods", "External" or "Resource", each mapping to a matching field in the object.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#type HorizontalPodAutoscaler#type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
   */
   readonly type: string;
   /**
   * external block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#external HorizontalPodAutoscaler#external}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#external HorizontalPodAutoscaler#external}
   */
   readonly external?: HorizontalPodAutoscalerSpecMetricExternal;
   /**
   * object block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#object HorizontalPodAutoscaler#object}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#object HorizontalPodAutoscaler#object}
   */
   readonly object?: HorizontalPodAutoscalerSpecMetricObject;
   /**
   * pods block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#pods HorizontalPodAutoscaler#pods}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#pods HorizontalPodAutoscaler#pods}
   */
   readonly pods?: HorizontalPodAutoscalerSpecMetricPods;
   /**
   * resource block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#resource HorizontalPodAutoscaler#resource}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#resource HorizontalPodAutoscaler#resource}
   */
   readonly resource?: HorizontalPodAutoscalerSpecMetricResource;
 }
@@ -2077,19 +2077,19 @@ export interface HorizontalPodAutoscalerSpecScaleTargetRef {
   /**
   * API version of the referent
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#api_version HorizontalPodAutoscaler#api_version}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#api_version HorizontalPodAutoscaler#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Kind of the referent. e.g. `ReplicationController`. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#kind HorizontalPodAutoscaler#kind}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#kind HorizontalPodAutoscaler#kind}
   */
   readonly kind: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#name HorizontalPodAutoscaler#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
   */
   readonly name: string;
 }
@@ -2197,37 +2197,37 @@ export interface HorizontalPodAutoscalerSpec {
   /**
   * Upper limit for the number of pods that can be set by the autoscaler.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#max_replicas HorizontalPodAutoscaler#max_replicas}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#max_replicas HorizontalPodAutoscaler#max_replicas}
   */
   readonly maxReplicas: number;
   /**
   * Lower limit for the number of pods that can be set by the autoscaler, defaults to `1`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#min_replicas HorizontalPodAutoscaler#min_replicas}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#min_replicas HorizontalPodAutoscaler#min_replicas}
   */
   readonly minReplicas?: number;
   /**
   * Target average CPU utilization (represented as a percentage of requested CPU) over all the pods. If not specified the default autoscaling policy will be used.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#target_cpu_utilization_percentage HorizontalPodAutoscaler#target_cpu_utilization_percentage}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#target_cpu_utilization_percentage HorizontalPodAutoscaler#target_cpu_utilization_percentage}
   */
   readonly targetCpuUtilizationPercentage?: number;
   /**
   * behavior block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#behavior HorizontalPodAutoscaler#behavior}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#behavior HorizontalPodAutoscaler#behavior}
   */
   readonly behavior?: HorizontalPodAutoscalerSpecBehavior;
   /**
   * metric block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#metric HorizontalPodAutoscaler#metric}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#metric HorizontalPodAutoscaler#metric}
   */
   readonly metric?: HorizontalPodAutoscalerSpecMetric[];
   /**
   * scale_target_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html#scale_target_ref HorizontalPodAutoscaler#scale_target_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#scale_target_ref HorizontalPodAutoscaler#scale_target_ref}
   */
   readonly scaleTargetRef: HorizontalPodAutoscalerSpecScaleTargetRef;
 }
@@ -2403,7 +2403,7 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html kubernetes_horizontal_pod_autoscaler}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler kubernetes_horizontal_pod_autoscaler}
 */
 export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
 
@@ -2417,7 +2417,7 @@ export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler.html kubernetes_horizontal_pod_autoscaler} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler kubernetes_horizontal_pod_autoscaler} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

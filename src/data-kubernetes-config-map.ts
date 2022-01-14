@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/d/config_map.html
+// https://www.terraform.io/docs/providers/kubernetes/d/config_map
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,7 +10,7 @@ export interface DataKubernetesConfigMapConfig extends cdktf.TerraformMetaArgume
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map.html#metadata DataKubernetesConfigMap#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map#metadata DataKubernetesConfigMap#metadata}
   */
   readonly metadata: DataKubernetesConfigMapMetadata;
 }
@@ -18,25 +18,25 @@ export interface DataKubernetesConfigMapMetadata {
   /**
   * An unstructured key value map stored with the config_map that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map.html#annotations DataKubernetesConfigMap#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map#annotations DataKubernetesConfigMap#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the config_map. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map.html#labels DataKubernetesConfigMap#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map#labels DataKubernetesConfigMap#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the config_map, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map.html#name DataKubernetesConfigMap#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map#name DataKubernetesConfigMap#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the config_map must be unique.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map.html#namespace DataKubernetesConfigMap#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map#namespace DataKubernetesConfigMap#namespace}
   */
   readonly namespace?: string;
 }
@@ -173,7 +173,7 @@ export class DataKubernetesConfigMapMetadataOutputReference extends cdktf.Comple
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map.html kubernetes_config_map}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map kubernetes_config_map}
 */
 export class DataKubernetesConfigMap extends cdktf.TerraformDataSource {
 
@@ -187,7 +187,7 @@ export class DataKubernetesConfigMap extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map.html kubernetes_config_map} Data Source
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map kubernetes_config_map} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

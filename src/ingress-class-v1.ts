@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html
+// https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,13 +10,13 @@ export interface IngressClassV1Config extends cdktf.TerraformMetaArguments {
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#metadata IngressClassV1#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#metadata IngressClassV1#metadata}
   */
   readonly metadata: IngressClassV1Metadata;
   /**
   * spec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#spec IngressClassV1#spec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#spec IngressClassV1#spec}
   */
   readonly spec: IngressClassV1Spec;
 }
@@ -24,25 +24,25 @@ export interface IngressClassV1Metadata {
   /**
   * An unstructured key value map stored with the ingress_class that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#annotations IngressClassV1#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#annotations IngressClassV1#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#generate_name IngressClassV1#generate_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#generate_name IngressClassV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the ingress_class. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#labels IngressClassV1#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#labels IngressClassV1#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the ingress_class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#name IngressClassV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#name IngressClassV1#name}
   */
   readonly name?: string;
 }
@@ -181,27 +181,27 @@ export interface IngressClassV1SpecParameters {
   /**
   * APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#api_group IngressClassV1#api_group}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#api_group IngressClassV1#api_group}
   */
   readonly apiGroup?: string;
   /**
   * Kind is the type of resource being referenced
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#kind IngressClassV1#kind}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#kind IngressClassV1#kind}
   */
   readonly kind: string;
   /**
   * Name is the name of resource being referenced
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#name IngressClassV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#name IngressClassV1#name}
   */
   readonly name: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#namespace IngressClassV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#namespace IngressClassV1#namespace}
   */
   readonly namespace?: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#scope IngressClassV1#scope}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#scope IngressClassV1#scope}
   */
   readonly scope?: string;
 }
@@ -224,13 +224,13 @@ export interface IngressClassV1Spec {
   /**
   * Controller refers to the name of the controller that should handle this class. This allows for different "flavors" that are controlled by the same controller. For example, you may have different Parameters for the same implementing controller. This should be specified as a domain-prefixed path no more than 250 characters in length, e.g. "acme.io/ingress-controller". This field is immutable.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#controller IngressClassV1#controller}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#controller IngressClassV1#controller}
   */
   readonly controller?: string;
   /**
   * parameters block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html#parameters IngressClassV1#parameters}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#parameters IngressClassV1#parameters}
   */
   readonly parameters?: IngressClassV1SpecParameters[];
 }
@@ -320,7 +320,7 @@ export class IngressClassV1SpecOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html kubernetes_ingress_class_v1}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1 kubernetes_ingress_class_v1}
 */
 export class IngressClassV1 extends cdktf.TerraformResource {
 
@@ -334,7 +334,7 @@ export class IngressClassV1 extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1.html kubernetes_ingress_class_v1} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1 kubernetes_ingress_class_v1} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

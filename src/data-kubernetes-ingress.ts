@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/d/ingress.html
+// https://www.terraform.io/docs/providers/kubernetes/d/ingress
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,7 +10,7 @@ export interface DataKubernetesIngressConfig extends cdktf.TerraformMetaArgument
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress.html#metadata DataKubernetesIngress#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress#metadata DataKubernetesIngress#metadata}
   */
   readonly metadata: DataKubernetesIngressMetadata;
 }
@@ -141,25 +141,25 @@ export interface DataKubernetesIngressMetadata {
   /**
   * An unstructured key value map stored with the ingress that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress.html#annotations DataKubernetesIngress#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress#annotations DataKubernetesIngress#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the ingress. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress.html#labels DataKubernetesIngress#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress#labels DataKubernetesIngress#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the ingress, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress.html#name DataKubernetesIngress#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress#name DataKubernetesIngress#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the ingress must be unique.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress.html#namespace DataKubernetesIngress#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress#namespace DataKubernetesIngress#namespace}
   */
   readonly namespace?: string;
 }
@@ -296,7 +296,7 @@ export class DataKubernetesIngressMetadataOutputReference extends cdktf.ComplexO
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress.html kubernetes_ingress}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress kubernetes_ingress}
 */
 export class DataKubernetesIngress extends cdktf.TerraformDataSource {
 
@@ -310,7 +310,7 @@ export class DataKubernetesIngress extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress.html kubernetes_ingress} Data Source
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress kubernetes_ingress} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

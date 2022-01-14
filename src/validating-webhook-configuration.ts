@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html
+// https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,13 +10,13 @@ export interface ValidatingWebhookConfigurationConfig extends cdktf.TerraformMet
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#metadata ValidatingWebhookConfiguration#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#metadata ValidatingWebhookConfiguration#metadata}
   */
   readonly metadata: ValidatingWebhookConfigurationMetadata;
   /**
   * webhook block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#webhook ValidatingWebhookConfiguration#webhook}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#webhook ValidatingWebhookConfiguration#webhook}
   */
   readonly webhook: ValidatingWebhookConfigurationWebhook[];
 }
@@ -24,25 +24,25 @@ export interface ValidatingWebhookConfigurationMetadata {
   /**
   * An unstructured key value map stored with the validating webhook configuration that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#annotations ValidatingWebhookConfiguration#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#annotations ValidatingWebhookConfiguration#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#generate_name ValidatingWebhookConfiguration#generate_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#generate_name ValidatingWebhookConfiguration#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the validating webhook configuration. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#labels ValidatingWebhookConfiguration#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#labels ValidatingWebhookConfiguration#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the validating webhook configuration, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#name ValidatingWebhookConfiguration#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#name ValidatingWebhookConfiguration#name}
   */
   readonly name?: string;
 }
@@ -181,25 +181,25 @@ export interface ValidatingWebhookConfigurationWebhookClientConfigService {
   /**
   * `name` is the name of the service. Required
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#name ValidatingWebhookConfiguration#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#name ValidatingWebhookConfiguration#name}
   */
   readonly name: string;
   /**
   * `namespace` is the namespace of the service. Required
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#namespace ValidatingWebhookConfiguration#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#namespace ValidatingWebhookConfiguration#namespace}
   */
   readonly namespace: string;
   /**
   * `path` is an optional URL path which will be sent in any request to this service.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#path ValidatingWebhookConfiguration#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#path ValidatingWebhookConfiguration#path}
   */
   readonly path?: string;
   /**
   * If specified, the port on the service that hosting webhook. Default to 443 for backward compatibility. `port` should be a valid port number (1-65535, inclusive).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#port ValidatingWebhookConfiguration#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#port ValidatingWebhookConfiguration#port}
   */
   readonly port?: number;
 }
@@ -330,7 +330,7 @@ export interface ValidatingWebhookConfigurationWebhookClientConfig {
   /**
   * `caBundle` is a PEM encoded CA bundle which will be used to validate the webhook's server certificate. If unspecified, system trust roots on the apiserver are used.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#ca_bundle ValidatingWebhookConfiguration#ca_bundle}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#ca_bundle ValidatingWebhookConfiguration#ca_bundle}
   */
   readonly caBundle?: string;
   /**
@@ -346,13 +346,13 @@ A path is optional, and if present may be any string permissible in a URL. You m
 
 Attempting to use a user or basic auth e.g. "user:password@" is not allowed. Fragments ("#...") and query parameters ("?...") are not allowed, either.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#url ValidatingWebhookConfiguration#url}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#url ValidatingWebhookConfiguration#url}
   */
   readonly url?: string;
   /**
   * service block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#service ValidatingWebhookConfiguration#service}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#service ValidatingWebhookConfiguration#service}
   */
   readonly service?: ValidatingWebhookConfigurationWebhookClientConfigService;
 }
@@ -466,19 +466,19 @@ export interface ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpr
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#key ValidatingWebhookConfiguration#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#key ValidatingWebhookConfiguration#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#operator ValidatingWebhookConfiguration#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#operator ValidatingWebhookConfiguration#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#values ValidatingWebhookConfiguration#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#values ValidatingWebhookConfiguration#values}
   */
   readonly values?: string[];
 }
@@ -499,13 +499,13 @@ export interface ValidatingWebhookConfigurationWebhookNamespaceSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#match_labels ValidatingWebhookConfiguration#match_labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#match_labels ValidatingWebhookConfiguration#match_labels}
   */
   readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#match_expressions ValidatingWebhookConfiguration#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#match_expressions ValidatingWebhookConfiguration#match_expressions}
   */
   readonly matchExpressions?: ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions[];
 }
@@ -598,19 +598,19 @@ export interface ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpress
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#key ValidatingWebhookConfiguration#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#key ValidatingWebhookConfiguration#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#operator ValidatingWebhookConfiguration#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#operator ValidatingWebhookConfiguration#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#values ValidatingWebhookConfiguration#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#values ValidatingWebhookConfiguration#values}
   */
   readonly values?: string[];
 }
@@ -631,13 +631,13 @@ export interface ValidatingWebhookConfigurationWebhookObjectSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#match_labels ValidatingWebhookConfiguration#match_labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#match_labels ValidatingWebhookConfiguration#match_labels}
   */
   readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#match_expressions ValidatingWebhookConfiguration#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#match_expressions ValidatingWebhookConfiguration#match_expressions}
   */
   readonly matchExpressions?: ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressions[];
 }
@@ -728,25 +728,25 @@ export class ValidatingWebhookConfigurationWebhookObjectSelectorOutputReference 
 }
 export interface ValidatingWebhookConfigurationWebhookRule {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#api_groups ValidatingWebhookConfiguration#api_groups}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#api_groups ValidatingWebhookConfiguration#api_groups}
   */
   readonly apiGroups: string[];
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#api_versions ValidatingWebhookConfiguration#api_versions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#api_versions ValidatingWebhookConfiguration#api_versions}
   */
   readonly apiVersions: string[];
   /**
   * Operations is the operations the admission hook cares about - CREATE, UPDATE, DELETE, CONNECT or * for all of those operations and any future admission operations that are added. If '*' is present, the length of the slice must be one. Required.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#operations ValidatingWebhookConfiguration#operations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#operations ValidatingWebhookConfiguration#operations}
   */
   readonly operations: string[];
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#resources ValidatingWebhookConfiguration#resources}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#resources ValidatingWebhookConfiguration#resources}
   */
   readonly resources: string[];
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#scope ValidatingWebhookConfiguration#scope}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#scope ValidatingWebhookConfiguration#scope}
   */
   readonly scope?: string;
 }
@@ -769,13 +769,13 @@ export interface ValidatingWebhookConfigurationWebhook {
   /**
   * AdmissionReviewVersions is an ordered list of preferred `AdmissionReview` versions the Webhook expects. API server will try to use first version in the list which it supports. If none of the versions specified in this list supported by API server, validation will fail for this object. If a persisted webhook configuration specifies allowed versions and does not include any versions known to the API Server, calls to the webhook will fail and be subject to the failure policy.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#admission_review_versions ValidatingWebhookConfiguration#admission_review_versions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#admission_review_versions ValidatingWebhookConfiguration#admission_review_versions}
   */
   readonly admissionReviewVersions?: string[];
   /**
   * FailurePolicy defines how unrecognized errors from the admission endpoint are handled - allowed values are Ignore or Fail. Defaults to Fail.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#failure_policy ValidatingWebhookConfiguration#failure_policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#failure_policy ValidatingWebhookConfiguration#failure_policy}
   */
   readonly failurePolicy?: string;
   /**
@@ -787,49 +787,49 @@ export interface ValidatingWebhookConfigurationWebhook {
 
 Defaults to "Equivalent"
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#match_policy ValidatingWebhookConfiguration#match_policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#match_policy ValidatingWebhookConfiguration#match_policy}
   */
   readonly matchPolicy?: string;
   /**
   * The name of the admission webhook. Name should be fully qualified, e.g., imagepolicy.kubernetes.io, where "imagepolicy" is the name of the webhook, and kubernetes.io is the name of the organization. Required.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#name ValidatingWebhookConfiguration#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#name ValidatingWebhookConfiguration#name}
   */
   readonly name: string;
   /**
   * SideEffects states whether this webhook has side effects. Acceptable values are: None, NoneOnDryRun (webhooks created via v1beta1 may also specify Some or Unknown). Webhooks with side effects MUST implement a reconciliation system, since a request may be rejected by a future step in the admission chain and the side effects therefore need to be undone. Requests with the dryRun attribute will be auto-rejected if they match a webhook with sideEffects == Unknown or Some.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#side_effects ValidatingWebhookConfiguration#side_effects}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#side_effects ValidatingWebhookConfiguration#side_effects}
   */
   readonly sideEffects?: string;
   /**
   * TimeoutSeconds specifies the timeout for this webhook. After the timeout passes, the webhook call will be ignored or the API call will fail based on the failure policy. The timeout value must be between 1 and 30 seconds. Default to 10 seconds.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#timeout_seconds ValidatingWebhookConfiguration#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#timeout_seconds ValidatingWebhookConfiguration#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * client_config block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#client_config ValidatingWebhookConfiguration#client_config}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#client_config ValidatingWebhookConfiguration#client_config}
   */
   readonly clientConfig: ValidatingWebhookConfigurationWebhookClientConfig;
   /**
   * namespace_selector block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#namespace_selector ValidatingWebhookConfiguration#namespace_selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#namespace_selector ValidatingWebhookConfiguration#namespace_selector}
   */
   readonly namespaceSelector?: ValidatingWebhookConfigurationWebhookNamespaceSelector;
   /**
   * object_selector block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#object_selector ValidatingWebhookConfiguration#object_selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#object_selector ValidatingWebhookConfiguration#object_selector}
   */
   readonly objectSelector?: ValidatingWebhookConfigurationWebhookObjectSelector;
   /**
   * rule block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html#rule ValidatingWebhookConfiguration#rule}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#rule ValidatingWebhookConfiguration#rule}
   */
   readonly rule: ValidatingWebhookConfigurationWebhookRule[];
 }
@@ -855,7 +855,7 @@ export function validatingWebhookConfigurationWebhookToTerraform(struct?: Valida
 
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html kubernetes_validating_webhook_configuration}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration kubernetes_validating_webhook_configuration}
 */
 export class ValidatingWebhookConfiguration extends cdktf.TerraformResource {
 
@@ -869,7 +869,7 @@ export class ValidatingWebhookConfiguration extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration.html kubernetes_validating_webhook_configuration} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration kubernetes_validating_webhook_configuration} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

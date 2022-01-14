@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html
+// https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,19 +10,19 @@ export interface CronJobV1Config extends cdktf.TerraformMetaArguments {
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#metadata CronJobV1#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#metadata CronJobV1#metadata}
   */
   readonly metadata: CronJobV1Metadata;
   /**
   * spec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#spec CronJobV1#spec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#spec CronJobV1#spec}
   */
   readonly spec: CronJobV1Spec;
   /**
   * timeouts block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#timeouts CronJobV1#timeouts}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#timeouts CronJobV1#timeouts}
   */
   readonly timeouts?: CronJobV1Timeouts;
 }
@@ -30,31 +30,31 @@ export interface CronJobV1Metadata {
   /**
   * An unstructured key value map stored with the cronjob that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#annotations CronJobV1#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#annotations CronJobV1#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#generate_name CronJobV1#generate_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#generate_name CronJobV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the cronjob. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#labels CronJobV1#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#labels CronJobV1#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the cronjob, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the cronjob must be unique.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#namespace CronJobV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespace CronJobV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -216,25 +216,25 @@ export interface CronJobV1SpecJobTemplateMetadata {
   /**
   * An unstructured key value map stored with the jobTemplateSpec that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#annotations CronJobV1#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#annotations CronJobV1#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#generate_name CronJobV1#generate_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#generate_name CronJobV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the jobTemplateSpec. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#labels CronJobV1#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#labels CronJobV1#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the jobTemplateSpec, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
 }
@@ -373,19 +373,19 @@ export interface CronJobV1SpecJobTemplateSpecSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#operator CronJobV1#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#operator CronJobV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#values CronJobV1#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#values CronJobV1#values}
   */
   readonly values?: string[];
 }
@@ -406,13 +406,13 @@ export interface CronJobV1SpecJobTemplateSpecSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_labels CronJobV1#match_labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_labels CronJobV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_expressions CronJobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_expressions CronJobV1#match_expressions}
   */
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecSelectorMatchExpressions[];
 }
@@ -505,25 +505,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateMetadata {
   /**
   * An unstructured key value map stored with the job that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#annotations CronJobV1#annotations}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#annotations CronJobV1#annotations}
   */
   readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#generate_name CronJobV1#generate_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#generate_name CronJobV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the job. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#labels CronJobV1#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#labels CronJobV1#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the job, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
 }
@@ -662,19 +662,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPre
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#operator CronJobV1#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#operator CronJobV1#operator}
   */
   readonly operator?: string;
   /**
   * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#values CronJobV1#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#values CronJobV1#values}
   */
   readonly values?: string[];
 }
@@ -695,7 +695,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPre
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_expressions CronJobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_expressions CronJobV1#match_expressions}
   */
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[];
 }
@@ -764,13 +764,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPre
   /**
   * weight is in the range 1-100
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#weight CronJobV1#weight}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#weight CronJobV1#weight}
   */
   readonly weight: number;
   /**
   * preference block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#preference CronJobV1#preference}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#preference CronJobV1#preference}
   */
   readonly preference: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference;
 }
@@ -790,19 +790,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityReq
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#operator CronJobV1#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#operator CronJobV1#operator}
   */
   readonly operator?: string;
   /**
   * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#values CronJobV1#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#values CronJobV1#values}
   */
   readonly values?: string[];
 }
@@ -823,7 +823,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityReq
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_expressions CronJobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_expressions CronJobV1#match_expressions}
   */
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions[];
 }
@@ -842,7 +842,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityReq
   /**
   * node_selector_term block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#node_selector_term CronJobV1#node_selector_term}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#node_selector_term CronJobV1#node_selector_term}
   */
   readonly nodeSelectorTerm?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[];
 }
@@ -911,13 +911,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#preferred_during_scheduling_ignored_during_execution CronJobV1#preferred_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#preferred_during_scheduling_ignored_during_execution CronJobV1#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[];
   /**
   * required_during_scheduling_ignored_during_execution block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#required_during_scheduling_ignored_during_execution CronJobV1#required_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#required_during_scheduling_ignored_during_execution CronJobV1#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution;
 }
@@ -1009,19 +1009,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPref
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#operator CronJobV1#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#operator CronJobV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#values CronJobV1#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#values CronJobV1#values}
   */
   readonly values?: string[];
 }
@@ -1042,13 +1042,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPref
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_labels CronJobV1#match_labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_labels CronJobV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_expressions CronJobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_expressions CronJobV1#match_expressions}
   */
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[];
 }
@@ -1068,19 +1068,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPref
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#namespaces CronJobV1#namespaces}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespaces CronJobV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#topology_key CronJobV1#topology_key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#topology_key CronJobV1#topology_key}
   */
   readonly topologyKey?: string;
   /**
   * label_selector block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#label_selector CronJobV1#label_selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#label_selector CronJobV1#label_selector}
   */
   readonly labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
 }
@@ -1195,13 +1195,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPref
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#weight CronJobV1#weight}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#weight CronJobV1#weight}
   */
   readonly weight: number;
   /**
   * pod_affinity_term block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#pod_affinity_term CronJobV1#pod_affinity_term}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#pod_affinity_term CronJobV1#pod_affinity_term}
   */
   readonly podAffinityTerm: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
@@ -1221,19 +1221,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequ
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#operator CronJobV1#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#operator CronJobV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#values CronJobV1#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#values CronJobV1#values}
   */
   readonly values?: string[];
 }
@@ -1254,13 +1254,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequ
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_labels CronJobV1#match_labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_labels CronJobV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_expressions CronJobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_expressions CronJobV1#match_expressions}
   */
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[];
 }
@@ -1280,19 +1280,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequ
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#namespaces CronJobV1#namespaces}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespaces CronJobV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#topology_key CronJobV1#topology_key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#topology_key CronJobV1#topology_key}
   */
   readonly topologyKey?: string;
   /**
   * label_selector block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#label_selector CronJobV1#label_selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#label_selector CronJobV1#label_selector}
   */
   readonly labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[];
 }
@@ -1313,13 +1313,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#preferred_during_scheduling_ignored_during_execution CronJobV1#preferred_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#preferred_during_scheduling_ignored_during_execution CronJobV1#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[];
   /**
   * required_during_scheduling_ignored_during_execution block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#required_during_scheduling_ignored_during_execution CronJobV1#required_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#required_during_scheduling_ignored_during_execution CronJobV1#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
@@ -1412,19 +1412,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#operator CronJobV1#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#operator CronJobV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#values CronJobV1#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#values CronJobV1#values}
   */
   readonly values?: string[];
 }
@@ -1445,13 +1445,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_labels CronJobV1#match_labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_labels CronJobV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_expressions CronJobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_expressions CronJobV1#match_expressions}
   */
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[];
 }
@@ -1471,19 +1471,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#namespaces CronJobV1#namespaces}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespaces CronJobV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#topology_key CronJobV1#topology_key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#topology_key CronJobV1#topology_key}
   */
   readonly topologyKey?: string;
   /**
   * label_selector block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#label_selector CronJobV1#label_selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#label_selector CronJobV1#label_selector}
   */
   readonly labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
 }
@@ -1598,13 +1598,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#weight CronJobV1#weight}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#weight CronJobV1#weight}
   */
   readonly weight: number;
   /**
   * pod_affinity_term block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#pod_affinity_term CronJobV1#pod_affinity_term}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#pod_affinity_term CronJobV1#pod_affinity_term}
   */
   readonly podAffinityTerm: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
@@ -1624,19 +1624,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#operator CronJobV1#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#operator CronJobV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#values CronJobV1#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#values CronJobV1#values}
   */
   readonly values?: string[];
 }
@@ -1657,13 +1657,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_labels CronJobV1#match_labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_labels CronJobV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_expressions CronJobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_expressions CronJobV1#match_expressions}
   */
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[];
 }
@@ -1683,19 +1683,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#namespaces CronJobV1#namespaces}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespaces CronJobV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#topology_key CronJobV1#topology_key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#topology_key CronJobV1#topology_key}
   */
   readonly topologyKey?: string;
   /**
   * label_selector block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#label_selector CronJobV1#label_selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#label_selector CronJobV1#label_selector}
   */
   readonly labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[];
 }
@@ -1716,13 +1716,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity
   /**
   * preferred_during_scheduling_ignored_during_execution block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#preferred_during_scheduling_ignored_during_execution CronJobV1#preferred_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#preferred_during_scheduling_ignored_during_execution CronJobV1#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[];
   /**
   * required_during_scheduling_ignored_during_execution block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#required_during_scheduling_ignored_during_execution CronJobV1#required_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#required_during_scheduling_ignored_during_execution CronJobV1#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
 }
@@ -1815,19 +1815,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecAffinity {
   /**
   * node_affinity block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#node_affinity CronJobV1#node_affinity}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#node_affinity CronJobV1#node_affinity}
   */
   readonly nodeAffinity?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity;
   /**
   * pod_affinity block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#pod_affinity CronJobV1#pod_affinity}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#pod_affinity CronJobV1#pod_affinity}
   */
   readonly podAffinity?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinity;
   /**
   * pod_anti_affinity block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#pod_anti_affinity CronJobV1#pod_anti_affinity}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#pod_anti_affinity CronJobV1#pod_anti_affinity}
   */
   readonly podAntiAffinity?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity;
 }
@@ -1941,19 +1941,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromCo
   /**
   * The key to select.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#optional CronJobV1#optional}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#optional CronJobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -2067,13 +2067,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFi
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#api_version CronJobV1#api_version}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#api_version CronJobV1#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#field_path CronJobV1#field_path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#field_path CronJobV1#field_path}
   */
   readonly fieldPath?: string;
 }
@@ -2162,17 +2162,17 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldR
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#container_name CronJobV1#container_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#container_name CronJobV1#container_name}
   */
   readonly containerName?: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#divisor CronJobV1#divisor}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#divisor CronJobV1#divisor}
   */
   readonly divisor?: string;
   /**
   * Resource to select
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#resource CronJobV1#resource}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#resource CronJobV1#resource}
   */
   readonly resource: string;
 }
@@ -2283,19 +2283,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSe
   /**
   * The key of the secret to select from. Must be a valid secret key.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#optional CronJobV1#optional}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#optional CronJobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -2409,25 +2409,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFrom {
   /**
   * config_map_key_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#config_map_key_ref CronJobV1#config_map_key_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#config_map_key_ref CronJobV1#config_map_key_ref}
   */
   readonly configMapKeyRef?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#field_ref CronJobV1#field_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#field_ref CronJobV1#field_ref}
   */
   readonly fieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#resource_field_ref CronJobV1#resource_field_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#resource_field_ref CronJobV1#resource_field_ref}
   */
   readonly resourceFieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret_key_ref CronJobV1#secret_key_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret_key_ref CronJobV1#secret_key_ref}
   */
   readonly secretKeyRef?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef;
 }
@@ -2564,19 +2564,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
   /**
   * value_from block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value_from CronJobV1#value_from}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value_from CronJobV1#value_from}
   */
   readonly valueFrom?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFrom;
 }
@@ -2597,13 +2597,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigM
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the ConfigMap must be defined
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#optional CronJobV1#optional}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#optional CronJobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -2691,13 +2691,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretR
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the Secret must be defined
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#optional CronJobV1#optional}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#optional CronJobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -2785,19 +2785,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#prefix CronJobV1#prefix}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#prefix CronJobV1#prefix}
   */
   readonly prefix?: string;
   /**
   * config_map_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#config_map_ref CronJobV1#config_map_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#config_map_ref CronJobV1#config_map_ref}
   */
   readonly configMapRef?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret_ref CronJobV1#secret_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret_ref CronJobV1#secret_ref}
   */
   readonly secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef;
 }
@@ -2818,7 +2818,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostS
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#command CronJobV1#command}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#command CronJobV1#command}
   */
   readonly command?: string[];
 }
@@ -2886,13 +2886,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostS
   /**
   * The header field name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
 }
@@ -2912,31 +2912,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostS
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host CronJobV1#host}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host CronJobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#scheme CronJobV1#scheme}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#scheme CronJobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_header CronJobV1#http_header}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_header CronJobV1#http_header}
   */
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[];
 }
@@ -3097,7 +3097,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostS
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port: string;
 }
@@ -3116,19 +3116,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostS
   /**
   * exec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#exec CronJobV1#exec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#exec CronJobV1#exec}
   */
   readonly exec?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExec;
   /**
   * http_get block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_get CronJobV1#http_get}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_get CronJobV1#http_get}
   */
   readonly httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#tcp_socket CronJobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#tcp_socket CronJobV1#tcp_socket}
   */
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartTcpSocket[];
 }
@@ -3149,7 +3149,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreSt
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#command CronJobV1#command}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#command CronJobV1#command}
   */
   readonly command?: string[];
 }
@@ -3217,13 +3217,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreSt
   /**
   * The header field name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
 }
@@ -3243,31 +3243,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreSt
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host CronJobV1#host}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host CronJobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#scheme CronJobV1#scheme}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#scheme CronJobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_header CronJobV1#http_header}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_header CronJobV1#http_header}
   */
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[];
 }
@@ -3428,7 +3428,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreSt
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port: string;
 }
@@ -3447,19 +3447,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreSt
   /**
   * exec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#exec CronJobV1#exec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#exec CronJobV1#exec}
   */
   readonly exec?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExec;
   /**
   * http_get block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_get CronJobV1#http_get}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_get CronJobV1#http_get}
   */
   readonly httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#tcp_socket CronJobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#tcp_socket CronJobV1#tcp_socket}
   */
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopTcpSocket[];
 }
@@ -3480,13 +3480,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycle {
   /**
   * post_start block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#post_start CronJobV1#post_start}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#post_start CronJobV1#post_start}
   */
   readonly postStart?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart[];
   /**
   * pre_stop block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#pre_stop CronJobV1#pre_stop}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#pre_stop CronJobV1#pre_stop}
   */
   readonly preStop?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStop[];
 }
@@ -3579,7 +3579,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeE
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#command CronJobV1#command}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#command CronJobV1#command}
   */
   readonly command?: string[];
 }
@@ -3647,13 +3647,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeH
   /**
   * The header field name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
 }
@@ -3673,31 +3673,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeH
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host CronJobV1#host}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host CronJobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#scheme CronJobV1#scheme}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#scheme CronJobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_header CronJobV1#http_header}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_header CronJobV1#http_header}
   */
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[];
 }
@@ -3858,7 +3858,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeT
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port: string;
 }
@@ -3877,49 +3877,49 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbe 
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#failure_threshold CronJobV1#failure_threshold}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#failure_threshold CronJobV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#initial_delay_seconds CronJobV1#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#initial_delay_seconds CronJobV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#period_seconds CronJobV1#period_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#period_seconds CronJobV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#success_threshold CronJobV1#success_threshold}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#success_threshold CronJobV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#timeout_seconds CronJobV1#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#timeout_seconds CronJobV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#exec CronJobV1#exec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#exec CronJobV1#exec}
   */
   readonly exec?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec;
   /**
   * http_get block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_get CronJobV1#http_get}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_get CronJobV1#http_get}
   */
   readonly httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#tcp_socket CronJobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#tcp_socket CronJobV1#tcp_socket}
   */
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocket[];
 }
@@ -4149,31 +4149,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#container_port CronJobV1#container_port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#container_port CronJobV1#container_port}
   */
   readonly containerPort: number;
   /**
   * What host IP to bind the external port to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host_ip CronJobV1#host_ip}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host_ip CronJobV1#host_ip}
   */
   readonly hostIp?: string;
   /**
   * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host_port CronJobV1#host_port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host_port CronJobV1#host_port}
   */
   readonly hostPort?: number;
   /**
   * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#protocol CronJobV1#protocol}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#protocol CronJobV1#protocol}
   */
   readonly protocol?: string;
 }
@@ -4196,7 +4196,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#command CronJobV1#command}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#command CronJobV1#command}
   */
   readonly command?: string[];
 }
@@ -4264,13 +4264,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe
   /**
   * The header field name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
 }
@@ -4290,31 +4290,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host CronJobV1#host}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host CronJobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#scheme CronJobV1#scheme}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#scheme CronJobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_header CronJobV1#http_header}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_header CronJobV1#http_header}
   */
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[];
 }
@@ -4475,7 +4475,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port: string;
 }
@@ -4494,49 +4494,49 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#failure_threshold CronJobV1#failure_threshold}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#failure_threshold CronJobV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#initial_delay_seconds CronJobV1#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#initial_delay_seconds CronJobV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#period_seconds CronJobV1#period_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#period_seconds CronJobV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#success_threshold CronJobV1#success_threshold}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#success_threshold CronJobV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#timeout_seconds CronJobV1#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#timeout_seconds CronJobV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#exec CronJobV1#exec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#exec CronJobV1#exec}
   */
   readonly exec?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec;
   /**
   * http_get block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_get CronJobV1#http_get}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_get CronJobV1#http_get}
   */
   readonly httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet;
   /**
   * tcp_socket block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#tcp_socket CronJobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#tcp_socket CronJobV1#tcp_socket}
   */
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocket[];
 }
@@ -4766,13 +4766,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerResources {
   /**
   * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#limits CronJobV1#limits}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#limits CronJobV1#limits}
   */
   readonly limits?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#requests CronJobV1#requests}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#requests CronJobV1#requests}
   */
   readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
@@ -4865,13 +4865,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContex
   /**
   * Added capabilities
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#add CronJobV1#add}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#add CronJobV1#add}
   */
   readonly add?: string[];
   /**
   * Removed capabilities
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#drop CronJobV1#drop}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#drop CronJobV1#drop}
   */
   readonly drop?: string[];
 }
@@ -4962,25 +4962,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContex
   /**
   * Level is SELinux level label that applies to the container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#level CronJobV1#level}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#level CronJobV1#level}
   */
   readonly level?: string;
   /**
   * Role is a SELinux role label that applies to the container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#role CronJobV1#role}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#role CronJobV1#role}
   */
   readonly role?: string;
   /**
   * Type is a SELinux type label that applies to the container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#type CronJobV1#type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#type CronJobV1#type}
   */
   readonly type?: string;
   /**
   * User is a SELinux user label that applies to the container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#user CronJobV1#user}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#user CronJobV1#user}
   */
   readonly user?: string;
 }
@@ -5117,49 +5117,49 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContex
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#allow_privilege_escalation CronJobV1#allow_privilege_escalation}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#allow_privilege_escalation CronJobV1#allow_privilege_escalation}
   */
   readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#privileged CronJobV1#privileged}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#privileged CronJobV1#privileged}
   */
   readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only_root_filesystem CronJobV1#read_only_root_filesystem}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only_root_filesystem CronJobV1#read_only_root_filesystem}
   */
   readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#run_as_group CronJobV1#run_as_group}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#run_as_group CronJobV1#run_as_group}
   */
   readonly runAsGroup?: string;
   /**
   * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#run_as_non_root CronJobV1#run_as_non_root}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#run_as_non_root CronJobV1#run_as_non_root}
   */
   readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#run_as_user CronJobV1#run_as_user}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#run_as_user CronJobV1#run_as_user}
   */
   readonly runAsUser?: string;
   /**
   * capabilities block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#capabilities CronJobV1#capabilities}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#capabilities CronJobV1#capabilities}
   */
   readonly capabilities?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities;
   /**
   * se_linux_options block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#se_linux_options CronJobV1#se_linux_options}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#se_linux_options CronJobV1#se_linux_options}
   */
   readonly seLinuxOptions?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions;
 }
@@ -5388,7 +5388,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeEx
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#command CronJobV1#command}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#command CronJobV1#command}
   */
   readonly command?: string[];
 }
@@ -5456,13 +5456,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHt
   /**
   * The header field name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
 }
@@ -5482,31 +5482,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHt
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host CronJobV1#host}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host CronJobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#scheme CronJobV1#scheme}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#scheme CronJobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_header CronJobV1#http_header}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_header CronJobV1#http_header}
   */
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[];
 }
@@ -5667,7 +5667,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTc
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port: string;
 }
@@ -5686,49 +5686,49 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#failure_threshold CronJobV1#failure_threshold}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#failure_threshold CronJobV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#initial_delay_seconds CronJobV1#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#initial_delay_seconds CronJobV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#period_seconds CronJobV1#period_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#period_seconds CronJobV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#success_threshold CronJobV1#success_threshold}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#success_threshold CronJobV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#timeout_seconds CronJobV1#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#timeout_seconds CronJobV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#exec CronJobV1#exec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#exec CronJobV1#exec}
   */
   readonly exec?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExec;
   /**
   * http_get block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_get CronJobV1#http_get}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_get CronJobV1#http_get}
   */
   readonly httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet;
   /**
   * tcp_socket block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#tcp_socket CronJobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#tcp_socket CronJobV1#tcp_socket}
   */
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocket[];
 }
@@ -5958,31 +5958,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerVolumeMount {
   /**
   * Path within the container at which the volume should be mounted. Must not contain ':'.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#mount_path CronJobV1#mount_path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#mount_path CronJobV1#mount_path}
   */
   readonly mountPath: string;
   /**
   * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#mount_propagation CronJobV1#mount_propagation}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#mount_propagation CronJobV1#mount_propagation}
   */
   readonly mountPropagation?: string;
   /**
   * This must match the Name of a Volume.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
   /**
   * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#sub_path CronJobV1#sub_path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#sub_path CronJobV1#sub_path}
   */
   readonly subPath?: string;
 }
@@ -6005,127 +6005,127 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainer {
   /**
   * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#args CronJobV1#args}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#args CronJobV1#args}
   */
   readonly args?: string[];
   /**
   * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#command CronJobV1#command}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#command CronJobV1#command}
   */
   readonly command?: string[];
   /**
   * Docker image name. More info: http://kubernetes.io/docs/user-guide/images
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#image CronJobV1#image}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#image CronJobV1#image}
   */
   readonly image?: string;
   /**
   * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#image_pull_policy CronJobV1#image_pull_policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#image_pull_policy CronJobV1#image_pull_policy}
   */
   readonly imagePullPolicy?: string;
   /**
   * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
   /**
   * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#stdin CronJobV1#stdin}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#stdin CronJobV1#stdin}
   */
   readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#stdin_once CronJobV1#stdin_once}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#stdin_once CronJobV1#stdin_once}
   */
   readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#termination_message_path CronJobV1#termination_message_path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#termination_message_path CronJobV1#termination_message_path}
   */
   readonly terminationMessagePath?: string;
   /**
   * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#termination_message_policy CronJobV1#termination_message_policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#termination_message_policy CronJobV1#termination_message_policy}
   */
   readonly terminationMessagePolicy?: string;
   /**
   * Whether this container should allocate a TTY for itself
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#tty CronJobV1#tty}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#tty CronJobV1#tty}
   */
   readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#working_dir CronJobV1#working_dir}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#working_dir CronJobV1#working_dir}
   */
   readonly workingDir?: string;
   /**
   * env block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#env CronJobV1#env}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#env CronJobV1#env}
   */
   readonly env?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnv[];
   /**
   * env_from block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#env_from CronJobV1#env_from}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#env_from CronJobV1#env_from}
   */
   readonly envFrom?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFrom[];
   /**
   * lifecycle block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#lifecycle CronJobV1#lifecycle}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#lifecycle CronJobV1#lifecycle}
   */
   readonly lifecycle?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycle;
   /**
   * liveness_probe block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#liveness_probe CronJobV1#liveness_probe}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#liveness_probe CronJobV1#liveness_probe}
   */
   readonly livenessProbe?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbe;
   /**
   * port block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerPort[];
   /**
   * readiness_probe block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#readiness_probe CronJobV1#readiness_probe}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#readiness_probe CronJobV1#readiness_probe}
   */
   readonly readinessProbe?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe;
   /**
   * resources block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#resources CronJobV1#resources}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#resources CronJobV1#resources}
   */
   readonly resources?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerResources;
   /**
   * security_context block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#security_context CronJobV1#security_context}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#security_context CronJobV1#security_context}
   */
   readonly securityContext?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContext;
   /**
   * startup_probe block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#startup_probe CronJobV1#startup_probe}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#startup_probe CronJobV1#startup_probe}
   */
   readonly startupProbe?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbe;
   /**
   * volume_mount block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#volume_mount CronJobV1#volume_mount}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#volume_mount CronJobV1#volume_mount}
   */
   readonly volumeMount?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerVolumeMount[];
 }
@@ -6164,13 +6164,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOption {
   /**
   * Name of the option.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
   /**
   * Value of the option. Optional: Defaults to empty.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
 }
@@ -6190,19 +6190,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfig {
   /**
   * A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#nameservers CronJobV1#nameservers}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#nameservers CronJobV1#nameservers}
   */
   readonly nameservers?: string[];
   /**
   * A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#searches CronJobV1#searches}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#searches CronJobV1#searches}
   */
   readonly searches?: string[];
   /**
   * option block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#option CronJobV1#option}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#option CronJobV1#option}
   */
   readonly option?: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOption[];
 }
@@ -6317,13 +6317,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecHostAliases {
   /**
   * Hostnames for the IP address.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#hostnames CronJobV1#hostnames}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#hostnames CronJobV1#hostnames}
   */
   readonly hostnames: string[];
   /**
   * IP address of the host file entry.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#ip CronJobV1#ip}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#ip CronJobV1#ip}
   */
   readonly ip: string;
 }
@@ -6343,7 +6343,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecrets {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
 }
@@ -6362,19 +6362,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFr
   /**
   * The key to select.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#optional CronJobV1#optional}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#optional CronJobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -6488,13 +6488,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFr
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#api_version CronJobV1#api_version}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#api_version CronJobV1#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#field_path CronJobV1#field_path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#field_path CronJobV1#field_path}
   */
   readonly fieldPath?: string;
 }
@@ -6583,17 +6583,17 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFi
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#container_name CronJobV1#container_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#container_name CronJobV1#container_name}
   */
   readonly containerName?: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#divisor CronJobV1#divisor}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#divisor CronJobV1#divisor}
   */
   readonly divisor?: string;
   /**
   * Resource to select
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#resource CronJobV1#resource}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#resource CronJobV1#resource}
   */
   readonly resource: string;
 }
@@ -6704,19 +6704,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFr
   /**
   * The key of the secret to select from. Must be a valid secret key.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#optional CronJobV1#optional}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#optional CronJobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -6830,25 +6830,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFr
   /**
   * config_map_key_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#config_map_key_ref CronJobV1#config_map_key_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#config_map_key_ref CronJobV1#config_map_key_ref}
   */
   readonly configMapKeyRef?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#field_ref CronJobV1#field_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#field_ref CronJobV1#field_ref}
   */
   readonly fieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#resource_field_ref CronJobV1#resource_field_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#resource_field_ref CronJobV1#resource_field_ref}
   */
   readonly resourceFieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret_key_ref CronJobV1#secret_key_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret_key_ref CronJobV1#secret_key_ref}
   */
   readonly secretKeyRef?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef;
 }
@@ -6985,19 +6985,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
   /**
   * value_from block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value_from CronJobV1#value_from}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value_from CronJobV1#value_from}
   */
   readonly valueFrom?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom;
 }
@@ -7018,13 +7018,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromCon
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the ConfigMap must be defined
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#optional CronJobV1#optional}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#optional CronJobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -7112,13 +7112,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSec
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the Secret must be defined
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#optional CronJobV1#optional}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#optional CronJobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -7206,19 +7206,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#prefix CronJobV1#prefix}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#prefix CronJobV1#prefix}
   */
   readonly prefix?: string;
   /**
   * config_map_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#config_map_ref CronJobV1#config_map_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#config_map_ref CronJobV1#config_map_ref}
   */
   readonly configMapRef?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret_ref CronJobV1#secret_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret_ref CronJobV1#secret_ref}
   */
   readonly secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef;
 }
@@ -7239,7 +7239,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#command CronJobV1#command}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#command CronJobV1#command}
   */
   readonly command?: string[];
 }
@@ -7307,13 +7307,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   /**
   * The header field name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
 }
@@ -7333,31 +7333,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host CronJobV1#host}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host CronJobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#scheme CronJobV1#scheme}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#scheme CronJobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_header CronJobV1#http_header}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_header CronJobV1#http_header}
   */
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[];
 }
@@ -7518,7 +7518,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port: string;
 }
@@ -7537,19 +7537,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   /**
   * exec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#exec CronJobV1#exec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#exec CronJobV1#exec}
   */
   readonly exec?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExec;
   /**
   * http_get block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_get CronJobV1#http_get}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_get CronJobV1#http_get}
   */
   readonly httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#tcp_socket CronJobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#tcp_socket CronJobV1#tcp_socket}
   */
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartTcpSocket[];
 }
@@ -7570,7 +7570,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#command CronJobV1#command}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#command CronJobV1#command}
   */
   readonly command?: string[];
 }
@@ -7638,13 +7638,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   /**
   * The header field name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
 }
@@ -7664,31 +7664,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host CronJobV1#host}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host CronJobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#scheme CronJobV1#scheme}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#scheme CronJobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_header CronJobV1#http_header}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_header CronJobV1#http_header}
   */
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[];
 }
@@ -7849,7 +7849,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port: string;
 }
@@ -7868,19 +7868,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleP
   /**
   * exec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#exec CronJobV1#exec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#exec CronJobV1#exec}
   */
   readonly exec?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExec;
   /**
   * http_get block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_get CronJobV1#http_get}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_get CronJobV1#http_get}
   */
   readonly httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#tcp_socket CronJobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#tcp_socket CronJobV1#tcp_socket}
   */
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopTcpSocket[];
 }
@@ -7901,13 +7901,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycle 
   /**
   * post_start block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#post_start CronJobV1#post_start}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#post_start CronJobV1#post_start}
   */
   readonly postStart?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStart[];
   /**
   * pre_stop block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#pre_stop CronJobV1#pre_stop}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#pre_stop CronJobV1#pre_stop}
   */
   readonly preStop?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStop[];
 }
@@ -8000,7 +8000,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessPr
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#command CronJobV1#command}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#command CronJobV1#command}
   */
   readonly command?: string[];
 }
@@ -8068,13 +8068,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessPr
   /**
   * The header field name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
 }
@@ -8094,31 +8094,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessPr
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host CronJobV1#host}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host CronJobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#scheme CronJobV1#scheme}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#scheme CronJobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_header CronJobV1#http_header}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_header CronJobV1#http_header}
   */
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[];
 }
@@ -8279,7 +8279,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessPr
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port: string;
 }
@@ -8298,49 +8298,49 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessPr
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#failure_threshold CronJobV1#failure_threshold}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#failure_threshold CronJobV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#initial_delay_seconds CronJobV1#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#initial_delay_seconds CronJobV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#period_seconds CronJobV1#period_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#period_seconds CronJobV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#success_threshold CronJobV1#success_threshold}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#success_threshold CronJobV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#timeout_seconds CronJobV1#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#timeout_seconds CronJobV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#exec CronJobV1#exec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#exec CronJobV1#exec}
   */
   readonly exec?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec;
   /**
   * http_get block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_get CronJobV1#http_get}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_get CronJobV1#http_get}
   */
   readonly httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#tcp_socket CronJobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#tcp_socket CronJobV1#tcp_socket}
   */
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocket[];
 }
@@ -8570,31 +8570,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#container_port CronJobV1#container_port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#container_port CronJobV1#container_port}
   */
   readonly containerPort: number;
   /**
   * What host IP to bind the external port to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host_ip CronJobV1#host_ip}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host_ip CronJobV1#host_ip}
   */
   readonly hostIp?: string;
   /**
   * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host_port CronJobV1#host_port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host_port CronJobV1#host_port}
   */
   readonly hostPort?: number;
   /**
   * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#protocol CronJobV1#protocol}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#protocol CronJobV1#protocol}
   */
   readonly protocol?: string;
 }
@@ -8617,7 +8617,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessP
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#command CronJobV1#command}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#command CronJobV1#command}
   */
   readonly command?: string[];
 }
@@ -8685,13 +8685,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessP
   /**
   * The header field name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
 }
@@ -8711,31 +8711,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessP
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host CronJobV1#host}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host CronJobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#scheme CronJobV1#scheme}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#scheme CronJobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_header CronJobV1#http_header}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_header CronJobV1#http_header}
   */
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[];
 }
@@ -8896,7 +8896,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessP
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port: string;
 }
@@ -8915,49 +8915,49 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessP
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#failure_threshold CronJobV1#failure_threshold}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#failure_threshold CronJobV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#initial_delay_seconds CronJobV1#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#initial_delay_seconds CronJobV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#period_seconds CronJobV1#period_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#period_seconds CronJobV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#success_threshold CronJobV1#success_threshold}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#success_threshold CronJobV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#timeout_seconds CronJobV1#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#timeout_seconds CronJobV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#exec CronJobV1#exec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#exec CronJobV1#exec}
   */
   readonly exec?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec;
   /**
   * http_get block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_get CronJobV1#http_get}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_get CronJobV1#http_get}
   */
   readonly httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet;
   /**
   * tcp_socket block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#tcp_socket CronJobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#tcp_socket CronJobV1#tcp_socket}
   */
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocket[];
 }
@@ -9187,13 +9187,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResources 
   /**
   * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#limits CronJobV1#limits}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#limits CronJobV1#limits}
   */
   readonly limits?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#requests CronJobV1#requests}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#requests CronJobV1#requests}
   */
   readonly requests?: { [key: string]: string } | cdktf.IResolvable;
 }
@@ -9286,13 +9286,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityCo
   /**
   * Added capabilities
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#add CronJobV1#add}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#add CronJobV1#add}
   */
   readonly add?: string[];
   /**
   * Removed capabilities
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#drop CronJobV1#drop}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#drop CronJobV1#drop}
   */
   readonly drop?: string[];
 }
@@ -9383,25 +9383,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityCo
   /**
   * Level is SELinux level label that applies to the container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#level CronJobV1#level}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#level CronJobV1#level}
   */
   readonly level?: string;
   /**
   * Role is a SELinux role label that applies to the container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#role CronJobV1#role}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#role CronJobV1#role}
   */
   readonly role?: string;
   /**
   * Type is a SELinux type label that applies to the container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#type CronJobV1#type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#type CronJobV1#type}
   */
   readonly type?: string;
   /**
   * User is a SELinux user label that applies to the container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#user CronJobV1#user}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#user CronJobV1#user}
   */
   readonly user?: string;
 }
@@ -9538,49 +9538,49 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityCo
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#allow_privilege_escalation CronJobV1#allow_privilege_escalation}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#allow_privilege_escalation CronJobV1#allow_privilege_escalation}
   */
   readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#privileged CronJobV1#privileged}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#privileged CronJobV1#privileged}
   */
   readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only_root_filesystem CronJobV1#read_only_root_filesystem}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only_root_filesystem CronJobV1#read_only_root_filesystem}
   */
   readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#run_as_group CronJobV1#run_as_group}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#run_as_group CronJobV1#run_as_group}
   */
   readonly runAsGroup?: string;
   /**
   * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#run_as_non_root CronJobV1#run_as_non_root}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#run_as_non_root CronJobV1#run_as_non_root}
   */
   readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#run_as_user CronJobV1#run_as_user}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#run_as_user CronJobV1#run_as_user}
   */
   readonly runAsUser?: string;
   /**
   * capabilities block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#capabilities CronJobV1#capabilities}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#capabilities CronJobV1#capabilities}
   */
   readonly capabilities?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities;
   /**
   * se_linux_options block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#se_linux_options CronJobV1#se_linux_options}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#se_linux_options CronJobV1#se_linux_options}
   */
   readonly seLinuxOptions?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions;
 }
@@ -9809,7 +9809,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupPro
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#command CronJobV1#command}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#command CronJobV1#command}
   */
   readonly command?: string[];
 }
@@ -9877,13 +9877,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupPro
   /**
   * The header field name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
 }
@@ -9903,31 +9903,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupPro
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host CronJobV1#host}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host CronJobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#scheme CronJobV1#scheme}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#scheme CronJobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_header CronJobV1#http_header}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_header CronJobV1#http_header}
   */
   readonly httpHeader?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[];
 }
@@ -10088,7 +10088,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupPro
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port: string;
 }
@@ -10107,49 +10107,49 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupPro
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#failure_threshold CronJobV1#failure_threshold}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#failure_threshold CronJobV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#initial_delay_seconds CronJobV1#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#initial_delay_seconds CronJobV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#period_seconds CronJobV1#period_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#period_seconds CronJobV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#success_threshold CronJobV1#success_threshold}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#success_threshold CronJobV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#timeout_seconds CronJobV1#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#timeout_seconds CronJobV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#exec CronJobV1#exec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#exec CronJobV1#exec}
   */
   readonly exec?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec;
   /**
   * http_get block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#http_get CronJobV1#http_get}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#http_get CronJobV1#http_get}
   */
   readonly httpGet?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet;
   /**
   * tcp_socket block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#tcp_socket CronJobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#tcp_socket CronJobV1#tcp_socket}
   */
   readonly tcpSocket?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocket[];
 }
@@ -10379,31 +10379,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerVolumeMoun
   /**
   * Path within the container at which the volume should be mounted. Must not contain ':'.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#mount_path CronJobV1#mount_path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#mount_path CronJobV1#mount_path}
   */
   readonly mountPath: string;
   /**
   * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#mount_propagation CronJobV1#mount_propagation}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#mount_propagation CronJobV1#mount_propagation}
   */
   readonly mountPropagation?: string;
   /**
   * This must match the Name of a Volume.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
   /**
   * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#sub_path CronJobV1#sub_path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#sub_path CronJobV1#sub_path}
   */
   readonly subPath?: string;
 }
@@ -10426,127 +10426,127 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainer {
   /**
   * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#args CronJobV1#args}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#args CronJobV1#args}
   */
   readonly args?: string[];
   /**
   * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#command CronJobV1#command}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#command CronJobV1#command}
   */
   readonly command?: string[];
   /**
   * Docker image name. More info: http://kubernetes.io/docs/user-guide/images
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#image CronJobV1#image}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#image CronJobV1#image}
   */
   readonly image?: string;
   /**
   * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#image_pull_policy CronJobV1#image_pull_policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#image_pull_policy CronJobV1#image_pull_policy}
   */
   readonly imagePullPolicy?: string;
   /**
   * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
   /**
   * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#stdin CronJobV1#stdin}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#stdin CronJobV1#stdin}
   */
   readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#stdin_once CronJobV1#stdin_once}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#stdin_once CronJobV1#stdin_once}
   */
   readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#termination_message_path CronJobV1#termination_message_path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#termination_message_path CronJobV1#termination_message_path}
   */
   readonly terminationMessagePath?: string;
   /**
   * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#termination_message_policy CronJobV1#termination_message_policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#termination_message_policy CronJobV1#termination_message_policy}
   */
   readonly terminationMessagePolicy?: string;
   /**
   * Whether this container should allocate a TTY for itself
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#tty CronJobV1#tty}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#tty CronJobV1#tty}
   */
   readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#working_dir CronJobV1#working_dir}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#working_dir CronJobV1#working_dir}
   */
   readonly workingDir?: string;
   /**
   * env block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#env CronJobV1#env}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#env CronJobV1#env}
   */
   readonly env?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnv[];
   /**
   * env_from block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#env_from CronJobV1#env_from}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#env_from CronJobV1#env_from}
   */
   readonly envFrom?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFrom[];
   /**
   * lifecycle block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#lifecycle CronJobV1#lifecycle}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#lifecycle CronJobV1#lifecycle}
   */
   readonly lifecycle?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycle;
   /**
   * liveness_probe block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#liveness_probe CronJobV1#liveness_probe}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#liveness_probe CronJobV1#liveness_probe}
   */
   readonly livenessProbe?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe;
   /**
   * port block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#port CronJobV1#port}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#port CronJobV1#port}
   */
   readonly port?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerPort[];
   /**
   * readiness_probe block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#readiness_probe CronJobV1#readiness_probe}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#readiness_probe CronJobV1#readiness_probe}
   */
   readonly readinessProbe?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe;
   /**
   * resources block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#resources CronJobV1#resources}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#resources CronJobV1#resources}
   */
   readonly resources?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResources;
   /**
   * security_context block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#security_context CronJobV1#security_context}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#security_context CronJobV1#security_context}
   */
   readonly securityContext?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContext;
   /**
   * startup_probe block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#startup_probe CronJobV1#startup_probe}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#startup_probe CronJobV1#startup_probe}
   */
   readonly startupProbe?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbe;
   /**
   * volume_mount block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#volume_mount CronJobV1#volume_mount}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#volume_mount CronJobV1#volume_mount}
   */
   readonly volumeMount?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerVolumeMount[];
 }
@@ -10585,7 +10585,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecReadinessGate {
   /**
   * refers to a condition in the pod's condition list with matching type.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#condition_type CronJobV1#condition_type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#condition_type CronJobV1#condition_type}
   */
   readonly conditionType: string;
 }
@@ -10604,25 +10604,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxO
   /**
   * Level is SELinux level label that applies to the container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#level CronJobV1#level}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#level CronJobV1#level}
   */
   readonly level?: string;
   /**
   * Role is a SELinux role label that applies to the container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#role CronJobV1#role}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#role CronJobV1#role}
   */
   readonly role?: string;
   /**
   * Type is a SELinux type label that applies to the container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#type CronJobV1#type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#type CronJobV1#type}
   */
   readonly type?: string;
   /**
   * User is a SELinux user label that applies to the container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#user CronJobV1#user}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#user CronJobV1#user}
   */
   readonly user?: string;
 }
@@ -10759,13 +10759,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctl {
   /**
   * Name of a property to set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name: string;
   /**
   * Value of a property to set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value: string;
 }
@@ -10785,43 +10785,43 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext {
   /**
   * A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fs_group CronJobV1#fs_group}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fs_group CronJobV1#fs_group}
   */
   readonly fsGroup?: string;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#run_as_group CronJobV1#run_as_group}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#run_as_group CronJobV1#run_as_group}
   */
   readonly runAsGroup?: string;
   /**
   * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#run_as_non_root CronJobV1#run_as_non_root}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#run_as_non_root CronJobV1#run_as_non_root}
   */
   readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#run_as_user CronJobV1#run_as_user}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#run_as_user CronJobV1#run_as_user}
   */
   readonly runAsUser?: string;
   /**
   * A list of groups applied to the first process run in each container, in addition to the container's primary GID. If unspecified, no groups will be added to any container.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#supplemental_groups CronJobV1#supplemental_groups}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#supplemental_groups CronJobV1#supplemental_groups}
   */
   readonly supplementalGroups?: number[];
   /**
   * se_linux_options block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#se_linux_options CronJobV1#se_linux_options}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#se_linux_options CronJobV1#se_linux_options}
   */
   readonly seLinuxOptions?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions;
   /**
   * sysctl block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#sysctl CronJobV1#sysctl}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#sysctl CronJobV1#sysctl}
   */
   readonly sysctl?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctl[];
 }
@@ -11029,31 +11029,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecToleration {
   /**
   * Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#effect CronJobV1#effect}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#effect CronJobV1#effect}
   */
   readonly effect?: string;
   /**
   * Key is the taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#operator CronJobV1#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#operator CronJobV1#operator}
   */
   readonly operator?: string;
   /**
   * TolerationSeconds represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#toleration_seconds CronJobV1#toleration_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#toleration_seconds CronJobV1#toleration_seconds}
   */
   readonly tolerationSeconds?: string;
   /**
   * Value is the taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#value CronJobV1#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#value CronJobV1#value}
   */
   readonly value?: string;
 }
@@ -11076,19 +11076,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstrain
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#operator CronJobV1#operator}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#operator CronJobV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#values CronJobV1#values}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#values CronJobV1#values}
   */
   readonly values?: string[];
 }
@@ -11109,13 +11109,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstrain
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_labels CronJobV1#match_labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_labels CronJobV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * match_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#match_expressions CronJobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#match_expressions CronJobV1#match_expressions}
   */
   readonly matchExpressions?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions[];
 }
@@ -11135,25 +11135,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstrain
   /**
   * describes the degree to which pods may be unevenly distributed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#max_skew CronJobV1#max_skew}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#max_skew CronJobV1#max_skew}
   */
   readonly maxSkew?: number;
   /**
   * the key of node labels. Nodes that have a label with this key and identical values are considered to be in the same topology.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#topology_key CronJobV1#topology_key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#topology_key CronJobV1#topology_key}
   */
   readonly topologyKey?: string;
   /**
   * indicates how to deal with a pod if it doesn't satisfy the spread constraint.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#when_unsatisfiable CronJobV1#when_unsatisfiable}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#when_unsatisfiable CronJobV1#when_unsatisfiable}
   */
   readonly whenUnsatisfiable?: string;
   /**
   * label_selector block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#label_selector CronJobV1#label_selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#label_selector CronJobV1#label_selector}
   */
   readonly labelSelector?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelector[];
 }
@@ -11175,25 +11175,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockSt
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fs_type CronJobV1#fs_type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fs_type CronJobV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#partition CronJobV1#partition}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#partition CronJobV1#partition}
   */
   readonly partition?: number;
   /**
   * Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#volume_id CronJobV1#volume_id}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#volume_id CronJobV1#volume_id}
   */
   readonly volumeId: string;
 }
@@ -11327,37 +11327,37 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDisk {
   /**
   * Host Caching mode: None, Read Only, Read Write.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#caching_mode CronJobV1#caching_mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#caching_mode CronJobV1#caching_mode}
   */
   readonly cachingMode: string;
   /**
   * The URI the data disk in the blob storage
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#data_disk_uri CronJobV1#data_disk_uri}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#data_disk_uri CronJobV1#data_disk_uri}
   */
   readonly dataDiskUri: string;
   /**
   * The Name of the data disk in the blob storage
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#disk_name CronJobV1#disk_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#disk_name CronJobV1#disk_name}
   */
   readonly diskName: string;
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fs_type CronJobV1#fs_type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fs_type CronJobV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#kind CronJobV1#kind}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#kind CronJobV1#kind}
   */
   readonly kind?: string;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
@@ -11531,25 +11531,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFile {
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The name of secret that contains Azure Storage Account Name and Key
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret_name CronJobV1#secret_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret_name CronJobV1#secret_name}
   */
   readonly secretName: string;
   /**
   * The namespace of the secret that contains Azure Storage Account Name and Key. For Kubernetes up to 1.18.x the default is the same as the Pod. For Kubernetes 1.19.x and later the default is "default" namespace.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret_namespace CronJobV1#secret_namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret_namespace CronJobV1#secret_namespace}
   */
   readonly secretNamespace?: string;
   /**
   * Share Name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#share_name CronJobV1#share_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#share_name CronJobV1#share_name}
   */
   readonly shareName: string;
 }
@@ -11680,13 +11680,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#namespace CronJobV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespace CronJobV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -11777,37 +11777,37 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFs {
   /**
   * Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#monitors CronJobV1#monitors}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#monitors CronJobV1#monitors}
   */
   readonly monitors: string[];
   /**
   * Used as the mounted root, rather than the full Ceph tree, default is /
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret_file CronJobV1#secret_file}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret_file CronJobV1#secret_file}
   */
   readonly secretFile?: string;
   /**
   * User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#user CronJobV1#user}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#user CronJobV1#user}
   */
   readonly user?: string;
   /**
   * secret_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret_ref CronJobV1#secret_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret_ref CronJobV1#secret_ref}
   */
   readonly secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef;
 }
@@ -11987,19 +11987,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinder {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fs_type CronJobV1#fs_type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fs_type CronJobV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#volume_id CronJobV1#volume_id}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#volume_id CronJobV1#volume_id}
   */
   readonly volumeId: string;
 }
@@ -12110,19 +12110,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItems {
   /**
   * The key to project.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#mode CronJobV1#mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#mode CronJobV1#mode}
   */
   readonly mode?: string;
   /**
   * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
 }
@@ -12143,25 +12143,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMap {
   /**
   * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#default_mode CronJobV1#default_mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#default_mode CronJobV1#default_mode}
   */
   readonly defaultMode?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Optional: Specify whether the ConfigMap or its keys must be defined.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#optional CronJobV1#optional}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#optional CronJobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#items CronJobV1#items}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#items CronJobV1#items}
   */
   readonly items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItems[];
 }
@@ -12299,13 +12299,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpa
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#namespace CronJobV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespace CronJobV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -12396,13 +12396,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPubl
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#namespace CronJobV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespace CronJobV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -12493,13 +12493,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSec
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#namespace CronJobV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespace CronJobV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -12590,13 +12590,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecre
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#namespace CronJobV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespace CronJobV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -12687,55 +12687,55 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi {
   /**
   * the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#driver CronJobV1#driver}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#driver CronJobV1#driver}
   */
   readonly driver: string;
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fs_type CronJobV1#fs_type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fs_type CronJobV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Attributes of the volume to publish.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#volume_attributes CronJobV1#volume_attributes}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#volume_attributes CronJobV1#volume_attributes}
   */
   readonly volumeAttributes?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#volume_handle CronJobV1#volume_handle}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#volume_handle CronJobV1#volume_handle}
   */
   readonly volumeHandle: string;
   /**
   * controller_expand_secret_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#controller_expand_secret_ref CronJobV1#controller_expand_secret_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#controller_expand_secret_ref CronJobV1#controller_expand_secret_ref}
   */
   readonly controllerExpandSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef;
   /**
   * controller_publish_secret_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#controller_publish_secret_ref CronJobV1#controller_publish_secret_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#controller_publish_secret_ref CronJobV1#controller_publish_secret_ref}
   */
   readonly controllerPublishSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef;
   /**
   * node_publish_secret_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#node_publish_secret_ref CronJobV1#node_publish_secret_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#node_publish_secret_ref CronJobV1#node_publish_secret_ref}
   */
   readonly nodePublishSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef;
   /**
   * node_stage_secret_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#node_stage_secret_ref CronJobV1#node_stage_secret_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#node_stage_secret_ref CronJobV1#node_stage_secret_ref}
   */
   readonly nodeStageSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef;
 }
@@ -12982,13 +12982,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsF
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#api_version CronJobV1#api_version}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#api_version CronJobV1#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#field_path CronJobV1#field_path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#field_path CronJobV1#field_path}
   */
   readonly fieldPath?: string;
 }
@@ -13077,17 +13077,17 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsField
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#container_name CronJobV1#container_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#container_name CronJobV1#container_name}
   */
   readonly containerName: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#divisor CronJobV1#divisor}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#divisor CronJobV1#divisor}
   */
   readonly divisor?: string;
   /**
   * Resource to select
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#resource CronJobV1#resource}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#resource CronJobV1#resource}
   */
   readonly resource: string;
 }
@@ -13195,25 +13195,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItems 
   /**
   * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#mode CronJobV1#mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#mode CronJobV1#mode}
   */
   readonly mode?: string;
   /**
   * Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..'
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path: string;
   /**
   * field_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#field_ref CronJobV1#field_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#field_ref CronJobV1#field_ref}
   */
   readonly fieldRef: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRef;
   /**
   * resource_field_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#resource_field_ref CronJobV1#resource_field_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#resource_field_ref CronJobV1#resource_field_ref}
   */
   readonly resourceFieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef;
 }
@@ -13235,13 +13235,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApi {
   /**
   * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#default_mode CronJobV1#default_mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#default_mode CronJobV1#default_mode}
   */
   readonly defaultMode?: string;
   /**
   * items block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#items CronJobV1#items}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#items CronJobV1#items}
   */
   readonly items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItems[];
 }
@@ -13333,13 +13333,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDir {
   /**
   * What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#medium CronJobV1#medium}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#medium CronJobV1#medium}
   */
   readonly medium?: string;
   /**
   * Total amount of local storage required for this EmptyDir volume.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#size_limit CronJobV1#size_limit}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#size_limit CronJobV1#size_limit}
   */
   readonly sizeLimit?: string;
 }
@@ -13430,25 +13430,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFc {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fs_type CronJobV1#fs_type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fs_type CronJobV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * FC target lun number
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#lun CronJobV1#lun}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#lun CronJobV1#lun}
   */
   readonly lun: number;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * FC target worldwide names (WWNs)
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#target_ww_ns CronJobV1#target_ww_ns}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#target_ww_ns CronJobV1#target_ww_ns}
   */
   readonly targetWwNs: string[];
 }
@@ -13579,13 +13579,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretR
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#namespace CronJobV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespace CronJobV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -13676,31 +13676,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolume {
   /**
   * Driver is the name of the driver to use for this volume.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#driver CronJobV1#driver}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#driver CronJobV1#driver}
   */
   readonly driver: string;
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fs_type CronJobV1#fs_type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fs_type CronJobV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * Extra command options if any.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#options CronJobV1#options}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#options CronJobV1#options}
   */
   readonly options?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret_ref CronJobV1#secret_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret_ref CronJobV1#secret_ref}
   */
   readonly secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef;
 }
@@ -13858,13 +13858,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlocker {
   /**
   * Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#dataset_name CronJobV1#dataset_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#dataset_name CronJobV1#dataset_name}
   */
   readonly datasetName?: string;
   /**
   * UUID of the dataset. This is unique identifier of a Flocker dataset
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#dataset_uuid CronJobV1#dataset_uuid}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#dataset_uuid CronJobV1#dataset_uuid}
   */
   readonly datasetUuid?: string;
 }
@@ -13955,25 +13955,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fs_type CronJobV1#fs_type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fs_type CronJobV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty). More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#partition CronJobV1#partition}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#partition CronJobV1#partition}
   */
   readonly partition?: number;
   /**
   * Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#pd_name CronJobV1#pd_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#pd_name CronJobV1#pd_name}
   */
   readonly pdName: string;
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
@@ -14107,19 +14107,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepo {
   /**
   * Target directory name. Must not contain or start with '..'. If '.' is supplied, the volume directory will be the git repository. Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#directory CronJobV1#directory}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#directory CronJobV1#directory}
   */
   readonly directory?: string;
   /**
   * Repository URL
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#repository CronJobV1#repository}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#repository CronJobV1#repository}
   */
   readonly repository?: string;
   /**
   * Commit hash for the specified revision.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#revision CronJobV1#revision}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#revision CronJobV1#revision}
   */
   readonly revision?: string;
 }
@@ -14233,19 +14233,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfs {
   /**
   * The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#endpoints_name CronJobV1#endpoints_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#endpoints_name CronJobV1#endpoints_name}
   */
   readonly endpointsName: string;
   /**
   * The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path: string;
   /**
   * Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
@@ -14353,13 +14353,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPath {
   /**
   * Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
   /**
   * Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#type CronJobV1#type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#type CronJobV1#type}
   */
   readonly type?: string;
 }
@@ -14450,37 +14450,37 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsi {
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#iscsi
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fs_type CronJobV1#fs_type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fs_type CronJobV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * Target iSCSI Qualified Name.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#iqn CronJobV1#iqn}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#iqn CronJobV1#iqn}
   */
   readonly iqn: string;
   /**
   * iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#iscsi_interface CronJobV1#iscsi_interface}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#iscsi_interface CronJobV1#iscsi_interface}
   */
   readonly iscsiInterface?: string;
   /**
   * iSCSI target lun number.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#lun CronJobV1#lun}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#lun CronJobV1#lun}
   */
   readonly lun?: number;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#target_portal CronJobV1#target_portal}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#target_portal CronJobV1#target_portal}
   */
   readonly targetPortal: string;
 }
@@ -14657,7 +14657,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocal {
   /**
   * Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
 }
@@ -14725,19 +14725,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfs {
   /**
   * Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path: string;
   /**
   * Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#server CronJobV1#server}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#server CronJobV1#server}
   */
   readonly server: string;
 }
@@ -14845,13 +14845,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeC
   /**
   * ClaimName is the name of a PersistentVolumeClaim in the same 
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#claim_name CronJobV1#claim_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#claim_name CronJobV1#claim_name}
   */
   readonly claimName?: string;
   /**
   * Will force the ReadOnly setting in VolumeMounts.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
 }
@@ -14942,13 +14942,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentD
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fs_type CronJobV1#fs_type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fs_type CronJobV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * ID that identifies Photon Controller persistent disk
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#pd_id CronJobV1#pd_id}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#pd_id CronJobV1#pd_id}
   */
   readonly pdId: string;
 }
@@ -15036,19 +15036,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesC
   /**
   * The key to project.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#mode CronJobV1#mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#mode CronJobV1#mode}
   */
   readonly mode?: string;
   /**
   * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
 }
@@ -15069,19 +15069,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesC
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Optional: Specify whether the ConfigMap or it's keys must be defined.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#optional CronJobV1#optional}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#optional CronJobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#items CronJobV1#items}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#items CronJobV1#items}
   */
   readonly items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapItems[];
 }
@@ -15102,13 +15102,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesD
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to 'v1'.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#api_version CronJobV1#api_version}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#api_version CronJobV1#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#field_path CronJobV1#field_path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#field_path CronJobV1#field_path}
   */
   readonly fieldPath?: string;
 }
@@ -15197,17 +15197,17 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#container_name CronJobV1#container_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#container_name CronJobV1#container_name}
   */
   readonly containerName: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#divisor CronJobV1#divisor}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#divisor CronJobV1#divisor}
   */
   readonly divisor?: string;
   /**
   * Resource to select
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#resource CronJobV1#resource}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#resource CronJobV1#resource}
   */
   readonly resource: string;
 }
@@ -15315,25 +15315,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesD
   /**
   * Mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#mode CronJobV1#mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#mode CronJobV1#mode}
   */
   readonly mode?: string;
   /**
   * Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..'
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path: string;
   /**
   * field_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#field_ref CronJobV1#field_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#field_ref CronJobV1#field_ref}
   */
   readonly fieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef;
   /**
   * resource_field_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#resource_field_ref CronJobV1#resource_field_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#resource_field_ref CronJobV1#resource_field_ref}
   */
   readonly resourceFieldRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef;
 }
@@ -15355,7 +15355,7 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesD
   /**
   * items block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#items CronJobV1#items}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#items CronJobV1#items}
   */
   readonly items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[];
 }
@@ -15424,19 +15424,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesS
   /**
   * The key to project.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#mode CronJobV1#mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#mode CronJobV1#mode}
   */
   readonly mode?: string;
   /**
   * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
 }
@@ -15457,19 +15457,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesS
   /**
   * Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Optional: Specify whether the Secret or it's keys must be defined.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#optional CronJobV1#optional}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#optional CronJobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#items CronJobV1#items}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#items CronJobV1#items}
   */
   readonly items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretItems[];
 }
@@ -15490,19 +15490,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesS
   /**
   * Audience is the intended audience of the token
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#audience CronJobV1#audience}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#audience CronJobV1#audience}
   */
   readonly audience?: string;
   /**
   * ExpirationSeconds is the expected duration of validity of the service account token. It defaults to 1 hour and must be at least 10 minutes (600 seconds).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#expiration_seconds CronJobV1#expiration_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#expiration_seconds CronJobV1#expiration_seconds}
   */
   readonly expirationSeconds?: number;
   /**
   * Path specifies a relative path to the mount point of the projected volume.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path: string;
 }
@@ -15613,25 +15613,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSources 
   /**
   * config_map block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#config_map CronJobV1#config_map}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#config_map CronJobV1#config_map}
   */
   readonly configMap?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMap[];
   /**
   * downward_api block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#downward_api CronJobV1#downward_api}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#downward_api CronJobV1#downward_api}
   */
   readonly downwardApi?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApi;
   /**
   * secret block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret CronJobV1#secret}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret CronJobV1#secret}
   */
   readonly secret?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecret[];
   /**
   * service_account_token block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#service_account_token CronJobV1#service_account_token}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#service_account_token CronJobV1#service_account_token}
   */
   readonly serviceAccountToken?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken;
 }
@@ -15653,13 +15653,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjected {
   /**
   * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#default_mode CronJobV1#default_mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#default_mode CronJobV1#default_mode}
   */
   readonly defaultMode?: string;
   /**
   * sources block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#sources CronJobV1#sources}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#sources CronJobV1#sources}
   */
   readonly sources: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSources[];
 }
@@ -15679,31 +15679,31 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyte {
   /**
   * Group to map volume access to Default is no group
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#group CronJobV1#group}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#group CronJobV1#group}
   */
   readonly group?: string;
   /**
   * Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#registry CronJobV1#registry}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#registry CronJobV1#registry}
   */
   readonly registry: string;
   /**
   * User to map volume access to Defaults to serivceaccount user
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#user CronJobV1#user}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#user CronJobV1#user}
   */
   readonly user?: string;
   /**
   * Volume is a string that references an already created Quobyte volume by name.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#volume CronJobV1#volume}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#volume CronJobV1#volume}
   */
   readonly volume: string;
 }
@@ -15857,13 +15857,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#namespace CronJobV1#namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespace CronJobV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -15954,49 +15954,49 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbd {
   /**
   * A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#ceph_monitors CronJobV1#ceph_monitors}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#ceph_monitors CronJobV1#ceph_monitors}
   */
   readonly cephMonitors: string[];
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#rbd
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fs_type CronJobV1#fs_type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fs_type CronJobV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#keyring CronJobV1#keyring}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#keyring CronJobV1#keyring}
   */
   readonly keyring?: string;
   /**
   * The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#rados_user CronJobV1#rados_user}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#rados_user CronJobV1#rados_user}
   */
   readonly radosUser?: string;
   /**
   * The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#rbd_image CronJobV1#rbd_image}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#rbd_image CronJobV1#rbd_image}
   */
   readonly rbdImage: string;
   /**
   * The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#rbd_pool CronJobV1#rbd_pool}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#rbd_pool CronJobV1#rbd_pool}
   */
   readonly rbdPool?: string;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#read_only CronJobV1#read_only}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#read_only CronJobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret_ref CronJobV1#secret_ref}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret_ref CronJobV1#secret_ref}
   */
   readonly secretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef;
 }
@@ -16219,19 +16219,19 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItems {
   /**
   * The key to project.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#key CronJobV1#key}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#key CronJobV1#key}
   */
   readonly key?: string;
   /**
   * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#mode CronJobV1#mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#mode CronJobV1#mode}
   */
   readonly mode?: string;
   /**
   * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#path CronJobV1#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#path CronJobV1#path}
   */
   readonly path?: string;
 }
@@ -16252,25 +16252,25 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecret {
   /**
   * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#default_mode CronJobV1#default_mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#default_mode CronJobV1#default_mode}
   */
   readonly defaultMode?: string;
   /**
   * Optional: Specify whether the Secret or its keys must be defined.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#optional CronJobV1#optional}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#optional CronJobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
   /**
   * Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret_name CronJobV1#secret_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret_name CronJobV1#secret_name}
   */
   readonly secretName?: string;
   /**
   * items block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#items CronJobV1#items}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#items CronJobV1#items}
   */
   readonly items?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItems[];
 }
@@ -16408,13 +16408,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolume {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fs_type CronJobV1#fs_type}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fs_type CronJobV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * Path that identifies vSphere volume vmdk
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#volume_path CronJobV1#volume_path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#volume_path CronJobV1#volume_path}
   */
   readonly volumePath: string;
 }
@@ -16502,163 +16502,163 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolume {
   /**
   * Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#name CronJobV1#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
   /**
   * aws_elastic_block_store block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#aws_elastic_block_store CronJobV1#aws_elastic_block_store}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#aws_elastic_block_store CronJobV1#aws_elastic_block_store}
   */
   readonly awsElasticBlockStore?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStore;
   /**
   * azure_disk block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#azure_disk CronJobV1#azure_disk}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#azure_disk CronJobV1#azure_disk}
   */
   readonly azureDisk?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDisk;
   /**
   * azure_file block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#azure_file CronJobV1#azure_file}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#azure_file CronJobV1#azure_file}
   */
   readonly azureFile?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFile;
   /**
   * ceph_fs block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#ceph_fs CronJobV1#ceph_fs}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#ceph_fs CronJobV1#ceph_fs}
   */
   readonly cephFs?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFs;
   /**
   * cinder block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#cinder CronJobV1#cinder}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#cinder CronJobV1#cinder}
   */
   readonly cinder?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinder;
   /**
   * config_map block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#config_map CronJobV1#config_map}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#config_map CronJobV1#config_map}
   */
   readonly configMap?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMap;
   /**
   * csi block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#csi CronJobV1#csi}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#csi CronJobV1#csi}
   */
   readonly csi?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi;
   /**
   * downward_api block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#downward_api CronJobV1#downward_api}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#downward_api CronJobV1#downward_api}
   */
   readonly downwardApi?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApi;
   /**
   * empty_dir block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#empty_dir CronJobV1#empty_dir}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#empty_dir CronJobV1#empty_dir}
   */
   readonly emptyDir?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDir;
   /**
   * fc block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#fc CronJobV1#fc}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#fc CronJobV1#fc}
   */
   readonly fc?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFc;
   /**
   * flex_volume block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#flex_volume CronJobV1#flex_volume}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#flex_volume CronJobV1#flex_volume}
   */
   readonly flexVolume?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolume;
   /**
   * flocker block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#flocker CronJobV1#flocker}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#flocker CronJobV1#flocker}
   */
   readonly flocker?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlocker;
   /**
   * gce_persistent_disk block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#gce_persistent_disk CronJobV1#gce_persistent_disk}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#gce_persistent_disk CronJobV1#gce_persistent_disk}
   */
   readonly gcePersistentDisk?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk;
   /**
   * git_repo block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#git_repo CronJobV1#git_repo}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#git_repo CronJobV1#git_repo}
   */
   readonly gitRepo?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepo;
   /**
   * glusterfs block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#glusterfs CronJobV1#glusterfs}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#glusterfs CronJobV1#glusterfs}
   */
   readonly glusterfs?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfs;
   /**
   * host_path block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host_path CronJobV1#host_path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host_path CronJobV1#host_path}
   */
   readonly hostPath?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPath;
   /**
   * iscsi block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#iscsi CronJobV1#iscsi}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#iscsi CronJobV1#iscsi}
   */
   readonly iscsi?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsi;
   /**
   * local block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#local CronJobV1#local}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#local CronJobV1#local}
   */
   readonly local?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocal;
   /**
   * nfs block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#nfs CronJobV1#nfs}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#nfs CronJobV1#nfs}
   */
   readonly nfs?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfs;
   /**
   * persistent_volume_claim block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#persistent_volume_claim CronJobV1#persistent_volume_claim}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#persistent_volume_claim CronJobV1#persistent_volume_claim}
   */
   readonly persistentVolumeClaim?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim;
   /**
   * photon_persistent_disk block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#photon_persistent_disk CronJobV1#photon_persistent_disk}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#photon_persistent_disk CronJobV1#photon_persistent_disk}
   */
   readonly photonPersistentDisk?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDisk;
   /**
   * projected block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#projected CronJobV1#projected}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#projected CronJobV1#projected}
   */
   readonly projected?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjected[];
   /**
   * quobyte block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#quobyte CronJobV1#quobyte}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#quobyte CronJobV1#quobyte}
   */
   readonly quobyte?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyte;
   /**
   * rbd block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#rbd CronJobV1#rbd}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#rbd CronJobV1#rbd}
   */
   readonly rbd?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbd;
   /**
   * secret block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#secret CronJobV1#secret}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#secret CronJobV1#secret}
   */
   readonly secret?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecret;
   /**
   * vsphere_volume block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#vsphere_volume CronJobV1#vsphere_volume}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#vsphere_volume CronJobV1#vsphere_volume}
   */
   readonly vsphereVolume?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolume;
 }
@@ -16703,163 +16703,163 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpec {
   /**
   * Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#active_deadline_seconds CronJobV1#active_deadline_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#active_deadline_seconds CronJobV1#active_deadline_seconds}
   */
   readonly activeDeadlineSeconds?: number;
   /**
   * AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#automount_service_account_token CronJobV1#automount_service_account_token}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#automount_service_account_token CronJobV1#automount_service_account_token}
   */
   readonly automountServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
   * Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#dns_policy CronJobV1#dns_policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#dns_policy CronJobV1#dns_policy}
   */
   readonly dnsPolicy?: string;
   /**
   * Enables generating environment variables for service discovery. Defaults to true.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#enable_service_links CronJobV1#enable_service_links}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#enable_service_links CronJobV1#enable_service_links}
   */
   readonly enableServiceLinks?: boolean | cdktf.IResolvable;
   /**
   * Use the host's ipc namespace. Optional: Defaults to false.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host_ipc CronJobV1#host_ipc}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host_ipc CronJobV1#host_ipc}
   */
   readonly hostIpc?: boolean | cdktf.IResolvable;
   /**
   * Host networking requested for this pod. Use the host's network namespace. If this option is set, the ports that will be used must be specified.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host_network CronJobV1#host_network}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host_network CronJobV1#host_network}
   */
   readonly hostNetwork?: boolean | cdktf.IResolvable;
   /**
   * Use the host's pid namespace.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host_pid CronJobV1#host_pid}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host_pid CronJobV1#host_pid}
   */
   readonly hostPid?: boolean | cdktf.IResolvable;
   /**
   * Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#hostname CronJobV1#hostname}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#hostname CronJobV1#hostname}
   */
   readonly hostname?: string;
   /**
   * NodeName is a request to schedule this pod onto a specific node. If it is non-empty, the scheduler simply schedules this pod onto that node, assuming that it fits resource requirements.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#node_name CronJobV1#node_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#node_name CronJobV1#node_name}
   */
   readonly nodeName?: string;
   /**
   * NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: http://kubernetes.io/docs/user-guide/node-selection.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#node_selector CronJobV1#node_selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#node_selector CronJobV1#node_selector}
   */
   readonly nodeSelector?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#priority_class_name CronJobV1#priority_class_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#priority_class_name CronJobV1#priority_class_name}
   */
   readonly priorityClassName?: string;
   /**
   * Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#restart_policy CronJobV1#restart_policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#restart_policy CronJobV1#restart_policy}
   */
   readonly restartPolicy?: string;
   /**
   * ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#service_account_name CronJobV1#service_account_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#service_account_name CronJobV1#service_account_name}
   */
   readonly serviceAccountName?: string;
   /**
   * Share a single process namespace between all of the containers in a pod. When this is set containers will be able to view and signal processes from other containers in the same pod, and the first process in each container will not be assigned PID 1. HostPID and ShareProcessNamespace cannot both be set. Optional: Defaults to false.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#share_process_namespace CronJobV1#share_process_namespace}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#share_process_namespace CronJobV1#share_process_namespace}
   */
   readonly shareProcessNamespace?: boolean | cdktf.IResolvable;
   /**
   * If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#subdomain CronJobV1#subdomain}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#subdomain CronJobV1#subdomain}
   */
   readonly subdomain?: string;
   /**
   * Optional duration in seconds the pod needs to terminate gracefully. May be decreased in delete request. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period will be used instead. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#termination_grace_period_seconds CronJobV1#termination_grace_period_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#termination_grace_period_seconds CronJobV1#termination_grace_period_seconds}
   */
   readonly terminationGracePeriodSeconds?: number;
   /**
   * affinity block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#affinity CronJobV1#affinity}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#affinity CronJobV1#affinity}
   */
   readonly affinity?: CronJobV1SpecJobTemplateSpecTemplateSpecAffinity;
   /**
   * container block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#container CronJobV1#container}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#container CronJobV1#container}
   */
   readonly container?: CronJobV1SpecJobTemplateSpecTemplateSpecContainer[];
   /**
   * dns_config block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#dns_config CronJobV1#dns_config}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#dns_config CronJobV1#dns_config}
   */
   readonly dnsConfig?: CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfig;
   /**
   * host_aliases block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#host_aliases CronJobV1#host_aliases}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#host_aliases CronJobV1#host_aliases}
   */
   readonly hostAliases?: CronJobV1SpecJobTemplateSpecTemplateSpecHostAliases[];
   /**
   * image_pull_secrets block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#image_pull_secrets CronJobV1#image_pull_secrets}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#image_pull_secrets CronJobV1#image_pull_secrets}
   */
   readonly imagePullSecrets?: CronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecrets[];
   /**
   * init_container block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#init_container CronJobV1#init_container}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#init_container CronJobV1#init_container}
   */
   readonly initContainer?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainer[];
   /**
   * readiness_gate block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#readiness_gate CronJobV1#readiness_gate}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#readiness_gate CronJobV1#readiness_gate}
   */
   readonly readinessGate?: CronJobV1SpecJobTemplateSpecTemplateSpecReadinessGate[];
   /**
   * security_context block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#security_context CronJobV1#security_context}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#security_context CronJobV1#security_context}
   */
   readonly securityContext?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext;
   /**
   * toleration block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#toleration CronJobV1#toleration}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#toleration CronJobV1#toleration}
   */
   readonly toleration?: CronJobV1SpecJobTemplateSpecTemplateSpecToleration[];
   /**
   * topology_spread_constraint block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#topology_spread_constraint CronJobV1#topology_spread_constraint}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#topology_spread_constraint CronJobV1#topology_spread_constraint}
   */
   readonly topologySpreadConstraint?: CronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraint[];
   /**
   * volume block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#volume CronJobV1#volume}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#volume CronJobV1#volume}
   */
   readonly volume?: CronJobV1SpecJobTemplateSpecTemplateSpecVolume[];
 }
@@ -17534,13 +17534,13 @@ export interface CronJobV1SpecJobTemplateSpecTemplate {
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#metadata CronJobV1#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#metadata CronJobV1#metadata}
   */
   readonly metadata: CronJobV1SpecJobTemplateSpecTemplateMetadata;
   /**
   * spec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#spec CronJobV1#spec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#spec CronJobV1#spec}
   */
   readonly spec?: CronJobV1SpecJobTemplateSpecTemplateSpec;
 }
@@ -17628,55 +17628,55 @@ export interface CronJobV1SpecJobTemplateSpec {
   /**
   * Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#active_deadline_seconds CronJobV1#active_deadline_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#active_deadline_seconds CronJobV1#active_deadline_seconds}
   */
   readonly activeDeadlineSeconds?: number;
   /**
   * Specifies the number of retries before marking this job failed. Defaults to 6
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#backoff_limit CronJobV1#backoff_limit}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#backoff_limit CronJobV1#backoff_limit}
   */
   readonly backoffLimit?: number;
   /**
   * CompletionMode specifies how Pod completions are tracked.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#completion_mode CronJobV1#completion_mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#completion_mode CronJobV1#completion_mode}
   */
   readonly completionMode?: string;
   /**
   * Specifies the desired number of successfully finished pods the job should be run with. Setting to nil means that the success of any pod signals the success of all pods, and allows parallelism to have any positive value. Setting to 1 means that parallelism is limited to 1 and the success of that pod signals the success of the job. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#completions CronJobV1#completions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#completions CronJobV1#completions}
   */
   readonly completions?: number;
   /**
   * Controls generation of pod labels and pod selectors. Leave unset unless you are certain what you are doing. When false or unset, the system pick labels unique to this job and appends those labels to the pod template. When true, the user is responsible for picking unique labels and specifying the selector. Failure to pick a unique label may cause this and other jobs to not function correctly. More info: https://git.k8s.io/community/contributors/design-proposals/selector-generation.md
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#manual_selector CronJobV1#manual_selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#manual_selector CronJobV1#manual_selector}
   */
   readonly manualSelector?: boolean | cdktf.IResolvable;
   /**
   * Specifies the maximum desired number of pods the job should run at any given time. The actual number of pods running in steady state will be less than this number when ((.spec.completions - .status.successful) < .spec.parallelism), i.e. when the work left to do is less than max parallelism. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#parallelism CronJobV1#parallelism}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#parallelism CronJobV1#parallelism}
   */
   readonly parallelism?: number;
   /**
   * ttlSecondsAfterFinished limits the lifetime of a Job that has finished execution (either Complete or Failed). If this field is set, ttlSecondsAfterFinished after the Job finishes, it is eligible to be automatically deleted. When the Job is being deleted, its lifecycle guarantees (e.g. finalizers) will be honored. If this field is unset, the Job won't be automatically deleted. If this field is set to zero, the Job becomes eligible to be deleted immediately after it finishes.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#ttl_seconds_after_finished CronJobV1#ttl_seconds_after_finished}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#ttl_seconds_after_finished CronJobV1#ttl_seconds_after_finished}
   */
   readonly ttlSecondsAfterFinished?: string;
   /**
   * selector block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#selector CronJobV1#selector}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#selector CronJobV1#selector}
   */
   readonly selector?: CronJobV1SpecJobTemplateSpecSelector;
   /**
   * template block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#template CronJobV1#template}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#template CronJobV1#template}
   */
   readonly template: CronJobV1SpecJobTemplateSpecTemplate;
 }
@@ -17925,13 +17925,13 @@ export interface CronJobV1SpecJobTemplate {
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#metadata CronJobV1#metadata}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#metadata CronJobV1#metadata}
   */
   readonly metadata: CronJobV1SpecJobTemplateMetadata;
   /**
   * spec block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#spec CronJobV1#spec}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#spec CronJobV1#spec}
   */
   readonly spec: CronJobV1SpecJobTemplateSpec;
 }
@@ -18016,43 +18016,43 @@ export interface CronJobV1Spec {
   /**
   * Specifies how to treat concurrent executions of a Job. Defaults to Allow.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#concurrency_policy CronJobV1#concurrency_policy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#concurrency_policy CronJobV1#concurrency_policy}
   */
   readonly concurrencyPolicy?: string;
   /**
   * The number of failed finished jobs to retain. This is a pointer to distinguish between explicit zero and not specified. Defaults to 1.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#failed_jobs_history_limit CronJobV1#failed_jobs_history_limit}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#failed_jobs_history_limit CronJobV1#failed_jobs_history_limit}
   */
   readonly failedJobsHistoryLimit?: number;
   /**
   * Cron format string, e.g. 0 * * * * or @hourly, as schedule time of its jobs to be created and executed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#schedule CronJobV1#schedule}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#schedule CronJobV1#schedule}
   */
   readonly schedule: string;
   /**
   * Optional deadline in seconds for starting the job if it misses scheduled time for any reason. Missed jobs executions will be counted as failed ones.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#starting_deadline_seconds CronJobV1#starting_deadline_seconds}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#starting_deadline_seconds CronJobV1#starting_deadline_seconds}
   */
   readonly startingDeadlineSeconds?: number;
   /**
   * The number of successful finished jobs to retain. Defaults to 3.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#successful_jobs_history_limit CronJobV1#successful_jobs_history_limit}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#successful_jobs_history_limit CronJobV1#successful_jobs_history_limit}
   */
   readonly successfulJobsHistoryLimit?: number;
   /**
   * This flag tells the controller to suspend subsequent executions, it does not apply to already started executions. Defaults to false.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#suspend CronJobV1#suspend}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#suspend CronJobV1#suspend}
   */
   readonly suspend?: boolean | cdktf.IResolvable;
   /**
   * job_template block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#job_template CronJobV1#job_template}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#job_template CronJobV1#job_template}
   */
   readonly jobTemplate: CronJobV1SpecJobTemplate;
 }
@@ -18250,7 +18250,7 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
 }
 export interface CronJobV1Timeouts {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html#delete CronJobV1#delete}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#delete CronJobV1#delete}
   */
   readonly delete?: string;
 }
@@ -18316,7 +18316,7 @@ export class CronJobV1TimeoutsOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html kubernetes_cron_job_v1}
+* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1 kubernetes_cron_job_v1}
 */
 export class CronJobV1 extends cdktf.TerraformResource {
 
@@ -18330,7 +18330,7 @@ export class CronJobV1 extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1.html kubernetes_cron_job_v1} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1 kubernetes_cron_job_v1} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
