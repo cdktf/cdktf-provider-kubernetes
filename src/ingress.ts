@@ -43,7 +43,7 @@ export class IngressStatusLoadBalancer extends cdktf.ComplexComputedList {
   // ingress - computed: true, optional: false, required: false
   public get ingress() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ingress') as any;
+    return this.interpolationForAttribute('ingress');
   }
 }
 export class IngressStatus extends cdktf.ComplexComputedList {
@@ -51,7 +51,7 @@ export class IngressStatus extends cdktf.ComplexComputedList {
   // load_balancer - computed: true, optional: false, required: false
   public get loadBalancer() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('load_balancer') as any;
+    return this.interpolationForAttribute('load_balancer');
   }
 }
 export interface IngressMetadata {
@@ -60,7 +60,7 @@ export interface IngressMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#annotations Ingress#annotations}
   */
-  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
+  readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -72,7 +72,7 @@ export interface IngressMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#labels Ingress#labels}
   */
-  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly labels?: { [key: string]: string };
   /**
   * Name of the ingress, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -88,14 +88,14 @@ export interface IngressMetadata {
 }
 
 export function ingressMetadataToTerraform(struct?: IngressMetadataOutputReference | IngressMetadata): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    annotations: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
-    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
@@ -109,7 +109,7 @@ export class IngressMetadataOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -159,12 +159,11 @@ export class IngressMetadataOutputReference extends cdktf.ComplexObject {
   }
 
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
+  private _annotations?: { [key: string]: string }; 
   public get annotations() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('annotations') as any;
+    return this.getStringMapAttribute('annotations');
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set annotations(value: { [key: string]: string }) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -191,13 +190,17 @@ export class IngressMetadataOutputReference extends cdktf.ComplexObject {
     return this._generateName;
   }
 
-  // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
-  public get labels() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+  // generation - computed: true, optional: false, required: false
+  public get generation() {
+    return this.getNumberAttribute('generation');
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string }; 
+  public get labels() {
+    return this.getStringMapAttribute('labels');
+  }
+  public set labels(value: { [key: string]: string }) {
     this._labels = value;
   }
   public resetLabels() {
@@ -239,6 +242,16 @@ export class IngressMetadataOutputReference extends cdktf.ComplexObject {
   public get namespaceInput() {
     return this._namespace;
   }
+
+  // resource_version - computed: true, optional: false, required: false
+  public get resourceVersion() {
+    return this.getStringAttribute('resource_version');
+  }
+
+  // uid - computed: true, optional: false, required: false
+  public get uid() {
+    return this.getStringAttribute('uid');
+  }
 }
 export interface IngressSpecBackend {
   /**
@@ -256,7 +269,7 @@ export interface IngressSpecBackend {
 }
 
 export function ingressSpecBackendToTerraform(struct?: IngressSpecBackendOutputReference | IngressSpecBackend): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -274,7 +287,7 @@ export class IngressSpecBackendOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -353,7 +366,7 @@ export interface IngressSpecRuleHttpPathBackend {
 }
 
 export function ingressSpecRuleHttpPathBackendToTerraform(struct?: IngressSpecRuleHttpPathBackendOutputReference | IngressSpecRuleHttpPathBackend): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -371,7 +384,7 @@ export class IngressSpecRuleHttpPathBackendOutputReference extends cdktf.Complex
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -449,8 +462,8 @@ export interface IngressSpecRuleHttpPath {
   readonly backend?: IngressSpecRuleHttpPathBackend;
 }
 
-export function ingressSpecRuleHttpPathToTerraform(struct?: IngressSpecRuleHttpPath): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function ingressSpecRuleHttpPathToTerraform(struct?: IngressSpecRuleHttpPath | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -466,11 +479,11 @@ export interface IngressSpecRuleHttp {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#path Ingress#path}
   */
-  readonly path: IngressSpecRuleHttpPath[];
+  readonly path: IngressSpecRuleHttpPath[] | cdktf.IResolvable;
 }
 
 export function ingressSpecRuleHttpToTerraform(struct?: IngressSpecRuleHttpOutputReference | IngressSpecRuleHttp): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -487,7 +500,7 @@ export class IngressSpecRuleHttpOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -513,12 +526,12 @@ export class IngressSpecRuleHttpOutputReference extends cdktf.ComplexObject {
   }
 
   // path - computed: false, optional: false, required: true
-  private _path?: IngressSpecRuleHttpPath[]; 
+  private _path?: IngressSpecRuleHttpPath[] | cdktf.IResolvable; 
   public get path() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('path') as any;
+    return this.interpolationForAttribute('path');
   }
-  public set path(value: IngressSpecRuleHttpPath[]) {
+  public set path(value: IngressSpecRuleHttpPath[] | cdktf.IResolvable) {
     this._path = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -548,8 +561,8 @@ Host can be "precise" which is a domain name without the terminating dot of a ne
   readonly http: IngressSpecRuleHttp;
 }
 
-export function ingressSpecRuleToTerraform(struct?: IngressSpecRule): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function ingressSpecRuleToTerraform(struct?: IngressSpecRule | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -574,8 +587,8 @@ export interface IngressSpecTls {
   readonly secretName?: string;
 }
 
-export function ingressSpecTlsToTerraform(struct?: IngressSpecTls): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function ingressSpecTlsToTerraform(struct?: IngressSpecTls | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -603,17 +616,17 @@ export interface IngressSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#rule Ingress#rule}
   */
-  readonly rule?: IngressSpecRule[];
+  readonly rule?: IngressSpecRule[] | cdktf.IResolvable;
   /**
   * tls block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#tls Ingress#tls}
   */
-  readonly tls?: IngressSpecTls[];
+  readonly tls?: IngressSpecTls[] | cdktf.IResolvable;
 }
 
 export function ingressSpecToTerraform(struct?: IngressSpecOutputReference | IngressSpec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -633,7 +646,7 @@ export class IngressSpecOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -693,7 +706,7 @@ export class IngressSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // backend - computed: false, optional: true, required: false
-  private _backend = new IngressSpecBackendOutputReference(this as any, "backend", true);
+  private _backend = new IngressSpecBackendOutputReference(this, "backend", true);
   public get backend() {
     return this._backend;
   }
@@ -709,12 +722,12 @@ export class IngressSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // rule - computed: false, optional: true, required: false
-  private _rule?: IngressSpecRule[]; 
+  private _rule?: IngressSpecRule[] | cdktf.IResolvable; 
   public get rule() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('rule') as any;
+    return this.interpolationForAttribute('rule');
   }
-  public set rule(value: IngressSpecRule[]) {
+  public set rule(value: IngressSpecRule[] | cdktf.IResolvable) {
     this._rule = value;
   }
   public resetRule() {
@@ -726,12 +739,12 @@ export class IngressSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // tls - computed: false, optional: true, required: false
-  private _tls?: IngressSpecTls[]; 
+  private _tls?: IngressSpecTls[] | cdktf.IResolvable; 
   public get tls() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tls') as any;
+    return this.interpolationForAttribute('tls');
   }
-  public set tls(value: IngressSpecTls[]) {
+  public set tls(value: IngressSpecTls[] | cdktf.IResolvable) {
     this._tls = value;
   }
   public resetTls() {
@@ -791,13 +804,13 @@ export class Ingress extends cdktf.TerraformResource {
 
   // status - computed: true, optional: false, required: false
   public status(index: string) {
-    return new IngressStatus(this, 'status', index);
+    return new IngressStatus(this, 'status', index, false);
   }
 
   // wait_for_load_balancer - computed: false, optional: true, required: false
   private _waitForLoadBalancer?: boolean | cdktf.IResolvable; 
   public get waitForLoadBalancer() {
-    return this.getBooleanAttribute('wait_for_load_balancer') as any;
+    return this.getBooleanAttribute('wait_for_load_balancer');
   }
   public set waitForLoadBalancer(value: boolean | cdktf.IResolvable) {
     this._waitForLoadBalancer = value;
@@ -811,7 +824,7 @@ export class Ingress extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new IngressMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new IngressMetadataOutputReference(this, "metadata", true);
   public get metadata() {
     return this._metadata;
   }
@@ -824,7 +837,7 @@ export class Ingress extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new IngressSpecOutputReference(this as any, "spec", true);
+  private _spec = new IngressSpecOutputReference(this, "spec", true);
   public get spec() {
     return this._spec;
   }

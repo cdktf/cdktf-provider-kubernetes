@@ -18,7 +18,7 @@ export interface DefaultServiceAccountConfig extends cdktf.TerraformMetaArgument
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account#image_pull_secret DefaultServiceAccount#image_pull_secret}
   */
-  readonly imagePullSecret?: DefaultServiceAccountImagePullSecret[];
+  readonly imagePullSecret?: DefaultServiceAccountImagePullSecret[] | cdktf.IResolvable;
   /**
   * metadata block
   * 
@@ -30,7 +30,7 @@ export interface DefaultServiceAccountConfig extends cdktf.TerraformMetaArgument
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account#secret DefaultServiceAccount#secret}
   */
-  readonly secret?: DefaultServiceAccountSecret[];
+  readonly secret?: DefaultServiceAccountSecret[] | cdktf.IResolvable;
   /**
   * timeouts block
   * 
@@ -47,8 +47,8 @@ export interface DefaultServiceAccountImagePullSecret {
   readonly name?: string;
 }
 
-export function defaultServiceAccountImagePullSecretToTerraform(struct?: DefaultServiceAccountImagePullSecret): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function defaultServiceAccountImagePullSecretToTerraform(struct?: DefaultServiceAccountImagePullSecret | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -63,13 +63,13 @@ export interface DefaultServiceAccountMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account#annotations DefaultServiceAccount#annotations}
   */
-  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
+  readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the service account. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/default_service_account#labels DefaultServiceAccount#labels}
   */
-  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly labels?: { [key: string]: string };
   /**
   * Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -85,13 +85,13 @@ export interface DefaultServiceAccountMetadata {
 }
 
 export function defaultServiceAccountMetadataToTerraform(struct?: DefaultServiceAccountMetadataOutputReference | DefaultServiceAccountMetadata): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
-    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    annotations: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
@@ -105,7 +105,7 @@ export class DefaultServiceAccountMetadataOutputReference extends cdktf.ComplexO
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -149,12 +149,11 @@ export class DefaultServiceAccountMetadataOutputReference extends cdktf.ComplexO
   }
 
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
+  private _annotations?: { [key: string]: string }; 
   public get annotations() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('annotations') as any;
+    return this.getStringMapAttribute('annotations');
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set annotations(value: { [key: string]: string }) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -165,13 +164,17 @@ export class DefaultServiceAccountMetadataOutputReference extends cdktf.ComplexO
     return this._annotations;
   }
 
-  // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
-  public get labels() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+  // generation - computed: true, optional: false, required: false
+  public get generation() {
+    return this.getNumberAttribute('generation');
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string }; 
+  public get labels() {
+    return this.getStringMapAttribute('labels');
+  }
+  public set labels(value: { [key: string]: string }) {
     this._labels = value;
   }
   public resetLabels() {
@@ -213,6 +216,16 @@ export class DefaultServiceAccountMetadataOutputReference extends cdktf.ComplexO
   public get namespaceInput() {
     return this._namespace;
   }
+
+  // resource_version - computed: true, optional: false, required: false
+  public get resourceVersion() {
+    return this.getStringAttribute('resource_version');
+  }
+
+  // uid - computed: true, optional: false, required: false
+  public get uid() {
+    return this.getStringAttribute('uid');
+  }
 }
 export interface DefaultServiceAccountSecret {
   /**
@@ -223,8 +236,8 @@ export interface DefaultServiceAccountSecret {
   readonly name?: string;
 }
 
-export function defaultServiceAccountSecretToTerraform(struct?: DefaultServiceAccountSecret): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function defaultServiceAccountSecretToTerraform(struct?: DefaultServiceAccountSecret | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -240,8 +253,8 @@ export interface DefaultServiceAccountTimeouts {
   readonly create?: string;
 }
 
-export function defaultServiceAccountTimeoutsToTerraform(struct?: DefaultServiceAccountTimeoutsOutputReference | DefaultServiceAccountTimeouts): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function defaultServiceAccountTimeoutsToTerraform(struct?: DefaultServiceAccountTimeoutsOutputReference | DefaultServiceAccountTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -258,7 +271,7 @@ export class DefaultServiceAccountTimeoutsOutputReference extends cdktf.ComplexO
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -346,7 +359,7 @@ export class DefaultServiceAccount extends cdktf.TerraformResource {
   // automount_service_account_token - computed: false, optional: true, required: false
   private _automountServiceAccountToken?: boolean | cdktf.IResolvable; 
   public get automountServiceAccountToken() {
-    return this.getBooleanAttribute('automount_service_account_token') as any;
+    return this.getBooleanAttribute('automount_service_account_token');
   }
   public set automountServiceAccountToken(value: boolean | cdktf.IResolvable) {
     this._automountServiceAccountToken = value;
@@ -370,12 +383,12 @@ export class DefaultServiceAccount extends cdktf.TerraformResource {
   }
 
   // image_pull_secret - computed: false, optional: true, required: false
-  private _imagePullSecret?: DefaultServiceAccountImagePullSecret[]; 
+  private _imagePullSecret?: DefaultServiceAccountImagePullSecret[] | cdktf.IResolvable; 
   public get imagePullSecret() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('image_pull_secret') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('image_pull_secret')));
   }
-  public set imagePullSecret(value: DefaultServiceAccountImagePullSecret[]) {
+  public set imagePullSecret(value: DefaultServiceAccountImagePullSecret[] | cdktf.IResolvable) {
     this._imagePullSecret = value;
   }
   public resetImagePullSecret() {
@@ -387,7 +400,7 @@ export class DefaultServiceAccount extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new DefaultServiceAccountMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new DefaultServiceAccountMetadataOutputReference(this, "metadata", true);
   public get metadata() {
     return this._metadata;
   }
@@ -400,12 +413,12 @@ export class DefaultServiceAccount extends cdktf.TerraformResource {
   }
 
   // secret - computed: false, optional: true, required: false
-  private _secret?: DefaultServiceAccountSecret[]; 
+  private _secret?: DefaultServiceAccountSecret[] | cdktf.IResolvable; 
   public get secret() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('secret') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('secret')));
   }
-  public set secret(value: DefaultServiceAccountSecret[]) {
+  public set secret(value: DefaultServiceAccountSecret[] | cdktf.IResolvable) {
     this._secret = value;
   }
   public resetSecret() {
@@ -417,7 +430,7 @@ export class DefaultServiceAccount extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new DefaultServiceAccountTimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new DefaultServiceAccountTimeoutsOutputReference(this, "timeouts", true);
   public get timeouts() {
     return this._timeouts;
   }

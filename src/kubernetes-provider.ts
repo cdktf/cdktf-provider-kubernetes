@@ -120,11 +120,11 @@ export interface KubernetesProviderExec {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#env KubernetesProvider#env}
   */
-  readonly env?: { [key: string]: string } | cdktf.IResolvable;
+  readonly env?: { [key: string]: string };
 }
 
 export function kubernetesProviderExecToTerraform(struct?: KubernetesProviderExec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -132,7 +132,7 @@ export function kubernetesProviderExecToTerraform(struct?: KubernetesProviderExe
     api_version: cdktf.stringToTerraform(struct!.apiVersion),
     args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
     command: cdktf.stringToTerraform(struct!.command),
-    env: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.env),
+    env: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.env),
   }
 }
 
@@ -146,7 +146,7 @@ export interface KubernetesProviderExperiments {
 }
 
 export function kubernetesProviderExperimentsToTerraform(struct?: KubernetesProviderExperiments): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }

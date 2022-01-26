@@ -34,13 +34,13 @@ export interface DataKubernetesServiceAccountV1Metadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account_v1#annotations DataKubernetesServiceAccountV1#annotations}
   */
-  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
+  readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the service account. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service_account_v1#labels DataKubernetesServiceAccountV1#labels}
   */
-  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly labels?: { [key: string]: string };
   /**
   * Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -56,13 +56,13 @@ export interface DataKubernetesServiceAccountV1Metadata {
 }
 
 export function dataKubernetesServiceAccountV1MetadataToTerraform(struct?: DataKubernetesServiceAccountV1MetadataOutputReference | DataKubernetesServiceAccountV1Metadata): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
-    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    annotations: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
@@ -76,7 +76,7 @@ export class DataKubernetesServiceAccountV1MetadataOutputReference extends cdktf
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -120,12 +120,11 @@ export class DataKubernetesServiceAccountV1MetadataOutputReference extends cdktf
   }
 
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
+  private _annotations?: { [key: string]: string }; 
   public get annotations() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('annotations') as any;
+    return this.getStringMapAttribute('annotations');
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set annotations(value: { [key: string]: string }) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -136,13 +135,17 @@ export class DataKubernetesServiceAccountV1MetadataOutputReference extends cdktf
     return this._annotations;
   }
 
-  // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
-  public get labels() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+  // generation - computed: true, optional: false, required: false
+  public get generation() {
+    return this.getNumberAttribute('generation');
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string }; 
+  public get labels() {
+    return this.getStringMapAttribute('labels');
+  }
+  public set labels(value: { [key: string]: string }) {
     this._labels = value;
   }
   public resetLabels() {
@@ -183,6 +186,16 @@ export class DataKubernetesServiceAccountV1MetadataOutputReference extends cdktf
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
     return this._namespace;
+  }
+
+  // resource_version - computed: true, optional: false, required: false
+  public get resourceVersion() {
+    return this.getStringAttribute('resource_version');
+  }
+
+  // uid - computed: true, optional: false, required: false
+  public get uid() {
+    return this.getStringAttribute('uid');
   }
 }
 
@@ -227,7 +240,7 @@ export class DataKubernetesServiceAccountV1 extends cdktf.TerraformDataSource {
 
   // automount_service_account_token - computed: true, optional: false, required: false
   public get automountServiceAccountToken() {
-    return this.getBooleanAttribute('automount_service_account_token') as any;
+    return this.getBooleanAttribute('automount_service_account_token');
   }
 
   // default_secret_name - computed: true, optional: false, required: false
@@ -242,16 +255,16 @@ export class DataKubernetesServiceAccountV1 extends cdktf.TerraformDataSource {
 
   // image_pull_secret - computed: true, optional: false, required: false
   public imagePullSecret(index: string) {
-    return new DataKubernetesServiceAccountV1ImagePullSecret(this, 'image_pull_secret', index);
+    return new DataKubernetesServiceAccountV1ImagePullSecret(this, 'image_pull_secret', index, false);
   }
 
   // secret - computed: true, optional: false, required: false
   public secret(index: string) {
-    return new DataKubernetesServiceAccountV1Secret(this, 'secret', index);
+    return new DataKubernetesServiceAccountV1Secret(this, 'secret', index, false);
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new DataKubernetesServiceAccountV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new DataKubernetesServiceAccountV1MetadataOutputReference(this, "metadata", true);
   public get metadata() {
     return this._metadata;
   }

@@ -43,7 +43,7 @@ export class DataKubernetesIngressSpecRuleHttpPath extends cdktf.ComplexComputed
   // backend - computed: true, optional: false, required: false
   public get backend() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('backend') as any;
+    return this.interpolationForAttribute('backend');
   }
 
   // path - computed: true, optional: false, required: false
@@ -56,7 +56,7 @@ export class DataKubernetesIngressSpecRuleHttp extends cdktf.ComplexComputedList
   // path - computed: true, optional: false, required: false
   public get path() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('path') as any;
+    return this.interpolationForAttribute('path');
   }
 }
 export class DataKubernetesIngressSpecRule extends cdktf.ComplexComputedList {
@@ -69,7 +69,7 @@ export class DataKubernetesIngressSpecRule extends cdktf.ComplexComputedList {
   // http - computed: true, optional: false, required: false
   public get http() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http') as any;
+    return this.interpolationForAttribute('http');
   }
 }
 export class DataKubernetesIngressSpecTls extends cdktf.ComplexComputedList {
@@ -89,7 +89,7 @@ export class DataKubernetesIngressSpec extends cdktf.ComplexComputedList {
   // backend - computed: true, optional: false, required: false
   public get backend() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('backend') as any;
+    return this.interpolationForAttribute('backend');
   }
 
   // ingress_class_name - computed: true, optional: false, required: false
@@ -100,13 +100,13 @@ export class DataKubernetesIngressSpec extends cdktf.ComplexComputedList {
   // rule - computed: true, optional: false, required: false
   public get rule() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('rule') as any;
+    return this.interpolationForAttribute('rule');
   }
 
   // tls - computed: true, optional: false, required: false
   public get tls() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tls') as any;
+    return this.interpolationForAttribute('tls');
   }
 }
 export class DataKubernetesIngressStatusLoadBalancerIngress extends cdktf.ComplexComputedList {
@@ -126,7 +126,7 @@ export class DataKubernetesIngressStatusLoadBalancer extends cdktf.ComplexComput
   // ingress - computed: true, optional: false, required: false
   public get ingress() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ingress') as any;
+    return this.interpolationForAttribute('ingress');
   }
 }
 export class DataKubernetesIngressStatus extends cdktf.ComplexComputedList {
@@ -134,7 +134,7 @@ export class DataKubernetesIngressStatus extends cdktf.ComplexComputedList {
   // load_balancer - computed: true, optional: false, required: false
   public get loadBalancer() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('load_balancer') as any;
+    return this.interpolationForAttribute('load_balancer');
   }
 }
 export interface DataKubernetesIngressMetadata {
@@ -143,13 +143,13 @@ export interface DataKubernetesIngressMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress#annotations DataKubernetesIngress#annotations}
   */
-  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
+  readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the ingress. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/ingress#labels DataKubernetesIngress#labels}
   */
-  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly labels?: { [key: string]: string };
   /**
   * Name of the ingress, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -165,13 +165,13 @@ export interface DataKubernetesIngressMetadata {
 }
 
 export function dataKubernetesIngressMetadataToTerraform(struct?: DataKubernetesIngressMetadataOutputReference | DataKubernetesIngressMetadata): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
-    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    annotations: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
@@ -185,7 +185,7 @@ export class DataKubernetesIngressMetadataOutputReference extends cdktf.ComplexO
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -229,12 +229,11 @@ export class DataKubernetesIngressMetadataOutputReference extends cdktf.ComplexO
   }
 
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
+  private _annotations?: { [key: string]: string }; 
   public get annotations() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('annotations') as any;
+    return this.getStringMapAttribute('annotations');
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set annotations(value: { [key: string]: string }) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -245,13 +244,17 @@ export class DataKubernetesIngressMetadataOutputReference extends cdktf.ComplexO
     return this._annotations;
   }
 
-  // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
-  public get labels() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+  // generation - computed: true, optional: false, required: false
+  public get generation() {
+    return this.getNumberAttribute('generation');
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string }; 
+  public get labels() {
+    return this.getStringMapAttribute('labels');
+  }
+  public set labels(value: { [key: string]: string }) {
     this._labels = value;
   }
   public resetLabels() {
@@ -292,6 +295,16 @@ export class DataKubernetesIngressMetadataOutputReference extends cdktf.ComplexO
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
     return this._namespace;
+  }
+
+  // resource_version - computed: true, optional: false, required: false
+  public get resourceVersion() {
+    return this.getStringAttribute('resource_version');
+  }
+
+  // uid - computed: true, optional: false, required: false
+  public get uid() {
+    return this.getStringAttribute('uid');
   }
 }
 
@@ -341,16 +354,16 @@ export class DataKubernetesIngress extends cdktf.TerraformDataSource {
 
   // spec - computed: true, optional: false, required: false
   public spec(index: string) {
-    return new DataKubernetesIngressSpec(this, 'spec', index);
+    return new DataKubernetesIngressSpec(this, 'spec', index, false);
   }
 
   // status - computed: true, optional: false, required: false
   public status(index: string) {
-    return new DataKubernetesIngressStatus(this, 'status', index);
+    return new DataKubernetesIngressStatus(this, 'status', index, false);
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new DataKubernetesIngressMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new DataKubernetesIngressMetadataOutputReference(this, "metadata", true);
   public get metadata() {
     return this._metadata;
   }
