@@ -32,7 +32,7 @@ export interface PodMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#annotations Pod#annotations}
   */
-  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
+  readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -44,7 +44,7 @@ export interface PodMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#labels Pod#labels}
   */
-  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly labels?: { [key: string]: string };
   /**
   * Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -60,14 +60,14 @@ export interface PodMetadata {
 }
 
 export function podMetadataToTerraform(struct?: PodMetadataOutputReference | PodMetadata): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    annotations: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
-    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
@@ -81,7 +81,7 @@ export class PodMetadataOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -131,12 +131,11 @@ export class PodMetadataOutputReference extends cdktf.ComplexObject {
   }
 
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
+  private _annotations?: { [key: string]: string }; 
   public get annotations() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('annotations') as any;
+    return this.getStringMapAttribute('annotations');
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set annotations(value: { [key: string]: string }) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -163,13 +162,17 @@ export class PodMetadataOutputReference extends cdktf.ComplexObject {
     return this._generateName;
   }
 
-  // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
-  public get labels() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+  // generation - computed: true, optional: false, required: false
+  public get generation() {
+    return this.getNumberAttribute('generation');
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string }; 
+  public get labels() {
+    return this.getStringMapAttribute('labels');
+  }
+  public set labels(value: { [key: string]: string }) {
     this._labels = value;
   }
   public resetLabels() {
@@ -211,6 +214,16 @@ export class PodMetadataOutputReference extends cdktf.ComplexObject {
   public get namespaceInput() {
     return this._namespace;
   }
+
+  // resource_version - computed: true, optional: false, required: false
+  public get resourceVersion() {
+    return this.getStringAttribute('resource_version');
+  }
+
+  // uid - computed: true, optional: false, required: false
+  public get uid() {
+    return this.getStringAttribute('uid');
+  }
 }
 export interface PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions {
   /**
@@ -233,8 +246,8 @@ export interface PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuri
   readonly values?: string[];
 }
 
-export function podSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform(struct?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform(struct?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -251,11 +264,11 @@ export interface PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuri
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#match_expressions Pod#match_expressions}
   */
-  readonly matchExpressions?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[];
+  readonly matchExpressions?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | cdktf.IResolvable;
 }
 
 export function podSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToTerraform(struct?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference | PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -272,7 +285,7 @@ export class PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringEx
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -298,12 +311,12 @@ export class PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringEx
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[]; 
+  private _matchExpressions?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | cdktf.IResolvable; 
   public get matchExpressions() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions') as any;
+    return this.interpolationForAttribute('match_expressions');
   }
-  public set matchExpressions(value: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[]) {
+  public set matchExpressions(value: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | cdktf.IResolvable) {
     this._matchExpressions = value;
   }
   public resetMatchExpressions() {
@@ -329,8 +342,8 @@ export interface PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuri
   readonly preference: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference;
 }
 
-export function podSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -361,8 +374,8 @@ export interface PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDurin
   readonly values?: string[];
 }
 
-export function podSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform(struct?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform(struct?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -379,11 +392,11 @@ export interface PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDurin
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#match_expressions Pod#match_expressions}
   */
-  readonly matchExpressions?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions[];
+  readonly matchExpressions?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions[] | cdktf.IResolvable;
 }
 
-export function podSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform(struct?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform(struct?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -398,11 +411,11 @@ export interface PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDurin
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#node_selector_term Pod#node_selector_term}
   */
-  readonly nodeSelectorTerm?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[];
+  readonly nodeSelectorTerm?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | cdktf.IResolvable;
 }
 
 export function podSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference | PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -419,7 +432,7 @@ export class PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExe
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -445,12 +458,12 @@ export class PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExe
   }
 
   // node_selector_term - computed: false, optional: true, required: false
-  private _nodeSelectorTerm?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[]; 
+  private _nodeSelectorTerm?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | cdktf.IResolvable; 
   public get nodeSelectorTerm() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('node_selector_term') as any;
+    return this.interpolationForAttribute('node_selector_term');
   }
-  public set nodeSelectorTerm(value: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[]) {
+  public set nodeSelectorTerm(value: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | cdktf.IResolvable) {
     this._nodeSelectorTerm = value;
   }
   public resetNodeSelectorTerm() {
@@ -467,7 +480,7 @@ export interface PodSpecAffinityNodeAffinity {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#preferred_during_scheduling_ignored_during_execution Pod#preferred_during_scheduling_ignored_during_execution}
   */
-  readonly preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[];
+  readonly preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
   * 
@@ -477,7 +490,7 @@ export interface PodSpecAffinityNodeAffinity {
 }
 
 export function podSpecAffinityNodeAffinityToTerraform(struct?: PodSpecAffinityNodeAffinityOutputReference | PodSpecAffinityNodeAffinity): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -495,7 +508,7 @@ export class PodSpecAffinityNodeAffinityOutputReference extends cdktf.ComplexObj
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -527,12 +540,12 @@ export class PodSpecAffinityNodeAffinityOutputReference extends cdktf.ComplexObj
   }
 
   // preferred_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[]; 
+  private _preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable; 
   public get preferredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
+    return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution');
   }
-  public set preferredDuringSchedulingIgnoredDuringExecution(value: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[]) {
+  public set preferredDuringSchedulingIgnoredDuringExecution(value: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable) {
     this._preferredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetPreferredDuringSchedulingIgnoredDuringExecution() {
@@ -544,7 +557,7 @@ export class PodSpecAffinityNodeAffinityOutputReference extends cdktf.ComplexObj
   }
 
   // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _requiredDuringSchedulingIgnoredDuringExecution = new PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this as any, "required_during_scheduling_ignored_during_execution", true);
+  private _requiredDuringSchedulingIgnoredDuringExecution = new PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this, "required_during_scheduling_ignored_during_execution", true);
   public get requiredDuringSchedulingIgnoredDuringExecution() {
     return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
@@ -580,8 +593,8 @@ export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDurin
   readonly values?: string[];
 }
 
-export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -598,22 +611,22 @@ export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDurin
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#match_labels Pod#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#match_expressions Pod#match_expressions}
   */
-  readonly matchExpressions?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[];
+  readonly matchExpressions?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
 
-export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
   }
 }
@@ -636,11 +649,11 @@ export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDurin
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#label_selector Pod#label_selector}
   */
-  readonly labelSelector?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
+  readonly labelSelector?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable;
 }
 
 export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -659,7 +672,7 @@ export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExe
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -699,7 +712,7 @@ export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExe
   // namespaces - computed: false, optional: true, required: false
   private _namespaces?: string[]; 
   public get namespaces() {
-    return this.getListAttribute('namespaces');
+    return cdktf.Fn.tolist(this.getListAttribute('namespaces'));
   }
   public set namespaces(value: string[]) {
     this._namespaces = value;
@@ -729,12 +742,12 @@ export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExe
   }
 
   // label_selector - computed: false, optional: true, required: false
-  private _labelSelector?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[]; 
+  private _labelSelector?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable; 
   public get labelSelector() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('label_selector') as any;
+    return this.interpolationForAttribute('label_selector');
   }
-  public set labelSelector(value: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[]) {
+  public set labelSelector(value: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable) {
     this._labelSelector = value;
   }
   public resetLabelSelector() {
@@ -760,8 +773,8 @@ export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDurin
   readonly podAffinityTerm: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
 
-export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -792,8 +805,8 @@ export interface PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuring
   readonly values?: string[];
 }
 
-export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -810,22 +823,22 @@ export interface PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuring
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#match_labels Pod#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#match_expressions Pod#match_expressions}
   */
-  readonly matchExpressions?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[];
+  readonly matchExpressions?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
 
-export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
   }
 }
@@ -848,11 +861,11 @@ export interface PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuring
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#label_selector Pod#label_selector}
   */
-  readonly labelSelector?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[];
+  readonly labelSelector?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[] | cdktf.IResolvable;
 }
 
-export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -869,17 +882,17 @@ export interface PodSpecAffinityPodAffinity {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#preferred_during_scheduling_ignored_during_execution Pod#preferred_during_scheduling_ignored_during_execution}
   */
-  readonly preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[];
+  readonly preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#required_during_scheduling_ignored_during_execution Pod#required_during_scheduling_ignored_during_execution}
   */
-  readonly requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
+  readonly requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
 }
 
 export function podSpecAffinityPodAffinityToTerraform(struct?: PodSpecAffinityPodAffinityOutputReference | PodSpecAffinityPodAffinity): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -897,7 +910,7 @@ export class PodSpecAffinityPodAffinityOutputReference extends cdktf.ComplexObje
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -929,12 +942,12 @@ export class PodSpecAffinityPodAffinityOutputReference extends cdktf.ComplexObje
   }
 
   // preferred_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[]; 
+  private _preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable; 
   public get preferredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
+    return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution');
   }
-  public set preferredDuringSchedulingIgnoredDuringExecution(value: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[]) {
+  public set preferredDuringSchedulingIgnoredDuringExecution(value: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable) {
     this._preferredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetPreferredDuringSchedulingIgnoredDuringExecution() {
@@ -946,12 +959,12 @@ export class PodSpecAffinityPodAffinityOutputReference extends cdktf.ComplexObje
   }
 
   // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[]; 
+  private _requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable; 
   public get requiredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution') as any;
+    return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution');
   }
-  public set requiredDuringSchedulingIgnoredDuringExecution(value: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[]) {
+  public set requiredDuringSchedulingIgnoredDuringExecution(value: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable) {
     this._requiredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetRequiredDuringSchedulingIgnoredDuringExecution() {
@@ -983,8 +996,8 @@ export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredD
   readonly values?: string[];
 }
 
-export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1001,22 +1014,22 @@ export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredD
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#match_labels Pod#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#match_expressions Pod#match_expressions}
   */
-  readonly matchExpressions?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[];
+  readonly matchExpressions?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
 
-export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
   }
 }
@@ -1039,11 +1052,11 @@ export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredD
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#label_selector Pod#label_selector}
   */
-  readonly labelSelector?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[];
+  readonly labelSelector?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable;
 }
 
 export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1062,7 +1075,7 @@ export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDurin
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1102,7 +1115,7 @@ export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDurin
   // namespaces - computed: false, optional: true, required: false
   private _namespaces?: string[]; 
   public get namespaces() {
-    return this.getListAttribute('namespaces');
+    return cdktf.Fn.tolist(this.getListAttribute('namespaces'));
   }
   public set namespaces(value: string[]) {
     this._namespaces = value;
@@ -1132,12 +1145,12 @@ export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDurin
   }
 
   // label_selector - computed: false, optional: true, required: false
-  private _labelSelector?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[]; 
+  private _labelSelector?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable; 
   public get labelSelector() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('label_selector') as any;
+    return this.interpolationForAttribute('label_selector');
   }
-  public set labelSelector(value: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[]) {
+  public set labelSelector(value: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable) {
     this._labelSelector = value;
   }
   public resetLabelSelector() {
@@ -1163,8 +1176,8 @@ export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredD
   readonly podAffinityTerm: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
 
-export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1195,8 +1208,8 @@ export interface PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDu
   readonly values?: string[];
 }
 
-export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1213,22 +1226,22 @@ export interface PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDu
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#match_labels Pod#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#match_expressions Pod#match_expressions}
   */
-  readonly matchExpressions?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[];
+  readonly matchExpressions?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
 
-export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
   }
 }
@@ -1251,11 +1264,11 @@ export interface PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDu
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#label_selector Pod#label_selector}
   */
-  readonly labelSelector?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[];
+  readonly labelSelector?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[] | cdktf.IResolvable;
 }
 
-export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1272,17 +1285,17 @@ export interface PodSpecAffinityPodAntiAffinity {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#preferred_during_scheduling_ignored_during_execution Pod#preferred_during_scheduling_ignored_during_execution}
   */
-  readonly preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[];
+  readonly preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#required_during_scheduling_ignored_during_execution Pod#required_during_scheduling_ignored_during_execution}
   */
-  readonly requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[];
+  readonly requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
 }
 
 export function podSpecAffinityPodAntiAffinityToTerraform(struct?: PodSpecAffinityPodAntiAffinityOutputReference | PodSpecAffinityPodAntiAffinity): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1300,7 +1313,7 @@ export class PodSpecAffinityPodAntiAffinityOutputReference extends cdktf.Complex
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1332,12 +1345,12 @@ export class PodSpecAffinityPodAntiAffinityOutputReference extends cdktf.Complex
   }
 
   // preferred_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[]; 
+  private _preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable; 
   public get preferredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution') as any;
+    return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution');
   }
-  public set preferredDuringSchedulingIgnoredDuringExecution(value: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[]) {
+  public set preferredDuringSchedulingIgnoredDuringExecution(value: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable) {
     this._preferredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetPreferredDuringSchedulingIgnoredDuringExecution() {
@@ -1349,12 +1362,12 @@ export class PodSpecAffinityPodAntiAffinityOutputReference extends cdktf.Complex
   }
 
   // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[]; 
+  private _requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable; 
   public get requiredDuringSchedulingIgnoredDuringExecution() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution') as any;
+    return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution');
   }
-  public set requiredDuringSchedulingIgnoredDuringExecution(value: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[]) {
+  public set requiredDuringSchedulingIgnoredDuringExecution(value: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable) {
     this._requiredDuringSchedulingIgnoredDuringExecution = value;
   }
   public resetRequiredDuringSchedulingIgnoredDuringExecution() {
@@ -1387,7 +1400,7 @@ export interface PodSpecAffinity {
 }
 
 export function podSpecAffinityToTerraform(struct?: PodSpecAffinityOutputReference | PodSpecAffinity): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1406,7 +1419,7 @@ export class PodSpecAffinityOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1444,7 +1457,7 @@ export class PodSpecAffinityOutputReference extends cdktf.ComplexObject {
   }
 
   // node_affinity - computed: false, optional: true, required: false
-  private _nodeAffinity = new PodSpecAffinityNodeAffinityOutputReference(this as any, "node_affinity", true);
+  private _nodeAffinity = new PodSpecAffinityNodeAffinityOutputReference(this, "node_affinity", true);
   public get nodeAffinity() {
     return this._nodeAffinity;
   }
@@ -1460,7 +1473,7 @@ export class PodSpecAffinityOutputReference extends cdktf.ComplexObject {
   }
 
   // pod_affinity - computed: false, optional: true, required: false
-  private _podAffinity = new PodSpecAffinityPodAffinityOutputReference(this as any, "pod_affinity", true);
+  private _podAffinity = new PodSpecAffinityPodAffinityOutputReference(this, "pod_affinity", true);
   public get podAffinity() {
     return this._podAffinity;
   }
@@ -1476,7 +1489,7 @@ export class PodSpecAffinityOutputReference extends cdktf.ComplexObject {
   }
 
   // pod_anti_affinity - computed: false, optional: true, required: false
-  private _podAntiAffinity = new PodSpecAffinityPodAntiAffinityOutputReference(this as any, "pod_anti_affinity", true);
+  private _podAntiAffinity = new PodSpecAffinityPodAntiAffinityOutputReference(this, "pod_anti_affinity", true);
   public get podAntiAffinity() {
     return this._podAntiAffinity;
   }
@@ -1513,7 +1526,7 @@ export interface PodSpecContainerEnvValueFromConfigMapKeyRef {
 }
 
 export function podSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: PodSpecContainerEnvValueFromConfigMapKeyRefOutputReference | PodSpecContainerEnvValueFromConfigMapKeyRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1532,7 +1545,7 @@ export class PodSpecContainerEnvValueFromConfigMapKeyRefOutputReference extends 
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1604,7 +1617,7 @@ export class PodSpecContainerEnvValueFromConfigMapKeyRefOutputReference extends 
   // optional - computed: false, optional: true, required: false
   private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
-    return this.getBooleanAttribute('optional') as any;
+    return this.getBooleanAttribute('optional');
   }
   public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
@@ -1633,7 +1646,7 @@ export interface PodSpecContainerEnvValueFromFieldRef {
 }
 
 export function podSpecContainerEnvValueFromFieldRefToTerraform(struct?: PodSpecContainerEnvValueFromFieldRefOutputReference | PodSpecContainerEnvValueFromFieldRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1651,7 +1664,7 @@ export class PodSpecContainerEnvValueFromFieldRefOutputReference extends cdktf.C
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1732,7 +1745,7 @@ export interface PodSpecContainerEnvValueFromResourceFieldRef {
 }
 
 export function podSpecContainerEnvValueFromResourceFieldRefToTerraform(struct?: PodSpecContainerEnvValueFromResourceFieldRefOutputReference | PodSpecContainerEnvValueFromResourceFieldRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1751,7 +1764,7 @@ export class PodSpecContainerEnvValueFromResourceFieldRefOutputReference extends
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1855,7 +1868,7 @@ export interface PodSpecContainerEnvValueFromSecretKeyRef {
 }
 
 export function podSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?: PodSpecContainerEnvValueFromSecretKeyRefOutputReference | PodSpecContainerEnvValueFromSecretKeyRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1874,7 +1887,7 @@ export class PodSpecContainerEnvValueFromSecretKeyRefOutputReference extends cdk
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1946,7 +1959,7 @@ export class PodSpecContainerEnvValueFromSecretKeyRefOutputReference extends cdk
   // optional - computed: false, optional: true, required: false
   private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
-    return this.getBooleanAttribute('optional') as any;
+    return this.getBooleanAttribute('optional');
   }
   public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
@@ -1987,7 +2000,7 @@ export interface PodSpecContainerEnvValueFrom {
 }
 
 export function podSpecContainerEnvValueFromToTerraform(struct?: PodSpecContainerEnvValueFromOutputReference | PodSpecContainerEnvValueFrom): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2007,7 +2020,7 @@ export class PodSpecContainerEnvValueFromOutputReference extends cdktf.ComplexOb
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2051,7 +2064,7 @@ export class PodSpecContainerEnvValueFromOutputReference extends cdktf.ComplexOb
   }
 
   // config_map_key_ref - computed: false, optional: true, required: false
-  private _configMapKeyRef = new PodSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this as any, "config_map_key_ref", true);
+  private _configMapKeyRef = new PodSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref", true);
   public get configMapKeyRef() {
     return this._configMapKeyRef;
   }
@@ -2067,7 +2080,7 @@ export class PodSpecContainerEnvValueFromOutputReference extends cdktf.ComplexOb
   }
 
   // field_ref - computed: false, optional: true, required: false
-  private _fieldRef = new PodSpecContainerEnvValueFromFieldRefOutputReference(this as any, "field_ref", true);
+  private _fieldRef = new PodSpecContainerEnvValueFromFieldRefOutputReference(this, "field_ref", true);
   public get fieldRef() {
     return this._fieldRef;
   }
@@ -2083,7 +2096,7 @@ export class PodSpecContainerEnvValueFromOutputReference extends cdktf.ComplexOb
   }
 
   // resource_field_ref - computed: false, optional: true, required: false
-  private _resourceFieldRef = new PodSpecContainerEnvValueFromResourceFieldRefOutputReference(this as any, "resource_field_ref", true);
+  private _resourceFieldRef = new PodSpecContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref", true);
   public get resourceFieldRef() {
     return this._resourceFieldRef;
   }
@@ -2099,7 +2112,7 @@ export class PodSpecContainerEnvValueFromOutputReference extends cdktf.ComplexOb
   }
 
   // secret_key_ref - computed: false, optional: true, required: false
-  private _secretKeyRef = new PodSpecContainerEnvValueFromSecretKeyRefOutputReference(this as any, "secret_key_ref", true);
+  private _secretKeyRef = new PodSpecContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref", true);
   public get secretKeyRef() {
     return this._secretKeyRef;
   }
@@ -2135,8 +2148,8 @@ export interface PodSpecContainerEnv {
   readonly valueFrom?: PodSpecContainerEnvValueFrom;
 }
 
-export function podSpecContainerEnvToTerraform(struct?: PodSpecContainerEnv): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerEnvToTerraform(struct?: PodSpecContainerEnv | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2163,7 +2176,7 @@ export interface PodSpecContainerEnvFromConfigMapRef {
 }
 
 export function podSpecContainerEnvFromConfigMapRefToTerraform(struct?: PodSpecContainerEnvFromConfigMapRefOutputReference | PodSpecContainerEnvFromConfigMapRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2181,7 +2194,7 @@ export class PodSpecContainerEnvFromConfigMapRefOutputReference extends cdktf.Co
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2228,7 +2241,7 @@ export class PodSpecContainerEnvFromConfigMapRefOutputReference extends cdktf.Co
   // optional - computed: false, optional: true, required: false
   private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
-    return this.getBooleanAttribute('optional') as any;
+    return this.getBooleanAttribute('optional');
   }
   public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
@@ -2257,7 +2270,7 @@ export interface PodSpecContainerEnvFromSecretRef {
 }
 
 export function podSpecContainerEnvFromSecretRefToTerraform(struct?: PodSpecContainerEnvFromSecretRefOutputReference | PodSpecContainerEnvFromSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2275,7 +2288,7 @@ export class PodSpecContainerEnvFromSecretRefOutputReference extends cdktf.Compl
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2322,7 +2335,7 @@ export class PodSpecContainerEnvFromSecretRefOutputReference extends cdktf.Compl
   // optional - computed: false, optional: true, required: false
   private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
-    return this.getBooleanAttribute('optional') as any;
+    return this.getBooleanAttribute('optional');
   }
   public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
@@ -2356,8 +2369,8 @@ export interface PodSpecContainerEnvFrom {
   readonly secretRef?: PodSpecContainerEnvFromSecretRef;
 }
 
-export function podSpecContainerEnvFromToTerraform(struct?: PodSpecContainerEnvFrom): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerEnvFromToTerraform(struct?: PodSpecContainerEnvFrom | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2378,7 +2391,7 @@ export interface PodSpecContainerLifecyclePostStartExec {
 }
 
 export function podSpecContainerLifecyclePostStartExecToTerraform(struct?: PodSpecContainerLifecyclePostStartExecOutputReference | PodSpecContainerLifecyclePostStartExec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2395,7 +2408,7 @@ export class PodSpecContainerLifecyclePostStartExecOutputReference extends cdktf
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2451,8 +2464,8 @@ export interface PodSpecContainerLifecyclePostStartHttpGetHttpHeader {
   readonly value?: string;
 }
 
-export function podSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: PodSpecContainerLifecyclePostStartHttpGetHttpHeader): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: PodSpecContainerLifecyclePostStartHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2492,11 +2505,11 @@ export interface PodSpecContainerLifecyclePostStartHttpGet {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#http_header Pod#http_header}
   */
-  readonly httpHeader?: PodSpecContainerLifecyclePostStartHttpGetHttpHeader[];
+  readonly httpHeader?: PodSpecContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable;
 }
 
 export function podSpecContainerLifecyclePostStartHttpGetToTerraform(struct?: PodSpecContainerLifecyclePostStartHttpGetOutputReference | PodSpecContainerLifecyclePostStartHttpGet): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2517,7 +2530,7 @@ export class PodSpecContainerLifecyclePostStartHttpGetOutputReference extends cd
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2631,12 +2644,12 @@ export class PodSpecContainerLifecyclePostStartHttpGetOutputReference extends cd
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: PodSpecContainerLifecyclePostStartHttpGetHttpHeader[]; 
+  private _httpHeader?: PodSpecContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header') as any;
+    return this.interpolationForAttribute('http_header');
   }
-  public set httpHeader(value: PodSpecContainerLifecyclePostStartHttpGetHttpHeader[]) {
+  public set httpHeader(value: PodSpecContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -2656,8 +2669,8 @@ export interface PodSpecContainerLifecyclePostStartTcpSocket {
   readonly port: string;
 }
 
-export function podSpecContainerLifecyclePostStartTcpSocketToTerraform(struct?: PodSpecContainerLifecyclePostStartTcpSocket): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerLifecyclePostStartTcpSocketToTerraform(struct?: PodSpecContainerLifecyclePostStartTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2684,11 +2697,11 @@ export interface PodSpecContainerLifecyclePostStart {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#tcp_socket Pod#tcp_socket}
   */
-  readonly tcpSocket?: PodSpecContainerLifecyclePostStartTcpSocket[];
+  readonly tcpSocket?: PodSpecContainerLifecyclePostStartTcpSocket[] | cdktf.IResolvable;
 }
 
-export function podSpecContainerLifecyclePostStartToTerraform(struct?: PodSpecContainerLifecyclePostStart): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerLifecyclePostStartToTerraform(struct?: PodSpecContainerLifecyclePostStart | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2709,7 +2722,7 @@ export interface PodSpecContainerLifecyclePreStopExec {
 }
 
 export function podSpecContainerLifecyclePreStopExecToTerraform(struct?: PodSpecContainerLifecyclePreStopExecOutputReference | PodSpecContainerLifecyclePreStopExec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2726,7 +2739,7 @@ export class PodSpecContainerLifecyclePreStopExecOutputReference extends cdktf.C
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2782,8 +2795,8 @@ export interface PodSpecContainerLifecyclePreStopHttpGetHttpHeader {
   readonly value?: string;
 }
 
-export function podSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: PodSpecContainerLifecyclePreStopHttpGetHttpHeader): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: PodSpecContainerLifecyclePreStopHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2823,11 +2836,11 @@ export interface PodSpecContainerLifecyclePreStopHttpGet {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#http_header Pod#http_header}
   */
-  readonly httpHeader?: PodSpecContainerLifecyclePreStopHttpGetHttpHeader[];
+  readonly httpHeader?: PodSpecContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable;
 }
 
 export function podSpecContainerLifecyclePreStopHttpGetToTerraform(struct?: PodSpecContainerLifecyclePreStopHttpGetOutputReference | PodSpecContainerLifecyclePreStopHttpGet): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2848,7 +2861,7 @@ export class PodSpecContainerLifecyclePreStopHttpGetOutputReference extends cdkt
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2962,12 +2975,12 @@ export class PodSpecContainerLifecyclePreStopHttpGetOutputReference extends cdkt
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: PodSpecContainerLifecyclePreStopHttpGetHttpHeader[]; 
+  private _httpHeader?: PodSpecContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header') as any;
+    return this.interpolationForAttribute('http_header');
   }
-  public set httpHeader(value: PodSpecContainerLifecyclePreStopHttpGetHttpHeader[]) {
+  public set httpHeader(value: PodSpecContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -2987,8 +3000,8 @@ export interface PodSpecContainerLifecyclePreStopTcpSocket {
   readonly port: string;
 }
 
-export function podSpecContainerLifecyclePreStopTcpSocketToTerraform(struct?: PodSpecContainerLifecyclePreStopTcpSocket): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerLifecyclePreStopTcpSocketToTerraform(struct?: PodSpecContainerLifecyclePreStopTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3015,11 +3028,11 @@ export interface PodSpecContainerLifecyclePreStop {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#tcp_socket Pod#tcp_socket}
   */
-  readonly tcpSocket?: PodSpecContainerLifecyclePreStopTcpSocket[];
+  readonly tcpSocket?: PodSpecContainerLifecyclePreStopTcpSocket[] | cdktf.IResolvable;
 }
 
-export function podSpecContainerLifecyclePreStopToTerraform(struct?: PodSpecContainerLifecyclePreStop): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerLifecyclePreStopToTerraform(struct?: PodSpecContainerLifecyclePreStop | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3036,17 +3049,17 @@ export interface PodSpecContainerLifecycle {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#post_start Pod#post_start}
   */
-  readonly postStart?: PodSpecContainerLifecyclePostStart[];
+  readonly postStart?: PodSpecContainerLifecyclePostStart[] | cdktf.IResolvable;
   /**
   * pre_stop block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#pre_stop Pod#pre_stop}
   */
-  readonly preStop?: PodSpecContainerLifecyclePreStop[];
+  readonly preStop?: PodSpecContainerLifecyclePreStop[] | cdktf.IResolvable;
 }
 
 export function podSpecContainerLifecycleToTerraform(struct?: PodSpecContainerLifecycleOutputReference | PodSpecContainerLifecycle): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3064,7 +3077,7 @@ export class PodSpecContainerLifecycleOutputReference extends cdktf.ComplexObjec
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3096,12 +3109,12 @@ export class PodSpecContainerLifecycleOutputReference extends cdktf.ComplexObjec
   }
 
   // post_start - computed: false, optional: true, required: false
-  private _postStart?: PodSpecContainerLifecyclePostStart[]; 
+  private _postStart?: PodSpecContainerLifecyclePostStart[] | cdktf.IResolvable; 
   public get postStart() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('post_start') as any;
+    return this.interpolationForAttribute('post_start');
   }
-  public set postStart(value: PodSpecContainerLifecyclePostStart[]) {
+  public set postStart(value: PodSpecContainerLifecyclePostStart[] | cdktf.IResolvable) {
     this._postStart = value;
   }
   public resetPostStart() {
@@ -3113,12 +3126,12 @@ export class PodSpecContainerLifecycleOutputReference extends cdktf.ComplexObjec
   }
 
   // pre_stop - computed: false, optional: true, required: false
-  private _preStop?: PodSpecContainerLifecyclePreStop[]; 
+  private _preStop?: PodSpecContainerLifecyclePreStop[] | cdktf.IResolvable; 
   public get preStop() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('pre_stop') as any;
+    return this.interpolationForAttribute('pre_stop');
   }
-  public set preStop(value: PodSpecContainerLifecyclePreStop[]) {
+  public set preStop(value: PodSpecContainerLifecyclePreStop[] | cdktf.IResolvable) {
     this._preStop = value;
   }
   public resetPreStop() {
@@ -3139,7 +3152,7 @@ export interface PodSpecContainerLivenessProbeExec {
 }
 
 export function podSpecContainerLivenessProbeExecToTerraform(struct?: PodSpecContainerLivenessProbeExecOutputReference | PodSpecContainerLivenessProbeExec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3156,7 +3169,7 @@ export class PodSpecContainerLivenessProbeExecOutputReference extends cdktf.Comp
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3212,8 +3225,8 @@ export interface PodSpecContainerLivenessProbeHttpGetHttpHeader {
   readonly value?: string;
 }
 
-export function podSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecContainerLivenessProbeHttpGetHttpHeader): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecContainerLivenessProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3253,11 +3266,11 @@ export interface PodSpecContainerLivenessProbeHttpGet {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#http_header Pod#http_header}
   */
-  readonly httpHeader?: PodSpecContainerLivenessProbeHttpGetHttpHeader[];
+  readonly httpHeader?: PodSpecContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
 
 export function podSpecContainerLivenessProbeHttpGetToTerraform(struct?: PodSpecContainerLivenessProbeHttpGetOutputReference | PodSpecContainerLivenessProbeHttpGet): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3278,7 +3291,7 @@ export class PodSpecContainerLivenessProbeHttpGetOutputReference extends cdktf.C
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3392,12 +3405,12 @@ export class PodSpecContainerLivenessProbeHttpGetOutputReference extends cdktf.C
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: PodSpecContainerLivenessProbeHttpGetHttpHeader[]; 
+  private _httpHeader?: PodSpecContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header') as any;
+    return this.interpolationForAttribute('http_header');
   }
-  public set httpHeader(value: PodSpecContainerLivenessProbeHttpGetHttpHeader[]) {
+  public set httpHeader(value: PodSpecContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -3417,8 +3430,8 @@ export interface PodSpecContainerLivenessProbeTcpSocket {
   readonly port: string;
 }
 
-export function podSpecContainerLivenessProbeTcpSocketToTerraform(struct?: PodSpecContainerLivenessProbeTcpSocket): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerLivenessProbeTcpSocketToTerraform(struct?: PodSpecContainerLivenessProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3475,11 +3488,11 @@ export interface PodSpecContainerLivenessProbe {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#tcp_socket Pod#tcp_socket}
   */
-  readonly tcpSocket?: PodSpecContainerLivenessProbeTcpSocket[];
+  readonly tcpSocket?: PodSpecContainerLivenessProbeTcpSocket[] | cdktf.IResolvable;
 }
 
 export function podSpecContainerLivenessProbeToTerraform(struct?: PodSpecContainerLivenessProbeOutputReference | PodSpecContainerLivenessProbe): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3503,7 +3516,7 @@ export class PodSpecContainerLivenessProbeOutputReference extends cdktf.ComplexO
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3651,7 +3664,7 @@ export class PodSpecContainerLivenessProbeOutputReference extends cdktf.ComplexO
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecContainerLivenessProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new PodSpecContainerLivenessProbeExecOutputReference(this, "exec", true);
   public get exec() {
     return this._exec;
   }
@@ -3667,7 +3680,7 @@ export class PodSpecContainerLivenessProbeOutputReference extends cdktf.ComplexO
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecContainerLivenessProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new PodSpecContainerLivenessProbeHttpGetOutputReference(this, "http_get", true);
   public get httpGet() {
     return this._httpGet;
   }
@@ -3683,12 +3696,12 @@ export class PodSpecContainerLivenessProbeOutputReference extends cdktf.ComplexO
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: PodSpecContainerLivenessProbeTcpSocket[]; 
+  private _tcpSocket?: PodSpecContainerLivenessProbeTcpSocket[] | cdktf.IResolvable; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket') as any;
+    return this.interpolationForAttribute('tcp_socket');
   }
-  public set tcpSocket(value: PodSpecContainerLivenessProbeTcpSocket[]) {
+  public set tcpSocket(value: PodSpecContainerLivenessProbeTcpSocket[] | cdktf.IResolvable) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -3732,8 +3745,8 @@ export interface PodSpecContainerPort {
   readonly protocol?: string;
 }
 
-export function podSpecContainerPortToTerraform(struct?: PodSpecContainerPort): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerPortToTerraform(struct?: PodSpecContainerPort | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3756,7 +3769,7 @@ export interface PodSpecContainerReadinessProbeExec {
 }
 
 export function podSpecContainerReadinessProbeExecToTerraform(struct?: PodSpecContainerReadinessProbeExecOutputReference | PodSpecContainerReadinessProbeExec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3773,7 +3786,7 @@ export class PodSpecContainerReadinessProbeExecOutputReference extends cdktf.Com
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3829,8 +3842,8 @@ export interface PodSpecContainerReadinessProbeHttpGetHttpHeader {
   readonly value?: string;
 }
 
-export function podSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecContainerReadinessProbeHttpGetHttpHeader): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecContainerReadinessProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3870,11 +3883,11 @@ export interface PodSpecContainerReadinessProbeHttpGet {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#http_header Pod#http_header}
   */
-  readonly httpHeader?: PodSpecContainerReadinessProbeHttpGetHttpHeader[];
+  readonly httpHeader?: PodSpecContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
 
 export function podSpecContainerReadinessProbeHttpGetToTerraform(struct?: PodSpecContainerReadinessProbeHttpGetOutputReference | PodSpecContainerReadinessProbeHttpGet): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3895,7 +3908,7 @@ export class PodSpecContainerReadinessProbeHttpGetOutputReference extends cdktf.
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -4009,12 +4022,12 @@ export class PodSpecContainerReadinessProbeHttpGetOutputReference extends cdktf.
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: PodSpecContainerReadinessProbeHttpGetHttpHeader[]; 
+  private _httpHeader?: PodSpecContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header') as any;
+    return this.interpolationForAttribute('http_header');
   }
-  public set httpHeader(value: PodSpecContainerReadinessProbeHttpGetHttpHeader[]) {
+  public set httpHeader(value: PodSpecContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -4034,8 +4047,8 @@ export interface PodSpecContainerReadinessProbeTcpSocket {
   readonly port: string;
 }
 
-export function podSpecContainerReadinessProbeTcpSocketToTerraform(struct?: PodSpecContainerReadinessProbeTcpSocket): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerReadinessProbeTcpSocketToTerraform(struct?: PodSpecContainerReadinessProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -4092,11 +4105,11 @@ export interface PodSpecContainerReadinessProbe {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#tcp_socket Pod#tcp_socket}
   */
-  readonly tcpSocket?: PodSpecContainerReadinessProbeTcpSocket[];
+  readonly tcpSocket?: PodSpecContainerReadinessProbeTcpSocket[] | cdktf.IResolvable;
 }
 
 export function podSpecContainerReadinessProbeToTerraform(struct?: PodSpecContainerReadinessProbeOutputReference | PodSpecContainerReadinessProbe): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -4120,7 +4133,7 @@ export class PodSpecContainerReadinessProbeOutputReference extends cdktf.Complex
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -4268,7 +4281,7 @@ export class PodSpecContainerReadinessProbeOutputReference extends cdktf.Complex
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecContainerReadinessProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new PodSpecContainerReadinessProbeExecOutputReference(this, "exec", true);
   public get exec() {
     return this._exec;
   }
@@ -4284,7 +4297,7 @@ export class PodSpecContainerReadinessProbeOutputReference extends cdktf.Complex
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecContainerReadinessProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new PodSpecContainerReadinessProbeHttpGetOutputReference(this, "http_get", true);
   public get httpGet() {
     return this._httpGet;
   }
@@ -4300,12 +4313,12 @@ export class PodSpecContainerReadinessProbeOutputReference extends cdktf.Complex
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: PodSpecContainerReadinessProbeTcpSocket[]; 
+  private _tcpSocket?: PodSpecContainerReadinessProbeTcpSocket[] | cdktf.IResolvable; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket') as any;
+    return this.interpolationForAttribute('tcp_socket');
   }
-  public set tcpSocket(value: PodSpecContainerReadinessProbeTcpSocket[]) {
+  public set tcpSocket(value: PodSpecContainerReadinessProbeTcpSocket[] | cdktf.IResolvable) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -4322,23 +4335,23 @@ export interface PodSpecContainerResources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#limits Pod#limits}
   */
-  readonly limits?: { [key: string]: string } | cdktf.IResolvable;
+  readonly limits?: { [key: string]: string };
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#requests Pod#requests}
   */
-  readonly requests?: { [key: string]: string } | cdktf.IResolvable;
+  readonly requests?: { [key: string]: string };
 }
 
 export function podSpecContainerResourcesToTerraform(struct?: PodSpecContainerResourcesOutputReference | PodSpecContainerResources): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    limits: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.limits),
-    requests: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.requests),
+    limits: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.limits),
+    requests: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.requests),
   }
 }
 
@@ -4350,7 +4363,7 @@ export class PodSpecContainerResourcesOutputReference extends cdktf.ComplexObjec
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -4382,12 +4395,11 @@ export class PodSpecContainerResourcesOutputReference extends cdktf.ComplexObjec
   }
 
   // limits - computed: true, optional: true, required: false
-  private _limits?: { [key: string]: string } | cdktf.IResolvable; 
+  private _limits?: { [key: string]: string }; 
   public get limits() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('limits') as any;
+    return this.getStringMapAttribute('limits');
   }
-  public set limits(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set limits(value: { [key: string]: string }) {
     this._limits = value;
   }
   public resetLimits() {
@@ -4399,12 +4411,11 @@ export class PodSpecContainerResourcesOutputReference extends cdktf.ComplexObjec
   }
 
   // requests - computed: true, optional: true, required: false
-  private _requests?: { [key: string]: string } | cdktf.IResolvable; 
+  private _requests?: { [key: string]: string }; 
   public get requests() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('requests') as any;
+    return this.getStringMapAttribute('requests');
   }
-  public set requests(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set requests(value: { [key: string]: string }) {
     this._requests = value;
   }
   public resetRequests() {
@@ -4431,7 +4442,7 @@ export interface PodSpecContainerSecurityContextCapabilities {
 }
 
 export function podSpecContainerSecurityContextCapabilitiesToTerraform(struct?: PodSpecContainerSecurityContextCapabilitiesOutputReference | PodSpecContainerSecurityContextCapabilities): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -4449,7 +4460,7 @@ export class PodSpecContainerSecurityContextCapabilitiesOutputReference extends 
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -4540,7 +4551,7 @@ export interface PodSpecContainerSecurityContextSeLinuxOptions {
 }
 
 export function podSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct?: PodSpecContainerSecurityContextSeLinuxOptionsOutputReference | PodSpecContainerSecurityContextSeLinuxOptions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -4560,7 +4571,7 @@ export class PodSpecContainerSecurityContextSeLinuxOptionsOutputReference extend
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -4719,7 +4730,7 @@ export interface PodSpecContainerSecurityContext {
 }
 
 export function podSpecContainerSecurityContextToTerraform(struct?: PodSpecContainerSecurityContextOutputReference | PodSpecContainerSecurityContext): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -4743,7 +4754,7 @@ export class PodSpecContainerSecurityContextOutputReference extends cdktf.Comple
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -4813,7 +4824,7 @@ export class PodSpecContainerSecurityContextOutputReference extends cdktf.Comple
   // allow_privilege_escalation - computed: false, optional: true, required: false
   private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable; 
   public get allowPrivilegeEscalation() {
-    return this.getBooleanAttribute('allow_privilege_escalation') as any;
+    return this.getBooleanAttribute('allow_privilege_escalation');
   }
   public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable) {
     this._allowPrivilegeEscalation = value;
@@ -4829,7 +4840,7 @@ export class PodSpecContainerSecurityContextOutputReference extends cdktf.Comple
   // privileged - computed: false, optional: true, required: false
   private _privileged?: boolean | cdktf.IResolvable; 
   public get privileged() {
-    return this.getBooleanAttribute('privileged') as any;
+    return this.getBooleanAttribute('privileged');
   }
   public set privileged(value: boolean | cdktf.IResolvable) {
     this._privileged = value;
@@ -4845,7 +4856,7 @@ export class PodSpecContainerSecurityContextOutputReference extends cdktf.Comple
   // read_only_root_filesystem - computed: false, optional: true, required: false
   private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable; 
   public get readOnlyRootFilesystem() {
-    return this.getBooleanAttribute('read_only_root_filesystem') as any;
+    return this.getBooleanAttribute('read_only_root_filesystem');
   }
   public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable) {
     this._readOnlyRootFilesystem = value;
@@ -4877,7 +4888,7 @@ export class PodSpecContainerSecurityContextOutputReference extends cdktf.Comple
   // run_as_non_root - computed: false, optional: true, required: false
   private _runAsNonRoot?: boolean | cdktf.IResolvable; 
   public get runAsNonRoot() {
-    return this.getBooleanAttribute('run_as_non_root') as any;
+    return this.getBooleanAttribute('run_as_non_root');
   }
   public set runAsNonRoot(value: boolean | cdktf.IResolvable) {
     this._runAsNonRoot = value;
@@ -4907,7 +4918,7 @@ export class PodSpecContainerSecurityContextOutputReference extends cdktf.Comple
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities = new PodSpecContainerSecurityContextCapabilitiesOutputReference(this as any, "capabilities", true);
+  private _capabilities = new PodSpecContainerSecurityContextCapabilitiesOutputReference(this, "capabilities", true);
   public get capabilities() {
     return this._capabilities;
   }
@@ -4923,7 +4934,7 @@ export class PodSpecContainerSecurityContextOutputReference extends cdktf.Comple
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new PodSpecContainerSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
+  private _seLinuxOptions = new PodSpecContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options", true);
   public get seLinuxOptions() {
     return this._seLinuxOptions;
   }
@@ -4948,7 +4959,7 @@ export interface PodSpecContainerStartupProbeExec {
 }
 
 export function podSpecContainerStartupProbeExecToTerraform(struct?: PodSpecContainerStartupProbeExecOutputReference | PodSpecContainerStartupProbeExec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -4965,7 +4976,7 @@ export class PodSpecContainerStartupProbeExecOutputReference extends cdktf.Compl
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -5021,8 +5032,8 @@ export interface PodSpecContainerStartupProbeHttpGetHttpHeader {
   readonly value?: string;
 }
 
-export function podSpecContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecContainerStartupProbeHttpGetHttpHeader): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -5062,11 +5073,11 @@ export interface PodSpecContainerStartupProbeHttpGet {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#http_header Pod#http_header}
   */
-  readonly httpHeader?: PodSpecContainerStartupProbeHttpGetHttpHeader[];
+  readonly httpHeader?: PodSpecContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
 
 export function podSpecContainerStartupProbeHttpGetToTerraform(struct?: PodSpecContainerStartupProbeHttpGetOutputReference | PodSpecContainerStartupProbeHttpGet): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -5087,7 +5098,7 @@ export class PodSpecContainerStartupProbeHttpGetOutputReference extends cdktf.Co
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -5201,12 +5212,12 @@ export class PodSpecContainerStartupProbeHttpGetOutputReference extends cdktf.Co
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: PodSpecContainerStartupProbeHttpGetHttpHeader[]; 
+  private _httpHeader?: PodSpecContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header') as any;
+    return this.interpolationForAttribute('http_header');
   }
-  public set httpHeader(value: PodSpecContainerStartupProbeHttpGetHttpHeader[]) {
+  public set httpHeader(value: PodSpecContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -5226,8 +5237,8 @@ export interface PodSpecContainerStartupProbeTcpSocket {
   readonly port: string;
 }
 
-export function podSpecContainerStartupProbeTcpSocketToTerraform(struct?: PodSpecContainerStartupProbeTcpSocket): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerStartupProbeTcpSocketToTerraform(struct?: PodSpecContainerStartupProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -5284,11 +5295,11 @@ export interface PodSpecContainerStartupProbe {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#tcp_socket Pod#tcp_socket}
   */
-  readonly tcpSocket?: PodSpecContainerStartupProbeTcpSocket[];
+  readonly tcpSocket?: PodSpecContainerStartupProbeTcpSocket[] | cdktf.IResolvable;
 }
 
 export function podSpecContainerStartupProbeToTerraform(struct?: PodSpecContainerStartupProbeOutputReference | PodSpecContainerStartupProbe): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -5312,7 +5323,7 @@ export class PodSpecContainerStartupProbeOutputReference extends cdktf.ComplexOb
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -5460,7 +5471,7 @@ export class PodSpecContainerStartupProbeOutputReference extends cdktf.ComplexOb
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecContainerStartupProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new PodSpecContainerStartupProbeExecOutputReference(this, "exec", true);
   public get exec() {
     return this._exec;
   }
@@ -5476,7 +5487,7 @@ export class PodSpecContainerStartupProbeOutputReference extends cdktf.ComplexOb
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecContainerStartupProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new PodSpecContainerStartupProbeHttpGetOutputReference(this, "http_get", true);
   public get httpGet() {
     return this._httpGet;
   }
@@ -5492,12 +5503,12 @@ export class PodSpecContainerStartupProbeOutputReference extends cdktf.ComplexOb
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: PodSpecContainerStartupProbeTcpSocket[]; 
+  private _tcpSocket?: PodSpecContainerStartupProbeTcpSocket[] | cdktf.IResolvable; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket') as any;
+    return this.interpolationForAttribute('tcp_socket');
   }
-  public set tcpSocket(value: PodSpecContainerStartupProbeTcpSocket[]) {
+  public set tcpSocket(value: PodSpecContainerStartupProbeTcpSocket[] | cdktf.IResolvable) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -5541,8 +5552,8 @@ export interface PodSpecContainerVolumeMount {
   readonly subPath?: string;
 }
 
-export function podSpecContainerVolumeMountToTerraform(struct?: PodSpecContainerVolumeMount): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerVolumeMountToTerraform(struct?: PodSpecContainerVolumeMount | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -5627,13 +5638,13 @@ export interface PodSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#env Pod#env}
   */
-  readonly env?: PodSpecContainerEnv[];
+  readonly env?: PodSpecContainerEnv[] | cdktf.IResolvable;
   /**
   * env_from block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#env_from Pod#env_from}
   */
-  readonly envFrom?: PodSpecContainerEnvFrom[];
+  readonly envFrom?: PodSpecContainerEnvFrom[] | cdktf.IResolvable;
   /**
   * lifecycle block
   * 
@@ -5651,7 +5662,7 @@ export interface PodSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#port Pod#port}
   */
-  readonly port?: PodSpecContainerPort[];
+  readonly port?: PodSpecContainerPort[] | cdktf.IResolvable;
   /**
   * readiness_probe block
   * 
@@ -5681,11 +5692,11 @@ export interface PodSpecContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#volume_mount Pod#volume_mount}
   */
-  readonly volumeMount?: PodSpecContainerVolumeMount[];
+  readonly volumeMount?: PodSpecContainerVolumeMount[] | cdktf.IResolvable;
 }
 
-export function podSpecContainerToTerraform(struct?: PodSpecContainer): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecContainerToTerraform(struct?: PodSpecContainer | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -5729,8 +5740,8 @@ export interface PodSpecDnsConfigOption {
   readonly value?: string;
 }
 
-export function podSpecDnsConfigOptionToTerraform(struct?: PodSpecDnsConfigOption): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecDnsConfigOptionToTerraform(struct?: PodSpecDnsConfigOption | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -5758,11 +5769,11 @@ export interface PodSpecDnsConfig {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#option Pod#option}
   */
-  readonly option?: PodSpecDnsConfigOption[];
+  readonly option?: PodSpecDnsConfigOption[] | cdktf.IResolvable;
 }
 
 export function podSpecDnsConfigToTerraform(struct?: PodSpecDnsConfigOutputReference | PodSpecDnsConfig): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -5781,7 +5792,7 @@ export class PodSpecDnsConfigOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -5851,12 +5862,12 @@ export class PodSpecDnsConfigOutputReference extends cdktf.ComplexObject {
   }
 
   // option - computed: false, optional: true, required: false
-  private _option?: PodSpecDnsConfigOption[]; 
+  private _option?: PodSpecDnsConfigOption[] | cdktf.IResolvable; 
   public get option() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('option') as any;
+    return this.interpolationForAttribute('option');
   }
-  public set option(value: PodSpecDnsConfigOption[]) {
+  public set option(value: PodSpecDnsConfigOption[] | cdktf.IResolvable) {
     this._option = value;
   }
   public resetOption() {
@@ -5882,8 +5893,8 @@ export interface PodSpecHostAliases {
   readonly ip: string;
 }
 
-export function podSpecHostAliasesToTerraform(struct?: PodSpecHostAliases): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecHostAliasesToTerraform(struct?: PodSpecHostAliases | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -5902,8 +5913,8 @@ export interface PodSpecImagePullSecrets {
   readonly name: string;
 }
 
-export function podSpecImagePullSecretsToTerraform(struct?: PodSpecImagePullSecrets): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecImagePullSecretsToTerraform(struct?: PodSpecImagePullSecrets | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -5934,7 +5945,7 @@ export interface PodSpecInitContainerEnvValueFromConfigMapKeyRef {
 }
 
 export function podSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: PodSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference | PodSpecInitContainerEnvValueFromConfigMapKeyRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -5953,7 +5964,7 @@ export class PodSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference exte
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -6025,7 +6036,7 @@ export class PodSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference exte
   // optional - computed: false, optional: true, required: false
   private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
-    return this.getBooleanAttribute('optional') as any;
+    return this.getBooleanAttribute('optional');
   }
   public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
@@ -6054,7 +6065,7 @@ export interface PodSpecInitContainerEnvValueFromFieldRef {
 }
 
 export function podSpecInitContainerEnvValueFromFieldRefToTerraform(struct?: PodSpecInitContainerEnvValueFromFieldRefOutputReference | PodSpecInitContainerEnvValueFromFieldRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -6072,7 +6083,7 @@ export class PodSpecInitContainerEnvValueFromFieldRefOutputReference extends cdk
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -6153,7 +6164,7 @@ export interface PodSpecInitContainerEnvValueFromResourceFieldRef {
 }
 
 export function podSpecInitContainerEnvValueFromResourceFieldRefToTerraform(struct?: PodSpecInitContainerEnvValueFromResourceFieldRefOutputReference | PodSpecInitContainerEnvValueFromResourceFieldRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -6172,7 +6183,7 @@ export class PodSpecInitContainerEnvValueFromResourceFieldRefOutputReference ext
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -6276,7 +6287,7 @@ export interface PodSpecInitContainerEnvValueFromSecretKeyRef {
 }
 
 export function podSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct?: PodSpecInitContainerEnvValueFromSecretKeyRefOutputReference | PodSpecInitContainerEnvValueFromSecretKeyRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -6295,7 +6306,7 @@ export class PodSpecInitContainerEnvValueFromSecretKeyRefOutputReference extends
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -6367,7 +6378,7 @@ export class PodSpecInitContainerEnvValueFromSecretKeyRefOutputReference extends
   // optional - computed: false, optional: true, required: false
   private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
-    return this.getBooleanAttribute('optional') as any;
+    return this.getBooleanAttribute('optional');
   }
   public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
@@ -6408,7 +6419,7 @@ export interface PodSpecInitContainerEnvValueFrom {
 }
 
 export function podSpecInitContainerEnvValueFromToTerraform(struct?: PodSpecInitContainerEnvValueFromOutputReference | PodSpecInitContainerEnvValueFrom): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -6428,7 +6439,7 @@ export class PodSpecInitContainerEnvValueFromOutputReference extends cdktf.Compl
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -6472,7 +6483,7 @@ export class PodSpecInitContainerEnvValueFromOutputReference extends cdktf.Compl
   }
 
   // config_map_key_ref - computed: false, optional: true, required: false
-  private _configMapKeyRef = new PodSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this as any, "config_map_key_ref", true);
+  private _configMapKeyRef = new PodSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref", true);
   public get configMapKeyRef() {
     return this._configMapKeyRef;
   }
@@ -6488,7 +6499,7 @@ export class PodSpecInitContainerEnvValueFromOutputReference extends cdktf.Compl
   }
 
   // field_ref - computed: false, optional: true, required: false
-  private _fieldRef = new PodSpecInitContainerEnvValueFromFieldRefOutputReference(this as any, "field_ref", true);
+  private _fieldRef = new PodSpecInitContainerEnvValueFromFieldRefOutputReference(this, "field_ref", true);
   public get fieldRef() {
     return this._fieldRef;
   }
@@ -6504,7 +6515,7 @@ export class PodSpecInitContainerEnvValueFromOutputReference extends cdktf.Compl
   }
 
   // resource_field_ref - computed: false, optional: true, required: false
-  private _resourceFieldRef = new PodSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this as any, "resource_field_ref", true);
+  private _resourceFieldRef = new PodSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref", true);
   public get resourceFieldRef() {
     return this._resourceFieldRef;
   }
@@ -6520,7 +6531,7 @@ export class PodSpecInitContainerEnvValueFromOutputReference extends cdktf.Compl
   }
 
   // secret_key_ref - computed: false, optional: true, required: false
-  private _secretKeyRef = new PodSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this as any, "secret_key_ref", true);
+  private _secretKeyRef = new PodSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref", true);
   public get secretKeyRef() {
     return this._secretKeyRef;
   }
@@ -6556,8 +6567,8 @@ export interface PodSpecInitContainerEnv {
   readonly valueFrom?: PodSpecInitContainerEnvValueFrom;
 }
 
-export function podSpecInitContainerEnvToTerraform(struct?: PodSpecInitContainerEnv): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerEnvToTerraform(struct?: PodSpecInitContainerEnv | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -6584,7 +6595,7 @@ export interface PodSpecInitContainerEnvFromConfigMapRef {
 }
 
 export function podSpecInitContainerEnvFromConfigMapRefToTerraform(struct?: PodSpecInitContainerEnvFromConfigMapRefOutputReference | PodSpecInitContainerEnvFromConfigMapRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -6602,7 +6613,7 @@ export class PodSpecInitContainerEnvFromConfigMapRefOutputReference extends cdkt
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -6649,7 +6660,7 @@ export class PodSpecInitContainerEnvFromConfigMapRefOutputReference extends cdkt
   // optional - computed: false, optional: true, required: false
   private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
-    return this.getBooleanAttribute('optional') as any;
+    return this.getBooleanAttribute('optional');
   }
   public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
@@ -6678,7 +6689,7 @@ export interface PodSpecInitContainerEnvFromSecretRef {
 }
 
 export function podSpecInitContainerEnvFromSecretRefToTerraform(struct?: PodSpecInitContainerEnvFromSecretRefOutputReference | PodSpecInitContainerEnvFromSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -6696,7 +6707,7 @@ export class PodSpecInitContainerEnvFromSecretRefOutputReference extends cdktf.C
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -6743,7 +6754,7 @@ export class PodSpecInitContainerEnvFromSecretRefOutputReference extends cdktf.C
   // optional - computed: false, optional: true, required: false
   private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
-    return this.getBooleanAttribute('optional') as any;
+    return this.getBooleanAttribute('optional');
   }
   public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
@@ -6777,8 +6788,8 @@ export interface PodSpecInitContainerEnvFrom {
   readonly secretRef?: PodSpecInitContainerEnvFromSecretRef;
 }
 
-export function podSpecInitContainerEnvFromToTerraform(struct?: PodSpecInitContainerEnvFrom): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerEnvFromToTerraform(struct?: PodSpecInitContainerEnvFrom | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -6799,7 +6810,7 @@ export interface PodSpecInitContainerLifecyclePostStartExec {
 }
 
 export function podSpecInitContainerLifecyclePostStartExecToTerraform(struct?: PodSpecInitContainerLifecyclePostStartExecOutputReference | PodSpecInitContainerLifecyclePostStartExec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -6816,7 +6827,7 @@ export class PodSpecInitContainerLifecyclePostStartExecOutputReference extends c
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -6872,8 +6883,8 @@ export interface PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader {
   readonly value?: string;
 }
 
-export function podSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -6913,11 +6924,11 @@ export interface PodSpecInitContainerLifecyclePostStartHttpGet {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#http_header Pod#http_header}
   */
-  readonly httpHeader?: PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader[];
+  readonly httpHeader?: PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable;
 }
 
 export function podSpecInitContainerLifecyclePostStartHttpGetToTerraform(struct?: PodSpecInitContainerLifecyclePostStartHttpGetOutputReference | PodSpecInitContainerLifecyclePostStartHttpGet): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -6938,7 +6949,7 @@ export class PodSpecInitContainerLifecyclePostStartHttpGetOutputReference extend
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -7052,12 +7063,12 @@ export class PodSpecInitContainerLifecyclePostStartHttpGetOutputReference extend
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader[]; 
+  private _httpHeader?: PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header') as any;
+    return this.interpolationForAttribute('http_header');
   }
-  public set httpHeader(value: PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader[]) {
+  public set httpHeader(value: PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -7077,8 +7088,8 @@ export interface PodSpecInitContainerLifecyclePostStartTcpSocket {
   readonly port: string;
 }
 
-export function podSpecInitContainerLifecyclePostStartTcpSocketToTerraform(struct?: PodSpecInitContainerLifecyclePostStartTcpSocket): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerLifecyclePostStartTcpSocketToTerraform(struct?: PodSpecInitContainerLifecyclePostStartTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7105,11 +7116,11 @@ export interface PodSpecInitContainerLifecyclePostStart {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#tcp_socket Pod#tcp_socket}
   */
-  readonly tcpSocket?: PodSpecInitContainerLifecyclePostStartTcpSocket[];
+  readonly tcpSocket?: PodSpecInitContainerLifecyclePostStartTcpSocket[] | cdktf.IResolvable;
 }
 
-export function podSpecInitContainerLifecyclePostStartToTerraform(struct?: PodSpecInitContainerLifecyclePostStart): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerLifecyclePostStartToTerraform(struct?: PodSpecInitContainerLifecyclePostStart | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7130,7 +7141,7 @@ export interface PodSpecInitContainerLifecyclePreStopExec {
 }
 
 export function podSpecInitContainerLifecyclePreStopExecToTerraform(struct?: PodSpecInitContainerLifecyclePreStopExecOutputReference | PodSpecInitContainerLifecyclePreStopExec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7147,7 +7158,7 @@ export class PodSpecInitContainerLifecyclePreStopExecOutputReference extends cdk
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -7203,8 +7214,8 @@ export interface PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader {
   readonly value?: string;
 }
 
-export function podSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7244,11 +7255,11 @@ export interface PodSpecInitContainerLifecyclePreStopHttpGet {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#http_header Pod#http_header}
   */
-  readonly httpHeader?: PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader[];
+  readonly httpHeader?: PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable;
 }
 
 export function podSpecInitContainerLifecyclePreStopHttpGetToTerraform(struct?: PodSpecInitContainerLifecyclePreStopHttpGetOutputReference | PodSpecInitContainerLifecyclePreStopHttpGet): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7269,7 +7280,7 @@ export class PodSpecInitContainerLifecyclePreStopHttpGetOutputReference extends 
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -7383,12 +7394,12 @@ export class PodSpecInitContainerLifecyclePreStopHttpGetOutputReference extends 
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader[]; 
+  private _httpHeader?: PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header') as any;
+    return this.interpolationForAttribute('http_header');
   }
-  public set httpHeader(value: PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader[]) {
+  public set httpHeader(value: PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -7408,8 +7419,8 @@ export interface PodSpecInitContainerLifecyclePreStopTcpSocket {
   readonly port: string;
 }
 
-export function podSpecInitContainerLifecyclePreStopTcpSocketToTerraform(struct?: PodSpecInitContainerLifecyclePreStopTcpSocket): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerLifecyclePreStopTcpSocketToTerraform(struct?: PodSpecInitContainerLifecyclePreStopTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7436,11 +7447,11 @@ export interface PodSpecInitContainerLifecyclePreStop {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#tcp_socket Pod#tcp_socket}
   */
-  readonly tcpSocket?: PodSpecInitContainerLifecyclePreStopTcpSocket[];
+  readonly tcpSocket?: PodSpecInitContainerLifecyclePreStopTcpSocket[] | cdktf.IResolvable;
 }
 
-export function podSpecInitContainerLifecyclePreStopToTerraform(struct?: PodSpecInitContainerLifecyclePreStop): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerLifecyclePreStopToTerraform(struct?: PodSpecInitContainerLifecyclePreStop | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7457,17 +7468,17 @@ export interface PodSpecInitContainerLifecycle {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#post_start Pod#post_start}
   */
-  readonly postStart?: PodSpecInitContainerLifecyclePostStart[];
+  readonly postStart?: PodSpecInitContainerLifecyclePostStart[] | cdktf.IResolvable;
   /**
   * pre_stop block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#pre_stop Pod#pre_stop}
   */
-  readonly preStop?: PodSpecInitContainerLifecyclePreStop[];
+  readonly preStop?: PodSpecInitContainerLifecyclePreStop[] | cdktf.IResolvable;
 }
 
 export function podSpecInitContainerLifecycleToTerraform(struct?: PodSpecInitContainerLifecycleOutputReference | PodSpecInitContainerLifecycle): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7485,7 +7496,7 @@ export class PodSpecInitContainerLifecycleOutputReference extends cdktf.ComplexO
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -7517,12 +7528,12 @@ export class PodSpecInitContainerLifecycleOutputReference extends cdktf.ComplexO
   }
 
   // post_start - computed: false, optional: true, required: false
-  private _postStart?: PodSpecInitContainerLifecyclePostStart[]; 
+  private _postStart?: PodSpecInitContainerLifecyclePostStart[] | cdktf.IResolvable; 
   public get postStart() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('post_start') as any;
+    return this.interpolationForAttribute('post_start');
   }
-  public set postStart(value: PodSpecInitContainerLifecyclePostStart[]) {
+  public set postStart(value: PodSpecInitContainerLifecyclePostStart[] | cdktf.IResolvable) {
     this._postStart = value;
   }
   public resetPostStart() {
@@ -7534,12 +7545,12 @@ export class PodSpecInitContainerLifecycleOutputReference extends cdktf.ComplexO
   }
 
   // pre_stop - computed: false, optional: true, required: false
-  private _preStop?: PodSpecInitContainerLifecyclePreStop[]; 
+  private _preStop?: PodSpecInitContainerLifecyclePreStop[] | cdktf.IResolvable; 
   public get preStop() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('pre_stop') as any;
+    return this.interpolationForAttribute('pre_stop');
   }
-  public set preStop(value: PodSpecInitContainerLifecyclePreStop[]) {
+  public set preStop(value: PodSpecInitContainerLifecyclePreStop[] | cdktf.IResolvable) {
     this._preStop = value;
   }
   public resetPreStop() {
@@ -7560,7 +7571,7 @@ export interface PodSpecInitContainerLivenessProbeExec {
 }
 
 export function podSpecInitContainerLivenessProbeExecToTerraform(struct?: PodSpecInitContainerLivenessProbeExecOutputReference | PodSpecInitContainerLivenessProbeExec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7577,7 +7588,7 @@ export class PodSpecInitContainerLivenessProbeExecOutputReference extends cdktf.
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -7633,8 +7644,8 @@ export interface PodSpecInitContainerLivenessProbeHttpGetHttpHeader {
   readonly value?: string;
 }
 
-export function podSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecInitContainerLivenessProbeHttpGetHttpHeader): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecInitContainerLivenessProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7674,11 +7685,11 @@ export interface PodSpecInitContainerLivenessProbeHttpGet {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#http_header Pod#http_header}
   */
-  readonly httpHeader?: PodSpecInitContainerLivenessProbeHttpGetHttpHeader[];
+  readonly httpHeader?: PodSpecInitContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
 
 export function podSpecInitContainerLivenessProbeHttpGetToTerraform(struct?: PodSpecInitContainerLivenessProbeHttpGetOutputReference | PodSpecInitContainerLivenessProbeHttpGet): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7699,7 +7710,7 @@ export class PodSpecInitContainerLivenessProbeHttpGetOutputReference extends cdk
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -7813,12 +7824,12 @@ export class PodSpecInitContainerLivenessProbeHttpGetOutputReference extends cdk
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: PodSpecInitContainerLivenessProbeHttpGetHttpHeader[]; 
+  private _httpHeader?: PodSpecInitContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header') as any;
+    return this.interpolationForAttribute('http_header');
   }
-  public set httpHeader(value: PodSpecInitContainerLivenessProbeHttpGetHttpHeader[]) {
+  public set httpHeader(value: PodSpecInitContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -7838,8 +7849,8 @@ export interface PodSpecInitContainerLivenessProbeTcpSocket {
   readonly port: string;
 }
 
-export function podSpecInitContainerLivenessProbeTcpSocketToTerraform(struct?: PodSpecInitContainerLivenessProbeTcpSocket): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerLivenessProbeTcpSocketToTerraform(struct?: PodSpecInitContainerLivenessProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7896,11 +7907,11 @@ export interface PodSpecInitContainerLivenessProbe {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#tcp_socket Pod#tcp_socket}
   */
-  readonly tcpSocket?: PodSpecInitContainerLivenessProbeTcpSocket[];
+  readonly tcpSocket?: PodSpecInitContainerLivenessProbeTcpSocket[] | cdktf.IResolvable;
 }
 
 export function podSpecInitContainerLivenessProbeToTerraform(struct?: PodSpecInitContainerLivenessProbeOutputReference | PodSpecInitContainerLivenessProbe): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -7924,7 +7935,7 @@ export class PodSpecInitContainerLivenessProbeOutputReference extends cdktf.Comp
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -8072,7 +8083,7 @@ export class PodSpecInitContainerLivenessProbeOutputReference extends cdktf.Comp
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecInitContainerLivenessProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new PodSpecInitContainerLivenessProbeExecOutputReference(this, "exec", true);
   public get exec() {
     return this._exec;
   }
@@ -8088,7 +8099,7 @@ export class PodSpecInitContainerLivenessProbeOutputReference extends cdktf.Comp
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecInitContainerLivenessProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new PodSpecInitContainerLivenessProbeHttpGetOutputReference(this, "http_get", true);
   public get httpGet() {
     return this._httpGet;
   }
@@ -8104,12 +8115,12 @@ export class PodSpecInitContainerLivenessProbeOutputReference extends cdktf.Comp
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: PodSpecInitContainerLivenessProbeTcpSocket[]; 
+  private _tcpSocket?: PodSpecInitContainerLivenessProbeTcpSocket[] | cdktf.IResolvable; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket') as any;
+    return this.interpolationForAttribute('tcp_socket');
   }
-  public set tcpSocket(value: PodSpecInitContainerLivenessProbeTcpSocket[]) {
+  public set tcpSocket(value: PodSpecInitContainerLivenessProbeTcpSocket[] | cdktf.IResolvable) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -8153,8 +8164,8 @@ export interface PodSpecInitContainerPort {
   readonly protocol?: string;
 }
 
-export function podSpecInitContainerPortToTerraform(struct?: PodSpecInitContainerPort): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerPortToTerraform(struct?: PodSpecInitContainerPort | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -8177,7 +8188,7 @@ export interface PodSpecInitContainerReadinessProbeExec {
 }
 
 export function podSpecInitContainerReadinessProbeExecToTerraform(struct?: PodSpecInitContainerReadinessProbeExecOutputReference | PodSpecInitContainerReadinessProbeExec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -8194,7 +8205,7 @@ export class PodSpecInitContainerReadinessProbeExecOutputReference extends cdktf
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -8250,8 +8261,8 @@ export interface PodSpecInitContainerReadinessProbeHttpGetHttpHeader {
   readonly value?: string;
 }
 
-export function podSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecInitContainerReadinessProbeHttpGetHttpHeader): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecInitContainerReadinessProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -8291,11 +8302,11 @@ export interface PodSpecInitContainerReadinessProbeHttpGet {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#http_header Pod#http_header}
   */
-  readonly httpHeader?: PodSpecInitContainerReadinessProbeHttpGetHttpHeader[];
+  readonly httpHeader?: PodSpecInitContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
 
 export function podSpecInitContainerReadinessProbeHttpGetToTerraform(struct?: PodSpecInitContainerReadinessProbeHttpGetOutputReference | PodSpecInitContainerReadinessProbeHttpGet): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -8316,7 +8327,7 @@ export class PodSpecInitContainerReadinessProbeHttpGetOutputReference extends cd
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -8430,12 +8441,12 @@ export class PodSpecInitContainerReadinessProbeHttpGetOutputReference extends cd
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: PodSpecInitContainerReadinessProbeHttpGetHttpHeader[]; 
+  private _httpHeader?: PodSpecInitContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header') as any;
+    return this.interpolationForAttribute('http_header');
   }
-  public set httpHeader(value: PodSpecInitContainerReadinessProbeHttpGetHttpHeader[]) {
+  public set httpHeader(value: PodSpecInitContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -8455,8 +8466,8 @@ export interface PodSpecInitContainerReadinessProbeTcpSocket {
   readonly port: string;
 }
 
-export function podSpecInitContainerReadinessProbeTcpSocketToTerraform(struct?: PodSpecInitContainerReadinessProbeTcpSocket): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerReadinessProbeTcpSocketToTerraform(struct?: PodSpecInitContainerReadinessProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -8513,11 +8524,11 @@ export interface PodSpecInitContainerReadinessProbe {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#tcp_socket Pod#tcp_socket}
   */
-  readonly tcpSocket?: PodSpecInitContainerReadinessProbeTcpSocket[];
+  readonly tcpSocket?: PodSpecInitContainerReadinessProbeTcpSocket[] | cdktf.IResolvable;
 }
 
 export function podSpecInitContainerReadinessProbeToTerraform(struct?: PodSpecInitContainerReadinessProbeOutputReference | PodSpecInitContainerReadinessProbe): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -8541,7 +8552,7 @@ export class PodSpecInitContainerReadinessProbeOutputReference extends cdktf.Com
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -8689,7 +8700,7 @@ export class PodSpecInitContainerReadinessProbeOutputReference extends cdktf.Com
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecInitContainerReadinessProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new PodSpecInitContainerReadinessProbeExecOutputReference(this, "exec", true);
   public get exec() {
     return this._exec;
   }
@@ -8705,7 +8716,7 @@ export class PodSpecInitContainerReadinessProbeOutputReference extends cdktf.Com
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecInitContainerReadinessProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new PodSpecInitContainerReadinessProbeHttpGetOutputReference(this, "http_get", true);
   public get httpGet() {
     return this._httpGet;
   }
@@ -8721,12 +8732,12 @@ export class PodSpecInitContainerReadinessProbeOutputReference extends cdktf.Com
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: PodSpecInitContainerReadinessProbeTcpSocket[]; 
+  private _tcpSocket?: PodSpecInitContainerReadinessProbeTcpSocket[] | cdktf.IResolvable; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket') as any;
+    return this.interpolationForAttribute('tcp_socket');
   }
-  public set tcpSocket(value: PodSpecInitContainerReadinessProbeTcpSocket[]) {
+  public set tcpSocket(value: PodSpecInitContainerReadinessProbeTcpSocket[] | cdktf.IResolvable) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -8743,23 +8754,23 @@ export interface PodSpecInitContainerResources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#limits Pod#limits}
   */
-  readonly limits?: { [key: string]: string } | cdktf.IResolvable;
+  readonly limits?: { [key: string]: string };
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#requests Pod#requests}
   */
-  readonly requests?: { [key: string]: string } | cdktf.IResolvable;
+  readonly requests?: { [key: string]: string };
 }
 
 export function podSpecInitContainerResourcesToTerraform(struct?: PodSpecInitContainerResourcesOutputReference | PodSpecInitContainerResources): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    limits: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.limits),
-    requests: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.requests),
+    limits: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.limits),
+    requests: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.requests),
   }
 }
 
@@ -8771,7 +8782,7 @@ export class PodSpecInitContainerResourcesOutputReference extends cdktf.ComplexO
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -8803,12 +8814,11 @@ export class PodSpecInitContainerResourcesOutputReference extends cdktf.ComplexO
   }
 
   // limits - computed: true, optional: true, required: false
-  private _limits?: { [key: string]: string } | cdktf.IResolvable; 
+  private _limits?: { [key: string]: string }; 
   public get limits() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('limits') as any;
+    return this.getStringMapAttribute('limits');
   }
-  public set limits(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set limits(value: { [key: string]: string }) {
     this._limits = value;
   }
   public resetLimits() {
@@ -8820,12 +8830,11 @@ export class PodSpecInitContainerResourcesOutputReference extends cdktf.ComplexO
   }
 
   // requests - computed: true, optional: true, required: false
-  private _requests?: { [key: string]: string } | cdktf.IResolvable; 
+  private _requests?: { [key: string]: string }; 
   public get requests() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('requests') as any;
+    return this.getStringMapAttribute('requests');
   }
-  public set requests(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set requests(value: { [key: string]: string }) {
     this._requests = value;
   }
   public resetRequests() {
@@ -8852,7 +8861,7 @@ export interface PodSpecInitContainerSecurityContextCapabilities {
 }
 
 export function podSpecInitContainerSecurityContextCapabilitiesToTerraform(struct?: PodSpecInitContainerSecurityContextCapabilitiesOutputReference | PodSpecInitContainerSecurityContextCapabilities): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -8870,7 +8879,7 @@ export class PodSpecInitContainerSecurityContextCapabilitiesOutputReference exte
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -8961,7 +8970,7 @@ export interface PodSpecInitContainerSecurityContextSeLinuxOptions {
 }
 
 export function podSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct?: PodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference | PodSpecInitContainerSecurityContextSeLinuxOptions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -8981,7 +8990,7 @@ export class PodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference ex
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -9140,7 +9149,7 @@ export interface PodSpecInitContainerSecurityContext {
 }
 
 export function podSpecInitContainerSecurityContextToTerraform(struct?: PodSpecInitContainerSecurityContextOutputReference | PodSpecInitContainerSecurityContext): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -9164,7 +9173,7 @@ export class PodSpecInitContainerSecurityContextOutputReference extends cdktf.Co
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -9234,7 +9243,7 @@ export class PodSpecInitContainerSecurityContextOutputReference extends cdktf.Co
   // allow_privilege_escalation - computed: false, optional: true, required: false
   private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable; 
   public get allowPrivilegeEscalation() {
-    return this.getBooleanAttribute('allow_privilege_escalation') as any;
+    return this.getBooleanAttribute('allow_privilege_escalation');
   }
   public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable) {
     this._allowPrivilegeEscalation = value;
@@ -9250,7 +9259,7 @@ export class PodSpecInitContainerSecurityContextOutputReference extends cdktf.Co
   // privileged - computed: false, optional: true, required: false
   private _privileged?: boolean | cdktf.IResolvable; 
   public get privileged() {
-    return this.getBooleanAttribute('privileged') as any;
+    return this.getBooleanAttribute('privileged');
   }
   public set privileged(value: boolean | cdktf.IResolvable) {
     this._privileged = value;
@@ -9266,7 +9275,7 @@ export class PodSpecInitContainerSecurityContextOutputReference extends cdktf.Co
   // read_only_root_filesystem - computed: false, optional: true, required: false
   private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable; 
   public get readOnlyRootFilesystem() {
-    return this.getBooleanAttribute('read_only_root_filesystem') as any;
+    return this.getBooleanAttribute('read_only_root_filesystem');
   }
   public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable) {
     this._readOnlyRootFilesystem = value;
@@ -9298,7 +9307,7 @@ export class PodSpecInitContainerSecurityContextOutputReference extends cdktf.Co
   // run_as_non_root - computed: false, optional: true, required: false
   private _runAsNonRoot?: boolean | cdktf.IResolvable; 
   public get runAsNonRoot() {
-    return this.getBooleanAttribute('run_as_non_root') as any;
+    return this.getBooleanAttribute('run_as_non_root');
   }
   public set runAsNonRoot(value: boolean | cdktf.IResolvable) {
     this._runAsNonRoot = value;
@@ -9328,7 +9337,7 @@ export class PodSpecInitContainerSecurityContextOutputReference extends cdktf.Co
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities = new PodSpecInitContainerSecurityContextCapabilitiesOutputReference(this as any, "capabilities", true);
+  private _capabilities = new PodSpecInitContainerSecurityContextCapabilitiesOutputReference(this, "capabilities", true);
   public get capabilities() {
     return this._capabilities;
   }
@@ -9344,7 +9353,7 @@ export class PodSpecInitContainerSecurityContextOutputReference extends cdktf.Co
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new PodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
+  private _seLinuxOptions = new PodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options", true);
   public get seLinuxOptions() {
     return this._seLinuxOptions;
   }
@@ -9369,7 +9378,7 @@ export interface PodSpecInitContainerStartupProbeExec {
 }
 
 export function podSpecInitContainerStartupProbeExecToTerraform(struct?: PodSpecInitContainerStartupProbeExecOutputReference | PodSpecInitContainerStartupProbeExec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -9386,7 +9395,7 @@ export class PodSpecInitContainerStartupProbeExecOutputReference extends cdktf.C
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -9442,8 +9451,8 @@ export interface PodSpecInitContainerStartupProbeHttpGetHttpHeader {
   readonly value?: string;
 }
 
-export function podSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecInitContainerStartupProbeHttpGetHttpHeader): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -9483,11 +9492,11 @@ export interface PodSpecInitContainerStartupProbeHttpGet {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#http_header Pod#http_header}
   */
-  readonly httpHeader?: PodSpecInitContainerStartupProbeHttpGetHttpHeader[];
+  readonly httpHeader?: PodSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
 
 export function podSpecInitContainerStartupProbeHttpGetToTerraform(struct?: PodSpecInitContainerStartupProbeHttpGetOutputReference | PodSpecInitContainerStartupProbeHttpGet): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -9508,7 +9517,7 @@ export class PodSpecInitContainerStartupProbeHttpGetOutputReference extends cdkt
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -9622,12 +9631,12 @@ export class PodSpecInitContainerStartupProbeHttpGetOutputReference extends cdkt
   }
 
   // http_header - computed: false, optional: true, required: false
-  private _httpHeader?: PodSpecInitContainerStartupProbeHttpGetHttpHeader[]; 
+  private _httpHeader?: PodSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable; 
   public get httpHeader() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header') as any;
+    return this.interpolationForAttribute('http_header');
   }
-  public set httpHeader(value: PodSpecInitContainerStartupProbeHttpGetHttpHeader[]) {
+  public set httpHeader(value: PodSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable) {
     this._httpHeader = value;
   }
   public resetHttpHeader() {
@@ -9647,8 +9656,8 @@ export interface PodSpecInitContainerStartupProbeTcpSocket {
   readonly port: string;
 }
 
-export function podSpecInitContainerStartupProbeTcpSocketToTerraform(struct?: PodSpecInitContainerStartupProbeTcpSocket): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerStartupProbeTcpSocketToTerraform(struct?: PodSpecInitContainerStartupProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -9705,11 +9714,11 @@ export interface PodSpecInitContainerStartupProbe {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#tcp_socket Pod#tcp_socket}
   */
-  readonly tcpSocket?: PodSpecInitContainerStartupProbeTcpSocket[];
+  readonly tcpSocket?: PodSpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable;
 }
 
 export function podSpecInitContainerStartupProbeToTerraform(struct?: PodSpecInitContainerStartupProbeOutputReference | PodSpecInitContainerStartupProbe): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -9733,7 +9742,7 @@ export class PodSpecInitContainerStartupProbeOutputReference extends cdktf.Compl
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -9881,7 +9890,7 @@ export class PodSpecInitContainerStartupProbeOutputReference extends cdktf.Compl
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecInitContainerStartupProbeExecOutputReference(this as any, "exec", true);
+  private _exec = new PodSpecInitContainerStartupProbeExecOutputReference(this, "exec", true);
   public get exec() {
     return this._exec;
   }
@@ -9897,7 +9906,7 @@ export class PodSpecInitContainerStartupProbeOutputReference extends cdktf.Compl
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecInitContainerStartupProbeHttpGetOutputReference(this as any, "http_get", true);
+  private _httpGet = new PodSpecInitContainerStartupProbeHttpGetOutputReference(this, "http_get", true);
   public get httpGet() {
     return this._httpGet;
   }
@@ -9913,12 +9922,12 @@ export class PodSpecInitContainerStartupProbeOutputReference extends cdktf.Compl
   }
 
   // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket?: PodSpecInitContainerStartupProbeTcpSocket[]; 
+  private _tcpSocket?: PodSpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable; 
   public get tcpSocket() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket') as any;
+    return this.interpolationForAttribute('tcp_socket');
   }
-  public set tcpSocket(value: PodSpecInitContainerStartupProbeTcpSocket[]) {
+  public set tcpSocket(value: PodSpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable) {
     this._tcpSocket = value;
   }
   public resetTcpSocket() {
@@ -9962,8 +9971,8 @@ export interface PodSpecInitContainerVolumeMount {
   readonly subPath?: string;
 }
 
-export function podSpecInitContainerVolumeMountToTerraform(struct?: PodSpecInitContainerVolumeMount): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerVolumeMountToTerraform(struct?: PodSpecInitContainerVolumeMount | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -10048,13 +10057,13 @@ export interface PodSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#env Pod#env}
   */
-  readonly env?: PodSpecInitContainerEnv[];
+  readonly env?: PodSpecInitContainerEnv[] | cdktf.IResolvable;
   /**
   * env_from block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#env_from Pod#env_from}
   */
-  readonly envFrom?: PodSpecInitContainerEnvFrom[];
+  readonly envFrom?: PodSpecInitContainerEnvFrom[] | cdktf.IResolvable;
   /**
   * lifecycle block
   * 
@@ -10072,7 +10081,7 @@ export interface PodSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#port Pod#port}
   */
-  readonly port?: PodSpecInitContainerPort[];
+  readonly port?: PodSpecInitContainerPort[] | cdktf.IResolvable;
   /**
   * readiness_probe block
   * 
@@ -10102,11 +10111,11 @@ export interface PodSpecInitContainer {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#volume_mount Pod#volume_mount}
   */
-  readonly volumeMount?: PodSpecInitContainerVolumeMount[];
+  readonly volumeMount?: PodSpecInitContainerVolumeMount[] | cdktf.IResolvable;
 }
 
-export function podSpecInitContainerToTerraform(struct?: PodSpecInitContainer): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecInitContainerToTerraform(struct?: PodSpecInitContainer | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -10144,8 +10153,8 @@ export interface PodSpecReadinessGate {
   readonly conditionType: string;
 }
 
-export function podSpecReadinessGateToTerraform(struct?: PodSpecReadinessGate): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecReadinessGateToTerraform(struct?: PodSpecReadinessGate | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -10182,7 +10191,7 @@ export interface PodSpecSecurityContextSeLinuxOptions {
 }
 
 export function podSpecSecurityContextSeLinuxOptionsToTerraform(struct?: PodSpecSecurityContextSeLinuxOptionsOutputReference | PodSpecSecurityContextSeLinuxOptions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -10202,7 +10211,7 @@ export class PodSpecSecurityContextSeLinuxOptionsOutputReference extends cdktf.C
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -10324,8 +10333,8 @@ export interface PodSpecSecurityContextSysctl {
   readonly value: string;
 }
 
-export function podSpecSecurityContextSysctlToTerraform(struct?: PodSpecSecurityContextSysctl): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecSecurityContextSysctlToTerraform(struct?: PodSpecSecurityContextSysctl | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -10377,11 +10386,11 @@ export interface PodSpecSecurityContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#sysctl Pod#sysctl}
   */
-  readonly sysctl?: PodSpecSecurityContextSysctl[];
+  readonly sysctl?: PodSpecSecurityContextSysctl[] | cdktf.IResolvable;
 }
 
 export function podSpecSecurityContextToTerraform(struct?: PodSpecSecurityContextOutputReference | PodSpecSecurityContext): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -10404,7 +10413,7 @@ export class PodSpecSecurityContextOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -10500,7 +10509,7 @@ export class PodSpecSecurityContextOutputReference extends cdktf.ComplexObject {
   // run_as_non_root - computed: false, optional: true, required: false
   private _runAsNonRoot?: boolean | cdktf.IResolvable; 
   public get runAsNonRoot() {
-    return this.getBooleanAttribute('run_as_non_root') as any;
+    return this.getBooleanAttribute('run_as_non_root');
   }
   public set runAsNonRoot(value: boolean | cdktf.IResolvable) {
     this._runAsNonRoot = value;
@@ -10532,8 +10541,7 @@ export class PodSpecSecurityContextOutputReference extends cdktf.ComplexObject {
   // supplemental_groups - computed: false, optional: true, required: false
   private _supplementalGroups?: number[]; 
   public get supplementalGroups() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('supplemental_groups') as any;
+    return cdktf.Token.asNumberList(cdktf.Fn.tolist(this.getNumberListAttribute('supplemental_groups')));
   }
   public set supplementalGroups(value: number[]) {
     this._supplementalGroups = value;
@@ -10547,7 +10555,7 @@ export class PodSpecSecurityContextOutputReference extends cdktf.ComplexObject {
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new PodSpecSecurityContextSeLinuxOptionsOutputReference(this as any, "se_linux_options", true);
+  private _seLinuxOptions = new PodSpecSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options", true);
   public get seLinuxOptions() {
     return this._seLinuxOptions;
   }
@@ -10563,12 +10571,12 @@ export class PodSpecSecurityContextOutputReference extends cdktf.ComplexObject {
   }
 
   // sysctl - computed: false, optional: true, required: false
-  private _sysctl?: PodSpecSecurityContextSysctl[]; 
+  private _sysctl?: PodSpecSecurityContextSysctl[] | cdktf.IResolvable; 
   public get sysctl() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('sysctl') as any;
+    return this.interpolationForAttribute('sysctl');
   }
-  public set sysctl(value: PodSpecSecurityContextSysctl[]) {
+  public set sysctl(value: PodSpecSecurityContextSysctl[] | cdktf.IResolvable) {
     this._sysctl = value;
   }
   public resetSysctl() {
@@ -10612,8 +10620,8 @@ export interface PodSpecToleration {
   readonly value?: string;
 }
 
-export function podSpecTolerationToTerraform(struct?: PodSpecToleration): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecTolerationToTerraform(struct?: PodSpecToleration | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -10647,8 +10655,8 @@ export interface PodSpecTopologySpreadConstraintLabelSelectorMatchExpressions {
   readonly values?: string[];
 }
 
-export function podSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform(struct?: PodSpecTopologySpreadConstraintLabelSelectorMatchExpressions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform(struct?: PodSpecTopologySpreadConstraintLabelSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -10665,22 +10673,22 @@ export interface PodSpecTopologySpreadConstraintLabelSelector {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#match_labels Pod#match_labels}
   */
-  readonly matchLabels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#match_expressions Pod#match_expressions}
   */
-  readonly matchExpressions?: PodSpecTopologySpreadConstraintLabelSelectorMatchExpressions[];
+  readonly matchExpressions?: PodSpecTopologySpreadConstraintLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
 
-export function podSpecTopologySpreadConstraintLabelSelectorToTerraform(struct?: PodSpecTopologySpreadConstraintLabelSelector): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecTopologySpreadConstraintLabelSelectorToTerraform(struct?: PodSpecTopologySpreadConstraintLabelSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.matchLabels),
+    match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
     match_expressions: cdktf.listMapper(podSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
   }
 }
@@ -10709,11 +10717,11 @@ export interface PodSpecTopologySpreadConstraint {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#label_selector Pod#label_selector}
   */
-  readonly labelSelector?: PodSpecTopologySpreadConstraintLabelSelector[];
+  readonly labelSelector?: PodSpecTopologySpreadConstraintLabelSelector[] | cdktf.IResolvable;
 }
 
-export function podSpecTopologySpreadConstraintToTerraform(struct?: PodSpecTopologySpreadConstraint): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecTopologySpreadConstraintToTerraform(struct?: PodSpecTopologySpreadConstraint | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -10753,7 +10761,7 @@ export interface PodSpecVolumeAwsElasticBlockStore {
 }
 
 export function podSpecVolumeAwsElasticBlockStoreToTerraform(struct?: PodSpecVolumeAwsElasticBlockStoreOutputReference | PodSpecVolumeAwsElasticBlockStore): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -10773,7 +10781,7 @@ export class PodSpecVolumeAwsElasticBlockStoreOutputReference extends cdktf.Comp
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -10851,7 +10859,7 @@ export class PodSpecVolumeAwsElasticBlockStoreOutputReference extends cdktf.Comp
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -10917,7 +10925,7 @@ export interface PodSpecVolumeAzureDisk {
 }
 
 export function podSpecVolumeAzureDiskToTerraform(struct?: PodSpecVolumeAzureDiskOutputReference | PodSpecVolumeAzureDisk): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -10939,7 +10947,7 @@ export class PodSpecVolumeAzureDiskOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -11068,7 +11076,7 @@ export class PodSpecVolumeAzureDiskOutputReference extends cdktf.ComplexObject {
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -11109,7 +11117,7 @@ export interface PodSpecVolumeAzureFile {
 }
 
 export function podSpecVolumeAzureFileToTerraform(struct?: PodSpecVolumeAzureFileOutputReference | PodSpecVolumeAzureFile): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -11129,7 +11137,7 @@ export class PodSpecVolumeAzureFileOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -11175,7 +11183,7 @@ export class PodSpecVolumeAzureFileOutputReference extends cdktf.ComplexObject {
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -11246,7 +11254,7 @@ export interface PodSpecVolumeCephFsSecretRef {
 }
 
 export function podSpecVolumeCephFsSecretRefToTerraform(struct?: PodSpecVolumeCephFsSecretRefOutputReference | PodSpecVolumeCephFsSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -11264,7 +11272,7 @@ export class PodSpecVolumeCephFsSecretRefOutputReference extends cdktf.ComplexOb
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -11367,7 +11375,7 @@ export interface PodSpecVolumeCephFs {
 }
 
 export function podSpecVolumeCephFsToTerraform(struct?: PodSpecVolumeCephFsOutputReference | PodSpecVolumeCephFs): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -11389,7 +11397,7 @@ export class PodSpecVolumeCephFsOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -11447,7 +11455,7 @@ export class PodSpecVolumeCephFsOutputReference extends cdktf.ComplexObject {
   // monitors - computed: false, optional: false, required: true
   private _monitors?: string[]; 
   public get monitors() {
-    return this.getListAttribute('monitors');
+    return cdktf.Fn.tolist(this.getListAttribute('monitors'));
   }
   public set monitors(value: string[]) {
     this._monitors = value;
@@ -11476,7 +11484,7 @@ export class PodSpecVolumeCephFsOutputReference extends cdktf.ComplexObject {
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -11522,7 +11530,7 @@ export class PodSpecVolumeCephFsOutputReference extends cdktf.ComplexObject {
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new PodSpecVolumeCephFsSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new PodSpecVolumeCephFsSecretRefOutputReference(this, "secret_ref", true);
   public get secretRef() {
     return this._secretRef;
   }
@@ -11559,7 +11567,7 @@ export interface PodSpecVolumeCinder {
 }
 
 export function podSpecVolumeCinderToTerraform(struct?: PodSpecVolumeCinderOutputReference | PodSpecVolumeCinder): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -11578,7 +11586,7 @@ export class PodSpecVolumeCinderOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -11634,7 +11642,7 @@ export class PodSpecVolumeCinderOutputReference extends cdktf.ComplexObject {
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -11681,8 +11689,8 @@ export interface PodSpecVolumeConfigMapItems {
   readonly path?: string;
 }
 
-export function podSpecVolumeConfigMapItemsToTerraform(struct?: PodSpecVolumeConfigMapItems): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecVolumeConfigMapItemsToTerraform(struct?: PodSpecVolumeConfigMapItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -11717,11 +11725,11 @@ export interface PodSpecVolumeConfigMap {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#items Pod#items}
   */
-  readonly items?: PodSpecVolumeConfigMapItems[];
+  readonly items?: PodSpecVolumeConfigMapItems[] | cdktf.IResolvable;
 }
 
 export function podSpecVolumeConfigMapToTerraform(struct?: PodSpecVolumeConfigMapOutputReference | PodSpecVolumeConfigMap): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -11741,7 +11749,7 @@ export class PodSpecVolumeConfigMapOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -11819,7 +11827,7 @@ export class PodSpecVolumeConfigMapOutputReference extends cdktf.ComplexObject {
   // optional - computed: false, optional: true, required: false
   private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
-    return this.getBooleanAttribute('optional') as any;
+    return this.getBooleanAttribute('optional');
   }
   public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
@@ -11833,12 +11841,12 @@ export class PodSpecVolumeConfigMapOutputReference extends cdktf.ComplexObject {
   }
 
   // items - computed: false, optional: true, required: false
-  private _items?: PodSpecVolumeConfigMapItems[]; 
+  private _items?: PodSpecVolumeConfigMapItems[] | cdktf.IResolvable; 
   public get items() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('items') as any;
+    return this.interpolationForAttribute('items');
   }
-  public set items(value: PodSpecVolumeConfigMapItems[]) {
+  public set items(value: PodSpecVolumeConfigMapItems[] | cdktf.IResolvable) {
     this._items = value;
   }
   public resetItems() {
@@ -11865,7 +11873,7 @@ export interface PodSpecVolumeCsiControllerExpandSecretRef {
 }
 
 export function podSpecVolumeCsiControllerExpandSecretRefToTerraform(struct?: PodSpecVolumeCsiControllerExpandSecretRefOutputReference | PodSpecVolumeCsiControllerExpandSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -11883,7 +11891,7 @@ export class PodSpecVolumeCsiControllerExpandSecretRefOutputReference extends cd
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -11962,7 +11970,7 @@ export interface PodSpecVolumeCsiControllerPublishSecretRef {
 }
 
 export function podSpecVolumeCsiControllerPublishSecretRefToTerraform(struct?: PodSpecVolumeCsiControllerPublishSecretRefOutputReference | PodSpecVolumeCsiControllerPublishSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -11980,7 +11988,7 @@ export class PodSpecVolumeCsiControllerPublishSecretRefOutputReference extends c
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -12059,7 +12067,7 @@ export interface PodSpecVolumeCsiNodePublishSecretRef {
 }
 
 export function podSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: PodSpecVolumeCsiNodePublishSecretRefOutputReference | PodSpecVolumeCsiNodePublishSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -12077,7 +12085,7 @@ export class PodSpecVolumeCsiNodePublishSecretRefOutputReference extends cdktf.C
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -12156,7 +12164,7 @@ export interface PodSpecVolumeCsiNodeStageSecretRef {
 }
 
 export function podSpecVolumeCsiNodeStageSecretRefToTerraform(struct?: PodSpecVolumeCsiNodeStageSecretRefOutputReference | PodSpecVolumeCsiNodeStageSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -12174,7 +12182,7 @@ export class PodSpecVolumeCsiNodeStageSecretRefOutputReference extends cdktf.Com
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -12261,7 +12269,7 @@ export interface PodSpecVolumeCsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#volume_attributes Pod#volume_attributes}
   */
-  readonly volumeAttributes?: { [key: string]: string } | cdktf.IResolvable;
+  readonly volumeAttributes?: { [key: string]: string };
   /**
   * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
   * 
@@ -12295,7 +12303,7 @@ export interface PodSpecVolumeCsi {
 }
 
 export function podSpecVolumeCsiToTerraform(struct?: PodSpecVolumeCsiOutputReference | PodSpecVolumeCsi): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -12303,7 +12311,7 @@ export function podSpecVolumeCsiToTerraform(struct?: PodSpecVolumeCsiOutputRefer
     driver: cdktf.stringToTerraform(struct!.driver),
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
-    volume_attributes: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.volumeAttributes),
+    volume_attributes: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.volumeAttributes),
     volume_handle: cdktf.stringToTerraform(struct!.volumeHandle),
     controller_expand_secret_ref: podSpecVolumeCsiControllerExpandSecretRefToTerraform(struct!.controllerExpandSecretRef),
     controller_publish_secret_ref: podSpecVolumeCsiControllerPublishSecretRefToTerraform(struct!.controllerPublishSecretRef),
@@ -12320,7 +12328,7 @@ export class PodSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -12425,7 +12433,7 @@ export class PodSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -12439,12 +12447,11 @@ export class PodSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
   }
 
   // volume_attributes - computed: false, optional: true, required: false
-  private _volumeAttributes?: { [key: string]: string } | cdktf.IResolvable; 
+  private _volumeAttributes?: { [key: string]: string }; 
   public get volumeAttributes() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('volume_attributes') as any;
+    return this.getStringMapAttribute('volume_attributes');
   }
-  public set volumeAttributes(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set volumeAttributes(value: { [key: string]: string }) {
     this._volumeAttributes = value;
   }
   public resetVolumeAttributes() {
@@ -12469,7 +12476,7 @@ export class PodSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
   }
 
   // controller_expand_secret_ref - computed: false, optional: true, required: false
-  private _controllerExpandSecretRef = new PodSpecVolumeCsiControllerExpandSecretRefOutputReference(this as any, "controller_expand_secret_ref", true);
+  private _controllerExpandSecretRef = new PodSpecVolumeCsiControllerExpandSecretRefOutputReference(this, "controller_expand_secret_ref", true);
   public get controllerExpandSecretRef() {
     return this._controllerExpandSecretRef;
   }
@@ -12485,7 +12492,7 @@ export class PodSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
   }
 
   // controller_publish_secret_ref - computed: false, optional: true, required: false
-  private _controllerPublishSecretRef = new PodSpecVolumeCsiControllerPublishSecretRefOutputReference(this as any, "controller_publish_secret_ref", true);
+  private _controllerPublishSecretRef = new PodSpecVolumeCsiControllerPublishSecretRefOutputReference(this, "controller_publish_secret_ref", true);
   public get controllerPublishSecretRef() {
     return this._controllerPublishSecretRef;
   }
@@ -12501,7 +12508,7 @@ export class PodSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
   }
 
   // node_publish_secret_ref - computed: false, optional: true, required: false
-  private _nodePublishSecretRef = new PodSpecVolumeCsiNodePublishSecretRefOutputReference(this as any, "node_publish_secret_ref", true);
+  private _nodePublishSecretRef = new PodSpecVolumeCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref", true);
   public get nodePublishSecretRef() {
     return this._nodePublishSecretRef;
   }
@@ -12517,7 +12524,7 @@ export class PodSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
   }
 
   // node_stage_secret_ref - computed: false, optional: true, required: false
-  private _nodeStageSecretRef = new PodSpecVolumeCsiNodeStageSecretRefOutputReference(this as any, "node_stage_secret_ref", true);
+  private _nodeStageSecretRef = new PodSpecVolumeCsiNodeStageSecretRefOutputReference(this, "node_stage_secret_ref", true);
   public get nodeStageSecretRef() {
     return this._nodeStageSecretRef;
   }
@@ -12548,7 +12555,7 @@ export interface PodSpecVolumeDownwardApiItemsFieldRef {
 }
 
 export function podSpecVolumeDownwardApiItemsFieldRefToTerraform(struct?: PodSpecVolumeDownwardApiItemsFieldRefOutputReference | PodSpecVolumeDownwardApiItemsFieldRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -12566,7 +12573,7 @@ export class PodSpecVolumeDownwardApiItemsFieldRefOutputReference extends cdktf.
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -12647,7 +12654,7 @@ export interface PodSpecVolumeDownwardApiItemsResourceFieldRef {
 }
 
 export function podSpecVolumeDownwardApiItemsResourceFieldRefToTerraform(struct?: PodSpecVolumeDownwardApiItemsResourceFieldRefOutputReference | PodSpecVolumeDownwardApiItemsResourceFieldRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -12666,7 +12673,7 @@ export class PodSpecVolumeDownwardApiItemsResourceFieldRefOutputReference extend
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -12772,8 +12779,8 @@ export interface PodSpecVolumeDownwardApiItems {
   readonly resourceFieldRef?: PodSpecVolumeDownwardApiItemsResourceFieldRef;
 }
 
-export function podSpecVolumeDownwardApiItemsToTerraform(struct?: PodSpecVolumeDownwardApiItems): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecVolumeDownwardApiItemsToTerraform(struct?: PodSpecVolumeDownwardApiItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -12797,11 +12804,11 @@ export interface PodSpecVolumeDownwardApi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#items Pod#items}
   */
-  readonly items?: PodSpecVolumeDownwardApiItems[];
+  readonly items?: PodSpecVolumeDownwardApiItems[] | cdktf.IResolvable;
 }
 
 export function podSpecVolumeDownwardApiToTerraform(struct?: PodSpecVolumeDownwardApiOutputReference | PodSpecVolumeDownwardApi): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -12819,7 +12826,7 @@ export class PodSpecVolumeDownwardApiOutputReference extends cdktf.ComplexObject
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -12867,12 +12874,12 @@ export class PodSpecVolumeDownwardApiOutputReference extends cdktf.ComplexObject
   }
 
   // items - computed: false, optional: true, required: false
-  private _items?: PodSpecVolumeDownwardApiItems[]; 
+  private _items?: PodSpecVolumeDownwardApiItems[] | cdktf.IResolvable; 
   public get items() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('items') as any;
+    return this.interpolationForAttribute('items');
   }
-  public set items(value: PodSpecVolumeDownwardApiItems[]) {
+  public set items(value: PodSpecVolumeDownwardApiItems[] | cdktf.IResolvable) {
     this._items = value;
   }
   public resetItems() {
@@ -12899,7 +12906,7 @@ export interface PodSpecVolumeEmptyDir {
 }
 
 export function podSpecVolumeEmptyDirToTerraform(struct?: PodSpecVolumeEmptyDirOutputReference | PodSpecVolumeEmptyDir): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -12917,7 +12924,7 @@ export class PodSpecVolumeEmptyDirOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -13008,7 +13015,7 @@ export interface PodSpecVolumeFc {
 }
 
 export function podSpecVolumeFcToTerraform(struct?: PodSpecVolumeFcOutputReference | PodSpecVolumeFc): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -13028,7 +13035,7 @@ export class PodSpecVolumeFcOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -13103,7 +13110,7 @@ export class PodSpecVolumeFcOutputReference extends cdktf.ComplexObject {
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -13119,7 +13126,7 @@ export class PodSpecVolumeFcOutputReference extends cdktf.ComplexObject {
   // target_ww_ns - computed: false, optional: false, required: true
   private _targetWwNs?: string[]; 
   public get targetWwNs() {
-    return this.getListAttribute('target_ww_ns');
+    return cdktf.Fn.tolist(this.getListAttribute('target_ww_ns'));
   }
   public set targetWwNs(value: string[]) {
     this._targetWwNs = value;
@@ -13145,7 +13152,7 @@ export interface PodSpecVolumeFlexVolumeSecretRef {
 }
 
 export function podSpecVolumeFlexVolumeSecretRefToTerraform(struct?: PodSpecVolumeFlexVolumeSecretRefOutputReference | PodSpecVolumeFlexVolumeSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -13163,7 +13170,7 @@ export class PodSpecVolumeFlexVolumeSecretRefOutputReference extends cdktf.Compl
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -13244,7 +13251,7 @@ export interface PodSpecVolumeFlexVolume {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#options Pod#options}
   */
-  readonly options?: { [key: string]: string } | cdktf.IResolvable;
+  readonly options?: { [key: string]: string };
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
   * 
@@ -13260,14 +13267,14 @@ export interface PodSpecVolumeFlexVolume {
 }
 
 export function podSpecVolumeFlexVolumeToTerraform(struct?: PodSpecVolumeFlexVolumeOutputReference | PodSpecVolumeFlexVolume): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
     driver: cdktf.stringToTerraform(struct!.driver),
     fs_type: cdktf.stringToTerraform(struct!.fsType),
-    options: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.options),
+    options: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.options),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_ref: podSpecVolumeFlexVolumeSecretRefToTerraform(struct!.secretRef),
   }
@@ -13281,7 +13288,7 @@ export class PodSpecVolumeFlexVolumeOutputReference extends cdktf.ComplexObject 
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -13360,12 +13367,11 @@ export class PodSpecVolumeFlexVolumeOutputReference extends cdktf.ComplexObject 
   }
 
   // options - computed: false, optional: true, required: false
-  private _options?: { [key: string]: string } | cdktf.IResolvable; 
+  private _options?: { [key: string]: string }; 
   public get options() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('options') as any;
+    return this.getStringMapAttribute('options');
   }
-  public set options(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set options(value: { [key: string]: string }) {
     this._options = value;
   }
   public resetOptions() {
@@ -13379,7 +13385,7 @@ export class PodSpecVolumeFlexVolumeOutputReference extends cdktf.ComplexObject 
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -13393,7 +13399,7 @@ export class PodSpecVolumeFlexVolumeOutputReference extends cdktf.ComplexObject 
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new PodSpecVolumeFlexVolumeSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new PodSpecVolumeFlexVolumeSecretRefOutputReference(this, "secret_ref", true);
   public get secretRef() {
     return this._secretRef;
   }
@@ -13424,7 +13430,7 @@ export interface PodSpecVolumeFlocker {
 }
 
 export function podSpecVolumeFlockerToTerraform(struct?: PodSpecVolumeFlockerOutputReference | PodSpecVolumeFlocker): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -13442,7 +13448,7 @@ export class PodSpecVolumeFlockerOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -13533,7 +13539,7 @@ export interface PodSpecVolumeGcePersistentDisk {
 }
 
 export function podSpecVolumeGcePersistentDiskToTerraform(struct?: PodSpecVolumeGcePersistentDiskOutputReference | PodSpecVolumeGcePersistentDisk): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -13553,7 +13559,7 @@ export class PodSpecVolumeGcePersistentDiskOutputReference extends cdktf.Complex
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -13644,7 +13650,7 @@ export class PodSpecVolumeGcePersistentDiskOutputReference extends cdktf.Complex
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -13679,7 +13685,7 @@ export interface PodSpecVolumeGitRepo {
 }
 
 export function podSpecVolumeGitRepoToTerraform(struct?: PodSpecVolumeGitRepoOutputReference | PodSpecVolumeGitRepo): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -13698,7 +13704,7 @@ export class PodSpecVolumeGitRepoOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -13805,7 +13811,7 @@ export interface PodSpecVolumeGlusterfs {
 }
 
 export function podSpecVolumeGlusterfsToTerraform(struct?: PodSpecVolumeGlusterfsOutputReference | PodSpecVolumeGlusterfs): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -13824,7 +13830,7 @@ export class PodSpecVolumeGlusterfsOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -13890,7 +13896,7 @@ export class PodSpecVolumeGlusterfsOutputReference extends cdktf.ComplexObject {
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -13919,7 +13925,7 @@ export interface PodSpecVolumeHostPath {
 }
 
 export function podSpecVolumeHostPathToTerraform(struct?: PodSpecVolumeHostPathOutputReference | PodSpecVolumeHostPath): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -13937,7 +13943,7 @@ export class PodSpecVolumeHostPathOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -14040,7 +14046,7 @@ export interface PodSpecVolumeIscsi {
 }
 
 export function podSpecVolumeIscsiToTerraform(struct?: PodSpecVolumeIscsiOutputReference | PodSpecVolumeIscsi): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -14062,7 +14068,7 @@ export class PodSpecVolumeIscsiOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -14181,7 +14187,7 @@ export class PodSpecVolumeIscsiOutputReference extends cdktf.ComplexObject {
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -14217,7 +14223,7 @@ export interface PodSpecVolumeLocal {
 }
 
 export function podSpecVolumeLocalToTerraform(struct?: PodSpecVolumeLocalOutputReference | PodSpecVolumeLocal): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -14234,7 +14240,7 @@ export class PodSpecVolumeLocalOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -14297,7 +14303,7 @@ export interface PodSpecVolumeNfs {
 }
 
 export function podSpecVolumeNfsToTerraform(struct?: PodSpecVolumeNfsOutputReference | PodSpecVolumeNfs): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -14316,7 +14322,7 @@ export class PodSpecVolumeNfsOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -14369,7 +14375,7 @@ export class PodSpecVolumeNfsOutputReference extends cdktf.ComplexObject {
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -14411,7 +14417,7 @@ export interface PodSpecVolumePersistentVolumeClaim {
 }
 
 export function podSpecVolumePersistentVolumeClaimToTerraform(struct?: PodSpecVolumePersistentVolumeClaimOutputReference | PodSpecVolumePersistentVolumeClaim): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -14429,7 +14435,7 @@ export class PodSpecVolumePersistentVolumeClaimOutputReference extends cdktf.Com
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -14479,7 +14485,7 @@ export class PodSpecVolumePersistentVolumeClaimOutputReference extends cdktf.Com
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -14508,7 +14514,7 @@ export interface PodSpecVolumePhotonPersistentDisk {
 }
 
 export function podSpecVolumePhotonPersistentDiskToTerraform(struct?: PodSpecVolumePhotonPersistentDiskOutputReference | PodSpecVolumePhotonPersistentDisk): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -14526,7 +14532,7 @@ export class PodSpecVolumePhotonPersistentDiskOutputReference extends cdktf.Comp
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -14607,8 +14613,8 @@ export interface PodSpecVolumeProjectedSourcesConfigMapItems {
   readonly path?: string;
 }
 
-export function podSpecVolumeProjectedSourcesConfigMapItemsToTerraform(struct?: PodSpecVolumeProjectedSourcesConfigMapItems): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecVolumeProjectedSourcesConfigMapItemsToTerraform(struct?: PodSpecVolumeProjectedSourcesConfigMapItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -14637,11 +14643,11 @@ export interface PodSpecVolumeProjectedSourcesConfigMap {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#items Pod#items}
   */
-  readonly items?: PodSpecVolumeProjectedSourcesConfigMapItems[];
+  readonly items?: PodSpecVolumeProjectedSourcesConfigMapItems[] | cdktf.IResolvable;
 }
 
-export function podSpecVolumeProjectedSourcesConfigMapToTerraform(struct?: PodSpecVolumeProjectedSourcesConfigMap): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecVolumeProjectedSourcesConfigMapToTerraform(struct?: PodSpecVolumeProjectedSourcesConfigMap | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -14668,7 +14674,7 @@ export interface PodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef {
 }
 
 export function podSpecVolumeProjectedSourcesDownwardApiItemsFieldRefToTerraform(struct?: PodSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference | PodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -14686,7 +14692,7 @@ export class PodSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReferenc
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -14767,7 +14773,7 @@ export interface PodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
 }
 
 export function podSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefToTerraform(struct?: PodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference | PodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -14786,7 +14792,7 @@ export class PodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutput
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -14892,8 +14898,8 @@ export interface PodSpecVolumeProjectedSourcesDownwardApiItems {
   readonly resourceFieldRef?: PodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef;
 }
 
-export function podSpecVolumeProjectedSourcesDownwardApiItemsToTerraform(struct?: PodSpecVolumeProjectedSourcesDownwardApiItems): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecVolumeProjectedSourcesDownwardApiItemsToTerraform(struct?: PodSpecVolumeProjectedSourcesDownwardApiItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -14911,11 +14917,11 @@ export interface PodSpecVolumeProjectedSourcesDownwardApi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#items Pod#items}
   */
-  readonly items?: PodSpecVolumeProjectedSourcesDownwardApiItems[];
+  readonly items?: PodSpecVolumeProjectedSourcesDownwardApiItems[] | cdktf.IResolvable;
 }
 
 export function podSpecVolumeProjectedSourcesDownwardApiToTerraform(struct?: PodSpecVolumeProjectedSourcesDownwardApiOutputReference | PodSpecVolumeProjectedSourcesDownwardApi): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -14932,7 +14938,7 @@ export class PodSpecVolumeProjectedSourcesDownwardApiOutputReference extends cdk
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -14958,12 +14964,12 @@ export class PodSpecVolumeProjectedSourcesDownwardApiOutputReference extends cdk
   }
 
   // items - computed: false, optional: true, required: false
-  private _items?: PodSpecVolumeProjectedSourcesDownwardApiItems[]; 
+  private _items?: PodSpecVolumeProjectedSourcesDownwardApiItems[] | cdktf.IResolvable; 
   public get items() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('items') as any;
+    return this.interpolationForAttribute('items');
   }
-  public set items(value: PodSpecVolumeProjectedSourcesDownwardApiItems[]) {
+  public set items(value: PodSpecVolumeProjectedSourcesDownwardApiItems[] | cdktf.IResolvable) {
     this._items = value;
   }
   public resetItems() {
@@ -14995,8 +15001,8 @@ export interface PodSpecVolumeProjectedSourcesSecretItems {
   readonly path?: string;
 }
 
-export function podSpecVolumeProjectedSourcesSecretItemsToTerraform(struct?: PodSpecVolumeProjectedSourcesSecretItems): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecVolumeProjectedSourcesSecretItemsToTerraform(struct?: PodSpecVolumeProjectedSourcesSecretItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -15025,11 +15031,11 @@ export interface PodSpecVolumeProjectedSourcesSecret {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#items Pod#items}
   */
-  readonly items?: PodSpecVolumeProjectedSourcesSecretItems[];
+  readonly items?: PodSpecVolumeProjectedSourcesSecretItems[] | cdktf.IResolvable;
 }
 
-export function podSpecVolumeProjectedSourcesSecretToTerraform(struct?: PodSpecVolumeProjectedSourcesSecret): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecVolumeProjectedSourcesSecretToTerraform(struct?: PodSpecVolumeProjectedSourcesSecret | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -15062,7 +15068,7 @@ export interface PodSpecVolumeProjectedSourcesServiceAccountToken {
 }
 
 export function podSpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct?: PodSpecVolumeProjectedSourcesServiceAccountTokenOutputReference | PodSpecVolumeProjectedSourcesServiceAccountToken): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -15081,7 +15087,7 @@ export class PodSpecVolumeProjectedSourcesServiceAccountTokenOutputReference ext
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -15169,7 +15175,7 @@ export interface PodSpecVolumeProjectedSources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#config_map Pod#config_map}
   */
-  readonly configMap?: PodSpecVolumeProjectedSourcesConfigMap[];
+  readonly configMap?: PodSpecVolumeProjectedSourcesConfigMap[] | cdktf.IResolvable;
   /**
   * downward_api block
   * 
@@ -15181,7 +15187,7 @@ export interface PodSpecVolumeProjectedSources {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#secret Pod#secret}
   */
-  readonly secret?: PodSpecVolumeProjectedSourcesSecret[];
+  readonly secret?: PodSpecVolumeProjectedSourcesSecret[] | cdktf.IResolvable;
   /**
   * service_account_token block
   * 
@@ -15190,8 +15196,8 @@ export interface PodSpecVolumeProjectedSources {
   readonly serviceAccountToken?: PodSpecVolumeProjectedSourcesServiceAccountToken;
 }
 
-export function podSpecVolumeProjectedSourcesToTerraform(struct?: PodSpecVolumeProjectedSources): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecVolumeProjectedSourcesToTerraform(struct?: PodSpecVolumeProjectedSources | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -15215,11 +15221,11 @@ export interface PodSpecVolumeProjected {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#sources Pod#sources}
   */
-  readonly sources: PodSpecVolumeProjectedSources[];
+  readonly sources: PodSpecVolumeProjectedSources[] | cdktf.IResolvable;
 }
 
-export function podSpecVolumeProjectedToTerraform(struct?: PodSpecVolumeProjected): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecVolumeProjectedToTerraform(struct?: PodSpecVolumeProjected | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -15263,7 +15269,7 @@ export interface PodSpecVolumeQuobyte {
 }
 
 export function podSpecVolumeQuobyteToTerraform(struct?: PodSpecVolumeQuobyteOutputReference | PodSpecVolumeQuobyte): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -15284,7 +15290,7 @@ export class PodSpecVolumeQuobyteOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -15352,7 +15358,7 @@ export class PodSpecVolumeQuobyteOutputReference extends cdktf.ComplexObject {
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -15423,7 +15429,7 @@ export interface PodSpecVolumeRbdSecretRef {
 }
 
 export function podSpecVolumeRbdSecretRefToTerraform(struct?: PodSpecVolumeRbdSecretRefOutputReference | PodSpecVolumeRbdSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -15441,7 +15447,7 @@ export class PodSpecVolumeRbdSecretRefOutputReference extends cdktf.ComplexObjec
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -15556,7 +15562,7 @@ export interface PodSpecVolumeRbd {
 }
 
 export function podSpecVolumeRbdToTerraform(struct?: PodSpecVolumeRbdOutputReference | PodSpecVolumeRbd): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -15580,7 +15586,7 @@ export class PodSpecVolumeRbdOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -15650,7 +15656,7 @@ export class PodSpecVolumeRbdOutputReference extends cdktf.ComplexObject {
   // ceph_monitors - computed: false, optional: false, required: true
   private _cephMonitors?: string[]; 
   public get cephMonitors() {
-    return this.getListAttribute('ceph_monitors');
+    return cdktf.Fn.tolist(this.getListAttribute('ceph_monitors'));
   }
   public set cephMonitors(value: string[]) {
     this._cephMonitors = value;
@@ -15740,7 +15746,7 @@ export class PodSpecVolumeRbdOutputReference extends cdktf.ComplexObject {
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -15754,7 +15760,7 @@ export class PodSpecVolumeRbdOutputReference extends cdktf.ComplexObject {
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new PodSpecVolumeRbdSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new PodSpecVolumeRbdSecretRefOutputReference(this, "secret_ref", true);
   public get secretRef() {
     return this._secretRef;
   }
@@ -15790,8 +15796,8 @@ export interface PodSpecVolumeSecretItems {
   readonly path?: string;
 }
 
-export function podSpecVolumeSecretItemsToTerraform(struct?: PodSpecVolumeSecretItems): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecVolumeSecretItemsToTerraform(struct?: PodSpecVolumeSecretItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -15826,11 +15832,11 @@ export interface PodSpecVolumeSecret {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#items Pod#items}
   */
-  readonly items?: PodSpecVolumeSecretItems[];
+  readonly items?: PodSpecVolumeSecretItems[] | cdktf.IResolvable;
 }
 
 export function podSpecVolumeSecretToTerraform(struct?: PodSpecVolumeSecretOutputReference | PodSpecVolumeSecret): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -15850,7 +15856,7 @@ export class PodSpecVolumeSecretOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -15912,7 +15918,7 @@ export class PodSpecVolumeSecretOutputReference extends cdktf.ComplexObject {
   // optional - computed: false, optional: true, required: false
   private _optional?: boolean | cdktf.IResolvable; 
   public get optional() {
-    return this.getBooleanAttribute('optional') as any;
+    return this.getBooleanAttribute('optional');
   }
   public set optional(value: boolean | cdktf.IResolvable) {
     this._optional = value;
@@ -15942,12 +15948,12 @@ export class PodSpecVolumeSecretOutputReference extends cdktf.ComplexObject {
   }
 
   // items - computed: false, optional: true, required: false
-  private _items?: PodSpecVolumeSecretItems[]; 
+  private _items?: PodSpecVolumeSecretItems[] | cdktf.IResolvable; 
   public get items() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('items') as any;
+    return this.interpolationForAttribute('items');
   }
-  public set items(value: PodSpecVolumeSecretItems[]) {
+  public set items(value: PodSpecVolumeSecretItems[] | cdktf.IResolvable) {
     this._items = value;
   }
   public resetItems() {
@@ -15974,7 +15980,7 @@ export interface PodSpecVolumeVsphereVolume {
 }
 
 export function podSpecVolumeVsphereVolumeToTerraform(struct?: PodSpecVolumeVsphereVolumeOutputReference | PodSpecVolumeVsphereVolume): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -15992,7 +15998,7 @@ export class PodSpecVolumeVsphereVolumeOutputReference extends cdktf.ComplexObje
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -16190,7 +16196,7 @@ export interface PodSpecVolume {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#projected Pod#projected}
   */
-  readonly projected?: PodSpecVolumeProjected[];
+  readonly projected?: PodSpecVolumeProjected[] | cdktf.IResolvable;
   /**
   * quobyte block
   * 
@@ -16217,8 +16223,8 @@ export interface PodSpecVolume {
   readonly vsphereVolume?: PodSpecVolumeVsphereVolume;
 }
 
-export function podSpecVolumeToTerraform(struct?: PodSpecVolume): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podSpecVolumeToTerraform(struct?: PodSpecVolume | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -16313,7 +16319,7 @@ export interface PodSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#node_selector Pod#node_selector}
   */
-  readonly nodeSelector?: { [key: string]: string } | cdktf.IResolvable;
+  readonly nodeSelector?: { [key: string]: string };
   /**
   * If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default.
   * 
@@ -16361,7 +16367,7 @@ export interface PodSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#container Pod#container}
   */
-  readonly container?: PodSpecContainer[];
+  readonly container?: PodSpecContainer[] | cdktf.IResolvable;
   /**
   * dns_config block
   * 
@@ -16373,25 +16379,25 @@ export interface PodSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#host_aliases Pod#host_aliases}
   */
-  readonly hostAliases?: PodSpecHostAliases[];
+  readonly hostAliases?: PodSpecHostAliases[] | cdktf.IResolvable;
   /**
   * image_pull_secrets block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#image_pull_secrets Pod#image_pull_secrets}
   */
-  readonly imagePullSecrets?: PodSpecImagePullSecrets[];
+  readonly imagePullSecrets?: PodSpecImagePullSecrets[] | cdktf.IResolvable;
   /**
   * init_container block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#init_container Pod#init_container}
   */
-  readonly initContainer?: PodSpecInitContainer[];
+  readonly initContainer?: PodSpecInitContainer[] | cdktf.IResolvable;
   /**
   * readiness_gate block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#readiness_gate Pod#readiness_gate}
   */
-  readonly readinessGate?: PodSpecReadinessGate[];
+  readonly readinessGate?: PodSpecReadinessGate[] | cdktf.IResolvable;
   /**
   * security_context block
   * 
@@ -16403,23 +16409,23 @@ export interface PodSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#toleration Pod#toleration}
   */
-  readonly toleration?: PodSpecToleration[];
+  readonly toleration?: PodSpecToleration[] | cdktf.IResolvable;
   /**
   * topology_spread_constraint block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#topology_spread_constraint Pod#topology_spread_constraint}
   */
-  readonly topologySpreadConstraint?: PodSpecTopologySpreadConstraint[];
+  readonly topologySpreadConstraint?: PodSpecTopologySpreadConstraint[] | cdktf.IResolvable;
   /**
   * volume block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod#volume Pod#volume}
   */
-  readonly volume?: PodSpecVolume[];
+  readonly volume?: PodSpecVolume[] | cdktf.IResolvable;
 }
 
 export function podSpecToTerraform(struct?: PodSpecOutputReference | PodSpec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -16433,7 +16439,7 @@ export function podSpecToTerraform(struct?: PodSpecOutputReference | PodSpec): a
     host_pid: cdktf.booleanToTerraform(struct!.hostPid),
     hostname: cdktf.stringToTerraform(struct!.hostname),
     node_name: cdktf.stringToTerraform(struct!.nodeName),
-    node_selector: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.nodeSelector),
+    node_selector: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.nodeSelector),
     priority_class_name: cdktf.stringToTerraform(struct!.priorityClassName),
     restart_policy: cdktf.stringToTerraform(struct!.restartPolicy),
     service_account_name: cdktf.stringToTerraform(struct!.serviceAccountName),
@@ -16462,7 +16468,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -16662,7 +16668,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   // automount_service_account_token - computed: false, optional: true, required: false
   private _automountServiceAccountToken?: boolean | cdktf.IResolvable; 
   public get automountServiceAccountToken() {
-    return this.getBooleanAttribute('automount_service_account_token') as any;
+    return this.getBooleanAttribute('automount_service_account_token');
   }
   public set automountServiceAccountToken(value: boolean | cdktf.IResolvable) {
     this._automountServiceAccountToken = value;
@@ -16694,7 +16700,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   // enable_service_links - computed: false, optional: true, required: false
   private _enableServiceLinks?: boolean | cdktf.IResolvable; 
   public get enableServiceLinks() {
-    return this.getBooleanAttribute('enable_service_links') as any;
+    return this.getBooleanAttribute('enable_service_links');
   }
   public set enableServiceLinks(value: boolean | cdktf.IResolvable) {
     this._enableServiceLinks = value;
@@ -16710,7 +16716,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   // host_ipc - computed: false, optional: true, required: false
   private _hostIpc?: boolean | cdktf.IResolvable; 
   public get hostIpc() {
-    return this.getBooleanAttribute('host_ipc') as any;
+    return this.getBooleanAttribute('host_ipc');
   }
   public set hostIpc(value: boolean | cdktf.IResolvable) {
     this._hostIpc = value;
@@ -16726,7 +16732,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   // host_network - computed: false, optional: true, required: false
   private _hostNetwork?: boolean | cdktf.IResolvable; 
   public get hostNetwork() {
-    return this.getBooleanAttribute('host_network') as any;
+    return this.getBooleanAttribute('host_network');
   }
   public set hostNetwork(value: boolean | cdktf.IResolvable) {
     this._hostNetwork = value;
@@ -16742,7 +16748,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   // host_pid - computed: false, optional: true, required: false
   private _hostPid?: boolean | cdktf.IResolvable; 
   public get hostPid() {
-    return this.getBooleanAttribute('host_pid') as any;
+    return this.getBooleanAttribute('host_pid');
   }
   public set hostPid(value: boolean | cdktf.IResolvable) {
     this._hostPid = value;
@@ -16788,12 +16794,11 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // node_selector - computed: false, optional: true, required: false
-  private _nodeSelector?: { [key: string]: string } | cdktf.IResolvable; 
+  private _nodeSelector?: { [key: string]: string }; 
   public get nodeSelector() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('node_selector') as any;
+    return this.getStringMapAttribute('node_selector');
   }
-  public set nodeSelector(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set nodeSelector(value: { [key: string]: string }) {
     this._nodeSelector = value;
   }
   public resetNodeSelector() {
@@ -16855,7 +16860,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   // share_process_namespace - computed: false, optional: true, required: false
   private _shareProcessNamespace?: boolean | cdktf.IResolvable; 
   public get shareProcessNamespace() {
-    return this.getBooleanAttribute('share_process_namespace') as any;
+    return this.getBooleanAttribute('share_process_namespace');
   }
   public set shareProcessNamespace(value: boolean | cdktf.IResolvable) {
     this._shareProcessNamespace = value;
@@ -16901,7 +16906,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // affinity - computed: false, optional: true, required: false
-  private _affinity = new PodSpecAffinityOutputReference(this as any, "affinity", true);
+  private _affinity = new PodSpecAffinityOutputReference(this, "affinity", true);
   public get affinity() {
     return this._affinity;
   }
@@ -16917,12 +16922,12 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // container - computed: false, optional: true, required: false
-  private _container?: PodSpecContainer[]; 
+  private _container?: PodSpecContainer[] | cdktf.IResolvable; 
   public get container() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('container') as any;
+    return this.interpolationForAttribute('container');
   }
-  public set container(value: PodSpecContainer[]) {
+  public set container(value: PodSpecContainer[] | cdktf.IResolvable) {
     this._container = value;
   }
   public resetContainer() {
@@ -16934,7 +16939,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // dns_config - computed: false, optional: true, required: false
-  private _dnsConfig = new PodSpecDnsConfigOutputReference(this as any, "dns_config", true);
+  private _dnsConfig = new PodSpecDnsConfigOutputReference(this, "dns_config", true);
   public get dnsConfig() {
     return this._dnsConfig;
   }
@@ -16950,12 +16955,12 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // host_aliases - computed: false, optional: true, required: false
-  private _hostAliases?: PodSpecHostAliases[]; 
+  private _hostAliases?: PodSpecHostAliases[] | cdktf.IResolvable; 
   public get hostAliases() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('host_aliases') as any;
+    return this.interpolationForAttribute('host_aliases');
   }
-  public set hostAliases(value: PodSpecHostAliases[]) {
+  public set hostAliases(value: PodSpecHostAliases[] | cdktf.IResolvable) {
     this._hostAliases = value;
   }
   public resetHostAliases() {
@@ -16967,12 +16972,12 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // image_pull_secrets - computed: false, optional: true, required: false
-  private _imagePullSecrets?: PodSpecImagePullSecrets[]; 
+  private _imagePullSecrets?: PodSpecImagePullSecrets[] | cdktf.IResolvable; 
   public get imagePullSecrets() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('image_pull_secrets') as any;
+    return this.interpolationForAttribute('image_pull_secrets');
   }
-  public set imagePullSecrets(value: PodSpecImagePullSecrets[]) {
+  public set imagePullSecrets(value: PodSpecImagePullSecrets[] | cdktf.IResolvable) {
     this._imagePullSecrets = value;
   }
   public resetImagePullSecrets() {
@@ -16984,12 +16989,12 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // init_container - computed: false, optional: true, required: false
-  private _initContainer?: PodSpecInitContainer[]; 
+  private _initContainer?: PodSpecInitContainer[] | cdktf.IResolvable; 
   public get initContainer() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('init_container') as any;
+    return this.interpolationForAttribute('init_container');
   }
-  public set initContainer(value: PodSpecInitContainer[]) {
+  public set initContainer(value: PodSpecInitContainer[] | cdktf.IResolvable) {
     this._initContainer = value;
   }
   public resetInitContainer() {
@@ -17001,12 +17006,12 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // readiness_gate - computed: false, optional: true, required: false
-  private _readinessGate?: PodSpecReadinessGate[]; 
+  private _readinessGate?: PodSpecReadinessGate[] | cdktf.IResolvable; 
   public get readinessGate() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('readiness_gate') as any;
+    return this.interpolationForAttribute('readiness_gate');
   }
-  public set readinessGate(value: PodSpecReadinessGate[]) {
+  public set readinessGate(value: PodSpecReadinessGate[] | cdktf.IResolvable) {
     this._readinessGate = value;
   }
   public resetReadinessGate() {
@@ -17018,7 +17023,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // security_context - computed: false, optional: true, required: false
-  private _securityContext = new PodSpecSecurityContextOutputReference(this as any, "security_context", true);
+  private _securityContext = new PodSpecSecurityContextOutputReference(this, "security_context", true);
   public get securityContext() {
     return this._securityContext;
   }
@@ -17034,12 +17039,12 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // toleration - computed: false, optional: true, required: false
-  private _toleration?: PodSpecToleration[]; 
+  private _toleration?: PodSpecToleration[] | cdktf.IResolvable; 
   public get toleration() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('toleration') as any;
+    return this.interpolationForAttribute('toleration');
   }
-  public set toleration(value: PodSpecToleration[]) {
+  public set toleration(value: PodSpecToleration[] | cdktf.IResolvable) {
     this._toleration = value;
   }
   public resetToleration() {
@@ -17051,12 +17056,12 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // topology_spread_constraint - computed: false, optional: true, required: false
-  private _topologySpreadConstraint?: PodSpecTopologySpreadConstraint[]; 
+  private _topologySpreadConstraint?: PodSpecTopologySpreadConstraint[] | cdktf.IResolvable; 
   public get topologySpreadConstraint() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('topology_spread_constraint') as any;
+    return this.interpolationForAttribute('topology_spread_constraint');
   }
-  public set topologySpreadConstraint(value: PodSpecTopologySpreadConstraint[]) {
+  public set topologySpreadConstraint(value: PodSpecTopologySpreadConstraint[] | cdktf.IResolvable) {
     this._topologySpreadConstraint = value;
   }
   public resetTopologySpreadConstraint() {
@@ -17068,12 +17073,12 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // volume - computed: false, optional: true, required: false
-  private _volume?: PodSpecVolume[]; 
+  private _volume?: PodSpecVolume[] | cdktf.IResolvable; 
   public get volume() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('volume') as any;
+    return this.interpolationForAttribute('volume');
   }
-  public set volume(value: PodSpecVolume[]) {
+  public set volume(value: PodSpecVolume[] | cdktf.IResolvable) {
     this._volume = value;
   }
   public resetVolume() {
@@ -17095,8 +17100,8 @@ export interface PodTimeouts {
   readonly delete?: string;
 }
 
-export function podTimeoutsToTerraform(struct?: PodTimeoutsOutputReference | PodTimeouts): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function podTimeoutsToTerraform(struct?: PodTimeoutsOutputReference | PodTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -17114,7 +17119,7 @@ export class PodTimeoutsOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -17225,7 +17230,7 @@ export class Pod extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new PodMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new PodMetadataOutputReference(this, "metadata", true);
   public get metadata() {
     return this._metadata;
   }
@@ -17238,7 +17243,7 @@ export class Pod extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new PodSpecOutputReference(this as any, "spec", true);
+  private _spec = new PodSpecOutputReference(this, "spec", true);
   public get spec() {
     return this._spec;
   }
@@ -17251,7 +17256,7 @@ export class Pod extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new PodTimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new PodTimeoutsOutputReference(this, "timeouts", true);
   public get timeouts() {
     return this._timeouts;
   }

@@ -26,7 +26,7 @@ export interface NamespaceMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/namespace#annotations Namespace#annotations}
   */
-  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
+  readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -38,7 +38,7 @@ export interface NamespaceMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/namespace#labels Namespace#labels}
   */
-  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly labels?: { [key: string]: string };
   /**
   * Name of the namespace, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -48,14 +48,14 @@ export interface NamespaceMetadata {
 }
 
 export function namespaceMetadataToTerraform(struct?: NamespaceMetadataOutputReference | NamespaceMetadata): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    annotations: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
-    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
   }
 }
@@ -68,7 +68,7 @@ export class NamespaceMetadataOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -112,12 +112,11 @@ export class NamespaceMetadataOutputReference extends cdktf.ComplexObject {
   }
 
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
+  private _annotations?: { [key: string]: string }; 
   public get annotations() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('annotations') as any;
+    return this.getStringMapAttribute('annotations');
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set annotations(value: { [key: string]: string }) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -144,13 +143,17 @@ export class NamespaceMetadataOutputReference extends cdktf.ComplexObject {
     return this._generateName;
   }
 
-  // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
-  public get labels() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+  // generation - computed: true, optional: false, required: false
+  public get generation() {
+    return this.getNumberAttribute('generation');
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string }; 
+  public get labels() {
+    return this.getStringMapAttribute('labels');
+  }
+  public set labels(value: { [key: string]: string }) {
     this._labels = value;
   }
   public resetLabels() {
@@ -176,6 +179,16 @@ export class NamespaceMetadataOutputReference extends cdktf.ComplexObject {
   public get nameInput() {
     return this._name;
   }
+
+  // resource_version - computed: true, optional: false, required: false
+  public get resourceVersion() {
+    return this.getStringAttribute('resource_version');
+  }
+
+  // uid - computed: true, optional: false, required: false
+  public get uid() {
+    return this.getStringAttribute('uid');
+  }
 }
 export interface NamespaceTimeouts {
   /**
@@ -184,8 +197,8 @@ export interface NamespaceTimeouts {
   readonly delete?: string;
 }
 
-export function namespaceTimeoutsToTerraform(struct?: NamespaceTimeoutsOutputReference | NamespaceTimeouts): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function namespaceTimeoutsToTerraform(struct?: NamespaceTimeoutsOutputReference | NamespaceTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -202,7 +215,7 @@ export class NamespaceTimeoutsOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -290,7 +303,7 @@ export class Namespace extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new NamespaceMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new NamespaceMetadataOutputReference(this, "metadata", true);
   public get metadata() {
     return this._metadata;
   }
@@ -303,7 +316,7 @@ export class Namespace extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new NamespaceTimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new NamespaceTimeoutsOutputReference(this, "timeouts", true);
   public get timeouts() {
     return this._timeouts;
   }

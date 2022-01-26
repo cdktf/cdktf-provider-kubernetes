@@ -24,7 +24,7 @@ export interface RoleBindingConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding#subject RoleBinding#subject}
   */
-  readonly subject: RoleBindingSubject[];
+  readonly subject: RoleBindingSubject[] | cdktf.IResolvable;
 }
 export interface RoleBindingMetadata {
   /**
@@ -32,13 +32,13 @@ export interface RoleBindingMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding#annotations RoleBinding#annotations}
   */
-  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
+  readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the roleBinding. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_binding#labels RoleBinding#labels}
   */
-  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly labels?: { [key: string]: string };
   /**
   * Name of the roleBinding, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -54,13 +54,13 @@ export interface RoleBindingMetadata {
 }
 
 export function roleBindingMetadataToTerraform(struct?: RoleBindingMetadataOutputReference | RoleBindingMetadata): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
-    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    annotations: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
@@ -74,7 +74,7 @@ export class RoleBindingMetadataOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -118,12 +118,11 @@ export class RoleBindingMetadataOutputReference extends cdktf.ComplexObject {
   }
 
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
+  private _annotations?: { [key: string]: string }; 
   public get annotations() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('annotations') as any;
+    return this.getStringMapAttribute('annotations');
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set annotations(value: { [key: string]: string }) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -134,13 +133,17 @@ export class RoleBindingMetadataOutputReference extends cdktf.ComplexObject {
     return this._annotations;
   }
 
-  // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
-  public get labels() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+  // generation - computed: true, optional: false, required: false
+  public get generation() {
+    return this.getNumberAttribute('generation');
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string }; 
+  public get labels() {
+    return this.getStringMapAttribute('labels');
+  }
+  public set labels(value: { [key: string]: string }) {
     this._labels = value;
   }
   public resetLabels() {
@@ -182,6 +185,16 @@ export class RoleBindingMetadataOutputReference extends cdktf.ComplexObject {
   public get namespaceInput() {
     return this._namespace;
   }
+
+  // resource_version - computed: true, optional: false, required: false
+  public get resourceVersion() {
+    return this.getStringAttribute('resource_version');
+  }
+
+  // uid - computed: true, optional: false, required: false
+  public get uid() {
+    return this.getStringAttribute('uid');
+  }
 }
 export interface RoleBindingRoleRef {
   /**
@@ -205,7 +218,7 @@ export interface RoleBindingRoleRef {
 }
 
 export function roleBindingRoleRefToTerraform(struct?: RoleBindingRoleRefOutputReference | RoleBindingRoleRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -224,7 +237,7 @@ export class RoleBindingRoleRefOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -327,8 +340,8 @@ export interface RoleBindingSubject {
   readonly namespace?: string;
 }
 
-export function roleBindingSubjectToTerraform(struct?: RoleBindingSubject): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function roleBindingSubjectToTerraform(struct?: RoleBindingSubject | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -388,7 +401,7 @@ export class RoleBinding extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new RoleBindingMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new RoleBindingMetadataOutputReference(this, "metadata", true);
   public get metadata() {
     return this._metadata;
   }
@@ -401,7 +414,7 @@ export class RoleBinding extends cdktf.TerraformResource {
   }
 
   // role_ref - computed: false, optional: false, required: true
-  private _roleRef = new RoleBindingRoleRefOutputReference(this as any, "role_ref", true);
+  private _roleRef = new RoleBindingRoleRefOutputReference(this, "role_ref", true);
   public get roleRef() {
     return this._roleRef;
   }
@@ -414,12 +427,12 @@ export class RoleBinding extends cdktf.TerraformResource {
   }
 
   // subject - computed: false, optional: false, required: true
-  private _subject?: RoleBindingSubject[]; 
+  private _subject?: RoleBindingSubject[] | cdktf.IResolvable; 
   public get subject() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('subject') as any;
+    return this.interpolationForAttribute('subject');
   }
-  public set subject(value: RoleBindingSubject[]) {
+  public set subject(value: RoleBindingSubject[] | cdktf.IResolvable) {
     this._subject = value;
   }
   // Temporarily expose input value. Use with caution.

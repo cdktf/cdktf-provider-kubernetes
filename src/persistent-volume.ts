@@ -18,7 +18,7 @@ export interface PersistentVolumeConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume#spec PersistentVolume#spec}
   */
-  readonly spec: PersistentVolumeSpec[];
+  readonly spec: PersistentVolumeSpec[] | cdktf.IResolvable;
   /**
   * timeouts block
   * 
@@ -32,13 +32,13 @@ export interface PersistentVolumeMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume#annotations PersistentVolume#annotations}
   */
-  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
+  readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume#labels PersistentVolume#labels}
   */
-  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly labels?: { [key: string]: string };
   /**
   * Name of the persistent volume, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -48,13 +48,13 @@ export interface PersistentVolumeMetadata {
 }
 
 export function persistentVolumeMetadataToTerraform(struct?: PersistentVolumeMetadataOutputReference | PersistentVolumeMetadata): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
-    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    annotations: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
   }
 }
@@ -67,7 +67,7 @@ export class PersistentVolumeMetadataOutputReference extends cdktf.ComplexObject
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -105,12 +105,11 @@ export class PersistentVolumeMetadataOutputReference extends cdktf.ComplexObject
   }
 
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
+  private _annotations?: { [key: string]: string }; 
   public get annotations() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('annotations') as any;
+    return this.getStringMapAttribute('annotations');
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set annotations(value: { [key: string]: string }) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -121,13 +120,17 @@ export class PersistentVolumeMetadataOutputReference extends cdktf.ComplexObject
     return this._annotations;
   }
 
-  // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
-  public get labels() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+  // generation - computed: true, optional: false, required: false
+  public get generation() {
+    return this.getNumberAttribute('generation');
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string }; 
+  public get labels() {
+    return this.getStringMapAttribute('labels');
+  }
+  public set labels(value: { [key: string]: string }) {
     this._labels = value;
   }
   public resetLabels() {
@@ -153,6 +156,16 @@ export class PersistentVolumeMetadataOutputReference extends cdktf.ComplexObject
   public get nameInput() {
     return this._name;
   }
+
+  // resource_version - computed: true, optional: false, required: false
+  public get resourceVersion() {
+    return this.getStringAttribute('resource_version');
+  }
+
+  // uid - computed: true, optional: false, required: false
+  public get uid() {
+    return this.getStringAttribute('uid');
+  }
 }
 export interface PersistentVolumeSpecClaimRef {
   /**
@@ -170,7 +183,7 @@ export interface PersistentVolumeSpecClaimRef {
 }
 
 export function persistentVolumeSpecClaimRefToTerraform(struct?: PersistentVolumeSpecClaimRefOutputReference | PersistentVolumeSpecClaimRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -188,7 +201,7 @@ export class PersistentVolumeSpecClaimRefOutputReference extends cdktf.ComplexOb
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -269,8 +282,8 @@ export interface PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchEx
   readonly values?: string[];
 }
 
-export function persistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function persistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -302,8 +315,8 @@ export interface PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFi
   readonly values?: string[];
 }
 
-export function persistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFields): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function persistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFields | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -320,17 +333,17 @@ export interface PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume#match_expressions PersistentVolume#match_expressions}
   */
-  readonly matchExpressions?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressions[];
+  readonly matchExpressions?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressions[] | cdktf.IResolvable;
   /**
   * match_fields block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume#match_fields PersistentVolume#match_fields}
   */
-  readonly matchFields?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFields[];
+  readonly matchFields?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFields[] | cdktf.IResolvable;
 }
 
-export function persistentVolumeSpecNodeAffinityRequiredNodeSelectorTermToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function persistentVolumeSpecNodeAffinityRequiredNodeSelectorTermToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -346,11 +359,11 @@ export interface PersistentVolumeSpecNodeAffinityRequired {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume#node_selector_term PersistentVolume#node_selector_term}
   */
-  readonly nodeSelectorTerm: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm[];
+  readonly nodeSelectorTerm: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm[] | cdktf.IResolvable;
 }
 
 export function persistentVolumeSpecNodeAffinityRequiredToTerraform(struct?: PersistentVolumeSpecNodeAffinityRequiredOutputReference | PersistentVolumeSpecNodeAffinityRequired): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -367,7 +380,7 @@ export class PersistentVolumeSpecNodeAffinityRequiredOutputReference extends cdk
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -393,12 +406,12 @@ export class PersistentVolumeSpecNodeAffinityRequiredOutputReference extends cdk
   }
 
   // node_selector_term - computed: false, optional: false, required: true
-  private _nodeSelectorTerm?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm[]; 
+  private _nodeSelectorTerm?: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm[] | cdktf.IResolvable; 
   public get nodeSelectorTerm() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('node_selector_term') as any;
+    return this.interpolationForAttribute('node_selector_term');
   }
-  public set nodeSelectorTerm(value: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm[]) {
+  public set nodeSelectorTerm(value: PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm[] | cdktf.IResolvable) {
     this._nodeSelectorTerm = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -416,7 +429,7 @@ export interface PersistentVolumeSpecNodeAffinity {
 }
 
 export function persistentVolumeSpecNodeAffinityToTerraform(struct?: PersistentVolumeSpecNodeAffinityOutputReference | PersistentVolumeSpecNodeAffinity): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -433,7 +446,7 @@ export class PersistentVolumeSpecNodeAffinityOutputReference extends cdktf.Compl
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -459,7 +472,7 @@ export class PersistentVolumeSpecNodeAffinityOutputReference extends cdktf.Compl
   }
 
   // required - computed: false, optional: true, required: false
-  private _required = new PersistentVolumeSpecNodeAffinityRequiredOutputReference(this as any, "required", true);
+  private _required = new PersistentVolumeSpecNodeAffinityRequiredOutputReference(this, "required", true);
   public get required() {
     return this._required;
   }
@@ -502,7 +515,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore 
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference | PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -522,7 +535,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutpu
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -600,7 +613,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutpu
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -666,7 +679,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceAzureDisk {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceAzureDiskToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference | PersistentVolumeSpecPersistentVolumeSourceAzureDisk): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -688,7 +701,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference 
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -817,7 +830,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference 
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -858,7 +871,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceAzureFile {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceAzureFileToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference | PersistentVolumeSpecPersistentVolumeSourceAzureFile): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -878,7 +891,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference 
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -924,7 +937,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference 
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -995,7 +1008,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceCephFsSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1013,7 +1026,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputRefe
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1116,7 +1129,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCephFs {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceCephFsToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference | PersistentVolumeSpecPersistentVolumeSourceCephFs): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1138,7 +1151,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1196,7 +1209,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
   // monitors - computed: false, optional: false, required: true
   private _monitors?: string[]; 
   public get monitors() {
-    return this.getListAttribute('monitors');
+    return cdktf.Fn.tolist(this.getListAttribute('monitors'));
   }
   public set monitors(value: string[]) {
     this._monitors = value;
@@ -1225,7 +1238,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -1271,7 +1284,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputReference(this, "secret_ref", true);
   public get secretRef() {
     return this._secretRef;
   }
@@ -1308,7 +1321,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCinder {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceCinderToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference | PersistentVolumeSpecPersistentVolumeSourceCinder): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1327,7 +1340,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference ext
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1383,7 +1396,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference ext
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -1425,7 +1438,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSe
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1443,7 +1456,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecret
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1522,7 +1535,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishS
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1540,7 +1553,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecre
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1619,7 +1632,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretR
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1637,7 +1650,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOu
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1716,7 +1729,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1734,7 +1747,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutp
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1821,7 +1834,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCsi {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume#volume_attributes PersistentVolume#volume_attributes}
   */
-  readonly volumeAttributes?: { [key: string]: string } | cdktf.IResolvable;
+  readonly volumeAttributes?: { [key: string]: string };
   /**
   * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
   * 
@@ -1855,7 +1868,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceCsi {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceCsiToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference | PersistentVolumeSpecPersistentVolumeSourceCsi): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1863,7 +1876,7 @@ export function persistentVolumeSpecPersistentVolumeSourceCsiToTerraform(struct?
     driver: cdktf.stringToTerraform(struct!.driver),
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
-    volume_attributes: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.volumeAttributes),
+    volume_attributes: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.volumeAttributes),
     volume_handle: cdktf.stringToTerraform(struct!.volumeHandle),
     controller_expand_secret_ref: persistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefToTerraform(struct!.controllerExpandSecretRef),
     controller_publish_secret_ref: persistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefToTerraform(struct!.controllerPublishSecretRef),
@@ -1880,7 +1893,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1985,7 +1998,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -1999,12 +2012,11 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
 
   // volume_attributes - computed: false, optional: true, required: false
-  private _volumeAttributes?: { [key: string]: string } | cdktf.IResolvable; 
+  private _volumeAttributes?: { [key: string]: string }; 
   public get volumeAttributes() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('volume_attributes') as any;
+    return this.getStringMapAttribute('volume_attributes');
   }
-  public set volumeAttributes(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set volumeAttributes(value: { [key: string]: string }) {
     this._volumeAttributes = value;
   }
   public resetVolumeAttributes() {
@@ -2029,7 +2041,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
 
   // controller_expand_secret_ref - computed: false, optional: true, required: false
-  private _controllerExpandSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference(this as any, "controller_expand_secret_ref", true);
+  private _controllerExpandSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference(this, "controller_expand_secret_ref", true);
   public get controllerExpandSecretRef() {
     return this._controllerExpandSecretRef;
   }
@@ -2045,7 +2057,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
 
   // controller_publish_secret_ref - computed: false, optional: true, required: false
-  private _controllerPublishSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference(this as any, "controller_publish_secret_ref", true);
+  private _controllerPublishSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference(this, "controller_publish_secret_ref", true);
   public get controllerPublishSecretRef() {
     return this._controllerPublishSecretRef;
   }
@@ -2061,7 +2073,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
 
   // node_publish_secret_ref - computed: false, optional: true, required: false
-  private _nodePublishSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference(this as any, "node_publish_secret_ref", true);
+  private _nodePublishSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref", true);
   public get nodePublishSecretRef() {
     return this._nodePublishSecretRef;
   }
@@ -2077,7 +2089,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
 
   // node_stage_secret_ref - computed: false, optional: true, required: false
-  private _nodeStageSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference(this as any, "node_stage_secret_ref", true);
+  private _nodeStageSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference(this, "node_stage_secret_ref", true);
   public get nodeStageSecretRef() {
     return this._nodeStageSecretRef;
   }
@@ -2120,7 +2132,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceFc {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceFcToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceFcOutputReference | PersistentVolumeSpecPersistentVolumeSourceFc): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2140,7 +2152,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFcOutputReference extends
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2215,7 +2227,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFcOutputReference extends
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -2231,7 +2243,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFcOutputReference extends
   // target_ww_ns - computed: false, optional: false, required: true
   private _targetWwNs?: string[]; 
   public get targetWwNs() {
-    return this.getListAttribute('target_ww_ns');
+    return cdktf.Fn.tolist(this.getListAttribute('target_ww_ns'));
   }
   public set targetWwNs(value: string[]) {
     this._targetWwNs = value;
@@ -2257,7 +2269,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2275,7 +2287,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutput
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2356,7 +2368,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceFlexVolume {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume#options PersistentVolume#options}
   */
-  readonly options?: { [key: string]: string } | cdktf.IResolvable;
+  readonly options?: { [key: string]: string };
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
   * 
@@ -2372,14 +2384,14 @@ export interface PersistentVolumeSpecPersistentVolumeSourceFlexVolume {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceFlexVolumeToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference | PersistentVolumeSpecPersistentVolumeSourceFlexVolume): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
     driver: cdktf.stringToTerraform(struct!.driver),
     fs_type: cdktf.stringToTerraform(struct!.fsType),
-    options: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.options),
+    options: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.options),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_ref: persistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefToTerraform(struct!.secretRef),
   }
@@ -2393,7 +2405,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2472,12 +2484,11 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
   }
 
   // options - computed: false, optional: true, required: false
-  private _options?: { [key: string]: string } | cdktf.IResolvable; 
+  private _options?: { [key: string]: string }; 
   public get options() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('options') as any;
+    return this.getStringMapAttribute('options');
   }
-  public set options(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set options(value: { [key: string]: string }) {
     this._options = value;
   }
   public resetOptions() {
@@ -2491,7 +2502,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -2505,7 +2516,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference(this, "secret_ref", true);
   public get secretRef() {
     return this._secretRef;
   }
@@ -2536,7 +2547,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceFlocker {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceFlockerToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference | PersistentVolumeSpecPersistentVolumeSourceFlocker): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2554,7 +2565,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference ex
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2645,7 +2656,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceGcePersistentDiskToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputReference | PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2665,7 +2676,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputRe
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2756,7 +2767,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputRe
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -2791,7 +2802,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceGlusterfs {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceGlusterfsToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference | PersistentVolumeSpecPersistentVolumeSourceGlusterfs): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2810,7 +2821,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference 
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -2876,7 +2887,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference 
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -2905,7 +2916,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceHostPath {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceHostPathToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference | PersistentVolumeSpecPersistentVolumeSourceHostPath): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -2923,7 +2934,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference e
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3026,7 +3037,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceIscsi {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceIscsiToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference | PersistentVolumeSpecPersistentVolumeSourceIscsi): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3048,7 +3059,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference exte
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3167,7 +3178,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference exte
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -3203,7 +3214,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceLocal {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceLocalToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference | PersistentVolumeSpecPersistentVolumeSourceLocal): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3220,7 +3231,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference exte
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3283,7 +3294,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceNfs {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceNfsToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference | PersistentVolumeSpecPersistentVolumeSourceNfs): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3302,7 +3313,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference extend
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3355,7 +3366,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference extend
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -3397,7 +3408,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk 
 }
 
 export function persistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutputReference | PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3415,7 +3426,7 @@ export class PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutpu
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3509,7 +3520,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceQuobyte {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceQuobyteToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference | PersistentVolumeSpecPersistentVolumeSourceQuobyte): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3530,7 +3541,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference ex
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3598,7 +3609,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference ex
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -3669,7 +3680,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceRbdSecretRefToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReference | PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3687,7 +3698,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReferen
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3802,7 +3813,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceRbd {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceRbdToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference | PersistentVolumeSpecPersistentVolumeSourceRbd): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -3826,7 +3837,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -3896,7 +3907,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   // ceph_monitors - computed: false, optional: false, required: true
   private _cephMonitors?: string[]; 
   public get cephMonitors() {
-    return this.getListAttribute('ceph_monitors');
+    return cdktf.Fn.tolist(this.getListAttribute('ceph_monitors'));
   }
   public set cephMonitors(value: string[]) {
     this._cephMonitors = value;
@@ -3986,7 +3997,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -4000,7 +4011,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReference(this as any, "secret_ref", true);
+  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReference(this, "secret_ref", true);
   public get secretRef() {
     return this._secretRef;
   }
@@ -4031,7 +4042,7 @@ export interface PersistentVolumeSpecPersistentVolumeSourceVsphereVolume {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceVsphereVolumeToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputReference | PersistentVolumeSpecPersistentVolumeSourceVsphereVolume): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -4049,7 +4060,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputRefere
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -4227,7 +4238,7 @@ export interface PersistentVolumeSpecPersistentVolumeSource {
 }
 
 export function persistentVolumeSpecPersistentVolumeSourceToTerraform(struct?: PersistentVolumeSpecPersistentVolumeSourceOutputReference | PersistentVolumeSpecPersistentVolumeSource): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -4262,7 +4273,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -4396,7 +4407,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // aws_elastic_block_store - computed: false, optional: true, required: false
-  private _awsElasticBlockStore = new PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference(this as any, "aws_elastic_block_store", true);
+  private _awsElasticBlockStore = new PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference(this, "aws_elastic_block_store", true);
   public get awsElasticBlockStore() {
     return this._awsElasticBlockStore;
   }
@@ -4412,7 +4423,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // azure_disk - computed: false, optional: true, required: false
-  private _azureDisk = new PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference(this as any, "azure_disk", true);
+  private _azureDisk = new PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference(this, "azure_disk", true);
   public get azureDisk() {
     return this._azureDisk;
   }
@@ -4428,7 +4439,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // azure_file - computed: false, optional: true, required: false
-  private _azureFile = new PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference(this as any, "azure_file", true);
+  private _azureFile = new PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference(this, "azure_file", true);
   public get azureFile() {
     return this._azureFile;
   }
@@ -4444,7 +4455,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // ceph_fs - computed: false, optional: true, required: false
-  private _cephFs = new PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference(this as any, "ceph_fs", true);
+  private _cephFs = new PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference(this, "ceph_fs", true);
   public get cephFs() {
     return this._cephFs;
   }
@@ -4460,7 +4471,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // cinder - computed: false, optional: true, required: false
-  private _cinder = new PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference(this as any, "cinder", true);
+  private _cinder = new PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference(this, "cinder", true);
   public get cinder() {
     return this._cinder;
   }
@@ -4476,7 +4487,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // csi - computed: false, optional: true, required: false
-  private _csi = new PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference(this as any, "csi", true);
+  private _csi = new PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference(this, "csi", true);
   public get csi() {
     return this._csi;
   }
@@ -4492,7 +4503,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // fc - computed: false, optional: true, required: false
-  private _fc = new PersistentVolumeSpecPersistentVolumeSourceFcOutputReference(this as any, "fc", true);
+  private _fc = new PersistentVolumeSpecPersistentVolumeSourceFcOutputReference(this, "fc", true);
   public get fc() {
     return this._fc;
   }
@@ -4508,7 +4519,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // flex_volume - computed: false, optional: true, required: false
-  private _flexVolume = new PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference(this as any, "flex_volume", true);
+  private _flexVolume = new PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference(this, "flex_volume", true);
   public get flexVolume() {
     return this._flexVolume;
   }
@@ -4524,7 +4535,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // flocker - computed: false, optional: true, required: false
-  private _flocker = new PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference(this as any, "flocker", true);
+  private _flocker = new PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference(this, "flocker", true);
   public get flocker() {
     return this._flocker;
   }
@@ -4540,7 +4551,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // gce_persistent_disk - computed: false, optional: true, required: false
-  private _gcePersistentDisk = new PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputReference(this as any, "gce_persistent_disk", true);
+  private _gcePersistentDisk = new PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputReference(this, "gce_persistent_disk", true);
   public get gcePersistentDisk() {
     return this._gcePersistentDisk;
   }
@@ -4556,7 +4567,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // glusterfs - computed: false, optional: true, required: false
-  private _glusterfs = new PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference(this as any, "glusterfs", true);
+  private _glusterfs = new PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference(this, "glusterfs", true);
   public get glusterfs() {
     return this._glusterfs;
   }
@@ -4572,7 +4583,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // host_path - computed: false, optional: true, required: false
-  private _hostPath = new PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference(this as any, "host_path", true);
+  private _hostPath = new PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference(this, "host_path", true);
   public get hostPath() {
     return this._hostPath;
   }
@@ -4588,7 +4599,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // iscsi - computed: false, optional: true, required: false
-  private _iscsi = new PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference(this as any, "iscsi", true);
+  private _iscsi = new PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference(this, "iscsi", true);
   public get iscsi() {
     return this._iscsi;
   }
@@ -4604,7 +4615,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // local - computed: false, optional: true, required: false
-  private _local = new PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference(this as any, "local", true);
+  private _local = new PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference(this, "local", true);
   public get local() {
     return this._local;
   }
@@ -4620,7 +4631,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // nfs - computed: false, optional: true, required: false
-  private _nfs = new PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference(this as any, "nfs", true);
+  private _nfs = new PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference(this, "nfs", true);
   public get nfs() {
     return this._nfs;
   }
@@ -4636,7 +4647,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // photon_persistent_disk - computed: false, optional: true, required: false
-  private _photonPersistentDisk = new PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutputReference(this as any, "photon_persistent_disk", true);
+  private _photonPersistentDisk = new PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutputReference(this, "photon_persistent_disk", true);
   public get photonPersistentDisk() {
     return this._photonPersistentDisk;
   }
@@ -4652,7 +4663,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // quobyte - computed: false, optional: true, required: false
-  private _quobyte = new PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference(this as any, "quobyte", true);
+  private _quobyte = new PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference(this, "quobyte", true);
   public get quobyte() {
     return this._quobyte;
   }
@@ -4668,7 +4679,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // rbd - computed: false, optional: true, required: false
-  private _rbd = new PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference(this as any, "rbd", true);
+  private _rbd = new PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference(this, "rbd", true);
   public get rbd() {
     return this._rbd;
   }
@@ -4684,7 +4695,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // vsphere_volume - computed: false, optional: true, required: false
-  private _vsphereVolume = new PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputReference(this as any, "vsphere_volume", true);
+  private _vsphereVolume = new PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputReference(this, "vsphere_volume", true);
   public get vsphereVolume() {
     return this._vsphereVolume;
   }
@@ -4711,7 +4722,7 @@ export interface PersistentVolumeSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume#capacity PersistentVolume#capacity}
   */
-  readonly capacity: { [key: string]: string } | cdktf.IResolvable;
+  readonly capacity: { [key: string]: string };
   /**
   * A list of mount options, e.g. ["ro", "soft"]. Not validated - mount will simply fail if one is invalid.
   * 
@@ -4756,14 +4767,14 @@ export interface PersistentVolumeSpec {
   readonly persistentVolumeSource: PersistentVolumeSpecPersistentVolumeSource;
 }
 
-export function persistentVolumeSpecToTerraform(struct?: PersistentVolumeSpec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function persistentVolumeSpecToTerraform(struct?: PersistentVolumeSpec | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
     access_modes: cdktf.listMapper(cdktf.stringToTerraform)(struct!.accessModes),
-    capacity: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.capacity),
+    capacity: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.capacity),
     mount_options: cdktf.listMapper(cdktf.stringToTerraform)(struct!.mountOptions),
     persistent_volume_reclaim_policy: cdktf.stringToTerraform(struct!.persistentVolumeReclaimPolicy),
     storage_class_name: cdktf.stringToTerraform(struct!.storageClassName),
@@ -4781,8 +4792,8 @@ export interface PersistentVolumeTimeouts {
   readonly create?: string;
 }
 
-export function persistentVolumeTimeoutsToTerraform(struct?: PersistentVolumeTimeoutsOutputReference | PersistentVolumeTimeouts): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function persistentVolumeTimeoutsToTerraform(struct?: PersistentVolumeTimeoutsOutputReference | PersistentVolumeTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -4799,7 +4810,7 @@ export class PersistentVolumeTimeoutsOutputReference extends cdktf.ComplexObject
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -4888,7 +4899,7 @@ export class PersistentVolume extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new PersistentVolumeMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new PersistentVolumeMetadataOutputReference(this, "metadata", true);
   public get metadata() {
     return this._metadata;
   }
@@ -4901,12 +4912,12 @@ export class PersistentVolume extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: PersistentVolumeSpec[]; 
+  private _spec?: PersistentVolumeSpec[] | cdktf.IResolvable; 
   public get spec() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('spec') as any;
+    return this.interpolationForAttribute('spec');
   }
-  public set spec(value: PersistentVolumeSpec[]) {
+  public set spec(value: PersistentVolumeSpec[] | cdktf.IResolvable) {
     this._spec = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -4915,7 +4926,7 @@ export class PersistentVolume extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new PersistentVolumeTimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new PersistentVolumeTimeoutsOutputReference(this, "timeouts", true);
   public get timeouts() {
     return this._timeouts;
   }

@@ -50,7 +50,7 @@ export class DataKubernetesServiceV1Spec extends cdktf.ComplexComputedList {
 
   // external_ips - computed: true, optional: false, required: false
   public get externalIps() {
-    return this.getListAttribute('external_ips');
+    return cdktf.Fn.tolist(this.getListAttribute('external_ips'));
   }
 
   // external_name - computed: true, optional: false, required: false
@@ -75,24 +75,23 @@ export class DataKubernetesServiceV1Spec extends cdktf.ComplexComputedList {
 
   // load_balancer_source_ranges - computed: true, optional: false, required: false
   public get loadBalancerSourceRanges() {
-    return this.getListAttribute('load_balancer_source_ranges');
+    return cdktf.Fn.tolist(this.getListAttribute('load_balancer_source_ranges'));
   }
 
   // port - computed: true, optional: false, required: false
   public get port() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('port') as any;
+    return this.interpolationForAttribute('port');
   }
 
   // publish_not_ready_addresses - computed: true, optional: false, required: false
   public get publishNotReadyAddresses() {
-    return this.getBooleanAttribute('publish_not_ready_addresses') as any;
+    return this.getBooleanAttribute('publish_not_ready_addresses');
   }
 
   // selector - computed: true, optional: false, required: false
   public get selector() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('selector') as any;
+    return this.getStringMapAttribute('selector');
   }
 
   // session_affinity - computed: true, optional: false, required: false
@@ -122,7 +121,7 @@ export class DataKubernetesServiceV1StatusLoadBalancer extends cdktf.ComplexComp
   // ingress - computed: true, optional: false, required: false
   public get ingress() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ingress') as any;
+    return this.interpolationForAttribute('ingress');
   }
 }
 export class DataKubernetesServiceV1Status extends cdktf.ComplexComputedList {
@@ -130,7 +129,7 @@ export class DataKubernetesServiceV1Status extends cdktf.ComplexComputedList {
   // load_balancer - computed: true, optional: false, required: false
   public get loadBalancer() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('load_balancer') as any;
+    return this.interpolationForAttribute('load_balancer');
   }
 }
 export interface DataKubernetesServiceV1Metadata {
@@ -139,13 +138,13 @@ export interface DataKubernetesServiceV1Metadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service_v1#annotations DataKubernetesServiceV1#annotations}
   */
-  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
+  readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the service. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/service_v1#labels DataKubernetesServiceV1#labels}
   */
-  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly labels?: { [key: string]: string };
   /**
   * Name of the service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -161,13 +160,13 @@ export interface DataKubernetesServiceV1Metadata {
 }
 
 export function dataKubernetesServiceV1MetadataToTerraform(struct?: DataKubernetesServiceV1MetadataOutputReference | DataKubernetesServiceV1Metadata): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
-    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    annotations: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.annotations),
+    labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
@@ -181,7 +180,7 @@ export class DataKubernetesServiceV1MetadataOutputReference extends cdktf.Comple
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -225,12 +224,11 @@ export class DataKubernetesServiceV1MetadataOutputReference extends cdktf.Comple
   }
 
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
+  private _annotations?: { [key: string]: string }; 
   public get annotations() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('annotations') as any;
+    return this.getStringMapAttribute('annotations');
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set annotations(value: { [key: string]: string }) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -241,13 +239,17 @@ export class DataKubernetesServiceV1MetadataOutputReference extends cdktf.Comple
     return this._annotations;
   }
 
-  // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
-  public get labels() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+  // generation - computed: true, optional: false, required: false
+  public get generation() {
+    return this.getNumberAttribute('generation');
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string }; 
+  public get labels() {
+    return this.getStringMapAttribute('labels');
+  }
+  public set labels(value: { [key: string]: string }) {
     this._labels = value;
   }
   public resetLabels() {
@@ -288,6 +290,16 @@ export class DataKubernetesServiceV1MetadataOutputReference extends cdktf.Comple
   // Temporarily expose input value. Use with caution.
   public get namespaceInput() {
     return this._namespace;
+  }
+
+  // resource_version - computed: true, optional: false, required: false
+  public get resourceVersion() {
+    return this.getStringAttribute('resource_version');
+  }
+
+  // uid - computed: true, optional: false, required: false
+  public get uid() {
+    return this.getStringAttribute('uid');
   }
 }
 
@@ -337,16 +349,16 @@ export class DataKubernetesServiceV1 extends cdktf.TerraformDataSource {
 
   // spec - computed: true, optional: false, required: false
   public spec(index: string) {
-    return new DataKubernetesServiceV1Spec(this, 'spec', index);
+    return new DataKubernetesServiceV1Spec(this, 'spec', index, false);
   }
 
   // status - computed: true, optional: false, required: false
   public status(index: string) {
-    return new DataKubernetesServiceV1Status(this, 'status', index);
+    return new DataKubernetesServiceV1Status(this, 'status', index, false);
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new DataKubernetesServiceV1MetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new DataKubernetesServiceV1MetadataOutputReference(this, "metadata", true);
   public get metadata() {
     return this._metadata;
   }

@@ -18,19 +18,19 @@ export interface ManifestConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#manifest Manifest#manifest}
   */
-  readonly manifest: { [key: string]: any } | cdktf.IResolvable;
+  readonly manifest: { [key: string]: any };
   /**
   * The resulting resource state, as returned by the API server after applying the desired state from `manifest`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#object Manifest#object}
   */
-  readonly object?: { [key: string]: any } | cdktf.IResolvable;
+  readonly object?: { [key: string]: any };
   /**
   * A map of attribute paths and desired patterns to be matched. After each apply the provider will wait for all attributes listed here to reach a value that matches the desired pattern.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#wait_for Manifest#wait_for}
   */
-  readonly waitFor?: ManifestWaitFor;
+  readonly waitFor?: ManifestWaitFor | cdktf.IResolvable;
   /**
   * field_manager block
   * 
@@ -48,16 +48,16 @@ export interface ManifestWaitFor {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#fields Manifest#fields}
   */
-  readonly fields?: { [key: string]: string } | cdktf.IResolvable;
+  readonly fields?: { [key: string]: string };
 }
 
-export function manifestWaitForToTerraform(struct?: ManifestWaitFor): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function manifestWaitForToTerraform(struct?: ManifestWaitFor | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    fields: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.fields),
+    fields: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.fields),
   }
 }
 
@@ -77,7 +77,7 @@ export interface ManifestFieldManager {
 }
 
 export function manifestFieldManagerToTerraform(struct?: ManifestFieldManagerOutputReference | ManifestFieldManager): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -95,7 +95,7 @@ export class ManifestFieldManagerOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -129,7 +129,7 @@ export class ManifestFieldManagerOutputReference extends cdktf.ComplexObject {
   // force_conflicts - computed: false, optional: true, required: false
   private _forceConflicts?: boolean | cdktf.IResolvable; 
   public get forceConflicts() {
-    return this.getBooleanAttribute('force_conflicts') as any;
+    return this.getBooleanAttribute('force_conflicts');
   }
   public set forceConflicts(value: boolean | cdktf.IResolvable) {
     this._forceConflicts = value;
@@ -180,7 +180,7 @@ export interface ManifestTimeouts {
 }
 
 export function manifestTimeoutsToTerraform(struct?: ManifestTimeoutsOutputReference | ManifestTimeouts): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -199,7 +199,7 @@ export class ManifestTimeoutsOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -346,12 +346,11 @@ export class Manifest extends cdktf.TerraformResource {
   }
 
   // manifest - computed: false, optional: false, required: true
-  private _manifest?: { [key: string]: any } | cdktf.IResolvable; 
+  private _manifest?: { [key: string]: any }; 
   public get manifest() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('manifest') as any;
+    return this.getAnyMapAttribute('manifest');
   }
-  public set manifest(value: { [key: string]: any } | cdktf.IResolvable) {
+  public set manifest(value: { [key: string]: any }) {
     this._manifest = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -360,12 +359,11 @@ export class Manifest extends cdktf.TerraformResource {
   }
 
   // object - computed: true, optional: true, required: false
-  private _object?: { [key: string]: any } | cdktf.IResolvable; 
+  private _object?: { [key: string]: any }; 
   public get object() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('object') as any;
+    return this.getAnyMapAttribute('object');
   }
-  public set object(value: { [key: string]: any } | cdktf.IResolvable) {
+  public set object(value: { [key: string]: any }) {
     this._object = value;
   }
   public resetObject() {
@@ -377,12 +375,12 @@ export class Manifest extends cdktf.TerraformResource {
   }
 
   // wait_for - computed: false, optional: true, required: false
-  private _waitFor?: ManifestWaitFor; 
+  private _waitFor?: ManifestWaitFor | cdktf.IResolvable; 
   public get waitFor() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('wait_for') as any;
+    return this.interpolationForAttribute('wait_for');
   }
-  public set waitFor(value: ManifestWaitFor) {
+  public set waitFor(value: ManifestWaitFor | cdktf.IResolvable) {
     this._waitFor = value;
   }
   public resetWaitFor() {
@@ -394,7 +392,7 @@ export class Manifest extends cdktf.TerraformResource {
   }
 
   // field_manager - computed: false, optional: true, required: false
-  private _fieldManager = new ManifestFieldManagerOutputReference(this as any, "field_manager", true);
+  private _fieldManager = new ManifestFieldManagerOutputReference(this, "field_manager", true);
   public get fieldManager() {
     return this._fieldManager;
   }
@@ -410,7 +408,7 @@ export class Manifest extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new ManifestTimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new ManifestTimeoutsOutputReference(this, "timeouts", true);
   public get timeouts() {
     return this._timeouts;
   }

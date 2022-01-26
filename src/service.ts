@@ -49,7 +49,7 @@ export class ServiceStatusLoadBalancer extends cdktf.ComplexComputedList {
   // ingress - computed: true, optional: false, required: false
   public get ingress() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ingress') as any;
+    return this.interpolationForAttribute('ingress');
   }
 }
 export class ServiceStatus extends cdktf.ComplexComputedList {
@@ -57,7 +57,7 @@ export class ServiceStatus extends cdktf.ComplexComputedList {
   // load_balancer - computed: true, optional: false, required: false
   public get loadBalancer() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('load_balancer') as any;
+    return this.interpolationForAttribute('load_balancer');
   }
 }
 export interface ServiceMetadata {
@@ -66,7 +66,7 @@ export interface ServiceMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service#annotations Service#annotations}
   */
-  readonly annotations?: { [key: string]: string } | cdktf.IResolvable;
+  readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
@@ -78,7 +78,7 @@ export interface ServiceMetadata {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service#labels Service#labels}
   */
-  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly labels?: { [key: string]: string };
   /**
   * Name of the service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
@@ -94,14 +94,14 @@ export interface ServiceMetadata {
 }
 
 export function serviceMetadataToTerraform(struct?: ServiceMetadataOutputReference | ServiceMetadata): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    annotations: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.annotations),
+    annotations: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.annotations),
     generate_name: cdktf.stringToTerraform(struct!.generateName),
-    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
@@ -115,7 +115,7 @@ export class ServiceMetadataOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -165,12 +165,11 @@ export class ServiceMetadataOutputReference extends cdktf.ComplexObject {
   }
 
   // annotations - computed: false, optional: true, required: false
-  private _annotations?: { [key: string]: string } | cdktf.IResolvable; 
+  private _annotations?: { [key: string]: string }; 
   public get annotations() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('annotations') as any;
+    return this.getStringMapAttribute('annotations');
   }
-  public set annotations(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set annotations(value: { [key: string]: string }) {
     this._annotations = value;
   }
   public resetAnnotations() {
@@ -197,13 +196,17 @@ export class ServiceMetadataOutputReference extends cdktf.ComplexObject {
     return this._generateName;
   }
 
-  // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
-  public get labels() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+  // generation - computed: true, optional: false, required: false
+  public get generation() {
+    return this.getNumberAttribute('generation');
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string }; 
+  public get labels() {
+    return this.getStringMapAttribute('labels');
+  }
+  public set labels(value: { [key: string]: string }) {
     this._labels = value;
   }
   public resetLabels() {
@@ -245,6 +248,16 @@ export class ServiceMetadataOutputReference extends cdktf.ComplexObject {
   public get namespaceInput() {
     return this._namespace;
   }
+
+  // resource_version - computed: true, optional: false, required: false
+  public get resourceVersion() {
+    return this.getStringAttribute('resource_version');
+  }
+
+  // uid - computed: true, optional: false, required: false
+  public get uid() {
+    return this.getStringAttribute('uid');
+  }
 }
 export interface ServiceSpecPort {
   /**
@@ -279,8 +292,8 @@ export interface ServiceSpecPort {
   readonly targetPort?: string;
 }
 
-export function serviceSpecPortToTerraform(struct?: ServiceSpecPort): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function serviceSpecPortToTerraform(struct?: ServiceSpecPort | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -347,7 +360,7 @@ export interface ServiceSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service#selector Service#selector}
   */
-  readonly selector?: { [key: string]: string } | cdktf.IResolvable;
+  readonly selector?: { [key: string]: string };
   /**
   * Used to maintain session affinity. Supports `ClientIP` and `None`. Defaults to `None`. More info: http://kubernetes.io/docs/user-guide/services#virtual-ips-and-service-proxies
   * 
@@ -365,11 +378,11 @@ export interface ServiceSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service#port Service#port}
   */
-  readonly port?: ServiceSpecPort[];
+  readonly port?: ServiceSpecPort[] | cdktf.IResolvable;
 }
 
 export function serviceSpecToTerraform(struct?: ServiceSpecOutputReference | ServiceSpec): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -382,7 +395,7 @@ export function serviceSpecToTerraform(struct?: ServiceSpecOutputReference | Ser
     load_balancer_ip: cdktf.stringToTerraform(struct!.loadBalancerIp),
     load_balancer_source_ranges: cdktf.listMapper(cdktf.stringToTerraform)(struct!.loadBalancerSourceRanges),
     publish_not_ready_addresses: cdktf.booleanToTerraform(struct!.publishNotReadyAddresses),
-    selector: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.selector),
+    selector: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.selector),
     session_affinity: cdktf.stringToTerraform(struct!.sessionAffinity),
     type: cdktf.stringToTerraform(struct!.type),
     port: cdktf.listMapper(serviceSpecPortToTerraform)(struct!.port),
@@ -397,7 +410,7 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -507,7 +520,7 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   // external_ips - computed: false, optional: true, required: false
   private _externalIps?: string[]; 
   public get externalIps() {
-    return this.getListAttribute('external_ips');
+    return cdktf.Fn.tolist(this.getListAttribute('external_ips'));
   }
   public set externalIps(value: string[]) {
     this._externalIps = value;
@@ -587,7 +600,7 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   // load_balancer_source_ranges - computed: false, optional: true, required: false
   private _loadBalancerSourceRanges?: string[]; 
   public get loadBalancerSourceRanges() {
-    return this.getListAttribute('load_balancer_source_ranges');
+    return cdktf.Fn.tolist(this.getListAttribute('load_balancer_source_ranges'));
   }
   public set loadBalancerSourceRanges(value: string[]) {
     this._loadBalancerSourceRanges = value;
@@ -603,7 +616,7 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   // publish_not_ready_addresses - computed: false, optional: true, required: false
   private _publishNotReadyAddresses?: boolean | cdktf.IResolvable; 
   public get publishNotReadyAddresses() {
-    return this.getBooleanAttribute('publish_not_ready_addresses') as any;
+    return this.getBooleanAttribute('publish_not_ready_addresses');
   }
   public set publishNotReadyAddresses(value: boolean | cdktf.IResolvable) {
     this._publishNotReadyAddresses = value;
@@ -617,12 +630,11 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector?: { [key: string]: string } | cdktf.IResolvable; 
+  private _selector?: { [key: string]: string }; 
   public get selector() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('selector') as any;
+    return this.getStringMapAttribute('selector');
   }
-  public set selector(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set selector(value: { [key: string]: string }) {
     this._selector = value;
   }
   public resetSelector() {
@@ -666,12 +678,12 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: ServiceSpecPort[]; 
+  private _port?: ServiceSpecPort[] | cdktf.IResolvable; 
   public get port() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('port') as any;
+    return this.interpolationForAttribute('port');
   }
-  public set port(value: ServiceSpecPort[]) {
+  public set port(value: ServiceSpecPort[] | cdktf.IResolvable) {
     this._port = value;
   }
   public resetPort() {
@@ -689,8 +701,8 @@ export interface ServiceTimeouts {
   readonly create?: string;
 }
 
-export function serviceTimeoutsToTerraform(struct?: ServiceTimeoutsOutputReference | ServiceTimeouts): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function serviceTimeoutsToTerraform(struct?: ServiceTimeoutsOutputReference | ServiceTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -707,7 +719,7 @@ export class ServiceTimeoutsOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -798,13 +810,13 @@ export class Service extends cdktf.TerraformResource {
 
   // status - computed: true, optional: false, required: false
   public status(index: string) {
-    return new ServiceStatus(this, 'status', index);
+    return new ServiceStatus(this, 'status', index, false);
   }
 
   // wait_for_load_balancer - computed: false, optional: true, required: false
   private _waitForLoadBalancer?: boolean | cdktf.IResolvable; 
   public get waitForLoadBalancer() {
-    return this.getBooleanAttribute('wait_for_load_balancer') as any;
+    return this.getBooleanAttribute('wait_for_load_balancer');
   }
   public set waitForLoadBalancer(value: boolean | cdktf.IResolvable) {
     this._waitForLoadBalancer = value;
@@ -818,7 +830,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new ServiceMetadataOutputReference(this as any, "metadata", true);
+  private _metadata = new ServiceMetadataOutputReference(this, "metadata", true);
   public get metadata() {
     return this._metadata;
   }
@@ -831,7 +843,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new ServiceSpecOutputReference(this as any, "spec", true);
+  private _spec = new ServiceSpecOutputReference(this, "spec", true);
   public get spec() {
     return this._spec;
   }
@@ -844,7 +856,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new ServiceTimeoutsOutputReference(this as any, "timeouts", true);
+  private _timeouts = new ServiceTimeoutsOutputReference(this, "timeouts", true);
   public get timeouts() {
     return this._timeouts;
   }
