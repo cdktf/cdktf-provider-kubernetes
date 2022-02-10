@@ -376,7 +376,7 @@ export interface IngressV1SpecDefaultBackendServicePort {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_v1#name IngressV1#name}
   */
-  readonly name?: number;
+  readonly name?: string;
   /**
   * Specifies the numerical port of the referenced service.
   * 
@@ -391,7 +391,7 @@ export function ingressV1SpecDefaultBackendServicePortToTerraform(struct?: Ingre
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    name: cdktf.numberToTerraform(struct!.name),
+    name: cdktf.stringToTerraform(struct!.name),
     number: cdktf.numberToTerraform(struct!.number),
   }
 }
@@ -436,11 +436,11 @@ export class IngressV1SpecDefaultBackendServicePortOutputReference extends cdktf
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: number; 
+  private _name?: string; 
   public get name() {
-    return this.getNumberAttribute('name');
+    return this.getStringAttribute('name');
   }
-  public set name(value: number) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -778,7 +778,7 @@ export interface IngressV1SpecRuleHttpPathBackendServicePort {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_v1#name IngressV1#name}
   */
-  readonly name?: number;
+  readonly name?: string;
   /**
   * Specifies the numerical port of the referenced service.
   * 
@@ -793,7 +793,7 @@ export function ingressV1SpecRuleHttpPathBackendServicePortToTerraform(struct?: 
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    name: cdktf.numberToTerraform(struct!.name),
+    name: cdktf.stringToTerraform(struct!.name),
     number: cdktf.numberToTerraform(struct!.number),
   }
 }
@@ -838,11 +838,11 @@ export class IngressV1SpecRuleHttpPathBackendServicePortOutputReference extends 
   }
 
   // name - computed: false, optional: true, required: false
-  private _name?: number; 
+  private _name?: string; 
   public get name() {
-    return this.getNumberAttribute('name');
+    return this.getStringAttribute('name');
   }
-  public set name(value: number) {
+  public set name(value: string) {
     this._name = value;
   }
   public resetName() {
@@ -1059,7 +1059,7 @@ export class IngressV1SpecRuleHttpPathBackendOutputReference extends cdktf.Compl
 }
 export interface IngressV1SpecRuleHttpPath {
   /**
-  * Path is matched against the path of an incoming request. Currently it can contain characters disallowed from the conventional "path" part of a URL as defined by RFC 3986. Paths must begin with a '/'. When unspecified, all paths from incoming requests are matched.
+  * Path is matched against the path of an incoming request. Currently it can contain characters disallowed from the conventional "path" part of a URL as defined by RFC 3986. Paths must begin with a '/' and must be present when using PathType with value "Exact" or "Prefix".
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_v1#path IngressV1#path}
   */
