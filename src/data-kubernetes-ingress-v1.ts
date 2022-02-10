@@ -35,7 +35,7 @@ export class DataKubernetesIngressV1SpecDefaultBackendServicePort extends cdktf.
 
   // name - computed: true, optional: false, required: false
   public get name() {
-    return this.getNumberAttribute('name');
+    return this.getStringAttribute('name');
   }
 
   // number - computed: true, optional: false, required: false
@@ -91,7 +91,7 @@ export class DataKubernetesIngressV1SpecRuleHttpPathBackendServicePort extends c
 
   // name - computed: true, optional: false, required: false
   public get name() {
-    return this.getNumberAttribute('name');
+    return this.getStringAttribute('name');
   }
 
   // number - computed: true, optional: false, required: false

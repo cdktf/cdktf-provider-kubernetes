@@ -76,6 +76,7 @@ export * from './data-kubernetes-config-map';
 export * from './data-kubernetes-config-map-v1';
 export * from './data-kubernetes-ingress';
 export * from './data-kubernetes-ingress-v1';
+export * from './data-kubernetes-mutating-webhook-configuration-v1';
 export * from './data-kubernetes-namespace';
 export * from './data-kubernetes-namespace-v1';
 export * from './data-kubernetes-persistent-volume-claim';
