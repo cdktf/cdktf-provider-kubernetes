@@ -122,10 +122,25 @@
     chalk "^4.1.2"
     semver "^7.3.5"
 
+"@jsii/check-node@1.53.0":
+  version "1.53.0"
+  resolved "https://registry.yarnpkg.com/@jsii/check-node/-/check-node-1.53.0.tgz#9c54cef4bf1fca61dd24e536c4dac89e29abe599"
+  integrity sha512-38KA8qNxawWDCj9qVzc4Y6oAdkAmoLSDENzlG24SD309/TnSgMcnCCqtdOVRuJWo66aQgyEUrSqaGWw/YUCVyA==
+  dependencies:
+    chalk "^4.1.2"
+    semver "^7.3.5"
+
 "@jsii/spec@1.52.1", "@jsii/spec@^1.30.0", "@jsii/spec@^1.52.1":
   version "1.52.1"
   resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.52.1.tgz#2e44a019e3b5722a96883c42d726b748956c223e"
   integrity sha512-Mt5yzqR/DYZhxjOBTuQsstYh0gdlwSWvjTAfUGf5Rp76j8gddkADlrMRFeVrXBy/Y+ccJLUYWMSsEf1Ti6ERcQ==
+  dependencies:
+    jsonschema "^1.4.0"
+
+"@jsii/spec@^1.53.0":
+  version "1.53.0"
+  resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.53.0.tgz#81423db107461c13b0f10894bb1739041f71ca63"
+  integrity sha512-wWpO4S6rHjL9r+7oI/1HfThSdTh8YNGYxwCNvvAZcBsnNw2j/yBxo+LaqbPduq4biC14kB+TAov43wf7KUm7qw==
   dependencies:
     jsonschema "^1.4.0"
 
@@ -638,7 +653,7 @@ chalk@^2.0.0, chalk@^2.4.2:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chalk@^4.1.0, chalk@^4.1.2:
+chalk@^4, chalk@^4.1.0, chalk@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
   integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
@@ -2217,7 +2232,7 @@ jsii-srcmak@^0.1.455:
     ncp "^2.0.0"
     yargs "^15.4.1"
 
-jsii@1.52.1, jsii@^1.46.0, jsii@^1.52.1:
+jsii@1.52.1, jsii@^1.52.1:
   version "1.52.1"
   resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.52.1.tgz#cfee7359ce9a6d877eadd2b5a0dff14f618f7a55"
   integrity sha512-kILHStPX3xeADtB/2Wda56Mzz/6KUw8xNr/k+dp84qn9YlZA81cW85tKK5biYCy/XAh5IPsWIZVFRqR8CSPMMw==
@@ -2229,6 +2244,25 @@ jsii@1.52.1, jsii@^1.46.0, jsii@^1.52.1:
     deep-equal "^2.0.5"
     fs-extra "^9.1.0"
     log4js "^6.3.0"
+    semver "^7.3.5"
+    semver-intersect "^1.4.0"
+    sort-json "^2.0.0"
+    spdx-license-list "^6.4.0"
+    typescript "~3.9.10"
+    yargs "^16.2.0"
+
+jsii@^1.53.0:
+  version "1.53.0"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.53.0.tgz#946b557ef50523a57e9b5a570293b951186c83d2"
+  integrity sha512-hPwapfZD3zIzHD49gewtM/w/iSi6QMPKf+HjovFA4u4j/cwUJBpb5DqG55m3LtUKHLj23Ll6KDuh7xr+H5PiDA==
+  dependencies:
+    "@jsii/check-node" "1.53.0"
+    "@jsii/spec" "^1.53.0"
+    case "^1.6.3"
+    chalk "^4"
+    deep-equal "^2.0.5"
+    fs-extra "^9.1.0"
+    log4js "^6.4.1"
     semver "^7.3.5"
     semver-intersect "^1.4.0"
     sort-json "^2.0.0"
@@ -2433,7 +2467,7 @@ lodash@^4.17.15, lodash@^4.17.21:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
-log4js@^6.3.0:
+log4js@^6.3.0, log4js@^6.4.1:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/log4js/-/log4js-6.4.1.tgz#9d3a8bf2c31c1e213fe3fc398a6053f7a2bc53e8"
   integrity sha512-iUiYnXqAmNKiIZ1XSAitQ4TmNs8CdZYTAWINARF3LjnsLN8tY5m0vRwd6uuWj/yNY0YHxeZodnbmxKFUOM2rMg==
@@ -3152,10 +3186,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.52.15:
-  version "0.52.15"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.52.15.tgz#b5c33d1e9a0f650315885c47e2a020546844f78e"
-  integrity sha512-EdUUAltxKDQjsxBuyFqAwo1wGsCY84gN6DaVgIRPglidUVnE21YFIMRaAoNDL16D0Q6YwtlBIXKEvC3SOU1GtA==
+projen@^0.52.24:
+  version "0.52.24"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.52.24.tgz#9c14bfa4bcf1210d27911370667901a449961dcc"
+  integrity sha512-35rERSl9khtZTTisfhVTYCfBoYaM33P4iNEUtuafpu8nnSA/U/eRRgWYfhCCSchHBeV7K06rHuqvy2VIDHP7OA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
