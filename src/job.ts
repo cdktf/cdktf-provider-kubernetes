@@ -4983,6 +4983,103 @@ export class JobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputRefe
     return this._user;
   }
 }
+export interface JobSpecTemplateSpecContainerSecurityContextSeccompProfile {
+  /**
+  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#localhost_profile Job#localhost_profile}
+  */
+  readonly localhostProfile?: string;
+  /**
+  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#type Job#type}
+  */
+  readonly type?: string;
+}
+
+export function jobSpecTemplateSpecContainerSecurityContextSeccompProfileToTerraform(struct?: JobSpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference | JobSpecTemplateSpecContainerSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class JobSpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  public get internalValue(): JobSpecTemplateSpecContainerSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._localhostProfile !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.localhostProfile = this._localhostProfile;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobSpecTemplateSpecContainerSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._localhostProfile = undefined;
+      this._type = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._localhostProfile = value.localhostProfile;
+      this._type = value.type;
+    }
+  }
+
+  // localhost_profile - computed: false, optional: true, required: false
+  private _localhostProfile?: string; 
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+  public set localhostProfile(value: string) {
+    this._localhostProfile = value;
+  }
+  public resetLocalhostProfile() {
+    this._localhostProfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get localhostProfileInput() {
+    return this._localhostProfile;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
 export interface JobSpecTemplateSpecContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
@@ -5032,6 +5129,12 @@ export interface JobSpecTemplateSpecContainerSecurityContext {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#se_linux_options Job#se_linux_options}
   */
   readonly seLinuxOptions?: JobSpecTemplateSpecContainerSecurityContextSeLinuxOptions;
+  /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#seccomp_profile Job#seccomp_profile}
+  */
+  readonly seccompProfile?: JobSpecTemplateSpecContainerSecurityContextSeccompProfile;
 }
 
 export function jobSpecTemplateSpecContainerSecurityContextToTerraform(struct?: JobSpecTemplateSpecContainerSecurityContextOutputReference | JobSpecTemplateSpecContainerSecurityContext): any {
@@ -5048,6 +5151,7 @@ export function jobSpecTemplateSpecContainerSecurityContextToTerraform(struct?: 
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: jobSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform(struct!.capabilities),
     se_linux_options: jobSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: jobSpecTemplateSpecContainerSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
   }
 }
 
@@ -5098,6 +5202,10 @@ export class JobSpecTemplateSpecContainerSecurityContextOutputReference extends 
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -5112,6 +5220,7 @@ export class JobSpecTemplateSpecContainerSecurityContextOutputReference extends 
       this._runAsUser = undefined;
       this._capabilities.internalValue = undefined;
       this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -5123,6 +5232,7 @@ export class JobSpecTemplateSpecContainerSecurityContextOutputReference extends 
       this._runAsUser = value.runAsUser;
       this._capabilities.internalValue = value.capabilities;
       this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
     }
   }
 
@@ -5252,6 +5362,22 @@ export class JobSpecTemplateSpecContainerSecurityContextOutputReference extends 
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
     return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new JobSpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: JobSpecTemplateSpecContainerSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
   }
 }
 export interface JobSpecTemplateSpecContainerStartupProbeExec {
@@ -9402,6 +9528,103 @@ export class JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutput
     return this._user;
   }
 }
+export interface JobSpecTemplateSpecInitContainerSecurityContextSeccompProfile {
+  /**
+  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#localhost_profile Job#localhost_profile}
+  */
+  readonly localhostProfile?: string;
+  /**
+  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#type Job#type}
+  */
+  readonly type?: string;
+}
+
+export function jobSpecTemplateSpecInitContainerSecurityContextSeccompProfileToTerraform(struct?: JobSpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference | JobSpecTemplateSpecInitContainerSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class JobSpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  public get internalValue(): JobSpecTemplateSpecInitContainerSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._localhostProfile !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.localhostProfile = this._localhostProfile;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobSpecTemplateSpecInitContainerSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._localhostProfile = undefined;
+      this._type = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._localhostProfile = value.localhostProfile;
+      this._type = value.type;
+    }
+  }
+
+  // localhost_profile - computed: false, optional: true, required: false
+  private _localhostProfile?: string; 
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+  public set localhostProfile(value: string) {
+    this._localhostProfile = value;
+  }
+  public resetLocalhostProfile() {
+    this._localhostProfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get localhostProfileInput() {
+    return this._localhostProfile;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
 export interface JobSpecTemplateSpecInitContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
@@ -9451,6 +9674,12 @@ export interface JobSpecTemplateSpecInitContainerSecurityContext {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#se_linux_options Job#se_linux_options}
   */
   readonly seLinuxOptions?: JobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions;
+  /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#seccomp_profile Job#seccomp_profile}
+  */
+  readonly seccompProfile?: JobSpecTemplateSpecInitContainerSecurityContextSeccompProfile;
 }
 
 export function jobSpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: JobSpecTemplateSpecInitContainerSecurityContextOutputReference | JobSpecTemplateSpecInitContainerSecurityContext): any {
@@ -9467,6 +9696,7 @@ export function jobSpecTemplateSpecInitContainerSecurityContextToTerraform(struc
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: jobSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct!.capabilities),
     se_linux_options: jobSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: jobSpecTemplateSpecInitContainerSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
   }
 }
 
@@ -9517,6 +9747,10 @@ export class JobSpecTemplateSpecInitContainerSecurityContextOutputReference exte
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -9531,6 +9765,7 @@ export class JobSpecTemplateSpecInitContainerSecurityContextOutputReference exte
       this._runAsUser = undefined;
       this._capabilities.internalValue = undefined;
       this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -9542,6 +9777,7 @@ export class JobSpecTemplateSpecInitContainerSecurityContextOutputReference exte
       this._runAsUser = value.runAsUser;
       this._capabilities.internalValue = value.capabilities;
       this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
     }
   }
 
@@ -9671,6 +9907,22 @@ export class JobSpecTemplateSpecInitContainerSecurityContextOutputReference exte
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
     return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new JobSpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: JobSpecTemplateSpecInitContainerSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
   }
 }
 export interface JobSpecTemplateSpecInitContainerStartupProbeExec {
@@ -10623,6 +10875,103 @@ export class JobSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference ext
     return this._user;
   }
 }
+export interface JobSpecTemplateSpecSecurityContextSeccompProfile {
+  /**
+  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#localhost_profile Job#localhost_profile}
+  */
+  readonly localhostProfile?: string;
+  /**
+  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#type Job#type}
+  */
+  readonly type?: string;
+}
+
+export function jobSpecTemplateSpecSecurityContextSeccompProfileToTerraform(struct?: JobSpecTemplateSpecSecurityContextSeccompProfileOutputReference | JobSpecTemplateSpecSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class JobSpecTemplateSpecSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  public get internalValue(): JobSpecTemplateSpecSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._localhostProfile !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.localhostProfile = this._localhostProfile;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobSpecTemplateSpecSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._localhostProfile = undefined;
+      this._type = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._localhostProfile = value.localhostProfile;
+      this._type = value.type;
+    }
+  }
+
+  // localhost_profile - computed: false, optional: true, required: false
+  private _localhostProfile?: string; 
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+  public set localhostProfile(value: string) {
+    this._localhostProfile = value;
+  }
+  public resetLocalhostProfile() {
+    this._localhostProfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get localhostProfileInput() {
+    return this._localhostProfile;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
 export interface JobSpecTemplateSpecSecurityContextSysctl {
   /**
   * Name of a property to set.
@@ -10687,6 +11036,12 @@ export interface JobSpecTemplateSpecSecurityContext {
   */
   readonly seLinuxOptions?: JobSpecTemplateSpecSecurityContextSeLinuxOptions;
   /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#seccomp_profile Job#seccomp_profile}
+  */
+  readonly seccompProfile?: JobSpecTemplateSpecSecurityContextSeccompProfile;
+  /**
   * sysctl block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#sysctl Job#sysctl}
@@ -10706,6 +11061,7 @@ export function jobSpecTemplateSpecSecurityContextToTerraform(struct?: JobSpecTe
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform)(struct!.supplementalGroups),
     se_linux_options: jobSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: jobSpecTemplateSpecSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
     sysctl: cdktf.listMapper(jobSpecTemplateSpecSecurityContextSysctlToTerraform)(struct!.sysctl),
   }
 }
@@ -10749,6 +11105,10 @@ export class JobSpecTemplateSpecSecurityContextOutputReference extends cdktf.Com
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
     if (this._sysctl !== undefined) {
       hasAnyValues = true;
       internalValueResult.sysctl = this._sysctl;
@@ -10765,6 +11125,7 @@ export class JobSpecTemplateSpecSecurityContextOutputReference extends cdktf.Com
       this._runAsUser = undefined;
       this._supplementalGroups = undefined;
       this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
       this._sysctl = undefined;
     }
     else {
@@ -10775,6 +11136,7 @@ export class JobSpecTemplateSpecSecurityContextOutputReference extends cdktf.Com
       this._runAsUser = value.runAsUser;
       this._supplementalGroups = value.supplementalGroups;
       this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
       this._sysctl = value.sysctl;
     }
   }
@@ -10873,6 +11235,22 @@ export class JobSpecTemplateSpecSecurityContextOutputReference extends cdktf.Com
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
     return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new JobSpecTemplateSpecSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: JobSpecTemplateSpecSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
   }
 
   // sysctl - computed: false, optional: true, required: false
@@ -12162,200 +12540,6 @@ export class JobSpecTemplateSpecVolumeConfigMapOutputReference extends cdktf.Com
     return this._items;
   }
 }
-export interface JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef {
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#name Job#name}
-  */
-  readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#namespace Job#namespace}
-  */
-  readonly namespace?: string;
-}
-
-export function jobSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference | JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
-  }
-}
-
-export class JobSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  public get internalValue(): JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._name = undefined;
-      this._namespace = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._name = value.name;
-      this._namespace = value.namespace;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
-  }
-}
-export interface JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef {
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#name Job#name}
-  */
-  readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#namespace Job#namespace}
-  */
-  readonly namespace?: string;
-}
-
-export function jobSpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference | JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
-  }
-}
-
-export class JobSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  public get internalValue(): JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._name = undefined;
-      this._namespace = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._name = value.name;
-      this._namespace = value.namespace;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
-  }
-}
 export interface JobSpecTemplateSpecVolumeCsiNodePublishSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
@@ -12363,12 +12547,6 @@ export interface JobSpecTemplateSpecVolumeCsiNodePublishSecretRef {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#name Job#name}
   */
   readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#namespace Job#namespace}
-  */
-  readonly namespace?: string;
 }
 
 export function jobSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference | JobSpecTemplateSpecVolumeCsiNodePublishSecretRef): any {
@@ -12378,7 +12556,6 @@ export function jobSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(stru
   }
   return {
     name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
   }
 }
 
@@ -12401,10 +12578,6 @@ export class JobSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference ext
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -12412,12 +12585,10 @@ export class JobSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference ext
     if (value === undefined) {
       this.isEmptyObject = false;
       this._name = undefined;
-      this._namespace = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
-      this._namespace = value.namespace;
     }
   }
 
@@ -12435,119 +12606,6 @@ export class JobSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference ext
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
     return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
-  }
-}
-export interface JobSpecTemplateSpecVolumeCsiNodeStageSecretRef {
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#name Job#name}
-  */
-  readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#namespace Job#namespace}
-  */
-  readonly namespace?: string;
-}
-
-export function jobSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct?: JobSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference | JobSpecTemplateSpecVolumeCsiNodeStageSecretRef): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
-  }
-}
-
-export class JobSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  public get internalValue(): JobSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: JobSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._name = undefined;
-      this._namespace = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._name = value.name;
-      this._namespace = value.namespace;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
   }
 }
 export interface JobSpecTemplateSpecVolumeCsi {
@@ -12576,35 +12634,11 @@ export interface JobSpecTemplateSpecVolumeCsi {
   */
   readonly volumeAttributes?: { [key: string]: string };
   /**
-  * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#volume_handle Job#volume_handle}
-  */
-  readonly volumeHandle: string;
-  /**
-  * controller_expand_secret_ref block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#controller_expand_secret_ref Job#controller_expand_secret_ref}
-  */
-  readonly controllerExpandSecretRef?: JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef;
-  /**
-  * controller_publish_secret_ref block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#controller_publish_secret_ref Job#controller_publish_secret_ref}
-  */
-  readonly controllerPublishSecretRef?: JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef;
-  /**
   * node_publish_secret_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#node_publish_secret_ref Job#node_publish_secret_ref}
   */
   readonly nodePublishSecretRef?: JobSpecTemplateSpecVolumeCsiNodePublishSecretRef;
-  /**
-  * node_stage_secret_ref block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job#node_stage_secret_ref Job#node_stage_secret_ref}
-  */
-  readonly nodeStageSecretRef?: JobSpecTemplateSpecVolumeCsiNodeStageSecretRef;
 }
 
 export function jobSpecTemplateSpecVolumeCsiToTerraform(struct?: JobSpecTemplateSpecVolumeCsiOutputReference | JobSpecTemplateSpecVolumeCsi): any {
@@ -12617,11 +12651,7 @@ export function jobSpecTemplateSpecVolumeCsiToTerraform(struct?: JobSpecTemplate
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     volume_attributes: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.volumeAttributes),
-    volume_handle: cdktf.stringToTerraform(struct!.volumeHandle),
-    controller_expand_secret_ref: jobSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct!.controllerExpandSecretRef),
-    controller_publish_secret_ref: jobSpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct!.controllerPublishSecretRef),
     node_publish_secret_ref: jobSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct!.nodePublishSecretRef),
-    node_stage_secret_ref: jobSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct!.nodeStageSecretRef),
   }
 }
 
@@ -12656,25 +12686,9 @@ export class JobSpecTemplateSpecVolumeCsiOutputReference extends cdktf.ComplexOb
       hasAnyValues = true;
       internalValueResult.volumeAttributes = this._volumeAttributes;
     }
-    if (this._volumeHandle !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.volumeHandle = this._volumeHandle;
-    }
-    if (this._controllerExpandSecretRef?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
-    }
-    if (this._controllerPublishSecretRef?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
-    }
     if (this._nodePublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
-    }
-    if (this._nodeStageSecretRef?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -12686,11 +12700,7 @@ export class JobSpecTemplateSpecVolumeCsiOutputReference extends cdktf.ComplexOb
       this._fsType = undefined;
       this._readOnly = undefined;
       this._volumeAttributes = undefined;
-      this._volumeHandle = undefined;
-      this._controllerExpandSecretRef.internalValue = undefined;
-      this._controllerPublishSecretRef.internalValue = undefined;
       this._nodePublishSecretRef.internalValue = undefined;
-      this._nodeStageSecretRef.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -12698,11 +12708,7 @@ export class JobSpecTemplateSpecVolumeCsiOutputReference extends cdktf.ComplexOb
       this._fsType = value.fsType;
       this._readOnly = value.readOnly;
       this._volumeAttributes = value.volumeAttributes;
-      this._volumeHandle = value.volumeHandle;
-      this._controllerExpandSecretRef.internalValue = value.controllerExpandSecretRef;
-      this._controllerPublishSecretRef.internalValue = value.controllerPublishSecretRef;
       this._nodePublishSecretRef.internalValue = value.nodePublishSecretRef;
-      this._nodeStageSecretRef.internalValue = value.nodeStageSecretRef;
     }
   }
 
@@ -12767,51 +12773,6 @@ export class JobSpecTemplateSpecVolumeCsiOutputReference extends cdktf.ComplexOb
     return this._volumeAttributes;
   }
 
-  // volume_handle - computed: false, optional: false, required: true
-  private _volumeHandle?: string; 
-  public get volumeHandle() {
-    return this.getStringAttribute('volume_handle');
-  }
-  public set volumeHandle(value: string) {
-    this._volumeHandle = value;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get volumeHandleInput() {
-    return this._volumeHandle;
-  }
-
-  // controller_expand_secret_ref - computed: false, optional: true, required: false
-  private _controllerExpandSecretRef = new JobSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference(this, "controller_expand_secret_ref", true);
-  public get controllerExpandSecretRef() {
-    return this._controllerExpandSecretRef;
-  }
-  public putControllerExpandSecretRef(value: JobSpecTemplateSpecVolumeCsiControllerExpandSecretRef) {
-    this._controllerExpandSecretRef.internalValue = value;
-  }
-  public resetControllerExpandSecretRef() {
-    this._controllerExpandSecretRef.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get controllerExpandSecretRefInput() {
-    return this._controllerExpandSecretRef.internalValue;
-  }
-
-  // controller_publish_secret_ref - computed: false, optional: true, required: false
-  private _controllerPublishSecretRef = new JobSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference(this, "controller_publish_secret_ref", true);
-  public get controllerPublishSecretRef() {
-    return this._controllerPublishSecretRef;
-  }
-  public putControllerPublishSecretRef(value: JobSpecTemplateSpecVolumeCsiControllerPublishSecretRef) {
-    this._controllerPublishSecretRef.internalValue = value;
-  }
-  public resetControllerPublishSecretRef() {
-    this._controllerPublishSecretRef.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get controllerPublishSecretRefInput() {
-    return this._controllerPublishSecretRef.internalValue;
-  }
-
   // node_publish_secret_ref - computed: false, optional: true, required: false
   private _nodePublishSecretRef = new JobSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref", true);
   public get nodePublishSecretRef() {
@@ -12826,22 +12787,6 @@ export class JobSpecTemplateSpecVolumeCsiOutputReference extends cdktf.ComplexOb
   // Temporarily expose input value. Use with caution.
   public get nodePublishSecretRefInput() {
     return this._nodePublishSecretRef.internalValue;
-  }
-
-  // node_stage_secret_ref - computed: false, optional: true, required: false
-  private _nodeStageSecretRef = new JobSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference(this, "node_stage_secret_ref", true);
-  public get nodeStageSecretRef() {
-    return this._nodeStageSecretRef;
-  }
-  public putNodeStageSecretRef(value: JobSpecTemplateSpecVolumeCsiNodeStageSecretRef) {
-    this._nodeStageSecretRef.internalValue = value;
-  }
-  public resetNodeStageSecretRef() {
-    this._nodeStageSecretRef.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nodeStageSecretRefInput() {
-    return this._nodeStageSecretRef.internalValue;
   }
 }
 export interface JobSpecTemplateSpecVolumeDownwardApiItemsFieldRef {

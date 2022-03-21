@@ -5150,6 +5150,103 @@ export class DaemonSetV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsOu
     return this._user;
   }
 }
+export interface DaemonSetV1SpecTemplateSpecContainerSecurityContextSeccompProfile {
+  /**
+  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#localhost_profile DaemonSetV1#localhost_profile}
+  */
+  readonly localhostProfile?: string;
+  /**
+  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#type DaemonSetV1#type}
+  */
+  readonly type?: string;
+}
+
+export function daemonSetV1SpecTemplateSpecContainerSecurityContextSeccompProfileToTerraform(struct?: DaemonSetV1SpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference | DaemonSetV1SpecTemplateSpecContainerSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class DaemonSetV1SpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  public get internalValue(): DaemonSetV1SpecTemplateSpecContainerSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._localhostProfile !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.localhostProfile = this._localhostProfile;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DaemonSetV1SpecTemplateSpecContainerSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._localhostProfile = undefined;
+      this._type = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._localhostProfile = value.localhostProfile;
+      this._type = value.type;
+    }
+  }
+
+  // localhost_profile - computed: false, optional: true, required: false
+  private _localhostProfile?: string; 
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+  public set localhostProfile(value: string) {
+    this._localhostProfile = value;
+  }
+  public resetLocalhostProfile() {
+    this._localhostProfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get localhostProfileInput() {
+    return this._localhostProfile;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
 export interface DaemonSetV1SpecTemplateSpecContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
@@ -5199,6 +5296,12 @@ export interface DaemonSetV1SpecTemplateSpecContainerSecurityContext {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#se_linux_options DaemonSetV1#se_linux_options}
   */
   readonly seLinuxOptions?: DaemonSetV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions;
+  /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#seccomp_profile DaemonSetV1#seccomp_profile}
+  */
+  readonly seccompProfile?: DaemonSetV1SpecTemplateSpecContainerSecurityContextSeccompProfile;
 }
 
 export function daemonSetV1SpecTemplateSpecContainerSecurityContextToTerraform(struct?: DaemonSetV1SpecTemplateSpecContainerSecurityContextOutputReference | DaemonSetV1SpecTemplateSpecContainerSecurityContext): any {
@@ -5215,6 +5318,7 @@ export function daemonSetV1SpecTemplateSpecContainerSecurityContextToTerraform(s
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: daemonSetV1SpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform(struct!.capabilities),
     se_linux_options: daemonSetV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: daemonSetV1SpecTemplateSpecContainerSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
   }
 }
 
@@ -5265,6 +5369,10 @@ export class DaemonSetV1SpecTemplateSpecContainerSecurityContextOutputReference 
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -5279,6 +5387,7 @@ export class DaemonSetV1SpecTemplateSpecContainerSecurityContextOutputReference 
       this._runAsUser = undefined;
       this._capabilities.internalValue = undefined;
       this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -5290,6 +5399,7 @@ export class DaemonSetV1SpecTemplateSpecContainerSecurityContextOutputReference 
       this._runAsUser = value.runAsUser;
       this._capabilities.internalValue = value.capabilities;
       this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
     }
   }
 
@@ -5419,6 +5529,22 @@ export class DaemonSetV1SpecTemplateSpecContainerSecurityContextOutputReference 
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
     return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new DaemonSetV1SpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: DaemonSetV1SpecTemplateSpecContainerSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
   }
 }
 export interface DaemonSetV1SpecTemplateSpecContainerStartupProbeExec {
@@ -9569,6 +9695,103 @@ export class DaemonSetV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptio
     return this._user;
   }
 }
+export interface DaemonSetV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile {
+  /**
+  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#localhost_profile DaemonSetV1#localhost_profile}
+  */
+  readonly localhostProfile?: string;
+  /**
+  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#type DaemonSetV1#type}
+  */
+  readonly type?: string;
+}
+
+export function daemonSetV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileToTerraform(struct?: DaemonSetV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference | DaemonSetV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class DaemonSetV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  public get internalValue(): DaemonSetV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._localhostProfile !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.localhostProfile = this._localhostProfile;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DaemonSetV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._localhostProfile = undefined;
+      this._type = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._localhostProfile = value.localhostProfile;
+      this._type = value.type;
+    }
+  }
+
+  // localhost_profile - computed: false, optional: true, required: false
+  private _localhostProfile?: string; 
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+  public set localhostProfile(value: string) {
+    this._localhostProfile = value;
+  }
+  public resetLocalhostProfile() {
+    this._localhostProfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get localhostProfileInput() {
+    return this._localhostProfile;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
 export interface DaemonSetV1SpecTemplateSpecInitContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
@@ -9618,6 +9841,12 @@ export interface DaemonSetV1SpecTemplateSpecInitContainerSecurityContext {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#se_linux_options DaemonSetV1#se_linux_options}
   */
   readonly seLinuxOptions?: DaemonSetV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions;
+  /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#seccomp_profile DaemonSetV1#seccomp_profile}
+  */
+  readonly seccompProfile?: DaemonSetV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile;
 }
 
 export function daemonSetV1SpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: DaemonSetV1SpecTemplateSpecInitContainerSecurityContextOutputReference | DaemonSetV1SpecTemplateSpecInitContainerSecurityContext): any {
@@ -9634,6 +9863,7 @@ export function daemonSetV1SpecTemplateSpecInitContainerSecurityContextToTerrafo
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: daemonSetV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct!.capabilities),
     se_linux_options: daemonSetV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: daemonSetV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
   }
 }
 
@@ -9684,6 +9914,10 @@ export class DaemonSetV1SpecTemplateSpecInitContainerSecurityContextOutputRefere
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -9698,6 +9932,7 @@ export class DaemonSetV1SpecTemplateSpecInitContainerSecurityContextOutputRefere
       this._runAsUser = undefined;
       this._capabilities.internalValue = undefined;
       this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -9709,6 +9944,7 @@ export class DaemonSetV1SpecTemplateSpecInitContainerSecurityContextOutputRefere
       this._runAsUser = value.runAsUser;
       this._capabilities.internalValue = value.capabilities;
       this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
     }
   }
 
@@ -9838,6 +10074,22 @@ export class DaemonSetV1SpecTemplateSpecInitContainerSecurityContextOutputRefere
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
     return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new DaemonSetV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: DaemonSetV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
   }
 }
 export interface DaemonSetV1SpecTemplateSpecInitContainerStartupProbeExec {
@@ -10790,6 +11042,103 @@ export class DaemonSetV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputRefer
     return this._user;
   }
 }
+export interface DaemonSetV1SpecTemplateSpecSecurityContextSeccompProfile {
+  /**
+  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#localhost_profile DaemonSetV1#localhost_profile}
+  */
+  readonly localhostProfile?: string;
+  /**
+  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#type DaemonSetV1#type}
+  */
+  readonly type?: string;
+}
+
+export function daemonSetV1SpecTemplateSpecSecurityContextSeccompProfileToTerraform(struct?: DaemonSetV1SpecTemplateSpecSecurityContextSeccompProfileOutputReference | DaemonSetV1SpecTemplateSpecSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class DaemonSetV1SpecTemplateSpecSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  public get internalValue(): DaemonSetV1SpecTemplateSpecSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._localhostProfile !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.localhostProfile = this._localhostProfile;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DaemonSetV1SpecTemplateSpecSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._localhostProfile = undefined;
+      this._type = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._localhostProfile = value.localhostProfile;
+      this._type = value.type;
+    }
+  }
+
+  // localhost_profile - computed: false, optional: true, required: false
+  private _localhostProfile?: string; 
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+  public set localhostProfile(value: string) {
+    this._localhostProfile = value;
+  }
+  public resetLocalhostProfile() {
+    this._localhostProfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get localhostProfileInput() {
+    return this._localhostProfile;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
 export interface DaemonSetV1SpecTemplateSpecSecurityContextSysctl {
   /**
   * Name of a property to set.
@@ -10854,6 +11203,12 @@ export interface DaemonSetV1SpecTemplateSpecSecurityContext {
   */
   readonly seLinuxOptions?: DaemonSetV1SpecTemplateSpecSecurityContextSeLinuxOptions;
   /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#seccomp_profile DaemonSetV1#seccomp_profile}
+  */
+  readonly seccompProfile?: DaemonSetV1SpecTemplateSpecSecurityContextSeccompProfile;
+  /**
   * sysctl block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#sysctl DaemonSetV1#sysctl}
@@ -10873,6 +11228,7 @@ export function daemonSetV1SpecTemplateSpecSecurityContextToTerraform(struct?: D
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform)(struct!.supplementalGroups),
     se_linux_options: daemonSetV1SpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: daemonSetV1SpecTemplateSpecSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
     sysctl: cdktf.listMapper(daemonSetV1SpecTemplateSpecSecurityContextSysctlToTerraform)(struct!.sysctl),
   }
 }
@@ -10916,6 +11272,10 @@ export class DaemonSetV1SpecTemplateSpecSecurityContextOutputReference extends c
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
     if (this._sysctl !== undefined) {
       hasAnyValues = true;
       internalValueResult.sysctl = this._sysctl;
@@ -10932,6 +11292,7 @@ export class DaemonSetV1SpecTemplateSpecSecurityContextOutputReference extends c
       this._runAsUser = undefined;
       this._supplementalGroups = undefined;
       this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
       this._sysctl = undefined;
     }
     else {
@@ -10942,6 +11303,7 @@ export class DaemonSetV1SpecTemplateSpecSecurityContextOutputReference extends c
       this._runAsUser = value.runAsUser;
       this._supplementalGroups = value.supplementalGroups;
       this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
       this._sysctl = value.sysctl;
     }
   }
@@ -11040,6 +11402,22 @@ export class DaemonSetV1SpecTemplateSpecSecurityContextOutputReference extends c
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
     return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new DaemonSetV1SpecTemplateSpecSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: DaemonSetV1SpecTemplateSpecSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
   }
 
   // sysctl - computed: false, optional: true, required: false
@@ -12329,200 +12707,6 @@ export class DaemonSetV1SpecTemplateSpecVolumeConfigMapOutputReference extends c
     return this._items;
   }
 }
-export interface DaemonSetV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef {
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#name DaemonSetV1#name}
-  */
-  readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#namespace DaemonSetV1#namespace}
-  */
-  readonly namespace?: string;
-}
-
-export function daemonSetV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct?: DaemonSetV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference | DaemonSetV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
-  }
-}
-
-export class DaemonSetV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  public get internalValue(): DaemonSetV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: DaemonSetV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._name = undefined;
-      this._namespace = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._name = value.name;
-      this._namespace = value.namespace;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
-  }
-}
-export interface DaemonSetV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef {
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#name DaemonSetV1#name}
-  */
-  readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#namespace DaemonSetV1#namespace}
-  */
-  readonly namespace?: string;
-}
-
-export function daemonSetV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct?: DaemonSetV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference | DaemonSetV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
-  }
-}
-
-export class DaemonSetV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  public get internalValue(): DaemonSetV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: DaemonSetV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._name = undefined;
-      this._namespace = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._name = value.name;
-      this._namespace = value.namespace;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
-  }
-}
 export interface DaemonSetV1SpecTemplateSpecVolumeCsiNodePublishSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
@@ -12530,12 +12714,6 @@ export interface DaemonSetV1SpecTemplateSpecVolumeCsiNodePublishSecretRef {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#name DaemonSetV1#name}
   */
   readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#namespace DaemonSetV1#namespace}
-  */
-  readonly namespace?: string;
 }
 
 export function daemonSetV1SpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: DaemonSetV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference | DaemonSetV1SpecTemplateSpecVolumeCsiNodePublishSecretRef): any {
@@ -12545,7 +12723,6 @@ export function daemonSetV1SpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraf
   }
   return {
     name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
   }
 }
 
@@ -12568,10 +12745,6 @@ export class DaemonSetV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputRefer
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -12579,12 +12752,10 @@ export class DaemonSetV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputRefer
     if (value === undefined) {
       this.isEmptyObject = false;
       this._name = undefined;
-      this._namespace = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
-      this._namespace = value.namespace;
     }
   }
 
@@ -12602,119 +12773,6 @@ export class DaemonSetV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputRefer
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
     return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
-  }
-}
-export interface DaemonSetV1SpecTemplateSpecVolumeCsiNodeStageSecretRef {
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#name DaemonSetV1#name}
-  */
-  readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#namespace DaemonSetV1#namespace}
-  */
-  readonly namespace?: string;
-}
-
-export function daemonSetV1SpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct?: DaemonSetV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference | DaemonSetV1SpecTemplateSpecVolumeCsiNodeStageSecretRef): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
-  }
-}
-
-export class DaemonSetV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  public get internalValue(): DaemonSetV1SpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: DaemonSetV1SpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._name = undefined;
-      this._namespace = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._name = value.name;
-      this._namespace = value.namespace;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
   }
 }
 export interface DaemonSetV1SpecTemplateSpecVolumeCsi {
@@ -12743,35 +12801,11 @@ export interface DaemonSetV1SpecTemplateSpecVolumeCsi {
   */
   readonly volumeAttributes?: { [key: string]: string };
   /**
-  * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#volume_handle DaemonSetV1#volume_handle}
-  */
-  readonly volumeHandle: string;
-  /**
-  * controller_expand_secret_ref block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#controller_expand_secret_ref DaemonSetV1#controller_expand_secret_ref}
-  */
-  readonly controllerExpandSecretRef?: DaemonSetV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef;
-  /**
-  * controller_publish_secret_ref block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#controller_publish_secret_ref DaemonSetV1#controller_publish_secret_ref}
-  */
-  readonly controllerPublishSecretRef?: DaemonSetV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef;
-  /**
   * node_publish_secret_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#node_publish_secret_ref DaemonSetV1#node_publish_secret_ref}
   */
   readonly nodePublishSecretRef?: DaemonSetV1SpecTemplateSpecVolumeCsiNodePublishSecretRef;
-  /**
-  * node_stage_secret_ref block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemon_set_v1#node_stage_secret_ref DaemonSetV1#node_stage_secret_ref}
-  */
-  readonly nodeStageSecretRef?: DaemonSetV1SpecTemplateSpecVolumeCsiNodeStageSecretRef;
 }
 
 export function daemonSetV1SpecTemplateSpecVolumeCsiToTerraform(struct?: DaemonSetV1SpecTemplateSpecVolumeCsiOutputReference | DaemonSetV1SpecTemplateSpecVolumeCsi): any {
@@ -12784,11 +12818,7 @@ export function daemonSetV1SpecTemplateSpecVolumeCsiToTerraform(struct?: DaemonS
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     volume_attributes: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.volumeAttributes),
-    volume_handle: cdktf.stringToTerraform(struct!.volumeHandle),
-    controller_expand_secret_ref: daemonSetV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct!.controllerExpandSecretRef),
-    controller_publish_secret_ref: daemonSetV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct!.controllerPublishSecretRef),
     node_publish_secret_ref: daemonSetV1SpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct!.nodePublishSecretRef),
-    node_stage_secret_ref: daemonSetV1SpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct!.nodeStageSecretRef),
   }
 }
 
@@ -12823,25 +12853,9 @@ export class DaemonSetV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.C
       hasAnyValues = true;
       internalValueResult.volumeAttributes = this._volumeAttributes;
     }
-    if (this._volumeHandle !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.volumeHandle = this._volumeHandle;
-    }
-    if (this._controllerExpandSecretRef?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
-    }
-    if (this._controllerPublishSecretRef?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
-    }
     if (this._nodePublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
-    }
-    if (this._nodeStageSecretRef?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -12853,11 +12867,7 @@ export class DaemonSetV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.C
       this._fsType = undefined;
       this._readOnly = undefined;
       this._volumeAttributes = undefined;
-      this._volumeHandle = undefined;
-      this._controllerExpandSecretRef.internalValue = undefined;
-      this._controllerPublishSecretRef.internalValue = undefined;
       this._nodePublishSecretRef.internalValue = undefined;
-      this._nodeStageSecretRef.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -12865,11 +12875,7 @@ export class DaemonSetV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.C
       this._fsType = value.fsType;
       this._readOnly = value.readOnly;
       this._volumeAttributes = value.volumeAttributes;
-      this._volumeHandle = value.volumeHandle;
-      this._controllerExpandSecretRef.internalValue = value.controllerExpandSecretRef;
-      this._controllerPublishSecretRef.internalValue = value.controllerPublishSecretRef;
       this._nodePublishSecretRef.internalValue = value.nodePublishSecretRef;
-      this._nodeStageSecretRef.internalValue = value.nodeStageSecretRef;
     }
   }
 
@@ -12934,51 +12940,6 @@ export class DaemonSetV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.C
     return this._volumeAttributes;
   }
 
-  // volume_handle - computed: false, optional: false, required: true
-  private _volumeHandle?: string; 
-  public get volumeHandle() {
-    return this.getStringAttribute('volume_handle');
-  }
-  public set volumeHandle(value: string) {
-    this._volumeHandle = value;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get volumeHandleInput() {
-    return this._volumeHandle;
-  }
-
-  // controller_expand_secret_ref - computed: false, optional: true, required: false
-  private _controllerExpandSecretRef = new DaemonSetV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference(this, "controller_expand_secret_ref", true);
-  public get controllerExpandSecretRef() {
-    return this._controllerExpandSecretRef;
-  }
-  public putControllerExpandSecretRef(value: DaemonSetV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef) {
-    this._controllerExpandSecretRef.internalValue = value;
-  }
-  public resetControllerExpandSecretRef() {
-    this._controllerExpandSecretRef.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get controllerExpandSecretRefInput() {
-    return this._controllerExpandSecretRef.internalValue;
-  }
-
-  // controller_publish_secret_ref - computed: false, optional: true, required: false
-  private _controllerPublishSecretRef = new DaemonSetV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference(this, "controller_publish_secret_ref", true);
-  public get controllerPublishSecretRef() {
-    return this._controllerPublishSecretRef;
-  }
-  public putControllerPublishSecretRef(value: DaemonSetV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef) {
-    this._controllerPublishSecretRef.internalValue = value;
-  }
-  public resetControllerPublishSecretRef() {
-    this._controllerPublishSecretRef.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get controllerPublishSecretRefInput() {
-    return this._controllerPublishSecretRef.internalValue;
-  }
-
   // node_publish_secret_ref - computed: false, optional: true, required: false
   private _nodePublishSecretRef = new DaemonSetV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref", true);
   public get nodePublishSecretRef() {
@@ -12993,22 +12954,6 @@ export class DaemonSetV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.C
   // Temporarily expose input value. Use with caution.
   public get nodePublishSecretRefInput() {
     return this._nodePublishSecretRef.internalValue;
-  }
-
-  // node_stage_secret_ref - computed: false, optional: true, required: false
-  private _nodeStageSecretRef = new DaemonSetV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference(this, "node_stage_secret_ref", true);
-  public get nodeStageSecretRef() {
-    return this._nodeStageSecretRef;
-  }
-  public putNodeStageSecretRef(value: DaemonSetV1SpecTemplateSpecVolumeCsiNodeStageSecretRef) {
-    this._nodeStageSecretRef.internalValue = value;
-  }
-  public resetNodeStageSecretRef() {
-    this._nodeStageSecretRef.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nodeStageSecretRefInput() {
-    return this._nodeStageSecretRef.internalValue;
   }
 }
 export interface DaemonSetV1SpecTemplateSpecVolumeDownwardApiItemsFieldRef {

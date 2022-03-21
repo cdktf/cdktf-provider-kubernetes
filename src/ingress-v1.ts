@@ -1185,7 +1185,7 @@ Host can be "precise" which is a domain name without the terminating dot of a ne
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_v1#http IngressV1#http}
   */
-  readonly http: IngressV1SpecRuleHttp;
+  readonly http?: IngressV1SpecRuleHttp;
 }
 
 export function ingressV1SpecRuleToTerraform(struct?: IngressV1SpecRule | cdktf.IResolvable): any {

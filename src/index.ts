@@ -83,6 +83,7 @@ export * from './data-kubernetes-persistent-volume-claim';
 export * from './data-kubernetes-persistent-volume-claim-v1';
 export * from './data-kubernetes-pod';
 export * from './data-kubernetes-pod-v1';
+export * from './data-kubernetes-resource';
 export * from './data-kubernetes-secret';
 export * from './data-kubernetes-secret-v1';
 export * from './data-kubernetes-service';
