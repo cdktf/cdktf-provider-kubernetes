@@ -5208,6 +5208,103 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsO
     return this._user;
   }
 }
+export interface DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfile {
+  /**
+  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#localhost_profile DeploymentV1#localhost_profile}
+  */
+  readonly localhostProfile?: string;
+  /**
+  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#type DeploymentV1#type}
+  */
+  readonly type?: string;
+}
+
+export function deploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfileToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference | DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  public get internalValue(): DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._localhostProfile !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.localhostProfile = this._localhostProfile;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._localhostProfile = undefined;
+      this._type = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._localhostProfile = value.localhostProfile;
+      this._type = value.type;
+    }
+  }
+
+  // localhost_profile - computed: false, optional: true, required: false
+  private _localhostProfile?: string; 
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+  public set localhostProfile(value: string) {
+    this._localhostProfile = value;
+  }
+  public resetLocalhostProfile() {
+    this._localhostProfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get localhostProfileInput() {
+    return this._localhostProfile;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
 export interface DeploymentV1SpecTemplateSpecContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
@@ -5257,6 +5354,12 @@ export interface DeploymentV1SpecTemplateSpecContainerSecurityContext {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#se_linux_options DeploymentV1#se_linux_options}
   */
   readonly seLinuxOptions?: DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions;
+  /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#seccomp_profile DeploymentV1#seccomp_profile}
+  */
+  readonly seccompProfile?: DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfile;
 }
 
 export function deploymentV1SpecTemplateSpecContainerSecurityContextToTerraform(struct?: DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference | DeploymentV1SpecTemplateSpecContainerSecurityContext): any {
@@ -5273,6 +5376,7 @@ export function deploymentV1SpecTemplateSpecContainerSecurityContextToTerraform(
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: deploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform(struct!.capabilities),
     se_linux_options: deploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: deploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
   }
 }
 
@@ -5323,6 +5427,10 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -5337,6 +5445,7 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
       this._runAsUser = undefined;
       this._capabilities.internalValue = undefined;
       this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -5348,6 +5457,7 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
       this._runAsUser = value.runAsUser;
       this._capabilities.internalValue = value.capabilities;
       this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
     }
   }
 
@@ -5477,6 +5587,22 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
     return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecContainerStartupProbeExec {
@@ -9627,6 +9753,103 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOpti
     return this._user;
   }
 }
+export interface DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile {
+  /**
+  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#localhost_profile DeploymentV1#localhost_profile}
+  */
+  readonly localhostProfile?: string;
+  /**
+  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#type DeploymentV1#type}
+  */
+  readonly type?: string;
+}
+
+export function deploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference | DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._localhostProfile !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.localhostProfile = this._localhostProfile;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._localhostProfile = undefined;
+      this._type = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._localhostProfile = value.localhostProfile;
+      this._type = value.type;
+    }
+  }
+
+  // localhost_profile - computed: false, optional: true, required: false
+  private _localhostProfile?: string; 
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+  public set localhostProfile(value: string) {
+    this._localhostProfile = value;
+  }
+  public resetLocalhostProfile() {
+    this._localhostProfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get localhostProfileInput() {
+    return this._localhostProfile;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
 export interface DeploymentV1SpecTemplateSpecInitContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
@@ -9676,6 +9899,12 @@ export interface DeploymentV1SpecTemplateSpecInitContainerSecurityContext {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#se_linux_options DeploymentV1#se_linux_options}
   */
   readonly seLinuxOptions?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions;
+  /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#seccomp_profile DeploymentV1#seccomp_profile}
+  */
+  readonly seccompProfile?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile;
 }
 
 export function deploymentV1SpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputReference | DeploymentV1SpecTemplateSpecInitContainerSecurityContext): any {
@@ -9692,6 +9921,7 @@ export function deploymentV1SpecTemplateSpecInitContainerSecurityContextToTerraf
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: deploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct!.capabilities),
     se_linux_options: deploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: deploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
   }
 }
 
@@ -9742,6 +9972,10 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -9756,6 +9990,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
       this._runAsUser = undefined;
       this._capabilities.internalValue = undefined;
       this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -9767,6 +10002,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
       this._runAsUser = value.runAsUser;
       this._capabilities.internalValue = value.capabilities;
       this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
     }
   }
 
@@ -9896,6 +10132,22 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
     return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecInitContainerStartupProbeExec {
@@ -10848,6 +11100,103 @@ export class DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputRefe
     return this._user;
   }
 }
+export interface DeploymentV1SpecTemplateSpecSecurityContextSeccompProfile {
+  /**
+  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#localhost_profile DeploymentV1#localhost_profile}
+  */
+  readonly localhostProfile?: string;
+  /**
+  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#type DeploymentV1#type}
+  */
+  readonly type?: string;
+}
+
+export function deploymentV1SpecTemplateSpecSecurityContextSeccompProfileToTerraform(struct?: DeploymentV1SpecTemplateSpecSecurityContextSeccompProfileOutputReference | DeploymentV1SpecTemplateSpecSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class DeploymentV1SpecTemplateSpecSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  public get internalValue(): DeploymentV1SpecTemplateSpecSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._localhostProfile !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.localhostProfile = this._localhostProfile;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DeploymentV1SpecTemplateSpecSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._localhostProfile = undefined;
+      this._type = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._localhostProfile = value.localhostProfile;
+      this._type = value.type;
+    }
+  }
+
+  // localhost_profile - computed: false, optional: true, required: false
+  private _localhostProfile?: string; 
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+  public set localhostProfile(value: string) {
+    this._localhostProfile = value;
+  }
+  public resetLocalhostProfile() {
+    this._localhostProfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get localhostProfileInput() {
+    return this._localhostProfile;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
 export interface DeploymentV1SpecTemplateSpecSecurityContextSysctl {
   /**
   * Name of a property to set.
@@ -10912,6 +11261,12 @@ export interface DeploymentV1SpecTemplateSpecSecurityContext {
   */
   readonly seLinuxOptions?: DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptions;
   /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#seccomp_profile DeploymentV1#seccomp_profile}
+  */
+  readonly seccompProfile?: DeploymentV1SpecTemplateSpecSecurityContextSeccompProfile;
+  /**
   * sysctl block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#sysctl DeploymentV1#sysctl}
@@ -10931,6 +11286,7 @@ export function deploymentV1SpecTemplateSpecSecurityContextToTerraform(struct?: 
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform)(struct!.supplementalGroups),
     se_linux_options: deploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: deploymentV1SpecTemplateSpecSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
     sysctl: cdktf.listMapper(deploymentV1SpecTemplateSpecSecurityContextSysctlToTerraform)(struct!.sysctl),
   }
 }
@@ -10974,6 +11330,10 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
     if (this._sysctl !== undefined) {
       hasAnyValues = true;
       internalValueResult.sysctl = this._sysctl;
@@ -10990,6 +11350,7 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
       this._runAsUser = undefined;
       this._supplementalGroups = undefined;
       this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
       this._sysctl = undefined;
     }
     else {
@@ -11000,6 +11361,7 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
       this._runAsUser = value.runAsUser;
       this._supplementalGroups = value.supplementalGroups;
       this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
       this._sysctl = value.sysctl;
     }
   }
@@ -11098,6 +11460,22 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
     return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new DeploymentV1SpecTemplateSpecSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: DeploymentV1SpecTemplateSpecSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
   }
 
   // sysctl - computed: false, optional: true, required: false
@@ -12387,200 +12765,6 @@ export class DeploymentV1SpecTemplateSpecVolumeConfigMapOutputReference extends 
     return this._items;
   }
 }
-export interface DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef {
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#name DeploymentV1#name}
-  */
-  readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#namespace DeploymentV1#namespace}
-  */
-  readonly namespace?: string;
-}
-
-export function deploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
-  }
-}
-
-export class DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._name = undefined;
-      this._namespace = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._name = value.name;
-      this._namespace = value.namespace;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
-  }
-}
-export interface DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef {
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#name DeploymentV1#name}
-  */
-  readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#namespace DeploymentV1#namespace}
-  */
-  readonly namespace?: string;
-}
-
-export function deploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
-  }
-}
-
-export class DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._name = undefined;
-      this._namespace = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._name = value.name;
-      this._namespace = value.namespace;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
-  }
-}
 export interface DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
@@ -12588,12 +12772,6 @@ export interface DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#namespace DeploymentV1#namespace}
-  */
-  readonly namespace?: string;
 }
 
 export function deploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef): any {
@@ -12603,7 +12781,6 @@ export function deploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefToTerra
   }
   return {
     name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
   }
 }
 
@@ -12626,10 +12803,6 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputRefe
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -12637,12 +12810,10 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputRefe
     if (value === undefined) {
       this.isEmptyObject = false;
       this._name = undefined;
-      this._namespace = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
-      this._namespace = value.namespace;
     }
   }
 
@@ -12660,119 +12831,6 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputRefe
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
     return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
-  }
-}
-export interface DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef {
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#name DeploymentV1#name}
-  */
-  readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#namespace DeploymentV1#namespace}
-  */
-  readonly namespace?: string;
-}
-
-export function deploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference | DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
-  }
-}
-
-export class DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._name = undefined;
-      this._namespace = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._name = value.name;
-      this._namespace = value.namespace;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeCsi {
@@ -12801,35 +12859,11 @@ export interface DeploymentV1SpecTemplateSpecVolumeCsi {
   */
   readonly volumeAttributes?: { [key: string]: string };
   /**
-  * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#volume_handle DeploymentV1#volume_handle}
-  */
-  readonly volumeHandle: string;
-  /**
-  * controller_expand_secret_ref block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#controller_expand_secret_ref DeploymentV1#controller_expand_secret_ref}
-  */
-  readonly controllerExpandSecretRef?: DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef;
-  /**
-  * controller_publish_secret_ref block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#controller_publish_secret_ref DeploymentV1#controller_publish_secret_ref}
-  */
-  readonly controllerPublishSecretRef?: DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef;
-  /**
   * node_publish_secret_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#node_publish_secret_ref DeploymentV1#node_publish_secret_ref}
   */
   readonly nodePublishSecretRef?: DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef;
-  /**
-  * node_stage_secret_ref block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#node_stage_secret_ref DeploymentV1#node_stage_secret_ref}
-  */
-  readonly nodeStageSecretRef?: DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef;
 }
 
 export function deploymentV1SpecTemplateSpecVolumeCsiToTerraform(struct?: DeploymentV1SpecTemplateSpecVolumeCsiOutputReference | DeploymentV1SpecTemplateSpecVolumeCsi): any {
@@ -12842,11 +12876,7 @@ export function deploymentV1SpecTemplateSpecVolumeCsiToTerraform(struct?: Deploy
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     volume_attributes: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.volumeAttributes),
-    volume_handle: cdktf.stringToTerraform(struct!.volumeHandle),
-    controller_expand_secret_ref: deploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct!.controllerExpandSecretRef),
-    controller_publish_secret_ref: deploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct!.controllerPublishSecretRef),
     node_publish_secret_ref: deploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct!.nodePublishSecretRef),
-    node_stage_secret_ref: deploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct!.nodeStageSecretRef),
   }
 }
 
@@ -12881,25 +12911,9 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
       hasAnyValues = true;
       internalValueResult.volumeAttributes = this._volumeAttributes;
     }
-    if (this._volumeHandle !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.volumeHandle = this._volumeHandle;
-    }
-    if (this._controllerExpandSecretRef?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
-    }
-    if (this._controllerPublishSecretRef?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
-    }
     if (this._nodePublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
-    }
-    if (this._nodeStageSecretRef?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -12911,11 +12925,7 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
       this._fsType = undefined;
       this._readOnly = undefined;
       this._volumeAttributes = undefined;
-      this._volumeHandle = undefined;
-      this._controllerExpandSecretRef.internalValue = undefined;
-      this._controllerPublishSecretRef.internalValue = undefined;
       this._nodePublishSecretRef.internalValue = undefined;
-      this._nodeStageSecretRef.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -12923,11 +12933,7 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
       this._fsType = value.fsType;
       this._readOnly = value.readOnly;
       this._volumeAttributes = value.volumeAttributes;
-      this._volumeHandle = value.volumeHandle;
-      this._controllerExpandSecretRef.internalValue = value.controllerExpandSecretRef;
-      this._controllerPublishSecretRef.internalValue = value.controllerPublishSecretRef;
       this._nodePublishSecretRef.internalValue = value.nodePublishSecretRef;
-      this._nodeStageSecretRef.internalValue = value.nodeStageSecretRef;
     }
   }
 
@@ -12992,51 +12998,6 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
     return this._volumeAttributes;
   }
 
-  // volume_handle - computed: false, optional: false, required: true
-  private _volumeHandle?: string; 
-  public get volumeHandle() {
-    return this.getStringAttribute('volume_handle');
-  }
-  public set volumeHandle(value: string) {
-    this._volumeHandle = value;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get volumeHandleInput() {
-    return this._volumeHandle;
-  }
-
-  // controller_expand_secret_ref - computed: false, optional: true, required: false
-  private _controllerExpandSecretRef = new DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference(this, "controller_expand_secret_ref", true);
-  public get controllerExpandSecretRef() {
-    return this._controllerExpandSecretRef;
-  }
-  public putControllerExpandSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCsiControllerExpandSecretRef) {
-    this._controllerExpandSecretRef.internalValue = value;
-  }
-  public resetControllerExpandSecretRef() {
-    this._controllerExpandSecretRef.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get controllerExpandSecretRefInput() {
-    return this._controllerExpandSecretRef.internalValue;
-  }
-
-  // controller_publish_secret_ref - computed: false, optional: true, required: false
-  private _controllerPublishSecretRef = new DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference(this, "controller_publish_secret_ref", true);
-  public get controllerPublishSecretRef() {
-    return this._controllerPublishSecretRef;
-  }
-  public putControllerPublishSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCsiControllerPublishSecretRef) {
-    this._controllerPublishSecretRef.internalValue = value;
-  }
-  public resetControllerPublishSecretRef() {
-    this._controllerPublishSecretRef.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get controllerPublishSecretRefInput() {
-    return this._controllerPublishSecretRef.internalValue;
-  }
-
   // node_publish_secret_ref - computed: false, optional: true, required: false
   private _nodePublishSecretRef = new DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref", true);
   public get nodePublishSecretRef() {
@@ -13051,22 +13012,6 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
   // Temporarily expose input value. Use with caution.
   public get nodePublishSecretRefInput() {
     return this._nodePublishSecretRef.internalValue;
-  }
-
-  // node_stage_secret_ref - computed: false, optional: true, required: false
-  private _nodeStageSecretRef = new DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference(this, "node_stage_secret_ref", true);
-  public get nodeStageSecretRef() {
-    return this._nodeStageSecretRef;
-  }
-  public putNodeStageSecretRef(value: DeploymentV1SpecTemplateSpecVolumeCsiNodeStageSecretRef) {
-    this._nodeStageSecretRef.internalValue = value;
-  }
-  public resetNodeStageSecretRef() {
-    this._nodeStageSecretRef.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nodeStageSecretRefInput() {
-    return this._nodeStageSecretRef.internalValue;
   }
 }
 export interface DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRef {

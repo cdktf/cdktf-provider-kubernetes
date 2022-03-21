@@ -948,6 +948,18 @@ export class DataKubernetesPodV1SpecContainerSecurityContextSeLinuxOptions exten
     return this.getStringAttribute('user');
   }
 }
+export class DataKubernetesPodV1SpecContainerSecurityContextSeccompProfile extends cdktf.ComplexComputedList {
+
+  // localhost_profile - computed: true, optional: false, required: false
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+
+  // type - computed: true, optional: false, required: false
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+}
 export class DataKubernetesPodV1SpecContainerSecurityContext extends cdktf.ComplexComputedList {
 
   // allow_privilege_escalation - computed: true, optional: false, required: false
@@ -990,6 +1002,12 @@ export class DataKubernetesPodV1SpecContainerSecurityContext extends cdktf.Compl
   public get seLinuxOptions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('se_linux_options');
+  }
+
+  // seccomp_profile - computed: true, optional: false, required: false
+  public get seccompProfile() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('seccomp_profile');
   }
 }
 export class DataKubernetesPodV1SpecContainerStartupProbeExec extends cdktf.ComplexComputedList {
@@ -1867,6 +1885,18 @@ export class DataKubernetesPodV1SpecInitContainerSecurityContextSeLinuxOptions e
     return this.getStringAttribute('user');
   }
 }
+export class DataKubernetesPodV1SpecInitContainerSecurityContextSeccompProfile extends cdktf.ComplexComputedList {
+
+  // localhost_profile - computed: true, optional: false, required: false
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+
+  // type - computed: true, optional: false, required: false
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+}
 export class DataKubernetesPodV1SpecInitContainerSecurityContext extends cdktf.ComplexComputedList {
 
   // allow_privilege_escalation - computed: true, optional: false, required: false
@@ -1909,6 +1939,12 @@ export class DataKubernetesPodV1SpecInitContainerSecurityContext extends cdktf.C
   public get seLinuxOptions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('se_linux_options');
+  }
+
+  // seccomp_profile - computed: true, optional: false, required: false
+  public get seccompProfile() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('seccomp_profile');
   }
 }
 export class DataKubernetesPodV1SpecInitContainerStartupProbeExec extends cdktf.ComplexComputedList {
@@ -2183,6 +2219,18 @@ export class DataKubernetesPodV1SpecSecurityContextSeLinuxOptions extends cdktf.
     return this.getStringAttribute('user');
   }
 }
+export class DataKubernetesPodV1SpecSecurityContextSeccompProfile extends cdktf.ComplexComputedList {
+
+  // localhost_profile - computed: true, optional: false, required: false
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+
+  // type - computed: true, optional: false, required: false
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+}
 export class DataKubernetesPodV1SpecSecurityContextSysctl extends cdktf.ComplexComputedList {
 
   // name - computed: true, optional: false, required: false
@@ -2221,6 +2269,12 @@ export class DataKubernetesPodV1SpecSecurityContext extends cdktf.ComplexCompute
   public get seLinuxOptions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('se_linux_options');
+  }
+
+  // seccomp_profile - computed: true, optional: false, required: false
+  public get seccompProfile() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('seccomp_profile');
   }
 
   // supplemental_groups - computed: true, optional: false, required: false
@@ -2492,67 +2546,14 @@ export class DataKubernetesPodV1SpecVolumeConfigMap extends cdktf.ComplexCompute
     return this.getBooleanAttribute('optional');
   }
 }
-export class DataKubernetesPodV1SpecVolumeCsiControllerExpandSecretRef extends cdktf.ComplexComputedList {
-
-  // name - computed: true, optional: false, required: false
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-
-  // namespace - computed: true, optional: false, required: false
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-}
-export class DataKubernetesPodV1SpecVolumeCsiControllerPublishSecretRef extends cdktf.ComplexComputedList {
-
-  // name - computed: true, optional: false, required: false
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-
-  // namespace - computed: true, optional: false, required: false
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-}
 export class DataKubernetesPodV1SpecVolumeCsiNodePublishSecretRef extends cdktf.ComplexComputedList {
 
   // name - computed: true, optional: false, required: false
   public get name() {
     return this.getStringAttribute('name');
   }
-
-  // namespace - computed: true, optional: false, required: false
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-}
-export class DataKubernetesPodV1SpecVolumeCsiNodeStageSecretRef extends cdktf.ComplexComputedList {
-
-  // name - computed: true, optional: false, required: false
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-
-  // namespace - computed: true, optional: false, required: false
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
 }
 export class DataKubernetesPodV1SpecVolumeCsi extends cdktf.ComplexComputedList {
-
-  // controller_expand_secret_ref - computed: true, optional: false, required: false
-  public get controllerExpandSecretRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('controller_expand_secret_ref');
-  }
-
-  // controller_publish_secret_ref - computed: true, optional: false, required: false
-  public get controllerPublishSecretRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('controller_publish_secret_ref');
-  }
 
   // driver - computed: true, optional: false, required: false
   public get driver() {
@@ -2570,12 +2571,6 @@ export class DataKubernetesPodV1SpecVolumeCsi extends cdktf.ComplexComputedList 
     return this.interpolationForAttribute('node_publish_secret_ref');
   }
 
-  // node_stage_secret_ref - computed: true, optional: false, required: false
-  public get nodeStageSecretRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('node_stage_secret_ref');
-  }
-
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
     return this.getBooleanAttribute('read_only');
@@ -2584,11 +2579,6 @@ export class DataKubernetesPodV1SpecVolumeCsi extends cdktf.ComplexComputedList 
   // volume_attributes - computed: true, optional: false, required: false
   public get volumeAttributes() {
     return this.getStringMapAttribute('volume_attributes');
-  }
-
-  // volume_handle - computed: true, optional: false, required: false
-  public get volumeHandle() {
-    return this.getStringAttribute('volume_handle');
   }
 }
 export class DataKubernetesPodV1SpecVolumeDownwardApiItemsFieldRef extends cdktf.ComplexComputedList {

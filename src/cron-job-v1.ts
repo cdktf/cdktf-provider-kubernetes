@@ -5149,6 +5149,103 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeL
     return this._user;
   }
 }
+export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfile {
+  /**
+  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#localhost_profile CronJobV1#localhost_profile}
+  */
+  readonly localhostProfile?: string;
+  /**
+  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#type CronJobV1#type}
+  */
+  readonly type?: string;
+}
+
+export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfileToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._localhostProfile !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.localhostProfile = this._localhostProfile;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._localhostProfile = undefined;
+      this._type = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._localhostProfile = value.localhostProfile;
+      this._type = value.type;
+    }
+  }
+
+  // localhost_profile - computed: false, optional: true, required: false
+  private _localhostProfile?: string; 
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+  public set localhostProfile(value: string) {
+    this._localhostProfile = value;
+  }
+  public resetLocalhostProfile() {
+    this._localhostProfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get localhostProfileInput() {
+    return this._localhostProfile;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
@@ -5198,6 +5295,12 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContex
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#se_linux_options CronJobV1#se_linux_options}
   */
   readonly seLinuxOptions?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions;
+  /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#seccomp_profile CronJobV1#seccomp_profile}
+  */
+  readonly seccompProfile?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfile;
 }
 
 export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContext): any {
@@ -5214,6 +5317,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContext
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: cronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilitiesToTerraform(struct!.capabilities),
     se_linux_options: cronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: cronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
   }
 }
 
@@ -5264,6 +5368,10 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -5278,6 +5386,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
       this._runAsUser = undefined;
       this._capabilities.internalValue = undefined;
       this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -5289,6 +5398,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
       this._runAsUser = value.runAsUser;
       this._capabilities.internalValue = value.capabilities;
       this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
     }
   }
 
@@ -5418,6 +5528,22 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
     return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExec {
@@ -9568,6 +9694,103 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
     return this._user;
   }
 }
+export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfile {
+  /**
+  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#localhost_profile CronJobV1#localhost_profile}
+  */
+  readonly localhostProfile?: string;
+  /**
+  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#type CronJobV1#type}
+  */
+  readonly type?: string;
+}
+
+export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfileToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._localhostProfile !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.localhostProfile = this._localhostProfile;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._localhostProfile = undefined;
+      this._type = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._localhostProfile = value.localhostProfile;
+      this._type = value.type;
+    }
+  }
+
+  // localhost_profile - computed: false, optional: true, required: false
+  private _localhostProfile?: string; 
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+  public set localhostProfile(value: string) {
+    this._localhostProfile = value;
+  }
+  public resetLocalhostProfile() {
+    this._localhostProfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get localhostProfileInput() {
+    return this._localhostProfile;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
@@ -9617,6 +9840,12 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityCo
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#se_linux_options CronJobV1#se_linux_options}
   */
   readonly seLinuxOptions?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions;
+  /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#seccomp_profile CronJobV1#seccomp_profile}
+  */
+  readonly seccompProfile?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfile;
 }
 
 export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContext): any {
@@ -9633,6 +9862,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityCon
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     capabilities: cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct!.capabilities),
     se_linux_options: cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
   }
 }
 
@@ -9683,6 +9913,10 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -9697,6 +9931,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
       this._runAsUser = undefined;
       this._capabilities.internalValue = undefined;
       this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -9708,6 +9943,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
       this._runAsUser = value.runAsUser;
       this._capabilities.internalValue = value.capabilities;
       this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
     }
   }
 
@@ -9837,6 +10073,22 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
     return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec {
@@ -10789,6 +11041,103 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptio
     return this._user;
   }
 }
+export interface CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfile {
+  /**
+  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#localhost_profile CronJobV1#localhost_profile}
+  */
+  readonly localhostProfile?: string;
+  /**
+  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#type CronJobV1#type}
+  */
+  readonly type?: string;
+}
+
+export function cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfileToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfileOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._localhostProfile !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.localhostProfile = this._localhostProfile;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._localhostProfile = undefined;
+      this._type = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._localhostProfile = value.localhostProfile;
+      this._type = value.type;
+    }
+  }
+
+  // localhost_profile - computed: false, optional: true, required: false
+  private _localhostProfile?: string; 
+  public get localhostProfile() {
+    return this.getStringAttribute('localhost_profile');
+  }
+  public set localhostProfile(value: string) {
+    this._localhostProfile = value;
+  }
+  public resetLocalhostProfile() {
+    this._localhostProfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get localhostProfileInput() {
+    return this._localhostProfile;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctl {
   /**
   * Name of a property to set.
@@ -10853,6 +11202,12 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext {
   */
   readonly seLinuxOptions?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions;
   /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#seccomp_profile CronJobV1#seccomp_profile}
+  */
+  readonly seccompProfile?: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfile;
+  /**
   * sysctl block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#sysctl CronJobV1#sysctl}
@@ -10872,6 +11227,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextToTerrafo
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
     supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform)(struct!.supplementalGroups),
     se_linux_options: cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
     sysctl: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctlToTerraform)(struct!.sysctl),
   }
 }
@@ -10915,6 +11271,10 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
       hasAnyValues = true;
       internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
     if (this._sysctl !== undefined) {
       hasAnyValues = true;
       internalValueResult.sysctl = this._sysctl;
@@ -10931,6 +11291,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
       this._runAsUser = undefined;
       this._supplementalGroups = undefined;
       this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
       this._sysctl = undefined;
     }
     else {
@@ -10941,6 +11302,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
       this._runAsUser = value.runAsUser;
       this._supplementalGroups = value.supplementalGroups;
       this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
       this._sysctl = value.sysctl;
     }
   }
@@ -11039,6 +11401,22 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
     return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
   }
 
   // sysctl - computed: false, optional: true, required: false
@@ -12328,200 +12706,6 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputRefere
     return this._items;
   }
 }
-export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef {
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
-  */
-  readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespace CronJobV1#namespace}
-  */
-  readonly namespace?: string;
-}
-
-export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
-  }
-}
-
-export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._name = undefined;
-      this._namespace = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._name = value.name;
-      this._namespace = value.namespace;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
-  }
-}
-export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef {
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
-  */
-  readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespace CronJobV1#namespace}
-  */
-  readonly namespace?: string;
-}
-
-export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
-  }
-}
-
-export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._name = undefined;
-      this._namespace = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._name = value.name;
-      this._namespace = value.namespace;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
-  }
-}
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
@@ -12529,12 +12713,6 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSec
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
   */
   readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespace CronJobV1#namespace}
-  */
-  readonly namespace?: string;
 }
 
 export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef): any {
@@ -12544,7 +12722,6 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecr
   }
   return {
     name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
   }
 }
 
@@ -12567,10 +12744,6 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretR
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -12578,12 +12751,10 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretR
     if (value === undefined) {
       this.isEmptyObject = false;
       this._name = undefined;
-      this._namespace = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
-      this._namespace = value.namespace;
     }
   }
 
@@ -12601,119 +12772,6 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretR
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
     return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
-  }
-}
-export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef {
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#name CronJobV1#name}
-  */
-  readonly name?: string;
-  /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#namespace CronJobV1#namespace}
-  */
-  readonly namespace?: string;
-}
-
-export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    namespace: cdktf.stringToTerraform(struct!.namespace),
-  }
-}
-
-export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._namespace !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.namespace = this._namespace;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._name = undefined;
-      this._namespace = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._name = value.name;
-      this._namespace = value.namespace;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // namespace - computed: true, optional: true, required: false
-  private _namespace?: string; 
-  public get namespace() {
-    return this.getStringAttribute('namespace');
-  }
-  public set namespace(value: string) {
-    this._namespace = value;
-  }
-  public resetNamespace() {
-    this._namespace = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get namespaceInput() {
-    return this._namespace;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi {
@@ -12742,35 +12800,11 @@ export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi {
   */
   readonly volumeAttributes?: { [key: string]: string };
   /**
-  * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#volume_handle CronJobV1#volume_handle}
-  */
-  readonly volumeHandle: string;
-  /**
-  * controller_expand_secret_ref block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#controller_expand_secret_ref CronJobV1#controller_expand_secret_ref}
-  */
-  readonly controllerExpandSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef;
-  /**
-  * controller_publish_secret_ref block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#controller_publish_secret_ref CronJobV1#controller_publish_secret_ref}
-  */
-  readonly controllerPublishSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef;
-  /**
   * node_publish_secret_ref block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#node_publish_secret_ref CronJobV1#node_publish_secret_ref}
   */
   readonly nodePublishSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef;
-  /**
-  * node_stage_secret_ref block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#node_stage_secret_ref CronJobV1#node_stage_secret_ref}
-  */
-  readonly nodeStageSecretRef?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef;
 }
 
 export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiToTerraform(struct?: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference | CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi): any {
@@ -12783,11 +12817,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiToTerraform(str
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     volume_attributes: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.volumeAttributes),
-    volume_handle: cdktf.stringToTerraform(struct!.volumeHandle),
-    controller_expand_secret_ref: cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRefToTerraform(struct!.controllerExpandSecretRef),
-    controller_publish_secret_ref: cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRefToTerraform(struct!.controllerPublishSecretRef),
     node_publish_secret_ref: cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefToTerraform(struct!.nodePublishSecretRef),
-    node_stage_secret_ref: cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefToTerraform(struct!.nodeStageSecretRef),
   }
 }
 
@@ -12822,25 +12852,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
       hasAnyValues = true;
       internalValueResult.volumeAttributes = this._volumeAttributes;
     }
-    if (this._volumeHandle !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.volumeHandle = this._volumeHandle;
-    }
-    if (this._controllerExpandSecretRef?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.controllerExpandSecretRef = this._controllerExpandSecretRef?.internalValue;
-    }
-    if (this._controllerPublishSecretRef?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.controllerPublishSecretRef = this._controllerPublishSecretRef?.internalValue;
-    }
     if (this._nodePublishSecretRef?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.nodePublishSecretRef = this._nodePublishSecretRef?.internalValue;
-    }
-    if (this._nodeStageSecretRef?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.nodeStageSecretRef = this._nodeStageSecretRef?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -12852,11 +12866,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
       this._fsType = undefined;
       this._readOnly = undefined;
       this._volumeAttributes = undefined;
-      this._volumeHandle = undefined;
-      this._controllerExpandSecretRef.internalValue = undefined;
-      this._controllerPublishSecretRef.internalValue = undefined;
       this._nodePublishSecretRef.internalValue = undefined;
-      this._nodeStageSecretRef.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -12864,11 +12874,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
       this._fsType = value.fsType;
       this._readOnly = value.readOnly;
       this._volumeAttributes = value.volumeAttributes;
-      this._volumeHandle = value.volumeHandle;
-      this._controllerExpandSecretRef.internalValue = value.controllerExpandSecretRef;
-      this._controllerPublishSecretRef.internalValue = value.controllerPublishSecretRef;
       this._nodePublishSecretRef.internalValue = value.nodePublishSecretRef;
-      this._nodeStageSecretRef.internalValue = value.nodeStageSecretRef;
     }
   }
 
@@ -12933,51 +12939,6 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
     return this._volumeAttributes;
   }
 
-  // volume_handle - computed: false, optional: false, required: true
-  private _volumeHandle?: string; 
-  public get volumeHandle() {
-    return this.getStringAttribute('volume_handle');
-  }
-  public set volumeHandle(value: string) {
-    this._volumeHandle = value;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get volumeHandleInput() {
-    return this._volumeHandle;
-  }
-
-  // controller_expand_secret_ref - computed: false, optional: true, required: false
-  private _controllerExpandSecretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRefOutputReference(this, "controller_expand_secret_ref", true);
-  public get controllerExpandSecretRef() {
-    return this._controllerExpandSecretRef;
-  }
-  public putControllerExpandSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerExpandSecretRef) {
-    this._controllerExpandSecretRef.internalValue = value;
-  }
-  public resetControllerExpandSecretRef() {
-    this._controllerExpandSecretRef.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get controllerExpandSecretRefInput() {
-    return this._controllerExpandSecretRef.internalValue;
-  }
-
-  // controller_publish_secret_ref - computed: false, optional: true, required: false
-  private _controllerPublishSecretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRefOutputReference(this, "controller_publish_secret_ref", true);
-  public get controllerPublishSecretRef() {
-    return this._controllerPublishSecretRef;
-  }
-  public putControllerPublishSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiControllerPublishSecretRef) {
-    this._controllerPublishSecretRef.internalValue = value;
-  }
-  public resetControllerPublishSecretRef() {
-    this._controllerPublishSecretRef.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get controllerPublishSecretRefInput() {
-    return this._controllerPublishSecretRef.internalValue;
-  }
-
   // node_publish_secret_ref - computed: false, optional: true, required: false
   private _nodePublishSecretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref", true);
   public get nodePublishSecretRef() {
@@ -12992,22 +12953,6 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
   // Temporarily expose input value. Use with caution.
   public get nodePublishSecretRefInput() {
     return this._nodePublishSecretRef.internalValue;
-  }
-
-  // node_stage_secret_ref - computed: false, optional: true, required: false
-  private _nodeStageSecretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRefOutputReference(this, "node_stage_secret_ref", true);
-  public get nodeStageSecretRef() {
-    return this._nodeStageSecretRef;
-  }
-  public putNodeStageSecretRef(value: CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodeStageSecretRef) {
-    this._nodeStageSecretRef.internalValue = value;
-  }
-  public resetNodeStageSecretRef() {
-    this._nodeStageSecretRef.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nodeStageSecretRefInput() {
-    return this._nodeStageSecretRef.internalValue;
   }
 }
 export interface CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRef {
