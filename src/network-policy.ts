@@ -73,10 +73,9 @@ export class NetworkPolicyMetadataOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): NetworkPolicyMetadata | undefined {
@@ -277,10 +276,9 @@ export class NetworkPolicySpecEgressToIpBlockOutputReference extends cdktf.Compl
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): NetworkPolicySpecEgressToIpBlock | undefined {
@@ -407,10 +405,9 @@ export class NetworkPolicySpecEgressToNamespaceSelectorOutputReference extends c
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): NetworkPolicySpecEgressToNamespaceSelector | undefined {
@@ -538,10 +535,9 @@ export class NetworkPolicySpecEgressToPodSelectorOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): NetworkPolicySpecEgressToPodSelector | undefined {
@@ -695,10 +691,9 @@ export class NetworkPolicySpecIngressFromIpBlockOutputReference extends cdktf.Co
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): NetworkPolicySpecIngressFromIpBlock | undefined {
@@ -825,10 +820,9 @@ export class NetworkPolicySpecIngressFromNamespaceSelectorOutputReference extend
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): NetworkPolicySpecIngressFromNamespaceSelector | undefined {
@@ -956,10 +950,9 @@ export class NetworkPolicySpecIngressFromPodSelectorOutputReference extends cdkt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): NetworkPolicySpecIngressFromPodSelector | undefined {
@@ -1172,10 +1165,9 @@ export class NetworkPolicySpecPodSelectorOutputReference extends cdktf.ComplexOb
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): NetworkPolicySpecPodSelector | undefined {
@@ -1284,10 +1276,9 @@ export class NetworkPolicySpecOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): NetworkPolicySpec | undefined {
@@ -1377,7 +1368,7 @@ export class NetworkPolicySpecOutputReference extends cdktf.ComplexObject {
   }
 
   // pod_selector - computed: false, optional: false, required: true
-  private _podSelector = new NetworkPolicySpecPodSelectorOutputReference(this, "pod_selector", true);
+  private _podSelector = new NetworkPolicySpecPodSelectorOutputReference(this, "pod_selector");
   public get podSelector() {
     return this._podSelector;
   }
@@ -1398,7 +1389,7 @@ export class NetworkPolicy extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_network_policy";
+  public static readonly tfResourceType = "kubernetes_network_policy";
 
   // ===========
   // INITIALIZER
@@ -1415,7 +1406,9 @@ export class NetworkPolicy extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_network_policy',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -1436,7 +1429,7 @@ export class NetworkPolicy extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new NetworkPolicyMetadataOutputReference(this, "metadata", true);
+  private _metadata = new NetworkPolicyMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -1449,7 +1442,7 @@ export class NetworkPolicy extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new NetworkPolicySpecOutputReference(this, "spec", true);
+  private _spec = new NetworkPolicySpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }

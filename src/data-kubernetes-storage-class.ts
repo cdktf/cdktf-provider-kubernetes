@@ -101,10 +101,9 @@ export class DataKubernetesStorageClassAllowedTopologiesOutputReference extends 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DataKubernetesStorageClassAllowedTopologies | undefined {
@@ -184,10 +183,9 @@ export class DataKubernetesStorageClassMetadataOutputReference extends cdktf.Com
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DataKubernetesStorageClassMetadata | undefined {
@@ -295,7 +293,7 @@ export class DataKubernetesStorageClass extends cdktf.TerraformDataSource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_storage_class";
+  public static readonly tfResourceType = "kubernetes_storage_class";
 
   // ===========
   // INITIALIZER
@@ -312,7 +310,9 @@ export class DataKubernetesStorageClass extends cdktf.TerraformDataSource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_storage_class',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -423,7 +423,7 @@ export class DataKubernetesStorageClass extends cdktf.TerraformDataSource {
   }
 
   // allowed_topologies - computed: false, optional: true, required: false
-  private _allowedTopologies = new DataKubernetesStorageClassAllowedTopologiesOutputReference(this, "allowed_topologies", true);
+  private _allowedTopologies = new DataKubernetesStorageClassAllowedTopologiesOutputReference(this, "allowed_topologies");
   public get allowedTopologies() {
     return this._allowedTopologies;
   }
@@ -439,7 +439,7 @@ export class DataKubernetesStorageClass extends cdktf.TerraformDataSource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new DataKubernetesStorageClassMetadataOutputReference(this, "metadata", true);
+  private _metadata = new DataKubernetesStorageClassMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }

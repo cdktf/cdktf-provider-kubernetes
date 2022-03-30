@@ -32,7 +32,45 @@ export interface ServiceConfig extends cdktf.TerraformMetaArguments {
   */
   readonly timeouts?: ServiceTimeouts;
 }
-export class ServiceStatusLoadBalancerIngress extends cdktf.ComplexComputedList {
+export interface ServiceStatusLoadBalancerIngress {
+}
+
+export function serviceStatusLoadBalancerIngressToTerraform(struct?: ServiceStatusLoadBalancerIngress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class ServiceStatusLoadBalancerIngressOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceStatusLoadBalancerIngress | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceStatusLoadBalancerIngress | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // hostname - computed: true, optional: false, required: false
   public get hostname() {
@@ -44,20 +82,153 @@ export class ServiceStatusLoadBalancerIngress extends cdktf.ComplexComputedList 
     return this.getStringAttribute('ip');
   }
 }
-export class ServiceStatusLoadBalancer extends cdktf.ComplexComputedList {
 
-  // ingress - computed: true, optional: false, required: false
-  public get ingress() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ingress');
+export class ServiceStatusLoadBalancerIngressList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceStatusLoadBalancerIngressOutputReference {
+    return new ServiceStatusLoadBalancerIngressOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
-export class ServiceStatus extends cdktf.ComplexComputedList {
+export interface ServiceStatusLoadBalancer {
+}
+
+export function serviceStatusLoadBalancerToTerraform(struct?: ServiceStatusLoadBalancer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class ServiceStatusLoadBalancerOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceStatusLoadBalancer | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceStatusLoadBalancer | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // ingress - computed: true, optional: false, required: false
+  private _ingress = new ServiceStatusLoadBalancerIngressList(this, "ingress", false);
+  public get ingress() {
+    return this._ingress;
+  }
+}
+
+export class ServiceStatusLoadBalancerList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceStatusLoadBalancerOutputReference {
+    return new ServiceStatusLoadBalancerOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface ServiceStatus {
+}
+
+export function serviceStatusToTerraform(struct?: ServiceStatus): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class ServiceStatusOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceStatus | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceStatus | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // load_balancer - computed: true, optional: false, required: false
+  private _loadBalancer = new ServiceStatusLoadBalancerList(this, "load_balancer", false);
   public get loadBalancer() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('load_balancer');
+    return this._loadBalancer;
+  }
+}
+
+export class ServiceStatusList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceStatusOutputReference {
+    return new ServiceStatusOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
 export interface ServiceMetadata {
@@ -113,10 +284,9 @@ export class ServiceMetadataOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceMetadata | undefined {
@@ -408,10 +578,9 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceSpec | undefined {
@@ -717,10 +886,9 @@ export class ServiceTimeoutsOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTimeouts | undefined {
@@ -769,7 +937,7 @@ export class Service extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_service";
+  public static readonly tfResourceType = "kubernetes_service";
 
   // ===========
   // INITIALIZER
@@ -786,7 +954,9 @@ export class Service extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_service',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -809,8 +979,9 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // status - computed: true, optional: false, required: false
-  public status(index: string) {
-    return new ServiceStatus(this, 'status', index, false);
+  private _status = new ServiceStatusList(this, "status", false);
+  public get status() {
+    return this._status;
   }
 
   // wait_for_load_balancer - computed: false, optional: true, required: false
@@ -830,7 +1001,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new ServiceMetadataOutputReference(this, "metadata", true);
+  private _metadata = new ServiceMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -843,7 +1014,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new ServiceSpecOutputReference(this, "spec", true);
+  private _spec = new ServiceSpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }
@@ -856,7 +1027,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new ServiceTimeoutsOutputReference(this, "timeouts", true);
+  private _timeouts = new ServiceTimeoutsOutputReference(this, "timeouts");
   public get timeouts() {
     return this._timeouts;
   }

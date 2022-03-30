@@ -73,10 +73,9 @@ export class PodDisruptionBudgetV1MetadataOutputReference extends cdktf.ComplexO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodDisruptionBudgetV1Metadata | undefined {
@@ -284,10 +283,9 @@ export class PodDisruptionBudgetV1SpecSelectorOutputReference extends cdktf.Comp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodDisruptionBudgetV1SpecSelector | undefined {
@@ -385,10 +383,9 @@ export class PodDisruptionBudgetV1SpecOutputReference extends cdktf.ComplexObjec
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodDisruptionBudgetV1Spec | undefined {
@@ -457,7 +454,7 @@ export class PodDisruptionBudgetV1SpecOutputReference extends cdktf.ComplexObjec
   }
 
   // selector - computed: false, optional: false, required: true
-  private _selector = new PodDisruptionBudgetV1SpecSelectorOutputReference(this, "selector", true);
+  private _selector = new PodDisruptionBudgetV1SpecSelectorOutputReference(this, "selector");
   public get selector() {
     return this._selector;
   }
@@ -478,7 +475,7 @@ export class PodDisruptionBudgetV1 extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_pod_disruption_budget_v1";
+  public static readonly tfResourceType = "kubernetes_pod_disruption_budget_v1";
 
   // ===========
   // INITIALIZER
@@ -495,7 +492,9 @@ export class PodDisruptionBudgetV1 extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_pod_disruption_budget_v1',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -516,7 +515,7 @@ export class PodDisruptionBudgetV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new PodDisruptionBudgetV1MetadataOutputReference(this, "metadata", true);
+  private _metadata = new PodDisruptionBudgetV1MetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -529,7 +528,7 @@ export class PodDisruptionBudgetV1 extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new PodDisruptionBudgetV1SpecOutputReference(this, "spec", true);
+  private _spec = new PodDisruptionBudgetV1SpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }

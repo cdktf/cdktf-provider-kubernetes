@@ -110,10 +110,9 @@ export class ServiceAccountMetadataOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceAccountMetadata | undefined {
@@ -298,10 +297,9 @@ export class ServiceAccountTimeoutsOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceAccountTimeouts | undefined {
@@ -350,7 +348,7 @@ export class ServiceAccount extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_service_account";
+  public static readonly tfResourceType = "kubernetes_service_account";
 
   // ===========
   // INITIALIZER
@@ -367,7 +365,9 @@ export class ServiceAccount extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_service_account',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -429,7 +429,7 @@ export class ServiceAccount extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new ServiceAccountMetadataOutputReference(this, "metadata", true);
+  private _metadata = new ServiceAccountMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -459,7 +459,7 @@ export class ServiceAccount extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new ServiceAccountTimeoutsOutputReference(this, "timeouts", true);
+  private _timeouts = new ServiceAccountTimeoutsOutputReference(this, "timeouts");
   public get timeouts() {
     return this._timeouts;
   }

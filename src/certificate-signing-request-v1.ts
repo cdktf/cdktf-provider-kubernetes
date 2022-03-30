@@ -78,10 +78,9 @@ export class CertificateSigningRequestV1MetadataOutputReference extends cdktf.Co
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CertificateSigningRequestV1Metadata | undefined {
@@ -274,10 +273,9 @@ export class CertificateSigningRequestV1SpecOutputReference extends cdktf.Comple
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CertificateSigningRequestV1Spec | undefined {
@@ -378,10 +376,9 @@ export class CertificateSigningRequestV1TimeoutsOutputReference extends cdktf.Co
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CertificateSigningRequestV1Timeouts | undefined {
@@ -430,7 +427,7 @@ export class CertificateSigningRequestV1 extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_certificate_signing_request_v1";
+  public static readonly tfResourceType = "kubernetes_certificate_signing_request_v1";
 
   // ===========
   // INITIALIZER
@@ -447,7 +444,9 @@ export class CertificateSigningRequestV1 extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_certificate_signing_request_v1',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -491,7 +490,7 @@ export class CertificateSigningRequestV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new CertificateSigningRequestV1MetadataOutputReference(this, "metadata", true);
+  private _metadata = new CertificateSigningRequestV1MetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -504,7 +503,7 @@ export class CertificateSigningRequestV1 extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new CertificateSigningRequestV1SpecOutputReference(this, "spec", true);
+  private _spec = new CertificateSigningRequestV1SpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }
@@ -517,7 +516,7 @@ export class CertificateSigningRequestV1 extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new CertificateSigningRequestV1TimeoutsOutputReference(this, "timeouts", true);
+  private _timeouts = new CertificateSigningRequestV1TimeoutsOutputReference(this, "timeouts");
   public get timeouts() {
     return this._timeouts;
   }

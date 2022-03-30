@@ -14,7 +14,45 @@ export interface DataKubernetesIngressConfig extends cdktf.TerraformMetaArgument
   */
   readonly metadata: DataKubernetesIngressMetadata;
 }
-export class DataKubernetesIngressSpecBackend extends cdktf.ComplexComputedList {
+export interface DataKubernetesIngressSpecBackend {
+}
+
+export function dataKubernetesIngressSpecBackendToTerraform(struct?: DataKubernetesIngressSpecBackend): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesIngressSpecBackendOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesIngressSpecBackend | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesIngressSpecBackend | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // service_name - computed: true, optional: false, required: false
   public get serviceName() {
@@ -26,7 +64,64 @@ export class DataKubernetesIngressSpecBackend extends cdktf.ComplexComputedList 
     return this.getStringAttribute('service_port');
   }
 }
-export class DataKubernetesIngressSpecRuleHttpPathBackend extends cdktf.ComplexComputedList {
+
+export class DataKubernetesIngressSpecBackendList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesIngressSpecBackendOutputReference {
+    return new DataKubernetesIngressSpecBackendOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesIngressSpecRuleHttpPathBackend {
+}
+
+export function dataKubernetesIngressSpecRuleHttpPathBackendToTerraform(struct?: DataKubernetesIngressSpecRuleHttpPathBackend): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesIngressSpecRuleHttpPathBackendOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesIngressSpecRuleHttpPathBackend | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesIngressSpecRuleHttpPathBackend | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // service_name - computed: true, optional: false, required: false
   public get serviceName() {
@@ -38,12 +133,69 @@ export class DataKubernetesIngressSpecRuleHttpPathBackend extends cdktf.ComplexC
     return this.getStringAttribute('service_port');
   }
 }
-export class DataKubernetesIngressSpecRuleHttpPath extends cdktf.ComplexComputedList {
+
+export class DataKubernetesIngressSpecRuleHttpPathBackendList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesIngressSpecRuleHttpPathBackendOutputReference {
+    return new DataKubernetesIngressSpecRuleHttpPathBackendOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesIngressSpecRuleHttpPath {
+}
+
+export function dataKubernetesIngressSpecRuleHttpPathToTerraform(struct?: DataKubernetesIngressSpecRuleHttpPath): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesIngressSpecRuleHttpPathOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesIngressSpecRuleHttpPath | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesIngressSpecRuleHttpPath | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // backend - computed: true, optional: false, required: false
+  private _backend = new DataKubernetesIngressSpecRuleHttpPathBackendList(this, "backend", false);
   public get backend() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('backend');
+    return this._backend;
   }
 
   // path - computed: true, optional: false, required: false
@@ -51,15 +203,129 @@ export class DataKubernetesIngressSpecRuleHttpPath extends cdktf.ComplexComputed
     return this.getStringAttribute('path');
   }
 }
-export class DataKubernetesIngressSpecRuleHttp extends cdktf.ComplexComputedList {
 
-  // path - computed: true, optional: false, required: false
-  public get path() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('path');
+export class DataKubernetesIngressSpecRuleHttpPathList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesIngressSpecRuleHttpPathOutputReference {
+    return new DataKubernetesIngressSpecRuleHttpPathOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
-export class DataKubernetesIngressSpecRule extends cdktf.ComplexComputedList {
+export interface DataKubernetesIngressSpecRuleHttp {
+}
+
+export function dataKubernetesIngressSpecRuleHttpToTerraform(struct?: DataKubernetesIngressSpecRuleHttp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesIngressSpecRuleHttpOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesIngressSpecRuleHttp | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesIngressSpecRuleHttp | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // path - computed: true, optional: false, required: false
+  private _path = new DataKubernetesIngressSpecRuleHttpPathList(this, "path", false);
+  public get path() {
+    return this._path;
+  }
+}
+
+export class DataKubernetesIngressSpecRuleHttpList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesIngressSpecRuleHttpOutputReference {
+    return new DataKubernetesIngressSpecRuleHttpOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesIngressSpecRule {
+}
+
+export function dataKubernetesIngressSpecRuleToTerraform(struct?: DataKubernetesIngressSpecRule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesIngressSpecRuleOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesIngressSpecRule | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesIngressSpecRule | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // host - computed: true, optional: false, required: false
   public get host() {
@@ -67,12 +333,69 @@ export class DataKubernetesIngressSpecRule extends cdktf.ComplexComputedList {
   }
 
   // http - computed: true, optional: false, required: false
+  private _http = new DataKubernetesIngressSpecRuleHttpList(this, "http", false);
   public get http() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http');
+    return this._http;
   }
 }
-export class DataKubernetesIngressSpecTls extends cdktf.ComplexComputedList {
+
+export class DataKubernetesIngressSpecRuleList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesIngressSpecRuleOutputReference {
+    return new DataKubernetesIngressSpecRuleOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesIngressSpecTls {
+}
+
+export function dataKubernetesIngressSpecTlsToTerraform(struct?: DataKubernetesIngressSpecTls): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesIngressSpecTlsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesIngressSpecTls | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesIngressSpecTls | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // hosts - computed: true, optional: false, required: false
   public get hosts() {
@@ -84,12 +407,69 @@ export class DataKubernetesIngressSpecTls extends cdktf.ComplexComputedList {
     return this.getStringAttribute('secret_name');
   }
 }
-export class DataKubernetesIngressSpec extends cdktf.ComplexComputedList {
+
+export class DataKubernetesIngressSpecTlsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesIngressSpecTlsOutputReference {
+    return new DataKubernetesIngressSpecTlsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesIngressSpec {
+}
+
+export function dataKubernetesIngressSpecToTerraform(struct?: DataKubernetesIngressSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesIngressSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesIngressSpec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesIngressSpec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // backend - computed: true, optional: false, required: false
+  private _backend = new DataKubernetesIngressSpecBackendList(this, "backend", false);
   public get backend() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('backend');
+    return this._backend;
   }
 
   // ingress_class_name - computed: true, optional: false, required: false
@@ -98,18 +478,75 @@ export class DataKubernetesIngressSpec extends cdktf.ComplexComputedList {
   }
 
   // rule - computed: true, optional: false, required: false
+  private _rule = new DataKubernetesIngressSpecRuleList(this, "rule", false);
   public get rule() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('rule');
+    return this._rule;
   }
 
   // tls - computed: true, optional: false, required: false
+  private _tls = new DataKubernetesIngressSpecTlsList(this, "tls", false);
   public get tls() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tls');
+    return this._tls;
   }
 }
-export class DataKubernetesIngressStatusLoadBalancerIngress extends cdktf.ComplexComputedList {
+
+export class DataKubernetesIngressSpecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesIngressSpecOutputReference {
+    return new DataKubernetesIngressSpecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesIngressStatusLoadBalancerIngress {
+}
+
+export function dataKubernetesIngressStatusLoadBalancerIngressToTerraform(struct?: DataKubernetesIngressStatusLoadBalancerIngress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesIngressStatusLoadBalancerIngressOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesIngressStatusLoadBalancerIngress | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesIngressStatusLoadBalancerIngress | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // hostname - computed: true, optional: false, required: false
   public get hostname() {
@@ -121,20 +558,153 @@ export class DataKubernetesIngressStatusLoadBalancerIngress extends cdktf.Comple
     return this.getStringAttribute('ip');
   }
 }
-export class DataKubernetesIngressStatusLoadBalancer extends cdktf.ComplexComputedList {
 
-  // ingress - computed: true, optional: false, required: false
-  public get ingress() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ingress');
+export class DataKubernetesIngressStatusLoadBalancerIngressList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesIngressStatusLoadBalancerIngressOutputReference {
+    return new DataKubernetesIngressStatusLoadBalancerIngressOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
-export class DataKubernetesIngressStatus extends cdktf.ComplexComputedList {
+export interface DataKubernetesIngressStatusLoadBalancer {
+}
+
+export function dataKubernetesIngressStatusLoadBalancerToTerraform(struct?: DataKubernetesIngressStatusLoadBalancer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesIngressStatusLoadBalancerOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesIngressStatusLoadBalancer | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesIngressStatusLoadBalancer | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // ingress - computed: true, optional: false, required: false
+  private _ingress = new DataKubernetesIngressStatusLoadBalancerIngressList(this, "ingress", false);
+  public get ingress() {
+    return this._ingress;
+  }
+}
+
+export class DataKubernetesIngressStatusLoadBalancerList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesIngressStatusLoadBalancerOutputReference {
+    return new DataKubernetesIngressStatusLoadBalancerOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesIngressStatus {
+}
+
+export function dataKubernetesIngressStatusToTerraform(struct?: DataKubernetesIngressStatus): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesIngressStatusOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesIngressStatus | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesIngressStatus | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // load_balancer - computed: true, optional: false, required: false
+  private _loadBalancer = new DataKubernetesIngressStatusLoadBalancerList(this, "load_balancer", false);
   public get loadBalancer() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('load_balancer');
+    return this._loadBalancer;
+  }
+}
+
+export class DataKubernetesIngressStatusList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesIngressStatusOutputReference {
+    return new DataKubernetesIngressStatusOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
 export interface DataKubernetesIngressMetadata {
@@ -183,10 +753,9 @@ export class DataKubernetesIngressMetadataOutputReference extends cdktf.ComplexO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DataKubernetesIngressMetadata | undefined {
@@ -316,7 +885,7 @@ export class DataKubernetesIngress extends cdktf.TerraformDataSource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_ingress";
+  public static readonly tfResourceType = "kubernetes_ingress";
 
   // ===========
   // INITIALIZER
@@ -333,7 +902,9 @@ export class DataKubernetesIngress extends cdktf.TerraformDataSource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_ingress',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -353,17 +924,19 @@ export class DataKubernetesIngress extends cdktf.TerraformDataSource {
   }
 
   // spec - computed: true, optional: false, required: false
-  public spec(index: string) {
-    return new DataKubernetesIngressSpec(this, 'spec', index, false);
+  private _spec = new DataKubernetesIngressSpecList(this, "spec", false);
+  public get spec() {
+    return this._spec;
   }
 
   // status - computed: true, optional: false, required: false
-  public status(index: string) {
-    return new DataKubernetesIngressStatus(this, 'status', index, false);
+  private _status = new DataKubernetesIngressStatusList(this, "status", false);
+  public get status() {
+    return this._status;
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new DataKubernetesIngressMetadataOutputReference(this, "metadata", true);
+  private _metadata = new DataKubernetesIngressMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }

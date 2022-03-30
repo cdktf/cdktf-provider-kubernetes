@@ -66,10 +66,9 @@ export class ValidatingWebhookConfigurationMetadataOutputReference extends cdktf
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ValidatingWebhookConfigurationMetadata | undefined {
@@ -236,10 +235,9 @@ export class ValidatingWebhookConfigurationWebhookClientConfigServiceOutputRefer
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ValidatingWebhookConfigurationWebhookClientConfigService | undefined {
@@ -388,10 +386,9 @@ export class ValidatingWebhookConfigurationWebhookClientConfigOutputReference ex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ValidatingWebhookConfigurationWebhookClientConfig | undefined {
@@ -460,7 +457,7 @@ export class ValidatingWebhookConfigurationWebhookClientConfigOutputReference ex
   }
 
   // service - computed: false, optional: true, required: false
-  private _service = new ValidatingWebhookConfigurationWebhookClientConfigServiceOutputReference(this, "service", true);
+  private _service = new ValidatingWebhookConfigurationWebhookClientConfigServiceOutputReference(this, "service");
   public get service() {
     return this._service;
   }
@@ -540,10 +537,9 @@ export class ValidatingWebhookConfigurationWebhookNamespaceSelectorOutputReferen
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ValidatingWebhookConfigurationWebhookNamespaceSelector | undefined {
@@ -671,10 +667,9 @@ export class ValidatingWebhookConfigurationWebhookObjectSelectorOutputReference 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ValidatingWebhookConfigurationWebhookObjectSelector | undefined {
@@ -873,7 +868,7 @@ export class ValidatingWebhookConfiguration extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_validating_webhook_configuration";
+  public static readonly tfResourceType = "kubernetes_validating_webhook_configuration";
 
   // ===========
   // INITIALIZER
@@ -890,7 +885,9 @@ export class ValidatingWebhookConfiguration extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_validating_webhook_configuration',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -911,7 +908,7 @@ export class ValidatingWebhookConfiguration extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new ValidatingWebhookConfigurationMetadataOutputReference(this, "metadata", true);
+  private _metadata = new ValidatingWebhookConfigurationMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }

@@ -79,10 +79,9 @@ export class ResourceQuotaV1MetadataOutputReference extends cdktf.ComplexObject 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ResourceQuotaV1Metadata | undefined {
@@ -283,10 +282,9 @@ export class ResourceQuotaV1SpecScopeSelectorOutputReference extends cdktf.Compl
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ResourceQuotaV1SpecScopeSelector | undefined {
@@ -366,10 +364,9 @@ export class ResourceQuotaV1SpecOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ResourceQuotaV1Spec | undefined {
@@ -438,7 +435,7 @@ export class ResourceQuotaV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   // scope_selector - computed: false, optional: true, required: false
-  private _scopeSelector = new ResourceQuotaV1SpecScopeSelectorOutputReference(this, "scope_selector", true);
+  private _scopeSelector = new ResourceQuotaV1SpecScopeSelectorOutputReference(this, "scope_selector");
   public get scopeSelector() {
     return this._scopeSelector;
   }
@@ -481,10 +478,9 @@ export class ResourceQuotaV1TimeoutsOutputReference extends cdktf.ComplexObject 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ResourceQuotaV1Timeouts | undefined {
@@ -555,7 +551,7 @@ export class ResourceQuotaV1 extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_resource_quota_v1";
+  public static readonly tfResourceType = "kubernetes_resource_quota_v1";
 
   // ===========
   // INITIALIZER
@@ -572,7 +568,9 @@ export class ResourceQuotaV1 extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_resource_quota_v1',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -594,7 +592,7 @@ export class ResourceQuotaV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new ResourceQuotaV1MetadataOutputReference(this, "metadata", true);
+  private _metadata = new ResourceQuotaV1MetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -607,7 +605,7 @@ export class ResourceQuotaV1 extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: true, required: false
-  private _spec = new ResourceQuotaV1SpecOutputReference(this, "spec", true);
+  private _spec = new ResourceQuotaV1SpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }
@@ -623,7 +621,7 @@ export class ResourceQuotaV1 extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new ResourceQuotaV1TimeoutsOutputReference(this, "timeouts", true);
+  private _timeouts = new ResourceQuotaV1TimeoutsOutputReference(this, "timeouts");
   public get timeouts() {
     return this._timeouts;
   }

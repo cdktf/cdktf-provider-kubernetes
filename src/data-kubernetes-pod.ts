@@ -14,7 +14,45 @@ export interface DataKubernetesPodConfig extends cdktf.TerraformMetaArguments {
   */
   readonly metadata: DataKubernetesPodMetadata;
 }
-export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions extends cdktf.ComplexComputedList {
+export interface DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions {
+}
+
+export function dataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform(struct?: DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -31,20 +69,134 @@ export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingI
     return cdktf.Fn.tolist(this.getListAttribute('values'));
   }
 }
-export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference extends cdktf.ComplexComputedList {
 
-  // match_expressions - computed: true, optional: false, required: false
-  public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsOutputReference {
+    return new DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
-export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution extends cdktf.ComplexComputedList {
+export interface DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference {
+}
+
+export function dataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToTerraform(struct?: DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // match_expressions - computed: true, optional: false, required: false
+  private _matchExpressions = new DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsList(this, "match_expressions", false);
+  public get matchExpressions() {
+    return this._matchExpressions;
+  }
+}
+
+export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference {
+    return new DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution {
+}
+
+export function dataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // preference - computed: true, optional: false, required: false
+  private _preference = new DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceList(this, "preference", false);
   public get preference() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('preference');
+    return this._preference;
   }
 
   // weight - computed: true, optional: false, required: false
@@ -52,7 +204,64 @@ export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingI
     return this.getNumberAttribute('weight');
   }
 }
-export class DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionOutputReference {
+    return new DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions {
+}
+
+export function dataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform(struct?: DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -69,37 +278,265 @@ export class DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIg
     return cdktf.Fn.tolist(this.getListAttribute('values'));
   }
 }
-export class DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm extends cdktf.ComplexComputedList {
 
-  // match_expressions - computed: true, optional: false, required: false
-  public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+export class DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsOutputReference {
+    return new DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
-export class DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution extends cdktf.ComplexComputedList {
+export interface DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm {
+}
+
+export function dataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform(struct?: DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // match_expressions - computed: true, optional: false, required: false
+  private _matchExpressions = new DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsList(this, "match_expressions", false);
+  public get matchExpressions() {
+    return this._matchExpressions;
+  }
+}
+
+export class DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermOutputReference {
+    return new DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution {
+}
+
+export function dataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // node_selector_term - computed: true, optional: false, required: false
+  private _nodeSelectorTerm = new DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermList(this, "node_selector_term", false);
   public get nodeSelectorTerm() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('node_selector_term');
+    return this._nodeSelectorTerm;
   }
 }
-export class DataKubernetesPodSpecAffinityNodeAffinity extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference {
+    return new DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityNodeAffinity {
+}
+
+export function dataKubernetesPodSpecAffinityNodeAffinityToTerraform(struct?: DataKubernetesPodSpecAffinityNodeAffinity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityNodeAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityNodeAffinity | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityNodeAffinity | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // preferred_during_scheduling_ignored_during_execution - computed: true, optional: false, required: false
+  private _preferredDuringSchedulingIgnoredDuringExecution = new DataKubernetesPodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionList(this, "preferred_during_scheduling_ignored_during_execution", false);
   public get preferredDuringSchedulingIgnoredDuringExecution() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution');
+    return this._preferredDuringSchedulingIgnoredDuringExecution;
   }
 
   // required_during_scheduling_ignored_during_execution - computed: true, optional: false, required: false
+  private _requiredDuringSchedulingIgnoredDuringExecution = new DataKubernetesPodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionList(this, "required_during_scheduling_ignored_during_execution", false);
   public get requiredDuringSchedulingIgnoredDuringExecution() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution');
+    return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
 }
-export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityNodeAffinityList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityNodeAffinityOutputReference {
+    return new DataKubernetesPodSpecAffinityNodeAffinityOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
+}
+
+export function dataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -116,25 +553,139 @@ export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIg
     return cdktf.Fn.tolist(this.getListAttribute('values'));
   }
 }
-export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector {
+}
+
+export function dataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // match_expressions - computed: true, optional: false, required: false
+  private _matchExpressions = new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsList(this, "match_expressions", false);
   public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+    return this._matchExpressions;
   }
 
   // match_labels - computed: true, optional: false, required: false
-  public get matchLabels() {
-    return this.getStringMapAttribute('match_labels');
+  public matchLabels(key: string): string | cdktf.IResolvable {
+    return new cdktf.StringMap(this, 'match_labels').lookup(key);
   }
 }
-export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
+}
+
+export function dataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // label_selector - computed: true, optional: false, required: false
+  private _labelSelector = new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorList(this, "label_selector", false);
   public get labelSelector() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('label_selector');
+    return this._labelSelector;
   }
 
   // namespaces - computed: true, optional: false, required: false
@@ -147,12 +698,69 @@ export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIg
     return this.getStringAttribute('topology_key');
   }
 }
-export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution {
+}
+
+export function dataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // pod_affinity_term - computed: true, optional: false, required: false
+  private _podAffinityTerm = new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermList(this, "pod_affinity_term", false);
   public get podAffinityTerm() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('pod_affinity_term');
+    return this._podAffinityTerm;
   }
 
   // weight - computed: true, optional: false, required: false
@@ -160,7 +768,64 @@ export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIg
     return this.getNumberAttribute('weight');
   }
 }
-export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions {
+}
+
+export function dataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -177,25 +842,139 @@ export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgn
     return cdktf.Fn.tolist(this.getListAttribute('values'));
   }
 }
-export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector {
+}
+
+export function dataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // match_expressions - computed: true, optional: false, required: false
+  private _matchExpressions = new DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsList(this, "match_expressions", false);
   public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+    return this._matchExpressions;
   }
 
   // match_labels - computed: true, optional: false, required: false
-  public get matchLabels() {
-    return this.getStringMapAttribute('match_labels');
+  public matchLabels(key: string): string | cdktf.IResolvable {
+    return new cdktf.StringMap(this, 'match_labels').lookup(key);
   }
 }
-export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution {
+}
+
+export function dataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // label_selector - computed: true, optional: false, required: false
+  private _labelSelector = new DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorList(this, "label_selector", false);
   public get labelSelector() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('label_selector');
+    return this._labelSelector;
   }
 
   // namespaces - computed: true, optional: false, required: false
@@ -208,21 +987,135 @@ export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgn
     return this.getStringAttribute('topology_key');
   }
 }
-export class DataKubernetesPodSpecAffinityPodAffinity extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAffinity {
+}
+
+export function dataKubernetesPodSpecAffinityPodAffinityToTerraform(struct?: DataKubernetesPodSpecAffinityPodAffinity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAffinity | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAffinity | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // preferred_during_scheduling_ignored_during_execution - computed: true, optional: false, required: false
+  private _preferredDuringSchedulingIgnoredDuringExecution = new DataKubernetesPodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionList(this, "preferred_during_scheduling_ignored_during_execution", false);
   public get preferredDuringSchedulingIgnoredDuringExecution() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution');
+    return this._preferredDuringSchedulingIgnoredDuringExecution;
   }
 
   // required_during_scheduling_ignored_during_execution - computed: true, optional: false, required: false
+  private _requiredDuringSchedulingIgnoredDuringExecution = new DataKubernetesPodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionList(this, "required_during_scheduling_ignored_during_execution", false);
   public get requiredDuringSchedulingIgnoredDuringExecution() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution');
+    return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
 }
-export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAffinityList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAffinityOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAffinityOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
+}
+
+export function dataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform(struct?: DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -239,25 +1132,139 @@ export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringScheduli
     return cdktf.Fn.tolist(this.getListAttribute('values'));
   }
 }
-export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector {
+}
+
+export function dataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform(struct?: DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // match_expressions - computed: true, optional: false, required: false
+  private _matchExpressions = new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsList(this, "match_expressions", false);
   public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+    return this._matchExpressions;
   }
 
   // match_labels - computed: true, optional: false, required: false
-  public get matchLabels() {
-    return this.getStringMapAttribute('match_labels');
+  public matchLabels(key: string): string | cdktf.IResolvable {
+    return new cdktf.StringMap(this, 'match_labels').lookup(key);
   }
 }
-export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
+}
+
+export function dataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // label_selector - computed: true, optional: false, required: false
+  private _labelSelector = new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorList(this, "label_selector", false);
   public get labelSelector() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('label_selector');
+    return this._labelSelector;
   }
 
   // namespaces - computed: true, optional: false, required: false
@@ -270,12 +1277,69 @@ export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringScheduli
     return this.getStringAttribute('topology_key');
   }
 }
-export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution {
+}
+
+export function dataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // pod_affinity_term - computed: true, optional: false, required: false
+  private _podAffinityTerm = new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermList(this, "pod_affinity_term", false);
   public get podAffinityTerm() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('pod_affinity_term');
+    return this._podAffinityTerm;
   }
 
   // weight - computed: true, optional: false, required: false
@@ -283,7 +1347,64 @@ export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringScheduli
     return this.getNumberAttribute('weight');
   }
 }
-export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions {
+}
+
+export function dataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform(struct?: DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -300,25 +1421,139 @@ export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulin
     return cdktf.Fn.tolist(this.getListAttribute('values'));
   }
 }
-export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector {
+}
+
+export function dataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform(struct?: DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // match_expressions - computed: true, optional: false, required: false
+  private _matchExpressions = new DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsList(this, "match_expressions", false);
   public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+    return this._matchExpressions;
   }
 
   // match_labels - computed: true, optional: false, required: false
-  public get matchLabels() {
-    return this.getStringMapAttribute('match_labels');
+  public matchLabels(key: string): string | cdktf.IResolvable {
+    return new cdktf.StringMap(this, 'match_labels').lookup(key);
   }
 }
-export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution {
+}
+
+export function dataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // label_selector - computed: true, optional: false, required: false
+  private _labelSelector = new DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorList(this, "label_selector", false);
   public get labelSelector() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('label_selector');
+    return this._labelSelector;
   }
 
   // namespaces - computed: true, optional: false, required: false
@@ -331,41 +1566,212 @@ export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulin
     return this.getStringAttribute('topology_key');
   }
 }
-export class DataKubernetesPodSpecAffinityPodAntiAffinity extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinityPodAntiAffinity {
+}
+
+export function dataKubernetesPodSpecAffinityPodAntiAffinityToTerraform(struct?: DataKubernetesPodSpecAffinityPodAntiAffinity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinityPodAntiAffinity | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinityPodAntiAffinity | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // preferred_during_scheduling_ignored_during_execution - computed: true, optional: false, required: false
+  private _preferredDuringSchedulingIgnoredDuringExecution = new DataKubernetesPodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionList(this, "preferred_during_scheduling_ignored_during_execution", false);
   public get preferredDuringSchedulingIgnoredDuringExecution() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('preferred_during_scheduling_ignored_during_execution');
+    return this._preferredDuringSchedulingIgnoredDuringExecution;
   }
 
   // required_during_scheduling_ignored_during_execution - computed: true, optional: false, required: false
+  private _requiredDuringSchedulingIgnoredDuringExecution = new DataKubernetesPodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionList(this, "required_during_scheduling_ignored_during_execution", false);
   public get requiredDuringSchedulingIgnoredDuringExecution() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('required_during_scheduling_ignored_during_execution');
+    return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
 }
-export class DataKubernetesPodSpecAffinity extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityPodAntiAffinityList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityPodAntiAffinityOutputReference {
+    return new DataKubernetesPodSpecAffinityPodAntiAffinityOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecAffinity {
+}
+
+export function dataKubernetesPodSpecAffinityToTerraform(struct?: DataKubernetesPodSpecAffinity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecAffinityOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecAffinity | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecAffinity | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // node_affinity - computed: true, optional: false, required: false
+  private _nodeAffinity = new DataKubernetesPodSpecAffinityNodeAffinityList(this, "node_affinity", false);
   public get nodeAffinity() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('node_affinity');
+    return this._nodeAffinity;
   }
 
   // pod_affinity - computed: true, optional: false, required: false
+  private _podAffinity = new DataKubernetesPodSpecAffinityPodAffinityList(this, "pod_affinity", false);
   public get podAffinity() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('pod_affinity');
+    return this._podAffinity;
   }
 
   // pod_anti_affinity - computed: true, optional: false, required: false
+  private _podAntiAffinity = new DataKubernetesPodSpecAffinityPodAntiAffinityList(this, "pod_anti_affinity", false);
   public get podAntiAffinity() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('pod_anti_affinity');
+    return this._podAntiAffinity;
   }
 }
-export class DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecAffinityList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecAffinityOutputReference {
+    return new DataKubernetesPodSpecAffinityOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRef {
+}
+
+export function dataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -382,7 +1788,64 @@ export class DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRef extends c
     return this.getBooleanAttribute('optional');
   }
 }
-export class DataKubernetesPodSpecContainerEnvValueFromFieldRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRefOutputReference {
+    return new DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerEnvValueFromFieldRef {
+}
+
+export function dataKubernetesPodSpecContainerEnvValueFromFieldRefToTerraform(struct?: DataKubernetesPodSpecContainerEnvValueFromFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerEnvValueFromFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerEnvValueFromFieldRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerEnvValueFromFieldRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // api_version - computed: true, optional: false, required: false
   public get apiVersion() {
@@ -394,7 +1857,64 @@ export class DataKubernetesPodSpecContainerEnvValueFromFieldRef extends cdktf.Co
     return this.getStringAttribute('field_path');
   }
 }
-export class DataKubernetesPodSpecContainerEnvValueFromResourceFieldRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerEnvValueFromFieldRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerEnvValueFromFieldRefOutputReference {
+    return new DataKubernetesPodSpecContainerEnvValueFromFieldRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerEnvValueFromResourceFieldRef {
+}
+
+export function dataKubernetesPodSpecContainerEnvValueFromResourceFieldRefToTerraform(struct?: DataKubernetesPodSpecContainerEnvValueFromResourceFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerEnvValueFromResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerEnvValueFromResourceFieldRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerEnvValueFromResourceFieldRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // container_name - computed: true, optional: false, required: false
   public get containerName() {
@@ -411,7 +1931,64 @@ export class DataKubernetesPodSpecContainerEnvValueFromResourceFieldRef extends 
     return this.getStringAttribute('resource');
   }
 }
-export class DataKubernetesPodSpecContainerEnvValueFromSecretKeyRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerEnvValueFromResourceFieldRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerEnvValueFromResourceFieldRefOutputReference {
+    return new DataKubernetesPodSpecContainerEnvValueFromResourceFieldRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerEnvValueFromSecretKeyRef {
+}
+
+export function dataKubernetesPodSpecContainerEnvValueFromSecretKeyRefToTerraform(struct?: DataKubernetesPodSpecContainerEnvValueFromSecretKeyRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerEnvValueFromSecretKeyRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerEnvValueFromSecretKeyRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerEnvValueFromSecretKeyRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -428,33 +2005,147 @@ export class DataKubernetesPodSpecContainerEnvValueFromSecretKeyRef extends cdkt
     return this.getBooleanAttribute('optional');
   }
 }
-export class DataKubernetesPodSpecContainerEnvValueFrom extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerEnvValueFromSecretKeyRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerEnvValueFromSecretKeyRefOutputReference {
+    return new DataKubernetesPodSpecContainerEnvValueFromSecretKeyRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerEnvValueFrom {
+}
+
+export function dataKubernetesPodSpecContainerEnvValueFromToTerraform(struct?: DataKubernetesPodSpecContainerEnvValueFrom): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerEnvValueFromOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerEnvValueFrom | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerEnvValueFrom | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // config_map_key_ref - computed: true, optional: false, required: false
+  private _configMapKeyRef = new DataKubernetesPodSpecContainerEnvValueFromConfigMapKeyRefList(this, "config_map_key_ref", false);
   public get configMapKeyRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('config_map_key_ref');
+    return this._configMapKeyRef;
   }
 
   // field_ref - computed: true, optional: false, required: false
+  private _fieldRef = new DataKubernetesPodSpecContainerEnvValueFromFieldRefList(this, "field_ref", false);
   public get fieldRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('field_ref');
+    return this._fieldRef;
   }
 
   // resource_field_ref - computed: true, optional: false, required: false
+  private _resourceFieldRef = new DataKubernetesPodSpecContainerEnvValueFromResourceFieldRefList(this, "resource_field_ref", false);
   public get resourceFieldRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('resource_field_ref');
+    return this._resourceFieldRef;
   }
 
   // secret_key_ref - computed: true, optional: false, required: false
+  private _secretKeyRef = new DataKubernetesPodSpecContainerEnvValueFromSecretKeyRefList(this, "secret_key_ref", false);
   public get secretKeyRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('secret_key_ref');
+    return this._secretKeyRef;
   }
 }
-export class DataKubernetesPodSpecContainerEnv extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerEnvValueFromList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerEnvValueFromOutputReference {
+    return new DataKubernetesPodSpecContainerEnvValueFromOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerEnv {
+}
+
+export function dataKubernetesPodSpecContainerEnvToTerraform(struct?: DataKubernetesPodSpecContainerEnv): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerEnvOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerEnv | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerEnv | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -467,12 +2158,69 @@ export class DataKubernetesPodSpecContainerEnv extends cdktf.ComplexComputedList
   }
 
   // value_from - computed: true, optional: false, required: false
+  private _valueFrom = new DataKubernetesPodSpecContainerEnvValueFromList(this, "value_from", false);
   public get valueFrom() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('value_from');
+    return this._valueFrom;
   }
 }
-export class DataKubernetesPodSpecContainerEnvFromConfigMapRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerEnvList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerEnvOutputReference {
+    return new DataKubernetesPodSpecContainerEnvOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerEnvFromConfigMapRef {
+}
+
+export function dataKubernetesPodSpecContainerEnvFromConfigMapRefToTerraform(struct?: DataKubernetesPodSpecContainerEnvFromConfigMapRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerEnvFromConfigMapRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerEnvFromConfigMapRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerEnvFromConfigMapRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -484,7 +2232,64 @@ export class DataKubernetesPodSpecContainerEnvFromConfigMapRef extends cdktf.Com
     return this.getBooleanAttribute('optional');
   }
 }
-export class DataKubernetesPodSpecContainerEnvFromSecretRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerEnvFromConfigMapRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerEnvFromConfigMapRefOutputReference {
+    return new DataKubernetesPodSpecContainerEnvFromConfigMapRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerEnvFromSecretRef {
+}
+
+export function dataKubernetesPodSpecContainerEnvFromSecretRefToTerraform(struct?: DataKubernetesPodSpecContainerEnvFromSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerEnvFromSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerEnvFromSecretRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerEnvFromSecretRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -496,12 +2301,69 @@ export class DataKubernetesPodSpecContainerEnvFromSecretRef extends cdktf.Comple
     return this.getBooleanAttribute('optional');
   }
 }
-export class DataKubernetesPodSpecContainerEnvFrom extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerEnvFromSecretRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerEnvFromSecretRefOutputReference {
+    return new DataKubernetesPodSpecContainerEnvFromSecretRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerEnvFrom {
+}
+
+export function dataKubernetesPodSpecContainerEnvFromToTerraform(struct?: DataKubernetesPodSpecContainerEnvFrom): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerEnvFromOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerEnvFrom | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerEnvFrom | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // config_map_ref - computed: true, optional: false, required: false
+  private _configMapRef = new DataKubernetesPodSpecContainerEnvFromConfigMapRefList(this, "config_map_ref", false);
   public get configMapRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('config_map_ref');
+    return this._configMapRef;
   }
 
   // prefix - computed: true, optional: false, required: false
@@ -510,19 +2372,133 @@ export class DataKubernetesPodSpecContainerEnvFrom extends cdktf.ComplexComputed
   }
 
   // secret_ref - computed: true, optional: false, required: false
+  private _secretRef = new DataKubernetesPodSpecContainerEnvFromSecretRefList(this, "secret_ref", false);
   public get secretRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('secret_ref');
+    return this._secretRef;
   }
 }
-export class DataKubernetesPodSpecContainerLifecyclePostStartExec extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerEnvFromList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerEnvFromOutputReference {
+    return new DataKubernetesPodSpecContainerEnvFromOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLifecyclePostStartExec {
+}
+
+export function dataKubernetesPodSpecContainerLifecyclePostStartExecToTerraform(struct?: DataKubernetesPodSpecContainerLifecyclePostStartExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLifecyclePostStartExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLifecyclePostStartExec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLifecyclePostStartExec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // command - computed: true, optional: false, required: false
   public get command() {
     return this.getListAttribute('command');
   }
 }
-export class DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeader extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLifecyclePostStartExecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLifecyclePostStartExecOutputReference {
+    return new DataKubernetesPodSpecContainerLifecyclePostStartExecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeader {
+}
+
+export function dataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeader | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeader | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -534,7 +2510,64 @@ export class DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeader e
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecContainerLifecyclePostStartHttpGet extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeaderList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeaderOutputReference {
+    return new DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLifecyclePostStartHttpGet {
+}
+
+export function dataKubernetesPodSpecContainerLifecyclePostStartHttpGetToTerraform(struct?: DataKubernetesPodSpecContainerLifecyclePostStartHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLifecyclePostStartHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLifecyclePostStartHttpGet | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLifecyclePostStartHttpGet | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // host - computed: true, optional: false, required: false
   public get host() {
@@ -542,9 +2575,9 @@ export class DataKubernetesPodSpecContainerLifecyclePostStartHttpGet extends cdk
   }
 
   // http_header - computed: true, optional: false, required: false
+  private _httpHeader = new DataKubernetesPodSpecContainerLifecyclePostStartHttpGetHttpHeaderList(this, "http_header", false);
   public get httpHeader() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header');
+    return this._httpHeader;
   }
 
   // path - computed: true, optional: false, required: false
@@ -562,41 +2595,269 @@ export class DataKubernetesPodSpecContainerLifecyclePostStartHttpGet extends cdk
     return this.getStringAttribute('scheme');
   }
 }
-export class DataKubernetesPodSpecContainerLifecyclePostStartTcpSocket extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLifecyclePostStartHttpGetList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLifecyclePostStartHttpGetOutputReference {
+    return new DataKubernetesPodSpecContainerLifecyclePostStartHttpGetOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLifecyclePostStartTcpSocket {
+}
+
+export function dataKubernetesPodSpecContainerLifecyclePostStartTcpSocketToTerraform(struct?: DataKubernetesPodSpecContainerLifecyclePostStartTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLifecyclePostStartTcpSocketOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLifecyclePostStartTcpSocket | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLifecyclePostStartTcpSocket | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // port - computed: true, optional: false, required: false
   public get port() {
     return this.getStringAttribute('port');
   }
 }
-export class DataKubernetesPodSpecContainerLifecyclePostStart extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLifecyclePostStartTcpSocketList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLifecyclePostStartTcpSocketOutputReference {
+    return new DataKubernetesPodSpecContainerLifecyclePostStartTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLifecyclePostStart {
+}
+
+export function dataKubernetesPodSpecContainerLifecyclePostStartToTerraform(struct?: DataKubernetesPodSpecContainerLifecyclePostStart): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLifecyclePostStartOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLifecyclePostStart | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLifecyclePostStart | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // exec - computed: true, optional: false, required: false
+  private _exec = new DataKubernetesPodSpecContainerLifecyclePostStartExecList(this, "exec", false);
   public get exec() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('exec');
+    return this._exec;
   }
 
   // http_get - computed: true, optional: false, required: false
+  private _httpGet = new DataKubernetesPodSpecContainerLifecyclePostStartHttpGetList(this, "http_get", false);
   public get httpGet() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_get');
+    return this._httpGet;
   }
 
   // tcp_socket - computed: true, optional: false, required: false
+  private _tcpSocket = new DataKubernetesPodSpecContainerLifecyclePostStartTcpSocketList(this, "tcp_socket", false);
   public get tcpSocket() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket');
+    return this._tcpSocket;
   }
 }
-export class DataKubernetesPodSpecContainerLifecyclePreStopExec extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLifecyclePostStartList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLifecyclePostStartOutputReference {
+    return new DataKubernetesPodSpecContainerLifecyclePostStartOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLifecyclePreStopExec {
+}
+
+export function dataKubernetesPodSpecContainerLifecyclePreStopExecToTerraform(struct?: DataKubernetesPodSpecContainerLifecyclePreStopExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLifecyclePreStopExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLifecyclePreStopExec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLifecyclePreStopExec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // command - computed: true, optional: false, required: false
   public get command() {
     return this.getListAttribute('command');
   }
 }
-export class DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeader extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLifecyclePreStopExecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLifecyclePreStopExecOutputReference {
+    return new DataKubernetesPodSpecContainerLifecyclePreStopExecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeader {
+}
+
+export function dataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeader | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeader | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -608,7 +2869,64 @@ export class DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeader ext
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecContainerLifecyclePreStopHttpGet extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeaderList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeaderOutputReference {
+    return new DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLifecyclePreStopHttpGet {
+}
+
+export function dataKubernetesPodSpecContainerLifecyclePreStopHttpGetToTerraform(struct?: DataKubernetesPodSpecContainerLifecyclePreStopHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLifecyclePreStopHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLifecyclePreStopHttpGet | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLifecyclePreStopHttpGet | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // host - computed: true, optional: false, required: false
   public get host() {
@@ -616,9 +2934,9 @@ export class DataKubernetesPodSpecContainerLifecyclePreStopHttpGet extends cdktf
   }
 
   // http_header - computed: true, optional: false, required: false
+  private _httpHeader = new DataKubernetesPodSpecContainerLifecyclePreStopHttpGetHttpHeaderList(this, "http_header", false);
   public get httpHeader() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header');
+    return this._httpHeader;
   }
 
   // path - computed: true, optional: false, required: false
@@ -636,55 +2954,340 @@ export class DataKubernetesPodSpecContainerLifecyclePreStopHttpGet extends cdktf
     return this.getStringAttribute('scheme');
   }
 }
-export class DataKubernetesPodSpecContainerLifecyclePreStopTcpSocket extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLifecyclePreStopHttpGetList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLifecyclePreStopHttpGetOutputReference {
+    return new DataKubernetesPodSpecContainerLifecyclePreStopHttpGetOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLifecyclePreStopTcpSocket {
+}
+
+export function dataKubernetesPodSpecContainerLifecyclePreStopTcpSocketToTerraform(struct?: DataKubernetesPodSpecContainerLifecyclePreStopTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLifecyclePreStopTcpSocketOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLifecyclePreStopTcpSocket | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLifecyclePreStopTcpSocket | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // port - computed: true, optional: false, required: false
   public get port() {
     return this.getStringAttribute('port');
   }
 }
-export class DataKubernetesPodSpecContainerLifecyclePreStop extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLifecyclePreStopTcpSocketList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLifecyclePreStopTcpSocketOutputReference {
+    return new DataKubernetesPodSpecContainerLifecyclePreStopTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLifecyclePreStop {
+}
+
+export function dataKubernetesPodSpecContainerLifecyclePreStopToTerraform(struct?: DataKubernetesPodSpecContainerLifecyclePreStop): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLifecyclePreStopOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLifecyclePreStop | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLifecyclePreStop | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // exec - computed: true, optional: false, required: false
+  private _exec = new DataKubernetesPodSpecContainerLifecyclePreStopExecList(this, "exec", false);
   public get exec() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('exec');
+    return this._exec;
   }
 
   // http_get - computed: true, optional: false, required: false
+  private _httpGet = new DataKubernetesPodSpecContainerLifecyclePreStopHttpGetList(this, "http_get", false);
   public get httpGet() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_get');
+    return this._httpGet;
   }
 
   // tcp_socket - computed: true, optional: false, required: false
+  private _tcpSocket = new DataKubernetesPodSpecContainerLifecyclePreStopTcpSocketList(this, "tcp_socket", false);
   public get tcpSocket() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket');
+    return this._tcpSocket;
   }
 }
-export class DataKubernetesPodSpecContainerLifecycle extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLifecyclePreStopList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLifecyclePreStopOutputReference {
+    return new DataKubernetesPodSpecContainerLifecyclePreStopOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLifecycle {
+}
+
+export function dataKubernetesPodSpecContainerLifecycleToTerraform(struct?: DataKubernetesPodSpecContainerLifecycle): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLifecycleOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLifecycle | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLifecycle | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // post_start - computed: true, optional: false, required: false
+  private _postStart = new DataKubernetesPodSpecContainerLifecyclePostStartList(this, "post_start", false);
   public get postStart() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('post_start');
+    return this._postStart;
   }
 
   // pre_stop - computed: true, optional: false, required: false
+  private _preStop = new DataKubernetesPodSpecContainerLifecyclePreStopList(this, "pre_stop", false);
   public get preStop() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('pre_stop');
+    return this._preStop;
   }
 }
-export class DataKubernetesPodSpecContainerLivenessProbeExec extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLifecycleList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLifecycleOutputReference {
+    return new DataKubernetesPodSpecContainerLifecycleOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLivenessProbeExec {
+}
+
+export function dataKubernetesPodSpecContainerLivenessProbeExecToTerraform(struct?: DataKubernetesPodSpecContainerLivenessProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLivenessProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLivenessProbeExec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLivenessProbeExec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // command - computed: true, optional: false, required: false
   public get command() {
     return this.getListAttribute('command');
   }
 }
-export class DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeader extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLivenessProbeExecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLivenessProbeExecOutputReference {
+    return new DataKubernetesPodSpecContainerLivenessProbeExecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeader {
+}
+
+export function dataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeader | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeader | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -696,7 +3299,64 @@ export class DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeader extend
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecContainerLivenessProbeHttpGet extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeaderList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeaderOutputReference {
+    return new DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLivenessProbeHttpGet {
+}
+
+export function dataKubernetesPodSpecContainerLivenessProbeHttpGetToTerraform(struct?: DataKubernetesPodSpecContainerLivenessProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLivenessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLivenessProbeHttpGet | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLivenessProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // host - computed: true, optional: false, required: false
   public get host() {
@@ -704,9 +3364,9 @@ export class DataKubernetesPodSpecContainerLivenessProbeHttpGet extends cdktf.Co
   }
 
   // http_header - computed: true, optional: false, required: false
+  private _httpHeader = new DataKubernetesPodSpecContainerLivenessProbeHttpGetHttpHeaderList(this, "http_header", false);
   public get httpHeader() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header');
+    return this._httpHeader;
   }
 
   // path - computed: true, optional: false, required: false
@@ -724,19 +3384,133 @@ export class DataKubernetesPodSpecContainerLivenessProbeHttpGet extends cdktf.Co
     return this.getStringAttribute('scheme');
   }
 }
-export class DataKubernetesPodSpecContainerLivenessProbeTcpSocket extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLivenessProbeHttpGetList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLivenessProbeHttpGetOutputReference {
+    return new DataKubernetesPodSpecContainerLivenessProbeHttpGetOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLivenessProbeTcpSocket {
+}
+
+export function dataKubernetesPodSpecContainerLivenessProbeTcpSocketToTerraform(struct?: DataKubernetesPodSpecContainerLivenessProbeTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLivenessProbeTcpSocketOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLivenessProbeTcpSocket | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLivenessProbeTcpSocket | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // port - computed: true, optional: false, required: false
   public get port() {
     return this.getStringAttribute('port');
   }
 }
-export class DataKubernetesPodSpecContainerLivenessProbe extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLivenessProbeTcpSocketList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLivenessProbeTcpSocketOutputReference {
+    return new DataKubernetesPodSpecContainerLivenessProbeTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerLivenessProbe {
+}
+
+export function dataKubernetesPodSpecContainerLivenessProbeToTerraform(struct?: DataKubernetesPodSpecContainerLivenessProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerLivenessProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerLivenessProbe | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerLivenessProbe | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // exec - computed: true, optional: false, required: false
+  private _exec = new DataKubernetesPodSpecContainerLivenessProbeExecList(this, "exec", false);
   public get exec() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('exec');
+    return this._exec;
   }
 
   // failure_threshold - computed: true, optional: false, required: false
@@ -745,9 +3519,9 @@ export class DataKubernetesPodSpecContainerLivenessProbe extends cdktf.ComplexCo
   }
 
   // http_get - computed: true, optional: false, required: false
+  private _httpGet = new DataKubernetesPodSpecContainerLivenessProbeHttpGetList(this, "http_get", false);
   public get httpGet() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_get');
+    return this._httpGet;
   }
 
   // initial_delay_seconds - computed: true, optional: false, required: false
@@ -766,9 +3540,9 @@ export class DataKubernetesPodSpecContainerLivenessProbe extends cdktf.ComplexCo
   }
 
   // tcp_socket - computed: true, optional: false, required: false
+  private _tcpSocket = new DataKubernetesPodSpecContainerLivenessProbeTcpSocketList(this, "tcp_socket", false);
   public get tcpSocket() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket');
+    return this._tcpSocket;
   }
 
   // timeout_seconds - computed: true, optional: false, required: false
@@ -776,7 +3550,64 @@ export class DataKubernetesPodSpecContainerLivenessProbe extends cdktf.ComplexCo
     return this.getNumberAttribute('timeout_seconds');
   }
 }
-export class DataKubernetesPodSpecContainerPort extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerLivenessProbeList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerLivenessProbeOutputReference {
+    return new DataKubernetesPodSpecContainerLivenessProbeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerPort {
+}
+
+export function dataKubernetesPodSpecContainerPortToTerraform(struct?: DataKubernetesPodSpecContainerPort): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerPortOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerPort | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerPort | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // container_port - computed: true, optional: false, required: false
   public get containerPort() {
@@ -803,14 +3634,128 @@ export class DataKubernetesPodSpecContainerPort extends cdktf.ComplexComputedLis
     return this.getStringAttribute('protocol');
   }
 }
-export class DataKubernetesPodSpecContainerReadinessProbeExec extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerPortList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerPortOutputReference {
+    return new DataKubernetesPodSpecContainerPortOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerReadinessProbeExec {
+}
+
+export function dataKubernetesPodSpecContainerReadinessProbeExecToTerraform(struct?: DataKubernetesPodSpecContainerReadinessProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerReadinessProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerReadinessProbeExec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerReadinessProbeExec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // command - computed: true, optional: false, required: false
   public get command() {
     return this.getListAttribute('command');
   }
 }
-export class DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeader extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerReadinessProbeExecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerReadinessProbeExecOutputReference {
+    return new DataKubernetesPodSpecContainerReadinessProbeExecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeader {
+}
+
+export function dataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeader | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeader | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -822,7 +3767,64 @@ export class DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeader exten
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecContainerReadinessProbeHttpGet extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeaderList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeaderOutputReference {
+    return new DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerReadinessProbeHttpGet {
+}
+
+export function dataKubernetesPodSpecContainerReadinessProbeHttpGetToTerraform(struct?: DataKubernetesPodSpecContainerReadinessProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerReadinessProbeHttpGet | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerReadinessProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // host - computed: true, optional: false, required: false
   public get host() {
@@ -830,9 +3832,9 @@ export class DataKubernetesPodSpecContainerReadinessProbeHttpGet extends cdktf.C
   }
 
   // http_header - computed: true, optional: false, required: false
+  private _httpHeader = new DataKubernetesPodSpecContainerReadinessProbeHttpGetHttpHeaderList(this, "http_header", false);
   public get httpHeader() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header');
+    return this._httpHeader;
   }
 
   // path - computed: true, optional: false, required: false
@@ -850,19 +3852,133 @@ export class DataKubernetesPodSpecContainerReadinessProbeHttpGet extends cdktf.C
     return this.getStringAttribute('scheme');
   }
 }
-export class DataKubernetesPodSpecContainerReadinessProbeTcpSocket extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerReadinessProbeHttpGetList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerReadinessProbeHttpGetOutputReference {
+    return new DataKubernetesPodSpecContainerReadinessProbeHttpGetOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerReadinessProbeTcpSocket {
+}
+
+export function dataKubernetesPodSpecContainerReadinessProbeTcpSocketToTerraform(struct?: DataKubernetesPodSpecContainerReadinessProbeTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerReadinessProbeTcpSocketOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerReadinessProbeTcpSocket | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerReadinessProbeTcpSocket | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // port - computed: true, optional: false, required: false
   public get port() {
     return this.getStringAttribute('port');
   }
 }
-export class DataKubernetesPodSpecContainerReadinessProbe extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerReadinessProbeTcpSocketList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerReadinessProbeTcpSocketOutputReference {
+    return new DataKubernetesPodSpecContainerReadinessProbeTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerReadinessProbe {
+}
+
+export function dataKubernetesPodSpecContainerReadinessProbeToTerraform(struct?: DataKubernetesPodSpecContainerReadinessProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerReadinessProbe | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerReadinessProbe | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // exec - computed: true, optional: false, required: false
+  private _exec = new DataKubernetesPodSpecContainerReadinessProbeExecList(this, "exec", false);
   public get exec() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('exec');
+    return this._exec;
   }
 
   // failure_threshold - computed: true, optional: false, required: false
@@ -871,9 +3987,9 @@ export class DataKubernetesPodSpecContainerReadinessProbe extends cdktf.ComplexC
   }
 
   // http_get - computed: true, optional: false, required: false
+  private _httpGet = new DataKubernetesPodSpecContainerReadinessProbeHttpGetList(this, "http_get", false);
   public get httpGet() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_get');
+    return this._httpGet;
   }
 
   // initial_delay_seconds - computed: true, optional: false, required: false
@@ -892,9 +4008,9 @@ export class DataKubernetesPodSpecContainerReadinessProbe extends cdktf.ComplexC
   }
 
   // tcp_socket - computed: true, optional: false, required: false
+  private _tcpSocket = new DataKubernetesPodSpecContainerReadinessProbeTcpSocketList(this, "tcp_socket", false);
   public get tcpSocket() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket');
+    return this._tcpSocket;
   }
 
   // timeout_seconds - computed: true, optional: false, required: false
@@ -902,19 +4018,133 @@ export class DataKubernetesPodSpecContainerReadinessProbe extends cdktf.ComplexC
     return this.getNumberAttribute('timeout_seconds');
   }
 }
-export class DataKubernetesPodSpecContainerResources extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerReadinessProbeList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerReadinessProbeOutputReference {
+    return new DataKubernetesPodSpecContainerReadinessProbeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerResources {
+}
+
+export function dataKubernetesPodSpecContainerResourcesToTerraform(struct?: DataKubernetesPodSpecContainerResources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerResourcesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerResources | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerResources | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // limits - computed: true, optional: false, required: false
-  public get limits() {
-    return this.getStringMapAttribute('limits');
+  public limits(key: string): string | cdktf.IResolvable {
+    return new cdktf.StringMap(this, 'limits').lookup(key);
   }
 
   // requests - computed: true, optional: false, required: false
-  public get requests() {
-    return this.getStringMapAttribute('requests');
+  public requests(key: string): string | cdktf.IResolvable {
+    return new cdktf.StringMap(this, 'requests').lookup(key);
   }
 }
-export class DataKubernetesPodSpecContainerSecurityContextCapabilities extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerResourcesList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerResourcesOutputReference {
+    return new DataKubernetesPodSpecContainerResourcesOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerSecurityContextCapabilities {
+}
+
+export function dataKubernetesPodSpecContainerSecurityContextCapabilitiesToTerraform(struct?: DataKubernetesPodSpecContainerSecurityContextCapabilities): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerSecurityContextCapabilities | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerSecurityContextCapabilities | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // add - computed: true, optional: false, required: false
   public get add() {
@@ -926,7 +4156,64 @@ export class DataKubernetesPodSpecContainerSecurityContextCapabilities extends c
     return this.getListAttribute('drop');
   }
 }
-export class DataKubernetesPodSpecContainerSecurityContextSeLinuxOptions extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerSecurityContextCapabilitiesList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerSecurityContextCapabilitiesOutputReference {
+    return new DataKubernetesPodSpecContainerSecurityContextCapabilitiesOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerSecurityContextSeLinuxOptions {
+}
+
+export function dataKubernetesPodSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct?: DataKubernetesPodSpecContainerSecurityContextSeLinuxOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerSecurityContextSeLinuxOptions | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerSecurityContextSeLinuxOptions | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // level - computed: true, optional: false, required: false
   public get level() {
@@ -948,7 +4235,64 @@ export class DataKubernetesPodSpecContainerSecurityContextSeLinuxOptions extends
     return this.getStringAttribute('user');
   }
 }
-export class DataKubernetesPodSpecContainerSecurityContextSeccompProfile extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerSecurityContextSeLinuxOptionsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerSecurityContextSeLinuxOptionsOutputReference {
+    return new DataKubernetesPodSpecContainerSecurityContextSeLinuxOptionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerSecurityContextSeccompProfile {
+}
+
+export function dataKubernetesPodSpecContainerSecurityContextSeccompProfileToTerraform(struct?: DataKubernetesPodSpecContainerSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // localhost_profile - computed: true, optional: false, required: false
   public get localhostProfile() {
@@ -960,7 +4304,64 @@ export class DataKubernetesPodSpecContainerSecurityContextSeccompProfile extends
     return this.getStringAttribute('type');
   }
 }
-export class DataKubernetesPodSpecContainerSecurityContext extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerSecurityContextSeccompProfileList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerSecurityContextSeccompProfileOutputReference {
+    return new DataKubernetesPodSpecContainerSecurityContextSeccompProfileOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerSecurityContext {
+}
+
+export function dataKubernetesPodSpecContainerSecurityContextToTerraform(struct?: DataKubernetesPodSpecContainerSecurityContext): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerSecurityContextOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerSecurityContext | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerSecurityContext | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // allow_privilege_escalation - computed: true, optional: false, required: false
   public get allowPrivilegeEscalation() {
@@ -968,9 +4369,9 @@ export class DataKubernetesPodSpecContainerSecurityContext extends cdktf.Complex
   }
 
   // capabilities - computed: true, optional: false, required: false
+  private _capabilities = new DataKubernetesPodSpecContainerSecurityContextCapabilitiesList(this, "capabilities", false);
   public get capabilities() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('capabilities');
+    return this._capabilities;
   }
 
   // privileged - computed: true, optional: false, required: false
@@ -999,25 +4400,139 @@ export class DataKubernetesPodSpecContainerSecurityContext extends cdktf.Complex
   }
 
   // se_linux_options - computed: true, optional: false, required: false
+  private _seLinuxOptions = new DataKubernetesPodSpecContainerSecurityContextSeLinuxOptionsList(this, "se_linux_options", false);
   public get seLinuxOptions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('se_linux_options');
+    return this._seLinuxOptions;
   }
 
   // seccomp_profile - computed: true, optional: false, required: false
+  private _seccompProfile = new DataKubernetesPodSpecContainerSecurityContextSeccompProfileList(this, "seccomp_profile", false);
   public get seccompProfile() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('seccomp_profile');
+    return this._seccompProfile;
   }
 }
-export class DataKubernetesPodSpecContainerStartupProbeExec extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerSecurityContextList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerSecurityContextOutputReference {
+    return new DataKubernetesPodSpecContainerSecurityContextOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerStartupProbeExec {
+}
+
+export function dataKubernetesPodSpecContainerStartupProbeExecToTerraform(struct?: DataKubernetesPodSpecContainerStartupProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerStartupProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerStartupProbeExec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerStartupProbeExec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // command - computed: true, optional: false, required: false
   public get command() {
     return this.getListAttribute('command');
   }
 }
-export class DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeader extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerStartupProbeExecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerStartupProbeExecOutputReference {
+    return new DataKubernetesPodSpecContainerStartupProbeExecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeader {
+}
+
+export function dataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeader | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeader | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -1029,7 +4544,64 @@ export class DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeader extends
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecContainerStartupProbeHttpGet extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeaderList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeaderOutputReference {
+    return new DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerStartupProbeHttpGet {
+}
+
+export function dataKubernetesPodSpecContainerStartupProbeHttpGetToTerraform(struct?: DataKubernetesPodSpecContainerStartupProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerStartupProbeHttpGet | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerStartupProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // host - computed: true, optional: false, required: false
   public get host() {
@@ -1037,9 +4609,9 @@ export class DataKubernetesPodSpecContainerStartupProbeHttpGet extends cdktf.Com
   }
 
   // http_header - computed: true, optional: false, required: false
+  private _httpHeader = new DataKubernetesPodSpecContainerStartupProbeHttpGetHttpHeaderList(this, "http_header", false);
   public get httpHeader() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header');
+    return this._httpHeader;
   }
 
   // path - computed: true, optional: false, required: false
@@ -1057,19 +4629,133 @@ export class DataKubernetesPodSpecContainerStartupProbeHttpGet extends cdktf.Com
     return this.getStringAttribute('scheme');
   }
 }
-export class DataKubernetesPodSpecContainerStartupProbeTcpSocket extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerStartupProbeHttpGetList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerStartupProbeHttpGetOutputReference {
+    return new DataKubernetesPodSpecContainerStartupProbeHttpGetOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerStartupProbeTcpSocket {
+}
+
+export function dataKubernetesPodSpecContainerStartupProbeTcpSocketToTerraform(struct?: DataKubernetesPodSpecContainerStartupProbeTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerStartupProbeTcpSocketOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerStartupProbeTcpSocket | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerStartupProbeTcpSocket | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // port - computed: true, optional: false, required: false
   public get port() {
     return this.getStringAttribute('port');
   }
 }
-export class DataKubernetesPodSpecContainerStartupProbe extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerStartupProbeTcpSocketList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerStartupProbeTcpSocketOutputReference {
+    return new DataKubernetesPodSpecContainerStartupProbeTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerStartupProbe {
+}
+
+export function dataKubernetesPodSpecContainerStartupProbeToTerraform(struct?: DataKubernetesPodSpecContainerStartupProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerStartupProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerStartupProbe | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerStartupProbe | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // exec - computed: true, optional: false, required: false
+  private _exec = new DataKubernetesPodSpecContainerStartupProbeExecList(this, "exec", false);
   public get exec() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('exec');
+    return this._exec;
   }
 
   // failure_threshold - computed: true, optional: false, required: false
@@ -1078,9 +4764,9 @@ export class DataKubernetesPodSpecContainerStartupProbe extends cdktf.ComplexCom
   }
 
   // http_get - computed: true, optional: false, required: false
+  private _httpGet = new DataKubernetesPodSpecContainerStartupProbeHttpGetList(this, "http_get", false);
   public get httpGet() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_get');
+    return this._httpGet;
   }
 
   // initial_delay_seconds - computed: true, optional: false, required: false
@@ -1099,9 +4785,9 @@ export class DataKubernetesPodSpecContainerStartupProbe extends cdktf.ComplexCom
   }
 
   // tcp_socket - computed: true, optional: false, required: false
+  private _tcpSocket = new DataKubernetesPodSpecContainerStartupProbeTcpSocketList(this, "tcp_socket", false);
   public get tcpSocket() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket');
+    return this._tcpSocket;
   }
 
   // timeout_seconds - computed: true, optional: false, required: false
@@ -1109,7 +4795,64 @@ export class DataKubernetesPodSpecContainerStartupProbe extends cdktf.ComplexCom
     return this.getNumberAttribute('timeout_seconds');
   }
 }
-export class DataKubernetesPodSpecContainerVolumeMount extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerStartupProbeList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerStartupProbeOutputReference {
+    return new DataKubernetesPodSpecContainerStartupProbeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainerVolumeMount {
+}
+
+export function dataKubernetesPodSpecContainerVolumeMountToTerraform(struct?: DataKubernetesPodSpecContainerVolumeMount): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerVolumeMountOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainerVolumeMount | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainerVolumeMount | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // mount_path - computed: true, optional: false, required: false
   public get mountPath() {
@@ -1136,7 +4879,64 @@ export class DataKubernetesPodSpecContainerVolumeMount extends cdktf.ComplexComp
     return this.getStringAttribute('sub_path');
   }
 }
-export class DataKubernetesPodSpecContainer extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerVolumeMountList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerVolumeMountOutputReference {
+    return new DataKubernetesPodSpecContainerVolumeMountOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecContainer {
+}
+
+export function dataKubernetesPodSpecContainerToTerraform(struct?: DataKubernetesPodSpecContainer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecContainerOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecContainer | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecContainer | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // args - computed: true, optional: false, required: false
   public get args() {
@@ -1149,15 +4949,15 @@ export class DataKubernetesPodSpecContainer extends cdktf.ComplexComputedList {
   }
 
   // env - computed: true, optional: false, required: false
+  private _env = new DataKubernetesPodSpecContainerEnvList(this, "env", false);
   public get env() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('env');
+    return this._env;
   }
 
   // env_from - computed: true, optional: false, required: false
+  private _envFrom = new DataKubernetesPodSpecContainerEnvFromList(this, "env_from", false);
   public get envFrom() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('env_from');
+    return this._envFrom;
   }
 
   // image - computed: true, optional: false, required: false
@@ -1171,15 +4971,15 @@ export class DataKubernetesPodSpecContainer extends cdktf.ComplexComputedList {
   }
 
   // lifecycle - computed: true, optional: false, required: false
+  private _lifecycle = new DataKubernetesPodSpecContainerLifecycleList(this, "lifecycle", false);
   public get lifecycle() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('lifecycle');
+    return this._lifecycle;
   }
 
   // liveness_probe - computed: true, optional: false, required: false
+  private _livenessProbe = new DataKubernetesPodSpecContainerLivenessProbeList(this, "liveness_probe", false);
   public get livenessProbe() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('liveness_probe');
+    return this._livenessProbe;
   }
 
   // name - computed: true, optional: false, required: false
@@ -1188,33 +4988,33 @@ export class DataKubernetesPodSpecContainer extends cdktf.ComplexComputedList {
   }
 
   // port - computed: true, optional: false, required: false
+  private _port = new DataKubernetesPodSpecContainerPortList(this, "port", false);
   public get port() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('port');
+    return this._port;
   }
 
   // readiness_probe - computed: true, optional: false, required: false
+  private _readinessProbe = new DataKubernetesPodSpecContainerReadinessProbeList(this, "readiness_probe", false);
   public get readinessProbe() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('readiness_probe');
+    return this._readinessProbe;
   }
 
   // resources - computed: true, optional: false, required: false
+  private _resources = new DataKubernetesPodSpecContainerResourcesList(this, "resources", false);
   public get resources() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('resources');
+    return this._resources;
   }
 
   // security_context - computed: true, optional: false, required: false
+  private _securityContext = new DataKubernetesPodSpecContainerSecurityContextList(this, "security_context", false);
   public get securityContext() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('security_context');
+    return this._securityContext;
   }
 
   // startup_probe - computed: true, optional: false, required: false
+  private _startupProbe = new DataKubernetesPodSpecContainerStartupProbeList(this, "startup_probe", false);
   public get startupProbe() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('startup_probe');
+    return this._startupProbe;
   }
 
   // stdin - computed: true, optional: false, required: false
@@ -1243,9 +5043,9 @@ export class DataKubernetesPodSpecContainer extends cdktf.ComplexComputedList {
   }
 
   // volume_mount - computed: true, optional: false, required: false
+  private _volumeMount = new DataKubernetesPodSpecContainerVolumeMountList(this, "volume_mount", false);
   public get volumeMount() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('volume_mount');
+    return this._volumeMount;
   }
 
   // working_dir - computed: true, optional: false, required: false
@@ -1253,7 +5053,64 @@ export class DataKubernetesPodSpecContainer extends cdktf.ComplexComputedList {
     return this.getStringAttribute('working_dir');
   }
 }
-export class DataKubernetesPodSpecDnsConfigOption extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecContainerList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecContainerOutputReference {
+    return new DataKubernetesPodSpecContainerOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecDnsConfigOption {
+}
+
+export function dataKubernetesPodSpecDnsConfigOptionToTerraform(struct?: DataKubernetesPodSpecDnsConfigOption): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecDnsConfigOptionOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecDnsConfigOption | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecDnsConfigOption | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -1265,7 +5122,64 @@ export class DataKubernetesPodSpecDnsConfigOption extends cdktf.ComplexComputedL
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecDnsConfig extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecDnsConfigOptionList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecDnsConfigOptionOutputReference {
+    return new DataKubernetesPodSpecDnsConfigOptionOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecDnsConfig {
+}
+
+export function dataKubernetesPodSpecDnsConfigToTerraform(struct?: DataKubernetesPodSpecDnsConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecDnsConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecDnsConfig | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecDnsConfig | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // nameservers - computed: true, optional: false, required: false
   public get nameservers() {
@@ -1273,9 +5187,9 @@ export class DataKubernetesPodSpecDnsConfig extends cdktf.ComplexComputedList {
   }
 
   // option - computed: true, optional: false, required: false
+  private _option = new DataKubernetesPodSpecDnsConfigOptionList(this, "option", false);
   public get option() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('option');
+    return this._option;
   }
 
   // searches - computed: true, optional: false, required: false
@@ -1283,7 +5197,64 @@ export class DataKubernetesPodSpecDnsConfig extends cdktf.ComplexComputedList {
     return this.getListAttribute('searches');
   }
 }
-export class DataKubernetesPodSpecHostAliases extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecDnsConfigList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecDnsConfigOutputReference {
+    return new DataKubernetesPodSpecDnsConfigOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecHostAliases {
+}
+
+export function dataKubernetesPodSpecHostAliasesToTerraform(struct?: DataKubernetesPodSpecHostAliases): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecHostAliasesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecHostAliases | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecHostAliases | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // hostnames - computed: true, optional: false, required: false
   public get hostnames() {
@@ -1295,14 +5266,128 @@ export class DataKubernetesPodSpecHostAliases extends cdktf.ComplexComputedList 
     return this.getStringAttribute('ip');
   }
 }
-export class DataKubernetesPodSpecImagePullSecrets extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecHostAliasesList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecHostAliasesOutputReference {
+    return new DataKubernetesPodSpecHostAliasesOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecImagePullSecrets {
+}
+
+export function dataKubernetesPodSpecImagePullSecretsToTerraform(struct?: DataKubernetesPodSpecImagePullSecrets): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecImagePullSecretsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecImagePullSecrets | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecImagePullSecrets | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
     return this.getStringAttribute('name');
   }
 }
-export class DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecImagePullSecretsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecImagePullSecretsOutputReference {
+    return new DataKubernetesPodSpecImagePullSecretsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRef {
+}
+
+export function dataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRefToTerraform(struct?: DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -1319,7 +5404,64 @@ export class DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRef exten
     return this.getBooleanAttribute('optional');
   }
 }
-export class DataKubernetesPodSpecInitContainerEnvValueFromFieldRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference {
+    return new DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerEnvValueFromFieldRef {
+}
+
+export function dataKubernetesPodSpecInitContainerEnvValueFromFieldRefToTerraform(struct?: DataKubernetesPodSpecInitContainerEnvValueFromFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerEnvValueFromFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerEnvValueFromFieldRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerEnvValueFromFieldRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // api_version - computed: true, optional: false, required: false
   public get apiVersion() {
@@ -1331,7 +5473,64 @@ export class DataKubernetesPodSpecInitContainerEnvValueFromFieldRef extends cdkt
     return this.getStringAttribute('field_path');
   }
 }
-export class DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerEnvValueFromFieldRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerEnvValueFromFieldRefOutputReference {
+    return new DataKubernetesPodSpecInitContainerEnvValueFromFieldRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRef {
+}
+
+export function dataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRefToTerraform(struct?: DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // container_name - computed: true, optional: false, required: false
   public get containerName() {
@@ -1348,7 +5547,64 @@ export class DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRef exte
     return this.getStringAttribute('resource');
   }
 }
-export class DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRefOutputReference {
+    return new DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRef {
+}
+
+export function dataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct?: DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -1365,33 +5621,147 @@ export class DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRef extends 
     return this.getBooleanAttribute('optional');
   }
 }
-export class DataKubernetesPodSpecInitContainerEnvValueFrom extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRefOutputReference {
+    return new DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerEnvValueFrom {
+}
+
+export function dataKubernetesPodSpecInitContainerEnvValueFromToTerraform(struct?: DataKubernetesPodSpecInitContainerEnvValueFrom): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerEnvValueFromOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerEnvValueFrom | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerEnvValueFrom | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // config_map_key_ref - computed: true, optional: false, required: false
+  private _configMapKeyRef = new DataKubernetesPodSpecInitContainerEnvValueFromConfigMapKeyRefList(this, "config_map_key_ref", false);
   public get configMapKeyRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('config_map_key_ref');
+    return this._configMapKeyRef;
   }
 
   // field_ref - computed: true, optional: false, required: false
+  private _fieldRef = new DataKubernetesPodSpecInitContainerEnvValueFromFieldRefList(this, "field_ref", false);
   public get fieldRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('field_ref');
+    return this._fieldRef;
   }
 
   // resource_field_ref - computed: true, optional: false, required: false
+  private _resourceFieldRef = new DataKubernetesPodSpecInitContainerEnvValueFromResourceFieldRefList(this, "resource_field_ref", false);
   public get resourceFieldRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('resource_field_ref');
+    return this._resourceFieldRef;
   }
 
   // secret_key_ref - computed: true, optional: false, required: false
+  private _secretKeyRef = new DataKubernetesPodSpecInitContainerEnvValueFromSecretKeyRefList(this, "secret_key_ref", false);
   public get secretKeyRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('secret_key_ref');
+    return this._secretKeyRef;
   }
 }
-export class DataKubernetesPodSpecInitContainerEnv extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerEnvValueFromList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerEnvValueFromOutputReference {
+    return new DataKubernetesPodSpecInitContainerEnvValueFromOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerEnv {
+}
+
+export function dataKubernetesPodSpecInitContainerEnvToTerraform(struct?: DataKubernetesPodSpecInitContainerEnv): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerEnvOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerEnv | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerEnv | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -1404,12 +5774,69 @@ export class DataKubernetesPodSpecInitContainerEnv extends cdktf.ComplexComputed
   }
 
   // value_from - computed: true, optional: false, required: false
+  private _valueFrom = new DataKubernetesPodSpecInitContainerEnvValueFromList(this, "value_from", false);
   public get valueFrom() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('value_from');
+    return this._valueFrom;
   }
 }
-export class DataKubernetesPodSpecInitContainerEnvFromConfigMapRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerEnvList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerEnvOutputReference {
+    return new DataKubernetesPodSpecInitContainerEnvOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerEnvFromConfigMapRef {
+}
+
+export function dataKubernetesPodSpecInitContainerEnvFromConfigMapRefToTerraform(struct?: DataKubernetesPodSpecInitContainerEnvFromConfigMapRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerEnvFromConfigMapRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerEnvFromConfigMapRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerEnvFromConfigMapRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -1421,7 +5848,64 @@ export class DataKubernetesPodSpecInitContainerEnvFromConfigMapRef extends cdktf
     return this.getBooleanAttribute('optional');
   }
 }
-export class DataKubernetesPodSpecInitContainerEnvFromSecretRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerEnvFromConfigMapRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerEnvFromConfigMapRefOutputReference {
+    return new DataKubernetesPodSpecInitContainerEnvFromConfigMapRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerEnvFromSecretRef {
+}
+
+export function dataKubernetesPodSpecInitContainerEnvFromSecretRefToTerraform(struct?: DataKubernetesPodSpecInitContainerEnvFromSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerEnvFromSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerEnvFromSecretRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerEnvFromSecretRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -1433,12 +5917,69 @@ export class DataKubernetesPodSpecInitContainerEnvFromSecretRef extends cdktf.Co
     return this.getBooleanAttribute('optional');
   }
 }
-export class DataKubernetesPodSpecInitContainerEnvFrom extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerEnvFromSecretRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerEnvFromSecretRefOutputReference {
+    return new DataKubernetesPodSpecInitContainerEnvFromSecretRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerEnvFrom {
+}
+
+export function dataKubernetesPodSpecInitContainerEnvFromToTerraform(struct?: DataKubernetesPodSpecInitContainerEnvFrom): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerEnvFromOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerEnvFrom | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerEnvFrom | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // config_map_ref - computed: true, optional: false, required: false
+  private _configMapRef = new DataKubernetesPodSpecInitContainerEnvFromConfigMapRefList(this, "config_map_ref", false);
   public get configMapRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('config_map_ref');
+    return this._configMapRef;
   }
 
   // prefix - computed: true, optional: false, required: false
@@ -1447,19 +5988,133 @@ export class DataKubernetesPodSpecInitContainerEnvFrom extends cdktf.ComplexComp
   }
 
   // secret_ref - computed: true, optional: false, required: false
+  private _secretRef = new DataKubernetesPodSpecInitContainerEnvFromSecretRefList(this, "secret_ref", false);
   public get secretRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('secret_ref');
+    return this._secretRef;
   }
 }
-export class DataKubernetesPodSpecInitContainerLifecyclePostStartExec extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerEnvFromList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerEnvFromOutputReference {
+    return new DataKubernetesPodSpecInitContainerEnvFromOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLifecyclePostStartExec {
+}
+
+export function dataKubernetesPodSpecInitContainerLifecyclePostStartExecToTerraform(struct?: DataKubernetesPodSpecInitContainerLifecyclePostStartExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLifecyclePostStartExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLifecyclePostStartExec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLifecyclePostStartExec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // command - computed: true, optional: false, required: false
   public get command() {
     return this.getListAttribute('command');
   }
 }
-export class DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeader extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLifecyclePostStartExecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLifecyclePostStartExecOutputReference {
+    return new DataKubernetesPodSpecInitContainerLifecyclePostStartExecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeader {
+}
+
+export function dataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform(struct?: DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeader | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeader | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -1471,7 +6126,64 @@ export class DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHead
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGet extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeaderList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeaderOutputReference {
+    return new DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGet {
+}
+
+export function dataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetToTerraform(struct?: DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGet | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGet | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // host - computed: true, optional: false, required: false
   public get host() {
@@ -1479,9 +6191,9 @@ export class DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGet extends
   }
 
   // http_header - computed: true, optional: false, required: false
+  private _httpHeader = new DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetHttpHeaderList(this, "http_header", false);
   public get httpHeader() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header');
+    return this._httpHeader;
   }
 
   // path - computed: true, optional: false, required: false
@@ -1499,41 +6211,269 @@ export class DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGet extends
     return this.getStringAttribute('scheme');
   }
 }
-export class DataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocket extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetOutputReference {
+    return new DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocket {
+}
+
+export function dataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocketToTerraform(struct?: DataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocketOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocket | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocket | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // port - computed: true, optional: false, required: false
   public get port() {
     return this.getStringAttribute('port');
   }
 }
-export class DataKubernetesPodSpecInitContainerLifecyclePostStart extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocketList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocketOutputReference {
+    return new DataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLifecyclePostStart {
+}
+
+export function dataKubernetesPodSpecInitContainerLifecyclePostStartToTerraform(struct?: DataKubernetesPodSpecInitContainerLifecyclePostStart): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLifecyclePostStartOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLifecyclePostStart | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLifecyclePostStart | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // exec - computed: true, optional: false, required: false
+  private _exec = new DataKubernetesPodSpecInitContainerLifecyclePostStartExecList(this, "exec", false);
   public get exec() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('exec');
+    return this._exec;
   }
 
   // http_get - computed: true, optional: false, required: false
+  private _httpGet = new DataKubernetesPodSpecInitContainerLifecyclePostStartHttpGetList(this, "http_get", false);
   public get httpGet() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_get');
+    return this._httpGet;
   }
 
   // tcp_socket - computed: true, optional: false, required: false
+  private _tcpSocket = new DataKubernetesPodSpecInitContainerLifecyclePostStartTcpSocketList(this, "tcp_socket", false);
   public get tcpSocket() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket');
+    return this._tcpSocket;
   }
 }
-export class DataKubernetesPodSpecInitContainerLifecyclePreStopExec extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLifecyclePostStartList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLifecyclePostStartOutputReference {
+    return new DataKubernetesPodSpecInitContainerLifecyclePostStartOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLifecyclePreStopExec {
+}
+
+export function dataKubernetesPodSpecInitContainerLifecyclePreStopExecToTerraform(struct?: DataKubernetesPodSpecInitContainerLifecyclePreStopExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLifecyclePreStopExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLifecyclePreStopExec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLifecyclePreStopExec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // command - computed: true, optional: false, required: false
   public get command() {
     return this.getListAttribute('command');
   }
 }
-export class DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeader extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLifecyclePreStopExecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLifecyclePreStopExecOutputReference {
+    return new DataKubernetesPodSpecInitContainerLifecyclePreStopExecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeader {
+}
+
+export function dataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform(struct?: DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeader | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeader | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -1545,7 +6485,64 @@ export class DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeader
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGet extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeaderList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeaderOutputReference {
+    return new DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGet {
+}
+
+export function dataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetToTerraform(struct?: DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGet | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGet | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // host - computed: true, optional: false, required: false
   public get host() {
@@ -1553,9 +6550,9 @@ export class DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGet extends c
   }
 
   // http_header - computed: true, optional: false, required: false
+  private _httpHeader = new DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetHttpHeaderList(this, "http_header", false);
   public get httpHeader() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header');
+    return this._httpHeader;
   }
 
   // path - computed: true, optional: false, required: false
@@ -1573,55 +6570,340 @@ export class DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGet extends c
     return this.getStringAttribute('scheme');
   }
 }
-export class DataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocket extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetOutputReference {
+    return new DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocket {
+}
+
+export function dataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocketToTerraform(struct?: DataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocketOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocket | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocket | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // port - computed: true, optional: false, required: false
   public get port() {
     return this.getStringAttribute('port');
   }
 }
-export class DataKubernetesPodSpecInitContainerLifecyclePreStop extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocketList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocketOutputReference {
+    return new DataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLifecyclePreStop {
+}
+
+export function dataKubernetesPodSpecInitContainerLifecyclePreStopToTerraform(struct?: DataKubernetesPodSpecInitContainerLifecyclePreStop): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLifecyclePreStopOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLifecyclePreStop | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLifecyclePreStop | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // exec - computed: true, optional: false, required: false
+  private _exec = new DataKubernetesPodSpecInitContainerLifecyclePreStopExecList(this, "exec", false);
   public get exec() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('exec');
+    return this._exec;
   }
 
   // http_get - computed: true, optional: false, required: false
+  private _httpGet = new DataKubernetesPodSpecInitContainerLifecyclePreStopHttpGetList(this, "http_get", false);
   public get httpGet() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_get');
+    return this._httpGet;
   }
 
   // tcp_socket - computed: true, optional: false, required: false
+  private _tcpSocket = new DataKubernetesPodSpecInitContainerLifecyclePreStopTcpSocketList(this, "tcp_socket", false);
   public get tcpSocket() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket');
+    return this._tcpSocket;
   }
 }
-export class DataKubernetesPodSpecInitContainerLifecycle extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLifecyclePreStopList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLifecyclePreStopOutputReference {
+    return new DataKubernetesPodSpecInitContainerLifecyclePreStopOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLifecycle {
+}
+
+export function dataKubernetesPodSpecInitContainerLifecycleToTerraform(struct?: DataKubernetesPodSpecInitContainerLifecycle): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLifecycleOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLifecycle | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLifecycle | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // post_start - computed: true, optional: false, required: false
+  private _postStart = new DataKubernetesPodSpecInitContainerLifecyclePostStartList(this, "post_start", false);
   public get postStart() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('post_start');
+    return this._postStart;
   }
 
   // pre_stop - computed: true, optional: false, required: false
+  private _preStop = new DataKubernetesPodSpecInitContainerLifecyclePreStopList(this, "pre_stop", false);
   public get preStop() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('pre_stop');
+    return this._preStop;
   }
 }
-export class DataKubernetesPodSpecInitContainerLivenessProbeExec extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLifecycleList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLifecycleOutputReference {
+    return new DataKubernetesPodSpecInitContainerLifecycleOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLivenessProbeExec {
+}
+
+export function dataKubernetesPodSpecInitContainerLivenessProbeExecToTerraform(struct?: DataKubernetesPodSpecInitContainerLivenessProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLivenessProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLivenessProbeExec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLivenessProbeExec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // command - computed: true, optional: false, required: false
   public get command() {
     return this.getListAttribute('command');
   }
 }
-export class DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeader extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLivenessProbeExecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLivenessProbeExecOutputReference {
+    return new DataKubernetesPodSpecInitContainerLivenessProbeExecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeader {
+}
+
+export function dataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform(struct?: DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeader | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeader | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -1633,7 +6915,64 @@ export class DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeader ex
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecInitContainerLivenessProbeHttpGet extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeaderList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeaderOutputReference {
+    return new DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLivenessProbeHttpGet {
+}
+
+export function dataKubernetesPodSpecInitContainerLivenessProbeHttpGetToTerraform(struct?: DataKubernetesPodSpecInitContainerLivenessProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLivenessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLivenessProbeHttpGet | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLivenessProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // host - computed: true, optional: false, required: false
   public get host() {
@@ -1641,9 +6980,9 @@ export class DataKubernetesPodSpecInitContainerLivenessProbeHttpGet extends cdkt
   }
 
   // http_header - computed: true, optional: false, required: false
+  private _httpHeader = new DataKubernetesPodSpecInitContainerLivenessProbeHttpGetHttpHeaderList(this, "http_header", false);
   public get httpHeader() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header');
+    return this._httpHeader;
   }
 
   // path - computed: true, optional: false, required: false
@@ -1661,19 +7000,133 @@ export class DataKubernetesPodSpecInitContainerLivenessProbeHttpGet extends cdkt
     return this.getStringAttribute('scheme');
   }
 }
-export class DataKubernetesPodSpecInitContainerLivenessProbeTcpSocket extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLivenessProbeHttpGetList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLivenessProbeHttpGetOutputReference {
+    return new DataKubernetesPodSpecInitContainerLivenessProbeHttpGetOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLivenessProbeTcpSocket {
+}
+
+export function dataKubernetesPodSpecInitContainerLivenessProbeTcpSocketToTerraform(struct?: DataKubernetesPodSpecInitContainerLivenessProbeTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLivenessProbeTcpSocketOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLivenessProbeTcpSocket | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLivenessProbeTcpSocket | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // port - computed: true, optional: false, required: false
   public get port() {
     return this.getStringAttribute('port');
   }
 }
-export class DataKubernetesPodSpecInitContainerLivenessProbe extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLivenessProbeTcpSocketList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLivenessProbeTcpSocketOutputReference {
+    return new DataKubernetesPodSpecInitContainerLivenessProbeTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerLivenessProbe {
+}
+
+export function dataKubernetesPodSpecInitContainerLivenessProbeToTerraform(struct?: DataKubernetesPodSpecInitContainerLivenessProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerLivenessProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerLivenessProbe | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerLivenessProbe | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // exec - computed: true, optional: false, required: false
+  private _exec = new DataKubernetesPodSpecInitContainerLivenessProbeExecList(this, "exec", false);
   public get exec() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('exec');
+    return this._exec;
   }
 
   // failure_threshold - computed: true, optional: false, required: false
@@ -1682,9 +7135,9 @@ export class DataKubernetesPodSpecInitContainerLivenessProbe extends cdktf.Compl
   }
 
   // http_get - computed: true, optional: false, required: false
+  private _httpGet = new DataKubernetesPodSpecInitContainerLivenessProbeHttpGetList(this, "http_get", false);
   public get httpGet() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_get');
+    return this._httpGet;
   }
 
   // initial_delay_seconds - computed: true, optional: false, required: false
@@ -1703,9 +7156,9 @@ export class DataKubernetesPodSpecInitContainerLivenessProbe extends cdktf.Compl
   }
 
   // tcp_socket - computed: true, optional: false, required: false
+  private _tcpSocket = new DataKubernetesPodSpecInitContainerLivenessProbeTcpSocketList(this, "tcp_socket", false);
   public get tcpSocket() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket');
+    return this._tcpSocket;
   }
 
   // timeout_seconds - computed: true, optional: false, required: false
@@ -1713,7 +7166,64 @@ export class DataKubernetesPodSpecInitContainerLivenessProbe extends cdktf.Compl
     return this.getNumberAttribute('timeout_seconds');
   }
 }
-export class DataKubernetesPodSpecInitContainerPort extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerLivenessProbeList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerLivenessProbeOutputReference {
+    return new DataKubernetesPodSpecInitContainerLivenessProbeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerPort {
+}
+
+export function dataKubernetesPodSpecInitContainerPortToTerraform(struct?: DataKubernetesPodSpecInitContainerPort): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerPortOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerPort | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerPort | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // container_port - computed: true, optional: false, required: false
   public get containerPort() {
@@ -1740,14 +7250,128 @@ export class DataKubernetesPodSpecInitContainerPort extends cdktf.ComplexCompute
     return this.getStringAttribute('protocol');
   }
 }
-export class DataKubernetesPodSpecInitContainerReadinessProbeExec extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerPortList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerPortOutputReference {
+    return new DataKubernetesPodSpecInitContainerPortOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerReadinessProbeExec {
+}
+
+export function dataKubernetesPodSpecInitContainerReadinessProbeExecToTerraform(struct?: DataKubernetesPodSpecInitContainerReadinessProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerReadinessProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerReadinessProbeExec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerReadinessProbeExec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // command - computed: true, optional: false, required: false
   public get command() {
     return this.getListAttribute('command');
   }
 }
-export class DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeader extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerReadinessProbeExecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerReadinessProbeExecOutputReference {
+    return new DataKubernetesPodSpecInitContainerReadinessProbeExecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeader {
+}
+
+export function dataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeader | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeader | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -1759,7 +7383,64 @@ export class DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeader e
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecInitContainerReadinessProbeHttpGet extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeaderList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeaderOutputReference {
+    return new DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerReadinessProbeHttpGet {
+}
+
+export function dataKubernetesPodSpecInitContainerReadinessProbeHttpGetToTerraform(struct?: DataKubernetesPodSpecInitContainerReadinessProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerReadinessProbeHttpGet | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerReadinessProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // host - computed: true, optional: false, required: false
   public get host() {
@@ -1767,9 +7448,9 @@ export class DataKubernetesPodSpecInitContainerReadinessProbeHttpGet extends cdk
   }
 
   // http_header - computed: true, optional: false, required: false
+  private _httpHeader = new DataKubernetesPodSpecInitContainerReadinessProbeHttpGetHttpHeaderList(this, "http_header", false);
   public get httpHeader() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header');
+    return this._httpHeader;
   }
 
   // path - computed: true, optional: false, required: false
@@ -1787,19 +7468,133 @@ export class DataKubernetesPodSpecInitContainerReadinessProbeHttpGet extends cdk
     return this.getStringAttribute('scheme');
   }
 }
-export class DataKubernetesPodSpecInitContainerReadinessProbeTcpSocket extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerReadinessProbeHttpGetList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerReadinessProbeHttpGetOutputReference {
+    return new DataKubernetesPodSpecInitContainerReadinessProbeHttpGetOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerReadinessProbeTcpSocket {
+}
+
+export function dataKubernetesPodSpecInitContainerReadinessProbeTcpSocketToTerraform(struct?: DataKubernetesPodSpecInitContainerReadinessProbeTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerReadinessProbeTcpSocketOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerReadinessProbeTcpSocket | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerReadinessProbeTcpSocket | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // port - computed: true, optional: false, required: false
   public get port() {
     return this.getStringAttribute('port');
   }
 }
-export class DataKubernetesPodSpecInitContainerReadinessProbe extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerReadinessProbeTcpSocketList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerReadinessProbeTcpSocketOutputReference {
+    return new DataKubernetesPodSpecInitContainerReadinessProbeTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerReadinessProbe {
+}
+
+export function dataKubernetesPodSpecInitContainerReadinessProbeToTerraform(struct?: DataKubernetesPodSpecInitContainerReadinessProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerReadinessProbe | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerReadinessProbe | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // exec - computed: true, optional: false, required: false
+  private _exec = new DataKubernetesPodSpecInitContainerReadinessProbeExecList(this, "exec", false);
   public get exec() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('exec');
+    return this._exec;
   }
 
   // failure_threshold - computed: true, optional: false, required: false
@@ -1808,9 +7603,9 @@ export class DataKubernetesPodSpecInitContainerReadinessProbe extends cdktf.Comp
   }
 
   // http_get - computed: true, optional: false, required: false
+  private _httpGet = new DataKubernetesPodSpecInitContainerReadinessProbeHttpGetList(this, "http_get", false);
   public get httpGet() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_get');
+    return this._httpGet;
   }
 
   // initial_delay_seconds - computed: true, optional: false, required: false
@@ -1829,9 +7624,9 @@ export class DataKubernetesPodSpecInitContainerReadinessProbe extends cdktf.Comp
   }
 
   // tcp_socket - computed: true, optional: false, required: false
+  private _tcpSocket = new DataKubernetesPodSpecInitContainerReadinessProbeTcpSocketList(this, "tcp_socket", false);
   public get tcpSocket() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket');
+    return this._tcpSocket;
   }
 
   // timeout_seconds - computed: true, optional: false, required: false
@@ -1839,19 +7634,133 @@ export class DataKubernetesPodSpecInitContainerReadinessProbe extends cdktf.Comp
     return this.getNumberAttribute('timeout_seconds');
   }
 }
-export class DataKubernetesPodSpecInitContainerResources extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerReadinessProbeList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerReadinessProbeOutputReference {
+    return new DataKubernetesPodSpecInitContainerReadinessProbeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerResources {
+}
+
+export function dataKubernetesPodSpecInitContainerResourcesToTerraform(struct?: DataKubernetesPodSpecInitContainerResources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerResourcesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerResources | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerResources | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // limits - computed: true, optional: false, required: false
-  public get limits() {
-    return this.getStringMapAttribute('limits');
+  public limits(key: string): string | cdktf.IResolvable {
+    return new cdktf.StringMap(this, 'limits').lookup(key);
   }
 
   // requests - computed: true, optional: false, required: false
-  public get requests() {
-    return this.getStringMapAttribute('requests');
+  public requests(key: string): string | cdktf.IResolvable {
+    return new cdktf.StringMap(this, 'requests').lookup(key);
   }
 }
-export class DataKubernetesPodSpecInitContainerSecurityContextCapabilities extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerResourcesList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerResourcesOutputReference {
+    return new DataKubernetesPodSpecInitContainerResourcesOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerSecurityContextCapabilities {
+}
+
+export function dataKubernetesPodSpecInitContainerSecurityContextCapabilitiesToTerraform(struct?: DataKubernetesPodSpecInitContainerSecurityContextCapabilities): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerSecurityContextCapabilities | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerSecurityContextCapabilities | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // add - computed: true, optional: false, required: false
   public get add() {
@@ -1863,7 +7772,64 @@ export class DataKubernetesPodSpecInitContainerSecurityContextCapabilities exten
     return this.getListAttribute('drop');
   }
 }
-export class DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptions extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerSecurityContextCapabilitiesList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerSecurityContextCapabilitiesOutputReference {
+    return new DataKubernetesPodSpecInitContainerSecurityContextCapabilitiesOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptions {
+}
+
+export function dataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct?: DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptions | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptions | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // level - computed: true, optional: false, required: false
   public get level() {
@@ -1885,7 +7851,64 @@ export class DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptions ext
     return this.getStringAttribute('user');
   }
 }
-export class DataKubernetesPodSpecInitContainerSecurityContextSeccompProfile extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptionsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference {
+    return new DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerSecurityContextSeccompProfile {
+}
+
+export function dataKubernetesPodSpecInitContainerSecurityContextSeccompProfileToTerraform(struct?: DataKubernetesPodSpecInitContainerSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // localhost_profile - computed: true, optional: false, required: false
   public get localhostProfile() {
@@ -1897,7 +7920,64 @@ export class DataKubernetesPodSpecInitContainerSecurityContextSeccompProfile ext
     return this.getStringAttribute('type');
   }
 }
-export class DataKubernetesPodSpecInitContainerSecurityContext extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerSecurityContextSeccompProfileList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerSecurityContextSeccompProfileOutputReference {
+    return new DataKubernetesPodSpecInitContainerSecurityContextSeccompProfileOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerSecurityContext {
+}
+
+export function dataKubernetesPodSpecInitContainerSecurityContextToTerraform(struct?: DataKubernetesPodSpecInitContainerSecurityContext): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerSecurityContextOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerSecurityContext | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerSecurityContext | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // allow_privilege_escalation - computed: true, optional: false, required: false
   public get allowPrivilegeEscalation() {
@@ -1905,9 +7985,9 @@ export class DataKubernetesPodSpecInitContainerSecurityContext extends cdktf.Com
   }
 
   // capabilities - computed: true, optional: false, required: false
+  private _capabilities = new DataKubernetesPodSpecInitContainerSecurityContextCapabilitiesList(this, "capabilities", false);
   public get capabilities() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('capabilities');
+    return this._capabilities;
   }
 
   // privileged - computed: true, optional: false, required: false
@@ -1936,25 +8016,139 @@ export class DataKubernetesPodSpecInitContainerSecurityContext extends cdktf.Com
   }
 
   // se_linux_options - computed: true, optional: false, required: false
+  private _seLinuxOptions = new DataKubernetesPodSpecInitContainerSecurityContextSeLinuxOptionsList(this, "se_linux_options", false);
   public get seLinuxOptions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('se_linux_options');
+    return this._seLinuxOptions;
   }
 
   // seccomp_profile - computed: true, optional: false, required: false
+  private _seccompProfile = new DataKubernetesPodSpecInitContainerSecurityContextSeccompProfileList(this, "seccomp_profile", false);
   public get seccompProfile() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('seccomp_profile');
+    return this._seccompProfile;
   }
 }
-export class DataKubernetesPodSpecInitContainerStartupProbeExec extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerSecurityContextList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerSecurityContextOutputReference {
+    return new DataKubernetesPodSpecInitContainerSecurityContextOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerStartupProbeExec {
+}
+
+export function dataKubernetesPodSpecInitContainerStartupProbeExecToTerraform(struct?: DataKubernetesPodSpecInitContainerStartupProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerStartupProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerStartupProbeExec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerStartupProbeExec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // command - computed: true, optional: false, required: false
   public get command() {
     return this.getListAttribute('command');
   }
 }
-export class DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeader extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerStartupProbeExecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerStartupProbeExecOutputReference {
+    return new DataKubernetesPodSpecInitContainerStartupProbeExecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeader {
+}
+
+export function dataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeader | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeader | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -1966,7 +8160,64 @@ export class DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeader ext
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecInitContainerStartupProbeHttpGet extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeaderList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference {
+    return new DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerStartupProbeHttpGet {
+}
+
+export function dataKubernetesPodSpecInitContainerStartupProbeHttpGetToTerraform(struct?: DataKubernetesPodSpecInitContainerStartupProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerStartupProbeHttpGet | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerStartupProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // host - computed: true, optional: false, required: false
   public get host() {
@@ -1974,9 +8225,9 @@ export class DataKubernetesPodSpecInitContainerStartupProbeHttpGet extends cdktf
   }
 
   // http_header - computed: true, optional: false, required: false
+  private _httpHeader = new DataKubernetesPodSpecInitContainerStartupProbeHttpGetHttpHeaderList(this, "http_header", false);
   public get httpHeader() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_header');
+    return this._httpHeader;
   }
 
   // path - computed: true, optional: false, required: false
@@ -1994,19 +8245,133 @@ export class DataKubernetesPodSpecInitContainerStartupProbeHttpGet extends cdktf
     return this.getStringAttribute('scheme');
   }
 }
-export class DataKubernetesPodSpecInitContainerStartupProbeTcpSocket extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerStartupProbeHttpGetList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerStartupProbeHttpGetOutputReference {
+    return new DataKubernetesPodSpecInitContainerStartupProbeHttpGetOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerStartupProbeTcpSocket {
+}
+
+export function dataKubernetesPodSpecInitContainerStartupProbeTcpSocketToTerraform(struct?: DataKubernetesPodSpecInitContainerStartupProbeTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerStartupProbeTcpSocketOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerStartupProbeTcpSocket | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerStartupProbeTcpSocket | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // port - computed: true, optional: false, required: false
   public get port() {
     return this.getStringAttribute('port');
   }
 }
-export class DataKubernetesPodSpecInitContainerStartupProbe extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerStartupProbeTcpSocketList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerStartupProbeTcpSocketOutputReference {
+    return new DataKubernetesPodSpecInitContainerStartupProbeTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerStartupProbe {
+}
+
+export function dataKubernetesPodSpecInitContainerStartupProbeToTerraform(struct?: DataKubernetesPodSpecInitContainerStartupProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerStartupProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerStartupProbe | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerStartupProbe | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // exec - computed: true, optional: false, required: false
+  private _exec = new DataKubernetesPodSpecInitContainerStartupProbeExecList(this, "exec", false);
   public get exec() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('exec');
+    return this._exec;
   }
 
   // failure_threshold - computed: true, optional: false, required: false
@@ -2015,9 +8380,9 @@ export class DataKubernetesPodSpecInitContainerStartupProbe extends cdktf.Comple
   }
 
   // http_get - computed: true, optional: false, required: false
+  private _httpGet = new DataKubernetesPodSpecInitContainerStartupProbeHttpGetList(this, "http_get", false);
   public get httpGet() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('http_get');
+    return this._httpGet;
   }
 
   // initial_delay_seconds - computed: true, optional: false, required: false
@@ -2036,9 +8401,9 @@ export class DataKubernetesPodSpecInitContainerStartupProbe extends cdktf.Comple
   }
 
   // tcp_socket - computed: true, optional: false, required: false
+  private _tcpSocket = new DataKubernetesPodSpecInitContainerStartupProbeTcpSocketList(this, "tcp_socket", false);
   public get tcpSocket() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tcp_socket');
+    return this._tcpSocket;
   }
 
   // timeout_seconds - computed: true, optional: false, required: false
@@ -2046,7 +8411,64 @@ export class DataKubernetesPodSpecInitContainerStartupProbe extends cdktf.Comple
     return this.getNumberAttribute('timeout_seconds');
   }
 }
-export class DataKubernetesPodSpecInitContainerVolumeMount extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerStartupProbeList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerStartupProbeOutputReference {
+    return new DataKubernetesPodSpecInitContainerStartupProbeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainerVolumeMount {
+}
+
+export function dataKubernetesPodSpecInitContainerVolumeMountToTerraform(struct?: DataKubernetesPodSpecInitContainerVolumeMount): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerVolumeMountOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainerVolumeMount | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainerVolumeMount | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // mount_path - computed: true, optional: false, required: false
   public get mountPath() {
@@ -2073,7 +8495,64 @@ export class DataKubernetesPodSpecInitContainerVolumeMount extends cdktf.Complex
     return this.getStringAttribute('sub_path');
   }
 }
-export class DataKubernetesPodSpecInitContainer extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerVolumeMountList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerVolumeMountOutputReference {
+    return new DataKubernetesPodSpecInitContainerVolumeMountOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecInitContainer {
+}
+
+export function dataKubernetesPodSpecInitContainerToTerraform(struct?: DataKubernetesPodSpecInitContainer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecInitContainerOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecInitContainer | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecInitContainer | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // args - computed: true, optional: false, required: false
   public get args() {
@@ -2086,15 +8565,15 @@ export class DataKubernetesPodSpecInitContainer extends cdktf.ComplexComputedLis
   }
 
   // env - computed: true, optional: false, required: false
+  private _env = new DataKubernetesPodSpecInitContainerEnvList(this, "env", false);
   public get env() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('env');
+    return this._env;
   }
 
   // env_from - computed: true, optional: false, required: false
+  private _envFrom = new DataKubernetesPodSpecInitContainerEnvFromList(this, "env_from", false);
   public get envFrom() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('env_from');
+    return this._envFrom;
   }
 
   // image - computed: true, optional: false, required: false
@@ -2108,15 +8587,15 @@ export class DataKubernetesPodSpecInitContainer extends cdktf.ComplexComputedLis
   }
 
   // lifecycle - computed: true, optional: false, required: false
+  private _lifecycle = new DataKubernetesPodSpecInitContainerLifecycleList(this, "lifecycle", false);
   public get lifecycle() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('lifecycle');
+    return this._lifecycle;
   }
 
   // liveness_probe - computed: true, optional: false, required: false
+  private _livenessProbe = new DataKubernetesPodSpecInitContainerLivenessProbeList(this, "liveness_probe", false);
   public get livenessProbe() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('liveness_probe');
+    return this._livenessProbe;
   }
 
   // name - computed: true, optional: false, required: false
@@ -2125,33 +8604,33 @@ export class DataKubernetesPodSpecInitContainer extends cdktf.ComplexComputedLis
   }
 
   // port - computed: true, optional: false, required: false
+  private _port = new DataKubernetesPodSpecInitContainerPortList(this, "port", false);
   public get port() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('port');
+    return this._port;
   }
 
   // readiness_probe - computed: true, optional: false, required: false
+  private _readinessProbe = new DataKubernetesPodSpecInitContainerReadinessProbeList(this, "readiness_probe", false);
   public get readinessProbe() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('readiness_probe');
+    return this._readinessProbe;
   }
 
   // resources - computed: true, optional: false, required: false
+  private _resources = new DataKubernetesPodSpecInitContainerResourcesList(this, "resources", false);
   public get resources() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('resources');
+    return this._resources;
   }
 
   // security_context - computed: true, optional: false, required: false
+  private _securityContext = new DataKubernetesPodSpecInitContainerSecurityContextList(this, "security_context", false);
   public get securityContext() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('security_context');
+    return this._securityContext;
   }
 
   // startup_probe - computed: true, optional: false, required: false
+  private _startupProbe = new DataKubernetesPodSpecInitContainerStartupProbeList(this, "startup_probe", false);
   public get startupProbe() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('startup_probe');
+    return this._startupProbe;
   }
 
   // stdin - computed: true, optional: false, required: false
@@ -2180,9 +8659,9 @@ export class DataKubernetesPodSpecInitContainer extends cdktf.ComplexComputedLis
   }
 
   // volume_mount - computed: true, optional: false, required: false
+  private _volumeMount = new DataKubernetesPodSpecInitContainerVolumeMountList(this, "volume_mount", false);
   public get volumeMount() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('volume_mount');
+    return this._volumeMount;
   }
 
   // working_dir - computed: true, optional: false, required: false
@@ -2190,14 +8669,128 @@ export class DataKubernetesPodSpecInitContainer extends cdktf.ComplexComputedLis
     return this.getStringAttribute('working_dir');
   }
 }
-export class DataKubernetesPodSpecReadinessGate extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecInitContainerList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecInitContainerOutputReference {
+    return new DataKubernetesPodSpecInitContainerOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecReadinessGate {
+}
+
+export function dataKubernetesPodSpecReadinessGateToTerraform(struct?: DataKubernetesPodSpecReadinessGate): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecReadinessGateOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecReadinessGate | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecReadinessGate | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // condition_type - computed: true, optional: false, required: false
   public get conditionType() {
     return this.getStringAttribute('condition_type');
   }
 }
-export class DataKubernetesPodSpecSecurityContextSeLinuxOptions extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecReadinessGateList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecReadinessGateOutputReference {
+    return new DataKubernetesPodSpecReadinessGateOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecSecurityContextSeLinuxOptions {
+}
+
+export function dataKubernetesPodSpecSecurityContextSeLinuxOptionsToTerraform(struct?: DataKubernetesPodSpecSecurityContextSeLinuxOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecSecurityContextSeLinuxOptions | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecSecurityContextSeLinuxOptions | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // level - computed: true, optional: false, required: false
   public get level() {
@@ -2219,7 +8812,64 @@ export class DataKubernetesPodSpecSecurityContextSeLinuxOptions extends cdktf.Co
     return this.getStringAttribute('user');
   }
 }
-export class DataKubernetesPodSpecSecurityContextSeccompProfile extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecSecurityContextSeLinuxOptionsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecSecurityContextSeLinuxOptionsOutputReference {
+    return new DataKubernetesPodSpecSecurityContextSeLinuxOptionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecSecurityContextSeccompProfile {
+}
+
+export function dataKubernetesPodSpecSecurityContextSeccompProfileToTerraform(struct?: DataKubernetesPodSpecSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecSecurityContextSeccompProfile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecSecurityContextSeccompProfile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // localhost_profile - computed: true, optional: false, required: false
   public get localhostProfile() {
@@ -2231,7 +8881,64 @@ export class DataKubernetesPodSpecSecurityContextSeccompProfile extends cdktf.Co
     return this.getStringAttribute('type');
   }
 }
-export class DataKubernetesPodSpecSecurityContextSysctl extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecSecurityContextSeccompProfileList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecSecurityContextSeccompProfileOutputReference {
+    return new DataKubernetesPodSpecSecurityContextSeccompProfileOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecSecurityContextSysctl {
+}
+
+export function dataKubernetesPodSpecSecurityContextSysctlToTerraform(struct?: DataKubernetesPodSpecSecurityContextSysctl): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecSecurityContextSysctlOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecSecurityContextSysctl | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecSecurityContextSysctl | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -2243,7 +8950,64 @@ export class DataKubernetesPodSpecSecurityContextSysctl extends cdktf.ComplexCom
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecSecurityContext extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecSecurityContextSysctlList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecSecurityContextSysctlOutputReference {
+    return new DataKubernetesPodSpecSecurityContextSysctlOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecSecurityContext {
+}
+
+export function dataKubernetesPodSpecSecurityContextToTerraform(struct?: DataKubernetesPodSpecSecurityContext): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecSecurityContextOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecSecurityContext | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecSecurityContext | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // fs_group - computed: true, optional: false, required: false
   public get fsGroup() {
@@ -2266,15 +9030,15 @@ export class DataKubernetesPodSpecSecurityContext extends cdktf.ComplexComputedL
   }
 
   // se_linux_options - computed: true, optional: false, required: false
+  private _seLinuxOptions = new DataKubernetesPodSpecSecurityContextSeLinuxOptionsList(this, "se_linux_options", false);
   public get seLinuxOptions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('se_linux_options');
+    return this._seLinuxOptions;
   }
 
   // seccomp_profile - computed: true, optional: false, required: false
+  private _seccompProfile = new DataKubernetesPodSpecSecurityContextSeccompProfileList(this, "seccomp_profile", false);
   public get seccompProfile() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('seccomp_profile');
+    return this._seccompProfile;
   }
 
   // supplemental_groups - computed: true, optional: false, required: false
@@ -2283,12 +9047,69 @@ export class DataKubernetesPodSpecSecurityContext extends cdktf.ComplexComputedL
   }
 
   // sysctl - computed: true, optional: false, required: false
+  private _sysctl = new DataKubernetesPodSpecSecurityContextSysctlList(this, "sysctl", false);
   public get sysctl() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('sysctl');
+    return this._sysctl;
   }
 }
-export class DataKubernetesPodSpecToleration extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecSecurityContextList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecSecurityContextOutputReference {
+    return new DataKubernetesPodSpecSecurityContextOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecToleration {
+}
+
+export function dataKubernetesPodSpecTolerationToTerraform(struct?: DataKubernetesPodSpecToleration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecTolerationOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecToleration | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecToleration | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // effect - computed: true, optional: false, required: false
   public get effect() {
@@ -2315,7 +9136,64 @@ export class DataKubernetesPodSpecToleration extends cdktf.ComplexComputedList {
     return this.getStringAttribute('value');
   }
 }
-export class DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressions extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecTolerationList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecTolerationOutputReference {
+    return new DataKubernetesPodSpecTolerationOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressions {
+}
+
+export function dataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform(struct?: DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressions | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressions | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -2332,25 +9210,139 @@ export class DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpr
     return cdktf.Fn.tolist(this.getListAttribute('values'));
   }
 }
-export class DataKubernetesPodSpecTopologySpreadConstraintLabelSelector extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressionsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressionsOutputReference {
+    return new DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecTopologySpreadConstraintLabelSelector {
+}
+
+export function dataKubernetesPodSpecTopologySpreadConstraintLabelSelectorToTerraform(struct?: DataKubernetesPodSpecTopologySpreadConstraintLabelSelector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecTopologySpreadConstraintLabelSelector | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecTopologySpreadConstraintLabelSelector | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // match_expressions - computed: true, optional: false, required: false
+  private _matchExpressions = new DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorMatchExpressionsList(this, "match_expressions", false);
   public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+    return this._matchExpressions;
   }
 
   // match_labels - computed: true, optional: false, required: false
-  public get matchLabels() {
-    return this.getStringMapAttribute('match_labels');
+  public matchLabels(key: string): string | cdktf.IResolvable {
+    return new cdktf.StringMap(this, 'match_labels').lookup(key);
   }
 }
-export class DataKubernetesPodSpecTopologySpreadConstraint extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorOutputReference {
+    return new DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecTopologySpreadConstraint {
+}
+
+export function dataKubernetesPodSpecTopologySpreadConstraintToTerraform(struct?: DataKubernetesPodSpecTopologySpreadConstraint): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecTopologySpreadConstraintOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecTopologySpreadConstraint | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecTopologySpreadConstraint | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // label_selector - computed: true, optional: false, required: false
+  private _labelSelector = new DataKubernetesPodSpecTopologySpreadConstraintLabelSelectorList(this, "label_selector", false);
   public get labelSelector() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('label_selector');
+    return this._labelSelector;
   }
 
   // max_skew - computed: true, optional: false, required: false
@@ -2368,7 +9360,64 @@ export class DataKubernetesPodSpecTopologySpreadConstraint extends cdktf.Complex
     return this.getStringAttribute('when_unsatisfiable');
   }
 }
-export class DataKubernetesPodSpecVolumeAwsElasticBlockStore extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecTopologySpreadConstraintList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecTopologySpreadConstraintOutputReference {
+    return new DataKubernetesPodSpecTopologySpreadConstraintOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeAwsElasticBlockStore {
+}
+
+export function dataKubernetesPodSpecVolumeAwsElasticBlockStoreToTerraform(struct?: DataKubernetesPodSpecVolumeAwsElasticBlockStore): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeAwsElasticBlockStoreOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeAwsElasticBlockStore | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeAwsElasticBlockStore | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // fs_type - computed: true, optional: false, required: false
   public get fsType() {
@@ -2390,7 +9439,64 @@ export class DataKubernetesPodSpecVolumeAwsElasticBlockStore extends cdktf.Compl
     return this.getStringAttribute('volume_id');
   }
 }
-export class DataKubernetesPodSpecVolumeAzureDisk extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeAwsElasticBlockStoreList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeAwsElasticBlockStoreOutputReference {
+    return new DataKubernetesPodSpecVolumeAwsElasticBlockStoreOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeAzureDisk {
+}
+
+export function dataKubernetesPodSpecVolumeAzureDiskToTerraform(struct?: DataKubernetesPodSpecVolumeAzureDisk): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeAzureDiskOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeAzureDisk | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeAzureDisk | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // caching_mode - computed: true, optional: false, required: false
   public get cachingMode() {
@@ -2422,7 +9528,64 @@ export class DataKubernetesPodSpecVolumeAzureDisk extends cdktf.ComplexComputedL
     return this.getBooleanAttribute('read_only');
   }
 }
-export class DataKubernetesPodSpecVolumeAzureFile extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeAzureDiskList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeAzureDiskOutputReference {
+    return new DataKubernetesPodSpecVolumeAzureDiskOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeAzureFile {
+}
+
+export function dataKubernetesPodSpecVolumeAzureFileToTerraform(struct?: DataKubernetesPodSpecVolumeAzureFile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeAzureFileOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeAzureFile | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeAzureFile | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // read_only - computed: true, optional: false, required: false
   public get readOnly() {
@@ -2444,7 +9607,64 @@ export class DataKubernetesPodSpecVolumeAzureFile extends cdktf.ComplexComputedL
     return this.getStringAttribute('share_name');
   }
 }
-export class DataKubernetesPodSpecVolumeCephFsSecretRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeAzureFileList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeAzureFileOutputReference {
+    return new DataKubernetesPodSpecVolumeAzureFileOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeCephFsSecretRef {
+}
+
+export function dataKubernetesPodSpecVolumeCephFsSecretRefToTerraform(struct?: DataKubernetesPodSpecVolumeCephFsSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeCephFsSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeCephFsSecretRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeCephFsSecretRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -2456,7 +9676,64 @@ export class DataKubernetesPodSpecVolumeCephFsSecretRef extends cdktf.ComplexCom
     return this.getStringAttribute('namespace');
   }
 }
-export class DataKubernetesPodSpecVolumeCephFs extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeCephFsSecretRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeCephFsSecretRefOutputReference {
+    return new DataKubernetesPodSpecVolumeCephFsSecretRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeCephFs {
+}
+
+export function dataKubernetesPodSpecVolumeCephFsToTerraform(struct?: DataKubernetesPodSpecVolumeCephFs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeCephFsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeCephFs | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeCephFs | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // monitors - computed: true, optional: false, required: false
   public get monitors() {
@@ -2479,9 +9756,9 @@ export class DataKubernetesPodSpecVolumeCephFs extends cdktf.ComplexComputedList
   }
 
   // secret_ref - computed: true, optional: false, required: false
+  private _secretRef = new DataKubernetesPodSpecVolumeCephFsSecretRefList(this, "secret_ref", false);
   public get secretRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('secret_ref');
+    return this._secretRef;
   }
 
   // user - computed: true, optional: false, required: false
@@ -2489,7 +9766,64 @@ export class DataKubernetesPodSpecVolumeCephFs extends cdktf.ComplexComputedList
     return this.getStringAttribute('user');
   }
 }
-export class DataKubernetesPodSpecVolumeCinder extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeCephFsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeCephFsOutputReference {
+    return new DataKubernetesPodSpecVolumeCephFsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeCinder {
+}
+
+export function dataKubernetesPodSpecVolumeCinderToTerraform(struct?: DataKubernetesPodSpecVolumeCinder): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeCinderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeCinder | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeCinder | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // fs_type - computed: true, optional: false, required: false
   public get fsType() {
@@ -2506,7 +9840,64 @@ export class DataKubernetesPodSpecVolumeCinder extends cdktf.ComplexComputedList
     return this.getStringAttribute('volume_id');
   }
 }
-export class DataKubernetesPodSpecVolumeConfigMapItems extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeCinderList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeCinderOutputReference {
+    return new DataKubernetesPodSpecVolumeCinderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeConfigMapItems {
+}
+
+export function dataKubernetesPodSpecVolumeConfigMapItemsToTerraform(struct?: DataKubernetesPodSpecVolumeConfigMapItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeConfigMapItemsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeConfigMapItems | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeConfigMapItems | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -2523,7 +9914,64 @@ export class DataKubernetesPodSpecVolumeConfigMapItems extends cdktf.ComplexComp
     return this.getStringAttribute('path');
   }
 }
-export class DataKubernetesPodSpecVolumeConfigMap extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeConfigMapItemsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeConfigMapItemsOutputReference {
+    return new DataKubernetesPodSpecVolumeConfigMapItemsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeConfigMap {
+}
+
+export function dataKubernetesPodSpecVolumeConfigMapToTerraform(struct?: DataKubernetesPodSpecVolumeConfigMap): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeConfigMapOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeConfigMap | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeConfigMap | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // default_mode - computed: true, optional: false, required: false
   public get defaultMode() {
@@ -2531,9 +9979,9 @@ export class DataKubernetesPodSpecVolumeConfigMap extends cdktf.ComplexComputedL
   }
 
   // items - computed: true, optional: false, required: false
+  private _items = new DataKubernetesPodSpecVolumeConfigMapItemsList(this, "items", false);
   public get items() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('items');
+    return this._items;
   }
 
   // name - computed: true, optional: false, required: false
@@ -2546,14 +9994,128 @@ export class DataKubernetesPodSpecVolumeConfigMap extends cdktf.ComplexComputedL
     return this.getBooleanAttribute('optional');
   }
 }
-export class DataKubernetesPodSpecVolumeCsiNodePublishSecretRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeConfigMapList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeConfigMapOutputReference {
+    return new DataKubernetesPodSpecVolumeConfigMapOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeCsiNodePublishSecretRef {
+}
+
+export function dataKubernetesPodSpecVolumeCsiNodePublishSecretRefToTerraform(struct?: DataKubernetesPodSpecVolumeCsiNodePublishSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeCsiNodePublishSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeCsiNodePublishSecretRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeCsiNodePublishSecretRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
     return this.getStringAttribute('name');
   }
 }
-export class DataKubernetesPodSpecVolumeCsi extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeCsiNodePublishSecretRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeCsiNodePublishSecretRefOutputReference {
+    return new DataKubernetesPodSpecVolumeCsiNodePublishSecretRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeCsi {
+}
+
+export function dataKubernetesPodSpecVolumeCsiToTerraform(struct?: DataKubernetesPodSpecVolumeCsi): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeCsi | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeCsi | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // driver - computed: true, optional: false, required: false
   public get driver() {
@@ -2566,9 +10128,9 @@ export class DataKubernetesPodSpecVolumeCsi extends cdktf.ComplexComputedList {
   }
 
   // node_publish_secret_ref - computed: true, optional: false, required: false
+  private _nodePublishSecretRef = new DataKubernetesPodSpecVolumeCsiNodePublishSecretRefList(this, "node_publish_secret_ref", false);
   public get nodePublishSecretRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('node_publish_secret_ref');
+    return this._nodePublishSecretRef;
   }
 
   // read_only - computed: true, optional: false, required: false
@@ -2577,11 +10139,68 @@ export class DataKubernetesPodSpecVolumeCsi extends cdktf.ComplexComputedList {
   }
 
   // volume_attributes - computed: true, optional: false, required: false
-  public get volumeAttributes() {
-    return this.getStringMapAttribute('volume_attributes');
+  public volumeAttributes(key: string): string | cdktf.IResolvable {
+    return new cdktf.StringMap(this, 'volume_attributes').lookup(key);
   }
 }
-export class DataKubernetesPodSpecVolumeDownwardApiItemsFieldRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeCsiList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeCsiOutputReference {
+    return new DataKubernetesPodSpecVolumeCsiOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeDownwardApiItemsFieldRef {
+}
+
+export function dataKubernetesPodSpecVolumeDownwardApiItemsFieldRefToTerraform(struct?: DataKubernetesPodSpecVolumeDownwardApiItemsFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeDownwardApiItemsFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeDownwardApiItemsFieldRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeDownwardApiItemsFieldRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // api_version - computed: true, optional: false, required: false
   public get apiVersion() {
@@ -2593,7 +10212,64 @@ export class DataKubernetesPodSpecVolumeDownwardApiItemsFieldRef extends cdktf.C
     return this.getStringAttribute('field_path');
   }
 }
-export class DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeDownwardApiItemsFieldRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeDownwardApiItemsFieldRefOutputReference {
+    return new DataKubernetesPodSpecVolumeDownwardApiItemsFieldRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRef {
+}
+
+export function dataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRefToTerraform(struct?: DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // container_name - computed: true, optional: false, required: false
   public get containerName() {
@@ -2610,12 +10286,69 @@ export class DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRef extends
     return this.getStringAttribute('resource');
   }
 }
-export class DataKubernetesPodSpecVolumeDownwardApiItems extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRefOutputReference {
+    return new DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeDownwardApiItems {
+}
+
+export function dataKubernetesPodSpecVolumeDownwardApiItemsToTerraform(struct?: DataKubernetesPodSpecVolumeDownwardApiItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeDownwardApiItemsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeDownwardApiItems | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeDownwardApiItems | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // field_ref - computed: true, optional: false, required: false
+  private _fieldRef = new DataKubernetesPodSpecVolumeDownwardApiItemsFieldRefList(this, "field_ref", false);
   public get fieldRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('field_ref');
+    return this._fieldRef;
   }
 
   // mode - computed: true, optional: false, required: false
@@ -2629,12 +10362,69 @@ export class DataKubernetesPodSpecVolumeDownwardApiItems extends cdktf.ComplexCo
   }
 
   // resource_field_ref - computed: true, optional: false, required: false
+  private _resourceFieldRef = new DataKubernetesPodSpecVolumeDownwardApiItemsResourceFieldRefList(this, "resource_field_ref", false);
   public get resourceFieldRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('resource_field_ref');
+    return this._resourceFieldRef;
   }
 }
-export class DataKubernetesPodSpecVolumeDownwardApi extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeDownwardApiItemsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeDownwardApiItemsOutputReference {
+    return new DataKubernetesPodSpecVolumeDownwardApiItemsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeDownwardApi {
+}
+
+export function dataKubernetesPodSpecVolumeDownwardApiToTerraform(struct?: DataKubernetesPodSpecVolumeDownwardApi): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeDownwardApiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeDownwardApi | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeDownwardApi | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // default_mode - computed: true, optional: false, required: false
   public get defaultMode() {
@@ -2642,12 +10432,69 @@ export class DataKubernetesPodSpecVolumeDownwardApi extends cdktf.ComplexCompute
   }
 
   // items - computed: true, optional: false, required: false
+  private _items = new DataKubernetesPodSpecVolumeDownwardApiItemsList(this, "items", false);
   public get items() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('items');
+    return this._items;
   }
 }
-export class DataKubernetesPodSpecVolumeEmptyDir extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeDownwardApiList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeDownwardApiOutputReference {
+    return new DataKubernetesPodSpecVolumeDownwardApiOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeEmptyDir {
+}
+
+export function dataKubernetesPodSpecVolumeEmptyDirToTerraform(struct?: DataKubernetesPodSpecVolumeEmptyDir): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEmptyDirOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeEmptyDir | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeEmptyDir | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // medium - computed: true, optional: false, required: false
   public get medium() {
@@ -2659,7 +10506,64 @@ export class DataKubernetesPodSpecVolumeEmptyDir extends cdktf.ComplexComputedLi
     return this.getStringAttribute('size_limit');
   }
 }
-export class DataKubernetesPodSpecVolumeFc extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeEmptyDirList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeEmptyDirOutputReference {
+    return new DataKubernetesPodSpecVolumeEmptyDirOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeFc {
+}
+
+export function dataKubernetesPodSpecVolumeFcToTerraform(struct?: DataKubernetesPodSpecVolumeFc): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeFcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeFc | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeFc | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // fs_type - computed: true, optional: false, required: false
   public get fsType() {
@@ -2681,7 +10585,64 @@ export class DataKubernetesPodSpecVolumeFc extends cdktf.ComplexComputedList {
     return cdktf.Fn.tolist(this.getListAttribute('target_ww_ns'));
   }
 }
-export class DataKubernetesPodSpecVolumeFlexVolumeSecretRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeFcList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeFcOutputReference {
+    return new DataKubernetesPodSpecVolumeFcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeFlexVolumeSecretRef {
+}
+
+export function dataKubernetesPodSpecVolumeFlexVolumeSecretRefToTerraform(struct?: DataKubernetesPodSpecVolumeFlexVolumeSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeFlexVolumeSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeFlexVolumeSecretRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeFlexVolumeSecretRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -2693,7 +10654,64 @@ export class DataKubernetesPodSpecVolumeFlexVolumeSecretRef extends cdktf.Comple
     return this.getStringAttribute('namespace');
   }
 }
-export class DataKubernetesPodSpecVolumeFlexVolume extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeFlexVolumeSecretRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeFlexVolumeSecretRefOutputReference {
+    return new DataKubernetesPodSpecVolumeFlexVolumeSecretRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeFlexVolume {
+}
+
+export function dataKubernetesPodSpecVolumeFlexVolumeToTerraform(struct?: DataKubernetesPodSpecVolumeFlexVolume): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeFlexVolumeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeFlexVolume | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeFlexVolume | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // driver - computed: true, optional: false, required: false
   public get driver() {
@@ -2706,8 +10724,8 @@ export class DataKubernetesPodSpecVolumeFlexVolume extends cdktf.ComplexComputed
   }
 
   // options - computed: true, optional: false, required: false
-  public get options() {
-    return this.getStringMapAttribute('options');
+  public options(key: string): string | cdktf.IResolvable {
+    return new cdktf.StringMap(this, 'options').lookup(key);
   }
 
   // read_only - computed: true, optional: false, required: false
@@ -2716,12 +10734,69 @@ export class DataKubernetesPodSpecVolumeFlexVolume extends cdktf.ComplexComputed
   }
 
   // secret_ref - computed: true, optional: false, required: false
+  private _secretRef = new DataKubernetesPodSpecVolumeFlexVolumeSecretRefList(this, "secret_ref", false);
   public get secretRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('secret_ref');
+    return this._secretRef;
   }
 }
-export class DataKubernetesPodSpecVolumeFlocker extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeFlexVolumeList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeFlexVolumeOutputReference {
+    return new DataKubernetesPodSpecVolumeFlexVolumeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeFlocker {
+}
+
+export function dataKubernetesPodSpecVolumeFlockerToTerraform(struct?: DataKubernetesPodSpecVolumeFlocker): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeFlockerOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeFlocker | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeFlocker | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // dataset_name - computed: true, optional: false, required: false
   public get datasetName() {
@@ -2733,7 +10808,64 @@ export class DataKubernetesPodSpecVolumeFlocker extends cdktf.ComplexComputedLis
     return this.getStringAttribute('dataset_uuid');
   }
 }
-export class DataKubernetesPodSpecVolumeGcePersistentDisk extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeFlockerList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeFlockerOutputReference {
+    return new DataKubernetesPodSpecVolumeFlockerOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeGcePersistentDisk {
+}
+
+export function dataKubernetesPodSpecVolumeGcePersistentDiskToTerraform(struct?: DataKubernetesPodSpecVolumeGcePersistentDisk): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeGcePersistentDiskOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeGcePersistentDisk | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeGcePersistentDisk | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // fs_type - computed: true, optional: false, required: false
   public get fsType() {
@@ -2755,7 +10887,64 @@ export class DataKubernetesPodSpecVolumeGcePersistentDisk extends cdktf.ComplexC
     return this.getBooleanAttribute('read_only');
   }
 }
-export class DataKubernetesPodSpecVolumeGitRepo extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeGcePersistentDiskList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeGcePersistentDiskOutputReference {
+    return new DataKubernetesPodSpecVolumeGcePersistentDiskOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeGitRepo {
+}
+
+export function dataKubernetesPodSpecVolumeGitRepoToTerraform(struct?: DataKubernetesPodSpecVolumeGitRepo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeGitRepoOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeGitRepo | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeGitRepo | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // directory - computed: true, optional: false, required: false
   public get directory() {
@@ -2772,7 +10961,64 @@ export class DataKubernetesPodSpecVolumeGitRepo extends cdktf.ComplexComputedLis
     return this.getStringAttribute('revision');
   }
 }
-export class DataKubernetesPodSpecVolumeGlusterfs extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeGitRepoList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeGitRepoOutputReference {
+    return new DataKubernetesPodSpecVolumeGitRepoOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeGlusterfs {
+}
+
+export function dataKubernetesPodSpecVolumeGlusterfsToTerraform(struct?: DataKubernetesPodSpecVolumeGlusterfs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeGlusterfsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeGlusterfs | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeGlusterfs | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // endpoints_name - computed: true, optional: false, required: false
   public get endpointsName() {
@@ -2789,7 +11035,64 @@ export class DataKubernetesPodSpecVolumeGlusterfs extends cdktf.ComplexComputedL
     return this.getBooleanAttribute('read_only');
   }
 }
-export class DataKubernetesPodSpecVolumeHostPath extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeGlusterfsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeGlusterfsOutputReference {
+    return new DataKubernetesPodSpecVolumeGlusterfsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeHostPath {
+}
+
+export function dataKubernetesPodSpecVolumeHostPathToTerraform(struct?: DataKubernetesPodSpecVolumeHostPath): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeHostPathOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeHostPath | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeHostPath | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // path - computed: true, optional: false, required: false
   public get path() {
@@ -2801,7 +11104,64 @@ export class DataKubernetesPodSpecVolumeHostPath extends cdktf.ComplexComputedLi
     return this.getStringAttribute('type');
   }
 }
-export class DataKubernetesPodSpecVolumeIscsi extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeHostPathList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeHostPathOutputReference {
+    return new DataKubernetesPodSpecVolumeHostPathOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeIscsi {
+}
+
+export function dataKubernetesPodSpecVolumeIscsiToTerraform(struct?: DataKubernetesPodSpecVolumeIscsi): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeIscsiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeIscsi | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeIscsi | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // fs_type - computed: true, optional: false, required: false
   public get fsType() {
@@ -2833,14 +11193,128 @@ export class DataKubernetesPodSpecVolumeIscsi extends cdktf.ComplexComputedList 
     return this.getStringAttribute('target_portal');
   }
 }
-export class DataKubernetesPodSpecVolumeLocal extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeIscsiList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeIscsiOutputReference {
+    return new DataKubernetesPodSpecVolumeIscsiOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeLocal {
+}
+
+export function dataKubernetesPodSpecVolumeLocalToTerraform(struct?: DataKubernetesPodSpecVolumeLocal): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeLocalOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeLocal | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeLocal | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // path - computed: true, optional: false, required: false
   public get path() {
     return this.getStringAttribute('path');
   }
 }
-export class DataKubernetesPodSpecVolumeNfs extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeLocalList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeLocalOutputReference {
+    return new DataKubernetesPodSpecVolumeLocalOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeNfs {
+}
+
+export function dataKubernetesPodSpecVolumeNfsToTerraform(struct?: DataKubernetesPodSpecVolumeNfs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeNfsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeNfs | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeNfs | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // path - computed: true, optional: false, required: false
   public get path() {
@@ -2857,7 +11331,64 @@ export class DataKubernetesPodSpecVolumeNfs extends cdktf.ComplexComputedList {
     return this.getStringAttribute('server');
   }
 }
-export class DataKubernetesPodSpecVolumePersistentVolumeClaim extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeNfsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeNfsOutputReference {
+    return new DataKubernetesPodSpecVolumeNfsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumePersistentVolumeClaim {
+}
+
+export function dataKubernetesPodSpecVolumePersistentVolumeClaimToTerraform(struct?: DataKubernetesPodSpecVolumePersistentVolumeClaim): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumePersistentVolumeClaimOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumePersistentVolumeClaim | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumePersistentVolumeClaim | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // claim_name - computed: true, optional: false, required: false
   public get claimName() {
@@ -2869,7 +11400,64 @@ export class DataKubernetesPodSpecVolumePersistentVolumeClaim extends cdktf.Comp
     return this.getBooleanAttribute('read_only');
   }
 }
-export class DataKubernetesPodSpecVolumePhotonPersistentDisk extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumePersistentVolumeClaimList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumePersistentVolumeClaimOutputReference {
+    return new DataKubernetesPodSpecVolumePersistentVolumeClaimOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumePhotonPersistentDisk {
+}
+
+export function dataKubernetesPodSpecVolumePhotonPersistentDiskToTerraform(struct?: DataKubernetesPodSpecVolumePhotonPersistentDisk): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumePhotonPersistentDiskOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumePhotonPersistentDisk | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumePhotonPersistentDisk | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // fs_type - computed: true, optional: false, required: false
   public get fsType() {
@@ -2881,7 +11469,64 @@ export class DataKubernetesPodSpecVolumePhotonPersistentDisk extends cdktf.Compl
     return this.getStringAttribute('pd_id');
   }
 }
-export class DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItems extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumePhotonPersistentDiskList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumePhotonPersistentDiskOutputReference {
+    return new DataKubernetesPodSpecVolumePhotonPersistentDiskOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItems {
+}
+
+export function dataKubernetesPodSpecVolumeProjectedSourcesConfigMapItemsToTerraform(struct?: DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItemsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItems | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItems | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -2898,12 +11543,69 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItems extends c
     return this.getStringAttribute('path');
   }
 }
-export class DataKubernetesPodSpecVolumeProjectedSourcesConfigMap extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItemsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItemsOutputReference {
+    return new DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItemsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeProjectedSourcesConfigMap {
+}
+
+export function dataKubernetesPodSpecVolumeProjectedSourcesConfigMapToTerraform(struct?: DataKubernetesPodSpecVolumeProjectedSourcesConfigMap): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesConfigMapOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeProjectedSourcesConfigMap | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeProjectedSourcesConfigMap | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // items - computed: true, optional: false, required: false
+  private _items = new DataKubernetesPodSpecVolumeProjectedSourcesConfigMapItemsList(this, "items", false);
   public get items() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('items');
+    return this._items;
   }
 
   // name - computed: true, optional: false, required: false
@@ -2916,7 +11618,64 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesConfigMap extends cdktf.
     return this.getBooleanAttribute('optional');
   }
 }
-export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesConfigMapList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeProjectedSourcesConfigMapOutputReference {
+    return new DataKubernetesPodSpecVolumeProjectedSourcesConfigMapOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef {
+}
+
+export function dataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRefToTerraform(struct?: DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // api_version - computed: true, optional: false, required: false
   public get apiVersion() {
@@ -2928,7 +11687,64 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef
     return this.getStringAttribute('field_path');
   }
 }
-export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference {
+    return new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef {
+}
+
+export function dataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefToTerraform(struct?: DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // container_name - computed: true, optional: false, required: false
   public get containerName() {
@@ -2945,12 +11761,69 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResource
     return this.getStringAttribute('resource');
   }
 }
-export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItems extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference {
+    return new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItems {
+}
+
+export function dataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsToTerraform(struct?: DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItems | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItems | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // field_ref - computed: true, optional: false, required: false
+  private _fieldRef = new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsFieldRefList(this, "field_ref", false);
   public get fieldRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('field_ref');
+    return this._fieldRef;
   }
 
   // mode - computed: true, optional: false, required: false
@@ -2964,20 +11837,134 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItems extends
   }
 
   // resource_field_ref - computed: true, optional: false, required: false
+  private _resourceFieldRef = new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefList(this, "resource_field_ref", false);
   public get resourceFieldRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('resource_field_ref');
+    return this._resourceFieldRef;
   }
 }
-export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApi extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsOutputReference {
+    return new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeProjectedSourcesDownwardApi {
+}
+
+export function dataKubernetesPodSpecVolumeProjectedSourcesDownwardApiToTerraform(struct?: DataKubernetesPodSpecVolumeProjectedSourcesDownwardApi): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeProjectedSourcesDownwardApi | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeProjectedSourcesDownwardApi | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // items - computed: true, optional: false, required: false
+  private _items = new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiItemsList(this, "items", false);
   public get items() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('items');
+    return this._items;
   }
 }
-export class DataKubernetesPodSpecVolumeProjectedSourcesSecretItems extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiOutputReference {
+    return new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeProjectedSourcesSecretItems {
+}
+
+export function dataKubernetesPodSpecVolumeProjectedSourcesSecretItemsToTerraform(struct?: DataKubernetesPodSpecVolumeProjectedSourcesSecretItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesSecretItemsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeProjectedSourcesSecretItems | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeProjectedSourcesSecretItems | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -2994,12 +11981,69 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesSecretItems extends cdkt
     return this.getStringAttribute('path');
   }
 }
-export class DataKubernetesPodSpecVolumeProjectedSourcesSecret extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesSecretItemsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeProjectedSourcesSecretItemsOutputReference {
+    return new DataKubernetesPodSpecVolumeProjectedSourcesSecretItemsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeProjectedSourcesSecret {
+}
+
+export function dataKubernetesPodSpecVolumeProjectedSourcesSecretToTerraform(struct?: DataKubernetesPodSpecVolumeProjectedSourcesSecret): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesSecretOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeProjectedSourcesSecret | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeProjectedSourcesSecret | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // items - computed: true, optional: false, required: false
+  private _items = new DataKubernetesPodSpecVolumeProjectedSourcesSecretItemsList(this, "items", false);
   public get items() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('items');
+    return this._items;
   }
 
   // name - computed: true, optional: false, required: false
@@ -3012,7 +12056,64 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesSecret extends cdktf.Com
     return this.getBooleanAttribute('optional');
   }
 }
-export class DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountToken extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesSecretList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeProjectedSourcesSecretOutputReference {
+    return new DataKubernetesPodSpecVolumeProjectedSourcesSecretOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountToken {
+}
+
+export function dataKubernetesPodSpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct?: DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountToken): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountTokenOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountToken | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountToken | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // audience - computed: true, optional: false, required: false
   public get audience() {
@@ -3029,33 +12130,147 @@ export class DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountToken exte
     return this.getStringAttribute('path');
   }
 }
-export class DataKubernetesPodSpecVolumeProjectedSources extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountTokenList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountTokenOutputReference {
+    return new DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountTokenOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeProjectedSources {
+}
+
+export function dataKubernetesPodSpecVolumeProjectedSourcesToTerraform(struct?: DataKubernetesPodSpecVolumeProjectedSources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeProjectedSources | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeProjectedSources | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // config_map - computed: true, optional: false, required: false
+  private _configMap = new DataKubernetesPodSpecVolumeProjectedSourcesConfigMapList(this, "config_map", false);
   public get configMap() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('config_map');
+    return this._configMap;
   }
 
   // downward_api - computed: true, optional: false, required: false
+  private _downwardApi = new DataKubernetesPodSpecVolumeProjectedSourcesDownwardApiList(this, "downward_api", false);
   public get downwardApi() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('downward_api');
+    return this._downwardApi;
   }
 
   // secret - computed: true, optional: false, required: false
+  private _secret = new DataKubernetesPodSpecVolumeProjectedSourcesSecretList(this, "secret", false);
   public get secret() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('secret');
+    return this._secret;
   }
 
   // service_account_token - computed: true, optional: false, required: false
+  private _serviceAccountToken = new DataKubernetesPodSpecVolumeProjectedSourcesServiceAccountTokenList(this, "service_account_token", false);
   public get serviceAccountToken() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('service_account_token');
+    return this._serviceAccountToken;
   }
 }
-export class DataKubernetesPodSpecVolumeProjected extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeProjectedSourcesList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeProjectedSourcesOutputReference {
+    return new DataKubernetesPodSpecVolumeProjectedSourcesOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeProjected {
+}
+
+export function dataKubernetesPodSpecVolumeProjectedToTerraform(struct?: DataKubernetesPodSpecVolumeProjected): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeProjectedOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeProjected | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeProjected | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // default_mode - computed: true, optional: false, required: false
   public get defaultMode() {
@@ -3063,12 +12278,69 @@ export class DataKubernetesPodSpecVolumeProjected extends cdktf.ComplexComputedL
   }
 
   // sources - computed: true, optional: false, required: false
+  private _sources = new DataKubernetesPodSpecVolumeProjectedSourcesList(this, "sources", false);
   public get sources() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('sources');
+    return this._sources;
   }
 }
-export class DataKubernetesPodSpecVolumeQuobyte extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeProjectedList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeProjectedOutputReference {
+    return new DataKubernetesPodSpecVolumeProjectedOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeQuobyte {
+}
+
+export function dataKubernetesPodSpecVolumeQuobyteToTerraform(struct?: DataKubernetesPodSpecVolumeQuobyte): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeQuobyteOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeQuobyte | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeQuobyte | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // group - computed: true, optional: false, required: false
   public get group() {
@@ -3095,7 +12367,64 @@ export class DataKubernetesPodSpecVolumeQuobyte extends cdktf.ComplexComputedLis
     return this.getStringAttribute('volume');
   }
 }
-export class DataKubernetesPodSpecVolumeRbdSecretRef extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeQuobyteList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeQuobyteOutputReference {
+    return new DataKubernetesPodSpecVolumeQuobyteOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeRbdSecretRef {
+}
+
+export function dataKubernetesPodSpecVolumeRbdSecretRefToTerraform(struct?: DataKubernetesPodSpecVolumeRbdSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeRbdSecretRefOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeRbdSecretRef | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeRbdSecretRef | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
@@ -3107,7 +12436,64 @@ export class DataKubernetesPodSpecVolumeRbdSecretRef extends cdktf.ComplexComput
     return this.getStringAttribute('namespace');
   }
 }
-export class DataKubernetesPodSpecVolumeRbd extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeRbdSecretRefList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeRbdSecretRefOutputReference {
+    return new DataKubernetesPodSpecVolumeRbdSecretRefOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeRbd {
+}
+
+export function dataKubernetesPodSpecVolumeRbdToTerraform(struct?: DataKubernetesPodSpecVolumeRbd): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeRbdOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeRbd | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeRbd | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // ceph_monitors - computed: true, optional: false, required: false
   public get cephMonitors() {
@@ -3145,12 +12531,69 @@ export class DataKubernetesPodSpecVolumeRbd extends cdktf.ComplexComputedList {
   }
 
   // secret_ref - computed: true, optional: false, required: false
+  private _secretRef = new DataKubernetesPodSpecVolumeRbdSecretRefList(this, "secret_ref", false);
   public get secretRef() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('secret_ref');
+    return this._secretRef;
   }
 }
-export class DataKubernetesPodSpecVolumeSecretItems extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeRbdList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeRbdOutputReference {
+    return new DataKubernetesPodSpecVolumeRbdOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeSecretItems {
+}
+
+export function dataKubernetesPodSpecVolumeSecretItemsToTerraform(struct?: DataKubernetesPodSpecVolumeSecretItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeSecretItemsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeSecretItems | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeSecretItems | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // key - computed: true, optional: false, required: false
   public get key() {
@@ -3167,7 +12610,64 @@ export class DataKubernetesPodSpecVolumeSecretItems extends cdktf.ComplexCompute
     return this.getStringAttribute('path');
   }
 }
-export class DataKubernetesPodSpecVolumeSecret extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeSecretItemsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeSecretItemsOutputReference {
+    return new DataKubernetesPodSpecVolumeSecretItemsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeSecret {
+}
+
+export function dataKubernetesPodSpecVolumeSecretToTerraform(struct?: DataKubernetesPodSpecVolumeSecret): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeSecretOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeSecret | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeSecret | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // default_mode - computed: true, optional: false, required: false
   public get defaultMode() {
@@ -3175,9 +12675,9 @@ export class DataKubernetesPodSpecVolumeSecret extends cdktf.ComplexComputedList
   }
 
   // items - computed: true, optional: false, required: false
+  private _items = new DataKubernetesPodSpecVolumeSecretItemsList(this, "items", false);
   public get items() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('items');
+    return this._items;
   }
 
   // optional - computed: true, optional: false, required: false
@@ -3190,7 +12690,64 @@ export class DataKubernetesPodSpecVolumeSecret extends cdktf.ComplexComputedList
     return this.getStringAttribute('secret_name');
   }
 }
-export class DataKubernetesPodSpecVolumeVsphereVolume extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeSecretList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeSecretOutputReference {
+    return new DataKubernetesPodSpecVolumeSecretOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeVsphereVolume {
+}
+
+export function dataKubernetesPodSpecVolumeVsphereVolumeToTerraform(struct?: DataKubernetesPodSpecVolumeVsphereVolume): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeVsphereVolumeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeVsphereVolume | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeVsphereVolume | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // fs_type - computed: true, optional: false, required: false
   public get fsType() {
@@ -3202,114 +12759,171 @@ export class DataKubernetesPodSpecVolumeVsphereVolume extends cdktf.ComplexCompu
     return this.getStringAttribute('volume_path');
   }
 }
-export class DataKubernetesPodSpecVolume extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeVsphereVolumeList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeVsphereVolumeOutputReference {
+    return new DataKubernetesPodSpecVolumeVsphereVolumeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolume {
+}
+
+export function dataKubernetesPodSpecVolumeToTerraform(struct?: DataKubernetesPodSpecVolume): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolume | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolume | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // aws_elastic_block_store - computed: true, optional: false, required: false
+  private _awsElasticBlockStore = new DataKubernetesPodSpecVolumeAwsElasticBlockStoreList(this, "aws_elastic_block_store", false);
   public get awsElasticBlockStore() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('aws_elastic_block_store');
+    return this._awsElasticBlockStore;
   }
 
   // azure_disk - computed: true, optional: false, required: false
+  private _azureDisk = new DataKubernetesPodSpecVolumeAzureDiskList(this, "azure_disk", false);
   public get azureDisk() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('azure_disk');
+    return this._azureDisk;
   }
 
   // azure_file - computed: true, optional: false, required: false
+  private _azureFile = new DataKubernetesPodSpecVolumeAzureFileList(this, "azure_file", false);
   public get azureFile() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('azure_file');
+    return this._azureFile;
   }
 
   // ceph_fs - computed: true, optional: false, required: false
+  private _cephFs = new DataKubernetesPodSpecVolumeCephFsList(this, "ceph_fs", false);
   public get cephFs() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ceph_fs');
+    return this._cephFs;
   }
 
   // cinder - computed: true, optional: false, required: false
+  private _cinder = new DataKubernetesPodSpecVolumeCinderList(this, "cinder", false);
   public get cinder() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('cinder');
+    return this._cinder;
   }
 
   // config_map - computed: true, optional: false, required: false
+  private _configMap = new DataKubernetesPodSpecVolumeConfigMapList(this, "config_map", false);
   public get configMap() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('config_map');
+    return this._configMap;
   }
 
   // csi - computed: true, optional: false, required: false
+  private _csi = new DataKubernetesPodSpecVolumeCsiList(this, "csi", false);
   public get csi() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('csi');
+    return this._csi;
   }
 
   // downward_api - computed: true, optional: false, required: false
+  private _downwardApi = new DataKubernetesPodSpecVolumeDownwardApiList(this, "downward_api", false);
   public get downwardApi() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('downward_api');
+    return this._downwardApi;
   }
 
   // empty_dir - computed: true, optional: false, required: false
+  private _emptyDir = new DataKubernetesPodSpecVolumeEmptyDirList(this, "empty_dir", false);
   public get emptyDir() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('empty_dir');
+    return this._emptyDir;
   }
 
   // fc - computed: true, optional: false, required: false
+  private _fc = new DataKubernetesPodSpecVolumeFcList(this, "fc", false);
   public get fc() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('fc');
+    return this._fc;
   }
 
   // flex_volume - computed: true, optional: false, required: false
+  private _flexVolume = new DataKubernetesPodSpecVolumeFlexVolumeList(this, "flex_volume", false);
   public get flexVolume() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('flex_volume');
+    return this._flexVolume;
   }
 
   // flocker - computed: true, optional: false, required: false
+  private _flocker = new DataKubernetesPodSpecVolumeFlockerList(this, "flocker", false);
   public get flocker() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('flocker');
+    return this._flocker;
   }
 
   // gce_persistent_disk - computed: true, optional: false, required: false
+  private _gcePersistentDisk = new DataKubernetesPodSpecVolumeGcePersistentDiskList(this, "gce_persistent_disk", false);
   public get gcePersistentDisk() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('gce_persistent_disk');
+    return this._gcePersistentDisk;
   }
 
   // git_repo - computed: true, optional: false, required: false
+  private _gitRepo = new DataKubernetesPodSpecVolumeGitRepoList(this, "git_repo", false);
   public get gitRepo() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('git_repo');
+    return this._gitRepo;
   }
 
   // glusterfs - computed: true, optional: false, required: false
+  private _glusterfs = new DataKubernetesPodSpecVolumeGlusterfsList(this, "glusterfs", false);
   public get glusterfs() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('glusterfs');
+    return this._glusterfs;
   }
 
   // host_path - computed: true, optional: false, required: false
+  private _hostPath = new DataKubernetesPodSpecVolumeHostPathList(this, "host_path", false);
   public get hostPath() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('host_path');
+    return this._hostPath;
   }
 
   // iscsi - computed: true, optional: false, required: false
+  private _iscsi = new DataKubernetesPodSpecVolumeIscsiList(this, "iscsi", false);
   public get iscsi() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('iscsi');
+    return this._iscsi;
   }
 
   // local - computed: true, optional: false, required: false
+  private _local = new DataKubernetesPodSpecVolumeLocalList(this, "local", false);
   public get local() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('local');
+    return this._local;
   }
 
   // name - computed: true, optional: false, required: false
@@ -3318,54 +12932,111 @@ export class DataKubernetesPodSpecVolume extends cdktf.ComplexComputedList {
   }
 
   // nfs - computed: true, optional: false, required: false
+  private _nfs = new DataKubernetesPodSpecVolumeNfsList(this, "nfs", false);
   public get nfs() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('nfs');
+    return this._nfs;
   }
 
   // persistent_volume_claim - computed: true, optional: false, required: false
+  private _persistentVolumeClaim = new DataKubernetesPodSpecVolumePersistentVolumeClaimList(this, "persistent_volume_claim", false);
   public get persistentVolumeClaim() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('persistent_volume_claim');
+    return this._persistentVolumeClaim;
   }
 
   // photon_persistent_disk - computed: true, optional: false, required: false
+  private _photonPersistentDisk = new DataKubernetesPodSpecVolumePhotonPersistentDiskList(this, "photon_persistent_disk", false);
   public get photonPersistentDisk() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('photon_persistent_disk');
+    return this._photonPersistentDisk;
   }
 
   // projected - computed: true, optional: false, required: false
+  private _projected = new DataKubernetesPodSpecVolumeProjectedList(this, "projected", false);
   public get projected() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('projected');
+    return this._projected;
   }
 
   // quobyte - computed: true, optional: false, required: false
+  private _quobyte = new DataKubernetesPodSpecVolumeQuobyteList(this, "quobyte", false);
   public get quobyte() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('quobyte');
+    return this._quobyte;
   }
 
   // rbd - computed: true, optional: false, required: false
+  private _rbd = new DataKubernetesPodSpecVolumeRbdList(this, "rbd", false);
   public get rbd() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('rbd');
+    return this._rbd;
   }
 
   // secret - computed: true, optional: false, required: false
+  private _secret = new DataKubernetesPodSpecVolumeSecretList(this, "secret", false);
   public get secret() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('secret');
+    return this._secret;
   }
 
   // vsphere_volume - computed: true, optional: false, required: false
+  private _vsphereVolume = new DataKubernetesPodSpecVolumeVsphereVolumeList(this, "vsphere_volume", false);
   public get vsphereVolume() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('vsphere_volume');
+    return this._vsphereVolume;
   }
 }
-export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
+
+export class DataKubernetesPodSpecVolumeList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeOutputReference {
+    return new DataKubernetesPodSpecVolumeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpec {
+}
+
+export function dataKubernetesPodSpecToTerraform(struct?: DataKubernetesPodSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // active_deadline_seconds - computed: true, optional: false, required: false
   public get activeDeadlineSeconds() {
@@ -3373,9 +13044,9 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
   }
 
   // affinity - computed: true, optional: false, required: false
+  private _affinity = new DataKubernetesPodSpecAffinityList(this, "affinity", false);
   public get affinity() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('affinity');
+    return this._affinity;
   }
 
   // automount_service_account_token - computed: true, optional: false, required: false
@@ -3384,15 +13055,15 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
   }
 
   // container - computed: true, optional: false, required: false
+  private _container = new DataKubernetesPodSpecContainerList(this, "container", false);
   public get container() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('container');
+    return this._container;
   }
 
   // dns_config - computed: true, optional: false, required: false
+  private _dnsConfig = new DataKubernetesPodSpecDnsConfigList(this, "dns_config", false);
   public get dnsConfig() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('dns_config');
+    return this._dnsConfig;
   }
 
   // dns_policy - computed: true, optional: false, required: false
@@ -3406,9 +13077,9 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
   }
 
   // host_aliases - computed: true, optional: false, required: false
+  private _hostAliases = new DataKubernetesPodSpecHostAliasesList(this, "host_aliases", false);
   public get hostAliases() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('host_aliases');
+    return this._hostAliases;
   }
 
   // host_ipc - computed: true, optional: false, required: false
@@ -3432,15 +13103,15 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
   }
 
   // image_pull_secrets - computed: true, optional: false, required: false
+  private _imagePullSecrets = new DataKubernetesPodSpecImagePullSecretsList(this, "image_pull_secrets", false);
   public get imagePullSecrets() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('image_pull_secrets');
+    return this._imagePullSecrets;
   }
 
   // init_container - computed: true, optional: false, required: false
+  private _initContainer = new DataKubernetesPodSpecInitContainerList(this, "init_container", false);
   public get initContainer() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('init_container');
+    return this._initContainer;
   }
 
   // node_name - computed: true, optional: false, required: false
@@ -3449,8 +13120,8 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
   }
 
   // node_selector - computed: true, optional: false, required: false
-  public get nodeSelector() {
-    return this.getStringMapAttribute('node_selector');
+  public nodeSelector(key: string): string | cdktf.IResolvable {
+    return new cdktf.StringMap(this, 'node_selector').lookup(key);
   }
 
   // priority_class_name - computed: true, optional: false, required: false
@@ -3459,9 +13130,9 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
   }
 
   // readiness_gate - computed: true, optional: false, required: false
+  private _readinessGate = new DataKubernetesPodSpecReadinessGateList(this, "readiness_gate", false);
   public get readinessGate() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('readiness_gate');
+    return this._readinessGate;
   }
 
   // restart_policy - computed: true, optional: false, required: false
@@ -3470,9 +13141,9 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
   }
 
   // security_context - computed: true, optional: false, required: false
+  private _securityContext = new DataKubernetesPodSpecSecurityContextList(this, "security_context", false);
   public get securityContext() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('security_context');
+    return this._securityContext;
   }
 
   // service_account_name - computed: true, optional: false, required: false
@@ -3496,21 +13167,40 @@ export class DataKubernetesPodSpec extends cdktf.ComplexComputedList {
   }
 
   // toleration - computed: true, optional: false, required: false
+  private _toleration = new DataKubernetesPodSpecTolerationList(this, "toleration", false);
   public get toleration() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('toleration');
+    return this._toleration;
   }
 
   // topology_spread_constraint - computed: true, optional: false, required: false
+  private _topologySpreadConstraint = new DataKubernetesPodSpecTopologySpreadConstraintList(this, "topology_spread_constraint", false);
   public get topologySpreadConstraint() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('topology_spread_constraint');
+    return this._topologySpreadConstraint;
   }
 
   // volume - computed: true, optional: false, required: false
+  private _volume = new DataKubernetesPodSpecVolumeList(this, "volume", false);
   public get volume() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('volume');
+    return this._volume;
+  }
+}
+
+export class DataKubernetesPodSpecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecOutputReference {
+    return new DataKubernetesPodSpecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
 export interface DataKubernetesPodMetadata {
@@ -3566,10 +13256,9 @@ export class DataKubernetesPodMetadataOutputReference extends cdktf.ComplexObjec
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DataKubernetesPodMetadata | undefined {
@@ -3721,7 +13410,7 @@ export class DataKubernetesPod extends cdktf.TerraformDataSource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_pod";
+  public static readonly tfResourceType = "kubernetes_pod";
 
   // ===========
   // INITIALIZER
@@ -3738,7 +13427,9 @@ export class DataKubernetesPod extends cdktf.TerraformDataSource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_pod',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -3758,8 +13449,9 @@ export class DataKubernetesPod extends cdktf.TerraformDataSource {
   }
 
   // spec - computed: true, optional: false, required: false
-  public spec(index: string) {
-    return new DataKubernetesPodSpec(this, 'spec', index, false);
+  private _spec = new DataKubernetesPodSpecList(this, "spec", false);
+  public get spec() {
+    return this._spec;
   }
 
   // status - computed: true, optional: false, required: false
@@ -3768,7 +13460,7 @@ export class DataKubernetesPod extends cdktf.TerraformDataSource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new DataKubernetesPodMetadataOutputReference(this, "metadata", true);
+  private _metadata = new DataKubernetesPodMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }

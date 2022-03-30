@@ -73,10 +73,9 @@ export class LimitRangeV1MetadataOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): LimitRangeV1Metadata | undefined {
@@ -298,10 +297,9 @@ export class LimitRangeV1SpecOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): LimitRangeV1Spec | undefined {
@@ -351,7 +349,7 @@ export class LimitRangeV1 extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_limit_range_v1";
+  public static readonly tfResourceType = "kubernetes_limit_range_v1";
 
   // ===========
   // INITIALIZER
@@ -368,7 +366,9 @@ export class LimitRangeV1 extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_limit_range_v1',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -389,7 +389,7 @@ export class LimitRangeV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new LimitRangeV1MetadataOutputReference(this, "metadata", true);
+  private _metadata = new LimitRangeV1MetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -402,7 +402,7 @@ export class LimitRangeV1 extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: true, required: false
-  private _spec = new LimitRangeV1SpecOutputReference(this, "spec", true);
+  private _spec = new LimitRangeV1SpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }

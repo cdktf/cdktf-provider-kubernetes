@@ -73,10 +73,9 @@ export class HorizontalPodAutoscalerMetadataOutputReference extends cdktf.Comple
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerMetadata | undefined {
@@ -383,10 +382,9 @@ export class HorizontalPodAutoscalerSpecBehaviorOutputReference extends cdktf.Co
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecBehavior | undefined {
@@ -541,10 +539,9 @@ export class HorizontalPodAutoscalerSpecMetricExternalMetricOutputReference exte
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricExternalMetric | undefined {
@@ -650,10 +647,9 @@ export class HorizontalPodAutoscalerSpecMetricExternalTargetOutputReference exte
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricExternalTarget | undefined {
@@ -788,10 +784,9 @@ export class HorizontalPodAutoscalerSpecMetricExternalOutputReference extends cd
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricExternal | undefined {
@@ -822,7 +817,7 @@ export class HorizontalPodAutoscalerSpecMetricExternalOutputReference extends cd
   }
 
   // metric - computed: false, optional: false, required: true
-  private _metric = new HorizontalPodAutoscalerSpecMetricExternalMetricOutputReference(this, "metric", true);
+  private _metric = new HorizontalPodAutoscalerSpecMetricExternalMetricOutputReference(this, "metric");
   public get metric() {
     return this._metric;
   }
@@ -835,7 +830,7 @@ export class HorizontalPodAutoscalerSpecMetricExternalOutputReference extends cd
   }
 
   // target - computed: false, optional: true, required: false
-  private _target = new HorizontalPodAutoscalerSpecMetricExternalTargetOutputReference(this, "target", true);
+  private _target = new HorizontalPodAutoscalerSpecMetricExternalTargetOutputReference(this, "target");
   public get target() {
     return this._target;
   }
@@ -889,10 +884,9 @@ export class HorizontalPodAutoscalerSpecMetricObjectDescribedObjectOutputReferen
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricObjectDescribedObject | undefined {
@@ -1058,10 +1052,9 @@ export class HorizontalPodAutoscalerSpecMetricObjectMetricOutputReference extend
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricObjectMetric | undefined {
@@ -1167,10 +1160,9 @@ export class HorizontalPodAutoscalerSpecMetricObjectTargetOutputReference extend
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricObjectTarget | undefined {
@@ -1312,10 +1304,9 @@ export class HorizontalPodAutoscalerSpecMetricObjectOutputReference extends cdkt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricObject | undefined {
@@ -1352,7 +1343,7 @@ export class HorizontalPodAutoscalerSpecMetricObjectOutputReference extends cdkt
   }
 
   // described_object - computed: false, optional: false, required: true
-  private _describedObject = new HorizontalPodAutoscalerSpecMetricObjectDescribedObjectOutputReference(this, "described_object", true);
+  private _describedObject = new HorizontalPodAutoscalerSpecMetricObjectDescribedObjectOutputReference(this, "described_object");
   public get describedObject() {
     return this._describedObject;
   }
@@ -1365,7 +1356,7 @@ export class HorizontalPodAutoscalerSpecMetricObjectOutputReference extends cdkt
   }
 
   // metric - computed: false, optional: false, required: true
-  private _metric = new HorizontalPodAutoscalerSpecMetricObjectMetricOutputReference(this, "metric", true);
+  private _metric = new HorizontalPodAutoscalerSpecMetricObjectMetricOutputReference(this, "metric");
   public get metric() {
     return this._metric;
   }
@@ -1378,7 +1369,7 @@ export class HorizontalPodAutoscalerSpecMetricObjectOutputReference extends cdkt
   }
 
   // target - computed: false, optional: true, required: false
-  private _target = new HorizontalPodAutoscalerSpecMetricObjectTargetOutputReference(this, "target", true);
+  private _target = new HorizontalPodAutoscalerSpecMetricObjectTargetOutputReference(this, "target");
   public get target() {
     return this._target;
   }
@@ -1484,10 +1475,9 @@ export class HorizontalPodAutoscalerSpecMetricPodsMetricOutputReference extends 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricPodsMetric | undefined {
@@ -1593,10 +1583,9 @@ export class HorizontalPodAutoscalerSpecMetricPodsTargetOutputReference extends 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricPodsTarget | undefined {
@@ -1731,10 +1720,9 @@ export class HorizontalPodAutoscalerSpecMetricPodsOutputReference extends cdktf.
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricPods | undefined {
@@ -1765,7 +1753,7 @@ export class HorizontalPodAutoscalerSpecMetricPodsOutputReference extends cdktf.
   }
 
   // metric - computed: false, optional: false, required: true
-  private _metric = new HorizontalPodAutoscalerSpecMetricPodsMetricOutputReference(this, "metric", true);
+  private _metric = new HorizontalPodAutoscalerSpecMetricPodsMetricOutputReference(this, "metric");
   public get metric() {
     return this._metric;
   }
@@ -1778,7 +1766,7 @@ export class HorizontalPodAutoscalerSpecMetricPodsOutputReference extends cdktf.
   }
 
   // target - computed: false, optional: true, required: false
-  private _target = new HorizontalPodAutoscalerSpecMetricPodsTargetOutputReference(this, "target", true);
+  private _target = new HorizontalPodAutoscalerSpecMetricPodsTargetOutputReference(this, "target");
   public get target() {
     return this._target;
   }
@@ -1839,10 +1827,9 @@ export class HorizontalPodAutoscalerSpecMetricResourceTargetOutputReference exte
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricResourceTarget | undefined {
@@ -1977,10 +1964,9 @@ export class HorizontalPodAutoscalerSpecMetricResourceOutputReference extends cd
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecMetricResource | undefined {
@@ -2024,7 +2010,7 @@ export class HorizontalPodAutoscalerSpecMetricResourceOutputReference extends cd
   }
 
   // target - computed: false, optional: true, required: false
-  private _target = new HorizontalPodAutoscalerSpecMetricResourceTargetOutputReference(this, "target", true);
+  private _target = new HorizontalPodAutoscalerSpecMetricResourceTargetOutputReference(this, "target");
   public get target() {
     return this._target;
   }
@@ -2125,10 +2111,9 @@ export class HorizontalPodAutoscalerSpecScaleTargetRefOutputReference extends cd
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpecScaleTargetRef | undefined {
@@ -2266,10 +2251,9 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): HorizontalPodAutoscalerSpec | undefined {
@@ -2369,7 +2353,7 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
   }
 
   // behavior - computed: false, optional: true, required: false
-  private _behavior = new HorizontalPodAutoscalerSpecBehaviorOutputReference(this, "behavior", true);
+  private _behavior = new HorizontalPodAutoscalerSpecBehaviorOutputReference(this, "behavior");
   public get behavior() {
     return this._behavior;
   }
@@ -2402,7 +2386,7 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
   }
 
   // scale_target_ref - computed: false, optional: false, required: true
-  private _scaleTargetRef = new HorizontalPodAutoscalerSpecScaleTargetRefOutputReference(this, "scale_target_ref", true);
+  private _scaleTargetRef = new HorizontalPodAutoscalerSpecScaleTargetRefOutputReference(this, "scale_target_ref");
   public get scaleTargetRef() {
     return this._scaleTargetRef;
   }
@@ -2423,7 +2407,7 @@ export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_horizontal_pod_autoscaler";
+  public static readonly tfResourceType = "kubernetes_horizontal_pod_autoscaler";
 
   // ===========
   // INITIALIZER
@@ -2440,7 +2424,9 @@ export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_horizontal_pod_autoscaler',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -2461,7 +2447,7 @@ export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new HorizontalPodAutoscalerMetadataOutputReference(this, "metadata", true);
+  private _metadata = new HorizontalPodAutoscalerMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -2474,7 +2460,7 @@ export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new HorizontalPodAutoscalerSpecOutputReference(this, "spec", true);
+  private _spec = new HorizontalPodAutoscalerSpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }

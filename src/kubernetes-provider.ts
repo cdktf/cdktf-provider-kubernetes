@@ -164,7 +164,7 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes";
+  public static readonly tfResourceType = "kubernetes";
 
   // ===========
   // INITIALIZER
@@ -182,6 +182,7 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
       terraformResourceType: 'kubernetes',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
+        providerVersion: '2.9.0',
         providerVersionConstraint: '~> 2.0'
       },
       terraformProviderSource: 'kubernetes'

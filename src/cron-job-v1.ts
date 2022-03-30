@@ -79,10 +79,9 @@ export class CronJobV1MetadataOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1Metadata | undefined {
@@ -271,10 +270,9 @@ export class CronJobV1SpecJobTemplateMetadataOutputReference extends cdktf.Compl
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateMetadata | undefined {
@@ -460,10 +458,9 @@ export class CronJobV1SpecJobTemplateSpecSelectorOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecSelector | undefined {
@@ -572,10 +569,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference extends
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateMetadata | undefined {
@@ -754,10 +750,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferr
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined {
@@ -901,10 +896,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequire
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
@@ -977,10 +971,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputR
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinity | undefined {
@@ -1028,7 +1021,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputR
   }
 
   // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _requiredDuringSchedulingIgnoredDuringExecution = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this, "required_during_scheduling_ignored_during_execution", true);
+  private _requiredDuringSchedulingIgnoredDuringExecution = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this, "required_during_scheduling_ignored_during_execution");
   public get requiredDuringSchedulingIgnoredDuringExecution() {
     return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
@@ -1141,10 +1134,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferre
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
@@ -1379,10 +1371,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputRe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinity | undefined {
@@ -1544,10 +1535,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPref
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
@@ -1782,10 +1772,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinity | undefined {
@@ -1888,10 +1877,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityOutputReference ext
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecAffinity | undefined {
@@ -1928,7 +1916,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityOutputReference ext
   }
 
   // node_affinity - computed: false, optional: true, required: false
-  private _nodeAffinity = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputReference(this, "node_affinity", true);
+  private _nodeAffinity = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityNodeAffinityOutputReference(this, "node_affinity");
   public get nodeAffinity() {
     return this._nodeAffinity;
   }
@@ -1944,7 +1932,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityOutputReference ext
   }
 
   // pod_affinity - computed: false, optional: true, required: false
-  private _podAffinity = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputReference(this, "pod_affinity", true);
+  private _podAffinity = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAffinityOutputReference(this, "pod_affinity");
   public get podAffinity() {
     return this._podAffinity;
   }
@@ -1960,7 +1948,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecAffinityOutputReference ext
   }
 
   // pod_anti_affinity - computed: false, optional: true, required: false
-  private _podAntiAffinity = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutputReference(this, "pod_anti_affinity", true);
+  private _podAntiAffinity = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityOutputReference(this, "pod_anti_affinity");
   public get podAntiAffinity() {
     return this._podAntiAffinity;
   }
@@ -2014,10 +2002,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfig
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined {
@@ -2133,10 +2120,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldR
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRef | undefined {
@@ -2233,10 +2219,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResour
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined {
@@ -2356,10 +2341,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecret
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined {
@@ -2489,10 +2473,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromOutput
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFrom | undefined {
@@ -2535,7 +2518,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromOutput
   }
 
   // config_map_key_ref - computed: false, optional: true, required: false
-  private _configMapKeyRef = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref", true);
+  private _configMapKeyRef = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref");
   public get configMapKeyRef() {
     return this._configMapKeyRef;
   }
@@ -2551,7 +2534,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromOutput
   }
 
   // field_ref - computed: false, optional: true, required: false
-  private _fieldRef = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRefOutputReference(this, "field_ref", true);
+  private _fieldRef = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromFieldRefOutputReference(this, "field_ref");
   public get fieldRef() {
     return this._fieldRef;
   }
@@ -2567,7 +2550,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromOutput
   }
 
   // resource_field_ref - computed: false, optional: true, required: false
-  private _resourceFieldRef = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref", true);
+  private _resourceFieldRef = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref");
   public get resourceFieldRef() {
     return this._resourceFieldRef;
   }
@@ -2583,7 +2566,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromOutput
   }
 
   // secret_key_ref - computed: false, optional: true, required: false
-  private _secretKeyRef = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref", true);
+  private _secretKeyRef = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref");
   public get secretKeyRef() {
     return this._secretKeyRef;
   }
@@ -2663,10 +2646,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromConfigMapRef | undefined {
@@ -2757,10 +2739,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRefOu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerEnvFromSecretRef | undefined {
@@ -2877,10 +2858,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExec | undefined {
@@ -2999,10 +2979,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStart
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined {
@@ -3208,10 +3187,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopEx
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExec | undefined {
@@ -3330,10 +3308,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined {
@@ -3546,10 +3523,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycleOutputRef
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLifecycle | undefined {
@@ -3638,10 +3614,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec | undefined {
@@ -3760,10 +3735,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpG
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGet | undefined {
@@ -3985,10 +3959,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutpu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbe | undefined {
@@ -4135,7 +4108,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutpu
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecOutputReference(this, "exec", true);
+  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -4151,7 +4124,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeOutpu
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -4255,10 +4228,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExec | undefined {
@@ -4377,10 +4349,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGet | undefined {
@@ -4602,10 +4573,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbe | undefined {
@@ -4752,7 +4722,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutp
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExecOutputReference(this, "exec", true);
+  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -4768,7 +4738,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeOutp
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -4832,10 +4802,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerResourcesOutputRef
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerResources | undefined {
@@ -4929,10 +4898,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCap
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilities | undefined {
@@ -5040,10 +5008,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeL
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined {
@@ -5181,10 +5148,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSec
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfile | undefined {
@@ -5327,10 +5293,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContext | undefined {
@@ -5499,7 +5464,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference(this, "capabilities", true);
+  private _capabilities = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference(this, "capabilities");
   public get capabilities() {
     return this._capabilities;
   }
@@ -5515,7 +5480,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options", true);
+  private _seLinuxOptions = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options");
   public get seLinuxOptions() {
     return this._seLinuxOptions;
   }
@@ -5531,7 +5496,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextOut
   }
 
   // seccomp_profile - computed: false, optional: true, required: false
-  private _seccompProfile = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  private _seccompProfile = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile");
   public get seccompProfile() {
     return this._seccompProfile;
   }
@@ -5571,10 +5536,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExec | undefined {
@@ -5693,10 +5657,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGet | undefined {
@@ -5918,10 +5881,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutput
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbe | undefined {
@@ -6068,7 +6030,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutput
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOutputReference(this, "exec", true);
+  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -6084,7 +6046,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeOutput
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -6387,10 +6349,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOutputReference ex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfig | undefined {
@@ -6559,10 +6520,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromCo
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined {
@@ -6678,10 +6638,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFi
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined {
@@ -6778,10 +6737,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromRe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined {
@@ -6901,10 +6859,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined {
@@ -7034,10 +6991,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromOu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFrom | undefined {
@@ -7080,7 +7036,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromOu
   }
 
   // config_map_key_ref - computed: false, optional: true, required: false
-  private _configMapKeyRef = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref", true);
+  private _configMapKeyRef = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref");
   public get configMapKeyRef() {
     return this._configMapKeyRef;
   }
@@ -7096,7 +7052,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromOu
   }
 
   // field_ref - computed: false, optional: true, required: false
-  private _fieldRef = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference(this, "field_ref", true);
+  private _fieldRef = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference(this, "field_ref");
   public get fieldRef() {
     return this._fieldRef;
   }
@@ -7112,7 +7068,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromOu
   }
 
   // resource_field_ref - computed: false, optional: true, required: false
-  private _resourceFieldRef = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref", true);
+  private _resourceFieldRef = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref");
   public get resourceFieldRef() {
     return this._resourceFieldRef;
   }
@@ -7128,7 +7084,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromOu
   }
 
   // secret_key_ref - computed: false, optional: true, required: false
-  private _secretKeyRef = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref", true);
+  private _secretKeyRef = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref");
   public get secretKeyRef() {
     return this._secretKeyRef;
   }
@@ -7208,10 +7164,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigM
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined {
@@ -7302,10 +7257,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretR
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromSecretRef | undefined {
@@ -7422,10 +7376,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostS
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExec | undefined {
@@ -7544,10 +7497,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostS
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined {
@@ -7753,10 +7705,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreSt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExec | undefined {
@@ -7875,10 +7826,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreSt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined {
@@ -8091,10 +8041,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleOutpu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycle | undefined {
@@ -8183,10 +8132,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeE
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExec | undefined {
@@ -8305,10 +8253,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeH
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined {
@@ -8530,10 +8477,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe | undefined {
@@ -8680,7 +8626,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeO
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExecOutputReference(this, "exec", true);
+  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -8696,7 +8642,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeO
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -8800,10 +8746,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExec | undefined {
@@ -8922,10 +8867,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined {
@@ -9147,10 +9091,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe | undefined {
@@ -9297,7 +9240,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExecOutputReference(this, "exec", true);
+  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -9313,7 +9256,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbe
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -9377,10 +9320,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResourcesOutpu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResources | undefined {
@@ -9474,10 +9416,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilities | undefined {
@@ -9585,10 +9526,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined {
@@ -9726,10 +9666,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfile | undefined {
@@ -9872,10 +9811,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContext | undefined {
@@ -10044,7 +9982,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference(this, "capabilities", true);
+  private _capabilities = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference(this, "capabilities");
   public get capabilities() {
     return this._capabilities;
   }
@@ -10060,7 +9998,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options", true);
+  private _seLinuxOptions = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options");
   public get seLinuxOptions() {
     return this._seLinuxOptions;
   }
@@ -10076,7 +10014,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContex
   }
 
   // seccomp_profile - computed: false, optional: true, required: false
-  private _seccompProfile = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  private _seccompProfile = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile");
   public get seccompProfile() {
     return this._seccompProfile;
   }
@@ -10116,10 +10054,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeEx
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExec | undefined {
@@ -10238,10 +10175,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined {
@@ -10463,10 +10399,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbe | undefined {
@@ -10613,7 +10548,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOu
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExecOutputReference(this, "exec", true);
+  private _exec = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -10629,7 +10564,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeOu
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new CronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -10932,10 +10867,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptio
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptions | undefined {
@@ -11073,10 +11007,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfi
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfile | undefined {
@@ -11238,10 +11171,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContext | undefined {
@@ -11388,7 +11320,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options", true);
+  private _seLinuxOptions = new CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options");
   public get seLinuxOptions() {
     return this._seLinuxOptions;
   }
@@ -11404,7 +11336,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputRefere
   }
 
   // seccomp_profile - computed: false, optional: true, required: false
-  private _seccompProfile = new CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  private _seccompProfile = new CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfileOutputReference(this, "seccomp_profile");
   public get seccompProfile() {
     return this._seccompProfile;
   }
@@ -11628,10 +11560,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStoreO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAwsElasticBlockStore | undefined {
@@ -11794,10 +11725,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDiskOutputRefere
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureDisk | undefined {
@@ -11984,10 +11914,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFileOutputRefere
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeAzureFile | undefined {
@@ -12119,10 +12048,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutput
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRef | undefined {
@@ -12244,10 +12172,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFs | undefined {
@@ -12379,7 +12306,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsOutputReference
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutputReference(this, "secret_ref", true);
+  private _secretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsSecretRefOutputReference(this, "secret_ref");
   public get secretRef() {
     return this._secretRef;
   }
@@ -12433,10 +12360,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinderOutputReference
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCinder | undefined {
@@ -12596,10 +12522,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapOutputRefere
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMap | undefined {
@@ -12731,10 +12656,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretR
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined {
@@ -12827,10 +12751,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsi | undefined {
@@ -12940,7 +12863,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiOutputReference ex
   }
 
   // node_publish_secret_ref - computed: false, optional: true, required: false
-  private _nodePublishSecretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref", true);
+  private _nodePublishSecretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref");
   public get nodePublishSecretRef() {
     return this._nodePublishSecretRef;
   }
@@ -12987,10 +12910,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsField
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined {
@@ -13087,10 +13009,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResou
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined {
@@ -13240,10 +13161,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiOutputRefe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApi | undefined {
@@ -13338,10 +13258,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDirOutputReferen
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeEmptyDir | undefined {
@@ -13449,10 +13368,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFcOutputReference ext
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFc | undefined {
@@ -13584,10 +13502,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRef | undefined {
@@ -13702,10 +13619,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputRefer
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolume | undefined {
@@ -13815,7 +13731,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeOutputRefer
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference(this, "secret_ref", true);
+  private _secretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference(this, "secret_ref");
   public get secretRef() {
     return this._secretRef;
   }
@@ -13862,10 +13778,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlockerOutputReferenc
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeFlocker | undefined {
@@ -13973,10 +13888,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDiskOutp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGcePersistentDisk | undefined {
@@ -14118,10 +14032,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepoOutputReferenc
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGitRepo | undefined {
@@ -14244,10 +14157,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfsOutputRefere
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeGlusterfs | undefined {
@@ -14357,10 +14269,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPathOutputReferen
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeHostPath | undefined {
@@ -14482,10 +14393,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsiOutputReference 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeIscsi | undefined {
@@ -14654,10 +14564,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocalOutputReference 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeLocal | undefined {
@@ -14736,10 +14645,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfsOutputReference ex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfs | undefined {
@@ -14849,10 +14757,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaim | undefined {
@@ -14946,10 +14853,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDisk | undefined {
@@ -15106,10 +15012,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined {
@@ -15206,10 +15111,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined {
@@ -15352,10 +15256,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownw
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined {
@@ -15501,10 +15404,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServi
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined {
@@ -15704,10 +15606,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteOutputReferenc
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyte | undefined {
@@ -15861,10 +15762,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputRef
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRef | undefined {
@@ -16000,10 +15900,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference ex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbd | undefined {
@@ -16176,7 +16075,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdOutputReference ex
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputReference(this, "secret_ref", true);
+  private _secretRef = new CronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdSecretRefOutputReference(this, "secret_ref");
   public get secretRef() {
     return this._secretRef;
   }
@@ -16270,10 +16169,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretOutputReference
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecret | undefined {
@@ -16412,10 +16310,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolumeOutputRe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpecVolumeVsphereVolume | undefined {
@@ -16882,10 +16779,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplateSpec | undefined {
@@ -17322,7 +17218,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
 
   // affinity - computed: false, optional: true, required: false
-  private _affinity = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityOutputReference(this, "affinity", true);
+  private _affinity = new CronJobV1SpecJobTemplateSpecTemplateSpecAffinityOutputReference(this, "affinity");
   public get affinity() {
     return this._affinity;
   }
@@ -17355,7 +17251,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
 
   // dns_config - computed: false, optional: true, required: false
-  private _dnsConfig = new CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOutputReference(this, "dns_config", true);
+  private _dnsConfig = new CronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigOutputReference(this, "dns_config");
   public get dnsConfig() {
     return this._dnsConfig;
   }
@@ -17439,7 +17335,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference extends cdk
   }
 
   // security_context - computed: false, optional: true, required: false
-  private _securityContext = new CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputReference(this, "security_context", true);
+  private _securityContext = new CronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextOutputReference(this, "security_context");
   public get securityContext() {
     return this._securityContext;
   }
@@ -17537,10 +17433,9 @@ export class CronJobV1SpecJobTemplateSpecTemplateOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpecTemplate | undefined {
@@ -17571,7 +17466,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateOutputReference extends cdktf.C
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference(this, "metadata", true);
+  private _metadata = new CronJobV1SpecJobTemplateSpecTemplateMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -17584,7 +17479,7 @@ export class CronJobV1SpecJobTemplateSpecTemplateOutputReference extends cdktf.C
   }
 
   // spec - computed: false, optional: true, required: false
-  private _spec = new CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference(this, "spec", true);
+  private _spec = new CronJobV1SpecJobTemplateSpecTemplateSpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }
@@ -17680,10 +17575,9 @@ export class CronJobV1SpecJobTemplateSpecOutputReference extends cdktf.ComplexOb
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplateSpec | undefined {
@@ -17868,7 +17762,7 @@ export class CronJobV1SpecJobTemplateSpecOutputReference extends cdktf.ComplexOb
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector = new CronJobV1SpecJobTemplateSpecSelectorOutputReference(this, "selector", true);
+  private _selector = new CronJobV1SpecJobTemplateSpecSelectorOutputReference(this, "selector");
   public get selector() {
     return this._selector;
   }
@@ -17884,7 +17778,7 @@ export class CronJobV1SpecJobTemplateSpecOutputReference extends cdktf.ComplexOb
   }
 
   // template - computed: false, optional: false, required: true
-  private _template = new CronJobV1SpecJobTemplateSpecTemplateOutputReference(this, "template", true);
+  private _template = new CronJobV1SpecJobTemplateSpecTemplateOutputReference(this, "template");
   public get template() {
     return this._template;
   }
@@ -17928,10 +17822,9 @@ export class CronJobV1SpecJobTemplateOutputReference extends cdktf.ComplexObject
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1SpecJobTemplate | undefined {
@@ -17962,7 +17855,7 @@ export class CronJobV1SpecJobTemplateOutputReference extends cdktf.ComplexObject
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new CronJobV1SpecJobTemplateMetadataOutputReference(this, "metadata", true);
+  private _metadata = new CronJobV1SpecJobTemplateMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -17975,7 +17868,7 @@ export class CronJobV1SpecJobTemplateOutputReference extends cdktf.ComplexObject
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new CronJobV1SpecJobTemplateSpecOutputReference(this, "spec", true);
+  private _spec = new CronJobV1SpecJobTemplateSpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }
@@ -18054,10 +17947,9 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1Spec | undefined {
@@ -18211,7 +18103,7 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   // job_template - computed: false, optional: false, required: true
-  private _jobTemplate = new CronJobV1SpecJobTemplateOutputReference(this, "job_template", true);
+  private _jobTemplate = new CronJobV1SpecJobTemplateOutputReference(this, "job_template");
   public get jobTemplate() {
     return this._jobTemplate;
   }
@@ -18246,10 +18138,9 @@ export class CronJobV1TimeoutsOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CronJobV1Timeouts | undefined {
@@ -18298,7 +18189,7 @@ export class CronJobV1 extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_cron_job_v1";
+  public static readonly tfResourceType = "kubernetes_cron_job_v1";
 
   // ===========
   // INITIALIZER
@@ -18315,7 +18206,9 @@ export class CronJobV1 extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_cron_job_v1',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -18337,7 +18230,7 @@ export class CronJobV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new CronJobV1MetadataOutputReference(this, "metadata", true);
+  private _metadata = new CronJobV1MetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -18350,7 +18243,7 @@ export class CronJobV1 extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new CronJobV1SpecOutputReference(this, "spec", true);
+  private _spec = new CronJobV1SpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }
@@ -18363,7 +18256,7 @@ export class CronJobV1 extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new CronJobV1TimeoutsOutputReference(this, "timeouts", true);
+  private _timeouts = new CronJobV1TimeoutsOutputReference(this, "timeouts");
   public get timeouts() {
     return this._timeouts;
   }

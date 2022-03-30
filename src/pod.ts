@@ -79,10 +79,9 @@ export class PodMetadataOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodMetadata | undefined {
@@ -283,10 +282,9 @@ export class PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringEx
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined {
@@ -430,10 +428,9 @@ export class PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
@@ -506,10 +503,9 @@ export class PodSpecAffinityNodeAffinityOutputReference extends cdktf.ComplexObj
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecAffinityNodeAffinity | undefined {
@@ -557,7 +553,7 @@ export class PodSpecAffinityNodeAffinityOutputReference extends cdktf.ComplexObj
   }
 
   // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _requiredDuringSchedulingIgnoredDuringExecution = new PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this, "required_during_scheduling_ignored_during_execution", true);
+  private _requiredDuringSchedulingIgnoredDuringExecution = new PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this, "required_during_scheduling_ignored_during_execution");
   public get requiredDuringSchedulingIgnoredDuringExecution() {
     return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
@@ -670,10 +666,9 @@ export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
@@ -908,10 +903,9 @@ export class PodSpecAffinityPodAffinityOutputReference extends cdktf.ComplexObje
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecAffinityPodAffinity | undefined {
@@ -1073,10 +1067,9 @@ export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDurin
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
@@ -1311,10 +1304,9 @@ export class PodSpecAffinityPodAntiAffinityOutputReference extends cdktf.Complex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecAffinityPodAntiAffinity | undefined {
@@ -1417,10 +1409,9 @@ export class PodSpecAffinityOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecAffinity | undefined {
@@ -1457,7 +1448,7 @@ export class PodSpecAffinityOutputReference extends cdktf.ComplexObject {
   }
 
   // node_affinity - computed: false, optional: true, required: false
-  private _nodeAffinity = new PodSpecAffinityNodeAffinityOutputReference(this, "node_affinity", true);
+  private _nodeAffinity = new PodSpecAffinityNodeAffinityOutputReference(this, "node_affinity");
   public get nodeAffinity() {
     return this._nodeAffinity;
   }
@@ -1473,7 +1464,7 @@ export class PodSpecAffinityOutputReference extends cdktf.ComplexObject {
   }
 
   // pod_affinity - computed: false, optional: true, required: false
-  private _podAffinity = new PodSpecAffinityPodAffinityOutputReference(this, "pod_affinity", true);
+  private _podAffinity = new PodSpecAffinityPodAffinityOutputReference(this, "pod_affinity");
   public get podAffinity() {
     return this._podAffinity;
   }
@@ -1489,7 +1480,7 @@ export class PodSpecAffinityOutputReference extends cdktf.ComplexObject {
   }
 
   // pod_anti_affinity - computed: false, optional: true, required: false
-  private _podAntiAffinity = new PodSpecAffinityPodAntiAffinityOutputReference(this, "pod_anti_affinity", true);
+  private _podAntiAffinity = new PodSpecAffinityPodAntiAffinityOutputReference(this, "pod_anti_affinity");
   public get podAntiAffinity() {
     return this._podAntiAffinity;
   }
@@ -1543,10 +1534,9 @@ export class PodSpecContainerEnvValueFromConfigMapKeyRefOutputReference extends 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerEnvValueFromConfigMapKeyRef | undefined {
@@ -1662,10 +1652,9 @@ export class PodSpecContainerEnvValueFromFieldRefOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerEnvValueFromFieldRef | undefined {
@@ -1762,10 +1751,9 @@ export class PodSpecContainerEnvValueFromResourceFieldRefOutputReference extends
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerEnvValueFromResourceFieldRef | undefined {
@@ -1885,10 +1873,9 @@ export class PodSpecContainerEnvValueFromSecretKeyRefOutputReference extends cdk
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerEnvValueFromSecretKeyRef | undefined {
@@ -2018,10 +2005,9 @@ export class PodSpecContainerEnvValueFromOutputReference extends cdktf.ComplexOb
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerEnvValueFrom | undefined {
@@ -2064,7 +2050,7 @@ export class PodSpecContainerEnvValueFromOutputReference extends cdktf.ComplexOb
   }
 
   // config_map_key_ref - computed: false, optional: true, required: false
-  private _configMapKeyRef = new PodSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref", true);
+  private _configMapKeyRef = new PodSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref");
   public get configMapKeyRef() {
     return this._configMapKeyRef;
   }
@@ -2080,7 +2066,7 @@ export class PodSpecContainerEnvValueFromOutputReference extends cdktf.ComplexOb
   }
 
   // field_ref - computed: false, optional: true, required: false
-  private _fieldRef = new PodSpecContainerEnvValueFromFieldRefOutputReference(this, "field_ref", true);
+  private _fieldRef = new PodSpecContainerEnvValueFromFieldRefOutputReference(this, "field_ref");
   public get fieldRef() {
     return this._fieldRef;
   }
@@ -2096,7 +2082,7 @@ export class PodSpecContainerEnvValueFromOutputReference extends cdktf.ComplexOb
   }
 
   // resource_field_ref - computed: false, optional: true, required: false
-  private _resourceFieldRef = new PodSpecContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref", true);
+  private _resourceFieldRef = new PodSpecContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref");
   public get resourceFieldRef() {
     return this._resourceFieldRef;
   }
@@ -2112,7 +2098,7 @@ export class PodSpecContainerEnvValueFromOutputReference extends cdktf.ComplexOb
   }
 
   // secret_key_ref - computed: false, optional: true, required: false
-  private _secretKeyRef = new PodSpecContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref", true);
+  private _secretKeyRef = new PodSpecContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref");
   public get secretKeyRef() {
     return this._secretKeyRef;
   }
@@ -2192,10 +2178,9 @@ export class PodSpecContainerEnvFromConfigMapRefOutputReference extends cdktf.Co
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerEnvFromConfigMapRef | undefined {
@@ -2286,10 +2271,9 @@ export class PodSpecContainerEnvFromSecretRefOutputReference extends cdktf.Compl
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerEnvFromSecretRef | undefined {
@@ -2406,10 +2390,9 @@ export class PodSpecContainerLifecyclePostStartExecOutputReference extends cdktf
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerLifecyclePostStartExec | undefined {
@@ -2528,10 +2511,9 @@ export class PodSpecContainerLifecyclePostStartHttpGetOutputReference extends cd
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerLifecyclePostStartHttpGet | undefined {
@@ -2737,10 +2719,9 @@ export class PodSpecContainerLifecyclePreStopExecOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerLifecyclePreStopExec | undefined {
@@ -2859,10 +2840,9 @@ export class PodSpecContainerLifecyclePreStopHttpGetOutputReference extends cdkt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerLifecyclePreStopHttpGet | undefined {
@@ -3075,10 +3055,9 @@ export class PodSpecContainerLifecycleOutputReference extends cdktf.ComplexObjec
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerLifecycle | undefined {
@@ -3167,10 +3146,9 @@ export class PodSpecContainerLivenessProbeExecOutputReference extends cdktf.Comp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerLivenessProbeExec | undefined {
@@ -3289,10 +3267,9 @@ export class PodSpecContainerLivenessProbeHttpGetOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerLivenessProbeHttpGet | undefined {
@@ -3514,10 +3491,9 @@ export class PodSpecContainerLivenessProbeOutputReference extends cdktf.ComplexO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerLivenessProbe | undefined {
@@ -3664,7 +3640,7 @@ export class PodSpecContainerLivenessProbeOutputReference extends cdktf.ComplexO
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecContainerLivenessProbeExecOutputReference(this, "exec", true);
+  private _exec = new PodSpecContainerLivenessProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -3680,7 +3656,7 @@ export class PodSpecContainerLivenessProbeOutputReference extends cdktf.ComplexO
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecContainerLivenessProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new PodSpecContainerLivenessProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -3784,10 +3760,9 @@ export class PodSpecContainerReadinessProbeExecOutputReference extends cdktf.Com
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerReadinessProbeExec | undefined {
@@ -3906,10 +3881,9 @@ export class PodSpecContainerReadinessProbeHttpGetOutputReference extends cdktf.
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerReadinessProbeHttpGet | undefined {
@@ -4131,10 +4105,9 @@ export class PodSpecContainerReadinessProbeOutputReference extends cdktf.Complex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerReadinessProbe | undefined {
@@ -4281,7 +4254,7 @@ export class PodSpecContainerReadinessProbeOutputReference extends cdktf.Complex
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecContainerReadinessProbeExecOutputReference(this, "exec", true);
+  private _exec = new PodSpecContainerReadinessProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -4297,7 +4270,7 @@ export class PodSpecContainerReadinessProbeOutputReference extends cdktf.Complex
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecContainerReadinessProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new PodSpecContainerReadinessProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -4361,10 +4334,9 @@ export class PodSpecContainerResourcesOutputReference extends cdktf.ComplexObjec
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerResources | undefined {
@@ -4458,10 +4430,9 @@ export class PodSpecContainerSecurityContextCapabilitiesOutputReference extends 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerSecurityContextCapabilities | undefined {
@@ -4569,10 +4540,9 @@ export class PodSpecContainerSecurityContextSeLinuxOptionsOutputReference extend
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerSecurityContextSeLinuxOptions | undefined {
@@ -4710,10 +4680,9 @@ export class PodSpecContainerSecurityContextSeccompProfileOutputReference extend
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerSecurityContextSeccompProfile | undefined {
@@ -4856,10 +4825,9 @@ export class PodSpecContainerSecurityContextOutputReference extends cdktf.Comple
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerSecurityContext | undefined {
@@ -5028,7 +4996,7 @@ export class PodSpecContainerSecurityContextOutputReference extends cdktf.Comple
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities = new PodSpecContainerSecurityContextCapabilitiesOutputReference(this, "capabilities", true);
+  private _capabilities = new PodSpecContainerSecurityContextCapabilitiesOutputReference(this, "capabilities");
   public get capabilities() {
     return this._capabilities;
   }
@@ -5044,7 +5012,7 @@ export class PodSpecContainerSecurityContextOutputReference extends cdktf.Comple
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new PodSpecContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options", true);
+  private _seLinuxOptions = new PodSpecContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options");
   public get seLinuxOptions() {
     return this._seLinuxOptions;
   }
@@ -5060,7 +5028,7 @@ export class PodSpecContainerSecurityContextOutputReference extends cdktf.Comple
   }
 
   // seccomp_profile - computed: false, optional: true, required: false
-  private _seccompProfile = new PodSpecContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  private _seccompProfile = new PodSpecContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile");
   public get seccompProfile() {
     return this._seccompProfile;
   }
@@ -5100,10 +5068,9 @@ export class PodSpecContainerStartupProbeExecOutputReference extends cdktf.Compl
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerStartupProbeExec | undefined {
@@ -5222,10 +5189,9 @@ export class PodSpecContainerStartupProbeHttpGetOutputReference extends cdktf.Co
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerStartupProbeHttpGet | undefined {
@@ -5447,10 +5413,9 @@ export class PodSpecContainerStartupProbeOutputReference extends cdktf.ComplexOb
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecContainerStartupProbe | undefined {
@@ -5597,7 +5562,7 @@ export class PodSpecContainerStartupProbeOutputReference extends cdktf.ComplexOb
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecContainerStartupProbeExecOutputReference(this, "exec", true);
+  private _exec = new PodSpecContainerStartupProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -5613,7 +5578,7 @@ export class PodSpecContainerStartupProbeOutputReference extends cdktf.ComplexOb
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecContainerStartupProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new PodSpecContainerStartupProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -5916,10 +5881,9 @@ export class PodSpecDnsConfigOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecDnsConfig | undefined {
@@ -6088,10 +6052,9 @@ export class PodSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference exte
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerEnvValueFromConfigMapKeyRef | undefined {
@@ -6207,10 +6170,9 @@ export class PodSpecInitContainerEnvValueFromFieldRefOutputReference extends cdk
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerEnvValueFromFieldRef | undefined {
@@ -6307,10 +6269,9 @@ export class PodSpecInitContainerEnvValueFromResourceFieldRefOutputReference ext
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerEnvValueFromResourceFieldRef | undefined {
@@ -6430,10 +6391,9 @@ export class PodSpecInitContainerEnvValueFromSecretKeyRefOutputReference extends
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerEnvValueFromSecretKeyRef | undefined {
@@ -6563,10 +6523,9 @@ export class PodSpecInitContainerEnvValueFromOutputReference extends cdktf.Compl
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerEnvValueFrom | undefined {
@@ -6609,7 +6568,7 @@ export class PodSpecInitContainerEnvValueFromOutputReference extends cdktf.Compl
   }
 
   // config_map_key_ref - computed: false, optional: true, required: false
-  private _configMapKeyRef = new PodSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref", true);
+  private _configMapKeyRef = new PodSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref");
   public get configMapKeyRef() {
     return this._configMapKeyRef;
   }
@@ -6625,7 +6584,7 @@ export class PodSpecInitContainerEnvValueFromOutputReference extends cdktf.Compl
   }
 
   // field_ref - computed: false, optional: true, required: false
-  private _fieldRef = new PodSpecInitContainerEnvValueFromFieldRefOutputReference(this, "field_ref", true);
+  private _fieldRef = new PodSpecInitContainerEnvValueFromFieldRefOutputReference(this, "field_ref");
   public get fieldRef() {
     return this._fieldRef;
   }
@@ -6641,7 +6600,7 @@ export class PodSpecInitContainerEnvValueFromOutputReference extends cdktf.Compl
   }
 
   // resource_field_ref - computed: false, optional: true, required: false
-  private _resourceFieldRef = new PodSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref", true);
+  private _resourceFieldRef = new PodSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref");
   public get resourceFieldRef() {
     return this._resourceFieldRef;
   }
@@ -6657,7 +6616,7 @@ export class PodSpecInitContainerEnvValueFromOutputReference extends cdktf.Compl
   }
 
   // secret_key_ref - computed: false, optional: true, required: false
-  private _secretKeyRef = new PodSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref", true);
+  private _secretKeyRef = new PodSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref");
   public get secretKeyRef() {
     return this._secretKeyRef;
   }
@@ -6737,10 +6696,9 @@ export class PodSpecInitContainerEnvFromConfigMapRefOutputReference extends cdkt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerEnvFromConfigMapRef | undefined {
@@ -6831,10 +6789,9 @@ export class PodSpecInitContainerEnvFromSecretRefOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerEnvFromSecretRef | undefined {
@@ -6951,10 +6908,9 @@ export class PodSpecInitContainerLifecyclePostStartExecOutputReference extends c
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerLifecyclePostStartExec | undefined {
@@ -7073,10 +7029,9 @@ export class PodSpecInitContainerLifecyclePostStartHttpGetOutputReference extend
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerLifecyclePostStartHttpGet | undefined {
@@ -7282,10 +7237,9 @@ export class PodSpecInitContainerLifecyclePreStopExecOutputReference extends cdk
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerLifecyclePreStopExec | undefined {
@@ -7404,10 +7358,9 @@ export class PodSpecInitContainerLifecyclePreStopHttpGetOutputReference extends 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerLifecyclePreStopHttpGet | undefined {
@@ -7620,10 +7573,9 @@ export class PodSpecInitContainerLifecycleOutputReference extends cdktf.ComplexO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerLifecycle | undefined {
@@ -7712,10 +7664,9 @@ export class PodSpecInitContainerLivenessProbeExecOutputReference extends cdktf.
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerLivenessProbeExec | undefined {
@@ -7834,10 +7785,9 @@ export class PodSpecInitContainerLivenessProbeHttpGetOutputReference extends cdk
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerLivenessProbeHttpGet | undefined {
@@ -8059,10 +8009,9 @@ export class PodSpecInitContainerLivenessProbeOutputReference extends cdktf.Comp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerLivenessProbe | undefined {
@@ -8209,7 +8158,7 @@ export class PodSpecInitContainerLivenessProbeOutputReference extends cdktf.Comp
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecInitContainerLivenessProbeExecOutputReference(this, "exec", true);
+  private _exec = new PodSpecInitContainerLivenessProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -8225,7 +8174,7 @@ export class PodSpecInitContainerLivenessProbeOutputReference extends cdktf.Comp
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecInitContainerLivenessProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new PodSpecInitContainerLivenessProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -8329,10 +8278,9 @@ export class PodSpecInitContainerReadinessProbeExecOutputReference extends cdktf
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerReadinessProbeExec | undefined {
@@ -8451,10 +8399,9 @@ export class PodSpecInitContainerReadinessProbeHttpGetOutputReference extends cd
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerReadinessProbeHttpGet | undefined {
@@ -8676,10 +8623,9 @@ export class PodSpecInitContainerReadinessProbeOutputReference extends cdktf.Com
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerReadinessProbe | undefined {
@@ -8826,7 +8772,7 @@ export class PodSpecInitContainerReadinessProbeOutputReference extends cdktf.Com
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecInitContainerReadinessProbeExecOutputReference(this, "exec", true);
+  private _exec = new PodSpecInitContainerReadinessProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -8842,7 +8788,7 @@ export class PodSpecInitContainerReadinessProbeOutputReference extends cdktf.Com
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecInitContainerReadinessProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new PodSpecInitContainerReadinessProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -8906,10 +8852,9 @@ export class PodSpecInitContainerResourcesOutputReference extends cdktf.ComplexO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerResources | undefined {
@@ -9003,10 +8948,9 @@ export class PodSpecInitContainerSecurityContextCapabilitiesOutputReference exte
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerSecurityContextCapabilities | undefined {
@@ -9114,10 +9058,9 @@ export class PodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference ex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerSecurityContextSeLinuxOptions | undefined {
@@ -9255,10 +9198,9 @@ export class PodSpecInitContainerSecurityContextSeccompProfileOutputReference ex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerSecurityContextSeccompProfile | undefined {
@@ -9401,10 +9343,9 @@ export class PodSpecInitContainerSecurityContextOutputReference extends cdktf.Co
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerSecurityContext | undefined {
@@ -9573,7 +9514,7 @@ export class PodSpecInitContainerSecurityContextOutputReference extends cdktf.Co
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities = new PodSpecInitContainerSecurityContextCapabilitiesOutputReference(this, "capabilities", true);
+  private _capabilities = new PodSpecInitContainerSecurityContextCapabilitiesOutputReference(this, "capabilities");
   public get capabilities() {
     return this._capabilities;
   }
@@ -9589,7 +9530,7 @@ export class PodSpecInitContainerSecurityContextOutputReference extends cdktf.Co
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new PodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options", true);
+  private _seLinuxOptions = new PodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options");
   public get seLinuxOptions() {
     return this._seLinuxOptions;
   }
@@ -9605,7 +9546,7 @@ export class PodSpecInitContainerSecurityContextOutputReference extends cdktf.Co
   }
 
   // seccomp_profile - computed: false, optional: true, required: false
-  private _seccompProfile = new PodSpecInitContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  private _seccompProfile = new PodSpecInitContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile");
   public get seccompProfile() {
     return this._seccompProfile;
   }
@@ -9645,10 +9586,9 @@ export class PodSpecInitContainerStartupProbeExecOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerStartupProbeExec | undefined {
@@ -9767,10 +9707,9 @@ export class PodSpecInitContainerStartupProbeHttpGetOutputReference extends cdkt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerStartupProbeHttpGet | undefined {
@@ -9992,10 +9931,9 @@ export class PodSpecInitContainerStartupProbeOutputReference extends cdktf.Compl
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecInitContainerStartupProbe | undefined {
@@ -10142,7 +10080,7 @@ export class PodSpecInitContainerStartupProbeOutputReference extends cdktf.Compl
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecInitContainerStartupProbeExecOutputReference(this, "exec", true);
+  private _exec = new PodSpecInitContainerStartupProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -10158,7 +10096,7 @@ export class PodSpecInitContainerStartupProbeOutputReference extends cdktf.Compl
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecInitContainerStartupProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new PodSpecInitContainerStartupProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -10461,10 +10399,9 @@ export class PodSpecSecurityContextSeLinuxOptionsOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecSecurityContextSeLinuxOptions | undefined {
@@ -10602,10 +10539,9 @@ export class PodSpecSecurityContextSeccompProfileOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecSecurityContextSeccompProfile | undefined {
@@ -10767,10 +10703,9 @@ export class PodSpecSecurityContextOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecSecurityContext | undefined {
@@ -10917,7 +10852,7 @@ export class PodSpecSecurityContextOutputReference extends cdktf.ComplexObject {
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new PodSpecSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options", true);
+  private _seLinuxOptions = new PodSpecSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options");
   public get seLinuxOptions() {
     return this._seLinuxOptions;
   }
@@ -10933,7 +10868,7 @@ export class PodSpecSecurityContextOutputReference extends cdktf.ComplexObject {
   }
 
   // seccomp_profile - computed: false, optional: true, required: false
-  private _seccompProfile = new PodSpecSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  private _seccompProfile = new PodSpecSecurityContextSeccompProfileOutputReference(this, "seccomp_profile");
   public get seccompProfile() {
     return this._seccompProfile;
   }
@@ -11157,10 +11092,9 @@ export class PodSpecVolumeAwsElasticBlockStoreOutputReference extends cdktf.Comp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeAwsElasticBlockStore | undefined {
@@ -11323,10 +11257,9 @@ export class PodSpecVolumeAzureDiskOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeAzureDisk | undefined {
@@ -11513,10 +11446,9 @@ export class PodSpecVolumeAzureFileOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeAzureFile | undefined {
@@ -11648,10 +11580,9 @@ export class PodSpecVolumeCephFsSecretRefOutputReference extends cdktf.ComplexOb
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeCephFsSecretRef | undefined {
@@ -11773,10 +11704,9 @@ export class PodSpecVolumeCephFsOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeCephFs | undefined {
@@ -11908,7 +11838,7 @@ export class PodSpecVolumeCephFsOutputReference extends cdktf.ComplexObject {
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new PodSpecVolumeCephFsSecretRefOutputReference(this, "secret_ref", true);
+  private _secretRef = new PodSpecVolumeCephFsSecretRefOutputReference(this, "secret_ref");
   public get secretRef() {
     return this._secretRef;
   }
@@ -11962,10 +11892,9 @@ export class PodSpecVolumeCinderOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeCinder | undefined {
@@ -12125,10 +12054,9 @@ export class PodSpecVolumeConfigMapOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeConfigMap | undefined {
@@ -12260,10 +12188,9 @@ export class PodSpecVolumeCsiNodePublishSecretRefOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeCsiNodePublishSecretRef | undefined {
@@ -12356,10 +12283,9 @@ export class PodSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeCsi | undefined {
@@ -12469,7 +12395,7 @@ export class PodSpecVolumeCsiOutputReference extends cdktf.ComplexObject {
   }
 
   // node_publish_secret_ref - computed: false, optional: true, required: false
-  private _nodePublishSecretRef = new PodSpecVolumeCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref", true);
+  private _nodePublishSecretRef = new PodSpecVolumeCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref");
   public get nodePublishSecretRef() {
     return this._nodePublishSecretRef;
   }
@@ -12516,10 +12442,9 @@ export class PodSpecVolumeDownwardApiItemsFieldRefOutputReference extends cdktf.
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeDownwardApiItemsFieldRef | undefined {
@@ -12616,10 +12541,9 @@ export class PodSpecVolumeDownwardApiItemsResourceFieldRefOutputReference extend
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeDownwardApiItemsResourceFieldRef | undefined {
@@ -12769,10 +12693,9 @@ export class PodSpecVolumeDownwardApiOutputReference extends cdktf.ComplexObject
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeDownwardApi | undefined {
@@ -12867,10 +12790,9 @@ export class PodSpecVolumeEmptyDirOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeEmptyDir | undefined {
@@ -12978,10 +12900,9 @@ export class PodSpecVolumeFcOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeFc | undefined {
@@ -13113,10 +13034,9 @@ export class PodSpecVolumeFlexVolumeSecretRefOutputReference extends cdktf.Compl
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeFlexVolumeSecretRef | undefined {
@@ -13231,10 +13151,9 @@ export class PodSpecVolumeFlexVolumeOutputReference extends cdktf.ComplexObject 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeFlexVolume | undefined {
@@ -13344,7 +13263,7 @@ export class PodSpecVolumeFlexVolumeOutputReference extends cdktf.ComplexObject 
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new PodSpecVolumeFlexVolumeSecretRefOutputReference(this, "secret_ref", true);
+  private _secretRef = new PodSpecVolumeFlexVolumeSecretRefOutputReference(this, "secret_ref");
   public get secretRef() {
     return this._secretRef;
   }
@@ -13391,10 +13310,9 @@ export class PodSpecVolumeFlockerOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeFlocker | undefined {
@@ -13502,10 +13420,9 @@ export class PodSpecVolumeGcePersistentDiskOutputReference extends cdktf.Complex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeGcePersistentDisk | undefined {
@@ -13647,10 +13564,9 @@ export class PodSpecVolumeGitRepoOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeGitRepo | undefined {
@@ -13773,10 +13689,9 @@ export class PodSpecVolumeGlusterfsOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeGlusterfs | undefined {
@@ -13886,10 +13801,9 @@ export class PodSpecVolumeHostPathOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeHostPath | undefined {
@@ -14011,10 +13925,9 @@ export class PodSpecVolumeIscsiOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeIscsi | undefined {
@@ -14183,10 +14096,9 @@ export class PodSpecVolumeLocalOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeLocal | undefined {
@@ -14265,10 +14177,9 @@ export class PodSpecVolumeNfsOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeNfs | undefined {
@@ -14378,10 +14289,9 @@ export class PodSpecVolumePersistentVolumeClaimOutputReference extends cdktf.Com
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumePersistentVolumeClaim | undefined {
@@ -14475,10 +14385,9 @@ export class PodSpecVolumePhotonPersistentDiskOutputReference extends cdktf.Comp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumePhotonPersistentDisk | undefined {
@@ -14635,10 +14544,9 @@ export class PodSpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReferenc
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined {
@@ -14735,10 +14643,9 @@ export class PodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutput
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined {
@@ -14881,10 +14788,9 @@ export class PodSpecVolumeProjectedSourcesDownwardApiOutputReference extends cdk
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeProjectedSourcesDownwardApi | undefined {
@@ -15030,10 +14936,9 @@ export class PodSpecVolumeProjectedSourcesServiceAccountTokenOutputReference ext
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeProjectedSourcesServiceAccountToken | undefined {
@@ -15233,10 +15138,9 @@ export class PodSpecVolumeQuobyteOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeQuobyte | undefined {
@@ -15390,10 +15294,9 @@ export class PodSpecVolumeRbdSecretRefOutputReference extends cdktf.ComplexObjec
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeRbdSecretRef | undefined {
@@ -15529,10 +15432,9 @@ export class PodSpecVolumeRbdOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeRbd | undefined {
@@ -15705,7 +15607,7 @@ export class PodSpecVolumeRbdOutputReference extends cdktf.ComplexObject {
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new PodSpecVolumeRbdSecretRefOutputReference(this, "secret_ref", true);
+  private _secretRef = new PodSpecVolumeRbdSecretRefOutputReference(this, "secret_ref");
   public get secretRef() {
     return this._secretRef;
   }
@@ -15799,10 +15701,9 @@ export class PodSpecVolumeSecretOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeSecret | undefined {
@@ -15941,10 +15842,9 @@ export class PodSpecVolumeVsphereVolumeOutputReference extends cdktf.ComplexObje
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpecVolumeVsphereVolume | undefined {
@@ -16411,10 +16311,9 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSpec | undefined {
@@ -16851,7 +16750,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // affinity - computed: false, optional: true, required: false
-  private _affinity = new PodSpecAffinityOutputReference(this, "affinity", true);
+  private _affinity = new PodSpecAffinityOutputReference(this, "affinity");
   public get affinity() {
     return this._affinity;
   }
@@ -16884,7 +16783,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // dns_config - computed: false, optional: true, required: false
-  private _dnsConfig = new PodSpecDnsConfigOutputReference(this, "dns_config", true);
+  private _dnsConfig = new PodSpecDnsConfigOutputReference(this, "dns_config");
   public get dnsConfig() {
     return this._dnsConfig;
   }
@@ -16968,7 +16867,7 @@ export class PodSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // security_context - computed: false, optional: true, required: false
-  private _securityContext = new PodSpecSecurityContextOutputReference(this, "security_context", true);
+  private _securityContext = new PodSpecSecurityContextOutputReference(this, "security_context");
   public get securityContext() {
     return this._securityContext;
   }
@@ -17062,10 +16961,9 @@ export class PodTimeoutsOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodTimeouts | undefined {
@@ -17136,7 +17034,7 @@ export class Pod extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_pod";
+  public static readonly tfResourceType = "kubernetes_pod";
 
   // ===========
   // INITIALIZER
@@ -17153,7 +17051,9 @@ export class Pod extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_pod',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -17175,7 +17075,7 @@ export class Pod extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new PodMetadataOutputReference(this, "metadata", true);
+  private _metadata = new PodMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -17188,7 +17088,7 @@ export class Pod extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new PodSpecOutputReference(this, "spec", true);
+  private _spec = new PodSpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }
@@ -17201,7 +17101,7 @@ export class Pod extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new PodTimeoutsOutputReference(this, "timeouts", true);
+  private _timeouts = new PodTimeoutsOutputReference(this, "timeouts");
   public get timeouts() {
     return this._timeouts;
   }

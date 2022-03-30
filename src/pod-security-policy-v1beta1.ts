@@ -59,10 +59,9 @@ export class PodSecurityPolicyV1Beta1MetadataOutputReference extends cdktf.Compl
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1Metadata | undefined {
@@ -266,10 +265,9 @@ export class PodSecurityPolicyV1Beta1SpecFsGroupOutputReference extends cdktf.Co
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1SpecFsGroup | undefined {
@@ -413,10 +411,9 @@ export class PodSecurityPolicyV1Beta1SpecRunAsGroupOutputReference extends cdktf
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1SpecRunAsGroup | undefined {
@@ -534,10 +531,9 @@ export class PodSecurityPolicyV1Beta1SpecRunAsUserOutputReference extends cdktf.
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1SpecRunAsUser | undefined {
@@ -661,10 +657,9 @@ export class PodSecurityPolicyV1Beta1SpecSeLinuxOutputReference extends cdktf.Co
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1SpecSeLinux | undefined {
@@ -782,10 +777,9 @@ export class PodSecurityPolicyV1Beta1SpecSupplementalGroupsOutputReference exten
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1SpecSupplementalGroups | undefined {
@@ -1021,10 +1015,9 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PodSecurityPolicyV1Beta1Spec | undefined {
@@ -1433,7 +1426,7 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
   }
 
   // fs_group - computed: false, optional: false, required: true
-  private _fsGroup = new PodSecurityPolicyV1Beta1SpecFsGroupOutputReference(this, "fs_group", true);
+  private _fsGroup = new PodSecurityPolicyV1Beta1SpecFsGroupOutputReference(this, "fs_group");
   public get fsGroup() {
     return this._fsGroup;
   }
@@ -1463,7 +1456,7 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
   }
 
   // run_as_group - computed: false, optional: true, required: false
-  private _runAsGroup = new PodSecurityPolicyV1Beta1SpecRunAsGroupOutputReference(this, "run_as_group", true);
+  private _runAsGroup = new PodSecurityPolicyV1Beta1SpecRunAsGroupOutputReference(this, "run_as_group");
   public get runAsGroup() {
     return this._runAsGroup;
   }
@@ -1479,7 +1472,7 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
   }
 
   // run_as_user - computed: false, optional: false, required: true
-  private _runAsUser = new PodSecurityPolicyV1Beta1SpecRunAsUserOutputReference(this, "run_as_user", true);
+  private _runAsUser = new PodSecurityPolicyV1Beta1SpecRunAsUserOutputReference(this, "run_as_user");
   public get runAsUser() {
     return this._runAsUser;
   }
@@ -1492,7 +1485,7 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
   }
 
   // se_linux - computed: false, optional: true, required: false
-  private _seLinux = new PodSecurityPolicyV1Beta1SpecSeLinuxOutputReference(this, "se_linux", true);
+  private _seLinux = new PodSecurityPolicyV1Beta1SpecSeLinuxOutputReference(this, "se_linux");
   public get seLinux() {
     return this._seLinux;
   }
@@ -1508,7 +1501,7 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
   }
 
   // supplemental_groups - computed: false, optional: false, required: true
-  private _supplementalGroups = new PodSecurityPolicyV1Beta1SpecSupplementalGroupsOutputReference(this, "supplemental_groups", true);
+  private _supplementalGroups = new PodSecurityPolicyV1Beta1SpecSupplementalGroupsOutputReference(this, "supplemental_groups");
   public get supplementalGroups() {
     return this._supplementalGroups;
   }
@@ -1529,7 +1522,7 @@ export class PodSecurityPolicyV1Beta1 extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_pod_security_policy_v1beta1";
+  public static readonly tfResourceType = "kubernetes_pod_security_policy_v1beta1";
 
   // ===========
   // INITIALIZER
@@ -1546,7 +1539,9 @@ export class PodSecurityPolicyV1Beta1 extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_pod_security_policy_v1beta1',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -1567,7 +1562,7 @@ export class PodSecurityPolicyV1Beta1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new PodSecurityPolicyV1Beta1MetadataOutputReference(this, "metadata", true);
+  private _metadata = new PodSecurityPolicyV1Beta1MetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -1580,7 +1575,7 @@ export class PodSecurityPolicyV1Beta1 extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new PodSecurityPolicyV1Beta1SpecOutputReference(this, "spec", true);
+  private _spec = new PodSecurityPolicyV1Beta1SpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }

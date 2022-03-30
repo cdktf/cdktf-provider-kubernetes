@@ -85,10 +85,9 @@ export class DeploymentV1MetadataOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1Metadata | undefined {
@@ -296,10 +295,9 @@ export class DeploymentV1SpecSelectorOutputReference extends cdktf.ComplexObject
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecSelector | undefined {
@@ -394,10 +392,9 @@ export class DeploymentV1SpecStrategyRollingUpdateOutputReference extends cdktf.
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecStrategyRollingUpdate | undefined {
@@ -491,10 +488,9 @@ export class DeploymentV1SpecStrategyOutputReference extends cdktf.ComplexObject
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecStrategy | undefined {
@@ -541,7 +537,7 @@ export class DeploymentV1SpecStrategyOutputReference extends cdktf.ComplexObject
   }
 
   // rolling_update - computed: false, optional: true, required: false
-  private _rollingUpdate = new DeploymentV1SpecStrategyRollingUpdateOutputReference(this, "rolling_update", true);
+  private _rollingUpdate = new DeploymentV1SpecStrategyRollingUpdateOutputReference(this, "rolling_update");
   public get rollingUpdate() {
     return this._rollingUpdate;
   }
@@ -609,10 +605,9 @@ export class DeploymentV1SpecTemplateMetadataOutputReference extends cdktf.Compl
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateMetadata | undefined {
@@ -813,10 +808,9 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSche
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference | undefined {
@@ -960,10 +954,9 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSched
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution | undefined {
@@ -1036,10 +1029,9 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityOutputReference ext
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecAffinityNodeAffinity | undefined {
@@ -1087,7 +1079,7 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityOutputReference ext
   }
 
   // required_during_scheduling_ignored_during_execution - computed: false, optional: true, required: false
-  private _requiredDuringSchedulingIgnoredDuringExecution = new DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this, "required_during_scheduling_ignored_during_execution", true);
+  private _requiredDuringSchedulingIgnoredDuringExecution = new DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference(this, "required_during_scheduling_ignored_during_execution");
   public get requiredDuringSchedulingIgnoredDuringExecution() {
     return this._requiredDuringSchedulingIgnoredDuringExecution;
   }
@@ -1200,10 +1192,9 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSched
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
@@ -1438,10 +1429,9 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityOutputReference exte
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecAffinityPodAffinity | undefined {
@@ -1603,10 +1593,9 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringS
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm | undefined {
@@ -1841,10 +1830,9 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecAffinityPodAntiAffinity | undefined {
@@ -1947,10 +1935,9 @@ export class DeploymentV1SpecTemplateSpecAffinityOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecAffinity | undefined {
@@ -1987,7 +1974,7 @@ export class DeploymentV1SpecTemplateSpecAffinityOutputReference extends cdktf.C
   }
 
   // node_affinity - computed: false, optional: true, required: false
-  private _nodeAffinity = new DeploymentV1SpecTemplateSpecAffinityNodeAffinityOutputReference(this, "node_affinity", true);
+  private _nodeAffinity = new DeploymentV1SpecTemplateSpecAffinityNodeAffinityOutputReference(this, "node_affinity");
   public get nodeAffinity() {
     return this._nodeAffinity;
   }
@@ -2003,7 +1990,7 @@ export class DeploymentV1SpecTemplateSpecAffinityOutputReference extends cdktf.C
   }
 
   // pod_affinity - computed: false, optional: true, required: false
-  private _podAffinity = new DeploymentV1SpecTemplateSpecAffinityPodAffinityOutputReference(this, "pod_affinity", true);
+  private _podAffinity = new DeploymentV1SpecTemplateSpecAffinityPodAffinityOutputReference(this, "pod_affinity");
   public get podAffinity() {
     return this._podAffinity;
   }
@@ -2019,7 +2006,7 @@ export class DeploymentV1SpecTemplateSpecAffinityOutputReference extends cdktf.C
   }
 
   // pod_anti_affinity - computed: false, optional: true, required: false
-  private _podAntiAffinity = new DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference(this, "pod_anti_affinity", true);
+  private _podAntiAffinity = new DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference(this, "pod_anti_affinity");
   public get podAntiAffinity() {
     return this._podAntiAffinity;
   }
@@ -2073,10 +2060,9 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOut
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef | undefined {
@@ -2192,10 +2178,9 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputRefe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRef | undefined {
@@ -2292,10 +2277,9 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef | undefined {
@@ -2415,10 +2399,9 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutput
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef | undefined {
@@ -2548,10 +2531,9 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromOutputReference ex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvValueFrom | undefined {
@@ -2594,7 +2576,7 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromOutputReference ex
   }
 
   // config_map_key_ref - computed: false, optional: true, required: false
-  private _configMapKeyRef = new DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref", true);
+  private _configMapKeyRef = new DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref");
   public get configMapKeyRef() {
     return this._configMapKeyRef;
   }
@@ -2610,7 +2592,7 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromOutputReference ex
   }
 
   // field_ref - computed: false, optional: true, required: false
-  private _fieldRef = new DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputReference(this, "field_ref", true);
+  private _fieldRef = new DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputReference(this, "field_ref");
   public get fieldRef() {
     return this._fieldRef;
   }
@@ -2626,7 +2608,7 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromOutputReference ex
   }
 
   // resource_field_ref - computed: false, optional: true, required: false
-  private _resourceFieldRef = new DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref", true);
+  private _resourceFieldRef = new DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref");
   public get resourceFieldRef() {
     return this._resourceFieldRef;
   }
@@ -2642,7 +2624,7 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromOutputReference ex
   }
 
   // secret_key_ref - computed: false, optional: true, required: false
-  private _secretKeyRef = new DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref", true);
+  private _secretKeyRef = new DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref");
   public get secretKeyRef() {
     return this._secretKeyRef;
   }
@@ -2722,10 +2704,9 @@ export class DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRefOutputRefer
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRef | undefined {
@@ -2816,10 +2797,9 @@ export class DeploymentV1SpecTemplateSpecContainerEnvFromSecretRefOutputReferenc
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerEnvFromSecretRef | undefined {
@@ -2936,10 +2916,9 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExecOutputRe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExec | undefined {
@@ -3058,10 +3037,9 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutpu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGet | undefined {
@@ -3267,10 +3245,9 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExecOutputRefe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExec | undefined {
@@ -3389,10 +3366,9 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutputR
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGet | undefined {
@@ -3605,10 +3581,9 @@ export class DeploymentV1SpecTemplateSpecContainerLifecycleOutputReference exten
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerLifecycle | undefined {
@@ -3697,10 +3672,9 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeExecOutputReferen
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerLivenessProbeExec | undefined {
@@ -3819,10 +3793,9 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputRefe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGet | undefined {
@@ -4044,10 +4017,9 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference e
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerLivenessProbe | undefined {
@@ -4194,7 +4166,7 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference e
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new DeploymentV1SpecTemplateSpecContainerLivenessProbeExecOutputReference(this, "exec", true);
+  private _exec = new DeploymentV1SpecTemplateSpecContainerLivenessProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -4210,7 +4182,7 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference e
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -4314,10 +4286,9 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeExecOutputRefere
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerReadinessProbeExec | undefined {
@@ -4436,10 +4407,9 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputRef
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGet | undefined {
@@ -4661,10 +4631,9 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerReadinessProbe | undefined {
@@ -4811,7 +4780,7 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference 
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new DeploymentV1SpecTemplateSpecContainerReadinessProbeExecOutputReference(this, "exec", true);
+  private _exec = new DeploymentV1SpecTemplateSpecContainerReadinessProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -4827,7 +4796,7 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference 
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -4891,10 +4860,9 @@ export class DeploymentV1SpecTemplateSpecContainerResourcesOutputReference exten
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerResources | undefined {
@@ -4988,10 +4956,9 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesOut
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilities | undefined {
@@ -5099,10 +5066,9 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions | undefined {
@@ -5240,10 +5206,9 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfileO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfile | undefined {
@@ -5386,10 +5351,9 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerSecurityContext | undefined {
@@ -5558,7 +5522,7 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities = new DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference(this, "capabilities", true);
+  private _capabilities = new DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference(this, "capabilities");
   public get capabilities() {
     return this._capabilities;
   }
@@ -5574,7 +5538,7 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options", true);
+  private _seLinuxOptions = new DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options");
   public get seLinuxOptions() {
     return this._seLinuxOptions;
   }
@@ -5590,7 +5554,7 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
   }
 
   // seccomp_profile - computed: false, optional: true, required: false
-  private _seccompProfile = new DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  private _seccompProfile = new DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile");
   public get seccompProfile() {
     return this._seccompProfile;
   }
@@ -5630,10 +5594,9 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeExecOutputReferenc
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerStartupProbeExec | undefined {
@@ -5752,10 +5715,9 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputRefer
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGet | undefined {
@@ -5977,10 +5939,9 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference ex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecContainerStartupProbe | undefined {
@@ -6127,7 +6088,7 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference ex
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new DeploymentV1SpecTemplateSpecContainerStartupProbeExecOutputReference(this, "exec", true);
+  private _exec = new DeploymentV1SpecTemplateSpecContainerStartupProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -6143,7 +6104,7 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference ex
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -6446,10 +6407,9 @@ export class DeploymentV1SpecTemplateSpecDnsConfigOutputReference extends cdktf.
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecDnsConfig | undefined {
@@ -6618,10 +6578,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef | undefined {
@@ -6737,10 +6696,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutput
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRef | undefined {
@@ -6837,10 +6795,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldR
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef | undefined {
@@ -6960,10 +6917,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef | undefined {
@@ -7093,10 +7049,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromOutputReferenc
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvValueFrom | undefined {
@@ -7139,7 +7094,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromOutputReferenc
   }
 
   // config_map_key_ref - computed: false, optional: true, required: false
-  private _configMapKeyRef = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref", true);
+  private _configMapKeyRef = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference(this, "config_map_key_ref");
   public get configMapKeyRef() {
     return this._configMapKeyRef;
   }
@@ -7155,7 +7110,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromOutputReferenc
   }
 
   // field_ref - computed: false, optional: true, required: false
-  private _fieldRef = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference(this, "field_ref", true);
+  private _fieldRef = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference(this, "field_ref");
   public get fieldRef() {
     return this._fieldRef;
   }
@@ -7171,7 +7126,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromOutputReferenc
   }
 
   // resource_field_ref - computed: false, optional: true, required: false
-  private _resourceFieldRef = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref", true);
+  private _resourceFieldRef = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference(this, "resource_field_ref");
   public get resourceFieldRef() {
     return this._resourceFieldRef;
   }
@@ -7187,7 +7142,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromOutputReferenc
   }
 
   // secret_key_ref - computed: false, optional: true, required: false
-  private _secretKeyRef = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref", true);
+  private _secretKeyRef = new DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference(this, "secret_key_ref");
   public get secretKeyRef() {
     return this._secretKeyRef;
   }
@@ -7267,10 +7222,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRefOutputR
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRef | undefined {
@@ -7361,10 +7315,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRefOutputRefe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRef | undefined {
@@ -7481,10 +7434,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExecOutp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExec | undefined {
@@ -7603,10 +7555,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet | undefined {
@@ -7812,10 +7763,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExecOutput
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExec | undefined {
@@ -7934,10 +7884,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOut
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGet | undefined {
@@ -8150,10 +8099,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecycleOutputReference e
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLifecycle | undefined {
@@ -8242,10 +8190,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExecOutputRef
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExec | undefined {
@@ -8364,10 +8311,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutput
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGet | undefined {
@@ -8589,10 +8535,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReferen
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerLivenessProbe | undefined {
@@ -8739,7 +8684,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReferen
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExecOutputReference(this, "exec", true);
+  private _exec = new DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -8755,7 +8700,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReferen
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -8859,10 +8804,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExecOutputRe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExec | undefined {
@@ -8981,10 +8925,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutpu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined {
@@ -9206,10 +9149,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputRefere
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerReadinessProbe | undefined {
@@ -9356,7 +9298,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputRefere
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExecOutputReference(this, "exec", true);
+  private _exec = new DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -9372,7 +9314,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputRefere
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -9436,10 +9378,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerResourcesOutputReference e
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerResources | undefined {
@@ -9533,10 +9474,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitie
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilities | undefined {
@@ -9644,10 +9584,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOpti
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined {
@@ -9785,10 +9724,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProf
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile | undefined {
@@ -9931,10 +9869,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerSecurityContext | undefined {
@@ -10103,7 +10040,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities = new DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference(this, "capabilities", true);
+  private _capabilities = new DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference(this, "capabilities");
   public get capabilities() {
     return this._capabilities;
   }
@@ -10119,7 +10056,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options", true);
+  private _seLinuxOptions = new DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options");
   public get seLinuxOptions() {
     return this._seLinuxOptions;
   }
@@ -10135,7 +10072,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerSecurityContextOutputRefer
   }
 
   // seccomp_profile - computed: false, optional: true, required: false
-  private _seccompProfile = new DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  private _seccompProfile = new DeploymentV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile");
   public get seccompProfile() {
     return this._seccompProfile;
   }
@@ -10175,10 +10112,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeExecOutputRefe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerStartupProbeExec | undefined {
@@ -10297,10 +10233,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputR
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGet | undefined {
@@ -10522,10 +10457,9 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeOutputReferenc
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecInitContainerStartupProbe | undefined {
@@ -10672,7 +10606,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeOutputReferenc
   }
 
   // exec - computed: false, optional: true, required: false
-  private _exec = new DeploymentV1SpecTemplateSpecInitContainerStartupProbeExecOutputReference(this, "exec", true);
+  private _exec = new DeploymentV1SpecTemplateSpecInitContainerStartupProbeExecOutputReference(this, "exec");
   public get exec() {
     return this._exec;
   }
@@ -10688,7 +10622,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerStartupProbeOutputReferenc
   }
 
   // http_get - computed: false, optional: true, required: false
-  private _httpGet = new DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference(this, "http_get", true);
+  private _httpGet = new DeploymentV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference(this, "http_get");
   public get httpGet() {
     return this._httpGet;
   }
@@ -10991,10 +10925,9 @@ export class DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputRefe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptions | undefined {
@@ -11132,10 +11065,9 @@ export class DeploymentV1SpecTemplateSpecSecurityContextSeccompProfileOutputRefe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecSecurityContextSeccompProfile | undefined {
@@ -11297,10 +11229,9 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecSecurityContext | undefined {
@@ -11447,7 +11378,7 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options", true);
+  private _seLinuxOptions = new DeploymentV1SpecTemplateSpecSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options");
   public get seLinuxOptions() {
     return this._seLinuxOptions;
   }
@@ -11463,7 +11394,7 @@ export class DeploymentV1SpecTemplateSpecSecurityContextOutputReference extends 
   }
 
   // seccomp_profile - computed: false, optional: true, required: false
-  private _seccompProfile = new DeploymentV1SpecTemplateSpecSecurityContextSeccompProfileOutputReference(this, "seccomp_profile", true);
+  private _seccompProfile = new DeploymentV1SpecTemplateSpecSecurityContextSeccompProfileOutputReference(this, "seccomp_profile");
   public get seccompProfile() {
     return this._seccompProfile;
   }
@@ -11687,10 +11618,9 @@ export class DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStoreOutputReferen
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeAwsElasticBlockStore | undefined {
@@ -11853,10 +11783,9 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureDiskOutputReference extends 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeAzureDisk | undefined {
@@ -12043,10 +11972,9 @@ export class DeploymentV1SpecTemplateSpecVolumeAzureFileOutputReference extends 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeAzureFile | undefined {
@@ -12178,10 +12106,9 @@ export class DeploymentV1SpecTemplateSpecVolumeCephFsSecretRefOutputReference ex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCephFsSecretRef | undefined {
@@ -12303,10 +12230,9 @@ export class DeploymentV1SpecTemplateSpecVolumeCephFsOutputReference extends cdk
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCephFs | undefined {
@@ -12438,7 +12364,7 @@ export class DeploymentV1SpecTemplateSpecVolumeCephFsOutputReference extends cdk
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new DeploymentV1SpecTemplateSpecVolumeCephFsSecretRefOutputReference(this, "secret_ref", true);
+  private _secretRef = new DeploymentV1SpecTemplateSpecVolumeCephFsSecretRefOutputReference(this, "secret_ref");
   public get secretRef() {
     return this._secretRef;
   }
@@ -12492,10 +12418,9 @@ export class DeploymentV1SpecTemplateSpecVolumeCinderOutputReference extends cdk
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCinder | undefined {
@@ -12655,10 +12580,9 @@ export class DeploymentV1SpecTemplateSpecVolumeConfigMapOutputReference extends 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeConfigMap | undefined {
@@ -12790,10 +12714,9 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputRefe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRef | undefined {
@@ -12886,10 +12809,9 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeCsi | undefined {
@@ -12999,7 +12921,7 @@ export class DeploymentV1SpecTemplateSpecVolumeCsiOutputReference extends cdktf.
   }
 
   // node_publish_secret_ref - computed: false, optional: true, required: false
-  private _nodePublishSecretRef = new DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref", true);
+  private _nodePublishSecretRef = new DeploymentV1SpecTemplateSpecVolumeCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref");
   public get nodePublishSecretRef() {
     return this._nodePublishSecretRef;
   }
@@ -13046,10 +12968,9 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRefOutputRef
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsFieldRef | undefined {
@@ -13146,10 +13067,9 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRefO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef | undefined {
@@ -13299,10 +13219,9 @@ export class DeploymentV1SpecTemplateSpecVolumeDownwardApiOutputReference extend
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeDownwardApi | undefined {
@@ -13397,10 +13316,9 @@ export class DeploymentV1SpecTemplateSpecVolumeEmptyDirOutputReference extends c
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeEmptyDir | undefined {
@@ -13508,10 +13426,9 @@ export class DeploymentV1SpecTemplateSpecVolumeFcOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeFc | undefined {
@@ -13643,10 +13560,9 @@ export class DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRefOutputReferenc
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRef | undefined {
@@ -13761,10 +13677,9 @@ export class DeploymentV1SpecTemplateSpecVolumeFlexVolumeOutputReference extends
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeFlexVolume | undefined {
@@ -13874,7 +13789,7 @@ export class DeploymentV1SpecTemplateSpecVolumeFlexVolumeOutputReference extends
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference(this, "secret_ref", true);
+  private _secretRef = new DeploymentV1SpecTemplateSpecVolumeFlexVolumeSecretRefOutputReference(this, "secret_ref");
   public get secretRef() {
     return this._secretRef;
   }
@@ -13921,10 +13836,9 @@ export class DeploymentV1SpecTemplateSpecVolumeFlockerOutputReference extends cd
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeFlocker | undefined {
@@ -14032,10 +13946,9 @@ export class DeploymentV1SpecTemplateSpecVolumeGcePersistentDiskOutputReference 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeGcePersistentDisk | undefined {
@@ -14177,10 +14090,9 @@ export class DeploymentV1SpecTemplateSpecVolumeGitRepoOutputReference extends cd
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeGitRepo | undefined {
@@ -14303,10 +14215,9 @@ export class DeploymentV1SpecTemplateSpecVolumeGlusterfsOutputReference extends 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeGlusterfs | undefined {
@@ -14416,10 +14327,9 @@ export class DeploymentV1SpecTemplateSpecVolumeHostPathOutputReference extends c
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeHostPath | undefined {
@@ -14541,10 +14451,9 @@ export class DeploymentV1SpecTemplateSpecVolumeIscsiOutputReference extends cdkt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeIscsi | undefined {
@@ -14713,10 +14622,9 @@ export class DeploymentV1SpecTemplateSpecVolumeLocalOutputReference extends cdkt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeLocal | undefined {
@@ -14795,10 +14703,9 @@ export class DeploymentV1SpecTemplateSpecVolumeNfsOutputReference extends cdktf.
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeNfs | undefined {
@@ -14908,10 +14815,9 @@ export class DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaimOutputRefere
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumePersistentVolumeClaim | undefined {
@@ -15005,10 +14911,9 @@ export class DeploymentV1SpecTemplateSpecVolumePhotonPersistentDiskOutputReferen
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumePhotonPersistentDisk | undefined {
@@ -15165,10 +15070,9 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsF
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef | undefined {
@@ -15265,10 +15169,9 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsR
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef | undefined {
@@ -15411,10 +15314,9 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiOutput
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeProjectedSourcesDownwardApi | undefined {
@@ -15560,10 +15462,9 @@ export class DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountTok
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountToken | undefined {
@@ -15763,10 +15664,9 @@ export class DeploymentV1SpecTemplateSpecVolumeQuobyteOutputReference extends cd
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeQuobyte | undefined {
@@ -15920,10 +15820,9 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdSecretRefOutputReference exten
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeRbdSecretRef | undefined {
@@ -16059,10 +15958,9 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdOutputReference extends cdktf.
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeRbd | undefined {
@@ -16235,7 +16133,7 @@ export class DeploymentV1SpecTemplateSpecVolumeRbdOutputReference extends cdktf.
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new DeploymentV1SpecTemplateSpecVolumeRbdSecretRefOutputReference(this, "secret_ref", true);
+  private _secretRef = new DeploymentV1SpecTemplateSpecVolumeRbdSecretRefOutputReference(this, "secret_ref");
   public get secretRef() {
     return this._secretRef;
   }
@@ -16329,10 +16227,9 @@ export class DeploymentV1SpecTemplateSpecVolumeSecretOutputReference extends cdk
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeSecret | undefined {
@@ -16471,10 +16368,9 @@ export class DeploymentV1SpecTemplateSpecVolumeVsphereVolumeOutputReference exte
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpecVolumeVsphereVolume | undefined {
@@ -16941,10 +16837,9 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplateSpec | undefined {
@@ -17381,7 +17276,7 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
 
   // affinity - computed: false, optional: true, required: false
-  private _affinity = new DeploymentV1SpecTemplateSpecAffinityOutputReference(this, "affinity", true);
+  private _affinity = new DeploymentV1SpecTemplateSpecAffinityOutputReference(this, "affinity");
   public get affinity() {
     return this._affinity;
   }
@@ -17414,7 +17309,7 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
 
   // dns_config - computed: false, optional: true, required: false
-  private _dnsConfig = new DeploymentV1SpecTemplateSpecDnsConfigOutputReference(this, "dns_config", true);
+  private _dnsConfig = new DeploymentV1SpecTemplateSpecDnsConfigOutputReference(this, "dns_config");
   public get dnsConfig() {
     return this._dnsConfig;
   }
@@ -17498,7 +17393,7 @@ export class DeploymentV1SpecTemplateSpecOutputReference extends cdktf.ComplexOb
   }
 
   // security_context - computed: false, optional: true, required: false
-  private _securityContext = new DeploymentV1SpecTemplateSpecSecurityContextOutputReference(this, "security_context", true);
+  private _securityContext = new DeploymentV1SpecTemplateSpecSecurityContextOutputReference(this, "security_context");
   public get securityContext() {
     return this._securityContext;
   }
@@ -17596,10 +17491,9 @@ export class DeploymentV1SpecTemplateOutputReference extends cdktf.ComplexObject
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1SpecTemplate | undefined {
@@ -17630,7 +17524,7 @@ export class DeploymentV1SpecTemplateOutputReference extends cdktf.ComplexObject
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new DeploymentV1SpecTemplateMetadataOutputReference(this, "metadata", true);
+  private _metadata = new DeploymentV1SpecTemplateMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -17643,7 +17537,7 @@ export class DeploymentV1SpecTemplateOutputReference extends cdktf.ComplexObject
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new DeploymentV1SpecTemplateSpecOutputReference(this, "spec", true);
+  private _spec = new DeploymentV1SpecTemplateSpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }
@@ -17729,10 +17623,9 @@ export class DeploymentV1SpecOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1Spec | undefined {
@@ -17879,7 +17772,7 @@ export class DeploymentV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector = new DeploymentV1SpecSelectorOutputReference(this, "selector", true);
+  private _selector = new DeploymentV1SpecSelectorOutputReference(this, "selector");
   public get selector() {
     return this._selector;
   }
@@ -17895,7 +17788,7 @@ export class DeploymentV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   // strategy - computed: false, optional: true, required: false
-  private _strategy = new DeploymentV1SpecStrategyOutputReference(this, "strategy", true);
+  private _strategy = new DeploymentV1SpecStrategyOutputReference(this, "strategy");
   public get strategy() {
     return this._strategy;
   }
@@ -17911,7 +17804,7 @@ export class DeploymentV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   // template - computed: false, optional: false, required: true
-  private _template = new DeploymentV1SpecTemplateOutputReference(this, "template", true);
+  private _template = new DeploymentV1SpecTemplateOutputReference(this, "template");
   public get template() {
     return this._template;
   }
@@ -17956,10 +17849,9 @@ export class DeploymentV1TimeoutsOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DeploymentV1Timeouts | undefined {
@@ -18052,7 +17944,7 @@ export class DeploymentV1 extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_deployment_v1";
+  public static readonly tfResourceType = "kubernetes_deployment_v1";
 
   // ===========
   // INITIALIZER
@@ -18069,7 +17961,9 @@ export class DeploymentV1 extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_deployment_v1',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -18108,7 +18002,7 @@ export class DeploymentV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new DeploymentV1MetadataOutputReference(this, "metadata", true);
+  private _metadata = new DeploymentV1MetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -18121,7 +18015,7 @@ export class DeploymentV1 extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new DeploymentV1SpecOutputReference(this, "spec", true);
+  private _spec = new DeploymentV1SpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }
@@ -18134,7 +18028,7 @@ export class DeploymentV1 extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new DeploymentV1TimeoutsOutputReference(this, "timeouts", true);
+  private _timeouts = new DeploymentV1TimeoutsOutputReference(this, "timeouts");
   public get timeouts() {
     return this._timeouts;
   }

@@ -26,7 +26,45 @@ export interface IngressV1Config extends cdktf.TerraformMetaArguments {
   */
   readonly spec: IngressV1Spec;
 }
-export class IngressV1StatusLoadBalancerIngress extends cdktf.ComplexComputedList {
+export interface IngressV1StatusLoadBalancerIngress {
+}
+
+export function ingressV1StatusLoadBalancerIngressToTerraform(struct?: IngressV1StatusLoadBalancerIngress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class IngressV1StatusLoadBalancerIngressOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): IngressV1StatusLoadBalancerIngress | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: IngressV1StatusLoadBalancerIngress | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // hostname - computed: true, optional: false, required: false
   public get hostname() {
@@ -38,20 +76,153 @@ export class IngressV1StatusLoadBalancerIngress extends cdktf.ComplexComputedLis
     return this.getStringAttribute('ip');
   }
 }
-export class IngressV1StatusLoadBalancer extends cdktf.ComplexComputedList {
 
-  // ingress - computed: true, optional: false, required: false
-  public get ingress() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ingress');
+export class IngressV1StatusLoadBalancerIngressList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): IngressV1StatusLoadBalancerIngressOutputReference {
+    return new IngressV1StatusLoadBalancerIngressOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
-export class IngressV1Status extends cdktf.ComplexComputedList {
+export interface IngressV1StatusLoadBalancer {
+}
+
+export function ingressV1StatusLoadBalancerToTerraform(struct?: IngressV1StatusLoadBalancer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class IngressV1StatusLoadBalancerOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): IngressV1StatusLoadBalancer | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: IngressV1StatusLoadBalancer | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // ingress - computed: true, optional: false, required: false
+  private _ingress = new IngressV1StatusLoadBalancerIngressList(this, "ingress", false);
+  public get ingress() {
+    return this._ingress;
+  }
+}
+
+export class IngressV1StatusLoadBalancerList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): IngressV1StatusLoadBalancerOutputReference {
+    return new IngressV1StatusLoadBalancerOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface IngressV1Status {
+}
+
+export function ingressV1StatusToTerraform(struct?: IngressV1Status): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class IngressV1StatusOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): IngressV1Status | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: IngressV1Status | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // load_balancer - computed: true, optional: false, required: false
+  private _loadBalancer = new IngressV1StatusLoadBalancerList(this, "load_balancer", false);
   public get loadBalancer() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('load_balancer');
+    return this._loadBalancer;
+  }
+}
+
+export class IngressV1StatusList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): IngressV1StatusOutputReference {
+    return new IngressV1StatusOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
 export interface IngressV1Metadata {
@@ -107,10 +278,9 @@ export class IngressV1MetadataOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): IngressV1Metadata | undefined {
@@ -292,10 +462,9 @@ export class IngressV1SpecDefaultBackendResourceOutputReference extends cdktf.Co
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): IngressV1SpecDefaultBackendResource | undefined {
@@ -402,10 +571,9 @@ export class IngressV1SpecDefaultBackendServicePortOutputReference extends cdktf
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): IngressV1SpecDefaultBackendServicePort | undefined {
@@ -499,10 +667,9 @@ export class IngressV1SpecDefaultBackendServiceOutputReference extends cdktf.Com
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): IngressV1SpecDefaultBackendService | undefined {
@@ -546,7 +713,7 @@ export class IngressV1SpecDefaultBackendServiceOutputReference extends cdktf.Com
   }
 
   // port - computed: false, optional: false, required: true
-  private _port = new IngressV1SpecDefaultBackendServicePortOutputReference(this, "port", true);
+  private _port = new IngressV1SpecDefaultBackendServicePortOutputReference(this, "port");
   public get port() {
     return this._port;
   }
@@ -590,10 +757,9 @@ export class IngressV1SpecDefaultBackendOutputReference extends cdktf.ComplexObj
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): IngressV1SpecDefaultBackend | undefined {
@@ -624,7 +790,7 @@ export class IngressV1SpecDefaultBackendOutputReference extends cdktf.ComplexObj
   }
 
   // resource - computed: false, optional: true, required: false
-  private _resource = new IngressV1SpecDefaultBackendResourceOutputReference(this, "resource", true);
+  private _resource = new IngressV1SpecDefaultBackendResourceOutputReference(this, "resource");
   public get resource() {
     return this._resource;
   }
@@ -640,7 +806,7 @@ export class IngressV1SpecDefaultBackendOutputReference extends cdktf.ComplexObj
   }
 
   // service - computed: false, optional: true, required: false
-  private _service = new IngressV1SpecDefaultBackendServiceOutputReference(this, "service", true);
+  private _service = new IngressV1SpecDefaultBackendServiceOutputReference(this, "service");
   public get service() {
     return this._service;
   }
@@ -694,10 +860,9 @@ export class IngressV1SpecRuleHttpPathBackendResourceOutputReference extends cdk
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): IngressV1SpecRuleHttpPathBackendResource | undefined {
@@ -804,10 +969,9 @@ export class IngressV1SpecRuleHttpPathBackendServicePortOutputReference extends 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): IngressV1SpecRuleHttpPathBackendServicePort | undefined {
@@ -901,10 +1065,9 @@ export class IngressV1SpecRuleHttpPathBackendServiceOutputReference extends cdkt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): IngressV1SpecRuleHttpPathBackendService | undefined {
@@ -948,7 +1111,7 @@ export class IngressV1SpecRuleHttpPathBackendServiceOutputReference extends cdkt
   }
 
   // port - computed: false, optional: false, required: true
-  private _port = new IngressV1SpecRuleHttpPathBackendServicePortOutputReference(this, "port", true);
+  private _port = new IngressV1SpecRuleHttpPathBackendServicePortOutputReference(this, "port");
   public get port() {
     return this._port;
   }
@@ -992,10 +1155,9 @@ export class IngressV1SpecRuleHttpPathBackendOutputReference extends cdktf.Compl
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): IngressV1SpecRuleHttpPathBackend | undefined {
@@ -1026,7 +1188,7 @@ export class IngressV1SpecRuleHttpPathBackendOutputReference extends cdktf.Compl
   }
 
   // resource - computed: false, optional: true, required: false
-  private _resource = new IngressV1SpecRuleHttpPathBackendResourceOutputReference(this, "resource", true);
+  private _resource = new IngressV1SpecRuleHttpPathBackendResourceOutputReference(this, "resource");
   public get resource() {
     return this._resource;
   }
@@ -1042,7 +1204,7 @@ export class IngressV1SpecRuleHttpPathBackendOutputReference extends cdktf.Compl
   }
 
   // service - computed: false, optional: true, required: false
-  private _service = new IngressV1SpecRuleHttpPathBackendServiceOutputReference(this, "service", true);
+  private _service = new IngressV1SpecRuleHttpPathBackendServiceOutputReference(this, "service");
   public get service() {
     return this._service;
   }
@@ -1125,10 +1287,9 @@ export class IngressV1SpecRuleHttpOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): IngressV1SpecRuleHttp | undefined {
@@ -1271,10 +1432,9 @@ export class IngressV1SpecOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): IngressV1Spec | undefined {
@@ -1333,7 +1493,7 @@ export class IngressV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   // default_backend - computed: false, optional: true, required: false
-  private _defaultBackend = new IngressV1SpecDefaultBackendOutputReference(this, "default_backend", true);
+  private _defaultBackend = new IngressV1SpecDefaultBackendOutputReference(this, "default_backend");
   public get defaultBackend() {
     return this._defaultBackend;
   }
@@ -1391,7 +1551,7 @@ export class IngressV1 extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_ingress_v1";
+  public static readonly tfResourceType = "kubernetes_ingress_v1";
 
   // ===========
   // INITIALIZER
@@ -1408,7 +1568,9 @@ export class IngressV1 extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_ingress_v1',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -1430,8 +1592,9 @@ export class IngressV1 extends cdktf.TerraformResource {
   }
 
   // status - computed: true, optional: false, required: false
-  public status(index: string) {
-    return new IngressV1Status(this, 'status', index, false);
+  private _status = new IngressV1StatusList(this, "status", false);
+  public get status() {
+    return this._status;
   }
 
   // wait_for_load_balancer - computed: false, optional: true, required: false
@@ -1451,7 +1614,7 @@ export class IngressV1 extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new IngressV1MetadataOutputReference(this, "metadata", true);
+  private _metadata = new IngressV1MetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -1464,7 +1627,7 @@ export class IngressV1 extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new IngressV1SpecOutputReference(this, "spec", true);
+  private _spec = new IngressV1SpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }
