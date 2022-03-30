@@ -14,18 +14,132 @@ export interface DataKubernetesServiceAccountConfig extends cdktf.TerraformMetaA
   */
   readonly metadata: DataKubernetesServiceAccountMetadata;
 }
-export class DataKubernetesServiceAccountImagePullSecret extends cdktf.ComplexComputedList {
+export interface DataKubernetesServiceAccountImagePullSecret {
+}
+
+export function dataKubernetesServiceAccountImagePullSecretToTerraform(struct?: DataKubernetesServiceAccountImagePullSecret): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesServiceAccountImagePullSecretOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesServiceAccountImagePullSecret | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesServiceAccountImagePullSecret | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
     return this.getStringAttribute('name');
   }
 }
-export class DataKubernetesServiceAccountSecret extends cdktf.ComplexComputedList {
+
+export class DataKubernetesServiceAccountImagePullSecretList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesServiceAccountImagePullSecretOutputReference {
+    return new DataKubernetesServiceAccountImagePullSecretOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesServiceAccountSecret {
+}
+
+export function dataKubernetesServiceAccountSecretToTerraform(struct?: DataKubernetesServiceAccountSecret): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesServiceAccountSecretOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesServiceAccountSecret | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesServiceAccountSecret | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // name - computed: true, optional: false, required: false
   public get name() {
     return this.getStringAttribute('name');
+  }
+}
+
+export class DataKubernetesServiceAccountSecretList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesServiceAccountSecretOutputReference {
+    return new DataKubernetesServiceAccountSecretOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
 export interface DataKubernetesServiceAccountMetadata {
@@ -74,10 +188,9 @@ export class DataKubernetesServiceAccountMetadataOutputReference extends cdktf.C
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DataKubernetesServiceAccountMetadata | undefined {
@@ -207,7 +320,7 @@ export class DataKubernetesServiceAccount extends cdktf.TerraformDataSource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_service_account";
+  public static readonly tfResourceType = "kubernetes_service_account";
 
   // ===========
   // INITIALIZER
@@ -224,7 +337,9 @@ export class DataKubernetesServiceAccount extends cdktf.TerraformDataSource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_service_account',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -254,17 +369,19 @@ export class DataKubernetesServiceAccount extends cdktf.TerraformDataSource {
   }
 
   // image_pull_secret - computed: true, optional: false, required: false
-  public imagePullSecret(index: string) {
-    return new DataKubernetesServiceAccountImagePullSecret(this, 'image_pull_secret', index, false);
+  private _imagePullSecret = new DataKubernetesServiceAccountImagePullSecretList(this, "image_pull_secret", false);
+  public get imagePullSecret() {
+    return this._imagePullSecret;
   }
 
   // secret - computed: true, optional: false, required: false
-  public secret(index: string) {
-    return new DataKubernetesServiceAccountSecret(this, 'secret', index, false);
+  private _secret = new DataKubernetesServiceAccountSecretList(this, "secret", false);
+  public get secret() {
+    return this._secret;
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new DataKubernetesServiceAccountMetadataOutputReference(this, "metadata", true);
+  private _metadata = new DataKubernetesServiceAccountMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }

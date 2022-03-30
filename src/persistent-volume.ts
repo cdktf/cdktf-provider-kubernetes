@@ -65,10 +65,9 @@ export class PersistentVolumeMetadataOutputReference extends cdktf.ComplexObject
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeMetadata | undefined {
@@ -199,10 +198,9 @@ export class PersistentVolumeSpecClaimRefOutputReference extends cdktf.ComplexOb
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecClaimRef | undefined {
@@ -378,10 +376,9 @@ export class PersistentVolumeSpecNodeAffinityRequiredOutputReference extends cdk
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecNodeAffinityRequired | undefined {
@@ -444,10 +441,9 @@ export class PersistentVolumeSpecNodeAffinityOutputReference extends cdktf.Compl
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecNodeAffinity | undefined {
@@ -472,7 +468,7 @@ export class PersistentVolumeSpecNodeAffinityOutputReference extends cdktf.Compl
   }
 
   // required - computed: false, optional: true, required: false
-  private _required = new PersistentVolumeSpecNodeAffinityRequiredOutputReference(this, "required", true);
+  private _required = new PersistentVolumeSpecNodeAffinityRequiredOutputReference(this, "required");
   public get required() {
     return this._required;
   }
@@ -533,10 +529,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutpu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore | undefined {
@@ -699,10 +694,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceAzureDisk | undefined {
@@ -889,10 +883,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceAzureFile | undefined {
@@ -1024,10 +1017,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputRefe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef | undefined {
@@ -1149,10 +1141,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCephFs | undefined {
@@ -1284,7 +1275,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference ext
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputReference(this, "secret_ref", true);
+  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputReference(this, "secret_ref");
   public get secretRef() {
     return this._secretRef;
   }
@@ -1338,10 +1329,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference ext
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCinder | undefined {
@@ -1454,10 +1444,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecret
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef | undefined {
@@ -1551,10 +1540,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecre
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef | undefined {
@@ -1648,10 +1636,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef | undefined {
@@ -1745,10 +1732,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef | undefined {
@@ -1891,10 +1877,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceCsi | undefined {
@@ -2041,7 +2026,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
 
   // controller_expand_secret_ref - computed: false, optional: true, required: false
-  private _controllerExpandSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference(this, "controller_expand_secret_ref", true);
+  private _controllerExpandSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference(this, "controller_expand_secret_ref");
   public get controllerExpandSecretRef() {
     return this._controllerExpandSecretRef;
   }
@@ -2057,7 +2042,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
 
   // controller_publish_secret_ref - computed: false, optional: true, required: false
-  private _controllerPublishSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference(this, "controller_publish_secret_ref", true);
+  private _controllerPublishSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference(this, "controller_publish_secret_ref");
   public get controllerPublishSecretRef() {
     return this._controllerPublishSecretRef;
   }
@@ -2073,7 +2058,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
 
   // node_publish_secret_ref - computed: false, optional: true, required: false
-  private _nodePublishSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref", true);
+  private _nodePublishSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference(this, "node_publish_secret_ref");
   public get nodePublishSecretRef() {
     return this._nodePublishSecretRef;
   }
@@ -2089,7 +2074,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference extend
   }
 
   // node_stage_secret_ref - computed: false, optional: true, required: false
-  private _nodeStageSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference(this, "node_stage_secret_ref", true);
+  private _nodeStageSecretRef = new PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference(this, "node_stage_secret_ref");
   public get nodeStageSecretRef() {
     return this._nodeStageSecretRef;
   }
@@ -2150,10 +2135,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceFcOutputReference extends
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceFc | undefined {
@@ -2285,10 +2269,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutput
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef | undefined {
@@ -2403,10 +2386,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceFlexVolume | undefined {
@@ -2516,7 +2498,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference(this, "secret_ref", true);
+  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference(this, "secret_ref");
   public get secretRef() {
     return this._secretRef;
   }
@@ -2563,10 +2545,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference ex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceFlocker | undefined {
@@ -2674,10 +2655,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputRe
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk | undefined {
@@ -2819,10 +2799,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceGlusterfs | undefined {
@@ -2932,10 +2911,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference e
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceHostPath | undefined {
@@ -3057,10 +3035,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference exte
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceIscsi | undefined {
@@ -3229,10 +3206,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference exte
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceLocal | undefined {
@@ -3311,10 +3287,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference extend
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceNfs | undefined {
@@ -3424,10 +3399,9 @@ export class PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutpu
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk | undefined {
@@ -3539,10 +3513,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference ex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceQuobyte | undefined {
@@ -3696,10 +3669,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReferen
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef | undefined {
@@ -3835,10 +3807,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceRbd | undefined {
@@ -4011,7 +3982,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference extend
   }
 
   // secret_ref - computed: false, optional: true, required: false
-  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReference(this, "secret_ref", true);
+  private _secretRef = new PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReference(this, "secret_ref");
   public get secretRef() {
     return this._secretRef;
   }
@@ -4058,10 +4029,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputRefere
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSourceVsphereVolume | undefined {
@@ -4271,10 +4241,9 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeSpecPersistentVolumeSource | undefined {
@@ -4407,7 +4376,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // aws_elastic_block_store - computed: false, optional: true, required: false
-  private _awsElasticBlockStore = new PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference(this, "aws_elastic_block_store", true);
+  private _awsElasticBlockStore = new PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference(this, "aws_elastic_block_store");
   public get awsElasticBlockStore() {
     return this._awsElasticBlockStore;
   }
@@ -4423,7 +4392,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // azure_disk - computed: false, optional: true, required: false
-  private _azureDisk = new PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference(this, "azure_disk", true);
+  private _azureDisk = new PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference(this, "azure_disk");
   public get azureDisk() {
     return this._azureDisk;
   }
@@ -4439,7 +4408,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // azure_file - computed: false, optional: true, required: false
-  private _azureFile = new PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference(this, "azure_file", true);
+  private _azureFile = new PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference(this, "azure_file");
   public get azureFile() {
     return this._azureFile;
   }
@@ -4455,7 +4424,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // ceph_fs - computed: false, optional: true, required: false
-  private _cephFs = new PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference(this, "ceph_fs", true);
+  private _cephFs = new PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference(this, "ceph_fs");
   public get cephFs() {
     return this._cephFs;
   }
@@ -4471,7 +4440,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // cinder - computed: false, optional: true, required: false
-  private _cinder = new PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference(this, "cinder", true);
+  private _cinder = new PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference(this, "cinder");
   public get cinder() {
     return this._cinder;
   }
@@ -4487,7 +4456,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // csi - computed: false, optional: true, required: false
-  private _csi = new PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference(this, "csi", true);
+  private _csi = new PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference(this, "csi");
   public get csi() {
     return this._csi;
   }
@@ -4503,7 +4472,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // fc - computed: false, optional: true, required: false
-  private _fc = new PersistentVolumeSpecPersistentVolumeSourceFcOutputReference(this, "fc", true);
+  private _fc = new PersistentVolumeSpecPersistentVolumeSourceFcOutputReference(this, "fc");
   public get fc() {
     return this._fc;
   }
@@ -4519,7 +4488,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // flex_volume - computed: false, optional: true, required: false
-  private _flexVolume = new PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference(this, "flex_volume", true);
+  private _flexVolume = new PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference(this, "flex_volume");
   public get flexVolume() {
     return this._flexVolume;
   }
@@ -4535,7 +4504,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // flocker - computed: false, optional: true, required: false
-  private _flocker = new PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference(this, "flocker", true);
+  private _flocker = new PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference(this, "flocker");
   public get flocker() {
     return this._flocker;
   }
@@ -4551,7 +4520,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // gce_persistent_disk - computed: false, optional: true, required: false
-  private _gcePersistentDisk = new PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputReference(this, "gce_persistent_disk", true);
+  private _gcePersistentDisk = new PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputReference(this, "gce_persistent_disk");
   public get gcePersistentDisk() {
     return this._gcePersistentDisk;
   }
@@ -4567,7 +4536,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // glusterfs - computed: false, optional: true, required: false
-  private _glusterfs = new PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference(this, "glusterfs", true);
+  private _glusterfs = new PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference(this, "glusterfs");
   public get glusterfs() {
     return this._glusterfs;
   }
@@ -4583,7 +4552,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // host_path - computed: false, optional: true, required: false
-  private _hostPath = new PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference(this, "host_path", true);
+  private _hostPath = new PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference(this, "host_path");
   public get hostPath() {
     return this._hostPath;
   }
@@ -4599,7 +4568,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // iscsi - computed: false, optional: true, required: false
-  private _iscsi = new PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference(this, "iscsi", true);
+  private _iscsi = new PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference(this, "iscsi");
   public get iscsi() {
     return this._iscsi;
   }
@@ -4615,7 +4584,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // local - computed: false, optional: true, required: false
-  private _local = new PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference(this, "local", true);
+  private _local = new PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference(this, "local");
   public get local() {
     return this._local;
   }
@@ -4631,7 +4600,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // nfs - computed: false, optional: true, required: false
-  private _nfs = new PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference(this, "nfs", true);
+  private _nfs = new PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference(this, "nfs");
   public get nfs() {
     return this._nfs;
   }
@@ -4647,7 +4616,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // photon_persistent_disk - computed: false, optional: true, required: false
-  private _photonPersistentDisk = new PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutputReference(this, "photon_persistent_disk", true);
+  private _photonPersistentDisk = new PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutputReference(this, "photon_persistent_disk");
   public get photonPersistentDisk() {
     return this._photonPersistentDisk;
   }
@@ -4663,7 +4632,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // quobyte - computed: false, optional: true, required: false
-  private _quobyte = new PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference(this, "quobyte", true);
+  private _quobyte = new PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference(this, "quobyte");
   public get quobyte() {
     return this._quobyte;
   }
@@ -4679,7 +4648,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // rbd - computed: false, optional: true, required: false
-  private _rbd = new PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference(this, "rbd", true);
+  private _rbd = new PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference(this, "rbd");
   public get rbd() {
     return this._rbd;
   }
@@ -4695,7 +4664,7 @@ export class PersistentVolumeSpecPersistentVolumeSourceOutputReference extends c
   }
 
   // vsphere_volume - computed: false, optional: true, required: false
-  private _vsphereVolume = new PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputReference(this, "vsphere_volume", true);
+  private _vsphereVolume = new PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputReference(this, "vsphere_volume");
   public get vsphereVolume() {
     return this._vsphereVolume;
   }
@@ -4808,10 +4777,9 @@ export class PersistentVolumeTimeoutsOutputReference extends cdktf.ComplexObject
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeTimeouts | undefined {
@@ -4860,7 +4828,7 @@ export class PersistentVolume extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_persistent_volume";
+  public static readonly tfResourceType = "kubernetes_persistent_volume";
 
   // ===========
   // INITIALIZER
@@ -4877,7 +4845,9 @@ export class PersistentVolume extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_persistent_volume',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -4899,7 +4869,7 @@ export class PersistentVolume extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new PersistentVolumeMetadataOutputReference(this, "metadata", true);
+  private _metadata = new PersistentVolumeMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -4926,7 +4896,7 @@ export class PersistentVolume extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new PersistentVolumeTimeoutsOutputReference(this, "timeouts", true);
+  private _timeouts = new PersistentVolumeTimeoutsOutputReference(this, "timeouts");
   public get timeouts() {
     return this._timeouts;
   }

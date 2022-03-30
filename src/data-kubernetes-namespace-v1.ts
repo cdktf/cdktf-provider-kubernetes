@@ -14,11 +14,68 @@ export interface DataKubernetesNamespaceV1Config extends cdktf.TerraformMetaArgu
   */
   readonly metadata: DataKubernetesNamespaceV1Metadata;
 }
-export class DataKubernetesNamespaceV1Spec extends cdktf.ComplexComputedList {
+export interface DataKubernetesNamespaceV1Spec {
+}
+
+export function dataKubernetesNamespaceV1SpecToTerraform(struct?: DataKubernetesNamespaceV1Spec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesNamespaceV1SpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesNamespaceV1Spec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesNamespaceV1Spec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // finalizers - computed: true, optional: false, required: false
   public get finalizers() {
     return this.getListAttribute('finalizers');
+  }
+}
+
+export class DataKubernetesNamespaceV1SpecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesNamespaceV1SpecOutputReference {
+    return new DataKubernetesNamespaceV1SpecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
 export interface DataKubernetesNamespaceV1Metadata {
@@ -60,10 +117,9 @@ export class DataKubernetesNamespaceV1MetadataOutputReference extends cdktf.Comp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): DataKubernetesNamespaceV1Metadata | undefined {
@@ -171,7 +227,7 @@ export class DataKubernetesNamespaceV1 extends cdktf.TerraformDataSource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_namespace_v1";
+  public static readonly tfResourceType = "kubernetes_namespace_v1";
 
   // ===========
   // INITIALIZER
@@ -188,7 +244,9 @@ export class DataKubernetesNamespaceV1 extends cdktf.TerraformDataSource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_namespace_v1',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -208,12 +266,13 @@ export class DataKubernetesNamespaceV1 extends cdktf.TerraformDataSource {
   }
 
   // spec - computed: true, optional: false, required: false
-  public spec(index: string) {
-    return new DataKubernetesNamespaceV1Spec(this, 'spec', index, false);
+  private _spec = new DataKubernetesNamespaceV1SpecList(this, "spec", false);
+  public get spec() {
+    return this._spec;
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new DataKubernetesNamespaceV1MetadataOutputReference(this, "metadata", true);
+  private _metadata = new DataKubernetesNamespaceV1MetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }

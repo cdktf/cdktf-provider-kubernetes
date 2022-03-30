@@ -65,10 +65,9 @@ export class ClusterRoleBindingMetadataOutputReference extends cdktf.ComplexObje
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ClusterRoleBindingMetadata | undefined {
@@ -206,10 +205,9 @@ export class ClusterRoleBindingRoleRefOutputReference extends cdktf.ComplexObjec
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ClusterRoleBindingRoleRef | undefined {
@@ -333,7 +331,7 @@ export class ClusterRoleBinding extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_cluster_role_binding";
+  public static readonly tfResourceType = "kubernetes_cluster_role_binding";
 
   // ===========
   // INITIALIZER
@@ -350,7 +348,9 @@ export class ClusterRoleBinding extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_cluster_role_binding',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -372,7 +372,7 @@ export class ClusterRoleBinding extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new ClusterRoleBindingMetadataOutputReference(this, "metadata", true);
+  private _metadata = new ClusterRoleBindingMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -385,7 +385,7 @@ export class ClusterRoleBinding extends cdktf.TerraformResource {
   }
 
   // role_ref - computed: false, optional: false, required: true
-  private _roleRef = new ClusterRoleBindingRoleRefOutputReference(this, "role_ref", true);
+  private _roleRef = new ClusterRoleBindingRoleRefOutputReference(this, "role_ref");
   public get roleRef() {
     return this._roleRef;
   }

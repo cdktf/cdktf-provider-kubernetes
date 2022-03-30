@@ -85,10 +85,9 @@ export class PersistentVolumeClaimMetadataOutputReference extends cdktf.ComplexO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeClaimMetadata | undefined {
@@ -263,10 +262,9 @@ export class PersistentVolumeClaimSpecResourcesOutputReference extends cdktf.Com
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeClaimSpecResources | undefined {
@@ -393,10 +391,9 @@ export class PersistentVolumeClaimSpecSelectorOutputReference extends cdktf.Comp
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeClaimSpecSelector | undefined {
@@ -512,10 +509,9 @@ export class PersistentVolumeClaimSpecOutputReference extends cdktf.ComplexObjec
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeClaimSpec | undefined {
@@ -609,7 +605,7 @@ export class PersistentVolumeClaimSpecOutputReference extends cdktf.ComplexObjec
   }
 
   // resources - computed: false, optional: false, required: true
-  private _resources = new PersistentVolumeClaimSpecResourcesOutputReference(this, "resources", true);
+  private _resources = new PersistentVolumeClaimSpecResourcesOutputReference(this, "resources");
   public get resources() {
     return this._resources;
   }
@@ -622,7 +618,7 @@ export class PersistentVolumeClaimSpecOutputReference extends cdktf.ComplexObjec
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector = new PersistentVolumeClaimSpecSelectorOutputReference(this, "selector", true);
+  private _selector = new PersistentVolumeClaimSpecSelectorOutputReference(this, "selector");
   public get selector() {
     return this._selector;
   }
@@ -660,10 +656,9 @@ export class PersistentVolumeClaimTimeoutsOutputReference extends cdktf.ComplexO
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): PersistentVolumeClaimTimeouts | undefined {
@@ -712,7 +707,7 @@ export class PersistentVolumeClaim extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_persistent_volume_claim";
+  public static readonly tfResourceType = "kubernetes_persistent_volume_claim";
 
   // ===========
   // INITIALIZER
@@ -729,7 +724,9 @@ export class PersistentVolumeClaim extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_persistent_volume_claim',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -768,7 +765,7 @@ export class PersistentVolumeClaim extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new PersistentVolumeClaimMetadataOutputReference(this, "metadata", true);
+  private _metadata = new PersistentVolumeClaimMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -781,7 +778,7 @@ export class PersistentVolumeClaim extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new PersistentVolumeClaimSpecOutputReference(this, "spec", true);
+  private _spec = new PersistentVolumeClaimSpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }
@@ -794,7 +791,7 @@ export class PersistentVolumeClaim extends cdktf.TerraformResource {
   }
 
   // timeouts - computed: false, optional: true, required: false
-  private _timeouts = new PersistentVolumeClaimTimeoutsOutputReference(this, "timeouts", true);
+  private _timeouts = new PersistentVolumeClaimTimeoutsOutputReference(this, "timeouts");
   public get timeouts() {
     return this._timeouts;
   }

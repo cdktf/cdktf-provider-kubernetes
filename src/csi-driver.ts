@@ -66,10 +66,9 @@ export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CsiDriverMetadata | undefined {
@@ -229,10 +228,9 @@ export class CsiDriverSpecOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): CsiDriverSpec | undefined {
@@ -322,7 +320,7 @@ export class CsiDriver extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_csi_driver";
+  public static readonly tfResourceType = "kubernetes_csi_driver";
 
   // ===========
   // INITIALIZER
@@ -339,7 +337,9 @@ export class CsiDriver extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_csi_driver',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -360,7 +360,7 @@ export class CsiDriver extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new CsiDriverMetadataOutputReference(this, "metadata", true);
+  private _metadata = new CsiDriverMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -373,7 +373,7 @@ export class CsiDriver extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: true, required: false
-  private _spec = new CsiDriverSpecOutputReference(this, "spec", true);
+  private _spec = new CsiDriverSpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }

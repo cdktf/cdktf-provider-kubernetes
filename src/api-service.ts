@@ -66,10 +66,9 @@ export class ApiServiceMetadataOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ApiServiceMetadata | undefined {
@@ -229,10 +228,9 @@ export class ApiServiceSpecServiceOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ApiServiceSpecService | undefined {
@@ -377,10 +375,9 @@ export class ApiServiceSpecOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ApiServiceSpec | undefined {
@@ -525,7 +522,7 @@ export class ApiServiceSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // service - computed: false, optional: true, required: false
-  private _service = new ApiServiceSpecServiceOutputReference(this, "service", true);
+  private _service = new ApiServiceSpecServiceOutputReference(this, "service");
   public get service() {
     return this._service;
   }
@@ -549,7 +546,7 @@ export class ApiService extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_api_service";
+  public static readonly tfResourceType = "kubernetes_api_service";
 
   // ===========
   // INITIALIZER
@@ -566,7 +563,9 @@ export class ApiService extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_api_service',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -587,7 +586,7 @@ export class ApiService extends cdktf.TerraformResource {
   }
 
   // metadata - computed: false, optional: false, required: true
-  private _metadata = new ApiServiceMetadataOutputReference(this, "metadata", true);
+  private _metadata = new ApiServiceMetadataOutputReference(this, "metadata");
   public get metadata() {
     return this._metadata;
   }
@@ -600,7 +599,7 @@ export class ApiService extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec = new ApiServiceSpecOutputReference(this, "spec", true);
+  private _spec = new ApiServiceSpecOutputReference(this, "spec");
   public get spec() {
     return this._spec;
   }

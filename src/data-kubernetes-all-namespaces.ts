@@ -17,7 +17,7 @@ export class DataKubernetesAllNamespaces extends cdktf.TerraformDataSource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "kubernetes_all_namespaces";
+  public static readonly tfResourceType = "kubernetes_all_namespaces";
 
   // ===========
   // INITIALIZER
@@ -34,7 +34,9 @@ export class DataKubernetesAllNamespaces extends cdktf.TerraformDataSource {
     super(scope, id, {
       terraformResourceType: 'kubernetes_all_namespaces',
       terraformGeneratorMetadata: {
-        providerName: 'kubernetes'
+        providerName: 'kubernetes',
+        providerVersion: '2.9.0',
+        providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
