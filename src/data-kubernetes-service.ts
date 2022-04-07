@@ -54,6 +54,11 @@ export class DataKubernetesServiceSpecPortOutputReference extends cdktf.ComplexO
     }
   }
 
+  // app_protocol - computed: true, optional: false, required: false
+  public get appProtocol() {
+    return this.getStringAttribute('app_protocol');
+  }
+
   // name - computed: true, optional: false, required: false
   public get name() {
     return this.getStringAttribute('name');
@@ -613,7 +618,7 @@ export class DataKubernetesService extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_service',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.9.0',
+        providerVersion: '2.10.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

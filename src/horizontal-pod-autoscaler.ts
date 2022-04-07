@@ -448,6 +448,276 @@ export class HorizontalPodAutoscalerSpecBehaviorOutputReference extends cdktf.Co
     return this._scaleUp;
   }
 }
+export interface HorizontalPodAutoscalerSpecMetricContainerResourceTarget {
+  /**
+  * averageUtilization is the target value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods. Currently only valid for Resource metric source type
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
+  */
+  readonly averageUtilization?: number;
+  /**
+  * averageValue is the target value of the average of the metric across all relevant pods (as a quantity)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
+  */
+  readonly averageValue?: string;
+  /**
+  * type represents whether the metric type is Utilization, Value, or AverageValue
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
+  */
+  readonly type: string;
+  /**
+  * value is the target value of the metric (as a quantity).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
+  */
+  readonly value?: string;
+}
+
+export function horizontalPodAutoscalerSpecMetricContainerResourceTargetToTerraform(struct?: HorizontalPodAutoscalerSpecMetricContainerResourceTargetOutputReference | HorizontalPodAutoscalerSpecMetricContainerResourceTarget): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    average_utilization: cdktf.numberToTerraform(struct!.averageUtilization),
+    average_value: cdktf.stringToTerraform(struct!.averageValue),
+    type: cdktf.stringToTerraform(struct!.type),
+    value: cdktf.stringToTerraform(struct!.value),
+  }
+}
+
+export class HorizontalPodAutoscalerSpecMetricContainerResourceTargetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecMetricContainerResourceTarget | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._averageUtilization !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.averageUtilization = this._averageUtilization;
+    }
+    if (this._averageValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.averageValue = this._averageValue;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._value !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecMetricContainerResourceTarget | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._averageUtilization = undefined;
+      this._averageValue = undefined;
+      this._type = undefined;
+      this._value = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._averageUtilization = value.averageUtilization;
+      this._averageValue = value.averageValue;
+      this._type = value.type;
+      this._value = value.value;
+    }
+  }
+
+  // average_utilization - computed: false, optional: true, required: false
+  private _averageUtilization?: number; 
+  public get averageUtilization() {
+    return this.getNumberAttribute('average_utilization');
+  }
+  public set averageUtilization(value: number) {
+    this._averageUtilization = value;
+  }
+  public resetAverageUtilization() {
+    this._averageUtilization = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get averageUtilizationInput() {
+    return this._averageUtilization;
+  }
+
+  // average_value - computed: false, optional: true, required: false
+  private _averageValue?: string; 
+  public get averageValue() {
+    return this.getStringAttribute('average_value');
+  }
+  public set averageValue(value: string) {
+    this._averageValue = value;
+  }
+  public resetAverageValue() {
+    this._averageValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get averageValueInput() {
+    return this._averageValue;
+  }
+
+  // type - computed: false, optional: false, required: true
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+
+  // value - computed: false, optional: true, required: false
+  private _value?: string; 
+  public get value() {
+    return this.getStringAttribute('value');
+  }
+  public set value(value: string) {
+    this._value = value;
+  }
+  public resetValue() {
+    this._value = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valueInput() {
+    return this._value;
+  }
+}
+export interface HorizontalPodAutoscalerSpecMetricContainerResource {
+  /**
+  * name of the container in the pods of the scaling target
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#container HorizontalPodAutoscaler#container}
+  */
+  readonly container: string;
+  /**
+  * name of the resource in question
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
+  */
+  readonly name: string;
+  /**
+  * target block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
+  */
+  readonly target?: HorizontalPodAutoscalerSpecMetricContainerResourceTarget;
+}
+
+export function horizontalPodAutoscalerSpecMetricContainerResourceToTerraform(struct?: HorizontalPodAutoscalerSpecMetricContainerResourceOutputReference | HorizontalPodAutoscalerSpecMetricContainerResource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    container: cdktf.stringToTerraform(struct!.container),
+    name: cdktf.stringToTerraform(struct!.name),
+    target: horizontalPodAutoscalerSpecMetricContainerResourceTargetToTerraform(struct!.target),
+  }
+}
+
+export class HorizontalPodAutoscalerSpecMetricContainerResourceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecMetricContainerResource | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._container !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.container = this._container;
+    }
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._target?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.target = this._target?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecMetricContainerResource | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._container = undefined;
+      this._name = undefined;
+      this._target.internalValue = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._container = value.container;
+      this._name = value.name;
+      this._target.internalValue = value.target;
+    }
+  }
+
+  // container - computed: false, optional: false, required: true
+  private _container?: string; 
+  public get container() {
+    return this.getStringAttribute('container');
+  }
+  public set container(value: string) {
+    this._container = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get containerInput() {
+    return this._container;
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // target - computed: false, optional: true, required: false
+  private _target = new HorizontalPodAutoscalerSpecMetricContainerResourceTargetOutputReference(this, "target");
+  public get target() {
+    return this._target;
+  }
+  public putTarget(value: HorizontalPodAutoscalerSpecMetricContainerResourceTarget) {
+    this._target.internalValue = value;
+  }
+  public resetTarget() {
+    this._target.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get targetInput() {
+    return this._target.internalValue;
+  }
+}
 export interface HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
@@ -2027,11 +2297,17 @@ export class HorizontalPodAutoscalerSpecMetricResourceOutputReference extends cd
 }
 export interface HorizontalPodAutoscalerSpecMetric {
   /**
-  * type is the type of metric source. It should be one of "Object", "Pods", "External" or "Resource", each mapping to a matching field in the object.
+  * type is the type of metric source. It should be one of "ContainerResource", "External", "Object", "Pods" or "Resource", each mapping to a matching field in the object. Note: "ContainerResource" type is available on when the feature-gate HPAContainerMetrics is enabled
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
   */
   readonly type: string;
+  /**
+  * container_resource block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#container_resource HorizontalPodAutoscaler#container_resource}
+  */
+  readonly containerResource?: HorizontalPodAutoscalerSpecMetricContainerResource;
   /**
   * external block
   * 
@@ -2065,6 +2341,7 @@ export function horizontalPodAutoscalerSpecMetricToTerraform(struct?: Horizontal
   }
   return {
     type: cdktf.stringToTerraform(struct!.type),
+    container_resource: horizontalPodAutoscalerSpecMetricContainerResourceToTerraform(struct!.containerResource),
     external: horizontalPodAutoscalerSpecMetricExternalToTerraform(struct!.external),
     object: horizontalPodAutoscalerSpecMetricObjectToTerraform(struct!.object),
     pods: horizontalPodAutoscalerSpecMetricPodsToTerraform(struct!.pods),
@@ -2425,7 +2702,7 @@ export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_horizontal_pod_autoscaler',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.9.0',
+        providerVersion: '2.10.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

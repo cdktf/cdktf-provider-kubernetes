@@ -43,6 +43,12 @@ export interface ManifestConfig extends cdktf.TerraformMetaArguments {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#timeouts Manifest#timeouts}
   */
   readonly timeouts?: ManifestTimeouts;
+  /**
+  * wait block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#wait Manifest#wait}
+  */
+  readonly wait?: ManifestWait;
 }
 export interface ManifestWaitFor {
   /**
@@ -282,6 +288,102 @@ export class ManifestTimeoutsOutputReference extends cdktf.ComplexObject {
     return this._update;
   }
 }
+export interface ManifestWait {
+  /**
+  * A map of paths to fields to wait for a specific field value.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#fields Manifest#fields}
+  */
+  readonly fields?: { [key: string]: string };
+  /**
+  * Wait for rollout to complete on resources that support `kubectl rollout status`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#rollout Manifest#rollout}
+  */
+  readonly rollout?: boolean | cdktf.IResolvable;
+}
+
+export function manifestWaitToTerraform(struct?: ManifestWaitOutputReference | ManifestWait): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    fields: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.fields),
+    rollout: cdktf.booleanToTerraform(struct!.rollout),
+  }
+}
+
+export class ManifestWaitOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): ManifestWait | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._fields !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.fields = this._fields;
+    }
+    if (this._rollout !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.rollout = this._rollout;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ManifestWait | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._fields = undefined;
+      this._rollout = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._fields = value.fields;
+      this._rollout = value.rollout;
+    }
+  }
+
+  // fields - computed: false, optional: true, required: false
+  private _fields?: { [key: string]: string }; 
+  public get fields() {
+    return this.getStringMapAttribute('fields');
+  }
+  public set fields(value: { [key: string]: string }) {
+    this._fields = value;
+  }
+  public resetFields() {
+    this._fields = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fieldsInput() {
+    return this._fields;
+  }
+
+  // rollout - computed: false, optional: true, required: false
+  private _rollout?: boolean | cdktf.IResolvable; 
+  public get rollout() {
+    return this.getBooleanAttribute('rollout');
+  }
+  public set rollout(value: boolean | cdktf.IResolvable) {
+    this._rollout = value;
+  }
+  public resetRollout() {
+    this._rollout = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get rolloutInput() {
+    return this._rollout;
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest kubernetes_manifest}
@@ -309,7 +411,7 @@ export class Manifest extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_manifest',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.9.0',
+        providerVersion: '2.10.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
@@ -323,6 +425,7 @@ export class Manifest extends cdktf.TerraformResource {
     this._waitFor = config.waitFor;
     this._fieldManager.internalValue = config.fieldManager;
     this._timeouts.internalValue = config.timeouts;
+    this._wait.internalValue = config.wait;
   }
 
   // ==========
@@ -423,6 +526,22 @@ export class Manifest extends cdktf.TerraformResource {
     return this._timeouts.internalValue;
   }
 
+  // wait - computed: false, optional: true, required: false
+  private _wait = new ManifestWaitOutputReference(this, "wait");
+  public get wait() {
+    return this._wait;
+  }
+  public putWait(value: ManifestWait) {
+    this._wait.internalValue = value;
+  }
+  public resetWait() {
+    this._wait.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get waitInput() {
+    return this._wait.internalValue;
+  }
+
   // =========
   // SYNTHESIS
   // =========
@@ -435,6 +554,7 @@ export class Manifest extends cdktf.TerraformResource {
       wait_for: manifestWaitForToTerraform(this._waitFor),
       field_manager: manifestFieldManagerToTerraform(this._fieldManager.internalValue),
       timeouts: manifestTimeoutsToTerraform(this._timeouts.internalValue),
+      wait: manifestWaitToTerraform(this._wait.internalValue),
     };
   }
 }

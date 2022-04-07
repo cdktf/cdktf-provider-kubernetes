@@ -18207,7 +18207,7 @@ export class CronJob extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_cron_job',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.9.0',
+        providerVersion: '2.10.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
