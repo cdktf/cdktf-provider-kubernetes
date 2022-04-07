@@ -431,6 +431,12 @@ export class ServiceV1MetadataOutputReference extends cdktf.ComplexObject {
 }
 export interface ServiceV1SpecPort {
   /**
+  * The application protocol for this port. This field follows standard Kubernetes label syntax. Un-prefixed names are reserved for IANA standard service names (as per RFC-6335 and http://www.iana.org/assignments/service-names). Non-standard protocols should use prefixed names such as mycompany.com/my-custom-protocol.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#app_protocol ServiceV1#app_protocol}
+  */
+  readonly appProtocol?: string;
+  /**
   * The name of this port within the service. All ports within the service must have unique names. Optional if only one ServicePort is defined on this service.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#name ServiceV1#name}
@@ -468,6 +474,7 @@ export function serviceV1SpecPortToTerraform(struct?: ServiceV1SpecPort | cdktf.
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
+    app_protocol: cdktf.stringToTerraform(struct!.appProtocol),
     name: cdktf.stringToTerraform(struct!.name),
     node_port: cdktf.numberToTerraform(struct!.nodePort),
     port: cdktf.numberToTerraform(struct!.port),
@@ -955,7 +962,7 @@ export class ServiceV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_service_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.9.0',
+        providerVersion: '2.10.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

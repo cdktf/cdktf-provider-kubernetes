@@ -356,7 +356,7 @@ export class IngressClass extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_ingress_class',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.9.0',
+        providerVersion: '2.10.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

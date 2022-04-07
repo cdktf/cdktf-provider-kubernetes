@@ -849,7 +849,7 @@ Defaults to "Never".
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration#rule MutatingWebhookConfiguration#rule}
   */
-  readonly rule: MutatingWebhookConfigurationWebhookRule[] | cdktf.IResolvable;
+  readonly rule?: MutatingWebhookConfigurationWebhookRule[] | cdktf.IResolvable;
 }
 
 export function mutatingWebhookConfigurationWebhookToTerraform(struct?: MutatingWebhookConfigurationWebhook | cdktf.IResolvable): any {
@@ -899,7 +899,7 @@ export class MutatingWebhookConfiguration extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_mutating_webhook_configuration',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.9.0',
+        providerVersion: '2.10.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

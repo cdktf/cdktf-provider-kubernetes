@@ -837,7 +837,7 @@ Defaults to "Equivalent"
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/validating_webhook_configuration#rule ValidatingWebhookConfiguration#rule}
   */
-  readonly rule: ValidatingWebhookConfigurationWebhookRule[] | cdktf.IResolvable;
+  readonly rule?: ValidatingWebhookConfigurationWebhookRule[] | cdktf.IResolvable;
 }
 
 export function validatingWebhookConfigurationWebhookToTerraform(struct?: ValidatingWebhookConfigurationWebhook | cdktf.IResolvable): any {
@@ -886,7 +886,7 @@ export class ValidatingWebhookConfiguration extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_validating_webhook_configuration',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.9.0',
+        providerVersion: '2.10.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
