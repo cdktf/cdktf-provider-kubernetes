@@ -25,6 +25,7 @@ export * from './endpoints';
 export * from './endpoints-v1';
 export * from './horizontal-pod-autoscaler';
 export * from './horizontal-pod-autoscaler-v1';
+export * from './horizontal-pod-autoscaler-v2';
 export * from './horizontal-pod-autoscaler-v2beta2';
 export * from './ingress';
 export * from './ingress-class';

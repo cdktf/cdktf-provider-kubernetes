@@ -182,7 +182,7 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
       terraformResourceType: 'kubernetes',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.10.0',
+        providerVersion: '2.11.0',
         providerVersionConstraint: '~> 2.0'
       },
       terraformProviderSource: 'kubernetes'
