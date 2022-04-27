@@ -515,6 +515,18 @@ export interface ServiceV1Spec {
   */
   readonly healthCheckNodePort?: number;
   /**
+  * IPFamilies is a list of IP families (e.g. IPv4, IPv6) assigned to this service. This field is usually assigned automatically based on cluster configuration and the ipFamilyPolicy field. If this field is specified manually, the requested family is available in the cluster, and ipFamilyPolicy allows it, it will be used; otherwise creation of the service will fail. This field is conditionally mutable: it allows for adding or removing a secondary IP family, but it does not allow changing the primary IP family of the Service.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#ip_families ServiceV1#ip_families}
+  */
+  readonly ipFamilies?: string[];
+  /**
+  * IPFamilyPolicy represents the dual-stack-ness requested or required by this Service. If there is no value provided, then this field will be set to SingleStack. Services can be 'SingleStack' (a single IP family), 'PreferDualStack' (two IP families on dual-stack configured clusters or a single IP family on single-stack clusters), or 'RequireDualStack' (two IP families on dual-stack configured clusters, otherwise fail). The ipFamilies and clusterIPs fields depend on the value of this field.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#ip_family_policy ServiceV1#ip_family_policy}
+  */
+  readonly ipFamilyPolicy?: string;
+  /**
   * Only applies to `type = LoadBalancer`. LoadBalancer will get created with the IP specified in this field. This feature depends on whether the underlying cloud-provider supports specifying this field when a load balancer is created. This field will be ignored if the cloud-provider does not support the feature.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#load_balancer_ip ServiceV1#load_balancer_ip}
@@ -569,6 +581,8 @@ export function serviceV1SpecToTerraform(struct?: ServiceV1SpecOutputReference |
     external_name: cdktf.stringToTerraform(struct!.externalName),
     external_traffic_policy: cdktf.stringToTerraform(struct!.externalTrafficPolicy),
     health_check_node_port: cdktf.numberToTerraform(struct!.healthCheckNodePort),
+    ip_families: cdktf.listMapper(cdktf.stringToTerraform)(struct!.ipFamilies),
+    ip_family_policy: cdktf.stringToTerraform(struct!.ipFamilyPolicy),
     load_balancer_ip: cdktf.stringToTerraform(struct!.loadBalancerIp),
     load_balancer_source_ranges: cdktf.listMapper(cdktf.stringToTerraform)(struct!.loadBalancerSourceRanges),
     publish_not_ready_addresses: cdktf.booleanToTerraform(struct!.publishNotReadyAddresses),
@@ -613,6 +627,14 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.healthCheckNodePort = this._healthCheckNodePort;
     }
+    if (this._ipFamilies !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.ipFamilies = this._ipFamilies;
+    }
+    if (this._ipFamilyPolicy !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.ipFamilyPolicy = this._ipFamilyPolicy;
+    }
     if (this._loadBalancerIp !== undefined) {
       hasAnyValues = true;
       internalValueResult.loadBalancerIp = this._loadBalancerIp;
@@ -652,6 +674,8 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
       this._externalName = undefined;
       this._externalTrafficPolicy = undefined;
       this._healthCheckNodePort = undefined;
+      this._ipFamilies = undefined;
+      this._ipFamilyPolicy = undefined;
       this._loadBalancerIp = undefined;
       this._loadBalancerSourceRanges = undefined;
       this._publishNotReadyAddresses = undefined;
@@ -667,6 +691,8 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
       this._externalName = value.externalName;
       this._externalTrafficPolicy = value.externalTrafficPolicy;
       this._healthCheckNodePort = value.healthCheckNodePort;
+      this._ipFamilies = value.ipFamilies;
+      this._ipFamilyPolicy = value.ipFamilyPolicy;
       this._loadBalancerIp = value.loadBalancerIp;
       this._loadBalancerSourceRanges = value.loadBalancerSourceRanges;
       this._publishNotReadyAddresses = value.publishNotReadyAddresses;
@@ -755,6 +781,38 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
   // Temporarily expose input value. Use with caution.
   public get healthCheckNodePortInput() {
     return this._healthCheckNodePort;
+  }
+
+  // ip_families - computed: true, optional: true, required: false
+  private _ipFamilies?: string[]; 
+  public get ipFamilies() {
+    return this.getListAttribute('ip_families');
+  }
+  public set ipFamilies(value: string[]) {
+    this._ipFamilies = value;
+  }
+  public resetIpFamilies() {
+    this._ipFamilies = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ipFamiliesInput() {
+    return this._ipFamilies;
+  }
+
+  // ip_family_policy - computed: true, optional: true, required: false
+  private _ipFamilyPolicy?: string; 
+  public get ipFamilyPolicy() {
+    return this.getStringAttribute('ip_family_policy');
+  }
+  public set ipFamilyPolicy(value: string) {
+    this._ipFamilyPolicy = value;
+  }
+  public resetIpFamilyPolicy() {
+    this._ipFamilyPolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ipFamilyPolicyInput() {
+    return this._ipFamilyPolicy;
   }
 
   // load_balancer_ip - computed: false, optional: true, required: false
@@ -962,7 +1020,7 @@ export class ServiceV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_service_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.10.0',
+        providerVersion: '2.11.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

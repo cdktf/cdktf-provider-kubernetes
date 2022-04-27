@@ -168,6 +168,16 @@ export class DataKubernetesServiceV1SpecOutputReference extends cdktf.ComplexObj
     return this.getNumberAttribute('health_check_node_port');
   }
 
+  // ip_families - computed: true, optional: false, required: false
+  public get ipFamilies() {
+    return this.getListAttribute('ip_families');
+  }
+
+  // ip_family_policy - computed: true, optional: false, required: false
+  public get ipFamilyPolicy() {
+    return this.getStringAttribute('ip_family_policy');
+  }
+
   // load_balancer_ip - computed: true, optional: false, required: false
   public get loadBalancerIp() {
     return this.getStringAttribute('load_balancer_ip');
@@ -618,7 +628,7 @@ export class DataKubernetesServiceV1 extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_service_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.10.0',
+        providerVersion: '2.11.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

@@ -493,7 +493,7 @@ export class PodDisruptionBudget extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_pod_disruption_budget',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.10.0',
+        providerVersion: '2.11.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

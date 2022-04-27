@@ -17515,7 +17515,7 @@ export class ReplicationController extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_replication_controller',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.10.0',
+        providerVersion: '2.11.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
