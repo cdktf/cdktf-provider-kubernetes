@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface MutatingWebhookConfigurationV1Config extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration_v1#id MutatingWebhookConfigurationV1#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration_v1#metadata MutatingWebhookConfigurationV1#metadata}
@@ -505,6 +512,130 @@ export function mutatingWebhookConfigurationV1WebhookNamespaceSelectorMatchExpre
   }
 }
 
+export class MutatingWebhookConfigurationV1WebhookNamespaceSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): MutatingWebhookConfigurationV1WebhookNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: MutatingWebhookConfigurationV1WebhookNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class MutatingWebhookConfigurationV1WebhookNamespaceSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : MutatingWebhookConfigurationV1WebhookNamespaceSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): MutatingWebhookConfigurationV1WebhookNamespaceSelectorMatchExpressionsOutputReference {
+    return new MutatingWebhookConfigurationV1WebhookNamespaceSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface MutatingWebhookConfigurationV1WebhookNamespaceSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
@@ -549,9 +680,9 @@ export class MutatingWebhookConfigurationV1WebhookNamespaceSelectorOutputReferen
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions !== undefined) {
+    if (this._matchExpressions?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.matchExpressions = this._matchExpressions;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -560,12 +691,12 @@ export class MutatingWebhookConfigurationV1WebhookNamespaceSelectorOutputReferen
     if (value === undefined) {
       this.isEmptyObject = false;
       this._matchLabels = undefined;
-      this._matchExpressions = undefined;
+      this._matchExpressions.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
-      this._matchExpressions = value.matchExpressions;
+      this._matchExpressions.internalValue = value.matchExpressions;
     }
   }
 
@@ -586,20 +717,19 @@ export class MutatingWebhookConfigurationV1WebhookNamespaceSelectorOutputReferen
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: MutatingWebhookConfigurationV1WebhookNamespaceSelectorMatchExpressions[] | cdktf.IResolvable; 
+  private _matchExpressions = new MutatingWebhookConfigurationV1WebhookNamespaceSelectorMatchExpressionsList(this, "match_expressions", false);
   public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+    return this._matchExpressions;
   }
-  public set matchExpressions(value: MutatingWebhookConfigurationV1WebhookNamespaceSelectorMatchExpressions[] | cdktf.IResolvable) {
-    this._matchExpressions = value;
+  public putMatchExpressions(value: MutatingWebhookConfigurationV1WebhookNamespaceSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
   }
   public resetMatchExpressions() {
-    this._matchExpressions = undefined;
+    this._matchExpressions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions;
+    return this._matchExpressions.internalValue;
   }
 }
 export interface MutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressions {
@@ -635,6 +765,130 @@ export function mutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressi
   }
 }
 
+export class MutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): MutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: MutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class MutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : MutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): MutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressionsOutputReference {
+    return new MutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface MutatingWebhookConfigurationV1WebhookObjectSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
@@ -679,9 +933,9 @@ export class MutatingWebhookConfigurationV1WebhookObjectSelectorOutputReference 
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions !== undefined) {
+    if (this._matchExpressions?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.matchExpressions = this._matchExpressions;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -690,12 +944,12 @@ export class MutatingWebhookConfigurationV1WebhookObjectSelectorOutputReference 
     if (value === undefined) {
       this.isEmptyObject = false;
       this._matchLabels = undefined;
-      this._matchExpressions = undefined;
+      this._matchExpressions.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
-      this._matchExpressions = value.matchExpressions;
+      this._matchExpressions.internalValue = value.matchExpressions;
     }
   }
 
@@ -716,20 +970,19 @@ export class MutatingWebhookConfigurationV1WebhookObjectSelectorOutputReference 
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: MutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressions[] | cdktf.IResolvable; 
+  private _matchExpressions = new MutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressionsList(this, "match_expressions", false);
   public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+    return this._matchExpressions;
   }
-  public set matchExpressions(value: MutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressions[] | cdktf.IResolvable) {
-    this._matchExpressions = value;
+  public putMatchExpressions(value: MutatingWebhookConfigurationV1WebhookObjectSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
   }
   public resetMatchExpressions() {
-    this._matchExpressions = undefined;
+    this._matchExpressions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions;
+    return this._matchExpressions.internalValue;
   }
 }
 export interface MutatingWebhookConfigurationV1WebhookRule {
@@ -771,6 +1024,162 @@ export function mutatingWebhookConfigurationV1WebhookRuleToTerraform(struct?: Mu
   }
 }
 
+export class MutatingWebhookConfigurationV1WebhookRuleOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): MutatingWebhookConfigurationV1WebhookRule | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._apiGroups !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.apiGroups = this._apiGroups;
+    }
+    if (this._apiVersions !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.apiVersions = this._apiVersions;
+    }
+    if (this._operations !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operations = this._operations;
+    }
+    if (this._resources !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.resources = this._resources;
+    }
+    if (this._scope !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.scope = this._scope;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: MutatingWebhookConfigurationV1WebhookRule | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._apiGroups = undefined;
+      this._apiVersions = undefined;
+      this._operations = undefined;
+      this._resources = undefined;
+      this._scope = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._apiGroups = value.apiGroups;
+      this._apiVersions = value.apiVersions;
+      this._operations = value.operations;
+      this._resources = value.resources;
+      this._scope = value.scope;
+    }
+  }
+
+  // api_groups - computed: false, optional: false, required: true
+  private _apiGroups?: string[]; 
+  public get apiGroups() {
+    return this.getListAttribute('api_groups');
+  }
+  public set apiGroups(value: string[]) {
+    this._apiGroups = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get apiGroupsInput() {
+    return this._apiGroups;
+  }
+
+  // api_versions - computed: false, optional: false, required: true
+  private _apiVersions?: string[]; 
+  public get apiVersions() {
+    return this.getListAttribute('api_versions');
+  }
+  public set apiVersions(value: string[]) {
+    this._apiVersions = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get apiVersionsInput() {
+    return this._apiVersions;
+  }
+
+  // operations - computed: false, optional: false, required: true
+  private _operations?: string[]; 
+  public get operations() {
+    return this.getListAttribute('operations');
+  }
+  public set operations(value: string[]) {
+    this._operations = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operationsInput() {
+    return this._operations;
+  }
+
+  // resources - computed: false, optional: false, required: true
+  private _resources?: string[]; 
+  public get resources() {
+    return this.getListAttribute('resources');
+  }
+  public set resources(value: string[]) {
+    this._resources = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourcesInput() {
+    return this._resources;
+  }
+
+  // scope - computed: false, optional: true, required: false
+  private _scope?: string; 
+  public get scope() {
+    return this.getStringAttribute('scope');
+  }
+  public set scope(value: string) {
+    this._scope = value;
+  }
+  public resetScope() {
+    this._scope = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get scopeInput() {
+    return this._scope;
+  }
+}
+
+export class MutatingWebhookConfigurationV1WebhookRuleList extends cdktf.ComplexList {
+  public internalValue? : MutatingWebhookConfigurationV1WebhookRule[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): MutatingWebhookConfigurationV1WebhookRuleOutputReference {
+    return new MutatingWebhookConfigurationV1WebhookRuleOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface MutatingWebhookConfigurationV1Webhook {
   /**
   * AdmissionReviewVersions is an ordered list of preferred `AdmissionReview` versions the Webhook expects. API server will try to use first version in the list which it supports. If none of the versions specified in this list supported by API server, validation will fail for this object. If a persisted webhook configuration specifies allowed versions and does not include any versions known to the API Server, calls to the webhook will fail and be subject to the failure policy.
@@ -872,6 +1281,300 @@ export function mutatingWebhookConfigurationV1WebhookToTerraform(struct?: Mutati
   }
 }
 
+export class MutatingWebhookConfigurationV1WebhookOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): MutatingWebhookConfigurationV1Webhook | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._admissionReviewVersions !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.admissionReviewVersions = this._admissionReviewVersions;
+    }
+    if (this._failurePolicy !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.failurePolicy = this._failurePolicy;
+    }
+    if (this._matchPolicy !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchPolicy = this._matchPolicy;
+    }
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._reinvocationPolicy !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.reinvocationPolicy = this._reinvocationPolicy;
+    }
+    if (this._sideEffects !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.sideEffects = this._sideEffects;
+    }
+    if (this._timeoutSeconds !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._clientConfig?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.clientConfig = this._clientConfig?.internalValue;
+    }
+    if (this._namespaceSelector?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.namespaceSelector = this._namespaceSelector?.internalValue;
+    }
+    if (this._objectSelector?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.objectSelector = this._objectSelector?.internalValue;
+    }
+    if (this._rule?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.rule = this._rule?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: MutatingWebhookConfigurationV1Webhook | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._admissionReviewVersions = undefined;
+      this._failurePolicy = undefined;
+      this._matchPolicy = undefined;
+      this._name = undefined;
+      this._reinvocationPolicy = undefined;
+      this._sideEffects = undefined;
+      this._timeoutSeconds = undefined;
+      this._clientConfig.internalValue = undefined;
+      this._namespaceSelector.internalValue = undefined;
+      this._objectSelector.internalValue = undefined;
+      this._rule.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._admissionReviewVersions = value.admissionReviewVersions;
+      this._failurePolicy = value.failurePolicy;
+      this._matchPolicy = value.matchPolicy;
+      this._name = value.name;
+      this._reinvocationPolicy = value.reinvocationPolicy;
+      this._sideEffects = value.sideEffects;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._clientConfig.internalValue = value.clientConfig;
+      this._namespaceSelector.internalValue = value.namespaceSelector;
+      this._objectSelector.internalValue = value.objectSelector;
+      this._rule.internalValue = value.rule;
+    }
+  }
+
+  // admission_review_versions - computed: false, optional: true, required: false
+  private _admissionReviewVersions?: string[]; 
+  public get admissionReviewVersions() {
+    return this.getListAttribute('admission_review_versions');
+  }
+  public set admissionReviewVersions(value: string[]) {
+    this._admissionReviewVersions = value;
+  }
+  public resetAdmissionReviewVersions() {
+    this._admissionReviewVersions = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get admissionReviewVersionsInput() {
+    return this._admissionReviewVersions;
+  }
+
+  // failure_policy - computed: false, optional: true, required: false
+  private _failurePolicy?: string; 
+  public get failurePolicy() {
+    return this.getStringAttribute('failure_policy');
+  }
+  public set failurePolicy(value: string) {
+    this._failurePolicy = value;
+  }
+  public resetFailurePolicy() {
+    this._failurePolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get failurePolicyInput() {
+    return this._failurePolicy;
+  }
+
+  // match_policy - computed: false, optional: true, required: false
+  private _matchPolicy?: string; 
+  public get matchPolicy() {
+    return this.getStringAttribute('match_policy');
+  }
+  public set matchPolicy(value: string) {
+    this._matchPolicy = value;
+  }
+  public resetMatchPolicy() {
+    this._matchPolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchPolicyInput() {
+    return this._matchPolicy;
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // reinvocation_policy - computed: false, optional: true, required: false
+  private _reinvocationPolicy?: string; 
+  public get reinvocationPolicy() {
+    return this.getStringAttribute('reinvocation_policy');
+  }
+  public set reinvocationPolicy(value: string) {
+    this._reinvocationPolicy = value;
+  }
+  public resetReinvocationPolicy() {
+    this._reinvocationPolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get reinvocationPolicyInput() {
+    return this._reinvocationPolicy;
+  }
+
+  // side_effects - computed: false, optional: true, required: false
+  private _sideEffects?: string; 
+  public get sideEffects() {
+    return this.getStringAttribute('side_effects');
+  }
+  public set sideEffects(value: string) {
+    this._sideEffects = value;
+  }
+  public resetSideEffects() {
+    this._sideEffects = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get sideEffectsInput() {
+    return this._sideEffects;
+  }
+
+  // timeout_seconds - computed: false, optional: true, required: false
+  private _timeoutSeconds?: number; 
+  public get timeoutSeconds() {
+    return this.getNumberAttribute('timeout_seconds');
+  }
+  public set timeoutSeconds(value: number) {
+    this._timeoutSeconds = value;
+  }
+  public resetTimeoutSeconds() {
+    this._timeoutSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutSecondsInput() {
+    return this._timeoutSeconds;
+  }
+
+  // client_config - computed: false, optional: false, required: true
+  private _clientConfig = new MutatingWebhookConfigurationV1WebhookClientConfigOutputReference(this, "client_config");
+  public get clientConfig() {
+    return this._clientConfig;
+  }
+  public putClientConfig(value: MutatingWebhookConfigurationV1WebhookClientConfig) {
+    this._clientConfig.internalValue = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get clientConfigInput() {
+    return this._clientConfig.internalValue;
+  }
+
+  // namespace_selector - computed: false, optional: true, required: false
+  private _namespaceSelector = new MutatingWebhookConfigurationV1WebhookNamespaceSelectorOutputReference(this, "namespace_selector");
+  public get namespaceSelector() {
+    return this._namespaceSelector;
+  }
+  public putNamespaceSelector(value: MutatingWebhookConfigurationV1WebhookNamespaceSelector) {
+    this._namespaceSelector.internalValue = value;
+  }
+  public resetNamespaceSelector() {
+    this._namespaceSelector.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceSelectorInput() {
+    return this._namespaceSelector.internalValue;
+  }
+
+  // object_selector - computed: false, optional: true, required: false
+  private _objectSelector = new MutatingWebhookConfigurationV1WebhookObjectSelectorOutputReference(this, "object_selector");
+  public get objectSelector() {
+    return this._objectSelector;
+  }
+  public putObjectSelector(value: MutatingWebhookConfigurationV1WebhookObjectSelector) {
+    this._objectSelector.internalValue = value;
+  }
+  public resetObjectSelector() {
+    this._objectSelector.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get objectSelectorInput() {
+    return this._objectSelector.internalValue;
+  }
+
+  // rule - computed: false, optional: true, required: false
+  private _rule = new MutatingWebhookConfigurationV1WebhookRuleList(this, "rule", false);
+  public get rule() {
+    return this._rule;
+  }
+  public putRule(value: MutatingWebhookConfigurationV1WebhookRule[] | cdktf.IResolvable) {
+    this._rule.internalValue = value;
+  }
+  public resetRule() {
+    this._rule.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ruleInput() {
+    return this._rule.internalValue;
+  }
+}
+
+export class MutatingWebhookConfigurationV1WebhookList extends cdktf.ComplexList {
+  public internalValue? : MutatingWebhookConfigurationV1Webhook[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): MutatingWebhookConfigurationV1WebhookOutputReference {
+    return new MutatingWebhookConfigurationV1WebhookOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/mutating_webhook_configuration_v1 kubernetes_mutating_webhook_configuration_v1}
@@ -907,8 +1610,9 @@ export class MutatingWebhookConfigurationV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
-    this._webhook = config.webhook;
+    this._webhook.internalValue = config.webhook;
   }
 
   // ==========
@@ -916,8 +1620,19 @@ export class MutatingWebhookConfigurationV1 extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -934,17 +1649,16 @@ export class MutatingWebhookConfigurationV1 extends cdktf.TerraformResource {
   }
 
   // webhook - computed: false, optional: false, required: true
-  private _webhook?: MutatingWebhookConfigurationV1Webhook[] | cdktf.IResolvable; 
+  private _webhook = new MutatingWebhookConfigurationV1WebhookList(this, "webhook", false);
   public get webhook() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('webhook');
+    return this._webhook;
   }
-  public set webhook(value: MutatingWebhookConfigurationV1Webhook[] | cdktf.IResolvable) {
-    this._webhook = value;
+  public putWebhook(value: MutatingWebhookConfigurationV1Webhook[] | cdktf.IResolvable) {
+    this._webhook.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get webhookInput() {
-    return this._webhook;
+    return this._webhook.internalValue;
   }
 
   // =========
@@ -953,8 +1667,9 @@ export class MutatingWebhookConfigurationV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       metadata: mutatingWebhookConfigurationV1MetadataToTerraform(this._metadata.internalValue),
-      webhook: cdktf.listMapper(mutatingWebhookConfigurationV1WebhookToTerraform)(this._webhook),
+      webhook: cdktf.listMapper(mutatingWebhookConfigurationV1WebhookToTerraform)(this._webhook.internalValue),
     };
   }
 }

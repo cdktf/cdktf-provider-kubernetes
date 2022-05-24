@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface EndpointsConfig extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/endpoints#id Endpoints#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/endpoints#metadata Endpoints#metadata}
@@ -251,6 +258,127 @@ export function endpointsSubsetAddressToTerraform(struct?: EndpointsSubsetAddres
   }
 }
 
+export class EndpointsSubsetAddressOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): EndpointsSubsetAddress | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._hostname !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.hostname = this._hostname;
+    }
+    if (this._ip !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.ip = this._ip;
+    }
+    if (this._nodeName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.nodeName = this._nodeName;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: EndpointsSubsetAddress | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._hostname = undefined;
+      this._ip = undefined;
+      this._nodeName = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._hostname = value.hostname;
+      this._ip = value.ip;
+      this._nodeName = value.nodeName;
+    }
+  }
+
+  // hostname - computed: false, optional: true, required: false
+  private _hostname?: string; 
+  public get hostname() {
+    return this.getStringAttribute('hostname');
+  }
+  public set hostname(value: string) {
+    this._hostname = value;
+  }
+  public resetHostname() {
+    this._hostname = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostnameInput() {
+    return this._hostname;
+  }
+
+  // ip - computed: false, optional: false, required: true
+  private _ip?: string; 
+  public get ip() {
+    return this.getStringAttribute('ip');
+  }
+  public set ip(value: string) {
+    this._ip = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ipInput() {
+    return this._ip;
+  }
+
+  // node_name - computed: false, optional: true, required: false
+  private _nodeName?: string; 
+  public get nodeName() {
+    return this.getStringAttribute('node_name');
+  }
+  public set nodeName(value: string) {
+    this._nodeName = value;
+  }
+  public resetNodeName() {
+    this._nodeName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nodeNameInput() {
+    return this._nodeName;
+  }
+}
+
+export class EndpointsSubsetAddressList extends cdktf.ComplexList {
+  public internalValue? : EndpointsSubsetAddress[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): EndpointsSubsetAddressOutputReference {
+    return new EndpointsSubsetAddressOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface EndpointsSubsetNotReadyAddress {
   /**
   * The Hostname of this endpoint.
@@ -284,6 +412,127 @@ export function endpointsSubsetNotReadyAddressToTerraform(struct?: EndpointsSubs
   }
 }
 
+export class EndpointsSubsetNotReadyAddressOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): EndpointsSubsetNotReadyAddress | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._hostname !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.hostname = this._hostname;
+    }
+    if (this._ip !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.ip = this._ip;
+    }
+    if (this._nodeName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.nodeName = this._nodeName;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: EndpointsSubsetNotReadyAddress | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._hostname = undefined;
+      this._ip = undefined;
+      this._nodeName = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._hostname = value.hostname;
+      this._ip = value.ip;
+      this._nodeName = value.nodeName;
+    }
+  }
+
+  // hostname - computed: false, optional: true, required: false
+  private _hostname?: string; 
+  public get hostname() {
+    return this.getStringAttribute('hostname');
+  }
+  public set hostname(value: string) {
+    this._hostname = value;
+  }
+  public resetHostname() {
+    this._hostname = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostnameInput() {
+    return this._hostname;
+  }
+
+  // ip - computed: false, optional: false, required: true
+  private _ip?: string; 
+  public get ip() {
+    return this.getStringAttribute('ip');
+  }
+  public set ip(value: string) {
+    this._ip = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ipInput() {
+    return this._ip;
+  }
+
+  // node_name - computed: false, optional: true, required: false
+  private _nodeName?: string; 
+  public get nodeName() {
+    return this.getStringAttribute('node_name');
+  }
+  public set nodeName(value: string) {
+    this._nodeName = value;
+  }
+  public resetNodeName() {
+    this._nodeName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nodeNameInput() {
+    return this._nodeName;
+  }
+}
+
+export class EndpointsSubsetNotReadyAddressList extends cdktf.ComplexList {
+  public internalValue? : EndpointsSubsetNotReadyAddress[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): EndpointsSubsetNotReadyAddressOutputReference {
+    return new EndpointsSubsetNotReadyAddressOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface EndpointsSubsetPort {
   /**
   * The name of this port within the endpoint. Must be a DNS_LABEL. Optional if only one Port is defined on this endpoint.
@@ -317,6 +566,127 @@ export function endpointsSubsetPortToTerraform(struct?: EndpointsSubsetPort | cd
   }
 }
 
+export class EndpointsSubsetPortOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): EndpointsSubsetPort | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._protocol !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.protocol = this._protocol;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: EndpointsSubsetPort | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._name = undefined;
+      this._port = undefined;
+      this._protocol = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._name = value.name;
+      this._port = value.port;
+      this._protocol = value.protocol;
+    }
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // protocol - computed: false, optional: true, required: false
+  private _protocol?: string; 
+  public get protocol() {
+    return this.getStringAttribute('protocol');
+  }
+  public set protocol(value: string) {
+    this._protocol = value;
+  }
+  public resetProtocol() {
+    this._protocol = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get protocolInput() {
+    return this._protocol;
+  }
+}
+
+export class EndpointsSubsetPortList extends cdktf.ComplexList {
+  public internalValue? : EndpointsSubsetPort[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): EndpointsSubsetPortOutputReference {
+    return new EndpointsSubsetPortOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface EndpointsSubset {
   /**
   * address block
@@ -350,6 +720,130 @@ export function endpointsSubsetToTerraform(struct?: EndpointsSubset | cdktf.IRes
   }
 }
 
+export class EndpointsSubsetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): EndpointsSubset | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._address?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.address = this._address?.internalValue;
+    }
+    if (this._notReadyAddress?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.notReadyAddress = this._notReadyAddress?.internalValue;
+    }
+    if (this._port?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: EndpointsSubset | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._address.internalValue = undefined;
+      this._notReadyAddress.internalValue = undefined;
+      this._port.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._address.internalValue = value.address;
+      this._notReadyAddress.internalValue = value.notReadyAddress;
+      this._port.internalValue = value.port;
+    }
+  }
+
+  // address - computed: false, optional: true, required: false
+  private _address = new EndpointsSubsetAddressList(this, "address", true);
+  public get address() {
+    return this._address;
+  }
+  public putAddress(value: EndpointsSubsetAddress[] | cdktf.IResolvable) {
+    this._address.internalValue = value;
+  }
+  public resetAddress() {
+    this._address.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get addressInput() {
+    return this._address.internalValue;
+  }
+
+  // not_ready_address - computed: false, optional: true, required: false
+  private _notReadyAddress = new EndpointsSubsetNotReadyAddressList(this, "not_ready_address", true);
+  public get notReadyAddress() {
+    return this._notReadyAddress;
+  }
+  public putNotReadyAddress(value: EndpointsSubsetNotReadyAddress[] | cdktf.IResolvable) {
+    this._notReadyAddress.internalValue = value;
+  }
+  public resetNotReadyAddress() {
+    this._notReadyAddress.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get notReadyAddressInput() {
+    return this._notReadyAddress.internalValue;
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port = new EndpointsSubsetPortList(this, "port", true);
+  public get port() {
+    return this._port;
+  }
+  public putPort(value: EndpointsSubsetPort[] | cdktf.IResolvable) {
+    this._port.internalValue = value;
+  }
+  public resetPort() {
+    this._port.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port.internalValue;
+  }
+}
+
+export class EndpointsSubsetList extends cdktf.ComplexList {
+  public internalValue? : EndpointsSubset[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): EndpointsSubsetOutputReference {
+    return new EndpointsSubsetOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/endpoints kubernetes_endpoints}
@@ -385,8 +879,9 @@ export class Endpoints extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
-    this._subset = config.subset;
+    this._subset.internalValue = config.subset;
   }
 
   // ==========
@@ -394,8 +889,19 @@ export class Endpoints extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -412,20 +918,19 @@ export class Endpoints extends cdktf.TerraformResource {
   }
 
   // subset - computed: false, optional: true, required: false
-  private _subset?: EndpointsSubset[] | cdktf.IResolvable; 
+  private _subset = new EndpointsSubsetList(this, "subset", true);
   public get subset() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('subset')));
+    return this._subset;
   }
-  public set subset(value: EndpointsSubset[] | cdktf.IResolvable) {
-    this._subset = value;
+  public putSubset(value: EndpointsSubset[] | cdktf.IResolvable) {
+    this._subset.internalValue = value;
   }
   public resetSubset() {
-    this._subset = undefined;
+    this._subset.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get subsetInput() {
-    return this._subset;
+    return this._subset.internalValue;
   }
 
   // =========
@@ -434,8 +939,9 @@ export class Endpoints extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       metadata: endpointsMetadataToTerraform(this._metadata.internalValue),
-      subset: cdktf.listMapper(endpointsSubsetToTerraform)(this._subset),
+      subset: cdktf.listMapper(endpointsSubsetToTerraform)(this._subset.internalValue),
     };
   }
 }

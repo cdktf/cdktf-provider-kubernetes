@@ -67,6 +67,64 @@ export function manifestWaitForToTerraform(struct?: ManifestWaitFor | cdktf.IRes
   }
 }
 
+export class ManifestWaitForOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false);
+  }
+
+  public get internalValue(): ManifestWaitFor | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._fields !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.fields = this._fields;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ManifestWaitFor | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._fields = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._fields = value.fields;
+    }
+  }
+
+  // fields - computed: false, optional: true, required: false
+  private _fields?: { [key: string]: string }; 
+  public get fields() {
+    return this.getStringMapAttribute('fields');
+  }
+  public set fields(value: { [key: string]: string }) {
+    this._fields = value;
+  }
+  public resetFields() {
+    this._fields = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fieldsInput() {
+    return this._fields;
+  }
+}
 export interface ManifestFieldManager {
   /**
   * Force changes against conflicts.

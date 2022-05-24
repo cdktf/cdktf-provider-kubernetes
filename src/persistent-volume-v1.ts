@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface PersistentVolumeV1Config extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_v1#id PersistentVolumeV1#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_v1#metadata PersistentVolumeV1#metadata}
@@ -292,6 +299,124 @@ export function persistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchE
   }
 }
 
+export class PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: false, required: true
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: false, required: true
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsOutputReference {
+    return new PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFields {
   /**
   * The label key that the selector applies to.
@@ -325,6 +450,124 @@ export function persistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchF
   }
 }
 
+export class PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFields | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFields | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: false, required: true
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: false, required: true
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList extends cdktf.ComplexList {
+  public internalValue? : PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFields[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsOutputReference {
+    return new PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTerm {
   /**
   * match_expressions block
@@ -351,6 +594,108 @@ export function persistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermToTerr
   }
 }
 
+export class PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTerm | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._matchExpressions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
+    }
+    if (this._matchFields?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchFields = this._matchFields?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTerm | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._matchExpressions.internalValue = undefined;
+      this._matchFields.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._matchExpressions.internalValue = value.matchExpressions;
+      this._matchFields.internalValue = value.matchFields;
+    }
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions = new PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList(this, "match_expressions", false);
+  public get matchExpressions() {
+    return this._matchExpressions;
+  }
+  public putMatchExpressions(value: PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions.internalValue;
+  }
+
+  // match_fields - computed: false, optional: true, required: false
+  private _matchFields = new PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList(this, "match_fields", false);
+  public get matchFields() {
+    return this._matchFields;
+  }
+  public putMatchFields(value: PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFields[] | cdktf.IResolvable) {
+    this._matchFields.internalValue = value;
+  }
+  public resetMatchFields() {
+    this._matchFields.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchFieldsInput() {
+    return this._matchFields.internalValue;
+  }
+}
+
+export class PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermList extends cdktf.ComplexList {
+  public internalValue? : PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTerm[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermOutputReference {
+    return new PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PersistentVolumeV1SpecNodeAffinityRequired {
   /**
   * node_selector_term block
@@ -384,9 +729,9 @@ export class PersistentVolumeV1SpecNodeAffinityRequiredOutputReference extends c
   public get internalValue(): PersistentVolumeV1SpecNodeAffinityRequired | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nodeSelectorTerm !== undefined) {
+    if (this._nodeSelectorTerm?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.nodeSelectorTerm = this._nodeSelectorTerm;
+      internalValueResult.nodeSelectorTerm = this._nodeSelectorTerm?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -394,26 +739,25 @@ export class PersistentVolumeV1SpecNodeAffinityRequiredOutputReference extends c
   public set internalValue(value: PersistentVolumeV1SpecNodeAffinityRequired | undefined) {
     if (value === undefined) {
       this.isEmptyObject = false;
-      this._nodeSelectorTerm = undefined;
+      this._nodeSelectorTerm.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
-      this._nodeSelectorTerm = value.nodeSelectorTerm;
+      this._nodeSelectorTerm.internalValue = value.nodeSelectorTerm;
     }
   }
 
   // node_selector_term - computed: false, optional: false, required: true
-  private _nodeSelectorTerm?: PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTerm[] | cdktf.IResolvable; 
+  private _nodeSelectorTerm = new PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermList(this, "node_selector_term", false);
   public get nodeSelectorTerm() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('node_selector_term');
+    return this._nodeSelectorTerm;
   }
-  public set nodeSelectorTerm(value: PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTerm[] | cdktf.IResolvable) {
-    this._nodeSelectorTerm = value;
+  public putNodeSelectorTerm(value: PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTerm[] | cdktf.IResolvable) {
+    this._nodeSelectorTerm.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get nodeSelectorTermInput() {
-    return this._nodeSelectorTerm;
+    return this._nodeSelectorTerm.internalValue;
   }
 }
 export interface PersistentVolumeV1SpecNodeAffinity {
@@ -4754,6 +5098,253 @@ export function persistentVolumeV1SpecToTerraform(struct?: PersistentVolumeV1Spe
   }
 }
 
+export class PersistentVolumeV1SpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PersistentVolumeV1Spec | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._accessModes !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.accessModes = this._accessModes;
+    }
+    if (this._capacity !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.capacity = this._capacity;
+    }
+    if (this._mountOptions !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.mountOptions = this._mountOptions;
+    }
+    if (this._persistentVolumeReclaimPolicy !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.persistentVolumeReclaimPolicy = this._persistentVolumeReclaimPolicy;
+    }
+    if (this._storageClassName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.storageClassName = this._storageClassName;
+    }
+    if (this._volumeMode !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.volumeMode = this._volumeMode;
+    }
+    if (this._claimRef?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.claimRef = this._claimRef?.internalValue;
+    }
+    if (this._nodeAffinity?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.nodeAffinity = this._nodeAffinity?.internalValue;
+    }
+    if (this._persistentVolumeSource?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.persistentVolumeSource = this._persistentVolumeSource?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PersistentVolumeV1Spec | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._accessModes = undefined;
+      this._capacity = undefined;
+      this._mountOptions = undefined;
+      this._persistentVolumeReclaimPolicy = undefined;
+      this._storageClassName = undefined;
+      this._volumeMode = undefined;
+      this._claimRef.internalValue = undefined;
+      this._nodeAffinity.internalValue = undefined;
+      this._persistentVolumeSource.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._accessModes = value.accessModes;
+      this._capacity = value.capacity;
+      this._mountOptions = value.mountOptions;
+      this._persistentVolumeReclaimPolicy = value.persistentVolumeReclaimPolicy;
+      this._storageClassName = value.storageClassName;
+      this._volumeMode = value.volumeMode;
+      this._claimRef.internalValue = value.claimRef;
+      this._nodeAffinity.internalValue = value.nodeAffinity;
+      this._persistentVolumeSource.internalValue = value.persistentVolumeSource;
+    }
+  }
+
+  // access_modes - computed: false, optional: false, required: true
+  private _accessModes?: string[]; 
+  public get accessModes() {
+    return cdktf.Fn.tolist(this.getListAttribute('access_modes'));
+  }
+  public set accessModes(value: string[]) {
+    this._accessModes = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get accessModesInput() {
+    return this._accessModes;
+  }
+
+  // capacity - computed: false, optional: false, required: true
+  private _capacity?: { [key: string]: string }; 
+  public get capacity() {
+    return this.getStringMapAttribute('capacity');
+  }
+  public set capacity(value: { [key: string]: string }) {
+    this._capacity = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get capacityInput() {
+    return this._capacity;
+  }
+
+  // mount_options - computed: false, optional: true, required: false
+  private _mountOptions?: string[]; 
+  public get mountOptions() {
+    return cdktf.Fn.tolist(this.getListAttribute('mount_options'));
+  }
+  public set mountOptions(value: string[]) {
+    this._mountOptions = value;
+  }
+  public resetMountOptions() {
+    this._mountOptions = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get mountOptionsInput() {
+    return this._mountOptions;
+  }
+
+  // persistent_volume_reclaim_policy - computed: false, optional: true, required: false
+  private _persistentVolumeReclaimPolicy?: string; 
+  public get persistentVolumeReclaimPolicy() {
+    return this.getStringAttribute('persistent_volume_reclaim_policy');
+  }
+  public set persistentVolumeReclaimPolicy(value: string) {
+    this._persistentVolumeReclaimPolicy = value;
+  }
+  public resetPersistentVolumeReclaimPolicy() {
+    this._persistentVolumeReclaimPolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get persistentVolumeReclaimPolicyInput() {
+    return this._persistentVolumeReclaimPolicy;
+  }
+
+  // storage_class_name - computed: false, optional: true, required: false
+  private _storageClassName?: string; 
+  public get storageClassName() {
+    return this.getStringAttribute('storage_class_name');
+  }
+  public set storageClassName(value: string) {
+    this._storageClassName = value;
+  }
+  public resetStorageClassName() {
+    this._storageClassName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get storageClassNameInput() {
+    return this._storageClassName;
+  }
+
+  // volume_mode - computed: false, optional: true, required: false
+  private _volumeMode?: string; 
+  public get volumeMode() {
+    return this.getStringAttribute('volume_mode');
+  }
+  public set volumeMode(value: string) {
+    this._volumeMode = value;
+  }
+  public resetVolumeMode() {
+    this._volumeMode = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get volumeModeInput() {
+    return this._volumeMode;
+  }
+
+  // claim_ref - computed: false, optional: true, required: false
+  private _claimRef = new PersistentVolumeV1SpecClaimRefOutputReference(this, "claim_ref");
+  public get claimRef() {
+    return this._claimRef;
+  }
+  public putClaimRef(value: PersistentVolumeV1SpecClaimRef) {
+    this._claimRef.internalValue = value;
+  }
+  public resetClaimRef() {
+    this._claimRef.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get claimRefInput() {
+    return this._claimRef.internalValue;
+  }
+
+  // node_affinity - computed: false, optional: true, required: false
+  private _nodeAffinity = new PersistentVolumeV1SpecNodeAffinityOutputReference(this, "node_affinity");
+  public get nodeAffinity() {
+    return this._nodeAffinity;
+  }
+  public putNodeAffinity(value: PersistentVolumeV1SpecNodeAffinity) {
+    this._nodeAffinity.internalValue = value;
+  }
+  public resetNodeAffinity() {
+    this._nodeAffinity.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nodeAffinityInput() {
+    return this._nodeAffinity.internalValue;
+  }
+
+  // persistent_volume_source - computed: false, optional: false, required: true
+  private _persistentVolumeSource = new PersistentVolumeV1SpecPersistentVolumeSourceOutputReference(this, "persistent_volume_source");
+  public get persistentVolumeSource() {
+    return this._persistentVolumeSource;
+  }
+  public putPersistentVolumeSource(value: PersistentVolumeV1SpecPersistentVolumeSource) {
+    this._persistentVolumeSource.internalValue = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get persistentVolumeSourceInput() {
+    return this._persistentVolumeSource.internalValue;
+  }
+}
+
+export class PersistentVolumeV1SpecList extends cdktf.ComplexList {
+  public internalValue? : PersistentVolumeV1Spec[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PersistentVolumeV1SpecOutputReference {
+    return new PersistentVolumeV1SpecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PersistentVolumeV1Timeouts {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/persistent_volume_v1#create PersistentVolumeV1#create}
@@ -4773,6 +5364,7 @@ export function persistentVolumeV1TimeoutsToTerraform(struct?: PersistentVolumeV
 
 export class PersistentVolumeV1TimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
 
   /**
   * @param terraformResource The parent resource
@@ -4782,7 +5374,10 @@ export class PersistentVolumeV1TimeoutsOutputReference extends cdktf.ComplexObje
     super(terraformResource, terraformAttribute, false, 0);
   }
 
-  public get internalValue(): PersistentVolumeV1Timeouts | undefined {
+  public get internalValue(): PersistentVolumeV1Timeouts | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._create !== undefined) {
@@ -4792,13 +5387,19 @@ export class PersistentVolumeV1TimeoutsOutputReference extends cdktf.ComplexObje
     return hasAnyValues ? internalValueResult : undefined;
   }
 
-  public set internalValue(value: PersistentVolumeV1Timeouts | undefined) {
+  public set internalValue(value: PersistentVolumeV1Timeouts | cdktf.IResolvable | undefined) {
     if (value === undefined) {
       this.isEmptyObject = false;
+      this.resolvableValue = undefined;
       this._create = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
       this._create = value.create;
     }
   }
@@ -4854,8 +5455,9 @@ export class PersistentVolumeV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
-    this._spec = config.spec;
+    this._spec.internalValue = config.spec;
     this._timeouts.internalValue = config.timeouts;
   }
 
@@ -4864,8 +5466,19 @@ export class PersistentVolumeV1 extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -4882,17 +5495,16 @@ export class PersistentVolumeV1 extends cdktf.TerraformResource {
   }
 
   // spec - computed: false, optional: false, required: true
-  private _spec?: PersistentVolumeV1Spec[] | cdktf.IResolvable; 
+  private _spec = new PersistentVolumeV1SpecList(this, "spec", false);
   public get spec() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('spec');
+    return this._spec;
   }
-  public set spec(value: PersistentVolumeV1Spec[] | cdktf.IResolvable) {
-    this._spec = value;
+  public putSpec(value: PersistentVolumeV1Spec[] | cdktf.IResolvable) {
+    this._spec.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get specInput() {
-    return this._spec;
+    return this._spec.internalValue;
   }
 
   // timeouts - computed: false, optional: true, required: false
@@ -4917,8 +5529,9 @@ export class PersistentVolumeV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       metadata: persistentVolumeV1MetadataToTerraform(this._metadata.internalValue),
-      spec: cdktf.listMapper(persistentVolumeV1SpecToTerraform)(this._spec),
+      spec: cdktf.listMapper(persistentVolumeV1SpecToTerraform)(this._spec.internalValue),
       timeouts: persistentVolumeV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
   }

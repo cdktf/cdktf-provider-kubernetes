@@ -26,6 +26,13 @@ export interface AnnotationsConfig extends cdktf.TerraformMetaArguments {
   */
   readonly force?: boolean | cdktf.IResolvable;
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/annotations#id Annotations#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * The kind of the resource to annotate.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/annotations#kind Annotations#kind}
@@ -169,6 +176,7 @@ export class Annotations extends cdktf.TerraformResource {
     this._annotations = config.annotations;
     this._apiVersion = config.apiVersion;
     this._force = config.force;
+    this._id = config.id;
     this._kind = config.kind;
     this._metadata.internalValue = config.metadata;
   }
@@ -220,8 +228,19 @@ export class Annotations extends cdktf.TerraformResource {
   }
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // kind - computed: false, optional: false, required: true
@@ -259,6 +278,7 @@ export class Annotations extends cdktf.TerraformResource {
       annotations: cdktf.hashMapper(cdktf.stringToTerraform)(this._annotations),
       api_version: cdktf.stringToTerraform(this._apiVersion),
       force: cdktf.booleanToTerraform(this._force),
+      id: cdktf.stringToTerraform(this._id),
       kind: cdktf.stringToTerraform(this._kind),
       metadata: annotationsMetadataToTerraform(this._metadata.internalValue),
     };

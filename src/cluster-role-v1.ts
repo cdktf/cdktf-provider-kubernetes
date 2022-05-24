@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface ClusterRoleV1Config extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_v1#id ClusterRoleV1#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * aggregation_rule block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_v1#aggregation_rule ClusterRoleV1#aggregation_rule}
@@ -59,6 +66,130 @@ export function clusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressions
   }
 }
 
+export class ClusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ClusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ClusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class ClusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : ClusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ClusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressionsOutputReference {
+    return new ClusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ClusterRoleV1AggregationRuleClusterRoleSelectors {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
@@ -85,6 +216,108 @@ export function clusterRoleV1AggregationRuleClusterRoleSelectorsToTerraform(stru
   }
 }
 
+export class ClusterRoleV1AggregationRuleClusterRoleSelectorsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ClusterRoleV1AggregationRuleClusterRoleSelectors | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._matchLabels !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ClusterRoleV1AggregationRuleClusterRoleSelectors | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._matchLabels = undefined;
+      this._matchExpressions.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions.internalValue = value.matchExpressions;
+    }
+  }
+
+  // match_labels - computed: false, optional: true, required: false
+  private _matchLabels?: { [key: string]: string }; 
+  public get matchLabels() {
+    return this.getStringMapAttribute('match_labels');
+  }
+  public set matchLabels(value: { [key: string]: string }) {
+    this._matchLabels = value;
+  }
+  public resetMatchLabels() {
+    this._matchLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchLabelsInput() {
+    return this._matchLabels;
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions = new ClusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressionsList(this, "match_expressions", false);
+  public get matchExpressions() {
+    return this._matchExpressions;
+  }
+  public putMatchExpressions(value: ClusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions.internalValue;
+  }
+}
+
+export class ClusterRoleV1AggregationRuleClusterRoleSelectorsList extends cdktf.ComplexList {
+  public internalValue? : ClusterRoleV1AggregationRuleClusterRoleSelectors[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ClusterRoleV1AggregationRuleClusterRoleSelectorsOutputReference {
+    return new ClusterRoleV1AggregationRuleClusterRoleSelectorsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ClusterRoleV1AggregationRule {
   /**
   * cluster_role_selectors block
@@ -118,9 +351,9 @@ export class ClusterRoleV1AggregationRuleOutputReference extends cdktf.ComplexOb
   public get internalValue(): ClusterRoleV1AggregationRule | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._clusterRoleSelectors !== undefined) {
+    if (this._clusterRoleSelectors?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.clusterRoleSelectors = this._clusterRoleSelectors;
+      internalValueResult.clusterRoleSelectors = this._clusterRoleSelectors?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -128,29 +361,28 @@ export class ClusterRoleV1AggregationRuleOutputReference extends cdktf.ComplexOb
   public set internalValue(value: ClusterRoleV1AggregationRule | undefined) {
     if (value === undefined) {
       this.isEmptyObject = false;
-      this._clusterRoleSelectors = undefined;
+      this._clusterRoleSelectors.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
-      this._clusterRoleSelectors = value.clusterRoleSelectors;
+      this._clusterRoleSelectors.internalValue = value.clusterRoleSelectors;
     }
   }
 
   // cluster_role_selectors - computed: false, optional: true, required: false
-  private _clusterRoleSelectors?: ClusterRoleV1AggregationRuleClusterRoleSelectors[] | cdktf.IResolvable; 
+  private _clusterRoleSelectors = new ClusterRoleV1AggregationRuleClusterRoleSelectorsList(this, "cluster_role_selectors", false);
   public get clusterRoleSelectors() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('cluster_role_selectors');
+    return this._clusterRoleSelectors;
   }
-  public set clusterRoleSelectors(value: ClusterRoleV1AggregationRuleClusterRoleSelectors[] | cdktf.IResolvable) {
-    this._clusterRoleSelectors = value;
+  public putClusterRoleSelectors(value: ClusterRoleV1AggregationRuleClusterRoleSelectors[] | cdktf.IResolvable) {
+    this._clusterRoleSelectors.internalValue = value;
   }
   public resetClusterRoleSelectors() {
-    this._clusterRoleSelectors = undefined;
+    this._clusterRoleSelectors.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get clusterRoleSelectorsInput() {
-    return this._clusterRoleSelectors;
+    return this._clusterRoleSelectors.internalValue;
   }
 }
 export interface ClusterRoleV1Metadata {
@@ -340,6 +572,171 @@ export function clusterRoleV1RuleToTerraform(struct?: ClusterRoleV1Rule | cdktf.
   }
 }
 
+export class ClusterRoleV1RuleOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ClusterRoleV1Rule | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._apiGroups !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.apiGroups = this._apiGroups;
+    }
+    if (this._nonResourceUrls !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.nonResourceUrls = this._nonResourceUrls;
+    }
+    if (this._resourceNames !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.resourceNames = this._resourceNames;
+    }
+    if (this._resources !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.resources = this._resources;
+    }
+    if (this._verbs !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.verbs = this._verbs;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ClusterRoleV1Rule | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._apiGroups = undefined;
+      this._nonResourceUrls = undefined;
+      this._resourceNames = undefined;
+      this._resources = undefined;
+      this._verbs = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._apiGroups = value.apiGroups;
+      this._nonResourceUrls = value.nonResourceUrls;
+      this._resourceNames = value.resourceNames;
+      this._resources = value.resources;
+      this._verbs = value.verbs;
+    }
+  }
+
+  // api_groups - computed: false, optional: true, required: false
+  private _apiGroups?: string[]; 
+  public get apiGroups() {
+    return this.getListAttribute('api_groups');
+  }
+  public set apiGroups(value: string[]) {
+    this._apiGroups = value;
+  }
+  public resetApiGroups() {
+    this._apiGroups = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get apiGroupsInput() {
+    return this._apiGroups;
+  }
+
+  // non_resource_urls - computed: false, optional: true, required: false
+  private _nonResourceUrls?: string[]; 
+  public get nonResourceUrls() {
+    return this.getListAttribute('non_resource_urls');
+  }
+  public set nonResourceUrls(value: string[]) {
+    this._nonResourceUrls = value;
+  }
+  public resetNonResourceUrls() {
+    this._nonResourceUrls = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nonResourceUrlsInput() {
+    return this._nonResourceUrls;
+  }
+
+  // resource_names - computed: false, optional: true, required: false
+  private _resourceNames?: string[]; 
+  public get resourceNames() {
+    return this.getListAttribute('resource_names');
+  }
+  public set resourceNames(value: string[]) {
+    this._resourceNames = value;
+  }
+  public resetResourceNames() {
+    this._resourceNames = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourceNamesInput() {
+    return this._resourceNames;
+  }
+
+  // resources - computed: false, optional: true, required: false
+  private _resources?: string[]; 
+  public get resources() {
+    return this.getListAttribute('resources');
+  }
+  public set resources(value: string[]) {
+    this._resources = value;
+  }
+  public resetResources() {
+    this._resources = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourcesInput() {
+    return this._resources;
+  }
+
+  // verbs - computed: false, optional: false, required: true
+  private _verbs?: string[]; 
+  public get verbs() {
+    return this.getListAttribute('verbs');
+  }
+  public set verbs(value: string[]) {
+    this._verbs = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get verbsInput() {
+    return this._verbs;
+  }
+}
+
+export class ClusterRoleV1RuleList extends cdktf.ComplexList {
+  public internalValue? : ClusterRoleV1Rule[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ClusterRoleV1RuleOutputReference {
+    return new ClusterRoleV1RuleOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_v1 kubernetes_cluster_role_v1}
@@ -375,9 +772,10 @@ export class ClusterRoleV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._aggregationRule.internalValue = config.aggregationRule;
     this._metadata.internalValue = config.metadata;
-    this._rule = config.rule;
+    this._rule.internalValue = config.rule;
   }
 
   // ==========
@@ -385,8 +783,19 @@ export class ClusterRoleV1 extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // aggregation_rule - computed: false, optional: true, required: false
@@ -419,20 +828,19 @@ export class ClusterRoleV1 extends cdktf.TerraformResource {
   }
 
   // rule - computed: false, optional: true, required: false
-  private _rule?: ClusterRoleV1Rule[] | cdktf.IResolvable; 
+  private _rule = new ClusterRoleV1RuleList(this, "rule", false);
   public get rule() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('rule');
+    return this._rule;
   }
-  public set rule(value: ClusterRoleV1Rule[] | cdktf.IResolvable) {
-    this._rule = value;
+  public putRule(value: ClusterRoleV1Rule[] | cdktf.IResolvable) {
+    this._rule.internalValue = value;
   }
   public resetRule() {
-    this._rule = undefined;
+    this._rule.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get ruleInput() {
-    return this._rule;
+    return this._rule.internalValue;
   }
 
   // =========
@@ -441,9 +849,10 @@ export class ClusterRoleV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       aggregation_rule: clusterRoleV1AggregationRuleToTerraform(this._aggregationRule.internalValue),
       metadata: clusterRoleV1MetadataToTerraform(this._metadata.internalValue),
-      rule: cdktf.listMapper(clusterRoleV1RuleToTerraform)(this._rule),
+      rule: cdktf.listMapper(clusterRoleV1RuleToTerraform)(this._rule.internalValue),
     };
   }
 }

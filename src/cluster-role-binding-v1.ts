@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface ClusterRoleBindingV1Config extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding_v1#id ClusterRoleBindingV1#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding_v1#metadata ClusterRoleBindingV1#metadata}
@@ -322,6 +329,146 @@ export function clusterRoleBindingV1SubjectToTerraform(struct?: ClusterRoleBindi
   }
 }
 
+export class ClusterRoleBindingV1SubjectOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ClusterRoleBindingV1Subject | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._apiGroup !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.apiGroup = this._apiGroup;
+    }
+    if (this._kind !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.kind = this._kind;
+    }
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ClusterRoleBindingV1Subject | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._apiGroup = undefined;
+      this._kind = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._apiGroup = value.apiGroup;
+      this._kind = value.kind;
+      this._name = value.name;
+      this._namespace = value.namespace;
+    }
+  }
+
+  // api_group - computed: true, optional: true, required: false
+  private _apiGroup?: string; 
+  public get apiGroup() {
+    return this.getStringAttribute('api_group');
+  }
+  public set apiGroup(value: string) {
+    this._apiGroup = value;
+  }
+  public resetApiGroup() {
+    this._apiGroup = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get apiGroupInput() {
+    return this._apiGroup;
+  }
+
+  // kind - computed: false, optional: false, required: true
+  private _kind?: string; 
+  public get kind() {
+    return this.getStringAttribute('kind');
+  }
+  public set kind(value: string) {
+    this._kind = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get kindInput() {
+    return this._kind;
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // namespace - computed: false, optional: true, required: false
+  private _namespace?: string; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace;
+  }
+}
+
+export class ClusterRoleBindingV1SubjectList extends cdktf.ComplexList {
+  public internalValue? : ClusterRoleBindingV1Subject[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ClusterRoleBindingV1SubjectOutputReference {
+    return new ClusterRoleBindingV1SubjectOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding_v1 kubernetes_cluster_role_binding_v1}
@@ -357,9 +504,10 @@ export class ClusterRoleBindingV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
     this._roleRef.internalValue = config.roleRef;
-    this._subject = config.subject;
+    this._subject.internalValue = config.subject;
   }
 
   // ==========
@@ -367,8 +515,19 @@ export class ClusterRoleBindingV1 extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -398,17 +557,16 @@ export class ClusterRoleBindingV1 extends cdktf.TerraformResource {
   }
 
   // subject - computed: false, optional: false, required: true
-  private _subject?: ClusterRoleBindingV1Subject[] | cdktf.IResolvable; 
+  private _subject = new ClusterRoleBindingV1SubjectList(this, "subject", false);
   public get subject() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('subject');
+    return this._subject;
   }
-  public set subject(value: ClusterRoleBindingV1Subject[] | cdktf.IResolvable) {
-    this._subject = value;
+  public putSubject(value: ClusterRoleBindingV1Subject[] | cdktf.IResolvable) {
+    this._subject.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get subjectInput() {
-    return this._subject;
+    return this._subject.internalValue;
   }
 
   // =========
@@ -417,9 +575,10 @@ export class ClusterRoleBindingV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       metadata: clusterRoleBindingV1MetadataToTerraform(this._metadata.internalValue),
       role_ref: clusterRoleBindingV1RoleRefToTerraform(this._roleRef.internalValue),
-      subject: cdktf.listMapper(clusterRoleBindingV1SubjectToTerraform)(this._subject),
+      subject: cdktf.listMapper(clusterRoleBindingV1SubjectToTerraform)(this._subject.internalValue),
     };
   }
 }

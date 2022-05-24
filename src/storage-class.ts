@@ -14,6 +14,13 @@ export interface StorageClassConfig extends cdktf.TerraformMetaArguments {
   */
   readonly allowVolumeExpansion?: boolean | cdktf.IResolvable;
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#id StorageClass#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * Persistent Volumes that are dynamically created by a storage class will have the mount options specified
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#mount_options StorageClass#mount_options}
@@ -82,6 +89,108 @@ export function storageClassAllowedTopologiesMatchLabelExpressionsToTerraform(st
   }
 }
 
+export class StorageClassAllowedTopologiesMatchLabelExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): StorageClassAllowedTopologiesMatchLabelExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: StorageClassAllowedTopologiesMatchLabelExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class StorageClassAllowedTopologiesMatchLabelExpressionsList extends cdktf.ComplexList {
+  public internalValue? : StorageClassAllowedTopologiesMatchLabelExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): StorageClassAllowedTopologiesMatchLabelExpressionsOutputReference {
+    return new StorageClassAllowedTopologiesMatchLabelExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface StorageClassAllowedTopologies {
   /**
   * match_label_expressions block
@@ -115,9 +224,9 @@ export class StorageClassAllowedTopologiesOutputReference extends cdktf.ComplexO
   public get internalValue(): StorageClassAllowedTopologies | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchLabelExpressions !== undefined) {
+    if (this._matchLabelExpressions?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.matchLabelExpressions = this._matchLabelExpressions;
+      internalValueResult.matchLabelExpressions = this._matchLabelExpressions?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -125,29 +234,28 @@ export class StorageClassAllowedTopologiesOutputReference extends cdktf.ComplexO
   public set internalValue(value: StorageClassAllowedTopologies | undefined) {
     if (value === undefined) {
       this.isEmptyObject = false;
-      this._matchLabelExpressions = undefined;
+      this._matchLabelExpressions.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
-      this._matchLabelExpressions = value.matchLabelExpressions;
+      this._matchLabelExpressions.internalValue = value.matchLabelExpressions;
     }
   }
 
   // match_label_expressions - computed: false, optional: true, required: false
-  private _matchLabelExpressions?: StorageClassAllowedTopologiesMatchLabelExpressions[] | cdktf.IResolvable; 
+  private _matchLabelExpressions = new StorageClassAllowedTopologiesMatchLabelExpressionsList(this, "match_label_expressions", false);
   public get matchLabelExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_label_expressions');
+    return this._matchLabelExpressions;
   }
-  public set matchLabelExpressions(value: StorageClassAllowedTopologiesMatchLabelExpressions[] | cdktf.IResolvable) {
-    this._matchLabelExpressions = value;
+  public putMatchLabelExpressions(value: StorageClassAllowedTopologiesMatchLabelExpressions[] | cdktf.IResolvable) {
+    this._matchLabelExpressions.internalValue = value;
   }
   public resetMatchLabelExpressions() {
-    this._matchLabelExpressions = undefined;
+    this._matchLabelExpressions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get matchLabelExpressionsInput() {
-    return this._matchLabelExpressions;
+    return this._matchLabelExpressions.internalValue;
   }
 }
 export interface StorageClassMetadata {
@@ -355,6 +463,7 @@ export class StorageClass extends cdktf.TerraformResource {
       lifecycle: config.lifecycle
     });
     this._allowVolumeExpansion = config.allowVolumeExpansion;
+    this._id = config.id;
     this._mountOptions = config.mountOptions;
     this._parameters = config.parameters;
     this._reclaimPolicy = config.reclaimPolicy;
@@ -385,8 +494,19 @@ export class StorageClass extends cdktf.TerraformResource {
   }
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // mount_options - computed: false, optional: true, required: false
@@ -502,6 +622,7 @@ export class StorageClass extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       allow_volume_expansion: cdktf.booleanToTerraform(this._allowVolumeExpansion),
+      id: cdktf.stringToTerraform(this._id),
       mount_options: cdktf.listMapper(cdktf.stringToTerraform)(this._mountOptions),
       parameters: cdktf.hashMapper(cdktf.stringToTerraform)(this._parameters),
       reclaim_policy: cdktf.stringToTerraform(this._reclaimPolicy),

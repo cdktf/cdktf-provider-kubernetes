@@ -20,6 +20,13 @@ export interface ConfigMapV1DataConfig extends cdktf.TerraformMetaArguments {
   */
   readonly force?: boolean | cdktf.IResolvable;
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/config_map_v1_data#id ConfigMapV1Data#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/config_map_v1_data#metadata ConfigMapV1Data#metadata}
@@ -156,6 +163,7 @@ export class ConfigMapV1Data extends cdktf.TerraformResource {
     });
     this._data = config.data;
     this._force = config.force;
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
   }
 
@@ -193,8 +201,19 @@ export class ConfigMapV1Data extends cdktf.TerraformResource {
   }
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -218,6 +237,7 @@ export class ConfigMapV1Data extends cdktf.TerraformResource {
     return {
       data: cdktf.hashMapper(cdktf.stringToTerraform)(this._data),
       force: cdktf.booleanToTerraform(this._force),
+      id: cdktf.stringToTerraform(this._id),
       metadata: configMapV1DataMetadataToTerraform(this._metadata.internalValue),
     };
   }
