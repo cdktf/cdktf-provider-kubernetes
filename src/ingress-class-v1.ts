@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface IngressClassV1Config extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#id IngressClassV1#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress_class_v1#metadata IngressClassV1#metadata}
@@ -232,6 +239,168 @@ export function ingressClassV1SpecParametersToTerraform(struct?: IngressClassV1S
   }
 }
 
+export class IngressClassV1SpecParametersOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): IngressClassV1SpecParameters | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._apiGroup !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.apiGroup = this._apiGroup;
+    }
+    if (this._kind !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.kind = this._kind;
+    }
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._namespace !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.namespace = this._namespace;
+    }
+    if (this._scope !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.scope = this._scope;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: IngressClassV1SpecParameters | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._apiGroup = undefined;
+      this._kind = undefined;
+      this._name = undefined;
+      this._namespace = undefined;
+      this._scope = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._apiGroup = value.apiGroup;
+      this._kind = value.kind;
+      this._name = value.name;
+      this._namespace = value.namespace;
+      this._scope = value.scope;
+    }
+  }
+
+  // api_group - computed: false, optional: true, required: false
+  private _apiGroup?: string; 
+  public get apiGroup() {
+    return this.getStringAttribute('api_group');
+  }
+  public set apiGroup(value: string) {
+    this._apiGroup = value;
+  }
+  public resetApiGroup() {
+    this._apiGroup = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get apiGroupInput() {
+    return this._apiGroup;
+  }
+
+  // kind - computed: false, optional: false, required: true
+  private _kind?: string; 
+  public get kind() {
+    return this.getStringAttribute('kind');
+  }
+  public set kind(value: string) {
+    this._kind = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get kindInput() {
+    return this._kind;
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // namespace - computed: false, optional: true, required: false
+  private _namespace?: string; 
+  public get namespace() {
+    return this.getStringAttribute('namespace');
+  }
+  public set namespace(value: string) {
+    this._namespace = value;
+  }
+  public resetNamespace() {
+    this._namespace = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceInput() {
+    return this._namespace;
+  }
+
+  // scope - computed: true, optional: true, required: false
+  private _scope?: string; 
+  public get scope() {
+    return this.getStringAttribute('scope');
+  }
+  public set scope(value: string) {
+    this._scope = value;
+  }
+  public resetScope() {
+    this._scope = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get scopeInput() {
+    return this._scope;
+  }
+}
+
+export class IngressClassV1SpecParametersList extends cdktf.ComplexList {
+  public internalValue? : IngressClassV1SpecParameters[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): IngressClassV1SpecParametersOutputReference {
+    return new IngressClassV1SpecParametersOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface IngressClassV1Spec {
   /**
   * Controller refers to the name of the controller that should handle this class. This allows for different "flavors" that are controlled by the same controller. For example, you may have different Parameters for the same implementing controller. This should be specified as a domain-prefixed path no more than 250 characters in length, e.g. "acme.io/ingress-controller". This field is immutable.
@@ -276,9 +445,9 @@ export class IngressClassV1SpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.controller = this._controller;
     }
-    if (this._parameters !== undefined) {
+    if (this._parameters?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.parameters = this._parameters;
+      internalValueResult.parameters = this._parameters?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -287,12 +456,12 @@ export class IngressClassV1SpecOutputReference extends cdktf.ComplexObject {
     if (value === undefined) {
       this.isEmptyObject = false;
       this._controller = undefined;
-      this._parameters = undefined;
+      this._parameters.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._controller = value.controller;
-      this._parameters = value.parameters;
+      this._parameters.internalValue = value.parameters;
     }
   }
 
@@ -313,20 +482,19 @@ export class IngressClassV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   // parameters - computed: false, optional: true, required: false
-  private _parameters?: IngressClassV1SpecParameters[] | cdktf.IResolvable; 
+  private _parameters = new IngressClassV1SpecParametersList(this, "parameters", false);
   public get parameters() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('parameters');
+    return this._parameters;
   }
-  public set parameters(value: IngressClassV1SpecParameters[] | cdktf.IResolvable) {
-    this._parameters = value;
+  public putParameters(value: IngressClassV1SpecParameters[] | cdktf.IResolvable) {
+    this._parameters.internalValue = value;
   }
   public resetParameters() {
-    this._parameters = undefined;
+    this._parameters.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get parametersInput() {
-    return this._parameters;
+    return this._parameters.internalValue;
   }
 }
 
@@ -364,6 +532,7 @@ export class IngressClassV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
     this._spec.internalValue = config.spec;
   }
@@ -373,8 +542,19 @@ export class IngressClassV1 extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -409,6 +589,7 @@ export class IngressClassV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       metadata: ingressClassV1MetadataToTerraform(this._metadata.internalValue),
       spec: ingressClassV1SpecToTerraform(this._spec.internalValue),
     };

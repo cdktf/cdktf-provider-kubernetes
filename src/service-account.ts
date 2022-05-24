@@ -14,6 +14,13 @@ export interface ServiceAccountConfig extends cdktf.TerraformMetaArguments {
   */
   readonly automountServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_account#id ServiceAccount#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * image_pull_secret block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_account#image_pull_secret ServiceAccount#image_pull_secret}
@@ -57,6 +64,86 @@ export function serviceAccountImagePullSecretToTerraform(struct?: ServiceAccount
   }
 }
 
+export class ServiceAccountImagePullSecretOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceAccountImagePullSecret | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceAccountImagePullSecret | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._name = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._name = value.name;
+    }
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+}
+
+export class ServiceAccountImagePullSecretList extends cdktf.ComplexList {
+  public internalValue? : ServiceAccountImagePullSecret[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceAccountImagePullSecretOutputReference {
+    return new ServiceAccountImagePullSecretOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ServiceAccountMetadata {
   /**
   * An unstructured key value map stored with the service account that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
@@ -274,6 +361,86 @@ export function serviceAccountSecretToTerraform(struct?: ServiceAccountSecret | 
   }
 }
 
+export class ServiceAccountSecretOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceAccountSecret | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceAccountSecret | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._name = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._name = value.name;
+    }
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+}
+
+export class ServiceAccountSecretList extends cdktf.ComplexList {
+  public internalValue? : ServiceAccountSecret[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceAccountSecretOutputReference {
+    return new ServiceAccountSecretOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ServiceAccountTimeouts {
   /**
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_account#create ServiceAccount#create}
@@ -293,6 +460,7 @@ export function serviceAccountTimeoutsToTerraform(struct?: ServiceAccountTimeout
 
 export class ServiceAccountTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
 
   /**
   * @param terraformResource The parent resource
@@ -302,7 +470,10 @@ export class ServiceAccountTimeoutsOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, false, 0);
   }
 
-  public get internalValue(): ServiceAccountTimeouts | undefined {
+  public get internalValue(): ServiceAccountTimeouts | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._create !== undefined) {
@@ -312,13 +483,19 @@ export class ServiceAccountTimeoutsOutputReference extends cdktf.ComplexObject {
     return hasAnyValues ? internalValueResult : undefined;
   }
 
-  public set internalValue(value: ServiceAccountTimeouts | undefined) {
+  public set internalValue(value: ServiceAccountTimeouts | cdktf.IResolvable | undefined) {
     if (value === undefined) {
       this.isEmptyObject = false;
+      this.resolvableValue = undefined;
       this._create = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
       this._create = value.create;
     }
   }
@@ -375,9 +552,10 @@ export class ServiceAccount extends cdktf.TerraformResource {
       lifecycle: config.lifecycle
     });
     this._automountServiceAccountToken = config.automountServiceAccountToken;
-    this._imagePullSecret = config.imagePullSecret;
+    this._id = config.id;
+    this._imagePullSecret.internalValue = config.imagePullSecret;
     this._metadata.internalValue = config.metadata;
-    this._secret = config.secret;
+    this._secret.internalValue = config.secret;
     this._timeouts.internalValue = config.timeouts;
   }
 
@@ -407,25 +585,35 @@ export class ServiceAccount extends cdktf.TerraformResource {
   }
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
   }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
+  }
 
   // image_pull_secret - computed: false, optional: true, required: false
-  private _imagePullSecret?: ServiceAccountImagePullSecret[] | cdktf.IResolvable; 
+  private _imagePullSecret = new ServiceAccountImagePullSecretList(this, "image_pull_secret", true);
   public get imagePullSecret() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('image_pull_secret')));
+    return this._imagePullSecret;
   }
-  public set imagePullSecret(value: ServiceAccountImagePullSecret[] | cdktf.IResolvable) {
-    this._imagePullSecret = value;
+  public putImagePullSecret(value: ServiceAccountImagePullSecret[] | cdktf.IResolvable) {
+    this._imagePullSecret.internalValue = value;
   }
   public resetImagePullSecret() {
-    this._imagePullSecret = undefined;
+    this._imagePullSecret.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get imagePullSecretInput() {
-    return this._imagePullSecret;
+    return this._imagePullSecret.internalValue;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -442,20 +630,19 @@ export class ServiceAccount extends cdktf.TerraformResource {
   }
 
   // secret - computed: false, optional: true, required: false
-  private _secret?: ServiceAccountSecret[] | cdktf.IResolvable; 
+  private _secret = new ServiceAccountSecretList(this, "secret", true);
   public get secret() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('secret')));
+    return this._secret;
   }
-  public set secret(value: ServiceAccountSecret[] | cdktf.IResolvable) {
-    this._secret = value;
+  public putSecret(value: ServiceAccountSecret[] | cdktf.IResolvable) {
+    this._secret.internalValue = value;
   }
   public resetSecret() {
-    this._secret = undefined;
+    this._secret.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretInput() {
-    return this._secret;
+    return this._secret.internalValue;
   }
 
   // timeouts - computed: false, optional: true, required: false
@@ -481,9 +668,10 @@ export class ServiceAccount extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       automount_service_account_token: cdktf.booleanToTerraform(this._automountServiceAccountToken),
-      image_pull_secret: cdktf.listMapper(serviceAccountImagePullSecretToTerraform)(this._imagePullSecret),
+      id: cdktf.stringToTerraform(this._id),
+      image_pull_secret: cdktf.listMapper(serviceAccountImagePullSecretToTerraform)(this._imagePullSecret.internalValue),
       metadata: serviceAccountMetadataToTerraform(this._metadata.internalValue),
-      secret: cdktf.listMapper(serviceAccountSecretToTerraform)(this._secret),
+      secret: cdktf.listMapper(serviceAccountSecretToTerraform)(this._secret.internalValue),
       timeouts: serviceAccountTimeoutsToTerraform(this._timeouts.internalValue),
     };
   }

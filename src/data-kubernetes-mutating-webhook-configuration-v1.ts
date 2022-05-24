@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface DataKubernetesMutatingWebhookConfigurationV1Config extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/mutating_webhook_configuration_v1#id DataKubernetesMutatingWebhookConfigurationV1#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/mutating_webhook_configuration_v1#metadata DataKubernetesMutatingWebhookConfigurationV1#metadata}
@@ -289,8 +296,9 @@ export class DataKubernetesMutatingWebhookConfigurationV1WebhookNamespaceSelecto
   }
 
   // match_labels - computed: true, optional: false, required: false
-  public matchLabels(key: string): string | cdktf.IResolvable {
-    return new cdktf.StringMap(this, 'match_labels').lookup(key);
+  private _matchLabels = new cdktf.StringMap(this, "match_labels");
+  public get matchLabels() {
+    return this._matchLabels;
   }
 }
 
@@ -433,8 +441,9 @@ export class DataKubernetesMutatingWebhookConfigurationV1WebhookObjectSelectorOu
   }
 
   // match_labels - computed: true, optional: false, required: false
-  public matchLabels(key: string): string | cdktf.IResolvable {
-    return new cdktf.StringMap(this, 'match_labels').lookup(key);
+  private _matchLabels = new cdktf.StringMap(this, "match_labels");
+  public get matchLabels() {
+    return this._matchLabels;
   }
 }
 
@@ -833,6 +842,7 @@ export class DataKubernetesMutatingWebhookConfigurationV1 extends cdktf.Terrafor
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
   }
 
@@ -841,8 +851,19 @@ export class DataKubernetesMutatingWebhookConfigurationV1 extends cdktf.Terrafor
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // webhook - computed: true, optional: false, required: false
@@ -870,6 +891,7 @@ export class DataKubernetesMutatingWebhookConfigurationV1 extends cdktf.Terrafor
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       metadata: dataKubernetesMutatingWebhookConfigurationV1MetadataToTerraform(this._metadata.internalValue),
     };
   }

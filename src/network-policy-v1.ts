@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface NetworkPolicyV1Config extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/network_policy_v1#id NetworkPolicyV1#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/network_policy_v1#metadata NetworkPolicyV1#metadata}
@@ -244,6 +251,108 @@ export function networkPolicyV1SpecEgressPortsToTerraform(struct?: NetworkPolicy
   }
 }
 
+export class NetworkPolicyV1SpecEgressPortsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkPolicyV1SpecEgressPorts | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._protocol !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.protocol = this._protocol;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecEgressPorts | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._protocol = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._protocol = value.protocol;
+    }
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // protocol - computed: false, optional: true, required: false
+  private _protocol?: string; 
+  public get protocol() {
+    return this.getStringAttribute('protocol');
+  }
+  public set protocol(value: string) {
+    this._protocol = value;
+  }
+  public resetProtocol() {
+    this._protocol = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get protocolInput() {
+    return this._protocol;
+  }
+}
+
+export class NetworkPolicyV1SpecEgressPortsList extends cdktf.ComplexList {
+  public internalValue? : NetworkPolicyV1SpecEgressPorts[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkPolicyV1SpecEgressPortsOutputReference {
+    return new NetworkPolicyV1SpecEgressPortsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface NetworkPolicyV1SpecEgressToIpBlock {
   /**
   * CIDR is a string representing the IP Block Valid examples are "192.168.1.1/24" or "2001:db9::/64"
@@ -373,6 +482,130 @@ export function networkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsToTe
   }
 }
 
+export class NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsOutputReference {
+    return new NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface NetworkPolicyV1SpecEgressToNamespaceSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
@@ -417,9 +650,9 @@ export class NetworkPolicyV1SpecEgressToNamespaceSelectorOutputReference extends
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions !== undefined) {
+    if (this._matchExpressions?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.matchExpressions = this._matchExpressions;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -428,12 +661,12 @@ export class NetworkPolicyV1SpecEgressToNamespaceSelectorOutputReference extends
     if (value === undefined) {
       this.isEmptyObject = false;
       this._matchLabels = undefined;
-      this._matchExpressions = undefined;
+      this._matchExpressions.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
-      this._matchExpressions = value.matchExpressions;
+      this._matchExpressions.internalValue = value.matchExpressions;
     }
   }
 
@@ -454,20 +687,19 @@ export class NetworkPolicyV1SpecEgressToNamespaceSelectorOutputReference extends
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions[] | cdktf.IResolvable; 
+  private _matchExpressions = new NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsList(this, "match_expressions", false);
   public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+    return this._matchExpressions;
   }
-  public set matchExpressions(value: NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions[] | cdktf.IResolvable) {
-    this._matchExpressions = value;
+  public putMatchExpressions(value: NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
   }
   public resetMatchExpressions() {
-    this._matchExpressions = undefined;
+    this._matchExpressions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions;
+    return this._matchExpressions.internalValue;
   }
 }
 export interface NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions {
@@ -503,6 +735,130 @@ export function networkPolicyV1SpecEgressToPodSelectorMatchExpressionsToTerrafor
   }
 }
 
+export class NetworkPolicyV1SpecEgressToPodSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class NetworkPolicyV1SpecEgressToPodSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkPolicyV1SpecEgressToPodSelectorMatchExpressionsOutputReference {
+    return new NetworkPolicyV1SpecEgressToPodSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface NetworkPolicyV1SpecEgressToPodSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
@@ -547,9 +903,9 @@ export class NetworkPolicyV1SpecEgressToPodSelectorOutputReference extends cdktf
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions !== undefined) {
+    if (this._matchExpressions?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.matchExpressions = this._matchExpressions;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -558,12 +914,12 @@ export class NetworkPolicyV1SpecEgressToPodSelectorOutputReference extends cdktf
     if (value === undefined) {
       this.isEmptyObject = false;
       this._matchLabels = undefined;
-      this._matchExpressions = undefined;
+      this._matchExpressions.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
-      this._matchExpressions = value.matchExpressions;
+      this._matchExpressions.internalValue = value.matchExpressions;
     }
   }
 
@@ -584,20 +940,19 @@ export class NetworkPolicyV1SpecEgressToPodSelectorOutputReference extends cdktf
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions[] | cdktf.IResolvable; 
+  private _matchExpressions = new NetworkPolicyV1SpecEgressToPodSelectorMatchExpressionsList(this, "match_expressions", false);
   public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+    return this._matchExpressions;
   }
-  public set matchExpressions(value: NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions[] | cdktf.IResolvable) {
-    this._matchExpressions = value;
+  public putMatchExpressions(value: NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
   }
   public resetMatchExpressions() {
-    this._matchExpressions = undefined;
+    this._matchExpressions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions;
+    return this._matchExpressions.internalValue;
   }
 }
 export interface NetworkPolicyV1SpecEgressTo {
@@ -633,6 +988,130 @@ export function networkPolicyV1SpecEgressToToTerraform(struct?: NetworkPolicyV1S
   }
 }
 
+export class NetworkPolicyV1SpecEgressToOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkPolicyV1SpecEgressTo | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._ipBlock?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.ipBlock = this._ipBlock?.internalValue;
+    }
+    if (this._namespaceSelector?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.namespaceSelector = this._namespaceSelector?.internalValue;
+    }
+    if (this._podSelector?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.podSelector = this._podSelector?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecEgressTo | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._ipBlock.internalValue = undefined;
+      this._namespaceSelector.internalValue = undefined;
+      this._podSelector.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._ipBlock.internalValue = value.ipBlock;
+      this._namespaceSelector.internalValue = value.namespaceSelector;
+      this._podSelector.internalValue = value.podSelector;
+    }
+  }
+
+  // ip_block - computed: false, optional: true, required: false
+  private _ipBlock = new NetworkPolicyV1SpecEgressToIpBlockOutputReference(this, "ip_block");
+  public get ipBlock() {
+    return this._ipBlock;
+  }
+  public putIpBlock(value: NetworkPolicyV1SpecEgressToIpBlock) {
+    this._ipBlock.internalValue = value;
+  }
+  public resetIpBlock() {
+    this._ipBlock.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ipBlockInput() {
+    return this._ipBlock.internalValue;
+  }
+
+  // namespace_selector - computed: false, optional: true, required: false
+  private _namespaceSelector = new NetworkPolicyV1SpecEgressToNamespaceSelectorOutputReference(this, "namespace_selector");
+  public get namespaceSelector() {
+    return this._namespaceSelector;
+  }
+  public putNamespaceSelector(value: NetworkPolicyV1SpecEgressToNamespaceSelector) {
+    this._namespaceSelector.internalValue = value;
+  }
+  public resetNamespaceSelector() {
+    this._namespaceSelector.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceSelectorInput() {
+    return this._namespaceSelector.internalValue;
+  }
+
+  // pod_selector - computed: false, optional: true, required: false
+  private _podSelector = new NetworkPolicyV1SpecEgressToPodSelectorOutputReference(this, "pod_selector");
+  public get podSelector() {
+    return this._podSelector;
+  }
+  public putPodSelector(value: NetworkPolicyV1SpecEgressToPodSelector) {
+    this._podSelector.internalValue = value;
+  }
+  public resetPodSelector() {
+    this._podSelector.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get podSelectorInput() {
+    return this._podSelector.internalValue;
+  }
+}
+
+export class NetworkPolicyV1SpecEgressToList extends cdktf.ComplexList {
+  public internalValue? : NetworkPolicyV1SpecEgressTo[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkPolicyV1SpecEgressToOutputReference {
+    return new NetworkPolicyV1SpecEgressToOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface NetworkPolicyV1SpecEgress {
   /**
   * ports block
@@ -659,6 +1138,108 @@ export function networkPolicyV1SpecEgressToTerraform(struct?: NetworkPolicyV1Spe
   }
 }
 
+export class NetworkPolicyV1SpecEgressOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkPolicyV1SpecEgress | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._ports?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.ports = this._ports?.internalValue;
+    }
+    if (this._to?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.to = this._to?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecEgress | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._ports.internalValue = undefined;
+      this._to.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._ports.internalValue = value.ports;
+      this._to.internalValue = value.to;
+    }
+  }
+
+  // ports - computed: false, optional: true, required: false
+  private _ports = new NetworkPolicyV1SpecEgressPortsList(this, "ports", false);
+  public get ports() {
+    return this._ports;
+  }
+  public putPorts(value: NetworkPolicyV1SpecEgressPorts[] | cdktf.IResolvable) {
+    this._ports.internalValue = value;
+  }
+  public resetPorts() {
+    this._ports.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portsInput() {
+    return this._ports.internalValue;
+  }
+
+  // to - computed: false, optional: true, required: false
+  private _to = new NetworkPolicyV1SpecEgressToList(this, "to", false);
+  public get to() {
+    return this._to;
+  }
+  public putTo(value: NetworkPolicyV1SpecEgressTo[] | cdktf.IResolvable) {
+    this._to.internalValue = value;
+  }
+  public resetTo() {
+    this._to.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get toInput() {
+    return this._to.internalValue;
+  }
+}
+
+export class NetworkPolicyV1SpecEgressList extends cdktf.ComplexList {
+  public internalValue? : NetworkPolicyV1SpecEgress[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkPolicyV1SpecEgressOutputReference {
+    return new NetworkPolicyV1SpecEgressOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface NetworkPolicyV1SpecIngressFromIpBlock {
   /**
   * CIDR is a string representing the IP Block Valid examples are "192.168.1.1/24" or "2001:db9::/64"
@@ -788,6 +1369,130 @@ export function networkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsT
   }
 }
 
+export class NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsOutputReference {
+    return new NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface NetworkPolicyV1SpecIngressFromNamespaceSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
@@ -832,9 +1537,9 @@ export class NetworkPolicyV1SpecIngressFromNamespaceSelectorOutputReference exte
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions !== undefined) {
+    if (this._matchExpressions?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.matchExpressions = this._matchExpressions;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -843,12 +1548,12 @@ export class NetworkPolicyV1SpecIngressFromNamespaceSelectorOutputReference exte
     if (value === undefined) {
       this.isEmptyObject = false;
       this._matchLabels = undefined;
-      this._matchExpressions = undefined;
+      this._matchExpressions.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
-      this._matchExpressions = value.matchExpressions;
+      this._matchExpressions.internalValue = value.matchExpressions;
     }
   }
 
@@ -869,20 +1574,19 @@ export class NetworkPolicyV1SpecIngressFromNamespaceSelectorOutputReference exte
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions[] | cdktf.IResolvable; 
+  private _matchExpressions = new NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsList(this, "match_expressions", false);
   public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+    return this._matchExpressions;
   }
-  public set matchExpressions(value: NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions[] | cdktf.IResolvable) {
-    this._matchExpressions = value;
+  public putMatchExpressions(value: NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
   }
   public resetMatchExpressions() {
-    this._matchExpressions = undefined;
+    this._matchExpressions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions;
+    return this._matchExpressions.internalValue;
   }
 }
 export interface NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions {
@@ -918,6 +1622,130 @@ export function networkPolicyV1SpecIngressFromPodSelectorMatchExpressionsToTerra
   }
 }
 
+export class NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressionsOutputReference {
+    return new NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface NetworkPolicyV1SpecIngressFromPodSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
@@ -962,9 +1790,9 @@ export class NetworkPolicyV1SpecIngressFromPodSelectorOutputReference extends cd
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions !== undefined) {
+    if (this._matchExpressions?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.matchExpressions = this._matchExpressions;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -973,12 +1801,12 @@ export class NetworkPolicyV1SpecIngressFromPodSelectorOutputReference extends cd
     if (value === undefined) {
       this.isEmptyObject = false;
       this._matchLabels = undefined;
-      this._matchExpressions = undefined;
+      this._matchExpressions.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
-      this._matchExpressions = value.matchExpressions;
+      this._matchExpressions.internalValue = value.matchExpressions;
     }
   }
 
@@ -999,20 +1827,19 @@ export class NetworkPolicyV1SpecIngressFromPodSelectorOutputReference extends cd
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions[] | cdktf.IResolvable; 
+  private _matchExpressions = new NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressionsList(this, "match_expressions", false);
   public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+    return this._matchExpressions;
   }
-  public set matchExpressions(value: NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions[] | cdktf.IResolvable) {
-    this._matchExpressions = value;
+  public putMatchExpressions(value: NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
   }
   public resetMatchExpressions() {
-    this._matchExpressions = undefined;
+    this._matchExpressions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions;
+    return this._matchExpressions.internalValue;
   }
 }
 export interface NetworkPolicyV1SpecIngressFrom {
@@ -1048,6 +1875,130 @@ export function networkPolicyV1SpecIngressFromToTerraform(struct?: NetworkPolicy
   }
 }
 
+export class NetworkPolicyV1SpecIngressFromOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkPolicyV1SpecIngressFrom | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._ipBlock?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.ipBlock = this._ipBlock?.internalValue;
+    }
+    if (this._namespaceSelector?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.namespaceSelector = this._namespaceSelector?.internalValue;
+    }
+    if (this._podSelector?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.podSelector = this._podSelector?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecIngressFrom | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._ipBlock.internalValue = undefined;
+      this._namespaceSelector.internalValue = undefined;
+      this._podSelector.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._ipBlock.internalValue = value.ipBlock;
+      this._namespaceSelector.internalValue = value.namespaceSelector;
+      this._podSelector.internalValue = value.podSelector;
+    }
+  }
+
+  // ip_block - computed: false, optional: true, required: false
+  private _ipBlock = new NetworkPolicyV1SpecIngressFromIpBlockOutputReference(this, "ip_block");
+  public get ipBlock() {
+    return this._ipBlock;
+  }
+  public putIpBlock(value: NetworkPolicyV1SpecIngressFromIpBlock) {
+    this._ipBlock.internalValue = value;
+  }
+  public resetIpBlock() {
+    this._ipBlock.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ipBlockInput() {
+    return this._ipBlock.internalValue;
+  }
+
+  // namespace_selector - computed: false, optional: true, required: false
+  private _namespaceSelector = new NetworkPolicyV1SpecIngressFromNamespaceSelectorOutputReference(this, "namespace_selector");
+  public get namespaceSelector() {
+    return this._namespaceSelector;
+  }
+  public putNamespaceSelector(value: NetworkPolicyV1SpecIngressFromNamespaceSelector) {
+    this._namespaceSelector.internalValue = value;
+  }
+  public resetNamespaceSelector() {
+    this._namespaceSelector.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceSelectorInput() {
+    return this._namespaceSelector.internalValue;
+  }
+
+  // pod_selector - computed: false, optional: true, required: false
+  private _podSelector = new NetworkPolicyV1SpecIngressFromPodSelectorOutputReference(this, "pod_selector");
+  public get podSelector() {
+    return this._podSelector;
+  }
+  public putPodSelector(value: NetworkPolicyV1SpecIngressFromPodSelector) {
+    this._podSelector.internalValue = value;
+  }
+  public resetPodSelector() {
+    this._podSelector.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get podSelectorInput() {
+    return this._podSelector.internalValue;
+  }
+}
+
+export class NetworkPolicyV1SpecIngressFromList extends cdktf.ComplexList {
+  public internalValue? : NetworkPolicyV1SpecIngressFrom[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkPolicyV1SpecIngressFromOutputReference {
+    return new NetworkPolicyV1SpecIngressFromOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface NetworkPolicyV1SpecIngressPorts {
   /**
   * The port on the given protocol. This can either be a numerical or named port on a pod. If this field is not provided, this matches all port names and numbers. If present, only traffic on the specified protocol AND port will be matched.
@@ -1074,6 +2025,108 @@ export function networkPolicyV1SpecIngressPortsToTerraform(struct?: NetworkPolic
   }
 }
 
+export class NetworkPolicyV1SpecIngressPortsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkPolicyV1SpecIngressPorts | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._protocol !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.protocol = this._protocol;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecIngressPorts | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._protocol = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._protocol = value.protocol;
+    }
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // protocol - computed: false, optional: true, required: false
+  private _protocol?: string; 
+  public get protocol() {
+    return this.getStringAttribute('protocol');
+  }
+  public set protocol(value: string) {
+    this._protocol = value;
+  }
+  public resetProtocol() {
+    this._protocol = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get protocolInput() {
+    return this._protocol;
+  }
+}
+
+export class NetworkPolicyV1SpecIngressPortsList extends cdktf.ComplexList {
+  public internalValue? : NetworkPolicyV1SpecIngressPorts[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkPolicyV1SpecIngressPortsOutputReference {
+    return new NetworkPolicyV1SpecIngressPortsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface NetworkPolicyV1SpecIngress {
   /**
   * from block
@@ -1100,6 +2153,108 @@ export function networkPolicyV1SpecIngressToTerraform(struct?: NetworkPolicyV1Sp
   }
 }
 
+export class NetworkPolicyV1SpecIngressOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkPolicyV1SpecIngress | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._from?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.from = this._from?.internalValue;
+    }
+    if (this._ports?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.ports = this._ports?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecIngress | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._from.internalValue = undefined;
+      this._ports.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._from.internalValue = value.from;
+      this._ports.internalValue = value.ports;
+    }
+  }
+
+  // from - computed: false, optional: true, required: false
+  private _from = new NetworkPolicyV1SpecIngressFromList(this, "from", false);
+  public get from() {
+    return this._from;
+  }
+  public putFrom(value: NetworkPolicyV1SpecIngressFrom[] | cdktf.IResolvable) {
+    this._from.internalValue = value;
+  }
+  public resetFrom() {
+    this._from.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fromInput() {
+    return this._from.internalValue;
+  }
+
+  // ports - computed: false, optional: true, required: false
+  private _ports = new NetworkPolicyV1SpecIngressPortsList(this, "ports", false);
+  public get ports() {
+    return this._ports;
+  }
+  public putPorts(value: NetworkPolicyV1SpecIngressPorts[] | cdktf.IResolvable) {
+    this._ports.internalValue = value;
+  }
+  public resetPorts() {
+    this._ports.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portsInput() {
+    return this._ports.internalValue;
+  }
+}
+
+export class NetworkPolicyV1SpecIngressList extends cdktf.ComplexList {
+  public internalValue? : NetworkPolicyV1SpecIngress[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkPolicyV1SpecIngressOutputReference {
+    return new NetworkPolicyV1SpecIngressOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface NetworkPolicyV1SpecPodSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
@@ -1133,6 +2288,130 @@ export function networkPolicyV1SpecPodSelectorMatchExpressionsToTerraform(struct
   }
 }
 
+export class NetworkPolicyV1SpecPodSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkPolicyV1SpecPodSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkPolicyV1SpecPodSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class NetworkPolicyV1SpecPodSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : NetworkPolicyV1SpecPodSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkPolicyV1SpecPodSelectorMatchExpressionsOutputReference {
+    return new NetworkPolicyV1SpecPodSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface NetworkPolicyV1SpecPodSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
@@ -1177,9 +2456,9 @@ export class NetworkPolicyV1SpecPodSelectorOutputReference extends cdktf.Complex
       hasAnyValues = true;
       internalValueResult.matchLabels = this._matchLabels;
     }
-    if (this._matchExpressions !== undefined) {
+    if (this._matchExpressions?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.matchExpressions = this._matchExpressions;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -1188,12 +2467,12 @@ export class NetworkPolicyV1SpecPodSelectorOutputReference extends cdktf.Complex
     if (value === undefined) {
       this.isEmptyObject = false;
       this._matchLabels = undefined;
-      this._matchExpressions = undefined;
+      this._matchExpressions.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._matchLabels = value.matchLabels;
-      this._matchExpressions = value.matchExpressions;
+      this._matchExpressions.internalValue = value.matchExpressions;
     }
   }
 
@@ -1214,20 +2493,19 @@ export class NetworkPolicyV1SpecPodSelectorOutputReference extends cdktf.Complex
   }
 
   // match_expressions - computed: false, optional: true, required: false
-  private _matchExpressions?: NetworkPolicyV1SpecPodSelectorMatchExpressions[] | cdktf.IResolvable; 
+  private _matchExpressions = new NetworkPolicyV1SpecPodSelectorMatchExpressionsList(this, "match_expressions", false);
   public get matchExpressions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expressions');
+    return this._matchExpressions;
   }
-  public set matchExpressions(value: NetworkPolicyV1SpecPodSelectorMatchExpressions[] | cdktf.IResolvable) {
-    this._matchExpressions = value;
+  public putMatchExpressions(value: NetworkPolicyV1SpecPodSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
   }
   public resetMatchExpressions() {
-    this._matchExpressions = undefined;
+    this._matchExpressions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionsInput() {
-    return this._matchExpressions;
+    return this._matchExpressions.internalValue;
   }
 }
 export interface NetworkPolicyV1Spec {
@@ -1288,13 +2566,13 @@ export class NetworkPolicyV1SpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.policyTypes = this._policyTypes;
     }
-    if (this._egress !== undefined) {
+    if (this._egress?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.egress = this._egress;
+      internalValueResult.egress = this._egress?.internalValue;
     }
-    if (this._ingress !== undefined) {
+    if (this._ingress?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.ingress = this._ingress;
+      internalValueResult.ingress = this._ingress?.internalValue;
     }
     if (this._podSelector?.internalValue !== undefined) {
       hasAnyValues = true;
@@ -1307,15 +2585,15 @@ export class NetworkPolicyV1SpecOutputReference extends cdktf.ComplexObject {
     if (value === undefined) {
       this.isEmptyObject = false;
       this._policyTypes = undefined;
-      this._egress = undefined;
-      this._ingress = undefined;
+      this._egress.internalValue = undefined;
+      this._ingress.internalValue = undefined;
       this._podSelector.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._policyTypes = value.policyTypes;
-      this._egress = value.egress;
-      this._ingress = value.ingress;
+      this._egress.internalValue = value.egress;
+      this._ingress.internalValue = value.ingress;
       this._podSelector.internalValue = value.podSelector;
     }
   }
@@ -1334,37 +2612,35 @@ export class NetworkPolicyV1SpecOutputReference extends cdktf.ComplexObject {
   }
 
   // egress - computed: false, optional: true, required: false
-  private _egress?: NetworkPolicyV1SpecEgress[] | cdktf.IResolvable; 
+  private _egress = new NetworkPolicyV1SpecEgressList(this, "egress", false);
   public get egress() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('egress');
+    return this._egress;
   }
-  public set egress(value: NetworkPolicyV1SpecEgress[] | cdktf.IResolvable) {
-    this._egress = value;
+  public putEgress(value: NetworkPolicyV1SpecEgress[] | cdktf.IResolvable) {
+    this._egress.internalValue = value;
   }
   public resetEgress() {
-    this._egress = undefined;
+    this._egress.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get egressInput() {
-    return this._egress;
+    return this._egress.internalValue;
   }
 
   // ingress - computed: false, optional: true, required: false
-  private _ingress?: NetworkPolicyV1SpecIngress[] | cdktf.IResolvable; 
+  private _ingress = new NetworkPolicyV1SpecIngressList(this, "ingress", false);
   public get ingress() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ingress');
+    return this._ingress;
   }
-  public set ingress(value: NetworkPolicyV1SpecIngress[] | cdktf.IResolvable) {
-    this._ingress = value;
+  public putIngress(value: NetworkPolicyV1SpecIngress[] | cdktf.IResolvable) {
+    this._ingress.internalValue = value;
   }
   public resetIngress() {
-    this._ingress = undefined;
+    this._ingress.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get ingressInput() {
-    return this._ingress;
+    return this._ingress.internalValue;
   }
 
   // pod_selector - computed: false, optional: false, required: true
@@ -1415,6 +2691,7 @@ export class NetworkPolicyV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
     this._spec.internalValue = config.spec;
   }
@@ -1424,8 +2701,19 @@ export class NetworkPolicyV1 extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -1460,6 +2748,7 @@ export class NetworkPolicyV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       metadata: networkPolicyV1MetadataToTerraform(this._metadata.internalValue),
       spec: networkPolicyV1SpecToTerraform(this._spec.internalValue),
     };

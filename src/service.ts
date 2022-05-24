@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface ServiceConfig extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service#id Service#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service#wait_for_load_balancer Service#wait_for_load_balancer}
@@ -483,6 +490,193 @@ export function serviceSpecPortToTerraform(struct?: ServiceSpecPort | cdktf.IRes
   }
 }
 
+export class ServiceSpecPortOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceSpecPort | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._appProtocol !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.appProtocol = this._appProtocol;
+    }
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._nodePort !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.nodePort = this._nodePort;
+    }
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._protocol !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.protocol = this._protocol;
+    }
+    if (this._targetPort !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.targetPort = this._targetPort;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceSpecPort | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._appProtocol = undefined;
+      this._name = undefined;
+      this._nodePort = undefined;
+      this._port = undefined;
+      this._protocol = undefined;
+      this._targetPort = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._appProtocol = value.appProtocol;
+      this._name = value.name;
+      this._nodePort = value.nodePort;
+      this._port = value.port;
+      this._protocol = value.protocol;
+      this._targetPort = value.targetPort;
+    }
+  }
+
+  // app_protocol - computed: false, optional: true, required: false
+  private _appProtocol?: string; 
+  public get appProtocol() {
+    return this.getStringAttribute('app_protocol');
+  }
+  public set appProtocol(value: string) {
+    this._appProtocol = value;
+  }
+  public resetAppProtocol() {
+    this._appProtocol = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get appProtocolInput() {
+    return this._appProtocol;
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // node_port - computed: true, optional: true, required: false
+  private _nodePort?: number; 
+  public get nodePort() {
+    return this.getNumberAttribute('node_port');
+  }
+  public set nodePort(value: number) {
+    this._nodePort = value;
+  }
+  public resetNodePort() {
+    this._nodePort = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nodePortInput() {
+    return this._nodePort;
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // protocol - computed: false, optional: true, required: false
+  private _protocol?: string; 
+  public get protocol() {
+    return this.getStringAttribute('protocol');
+  }
+  public set protocol(value: string) {
+    this._protocol = value;
+  }
+  public resetProtocol() {
+    this._protocol = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get protocolInput() {
+    return this._protocol;
+  }
+
+  // target_port - computed: true, optional: true, required: false
+  private _targetPort?: string; 
+  public get targetPort() {
+    return this.getStringAttribute('target_port');
+  }
+  public set targetPort(value: string) {
+    this._targetPort = value;
+  }
+  public resetTargetPort() {
+    this._targetPort = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get targetPortInput() {
+    return this._targetPort;
+  }
+}
+
+export class ServiceSpecPortList extends cdktf.ComplexList {
+  public internalValue? : ServiceSpecPort[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceSpecPortOutputReference {
+    return new ServiceSpecPortOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ServiceSpec {
   /**
   * The IP address of the service. It is usually assigned randomly by the master. If an address is specified manually and is not in use by others, it will be allocated to the service; otherwise, creation of the service will fail. `None` can be specified for headless services when proxying is not required. Ignored if type is `ExternalName`. More info: http://kubernetes.io/docs/user-guide/services#virtual-ips-and-service-proxies
@@ -659,9 +853,9 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._port !== undefined) {
+    if (this._port?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.port = this._port;
+      internalValueResult.port = this._port?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -682,7 +876,7 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
       this._selector = undefined;
       this._sessionAffinity = undefined;
       this._type = undefined;
-      this._port = undefined;
+      this._port.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -699,7 +893,7 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
       this._selector = value.selector;
       this._sessionAffinity = value.sessionAffinity;
       this._type = value.type;
-      this._port = value.port;
+      this._port.internalValue = value.port;
     }
   }
 
@@ -912,20 +1106,19 @@ export class ServiceSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // port - computed: false, optional: true, required: false
-  private _port?: ServiceSpecPort[] | cdktf.IResolvable; 
+  private _port = new ServiceSpecPortList(this, "port", false);
   public get port() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('port');
+    return this._port;
   }
-  public set port(value: ServiceSpecPort[] | cdktf.IResolvable) {
-    this._port = value;
+  public putPort(value: ServiceSpecPort[] | cdktf.IResolvable) {
+    this._port.internalValue = value;
   }
   public resetPort() {
-    this._port = undefined;
+    this._port.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get portInput() {
-    return this._port;
+    return this._port.internalValue;
   }
 }
 export interface ServiceTimeouts {
@@ -947,6 +1140,7 @@ export function serviceTimeoutsToTerraform(struct?: ServiceTimeoutsOutputReferen
 
 export class ServiceTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
 
   /**
   * @param terraformResource The parent resource
@@ -956,7 +1150,10 @@ export class ServiceTimeoutsOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, false, 0);
   }
 
-  public get internalValue(): ServiceTimeouts | undefined {
+  public get internalValue(): ServiceTimeouts | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._create !== undefined) {
@@ -966,13 +1163,19 @@ export class ServiceTimeoutsOutputReference extends cdktf.ComplexObject {
     return hasAnyValues ? internalValueResult : undefined;
   }
 
-  public set internalValue(value: ServiceTimeouts | undefined) {
+  public set internalValue(value: ServiceTimeouts | cdktf.IResolvable | undefined) {
     if (value === undefined) {
       this.isEmptyObject = false;
+      this.resolvableValue = undefined;
       this._create = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
       this._create = value.create;
     }
   }
@@ -1028,6 +1231,7 @@ export class Service extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._waitForLoadBalancer = config.waitForLoadBalancer;
     this._metadata.internalValue = config.metadata;
     this._spec.internalValue = config.spec;
@@ -1039,8 +1243,19 @@ export class Service extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // status - computed: true, optional: false, required: false
@@ -1113,6 +1328,7 @@ export class Service extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       wait_for_load_balancer: cdktf.booleanToTerraform(this._waitForLoadBalancer),
       metadata: serviceMetadataToTerraform(this._metadata.internalValue),
       spec: serviceSpecToTerraform(this._spec.internalValue),

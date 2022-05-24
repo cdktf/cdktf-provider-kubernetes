@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface HorizontalPodAutoscalerConfig extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#id HorizontalPodAutoscaler#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler#metadata HorizontalPodAutoscaler#metadata}
@@ -251,6 +258,121 @@ export function horizontalPodAutoscalerSpecBehaviorScaleDownPolicyToTerraform(st
   }
 }
 
+export class HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._periodSeconds !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._value !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._periodSeconds = undefined;
+      this._type = undefined;
+      this._value = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._periodSeconds = value.periodSeconds;
+      this._type = value.type;
+      this._value = value.value;
+    }
+  }
+
+  // period_seconds - computed: false, optional: false, required: true
+  private _periodSeconds?: number; 
+  public get periodSeconds() {
+    return this.getNumberAttribute('period_seconds');
+  }
+  public set periodSeconds(value: number) {
+    this._periodSeconds = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get periodSecondsInput() {
+    return this._periodSeconds;
+  }
+
+  // type - computed: false, optional: false, required: true
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+
+  // value - computed: false, optional: false, required: true
+  private _value?: number; 
+  public get value() {
+    return this.getNumberAttribute('value');
+  }
+  public set value(value: number) {
+    this._value = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valueInput() {
+    return this._value;
+  }
+}
+
+export class HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyList extends cdktf.ComplexList {
+  public internalValue? : HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyOutputReference {
+    return new HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface HorizontalPodAutoscalerSpecBehaviorScaleDown {
   /**
   * Used to specify which policy should be used. If not set, the default value Max is used.
@@ -284,6 +406,127 @@ export function horizontalPodAutoscalerSpecBehaviorScaleDownToTerraform(struct?:
   }
 }
 
+export class HorizontalPodAutoscalerSpecBehaviorScaleDownOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecBehaviorScaleDown | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._selectPolicy !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.selectPolicy = this._selectPolicy;
+    }
+    if (this._stabilizationWindowSeconds !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.stabilizationWindowSeconds = this._stabilizationWindowSeconds;
+    }
+    if (this._policy?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.policy = this._policy?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecBehaviorScaleDown | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._selectPolicy = undefined;
+      this._stabilizationWindowSeconds = undefined;
+      this._policy.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._selectPolicy = value.selectPolicy;
+      this._stabilizationWindowSeconds = value.stabilizationWindowSeconds;
+      this._policy.internalValue = value.policy;
+    }
+  }
+
+  // select_policy - computed: false, optional: true, required: false
+  private _selectPolicy?: string; 
+  public get selectPolicy() {
+    return this.getStringAttribute('select_policy');
+  }
+  public set selectPolicy(value: string) {
+    this._selectPolicy = value;
+  }
+  public resetSelectPolicy() {
+    this._selectPolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get selectPolicyInput() {
+    return this._selectPolicy;
+  }
+
+  // stabilization_window_seconds - computed: false, optional: true, required: false
+  private _stabilizationWindowSeconds?: number; 
+  public get stabilizationWindowSeconds() {
+    return this.getNumberAttribute('stabilization_window_seconds');
+  }
+  public set stabilizationWindowSeconds(value: number) {
+    this._stabilizationWindowSeconds = value;
+  }
+  public resetStabilizationWindowSeconds() {
+    this._stabilizationWindowSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get stabilizationWindowSecondsInput() {
+    return this._stabilizationWindowSeconds;
+  }
+
+  // policy - computed: false, optional: false, required: true
+  private _policy = new HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyList(this, "policy", false);
+  public get policy() {
+    return this._policy;
+  }
+  public putPolicy(value: HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy[] | cdktf.IResolvable) {
+    this._policy.internalValue = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get policyInput() {
+    return this._policy.internalValue;
+  }
+}
+
+export class HorizontalPodAutoscalerSpecBehaviorScaleDownList extends cdktf.ComplexList {
+  public internalValue? : HorizontalPodAutoscalerSpecBehaviorScaleDown[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): HorizontalPodAutoscalerSpecBehaviorScaleDownOutputReference {
+    return new HorizontalPodAutoscalerSpecBehaviorScaleDownOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy {
   /**
   * Period specifies the window of time for which the policy should hold true. PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min).
@@ -317,6 +560,121 @@ export function horizontalPodAutoscalerSpecBehaviorScaleUpPolicyToTerraform(stru
   }
 }
 
+export class HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._periodSeconds !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._value !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._periodSeconds = undefined;
+      this._type = undefined;
+      this._value = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._periodSeconds = value.periodSeconds;
+      this._type = value.type;
+      this._value = value.value;
+    }
+  }
+
+  // period_seconds - computed: false, optional: false, required: true
+  private _periodSeconds?: number; 
+  public get periodSeconds() {
+    return this.getNumberAttribute('period_seconds');
+  }
+  public set periodSeconds(value: number) {
+    this._periodSeconds = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get periodSecondsInput() {
+    return this._periodSeconds;
+  }
+
+  // type - computed: false, optional: false, required: true
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+
+  // value - computed: false, optional: false, required: true
+  private _value?: number; 
+  public get value() {
+    return this.getNumberAttribute('value');
+  }
+  public set value(value: number) {
+    this._value = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valueInput() {
+    return this._value;
+  }
+}
+
+export class HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyList extends cdktf.ComplexList {
+  public internalValue? : HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyOutputReference {
+    return new HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface HorizontalPodAutoscalerSpecBehaviorScaleUp {
   /**
   * Used to specify which policy should be used. If not set, the default value Max is used.
@@ -350,6 +708,127 @@ export function horizontalPodAutoscalerSpecBehaviorScaleUpToTerraform(struct?: H
   }
 }
 
+export class HorizontalPodAutoscalerSpecBehaviorScaleUpOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecBehaviorScaleUp | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._selectPolicy !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.selectPolicy = this._selectPolicy;
+    }
+    if (this._stabilizationWindowSeconds !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.stabilizationWindowSeconds = this._stabilizationWindowSeconds;
+    }
+    if (this._policy?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.policy = this._policy?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecBehaviorScaleUp | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._selectPolicy = undefined;
+      this._stabilizationWindowSeconds = undefined;
+      this._policy.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._selectPolicy = value.selectPolicy;
+      this._stabilizationWindowSeconds = value.stabilizationWindowSeconds;
+      this._policy.internalValue = value.policy;
+    }
+  }
+
+  // select_policy - computed: false, optional: true, required: false
+  private _selectPolicy?: string; 
+  public get selectPolicy() {
+    return this.getStringAttribute('select_policy');
+  }
+  public set selectPolicy(value: string) {
+    this._selectPolicy = value;
+  }
+  public resetSelectPolicy() {
+    this._selectPolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get selectPolicyInput() {
+    return this._selectPolicy;
+  }
+
+  // stabilization_window_seconds - computed: false, optional: true, required: false
+  private _stabilizationWindowSeconds?: number; 
+  public get stabilizationWindowSeconds() {
+    return this.getNumberAttribute('stabilization_window_seconds');
+  }
+  public set stabilizationWindowSeconds(value: number) {
+    this._stabilizationWindowSeconds = value;
+  }
+  public resetStabilizationWindowSeconds() {
+    this._stabilizationWindowSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get stabilizationWindowSecondsInput() {
+    return this._stabilizationWindowSeconds;
+  }
+
+  // policy - computed: false, optional: false, required: true
+  private _policy = new HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyList(this, "policy", false);
+  public get policy() {
+    return this._policy;
+  }
+  public putPolicy(value: HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy[] | cdktf.IResolvable) {
+    this._policy.internalValue = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get policyInput() {
+    return this._policy.internalValue;
+  }
+}
+
+export class HorizontalPodAutoscalerSpecBehaviorScaleUpList extends cdktf.ComplexList {
+  public internalValue? : HorizontalPodAutoscalerSpecBehaviorScaleUp[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): HorizontalPodAutoscalerSpecBehaviorScaleUpOutputReference {
+    return new HorizontalPodAutoscalerSpecBehaviorScaleUpOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface HorizontalPodAutoscalerSpecBehavior {
   /**
   * scale_down block
@@ -390,13 +869,13 @@ export class HorizontalPodAutoscalerSpecBehaviorOutputReference extends cdktf.Co
   public get internalValue(): HorizontalPodAutoscalerSpecBehavior | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._scaleDown !== undefined) {
+    if (this._scaleDown?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.scaleDown = this._scaleDown;
+      internalValueResult.scaleDown = this._scaleDown?.internalValue;
     }
-    if (this._scaleUp !== undefined) {
+    if (this._scaleUp?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.scaleUp = this._scaleUp;
+      internalValueResult.scaleUp = this._scaleUp?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -404,48 +883,46 @@ export class HorizontalPodAutoscalerSpecBehaviorOutputReference extends cdktf.Co
   public set internalValue(value: HorizontalPodAutoscalerSpecBehavior | undefined) {
     if (value === undefined) {
       this.isEmptyObject = false;
-      this._scaleDown = undefined;
-      this._scaleUp = undefined;
+      this._scaleDown.internalValue = undefined;
+      this._scaleUp.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
-      this._scaleDown = value.scaleDown;
-      this._scaleUp = value.scaleUp;
+      this._scaleDown.internalValue = value.scaleDown;
+      this._scaleUp.internalValue = value.scaleUp;
     }
   }
 
   // scale_down - computed: false, optional: true, required: false
-  private _scaleDown?: HorizontalPodAutoscalerSpecBehaviorScaleDown[] | cdktf.IResolvable; 
+  private _scaleDown = new HorizontalPodAutoscalerSpecBehaviorScaleDownList(this, "scale_down", false);
   public get scaleDown() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('scale_down');
+    return this._scaleDown;
   }
-  public set scaleDown(value: HorizontalPodAutoscalerSpecBehaviorScaleDown[] | cdktf.IResolvable) {
-    this._scaleDown = value;
+  public putScaleDown(value: HorizontalPodAutoscalerSpecBehaviorScaleDown[] | cdktf.IResolvable) {
+    this._scaleDown.internalValue = value;
   }
   public resetScaleDown() {
-    this._scaleDown = undefined;
+    this._scaleDown.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get scaleDownInput() {
-    return this._scaleDown;
+    return this._scaleDown.internalValue;
   }
 
   // scale_up - computed: false, optional: true, required: false
-  private _scaleUp?: HorizontalPodAutoscalerSpecBehaviorScaleUp[] | cdktf.IResolvable; 
+  private _scaleUp = new HorizontalPodAutoscalerSpecBehaviorScaleUpList(this, "scale_up", false);
   public get scaleUp() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('scale_up');
+    return this._scaleUp;
   }
-  public set scaleUp(value: HorizontalPodAutoscalerSpecBehaviorScaleUp[] | cdktf.IResolvable) {
-    this._scaleUp = value;
+  public putScaleUp(value: HorizontalPodAutoscalerSpecBehaviorScaleUp[] | cdktf.IResolvable) {
+    this._scaleUp.internalValue = value;
   }
   public resetScaleUp() {
-    this._scaleUp = undefined;
+    this._scaleUp.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get scaleUpInput() {
-    return this._scaleUp;
+    return this._scaleUp.internalValue;
   }
 }
 export interface HorizontalPodAutoscalerSpecMetricContainerResourceTarget {
@@ -751,6 +1228,130 @@ export function horizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpr
   }
 }
 
+export class HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsOutputReference {
+    return new HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface HorizontalPodAutoscalerSpecMetricExternalMetricSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
@@ -777,6 +1378,108 @@ export function horizontalPodAutoscalerSpecMetricExternalMetricSelectorToTerrafo
   }
 }
 
+export class HorizontalPodAutoscalerSpecMetricExternalMetricSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecMetricExternalMetricSelector | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._matchLabels !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecMetricExternalMetricSelector | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._matchLabels = undefined;
+      this._matchExpressions.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions.internalValue = value.matchExpressions;
+    }
+  }
+
+  // match_labels - computed: false, optional: true, required: false
+  private _matchLabels?: { [key: string]: string }; 
+  public get matchLabels() {
+    return this.getStringMapAttribute('match_labels');
+  }
+  public set matchLabels(value: { [key: string]: string }) {
+    this._matchLabels = value;
+  }
+  public resetMatchLabels() {
+    this._matchLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchLabelsInput() {
+    return this._matchLabels;
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions = new HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsList(this, "match_expressions", false);
+  public get matchExpressions() {
+    return this._matchExpressions;
+  }
+  public putMatchExpressions(value: HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions.internalValue;
+  }
+}
+
+export class HorizontalPodAutoscalerSpecMetricExternalMetricSelectorList extends cdktf.ComplexList {
+  public internalValue? : HorizontalPodAutoscalerSpecMetricExternalMetricSelector[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): HorizontalPodAutoscalerSpecMetricExternalMetricSelectorOutputReference {
+    return new HorizontalPodAutoscalerSpecMetricExternalMetricSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface HorizontalPodAutoscalerSpecMetricExternalMetric {
   /**
   * name is the name of the given metric
@@ -821,9 +1524,9 @@ export class HorizontalPodAutoscalerSpecMetricExternalMetricOutputReference exte
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._selector !== undefined) {
+    if (this._selector?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.selector = this._selector;
+      internalValueResult.selector = this._selector?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -832,12 +1535,12 @@ export class HorizontalPodAutoscalerSpecMetricExternalMetricOutputReference exte
     if (value === undefined) {
       this.isEmptyObject = false;
       this._name = undefined;
-      this._selector = undefined;
+      this._selector.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
-      this._selector = value.selector;
+      this._selector.internalValue = value.selector;
     }
   }
 
@@ -855,20 +1558,19 @@ export class HorizontalPodAutoscalerSpecMetricExternalMetricOutputReference exte
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector?: HorizontalPodAutoscalerSpecMetricExternalMetricSelector[] | cdktf.IResolvable; 
+  private _selector = new HorizontalPodAutoscalerSpecMetricExternalMetricSelectorList(this, "selector", false);
   public get selector() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('selector');
+    return this._selector;
   }
-  public set selector(value: HorizontalPodAutoscalerSpecMetricExternalMetricSelector[] | cdktf.IResolvable) {
-    this._selector = value;
+  public putSelector(value: HorizontalPodAutoscalerSpecMetricExternalMetricSelector[] | cdktf.IResolvable) {
+    this._selector.internalValue = value;
   }
   public resetSelector() {
-    this._selector = undefined;
+    this._selector.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get selectorInput() {
-    return this._selector;
+    return this._selector.internalValue;
   }
 }
 export interface HorizontalPodAutoscalerSpecMetricExternalTarget {
@@ -1264,6 +1966,130 @@ export function horizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpres
   }
 }
 
+export class HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsOutputReference {
+    return new HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface HorizontalPodAutoscalerSpecMetricObjectMetricSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
@@ -1290,6 +2116,108 @@ export function horizontalPodAutoscalerSpecMetricObjectMetricSelectorToTerraform
   }
 }
 
+export class HorizontalPodAutoscalerSpecMetricObjectMetricSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecMetricObjectMetricSelector | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._matchLabels !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecMetricObjectMetricSelector | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._matchLabels = undefined;
+      this._matchExpressions.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions.internalValue = value.matchExpressions;
+    }
+  }
+
+  // match_labels - computed: false, optional: true, required: false
+  private _matchLabels?: { [key: string]: string }; 
+  public get matchLabels() {
+    return this.getStringMapAttribute('match_labels');
+  }
+  public set matchLabels(value: { [key: string]: string }) {
+    this._matchLabels = value;
+  }
+  public resetMatchLabels() {
+    this._matchLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchLabelsInput() {
+    return this._matchLabels;
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions = new HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsList(this, "match_expressions", false);
+  public get matchExpressions() {
+    return this._matchExpressions;
+  }
+  public putMatchExpressions(value: HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions.internalValue;
+  }
+}
+
+export class HorizontalPodAutoscalerSpecMetricObjectMetricSelectorList extends cdktf.ComplexList {
+  public internalValue? : HorizontalPodAutoscalerSpecMetricObjectMetricSelector[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): HorizontalPodAutoscalerSpecMetricObjectMetricSelectorOutputReference {
+    return new HorizontalPodAutoscalerSpecMetricObjectMetricSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface HorizontalPodAutoscalerSpecMetricObjectMetric {
   /**
   * name is the name of the given metric
@@ -1334,9 +2262,9 @@ export class HorizontalPodAutoscalerSpecMetricObjectMetricOutputReference extend
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._selector !== undefined) {
+    if (this._selector?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.selector = this._selector;
+      internalValueResult.selector = this._selector?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -1345,12 +2273,12 @@ export class HorizontalPodAutoscalerSpecMetricObjectMetricOutputReference extend
     if (value === undefined) {
       this.isEmptyObject = false;
       this._name = undefined;
-      this._selector = undefined;
+      this._selector.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
-      this._selector = value.selector;
+      this._selector.internalValue = value.selector;
     }
   }
 
@@ -1368,20 +2296,19 @@ export class HorizontalPodAutoscalerSpecMetricObjectMetricOutputReference extend
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector?: HorizontalPodAutoscalerSpecMetricObjectMetricSelector[] | cdktf.IResolvable; 
+  private _selector = new HorizontalPodAutoscalerSpecMetricObjectMetricSelectorList(this, "selector", false);
   public get selector() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('selector');
+    return this._selector;
   }
-  public set selector(value: HorizontalPodAutoscalerSpecMetricObjectMetricSelector[] | cdktf.IResolvable) {
-    this._selector = value;
+  public putSelector(value: HorizontalPodAutoscalerSpecMetricObjectMetricSelector[] | cdktf.IResolvable) {
+    this._selector.internalValue = value;
   }
   public resetSelector() {
-    this._selector = undefined;
+    this._selector.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get selectorInput() {
-    return this._selector;
+    return this._selector.internalValue;
   }
 }
 export interface HorizontalPodAutoscalerSpecMetricObjectTarget {
@@ -1687,6 +2614,130 @@ export function horizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressi
   }
 }
 
+export class HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsOutputReference {
+    return new HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface HorizontalPodAutoscalerSpecMetricPodsMetricSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
@@ -1713,6 +2764,108 @@ export function horizontalPodAutoscalerSpecMetricPodsMetricSelectorToTerraform(s
   }
 }
 
+export class HorizontalPodAutoscalerSpecMetricPodsMetricSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecMetricPodsMetricSelector | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._matchLabels !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecMetricPodsMetricSelector | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._matchLabels = undefined;
+      this._matchExpressions.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions.internalValue = value.matchExpressions;
+    }
+  }
+
+  // match_labels - computed: false, optional: true, required: false
+  private _matchLabels?: { [key: string]: string }; 
+  public get matchLabels() {
+    return this.getStringMapAttribute('match_labels');
+  }
+  public set matchLabels(value: { [key: string]: string }) {
+    this._matchLabels = value;
+  }
+  public resetMatchLabels() {
+    this._matchLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchLabelsInput() {
+    return this._matchLabels;
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions = new HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsList(this, "match_expressions", false);
+  public get matchExpressions() {
+    return this._matchExpressions;
+  }
+  public putMatchExpressions(value: HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions.internalValue;
+  }
+}
+
+export class HorizontalPodAutoscalerSpecMetricPodsMetricSelectorList extends cdktf.ComplexList {
+  public internalValue? : HorizontalPodAutoscalerSpecMetricPodsMetricSelector[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): HorizontalPodAutoscalerSpecMetricPodsMetricSelectorOutputReference {
+    return new HorizontalPodAutoscalerSpecMetricPodsMetricSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface HorizontalPodAutoscalerSpecMetricPodsMetric {
   /**
   * name is the name of the given metric
@@ -1757,9 +2910,9 @@ export class HorizontalPodAutoscalerSpecMetricPodsMetricOutputReference extends 
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._selector !== undefined) {
+    if (this._selector?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.selector = this._selector;
+      internalValueResult.selector = this._selector?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -1768,12 +2921,12 @@ export class HorizontalPodAutoscalerSpecMetricPodsMetricOutputReference extends 
     if (value === undefined) {
       this.isEmptyObject = false;
       this._name = undefined;
-      this._selector = undefined;
+      this._selector.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
-      this._selector = value.selector;
+      this._selector.internalValue = value.selector;
     }
   }
 
@@ -1791,20 +2944,19 @@ export class HorizontalPodAutoscalerSpecMetricPodsMetricOutputReference extends 
   }
 
   // selector - computed: false, optional: true, required: false
-  private _selector?: HorizontalPodAutoscalerSpecMetricPodsMetricSelector[] | cdktf.IResolvable; 
+  private _selector = new HorizontalPodAutoscalerSpecMetricPodsMetricSelectorList(this, "selector", false);
   public get selector() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('selector');
+    return this._selector;
   }
-  public set selector(value: HorizontalPodAutoscalerSpecMetricPodsMetricSelector[] | cdktf.IResolvable) {
-    this._selector = value;
+  public putSelector(value: HorizontalPodAutoscalerSpecMetricPodsMetricSelector[] | cdktf.IResolvable) {
+    this._selector.internalValue = value;
   }
   public resetSelector() {
-    this._selector = undefined;
+    this._selector.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get selectorInput() {
-    return this._selector;
+    return this._selector.internalValue;
   }
 }
 export interface HorizontalPodAutoscalerSpecMetricPodsTarget {
@@ -2349,6 +3501,193 @@ export function horizontalPodAutoscalerSpecMetricToTerraform(struct?: Horizontal
   }
 }
 
+export class HorizontalPodAutoscalerSpecMetricOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): HorizontalPodAutoscalerSpecMetric | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._containerResource?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.containerResource = this._containerResource?.internalValue;
+    }
+    if (this._external?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.external = this._external?.internalValue;
+    }
+    if (this._object?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.object = this._object?.internalValue;
+    }
+    if (this._pods?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.pods = this._pods?.internalValue;
+    }
+    if (this._resource?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.resource = this._resource?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: HorizontalPodAutoscalerSpecMetric | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._type = undefined;
+      this._containerResource.internalValue = undefined;
+      this._external.internalValue = undefined;
+      this._object.internalValue = undefined;
+      this._pods.internalValue = undefined;
+      this._resource.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._type = value.type;
+      this._containerResource.internalValue = value.containerResource;
+      this._external.internalValue = value.external;
+      this._object.internalValue = value.object;
+      this._pods.internalValue = value.pods;
+      this._resource.internalValue = value.resource;
+    }
+  }
+
+  // type - computed: false, optional: false, required: true
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+
+  // container_resource - computed: false, optional: true, required: false
+  private _containerResource = new HorizontalPodAutoscalerSpecMetricContainerResourceOutputReference(this, "container_resource");
+  public get containerResource() {
+    return this._containerResource;
+  }
+  public putContainerResource(value: HorizontalPodAutoscalerSpecMetricContainerResource) {
+    this._containerResource.internalValue = value;
+  }
+  public resetContainerResource() {
+    this._containerResource.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get containerResourceInput() {
+    return this._containerResource.internalValue;
+  }
+
+  // external - computed: false, optional: true, required: false
+  private _external = new HorizontalPodAutoscalerSpecMetricExternalOutputReference(this, "external");
+  public get external() {
+    return this._external;
+  }
+  public putExternal(value: HorizontalPodAutoscalerSpecMetricExternal) {
+    this._external.internalValue = value;
+  }
+  public resetExternal() {
+    this._external.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get externalInput() {
+    return this._external.internalValue;
+  }
+
+  // object - computed: false, optional: true, required: false
+  private _object = new HorizontalPodAutoscalerSpecMetricObjectOutputReference(this, "object");
+  public get object() {
+    return this._object;
+  }
+  public putObject(value: HorizontalPodAutoscalerSpecMetricObject) {
+    this._object.internalValue = value;
+  }
+  public resetObject() {
+    this._object.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get objectInput() {
+    return this._object.internalValue;
+  }
+
+  // pods - computed: false, optional: true, required: false
+  private _pods = new HorizontalPodAutoscalerSpecMetricPodsOutputReference(this, "pods");
+  public get pods() {
+    return this._pods;
+  }
+  public putPods(value: HorizontalPodAutoscalerSpecMetricPods) {
+    this._pods.internalValue = value;
+  }
+  public resetPods() {
+    this._pods.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get podsInput() {
+    return this._pods.internalValue;
+  }
+
+  // resource - computed: false, optional: true, required: false
+  private _resource = new HorizontalPodAutoscalerSpecMetricResourceOutputReference(this, "resource");
+  public get resource() {
+    return this._resource;
+  }
+  public putResource(value: HorizontalPodAutoscalerSpecMetricResource) {
+    this._resource.internalValue = value;
+  }
+  public resetResource() {
+    this._resource.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourceInput() {
+    return this._resource.internalValue;
+  }
+}
+
+export class HorizontalPodAutoscalerSpecMetricList extends cdktf.ComplexList {
+  public internalValue? : HorizontalPodAutoscalerSpecMetric[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): HorizontalPodAutoscalerSpecMetricOutputReference {
+    return new HorizontalPodAutoscalerSpecMetricOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface HorizontalPodAutoscalerSpecScaleTargetRef {
   /**
   * API version of the referent
@@ -2552,9 +3891,9 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
       hasAnyValues = true;
       internalValueResult.behavior = this._behavior?.internalValue;
     }
-    if (this._metric !== undefined) {
+    if (this._metric?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.metric = this._metric;
+      internalValueResult.metric = this._metric?.internalValue;
     }
     if (this._scaleTargetRef?.internalValue !== undefined) {
       hasAnyValues = true;
@@ -2570,7 +3909,7 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
       this._minReplicas = undefined;
       this._targetCpuUtilizationPercentage = undefined;
       this._behavior.internalValue = undefined;
-      this._metric = undefined;
+      this._metric.internalValue = undefined;
       this._scaleTargetRef.internalValue = undefined;
     }
     else {
@@ -2579,7 +3918,7 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
       this._minReplicas = value.minReplicas;
       this._targetCpuUtilizationPercentage = value.targetCpuUtilizationPercentage;
       this._behavior.internalValue = value.behavior;
-      this._metric = value.metric;
+      this._metric.internalValue = value.metric;
       this._scaleTargetRef.internalValue = value.scaleTargetRef;
     }
   }
@@ -2646,20 +3985,19 @@ export class HorizontalPodAutoscalerSpecOutputReference extends cdktf.ComplexObj
   }
 
   // metric - computed: false, optional: true, required: false
-  private _metric?: HorizontalPodAutoscalerSpecMetric[] | cdktf.IResolvable; 
+  private _metric = new HorizontalPodAutoscalerSpecMetricList(this, "metric", false);
   public get metric() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('metric');
+    return this._metric;
   }
-  public set metric(value: HorizontalPodAutoscalerSpecMetric[] | cdktf.IResolvable) {
-    this._metric = value;
+  public putMetric(value: HorizontalPodAutoscalerSpecMetric[] | cdktf.IResolvable) {
+    this._metric.internalValue = value;
   }
   public resetMetric() {
-    this._metric = undefined;
+    this._metric.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get metricInput() {
-    return this._metric;
+    return this._metric.internalValue;
   }
 
   // scale_target_ref - computed: false, optional: false, required: true
@@ -2710,6 +4048,7 @@ export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
     this._spec.internalValue = config.spec;
   }
@@ -2719,8 +4058,19 @@ export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -2755,6 +4105,7 @@ export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       metadata: horizontalPodAutoscalerMetadataToTerraform(this._metadata.internalValue),
       spec: horizontalPodAutoscalerSpecToTerraform(this._spec.internalValue),
     };

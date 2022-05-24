@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface PodSecurityPolicyV1Beta1Config extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#id PodSecurityPolicyV1Beta1#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy_v1beta1#metadata PodSecurityPolicyV1Beta1#metadata}
@@ -179,6 +186,83 @@ export function podSecurityPolicyV1Beta1SpecAllowedFlexVolumesToTerraform(struct
   }
 }
 
+export class PodSecurityPolicyV1Beta1SpecAllowedFlexVolumesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSecurityPolicyV1Beta1SpecAllowedFlexVolumes | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._driver !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.driver = this._driver;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSecurityPolicyV1Beta1SpecAllowedFlexVolumes | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._driver = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._driver = value.driver;
+    }
+  }
+
+  // driver - computed: false, optional: false, required: true
+  private _driver?: string; 
+  public get driver() {
+    return this.getStringAttribute('driver');
+  }
+  public set driver(value: string) {
+    this._driver = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get driverInput() {
+    return this._driver;
+  }
+}
+
+export class PodSecurityPolicyV1Beta1SpecAllowedFlexVolumesList extends cdktf.ComplexList {
+  public internalValue? : PodSecurityPolicyV1Beta1SpecAllowedFlexVolumes[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSecurityPolicyV1Beta1SpecAllowedFlexVolumesOutputReference {
+    return new PodSecurityPolicyV1Beta1SpecAllowedFlexVolumesOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSecurityPolicyV1Beta1SpecAllowedHostPaths {
   /**
   * pathPrefix is the path prefix that the host volume must match. It does not support `*`. Trailing slashes are trimmed when validating the path prefix with a host path.
@@ -207,6 +291,105 @@ export function podSecurityPolicyV1Beta1SpecAllowedHostPathsToTerraform(struct?:
   }
 }
 
+export class PodSecurityPolicyV1Beta1SpecAllowedHostPathsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSecurityPolicyV1Beta1SpecAllowedHostPaths | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._pathPrefix !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.pathPrefix = this._pathPrefix;
+    }
+    if (this._readOnly !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSecurityPolicyV1Beta1SpecAllowedHostPaths | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._pathPrefix = undefined;
+      this._readOnly = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._pathPrefix = value.pathPrefix;
+      this._readOnly = value.readOnly;
+    }
+  }
+
+  // path_prefix - computed: false, optional: false, required: true
+  private _pathPrefix?: string; 
+  public get pathPrefix() {
+    return this.getStringAttribute('path_prefix');
+  }
+  public set pathPrefix(value: string) {
+    this._pathPrefix = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathPrefixInput() {
+    return this._pathPrefix;
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only');
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly;
+  }
+}
+
+export class PodSecurityPolicyV1Beta1SpecAllowedHostPathsList extends cdktf.ComplexList {
+  public internalValue? : PodSecurityPolicyV1Beta1SpecAllowedHostPaths[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSecurityPolicyV1Beta1SpecAllowedHostPathsOutputReference {
+    return new PodSecurityPolicyV1Beta1SpecAllowedHostPathsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSecurityPolicyV1Beta1SpecFsGroupRange {
   /**
   * max is the end of the range, inclusive.
@@ -233,6 +416,102 @@ export function podSecurityPolicyV1Beta1SpecFsGroupRangeToTerraform(struct?: Pod
   }
 }
 
+export class PodSecurityPolicyV1Beta1SpecFsGroupRangeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSecurityPolicyV1Beta1SpecFsGroupRange | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._max !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.max = this._max;
+    }
+    if (this._min !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.min = this._min;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSecurityPolicyV1Beta1SpecFsGroupRange | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._max = undefined;
+      this._min = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._max = value.max;
+      this._min = value.min;
+    }
+  }
+
+  // max - computed: false, optional: false, required: true
+  private _max?: number; 
+  public get max() {
+    return this.getNumberAttribute('max');
+  }
+  public set max(value: number) {
+    this._max = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get maxInput() {
+    return this._max;
+  }
+
+  // min - computed: false, optional: false, required: true
+  private _min?: number; 
+  public get min() {
+    return this.getNumberAttribute('min');
+  }
+  public set min(value: number) {
+    this._min = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get minInput() {
+    return this._min;
+  }
+}
+
+export class PodSecurityPolicyV1Beta1SpecFsGroupRangeList extends cdktf.ComplexList {
+  public internalValue? : PodSecurityPolicyV1Beta1SpecFsGroupRange[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSecurityPolicyV1Beta1SpecFsGroupRangeOutputReference {
+    return new PodSecurityPolicyV1Beta1SpecFsGroupRangeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSecurityPolicyV1Beta1SpecFsGroup {
   /**
   * rule is the strategy that will dictate what FSGroup is used in the SecurityContext.
@@ -277,9 +556,9 @@ export class PodSecurityPolicyV1Beta1SpecFsGroupOutputReference extends cdktf.Co
       hasAnyValues = true;
       internalValueResult.rule = this._rule;
     }
-    if (this._range !== undefined) {
+    if (this._range?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.range = this._range;
+      internalValueResult.range = this._range?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -288,12 +567,12 @@ export class PodSecurityPolicyV1Beta1SpecFsGroupOutputReference extends cdktf.Co
     if (value === undefined) {
       this.isEmptyObject = false;
       this._rule = undefined;
-      this._range = undefined;
+      this._range.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._rule = value.rule;
-      this._range = value.range;
+      this._range.internalValue = value.range;
     }
   }
 
@@ -311,20 +590,19 @@ export class PodSecurityPolicyV1Beta1SpecFsGroupOutputReference extends cdktf.Co
   }
 
   // range - computed: false, optional: true, required: false
-  private _range?: PodSecurityPolicyV1Beta1SpecFsGroupRange[] | cdktf.IResolvable; 
+  private _range = new PodSecurityPolicyV1Beta1SpecFsGroupRangeList(this, "range", false);
   public get range() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('range');
+    return this._range;
   }
-  public set range(value: PodSecurityPolicyV1Beta1SpecFsGroupRange[] | cdktf.IResolvable) {
-    this._range = value;
+  public putRange(value: PodSecurityPolicyV1Beta1SpecFsGroupRange[] | cdktf.IResolvable) {
+    this._range.internalValue = value;
   }
   public resetRange() {
-    this._range = undefined;
+    this._range.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get rangeInput() {
-    return this._range;
+    return this._range.internalValue;
   }
 }
 export interface PodSecurityPolicyV1Beta1SpecHostPorts {
@@ -353,6 +631,102 @@ export function podSecurityPolicyV1Beta1SpecHostPortsToTerraform(struct?: PodSec
   }
 }
 
+export class PodSecurityPolicyV1Beta1SpecHostPortsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSecurityPolicyV1Beta1SpecHostPorts | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._max !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.max = this._max;
+    }
+    if (this._min !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.min = this._min;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSecurityPolicyV1Beta1SpecHostPorts | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._max = undefined;
+      this._min = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._max = value.max;
+      this._min = value.min;
+    }
+  }
+
+  // max - computed: false, optional: false, required: true
+  private _max?: number; 
+  public get max() {
+    return this.getNumberAttribute('max');
+  }
+  public set max(value: number) {
+    this._max = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get maxInput() {
+    return this._max;
+  }
+
+  // min - computed: false, optional: false, required: true
+  private _min?: number; 
+  public get min() {
+    return this.getNumberAttribute('min');
+  }
+  public set min(value: number) {
+    this._min = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get minInput() {
+    return this._min;
+  }
+}
+
+export class PodSecurityPolicyV1Beta1SpecHostPortsList extends cdktf.ComplexList {
+  public internalValue? : PodSecurityPolicyV1Beta1SpecHostPorts[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSecurityPolicyV1Beta1SpecHostPortsOutputReference {
+    return new PodSecurityPolicyV1Beta1SpecHostPortsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSecurityPolicyV1Beta1SpecRunAsGroupRange {
   /**
   * max is the end of the range, inclusive.
@@ -379,6 +753,102 @@ export function podSecurityPolicyV1Beta1SpecRunAsGroupRangeToTerraform(struct?: 
   }
 }
 
+export class PodSecurityPolicyV1Beta1SpecRunAsGroupRangeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSecurityPolicyV1Beta1SpecRunAsGroupRange | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._max !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.max = this._max;
+    }
+    if (this._min !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.min = this._min;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSecurityPolicyV1Beta1SpecRunAsGroupRange | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._max = undefined;
+      this._min = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._max = value.max;
+      this._min = value.min;
+    }
+  }
+
+  // max - computed: false, optional: false, required: true
+  private _max?: number; 
+  public get max() {
+    return this.getNumberAttribute('max');
+  }
+  public set max(value: number) {
+    this._max = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get maxInput() {
+    return this._max;
+  }
+
+  // min - computed: false, optional: false, required: true
+  private _min?: number; 
+  public get min() {
+    return this.getNumberAttribute('min');
+  }
+  public set min(value: number) {
+    this._min = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get minInput() {
+    return this._min;
+  }
+}
+
+export class PodSecurityPolicyV1Beta1SpecRunAsGroupRangeList extends cdktf.ComplexList {
+  public internalValue? : PodSecurityPolicyV1Beta1SpecRunAsGroupRange[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSecurityPolicyV1Beta1SpecRunAsGroupRangeOutputReference {
+    return new PodSecurityPolicyV1Beta1SpecRunAsGroupRangeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSecurityPolicyV1Beta1SpecRunAsGroup {
   /**
   * rule is the strategy that will dictate the allowable RunAsGroup values that may be set.
@@ -423,9 +893,9 @@ export class PodSecurityPolicyV1Beta1SpecRunAsGroupOutputReference extends cdktf
       hasAnyValues = true;
       internalValueResult.rule = this._rule;
     }
-    if (this._range !== undefined) {
+    if (this._range?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.range = this._range;
+      internalValueResult.range = this._range?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -434,12 +904,12 @@ export class PodSecurityPolicyV1Beta1SpecRunAsGroupOutputReference extends cdktf
     if (value === undefined) {
       this.isEmptyObject = false;
       this._rule = undefined;
-      this._range = undefined;
+      this._range.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._rule = value.rule;
-      this._range = value.range;
+      this._range.internalValue = value.range;
     }
   }
 
@@ -457,20 +927,19 @@ export class PodSecurityPolicyV1Beta1SpecRunAsGroupOutputReference extends cdktf
   }
 
   // range - computed: false, optional: true, required: false
-  private _range?: PodSecurityPolicyV1Beta1SpecRunAsGroupRange[] | cdktf.IResolvable; 
+  private _range = new PodSecurityPolicyV1Beta1SpecRunAsGroupRangeList(this, "range", false);
   public get range() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('range');
+    return this._range;
   }
-  public set range(value: PodSecurityPolicyV1Beta1SpecRunAsGroupRange[] | cdktf.IResolvable) {
-    this._range = value;
+  public putRange(value: PodSecurityPolicyV1Beta1SpecRunAsGroupRange[] | cdktf.IResolvable) {
+    this._range.internalValue = value;
   }
   public resetRange() {
-    this._range = undefined;
+    this._range.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get rangeInput() {
-    return this._range;
+    return this._range.internalValue;
   }
 }
 export interface PodSecurityPolicyV1Beta1SpecRunAsUserRange {
@@ -499,6 +968,102 @@ export function podSecurityPolicyV1Beta1SpecRunAsUserRangeToTerraform(struct?: P
   }
 }
 
+export class PodSecurityPolicyV1Beta1SpecRunAsUserRangeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSecurityPolicyV1Beta1SpecRunAsUserRange | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._max !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.max = this._max;
+    }
+    if (this._min !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.min = this._min;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSecurityPolicyV1Beta1SpecRunAsUserRange | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._max = undefined;
+      this._min = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._max = value.max;
+      this._min = value.min;
+    }
+  }
+
+  // max - computed: false, optional: false, required: true
+  private _max?: number; 
+  public get max() {
+    return this.getNumberAttribute('max');
+  }
+  public set max(value: number) {
+    this._max = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get maxInput() {
+    return this._max;
+  }
+
+  // min - computed: false, optional: false, required: true
+  private _min?: number; 
+  public get min() {
+    return this.getNumberAttribute('min');
+  }
+  public set min(value: number) {
+    this._min = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get minInput() {
+    return this._min;
+  }
+}
+
+export class PodSecurityPolicyV1Beta1SpecRunAsUserRangeList extends cdktf.ComplexList {
+  public internalValue? : PodSecurityPolicyV1Beta1SpecRunAsUserRange[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSecurityPolicyV1Beta1SpecRunAsUserRangeOutputReference {
+    return new PodSecurityPolicyV1Beta1SpecRunAsUserRangeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSecurityPolicyV1Beta1SpecRunAsUser {
   /**
   * rule is the strategy that will dictate the allowable RunAsUser values that may be set.
@@ -543,9 +1108,9 @@ export class PodSecurityPolicyV1Beta1SpecRunAsUserOutputReference extends cdktf.
       hasAnyValues = true;
       internalValueResult.rule = this._rule;
     }
-    if (this._range !== undefined) {
+    if (this._range?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.range = this._range;
+      internalValueResult.range = this._range?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -554,12 +1119,12 @@ export class PodSecurityPolicyV1Beta1SpecRunAsUserOutputReference extends cdktf.
     if (value === undefined) {
       this.isEmptyObject = false;
       this._rule = undefined;
-      this._range = undefined;
+      this._range.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._rule = value.rule;
-      this._range = value.range;
+      this._range.internalValue = value.range;
     }
   }
 
@@ -577,20 +1142,19 @@ export class PodSecurityPolicyV1Beta1SpecRunAsUserOutputReference extends cdktf.
   }
 
   // range - computed: false, optional: true, required: false
-  private _range?: PodSecurityPolicyV1Beta1SpecRunAsUserRange[] | cdktf.IResolvable; 
+  private _range = new PodSecurityPolicyV1Beta1SpecRunAsUserRangeList(this, "range", false);
   public get range() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('range');
+    return this._range;
   }
-  public set range(value: PodSecurityPolicyV1Beta1SpecRunAsUserRange[] | cdktf.IResolvable) {
-    this._range = value;
+  public putRange(value: PodSecurityPolicyV1Beta1SpecRunAsUserRange[] | cdktf.IResolvable) {
+    this._range.internalValue = value;
   }
   public resetRange() {
-    this._range = undefined;
+    this._range.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get rangeInput() {
-    return this._range;
+    return this._range.internalValue;
   }
 }
 export interface PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptions {
@@ -625,6 +1189,140 @@ export function podSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsToTerraform(str
   }
 }
 
+export class PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._level !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.level = this._level;
+    }
+    if (this._role !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.role = this._role;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._user !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.user = this._user;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._level = undefined;
+      this._role = undefined;
+      this._type = undefined;
+      this._user = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._level = value.level;
+      this._role = value.role;
+      this._type = value.type;
+      this._user = value.user;
+    }
+  }
+
+  // level - computed: false, optional: false, required: true
+  private _level?: string; 
+  public get level() {
+    return this.getStringAttribute('level');
+  }
+  public set level(value: string) {
+    this._level = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get levelInput() {
+    return this._level;
+  }
+
+  // role - computed: false, optional: false, required: true
+  private _role?: string; 
+  public get role() {
+    return this.getStringAttribute('role');
+  }
+  public set role(value: string) {
+    this._role = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get roleInput() {
+    return this._role;
+  }
+
+  // type - computed: false, optional: false, required: true
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+
+  // user - computed: false, optional: false, required: true
+  private _user?: string; 
+  public get user() {
+    return this.getStringAttribute('user');
+  }
+  public set user(value: string) {
+    this._user = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get userInput() {
+    return this._user;
+  }
+}
+
+export class PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsList extends cdktf.ComplexList {
+  public internalValue? : PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsOutputReference {
+    return new PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSecurityPolicyV1Beta1SpecSeLinux {
   /**
   * rule is the strategy that will dictate the allowable labels that may be set.
@@ -669,9 +1367,9 @@ export class PodSecurityPolicyV1Beta1SpecSeLinuxOutputReference extends cdktf.Co
       hasAnyValues = true;
       internalValueResult.rule = this._rule;
     }
-    if (this._seLinuxOptions !== undefined) {
+    if (this._seLinuxOptions?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.seLinuxOptions = this._seLinuxOptions;
+      internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -680,12 +1378,12 @@ export class PodSecurityPolicyV1Beta1SpecSeLinuxOutputReference extends cdktf.Co
     if (value === undefined) {
       this.isEmptyObject = false;
       this._rule = undefined;
-      this._seLinuxOptions = undefined;
+      this._seLinuxOptions.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._rule = value.rule;
-      this._seLinuxOptions = value.seLinuxOptions;
+      this._seLinuxOptions.internalValue = value.seLinuxOptions;
     }
   }
 
@@ -703,20 +1401,19 @@ export class PodSecurityPolicyV1Beta1SpecSeLinuxOutputReference extends cdktf.Co
   }
 
   // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions?: PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptions[] | cdktf.IResolvable; 
+  private _seLinuxOptions = new PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsList(this, "se_linux_options", false);
   public get seLinuxOptions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('se_linux_options');
+    return this._seLinuxOptions;
   }
-  public set seLinuxOptions(value: PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptions[] | cdktf.IResolvable) {
-    this._seLinuxOptions = value;
+  public putSeLinuxOptions(value: PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptions[] | cdktf.IResolvable) {
+    this._seLinuxOptions.internalValue = value;
   }
   public resetSeLinuxOptions() {
-    this._seLinuxOptions = undefined;
+    this._seLinuxOptions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get seLinuxOptionsInput() {
-    return this._seLinuxOptions;
+    return this._seLinuxOptions.internalValue;
   }
 }
 export interface PodSecurityPolicyV1Beta1SpecSupplementalGroupsRange {
@@ -745,6 +1442,102 @@ export function podSecurityPolicyV1Beta1SpecSupplementalGroupsRangeToTerraform(s
   }
 }
 
+export class PodSecurityPolicyV1Beta1SpecSupplementalGroupsRangeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSecurityPolicyV1Beta1SpecSupplementalGroupsRange | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._max !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.max = this._max;
+    }
+    if (this._min !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.min = this._min;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSecurityPolicyV1Beta1SpecSupplementalGroupsRange | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._max = undefined;
+      this._min = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._max = value.max;
+      this._min = value.min;
+    }
+  }
+
+  // max - computed: false, optional: false, required: true
+  private _max?: number; 
+  public get max() {
+    return this.getNumberAttribute('max');
+  }
+  public set max(value: number) {
+    this._max = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get maxInput() {
+    return this._max;
+  }
+
+  // min - computed: false, optional: false, required: true
+  private _min?: number; 
+  public get min() {
+    return this.getNumberAttribute('min');
+  }
+  public set min(value: number) {
+    this._min = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get minInput() {
+    return this._min;
+  }
+}
+
+export class PodSecurityPolicyV1Beta1SpecSupplementalGroupsRangeList extends cdktf.ComplexList {
+  public internalValue? : PodSecurityPolicyV1Beta1SpecSupplementalGroupsRange[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSecurityPolicyV1Beta1SpecSupplementalGroupsRangeOutputReference {
+    return new PodSecurityPolicyV1Beta1SpecSupplementalGroupsRangeOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSecurityPolicyV1Beta1SpecSupplementalGroups {
   /**
   * rule is the strategy that will dictate what supplemental groups is used in the SecurityContext.
@@ -789,9 +1582,9 @@ export class PodSecurityPolicyV1Beta1SpecSupplementalGroupsOutputReference exten
       hasAnyValues = true;
       internalValueResult.rule = this._rule;
     }
-    if (this._range !== undefined) {
+    if (this._range?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.range = this._range;
+      internalValueResult.range = this._range?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -800,12 +1593,12 @@ export class PodSecurityPolicyV1Beta1SpecSupplementalGroupsOutputReference exten
     if (value === undefined) {
       this.isEmptyObject = false;
       this._rule = undefined;
-      this._range = undefined;
+      this._range.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._rule = value.rule;
-      this._range = value.range;
+      this._range.internalValue = value.range;
     }
   }
 
@@ -823,20 +1616,19 @@ export class PodSecurityPolicyV1Beta1SpecSupplementalGroupsOutputReference exten
   }
 
   // range - computed: false, optional: true, required: false
-  private _range?: PodSecurityPolicyV1Beta1SpecSupplementalGroupsRange[] | cdktf.IResolvable; 
+  private _range = new PodSecurityPolicyV1Beta1SpecSupplementalGroupsRangeList(this, "range", false);
   public get range() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('range');
+    return this._range;
   }
-  public set range(value: PodSecurityPolicyV1Beta1SpecSupplementalGroupsRange[] | cdktf.IResolvable) {
-    this._range = value;
+  public putRange(value: PodSecurityPolicyV1Beta1SpecSupplementalGroupsRange[] | cdktf.IResolvable) {
+    this._range.internalValue = value;
   }
   public resetRange() {
-    this._range = undefined;
+    this._range.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get rangeInput() {
-    return this._range;
+    return this._range.internalValue;
   }
 }
 export interface PodSecurityPolicyV1Beta1Spec {
@@ -1079,21 +1871,21 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
       hasAnyValues = true;
       internalValueResult.volumes = this._volumes;
     }
-    if (this._allowedFlexVolumes !== undefined) {
+    if (this._allowedFlexVolumes?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.allowedFlexVolumes = this._allowedFlexVolumes;
+      internalValueResult.allowedFlexVolumes = this._allowedFlexVolumes?.internalValue;
     }
-    if (this._allowedHostPaths !== undefined) {
+    if (this._allowedHostPaths?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.allowedHostPaths = this._allowedHostPaths;
+      internalValueResult.allowedHostPaths = this._allowedHostPaths?.internalValue;
     }
     if (this._fsGroup?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsGroup = this._fsGroup?.internalValue;
     }
-    if (this._hostPorts !== undefined) {
+    if (this._hostPorts?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.hostPorts = this._hostPorts;
+      internalValueResult.hostPorts = this._hostPorts?.internalValue;
     }
     if (this._runAsGroup?.internalValue !== undefined) {
       hasAnyValues = true;
@@ -1131,10 +1923,10 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
       this._readOnlyRootFilesystem = undefined;
       this._requiredDropCapabilities = undefined;
       this._volumes = undefined;
-      this._allowedFlexVolumes = undefined;
-      this._allowedHostPaths = undefined;
+      this._allowedFlexVolumes.internalValue = undefined;
+      this._allowedHostPaths.internalValue = undefined;
       this._fsGroup.internalValue = undefined;
-      this._hostPorts = undefined;
+      this._hostPorts.internalValue = undefined;
       this._runAsGroup.internalValue = undefined;
       this._runAsUser.internalValue = undefined;
       this._seLinux.internalValue = undefined;
@@ -1156,10 +1948,10 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
       this._readOnlyRootFilesystem = value.readOnlyRootFilesystem;
       this._requiredDropCapabilities = value.requiredDropCapabilities;
       this._volumes = value.volumes;
-      this._allowedFlexVolumes = value.allowedFlexVolumes;
-      this._allowedHostPaths = value.allowedHostPaths;
+      this._allowedFlexVolumes.internalValue = value.allowedFlexVolumes;
+      this._allowedHostPaths.internalValue = value.allowedHostPaths;
       this._fsGroup.internalValue = value.fsGroup;
-      this._hostPorts = value.hostPorts;
+      this._hostPorts.internalValue = value.hostPorts;
       this._runAsGroup.internalValue = value.runAsGroup;
       this._runAsUser.internalValue = value.runAsUser;
       this._seLinux.internalValue = value.seLinux;
@@ -1392,37 +2184,35 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
   }
 
   // allowed_flex_volumes - computed: false, optional: true, required: false
-  private _allowedFlexVolumes?: PodSecurityPolicyV1Beta1SpecAllowedFlexVolumes[] | cdktf.IResolvable; 
+  private _allowedFlexVolumes = new PodSecurityPolicyV1Beta1SpecAllowedFlexVolumesList(this, "allowed_flex_volumes", false);
   public get allowedFlexVolumes() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('allowed_flex_volumes');
+    return this._allowedFlexVolumes;
   }
-  public set allowedFlexVolumes(value: PodSecurityPolicyV1Beta1SpecAllowedFlexVolumes[] | cdktf.IResolvable) {
-    this._allowedFlexVolumes = value;
+  public putAllowedFlexVolumes(value: PodSecurityPolicyV1Beta1SpecAllowedFlexVolumes[] | cdktf.IResolvable) {
+    this._allowedFlexVolumes.internalValue = value;
   }
   public resetAllowedFlexVolumes() {
-    this._allowedFlexVolumes = undefined;
+    this._allowedFlexVolumes.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get allowedFlexVolumesInput() {
-    return this._allowedFlexVolumes;
+    return this._allowedFlexVolumes.internalValue;
   }
 
   // allowed_host_paths - computed: false, optional: true, required: false
-  private _allowedHostPaths?: PodSecurityPolicyV1Beta1SpecAllowedHostPaths[] | cdktf.IResolvable; 
+  private _allowedHostPaths = new PodSecurityPolicyV1Beta1SpecAllowedHostPathsList(this, "allowed_host_paths", false);
   public get allowedHostPaths() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('allowed_host_paths');
+    return this._allowedHostPaths;
   }
-  public set allowedHostPaths(value: PodSecurityPolicyV1Beta1SpecAllowedHostPaths[] | cdktf.IResolvable) {
-    this._allowedHostPaths = value;
+  public putAllowedHostPaths(value: PodSecurityPolicyV1Beta1SpecAllowedHostPaths[] | cdktf.IResolvable) {
+    this._allowedHostPaths.internalValue = value;
   }
   public resetAllowedHostPaths() {
-    this._allowedHostPaths = undefined;
+    this._allowedHostPaths.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get allowedHostPathsInput() {
-    return this._allowedHostPaths;
+    return this._allowedHostPaths.internalValue;
   }
 
   // fs_group - computed: false, optional: false, required: true
@@ -1439,20 +2229,19 @@ export class PodSecurityPolicyV1Beta1SpecOutputReference extends cdktf.ComplexOb
   }
 
   // host_ports - computed: false, optional: true, required: false
-  private _hostPorts?: PodSecurityPolicyV1Beta1SpecHostPorts[] | cdktf.IResolvable; 
+  private _hostPorts = new PodSecurityPolicyV1Beta1SpecHostPortsList(this, "host_ports", false);
   public get hostPorts() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('host_ports');
+    return this._hostPorts;
   }
-  public set hostPorts(value: PodSecurityPolicyV1Beta1SpecHostPorts[] | cdktf.IResolvable) {
-    this._hostPorts = value;
+  public putHostPorts(value: PodSecurityPolicyV1Beta1SpecHostPorts[] | cdktf.IResolvable) {
+    this._hostPorts.internalValue = value;
   }
   public resetHostPorts() {
-    this._hostPorts = undefined;
+    this._hostPorts.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get hostPortsInput() {
-    return this._hostPorts;
+    return this._hostPorts.internalValue;
   }
 
   // run_as_group - computed: false, optional: true, required: false
@@ -1548,6 +2337,7 @@ export class PodSecurityPolicyV1Beta1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
     this._spec.internalValue = config.spec;
   }
@@ -1557,8 +2347,19 @@ export class PodSecurityPolicyV1Beta1 extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -1593,6 +2394,7 @@ export class PodSecurityPolicyV1Beta1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       metadata: podSecurityPolicyV1Beta1MetadataToTerraform(this._metadata.internalValue),
       spec: podSecurityPolicyV1Beta1SpecToTerraform(this._spec.internalValue),
     };

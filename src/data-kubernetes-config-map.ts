@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface DataKubernetesConfigMapConfig extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map#id DataKubernetesConfigMap#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map#metadata DataKubernetesConfigMap#metadata}
@@ -218,6 +225,7 @@ export class DataKubernetesConfigMap extends cdktf.TerraformDataSource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
   }
 
@@ -226,18 +234,31 @@ export class DataKubernetesConfigMap extends cdktf.TerraformDataSource {
   // ==========
 
   // binary_data - computed: true, optional: false, required: false
-  public binaryData(key: string): string | cdktf.IResolvable {
-    return new cdktf.StringMap(this, 'binary_data').lookup(key);
+  private _binaryData = new cdktf.StringMap(this, "binary_data");
+  public get binaryData() {
+    return this._binaryData;
   }
 
   // data - computed: true, optional: false, required: false
-  public data(key: string): string | cdktf.IResolvable {
-    return new cdktf.StringMap(this, 'data').lookup(key);
+  private _data = new cdktf.StringMap(this, "data");
+  public get data() {
+    return this._data;
   }
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -259,6 +280,7 @@ export class DataKubernetesConfigMap extends cdktf.TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       metadata: dataKubernetesConfigMapMetadataToTerraform(this._metadata.internalValue),
     };
   }

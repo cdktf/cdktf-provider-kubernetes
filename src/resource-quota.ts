@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface ResourceQuotaConfig extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota#id ResourceQuota#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/resource_quota#metadata ResourceQuota#metadata}
@@ -257,6 +264,124 @@ export function resourceQuotaSpecScopeSelectorMatchExpressionToTerraform(struct?
   }
 }
 
+export class ResourceQuotaSpecScopeSelectorMatchExpressionOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ResourceQuotaSpecScopeSelectorMatchExpression | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._scopeName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.scopeName = this._scopeName;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ResourceQuotaSpecScopeSelectorMatchExpression | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._operator = undefined;
+      this._scopeName = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._operator = value.operator;
+      this._scopeName = value.scopeName;
+      this._values = value.values;
+    }
+  }
+
+  // operator - computed: false, optional: false, required: true
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // scope_name - computed: false, optional: false, required: true
+  private _scopeName?: string; 
+  public get scopeName() {
+    return this.getStringAttribute('scope_name');
+  }
+  public set scopeName(value: string) {
+    this._scopeName = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get scopeNameInput() {
+    return this._scopeName;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class ResourceQuotaSpecScopeSelectorMatchExpressionList extends cdktf.ComplexList {
+  public internalValue? : ResourceQuotaSpecScopeSelectorMatchExpression[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ResourceQuotaSpecScopeSelectorMatchExpressionOutputReference {
+    return new ResourceQuotaSpecScopeSelectorMatchExpressionOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ResourceQuotaSpecScopeSelector {
   /**
   * match_expression block
@@ -290,9 +415,9 @@ export class ResourceQuotaSpecScopeSelectorOutputReference extends cdktf.Complex
   public get internalValue(): ResourceQuotaSpecScopeSelector | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._matchExpression !== undefined) {
+    if (this._matchExpression?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.matchExpression = this._matchExpression;
+      internalValueResult.matchExpression = this._matchExpression?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -300,29 +425,28 @@ export class ResourceQuotaSpecScopeSelectorOutputReference extends cdktf.Complex
   public set internalValue(value: ResourceQuotaSpecScopeSelector | undefined) {
     if (value === undefined) {
       this.isEmptyObject = false;
-      this._matchExpression = undefined;
+      this._matchExpression.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
-      this._matchExpression = value.matchExpression;
+      this._matchExpression.internalValue = value.matchExpression;
     }
   }
 
   // match_expression - computed: false, optional: true, required: false
-  private _matchExpression?: ResourceQuotaSpecScopeSelectorMatchExpression[] | cdktf.IResolvable; 
+  private _matchExpression = new ResourceQuotaSpecScopeSelectorMatchExpressionList(this, "match_expression", false);
   public get matchExpression() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('match_expression');
+    return this._matchExpression;
   }
-  public set matchExpression(value: ResourceQuotaSpecScopeSelectorMatchExpression[] | cdktf.IResolvable) {
-    this._matchExpression = value;
+  public putMatchExpression(value: ResourceQuotaSpecScopeSelectorMatchExpression[] | cdktf.IResolvable) {
+    this._matchExpression.internalValue = value;
   }
   public resetMatchExpression() {
-    this._matchExpression = undefined;
+    this._matchExpression.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get matchExpressionInput() {
-    return this._matchExpression;
+    return this._matchExpression.internalValue;
   }
 }
 export interface ResourceQuotaSpec {
@@ -474,6 +598,7 @@ export function resourceQuotaTimeoutsToTerraform(struct?: ResourceQuotaTimeoutsO
 
 export class ResourceQuotaTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
 
   /**
   * @param terraformResource The parent resource
@@ -483,7 +608,10 @@ export class ResourceQuotaTimeoutsOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, false, 0);
   }
 
-  public get internalValue(): ResourceQuotaTimeouts | undefined {
+  public get internalValue(): ResourceQuotaTimeouts | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._create !== undefined) {
@@ -497,14 +625,20 @@ export class ResourceQuotaTimeoutsOutputReference extends cdktf.ComplexObject {
     return hasAnyValues ? internalValueResult : undefined;
   }
 
-  public set internalValue(value: ResourceQuotaTimeouts | undefined) {
+  public set internalValue(value: ResourceQuotaTimeouts | cdktf.IResolvable | undefined) {
     if (value === undefined) {
       this.isEmptyObject = false;
+      this.resolvableValue = undefined;
       this._create = undefined;
       this._update = undefined;
     }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
       this._create = value.create;
       this._update = value.update;
     }
@@ -577,6 +711,7 @@ export class ResourceQuota extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
     this._spec.internalValue = config.spec;
     this._timeouts.internalValue = config.timeouts;
@@ -587,8 +722,19 @@ export class ResourceQuota extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -642,6 +788,7 @@ export class ResourceQuota extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       metadata: resourceQuotaMetadataToTerraform(this._metadata.internalValue),
       spec: resourceQuotaSpecToTerraform(this._spec.internalValue),
       timeouts: resourceQuotaTimeoutsToTerraform(this._timeouts.internalValue),

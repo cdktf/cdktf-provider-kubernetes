@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface RoleV1Config extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_v1#id RoleV1#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role_v1#metadata RoleV1#metadata}
@@ -258,6 +265,143 @@ export function roleV1RuleToTerraform(struct?: RoleV1Rule | cdktf.IResolvable): 
   }
 }
 
+export class RoleV1RuleOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): RoleV1Rule | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._apiGroups !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.apiGroups = this._apiGroups;
+    }
+    if (this._resourceNames !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.resourceNames = this._resourceNames;
+    }
+    if (this._resources !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.resources = this._resources;
+    }
+    if (this._verbs !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.verbs = this._verbs;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: RoleV1Rule | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._apiGroups = undefined;
+      this._resourceNames = undefined;
+      this._resources = undefined;
+      this._verbs = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._apiGroups = value.apiGroups;
+      this._resourceNames = value.resourceNames;
+      this._resources = value.resources;
+      this._verbs = value.verbs;
+    }
+  }
+
+  // api_groups - computed: false, optional: false, required: true
+  private _apiGroups?: string[]; 
+  public get apiGroups() {
+    return cdktf.Fn.tolist(this.getListAttribute('api_groups'));
+  }
+  public set apiGroups(value: string[]) {
+    this._apiGroups = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get apiGroupsInput() {
+    return this._apiGroups;
+  }
+
+  // resource_names - computed: false, optional: true, required: false
+  private _resourceNames?: string[]; 
+  public get resourceNames() {
+    return cdktf.Fn.tolist(this.getListAttribute('resource_names'));
+  }
+  public set resourceNames(value: string[]) {
+    this._resourceNames = value;
+  }
+  public resetResourceNames() {
+    this._resourceNames = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourceNamesInput() {
+    return this._resourceNames;
+  }
+
+  // resources - computed: false, optional: false, required: true
+  private _resources?: string[]; 
+  public get resources() {
+    return cdktf.Fn.tolist(this.getListAttribute('resources'));
+  }
+  public set resources(value: string[]) {
+    this._resources = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourcesInput() {
+    return this._resources;
+  }
+
+  // verbs - computed: false, optional: false, required: true
+  private _verbs?: string[]; 
+  public get verbs() {
+    return cdktf.Fn.tolist(this.getListAttribute('verbs'));
+  }
+  public set verbs(value: string[]) {
+    this._verbs = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get verbsInput() {
+    return this._verbs;
+  }
+}
+
+export class RoleV1RuleList extends cdktf.ComplexList {
+  public internalValue? : RoleV1Rule[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): RoleV1RuleOutputReference {
+    return new RoleV1RuleOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role_v1 kubernetes_role_v1}
@@ -293,8 +437,9 @@ export class RoleV1 extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._metadata.internalValue = config.metadata;
-    this._rule = config.rule;
+    this._rule.internalValue = config.rule;
   }
 
   // ==========
@@ -302,8 +447,19 @@ export class RoleV1 extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -320,17 +476,16 @@ export class RoleV1 extends cdktf.TerraformResource {
   }
 
   // rule - computed: false, optional: false, required: true
-  private _rule?: RoleV1Rule[] | cdktf.IResolvable; 
+  private _rule = new RoleV1RuleList(this, "rule", false);
   public get rule() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('rule');
+    return this._rule;
   }
-  public set rule(value: RoleV1Rule[] | cdktf.IResolvable) {
-    this._rule = value;
+  public putRule(value: RoleV1Rule[] | cdktf.IResolvable) {
+    this._rule.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
   public get ruleInput() {
-    return this._rule;
+    return this._rule.internalValue;
   }
 
   // =========
@@ -339,8 +494,9 @@ export class RoleV1 extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       metadata: roleV1MetadataToTerraform(this._metadata.internalValue),
-      rule: cdktf.listMapper(roleV1RuleToTerraform)(this._rule),
+      rule: cdktf.listMapper(roleV1RuleToTerraform)(this._rule.internalValue),
     };
   }
 }
