@@ -1844,7 +1844,7 @@ export interface DaemonsetSpecTemplateSpecAffinityPodAffinityPreferredDuringSche
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#topology_key Daemonset#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -1925,16 +1925,13 @@ export class DaemonsetSpecTemplateSpecAffinityPodAffinityPreferredDuringScheduli
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
@@ -2376,7 +2373,7 @@ export interface DaemonsetSpecTemplateSpecAffinityPodAffinityRequiredDuringSched
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#topology_key Daemonset#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -2469,16 +2466,13 @@ export class DaemonsetSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulin
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
@@ -2914,7 +2908,7 @@ export interface DaemonsetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuring
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#topology_key Daemonset#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -2995,16 +2989,13 @@ export class DaemonsetSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSche
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
@@ -3446,7 +3437,7 @@ export interface DaemonsetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringS
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#topology_key Daemonset#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -3539,16 +3530,13 @@ export class DaemonsetSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSched
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {

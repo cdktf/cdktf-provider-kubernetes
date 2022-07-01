@@ -1457,7 +1457,7 @@ export interface ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPrefe
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller_v1#topology_key ReplicationControllerV1#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -1538,16 +1538,13 @@ export class ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferred
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
@@ -1989,7 +1986,7 @@ export interface ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityRequi
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller_v1#topology_key ReplicationControllerV1#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -2082,16 +2079,13 @@ export class ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredD
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
@@ -2527,7 +2521,7 @@ export interface ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityP
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller_v1#topology_key ReplicationControllerV1#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -2608,16 +2602,13 @@ export class ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPrefe
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
@@ -3059,7 +3050,7 @@ export interface ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityR
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller_v1#topology_key ReplicationControllerV1#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -3152,16 +3143,13 @@ export class ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequi
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {

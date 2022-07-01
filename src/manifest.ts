@@ -346,6 +346,134 @@ export class ManifestTimeoutsOutputReference extends cdktf.ComplexObject {
     return this._update;
   }
 }
+export interface ManifestWaitCondition {
+  /**
+  * The condition status.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#status Manifest#status}
+  */
+  readonly status?: string;
+  /**
+  * The type of condition.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#type Manifest#type}
+  */
+  readonly type?: string;
+}
+
+export function manifestWaitConditionToTerraform(struct?: ManifestWaitCondition | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    status: cdktf.stringToTerraform(struct!.status),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+export class ManifestWaitConditionOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ManifestWaitCondition | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._status !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.status = this._status;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ManifestWaitCondition | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._status = undefined;
+      this._type = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._status = value.status;
+      this._type = value.type;
+    }
+  }
+
+  // status - computed: false, optional: true, required: false
+  private _status?: string; 
+  public get status() {
+    return this.getStringAttribute('status');
+  }
+  public set status(value: string) {
+    this._status = value;
+  }
+  public resetStatus() {
+    this._status = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get statusInput() {
+    return this._status;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
+
+export class ManifestWaitConditionList extends cdktf.ComplexList {
+  public internalValue? : ManifestWaitCondition[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ManifestWaitConditionOutputReference {
+    return new ManifestWaitConditionOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ManifestWait {
   /**
   * A map of paths to fields to wait for a specific field value.
@@ -359,6 +487,12 @@ export interface ManifestWait {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#rollout Manifest#rollout}
   */
   readonly rollout?: boolean | cdktf.IResolvable;
+  /**
+  * condition block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#condition Manifest#condition}
+  */
+  readonly condition?: ManifestWaitCondition[] | cdktf.IResolvable;
 }
 
 export function manifestWaitToTerraform(struct?: ManifestWaitOutputReference | ManifestWait): any {
@@ -369,6 +503,7 @@ export function manifestWaitToTerraform(struct?: ManifestWaitOutputReference | M
   return {
     fields: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.fields),
     rollout: cdktf.booleanToTerraform(struct!.rollout),
+    condition: cdktf.listMapper(manifestWaitConditionToTerraform)(struct!.condition),
   }
 }
 
@@ -394,6 +529,10 @@ export class ManifestWaitOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.rollout = this._rollout;
     }
+    if (this._condition?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.condition = this._condition?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -402,11 +541,13 @@ export class ManifestWaitOutputReference extends cdktf.ComplexObject {
       this.isEmptyObject = false;
       this._fields = undefined;
       this._rollout = undefined;
+      this._condition.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._fields = value.fields;
       this._rollout = value.rollout;
+      this._condition.internalValue = value.condition;
     }
   }
 
@@ -441,6 +582,22 @@ export class ManifestWaitOutputReference extends cdktf.ComplexObject {
   public get rolloutInput() {
     return this._rollout;
   }
+
+  // condition - computed: false, optional: true, required: false
+  private _condition = new ManifestWaitConditionList(this, "condition", false);
+  public get condition() {
+    return this._condition;
+  }
+  public putCondition(value: ManifestWaitCondition[] | cdktf.IResolvable) {
+    this._condition.internalValue = value;
+  }
+  public resetCondition() {
+    this._condition.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get conditionInput() {
+    return this._condition.internalValue;
+  }
 }
 
 /**
@@ -469,7 +626,7 @@ export class Manifest extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_manifest',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.11.0',
+        providerVersion: '2.12.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

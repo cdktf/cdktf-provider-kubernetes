@@ -110,6 +110,135 @@ export class DataKubernetesServiceV1SpecPortList extends cdktf.ComplexList {
     return new DataKubernetesServiceV1SpecPortOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
+export interface DataKubernetesServiceV1SpecSessionAffinityConfigClientIp {
+}
+
+export function dataKubernetesServiceV1SpecSessionAffinityConfigClientIpToTerraform(struct?: DataKubernetesServiceV1SpecSessionAffinityConfigClientIp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesServiceV1SpecSessionAffinityConfigClientIpOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesServiceV1SpecSessionAffinityConfigClientIp | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesServiceV1SpecSessionAffinityConfigClientIp | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // timeout_seconds - computed: true, optional: false, required: false
+  public get timeoutSeconds() {
+    return this.getNumberAttribute('timeout_seconds');
+  }
+}
+
+export class DataKubernetesServiceV1SpecSessionAffinityConfigClientIpList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesServiceV1SpecSessionAffinityConfigClientIpOutputReference {
+    return new DataKubernetesServiceV1SpecSessionAffinityConfigClientIpOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesServiceV1SpecSessionAffinityConfig {
+}
+
+export function dataKubernetesServiceV1SpecSessionAffinityConfigToTerraform(struct?: DataKubernetesServiceV1SpecSessionAffinityConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesServiceV1SpecSessionAffinityConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesServiceV1SpecSessionAffinityConfig | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesServiceV1SpecSessionAffinityConfig | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // client_ip - computed: true, optional: false, required: false
+  private _clientIp = new DataKubernetesServiceV1SpecSessionAffinityConfigClientIpList(this, "client_ip", false);
+  public get clientIp() {
+    return this._clientIp;
+  }
+}
+
+export class DataKubernetesServiceV1SpecSessionAffinityConfigList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesServiceV1SpecSessionAffinityConfigOutputReference {
+    return new DataKubernetesServiceV1SpecSessionAffinityConfigOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface DataKubernetesServiceV1Spec {
 }
 
@@ -150,9 +279,19 @@ export class DataKubernetesServiceV1SpecOutputReference extends cdktf.ComplexObj
     }
   }
 
+  // allocate_load_balancer_node_ports - computed: true, optional: false, required: false
+  public get allocateLoadBalancerNodePorts() {
+    return this.getBooleanAttribute('allocate_load_balancer_node_ports');
+  }
+
   // cluster_ip - computed: true, optional: false, required: false
   public get clusterIp() {
     return this.getStringAttribute('cluster_ip');
+  }
+
+  // cluster_ips - computed: true, optional: false, required: false
+  public get clusterIps() {
+    return this.getListAttribute('cluster_ips');
   }
 
   // external_ips - computed: true, optional: false, required: false
@@ -175,6 +314,11 @@ export class DataKubernetesServiceV1SpecOutputReference extends cdktf.ComplexObj
     return this.getNumberAttribute('health_check_node_port');
   }
 
+  // internal_traffic_policy - computed: true, optional: false, required: false
+  public get internalTrafficPolicy() {
+    return this.getStringAttribute('internal_traffic_policy');
+  }
+
   // ip_families - computed: true, optional: false, required: false
   public get ipFamilies() {
     return this.getListAttribute('ip_families');
@@ -183,6 +327,11 @@ export class DataKubernetesServiceV1SpecOutputReference extends cdktf.ComplexObj
   // ip_family_policy - computed: true, optional: false, required: false
   public get ipFamilyPolicy() {
     return this.getStringAttribute('ip_family_policy');
+  }
+
+  // load_balancer_class - computed: true, optional: false, required: false
+  public get loadBalancerClass() {
+    return this.getStringAttribute('load_balancer_class');
   }
 
   // load_balancer_ip - computed: true, optional: false, required: false
@@ -215,6 +364,12 @@ export class DataKubernetesServiceV1SpecOutputReference extends cdktf.ComplexObj
   // session_affinity - computed: true, optional: false, required: false
   public get sessionAffinity() {
     return this.getStringAttribute('session_affinity');
+  }
+
+  // session_affinity_config - computed: true, optional: false, required: false
+  private _sessionAffinityConfig = new DataKubernetesServiceV1SpecSessionAffinityConfigList(this, "session_affinity_config", false);
+  public get sessionAffinityConfig() {
+    return this._sessionAffinityConfig;
   }
 
   // type - computed: true, optional: false, required: false
@@ -636,7 +791,7 @@ export class DataKubernetesServiceV1 extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_service_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.11.0',
+        providerVersion: '2.12.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

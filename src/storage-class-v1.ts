@@ -454,7 +454,7 @@ export class StorageClassV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_storage_class_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.11.0',
+        providerVersion: '2.12.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

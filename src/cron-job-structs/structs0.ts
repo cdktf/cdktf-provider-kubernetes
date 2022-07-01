@@ -1850,7 +1850,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPrefer
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job#topology_key CronJob#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -1931,16 +1931,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredD
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
@@ -2382,7 +2379,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequir
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job#topology_key CronJob#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -2475,16 +2472,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDu
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
@@ -2920,7 +2914,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPr
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job#topology_key CronJob#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -3001,16 +2995,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPrefer
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
@@ -3452,7 +3443,7 @@ export interface CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRe
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job#topology_key CronJob#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -3545,16 +3536,13 @@ export class CronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequir
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
