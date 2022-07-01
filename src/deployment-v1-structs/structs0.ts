@@ -1902,7 +1902,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringS
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#topology_key DeploymentV1#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -1983,16 +1983,13 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSched
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
@@ -2434,7 +2431,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSc
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#topology_key DeploymentV1#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -2527,16 +2524,13 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedu
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
@@ -2972,7 +2966,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDur
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#topology_key DeploymentV1#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -3053,16 +3047,13 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringS
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {
@@ -3504,7 +3495,7 @@ export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuri
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/deployment_v1#topology_key DeploymentV1#topology_key}
   */
-  readonly topologyKey?: string;
+  readonly topologyKey: string;
   /**
   * label_selector block
   * 
@@ -3597,16 +3588,13 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSc
     return this._namespaces;
   }
 
-  // topology_key - computed: false, optional: true, required: false
+  // topology_key - computed: false, optional: false, required: true
   private _topologyKey?: string; 
   public get topologyKey() {
     return this.getStringAttribute('topology_key');
   }
   public set topologyKey(value: string) {
     this._topologyKey = value;
-  }
-  public resetTopologyKey() {
-    this._topologyKey = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get topologyKeyInput() {

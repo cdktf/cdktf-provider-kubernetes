@@ -56,6 +56,18 @@ export interface KubernetesProviderConfig {
   */
   readonly host?: string;
   /**
+  * List of Kubernetes metadata annotations to ignore across all resources handled by this provider for situations where external systems are managing certain resource annotations. Each item is a regular expression.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#ignore_annotations KubernetesProvider#ignore_annotations}
+  */
+  readonly ignoreAnnotations?: string[];
+  /**
+  * List of Kubernetes metadata labels to ignore across all resources handled by this provider for situations where external systems are managing certain resource labels. Each item is a regular expression.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#ignore_labels KubernetesProvider#ignore_labels}
+  */
+  readonly ignoreLabels?: string[];
+  /**
   * Whether server should be accessed without verifying the TLS certificate.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#insecure KubernetesProvider#insecure}
@@ -182,7 +194,7 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
       terraformResourceType: 'kubernetes',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.11.0',
+        providerVersion: '2.12.0',
         providerVersionConstraint: '~> 2.0'
       },
       terraformProviderSource: 'kubernetes'
@@ -196,6 +208,8 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
     this._configPath = config.configPath;
     this._configPaths = config.configPaths;
     this._host = config.host;
+    this._ignoreAnnotations = config.ignoreAnnotations;
+    this._ignoreLabels = config.ignoreLabels;
     this._insecure = config.insecure;
     this._password = config.password;
     this._proxyUrl = config.proxyUrl;
@@ -354,6 +368,38 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
     return this._host;
   }
 
+  // ignore_annotations - computed: false, optional: true, required: false
+  private _ignoreAnnotations?: string[]; 
+  public get ignoreAnnotations() {
+    return this._ignoreAnnotations;
+  }
+  public set ignoreAnnotations(value: string[] | undefined) {
+    this._ignoreAnnotations = value;
+  }
+  public resetIgnoreAnnotations() {
+    this._ignoreAnnotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ignoreAnnotationsInput() {
+    return this._ignoreAnnotations;
+  }
+
+  // ignore_labels - computed: false, optional: true, required: false
+  private _ignoreLabels?: string[]; 
+  public get ignoreLabels() {
+    return this._ignoreLabels;
+  }
+  public set ignoreLabels(value: string[] | undefined) {
+    this._ignoreLabels = value;
+  }
+  public resetIgnoreLabels() {
+    this._ignoreLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ignoreLabelsInput() {
+    return this._ignoreLabels;
+  }
+
   // insecure - computed: false, optional: true, required: false
   private _insecure?: boolean | cdktf.IResolvable; 
   public get insecure() {
@@ -497,6 +543,8 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
       config_path: cdktf.stringToTerraform(this._configPath),
       config_paths: cdktf.listMapper(cdktf.stringToTerraform)(this._configPaths),
       host: cdktf.stringToTerraform(this._host),
+      ignore_annotations: cdktf.listMapper(cdktf.stringToTerraform)(this._ignoreAnnotations),
+      ignore_labels: cdktf.listMapper(cdktf.stringToTerraform)(this._ignoreLabels),
       insecure: cdktf.booleanToTerraform(this._insecure),
       password: cdktf.stringToTerraform(this._password),
       proxy_url: cdktf.stringToTerraform(this._proxyUrl),

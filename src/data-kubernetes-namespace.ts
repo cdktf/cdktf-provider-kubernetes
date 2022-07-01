@@ -252,7 +252,7 @@ export class DataKubernetesNamespace extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_namespace',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.11.0',
+        providerVersion: '2.12.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

@@ -677,13 +677,159 @@ export class ServiceV1SpecPortList extends cdktf.ComplexList {
     return new ServiceV1SpecPortOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
+export interface ServiceV1SpecSessionAffinityConfigClientIp {
+  /**
+  * Specifies the seconds of `ClientIP` type session sticky time. The value must be > 0 and <= 86400(for 1 day) if `ServiceAffinity` == `ClientIP`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#timeout_seconds ServiceV1#timeout_seconds}
+  */
+  readonly timeoutSeconds?: number;
+}
+
+export function serviceV1SpecSessionAffinityConfigClientIpToTerraform(struct?: ServiceV1SpecSessionAffinityConfigClientIpOutputReference | ServiceV1SpecSessionAffinityConfigClientIp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
+  }
+}
+
+export class ServiceV1SpecSessionAffinityConfigClientIpOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): ServiceV1SpecSessionAffinityConfigClientIp | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._timeoutSeconds !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceV1SpecSessionAffinityConfigClientIp | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._timeoutSeconds = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._timeoutSeconds = value.timeoutSeconds;
+    }
+  }
+
+  // timeout_seconds - computed: true, optional: true, required: false
+  private _timeoutSeconds?: number; 
+  public get timeoutSeconds() {
+    return this.getNumberAttribute('timeout_seconds');
+  }
+  public set timeoutSeconds(value: number) {
+    this._timeoutSeconds = value;
+  }
+  public resetTimeoutSeconds() {
+    this._timeoutSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutSecondsInput() {
+    return this._timeoutSeconds;
+  }
+}
+export interface ServiceV1SpecSessionAffinityConfig {
+  /**
+  * client_ip block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#client_ip ServiceV1#client_ip}
+  */
+  readonly clientIp?: ServiceV1SpecSessionAffinityConfigClientIp;
+}
+
+export function serviceV1SpecSessionAffinityConfigToTerraform(struct?: ServiceV1SpecSessionAffinityConfigOutputReference | ServiceV1SpecSessionAffinityConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    client_ip: serviceV1SpecSessionAffinityConfigClientIpToTerraform(struct!.clientIp),
+  }
+}
+
+export class ServiceV1SpecSessionAffinityConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): ServiceV1SpecSessionAffinityConfig | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._clientIp?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.clientIp = this._clientIp?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceV1SpecSessionAffinityConfig | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._clientIp.internalValue = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._clientIp.internalValue = value.clientIp;
+    }
+  }
+
+  // client_ip - computed: false, optional: true, required: false
+  private _clientIp = new ServiceV1SpecSessionAffinityConfigClientIpOutputReference(this, "client_ip");
+  public get clientIp() {
+    return this._clientIp;
+  }
+  public putClientIp(value: ServiceV1SpecSessionAffinityConfigClientIp) {
+    this._clientIp.internalValue = value;
+  }
+  public resetClientIp() {
+    this._clientIp.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get clientIpInput() {
+    return this._clientIp.internalValue;
+  }
+}
 export interface ServiceV1Spec {
+  /**
+  * Defines if `NodePorts` will be automatically allocated for services with type `LoadBalancer`. It may be set to `false` if the cluster load-balancer does not rely on `NodePorts`.  If the caller requests specific `NodePorts` (by specifying a value), those requests will be respected, regardless of this field. This field may only be set for services with type `LoadBalancer`. Default is `true`. More info: https://kubernetes.io/docs/concepts/services-networking/service/#load-balancer-nodeport-allocation
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#allocate_load_balancer_node_ports ServiceV1#allocate_load_balancer_node_ports}
+  */
+  readonly allocateLoadBalancerNodePorts?: boolean | cdktf.IResolvable;
   /**
   * The IP address of the service. It is usually assigned randomly by the master. If an address is specified manually and is not in use by others, it will be allocated to the service; otherwise, creation of the service will fail. `None` can be specified for headless services when proxying is not required. Ignored if type is `ExternalName`. More info: http://kubernetes.io/docs/user-guide/services#virtual-ips-and-service-proxies
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#cluster_ip ServiceV1#cluster_ip}
   */
   readonly clusterIp?: string;
+  /**
+  * List of IP addresses assigned to this service, and are usually assigned randomly. If an address is specified manually and is not in use by others, it will be allocated to the service; otherwise creation of the service will fail. If this field is not specified, it will be initialized from the `clusterIP` field. If this field is specified, clients must ensure that `clusterIPs[0]` and `clusterIP` have the same value. More info: http://kubernetes.io/docs/user-guide/services#virtual-ips-and-service-proxies
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#cluster_ips ServiceV1#cluster_ips}
+  */
+  readonly clusterIps?: string[];
   /**
   * A list of IP addresses for which nodes in the cluster will also accept traffic for this service. These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP.  A common example is external load-balancers that are not part of the Kubernetes system.
   * 
@@ -709,6 +855,12 @@ export interface ServiceV1Spec {
   */
   readonly healthCheckNodePort?: number;
   /**
+  * Specifies if the cluster internal traffic should be routed to all endpoints or node-local endpoints only. `Cluster` routes internal traffic to a Service to all endpoints. `Local` routes traffic to node-local endpoints only, traffic is dropped if no node-local endpoints are ready. The default value is `Cluster`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#internal_traffic_policy ServiceV1#internal_traffic_policy}
+  */
+  readonly internalTrafficPolicy?: string;
+  /**
   * IPFamilies is a list of IP families (e.g. IPv4, IPv6) assigned to this service. This field is usually assigned automatically based on cluster configuration and the ipFamilyPolicy field. If this field is specified manually, the requested family is available in the cluster, and ipFamilyPolicy allows it, it will be used; otherwise creation of the service will fail. This field is conditionally mutable: it allows for adding or removing a secondary IP family, but it does not allow changing the primary IP family of the Service.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#ip_families ServiceV1#ip_families}
@@ -720,6 +872,12 @@ export interface ServiceV1Spec {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#ip_family_policy ServiceV1#ip_family_policy}
   */
   readonly ipFamilyPolicy?: string;
+  /**
+  * The class of the load balancer implementation this Service belongs to. If specified, the value of this field must be a label-style identifier, with an optional prefix. This field can only be set when the Service type is `LoadBalancer`. If not set, the default load balancer implementation is used. This field can only be set when creating or updating a Service to type `LoadBalancer`. More info: https://kubernetes.io/docs/concepts/services-networking/service/#load-balancer-class
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#load_balancer_class ServiceV1#load_balancer_class}
+  */
+  readonly loadBalancerClass?: string;
   /**
   * Only applies to `type = LoadBalancer`. LoadBalancer will get created with the IP specified in this field. This feature depends on whether the underlying cloud-provider supports specifying this field when a load balancer is created. This field will be ignored if the cloud-provider does not support the feature.
   * 
@@ -762,6 +920,12 @@ export interface ServiceV1Spec {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#port ServiceV1#port}
   */
   readonly port?: ServiceV1SpecPort[] | cdktf.IResolvable;
+  /**
+  * session_affinity_config block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/service_v1#session_affinity_config ServiceV1#session_affinity_config}
+  */
+  readonly sessionAffinityConfig?: ServiceV1SpecSessionAffinityConfig;
 }
 
 export function serviceV1SpecToTerraform(struct?: ServiceV1SpecOutputReference | ServiceV1Spec): any {
@@ -770,13 +934,17 @@ export function serviceV1SpecToTerraform(struct?: ServiceV1SpecOutputReference |
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
+    allocate_load_balancer_node_ports: cdktf.booleanToTerraform(struct!.allocateLoadBalancerNodePorts),
     cluster_ip: cdktf.stringToTerraform(struct!.clusterIp),
+    cluster_ips: cdktf.listMapper(cdktf.stringToTerraform)(struct!.clusterIps),
     external_ips: cdktf.listMapper(cdktf.stringToTerraform)(struct!.externalIps),
     external_name: cdktf.stringToTerraform(struct!.externalName),
     external_traffic_policy: cdktf.stringToTerraform(struct!.externalTrafficPolicy),
     health_check_node_port: cdktf.numberToTerraform(struct!.healthCheckNodePort),
+    internal_traffic_policy: cdktf.stringToTerraform(struct!.internalTrafficPolicy),
     ip_families: cdktf.listMapper(cdktf.stringToTerraform)(struct!.ipFamilies),
     ip_family_policy: cdktf.stringToTerraform(struct!.ipFamilyPolicy),
+    load_balancer_class: cdktf.stringToTerraform(struct!.loadBalancerClass),
     load_balancer_ip: cdktf.stringToTerraform(struct!.loadBalancerIp),
     load_balancer_source_ranges: cdktf.listMapper(cdktf.stringToTerraform)(struct!.loadBalancerSourceRanges),
     publish_not_ready_addresses: cdktf.booleanToTerraform(struct!.publishNotReadyAddresses),
@@ -784,6 +952,7 @@ export function serviceV1SpecToTerraform(struct?: ServiceV1SpecOutputReference |
     session_affinity: cdktf.stringToTerraform(struct!.sessionAffinity),
     type: cdktf.stringToTerraform(struct!.type),
     port: cdktf.listMapper(serviceV1SpecPortToTerraform)(struct!.port),
+    session_affinity_config: serviceV1SpecSessionAffinityConfigToTerraform(struct!.sessionAffinityConfig),
   }
 }
 
@@ -801,9 +970,17 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ServiceV1Spec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
+    if (this._allocateLoadBalancerNodePorts !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.allocateLoadBalancerNodePorts = this._allocateLoadBalancerNodePorts;
+    }
     if (this._clusterIp !== undefined) {
       hasAnyValues = true;
       internalValueResult.clusterIp = this._clusterIp;
+    }
+    if (this._clusterIps !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.clusterIps = this._clusterIps;
     }
     if (this._externalIps !== undefined) {
       hasAnyValues = true;
@@ -821,6 +998,10 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.healthCheckNodePort = this._healthCheckNodePort;
     }
+    if (this._internalTrafficPolicy !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.internalTrafficPolicy = this._internalTrafficPolicy;
+    }
     if (this._ipFamilies !== undefined) {
       hasAnyValues = true;
       internalValueResult.ipFamilies = this._ipFamilies;
@@ -828,6 +1009,10 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
     if (this._ipFamilyPolicy !== undefined) {
       hasAnyValues = true;
       internalValueResult.ipFamilyPolicy = this._ipFamilyPolicy;
+    }
+    if (this._loadBalancerClass !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.loadBalancerClass = this._loadBalancerClass;
     }
     if (this._loadBalancerIp !== undefined) {
       hasAnyValues = true;
@@ -857,19 +1042,27 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.port = this._port?.internalValue;
     }
+    if (this._sessionAffinityConfig?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.sessionAffinityConfig = this._sessionAffinityConfig?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
   public set internalValue(value: ServiceV1Spec | undefined) {
     if (value === undefined) {
       this.isEmptyObject = false;
+      this._allocateLoadBalancerNodePorts = undefined;
       this._clusterIp = undefined;
+      this._clusterIps = undefined;
       this._externalIps = undefined;
       this._externalName = undefined;
       this._externalTrafficPolicy = undefined;
       this._healthCheckNodePort = undefined;
+      this._internalTrafficPolicy = undefined;
       this._ipFamilies = undefined;
       this._ipFamilyPolicy = undefined;
+      this._loadBalancerClass = undefined;
       this._loadBalancerIp = undefined;
       this._loadBalancerSourceRanges = undefined;
       this._publishNotReadyAddresses = undefined;
@@ -877,16 +1070,21 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
       this._sessionAffinity = undefined;
       this._type = undefined;
       this._port.internalValue = undefined;
+      this._sessionAffinityConfig.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
+      this._allocateLoadBalancerNodePorts = value.allocateLoadBalancerNodePorts;
       this._clusterIp = value.clusterIp;
+      this._clusterIps = value.clusterIps;
       this._externalIps = value.externalIps;
       this._externalName = value.externalName;
       this._externalTrafficPolicy = value.externalTrafficPolicy;
       this._healthCheckNodePort = value.healthCheckNodePort;
+      this._internalTrafficPolicy = value.internalTrafficPolicy;
       this._ipFamilies = value.ipFamilies;
       this._ipFamilyPolicy = value.ipFamilyPolicy;
+      this._loadBalancerClass = value.loadBalancerClass;
       this._loadBalancerIp = value.loadBalancerIp;
       this._loadBalancerSourceRanges = value.loadBalancerSourceRanges;
       this._publishNotReadyAddresses = value.publishNotReadyAddresses;
@@ -894,7 +1092,24 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
       this._sessionAffinity = value.sessionAffinity;
       this._type = value.type;
       this._port.internalValue = value.port;
+      this._sessionAffinityConfig.internalValue = value.sessionAffinityConfig;
     }
+  }
+
+  // allocate_load_balancer_node_ports - computed: false, optional: true, required: false
+  private _allocateLoadBalancerNodePorts?: boolean | cdktf.IResolvable; 
+  public get allocateLoadBalancerNodePorts() {
+    return this.getBooleanAttribute('allocate_load_balancer_node_ports');
+  }
+  public set allocateLoadBalancerNodePorts(value: boolean | cdktf.IResolvable) {
+    this._allocateLoadBalancerNodePorts = value;
+  }
+  public resetAllocateLoadBalancerNodePorts() {
+    this._allocateLoadBalancerNodePorts = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get allocateLoadBalancerNodePortsInput() {
+    return this._allocateLoadBalancerNodePorts;
   }
 
   // cluster_ip - computed: true, optional: true, required: false
@@ -911,6 +1126,22 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
   // Temporarily expose input value. Use with caution.
   public get clusterIpInput() {
     return this._clusterIp;
+  }
+
+  // cluster_ips - computed: true, optional: true, required: false
+  private _clusterIps?: string[]; 
+  public get clusterIps() {
+    return this.getListAttribute('cluster_ips');
+  }
+  public set clusterIps(value: string[]) {
+    this._clusterIps = value;
+  }
+  public resetClusterIps() {
+    this._clusterIps = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get clusterIpsInput() {
+    return this._clusterIps;
   }
 
   // external_ips - computed: false, optional: true, required: false
@@ -977,6 +1208,22 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
     return this._healthCheckNodePort;
   }
 
+  // internal_traffic_policy - computed: true, optional: true, required: false
+  private _internalTrafficPolicy?: string; 
+  public get internalTrafficPolicy() {
+    return this.getStringAttribute('internal_traffic_policy');
+  }
+  public set internalTrafficPolicy(value: string) {
+    this._internalTrafficPolicy = value;
+  }
+  public resetInternalTrafficPolicy() {
+    this._internalTrafficPolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get internalTrafficPolicyInput() {
+    return this._internalTrafficPolicy;
+  }
+
   // ip_families - computed: true, optional: true, required: false
   private _ipFamilies?: string[]; 
   public get ipFamilies() {
@@ -1007,6 +1254,22 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
   // Temporarily expose input value. Use with caution.
   public get ipFamilyPolicyInput() {
     return this._ipFamilyPolicy;
+  }
+
+  // load_balancer_class - computed: false, optional: true, required: false
+  private _loadBalancerClass?: string; 
+  public get loadBalancerClass() {
+    return this.getStringAttribute('load_balancer_class');
+  }
+  public set loadBalancerClass(value: string) {
+    this._loadBalancerClass = value;
+  }
+  public resetLoadBalancerClass() {
+    this._loadBalancerClass = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get loadBalancerClassInput() {
+    return this._loadBalancerClass;
   }
 
   // load_balancer_ip - computed: false, optional: true, required: false
@@ -1120,6 +1383,22 @@ export class ServiceV1SpecOutputReference extends cdktf.ComplexObject {
   public get portInput() {
     return this._port.internalValue;
   }
+
+  // session_affinity_config - computed: false, optional: true, required: false
+  private _sessionAffinityConfig = new ServiceV1SpecSessionAffinityConfigOutputReference(this, "session_affinity_config");
+  public get sessionAffinityConfig() {
+    return this._sessionAffinityConfig;
+  }
+  public putSessionAffinityConfig(value: ServiceV1SpecSessionAffinityConfig) {
+    this._sessionAffinityConfig.internalValue = value;
+  }
+  public resetSessionAffinityConfig() {
+    this._sessionAffinityConfig.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get sessionAffinityConfigInput() {
+    return this._sessionAffinityConfig.internalValue;
+  }
 }
 export interface ServiceV1Timeouts {
   /**
@@ -1223,7 +1502,7 @@ export class ServiceV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_service_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.11.0',
+        providerVersion: '2.12.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
