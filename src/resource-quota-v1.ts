@@ -703,7 +703,7 @@ export class ResourceQuotaV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_resource_quota_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.12.0',
+        providerVersion: '2.12.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
