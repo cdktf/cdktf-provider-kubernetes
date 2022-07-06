@@ -5447,7 +5447,7 @@ export class PersistentVolume extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_persistent_volume',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.12.0',
+        providerVersion: '2.12.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

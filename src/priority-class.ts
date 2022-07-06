@@ -235,7 +235,7 @@ export class PriorityClass extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_priority_class',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.12.0',
+        providerVersion: '2.12.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

@@ -72,7 +72,7 @@ export class StatefulSet extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_stateful_set',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.12.0',
+        providerVersion: '2.12.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
