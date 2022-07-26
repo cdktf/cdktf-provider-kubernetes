@@ -402,7 +402,7 @@ export function horizontalPodAutoscalerSpecBehaviorScaleDownToTerraform(struct?:
   return {
     select_policy: cdktf.stringToTerraform(struct!.selectPolicy),
     stabilization_window_seconds: cdktf.numberToTerraform(struct!.stabilizationWindowSeconds),
-    policy: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorScaleDownPolicyToTerraform)(struct!.policy),
+    policy: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorScaleDownPolicyToTerraform, true)(struct!.policy),
   }
 }
 
@@ -704,7 +704,7 @@ export function horizontalPodAutoscalerSpecBehaviorScaleUpToTerraform(struct?: H
   return {
     select_policy: cdktf.stringToTerraform(struct!.selectPolicy),
     stabilization_window_seconds: cdktf.numberToTerraform(struct!.stabilizationWindowSeconds),
-    policy: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorScaleUpPolicyToTerraform)(struct!.policy),
+    policy: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorScaleUpPolicyToTerraform, true)(struct!.policy),
   }
 }
 
@@ -850,8 +850,8 @@ export function horizontalPodAutoscalerSpecBehaviorToTerraform(struct?: Horizont
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    scale_down: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorScaleDownToTerraform)(struct!.scaleDown),
-    scale_up: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorScaleUpToTerraform)(struct!.scaleUp),
+    scale_down: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorScaleDownToTerraform, true)(struct!.scaleDown),
+    scale_up: cdktf.listMapper(horizontalPodAutoscalerSpecBehaviorScaleUpToTerraform, true)(struct!.scaleUp),
   }
 }
 
@@ -1224,7 +1224,7 @@ export function horizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpr
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -1374,7 +1374,7 @@ export function horizontalPodAutoscalerSpecMetricExternalMetricSelectorToTerrafo
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(horizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(horizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -1502,7 +1502,7 @@ export function horizontalPodAutoscalerSpecMetricExternalMetricToTerraform(struc
   }
   return {
     name: cdktf.stringToTerraform(struct!.name),
-    selector: cdktf.listMapper(horizontalPodAutoscalerSpecMetricExternalMetricSelectorToTerraform)(struct!.selector),
+    selector: cdktf.listMapper(horizontalPodAutoscalerSpecMetricExternalMetricSelectorToTerraform, true)(struct!.selector),
   }
 }
 
@@ -1962,7 +1962,7 @@ export function horizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpres
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -2112,7 +2112,7 @@ export function horizontalPodAutoscalerSpecMetricObjectMetricSelectorToTerraform
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(horizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(horizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2240,7 +2240,7 @@ export function horizontalPodAutoscalerSpecMetricObjectMetricToTerraform(struct?
   }
   return {
     name: cdktf.stringToTerraform(struct!.name),
-    selector: cdktf.listMapper(horizontalPodAutoscalerSpecMetricObjectMetricSelectorToTerraform)(struct!.selector),
+    selector: cdktf.listMapper(horizontalPodAutoscalerSpecMetricObjectMetricSelectorToTerraform, true)(struct!.selector),
   }
 }
 
@@ -2610,7 +2610,7 @@ export function horizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressi
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -2760,7 +2760,7 @@ export function horizontalPodAutoscalerSpecMetricPodsMetricSelectorToTerraform(s
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(horizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(horizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2888,7 +2888,7 @@ export function horizontalPodAutoscalerSpecMetricPodsMetricToTerraform(struct?: 
   }
   return {
     name: cdktf.stringToTerraform(struct!.name),
-    selector: cdktf.listMapper(horizontalPodAutoscalerSpecMetricPodsMetricSelectorToTerraform)(struct!.selector),
+    selector: cdktf.listMapper(horizontalPodAutoscalerSpecMetricPodsMetricSelectorToTerraform, true)(struct!.selector),
   }
 }
 
@@ -3856,7 +3856,7 @@ export function horizontalPodAutoscalerSpecToTerraform(struct?: HorizontalPodAut
     min_replicas: cdktf.numberToTerraform(struct!.minReplicas),
     target_cpu_utilization_percentage: cdktf.numberToTerraform(struct!.targetCpuUtilizationPercentage),
     behavior: horizontalPodAutoscalerSpecBehaviorToTerraform(struct!.behavior),
-    metric: cdktf.listMapper(horizontalPodAutoscalerSpecMetricToTerraform)(struct!.metric),
+    metric: cdktf.listMapper(horizontalPodAutoscalerSpecMetricToTerraform, true)(struct!.metric),
     scale_target_ref: horizontalPodAutoscalerSpecScaleTargetRefToTerraform(struct!.scaleTargetRef),
   }
 }
@@ -4046,7 +4046,10 @@ export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;

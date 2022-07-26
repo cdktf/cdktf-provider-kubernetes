@@ -714,9 +714,9 @@ export function endpointsSubsetToTerraform(struct?: EndpointsSubset | cdktf.IRes
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    address: cdktf.listMapper(endpointsSubsetAddressToTerraform)(struct!.address),
-    not_ready_address: cdktf.listMapper(endpointsSubsetNotReadyAddressToTerraform)(struct!.notReadyAddress),
-    port: cdktf.listMapper(endpointsSubsetPortToTerraform)(struct!.port),
+    address: cdktf.listMapper(endpointsSubsetAddressToTerraform, true)(struct!.address),
+    not_ready_address: cdktf.listMapper(endpointsSubsetNotReadyAddressToTerraform, true)(struct!.notReadyAddress),
+    port: cdktf.listMapper(endpointsSubsetPortToTerraform, true)(struct!.port),
   }
 }
 
@@ -877,7 +877,10 @@ export class Endpoints extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;
@@ -941,7 +944,7 @@ export class Endpoints extends cdktf.TerraformResource {
     return {
       id: cdktf.stringToTerraform(this._id),
       metadata: endpointsMetadataToTerraform(this._metadata.internalValue),
-      subset: cdktf.listMapper(endpointsSubsetToTerraform)(this._subset.internalValue),
+      subset: cdktf.listMapper(endpointsSubsetToTerraform, true)(this._subset.internalValue),
     };
   }
 }

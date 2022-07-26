@@ -936,22 +936,22 @@ export function serviceSpecToTerraform(struct?: ServiceSpecOutputReference | Ser
   return {
     allocate_load_balancer_node_ports: cdktf.booleanToTerraform(struct!.allocateLoadBalancerNodePorts),
     cluster_ip: cdktf.stringToTerraform(struct!.clusterIp),
-    cluster_ips: cdktf.listMapper(cdktf.stringToTerraform)(struct!.clusterIps),
-    external_ips: cdktf.listMapper(cdktf.stringToTerraform)(struct!.externalIps),
+    cluster_ips: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.clusterIps),
+    external_ips: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.externalIps),
     external_name: cdktf.stringToTerraform(struct!.externalName),
     external_traffic_policy: cdktf.stringToTerraform(struct!.externalTrafficPolicy),
     health_check_node_port: cdktf.numberToTerraform(struct!.healthCheckNodePort),
     internal_traffic_policy: cdktf.stringToTerraform(struct!.internalTrafficPolicy),
-    ip_families: cdktf.listMapper(cdktf.stringToTerraform)(struct!.ipFamilies),
+    ip_families: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.ipFamilies),
     ip_family_policy: cdktf.stringToTerraform(struct!.ipFamilyPolicy),
     load_balancer_class: cdktf.stringToTerraform(struct!.loadBalancerClass),
     load_balancer_ip: cdktf.stringToTerraform(struct!.loadBalancerIp),
-    load_balancer_source_ranges: cdktf.listMapper(cdktf.stringToTerraform)(struct!.loadBalancerSourceRanges),
+    load_balancer_source_ranges: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.loadBalancerSourceRanges),
     publish_not_ready_addresses: cdktf.booleanToTerraform(struct!.publishNotReadyAddresses),
     selector: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.selector),
     session_affinity: cdktf.stringToTerraform(struct!.sessionAffinity),
     type: cdktf.stringToTerraform(struct!.type),
-    port: cdktf.listMapper(serviceSpecPortToTerraform)(struct!.port),
+    port: cdktf.listMapper(serviceSpecPortToTerraform, true)(struct!.port),
     session_affinity_config: serviceSpecSessionAffinityConfigToTerraform(struct!.sessionAffinityConfig),
   }
 }
@@ -1508,7 +1508,10 @@ export class Service extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._waitForLoadBalancer = config.waitForLoadBalancer;

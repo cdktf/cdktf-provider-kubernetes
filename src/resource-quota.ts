@@ -260,7 +260,7 @@ export function resourceQuotaSpecScopeSelectorMatchExpressionToTerraform(struct?
   return {
     operator: cdktf.stringToTerraform(struct!.operator),
     scope_name: cdktf.stringToTerraform(struct!.scopeName),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -397,7 +397,7 @@ export function resourceQuotaSpecScopeSelectorToTerraform(struct?: ResourceQuota
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_expression: cdktf.listMapper(resourceQuotaSpecScopeSelectorMatchExpressionToTerraform)(struct!.matchExpression),
+    match_expression: cdktf.listMapper(resourceQuotaSpecScopeSelectorMatchExpressionToTerraform, true)(struct!.matchExpression),
   }
 }
 
@@ -477,7 +477,7 @@ export function resourceQuotaSpecToTerraform(struct?: ResourceQuotaSpecOutputRef
   }
   return {
     hard: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.hard),
-    scopes: cdktf.listMapper(cdktf.stringToTerraform)(struct!.scopes),
+    scopes: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.scopes),
     scope_selector: resourceQuotaSpecScopeSelectorToTerraform(struct!.scopeSelector),
   }
 }
@@ -709,7 +709,10 @@ export class ResourceQuota extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;

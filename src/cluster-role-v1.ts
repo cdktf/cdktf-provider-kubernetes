@@ -62,7 +62,7 @@ export function clusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressions
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -212,7 +212,7 @@ export function clusterRoleV1AggregationRuleClusterRoleSelectorsToTerraform(stru
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(clusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(clusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -333,7 +333,7 @@ export function clusterRoleV1AggregationRuleToTerraform(struct?: ClusterRoleV1Ag
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    cluster_role_selectors: cdktf.listMapper(clusterRoleV1AggregationRuleClusterRoleSelectorsToTerraform)(struct!.clusterRoleSelectors),
+    cluster_role_selectors: cdktf.listMapper(clusterRoleV1AggregationRuleClusterRoleSelectorsToTerraform, true)(struct!.clusterRoleSelectors),
   }
 }
 
@@ -564,11 +564,11 @@ export function clusterRoleV1RuleToTerraform(struct?: ClusterRoleV1Rule | cdktf.
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    api_groups: cdktf.listMapper(cdktf.stringToTerraform)(struct!.apiGroups),
-    non_resource_urls: cdktf.listMapper(cdktf.stringToTerraform)(struct!.nonResourceUrls),
-    resource_names: cdktf.listMapper(cdktf.stringToTerraform)(struct!.resourceNames),
-    resources: cdktf.listMapper(cdktf.stringToTerraform)(struct!.resources),
-    verbs: cdktf.listMapper(cdktf.stringToTerraform)(struct!.verbs),
+    api_groups: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.apiGroups),
+    non_resource_urls: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.nonResourceUrls),
+    resource_names: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.resourceNames),
+    resources: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.resources),
+    verbs: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.verbs),
   }
 }
 
@@ -770,7 +770,10 @@ export class ClusterRoleV1 extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._aggregationRule.internalValue = config.aggregationRule;
@@ -852,7 +855,7 @@ export class ClusterRoleV1 extends cdktf.TerraformResource {
       id: cdktf.stringToTerraform(this._id),
       aggregation_rule: clusterRoleV1AggregationRuleToTerraform(this._aggregationRule.internalValue),
       metadata: clusterRoleV1MetadataToTerraform(this._metadata.internalValue),
-      rule: cdktf.listMapper(clusterRoleV1RuleToTerraform)(this._rule.internalValue),
+      rule: cdktf.listMapper(clusterRoleV1RuleToTerraform, true)(this._rule.internalValue),
     };
   }
 }

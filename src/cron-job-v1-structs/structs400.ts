@@ -120,7 +120,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProb
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct!.exec),
     http_get: cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -670,8 +670,8 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerToTerraform
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    args: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.args),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
     image: cdktf.stringToTerraform(struct!.image),
     image_pull_policy: cdktf.stringToTerraform(struct!.imagePullPolicy),
     name: cdktf.stringToTerraform(struct!.name),
@@ -681,16 +681,16 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerToTerraform
     termination_message_policy: cdktf.stringToTerraform(struct!.terminationMessagePolicy),
     tty: cdktf.booleanToTerraform(struct!.tty),
     working_dir: cdktf.stringToTerraform(struct!.workingDir),
-    env: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvToTerraform)(struct!.env),
-    env_from: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromToTerraform)(struct!.envFrom),
+    env: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvToTerraform, true)(struct!.env),
+    env_from: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerEnvFromToTerraform, true)(struct!.envFrom),
     lifecycle: cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLifecycleToTerraform(struct!.lifecycle),
     liveness_probe: cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeToTerraform(struct!.livenessProbe),
-    port: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerPortToTerraform)(struct!.port),
+    port: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerPortToTerraform, true)(struct!.port),
     readiness_probe: cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeToTerraform(struct!.readinessProbe),
     resources: cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerResourcesToTerraform(struct!.resources),
     security_context: cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerSecurityContextToTerraform(struct!.securityContext),
     startup_probe: cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerStartupProbeToTerraform(struct!.startupProbe),
-    volume_mount: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerVolumeMountToTerraform)(struct!.volumeMount),
+    volume_mount: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerVolumeMountToTerraform, true)(struct!.volumeMount),
   }
 }
 
@@ -1740,10 +1740,10 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextToTerrafo
     run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
-    supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform)(struct!.supplementalGroups),
+    supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform, false)(struct!.supplementalGroups),
     se_linux_options: cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
     seccomp_profile: cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
-    sysctl: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctlToTerraform)(struct!.sysctl),
+    sysctl: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextSysctlToTerraform, true)(struct!.sysctl),
   }
 }
 
@@ -2193,7 +2193,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraint
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -2343,7 +2343,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraint
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2485,7 +2485,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraint
     max_skew: cdktf.numberToTerraform(struct!.maxSkew),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
     when_unsatisfiable: cdktf.stringToTerraform(struct!.whenUnsatisfiable),
-    label_selector: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -3278,7 +3278,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeCephFsToTerraform(
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    monitors: cdktf.listMapper(cdktf.stringToTerraform)(struct!.monitors),
+    monitors: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.monitors),
     path: cdktf.stringToTerraform(struct!.path),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_file: cdktf.stringToTerraform(struct!.secretFile),
@@ -3757,7 +3757,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapToTerrafo
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
-    items: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeConfigMapItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -4535,7 +4535,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiToTerra
   }
   return {
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
-    items: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeDownwardApiItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -4741,7 +4741,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeFcToTerraform(stru
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     lun: cdktf.numberToTerraform(struct!.lun),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
-    target_ww_ns: cdktf.listMapper(cdktf.stringToTerraform)(struct!.targetWwNs),
+    target_ww_ns: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.targetWwNs),
   }
 }
 
@@ -6483,7 +6483,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesCo
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
-    items: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -7020,7 +7020,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDo
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    items: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -7258,7 +7258,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSe
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
-    items: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -7541,9 +7541,9 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesTo
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    config_map: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform)(struct!.configMap),
+    config_map: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform, true)(struct!.configMap),
     downward_api: cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform(struct!.downwardApi),
-    secret: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretToTerraform)(struct!.secret),
+    secret: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesSecretToTerraform, true)(struct!.secret),
     service_account_token: cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct!.serviceAccountToken),
   }
 }
@@ -7716,7 +7716,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedToTerrafo
   }
   return {
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
-    sources: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesToTerraform)(struct!.sources),
+    sources: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedSourcesToTerraform, true)(struct!.sources),
   }
 }
 
@@ -8149,7 +8149,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdToTerraform(str
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    ceph_monitors: cdktf.listMapper(cdktf.stringToTerraform)(struct!.cephMonitors),
+    ceph_monitors: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.cephMonitors),
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     keyring: cdktf.stringToTerraform(struct!.keyring),
     rados_user: cdktf.stringToTerraform(struct!.radosUser),
@@ -8549,7 +8549,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretToTerraform(
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
     optional: cdktf.booleanToTerraform(struct!.optional),
     secret_name: cdktf.stringToTerraform(struct!.secretName),
-    items: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -8953,7 +8953,7 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecVolumeToTerraform(struct
     nfs: cronJobV1SpecJobTemplateSpecTemplateSpecVolumeNfsToTerraform(struct!.nfs),
     persistent_volume_claim: cronJobV1SpecJobTemplateSpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct!.persistentVolumeClaim),
     photon_persistent_disk: cronJobV1SpecJobTemplateSpecTemplateSpecVolumePhotonPersistentDiskToTerraform(struct!.photonPersistentDisk),
-    projected: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedToTerraform)(struct!.projected),
+    projected: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeProjectedToTerraform, true)(struct!.projected),
     quobyte: cronJobV1SpecJobTemplateSpecTemplateSpecVolumeQuobyteToTerraform(struct!.quobyte),
     rbd: cronJobV1SpecJobTemplateSpecTemplateSpecVolumeRbdToTerraform(struct!.rbd),
     secret: cronJobV1SpecJobTemplateSpecTemplateSpecVolumeSecretToTerraform(struct!.secret),
@@ -9801,16 +9801,16 @@ export function cronJobV1SpecJobTemplateSpecTemplateSpecToTerraform(struct?: Cro
     subdomain: cdktf.stringToTerraform(struct!.subdomain),
     termination_grace_period_seconds: cdktf.numberToTerraform(struct!.terminationGracePeriodSeconds),
     affinity: cronJobV1SpecJobTemplateSpecTemplateSpecAffinityToTerraform(struct!.affinity),
-    container: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecContainerToTerraform)(struct!.container),
+    container: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecContainerToTerraform, true)(struct!.container),
     dns_config: cronJobV1SpecJobTemplateSpecTemplateSpecDnsConfigToTerraform(struct!.dnsConfig),
-    host_aliases: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecHostAliasesToTerraform)(struct!.hostAliases),
-    image_pull_secrets: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecretsToTerraform)(struct!.imagePullSecrets),
-    init_container: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerToTerraform)(struct!.initContainer),
-    readiness_gate: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecReadinessGateToTerraform)(struct!.readinessGate),
+    host_aliases: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecHostAliasesToTerraform, true)(struct!.hostAliases),
+    image_pull_secrets: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecImagePullSecretsToTerraform, true)(struct!.imagePullSecrets),
+    init_container: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecInitContainerToTerraform, true)(struct!.initContainer),
+    readiness_gate: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecReadinessGateToTerraform, true)(struct!.readinessGate),
     security_context: cronJobV1SpecJobTemplateSpecTemplateSpecSecurityContextToTerraform(struct!.securityContext),
-    toleration: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecTolerationToTerraform)(struct!.toleration),
-    topology_spread_constraint: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintToTerraform)(struct!.topologySpreadConstraint),
-    volume: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeToTerraform)(struct!.volume),
+    toleration: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecTolerationToTerraform, true)(struct!.toleration),
+    topology_spread_constraint: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecTopologySpreadConstraintToTerraform, true)(struct!.topologySpreadConstraint),
+    volume: cdktf.listMapper(cronJobV1SpecJobTemplateSpecTemplateSpecVolumeToTerraform, true)(struct!.volume),
   }
 }
 

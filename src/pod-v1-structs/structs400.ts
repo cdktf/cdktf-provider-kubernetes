@@ -546,10 +546,10 @@ export function podV1SpecSecurityContextToTerraform(struct?: PodV1SpecSecurityCo
     run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
-    supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform)(struct!.supplementalGroups),
+    supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform, false)(struct!.supplementalGroups),
     se_linux_options: podV1SpecSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
     seccomp_profile: podV1SpecSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
-    sysctl: cdktf.listMapper(podV1SpecSecurityContextSysctlToTerraform)(struct!.sysctl),
+    sysctl: cdktf.listMapper(podV1SpecSecurityContextSysctlToTerraform, true)(struct!.sysctl),
   }
 }
 
@@ -999,7 +999,7 @@ export function podV1SpecTopologySpreadConstraintLabelSelectorMatchExpressionsTo
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -1149,7 +1149,7 @@ export function podV1SpecTopologySpreadConstraintLabelSelectorToTerraform(struct
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(podV1SpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(podV1SpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -1291,7 +1291,7 @@ export function podV1SpecTopologySpreadConstraintToTerraform(struct?: PodV1SpecT
     max_skew: cdktf.numberToTerraform(struct!.maxSkew),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
     when_unsatisfiable: cdktf.stringToTerraform(struct!.whenUnsatisfiable),
-    label_selector: cdktf.listMapper(podV1SpecTopologySpreadConstraintLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(podV1SpecTopologySpreadConstraintLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -2084,7 +2084,7 @@ export function podV1SpecVolumeCephFsToTerraform(struct?: PodV1SpecVolumeCephFsO
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    monitors: cdktf.listMapper(cdktf.stringToTerraform)(struct!.monitors),
+    monitors: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.monitors),
     path: cdktf.stringToTerraform(struct!.path),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_file: cdktf.stringToTerraform(struct!.secretFile),
@@ -2563,7 +2563,7 @@ export function podV1SpecVolumeConfigMapToTerraform(struct?: PodV1SpecVolumeConf
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
-    items: cdktf.listMapper(podV1SpecVolumeConfigMapItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(podV1SpecVolumeConfigMapItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -3341,7 +3341,7 @@ export function podV1SpecVolumeDownwardApiToTerraform(struct?: PodV1SpecVolumeDo
   }
   return {
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
-    items: cdktf.listMapper(podV1SpecVolumeDownwardApiItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(podV1SpecVolumeDownwardApiItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -3547,7 +3547,7 @@ export function podV1SpecVolumeFcToTerraform(struct?: PodV1SpecVolumeFcOutputRef
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     lun: cdktf.numberToTerraform(struct!.lun),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
-    target_ww_ns: cdktf.listMapper(cdktf.stringToTerraform)(struct!.targetWwNs),
+    target_ww_ns: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.targetWwNs),
   }
 }
 
@@ -5289,7 +5289,7 @@ export function podV1SpecVolumeProjectedSourcesConfigMapToTerraform(struct?: Pod
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
-    items: cdktf.listMapper(podV1SpecVolumeProjectedSourcesConfigMapItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(podV1SpecVolumeProjectedSourcesConfigMapItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -5826,7 +5826,7 @@ export function podV1SpecVolumeProjectedSourcesDownwardApiToTerraform(struct?: P
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    items: cdktf.listMapper(podV1SpecVolumeProjectedSourcesDownwardApiItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(podV1SpecVolumeProjectedSourcesDownwardApiItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -6064,7 +6064,7 @@ export function podV1SpecVolumeProjectedSourcesSecretToTerraform(struct?: PodV1S
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
-    items: cdktf.listMapper(podV1SpecVolumeProjectedSourcesSecretItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(podV1SpecVolumeProjectedSourcesSecretItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -6347,9 +6347,9 @@ export function podV1SpecVolumeProjectedSourcesToTerraform(struct?: PodV1SpecVol
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    config_map: cdktf.listMapper(podV1SpecVolumeProjectedSourcesConfigMapToTerraform)(struct!.configMap),
+    config_map: cdktf.listMapper(podV1SpecVolumeProjectedSourcesConfigMapToTerraform, true)(struct!.configMap),
     downward_api: podV1SpecVolumeProjectedSourcesDownwardApiToTerraform(struct!.downwardApi),
-    secret: cdktf.listMapper(podV1SpecVolumeProjectedSourcesSecretToTerraform)(struct!.secret),
+    secret: cdktf.listMapper(podV1SpecVolumeProjectedSourcesSecretToTerraform, true)(struct!.secret),
     service_account_token: podV1SpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct!.serviceAccountToken),
   }
 }
@@ -6522,7 +6522,7 @@ export function podV1SpecVolumeProjectedToTerraform(struct?: PodV1SpecVolumeProj
   }
   return {
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
-    sources: cdktf.listMapper(podV1SpecVolumeProjectedSourcesToTerraform)(struct!.sources),
+    sources: cdktf.listMapper(podV1SpecVolumeProjectedSourcesToTerraform, true)(struct!.sources),
   }
 }
 
@@ -6955,7 +6955,7 @@ export function podV1SpecVolumeRbdToTerraform(struct?: PodV1SpecVolumeRbdOutputR
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    ceph_monitors: cdktf.listMapper(cdktf.stringToTerraform)(struct!.cephMonitors),
+    ceph_monitors: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.cephMonitors),
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     keyring: cdktf.stringToTerraform(struct!.keyring),
     rados_user: cdktf.stringToTerraform(struct!.radosUser),
@@ -7355,7 +7355,7 @@ export function podV1SpecVolumeSecretToTerraform(struct?: PodV1SpecVolumeSecretO
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
     optional: cdktf.booleanToTerraform(struct!.optional),
     secret_name: cdktf.stringToTerraform(struct!.secretName),
-    items: cdktf.listMapper(podV1SpecVolumeSecretItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(podV1SpecVolumeSecretItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -7759,7 +7759,7 @@ export function podV1SpecVolumeToTerraform(struct?: PodV1SpecVolume | cdktf.IRes
     nfs: podV1SpecVolumeNfsToTerraform(struct!.nfs),
     persistent_volume_claim: podV1SpecVolumePersistentVolumeClaimToTerraform(struct!.persistentVolumeClaim),
     photon_persistent_disk: podV1SpecVolumePhotonPersistentDiskToTerraform(struct!.photonPersistentDisk),
-    projected: cdktf.listMapper(podV1SpecVolumeProjectedToTerraform)(struct!.projected),
+    projected: cdktf.listMapper(podV1SpecVolumeProjectedToTerraform, true)(struct!.projected),
     quobyte: podV1SpecVolumeQuobyteToTerraform(struct!.quobyte),
     rbd: podV1SpecVolumeRbdToTerraform(struct!.rbd),
     secret: podV1SpecVolumeSecretToTerraform(struct!.secret),
@@ -8607,16 +8607,16 @@ export function podV1SpecToTerraform(struct?: PodV1SpecOutputReference | PodV1Sp
     subdomain: cdktf.stringToTerraform(struct!.subdomain),
     termination_grace_period_seconds: cdktf.numberToTerraform(struct!.terminationGracePeriodSeconds),
     affinity: podV1SpecAffinityToTerraform(struct!.affinity),
-    container: cdktf.listMapper(podV1SpecContainerToTerraform)(struct!.container),
+    container: cdktf.listMapper(podV1SpecContainerToTerraform, true)(struct!.container),
     dns_config: podV1SpecDnsConfigToTerraform(struct!.dnsConfig),
-    host_aliases: cdktf.listMapper(podV1SpecHostAliasesToTerraform)(struct!.hostAliases),
-    image_pull_secrets: cdktf.listMapper(podV1SpecImagePullSecretsToTerraform)(struct!.imagePullSecrets),
-    init_container: cdktf.listMapper(podV1SpecInitContainerToTerraform)(struct!.initContainer),
-    readiness_gate: cdktf.listMapper(podV1SpecReadinessGateToTerraform)(struct!.readinessGate),
+    host_aliases: cdktf.listMapper(podV1SpecHostAliasesToTerraform, true)(struct!.hostAliases),
+    image_pull_secrets: cdktf.listMapper(podV1SpecImagePullSecretsToTerraform, true)(struct!.imagePullSecrets),
+    init_container: cdktf.listMapper(podV1SpecInitContainerToTerraform, true)(struct!.initContainer),
+    readiness_gate: cdktf.listMapper(podV1SpecReadinessGateToTerraform, true)(struct!.readinessGate),
     security_context: podV1SpecSecurityContextToTerraform(struct!.securityContext),
-    toleration: cdktf.listMapper(podV1SpecTolerationToTerraform)(struct!.toleration),
-    topology_spread_constraint: cdktf.listMapper(podV1SpecTopologySpreadConstraintToTerraform)(struct!.topologySpreadConstraint),
-    volume: cdktf.listMapper(podV1SpecVolumeToTerraform)(struct!.volume),
+    toleration: cdktf.listMapper(podV1SpecTolerationToTerraform, true)(struct!.toleration),
+    topology_spread_constraint: cdktf.listMapper(podV1SpecTopologySpreadConstraintToTerraform, true)(struct!.topologySpreadConstraint),
+    volume: cdktf.listMapper(podV1SpecVolumeToTerraform, true)(struct!.volume),
   }
 }
 

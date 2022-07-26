@@ -225,7 +225,7 @@ export function csiDriverV1SpecToTerraform(struct?: CsiDriverV1SpecOutputReferen
   return {
     attach_required: cdktf.booleanToTerraform(struct!.attachRequired),
     pod_info_on_mount: cdktf.booleanToTerraform(struct!.podInfoOnMount),
-    volume_lifecycle_modes: cdktf.listMapper(cdktf.stringToTerraform)(struct!.volumeLifecycleModes),
+    volume_lifecycle_modes: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.volumeLifecycleModes),
   }
 }
 
@@ -351,7 +351,10 @@ export class CsiDriverV1 extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;

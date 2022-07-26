@@ -270,7 +270,7 @@ export function certificateSigningRequestV1SpecToTerraform(struct?: CertificateS
   return {
     request: cdktf.stringToTerraform(struct!.request),
     signer_name: cdktf.stringToTerraform(struct!.signerName),
-    usages: cdktf.listMapper(cdktf.stringToTerraform)(struct!.usages),
+    usages: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.usages),
   }
 }
 
@@ -468,7 +468,10 @@ export class CertificateSigningRequestV1 extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._autoApprove = config.autoApprove;
     this._id = config.id;

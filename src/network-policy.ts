@@ -375,7 +375,7 @@ export function networkPolicySpecEgressToIpBlockToTerraform(struct?: NetworkPoli
   }
   return {
     cidr: cdktf.stringToTerraform(struct!.cidr),
-    except: cdktf.listMapper(cdktf.stringToTerraform)(struct!.except),
+    except: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.except),
   }
 }
 
@@ -478,7 +478,7 @@ export function networkPolicySpecEgressToNamespaceSelectorMatchExpressionsToTerr
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -628,7 +628,7 @@ export function networkPolicySpecEgressToNamespaceSelectorToTerraform(struct?: N
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(networkPolicySpecEgressToNamespaceSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(networkPolicySpecEgressToNamespaceSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -731,7 +731,7 @@ export function networkPolicySpecEgressToPodSelectorMatchExpressionsToTerraform(
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -881,7 +881,7 @@ export function networkPolicySpecEgressToPodSelectorToTerraform(struct?: Network
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(networkPolicySpecEgressToPodSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(networkPolicySpecEgressToPodSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -1133,8 +1133,8 @@ export function networkPolicySpecEgressToTerraform(struct?: NetworkPolicySpecEgr
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    ports: cdktf.listMapper(networkPolicySpecEgressPortsToTerraform)(struct!.ports),
-    to: cdktf.listMapper(networkPolicySpecEgressToToTerraform)(struct!.to),
+    ports: cdktf.listMapper(networkPolicySpecEgressPortsToTerraform, true)(struct!.ports),
+    to: cdktf.listMapper(networkPolicySpecEgressToToTerraform, true)(struct!.to),
   }
 }
 
@@ -1262,7 +1262,7 @@ export function networkPolicySpecIngressFromIpBlockToTerraform(struct?: NetworkP
   }
   return {
     cidr: cdktf.stringToTerraform(struct!.cidr),
-    except: cdktf.listMapper(cdktf.stringToTerraform)(struct!.except),
+    except: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.except),
   }
 }
 
@@ -1365,7 +1365,7 @@ export function networkPolicySpecIngressFromNamespaceSelectorMatchExpressionsToT
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -1515,7 +1515,7 @@ export function networkPolicySpecIngressFromNamespaceSelectorToTerraform(struct?
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(networkPolicySpecIngressFromNamespaceSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(networkPolicySpecIngressFromNamespaceSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -1618,7 +1618,7 @@ export function networkPolicySpecIngressFromPodSelectorMatchExpressionsToTerrafo
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -1768,7 +1768,7 @@ export function networkPolicySpecIngressFromPodSelectorToTerraform(struct?: Netw
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(networkPolicySpecIngressFromPodSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(networkPolicySpecIngressFromPodSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2148,8 +2148,8 @@ export function networkPolicySpecIngressToTerraform(struct?: NetworkPolicySpecIn
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    from: cdktf.listMapper(networkPolicySpecIngressFromToTerraform)(struct!.from),
-    ports: cdktf.listMapper(networkPolicySpecIngressPortsToTerraform)(struct!.ports),
+    from: cdktf.listMapper(networkPolicySpecIngressFromToTerraform, true)(struct!.from),
+    ports: cdktf.listMapper(networkPolicySpecIngressPortsToTerraform, true)(struct!.ports),
   }
 }
 
@@ -2284,7 +2284,7 @@ export function networkPolicySpecPodSelectorMatchExpressionsToTerraform(struct?:
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -2434,7 +2434,7 @@ export function networkPolicySpecPodSelectorToTerraform(struct?: NetworkPolicySp
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(networkPolicySpecPodSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(networkPolicySpecPodSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2541,9 +2541,9 @@ export function networkPolicySpecToTerraform(struct?: NetworkPolicySpecOutputRef
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    policy_types: cdktf.listMapper(cdktf.stringToTerraform)(struct!.policyTypes),
-    egress: cdktf.listMapper(networkPolicySpecEgressToTerraform)(struct!.egress),
-    ingress: cdktf.listMapper(networkPolicySpecIngressToTerraform)(struct!.ingress),
+    policy_types: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.policyTypes),
+    egress: cdktf.listMapper(networkPolicySpecEgressToTerraform, true)(struct!.egress),
+    ingress: cdktf.listMapper(networkPolicySpecIngressToTerraform, true)(struct!.ingress),
     pod_selector: networkPolicySpecPodSelectorToTerraform(struct!.podSelector),
   }
 }
@@ -2689,7 +2689,10 @@ export class NetworkPolicy extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;
