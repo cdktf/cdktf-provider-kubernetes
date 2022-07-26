@@ -295,7 +295,7 @@ export function persistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchE
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -446,7 +446,7 @@ export function persistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchF
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -589,8 +589,8 @@ export function persistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermToTerr
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_expressions: cdktf.listMapper(persistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsToTerraform)(struct!.matchExpressions),
-    match_fields: cdktf.listMapper(persistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsToTerraform)(struct!.matchFields),
+    match_expressions: cdktf.listMapper(persistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsToTerraform, true)(struct!.matchExpressions),
+    match_fields: cdktf.listMapper(persistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsToTerraform, true)(struct!.matchFields),
   }
 }
 
@@ -711,7 +711,7 @@ export function persistentVolumeV1SpecNodeAffinityRequiredToTerraform(struct?: P
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    node_selector_term: cdktf.listMapper(persistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermToTerraform)(struct!.nodeSelectorTerm),
+    node_selector_term: cdktf.listMapper(persistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermToTerraform, true)(struct!.nodeSelectorTerm),
   }
 }
 
@@ -1470,7 +1470,7 @@ export function persistentVolumeV1SpecPersistentVolumeSourceCephFsToTerraform(st
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    monitors: cdktf.listMapper(cdktf.stringToTerraform)(struct!.monitors),
+    monitors: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.monitors),
     path: cdktf.stringToTerraform(struct!.path),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_file: cdktf.stringToTerraform(struct!.secretFile),
@@ -2469,7 +2469,7 @@ export function persistentVolumeV1SpecPersistentVolumeSourceFcToTerraform(struct
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     lun: cdktf.numberToTerraform(struct!.lun),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
-    target_ww_ns: cdktf.listMapper(cdktf.stringToTerraform)(struct!.targetWwNs),
+    target_ww_ns: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.targetWwNs),
   }
 }
 
@@ -4134,7 +4134,7 @@ export function persistentVolumeV1SpecPersistentVolumeSourceRbdToTerraform(struc
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    ceph_monitors: cdktf.listMapper(cdktf.stringToTerraform)(struct!.cephMonitors),
+    ceph_monitors: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.cephMonitors),
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     keyring: cdktf.stringToTerraform(struct!.keyring),
     rados_user: cdktf.stringToTerraform(struct!.radosUser),
@@ -5086,9 +5086,9 @@ export function persistentVolumeV1SpecToTerraform(struct?: PersistentVolumeV1Spe
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    access_modes: cdktf.listMapper(cdktf.stringToTerraform)(struct!.accessModes),
+    access_modes: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.accessModes),
     capacity: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.capacity),
-    mount_options: cdktf.listMapper(cdktf.stringToTerraform)(struct!.mountOptions),
+    mount_options: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.mountOptions),
     persistent_volume_reclaim_policy: cdktf.stringToTerraform(struct!.persistentVolumeReclaimPolicy),
     storage_class_name: cdktf.stringToTerraform(struct!.storageClassName),
     volume_mode: cdktf.stringToTerraform(struct!.volumeMode),
@@ -5453,7 +5453,10 @@ export class PersistentVolumeV1 extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;
@@ -5531,7 +5534,7 @@ export class PersistentVolumeV1 extends cdktf.TerraformResource {
     return {
       id: cdktf.stringToTerraform(this._id),
       metadata: persistentVolumeV1MetadataToTerraform(this._metadata.internalValue),
-      spec: cdktf.listMapper(persistentVolumeV1SpecToTerraform)(this._spec.internalValue),
+      spec: cdktf.listMapper(persistentVolumeV1SpecToTerraform, true)(this._spec.internalValue),
       timeouts: persistentVolumeV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
   }

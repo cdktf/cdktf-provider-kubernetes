@@ -391,8 +391,8 @@ export function statefulSetV1SpecTemplateSpecInitContainerToTerraform(struct?: S
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    args: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.args),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
     image: cdktf.stringToTerraform(struct!.image),
     image_pull_policy: cdktf.stringToTerraform(struct!.imagePullPolicy),
     name: cdktf.stringToTerraform(struct!.name),
@@ -402,16 +402,16 @@ export function statefulSetV1SpecTemplateSpecInitContainerToTerraform(struct?: S
     termination_message_policy: cdktf.stringToTerraform(struct!.terminationMessagePolicy),
     tty: cdktf.booleanToTerraform(struct!.tty),
     working_dir: cdktf.stringToTerraform(struct!.workingDir),
-    env: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerEnvToTerraform)(struct!.env),
-    env_from: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerEnvFromToTerraform)(struct!.envFrom),
+    env: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerEnvToTerraform, true)(struct!.env),
+    env_from: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerEnvFromToTerraform, true)(struct!.envFrom),
     lifecycle: statefulSetV1SpecTemplateSpecInitContainerLifecycleToTerraform(struct!.lifecycle),
     liveness_probe: statefulSetV1SpecTemplateSpecInitContainerLivenessProbeToTerraform(struct!.livenessProbe),
-    port: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerPortToTerraform)(struct!.port),
+    port: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerPortToTerraform, true)(struct!.port),
     readiness_probe: statefulSetV1SpecTemplateSpecInitContainerReadinessProbeToTerraform(struct!.readinessProbe),
     resources: statefulSetV1SpecTemplateSpecInitContainerResourcesToTerraform(struct!.resources),
     security_context: statefulSetV1SpecTemplateSpecInitContainerSecurityContextToTerraform(struct!.securityContext),
     startup_probe: statefulSetV1SpecTemplateSpecInitContainerStartupProbeToTerraform(struct!.startupProbe),
-    volume_mount: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerVolumeMountToTerraform)(struct!.volumeMount),
+    volume_mount: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerVolumeMountToTerraform, true)(struct!.volumeMount),
   }
 }
 
@@ -1461,10 +1461,10 @@ export function statefulSetV1SpecTemplateSpecSecurityContextToTerraform(struct?:
     run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
-    supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform)(struct!.supplementalGroups),
+    supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform, false)(struct!.supplementalGroups),
     se_linux_options: statefulSetV1SpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
     seccomp_profile: statefulSetV1SpecTemplateSpecSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
-    sysctl: cdktf.listMapper(statefulSetV1SpecTemplateSpecSecurityContextSysctlToTerraform)(struct!.sysctl),
+    sysctl: cdktf.listMapper(statefulSetV1SpecTemplateSpecSecurityContextSysctlToTerraform, true)(struct!.sysctl),
   }
 }
 
@@ -1914,7 +1914,7 @@ export function statefulSetV1SpecTemplateSpecTopologySpreadConstraintLabelSelect
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -2064,7 +2064,7 @@ export function statefulSetV1SpecTemplateSpecTopologySpreadConstraintLabelSelect
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2206,7 +2206,7 @@ export function statefulSetV1SpecTemplateSpecTopologySpreadConstraintToTerraform
     max_skew: cdktf.numberToTerraform(struct!.maxSkew),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
     when_unsatisfiable: cdktf.stringToTerraform(struct!.whenUnsatisfiable),
-    label_selector: cdktf.listMapper(statefulSetV1SpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(statefulSetV1SpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -2999,7 +2999,7 @@ export function statefulSetV1SpecTemplateSpecVolumeCephFsToTerraform(struct?: St
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    monitors: cdktf.listMapper(cdktf.stringToTerraform)(struct!.monitors),
+    monitors: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.monitors),
     path: cdktf.stringToTerraform(struct!.path),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_file: cdktf.stringToTerraform(struct!.secretFile),
@@ -3478,7 +3478,7 @@ export function statefulSetV1SpecTemplateSpecVolumeConfigMapToTerraform(struct?:
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
-    items: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeConfigMapItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeConfigMapItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -4256,7 +4256,7 @@ export function statefulSetV1SpecTemplateSpecVolumeDownwardApiToTerraform(struct
   }
   return {
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
-    items: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeDownwardApiItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeDownwardApiItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -4462,7 +4462,7 @@ export function statefulSetV1SpecTemplateSpecVolumeFcToTerraform(struct?: Statef
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     lun: cdktf.numberToTerraform(struct!.lun),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
-    target_ww_ns: cdktf.listMapper(cdktf.stringToTerraform)(struct!.targetWwNs),
+    target_ww_ns: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.targetWwNs),
   }
 }
 
@@ -6204,7 +6204,7 @@ export function statefulSetV1SpecTemplateSpecVolumeProjectedSourcesConfigMapToTe
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
-    items: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -6741,7 +6741,7 @@ export function statefulSetV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiTo
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    items: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -6979,7 +6979,7 @@ export function statefulSetV1SpecTemplateSpecVolumeProjectedSourcesSecretToTerra
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
-    items: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -7262,9 +7262,9 @@ export function statefulSetV1SpecTemplateSpecVolumeProjectedSourcesToTerraform(s
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    config_map: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform)(struct!.configMap),
+    config_map: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform, true)(struct!.configMap),
     downward_api: statefulSetV1SpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform(struct!.downwardApi),
-    secret: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedSourcesSecretToTerraform)(struct!.secret),
+    secret: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedSourcesSecretToTerraform, true)(struct!.secret),
     service_account_token: statefulSetV1SpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct!.serviceAccountToken),
   }
 }
@@ -7437,7 +7437,7 @@ export function statefulSetV1SpecTemplateSpecVolumeProjectedToTerraform(struct?:
   }
   return {
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
-    sources: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedSourcesToTerraform)(struct!.sources),
+    sources: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedSourcesToTerraform, true)(struct!.sources),
   }
 }
 
@@ -7870,7 +7870,7 @@ export function statefulSetV1SpecTemplateSpecVolumeRbdToTerraform(struct?: State
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    ceph_monitors: cdktf.listMapper(cdktf.stringToTerraform)(struct!.cephMonitors),
+    ceph_monitors: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.cephMonitors),
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     keyring: cdktf.stringToTerraform(struct!.keyring),
     rados_user: cdktf.stringToTerraform(struct!.radosUser),
@@ -8270,7 +8270,7 @@ export function statefulSetV1SpecTemplateSpecVolumeSecretToTerraform(struct?: St
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
     optional: cdktf.booleanToTerraform(struct!.optional),
     secret_name: cdktf.stringToTerraform(struct!.secretName),
-    items: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeSecretItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeSecretItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -8674,7 +8674,7 @@ export function statefulSetV1SpecTemplateSpecVolumeToTerraform(struct?: Stateful
     nfs: statefulSetV1SpecTemplateSpecVolumeNfsToTerraform(struct!.nfs),
     persistent_volume_claim: statefulSetV1SpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct!.persistentVolumeClaim),
     photon_persistent_disk: statefulSetV1SpecTemplateSpecVolumePhotonPersistentDiskToTerraform(struct!.photonPersistentDisk),
-    projected: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedToTerraform)(struct!.projected),
+    projected: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeProjectedToTerraform, true)(struct!.projected),
     quobyte: statefulSetV1SpecTemplateSpecVolumeQuobyteToTerraform(struct!.quobyte),
     rbd: statefulSetV1SpecTemplateSpecVolumeRbdToTerraform(struct!.rbd),
     secret: statefulSetV1SpecTemplateSpecVolumeSecretToTerraform(struct!.secret),
@@ -9522,16 +9522,16 @@ export function statefulSetV1SpecTemplateSpecToTerraform(struct?: StatefulSetV1S
     subdomain: cdktf.stringToTerraform(struct!.subdomain),
     termination_grace_period_seconds: cdktf.numberToTerraform(struct!.terminationGracePeriodSeconds),
     affinity: statefulSetV1SpecTemplateSpecAffinityToTerraform(struct!.affinity),
-    container: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerToTerraform)(struct!.container),
+    container: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerToTerraform, true)(struct!.container),
     dns_config: statefulSetV1SpecTemplateSpecDnsConfigToTerraform(struct!.dnsConfig),
-    host_aliases: cdktf.listMapper(statefulSetV1SpecTemplateSpecHostAliasesToTerraform)(struct!.hostAliases),
-    image_pull_secrets: cdktf.listMapper(statefulSetV1SpecTemplateSpecImagePullSecretsToTerraform)(struct!.imagePullSecrets),
-    init_container: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerToTerraform)(struct!.initContainer),
-    readiness_gate: cdktf.listMapper(statefulSetV1SpecTemplateSpecReadinessGateToTerraform)(struct!.readinessGate),
+    host_aliases: cdktf.listMapper(statefulSetV1SpecTemplateSpecHostAliasesToTerraform, true)(struct!.hostAliases),
+    image_pull_secrets: cdktf.listMapper(statefulSetV1SpecTemplateSpecImagePullSecretsToTerraform, true)(struct!.imagePullSecrets),
+    init_container: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerToTerraform, true)(struct!.initContainer),
+    readiness_gate: cdktf.listMapper(statefulSetV1SpecTemplateSpecReadinessGateToTerraform, true)(struct!.readinessGate),
     security_context: statefulSetV1SpecTemplateSpecSecurityContextToTerraform(struct!.securityContext),
-    toleration: cdktf.listMapper(statefulSetV1SpecTemplateSpecTolerationToTerraform)(struct!.toleration),
-    topology_spread_constraint: cdktf.listMapper(statefulSetV1SpecTemplateSpecTopologySpreadConstraintToTerraform)(struct!.topologySpreadConstraint),
-    volume: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeToTerraform)(struct!.volume),
+    toleration: cdktf.listMapper(statefulSetV1SpecTemplateSpecTolerationToTerraform, true)(struct!.toleration),
+    topology_spread_constraint: cdktf.listMapper(statefulSetV1SpecTemplateSpecTopologySpreadConstraintToTerraform, true)(struct!.topologySpreadConstraint),
+    volume: cdktf.listMapper(statefulSetV1SpecTemplateSpecVolumeToTerraform, true)(struct!.volume),
   }
 }
 
@@ -10369,7 +10369,7 @@ export function statefulSetV1SpecUpdateStrategyToTerraform(struct?: StatefulSetV
   }
   return {
     type: cdktf.stringToTerraform(struct!.type),
-    rolling_update: cdktf.listMapper(statefulSetV1SpecUpdateStrategyRollingUpdateToTerraform)(struct!.rollingUpdate),
+    rolling_update: cdktf.listMapper(statefulSetV1SpecUpdateStrategyRollingUpdateToTerraform, true)(struct!.rollingUpdate),
   }
 }
 
@@ -10798,7 +10798,7 @@ export function statefulSetV1SpecVolumeClaimTemplateSpecSelectorMatchExpressions
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -10948,7 +10948,7 @@ export function statefulSetV1SpecVolumeClaimTemplateSpecSelectorToTerraform(stru
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(statefulSetV1SpecVolumeClaimTemplateSpecSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(statefulSetV1SpecVolumeClaimTemplateSpecSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -11061,7 +11061,7 @@ export function statefulSetV1SpecVolumeClaimTemplateSpecToTerraform(struct?: Sta
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    access_modes: cdktf.listMapper(cdktf.stringToTerraform)(struct!.accessModes),
+    access_modes: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.accessModes),
     storage_class_name: cdktf.stringToTerraform(struct!.storageClassName),
     volume_name: cdktf.stringToTerraform(struct!.volumeName),
     resources: statefulSetV1SpecVolumeClaimTemplateSpecResourcesToTerraform(struct!.resources),
@@ -11384,8 +11384,8 @@ export function statefulSetV1SpecToTerraform(struct?: StatefulSetV1SpecOutputRef
     service_name: cdktf.stringToTerraform(struct!.serviceName),
     selector: statefulSetV1SpecSelectorToTerraform(struct!.selector),
     template: statefulSetV1SpecTemplateToTerraform(struct!.template),
-    update_strategy: cdktf.listMapper(statefulSetV1SpecUpdateStrategyToTerraform)(struct!.updateStrategy),
-    volume_claim_template: cdktf.listMapper(statefulSetV1SpecVolumeClaimTemplateToTerraform)(struct!.volumeClaimTemplate),
+    update_strategy: cdktf.listMapper(statefulSetV1SpecUpdateStrategyToTerraform, true)(struct!.updateStrategy),
+    volume_claim_template: cdktf.listMapper(statefulSetV1SpecVolumeClaimTemplateToTerraform, true)(struct!.volumeClaimTemplate),
   }
 }
 

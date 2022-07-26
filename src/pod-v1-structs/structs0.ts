@@ -226,7 +226,7 @@ export function podV1SpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDur
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -369,7 +369,7 @@ export function podV1SpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDur
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_expressions: cdktf.listMapper(podV1SpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(podV1SpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -572,7 +572,7 @@ export function podV1SpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuri
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -715,7 +715,7 @@ export function podV1SpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuri
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_expressions: cdktf.listMapper(podV1SpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(podV1SpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -814,7 +814,7 @@ export function podV1SpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuri
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    node_selector_term: cdktf.listMapper(podV1SpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform)(struct!.nodeSelectorTerm),
+    node_selector_term: cdktf.listMapper(podV1SpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform, true)(struct!.nodeSelectorTerm),
   }
 }
 
@@ -887,7 +887,7 @@ export function podV1SpecAffinityNodeAffinityToTerraform(struct?: PodV1SpecAffin
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(podV1SpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
+    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(podV1SpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
     required_during_scheduling_ignored_during_execution: podV1SpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
 }
@@ -991,7 +991,7 @@ export function podV1SpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuri
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -1141,7 +1141,7 @@ export function podV1SpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuri
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(podV1SpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(podV1SpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -1274,9 +1274,9 @@ export function podV1SpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuri
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
+    namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
-    label_selector: cdktf.listMapper(podV1SpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(podV1SpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -1520,7 +1520,7 @@ export function podV1SpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDurin
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -1670,7 +1670,7 @@ export function podV1SpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDurin
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(podV1SpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(podV1SpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -1803,9 +1803,9 @@ export function podV1SpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDurin
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
+    namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
-    label_selector: cdktf.listMapper(podV1SpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(podV1SpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -1951,8 +1951,8 @@ export function podV1SpecAffinityPodAffinityToTerraform(struct?: PodV1SpecAffini
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(podV1SpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
-    required_during_scheduling_ignored_during_execution: cdktf.listMapper(podV1SpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
+    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(podV1SpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
+    required_during_scheduling_ignored_during_execution: cdktf.listMapper(podV1SpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
 }
 
@@ -2055,7 +2055,7 @@ export function podV1SpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnored
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -2205,7 +2205,7 @@ export function podV1SpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnored
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(podV1SpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(podV1SpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2338,9 +2338,9 @@ export function podV1SpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnored
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
+    namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
-    label_selector: cdktf.listMapper(podV1SpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(podV1SpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -2584,7 +2584,7 @@ export function podV1SpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredD
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -2734,7 +2734,7 @@ export function podV1SpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredD
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(podV1SpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(podV1SpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2867,9 +2867,9 @@ export function podV1SpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredD
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
+    namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
-    label_selector: cdktf.listMapper(podV1SpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(podV1SpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -3015,8 +3015,8 @@ export function podV1SpecAffinityPodAntiAffinityToTerraform(struct?: PodV1SpecAf
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(podV1SpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
-    required_during_scheduling_ignored_during_execution: cdktf.listMapper(podV1SpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
+    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(podV1SpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
+    required_during_scheduling_ignored_during_execution: cdktf.listMapper(podV1SpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
 }
 
@@ -4345,7 +4345,7 @@ export function podV1SpecContainerLifecyclePostStartExecToTerraform(struct?: Pod
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -4568,7 +4568,7 @@ export function podV1SpecContainerLifecyclePostStartHttpGetToTerraform(struct?: 
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(podV1SpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(podV1SpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -4833,7 +4833,7 @@ export function podV1SpecContainerLifecyclePostStartToTerraform(struct?: PodV1Sp
   return {
     exec: podV1SpecContainerLifecyclePostStartExecToTerraform(struct!.exec),
     http_get: podV1SpecContainerLifecyclePostStartHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(podV1SpecContainerLifecyclePostStartTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(podV1SpecContainerLifecyclePostStartTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -4976,7 +4976,7 @@ export function podV1SpecContainerLifecyclePreStopExecToTerraform(struct?: PodV1
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -5199,7 +5199,7 @@ export function podV1SpecContainerLifecyclePreStopHttpGetToTerraform(struct?: Po
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(podV1SpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(podV1SpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -5464,7 +5464,7 @@ export function podV1SpecContainerLifecyclePreStopToTerraform(struct?: PodV1Spec
   return {
     exec: podV1SpecContainerLifecyclePreStopExecToTerraform(struct!.exec),
     http_get: podV1SpecContainerLifecyclePreStopHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(podV1SpecContainerLifecyclePreStopTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(podV1SpecContainerLifecyclePreStopTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -5613,8 +5613,8 @@ export function podV1SpecContainerLifecycleToTerraform(struct?: PodV1SpecContain
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    post_start: cdktf.listMapper(podV1SpecContainerLifecyclePostStartToTerraform)(struct!.postStart),
-    pre_stop: cdktf.listMapper(podV1SpecContainerLifecyclePreStopToTerraform)(struct!.preStop),
+    post_start: cdktf.listMapper(podV1SpecContainerLifecyclePostStartToTerraform, true)(struct!.postStart),
+    pre_stop: cdktf.listMapper(podV1SpecContainerLifecyclePreStopToTerraform, true)(struct!.preStop),
   }
 }
 
@@ -5703,7 +5703,7 @@ export function podV1SpecContainerLivenessProbeExecToTerraform(struct?: PodV1Spe
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -5926,7 +5926,7 @@ export function podV1SpecContainerLivenessProbeHttpGetToTerraform(struct?: PodV1
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(podV1SpecContainerLivenessProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(podV1SpecContainerLivenessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -6226,7 +6226,7 @@ export function podV1SpecContainerLivenessProbeToTerraform(struct?: PodV1SpecCon
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: podV1SpecContainerLivenessProbeExecToTerraform(struct!.exec),
     http_get: podV1SpecContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(podV1SpecContainerLivenessProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(podV1SpecContainerLivenessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -6659,7 +6659,7 @@ export function podV1SpecContainerReadinessProbeExecToTerraform(struct?: PodV1Sp
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -6882,7 +6882,7 @@ export function podV1SpecContainerReadinessProbeHttpGetToTerraform(struct?: PodV
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(podV1SpecContainerReadinessProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(podV1SpecContainerReadinessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -7182,7 +7182,7 @@ export function podV1SpecContainerReadinessProbeToTerraform(struct?: PodV1SpecCo
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: podV1SpecContainerReadinessProbeExecToTerraform(struct!.exec),
     http_get: podV1SpecContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(podV1SpecContainerReadinessProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(podV1SpecContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -7505,8 +7505,8 @@ export function podV1SpecContainerSecurityContextCapabilitiesToTerraform(struct?
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    add: cdktf.listMapper(cdktf.stringToTerraform)(struct!.add),
-    drop: cdktf.listMapper(cdktf.stringToTerraform)(struct!.drop),
+    add: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.add),
+    drop: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.drop),
   }
 }
 
@@ -8144,7 +8144,7 @@ export function podV1SpecContainerStartupProbeExecToTerraform(struct?: PodV1Spec
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -8367,7 +8367,7 @@ export function podV1SpecContainerStartupProbeHttpGetToTerraform(struct?: PodV1S
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(podV1SpecContainerStartupProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(podV1SpecContainerStartupProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -8667,7 +8667,7 @@ export function podV1SpecContainerStartupProbeToTerraform(struct?: PodV1SpecCont
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: podV1SpecContainerStartupProbeExecToTerraform(struct!.exec),
     http_get: podV1SpecContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(podV1SpecContainerStartupProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(podV1SpecContainerStartupProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -9217,8 +9217,8 @@ export function podV1SpecContainerToTerraform(struct?: PodV1SpecContainer | cdkt
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    args: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.args),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
     image: cdktf.stringToTerraform(struct!.image),
     image_pull_policy: cdktf.stringToTerraform(struct!.imagePullPolicy),
     name: cdktf.stringToTerraform(struct!.name),
@@ -9228,16 +9228,16 @@ export function podV1SpecContainerToTerraform(struct?: PodV1SpecContainer | cdkt
     termination_message_policy: cdktf.stringToTerraform(struct!.terminationMessagePolicy),
     tty: cdktf.booleanToTerraform(struct!.tty),
     working_dir: cdktf.stringToTerraform(struct!.workingDir),
-    env: cdktf.listMapper(podV1SpecContainerEnvToTerraform)(struct!.env),
-    env_from: cdktf.listMapper(podV1SpecContainerEnvFromToTerraform)(struct!.envFrom),
+    env: cdktf.listMapper(podV1SpecContainerEnvToTerraform, true)(struct!.env),
+    env_from: cdktf.listMapper(podV1SpecContainerEnvFromToTerraform, true)(struct!.envFrom),
     lifecycle: podV1SpecContainerLifecycleToTerraform(struct!.lifecycle),
     liveness_probe: podV1SpecContainerLivenessProbeToTerraform(struct!.livenessProbe),
-    port: cdktf.listMapper(podV1SpecContainerPortToTerraform)(struct!.port),
+    port: cdktf.listMapper(podV1SpecContainerPortToTerraform, true)(struct!.port),
     readiness_probe: podV1SpecContainerReadinessProbeToTerraform(struct!.readinessProbe),
     resources: podV1SpecContainerResourcesToTerraform(struct!.resources),
     security_context: podV1SpecContainerSecurityContextToTerraform(struct!.securityContext),
     startup_probe: podV1SpecContainerStartupProbeToTerraform(struct!.startupProbe),
-    volume_mount: cdktf.listMapper(podV1SpecContainerVolumeMountToTerraform)(struct!.volumeMount),
+    volume_mount: cdktf.listMapper(podV1SpecContainerVolumeMountToTerraform, true)(struct!.volumeMount),
   }
 }
 
@@ -9910,9 +9910,9 @@ export function podV1SpecDnsConfigToTerraform(struct?: PodV1SpecDnsConfigOutputR
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    nameservers: cdktf.listMapper(cdktf.stringToTerraform)(struct!.nameservers),
-    searches: cdktf.listMapper(cdktf.stringToTerraform)(struct!.searches),
-    option: cdktf.listMapper(podV1SpecDnsConfigOptionToTerraform)(struct!.option),
+    nameservers: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.nameservers),
+    searches: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.searches),
+    option: cdktf.listMapper(podV1SpecDnsConfigOptionToTerraform, true)(struct!.option),
   }
 }
 
@@ -10029,7 +10029,7 @@ export function podV1SpecHostAliasesToTerraform(struct?: PodV1SpecHostAliases | 
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    hostnames: cdktf.listMapper(cdktf.stringToTerraform)(struct!.hostnames),
+    hostnames: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.hostnames),
     ip: cdktf.stringToTerraform(struct!.ip),
   }
 }
@@ -11356,7 +11356,7 @@ export function podV1SpecInitContainerLifecyclePostStartExecToTerraform(struct?:
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -11579,7 +11579,7 @@ export function podV1SpecInitContainerLifecyclePostStartHttpGetToTerraform(struc
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(podV1SpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(podV1SpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -11844,7 +11844,7 @@ export function podV1SpecInitContainerLifecyclePostStartToTerraform(struct?: Pod
   return {
     exec: podV1SpecInitContainerLifecyclePostStartExecToTerraform(struct!.exec),
     http_get: podV1SpecInitContainerLifecyclePostStartHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(podV1SpecInitContainerLifecyclePostStartTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(podV1SpecInitContainerLifecyclePostStartTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -11987,7 +11987,7 @@ export function podV1SpecInitContainerLifecyclePreStopExecToTerraform(struct?: P
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -12210,7 +12210,7 @@ export function podV1SpecInitContainerLifecyclePreStopHttpGetToTerraform(struct?
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(podV1SpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(podV1SpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -12475,7 +12475,7 @@ export function podV1SpecInitContainerLifecyclePreStopToTerraform(struct?: PodV1
   return {
     exec: podV1SpecInitContainerLifecyclePreStopExecToTerraform(struct!.exec),
     http_get: podV1SpecInitContainerLifecyclePreStopHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(podV1SpecInitContainerLifecyclePreStopTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(podV1SpecInitContainerLifecyclePreStopTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -12624,8 +12624,8 @@ export function podV1SpecInitContainerLifecycleToTerraform(struct?: PodV1SpecIni
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    post_start: cdktf.listMapper(podV1SpecInitContainerLifecyclePostStartToTerraform)(struct!.postStart),
-    pre_stop: cdktf.listMapper(podV1SpecInitContainerLifecyclePreStopToTerraform)(struct!.preStop),
+    post_start: cdktf.listMapper(podV1SpecInitContainerLifecyclePostStartToTerraform, true)(struct!.postStart),
+    pre_stop: cdktf.listMapper(podV1SpecInitContainerLifecyclePreStopToTerraform, true)(struct!.preStop),
   }
 }
 
@@ -12714,7 +12714,7 @@ export function podV1SpecInitContainerLivenessProbeExecToTerraform(struct?: PodV
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -12937,7 +12937,7 @@ export function podV1SpecInitContainerLivenessProbeHttpGetToTerraform(struct?: P
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(podV1SpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(podV1SpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -13237,7 +13237,7 @@ export function podV1SpecInitContainerLivenessProbeToTerraform(struct?: PodV1Spe
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: podV1SpecInitContainerLivenessProbeExecToTerraform(struct!.exec),
     http_get: podV1SpecInitContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(podV1SpecInitContainerLivenessProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(podV1SpecInitContainerLivenessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -13670,7 +13670,7 @@ export function podV1SpecInitContainerReadinessProbeExecToTerraform(struct?: Pod
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -13893,7 +13893,7 @@ export function podV1SpecInitContainerReadinessProbeHttpGetToTerraform(struct?: 
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(podV1SpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(podV1SpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -14193,7 +14193,7 @@ export function podV1SpecInitContainerReadinessProbeToTerraform(struct?: PodV1Sp
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: podV1SpecInitContainerReadinessProbeExecToTerraform(struct!.exec),
     http_get: podV1SpecInitContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(podV1SpecInitContainerReadinessProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(podV1SpecInitContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -14516,8 +14516,8 @@ export function podV1SpecInitContainerSecurityContextCapabilitiesToTerraform(str
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    add: cdktf.listMapper(cdktf.stringToTerraform)(struct!.add),
-    drop: cdktf.listMapper(cdktf.stringToTerraform)(struct!.drop),
+    add: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.add),
+    drop: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.drop),
   }
 }
 
@@ -15155,7 +15155,7 @@ export function podV1SpecInitContainerStartupProbeExecToTerraform(struct?: PodV1
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -15378,7 +15378,7 @@ export function podV1SpecInitContainerStartupProbeHttpGetToTerraform(struct?: Po
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(podV1SpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(podV1SpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -15678,7 +15678,7 @@ export function podV1SpecInitContainerStartupProbeToTerraform(struct?: PodV1Spec
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: podV1SpecInitContainerStartupProbeExecToTerraform(struct!.exec),
     http_get: podV1SpecInitContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(podV1SpecInitContainerStartupProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(podV1SpecInitContainerStartupProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -16228,8 +16228,8 @@ export function podV1SpecInitContainerToTerraform(struct?: PodV1SpecInitContaine
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    args: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.args),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
     image: cdktf.stringToTerraform(struct!.image),
     image_pull_policy: cdktf.stringToTerraform(struct!.imagePullPolicy),
     name: cdktf.stringToTerraform(struct!.name),
@@ -16239,16 +16239,16 @@ export function podV1SpecInitContainerToTerraform(struct?: PodV1SpecInitContaine
     termination_message_policy: cdktf.stringToTerraform(struct!.terminationMessagePolicy),
     tty: cdktf.booleanToTerraform(struct!.tty),
     working_dir: cdktf.stringToTerraform(struct!.workingDir),
-    env: cdktf.listMapper(podV1SpecInitContainerEnvToTerraform)(struct!.env),
-    env_from: cdktf.listMapper(podV1SpecInitContainerEnvFromToTerraform)(struct!.envFrom),
+    env: cdktf.listMapper(podV1SpecInitContainerEnvToTerraform, true)(struct!.env),
+    env_from: cdktf.listMapper(podV1SpecInitContainerEnvFromToTerraform, true)(struct!.envFrom),
     lifecycle: podV1SpecInitContainerLifecycleToTerraform(struct!.lifecycle),
     liveness_probe: podV1SpecInitContainerLivenessProbeToTerraform(struct!.livenessProbe),
-    port: cdktf.listMapper(podV1SpecInitContainerPortToTerraform)(struct!.port),
+    port: cdktf.listMapper(podV1SpecInitContainerPortToTerraform, true)(struct!.port),
     readiness_probe: podV1SpecInitContainerReadinessProbeToTerraform(struct!.readinessProbe),
     resources: podV1SpecInitContainerResourcesToTerraform(struct!.resources),
     security_context: podV1SpecInitContainerSecurityContextToTerraform(struct!.securityContext),
     startup_probe: podV1SpecInitContainerStartupProbeToTerraform(struct!.startupProbe),
-    volume_mount: cdktf.listMapper(podV1SpecInitContainerVolumeMountToTerraform)(struct!.volumeMount),
+    volume_mount: cdktf.listMapper(podV1SpecInitContainerVolumeMountToTerraform, true)(struct!.volumeMount),
   }
 }
 

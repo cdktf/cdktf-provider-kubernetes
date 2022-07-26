@@ -423,7 +423,7 @@ export function ingressClassV1SpecToTerraform(struct?: IngressClassV1SpecOutputR
   }
   return {
     controller: cdktf.stringToTerraform(struct!.controller),
-    parameters: cdktf.listMapper(ingressClassV1SpecParametersToTerraform)(struct!.parameters),
+    parameters: cdktf.listMapper(ingressClassV1SpecParametersToTerraform, true)(struct!.parameters),
   }
 }
 
@@ -530,7 +530,10 @@ export class IngressClassV1 extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;

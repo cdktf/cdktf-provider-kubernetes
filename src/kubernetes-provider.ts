@@ -142,7 +142,7 @@ export function kubernetesProviderExecToTerraform(struct?: KubernetesProviderExe
   }
   return {
     api_version: cdktf.stringToTerraform(struct!.apiVersion),
-    args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
+    args: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.args),
     command: cdktf.stringToTerraform(struct!.command),
     env: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.env),
   }
@@ -541,10 +541,10 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
       config_context_auth_info: cdktf.stringToTerraform(this._configContextAuthInfo),
       config_context_cluster: cdktf.stringToTerraform(this._configContextCluster),
       config_path: cdktf.stringToTerraform(this._configPath),
-      config_paths: cdktf.listMapper(cdktf.stringToTerraform)(this._configPaths),
+      config_paths: cdktf.listMapper(cdktf.stringToTerraform, false)(this._configPaths),
       host: cdktf.stringToTerraform(this._host),
-      ignore_annotations: cdktf.listMapper(cdktf.stringToTerraform)(this._ignoreAnnotations),
-      ignore_labels: cdktf.listMapper(cdktf.stringToTerraform)(this._ignoreLabels),
+      ignore_annotations: cdktf.listMapper(cdktf.stringToTerraform, false)(this._ignoreAnnotations),
+      ignore_labels: cdktf.listMapper(cdktf.stringToTerraform, false)(this._ignoreLabels),
       insecure: cdktf.booleanToTerraform(this._insecure),
       password: cdktf.stringToTerraform(this._password),
       proxy_url: cdktf.stringToTerraform(this._proxyUrl),

@@ -226,7 +226,7 @@ export function statefulSetV1SpecSelectorMatchExpressionsToTerraform(struct?: St
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -376,7 +376,7 @@ export function statefulSetV1SpecSelectorToTerraform(struct?: StatefulSetV1SpecS
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(statefulSetV1SpecSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(statefulSetV1SpecSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -648,7 +648,7 @@ export function statefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuring
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -791,7 +791,7 @@ export function statefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuring
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -994,7 +994,7 @@ export function statefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringS
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -1137,7 +1137,7 @@ export function statefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringS
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -1236,7 +1236,7 @@ export function statefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringS
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    node_selector_term: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform)(struct!.nodeSelectorTerm),
+    node_selector_term: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform, true)(struct!.nodeSelectorTerm),
   }
 }
 
@@ -1309,7 +1309,7 @@ export function statefulSetV1SpecTemplateSpecAffinityNodeAffinityToTerraform(str
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
+    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
     required_during_scheduling_ignored_during_execution: statefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
 }
@@ -1413,7 +1413,7 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringS
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -1563,7 +1563,7 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringS
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -1696,9 +1696,9 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringS
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
+    namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
-    label_selector: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -1942,7 +1942,7 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSc
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -2092,7 +2092,7 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSc
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2225,9 +2225,9 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSc
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
+    namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
-    label_selector: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -2373,8 +2373,8 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAffinityToTerraform(stru
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
-    required_during_scheduling_ignored_during_execution: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
+    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
+    required_during_scheduling_ignored_during_execution: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
 }
 
@@ -2477,7 +2477,7 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDur
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -2627,7 +2627,7 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDur
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2760,9 +2760,9 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDur
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
+    namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
-    label_selector: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -3006,7 +3006,7 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuri
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -3156,7 +3156,7 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuri
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -3289,9 +3289,9 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuri
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
+    namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
-    label_selector: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -3437,8 +3437,8 @@ export function statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityToTerraform(
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
-    required_during_scheduling_ignored_during_execution: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
+    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
+    required_during_scheduling_ignored_during_execution: cdktf.listMapper(statefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
 }
 
@@ -4767,7 +4767,7 @@ export function statefulSetV1SpecTemplateSpecContainerLifecyclePostStartExecToTe
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -4990,7 +4990,7 @@ export function statefulSetV1SpecTemplateSpecContainerLifecyclePostStartHttpGetT
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -5255,7 +5255,7 @@ export function statefulSetV1SpecTemplateSpecContainerLifecyclePostStartToTerraf
   return {
     exec: statefulSetV1SpecTemplateSpecContainerLifecyclePostStartExecToTerraform(struct!.exec),
     http_get: statefulSetV1SpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -5398,7 +5398,7 @@ export function statefulSetV1SpecTemplateSpecContainerLifecyclePreStopExecToTerr
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -5621,7 +5621,7 @@ export function statefulSetV1SpecTemplateSpecContainerLifecyclePreStopHttpGetToT
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -5886,7 +5886,7 @@ export function statefulSetV1SpecTemplateSpecContainerLifecyclePreStopToTerrafor
   return {
     exec: statefulSetV1SpecTemplateSpecContainerLifecyclePreStopExecToTerraform(struct!.exec),
     http_get: statefulSetV1SpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -6035,8 +6035,8 @@ export function statefulSetV1SpecTemplateSpecContainerLifecycleToTerraform(struc
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    post_start: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLifecyclePostStartToTerraform)(struct!.postStart),
-    pre_stop: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLifecyclePreStopToTerraform)(struct!.preStop),
+    post_start: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLifecyclePostStartToTerraform, true)(struct!.postStart),
+    pre_stop: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLifecyclePreStopToTerraform, true)(struct!.preStop),
   }
 }
 
@@ -6125,7 +6125,7 @@ export function statefulSetV1SpecTemplateSpecContainerLivenessProbeExecToTerrafo
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -6348,7 +6348,7 @@ export function statefulSetV1SpecTemplateSpecContainerLivenessProbeHttpGetToTerr
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -6648,7 +6648,7 @@ export function statefulSetV1SpecTemplateSpecContainerLivenessProbeToTerraform(s
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: statefulSetV1SpecTemplateSpecContainerLivenessProbeExecToTerraform(struct!.exec),
     http_get: statefulSetV1SpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -7081,7 +7081,7 @@ export function statefulSetV1SpecTemplateSpecContainerReadinessProbeExecToTerraf
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -7304,7 +7304,7 @@ export function statefulSetV1SpecTemplateSpecContainerReadinessProbeHttpGetToTer
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -7604,7 +7604,7 @@ export function statefulSetV1SpecTemplateSpecContainerReadinessProbeToTerraform(
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: statefulSetV1SpecTemplateSpecContainerReadinessProbeExecToTerraform(struct!.exec),
     http_get: statefulSetV1SpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -7927,8 +7927,8 @@ export function statefulSetV1SpecTemplateSpecContainerSecurityContextCapabilitie
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    add: cdktf.listMapper(cdktf.stringToTerraform)(struct!.add),
-    drop: cdktf.listMapper(cdktf.stringToTerraform)(struct!.drop),
+    add: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.add),
+    drop: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.drop),
   }
 }
 
@@ -8566,7 +8566,7 @@ export function statefulSetV1SpecTemplateSpecContainerStartupProbeExecToTerrafor
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -8789,7 +8789,7 @@ export function statefulSetV1SpecTemplateSpecContainerStartupProbeHttpGetToTerra
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -9089,7 +9089,7 @@ export function statefulSetV1SpecTemplateSpecContainerStartupProbeToTerraform(st
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: statefulSetV1SpecTemplateSpecContainerStartupProbeExecToTerraform(struct!.exec),
     http_get: statefulSetV1SpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerStartupProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerStartupProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -9639,8 +9639,8 @@ export function statefulSetV1SpecTemplateSpecContainerToTerraform(struct?: State
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    args: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.args),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
     image: cdktf.stringToTerraform(struct!.image),
     image_pull_policy: cdktf.stringToTerraform(struct!.imagePullPolicy),
     name: cdktf.stringToTerraform(struct!.name),
@@ -9650,16 +9650,16 @@ export function statefulSetV1SpecTemplateSpecContainerToTerraform(struct?: State
     termination_message_policy: cdktf.stringToTerraform(struct!.terminationMessagePolicy),
     tty: cdktf.booleanToTerraform(struct!.tty),
     working_dir: cdktf.stringToTerraform(struct!.workingDir),
-    env: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerEnvToTerraform)(struct!.env),
-    env_from: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerEnvFromToTerraform)(struct!.envFrom),
+    env: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerEnvToTerraform, true)(struct!.env),
+    env_from: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerEnvFromToTerraform, true)(struct!.envFrom),
     lifecycle: statefulSetV1SpecTemplateSpecContainerLifecycleToTerraform(struct!.lifecycle),
     liveness_probe: statefulSetV1SpecTemplateSpecContainerLivenessProbeToTerraform(struct!.livenessProbe),
-    port: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerPortToTerraform)(struct!.port),
+    port: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerPortToTerraform, true)(struct!.port),
     readiness_probe: statefulSetV1SpecTemplateSpecContainerReadinessProbeToTerraform(struct!.readinessProbe),
     resources: statefulSetV1SpecTemplateSpecContainerResourcesToTerraform(struct!.resources),
     security_context: statefulSetV1SpecTemplateSpecContainerSecurityContextToTerraform(struct!.securityContext),
     startup_probe: statefulSetV1SpecTemplateSpecContainerStartupProbeToTerraform(struct!.startupProbe),
-    volume_mount: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerVolumeMountToTerraform)(struct!.volumeMount),
+    volume_mount: cdktf.listMapper(statefulSetV1SpecTemplateSpecContainerVolumeMountToTerraform, true)(struct!.volumeMount),
   }
 }
 
@@ -10332,9 +10332,9 @@ export function statefulSetV1SpecTemplateSpecDnsConfigToTerraform(struct?: State
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    nameservers: cdktf.listMapper(cdktf.stringToTerraform)(struct!.nameservers),
-    searches: cdktf.listMapper(cdktf.stringToTerraform)(struct!.searches),
-    option: cdktf.listMapper(statefulSetV1SpecTemplateSpecDnsConfigOptionToTerraform)(struct!.option),
+    nameservers: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.nameservers),
+    searches: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.searches),
+    option: cdktf.listMapper(statefulSetV1SpecTemplateSpecDnsConfigOptionToTerraform, true)(struct!.option),
   }
 }
 
@@ -10451,7 +10451,7 @@ export function statefulSetV1SpecTemplateSpecHostAliasesToTerraform(struct?: Sta
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    hostnames: cdktf.listMapper(cdktf.stringToTerraform)(struct!.hostnames),
+    hostnames: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.hostnames),
     ip: cdktf.stringToTerraform(struct!.ip),
   }
 }
@@ -11778,7 +11778,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartExec
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -12001,7 +12001,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartHttp
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -12266,7 +12266,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartToTe
   return {
     exec: statefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartExecToTerraform(struct!.exec),
     http_get: statefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -12409,7 +12409,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopExecTo
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -12632,7 +12632,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGe
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -12897,7 +12897,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopToTerr
   return {
     exec: statefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopExecToTerraform(struct!.exec),
     http_get: statefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -13046,8 +13046,8 @@ export function statefulSetV1SpecTemplateSpecInitContainerLifecycleToTerraform(s
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    post_start: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartToTerraform)(struct!.postStart),
-    pre_stop: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopToTerraform)(struct!.preStop),
+    post_start: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartToTerraform, true)(struct!.postStart),
+    pre_stop: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopToTerraform, true)(struct!.preStop),
   }
 }
 
@@ -13136,7 +13136,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerLivenessProbeExecToTer
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -13359,7 +13359,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerLivenessProbeHttpGetTo
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -13659,7 +13659,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerLivenessProbeToTerrafo
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: statefulSetV1SpecTemplateSpecInitContainerLivenessProbeExecToTerraform(struct!.exec),
     http_get: statefulSetV1SpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -14092,7 +14092,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerReadinessProbeExecToTe
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -14315,7 +14315,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerReadinessProbeHttpGetT
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -14615,7 +14615,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerReadinessProbeToTerraf
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: statefulSetV1SpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct!.exec),
     http_get: statefulSetV1SpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -14938,8 +14938,8 @@ export function statefulSetV1SpecTemplateSpecInitContainerSecurityContextCapabil
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    add: cdktf.listMapper(cdktf.stringToTerraform)(struct!.add),
-    drop: cdktf.listMapper(cdktf.stringToTerraform)(struct!.drop),
+    add: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.add),
+    drop: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.drop),
   }
 }
 
@@ -15577,7 +15577,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerStartupProbeExecToTerr
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -15800,7 +15800,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerStartupProbeHttpGetToT
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -16100,7 +16100,7 @@ export function statefulSetV1SpecTemplateSpecInitContainerStartupProbeToTerrafor
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: statefulSetV1SpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct!.exec),
     http_get: statefulSetV1SpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(statefulSetV1SpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 

@@ -258,10 +258,10 @@ export function roleRuleToTerraform(struct?: RoleRule | cdktf.IResolvable): any 
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    api_groups: cdktf.listMapper(cdktf.stringToTerraform)(struct!.apiGroups),
-    resource_names: cdktf.listMapper(cdktf.stringToTerraform)(struct!.resourceNames),
-    resources: cdktf.listMapper(cdktf.stringToTerraform)(struct!.resources),
-    verbs: cdktf.listMapper(cdktf.stringToTerraform)(struct!.verbs),
+    api_groups: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.apiGroups),
+    resource_names: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.resourceNames),
+    resources: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.resources),
+    verbs: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.verbs),
   }
 }
 
@@ -435,7 +435,10 @@ export class Role extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;
@@ -496,7 +499,7 @@ export class Role extends cdktf.TerraformResource {
     return {
       id: cdktf.stringToTerraform(this._id),
       metadata: roleMetadataToTerraform(this._metadata.internalValue),
-      rule: cdktf.listMapper(roleRuleToTerraform)(this._rule.internalValue),
+      rule: cdktf.listMapper(roleRuleToTerraform, true)(this._rule.internalValue),
     };
   }
 }

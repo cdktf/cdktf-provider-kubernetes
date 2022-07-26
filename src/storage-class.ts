@@ -85,7 +85,7 @@ export function storageClassAllowedTopologiesMatchLabelExpressionsToTerraform(st
   }
   return {
     key: cdktf.stringToTerraform(struct!.key),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -206,7 +206,7 @@ export function storageClassAllowedTopologiesToTerraform(struct?: StorageClassAl
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_label_expressions: cdktf.listMapper(storageClassAllowedTopologiesMatchLabelExpressionsToTerraform)(struct!.matchLabelExpressions),
+    match_label_expressions: cdktf.listMapper(storageClassAllowedTopologiesMatchLabelExpressionsToTerraform, true)(struct!.matchLabelExpressions),
   }
 }
 
@@ -460,7 +460,10 @@ export class StorageClass extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._allowVolumeExpansion = config.allowVolumeExpansion;
     this._id = config.id;
@@ -623,7 +626,7 @@ export class StorageClass extends cdktf.TerraformResource {
     return {
       allow_volume_expansion: cdktf.booleanToTerraform(this._allowVolumeExpansion),
       id: cdktf.stringToTerraform(this._id),
-      mount_options: cdktf.listMapper(cdktf.stringToTerraform)(this._mountOptions),
+      mount_options: cdktf.listMapper(cdktf.stringToTerraform, false)(this._mountOptions),
       parameters: cdktf.hashMapper(cdktf.stringToTerraform)(this._parameters),
       reclaim_policy: cdktf.stringToTerraform(this._reclaimPolicy),
       storage_provisioner: cdktf.stringToTerraform(this._storageProvisioner),

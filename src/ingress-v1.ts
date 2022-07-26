@@ -1408,7 +1408,7 @@ export function ingressV1SpecRuleHttpToTerraform(struct?: IngressV1SpecRuleHttpO
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    path: cdktf.listMapper(ingressV1SpecRuleHttpPathToTerraform)(struct!.path),
+    path: cdktf.listMapper(ingressV1SpecRuleHttpPathToTerraform, true)(struct!.path),
   }
 }
 
@@ -1613,7 +1613,7 @@ export function ingressV1SpecTlsToTerraform(struct?: IngressV1SpecTls | cdktf.IR
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    hosts: cdktf.listMapper(cdktf.stringToTerraform)(struct!.hosts),
+    hosts: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.hosts),
     secret_name: cdktf.stringToTerraform(struct!.secretName),
   }
 }
@@ -1755,8 +1755,8 @@ export function ingressV1SpecToTerraform(struct?: IngressV1SpecOutputReference |
   return {
     ingress_class_name: cdktf.stringToTerraform(struct!.ingressClassName),
     default_backend: ingressV1SpecDefaultBackendToTerraform(struct!.defaultBackend),
-    rule: cdktf.listMapper(ingressV1SpecRuleToTerraform)(struct!.rule),
-    tls: cdktf.listMapper(ingressV1SpecTlsToTerraform)(struct!.tls),
+    rule: cdktf.listMapper(ingressV1SpecRuleToTerraform, true)(struct!.rule),
+    tls: cdktf.listMapper(ingressV1SpecTlsToTerraform, true)(struct!.tls),
   }
 }
 
@@ -1907,7 +1907,10 @@ export class IngressV1 extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._waitForLoadBalancer = config.waitForLoadBalancer;

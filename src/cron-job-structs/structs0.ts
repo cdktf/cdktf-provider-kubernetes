@@ -395,7 +395,7 @@ export function cronJobSpecJobTemplateSpecSelectorMatchExpressionsToTerraform(st
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -545,7 +545,7 @@ export function cronJobSpecJobTemplateSpecSelectorToTerraform(struct?: CronJobSp
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -817,7 +817,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPrefer
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -960,7 +960,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPrefer
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -1163,7 +1163,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequir
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -1306,7 +1306,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequir
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -1405,7 +1405,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequir
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    node_selector_term: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform)(struct!.nodeSelectorTerm),
+    node_selector_term: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToTerraform, true)(struct!.nodeSelectorTerm),
   }
 }
 
@@ -1478,7 +1478,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityToTerr
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
+    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
     required_during_scheduling_ignored_during_execution: cronJobSpecJobTemplateSpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
 }
@@ -1582,7 +1582,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferr
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -1732,7 +1732,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferr
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -1865,9 +1865,9 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferr
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
+    namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
-    label_selector: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -2111,7 +2111,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequire
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -2261,7 +2261,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequire
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2394,9 +2394,9 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequire
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
+    namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
-    label_selector: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -2542,8 +2542,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityToTerra
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
-    required_during_scheduling_ignored_during_execution: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
+    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
+    required_during_scheduling_ignored_during_execution: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
 }
 
@@ -2646,7 +2646,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPre
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -2796,7 +2796,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPre
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2929,9 +2929,9 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPre
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
+    namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
-    label_selector: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -3175,7 +3175,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityReq
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -3325,7 +3325,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityReq
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -3458,9 +3458,9 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityReq
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    namespaces: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namespaces),
+    namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
-    label_selector: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -3606,8 +3606,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityToT
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
-    required_during_scheduling_ignored_during_execution: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
+    preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
+    required_during_scheduling_ignored_during_execution: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
 }
 
@@ -4936,7 +4936,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStar
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -5159,7 +5159,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStar
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -5424,7 +5424,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStar
   return {
     exec: cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartExecToTerraform(struct!.exec),
     http_get: cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -5567,7 +5567,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopE
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -5790,7 +5790,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopH
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -6055,7 +6055,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopT
   return {
     exec: cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopExecToTerraform(struct!.exec),
     http_get: cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -6204,8 +6204,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLifecycleToTerraf
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    post_start: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartToTerraform)(struct!.postStart),
-    pre_stop: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopToTerraform)(struct!.preStop),
+    post_start: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePostStartToTerraform, true)(struct!.postStart),
+    pre_stop: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLifecyclePreStopToTerraform, true)(struct!.preStop),
   }
 }
 
@@ -6294,7 +6294,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeExec
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -6517,7 +6517,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttp
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -6817,7 +6817,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeToTe
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeExecToTerraform(struct!.exec),
     http_get: cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -7250,7 +7250,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeExe
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -7473,7 +7473,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHtt
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -7773,7 +7773,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeToT
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeExecToTerraform(struct!.exec),
     http_get: cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -8096,8 +8096,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextCa
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    add: cdktf.listMapper(cdktf.stringToTerraform)(struct!.add),
-    drop: cdktf.listMapper(cdktf.stringToTerraform)(struct!.drop),
+    add: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.add),
+    drop: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.drop),
   }
 }
 
@@ -8735,7 +8735,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeExecT
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -8958,7 +8958,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpG
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -9258,7 +9258,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeToTer
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeExecToTerraform(struct!.exec),
     http_get: cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -9808,8 +9808,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerToTerraform(struc
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    args: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.args),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
     image: cdktf.stringToTerraform(struct!.image),
     image_pull_policy: cdktf.stringToTerraform(struct!.imagePullPolicy),
     name: cdktf.stringToTerraform(struct!.name),
@@ -9819,16 +9819,16 @@ export function cronJobSpecJobTemplateSpecTemplateSpecContainerToTerraform(struc
     termination_message_policy: cdktf.stringToTerraform(struct!.terminationMessagePolicy),
     tty: cdktf.booleanToTerraform(struct!.tty),
     working_dir: cdktf.stringToTerraform(struct!.workingDir),
-    env: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerEnvToTerraform)(struct!.env),
-    env_from: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromToTerraform)(struct!.envFrom),
+    env: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerEnvToTerraform, true)(struct!.env),
+    env_from: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerEnvFromToTerraform, true)(struct!.envFrom),
     lifecycle: cronJobSpecJobTemplateSpecTemplateSpecContainerLifecycleToTerraform(struct!.lifecycle),
     liveness_probe: cronJobSpecJobTemplateSpecTemplateSpecContainerLivenessProbeToTerraform(struct!.livenessProbe),
-    port: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerPortToTerraform)(struct!.port),
+    port: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerPortToTerraform, true)(struct!.port),
     readiness_probe: cronJobSpecJobTemplateSpecTemplateSpecContainerReadinessProbeToTerraform(struct!.readinessProbe),
     resources: cronJobSpecJobTemplateSpecTemplateSpecContainerResourcesToTerraform(struct!.resources),
     security_context: cronJobSpecJobTemplateSpecTemplateSpecContainerSecurityContextToTerraform(struct!.securityContext),
     startup_probe: cronJobSpecJobTemplateSpecTemplateSpecContainerStartupProbeToTerraform(struct!.startupProbe),
-    volume_mount: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerVolumeMountToTerraform)(struct!.volumeMount),
+    volume_mount: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecContainerVolumeMountToTerraform, true)(struct!.volumeMount),
   }
 }
 
@@ -10501,9 +10501,9 @@ export function cronJobSpecJobTemplateSpecTemplateSpecDnsConfigToTerraform(struc
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    nameservers: cdktf.listMapper(cdktf.stringToTerraform)(struct!.nameservers),
-    searches: cdktf.listMapper(cdktf.stringToTerraform)(struct!.searches),
-    option: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecDnsConfigOptionToTerraform)(struct!.option),
+    nameservers: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.nameservers),
+    searches: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.searches),
+    option: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecDnsConfigOptionToTerraform, true)(struct!.option),
   }
 }
 
@@ -10620,7 +10620,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecHostAliasesToTerraform(str
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    hostnames: cdktf.listMapper(cdktf.stringToTerraform)(struct!.hostnames),
+    hostnames: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.hostnames),
     ip: cdktf.stringToTerraform(struct!.ip),
   }
 }
@@ -11947,7 +11947,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePost
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -12170,7 +12170,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePost
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -12435,7 +12435,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePost
   return {
     exec: cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartExecToTerraform(struct!.exec),
     http_get: cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -12578,7 +12578,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreS
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -12801,7 +12801,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreS
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -13066,7 +13066,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreS
   return {
     exec: cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopExecToTerraform(struct!.exec),
     http_get: cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -13215,8 +13215,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecycleToTe
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    post_start: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartToTerraform)(struct!.postStart),
-    pre_stop: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopToTerraform)(struct!.preStop),
+    post_start: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePostStartToTerraform, true)(struct!.postStart),
+    pre_stop: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLifecyclePreStopToTerraform, true)(struct!.preStop),
   }
 }
 
@@ -13305,7 +13305,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -13528,7 +13528,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -13828,7 +13828,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbe
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: cronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeExecToTerraform(struct!.exec),
     http_get: cronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -14261,7 +14261,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProb
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -14484,7 +14484,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProb
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 
@@ -14784,7 +14784,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProb
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: cronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct!.exec),
     http_get: cronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform)(struct!.tcpSocket),
+    tcp_socket: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
 }
 
@@ -15107,8 +15107,8 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerSecurityConte
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    add: cdktf.listMapper(cdktf.stringToTerraform)(struct!.add),
-    drop: cdktf.listMapper(cdktf.stringToTerraform)(struct!.drop),
+    add: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.add),
+    drop: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.drop),
   }
 }
 
@@ -15746,7 +15746,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeE
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
   }
 }
 
@@ -15969,7 +15969,7 @@ export function cronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeH
     path: cdktf.stringToTerraform(struct!.path),
     port: cdktf.stringToTerraform(struct!.port),
     scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform)(struct!.httpHeader),
+    http_header: cdktf.listMapper(cronJobSpecJobTemplateSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
 }
 

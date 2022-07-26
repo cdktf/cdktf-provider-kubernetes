@@ -503,7 +503,7 @@ export function manifestWaitToTerraform(struct?: ManifestWaitOutputReference | M
   return {
     fields: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.fields),
     rollout: cdktf.booleanToTerraform(struct!.rollout),
-    condition: cdktf.listMapper(manifestWaitConditionToTerraform)(struct!.condition),
+    condition: cdktf.listMapper(manifestWaitConditionToTerraform, true)(struct!.condition),
   }
 }
 
@@ -632,7 +632,10 @@ export class Manifest extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._computedFields = config.computedFields;
     this._manifest = config.manifest;
@@ -763,7 +766,7 @@ export class Manifest extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      computed_fields: cdktf.listMapper(cdktf.stringToTerraform)(this._computedFields),
+      computed_fields: cdktf.listMapper(cdktf.stringToTerraform, false)(this._computedFields),
       manifest: cdktf.hashMapper(cdktf.anyToTerraform)(this._manifest),
       object: cdktf.hashMapper(cdktf.anyToTerraform)(this._object),
       wait_for: manifestWaitForToTerraform(this._waitFor),

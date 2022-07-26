@@ -549,7 +549,10 @@ export class ServiceAccount extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._automountServiceAccountToken = config.automountServiceAccountToken;
     this._id = config.id;
@@ -669,9 +672,9 @@ export class ServiceAccount extends cdktf.TerraformResource {
     return {
       automount_service_account_token: cdktf.booleanToTerraform(this._automountServiceAccountToken),
       id: cdktf.stringToTerraform(this._id),
-      image_pull_secret: cdktf.listMapper(serviceAccountImagePullSecretToTerraform)(this._imagePullSecret.internalValue),
+      image_pull_secret: cdktf.listMapper(serviceAccountImagePullSecretToTerraform, true)(this._imagePullSecret.internalValue),
       metadata: serviceAccountMetadataToTerraform(this._metadata.internalValue),
-      secret: cdktf.listMapper(serviceAccountSecretToTerraform)(this._secret.internalValue),
+      secret: cdktf.listMapper(serviceAccountSecretToTerraform, true)(this._secret.internalValue),
       timeouts: serviceAccountTimeoutsToTerraform(this._timeouts.internalValue),
     };
   }

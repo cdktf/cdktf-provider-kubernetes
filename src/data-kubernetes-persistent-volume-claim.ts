@@ -325,7 +325,7 @@ export function dataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressionsT
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -475,7 +475,7 @@ export function dataKubernetesPersistentVolumeClaimSpecSelectorToTerraform(struc
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(dataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(dataKubernetesPersistentVolumeClaimSpecSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -610,7 +610,7 @@ export function dataKubernetesPersistentVolumeClaimSpecToTerraform(struct?: Data
   return {
     storage_class_name: cdktf.stringToTerraform(struct!.storageClassName),
     volume_name: cdktf.stringToTerraform(struct!.volumeName),
-    selector: cdktf.listMapper(dataKubernetesPersistentVolumeClaimSpecSelectorToTerraform)(struct!.selector),
+    selector: cdktf.listMapper(dataKubernetesPersistentVolumeClaimSpecSelectorToTerraform, true)(struct!.selector),
   }
 }
 
@@ -782,7 +782,10 @@ export class DataKubernetesPersistentVolumeClaim extends cdktf.TerraformDataSour
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;
@@ -846,7 +849,7 @@ export class DataKubernetesPersistentVolumeClaim extends cdktf.TerraformDataSour
     return {
       id: cdktf.stringToTerraform(this._id),
       metadata: dataKubernetesPersistentVolumeClaimMetadataToTerraform(this._metadata.internalValue),
-      spec: cdktf.listMapper(dataKubernetesPersistentVolumeClaimSpecToTerraform)(this._spec.internalValue),
+      spec: cdktf.listMapper(dataKubernetesPersistentVolumeClaimSpecToTerraform, true)(this._spec.internalValue),
     };
   }
 }

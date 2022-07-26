@@ -534,7 +534,7 @@ export function podSecurityPolicyV1Beta1SpecFsGroupToTerraform(struct?: PodSecur
   }
   return {
     rule: cdktf.stringToTerraform(struct!.rule),
-    range: cdktf.listMapper(podSecurityPolicyV1Beta1SpecFsGroupRangeToTerraform)(struct!.range),
+    range: cdktf.listMapper(podSecurityPolicyV1Beta1SpecFsGroupRangeToTerraform, true)(struct!.range),
   }
 }
 
@@ -871,7 +871,7 @@ export function podSecurityPolicyV1Beta1SpecRunAsGroupToTerraform(struct?: PodSe
   }
   return {
     rule: cdktf.stringToTerraform(struct!.rule),
-    range: cdktf.listMapper(podSecurityPolicyV1Beta1SpecRunAsGroupRangeToTerraform)(struct!.range),
+    range: cdktf.listMapper(podSecurityPolicyV1Beta1SpecRunAsGroupRangeToTerraform, true)(struct!.range),
   }
 }
 
@@ -1086,7 +1086,7 @@ export function podSecurityPolicyV1Beta1SpecRunAsUserToTerraform(struct?: PodSec
   }
   return {
     rule: cdktf.stringToTerraform(struct!.rule),
-    range: cdktf.listMapper(podSecurityPolicyV1Beta1SpecRunAsUserRangeToTerraform)(struct!.range),
+    range: cdktf.listMapper(podSecurityPolicyV1Beta1SpecRunAsUserRangeToTerraform, true)(struct!.range),
   }
 }
 
@@ -1345,7 +1345,7 @@ export function podSecurityPolicyV1Beta1SpecSeLinuxToTerraform(struct?: PodSecur
   }
   return {
     rule: cdktf.stringToTerraform(struct!.rule),
-    se_linux_options: cdktf.listMapper(podSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsToTerraform)(struct!.seLinuxOptions),
+    se_linux_options: cdktf.listMapper(podSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsToTerraform, true)(struct!.seLinuxOptions),
   }
 }
 
@@ -1560,7 +1560,7 @@ export function podSecurityPolicyV1Beta1SpecSupplementalGroupsToTerraform(struct
   }
   return {
     rule: cdktf.stringToTerraform(struct!.rule),
-    range: cdktf.listMapper(podSecurityPolicyV1Beta1SpecSupplementalGroupsRangeToTerraform)(struct!.range),
+    range: cdktf.listMapper(podSecurityPolicyV1Beta1SpecSupplementalGroupsRangeToTerraform, true)(struct!.range),
   }
 }
 
@@ -1777,23 +1777,23 @@ export function podSecurityPolicyV1Beta1SpecToTerraform(struct?: PodSecurityPoli
   }
   return {
     allow_privilege_escalation: cdktf.booleanToTerraform(struct!.allowPrivilegeEscalation),
-    allowed_capabilities: cdktf.listMapper(cdktf.stringToTerraform)(struct!.allowedCapabilities),
-    allowed_proc_mount_types: cdktf.listMapper(cdktf.stringToTerraform)(struct!.allowedProcMountTypes),
-    allowed_unsafe_sysctls: cdktf.listMapper(cdktf.stringToTerraform)(struct!.allowedUnsafeSysctls),
-    default_add_capabilities: cdktf.listMapper(cdktf.stringToTerraform)(struct!.defaultAddCapabilities),
+    allowed_capabilities: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.allowedCapabilities),
+    allowed_proc_mount_types: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.allowedProcMountTypes),
+    allowed_unsafe_sysctls: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.allowedUnsafeSysctls),
+    default_add_capabilities: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.defaultAddCapabilities),
     default_allow_privilege_escalation: cdktf.booleanToTerraform(struct!.defaultAllowPrivilegeEscalation),
-    forbidden_sysctls: cdktf.listMapper(cdktf.stringToTerraform)(struct!.forbiddenSysctls),
+    forbidden_sysctls: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.forbiddenSysctls),
     host_ipc: cdktf.booleanToTerraform(struct!.hostIpc),
     host_network: cdktf.booleanToTerraform(struct!.hostNetwork),
     host_pid: cdktf.booleanToTerraform(struct!.hostPid),
     privileged: cdktf.booleanToTerraform(struct!.privileged),
     read_only_root_filesystem: cdktf.booleanToTerraform(struct!.readOnlyRootFilesystem),
-    required_drop_capabilities: cdktf.listMapper(cdktf.stringToTerraform)(struct!.requiredDropCapabilities),
-    volumes: cdktf.listMapper(cdktf.stringToTerraform)(struct!.volumes),
-    allowed_flex_volumes: cdktf.listMapper(podSecurityPolicyV1Beta1SpecAllowedFlexVolumesToTerraform)(struct!.allowedFlexVolumes),
-    allowed_host_paths: cdktf.listMapper(podSecurityPolicyV1Beta1SpecAllowedHostPathsToTerraform)(struct!.allowedHostPaths),
+    required_drop_capabilities: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.requiredDropCapabilities),
+    volumes: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.volumes),
+    allowed_flex_volumes: cdktf.listMapper(podSecurityPolicyV1Beta1SpecAllowedFlexVolumesToTerraform, true)(struct!.allowedFlexVolumes),
+    allowed_host_paths: cdktf.listMapper(podSecurityPolicyV1Beta1SpecAllowedHostPathsToTerraform, true)(struct!.allowedHostPaths),
     fs_group: podSecurityPolicyV1Beta1SpecFsGroupToTerraform(struct!.fsGroup),
-    host_ports: cdktf.listMapper(podSecurityPolicyV1Beta1SpecHostPortsToTerraform)(struct!.hostPorts),
+    host_ports: cdktf.listMapper(podSecurityPolicyV1Beta1SpecHostPortsToTerraform, true)(struct!.hostPorts),
     run_as_group: podSecurityPolicyV1Beta1SpecRunAsGroupToTerraform(struct!.runAsGroup),
     run_as_user: podSecurityPolicyV1Beta1SpecRunAsUserToTerraform(struct!.runAsUser),
     se_linux: podSecurityPolicyV1Beta1SpecSeLinuxToTerraform(struct!.seLinux),
@@ -2335,7 +2335,10 @@ export class PodSecurityPolicyV1Beta1 extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;

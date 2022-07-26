@@ -502,7 +502,10 @@ export class ClusterRoleBindingV1 extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;
@@ -578,7 +581,7 @@ export class ClusterRoleBindingV1 extends cdktf.TerraformResource {
       id: cdktf.stringToTerraform(this._id),
       metadata: clusterRoleBindingV1MetadataToTerraform(this._metadata.internalValue),
       role_ref: clusterRoleBindingV1RoleRefToTerraform(this._roleRef.internalValue),
-      subject: cdktf.listMapper(clusterRoleBindingV1SubjectToTerraform)(this._subject.internalValue),
+      subject: cdktf.listMapper(clusterRoleBindingV1SubjectToTerraform, true)(this._subject.internalValue),
     };
   }
 }

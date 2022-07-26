@@ -484,7 +484,7 @@ export function limitRangeV1SpecToTerraform(struct?: LimitRangeV1SpecOutputRefer
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    limit: cdktf.listMapper(limitRangeV1SpecLimitToTerraform)(struct!.limit),
+    limit: cdktf.listMapper(limitRangeV1SpecLimitToTerraform, true)(struct!.limit),
   }
 }
 
@@ -569,7 +569,10 @@ export class LimitRangeV1 extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;

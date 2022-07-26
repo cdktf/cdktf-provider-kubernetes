@@ -508,7 +508,7 @@ export function mutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpress
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -658,7 +658,7 @@ export function mutatingWebhookConfigurationWebhookNamespaceSelectorToTerraform(
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(mutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(mutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -761,7 +761,7 @@ export function mutatingWebhookConfigurationWebhookObjectSelectorMatchExpression
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -911,7 +911,7 @@ export function mutatingWebhookConfigurationWebhookObjectSelectorToTerraform(str
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(mutatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(mutatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -1016,10 +1016,10 @@ export function mutatingWebhookConfigurationWebhookRuleToTerraform(struct?: Muta
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    api_groups: cdktf.listMapper(cdktf.stringToTerraform)(struct!.apiGroups),
-    api_versions: cdktf.listMapper(cdktf.stringToTerraform)(struct!.apiVersions),
-    operations: cdktf.listMapper(cdktf.stringToTerraform)(struct!.operations),
-    resources: cdktf.listMapper(cdktf.stringToTerraform)(struct!.resources),
+    api_groups: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.apiGroups),
+    api_versions: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.apiVersions),
+    operations: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.operations),
+    resources: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.resources),
     scope: cdktf.stringToTerraform(struct!.scope),
   }
 }
@@ -1267,7 +1267,7 @@ export function mutatingWebhookConfigurationWebhookToTerraform(struct?: Mutating
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    admission_review_versions: cdktf.listMapper(cdktf.stringToTerraform)(struct!.admissionReviewVersions),
+    admission_review_versions: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.admissionReviewVersions),
     failure_policy: cdktf.stringToTerraform(struct!.failurePolicy),
     match_policy: cdktf.stringToTerraform(struct!.matchPolicy),
     name: cdktf.stringToTerraform(struct!.name),
@@ -1277,7 +1277,7 @@ export function mutatingWebhookConfigurationWebhookToTerraform(struct?: Mutating
     client_config: mutatingWebhookConfigurationWebhookClientConfigToTerraform(struct!.clientConfig),
     namespace_selector: mutatingWebhookConfigurationWebhookNamespaceSelectorToTerraform(struct!.namespaceSelector),
     object_selector: mutatingWebhookConfigurationWebhookObjectSelectorToTerraform(struct!.objectSelector),
-    rule: cdktf.listMapper(mutatingWebhookConfigurationWebhookRuleToTerraform)(struct!.rule),
+    rule: cdktf.listMapper(mutatingWebhookConfigurationWebhookRuleToTerraform, true)(struct!.rule),
   }
 }
 
@@ -1608,7 +1608,10 @@ export class MutatingWebhookConfiguration extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._metadata.internalValue = config.metadata;
@@ -1669,7 +1672,7 @@ export class MutatingWebhookConfiguration extends cdktf.TerraformResource {
     return {
       id: cdktf.stringToTerraform(this._id),
       metadata: mutatingWebhookConfigurationMetadataToTerraform(this._metadata.internalValue),
-      webhook: cdktf.listMapper(mutatingWebhookConfigurationWebhookToTerraform)(this._webhook.internalValue),
+      webhook: cdktf.listMapper(mutatingWebhookConfigurationWebhookToTerraform, true)(this._webhook.internalValue),
     };
   }
 }

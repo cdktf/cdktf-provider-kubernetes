@@ -391,8 +391,8 @@ export function jobSpecTemplateSpecInitContainerToTerraform(struct?: JobSpecTemp
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    args: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.args),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
     image: cdktf.stringToTerraform(struct!.image),
     image_pull_policy: cdktf.stringToTerraform(struct!.imagePullPolicy),
     name: cdktf.stringToTerraform(struct!.name),
@@ -402,16 +402,16 @@ export function jobSpecTemplateSpecInitContainerToTerraform(struct?: JobSpecTemp
     termination_message_policy: cdktf.stringToTerraform(struct!.terminationMessagePolicy),
     tty: cdktf.booleanToTerraform(struct!.tty),
     working_dir: cdktf.stringToTerraform(struct!.workingDir),
-    env: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvToTerraform)(struct!.env),
-    env_from: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvFromToTerraform)(struct!.envFrom),
+    env: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvToTerraform, true)(struct!.env),
+    env_from: cdktf.listMapper(jobSpecTemplateSpecInitContainerEnvFromToTerraform, true)(struct!.envFrom),
     lifecycle: jobSpecTemplateSpecInitContainerLifecycleToTerraform(struct!.lifecycle),
     liveness_probe: jobSpecTemplateSpecInitContainerLivenessProbeToTerraform(struct!.livenessProbe),
-    port: cdktf.listMapper(jobSpecTemplateSpecInitContainerPortToTerraform)(struct!.port),
+    port: cdktf.listMapper(jobSpecTemplateSpecInitContainerPortToTerraform, true)(struct!.port),
     readiness_probe: jobSpecTemplateSpecInitContainerReadinessProbeToTerraform(struct!.readinessProbe),
     resources: jobSpecTemplateSpecInitContainerResourcesToTerraform(struct!.resources),
     security_context: jobSpecTemplateSpecInitContainerSecurityContextToTerraform(struct!.securityContext),
     startup_probe: jobSpecTemplateSpecInitContainerStartupProbeToTerraform(struct!.startupProbe),
-    volume_mount: cdktf.listMapper(jobSpecTemplateSpecInitContainerVolumeMountToTerraform)(struct!.volumeMount),
+    volume_mount: cdktf.listMapper(jobSpecTemplateSpecInitContainerVolumeMountToTerraform, true)(struct!.volumeMount),
   }
 }
 
@@ -1461,10 +1461,10 @@ export function jobSpecTemplateSpecSecurityContextToTerraform(struct?: JobSpecTe
     run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
-    supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform)(struct!.supplementalGroups),
+    supplemental_groups: cdktf.listMapper(cdktf.numberToTerraform, false)(struct!.supplementalGroups),
     se_linux_options: jobSpecTemplateSpecSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
     seccomp_profile: jobSpecTemplateSpecSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
-    sysctl: cdktf.listMapper(jobSpecTemplateSpecSecurityContextSysctlToTerraform)(struct!.sysctl),
+    sysctl: cdktf.listMapper(jobSpecTemplateSpecSecurityContextSysctlToTerraform, true)(struct!.sysctl),
   }
 }
 
@@ -1914,7 +1914,7 @@ export function jobSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExp
   return {
     key: cdktf.stringToTerraform(struct!.key),
     operator: cdktf.stringToTerraform(struct!.operator),
-    values: cdktf.listMapper(cdktf.stringToTerraform)(struct!.values),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
 }
 
@@ -2064,7 +2064,7 @@ export function jobSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraf
   }
   return {
     match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
-    match_expressions: cdktf.listMapper(jobSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform)(struct!.matchExpressions),
+    match_expressions: cdktf.listMapper(jobSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
   }
 }
 
@@ -2206,7 +2206,7 @@ export function jobSpecTemplateSpecTopologySpreadConstraintToTerraform(struct?: 
     max_skew: cdktf.numberToTerraform(struct!.maxSkew),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
     when_unsatisfiable: cdktf.stringToTerraform(struct!.whenUnsatisfiable),
-    label_selector: cdktf.listMapper(jobSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform)(struct!.labelSelector),
+    label_selector: cdktf.listMapper(jobSpecTemplateSpecTopologySpreadConstraintLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
 }
 
@@ -2999,7 +2999,7 @@ export function jobSpecTemplateSpecVolumeCephFsToTerraform(struct?: JobSpecTempl
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    monitors: cdktf.listMapper(cdktf.stringToTerraform)(struct!.monitors),
+    monitors: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.monitors),
     path: cdktf.stringToTerraform(struct!.path),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_file: cdktf.stringToTerraform(struct!.secretFile),
@@ -3478,7 +3478,7 @@ export function jobSpecTemplateSpecVolumeConfigMapToTerraform(struct?: JobSpecTe
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
-    items: cdktf.listMapper(jobSpecTemplateSpecVolumeConfigMapItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(jobSpecTemplateSpecVolumeConfigMapItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -4256,7 +4256,7 @@ export function jobSpecTemplateSpecVolumeDownwardApiToTerraform(struct?: JobSpec
   }
   return {
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
-    items: cdktf.listMapper(jobSpecTemplateSpecVolumeDownwardApiItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(jobSpecTemplateSpecVolumeDownwardApiItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -4462,7 +4462,7 @@ export function jobSpecTemplateSpecVolumeFcToTerraform(struct?: JobSpecTemplateS
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     lun: cdktf.numberToTerraform(struct!.lun),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
-    target_ww_ns: cdktf.listMapper(cdktf.stringToTerraform)(struct!.targetWwNs),
+    target_ww_ns: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.targetWwNs),
   }
 }
 
@@ -6204,7 +6204,7 @@ export function jobSpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform(st
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
-    items: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesConfigMapItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -6741,7 +6741,7 @@ export function jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform(
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    items: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -6979,7 +6979,7 @@ export function jobSpecTemplateSpecVolumeProjectedSourcesSecretToTerraform(struc
   return {
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
-    items: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesSecretItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -7262,9 +7262,9 @@ export function jobSpecTemplateSpecVolumeProjectedSourcesToTerraform(struct?: Jo
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    config_map: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform)(struct!.configMap),
+    config_map: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesConfigMapToTerraform, true)(struct!.configMap),
     downward_api: jobSpecTemplateSpecVolumeProjectedSourcesDownwardApiToTerraform(struct!.downwardApi),
-    secret: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesSecretToTerraform)(struct!.secret),
+    secret: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesSecretToTerraform, true)(struct!.secret),
     service_account_token: jobSpecTemplateSpecVolumeProjectedSourcesServiceAccountTokenToTerraform(struct!.serviceAccountToken),
   }
 }
@@ -7437,7 +7437,7 @@ export function jobSpecTemplateSpecVolumeProjectedToTerraform(struct?: JobSpecTe
   }
   return {
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
-    sources: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesToTerraform)(struct!.sources),
+    sources: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedSourcesToTerraform, true)(struct!.sources),
   }
 }
 
@@ -7870,7 +7870,7 @@ export function jobSpecTemplateSpecVolumeRbdToTerraform(struct?: JobSpecTemplate
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    ceph_monitors: cdktf.listMapper(cdktf.stringToTerraform)(struct!.cephMonitors),
+    ceph_monitors: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.cephMonitors),
     fs_type: cdktf.stringToTerraform(struct!.fsType),
     keyring: cdktf.stringToTerraform(struct!.keyring),
     rados_user: cdktf.stringToTerraform(struct!.radosUser),
@@ -8270,7 +8270,7 @@ export function jobSpecTemplateSpecVolumeSecretToTerraform(struct?: JobSpecTempl
     default_mode: cdktf.stringToTerraform(struct!.defaultMode),
     optional: cdktf.booleanToTerraform(struct!.optional),
     secret_name: cdktf.stringToTerraform(struct!.secretName),
-    items: cdktf.listMapper(jobSpecTemplateSpecVolumeSecretItemsToTerraform)(struct!.items),
+    items: cdktf.listMapper(jobSpecTemplateSpecVolumeSecretItemsToTerraform, true)(struct!.items),
   }
 }
 
@@ -8674,7 +8674,7 @@ export function jobSpecTemplateSpecVolumeToTerraform(struct?: JobSpecTemplateSpe
     nfs: jobSpecTemplateSpecVolumeNfsToTerraform(struct!.nfs),
     persistent_volume_claim: jobSpecTemplateSpecVolumePersistentVolumeClaimToTerraform(struct!.persistentVolumeClaim),
     photon_persistent_disk: jobSpecTemplateSpecVolumePhotonPersistentDiskToTerraform(struct!.photonPersistentDisk),
-    projected: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedToTerraform)(struct!.projected),
+    projected: cdktf.listMapper(jobSpecTemplateSpecVolumeProjectedToTerraform, true)(struct!.projected),
     quobyte: jobSpecTemplateSpecVolumeQuobyteToTerraform(struct!.quobyte),
     rbd: jobSpecTemplateSpecVolumeRbdToTerraform(struct!.rbd),
     secret: jobSpecTemplateSpecVolumeSecretToTerraform(struct!.secret),
@@ -9522,16 +9522,16 @@ export function jobSpecTemplateSpecToTerraform(struct?: JobSpecTemplateSpecOutpu
     subdomain: cdktf.stringToTerraform(struct!.subdomain),
     termination_grace_period_seconds: cdktf.numberToTerraform(struct!.terminationGracePeriodSeconds),
     affinity: jobSpecTemplateSpecAffinityToTerraform(struct!.affinity),
-    container: cdktf.listMapper(jobSpecTemplateSpecContainerToTerraform)(struct!.container),
+    container: cdktf.listMapper(jobSpecTemplateSpecContainerToTerraform, true)(struct!.container),
     dns_config: jobSpecTemplateSpecDnsConfigToTerraform(struct!.dnsConfig),
-    host_aliases: cdktf.listMapper(jobSpecTemplateSpecHostAliasesToTerraform)(struct!.hostAliases),
-    image_pull_secrets: cdktf.listMapper(jobSpecTemplateSpecImagePullSecretsToTerraform)(struct!.imagePullSecrets),
-    init_container: cdktf.listMapper(jobSpecTemplateSpecInitContainerToTerraform)(struct!.initContainer),
-    readiness_gate: cdktf.listMapper(jobSpecTemplateSpecReadinessGateToTerraform)(struct!.readinessGate),
+    host_aliases: cdktf.listMapper(jobSpecTemplateSpecHostAliasesToTerraform, true)(struct!.hostAliases),
+    image_pull_secrets: cdktf.listMapper(jobSpecTemplateSpecImagePullSecretsToTerraform, true)(struct!.imagePullSecrets),
+    init_container: cdktf.listMapper(jobSpecTemplateSpecInitContainerToTerraform, true)(struct!.initContainer),
+    readiness_gate: cdktf.listMapper(jobSpecTemplateSpecReadinessGateToTerraform, true)(struct!.readinessGate),
     security_context: jobSpecTemplateSpecSecurityContextToTerraform(struct!.securityContext),
-    toleration: cdktf.listMapper(jobSpecTemplateSpecTolerationToTerraform)(struct!.toleration),
-    topology_spread_constraint: cdktf.listMapper(jobSpecTemplateSpecTopologySpreadConstraintToTerraform)(struct!.topologySpreadConstraint),
-    volume: cdktf.listMapper(jobSpecTemplateSpecVolumeToTerraform)(struct!.volume),
+    toleration: cdktf.listMapper(jobSpecTemplateSpecTolerationToTerraform, true)(struct!.toleration),
+    topology_spread_constraint: cdktf.listMapper(jobSpecTemplateSpecTopologySpreadConstraintToTerraform, true)(struct!.topologySpreadConstraint),
+    volume: cdktf.listMapper(jobSpecTemplateSpecVolumeToTerraform, true)(struct!.volume),
   }
 }
 
