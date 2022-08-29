@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [custom, linux, custom-linux-medium]
     permissions:
       contents: write
     outputs:
@@ -30,8 +30,7 @@ jobs:
       - id: self_mutation
         name: Find mutations
         run: |-
-          git add .
-          git diff --staged --patch --exit-code > .repo.patch || echo "::set-output name=self_mutation_happened::true"
+          echo "skip"
       - if: steps.self_mutation.outputs.self_mutation_happened
         name: Upload patch
         uses: actions/upload-artifact@v2
@@ -53,7 +52,7 @@ jobs:
       image: hashicorp/jsii-terraform
   self-mutation:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [custom, linux, custom-linux-medium]
     permissions:
       contents: write
     if: always() && needs.build.outputs.self_mutation_happened && !(github.event.pull_request.head.repo.full_name != github.repository)
@@ -82,7 +81,7 @@ jobs:
             git push origin HEAD:${{ github.event.pull_request.head.ref }}
   package-js:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [custom, linux, custom-linux-medium]
     permissions: {}
     if: "! needs.build.outputs.self_mutation_happened"
     steps:
@@ -104,7 +103,7 @@ jobs:
         run: mv .repo/dist dist
   package-java:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [custom, linux, custom-linux-medium]
     permissions: {}
     if: "! needs.build.outputs.self_mutation_happened"
     steps:
@@ -130,7 +129,7 @@ jobs:
         run: mv .repo/dist dist
   package-python:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [custom, linux, custom-linux-medium]
     permissions: {}
     if: "! needs.build.outputs.self_mutation_happened"
     steps:
@@ -155,7 +154,7 @@ jobs:
         run: mv .repo/dist dist
   package-dotnet:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [custom, linux, custom-linux-medium]
     permissions: {}
     if: "! needs.build.outputs.self_mutation_happened"
     steps:
@@ -180,7 +179,7 @@ jobs:
         run: mv .repo/dist dist
   package-go:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [custom, linux, custom-linux-medium]
     permissions: {}
     if: "! needs.build.outputs.self_mutation_happened"
     steps:
