@@ -834,7 +834,7 @@ export class DataKubernetesMutatingWebhookConfigurationV1 extends cdktf.Terrafor
       terraformResourceType: 'kubernetes_mutating_webhook_configuration_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.12.1',
+        providerVersion: '2.13.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
