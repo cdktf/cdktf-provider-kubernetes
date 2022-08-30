@@ -2329,7 +2329,7 @@ export class PodSecurityPolicy extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_pod_security_policy',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.12.1',
+        providerVersion: '2.13.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
