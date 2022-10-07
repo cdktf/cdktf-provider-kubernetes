@@ -27,6 +27,12 @@ export interface ConfigMapV1Config extends cdktf.TerraformMetaArguments {
   */
   readonly id?: string;
   /**
+  * Immutable, if set to true, ensures that data stored in the ConfigMap cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/config_map_v1#immutable ConfigMapV1#immutable}
+  */
+  readonly immutable?: boolean | cdktf.IResolvable;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/config_map_v1#metadata ConfigMapV1#metadata}
@@ -258,7 +264,7 @@ export class ConfigMapV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_config_map_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.13.1',
+        providerVersion: '2.14.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
@@ -272,6 +278,7 @@ export class ConfigMapV1 extends cdktf.TerraformResource {
     this._binaryData = config.binaryData;
     this._data = config.data;
     this._id = config.id;
+    this._immutable = config.immutable;
     this._metadata.internalValue = config.metadata;
   }
 
@@ -327,6 +334,22 @@ export class ConfigMapV1 extends cdktf.TerraformResource {
     return this._id;
   }
 
+  // immutable - computed: false, optional: true, required: false
+  private _immutable?: boolean | cdktf.IResolvable; 
+  public get immutable() {
+    return this.getBooleanAttribute('immutable');
+  }
+  public set immutable(value: boolean | cdktf.IResolvable) {
+    this._immutable = value;
+  }
+  public resetImmutable() {
+    this._immutable = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get immutableInput() {
+    return this._immutable;
+  }
+
   // metadata - computed: false, optional: false, required: true
   private _metadata = new ConfigMapV1MetadataOutputReference(this, "metadata");
   public get metadata() {
@@ -349,6 +372,7 @@ export class ConfigMapV1 extends cdktf.TerraformResource {
       binary_data: cdktf.hashMapper(cdktf.stringToTerraform)(this._binaryData),
       data: cdktf.hashMapper(cdktf.stringToTerraform)(this._data),
       id: cdktf.stringToTerraform(this._id),
+      immutable: cdktf.booleanToTerraform(this._immutable),
       metadata: configMapV1MetadataToTerraform(this._metadata.internalValue),
     };
   }

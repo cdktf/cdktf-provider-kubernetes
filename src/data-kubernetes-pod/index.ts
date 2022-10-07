@@ -49,7 +49,7 @@ export class DataKubernetesPod extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_pod',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.13.1',
+        providerVersion: '2.14.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

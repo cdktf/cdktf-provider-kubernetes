@@ -15,6 +15,12 @@ export interface DataKubernetesConfigMapV1Config extends cdktf.TerraformMetaArgu
   */
   readonly id?: string;
   /**
+  * Immutable, if set to true, ensures that data stored in the ConfigMap cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map_v1#immutable DataKubernetesConfigMapV1#immutable}
+  */
+  readonly immutable?: boolean | cdktf.IResolvable;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/config_map_v1#metadata DataKubernetesConfigMapV1#metadata}
@@ -217,7 +223,7 @@ export class DataKubernetesConfigMapV1 extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_config_map_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.13.1',
+        providerVersion: '2.14.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
@@ -229,6 +235,7 @@ export class DataKubernetesConfigMapV1 extends cdktf.TerraformDataSource {
       forEach: config.forEach
     });
     this._id = config.id;
+    this._immutable = config.immutable;
     this._metadata.internalValue = config.metadata;
   }
 
@@ -264,6 +271,22 @@ export class DataKubernetesConfigMapV1 extends cdktf.TerraformDataSource {
     return this._id;
   }
 
+  // immutable - computed: false, optional: true, required: false
+  private _immutable?: boolean | cdktf.IResolvable; 
+  public get immutable() {
+    return this.getBooleanAttribute('immutable');
+  }
+  public set immutable(value: boolean | cdktf.IResolvable) {
+    this._immutable = value;
+  }
+  public resetImmutable() {
+    this._immutable = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get immutableInput() {
+    return this._immutable;
+  }
+
   // metadata - computed: false, optional: false, required: true
   private _metadata = new DataKubernetesConfigMapV1MetadataOutputReference(this, "metadata");
   public get metadata() {
@@ -284,6 +307,7 @@ export class DataKubernetesConfigMapV1 extends cdktf.TerraformDataSource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       id: cdktf.stringToTerraform(this._id),
+      immutable: cdktf.booleanToTerraform(this._immutable),
       metadata: dataKubernetesConfigMapV1MetadataToTerraform(this._metadata.internalValue),
     };
   }

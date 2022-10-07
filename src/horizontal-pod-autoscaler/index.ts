@@ -4040,7 +4040,7 @@ export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_horizontal_pod_autoscaler',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.13.1',
+        providerVersion: '2.14.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

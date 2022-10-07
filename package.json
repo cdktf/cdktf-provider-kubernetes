@@ -110,7 +110,7 @@
   "cdktf": {
     "provider": {
       "name": "registry.terraform.io/hashicorp/kubernetes",
-      "version": "2.13.1"
+      "version": "2.14.0"
     }
   },
   "resolutions": {

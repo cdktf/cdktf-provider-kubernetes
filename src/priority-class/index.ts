@@ -27,6 +27,12 @@ export interface PriorityClassConfig extends cdktf.TerraformMetaArguments {
   */
   readonly id?: string;
   /**
+  * PreemptionPolicy is the Policy for preempting pods with lower priority. One of Never, PreemptLowerPriority. Defaults to PreemptLowerPriority if unset.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class#preemption_policy PriorityClass#preemption_policy}
+  */
+  readonly preemptionPolicy?: string;
+  /**
   * The value of this priority class. This is the actual priority that pods receive when they have the name of this class in their pod spec.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/priority_class#value PriorityClass#value}
@@ -235,7 +241,7 @@ export class PriorityClass extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_priority_class',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.13.1',
+        providerVersion: '2.14.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
@@ -249,6 +255,7 @@ export class PriorityClass extends cdktf.TerraformResource {
     this._description = config.description;
     this._globalDefault = config.globalDefault;
     this._id = config.id;
+    this._preemptionPolicy = config.preemptionPolicy;
     this._value = config.value;
     this._metadata.internalValue = config.metadata;
   }
@@ -305,6 +312,22 @@ export class PriorityClass extends cdktf.TerraformResource {
     return this._id;
   }
 
+  // preemption_policy - computed: false, optional: true, required: false
+  private _preemptionPolicy?: string; 
+  public get preemptionPolicy() {
+    return this.getStringAttribute('preemption_policy');
+  }
+  public set preemptionPolicy(value: string) {
+    this._preemptionPolicy = value;
+  }
+  public resetPreemptionPolicy() {
+    this._preemptionPolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get preemptionPolicyInput() {
+    return this._preemptionPolicy;
+  }
+
   // value - computed: false, optional: false, required: true
   private _value?: number; 
   public get value() {
@@ -340,6 +363,7 @@ export class PriorityClass extends cdktf.TerraformResource {
       description: cdktf.stringToTerraform(this._description),
       global_default: cdktf.booleanToTerraform(this._globalDefault),
       id: cdktf.stringToTerraform(this._id),
+      preemption_policy: cdktf.stringToTerraform(this._preemptionPolicy),
       value: cdktf.numberToTerraform(this._value),
       metadata: priorityClassMetadataToTerraform(this._metadata.internalValue),
     };
