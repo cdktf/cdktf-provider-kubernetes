@@ -39,11 +39,23 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   */
   readonly type?: string;
   /**
+  * Terraform will wait for the service account token to be created.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/secret#wait_for_service_account_token Secret#wait_for_service_account_token}
+  */
+  readonly waitForServiceAccountToken?: boolean | cdktf.IResolvable;
+  /**
   * metadata block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/secret#metadata Secret#metadata}
   */
   readonly metadata: SecretMetadata;
+  /**
+  * timeouts block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/secret#timeouts Secret#timeouts}
+  */
+  readonly timeouts?: SecretTimeouts;
 }
 export interface SecretMetadata {
   /**
@@ -243,6 +255,81 @@ export class SecretMetadataOutputReference extends cdktf.ComplexObject {
     return this.getStringAttribute('uid');
   }
 }
+export interface SecretTimeouts {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/secret#create Secret#create}
+  */
+  readonly create?: string;
+}
+
+export function secretTimeoutsToTerraform(struct?: SecretTimeoutsOutputReference | SecretTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    create: cdktf.stringToTerraform(struct!.create),
+  }
+}
+
+export class SecretTimeoutsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): SecretTimeouts | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._create !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.create = this._create;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: SecretTimeouts | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._create = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._create = value.create;
+    }
+  }
+
+  // create - computed: false, optional: true, required: false
+  private _create?: string; 
+  public get create() {
+    return this.getStringAttribute('create');
+  }
+  public set create(value: string) {
+    this._create = value;
+  }
+  public resetCreate() {
+    this._create = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get createInput() {
+    return this._create;
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/secret kubernetes_secret}
@@ -270,7 +357,7 @@ export class Secret extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_secret',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.13.1',
+        providerVersion: '2.14.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
@@ -286,7 +373,9 @@ export class Secret extends cdktf.TerraformResource {
     this._id = config.id;
     this._immutable = config.immutable;
     this._type = config.type;
+    this._waitForServiceAccountToken = config.waitForServiceAccountToken;
     this._metadata.internalValue = config.metadata;
+    this._timeouts.internalValue = config.timeouts;
   }
 
   // ==========
@@ -373,6 +462,22 @@ export class Secret extends cdktf.TerraformResource {
     return this._type;
   }
 
+  // wait_for_service_account_token - computed: false, optional: true, required: false
+  private _waitForServiceAccountToken?: boolean | cdktf.IResolvable; 
+  public get waitForServiceAccountToken() {
+    return this.getBooleanAttribute('wait_for_service_account_token');
+  }
+  public set waitForServiceAccountToken(value: boolean | cdktf.IResolvable) {
+    this._waitForServiceAccountToken = value;
+  }
+  public resetWaitForServiceAccountToken() {
+    this._waitForServiceAccountToken = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get waitForServiceAccountTokenInput() {
+    return this._waitForServiceAccountToken;
+  }
+
   // metadata - computed: false, optional: false, required: true
   private _metadata = new SecretMetadataOutputReference(this, "metadata");
   public get metadata() {
@@ -386,6 +491,22 @@ export class Secret extends cdktf.TerraformResource {
     return this._metadata.internalValue;
   }
 
+  // timeouts - computed: false, optional: true, required: false
+  private _timeouts = new SecretTimeoutsOutputReference(this, "timeouts");
+  public get timeouts() {
+    return this._timeouts;
+  }
+  public putTimeouts(value: SecretTimeouts) {
+    this._timeouts.internalValue = value;
+  }
+  public resetTimeouts() {
+    this._timeouts.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutsInput() {
+    return this._timeouts.internalValue;
+  }
+
   // =========
   // SYNTHESIS
   // =========
@@ -397,7 +518,9 @@ export class Secret extends cdktf.TerraformResource {
       id: cdktf.stringToTerraform(this._id),
       immutable: cdktf.booleanToTerraform(this._immutable),
       type: cdktf.stringToTerraform(this._type),
+      wait_for_service_account_token: cdktf.booleanToTerraform(this._waitForServiceAccountToken),
       metadata: secretMetadataToTerraform(this._metadata.internalValue),
+      timeouts: secretTimeoutsToTerraform(this._timeouts.internalValue),
     };
   }
 }

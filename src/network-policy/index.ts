@@ -2683,7 +2683,7 @@ export class NetworkPolicy extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_network_policy',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.13.1',
+        providerVersion: '2.14.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
