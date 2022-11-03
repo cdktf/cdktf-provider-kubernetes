@@ -11,7 +11,7 @@ const actions = require("@actions/core");
 
 // set by the projen file that generates this script
 const CONSTRAINT = "~> 2.0";
-const FQ_PROVIDER_NAME = "kubernetes";
+const FQ_PROVIDER_NAME = "hashicorp/kubernetes";
 
 (async function main() {
   if (await newerMatchingProviderVersionExists()) {
