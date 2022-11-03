@@ -345,7 +345,7 @@ export class DataKubernetesServiceAccount extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_service_account',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.14.0',
+        providerVersion: '2.15.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

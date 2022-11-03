@@ -20,6 +20,12 @@ export interface AnnotationsConfig extends cdktf.TerraformMetaArguments {
   */
   readonly apiVersion: string;
   /**
+  * Set the name of the field manager for the specified labels.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/annotations#field_manager Annotations#field_manager}
+  */
+  readonly fieldManager?: string;
+  /**
   * Force overwriting annotations that were created or edited outside of Terraform.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/annotations#force Annotations#force}
@@ -165,7 +171,7 @@ export class Annotations extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_annotations',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.14.0',
+        providerVersion: '2.15.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
@@ -178,6 +184,7 @@ export class Annotations extends cdktf.TerraformResource {
     });
     this._annotations = config.annotations;
     this._apiVersion = config.apiVersion;
+    this._fieldManager = config.fieldManager;
     this._force = config.force;
     this._id = config.id;
     this._kind = config.kind;
@@ -212,6 +219,22 @@ export class Annotations extends cdktf.TerraformResource {
   // Temporarily expose input value. Use with caution.
   public get apiVersionInput() {
     return this._apiVersion;
+  }
+
+  // field_manager - computed: false, optional: true, required: false
+  private _fieldManager?: string; 
+  public get fieldManager() {
+    return this.getStringAttribute('field_manager');
+  }
+  public set fieldManager(value: string) {
+    this._fieldManager = value;
+  }
+  public resetFieldManager() {
+    this._fieldManager = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fieldManagerInput() {
+    return this._fieldManager;
   }
 
   // force - computed: false, optional: true, required: false
@@ -280,6 +303,7 @@ export class Annotations extends cdktf.TerraformResource {
     return {
       annotations: cdktf.hashMapper(cdktf.stringToTerraform)(this._annotations),
       api_version: cdktf.stringToTerraform(this._apiVersion),
+      field_manager: cdktf.stringToTerraform(this._fieldManager),
       force: cdktf.booleanToTerraform(this._force),
       id: cdktf.stringToTerraform(this._id),
       kind: cdktf.stringToTerraform(this._kind),
