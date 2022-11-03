@@ -14,6 +14,12 @@ export interface ConfigMapV1DataConfig extends cdktf.TerraformMetaArguments {
   */
   readonly data: { [key: string]: string };
   /**
+  * Set the name of the field manager for the specified labels.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/config_map_v1_data#field_manager ConfigMapV1Data#field_manager}
+  */
+  readonly fieldManager?: string;
+  /**
   * Force overwriting data that is managed outside of Terraform.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/config_map_v1_data#force ConfigMapV1Data#force}
@@ -153,7 +159,7 @@ export class ConfigMapV1Data extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_config_map_v1_data',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.14.0',
+        providerVersion: '2.15.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
@@ -165,6 +171,7 @@ export class ConfigMapV1Data extends cdktf.TerraformResource {
       forEach: config.forEach
     });
     this._data = config.data;
+    this._fieldManager = config.fieldManager;
     this._force = config.force;
     this._id = config.id;
     this._metadata.internalValue = config.metadata;
@@ -185,6 +192,22 @@ export class ConfigMapV1Data extends cdktf.TerraformResource {
   // Temporarily expose input value. Use with caution.
   public get dataInput() {
     return this._data;
+  }
+
+  // field_manager - computed: false, optional: true, required: false
+  private _fieldManager?: string; 
+  public get fieldManager() {
+    return this.getStringAttribute('field_manager');
+  }
+  public set fieldManager(value: string) {
+    this._fieldManager = value;
+  }
+  public resetFieldManager() {
+    this._fieldManager = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fieldManagerInput() {
+    return this._fieldManager;
   }
 
   // force - computed: false, optional: true, required: false
@@ -239,6 +262,7 @@ export class ConfigMapV1Data extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       data: cdktf.hashMapper(cdktf.stringToTerraform)(this._data),
+      field_manager: cdktf.stringToTerraform(this._fieldManager),
       force: cdktf.booleanToTerraform(this._force),
       id: cdktf.stringToTerraform(this._id),
       metadata: configMapV1DataMetadataToTerraform(this._metadata.internalValue),

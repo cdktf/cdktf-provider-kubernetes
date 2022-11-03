@@ -23,6 +23,7 @@ export * as deployment from './deployment';
 export * as deploymentV1 from './deployment-v1';
 export * as endpoints from './endpoints';
 export * as endpointsV1 from './endpoints-v1';
+export * as env from './env';
 export * as horizontalPodAutoscaler from './horizontal-pod-autoscaler';
 export * as horizontalPodAutoscalerV1 from './horizontal-pod-autoscaler-v1';
 export * as horizontalPodAutoscalerV2 from './horizontal-pod-autoscaler-v2';
