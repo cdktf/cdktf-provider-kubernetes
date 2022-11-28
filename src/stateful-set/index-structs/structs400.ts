@@ -1408,6 +1408,12 @@ export interface StatefulSetSpecTemplateSpecSecurityContext {
   */
   readonly fsGroup?: string;
   /**
+  * fsGroupChangePolicy defines behavior of changing ownership and permission of the volume before being exposed inside Pod. This field will only apply to volume types which support fsGroup based ownership(and permissions). It will have no effect on ephemeral volume types such as: secret, configmaps and emptydir.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set#fs_group_change_policy StatefulSet#fs_group_change_policy}
+  */
+  readonly fsGroupChangePolicy?: string;
+  /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set#run_as_group StatefulSet#run_as_group}
@@ -1458,6 +1464,7 @@ export function statefulSetSpecTemplateSpecSecurityContextToTerraform(struct?: S
   }
   return {
     fs_group: cdktf.stringToTerraform(struct!.fsGroup),
+    fs_group_change_policy: cdktf.stringToTerraform(struct!.fsGroupChangePolicy),
     run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
     run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
     run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
@@ -1485,6 +1492,10 @@ export class StatefulSetSpecTemplateSpecSecurityContextOutputReference extends c
     if (this._fsGroup !== undefined) {
       hasAnyValues = true;
       internalValueResult.fsGroup = this._fsGroup;
+    }
+    if (this._fsGroupChangePolicy !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.fsGroupChangePolicy = this._fsGroupChangePolicy;
     }
     if (this._runAsGroup !== undefined) {
       hasAnyValues = true;
@@ -1521,6 +1532,7 @@ export class StatefulSetSpecTemplateSpecSecurityContextOutputReference extends c
     if (value === undefined) {
       this.isEmptyObject = false;
       this._fsGroup = undefined;
+      this._fsGroupChangePolicy = undefined;
       this._runAsGroup = undefined;
       this._runAsNonRoot = undefined;
       this._runAsUser = undefined;
@@ -1532,6 +1544,7 @@ export class StatefulSetSpecTemplateSpecSecurityContextOutputReference extends c
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._fsGroup = value.fsGroup;
+      this._fsGroupChangePolicy = value.fsGroupChangePolicy;
       this._runAsGroup = value.runAsGroup;
       this._runAsNonRoot = value.runAsNonRoot;
       this._runAsUser = value.runAsUser;
@@ -1556,6 +1569,22 @@ export class StatefulSetSpecTemplateSpecSecurityContextOutputReference extends c
   // Temporarily expose input value. Use with caution.
   public get fsGroupInput() {
     return this._fsGroup;
+  }
+
+  // fs_group_change_policy - computed: false, optional: true, required: false
+  private _fsGroupChangePolicy?: string; 
+  public get fsGroupChangePolicy() {
+    return this.getStringAttribute('fs_group_change_policy');
+  }
+  public set fsGroupChangePolicy(value: string) {
+    this._fsGroupChangePolicy = value;
+  }
+  public resetFsGroupChangePolicy() {
+    this._fsGroupChangePolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fsGroupChangePolicyInput() {
+    return this._fsGroupChangePolicy;
   }
 
   // run_as_group - computed: false, optional: true, required: false
@@ -9408,6 +9437,12 @@ export interface StatefulSetSpecTemplateSpec {
   */
   readonly restartPolicy?: string;
   /**
+  * RuntimeClassName is a feature for selecting the container runtime configuration. The container runtime configuration is used to run a Pod's containers. More info: https://kubernetes.io/docs/concepts/containers/runtime-class
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set#runtime_class_name StatefulSet#runtime_class_name}
+  */
+  readonly runtimeClassName?: string;
+  /**
   * ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set#service_account_name StatefulSet#service_account_name}
@@ -9517,6 +9552,7 @@ export function statefulSetSpecTemplateSpecToTerraform(struct?: StatefulSetSpecT
     node_selector: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.nodeSelector),
     priority_class_name: cdktf.stringToTerraform(struct!.priorityClassName),
     restart_policy: cdktf.stringToTerraform(struct!.restartPolicy),
+    runtime_class_name: cdktf.stringToTerraform(struct!.runtimeClassName),
     service_account_name: cdktf.stringToTerraform(struct!.serviceAccountName),
     share_process_namespace: cdktf.booleanToTerraform(struct!.shareProcessNamespace),
     subdomain: cdktf.stringToTerraform(struct!.subdomain),
@@ -9597,6 +9633,10 @@ export class StatefulSetSpecTemplateSpecOutputReference extends cdktf.ComplexObj
       hasAnyValues = true;
       internalValueResult.restartPolicy = this._restartPolicy;
     }
+    if (this._runtimeClassName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.runtimeClassName = this._runtimeClassName;
+    }
     if (this._serviceAccountName !== undefined) {
       hasAnyValues = true;
       internalValueResult.serviceAccountName = this._serviceAccountName;
@@ -9675,6 +9715,7 @@ export class StatefulSetSpecTemplateSpecOutputReference extends cdktf.ComplexObj
       this._nodeSelector = undefined;
       this._priorityClassName = undefined;
       this._restartPolicy = undefined;
+      this._runtimeClassName = undefined;
       this._serviceAccountName = undefined;
       this._shareProcessNamespace = undefined;
       this._subdomain = undefined;
@@ -9705,6 +9746,7 @@ export class StatefulSetSpecTemplateSpecOutputReference extends cdktf.ComplexObj
       this._nodeSelector = value.nodeSelector;
       this._priorityClassName = value.priorityClassName;
       this._restartPolicy = value.restartPolicy;
+      this._runtimeClassName = value.runtimeClassName;
       this._serviceAccountName = value.serviceAccountName;
       this._shareProcessNamespace = value.shareProcessNamespace;
       this._subdomain = value.subdomain;
@@ -9913,6 +9955,22 @@ export class StatefulSetSpecTemplateSpecOutputReference extends cdktf.ComplexObj
   // Temporarily expose input value. Use with caution.
   public get restartPolicyInput() {
     return this._restartPolicy;
+  }
+
+  // runtime_class_name - computed: false, optional: true, required: false
+  private _runtimeClassName?: string; 
+  public get runtimeClassName() {
+    return this.getStringAttribute('runtime_class_name');
+  }
+  public set runtimeClassName(value: string) {
+    this._runtimeClassName = value;
+  }
+  public resetRuntimeClassName() {
+    this._runtimeClassName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runtimeClassNameInput() {
+    return this._runtimeClassName;
   }
 
   // service_account_name - computed: true, optional: true, required: false
