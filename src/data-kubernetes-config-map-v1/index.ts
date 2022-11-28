@@ -223,7 +223,7 @@ export class DataKubernetesConfigMapV1 extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_config_map_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.15.0',
+        providerVersion: '2.16.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

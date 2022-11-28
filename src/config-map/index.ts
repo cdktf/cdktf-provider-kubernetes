@@ -264,7 +264,7 @@ export class ConfigMap extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_config_map',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.15.0',
+        providerVersion: '2.16.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

@@ -79,6 +79,7 @@ export * as validatingWebhookConfigurationV1 from './validating-webhook-configur
 export * as dataKubernetesAllNamespaces from './data-kubernetes-all-namespaces';
 export * as dataKubernetesConfigMap from './data-kubernetes-config-map';
 export * as dataKubernetesConfigMapV1 from './data-kubernetes-config-map-v1';
+export * as dataKubernetesEndpointsV1 from './data-kubernetes-endpoints-v1';
 export * as dataKubernetesIngress from './data-kubernetes-ingress';
 export * as dataKubernetesIngressV1 from './data-kubernetes-ingress-v1';
 export * as dataKubernetesMutatingWebhookConfigurationV1 from './data-kubernetes-mutating-webhook-configuration-v1';

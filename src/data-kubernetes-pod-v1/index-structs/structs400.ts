@@ -1540,6 +1540,11 @@ export class DataKubernetesPodV1SpecSecurityContextOutputReference extends cdktf
     return this.getStringAttribute('fs_group');
   }
 
+  // fs_group_change_policy - computed: true, optional: false, required: false
+  public get fsGroupChangePolicy() {
+    return this.getStringAttribute('fs_group_change_policy');
+  }
+
   // run_as_group - computed: true, optional: false, required: false
   public get runAsGroup() {
     return this.getStringAttribute('run_as_group');
@@ -5668,6 +5673,11 @@ export class DataKubernetesPodV1SpecOutputReference extends cdktf.ComplexObject 
   // restart_policy - computed: true, optional: false, required: false
   public get restartPolicy() {
     return this.getStringAttribute('restart_policy');
+  }
+
+  // runtime_class_name - computed: true, optional: false, required: false
+  public get runtimeClassName() {
+    return this.getStringAttribute('runtime_class_name');
   }
 
   // security_context - computed: true, optional: false, required: false
