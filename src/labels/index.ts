@@ -171,7 +171,7 @@ export class Labels extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_labels',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.16.0',
+        providerVersion: '2.16.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

@@ -457,7 +457,7 @@ export class CertificateSigningRequest extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_certificate_signing_request',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.16.0',
+        providerVersion: '2.16.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

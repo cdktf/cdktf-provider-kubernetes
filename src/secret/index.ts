@@ -357,7 +357,7 @@ export class Secret extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_secret',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.16.0',
+        providerVersion: '2.16.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
