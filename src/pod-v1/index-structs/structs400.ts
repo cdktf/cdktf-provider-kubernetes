@@ -1,5 +1,35 @@
 import * as cdktf from 'cdktf';
-import { PodV1SpecAffinity,
+import { PodV1SpecInitContainerStartupProbeExec,
+podV1SpecInitContainerStartupProbeExecToTerraform,
+PodV1SpecInitContainerStartupProbeExecOutputReference,
+PodV1SpecInitContainerStartupProbeGrpc,
+podV1SpecInitContainerStartupProbeGrpcToTerraform,
+PodV1SpecInitContainerStartupProbeGrpcList,
+PodV1SpecInitContainerEnv,
+podV1SpecInitContainerEnvToTerraform,
+PodV1SpecInitContainerEnvList,
+PodV1SpecInitContainerEnvFrom,
+podV1SpecInitContainerEnvFromToTerraform,
+PodV1SpecInitContainerEnvFromList,
+PodV1SpecInitContainerLifecycle,
+podV1SpecInitContainerLifecycleToTerraform,
+PodV1SpecInitContainerLifecycleOutputReference,
+PodV1SpecInitContainerLivenessProbe,
+podV1SpecInitContainerLivenessProbeToTerraform,
+PodV1SpecInitContainerLivenessProbeOutputReference,
+PodV1SpecInitContainerPort,
+podV1SpecInitContainerPortToTerraform,
+PodV1SpecInitContainerPortList,
+PodV1SpecInitContainerReadinessProbe,
+podV1SpecInitContainerReadinessProbeToTerraform,
+PodV1SpecInitContainerReadinessProbeOutputReference,
+PodV1SpecInitContainerResources,
+podV1SpecInitContainerResourcesToTerraform,
+PodV1SpecInitContainerResourcesOutputReference,
+PodV1SpecInitContainerSecurityContext,
+podV1SpecInitContainerSecurityContextToTerraform,
+PodV1SpecInitContainerSecurityContextOutputReference,
+PodV1SpecAffinity,
 podV1SpecAffinityToTerraform,
 PodV1SpecAffinityOutputReference,
 PodV1SpecContainer,
@@ -13,10 +43,1598 @@ podV1SpecHostAliasesToTerraform,
 PodV1SpecHostAliasesList,
 PodV1SpecImagePullSecrets,
 podV1SpecImagePullSecretsToTerraform,
-PodV1SpecImagePullSecretsList,
-PodV1SpecInitContainer,
-podV1SpecInitContainerToTerraform,
-PodV1SpecInitContainerList } from './structs0'
+PodV1SpecImagePullSecretsList } from './structs0'
+export interface PodV1SpecInitContainerStartupProbeHttpGetHttpHeader {
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#name PodV1#name}
+  */
+  readonly name?: string;
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#value PodV1#value}
+  */
+  readonly value?: string;
+}
+
+export function podV1SpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: PodV1SpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    name: cdktf.stringToTerraform(struct!.name),
+    value: cdktf.stringToTerraform(struct!.value),
+  }
+}
+
+export class PodV1SpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodV1SpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._value !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodV1SpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._name = undefined;
+      this._value = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._name = value.name;
+      this._value = value.value;
+    }
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // value - computed: false, optional: true, required: false
+  private _value?: string; 
+  public get value() {
+    return this.getStringAttribute('value');
+  }
+  public set value(value: string) {
+    this._value = value;
+  }
+  public resetValue() {
+    this._value = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valueInput() {
+    return this._value;
+  }
+}
+
+export class PodV1SpecInitContainerStartupProbeHttpGetHttpHeaderList extends cdktf.ComplexList {
+  public internalValue? : PodV1SpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodV1SpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference {
+    return new PodV1SpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface PodV1SpecInitContainerStartupProbeHttpGet {
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#host PodV1#host}
+  */
+  readonly host?: string;
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#path PodV1#path}
+  */
+  readonly path?: string;
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#port PodV1#port}
+  */
+  readonly port?: string;
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#scheme PodV1#scheme}
+  */
+  readonly scheme?: string;
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#http_header PodV1#http_header}
+  */
+  readonly httpHeader?: PodV1SpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable;
+}
+
+export function podV1SpecInitContainerStartupProbeHttpGetToTerraform(struct?: PodV1SpecInitContainerStartupProbeHttpGetOutputReference | PodV1SpecInitContainerStartupProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    host: cdktf.stringToTerraform(struct!.host),
+    path: cdktf.stringToTerraform(struct!.path),
+    port: cdktf.stringToTerraform(struct!.port),
+    scheme: cdktf.stringToTerraform(struct!.scheme),
+    http_header: cdktf.listMapper(podV1SpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
+  }
+}
+
+export class PodV1SpecInitContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): PodV1SpecInitContainerStartupProbeHttpGet | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._host !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodV1SpecInitContainerStartupProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader.internalValue = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader.internalValue = value.httpHeader;
+    }
+  }
+
+  // host - computed: false, optional: true, required: false
+  private _host?: string; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string) {
+    this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host;
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path;
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // scheme - computed: false, optional: true, required: false
+  private _scheme?: string; 
+  public get scheme() {
+    return this.getStringAttribute('scheme');
+  }
+  public set scheme(value: string) {
+    this._scheme = value;
+  }
+  public resetScheme() {
+    this._scheme = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schemeInput() {
+    return this._scheme;
+  }
+
+  // http_header - computed: false, optional: true, required: false
+  private _httpHeader = new PodV1SpecInitContainerStartupProbeHttpGetHttpHeaderList(this, "http_header", false);
+  public get httpHeader() {
+    return this._httpHeader;
+  }
+  public putHttpHeader(value: PodV1SpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable) {
+    this._httpHeader.internalValue = value;
+  }
+  public resetHttpHeader() {
+    this._httpHeader.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpHeaderInput() {
+    return this._httpHeader.internalValue;
+  }
+}
+export interface PodV1SpecInitContainerStartupProbeTcpSocket {
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#port PodV1#port}
+  */
+  readonly port: string;
+}
+
+export function podV1SpecInitContainerStartupProbeTcpSocketToTerraform(struct?: PodV1SpecInitContainerStartupProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.stringToTerraform(struct!.port),
+  }
+}
+
+export class PodV1SpecInitContainerStartupProbeTcpSocketOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodV1SpecInitContainerStartupProbeTcpSocket | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodV1SpecInitContainerStartupProbeTcpSocket | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: string; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+}
+
+export class PodV1SpecInitContainerStartupProbeTcpSocketList extends cdktf.ComplexList {
+  public internalValue? : PodV1SpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodV1SpecInitContainerStartupProbeTcpSocketOutputReference {
+    return new PodV1SpecInitContainerStartupProbeTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface PodV1SpecInitContainerStartupProbe {
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#failure_threshold PodV1#failure_threshold}
+  */
+  readonly failureThreshold?: number;
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#initial_delay_seconds PodV1#initial_delay_seconds}
+  */
+  readonly initialDelaySeconds?: number;
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#period_seconds PodV1#period_seconds}
+  */
+  readonly periodSeconds?: number;
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#success_threshold PodV1#success_threshold}
+  */
+  readonly successThreshold?: number;
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#timeout_seconds PodV1#timeout_seconds}
+  */
+  readonly timeoutSeconds?: number;
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#exec PodV1#exec}
+  */
+  readonly exec?: PodV1SpecInitContainerStartupProbeExec;
+  /**
+  * grpc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#grpc PodV1#grpc}
+  */
+  readonly grpc?: PodV1SpecInitContainerStartupProbeGrpc[] | cdktf.IResolvable;
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#http_get PodV1#http_get}
+  */
+  readonly httpGet?: PodV1SpecInitContainerStartupProbeHttpGet;
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#tcp_socket PodV1#tcp_socket}
+  */
+  readonly tcpSocket?: PodV1SpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable;
+}
+
+export function podV1SpecInitContainerStartupProbeToTerraform(struct?: PodV1SpecInitContainerStartupProbeOutputReference | PodV1SpecInitContainerStartupProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    failure_threshold: cdktf.numberToTerraform(struct!.failureThreshold),
+    initial_delay_seconds: cdktf.numberToTerraform(struct!.initialDelaySeconds),
+    period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
+    success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
+    timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
+    exec: podV1SpecInitContainerStartupProbeExecToTerraform(struct!.exec),
+    grpc: cdktf.listMapper(podV1SpecInitContainerStartupProbeGrpcToTerraform, true)(struct!.grpc),
+    http_get: podV1SpecInitContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
+    tcp_socket: cdktf.listMapper(podV1SpecInitContainerStartupProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
+  }
+}
+
+export class PodV1SpecInitContainerStartupProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): PodV1SpecInitContainerStartupProbe | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._failureThreshold !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._grpc?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.grpc = this._grpc?.internalValue;
+    }
+    if (this._httpGet?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodV1SpecInitContainerStartupProbe | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._grpc.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket.internalValue = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._grpc.internalValue = value.grpc;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket.internalValue = value.tcpSocket;
+    }
+  }
+
+  // failure_threshold - computed: false, optional: true, required: false
+  private _failureThreshold?: number; 
+  public get failureThreshold() {
+    return this.getNumberAttribute('failure_threshold');
+  }
+  public set failureThreshold(value: number) {
+    this._failureThreshold = value;
+  }
+  public resetFailureThreshold() {
+    this._failureThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get failureThresholdInput() {
+    return this._failureThreshold;
+  }
+
+  // initial_delay_seconds - computed: false, optional: true, required: false
+  private _initialDelaySeconds?: number; 
+  public get initialDelaySeconds() {
+    return this.getNumberAttribute('initial_delay_seconds');
+  }
+  public set initialDelaySeconds(value: number) {
+    this._initialDelaySeconds = value;
+  }
+  public resetInitialDelaySeconds() {
+    this._initialDelaySeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get initialDelaySecondsInput() {
+    return this._initialDelaySeconds;
+  }
+
+  // period_seconds - computed: false, optional: true, required: false
+  private _periodSeconds?: number; 
+  public get periodSeconds() {
+    return this.getNumberAttribute('period_seconds');
+  }
+  public set periodSeconds(value: number) {
+    this._periodSeconds = value;
+  }
+  public resetPeriodSeconds() {
+    this._periodSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get periodSecondsInput() {
+    return this._periodSeconds;
+  }
+
+  // success_threshold - computed: false, optional: true, required: false
+  private _successThreshold?: number; 
+  public get successThreshold() {
+    return this.getNumberAttribute('success_threshold');
+  }
+  public set successThreshold(value: number) {
+    this._successThreshold = value;
+  }
+  public resetSuccessThreshold() {
+    this._successThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get successThresholdInput() {
+    return this._successThreshold;
+  }
+
+  // timeout_seconds - computed: false, optional: true, required: false
+  private _timeoutSeconds?: number; 
+  public get timeoutSeconds() {
+    return this.getNumberAttribute('timeout_seconds');
+  }
+  public set timeoutSeconds(value: number) {
+    this._timeoutSeconds = value;
+  }
+  public resetTimeoutSeconds() {
+    this._timeoutSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutSecondsInput() {
+    return this._timeoutSeconds;
+  }
+
+  // exec - computed: false, optional: true, required: false
+  private _exec = new PodV1SpecInitContainerStartupProbeExecOutputReference(this, "exec");
+  public get exec() {
+    return this._exec;
+  }
+  public putExec(value: PodV1SpecInitContainerStartupProbeExec) {
+    this._exec.internalValue = value;
+  }
+  public resetExec() {
+    this._exec.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get execInput() {
+    return this._exec.internalValue;
+  }
+
+  // grpc - computed: false, optional: true, required: false
+  private _grpc = new PodV1SpecInitContainerStartupProbeGrpcList(this, "grpc", false);
+  public get grpc() {
+    return this._grpc;
+  }
+  public putGrpc(value: PodV1SpecInitContainerStartupProbeGrpc[] | cdktf.IResolvable) {
+    this._grpc.internalValue = value;
+  }
+  public resetGrpc() {
+    this._grpc.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get grpcInput() {
+    return this._grpc.internalValue;
+  }
+
+  // http_get - computed: false, optional: true, required: false
+  private _httpGet = new PodV1SpecInitContainerStartupProbeHttpGetOutputReference(this, "http_get");
+  public get httpGet() {
+    return this._httpGet;
+  }
+  public putHttpGet(value: PodV1SpecInitContainerStartupProbeHttpGet) {
+    this._httpGet.internalValue = value;
+  }
+  public resetHttpGet() {
+    this._httpGet.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpGetInput() {
+    return this._httpGet.internalValue;
+  }
+
+  // tcp_socket - computed: false, optional: true, required: false
+  private _tcpSocket = new PodV1SpecInitContainerStartupProbeTcpSocketList(this, "tcp_socket", false);
+  public get tcpSocket() {
+    return this._tcpSocket;
+  }
+  public putTcpSocket(value: PodV1SpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable) {
+    this._tcpSocket.internalValue = value;
+  }
+  public resetTcpSocket() {
+    this._tcpSocket.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get tcpSocketInput() {
+    return this._tcpSocket.internalValue;
+  }
+}
+export interface PodV1SpecInitContainerVolumeMount {
+  /**
+  * Path within the container at which the volume should be mounted. Must not contain ':'.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#mount_path PodV1#mount_path}
+  */
+  readonly mountPath: string;
+  /**
+  * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#mount_propagation PodV1#mount_propagation}
+  */
+  readonly mountPropagation?: string;
+  /**
+  * This must match the Name of a Volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#name PodV1#name}
+  */
+  readonly name: string;
+  /**
+  * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#read_only PodV1#read_only}
+  */
+  readonly readOnly?: boolean | cdktf.IResolvable;
+  /**
+  * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#sub_path PodV1#sub_path}
+  */
+  readonly subPath?: string;
+}
+
+export function podV1SpecInitContainerVolumeMountToTerraform(struct?: PodV1SpecInitContainerVolumeMount | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    mount_path: cdktf.stringToTerraform(struct!.mountPath),
+    mount_propagation: cdktf.stringToTerraform(struct!.mountPropagation),
+    name: cdktf.stringToTerraform(struct!.name),
+    read_only: cdktf.booleanToTerraform(struct!.readOnly),
+    sub_path: cdktf.stringToTerraform(struct!.subPath),
+  }
+}
+
+export class PodV1SpecInitContainerVolumeMountOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodV1SpecInitContainerVolumeMount | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._mountPath !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.mountPath = this._mountPath;
+    }
+    if (this._mountPropagation !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.mountPropagation = this._mountPropagation;
+    }
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._readOnly !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._subPath !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.subPath = this._subPath;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodV1SpecInitContainerVolumeMount | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._mountPath = undefined;
+      this._mountPropagation = undefined;
+      this._name = undefined;
+      this._readOnly = undefined;
+      this._subPath = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._mountPath = value.mountPath;
+      this._mountPropagation = value.mountPropagation;
+      this._name = value.name;
+      this._readOnly = value.readOnly;
+      this._subPath = value.subPath;
+    }
+  }
+
+  // mount_path - computed: false, optional: false, required: true
+  private _mountPath?: string; 
+  public get mountPath() {
+    return this.getStringAttribute('mount_path');
+  }
+  public set mountPath(value: string) {
+    this._mountPath = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get mountPathInput() {
+    return this._mountPath;
+  }
+
+  // mount_propagation - computed: false, optional: true, required: false
+  private _mountPropagation?: string; 
+  public get mountPropagation() {
+    return this.getStringAttribute('mount_propagation');
+  }
+  public set mountPropagation(value: string) {
+    this._mountPropagation = value;
+  }
+  public resetMountPropagation() {
+    this._mountPropagation = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get mountPropagationInput() {
+    return this._mountPropagation;
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only');
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly;
+  }
+
+  // sub_path - computed: false, optional: true, required: false
+  private _subPath?: string; 
+  public get subPath() {
+    return this.getStringAttribute('sub_path');
+  }
+  public set subPath(value: string) {
+    this._subPath = value;
+  }
+  public resetSubPath() {
+    this._subPath = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get subPathInput() {
+    return this._subPath;
+  }
+}
+
+export class PodV1SpecInitContainerVolumeMountList extends cdktf.ComplexList {
+  public internalValue? : PodV1SpecInitContainerVolumeMount[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodV1SpecInitContainerVolumeMountOutputReference {
+    return new PodV1SpecInitContainerVolumeMountOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface PodV1SpecInitContainer {
+  /**
+  * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#args PodV1#args}
+  */
+  readonly args?: string[];
+  /**
+  * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#command PodV1#command}
+  */
+  readonly command?: string[];
+  /**
+  * Docker image name. More info: http://kubernetes.io/docs/user-guide/images
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#image PodV1#image}
+  */
+  readonly image?: string;
+  /**
+  * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#image_pull_policy PodV1#image_pull_policy}
+  */
+  readonly imagePullPolicy?: string;
+  /**
+  * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#name PodV1#name}
+  */
+  readonly name: string;
+  /**
+  * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#stdin PodV1#stdin}
+  */
+  readonly stdin?: boolean | cdktf.IResolvable;
+  /**
+  * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#stdin_once PodV1#stdin_once}
+  */
+  readonly stdinOnce?: boolean | cdktf.IResolvable;
+  /**
+  * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#termination_message_path PodV1#termination_message_path}
+  */
+  readonly terminationMessagePath?: string;
+  /**
+  * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#termination_message_policy PodV1#termination_message_policy}
+  */
+  readonly terminationMessagePolicy?: string;
+  /**
+  * Whether this container should allocate a TTY for itself
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#tty PodV1#tty}
+  */
+  readonly tty?: boolean | cdktf.IResolvable;
+  /**
+  * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#working_dir PodV1#working_dir}
+  */
+  readonly workingDir?: string;
+  /**
+  * env block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#env PodV1#env}
+  */
+  readonly env?: PodV1SpecInitContainerEnv[] | cdktf.IResolvable;
+  /**
+  * env_from block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#env_from PodV1#env_from}
+  */
+  readonly envFrom?: PodV1SpecInitContainerEnvFrom[] | cdktf.IResolvable;
+  /**
+  * lifecycle block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#lifecycle PodV1#lifecycle}
+  */
+  readonly lifecycle?: PodV1SpecInitContainerLifecycle;
+  /**
+  * liveness_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#liveness_probe PodV1#liveness_probe}
+  */
+  readonly livenessProbe?: PodV1SpecInitContainerLivenessProbe;
+  /**
+  * port block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#port PodV1#port}
+  */
+  readonly port?: PodV1SpecInitContainerPort[] | cdktf.IResolvable;
+  /**
+  * readiness_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#readiness_probe PodV1#readiness_probe}
+  */
+  readonly readinessProbe?: PodV1SpecInitContainerReadinessProbe;
+  /**
+  * resources block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#resources PodV1#resources}
+  */
+  readonly resources?: PodV1SpecInitContainerResources;
+  /**
+  * security_context block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#security_context PodV1#security_context}
+  */
+  readonly securityContext?: PodV1SpecInitContainerSecurityContext;
+  /**
+  * startup_probe block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#startup_probe PodV1#startup_probe}
+  */
+  readonly startupProbe?: PodV1SpecInitContainerStartupProbe;
+  /**
+  * volume_mount block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_v1#volume_mount PodV1#volume_mount}
+  */
+  readonly volumeMount?: PodV1SpecInitContainerVolumeMount[] | cdktf.IResolvable;
+}
+
+export function podV1SpecInitContainerToTerraform(struct?: PodV1SpecInitContainer | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    args: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.args),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
+    image: cdktf.stringToTerraform(struct!.image),
+    image_pull_policy: cdktf.stringToTerraform(struct!.imagePullPolicy),
+    name: cdktf.stringToTerraform(struct!.name),
+    stdin: cdktf.booleanToTerraform(struct!.stdin),
+    stdin_once: cdktf.booleanToTerraform(struct!.stdinOnce),
+    termination_message_path: cdktf.stringToTerraform(struct!.terminationMessagePath),
+    termination_message_policy: cdktf.stringToTerraform(struct!.terminationMessagePolicy),
+    tty: cdktf.booleanToTerraform(struct!.tty),
+    working_dir: cdktf.stringToTerraform(struct!.workingDir),
+    env: cdktf.listMapper(podV1SpecInitContainerEnvToTerraform, true)(struct!.env),
+    env_from: cdktf.listMapper(podV1SpecInitContainerEnvFromToTerraform, true)(struct!.envFrom),
+    lifecycle: podV1SpecInitContainerLifecycleToTerraform(struct!.lifecycle),
+    liveness_probe: podV1SpecInitContainerLivenessProbeToTerraform(struct!.livenessProbe),
+    port: cdktf.listMapper(podV1SpecInitContainerPortToTerraform, true)(struct!.port),
+    readiness_probe: podV1SpecInitContainerReadinessProbeToTerraform(struct!.readinessProbe),
+    resources: podV1SpecInitContainerResourcesToTerraform(struct!.resources),
+    security_context: podV1SpecInitContainerSecurityContextToTerraform(struct!.securityContext),
+    startup_probe: podV1SpecInitContainerStartupProbeToTerraform(struct!.startupProbe),
+    volume_mount: cdktf.listMapper(podV1SpecInitContainerVolumeMountToTerraform, true)(struct!.volumeMount),
+  }
+}
+
+export class PodV1SpecInitContainerOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodV1SpecInitContainer | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._args !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.args = this._args;
+    }
+    if (this._command !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    if (this._image !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.image = this._image;
+    }
+    if (this._imagePullPolicy !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.imagePullPolicy = this._imagePullPolicy;
+    }
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._stdin !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.stdin = this._stdin;
+    }
+    if (this._stdinOnce !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.stdinOnce = this._stdinOnce;
+    }
+    if (this._terminationMessagePath !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.terminationMessagePath = this._terminationMessagePath;
+    }
+    if (this._terminationMessagePolicy !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.terminationMessagePolicy = this._terminationMessagePolicy;
+    }
+    if (this._tty !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.tty = this._tty;
+    }
+    if (this._workingDir !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.workingDir = this._workingDir;
+    }
+    if (this._env?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.env = this._env?.internalValue;
+    }
+    if (this._envFrom?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.envFrom = this._envFrom?.internalValue;
+    }
+    if (this._lifecycle?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.lifecycle = this._lifecycle?.internalValue;
+    }
+    if (this._livenessProbe?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.livenessProbe = this._livenessProbe?.internalValue;
+    }
+    if (this._port?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port?.internalValue;
+    }
+    if (this._readinessProbe?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.readinessProbe = this._readinessProbe?.internalValue;
+    }
+    if (this._resources?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.resources = this._resources?.internalValue;
+    }
+    if (this._securityContext?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.securityContext = this._securityContext?.internalValue;
+    }
+    if (this._startupProbe?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.startupProbe = this._startupProbe?.internalValue;
+    }
+    if (this._volumeMount?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.volumeMount = this._volumeMount?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodV1SpecInitContainer | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._args = undefined;
+      this._command = undefined;
+      this._image = undefined;
+      this._imagePullPolicy = undefined;
+      this._name = undefined;
+      this._stdin = undefined;
+      this._stdinOnce = undefined;
+      this._terminationMessagePath = undefined;
+      this._terminationMessagePolicy = undefined;
+      this._tty = undefined;
+      this._workingDir = undefined;
+      this._env.internalValue = undefined;
+      this._envFrom.internalValue = undefined;
+      this._lifecycle.internalValue = undefined;
+      this._livenessProbe.internalValue = undefined;
+      this._port.internalValue = undefined;
+      this._readinessProbe.internalValue = undefined;
+      this._resources.internalValue = undefined;
+      this._securityContext.internalValue = undefined;
+      this._startupProbe.internalValue = undefined;
+      this._volumeMount.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._args = value.args;
+      this._command = value.command;
+      this._image = value.image;
+      this._imagePullPolicy = value.imagePullPolicy;
+      this._name = value.name;
+      this._stdin = value.stdin;
+      this._stdinOnce = value.stdinOnce;
+      this._terminationMessagePath = value.terminationMessagePath;
+      this._terminationMessagePolicy = value.terminationMessagePolicy;
+      this._tty = value.tty;
+      this._workingDir = value.workingDir;
+      this._env.internalValue = value.env;
+      this._envFrom.internalValue = value.envFrom;
+      this._lifecycle.internalValue = value.lifecycle;
+      this._livenessProbe.internalValue = value.livenessProbe;
+      this._port.internalValue = value.port;
+      this._readinessProbe.internalValue = value.readinessProbe;
+      this._resources.internalValue = value.resources;
+      this._securityContext.internalValue = value.securityContext;
+      this._startupProbe.internalValue = value.startupProbe;
+      this._volumeMount.internalValue = value.volumeMount;
+    }
+  }
+
+  // args - computed: false, optional: true, required: false
+  private _args?: string[]; 
+  public get args() {
+    return this.getListAttribute('args');
+  }
+  public set args(value: string[]) {
+    this._args = value;
+  }
+  public resetArgs() {
+    this._args = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get argsInput() {
+    return this._args;
+  }
+
+  // command - computed: false, optional: true, required: false
+  private _command?: string[]; 
+  public get command() {
+    return this.getListAttribute('command');
+  }
+  public set command(value: string[]) {
+    this._command = value;
+  }
+  public resetCommand() {
+    this._command = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command;
+  }
+
+  // image - computed: false, optional: true, required: false
+  private _image?: string; 
+  public get image() {
+    return this.getStringAttribute('image');
+  }
+  public set image(value: string) {
+    this._image = value;
+  }
+  public resetImage() {
+    this._image = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get imageInput() {
+    return this._image;
+  }
+
+  // image_pull_policy - computed: true, optional: true, required: false
+  private _imagePullPolicy?: string; 
+  public get imagePullPolicy() {
+    return this.getStringAttribute('image_pull_policy');
+  }
+  public set imagePullPolicy(value: string) {
+    this._imagePullPolicy = value;
+  }
+  public resetImagePullPolicy() {
+    this._imagePullPolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get imagePullPolicyInput() {
+    return this._imagePullPolicy;
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // stdin - computed: false, optional: true, required: false
+  private _stdin?: boolean | cdktf.IResolvable; 
+  public get stdin() {
+    return this.getBooleanAttribute('stdin');
+  }
+  public set stdin(value: boolean | cdktf.IResolvable) {
+    this._stdin = value;
+  }
+  public resetStdin() {
+    this._stdin = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get stdinInput() {
+    return this._stdin;
+  }
+
+  // stdin_once - computed: false, optional: true, required: false
+  private _stdinOnce?: boolean | cdktf.IResolvable; 
+  public get stdinOnce() {
+    return this.getBooleanAttribute('stdin_once');
+  }
+  public set stdinOnce(value: boolean | cdktf.IResolvable) {
+    this._stdinOnce = value;
+  }
+  public resetStdinOnce() {
+    this._stdinOnce = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get stdinOnceInput() {
+    return this._stdinOnce;
+  }
+
+  // termination_message_path - computed: false, optional: true, required: false
+  private _terminationMessagePath?: string; 
+  public get terminationMessagePath() {
+    return this.getStringAttribute('termination_message_path');
+  }
+  public set terminationMessagePath(value: string) {
+    this._terminationMessagePath = value;
+  }
+  public resetTerminationMessagePath() {
+    this._terminationMessagePath = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get terminationMessagePathInput() {
+    return this._terminationMessagePath;
+  }
+
+  // termination_message_policy - computed: true, optional: true, required: false
+  private _terminationMessagePolicy?: string; 
+  public get terminationMessagePolicy() {
+    return this.getStringAttribute('termination_message_policy');
+  }
+  public set terminationMessagePolicy(value: string) {
+    this._terminationMessagePolicy = value;
+  }
+  public resetTerminationMessagePolicy() {
+    this._terminationMessagePolicy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get terminationMessagePolicyInput() {
+    return this._terminationMessagePolicy;
+  }
+
+  // tty - computed: false, optional: true, required: false
+  private _tty?: boolean | cdktf.IResolvable; 
+  public get tty() {
+    return this.getBooleanAttribute('tty');
+  }
+  public set tty(value: boolean | cdktf.IResolvable) {
+    this._tty = value;
+  }
+  public resetTty() {
+    this._tty = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ttyInput() {
+    return this._tty;
+  }
+
+  // working_dir - computed: false, optional: true, required: false
+  private _workingDir?: string; 
+  public get workingDir() {
+    return this.getStringAttribute('working_dir');
+  }
+  public set workingDir(value: string) {
+    this._workingDir = value;
+  }
+  public resetWorkingDir() {
+    this._workingDir = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get workingDirInput() {
+    return this._workingDir;
+  }
+
+  // env - computed: false, optional: true, required: false
+  private _env = new PodV1SpecInitContainerEnvList(this, "env", false);
+  public get env() {
+    return this._env;
+  }
+  public putEnv(value: PodV1SpecInitContainerEnv[] | cdktf.IResolvable) {
+    this._env.internalValue = value;
+  }
+  public resetEnv() {
+    this._env.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get envInput() {
+    return this._env.internalValue;
+  }
+
+  // env_from - computed: false, optional: true, required: false
+  private _envFrom = new PodV1SpecInitContainerEnvFromList(this, "env_from", false);
+  public get envFrom() {
+    return this._envFrom;
+  }
+  public putEnvFrom(value: PodV1SpecInitContainerEnvFrom[] | cdktf.IResolvable) {
+    this._envFrom.internalValue = value;
+  }
+  public resetEnvFrom() {
+    this._envFrom.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get envFromInput() {
+    return this._envFrom.internalValue;
+  }
+
+  // lifecycle - computed: false, optional: true, required: false
+  private _lifecycle = new PodV1SpecInitContainerLifecycleOutputReference(this, "lifecycle");
+  public get lifecycle() {
+    return this._lifecycle;
+  }
+  public putLifecycle(value: PodV1SpecInitContainerLifecycle) {
+    this._lifecycle.internalValue = value;
+  }
+  public resetLifecycle() {
+    this._lifecycle.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get lifecycleInput() {
+    return this._lifecycle.internalValue;
+  }
+
+  // liveness_probe - computed: false, optional: true, required: false
+  private _livenessProbe = new PodV1SpecInitContainerLivenessProbeOutputReference(this, "liveness_probe");
+  public get livenessProbe() {
+    return this._livenessProbe;
+  }
+  public putLivenessProbe(value: PodV1SpecInitContainerLivenessProbe) {
+    this._livenessProbe.internalValue = value;
+  }
+  public resetLivenessProbe() {
+    this._livenessProbe.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get livenessProbeInput() {
+    return this._livenessProbe.internalValue;
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port = new PodV1SpecInitContainerPortList(this, "port", false);
+  public get port() {
+    return this._port;
+  }
+  public putPort(value: PodV1SpecInitContainerPort[] | cdktf.IResolvable) {
+    this._port.internalValue = value;
+  }
+  public resetPort() {
+    this._port.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port.internalValue;
+  }
+
+  // readiness_probe - computed: false, optional: true, required: false
+  private _readinessProbe = new PodV1SpecInitContainerReadinessProbeOutputReference(this, "readiness_probe");
+  public get readinessProbe() {
+    return this._readinessProbe;
+  }
+  public putReadinessProbe(value: PodV1SpecInitContainerReadinessProbe) {
+    this._readinessProbe.internalValue = value;
+  }
+  public resetReadinessProbe() {
+    this._readinessProbe.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readinessProbeInput() {
+    return this._readinessProbe.internalValue;
+  }
+
+  // resources - computed: false, optional: true, required: false
+  private _resources = new PodV1SpecInitContainerResourcesOutputReference(this, "resources");
+  public get resources() {
+    return this._resources;
+  }
+  public putResources(value: PodV1SpecInitContainerResources) {
+    this._resources.internalValue = value;
+  }
+  public resetResources() {
+    this._resources.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get resourcesInput() {
+    return this._resources.internalValue;
+  }
+
+  // security_context - computed: false, optional: true, required: false
+  private _securityContext = new PodV1SpecInitContainerSecurityContextOutputReference(this, "security_context");
+  public get securityContext() {
+    return this._securityContext;
+  }
+  public putSecurityContext(value: PodV1SpecInitContainerSecurityContext) {
+    this._securityContext.internalValue = value;
+  }
+  public resetSecurityContext() {
+    this._securityContext.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get securityContextInput() {
+    return this._securityContext.internalValue;
+  }
+
+  // startup_probe - computed: false, optional: true, required: false
+  private _startupProbe = new PodV1SpecInitContainerStartupProbeOutputReference(this, "startup_probe");
+  public get startupProbe() {
+    return this._startupProbe;
+  }
+  public putStartupProbe(value: PodV1SpecInitContainerStartupProbe) {
+    this._startupProbe.internalValue = value;
+  }
+  public resetStartupProbe() {
+    this._startupProbe.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get startupProbeInput() {
+    return this._startupProbe.internalValue;
+  }
+
+  // volume_mount - computed: false, optional: true, required: false
+  private _volumeMount = new PodV1SpecInitContainerVolumeMountList(this, "volume_mount", false);
+  public get volumeMount() {
+    return this._volumeMount;
+  }
+  public putVolumeMount(value: PodV1SpecInitContainerVolumeMount[] | cdktf.IResolvable) {
+    this._volumeMount.internalValue = value;
+  }
+  public resetVolumeMount() {
+    this._volumeMount.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get volumeMountInput() {
+    return this._volumeMount.internalValue;
+  }
+}
+
+export class PodV1SpecInitContainerList extends cdktf.ComplexList {
+  public internalValue? : PodV1SpecInitContainer[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodV1SpecInitContainerOutputReference {
+    return new PodV1SpecInitContainerOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodV1SpecReadinessGate {
   /**
   * refers to a condition in the pod's condition list with matching type.

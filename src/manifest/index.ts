@@ -626,7 +626,7 @@ export class Manifest extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_manifest',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.16.1',
+        providerVersion: '2.17.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

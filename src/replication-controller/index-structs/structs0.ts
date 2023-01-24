@@ -5953,6 +5953,131 @@ export class ReplicationControllerSpecTemplateSpecContainerLivenessProbeExecOutp
     return this._command;
   }
 }
+export interface ReplicationControllerSpecTemplateSpecContainerLivenessProbeGrpc {
+  /**
+  * Number of the port to access on the container. Number must be in the range 1 to 65535.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#port ReplicationController#port}
+  */
+  readonly port: number;
+  /**
+  * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#service ReplicationController#service}
+  */
+  readonly service?: string;
+}
+
+export function replicationControllerSpecTemplateSpecContainerLivenessProbeGrpcToTerraform(struct?: ReplicationControllerSpecTemplateSpecContainerLivenessProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.numberToTerraform(struct!.port),
+    service: cdktf.stringToTerraform(struct!.service),
+  }
+}
+
+export class ReplicationControllerSpecTemplateSpecContainerLivenessProbeGrpcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ReplicationControllerSpecTemplateSpecContainerLivenessProbeGrpc | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._service !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.service = this._service;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ReplicationControllerSpecTemplateSpecContainerLivenessProbeGrpc | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._service = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._service = value.service;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: string; 
+  public get service() {
+    return this.getStringAttribute('service');
+  }
+  public set service(value: string) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service;
+  }
+}
+
+export class ReplicationControllerSpecTemplateSpecContainerLivenessProbeGrpcList extends cdktf.ComplexList {
+  public internalValue? : ReplicationControllerSpecTemplateSpecContainerLivenessProbeGrpc[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ReplicationControllerSpecTemplateSpecContainerLivenessProbeGrpcOutputReference {
+    return new ReplicationControllerSpecTemplateSpecContainerLivenessProbeGrpcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ReplicationControllerSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
@@ -6398,6 +6523,12 @@ export interface ReplicationControllerSpecTemplateSpecContainerLivenessProbe {
   */
   readonly exec?: ReplicationControllerSpecTemplateSpecContainerLivenessProbeExec;
   /**
+  * grpc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#grpc ReplicationController#grpc}
+  */
+  readonly grpc?: ReplicationControllerSpecTemplateSpecContainerLivenessProbeGrpc[] | cdktf.IResolvable;
+  /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#http_get ReplicationController#http_get}
@@ -6423,6 +6554,7 @@ export function replicationControllerSpecTemplateSpecContainerLivenessProbeToTer
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: replicationControllerSpecTemplateSpecContainerLivenessProbeExecToTerraform(struct!.exec),
+    grpc: cdktf.listMapper(replicationControllerSpecTemplateSpecContainerLivenessProbeGrpcToTerraform, true)(struct!.grpc),
     http_get: replicationControllerSpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerSpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
@@ -6466,6 +6598,10 @@ export class ReplicationControllerSpecTemplateSpecContainerLivenessProbeOutputRe
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
+    if (this._grpc?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.grpc = this._grpc?.internalValue;
+    }
     if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
@@ -6486,6 +6622,7 @@ export class ReplicationControllerSpecTemplateSpecContainerLivenessProbeOutputRe
       this._successThreshold = undefined;
       this._timeoutSeconds = undefined;
       this._exec.internalValue = undefined;
+      this._grpc.internalValue = undefined;
       this._httpGet.internalValue = undefined;
       this._tcpSocket.internalValue = undefined;
     }
@@ -6497,6 +6634,7 @@ export class ReplicationControllerSpecTemplateSpecContainerLivenessProbeOutputRe
       this._successThreshold = value.successThreshold;
       this._timeoutSeconds = value.timeoutSeconds;
       this._exec.internalValue = value.exec;
+      this._grpc.internalValue = value.grpc;
       this._httpGet.internalValue = value.httpGet;
       this._tcpSocket.internalValue = value.tcpSocket;
     }
@@ -6596,6 +6734,22 @@ export class ReplicationControllerSpecTemplateSpecContainerLivenessProbeOutputRe
   // Temporarily expose input value. Use with caution.
   public get execInput() {
     return this._exec.internalValue;
+  }
+
+  // grpc - computed: false, optional: true, required: false
+  private _grpc = new ReplicationControllerSpecTemplateSpecContainerLivenessProbeGrpcList(this, "grpc", false);
+  public get grpc() {
+    return this._grpc;
+  }
+  public putGrpc(value: ReplicationControllerSpecTemplateSpecContainerLivenessProbeGrpc[] | cdktf.IResolvable) {
+    this._grpc.internalValue = value;
+  }
+  public resetGrpc() {
+    this._grpc.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get grpcInput() {
+    return this._grpc.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
@@ -6907,6 +7061,131 @@ export class ReplicationControllerSpecTemplateSpecContainerReadinessProbeExecOut
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
     return this._command;
+  }
+}
+export interface ReplicationControllerSpecTemplateSpecContainerReadinessProbeGrpc {
+  /**
+  * Number of the port to access on the container. Number must be in the range 1 to 65535.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#port ReplicationController#port}
+  */
+  readonly port: number;
+  /**
+  * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#service ReplicationController#service}
+  */
+  readonly service?: string;
+}
+
+export function replicationControllerSpecTemplateSpecContainerReadinessProbeGrpcToTerraform(struct?: ReplicationControllerSpecTemplateSpecContainerReadinessProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.numberToTerraform(struct!.port),
+    service: cdktf.stringToTerraform(struct!.service),
+  }
+}
+
+export class ReplicationControllerSpecTemplateSpecContainerReadinessProbeGrpcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ReplicationControllerSpecTemplateSpecContainerReadinessProbeGrpc | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._service !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.service = this._service;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ReplicationControllerSpecTemplateSpecContainerReadinessProbeGrpc | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._service = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._service = value.service;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: string; 
+  public get service() {
+    return this.getStringAttribute('service');
+  }
+  public set service(value: string) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service;
+  }
+}
+
+export class ReplicationControllerSpecTemplateSpecContainerReadinessProbeGrpcList extends cdktf.ComplexList {
+  public internalValue? : ReplicationControllerSpecTemplateSpecContainerReadinessProbeGrpc[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ReplicationControllerSpecTemplateSpecContainerReadinessProbeGrpcOutputReference {
+    return new ReplicationControllerSpecTemplateSpecContainerReadinessProbeGrpcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
 export interface ReplicationControllerSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader {
@@ -7354,6 +7633,12 @@ export interface ReplicationControllerSpecTemplateSpecContainerReadinessProbe {
   */
   readonly exec?: ReplicationControllerSpecTemplateSpecContainerReadinessProbeExec;
   /**
+  * grpc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#grpc ReplicationController#grpc}
+  */
+  readonly grpc?: ReplicationControllerSpecTemplateSpecContainerReadinessProbeGrpc[] | cdktf.IResolvable;
+  /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#http_get ReplicationController#http_get}
@@ -7379,6 +7664,7 @@ export function replicationControllerSpecTemplateSpecContainerReadinessProbeToTe
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: replicationControllerSpecTemplateSpecContainerReadinessProbeExecToTerraform(struct!.exec),
+    grpc: cdktf.listMapper(replicationControllerSpecTemplateSpecContainerReadinessProbeGrpcToTerraform, true)(struct!.grpc),
     http_get: replicationControllerSpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerSpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
@@ -7422,6 +7708,10 @@ export class ReplicationControllerSpecTemplateSpecContainerReadinessProbeOutputR
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
+    if (this._grpc?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.grpc = this._grpc?.internalValue;
+    }
     if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
@@ -7442,6 +7732,7 @@ export class ReplicationControllerSpecTemplateSpecContainerReadinessProbeOutputR
       this._successThreshold = undefined;
       this._timeoutSeconds = undefined;
       this._exec.internalValue = undefined;
+      this._grpc.internalValue = undefined;
       this._httpGet.internalValue = undefined;
       this._tcpSocket.internalValue = undefined;
     }
@@ -7453,6 +7744,7 @@ export class ReplicationControllerSpecTemplateSpecContainerReadinessProbeOutputR
       this._successThreshold = value.successThreshold;
       this._timeoutSeconds = value.timeoutSeconds;
       this._exec.internalValue = value.exec;
+      this._grpc.internalValue = value.grpc;
       this._httpGet.internalValue = value.httpGet;
       this._tcpSocket.internalValue = value.tcpSocket;
     }
@@ -7552,6 +7844,22 @@ export class ReplicationControllerSpecTemplateSpecContainerReadinessProbeOutputR
   // Temporarily expose input value. Use with caution.
   public get execInput() {
     return this._exec.internalValue;
+  }
+
+  // grpc - computed: false, optional: true, required: false
+  private _grpc = new ReplicationControllerSpecTemplateSpecContainerReadinessProbeGrpcList(this, "grpc", false);
+  public get grpc() {
+    return this._grpc;
+  }
+  public putGrpc(value: ReplicationControllerSpecTemplateSpecContainerReadinessProbeGrpc[] | cdktf.IResolvable) {
+    this._grpc.internalValue = value;
+  }
+  public resetGrpc() {
+    this._grpc.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get grpcInput() {
+    return this._grpc.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
@@ -8394,6 +8702,131 @@ export class ReplicationControllerSpecTemplateSpecContainerStartupProbeExecOutpu
     return this._command;
   }
 }
+export interface ReplicationControllerSpecTemplateSpecContainerStartupProbeGrpc {
+  /**
+  * Number of the port to access on the container. Number must be in the range 1 to 65535.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#port ReplicationController#port}
+  */
+  readonly port: number;
+  /**
+  * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#service ReplicationController#service}
+  */
+  readonly service?: string;
+}
+
+export function replicationControllerSpecTemplateSpecContainerStartupProbeGrpcToTerraform(struct?: ReplicationControllerSpecTemplateSpecContainerStartupProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.numberToTerraform(struct!.port),
+    service: cdktf.stringToTerraform(struct!.service),
+  }
+}
+
+export class ReplicationControllerSpecTemplateSpecContainerStartupProbeGrpcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ReplicationControllerSpecTemplateSpecContainerStartupProbeGrpc | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._service !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.service = this._service;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ReplicationControllerSpecTemplateSpecContainerStartupProbeGrpc | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._service = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._service = value.service;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: string; 
+  public get service() {
+    return this.getStringAttribute('service');
+  }
+  public set service(value: string) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service;
+  }
+}
+
+export class ReplicationControllerSpecTemplateSpecContainerStartupProbeGrpcList extends cdktf.ComplexList {
+  public internalValue? : ReplicationControllerSpecTemplateSpecContainerStartupProbeGrpc[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ReplicationControllerSpecTemplateSpecContainerStartupProbeGrpcOutputReference {
+    return new ReplicationControllerSpecTemplateSpecContainerStartupProbeGrpcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ReplicationControllerSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader {
   /**
   * The header field name
@@ -8839,6 +9272,12 @@ export interface ReplicationControllerSpecTemplateSpecContainerStartupProbe {
   */
   readonly exec?: ReplicationControllerSpecTemplateSpecContainerStartupProbeExec;
   /**
+  * grpc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#grpc ReplicationController#grpc}
+  */
+  readonly grpc?: ReplicationControllerSpecTemplateSpecContainerStartupProbeGrpc[] | cdktf.IResolvable;
+  /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#http_get ReplicationController#http_get}
@@ -8864,6 +9303,7 @@ export function replicationControllerSpecTemplateSpecContainerStartupProbeToTerr
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: replicationControllerSpecTemplateSpecContainerStartupProbeExecToTerraform(struct!.exec),
+    grpc: cdktf.listMapper(replicationControllerSpecTemplateSpecContainerStartupProbeGrpcToTerraform, true)(struct!.grpc),
     http_get: replicationControllerSpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerSpecTemplateSpecContainerStartupProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
@@ -8907,6 +9347,10 @@ export class ReplicationControllerSpecTemplateSpecContainerStartupProbeOutputRef
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
+    if (this._grpc?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.grpc = this._grpc?.internalValue;
+    }
     if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
@@ -8927,6 +9371,7 @@ export class ReplicationControllerSpecTemplateSpecContainerStartupProbeOutputRef
       this._successThreshold = undefined;
       this._timeoutSeconds = undefined;
       this._exec.internalValue = undefined;
+      this._grpc.internalValue = undefined;
       this._httpGet.internalValue = undefined;
       this._tcpSocket.internalValue = undefined;
     }
@@ -8938,6 +9383,7 @@ export class ReplicationControllerSpecTemplateSpecContainerStartupProbeOutputRef
       this._successThreshold = value.successThreshold;
       this._timeoutSeconds = value.timeoutSeconds;
       this._exec.internalValue = value.exec;
+      this._grpc.internalValue = value.grpc;
       this._httpGet.internalValue = value.httpGet;
       this._tcpSocket.internalValue = value.tcpSocket;
     }
@@ -9037,6 +9483,22 @@ export class ReplicationControllerSpecTemplateSpecContainerStartupProbeOutputRef
   // Temporarily expose input value. Use with caution.
   public get execInput() {
     return this._exec.internalValue;
+  }
+
+  // grpc - computed: false, optional: true, required: false
+  private _grpc = new ReplicationControllerSpecTemplateSpecContainerStartupProbeGrpcList(this, "grpc", false);
+  public get grpc() {
+    return this._grpc;
+  }
+  public putGrpc(value: ReplicationControllerSpecTemplateSpecContainerStartupProbeGrpc[] | cdktf.IResolvable) {
+    this._grpc.internalValue = value;
+  }
+  public resetGrpc() {
+    this._grpc.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get grpcInput() {
+    return this._grpc.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
@@ -12964,6 +13426,131 @@ export class ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeExec
     return this._command;
   }
 }
+export interface ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpc {
+  /**
+  * Number of the port to access on the container. Number must be in the range 1 to 65535.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#port ReplicationController#port}
+  */
+  readonly port: number;
+  /**
+  * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#service ReplicationController#service}
+  */
+  readonly service?: string;
+}
+
+export function replicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpcToTerraform(struct?: ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.numberToTerraform(struct!.port),
+    service: cdktf.stringToTerraform(struct!.service),
+  }
+}
+
+export class ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpc | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._service !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.service = this._service;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpc | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._service = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._service = value.service;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: string; 
+  public get service() {
+    return this.getStringAttribute('service');
+  }
+  public set service(value: string) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service;
+  }
+}
+
+export class ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpcList extends cdktf.ComplexList {
+  public internalValue? : ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpc[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpcOutputReference {
+    return new ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
@@ -13409,6 +13996,12 @@ export interface ReplicationControllerSpecTemplateSpecInitContainerLivenessProbe
   */
   readonly exec?: ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeExec;
   /**
+  * grpc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#grpc ReplicationController#grpc}
+  */
+  readonly grpc?: ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpc[] | cdktf.IResolvable;
+  /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#http_get ReplicationController#http_get}
@@ -13434,6 +14027,7 @@ export function replicationControllerSpecTemplateSpecInitContainerLivenessProbeT
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: replicationControllerSpecTemplateSpecInitContainerLivenessProbeExecToTerraform(struct!.exec),
+    grpc: cdktf.listMapper(replicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpcToTerraform, true)(struct!.grpc),
     http_get: replicationControllerSpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerSpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
@@ -13477,6 +14071,10 @@ export class ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeOutp
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
+    if (this._grpc?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.grpc = this._grpc?.internalValue;
+    }
     if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
@@ -13497,6 +14095,7 @@ export class ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeOutp
       this._successThreshold = undefined;
       this._timeoutSeconds = undefined;
       this._exec.internalValue = undefined;
+      this._grpc.internalValue = undefined;
       this._httpGet.internalValue = undefined;
       this._tcpSocket.internalValue = undefined;
     }
@@ -13508,6 +14107,7 @@ export class ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeOutp
       this._successThreshold = value.successThreshold;
       this._timeoutSeconds = value.timeoutSeconds;
       this._exec.internalValue = value.exec;
+      this._grpc.internalValue = value.grpc;
       this._httpGet.internalValue = value.httpGet;
       this._tcpSocket.internalValue = value.tcpSocket;
     }
@@ -13607,6 +14207,22 @@ export class ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeOutp
   // Temporarily expose input value. Use with caution.
   public get execInput() {
     return this._exec.internalValue;
+  }
+
+  // grpc - computed: false, optional: true, required: false
+  private _grpc = new ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpcList(this, "grpc", false);
+  public get grpc() {
+    return this._grpc;
+  }
+  public putGrpc(value: ReplicationControllerSpecTemplateSpecInitContainerLivenessProbeGrpc[] | cdktf.IResolvable) {
+    this._grpc.internalValue = value;
+  }
+  public resetGrpc() {
+    this._grpc.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get grpcInput() {
+    return this._grpc.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
@@ -13918,6 +14534,131 @@ export class ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeExe
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
     return this._command;
+  }
+}
+export interface ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpc {
+  /**
+  * Number of the port to access on the container. Number must be in the range 1 to 65535.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#port ReplicationController#port}
+  */
+  readonly port: number;
+  /**
+  * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#service ReplicationController#service}
+  */
+  readonly service?: string;
+}
+
+export function replicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpcToTerraform(struct?: ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.numberToTerraform(struct!.port),
+    service: cdktf.stringToTerraform(struct!.service),
+  }
+}
+
+export class ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpc | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._service !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.service = this._service;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpc | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._service = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._service = value.service;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: string; 
+  public get service() {
+    return this.getStringAttribute('service');
+  }
+  public set service(value: string) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service;
+  }
+}
+
+export class ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpcList extends cdktf.ComplexList {
+  public internalValue? : ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpcOutputReference {
+    return new ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
 export interface ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader {
@@ -14365,6 +15106,12 @@ export interface ReplicationControllerSpecTemplateSpecInitContainerReadinessProb
   */
   readonly exec?: ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeExec;
   /**
+  * grpc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#grpc ReplicationController#grpc}
+  */
+  readonly grpc?: ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable;
+  /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#http_get ReplicationController#http_get}
@@ -14390,6 +15137,7 @@ export function replicationControllerSpecTemplateSpecInitContainerReadinessProbe
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: replicationControllerSpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct!.exec),
+    grpc: cdktf.listMapper(replicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpcToTerraform, true)(struct!.grpc),
     http_get: replicationControllerSpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerSpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
@@ -14433,6 +15181,10 @@ export class ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeOut
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
+    if (this._grpc?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.grpc = this._grpc?.internalValue;
+    }
     if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
@@ -14453,6 +15205,7 @@ export class ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeOut
       this._successThreshold = undefined;
       this._timeoutSeconds = undefined;
       this._exec.internalValue = undefined;
+      this._grpc.internalValue = undefined;
       this._httpGet.internalValue = undefined;
       this._tcpSocket.internalValue = undefined;
     }
@@ -14464,6 +15217,7 @@ export class ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeOut
       this._successThreshold = value.successThreshold;
       this._timeoutSeconds = value.timeoutSeconds;
       this._exec.internalValue = value.exec;
+      this._grpc.internalValue = value.grpc;
       this._httpGet.internalValue = value.httpGet;
       this._tcpSocket.internalValue = value.tcpSocket;
     }
@@ -14563,6 +15317,22 @@ export class ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeOut
   // Temporarily expose input value. Use with caution.
   public get execInput() {
     return this._exec.internalValue;
+  }
+
+  // grpc - computed: false, optional: true, required: false
+  private _grpc = new ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpcList(this, "grpc", false);
+  public get grpc() {
+    return this._grpc;
+  }
+  public putGrpc(value: ReplicationControllerSpecTemplateSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable) {
+    this._grpc.internalValue = value;
+  }
+  public resetGrpc() {
+    this._grpc.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get grpcInput() {
+    return this._grpc.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
@@ -15403,891 +16173,5 @@ export class ReplicationControllerSpecTemplateSpecInitContainerStartupProbeExecO
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
     return this._command;
-  }
-}
-export interface ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader {
-  /**
-  * The header field name
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#name ReplicationController#name}
-  */
-  readonly name?: string;
-  /**
-  * The header field value
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#value ReplicationController#value}
-  */
-  readonly value?: string;
-}
-
-export function replicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    value: cdktf.stringToTerraform(struct!.value),
-  }
-}
-
-export class ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-  private resolvableValue?: cdktf.IResolvable;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param complexObjectIndex the index of this item in the list
-  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
-    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
-  }
-
-  public get internalValue(): ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable | undefined {
-    if (this.resolvableValue) {
-      return this.resolvableValue;
-    }
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._value !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.value = this._value;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this.resolvableValue = undefined;
-      this._name = undefined;
-      this._value = undefined;
-    }
-    else if (cdktf.Tokenization.isResolvable(value)) {
-      this.isEmptyObject = false;
-      this.resolvableValue = value;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this.resolvableValue = undefined;
-      this._name = value.name;
-      this._value = value.value;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // value - computed: false, optional: true, required: false
-  private _value?: string; 
-  public get value() {
-    return this.getStringAttribute('value');
-  }
-  public set value(value: string) {
-    this._value = value;
-  }
-  public resetValue() {
-    this._value = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get valueInput() {
-    return this._value;
-  }
-}
-
-export class ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderList extends cdktf.ComplexList {
-  public internalValue? : ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
-    super(terraformResource, terraformAttribute, wrapsSet)
-  }
-
-  /**
-  * @param index the index of the item to return
-  */
-  public get(index: number): ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference {
-    return new ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
-  }
-}
-export interface ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGet {
-  /**
-  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#host ReplicationController#host}
-  */
-  readonly host?: string;
-  /**
-  * Path to access on the HTTP server.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#path ReplicationController#path}
-  */
-  readonly path?: string;
-  /**
-  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#port ReplicationController#port}
-  */
-  readonly port?: string;
-  /**
-  * Scheme to use for connecting to the host.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#scheme ReplicationController#scheme}
-  */
-  readonly scheme?: string;
-  /**
-  * http_header block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#http_header ReplicationController#http_header}
-  */
-  readonly httpHeader?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable;
-}
-
-export function replicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference | ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGet): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    host: cdktf.stringToTerraform(struct!.host),
-    path: cdktf.stringToTerraform(struct!.path),
-    port: cdktf.stringToTerraform(struct!.port),
-    scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(replicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
-  }
-}
-
-export class ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._host !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.host = this._host;
-    }
-    if (this._path !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.path = this._path;
-    }
-    if (this._port !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.port = this._port;
-    }
-    if (this._scheme !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.scheme = this._scheme;
-    }
-    if (this._httpHeader?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.httpHeader = this._httpHeader?.internalValue;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._host = undefined;
-      this._path = undefined;
-      this._port = undefined;
-      this._scheme = undefined;
-      this._httpHeader.internalValue = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._host = value.host;
-      this._path = value.path;
-      this._port = value.port;
-      this._scheme = value.scheme;
-      this._httpHeader.internalValue = value.httpHeader;
-    }
-  }
-
-  // host - computed: false, optional: true, required: false
-  private _host?: string; 
-  public get host() {
-    return this.getStringAttribute('host');
-  }
-  public set host(value: string) {
-    this._host = value;
-  }
-  public resetHost() {
-    this._host = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get hostInput() {
-    return this._host;
-  }
-
-  // path - computed: false, optional: true, required: false
-  private _path?: string; 
-  public get path() {
-    return this.getStringAttribute('path');
-  }
-  public set path(value: string) {
-    this._path = value;
-  }
-  public resetPath() {
-    this._path = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get pathInput() {
-    return this._path;
-  }
-
-  // port - computed: false, optional: true, required: false
-  private _port?: string; 
-  public get port() {
-    return this.getStringAttribute('port');
-  }
-  public set port(value: string) {
-    this._port = value;
-  }
-  public resetPort() {
-    this._port = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get portInput() {
-    return this._port;
-  }
-
-  // scheme - computed: false, optional: true, required: false
-  private _scheme?: string; 
-  public get scheme() {
-    return this.getStringAttribute('scheme');
-  }
-  public set scheme(value: string) {
-    this._scheme = value;
-  }
-  public resetScheme() {
-    this._scheme = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get schemeInput() {
-    return this._scheme;
-  }
-
-  // http_header - computed: false, optional: true, required: false
-  private _httpHeader = new ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderList(this, "http_header", false);
-  public get httpHeader() {
-    return this._httpHeader;
-  }
-  public putHttpHeader(value: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable) {
-    this._httpHeader.internalValue = value;
-  }
-  public resetHttpHeader() {
-    this._httpHeader.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get httpHeaderInput() {
-    return this._httpHeader.internalValue;
-  }
-}
-export interface ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocket {
-  /**
-  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#port ReplicationController#port}
-  */
-  readonly port: string;
-}
-
-export function replicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform(struct?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocket | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    port: cdktf.stringToTerraform(struct!.port),
-  }
-}
-
-export class ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocketOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-  private resolvableValue?: cdktf.IResolvable;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param complexObjectIndex the index of this item in the list
-  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
-    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
-  }
-
-  public get internalValue(): ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocket | cdktf.IResolvable | undefined {
-    if (this.resolvableValue) {
-      return this.resolvableValue;
-    }
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._port !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.port = this._port;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocket | cdktf.IResolvable | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this.resolvableValue = undefined;
-      this._port = undefined;
-    }
-    else if (cdktf.Tokenization.isResolvable(value)) {
-      this.isEmptyObject = false;
-      this.resolvableValue = value;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this.resolvableValue = undefined;
-      this._port = value.port;
-    }
-  }
-
-  // port - computed: false, optional: false, required: true
-  private _port?: string; 
-  public get port() {
-    return this.getStringAttribute('port');
-  }
-  public set port(value: string) {
-    this._port = value;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get portInput() {
-    return this._port;
-  }
-}
-
-export class ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocketList extends cdktf.ComplexList {
-  public internalValue? : ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
-    super(terraformResource, terraformAttribute, wrapsSet)
-  }
-
-  /**
-  * @param index the index of the item to return
-  */
-  public get(index: number): ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocketOutputReference {
-    return new ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
-  }
-}
-export interface ReplicationControllerSpecTemplateSpecInitContainerStartupProbe {
-  /**
-  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#failure_threshold ReplicationController#failure_threshold}
-  */
-  readonly failureThreshold?: number;
-  /**
-  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#initial_delay_seconds ReplicationController#initial_delay_seconds}
-  */
-  readonly initialDelaySeconds?: number;
-  /**
-  * How often (in seconds) to perform the probe
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#period_seconds ReplicationController#period_seconds}
-  */
-  readonly periodSeconds?: number;
-  /**
-  * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#success_threshold ReplicationController#success_threshold}
-  */
-  readonly successThreshold?: number;
-  /**
-  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#timeout_seconds ReplicationController#timeout_seconds}
-  */
-  readonly timeoutSeconds?: number;
-  /**
-  * exec block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#exec ReplicationController#exec}
-  */
-  readonly exec?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeExec;
-  /**
-  * http_get block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#http_get ReplicationController#http_get}
-  */
-  readonly httpGet?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGet;
-  /**
-  * tcp_socket block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#tcp_socket ReplicationController#tcp_socket}
-  */
-  readonly tcpSocket?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable;
-}
-
-export function replicationControllerSpecTemplateSpecInitContainerStartupProbeToTerraform(struct?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeOutputReference | ReplicationControllerSpecTemplateSpecInitContainerStartupProbe): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    failure_threshold: cdktf.numberToTerraform(struct!.failureThreshold),
-    initial_delay_seconds: cdktf.numberToTerraform(struct!.initialDelaySeconds),
-    period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
-    success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
-    timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
-    exec: replicationControllerSpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct!.exec),
-    http_get: replicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(replicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
-  }
-}
-
-export class ReplicationControllerSpecTemplateSpecInitContainerStartupProbeOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): ReplicationControllerSpecTemplateSpecInitContainerStartupProbe | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._failureThreshold !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.failureThreshold = this._failureThreshold;
-    }
-    if (this._initialDelaySeconds !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
-    }
-    if (this._periodSeconds !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.periodSeconds = this._periodSeconds;
-    }
-    if (this._successThreshold !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.successThreshold = this._successThreshold;
-    }
-    if (this._timeoutSeconds !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.timeoutSeconds = this._timeoutSeconds;
-    }
-    if (this._exec?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.exec = this._exec?.internalValue;
-    }
-    if (this._httpGet?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.httpGet = this._httpGet?.internalValue;
-    }
-    if (this._tcpSocket?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.tcpSocket = this._tcpSocket?.internalValue;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: ReplicationControllerSpecTemplateSpecInitContainerStartupProbe | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._failureThreshold = undefined;
-      this._initialDelaySeconds = undefined;
-      this._periodSeconds = undefined;
-      this._successThreshold = undefined;
-      this._timeoutSeconds = undefined;
-      this._exec.internalValue = undefined;
-      this._httpGet.internalValue = undefined;
-      this._tcpSocket.internalValue = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._failureThreshold = value.failureThreshold;
-      this._initialDelaySeconds = value.initialDelaySeconds;
-      this._periodSeconds = value.periodSeconds;
-      this._successThreshold = value.successThreshold;
-      this._timeoutSeconds = value.timeoutSeconds;
-      this._exec.internalValue = value.exec;
-      this._httpGet.internalValue = value.httpGet;
-      this._tcpSocket.internalValue = value.tcpSocket;
-    }
-  }
-
-  // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number; 
-  public get failureThreshold() {
-    return this.getNumberAttribute('failure_threshold');
-  }
-  public set failureThreshold(value: number) {
-    this._failureThreshold = value;
-  }
-  public resetFailureThreshold() {
-    this._failureThreshold = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get failureThresholdInput() {
-    return this._failureThreshold;
-  }
-
-  // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number; 
-  public get initialDelaySeconds() {
-    return this.getNumberAttribute('initial_delay_seconds');
-  }
-  public set initialDelaySeconds(value: number) {
-    this._initialDelaySeconds = value;
-  }
-  public resetInitialDelaySeconds() {
-    this._initialDelaySeconds = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds;
-  }
-
-  // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number; 
-  public get periodSeconds() {
-    return this.getNumberAttribute('period_seconds');
-  }
-  public set periodSeconds(value: number) {
-    this._periodSeconds = value;
-  }
-  public resetPeriodSeconds() {
-    this._periodSeconds = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get periodSecondsInput() {
-    return this._periodSeconds;
-  }
-
-  // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number; 
-  public get successThreshold() {
-    return this.getNumberAttribute('success_threshold');
-  }
-  public set successThreshold(value: number) {
-    this._successThreshold = value;
-  }
-  public resetSuccessThreshold() {
-    this._successThreshold = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get successThresholdInput() {
-    return this._successThreshold;
-  }
-
-  // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number; 
-  public get timeoutSeconds() {
-    return this.getNumberAttribute('timeout_seconds');
-  }
-  public set timeoutSeconds(value: number) {
-    this._timeoutSeconds = value;
-  }
-  public resetTimeoutSeconds() {
-    this._timeoutSeconds = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get timeoutSecondsInput() {
-    return this._timeoutSeconds;
-  }
-
-  // exec - computed: false, optional: true, required: false
-  private _exec = new ReplicationControllerSpecTemplateSpecInitContainerStartupProbeExecOutputReference(this, "exec");
-  public get exec() {
-    return this._exec;
-  }
-  public putExec(value: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeExec) {
-    this._exec.internalValue = value;
-  }
-  public resetExec() {
-    this._exec.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get execInput() {
-    return this._exec.internalValue;
-  }
-
-  // http_get - computed: false, optional: true, required: false
-  private _httpGet = new ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference(this, "http_get");
-  public get httpGet() {
-    return this._httpGet;
-  }
-  public putHttpGet(value: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGet) {
-    this._httpGet.internalValue = value;
-  }
-  public resetHttpGet() {
-    this._httpGet.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get httpGetInput() {
-    return this._httpGet.internalValue;
-  }
-
-  // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket = new ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocketList(this, "tcp_socket", false);
-  public get tcpSocket() {
-    return this._tcpSocket;
-  }
-  public putTcpSocket(value: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable) {
-    this._tcpSocket.internalValue = value;
-  }
-  public resetTcpSocket() {
-    this._tcpSocket.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get tcpSocketInput() {
-    return this._tcpSocket.internalValue;
-  }
-}
-export interface ReplicationControllerSpecTemplateSpecInitContainerVolumeMount {
-  /**
-  * Path within the container at which the volume should be mounted. Must not contain ':'.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#mount_path ReplicationController#mount_path}
-  */
-  readonly mountPath: string;
-  /**
-  * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#mount_propagation ReplicationController#mount_propagation}
-  */
-  readonly mountPropagation?: string;
-  /**
-  * This must match the Name of a Volume.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#name ReplicationController#name}
-  */
-  readonly name: string;
-  /**
-  * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#read_only ReplicationController#read_only}
-  */
-  readonly readOnly?: boolean | cdktf.IResolvable;
-  /**
-  * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/replication_controller#sub_path ReplicationController#sub_path}
-  */
-  readonly subPath?: string;
-}
-
-export function replicationControllerSpecTemplateSpecInitContainerVolumeMountToTerraform(struct?: ReplicationControllerSpecTemplateSpecInitContainerVolumeMount | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    mount_path: cdktf.stringToTerraform(struct!.mountPath),
-    mount_propagation: cdktf.stringToTerraform(struct!.mountPropagation),
-    name: cdktf.stringToTerraform(struct!.name),
-    read_only: cdktf.booleanToTerraform(struct!.readOnly),
-    sub_path: cdktf.stringToTerraform(struct!.subPath),
-  }
-}
-
-export class ReplicationControllerSpecTemplateSpecInitContainerVolumeMountOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-  private resolvableValue?: cdktf.IResolvable;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param complexObjectIndex the index of this item in the list
-  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
-    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
-  }
-
-  public get internalValue(): ReplicationControllerSpecTemplateSpecInitContainerVolumeMount | cdktf.IResolvable | undefined {
-    if (this.resolvableValue) {
-      return this.resolvableValue;
-    }
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._mountPath !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.mountPath = this._mountPath;
-    }
-    if (this._mountPropagation !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.mountPropagation = this._mountPropagation;
-    }
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._readOnly !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.readOnly = this._readOnly;
-    }
-    if (this._subPath !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.subPath = this._subPath;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: ReplicationControllerSpecTemplateSpecInitContainerVolumeMount | cdktf.IResolvable | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this.resolvableValue = undefined;
-      this._mountPath = undefined;
-      this._mountPropagation = undefined;
-      this._name = undefined;
-      this._readOnly = undefined;
-      this._subPath = undefined;
-    }
-    else if (cdktf.Tokenization.isResolvable(value)) {
-      this.isEmptyObject = false;
-      this.resolvableValue = value;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this.resolvableValue = undefined;
-      this._mountPath = value.mountPath;
-      this._mountPropagation = value.mountPropagation;
-      this._name = value.name;
-      this._readOnly = value.readOnly;
-      this._subPath = value.subPath;
-    }
-  }
-
-  // mount_path - computed: false, optional: false, required: true
-  private _mountPath?: string; 
-  public get mountPath() {
-    return this.getStringAttribute('mount_path');
-  }
-  public set mountPath(value: string) {
-    this._mountPath = value;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get mountPathInput() {
-    return this._mountPath;
-  }
-
-  // mount_propagation - computed: false, optional: true, required: false
-  private _mountPropagation?: string; 
-  public get mountPropagation() {
-    return this.getStringAttribute('mount_propagation');
-  }
-  public set mountPropagation(value: string) {
-    this._mountPropagation = value;
-  }
-  public resetMountPropagation() {
-    this._mountPropagation = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get mountPropagationInput() {
-    return this._mountPropagation;
-  }
-
-  // name - computed: false, optional: false, required: true
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable; 
-  public get readOnly() {
-    return this.getBooleanAttribute('read_only');
-  }
-  public set readOnly(value: boolean | cdktf.IResolvable) {
-    this._readOnly = value;
-  }
-  public resetReadOnly() {
-    this._readOnly = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get readOnlyInput() {
-    return this._readOnly;
-  }
-
-  // sub_path - computed: false, optional: true, required: false
-  private _subPath?: string; 
-  public get subPath() {
-    return this.getStringAttribute('sub_path');
-  }
-  public set subPath(value: string) {
-    this._subPath = value;
-  }
-  public resetSubPath() {
-    this._subPath = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get subPathInput() {
-    return this._subPath;
-  }
-}
-
-export class ReplicationControllerSpecTemplateSpecInitContainerVolumeMountList extends cdktf.ComplexList {
-  public internalValue? : ReplicationControllerSpecTemplateSpecInitContainerVolumeMount[] | cdktf.IResolvable
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
-    super(terraformResource, terraformAttribute, wrapsSet)
-  }
-
-  /**
-  * @param index the index of the item to return
-  */
-  public get(index: number): ReplicationControllerSpecTemplateSpecInitContainerVolumeMountOutputReference {
-    return new ReplicationControllerSpecTemplateSpecInitContainerVolumeMountOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }

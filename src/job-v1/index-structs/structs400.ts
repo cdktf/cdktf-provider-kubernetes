@@ -1,5 +1,14 @@
 import * as cdktf from 'cdktf';
-import { JobV1SpecTemplateSpecInitContainerEnv,
+import { JobV1SpecTemplateSpecInitContainerSecurityContextCapabilities,
+jobV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform,
+JobV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference,
+JobV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions,
+jobV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform,
+JobV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference,
+JobV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile,
+jobV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileToTerraform,
+JobV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference,
+JobV1SpecTemplateSpecInitContainerEnv,
 jobV1SpecTemplateSpecInitContainerEnvToTerraform,
 JobV1SpecTemplateSpecInitContainerEnvList,
 JobV1SpecTemplateSpecInitContainerEnvFrom,
@@ -20,12 +29,6 @@ JobV1SpecTemplateSpecInitContainerReadinessProbeOutputReference,
 JobV1SpecTemplateSpecInitContainerResources,
 jobV1SpecTemplateSpecInitContainerResourcesToTerraform,
 JobV1SpecTemplateSpecInitContainerResourcesOutputReference,
-JobV1SpecTemplateSpecInitContainerSecurityContext,
-jobV1SpecTemplateSpecInitContainerSecurityContextToTerraform,
-JobV1SpecTemplateSpecInitContainerSecurityContextOutputReference,
-JobV1SpecTemplateSpecInitContainerStartupProbe,
-jobV1SpecTemplateSpecInitContainerStartupProbeToTerraform,
-JobV1SpecTemplateSpecInitContainerStartupProbeOutputReference,
 JobV1SpecTemplateSpecAffinity,
 jobV1SpecTemplateSpecAffinityToTerraform,
 JobV1SpecTemplateSpecAffinityOutputReference,
@@ -47,6 +50,1203 @@ JobV1SpecTemplateMetadataOutputReference,
 JobV1SpecSelector,
 jobV1SpecSelectorToTerraform,
 JobV1SpecSelectorOutputReference } from './structs0'
+export interface JobV1SpecTemplateSpecInitContainerSecurityContext {
+  /**
+  * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#allow_privilege_escalation JobV1#allow_privilege_escalation}
+  */
+  readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
+  /**
+  * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#privileged JobV1#privileged}
+  */
+  readonly privileged?: boolean | cdktf.IResolvable;
+  /**
+  * Whether this container has a read-only root filesystem. Default is false.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#read_only_root_filesystem JobV1#read_only_root_filesystem}
+  */
+  readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
+  /**
+  * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#run_as_group JobV1#run_as_group}
+  */
+  readonly runAsGroup?: string;
+  /**
+  * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#run_as_non_root JobV1#run_as_non_root}
+  */
+  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
+  /**
+  * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#run_as_user JobV1#run_as_user}
+  */
+  readonly runAsUser?: string;
+  /**
+  * capabilities block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#capabilities JobV1#capabilities}
+  */
+  readonly capabilities?: JobV1SpecTemplateSpecInitContainerSecurityContextCapabilities;
+  /**
+  * se_linux_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#se_linux_options JobV1#se_linux_options}
+  */
+  readonly seLinuxOptions?: JobV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions;
+  /**
+  * seccomp_profile block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#seccomp_profile JobV1#seccomp_profile}
+  */
+  readonly seccompProfile?: JobV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile;
+}
+
+export function jobV1SpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: JobV1SpecTemplateSpecInitContainerSecurityContextOutputReference | JobV1SpecTemplateSpecInitContainerSecurityContext): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    allow_privilege_escalation: cdktf.booleanToTerraform(struct!.allowPrivilegeEscalation),
+    privileged: cdktf.booleanToTerraform(struct!.privileged),
+    read_only_root_filesystem: cdktf.booleanToTerraform(struct!.readOnlyRootFilesystem),
+    run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
+    run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
+    run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
+    capabilities: jobV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct!.capabilities),
+    se_linux_options: jobV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
+    seccomp_profile: jobV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
+  }
+}
+
+export class JobV1SpecTemplateSpecInitContainerSecurityContextOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): JobV1SpecTemplateSpecInitContainerSecurityContext | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._allowPrivilegeEscalation !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
+    }
+    if (this._privileged !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.privileged = this._privileged;
+    }
+    if (this._readOnlyRootFilesystem !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
+    }
+    if (this._runAsGroup !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.runAsGroup = this._runAsGroup;
+    }
+    if (this._runAsNonRoot !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.runAsNonRoot = this._runAsNonRoot;
+    }
+    if (this._runAsUser !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.runAsUser = this._runAsUser;
+    }
+    if (this._capabilities?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.capabilities = this._capabilities?.internalValue;
+    }
+    if (this._seLinuxOptions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
+    }
+    if (this._seccompProfile?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobV1SpecTemplateSpecInitContainerSecurityContext | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._allowPrivilegeEscalation = undefined;
+      this._privileged = undefined;
+      this._readOnlyRootFilesystem = undefined;
+      this._runAsGroup = undefined;
+      this._runAsNonRoot = undefined;
+      this._runAsUser = undefined;
+      this._capabilities.internalValue = undefined;
+      this._seLinuxOptions.internalValue = undefined;
+      this._seccompProfile.internalValue = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._allowPrivilegeEscalation = value.allowPrivilegeEscalation;
+      this._privileged = value.privileged;
+      this._readOnlyRootFilesystem = value.readOnlyRootFilesystem;
+      this._runAsGroup = value.runAsGroup;
+      this._runAsNonRoot = value.runAsNonRoot;
+      this._runAsUser = value.runAsUser;
+      this._capabilities.internalValue = value.capabilities;
+      this._seLinuxOptions.internalValue = value.seLinuxOptions;
+      this._seccompProfile.internalValue = value.seccompProfile;
+    }
+  }
+
+  // allow_privilege_escalation - computed: false, optional: true, required: false
+  private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable; 
+  public get allowPrivilegeEscalation() {
+    return this.getBooleanAttribute('allow_privilege_escalation');
+  }
+  public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable) {
+    this._allowPrivilegeEscalation = value;
+  }
+  public resetAllowPrivilegeEscalation() {
+    this._allowPrivilegeEscalation = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get allowPrivilegeEscalationInput() {
+    return this._allowPrivilegeEscalation;
+  }
+
+  // privileged - computed: false, optional: true, required: false
+  private _privileged?: boolean | cdktf.IResolvable; 
+  public get privileged() {
+    return this.getBooleanAttribute('privileged');
+  }
+  public set privileged(value: boolean | cdktf.IResolvable) {
+    this._privileged = value;
+  }
+  public resetPrivileged() {
+    this._privileged = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get privilegedInput() {
+    return this._privileged;
+  }
+
+  // read_only_root_filesystem - computed: false, optional: true, required: false
+  private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable; 
+  public get readOnlyRootFilesystem() {
+    return this.getBooleanAttribute('read_only_root_filesystem');
+  }
+  public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable) {
+    this._readOnlyRootFilesystem = value;
+  }
+  public resetReadOnlyRootFilesystem() {
+    this._readOnlyRootFilesystem = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyRootFilesystemInput() {
+    return this._readOnlyRootFilesystem;
+  }
+
+  // run_as_group - computed: false, optional: true, required: false
+  private _runAsGroup?: string; 
+  public get runAsGroup() {
+    return this.getStringAttribute('run_as_group');
+  }
+  public set runAsGroup(value: string) {
+    this._runAsGroup = value;
+  }
+  public resetRunAsGroup() {
+    this._runAsGroup = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runAsGroupInput() {
+    return this._runAsGroup;
+  }
+
+  // run_as_non_root - computed: false, optional: true, required: false
+  private _runAsNonRoot?: boolean | cdktf.IResolvable; 
+  public get runAsNonRoot() {
+    return this.getBooleanAttribute('run_as_non_root');
+  }
+  public set runAsNonRoot(value: boolean | cdktf.IResolvable) {
+    this._runAsNonRoot = value;
+  }
+  public resetRunAsNonRoot() {
+    this._runAsNonRoot = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runAsNonRootInput() {
+    return this._runAsNonRoot;
+  }
+
+  // run_as_user - computed: false, optional: true, required: false
+  private _runAsUser?: string; 
+  public get runAsUser() {
+    return this.getStringAttribute('run_as_user');
+  }
+  public set runAsUser(value: string) {
+    this._runAsUser = value;
+  }
+  public resetRunAsUser() {
+    this._runAsUser = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runAsUserInput() {
+    return this._runAsUser;
+  }
+
+  // capabilities - computed: false, optional: true, required: false
+  private _capabilities = new JobV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference(this, "capabilities");
+  public get capabilities() {
+    return this._capabilities;
+  }
+  public putCapabilities(value: JobV1SpecTemplateSpecInitContainerSecurityContextCapabilities) {
+    this._capabilities.internalValue = value;
+  }
+  public resetCapabilities() {
+    this._capabilities.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get capabilitiesInput() {
+    return this._capabilities.internalValue;
+  }
+
+  // se_linux_options - computed: false, optional: true, required: false
+  private _seLinuxOptions = new JobV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options");
+  public get seLinuxOptions() {
+    return this._seLinuxOptions;
+  }
+  public putSeLinuxOptions(value: JobV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions) {
+    this._seLinuxOptions.internalValue = value;
+  }
+  public resetSeLinuxOptions() {
+    this._seLinuxOptions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seLinuxOptionsInput() {
+    return this._seLinuxOptions.internalValue;
+  }
+
+  // seccomp_profile - computed: false, optional: true, required: false
+  private _seccompProfile = new JobV1SpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile");
+  public get seccompProfile() {
+    return this._seccompProfile;
+  }
+  public putSeccompProfile(value: JobV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile) {
+    this._seccompProfile.internalValue = value;
+  }
+  public resetSeccompProfile() {
+    this._seccompProfile.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get seccompProfileInput() {
+    return this._seccompProfile.internalValue;
+  }
+}
+export interface JobV1SpecTemplateSpecInitContainerStartupProbeExec {
+  /**
+  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#command JobV1#command}
+  */
+  readonly command?: string[];
+}
+
+export function jobV1SpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct?: JobV1SpecTemplateSpecInitContainerStartupProbeExecOutputReference | JobV1SpecTemplateSpecInitContainerStartupProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
+  }
+}
+
+export class JobV1SpecTemplateSpecInitContainerStartupProbeExecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): JobV1SpecTemplateSpecInitContainerStartupProbeExec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._command !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.command = this._command;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobV1SpecTemplateSpecInitContainerStartupProbeExec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._command = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._command = value.command;
+    }
+  }
+
+  // command - computed: false, optional: true, required: false
+  private _command?: string[]; 
+  public get command() {
+    return this.getListAttribute('command');
+  }
+  public set command(value: string[]) {
+    this._command = value;
+  }
+  public resetCommand() {
+    this._command = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get commandInput() {
+    return this._command;
+  }
+}
+export interface JobV1SpecTemplateSpecInitContainerStartupProbeGrpc {
+  /**
+  * Number of the port to access on the container. Number must be in the range 1 to 65535.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#port JobV1#port}
+  */
+  readonly port: number;
+  /**
+  * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#service JobV1#service}
+  */
+  readonly service?: string;
+}
+
+export function jobV1SpecTemplateSpecInitContainerStartupProbeGrpcToTerraform(struct?: JobV1SpecTemplateSpecInitContainerStartupProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.numberToTerraform(struct!.port),
+    service: cdktf.stringToTerraform(struct!.service),
+  }
+}
+
+export class JobV1SpecTemplateSpecInitContainerStartupProbeGrpcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): JobV1SpecTemplateSpecInitContainerStartupProbeGrpc | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._service !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.service = this._service;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobV1SpecTemplateSpecInitContainerStartupProbeGrpc | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._service = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._service = value.service;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: string; 
+  public get service() {
+    return this.getStringAttribute('service');
+  }
+  public set service(value: string) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service;
+  }
+}
+
+export class JobV1SpecTemplateSpecInitContainerStartupProbeGrpcList extends cdktf.ComplexList {
+  public internalValue? : JobV1SpecTemplateSpecInitContainerStartupProbeGrpc[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): JobV1SpecTemplateSpecInitContainerStartupProbeGrpcOutputReference {
+    return new JobV1SpecTemplateSpecInitContainerStartupProbeGrpcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader {
+  /**
+  * The header field name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#name JobV1#name}
+  */
+  readonly name?: string;
+  /**
+  * The header field value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#value JobV1#value}
+  */
+  readonly value?: string;
+}
+
+export function jobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    name: cdktf.stringToTerraform(struct!.name),
+    value: cdktf.stringToTerraform(struct!.value),
+  }
+}
+
+export class JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._value !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._name = undefined;
+      this._value = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._name = value.name;
+      this._value = value.value;
+    }
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // value - computed: false, optional: true, required: false
+  private _value?: string; 
+  public get value() {
+    return this.getStringAttribute('value');
+  }
+  public set value(value: string) {
+    this._value = value;
+  }
+  public resetValue() {
+    this._value = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valueInput() {
+    return this._value;
+  }
+}
+
+export class JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderList extends cdktf.ComplexList {
+  public internalValue? : JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference {
+    return new JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface JobV1SpecTemplateSpecInitContainerStartupProbeHttpGet {
+  /**
+  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#host JobV1#host}
+  */
+  readonly host?: string;
+  /**
+  * Path to access on the HTTP server.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#path JobV1#path}
+  */
+  readonly path?: string;
+  /**
+  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#port JobV1#port}
+  */
+  readonly port?: string;
+  /**
+  * Scheme to use for connecting to the host.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#scheme JobV1#scheme}
+  */
+  readonly scheme?: string;
+  /**
+  * http_header block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#http_header JobV1#http_header}
+  */
+  readonly httpHeader?: JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable;
+}
+
+export function jobV1SpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct?: JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference | JobV1SpecTemplateSpecInitContainerStartupProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    host: cdktf.stringToTerraform(struct!.host),
+    path: cdktf.stringToTerraform(struct!.path),
+    port: cdktf.stringToTerraform(struct!.port),
+    scheme: cdktf.stringToTerraform(struct!.scheme),
+    http_header: cdktf.listMapper(jobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
+  }
+}
+
+export class JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): JobV1SpecTemplateSpecInitContainerStartupProbeHttpGet | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._host !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._path !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._scheme !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.scheme = this._scheme;
+    }
+    if (this._httpHeader?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.httpHeader = this._httpHeader?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobV1SpecTemplateSpecInitContainerStartupProbeHttpGet | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._host = undefined;
+      this._path = undefined;
+      this._port = undefined;
+      this._scheme = undefined;
+      this._httpHeader.internalValue = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._host = value.host;
+      this._path = value.path;
+      this._port = value.port;
+      this._scheme = value.scheme;
+      this._httpHeader.internalValue = value.httpHeader;
+    }
+  }
+
+  // host - computed: false, optional: true, required: false
+  private _host?: string; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string) {
+    this._host = value;
+  }
+  public resetHost() {
+    this._host = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host;
+  }
+
+  // path - computed: false, optional: true, required: false
+  private _path?: string; 
+  public get path() {
+    return this.getStringAttribute('path');
+  }
+  public set path(value: string) {
+    this._path = value;
+  }
+  public resetPath() {
+    this._path = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pathInput() {
+    return this._path;
+  }
+
+  // port - computed: false, optional: true, required: false
+  private _port?: string; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string) {
+    this._port = value;
+  }
+  public resetPort() {
+    this._port = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // scheme - computed: false, optional: true, required: false
+  private _scheme?: string; 
+  public get scheme() {
+    return this.getStringAttribute('scheme');
+  }
+  public set scheme(value: string) {
+    this._scheme = value;
+  }
+  public resetScheme() {
+    this._scheme = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schemeInput() {
+    return this._scheme;
+  }
+
+  // http_header - computed: false, optional: true, required: false
+  private _httpHeader = new JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderList(this, "http_header", false);
+  public get httpHeader() {
+    return this._httpHeader;
+  }
+  public putHttpHeader(value: JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable) {
+    this._httpHeader.internalValue = value;
+  }
+  public resetHttpHeader() {
+    this._httpHeader.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpHeaderInput() {
+    return this._httpHeader.internalValue;
+  }
+}
+export interface JobV1SpecTemplateSpecInitContainerStartupProbeTcpSocket {
+  /**
+  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#port JobV1#port}
+  */
+  readonly port: string;
+}
+
+export function jobV1SpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform(struct?: JobV1SpecTemplateSpecInitContainerStartupProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.stringToTerraform(struct!.port),
+  }
+}
+
+export class JobV1SpecTemplateSpecInitContainerStartupProbeTcpSocketOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): JobV1SpecTemplateSpecInitContainerStartupProbeTcpSocket | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobV1SpecTemplateSpecInitContainerStartupProbeTcpSocket | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: string; 
+  public get port() {
+    return this.getStringAttribute('port');
+  }
+  public set port(value: string) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+}
+
+export class JobV1SpecTemplateSpecInitContainerStartupProbeTcpSocketList extends cdktf.ComplexList {
+  public internalValue? : JobV1SpecTemplateSpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): JobV1SpecTemplateSpecInitContainerStartupProbeTcpSocketOutputReference {
+    return new JobV1SpecTemplateSpecInitContainerStartupProbeTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface JobV1SpecTemplateSpecInitContainerStartupProbe {
+  /**
+  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#failure_threshold JobV1#failure_threshold}
+  */
+  readonly failureThreshold?: number;
+  /**
+  * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#initial_delay_seconds JobV1#initial_delay_seconds}
+  */
+  readonly initialDelaySeconds?: number;
+  /**
+  * How often (in seconds) to perform the probe
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#period_seconds JobV1#period_seconds}
+  */
+  readonly periodSeconds?: number;
+  /**
+  * Minimum consecutive successes for the probe to be considered successful after having failed.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#success_threshold JobV1#success_threshold}
+  */
+  readonly successThreshold?: number;
+  /**
+  * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#timeout_seconds JobV1#timeout_seconds}
+  */
+  readonly timeoutSeconds?: number;
+  /**
+  * exec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#exec JobV1#exec}
+  */
+  readonly exec?: JobV1SpecTemplateSpecInitContainerStartupProbeExec;
+  /**
+  * grpc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#grpc JobV1#grpc}
+  */
+  readonly grpc?: JobV1SpecTemplateSpecInitContainerStartupProbeGrpc[] | cdktf.IResolvable;
+  /**
+  * http_get block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#http_get JobV1#http_get}
+  */
+  readonly httpGet?: JobV1SpecTemplateSpecInitContainerStartupProbeHttpGet;
+  /**
+  * tcp_socket block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#tcp_socket JobV1#tcp_socket}
+  */
+  readonly tcpSocket?: JobV1SpecTemplateSpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable;
+}
+
+export function jobV1SpecTemplateSpecInitContainerStartupProbeToTerraform(struct?: JobV1SpecTemplateSpecInitContainerStartupProbeOutputReference | JobV1SpecTemplateSpecInitContainerStartupProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    failure_threshold: cdktf.numberToTerraform(struct!.failureThreshold),
+    initial_delay_seconds: cdktf.numberToTerraform(struct!.initialDelaySeconds),
+    period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
+    success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
+    timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
+    exec: jobV1SpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct!.exec),
+    grpc: cdktf.listMapper(jobV1SpecTemplateSpecInitContainerStartupProbeGrpcToTerraform, true)(struct!.grpc),
+    http_get: jobV1SpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
+    tcp_socket: cdktf.listMapper(jobV1SpecTemplateSpecInitContainerStartupProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
+  }
+}
+
+export class JobV1SpecTemplateSpecInitContainerStartupProbeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): JobV1SpecTemplateSpecInitContainerStartupProbe | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._failureThreshold !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.failureThreshold = this._failureThreshold;
+    }
+    if (this._initialDelaySeconds !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
+    }
+    if (this._periodSeconds !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.periodSeconds = this._periodSeconds;
+    }
+    if (this._successThreshold !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.successThreshold = this._successThreshold;
+    }
+    if (this._timeoutSeconds !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.timeoutSeconds = this._timeoutSeconds;
+    }
+    if (this._exec?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.exec = this._exec?.internalValue;
+    }
+    if (this._grpc?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.grpc = this._grpc?.internalValue;
+    }
+    if (this._httpGet?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.httpGet = this._httpGet?.internalValue;
+    }
+    if (this._tcpSocket?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.tcpSocket = this._tcpSocket?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobV1SpecTemplateSpecInitContainerStartupProbe | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._failureThreshold = undefined;
+      this._initialDelaySeconds = undefined;
+      this._periodSeconds = undefined;
+      this._successThreshold = undefined;
+      this._timeoutSeconds = undefined;
+      this._exec.internalValue = undefined;
+      this._grpc.internalValue = undefined;
+      this._httpGet.internalValue = undefined;
+      this._tcpSocket.internalValue = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._failureThreshold = value.failureThreshold;
+      this._initialDelaySeconds = value.initialDelaySeconds;
+      this._periodSeconds = value.periodSeconds;
+      this._successThreshold = value.successThreshold;
+      this._timeoutSeconds = value.timeoutSeconds;
+      this._exec.internalValue = value.exec;
+      this._grpc.internalValue = value.grpc;
+      this._httpGet.internalValue = value.httpGet;
+      this._tcpSocket.internalValue = value.tcpSocket;
+    }
+  }
+
+  // failure_threshold - computed: false, optional: true, required: false
+  private _failureThreshold?: number; 
+  public get failureThreshold() {
+    return this.getNumberAttribute('failure_threshold');
+  }
+  public set failureThreshold(value: number) {
+    this._failureThreshold = value;
+  }
+  public resetFailureThreshold() {
+    this._failureThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get failureThresholdInput() {
+    return this._failureThreshold;
+  }
+
+  // initial_delay_seconds - computed: false, optional: true, required: false
+  private _initialDelaySeconds?: number; 
+  public get initialDelaySeconds() {
+    return this.getNumberAttribute('initial_delay_seconds');
+  }
+  public set initialDelaySeconds(value: number) {
+    this._initialDelaySeconds = value;
+  }
+  public resetInitialDelaySeconds() {
+    this._initialDelaySeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get initialDelaySecondsInput() {
+    return this._initialDelaySeconds;
+  }
+
+  // period_seconds - computed: false, optional: true, required: false
+  private _periodSeconds?: number; 
+  public get periodSeconds() {
+    return this.getNumberAttribute('period_seconds');
+  }
+  public set periodSeconds(value: number) {
+    this._periodSeconds = value;
+  }
+  public resetPeriodSeconds() {
+    this._periodSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get periodSecondsInput() {
+    return this._periodSeconds;
+  }
+
+  // success_threshold - computed: false, optional: true, required: false
+  private _successThreshold?: number; 
+  public get successThreshold() {
+    return this.getNumberAttribute('success_threshold');
+  }
+  public set successThreshold(value: number) {
+    this._successThreshold = value;
+  }
+  public resetSuccessThreshold() {
+    this._successThreshold = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get successThresholdInput() {
+    return this._successThreshold;
+  }
+
+  // timeout_seconds - computed: false, optional: true, required: false
+  private _timeoutSeconds?: number; 
+  public get timeoutSeconds() {
+    return this.getNumberAttribute('timeout_seconds');
+  }
+  public set timeoutSeconds(value: number) {
+    this._timeoutSeconds = value;
+  }
+  public resetTimeoutSeconds() {
+    this._timeoutSeconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timeoutSecondsInput() {
+    return this._timeoutSeconds;
+  }
+
+  // exec - computed: false, optional: true, required: false
+  private _exec = new JobV1SpecTemplateSpecInitContainerStartupProbeExecOutputReference(this, "exec");
+  public get exec() {
+    return this._exec;
+  }
+  public putExec(value: JobV1SpecTemplateSpecInitContainerStartupProbeExec) {
+    this._exec.internalValue = value;
+  }
+  public resetExec() {
+    this._exec.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get execInput() {
+    return this._exec.internalValue;
+  }
+
+  // grpc - computed: false, optional: true, required: false
+  private _grpc = new JobV1SpecTemplateSpecInitContainerStartupProbeGrpcList(this, "grpc", false);
+  public get grpc() {
+    return this._grpc;
+  }
+  public putGrpc(value: JobV1SpecTemplateSpecInitContainerStartupProbeGrpc[] | cdktf.IResolvable) {
+    this._grpc.internalValue = value;
+  }
+  public resetGrpc() {
+    this._grpc.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get grpcInput() {
+    return this._grpc.internalValue;
+  }
+
+  // http_get - computed: false, optional: true, required: false
+  private _httpGet = new JobV1SpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference(this, "http_get");
+  public get httpGet() {
+    return this._httpGet;
+  }
+  public putHttpGet(value: JobV1SpecTemplateSpecInitContainerStartupProbeHttpGet) {
+    this._httpGet.internalValue = value;
+  }
+  public resetHttpGet() {
+    this._httpGet.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get httpGetInput() {
+    return this._httpGet.internalValue;
+  }
+
+  // tcp_socket - computed: false, optional: true, required: false
+  private _tcpSocket = new JobV1SpecTemplateSpecInitContainerStartupProbeTcpSocketList(this, "tcp_socket", false);
+  public get tcpSocket() {
+    return this._tcpSocket;
+  }
+  public putTcpSocket(value: JobV1SpecTemplateSpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable) {
+    this._tcpSocket.internalValue = value;
+  }
+  public resetTcpSocket() {
+    this._tcpSocket.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get tcpSocketInput() {
+    return this._tcpSocket.internalValue;
+  }
+}
 export interface JobV1SpecTemplateSpecInitContainerVolumeMount {
   /**
   * Path within the container at which the volume should be mounted. Must not contain ':'.
