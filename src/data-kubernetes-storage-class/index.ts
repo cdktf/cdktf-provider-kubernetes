@@ -419,7 +419,7 @@ export class DataKubernetesStorageClass extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_storage_class',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.16.1',
+        providerVersion: '2.17.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

@@ -6340,6 +6340,131 @@ export class DaemonsetSpecTemplateSpecContainerLivenessProbeExecOutputReference 
     return this._command;
   }
 }
+export interface DaemonsetSpecTemplateSpecContainerLivenessProbeGrpc {
+  /**
+  * Number of the port to access on the container. Number must be in the range 1 to 65535.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#port Daemonset#port}
+  */
+  readonly port: number;
+  /**
+  * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#service Daemonset#service}
+  */
+  readonly service?: string;
+}
+
+export function daemonsetSpecTemplateSpecContainerLivenessProbeGrpcToTerraform(struct?: DaemonsetSpecTemplateSpecContainerLivenessProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.numberToTerraform(struct!.port),
+    service: cdktf.stringToTerraform(struct!.service),
+  }
+}
+
+export class DaemonsetSpecTemplateSpecContainerLivenessProbeGrpcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DaemonsetSpecTemplateSpecContainerLivenessProbeGrpc | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._service !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.service = this._service;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DaemonsetSpecTemplateSpecContainerLivenessProbeGrpc | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._service = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._service = value.service;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: string; 
+  public get service() {
+    return this.getStringAttribute('service');
+  }
+  public set service(value: string) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service;
+  }
+}
+
+export class DaemonsetSpecTemplateSpecContainerLivenessProbeGrpcList extends cdktf.ComplexList {
+  public internalValue? : DaemonsetSpecTemplateSpecContainerLivenessProbeGrpc[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DaemonsetSpecTemplateSpecContainerLivenessProbeGrpcOutputReference {
+    return new DaemonsetSpecTemplateSpecContainerLivenessProbeGrpcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface DaemonsetSpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
@@ -6785,6 +6910,12 @@ export interface DaemonsetSpecTemplateSpecContainerLivenessProbe {
   */
   readonly exec?: DaemonsetSpecTemplateSpecContainerLivenessProbeExec;
   /**
+  * grpc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#grpc Daemonset#grpc}
+  */
+  readonly grpc?: DaemonsetSpecTemplateSpecContainerLivenessProbeGrpc[] | cdktf.IResolvable;
+  /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#http_get Daemonset#http_get}
@@ -6810,6 +6941,7 @@ export function daemonsetSpecTemplateSpecContainerLivenessProbeToTerraform(struc
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: daemonsetSpecTemplateSpecContainerLivenessProbeExecToTerraform(struct!.exec),
+    grpc: cdktf.listMapper(daemonsetSpecTemplateSpecContainerLivenessProbeGrpcToTerraform, true)(struct!.grpc),
     http_get: daemonsetSpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(daemonsetSpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
@@ -6853,6 +6985,10 @@ export class DaemonsetSpecTemplateSpecContainerLivenessProbeOutputReference exte
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
+    if (this._grpc?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.grpc = this._grpc?.internalValue;
+    }
     if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
@@ -6873,6 +7009,7 @@ export class DaemonsetSpecTemplateSpecContainerLivenessProbeOutputReference exte
       this._successThreshold = undefined;
       this._timeoutSeconds = undefined;
       this._exec.internalValue = undefined;
+      this._grpc.internalValue = undefined;
       this._httpGet.internalValue = undefined;
       this._tcpSocket.internalValue = undefined;
     }
@@ -6884,6 +7021,7 @@ export class DaemonsetSpecTemplateSpecContainerLivenessProbeOutputReference exte
       this._successThreshold = value.successThreshold;
       this._timeoutSeconds = value.timeoutSeconds;
       this._exec.internalValue = value.exec;
+      this._grpc.internalValue = value.grpc;
       this._httpGet.internalValue = value.httpGet;
       this._tcpSocket.internalValue = value.tcpSocket;
     }
@@ -6983,6 +7121,22 @@ export class DaemonsetSpecTemplateSpecContainerLivenessProbeOutputReference exte
   // Temporarily expose input value. Use with caution.
   public get execInput() {
     return this._exec.internalValue;
+  }
+
+  // grpc - computed: false, optional: true, required: false
+  private _grpc = new DaemonsetSpecTemplateSpecContainerLivenessProbeGrpcList(this, "grpc", false);
+  public get grpc() {
+    return this._grpc;
+  }
+  public putGrpc(value: DaemonsetSpecTemplateSpecContainerLivenessProbeGrpc[] | cdktf.IResolvable) {
+    this._grpc.internalValue = value;
+  }
+  public resetGrpc() {
+    this._grpc.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get grpcInput() {
+    return this._grpc.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
@@ -7294,6 +7448,131 @@ export class DaemonsetSpecTemplateSpecContainerReadinessProbeExecOutputReference
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
     return this._command;
+  }
+}
+export interface DaemonsetSpecTemplateSpecContainerReadinessProbeGrpc {
+  /**
+  * Number of the port to access on the container. Number must be in the range 1 to 65535.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#port Daemonset#port}
+  */
+  readonly port: number;
+  /**
+  * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#service Daemonset#service}
+  */
+  readonly service?: string;
+}
+
+export function daemonsetSpecTemplateSpecContainerReadinessProbeGrpcToTerraform(struct?: DaemonsetSpecTemplateSpecContainerReadinessProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.numberToTerraform(struct!.port),
+    service: cdktf.stringToTerraform(struct!.service),
+  }
+}
+
+export class DaemonsetSpecTemplateSpecContainerReadinessProbeGrpcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DaemonsetSpecTemplateSpecContainerReadinessProbeGrpc | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._service !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.service = this._service;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DaemonsetSpecTemplateSpecContainerReadinessProbeGrpc | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._service = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._service = value.service;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: string; 
+  public get service() {
+    return this.getStringAttribute('service');
+  }
+  public set service(value: string) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service;
+  }
+}
+
+export class DaemonsetSpecTemplateSpecContainerReadinessProbeGrpcList extends cdktf.ComplexList {
+  public internalValue? : DaemonsetSpecTemplateSpecContainerReadinessProbeGrpc[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DaemonsetSpecTemplateSpecContainerReadinessProbeGrpcOutputReference {
+    return new DaemonsetSpecTemplateSpecContainerReadinessProbeGrpcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
 export interface DaemonsetSpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader {
@@ -7741,6 +8020,12 @@ export interface DaemonsetSpecTemplateSpecContainerReadinessProbe {
   */
   readonly exec?: DaemonsetSpecTemplateSpecContainerReadinessProbeExec;
   /**
+  * grpc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#grpc Daemonset#grpc}
+  */
+  readonly grpc?: DaemonsetSpecTemplateSpecContainerReadinessProbeGrpc[] | cdktf.IResolvable;
+  /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#http_get Daemonset#http_get}
@@ -7766,6 +8051,7 @@ export function daemonsetSpecTemplateSpecContainerReadinessProbeToTerraform(stru
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: daemonsetSpecTemplateSpecContainerReadinessProbeExecToTerraform(struct!.exec),
+    grpc: cdktf.listMapper(daemonsetSpecTemplateSpecContainerReadinessProbeGrpcToTerraform, true)(struct!.grpc),
     http_get: daemonsetSpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(daemonsetSpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
@@ -7809,6 +8095,10 @@ export class DaemonsetSpecTemplateSpecContainerReadinessProbeOutputReference ext
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
+    if (this._grpc?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.grpc = this._grpc?.internalValue;
+    }
     if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
@@ -7829,6 +8119,7 @@ export class DaemonsetSpecTemplateSpecContainerReadinessProbeOutputReference ext
       this._successThreshold = undefined;
       this._timeoutSeconds = undefined;
       this._exec.internalValue = undefined;
+      this._grpc.internalValue = undefined;
       this._httpGet.internalValue = undefined;
       this._tcpSocket.internalValue = undefined;
     }
@@ -7840,6 +8131,7 @@ export class DaemonsetSpecTemplateSpecContainerReadinessProbeOutputReference ext
       this._successThreshold = value.successThreshold;
       this._timeoutSeconds = value.timeoutSeconds;
       this._exec.internalValue = value.exec;
+      this._grpc.internalValue = value.grpc;
       this._httpGet.internalValue = value.httpGet;
       this._tcpSocket.internalValue = value.tcpSocket;
     }
@@ -7939,6 +8231,22 @@ export class DaemonsetSpecTemplateSpecContainerReadinessProbeOutputReference ext
   // Temporarily expose input value. Use with caution.
   public get execInput() {
     return this._exec.internalValue;
+  }
+
+  // grpc - computed: false, optional: true, required: false
+  private _grpc = new DaemonsetSpecTemplateSpecContainerReadinessProbeGrpcList(this, "grpc", false);
+  public get grpc() {
+    return this._grpc;
+  }
+  public putGrpc(value: DaemonsetSpecTemplateSpecContainerReadinessProbeGrpc[] | cdktf.IResolvable) {
+    this._grpc.internalValue = value;
+  }
+  public resetGrpc() {
+    this._grpc.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get grpcInput() {
+    return this._grpc.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
@@ -8781,6 +9089,131 @@ export class DaemonsetSpecTemplateSpecContainerStartupProbeExecOutputReference e
     return this._command;
   }
 }
+export interface DaemonsetSpecTemplateSpecContainerStartupProbeGrpc {
+  /**
+  * Number of the port to access on the container. Number must be in the range 1 to 65535.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#port Daemonset#port}
+  */
+  readonly port: number;
+  /**
+  * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#service Daemonset#service}
+  */
+  readonly service?: string;
+}
+
+export function daemonsetSpecTemplateSpecContainerStartupProbeGrpcToTerraform(struct?: DaemonsetSpecTemplateSpecContainerStartupProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.numberToTerraform(struct!.port),
+    service: cdktf.stringToTerraform(struct!.service),
+  }
+}
+
+export class DaemonsetSpecTemplateSpecContainerStartupProbeGrpcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DaemonsetSpecTemplateSpecContainerStartupProbeGrpc | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._service !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.service = this._service;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DaemonsetSpecTemplateSpecContainerStartupProbeGrpc | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._service = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._service = value.service;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: string; 
+  public get service() {
+    return this.getStringAttribute('service');
+  }
+  public set service(value: string) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service;
+  }
+}
+
+export class DaemonsetSpecTemplateSpecContainerStartupProbeGrpcList extends cdktf.ComplexList {
+  public internalValue? : DaemonsetSpecTemplateSpecContainerStartupProbeGrpc[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DaemonsetSpecTemplateSpecContainerStartupProbeGrpcOutputReference {
+    return new DaemonsetSpecTemplateSpecContainerStartupProbeGrpcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface DaemonsetSpecTemplateSpecContainerStartupProbeHttpGetHttpHeader {
   /**
   * The header field name
@@ -9226,6 +9659,12 @@ export interface DaemonsetSpecTemplateSpecContainerStartupProbe {
   */
   readonly exec?: DaemonsetSpecTemplateSpecContainerStartupProbeExec;
   /**
+  * grpc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#grpc Daemonset#grpc}
+  */
+  readonly grpc?: DaemonsetSpecTemplateSpecContainerStartupProbeGrpc[] | cdktf.IResolvable;
+  /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#http_get Daemonset#http_get}
@@ -9251,6 +9690,7 @@ export function daemonsetSpecTemplateSpecContainerStartupProbeToTerraform(struct
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: daemonsetSpecTemplateSpecContainerStartupProbeExecToTerraform(struct!.exec),
+    grpc: cdktf.listMapper(daemonsetSpecTemplateSpecContainerStartupProbeGrpcToTerraform, true)(struct!.grpc),
     http_get: daemonsetSpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(daemonsetSpecTemplateSpecContainerStartupProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
@@ -9294,6 +9734,10 @@ export class DaemonsetSpecTemplateSpecContainerStartupProbeOutputReference exten
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
+    if (this._grpc?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.grpc = this._grpc?.internalValue;
+    }
     if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
@@ -9314,6 +9758,7 @@ export class DaemonsetSpecTemplateSpecContainerStartupProbeOutputReference exten
       this._successThreshold = undefined;
       this._timeoutSeconds = undefined;
       this._exec.internalValue = undefined;
+      this._grpc.internalValue = undefined;
       this._httpGet.internalValue = undefined;
       this._tcpSocket.internalValue = undefined;
     }
@@ -9325,6 +9770,7 @@ export class DaemonsetSpecTemplateSpecContainerStartupProbeOutputReference exten
       this._successThreshold = value.successThreshold;
       this._timeoutSeconds = value.timeoutSeconds;
       this._exec.internalValue = value.exec;
+      this._grpc.internalValue = value.grpc;
       this._httpGet.internalValue = value.httpGet;
       this._tcpSocket.internalValue = value.tcpSocket;
     }
@@ -9424,6 +9870,22 @@ export class DaemonsetSpecTemplateSpecContainerStartupProbeOutputReference exten
   // Temporarily expose input value. Use with caution.
   public get execInput() {
     return this._exec.internalValue;
+  }
+
+  // grpc - computed: false, optional: true, required: false
+  private _grpc = new DaemonsetSpecTemplateSpecContainerStartupProbeGrpcList(this, "grpc", false);
+  public get grpc() {
+    return this._grpc;
+  }
+  public putGrpc(value: DaemonsetSpecTemplateSpecContainerStartupProbeGrpc[] | cdktf.IResolvable) {
+    this._grpc.internalValue = value;
+  }
+  public resetGrpc() {
+    this._grpc.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get grpcInput() {
+    return this._grpc.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
@@ -13351,6 +13813,131 @@ export class DaemonsetSpecTemplateSpecInitContainerLivenessProbeExecOutputRefere
     return this._command;
   }
 }
+export interface DaemonsetSpecTemplateSpecInitContainerLivenessProbeGrpc {
+  /**
+  * Number of the port to access on the container. Number must be in the range 1 to 65535.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#port Daemonset#port}
+  */
+  readonly port: number;
+  /**
+  * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#service Daemonset#service}
+  */
+  readonly service?: string;
+}
+
+export function daemonsetSpecTemplateSpecInitContainerLivenessProbeGrpcToTerraform(struct?: DaemonsetSpecTemplateSpecInitContainerLivenessProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.numberToTerraform(struct!.port),
+    service: cdktf.stringToTerraform(struct!.service),
+  }
+}
+
+export class DaemonsetSpecTemplateSpecInitContainerLivenessProbeGrpcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DaemonsetSpecTemplateSpecInitContainerLivenessProbeGrpc | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._service !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.service = this._service;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DaemonsetSpecTemplateSpecInitContainerLivenessProbeGrpc | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._service = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._service = value.service;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: string; 
+  public get service() {
+    return this.getStringAttribute('service');
+  }
+  public set service(value: string) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service;
+  }
+}
+
+export class DaemonsetSpecTemplateSpecInitContainerLivenessProbeGrpcList extends cdktf.ComplexList {
+  public internalValue? : DaemonsetSpecTemplateSpecInitContainerLivenessProbeGrpc[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DaemonsetSpecTemplateSpecInitContainerLivenessProbeGrpcOutputReference {
+    return new DaemonsetSpecTemplateSpecInitContainerLivenessProbeGrpcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface DaemonsetSpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
@@ -13796,6 +14383,12 @@ export interface DaemonsetSpecTemplateSpecInitContainerLivenessProbe {
   */
   readonly exec?: DaemonsetSpecTemplateSpecInitContainerLivenessProbeExec;
   /**
+  * grpc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#grpc Daemonset#grpc}
+  */
+  readonly grpc?: DaemonsetSpecTemplateSpecInitContainerLivenessProbeGrpc[] | cdktf.IResolvable;
+  /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#http_get Daemonset#http_get}
@@ -13821,6 +14414,7 @@ export function daemonsetSpecTemplateSpecInitContainerLivenessProbeToTerraform(s
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: daemonsetSpecTemplateSpecInitContainerLivenessProbeExecToTerraform(struct!.exec),
+    grpc: cdktf.listMapper(daemonsetSpecTemplateSpecInitContainerLivenessProbeGrpcToTerraform, true)(struct!.grpc),
     http_get: daemonsetSpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(daemonsetSpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
@@ -13864,6 +14458,10 @@ export class DaemonsetSpecTemplateSpecInitContainerLivenessProbeOutputReference 
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
+    if (this._grpc?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.grpc = this._grpc?.internalValue;
+    }
     if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
@@ -13884,6 +14482,7 @@ export class DaemonsetSpecTemplateSpecInitContainerLivenessProbeOutputReference 
       this._successThreshold = undefined;
       this._timeoutSeconds = undefined;
       this._exec.internalValue = undefined;
+      this._grpc.internalValue = undefined;
       this._httpGet.internalValue = undefined;
       this._tcpSocket.internalValue = undefined;
     }
@@ -13895,6 +14494,7 @@ export class DaemonsetSpecTemplateSpecInitContainerLivenessProbeOutputReference 
       this._successThreshold = value.successThreshold;
       this._timeoutSeconds = value.timeoutSeconds;
       this._exec.internalValue = value.exec;
+      this._grpc.internalValue = value.grpc;
       this._httpGet.internalValue = value.httpGet;
       this._tcpSocket.internalValue = value.tcpSocket;
     }
@@ -13994,6 +14594,22 @@ export class DaemonsetSpecTemplateSpecInitContainerLivenessProbeOutputReference 
   // Temporarily expose input value. Use with caution.
   public get execInput() {
     return this._exec.internalValue;
+  }
+
+  // grpc - computed: false, optional: true, required: false
+  private _grpc = new DaemonsetSpecTemplateSpecInitContainerLivenessProbeGrpcList(this, "grpc", false);
+  public get grpc() {
+    return this._grpc;
+  }
+  public putGrpc(value: DaemonsetSpecTemplateSpecInitContainerLivenessProbeGrpc[] | cdktf.IResolvable) {
+    this._grpc.internalValue = value;
+  }
+  public resetGrpc() {
+    this._grpc.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get grpcInput() {
+    return this._grpc.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
@@ -14305,6 +14921,131 @@ export class DaemonsetSpecTemplateSpecInitContainerReadinessProbeExecOutputRefer
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
     return this._command;
+  }
+}
+export interface DaemonsetSpecTemplateSpecInitContainerReadinessProbeGrpc {
+  /**
+  * Number of the port to access on the container. Number must be in the range 1 to 65535.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#port Daemonset#port}
+  */
+  readonly port: number;
+  /**
+  * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#service Daemonset#service}
+  */
+  readonly service?: string;
+}
+
+export function daemonsetSpecTemplateSpecInitContainerReadinessProbeGrpcToTerraform(struct?: DaemonsetSpecTemplateSpecInitContainerReadinessProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    port: cdktf.numberToTerraform(struct!.port),
+    service: cdktf.stringToTerraform(struct!.service),
+  }
+}
+
+export class DaemonsetSpecTemplateSpecInitContainerReadinessProbeGrpcOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DaemonsetSpecTemplateSpecInitContainerReadinessProbeGrpc | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._port !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.port = this._port;
+    }
+    if (this._service !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.service = this._service;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DaemonsetSpecTemplateSpecInitContainerReadinessProbeGrpc | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._port = undefined;
+      this._service = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._port = value.port;
+      this._service = value.service;
+    }
+  }
+
+  // port - computed: false, optional: false, required: true
+  private _port?: number; 
+  public get port() {
+    return this.getNumberAttribute('port');
+  }
+  public set port(value: number) {
+    this._port = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get portInput() {
+    return this._port;
+  }
+
+  // service - computed: false, optional: true, required: false
+  private _service?: string; 
+  public get service() {
+    return this.getStringAttribute('service');
+  }
+  public set service(value: string) {
+    this._service = value;
+  }
+  public resetService() {
+    this._service = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serviceInput() {
+    return this._service;
+  }
+}
+
+export class DaemonsetSpecTemplateSpecInitContainerReadinessProbeGrpcList extends cdktf.ComplexList {
+  public internalValue? : DaemonsetSpecTemplateSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DaemonsetSpecTemplateSpecInitContainerReadinessProbeGrpcOutputReference {
+    return new DaemonsetSpecTemplateSpecInitContainerReadinessProbeGrpcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
 export interface DaemonsetSpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader {
@@ -14752,6 +15493,12 @@ export interface DaemonsetSpecTemplateSpecInitContainerReadinessProbe {
   */
   readonly exec?: DaemonsetSpecTemplateSpecInitContainerReadinessProbeExec;
   /**
+  * grpc block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#grpc Daemonset#grpc}
+  */
+  readonly grpc?: DaemonsetSpecTemplateSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable;
+  /**
   * http_get block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#http_get Daemonset#http_get}
@@ -14777,6 +15524,7 @@ export function daemonsetSpecTemplateSpecInitContainerReadinessProbeToTerraform(
     success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
     timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
     exec: daemonsetSpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct!.exec),
+    grpc: cdktf.listMapper(daemonsetSpecTemplateSpecInitContainerReadinessProbeGrpcToTerraform, true)(struct!.grpc),
     http_get: daemonsetSpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(daemonsetSpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
@@ -14820,6 +15568,10 @@ export class DaemonsetSpecTemplateSpecInitContainerReadinessProbeOutputReference
       hasAnyValues = true;
       internalValueResult.exec = this._exec?.internalValue;
     }
+    if (this._grpc?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.grpc = this._grpc?.internalValue;
+    }
     if (this._httpGet?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.httpGet = this._httpGet?.internalValue;
@@ -14840,6 +15592,7 @@ export class DaemonsetSpecTemplateSpecInitContainerReadinessProbeOutputReference
       this._successThreshold = undefined;
       this._timeoutSeconds = undefined;
       this._exec.internalValue = undefined;
+      this._grpc.internalValue = undefined;
       this._httpGet.internalValue = undefined;
       this._tcpSocket.internalValue = undefined;
     }
@@ -14851,6 +15604,7 @@ export class DaemonsetSpecTemplateSpecInitContainerReadinessProbeOutputReference
       this._successThreshold = value.successThreshold;
       this._timeoutSeconds = value.timeoutSeconds;
       this._exec.internalValue = value.exec;
+      this._grpc.internalValue = value.grpc;
       this._httpGet.internalValue = value.httpGet;
       this._tcpSocket.internalValue = value.tcpSocket;
     }
@@ -14950,6 +15704,22 @@ export class DaemonsetSpecTemplateSpecInitContainerReadinessProbeOutputReference
   // Temporarily expose input value. Use with caution.
   public get execInput() {
     return this._exec.internalValue;
+  }
+
+  // grpc - computed: false, optional: true, required: false
+  private _grpc = new DaemonsetSpecTemplateSpecInitContainerReadinessProbeGrpcList(this, "grpc", false);
+  public get grpc() {
+    return this._grpc;
+  }
+  public putGrpc(value: DaemonsetSpecTemplateSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable) {
+    this._grpc.internalValue = value;
+  }
+  public resetGrpc() {
+    this._grpc.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get grpcInput() {
+    return this._grpc.internalValue;
   }
 
   // http_get - computed: false, optional: true, required: false
@@ -15174,932 +15944,5 @@ export class DaemonsetSpecTemplateSpecInitContainerSecurityContextCapabilitiesOu
   // Temporarily expose input value. Use with caution.
   public get dropInput() {
     return this._drop;
-  }
-}
-export interface DaemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions {
-  /**
-  * Level is SELinux level label that applies to the container.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#level Daemonset#level}
-  */
-  readonly level?: string;
-  /**
-  * Role is a SELinux role label that applies to the container.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#role Daemonset#role}
-  */
-  readonly role?: string;
-  /**
-  * Type is a SELinux type label that applies to the container.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#type Daemonset#type}
-  */
-  readonly type?: string;
-  /**
-  * User is a SELinux user label that applies to the container.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#user Daemonset#user}
-  */
-  readonly user?: string;
-}
-
-export function daemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct?: DaemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference | DaemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    level: cdktf.stringToTerraform(struct!.level),
-    role: cdktf.stringToTerraform(struct!.role),
-    type: cdktf.stringToTerraform(struct!.type),
-    user: cdktf.stringToTerraform(struct!.user),
-  }
-}
-
-export class DaemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): DaemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._level !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.level = this._level;
-    }
-    if (this._role !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.role = this._role;
-    }
-    if (this._type !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.type = this._type;
-    }
-    if (this._user !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.user = this._user;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: DaemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._level = undefined;
-      this._role = undefined;
-      this._type = undefined;
-      this._user = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._level = value.level;
-      this._role = value.role;
-      this._type = value.type;
-      this._user = value.user;
-    }
-  }
-
-  // level - computed: false, optional: true, required: false
-  private _level?: string; 
-  public get level() {
-    return this.getStringAttribute('level');
-  }
-  public set level(value: string) {
-    this._level = value;
-  }
-  public resetLevel() {
-    this._level = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get levelInput() {
-    return this._level;
-  }
-
-  // role - computed: false, optional: true, required: false
-  private _role?: string; 
-  public get role() {
-    return this.getStringAttribute('role');
-  }
-  public set role(value: string) {
-    this._role = value;
-  }
-  public resetRole() {
-    this._role = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get roleInput() {
-    return this._role;
-  }
-
-  // type - computed: false, optional: true, required: false
-  private _type?: string; 
-  public get type() {
-    return this.getStringAttribute('type');
-  }
-  public set type(value: string) {
-    this._type = value;
-  }
-  public resetType() {
-    this._type = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get typeInput() {
-    return this._type;
-  }
-
-  // user - computed: false, optional: true, required: false
-  private _user?: string; 
-  public get user() {
-    return this.getStringAttribute('user');
-  }
-  public set user(value: string) {
-    this._user = value;
-  }
-  public resetUser() {
-    this._user = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get userInput() {
-    return this._user;
-  }
-}
-export interface DaemonsetSpecTemplateSpecInitContainerSecurityContextSeccompProfile {
-  /**
-  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#localhost_profile Daemonset#localhost_profile}
-  */
-  readonly localhostProfile?: string;
-  /**
-  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#type Daemonset#type}
-  */
-  readonly type?: string;
-}
-
-export function daemonsetSpecTemplateSpecInitContainerSecurityContextSeccompProfileToTerraform(struct?: DaemonsetSpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference | DaemonsetSpecTemplateSpecInitContainerSecurityContextSeccompProfile): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
-    type: cdktf.stringToTerraform(struct!.type),
-  }
-}
-
-export class DaemonsetSpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): DaemonsetSpecTemplateSpecInitContainerSecurityContextSeccompProfile | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._localhostProfile !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.localhostProfile = this._localhostProfile;
-    }
-    if (this._type !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.type = this._type;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: DaemonsetSpecTemplateSpecInitContainerSecurityContextSeccompProfile | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._localhostProfile = undefined;
-      this._type = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._localhostProfile = value.localhostProfile;
-      this._type = value.type;
-    }
-  }
-
-  // localhost_profile - computed: false, optional: true, required: false
-  private _localhostProfile?: string; 
-  public get localhostProfile() {
-    return this.getStringAttribute('localhost_profile');
-  }
-  public set localhostProfile(value: string) {
-    this._localhostProfile = value;
-  }
-  public resetLocalhostProfile() {
-    this._localhostProfile = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get localhostProfileInput() {
-    return this._localhostProfile;
-  }
-
-  // type - computed: false, optional: true, required: false
-  private _type?: string; 
-  public get type() {
-    return this.getStringAttribute('type');
-  }
-  public set type(value: string) {
-    this._type = value;
-  }
-  public resetType() {
-    this._type = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get typeInput() {
-    return this._type;
-  }
-}
-export interface DaemonsetSpecTemplateSpecInitContainerSecurityContext {
-  /**
-  * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#allow_privilege_escalation Daemonset#allow_privilege_escalation}
-  */
-  readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
-  /**
-  * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#privileged Daemonset#privileged}
-  */
-  readonly privileged?: boolean | cdktf.IResolvable;
-  /**
-  * Whether this container has a read-only root filesystem. Default is false.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#read_only_root_filesystem Daemonset#read_only_root_filesystem}
-  */
-  readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
-  /**
-  * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#run_as_group Daemonset#run_as_group}
-  */
-  readonly runAsGroup?: string;
-  /**
-  * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#run_as_non_root Daemonset#run_as_non_root}
-  */
-  readonly runAsNonRoot?: boolean | cdktf.IResolvable;
-  /**
-  * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#run_as_user Daemonset#run_as_user}
-  */
-  readonly runAsUser?: string;
-  /**
-  * capabilities block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#capabilities Daemonset#capabilities}
-  */
-  readonly capabilities?: DaemonsetSpecTemplateSpecInitContainerSecurityContextCapabilities;
-  /**
-  * se_linux_options block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#se_linux_options Daemonset#se_linux_options}
-  */
-  readonly seLinuxOptions?: DaemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions;
-  /**
-  * seccomp_profile block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#seccomp_profile Daemonset#seccomp_profile}
-  */
-  readonly seccompProfile?: DaemonsetSpecTemplateSpecInitContainerSecurityContextSeccompProfile;
-}
-
-export function daemonsetSpecTemplateSpecInitContainerSecurityContextToTerraform(struct?: DaemonsetSpecTemplateSpecInitContainerSecurityContextOutputReference | DaemonsetSpecTemplateSpecInitContainerSecurityContext): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    allow_privilege_escalation: cdktf.booleanToTerraform(struct!.allowPrivilegeEscalation),
-    privileged: cdktf.booleanToTerraform(struct!.privileged),
-    read_only_root_filesystem: cdktf.booleanToTerraform(struct!.readOnlyRootFilesystem),
-    run_as_group: cdktf.stringToTerraform(struct!.runAsGroup),
-    run_as_non_root: cdktf.booleanToTerraform(struct!.runAsNonRoot),
-    run_as_user: cdktf.stringToTerraform(struct!.runAsUser),
-    capabilities: daemonsetSpecTemplateSpecInitContainerSecurityContextCapabilitiesToTerraform(struct!.capabilities),
-    se_linux_options: daemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
-    seccomp_profile: daemonsetSpecTemplateSpecInitContainerSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
-  }
-}
-
-export class DaemonsetSpecTemplateSpecInitContainerSecurityContextOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): DaemonsetSpecTemplateSpecInitContainerSecurityContext | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._allowPrivilegeEscalation !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.allowPrivilegeEscalation = this._allowPrivilegeEscalation;
-    }
-    if (this._privileged !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.privileged = this._privileged;
-    }
-    if (this._readOnlyRootFilesystem !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.readOnlyRootFilesystem = this._readOnlyRootFilesystem;
-    }
-    if (this._runAsGroup !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.runAsGroup = this._runAsGroup;
-    }
-    if (this._runAsNonRoot !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.runAsNonRoot = this._runAsNonRoot;
-    }
-    if (this._runAsUser !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.runAsUser = this._runAsUser;
-    }
-    if (this._capabilities?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.capabilities = this._capabilities?.internalValue;
-    }
-    if (this._seLinuxOptions?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.seLinuxOptions = this._seLinuxOptions?.internalValue;
-    }
-    if (this._seccompProfile?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.seccompProfile = this._seccompProfile?.internalValue;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: DaemonsetSpecTemplateSpecInitContainerSecurityContext | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._allowPrivilegeEscalation = undefined;
-      this._privileged = undefined;
-      this._readOnlyRootFilesystem = undefined;
-      this._runAsGroup = undefined;
-      this._runAsNonRoot = undefined;
-      this._runAsUser = undefined;
-      this._capabilities.internalValue = undefined;
-      this._seLinuxOptions.internalValue = undefined;
-      this._seccompProfile.internalValue = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._allowPrivilegeEscalation = value.allowPrivilegeEscalation;
-      this._privileged = value.privileged;
-      this._readOnlyRootFilesystem = value.readOnlyRootFilesystem;
-      this._runAsGroup = value.runAsGroup;
-      this._runAsNonRoot = value.runAsNonRoot;
-      this._runAsUser = value.runAsUser;
-      this._capabilities.internalValue = value.capabilities;
-      this._seLinuxOptions.internalValue = value.seLinuxOptions;
-      this._seccompProfile.internalValue = value.seccompProfile;
-    }
-  }
-
-  // allow_privilege_escalation - computed: false, optional: true, required: false
-  private _allowPrivilegeEscalation?: boolean | cdktf.IResolvable; 
-  public get allowPrivilegeEscalation() {
-    return this.getBooleanAttribute('allow_privilege_escalation');
-  }
-  public set allowPrivilegeEscalation(value: boolean | cdktf.IResolvable) {
-    this._allowPrivilegeEscalation = value;
-  }
-  public resetAllowPrivilegeEscalation() {
-    this._allowPrivilegeEscalation = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get allowPrivilegeEscalationInput() {
-    return this._allowPrivilegeEscalation;
-  }
-
-  // privileged - computed: false, optional: true, required: false
-  private _privileged?: boolean | cdktf.IResolvable; 
-  public get privileged() {
-    return this.getBooleanAttribute('privileged');
-  }
-  public set privileged(value: boolean | cdktf.IResolvable) {
-    this._privileged = value;
-  }
-  public resetPrivileged() {
-    this._privileged = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get privilegedInput() {
-    return this._privileged;
-  }
-
-  // read_only_root_filesystem - computed: false, optional: true, required: false
-  private _readOnlyRootFilesystem?: boolean | cdktf.IResolvable; 
-  public get readOnlyRootFilesystem() {
-    return this.getBooleanAttribute('read_only_root_filesystem');
-  }
-  public set readOnlyRootFilesystem(value: boolean | cdktf.IResolvable) {
-    this._readOnlyRootFilesystem = value;
-  }
-  public resetReadOnlyRootFilesystem() {
-    this._readOnlyRootFilesystem = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get readOnlyRootFilesystemInput() {
-    return this._readOnlyRootFilesystem;
-  }
-
-  // run_as_group - computed: false, optional: true, required: false
-  private _runAsGroup?: string; 
-  public get runAsGroup() {
-    return this.getStringAttribute('run_as_group');
-  }
-  public set runAsGroup(value: string) {
-    this._runAsGroup = value;
-  }
-  public resetRunAsGroup() {
-    this._runAsGroup = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get runAsGroupInput() {
-    return this._runAsGroup;
-  }
-
-  // run_as_non_root - computed: false, optional: true, required: false
-  private _runAsNonRoot?: boolean | cdktf.IResolvable; 
-  public get runAsNonRoot() {
-    return this.getBooleanAttribute('run_as_non_root');
-  }
-  public set runAsNonRoot(value: boolean | cdktf.IResolvable) {
-    this._runAsNonRoot = value;
-  }
-  public resetRunAsNonRoot() {
-    this._runAsNonRoot = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get runAsNonRootInput() {
-    return this._runAsNonRoot;
-  }
-
-  // run_as_user - computed: false, optional: true, required: false
-  private _runAsUser?: string; 
-  public get runAsUser() {
-    return this.getStringAttribute('run_as_user');
-  }
-  public set runAsUser(value: string) {
-    this._runAsUser = value;
-  }
-  public resetRunAsUser() {
-    this._runAsUser = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get runAsUserInput() {
-    return this._runAsUser;
-  }
-
-  // capabilities - computed: false, optional: true, required: false
-  private _capabilities = new DaemonsetSpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference(this, "capabilities");
-  public get capabilities() {
-    return this._capabilities;
-  }
-  public putCapabilities(value: DaemonsetSpecTemplateSpecInitContainerSecurityContextCapabilities) {
-    this._capabilities.internalValue = value;
-  }
-  public resetCapabilities() {
-    this._capabilities.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get capabilitiesInput() {
-    return this._capabilities.internalValue;
-  }
-
-  // se_linux_options - computed: false, optional: true, required: false
-  private _seLinuxOptions = new DaemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference(this, "se_linux_options");
-  public get seLinuxOptions() {
-    return this._seLinuxOptions;
-  }
-  public putSeLinuxOptions(value: DaemonsetSpecTemplateSpecInitContainerSecurityContextSeLinuxOptions) {
-    this._seLinuxOptions.internalValue = value;
-  }
-  public resetSeLinuxOptions() {
-    this._seLinuxOptions.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get seLinuxOptionsInput() {
-    return this._seLinuxOptions.internalValue;
-  }
-
-  // seccomp_profile - computed: false, optional: true, required: false
-  private _seccompProfile = new DaemonsetSpecTemplateSpecInitContainerSecurityContextSeccompProfileOutputReference(this, "seccomp_profile");
-  public get seccompProfile() {
-    return this._seccompProfile;
-  }
-  public putSeccompProfile(value: DaemonsetSpecTemplateSpecInitContainerSecurityContextSeccompProfile) {
-    this._seccompProfile.internalValue = value;
-  }
-  public resetSeccompProfile() {
-    this._seccompProfile.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get seccompProfileInput() {
-    return this._seccompProfile.internalValue;
-  }
-}
-export interface DaemonsetSpecTemplateSpecInitContainerStartupProbeExec {
-  /**
-  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#command Daemonset#command}
-  */
-  readonly command?: string[];
-}
-
-export function daemonsetSpecTemplateSpecInitContainerStartupProbeExecToTerraform(struct?: DaemonsetSpecTemplateSpecInitContainerStartupProbeExecOutputReference | DaemonsetSpecTemplateSpecInitContainerStartupProbeExec): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
-  }
-}
-
-export class DaemonsetSpecTemplateSpecInitContainerStartupProbeExecOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): DaemonsetSpecTemplateSpecInitContainerStartupProbeExec | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._command !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.command = this._command;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: DaemonsetSpecTemplateSpecInitContainerStartupProbeExec | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._command = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._command = value.command;
-    }
-  }
-
-  // command - computed: false, optional: true, required: false
-  private _command?: string[]; 
-  public get command() {
-    return this.getListAttribute('command');
-  }
-  public set command(value: string[]) {
-    this._command = value;
-  }
-  public resetCommand() {
-    this._command = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get commandInput() {
-    return this._command;
-  }
-}
-export interface DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader {
-  /**
-  * The header field name
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#name Daemonset#name}
-  */
-  readonly name?: string;
-  /**
-  * The header field value
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#value Daemonset#value}
-  */
-  readonly value?: string;
-}
-
-export function daemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform(struct?: DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    value: cdktf.stringToTerraform(struct!.value),
-  }
-}
-
-export class DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-  private resolvableValue?: cdktf.IResolvable;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param complexObjectIndex the index of this item in the list
-  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
-    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
-  }
-
-  public get internalValue(): DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable | undefined {
-    if (this.resolvableValue) {
-      return this.resolvableValue;
-    }
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._value !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.value = this._value;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this.resolvableValue = undefined;
-      this._name = undefined;
-      this._value = undefined;
-    }
-    else if (cdktf.Tokenization.isResolvable(value)) {
-      this.isEmptyObject = false;
-      this.resolvableValue = value;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this.resolvableValue = undefined;
-      this._name = value.name;
-      this._value = value.value;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // value - computed: false, optional: true, required: false
-  private _value?: string; 
-  public get value() {
-    return this.getStringAttribute('value');
-  }
-  public set value(value: string) {
-    this._value = value;
-  }
-  public resetValue() {
-    this._value = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get valueInput() {
-    return this._value;
-  }
-}
-
-export class DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderList extends cdktf.ComplexList {
-  public internalValue? : DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
-    super(terraformResource, terraformAttribute, wrapsSet)
-  }
-
-  /**
-  * @param index the index of the item to return
-  */
-  public get(index: number): DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference {
-    return new DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
-  }
-}
-export interface DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGet {
-  /**
-  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#host Daemonset#host}
-  */
-  readonly host?: string;
-  /**
-  * Path to access on the HTTP server.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#path Daemonset#path}
-  */
-  readonly path?: string;
-  /**
-  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#port Daemonset#port}
-  */
-  readonly port?: string;
-  /**
-  * Scheme to use for connecting to the host.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#scheme Daemonset#scheme}
-  */
-  readonly scheme?: string;
-  /**
-  * http_header block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/daemonset#http_header Daemonset#http_header}
-  */
-  readonly httpHeader?: DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable;
-}
-
-export function daemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetToTerraform(struct?: DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference | DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGet): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    host: cdktf.stringToTerraform(struct!.host),
-    path: cdktf.stringToTerraform(struct!.path),
-    port: cdktf.stringToTerraform(struct!.port),
-    scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(daemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
-  }
-}
-
-export class DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._host !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.host = this._host;
-    }
-    if (this._path !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.path = this._path;
-    }
-    if (this._port !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.port = this._port;
-    }
-    if (this._scheme !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.scheme = this._scheme;
-    }
-    if (this._httpHeader?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.httpHeader = this._httpHeader?.internalValue;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGet | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._host = undefined;
-      this._path = undefined;
-      this._port = undefined;
-      this._scheme = undefined;
-      this._httpHeader.internalValue = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._host = value.host;
-      this._path = value.path;
-      this._port = value.port;
-      this._scheme = value.scheme;
-      this._httpHeader.internalValue = value.httpHeader;
-    }
-  }
-
-  // host - computed: false, optional: true, required: false
-  private _host?: string; 
-  public get host() {
-    return this.getStringAttribute('host');
-  }
-  public set host(value: string) {
-    this._host = value;
-  }
-  public resetHost() {
-    this._host = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get hostInput() {
-    return this._host;
-  }
-
-  // path - computed: false, optional: true, required: false
-  private _path?: string; 
-  public get path() {
-    return this.getStringAttribute('path');
-  }
-  public set path(value: string) {
-    this._path = value;
-  }
-  public resetPath() {
-    this._path = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get pathInput() {
-    return this._path;
-  }
-
-  // port - computed: false, optional: true, required: false
-  private _port?: string; 
-  public get port() {
-    return this.getStringAttribute('port');
-  }
-  public set port(value: string) {
-    this._port = value;
-  }
-  public resetPort() {
-    this._port = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get portInput() {
-    return this._port;
-  }
-
-  // scheme - computed: false, optional: true, required: false
-  private _scheme?: string; 
-  public get scheme() {
-    return this.getStringAttribute('scheme');
-  }
-  public set scheme(value: string) {
-    this._scheme = value;
-  }
-  public resetScheme() {
-    this._scheme = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get schemeInput() {
-    return this._scheme;
-  }
-
-  // http_header - computed: false, optional: true, required: false
-  private _httpHeader = new DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeaderList(this, "http_header", false);
-  public get httpHeader() {
-    return this._httpHeader;
-  }
-  public putHttpHeader(value: DaemonsetSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable) {
-    this._httpHeader.internalValue = value;
-  }
-  public resetHttpHeader() {
-    this._httpHeader.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get httpHeaderInput() {
-    return this._httpHeader.internalValue;
   }
 }
