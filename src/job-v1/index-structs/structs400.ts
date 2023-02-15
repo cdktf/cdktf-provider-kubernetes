@@ -11520,7 +11520,7 @@ export interface JobV1Spec {
   */
   readonly backoffLimit?: number;
   /**
-  * CompletionMode specifies how Pod completions are tracked.
+  * Specifies how Pod completions are tracked. It can be `NonIndexed` (default) or `Indexed`. For more information: https://kubernetes.io/docs/concepts/workloads/controllers/job/#completion-mode
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/job_v1#completion_mode JobV1#completion_mode}
   */

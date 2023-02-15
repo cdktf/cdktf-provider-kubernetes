@@ -12,7 +12,7 @@ export interface AnnotationsConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/annotations#annotations Annotations#annotations}
   */
-  readonly annotations: { [key: string]: string };
+  readonly annotations?: { [key: string]: string };
   /**
   * The apiVersion of the resource to annotate.
   * 
@@ -44,6 +44,12 @@ export interface AnnotationsConfig extends cdktf.TerraformMetaArguments {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/annotations#kind Annotations#kind}
   */
   readonly kind: string;
+  /**
+  * A map of annotations to apply to the resource template.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/annotations#template_annotations Annotations#template_annotations}
+  */
+  readonly templateAnnotations?: { [key: string]: string };
   /**
   * metadata block
   * 
@@ -171,7 +177,7 @@ export class Annotations extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_annotations',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.17.0',
+        providerVersion: '2.18.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
@@ -188,6 +194,7 @@ export class Annotations extends cdktf.TerraformResource {
     this._force = config.force;
     this._id = config.id;
     this._kind = config.kind;
+    this._templateAnnotations = config.templateAnnotations;
     this._metadata.internalValue = config.metadata;
   }
 
@@ -195,13 +202,16 @@ export class Annotations extends cdktf.TerraformResource {
   // ATTRIBUTES
   // ==========
 
-  // annotations - computed: false, optional: false, required: true
+  // annotations - computed: false, optional: true, required: false
   private _annotations?: { [key: string]: string }; 
   public get annotations() {
     return this.getStringMapAttribute('annotations');
   }
   public set annotations(value: { [key: string]: string }) {
     this._annotations = value;
+  }
+  public resetAnnotations() {
+    this._annotations = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
@@ -282,6 +292,22 @@ export class Annotations extends cdktf.TerraformResource {
     return this._kind;
   }
 
+  // template_annotations - computed: false, optional: true, required: false
+  private _templateAnnotations?: { [key: string]: string }; 
+  public get templateAnnotations() {
+    return this.getStringMapAttribute('template_annotations');
+  }
+  public set templateAnnotations(value: { [key: string]: string }) {
+    this._templateAnnotations = value;
+  }
+  public resetTemplateAnnotations() {
+    this._templateAnnotations = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get templateAnnotationsInput() {
+    return this._templateAnnotations;
+  }
+
   // metadata - computed: false, optional: false, required: true
   private _metadata = new AnnotationsMetadataOutputReference(this, "metadata");
   public get metadata() {
@@ -307,6 +333,7 @@ export class Annotations extends cdktf.TerraformResource {
       force: cdktf.booleanToTerraform(this._force),
       id: cdktf.stringToTerraform(this._id),
       kind: cdktf.stringToTerraform(this._kind),
+      template_annotations: cdktf.hashMapper(cdktf.stringToTerraform)(this._templateAnnotations),
       metadata: annotationsMetadataToTerraform(this._metadata.internalValue),
     };
   }

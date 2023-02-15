@@ -11616,7 +11616,7 @@ export interface CronJobV1SpecJobTemplateSpec {
   */
   readonly backoffLimit?: number;
   /**
-  * CompletionMode specifies how Pod completions are tracked.
+  * Specifies how Pod completions are tracked. It can be `NonIndexed` (default) or `Indexed`. For more information: https://kubernetes.io/docs/concepts/workloads/controllers/job/#completion-mode
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#completion_mode CronJobV1#completion_mode}
   */
@@ -12026,6 +12026,12 @@ export interface CronJobV1Spec {
   */
   readonly suspend?: boolean | cdktf.IResolvable;
   /**
+  * The time zone for the given schedule. If not specified, this will rely on the time zone of the kube-controller-manager process. 
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#timezone CronJobV1#timezone}
+  */
+  readonly timezone?: string;
+  /**
   * job_template block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cron_job_v1#job_template CronJobV1#job_template}
@@ -12045,6 +12051,7 @@ export function cronJobV1SpecToTerraform(struct?: CronJobV1SpecOutputReference |
     starting_deadline_seconds: cdktf.numberToTerraform(struct!.startingDeadlineSeconds),
     successful_jobs_history_limit: cdktf.numberToTerraform(struct!.successfulJobsHistoryLimit),
     suspend: cdktf.booleanToTerraform(struct!.suspend),
+    timezone: cdktf.stringToTerraform(struct!.timezone),
     job_template: cronJobV1SpecJobTemplateToTerraform(struct!.jobTemplate),
   }
 }
@@ -12087,6 +12094,10 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.suspend = this._suspend;
     }
+    if (this._timezone !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.timezone = this._timezone;
+    }
     if (this._jobTemplate?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.jobTemplate = this._jobTemplate?.internalValue;
@@ -12103,6 +12114,7 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
       this._startingDeadlineSeconds = undefined;
       this._successfulJobsHistoryLimit = undefined;
       this._suspend = undefined;
+      this._timezone = undefined;
       this._jobTemplate.internalValue = undefined;
     }
     else {
@@ -12113,6 +12125,7 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
       this._startingDeadlineSeconds = value.startingDeadlineSeconds;
       this._successfulJobsHistoryLimit = value.successfulJobsHistoryLimit;
       this._suspend = value.suspend;
+      this._timezone = value.timezone;
       this._jobTemplate.internalValue = value.jobTemplate;
     }
   }
@@ -12208,6 +12221,22 @@ export class CronJobV1SpecOutputReference extends cdktf.ComplexObject {
   // Temporarily expose input value. Use with caution.
   public get suspendInput() {
     return this._suspend;
+  }
+
+  // timezone - computed: false, optional: true, required: false
+  private _timezone?: string; 
+  public get timezone() {
+    return this.getStringAttribute('timezone');
+  }
+  public set timezone(value: string) {
+    this._timezone = value;
+  }
+  public resetTimezone() {
+    this._timezone = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get timezoneInput() {
+    return this._timezone;
   }
 
   // job_template - computed: false, optional: false, required: true

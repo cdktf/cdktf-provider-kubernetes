@@ -949,7 +949,7 @@ export class Env extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_env',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.17.0',
+        providerVersion: '2.18.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
