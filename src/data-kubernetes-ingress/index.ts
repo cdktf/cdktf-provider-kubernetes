@@ -910,7 +910,7 @@ export class DataKubernetesIngress extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_ingress',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.18.0',
+        providerVersion: '2.18.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

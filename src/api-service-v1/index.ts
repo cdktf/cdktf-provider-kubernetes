@@ -571,7 +571,7 @@ export class ApiServiceV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_api_service_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.18.0',
+        providerVersion: '2.18.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
