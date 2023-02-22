@@ -871,7 +871,7 @@ export class DataKubernetesEndpointsV1 extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_endpoints_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.18.0',
+        providerVersion: '2.18.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

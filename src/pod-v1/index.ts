@@ -66,7 +66,7 @@ export class PodV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_pod_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.18.0',
+        providerVersion: '2.18.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
