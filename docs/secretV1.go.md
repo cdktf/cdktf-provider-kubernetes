@@ -9,7 +9,7 @@ Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/secret_
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/secretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/secretv1"
 
 secretv1.NewSecretV1(scope Construct, id *string, config SecretV1Config) SecretV1
 ```
@@ -341,7 +341,7 @@ func ResetWaitForServiceAccountToken()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.secretV1.SecretV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/secretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/secretv1"
 
 secretv1.SecretV1_IsConstruct(x interface{}) *bool
 ```
@@ -373,7 +373,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.secretV1.SecretV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/secretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/secretv1"
 
 secretv1.SecretV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -387,7 +387,7 @@ secretv1.SecretV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.secretV1.SecretV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/secretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/secretv1"
 
 secretv1.SecretV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -762,7 +762,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.secretV1.SecretV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/secretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/secretv1"
 
 &secretv1.SecretV1Config {
 	Connection: interface{},
@@ -772,12 +772,12 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/secretv1"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5.secretV1.SecretV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.secretV1.SecretV1Metadata,
 	BinaryData: *map[string]*string,
 	Data: *map[string]*string,
 	Id: *string,
 	Immutable: interface{},
-	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5.secretV1.SecretV1Timeouts,
+	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.secretV1.SecretV1Timeouts,
 	Type: *string,
 	WaitForServiceAccountToken: interface{},
 }
@@ -993,7 +993,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.secretV1.SecretV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/secretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/secretv1"
 
 &secretv1.SecretV1Metadata {
 	Annotations: *map[string]*string,
@@ -1097,7 +1097,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.secretV1.SecretV1Timeouts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/secretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/secretv1"
 
 &secretv1.SecretV1Timeouts {
 	Create: *string,
@@ -1131,7 +1131,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.secretV1.SecretV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/secretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/secretv1"
 
 secretv1.NewSecretV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) SecretV1MetadataOutputReference
 ```
@@ -1558,7 +1558,7 @@ func InternalValue() SecretV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.secretV1.SecretV1TimeoutsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/secretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/secretv1"
 
 secretv1.NewSecretV1TimeoutsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) SecretV1TimeoutsOutputReference
 ```
