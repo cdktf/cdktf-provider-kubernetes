@@ -776,7 +776,7 @@ export class DataKubernetesPersistentVolumeClaim extends cdktf.TerraformDataSour
       terraformResourceType: 'kubernetes_persistent_volume_claim',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.18.1',
+        providerVersion: '2.19.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

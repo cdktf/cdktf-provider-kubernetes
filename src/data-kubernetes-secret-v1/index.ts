@@ -35,6 +35,12 @@ export interface DataKubernetesSecretV1Metadata {
   */
   readonly annotations?: { [key: string]: string };
   /**
+  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1#generate_name DataKubernetesSecretV1#generate_name}
+  */
+  readonly generateName?: string;
+  /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the secret. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/secret_v1#labels DataKubernetesSecretV1#labels}
@@ -61,6 +67,7 @@ export function dataKubernetesSecretV1MetadataToTerraform(struct?: DataKubernete
   }
   return {
     annotations: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.annotations),
+    generate_name: cdktf.stringToTerraform(struct!.generateName),
     labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
@@ -85,6 +92,10 @@ export class DataKubernetesSecretV1MetadataOutputReference extends cdktf.Complex
       hasAnyValues = true;
       internalValueResult.annotations = this._annotations;
     }
+    if (this._generateName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.generateName = this._generateName;
+    }
     if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
@@ -104,6 +115,7 @@ export class DataKubernetesSecretV1MetadataOutputReference extends cdktf.Complex
     if (value === undefined) {
       this.isEmptyObject = false;
       this._annotations = undefined;
+      this._generateName = undefined;
       this._labels = undefined;
       this._name = undefined;
       this._namespace = undefined;
@@ -111,6 +123,7 @@ export class DataKubernetesSecretV1MetadataOutputReference extends cdktf.Complex
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._annotations = value.annotations;
+      this._generateName = value.generateName;
       this._labels = value.labels;
       this._name = value.name;
       this._namespace = value.namespace;
@@ -131,6 +144,22 @@ export class DataKubernetesSecretV1MetadataOutputReference extends cdktf.Complex
   // Temporarily expose input value. Use with caution.
   public get annotationsInput() {
     return this._annotations;
+  }
+
+  // generate_name - computed: false, optional: true, required: false
+  private _generateName?: string; 
+  public get generateName() {
+    return this.getStringAttribute('generate_name');
+  }
+  public set generateName(value: string) {
+    this._generateName = value;
+  }
+  public resetGenerateName() {
+    this._generateName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get generateNameInput() {
+    return this._generateName;
   }
 
   // generation - computed: true, optional: false, required: false
@@ -223,7 +252,7 @@ export class DataKubernetesSecretV1 extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_secret_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.18.1',
+        providerVersion: '2.19.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

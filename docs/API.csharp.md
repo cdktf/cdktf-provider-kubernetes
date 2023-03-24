@@ -102,5 +102,6 @@ The following submodules are available:
 - [statefulSetV1](./statefulSetV1.csharp.md)
 - [storageClass](./storageClass.csharp.md)
 - [storageClassV1](./storageClassV1.csharp.md)
+- [tokenRequestV1](./tokenRequestV1.csharp.md)
 - [validatingWebhookConfiguration](./validatingWebhookConfiguration.csharp.md)
 - [validatingWebhookConfigurationV1](./validatingWebhookConfigurationV1.csharp.md)

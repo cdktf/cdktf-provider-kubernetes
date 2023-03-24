@@ -6129,6 +6129,11 @@ export class DataKubernetesPodV1SpecOutputReference extends cdktf.ComplexObject 
     return this.getStringAttribute('runtime_class_name');
   }
 
+  // scheduler_name - computed: true, optional: false, required: false
+  public get schedulerName() {
+    return this.getStringAttribute('scheduler_name');
+  }
+
   // security_context - computed: true, optional: false, required: false
   private _securityContext = new DataKubernetesPodV1SpecSecurityContextList(this, "security_context", false);
   public get securityContext() {

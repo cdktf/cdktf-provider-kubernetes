@@ -72,7 +72,7 @@ export class Deployment extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_deployment',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.18.1',
+        providerVersion: '2.19.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

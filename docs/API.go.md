@@ -102,5 +102,6 @@ The following submodules are available:
 - [statefulSetV1](./statefulSetV1.go.md)
 - [storageClass](./storageClass.go.md)
 - [storageClassV1](./storageClassV1.go.md)
+- [tokenRequestV1](./tokenRequestV1.go.md)
 - [validatingWebhookConfiguration](./validatingWebhookConfiguration.go.md)
 - [validatingWebhookConfigurationV1](./validatingWebhookConfigurationV1.go.md)

@@ -2009,7 +2009,7 @@ export class IngressV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_ingress_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.18.1',
+        providerVersion: '2.19.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

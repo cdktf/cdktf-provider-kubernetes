@@ -102,5 +102,6 @@ The following submodules are available:
 - [statefulSetV1](./statefulSetV1.java.md)
 - [storageClass](./storageClass.java.md)
 - [storageClassV1](./storageClassV1.java.md)
+- [tokenRequestV1](./tokenRequestV1.java.md)
 - [validatingWebhookConfiguration](./validatingWebhookConfiguration.java.md)
 - [validatingWebhookConfigurationV1](./validatingWebhookConfigurationV1.java.md)

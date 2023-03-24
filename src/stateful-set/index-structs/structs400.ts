@@ -10643,6 +10643,12 @@ export interface StatefulSetSpecTemplateSpec {
   */
   readonly runtimeClassName?: string;
   /**
+  * If specified, the pod will be dispatched by specified scheduler. If not specified, the pod will be dispatched by default scheduler.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set#scheduler_name StatefulSet#scheduler_name}
+  */
+  readonly schedulerName?: string;
+  /**
   * ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/stateful_set#service_account_name StatefulSet#service_account_name}
@@ -10753,6 +10759,7 @@ export function statefulSetSpecTemplateSpecToTerraform(struct?: StatefulSetSpecT
     priority_class_name: cdktf.stringToTerraform(struct!.priorityClassName),
     restart_policy: cdktf.stringToTerraform(struct!.restartPolicy),
     runtime_class_name: cdktf.stringToTerraform(struct!.runtimeClassName),
+    scheduler_name: cdktf.stringToTerraform(struct!.schedulerName),
     service_account_name: cdktf.stringToTerraform(struct!.serviceAccountName),
     share_process_namespace: cdktf.booleanToTerraform(struct!.shareProcessNamespace),
     subdomain: cdktf.stringToTerraform(struct!.subdomain),
@@ -10837,6 +10844,10 @@ export class StatefulSetSpecTemplateSpecOutputReference extends cdktf.ComplexObj
       hasAnyValues = true;
       internalValueResult.runtimeClassName = this._runtimeClassName;
     }
+    if (this._schedulerName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.schedulerName = this._schedulerName;
+    }
     if (this._serviceAccountName !== undefined) {
       hasAnyValues = true;
       internalValueResult.serviceAccountName = this._serviceAccountName;
@@ -10916,6 +10927,7 @@ export class StatefulSetSpecTemplateSpecOutputReference extends cdktf.ComplexObj
       this._priorityClassName = undefined;
       this._restartPolicy = undefined;
       this._runtimeClassName = undefined;
+      this._schedulerName = undefined;
       this._serviceAccountName = undefined;
       this._shareProcessNamespace = undefined;
       this._subdomain = undefined;
@@ -10947,6 +10959,7 @@ export class StatefulSetSpecTemplateSpecOutputReference extends cdktf.ComplexObj
       this._priorityClassName = value.priorityClassName;
       this._restartPolicy = value.restartPolicy;
       this._runtimeClassName = value.runtimeClassName;
+      this._schedulerName = value.schedulerName;
       this._serviceAccountName = value.serviceAccountName;
       this._shareProcessNamespace = value.shareProcessNamespace;
       this._subdomain = value.subdomain;
@@ -11171,6 +11184,22 @@ export class StatefulSetSpecTemplateSpecOutputReference extends cdktf.ComplexObj
   // Temporarily expose input value. Use with caution.
   public get runtimeClassNameInput() {
     return this._runtimeClassName;
+  }
+
+  // scheduler_name - computed: true, optional: true, required: false
+  private _schedulerName?: string; 
+  public get schedulerName() {
+    return this.getStringAttribute('scheduler_name');
+  }
+  public set schedulerName(value: string) {
+    this._schedulerName = value;
+  }
+  public resetSchedulerName() {
+    this._schedulerName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get schedulerNameInput() {
+    return this._schedulerName;
   }
 
   // service_account_name - computed: true, optional: true, required: false

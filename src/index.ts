@@ -75,6 +75,7 @@ export * as statefulSet from './stateful-set';
 export * as statefulSetV1 from './stateful-set-v1';
 export * as storageClass from './storage-class';
 export * as storageClassV1 from './storage-class-v1';
+export * as tokenRequestV1 from './token-request-v1';
 export * as validatingWebhookConfiguration from './validating-webhook-configuration';
 export * as validatingWebhookConfigurationV1 from './validating-webhook-configuration-v1';
 export * as dataKubernetesAllNamespaces from './data-kubernetes-all-namespaces';
