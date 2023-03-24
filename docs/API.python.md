@@ -102,5 +102,6 @@ The following submodules are available:
 - [statefulSetV1](./statefulSetV1.python.md)
 - [storageClass](./storageClass.python.md)
 - [storageClassV1](./storageClassV1.python.md)
+- [tokenRequestV1](./tokenRequestV1.python.md)
 - [validatingWebhookConfiguration](./validatingWebhookConfiguration.python.md)
 - [validatingWebhookConfigurationV1](./validatingWebhookConfigurationV1.python.md)

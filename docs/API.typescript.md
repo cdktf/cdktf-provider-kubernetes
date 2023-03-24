@@ -102,5 +102,6 @@ The following submodules are available:
 - [statefulSetV1](./statefulSetV1.typescript.md)
 - [storageClass](./storageClass.typescript.md)
 - [storageClassV1](./storageClassV1.typescript.md)
+- [tokenRequestV1](./tokenRequestV1.typescript.md)
 - [validatingWebhookConfiguration](./validatingWebhookConfiguration.typescript.md)
 - [validatingWebhookConfigurationV1](./validatingWebhookConfigurationV1.typescript.md)
