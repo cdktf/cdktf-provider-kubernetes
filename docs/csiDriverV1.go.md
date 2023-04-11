@@ -9,7 +9,7 @@ Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/csi_dri
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
 
 csidriverv1.NewCsiDriverV1(scope Construct, id *string, config CsiDriverV1Config) CsiDriverV1
 ```
@@ -306,7 +306,7 @@ func ResetSpec()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
 
 csidriverv1.CsiDriverV1_IsConstruct(x interface{}) *bool
 ```
@@ -338,7 +338,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
 
 csidriverv1.CsiDriverV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -352,7 +352,7 @@ csidriverv1.CsiDriverV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
 
 csidriverv1.CsiDriverV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -617,7 +617,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
 
 &csidriverv1.CsiDriverV1Config {
 	Connection: interface{},
@@ -627,9 +627,9 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/csidriverv1"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5.csiDriverV1.CsiDriverV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.csiDriverV1.CsiDriverV1Metadata,
 	Id: *string,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5.csiDriverV1.CsiDriverV1Spec,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.csiDriverV1.CsiDriverV1Spec,
 }
 ```
 
@@ -768,7 +768,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
 
 &csidriverv1.CsiDriverV1Metadata {
 	Annotations: *map[string]*string,
@@ -856,7 +856,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
 
 &csidriverv1.CsiDriverV1Spec {
 	AttachRequired: interface{},
@@ -924,7 +924,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
 
 csidriverv1.NewCsiDriverV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) CsiDriverV1MetadataOutputReference
 ```
@@ -1322,7 +1322,7 @@ func InternalValue() CsiDriverV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v5/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
 
 csidriverv1.NewCsiDriverV1SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) CsiDriverV1SpecOutputReference
 ```
