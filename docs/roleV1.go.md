@@ -9,7 +9,7 @@ Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role_v1
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.roleV1.RoleV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolev1"
 
 rolev1.NewRoleV1(scope Construct, id *string, config RoleV1Config) RoleV1
 ```
@@ -299,7 +299,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.roleV1.RoleV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolev1"
 
 rolev1.RoleV1_IsConstruct(x interface{}) *bool
 ```
@@ -331,7 +331,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.roleV1.RoleV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolev1"
 
 rolev1.RoleV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -345,7 +345,7 @@ rolev1.RoleV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.roleV1.RoleV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolev1"
 
 rolev1.RoleV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -610,7 +610,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.roleV1.RoleV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolev1"
 
 &rolev1.RoleV1Config {
 	Connection: interface{},
@@ -620,7 +620,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolev1"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.roleV1.RoleV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.roleV1.RoleV1Metadata,
 	Rule: interface{},
 	Id: *string,
 }
@@ -761,7 +761,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.roleV1.RoleV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolev1"
 
 &rolev1.RoleV1Metadata {
 	Annotations: *map[string]*string,
@@ -865,7 +865,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.roleV1.RoleV1Rule.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolev1"
 
 &rolev1.RoleV1Rule {
 	ApiGroups: *[]*string,
@@ -949,7 +949,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.roleV1.RoleV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolev1"
 
 rolev1.NewRoleV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) RoleV1MetadataOutputReference
 ```
@@ -1376,7 +1376,7 @@ func InternalValue() RoleV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.roleV1.RoleV1RuleList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolev1"
 
 rolev1.NewRoleV1RuleList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) RoleV1RuleList
 ```
@@ -1519,7 +1519,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.roleV1.RoleV1RuleOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolev1"
 
 rolev1.NewRoleV1RuleOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) RoleV1RuleOutputReference
 ```

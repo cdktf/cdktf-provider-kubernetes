@@ -9,7 +9,7 @@ Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/mutatin
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfiguration.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfiguration(scope Construct, id *string, config MutatingWebhookConfigurationConfig) MutatingWebhookConfiguration
 ```
@@ -299,7 +299,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfiguration.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.MutatingWebhookConfiguration_IsConstruct(x interface{}) *bool
 ```
@@ -331,7 +331,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfiguration.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.MutatingWebhookConfiguration_IsTerraformElement(x interface{}) *bool
 ```
@@ -345,7 +345,7 @@ mutatingwebhookconfiguration.MutatingWebhookConfiguration_IsTerraformElement(x i
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfiguration.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.MutatingWebhookConfiguration_IsTerraformResource(x interface{}) *bool
 ```
@@ -610,7 +610,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 &mutatingwebhookconfiguration.MutatingWebhookConfigurationConfig {
 	Connection: interface{},
@@ -620,7 +620,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhook
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.mutatingWebhookConfiguration.MutatingWebhookConfigurationMetadata,
 	Webhook: interface{},
 	Id: *string,
 }
@@ -761,7 +761,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 &mutatingwebhookconfiguration.MutatingWebhookConfigurationMetadata {
 	Annotations: *map[string]*string,
@@ -849,16 +849,16 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhook.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 &mutatingwebhookconfiguration.MutatingWebhookConfigurationWebhook {
-	ClientConfig: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookClientConfig,
+	ClientConfig: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookClientConfig,
 	Name: *string,
 	AdmissionReviewVersions: *[]*string,
 	FailurePolicy: *string,
 	MatchPolicy: *string,
-	NamespaceSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookNamespaceSelector,
-	ObjectSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookObjectSelector,
+	NamespaceSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookNamespaceSelector,
+	ObjectSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookObjectSelector,
 	ReinvocationPolicy: *string,
 	Rule: interface{},
 	SideEffects: *string,
@@ -1066,11 +1066,11 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookClientConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 &mutatingwebhookconfiguration.MutatingWebhookConfigurationWebhookClientConfig {
 	CaBundle: *string,
-	Service: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookClientConfigService,
+	Service: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookClientConfigService,
 	Url: *string,
 }
 ```
@@ -1146,7 +1146,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookClientConfigService.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 &mutatingwebhookconfiguration.MutatingWebhookConfigurationWebhookClientConfigService {
 	Name: *string,
@@ -1230,7 +1230,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookNamespaceSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 &mutatingwebhookconfiguration.MutatingWebhookConfigurationWebhookNamespaceSelector {
 	MatchExpressions: interface{},
@@ -1282,7 +1282,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 &mutatingwebhookconfiguration.MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions {
 	Key: *string,
@@ -1350,7 +1350,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookObjectSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 &mutatingwebhookconfiguration.MutatingWebhookConfigurationWebhookObjectSelector {
 	MatchExpressions: interface{},
@@ -1402,7 +1402,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 &mutatingwebhookconfiguration.MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressions {
 	Key: *string,
@@ -1470,7 +1470,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookRule.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 &mutatingwebhookconfiguration.MutatingWebhookConfigurationWebhookRule {
 	ApiGroups: *[]*string,
@@ -1564,7 +1564,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) MutatingWebhookConfigurationMetadataOutputReference
 ```
@@ -1962,7 +1962,7 @@ func InternalValue() MutatingWebhookConfigurationMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookClientConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationWebhookClientConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) MutatingWebhookConfigurationWebhookClientConfigOutputReference
 ```
@@ -2311,7 +2311,7 @@ func InternalValue() MutatingWebhookConfigurationWebhookClientConfig
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookClientConfigServiceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationWebhookClientConfigServiceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) MutatingWebhookConfigurationWebhookClientConfigServiceOutputReference
 ```
@@ -2662,7 +2662,7 @@ func InternalValue() MutatingWebhookConfigurationWebhookClientConfigService
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationWebhookList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) MutatingWebhookConfigurationWebhookList
 ```
@@ -2805,7 +2805,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsList
 ```
@@ -2948,7 +2948,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsOutputReference
 ```
@@ -3302,7 +3302,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookNamespaceSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationWebhookNamespaceSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) MutatingWebhookConfigurationWebhookNamespaceSelectorOutputReference
 ```
@@ -3622,7 +3622,7 @@ func InternalValue() MutatingWebhookConfigurationWebhookNamespaceSelector
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsList
 ```
@@ -3765,7 +3765,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsOutputReference
 ```
@@ -4119,7 +4119,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookObjectSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationWebhookObjectSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) MutatingWebhookConfigurationWebhookObjectSelectorOutputReference
 ```
@@ -4439,7 +4439,7 @@ func InternalValue() MutatingWebhookConfigurationWebhookObjectSelector
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationWebhookOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) MutatingWebhookConfigurationWebhookOutputReference
 ```
@@ -5063,7 +5063,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookRuleList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationWebhookRuleList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) MutatingWebhookConfigurationWebhookRuleList
 ```
@@ -5206,7 +5206,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration.MutatingWebhookConfigurationWebhookRuleOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/mutatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/mutatingwebhookconfiguration"
 
 mutatingwebhookconfiguration.NewMutatingWebhookConfigurationWebhookRuleOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) MutatingWebhookConfigurationWebhookRuleOutputReference
 ```
