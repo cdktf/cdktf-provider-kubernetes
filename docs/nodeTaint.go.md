@@ -9,7 +9,7 @@ Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/node_ta
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
 
 nodetaint.NewNodeTaint(scope Construct, id *string, config NodeTaintConfig) NodeTaint
 ```
@@ -313,7 +313,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
 
 nodetaint.NodeTaint_IsConstruct(x interface{}) *bool
 ```
@@ -345,7 +345,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
 
 nodetaint.NodeTaint_IsTerraformElement(x interface{}) *bool
 ```
@@ -359,7 +359,7 @@ nodetaint.NodeTaint_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
 
 nodetaint.NodeTaint_IsTerraformResource(x interface{}) *bool
 ```
@@ -668,7 +668,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
 
 &nodetaint.NodeTaintConfig {
 	Connection: interface{},
@@ -678,8 +678,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.nodeTaint.NodeTaintMetadata,
-	Taint: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.nodeTaint.NodeTaintTaint,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.nodeTaint.NodeTaintMetadata,
+	Taint: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.nodeTaint.NodeTaintTaint,
 	FieldManager: *string,
 	Force: interface{},
 	Id: *string,
@@ -851,7 +851,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
 
 &nodetaint.NodeTaintMetadata {
 	Name: *string,
@@ -885,7 +885,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
 
 &nodetaint.NodeTaintTaint {
 	Effect: *string,
@@ -953,7 +953,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
 
 nodetaint.NewNodeTaintMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NodeTaintMetadataOutputReference
 ```
@@ -1224,7 +1224,7 @@ func InternalValue() NodeTaintMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
 
 nodetaint.NewNodeTaintTaintOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NodeTaintTaintOutputReference
 ```

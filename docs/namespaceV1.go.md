@@ -9,7 +9,7 @@ Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/namespa
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/namespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/namespacev1"
 
 namespacev1.NewNamespaceV1(scope Construct, id *string, config NamespaceV1Config) NamespaceV1
 ```
@@ -306,7 +306,7 @@ func ResetTimeouts()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/namespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/namespacev1"
 
 namespacev1.NamespaceV1_IsConstruct(x interface{}) *bool
 ```
@@ -338,7 +338,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/namespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/namespacev1"
 
 namespacev1.NamespaceV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -352,7 +352,7 @@ namespacev1.NamespaceV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/namespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/namespacev1"
 
 namespacev1.NamespaceV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -617,7 +617,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/namespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/namespacev1"
 
 &namespacev1.NamespaceV1Config {
 	Connection: interface{},
@@ -627,9 +627,9 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/namespacev1"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.namespaceV1.NamespaceV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.namespaceV1.NamespaceV1Metadata,
 	Id: *string,
-	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.namespaceV1.NamespaceV1Timeouts,
+	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.namespaceV1.NamespaceV1Timeouts,
 }
 ```
 
@@ -768,7 +768,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/namespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/namespacev1"
 
 &namespacev1.NamespaceV1Metadata {
 	Annotations: *map[string]*string,
@@ -856,7 +856,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Timeouts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/namespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/namespacev1"
 
 &namespacev1.NamespaceV1Timeouts {
 	Delete: *string,
@@ -890,7 +890,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/namespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/namespacev1"
 
 namespacev1.NewNamespaceV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NamespaceV1MetadataOutputReference
 ```
@@ -1288,7 +1288,7 @@ func InternalValue() NamespaceV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1TimeoutsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/namespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/namespacev1"
 
 namespacev1.NewNamespaceV1TimeoutsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NamespaceV1TimeoutsOutputReference
 ```
