@@ -9,7 +9,7 @@ Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role_bi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.roleBinding.RoleBinding.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolebinding"
 
 rolebinding.NewRoleBinding(scope Construct, id *string, config RoleBindingConfig) RoleBinding
 ```
@@ -312,7 +312,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.roleBinding.RoleBinding.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolebinding"
 
 rolebinding.RoleBinding_IsConstruct(x interface{}) *bool
 ```
@@ -344,7 +344,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.roleBinding.RoleBinding.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolebinding"
 
 rolebinding.RoleBinding_IsTerraformElement(x interface{}) *bool
 ```
@@ -358,7 +358,7 @@ rolebinding.RoleBinding_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.roleBinding.RoleBinding.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolebinding"
 
 rolebinding.RoleBinding_IsTerraformResource(x interface{}) *bool
 ```
@@ -645,7 +645,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.roleBinding.RoleBindingConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolebinding"
 
 &rolebinding.RoleBindingConfig {
 	Connection: interface{},
@@ -655,8 +655,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.roleBinding.RoleBindingMetadata,
-	RoleRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.roleBinding.RoleBindingRoleRef,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.roleBinding.RoleBindingMetadata,
+	RoleRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.roleBinding.RoleBindingRoleRef,
 	Subject: interface{},
 	Id: *string,
 }
@@ -812,7 +812,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.roleBinding.RoleBindingMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolebinding"
 
 &rolebinding.RoleBindingMetadata {
 	Annotations: *map[string]*string,
@@ -916,7 +916,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.roleBinding.RoleBindingRoleRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolebinding"
 
 &rolebinding.RoleBindingRoleRef {
 	ApiGroup: *string,
@@ -982,7 +982,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.roleBinding.RoleBindingSubject.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolebinding"
 
 &rolebinding.RoleBindingSubject {
 	Kind: *string,
@@ -1066,7 +1066,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.roleBinding.RoleBindingMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolebinding"
 
 rolebinding.NewRoleBindingMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) RoleBindingMetadataOutputReference
 ```
@@ -1493,7 +1493,7 @@ func InternalValue() RoleBindingMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.roleBinding.RoleBindingRoleRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolebinding"
 
 rolebinding.NewRoleBindingRoleRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) RoleBindingRoleRefOutputReference
 ```
@@ -1808,7 +1808,7 @@ func InternalValue() RoleBindingRoleRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.roleBinding.RoleBindingSubjectList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolebinding"
 
 rolebinding.NewRoleBindingSubjectList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) RoleBindingSubjectList
 ```
@@ -1951,7 +1951,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.roleBinding.RoleBindingSubjectOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/rolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/rolebinding"
 
 rolebinding.NewRoleBindingSubjectOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) RoleBindingSubjectOutputReference
 ```

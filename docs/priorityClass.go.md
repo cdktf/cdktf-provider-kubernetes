@@ -9,7 +9,7 @@ Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/priorit
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.priorityClass.PriorityClass.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/priorityclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/priorityclass"
 
 priorityclass.NewPriorityClass(scope Construct, id *string, config PriorityClassConfig) PriorityClass
 ```
@@ -307,7 +307,7 @@ func ResetPreemptionPolicy()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.priorityClass.PriorityClass.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/priorityclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/priorityclass"
 
 priorityclass.PriorityClass_IsConstruct(x interface{}) *bool
 ```
@@ -339,7 +339,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.priorityClass.PriorityClass.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/priorityclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/priorityclass"
 
 priorityclass.PriorityClass_IsTerraformElement(x interface{}) *bool
 ```
@@ -353,7 +353,7 @@ priorityclass.PriorityClass_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.priorityClass.PriorityClass.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/priorityclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/priorityclass"
 
 priorityclass.PriorityClass_IsTerraformResource(x interface{}) *bool
 ```
@@ -684,7 +684,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.priorityClass.PriorityClassConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/priorityclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/priorityclass"
 
 &priorityclass.PriorityClassConfig {
 	Connection: interface{},
@@ -694,7 +694,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/priorityclas
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.priorityClass.PriorityClassMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.priorityClass.PriorityClassMetadata,
 	Value: *f64,
 	Description: *string,
 	GlobalDefault: interface{},
@@ -887,7 +887,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.priorityClass.PriorityClassMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/priorityclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/priorityclass"
 
 &priorityclass.PriorityClassMetadata {
 	Annotations: *map[string]*string,
@@ -977,7 +977,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.priorityClass.PriorityClassMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/priorityclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/priorityclass"
 
 priorityclass.NewPriorityClassMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PriorityClassMetadataOutputReference
 ```

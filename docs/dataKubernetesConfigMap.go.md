@@ -9,7 +9,7 @@ Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/config_
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMap.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 datakubernetesconfigmap.NewDataKubernetesConfigMap(scope Construct, id *string, config DataKubernetesConfigMapConfig) DataKubernetesConfigMap
 ```
@@ -293,7 +293,7 @@ func ResetImmutable()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMap.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 datakubernetesconfigmap.DataKubernetesConfigMap_IsConstruct(x interface{}) *bool
 ```
@@ -325,7 +325,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMap.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 datakubernetesconfigmap.DataKubernetesConfigMap_IsTerraformElement(x interface{}) *bool
 ```
@@ -339,7 +339,7 @@ datakubernetesconfigmap.DataKubernetesConfigMap_IsTerraformElement(x interface{}
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMap.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 datakubernetesconfigmap.DataKubernetesConfigMap_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -604,7 +604,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 &datakubernetesconfigmap.DataKubernetesConfigMapConfig {
 	Connection: interface{},
@@ -614,7 +614,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/datakubernet
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.dataKubernetesConfigMap.DataKubernetesConfigMapMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapMetadata,
 	Id: *string,
 	Immutable: interface{},
 }
@@ -757,7 +757,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 &datakubernetesconfigmap.DataKubernetesConfigMapMetadata {
 	Annotations: *map[string]*string,
@@ -845,7 +845,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 datakubernetesconfigmap.NewDataKubernetesConfigMapMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) DataKubernetesConfigMapMetadataOutputReference
 ```

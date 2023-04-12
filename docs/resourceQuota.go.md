@@ -9,7 +9,7 @@ Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/resourc
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuota.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 resourcequota.NewResourceQuota(scope Construct, id *string, config ResourceQuotaConfig) ResourceQuota
 ```
@@ -326,7 +326,7 @@ func ResetTimeouts()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuota.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 resourcequota.ResourceQuota_IsConstruct(x interface{}) *bool
 ```
@@ -358,7 +358,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuota.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 resourcequota.ResourceQuota_IsTerraformElement(x interface{}) *bool
 ```
@@ -372,7 +372,7 @@ resourcequota.ResourceQuota_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuota.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 resourcequota.ResourceQuota_IsTerraformResource(x interface{}) *bool
 ```
@@ -659,7 +659,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuotaConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 &resourcequota.ResourceQuotaConfig {
 	Connection: interface{},
@@ -669,10 +669,10 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequot
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.resourceQuota.ResourceQuotaMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.resourceQuota.ResourceQuotaMetadata,
 	Id: *string,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.resourceQuota.ResourceQuotaSpec,
-	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.resourceQuota.ResourceQuotaTimeouts,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.resourceQuota.ResourceQuotaSpec,
+	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.resourceQuota.ResourceQuotaTimeouts,
 }
 ```
 
@@ -826,7 +826,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuotaMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 &resourcequota.ResourceQuotaMetadata {
 	Annotations: *map[string]*string,
@@ -930,12 +930,12 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuotaSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 &resourcequota.ResourceQuotaSpec {
 	Hard: *map[string]*string,
 	Scopes: *[]*string,
-	ScopeSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.resourceQuota.ResourceQuotaSpecScopeSelector,
+	ScopeSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.resourceQuota.ResourceQuotaSpecScopeSelector,
 }
 ```
 
@@ -998,7 +998,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuotaSpecScopeSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 &resourcequota.ResourceQuotaSpecScopeSelector {
 	MatchExpression: interface{},
@@ -1032,7 +1032,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuotaSpecScopeSelectorMatchExpression.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 &resourcequota.ResourceQuotaSpecScopeSelectorMatchExpression {
 	Operator: *string,
@@ -1098,7 +1098,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuotaTimeouts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 &resourcequota.ResourceQuotaTimeouts {
 	Create: *string,
@@ -1146,7 +1146,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuotaMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 resourcequota.NewResourceQuotaMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ResourceQuotaMetadataOutputReference
 ```
@@ -1573,7 +1573,7 @@ func InternalValue() ResourceQuotaMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuotaSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 resourcequota.NewResourceQuotaSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ResourceQuotaSpecOutputReference
 ```
@@ -1922,7 +1922,7 @@ func InternalValue() ResourceQuotaSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuotaSpecScopeSelectorMatchExpressionList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 resourcequota.NewResourceQuotaSpecScopeSelectorMatchExpressionList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ResourceQuotaSpecScopeSelectorMatchExpressionList
 ```
@@ -2065,7 +2065,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuotaSpecScopeSelectorMatchExpressionOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 resourcequota.NewResourceQuotaSpecScopeSelectorMatchExpressionOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ResourceQuotaSpecScopeSelectorMatchExpressionOutputReference
 ```
@@ -2405,7 +2405,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuotaSpecScopeSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 resourcequota.NewResourceQuotaSpecScopeSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ResourceQuotaSpecScopeSelectorOutputReference
 ```
@@ -2696,7 +2696,7 @@ func InternalValue() ResourceQuotaSpecScopeSelector
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.resourceQuota.ResourceQuotaTimeoutsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/resourcequota"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/resourcequota"
 
 resourcequota.NewResourceQuotaTimeoutsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ResourceQuotaTimeoutsOutputReference
 ```
