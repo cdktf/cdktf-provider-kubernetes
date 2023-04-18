@@ -1,6 +1,6 @@
 # `kubernetes_env`
 
-Refer to the Terraform Registory for docs: [`kubernetes_env`](https://www.terraform.io/docs/providers/kubernetes/r/env).
+Refer to the Terraform Registory for docs: [`kubernetes_env`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env).
 
 # `env` Submodule <a name="`env` Submodule" id="@cdktf/provider-kubernetes.env"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_env`](https://www.terraf
 
 ### Env <a name="Env" id="@cdktf/provider-kubernetes.env.Env"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/env kubernetes_env}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env kubernetes_env}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.env.Env.Initializer"></a>
 
@@ -386,7 +386,7 @@ env.Env_IsTerraformResource(x interface{}) *bool
 | <code><a href="#@cdktf/provider-kubernetes.env.Env.property.terraformResourceType">TerraformResourceType</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.env.Env.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.env.Env.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.env.Env.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.env.Env.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.env.Env.property.dependsOn">DependsOn</a></code> | <code>*[]*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.env.Env.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.env.Env.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -496,10 +496,10 @@ func Connection() interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.env.Env.property.count"></a>
 
 ```go
-func Count() *f64
+func Count() interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -742,7 +742,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/env"
 
 &env.EnvConfig {
 	Connection: interface{},
-	Count: *f64,
+	Count: interface{},
 	DependsOn: *[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable,
 	ForEach: github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator,
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
@@ -764,7 +764,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/env"
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvConfig.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.env.EnvConfig.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.env.EnvConfig.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvConfig.property.dependsOn">DependsOn</a></code> | <code>*[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvConfig.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvConfig.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -777,7 +777,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/env"
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.env.EnvMetadata">EnvMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvConfig.property.fieldManager">FieldManager</a></code> | <code>*string</code> | Set the name of the field manager for the specified environment variables. |
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvConfig.property.force">Force</a></code> | <code>interface{}</code> | Force overwriting environments that were created or edited outside of Terraform. |
-| <code><a href="#@cdktf/provider-kubernetes.env.EnvConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#id Env#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.env.EnvConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#id Env#id}. |
 
 ---
 
@@ -794,10 +794,10 @@ Connection interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.env.EnvConfig.property.count"></a>
 
 ```go
-Count *f64
+Count interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -861,7 +861,7 @@ ApiVersion *string
 
 Resource API version.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#api_version Env#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#api_version Env#api_version}
 
 ---
 
@@ -875,7 +875,7 @@ Container *string
 
 Name of the container for which we are updating the environment variables.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#container Env#container}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#container Env#container}
 
 ---
 
@@ -889,7 +889,7 @@ Env interface{}
 
 env block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#env Env#env}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#env Env#env}
 
 ---
 
@@ -903,7 +903,7 @@ Kind *string
 
 Resource Kind.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#kind Env#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#kind Env#kind}
 
 ---
 
@@ -917,7 +917,7 @@ Metadata EnvMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#metadata Env#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#metadata Env#metadata}
 
 ---
 
@@ -931,7 +931,7 @@ FieldManager *string
 
 Set the name of the field manager for the specified environment variables.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#field_manager Env#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#field_manager Env#field_manager}
 
 ---
 
@@ -945,7 +945,7 @@ Force interface{}
 
 Force overwriting environments that were created or edited outside of Terraform.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#force Env#force}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#force Env#force}
 
 ---
 
@@ -957,7 +957,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#id Env#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#id Env#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -998,7 +998,7 @@ Name *string
 
 Name of the environment variable. Must be a C_IDENTIFIER.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#name Env#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#name Env#name}
 
 ---
 
@@ -1014,7 +1014,7 @@ Variable references $(VAR_NAME) are expanded using the previous defined environm
 
 If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#value Env#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#value Env#value}
 
 ---
 
@@ -1028,7 +1028,7 @@ ValueFrom EnvEnvValueFrom
 
 value_from block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#value_from Env#value_from}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#value_from Env#value_from}
 
 ---
 
@@ -1068,7 +1068,7 @@ ConfigMapKeyRef EnvEnvValueFromConfigMapKeyRef
 
 config_map_key_ref block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#config_map_key_ref Env#config_map_key_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#config_map_key_ref Env#config_map_key_ref}
 
 ---
 
@@ -1082,7 +1082,7 @@ FieldRef EnvEnvValueFromFieldRef
 
 field_ref block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#field_ref Env#field_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#field_ref Env#field_ref}
 
 ---
 
@@ -1096,7 +1096,7 @@ ResourceFieldRef EnvEnvValueFromResourceFieldRef
 
 resource_field_ref block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#resource_field_ref Env#resource_field_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#resource_field_ref Env#resource_field_ref}
 
 ---
 
@@ -1110,7 +1110,7 @@ SecretKeyRef EnvEnvValueFromSecretKeyRef
 
 secret_key_ref block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#secret_key_ref Env#secret_key_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#secret_key_ref Env#secret_key_ref}
 
 ---
 
@@ -1148,7 +1148,7 @@ Key *string
 
 The key to select.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#key Env#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#key Env#key}
 
 ---
 
@@ -1162,7 +1162,7 @@ Name *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#name Env#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#name Env#name}
 
 ---
 
@@ -1176,7 +1176,7 @@ Optional interface{}
 
 Specify whether the ConfigMap or its key must be defined.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#optional Env#optional}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#optional Env#optional}
 
 ---
 
@@ -1212,7 +1212,7 @@ ApiVersion *string
 
 Version of the schema the FieldPath is written in terms of, defaults to "v1".
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#api_version Env#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#api_version Env#api_version}
 
 ---
 
@@ -1226,7 +1226,7 @@ FieldPath *string
 
 Path of the field to select in the specified API version.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#field_path Env#field_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#field_path Env#field_path}
 
 ---
 
@@ -1249,8 +1249,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/env"
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvValueFromResourceFieldRef.property.resource">Resource</a></code> | <code>*string</code> | Resource to select. |
-| <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvValueFromResourceFieldRef.property.containerName">ContainerName</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#container_name Env#container_name}. |
-| <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvValueFromResourceFieldRef.property.divisor">Divisor</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#divisor Env#divisor}. |
+| <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvValueFromResourceFieldRef.property.containerName">ContainerName</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#container_name Env#container_name}. |
+| <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvValueFromResourceFieldRef.property.divisor">Divisor</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#divisor Env#divisor}. |
 
 ---
 
@@ -1264,7 +1264,7 @@ Resource *string
 
 Resource to select.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#resource Env#resource}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#resource Env#resource}
 
 ---
 
@@ -1276,7 +1276,7 @@ ContainerName *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#container_name Env#container_name}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#container_name Env#container_name}.
 
 ---
 
@@ -1288,7 +1288,7 @@ Divisor *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#divisor Env#divisor}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#divisor Env#divisor}.
 
 ---
 
@@ -1326,7 +1326,7 @@ Key *string
 
 The key of the secret to select from. Must be a valid secret key.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#key Env#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#key Env#key}
 
 ---
 
@@ -1340,7 +1340,7 @@ Name *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#name Env#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#name Env#name}
 
 ---
 
@@ -1354,7 +1354,7 @@ Optional interface{}
 
 Specify whether the Secret or its key must be defined.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#optional Env#optional}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#optional Env#optional}
 
 ---
 
@@ -1390,7 +1390,7 @@ Name *string
 
 The name of the resource.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#name Env#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#name Env#name}
 
 ---
 
@@ -1404,7 +1404,7 @@ Namespace *string
 
 The namespace of the resource.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/env#namespace Env#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/env#namespace Env#namespace}
 
 ---
 

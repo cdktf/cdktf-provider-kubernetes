@@ -1,3 +1,3 @@
 # `data_kubernetes_service`
 
-Refer to the Terraform Registory for docs: [`data_kubernetes_service`](https://www.terraform.io/docs/providers/kubernetes/d/service).
+Refer to the Terraform Registory for docs: [`data_kubernetes_service`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/service).

@@ -1,6 +1,6 @@
 # `kubernetes_manifest`
 
-Refer to the Terraform Registory for docs: [`kubernetes_manifest`](https://www.terraform.io/docs/providers/kubernetes/r/manifest).
+Refer to the Terraform Registory for docs: [`kubernetes_manifest`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest).
 
 # `manifest` Submodule <a name="`manifest` Submodule" id="@cdktf/provider-kubernetes.manifest"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_manifest`](https://www.t
 
 ### Manifest <a name="Manifest" id="@cdktf/provider-kubernetes.manifest.Manifest"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest kubernetes_manifest}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest kubernetes_manifest}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.manifest.Manifest.Initializer"></a>
 
@@ -19,7 +19,7 @@ manifest.Manifest(
   scope: Construct,
   id: str,
   connection: typing.Union[SSHProvisionerConnection, WinrmProvisionerConnection] = None,
-  count: typing.Union[int, float] = None,
+  count: typing.Union[typing.Union[int, float], TerraformCount] = None,
   depends_on: typing.List[ITerraformDependable] = None,
   for_each: ITerraformIterator = None,
   lifecycle: TerraformResourceLifecycle = None,
@@ -31,7 +31,7 @@ manifest.Manifest(
   object: typing.Mapping[typing.Any] = None,
   timeouts: ManifestTimeouts = None,
   wait: ManifestWait = None,
-  wait_for: typing.Union[ManifestWaitFor, IResolvable] = None
+  wait_for: ManifestWaitFor = None
 )
 ```
 
@@ -40,7 +40,7 @@ manifest.Manifest(
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The scope in which to define this construct. |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.id">id</a></code> | <code>str</code> | The scoped construct ID. |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.connection">connection</a></code> | <code>typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.count">count</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.count">count</a></code> | <code>typing.Union[typing.Union[int, float], cdktf.TerraformCount]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.dependsOn">depends_on</a></code> | <code>typing.List[cdktf.ITerraformDependable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.forEach">for_each</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -52,7 +52,7 @@ manifest.Manifest(
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.object">object</a></code> | <code>typing.Mapping[typing.Any]</code> | The resulting resource state, as returned by the API server after applying the desired state from `manifest`. |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestTimeouts">ManifestTimeouts</a></code> | timeouts block. |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.wait">wait</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWait">ManifestWait</a></code> | wait block. |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.waitFor">wait_for</a></code> | <code>typing.Union[<a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a>, cdktf.IResolvable]</code> | A map of attribute paths and desired patterns to be matched. |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.waitFor">wait_for</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a></code> | A map of attribute paths and desired patterns to be matched. |
 
 ---
 
@@ -82,7 +82,7 @@ Must be unique amongst siblings in the same scope
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.count"></a>
 
-- *Type:* typing.Union[int, float]
+- *Type:* typing.Union[typing.Union[int, float], cdktf.TerraformCount]
 
 ---
 
@@ -122,7 +122,7 @@ Must be unique amongst siblings in the same scope
 
 A Kubernetes manifest describing the desired state of the resource in HCL format.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#manifest Manifest#manifest}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#manifest Manifest#manifest}
 
 ---
 
@@ -132,7 +132,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 List of manifest fields whose values can be altered by the API server during 'apply'. Defaults to: ["metadata.annotations", "metadata.labels"].
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#computed_fields Manifest#computed_fields}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#computed_fields Manifest#computed_fields}
 
 ---
 
@@ -142,7 +142,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 field_manager block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#field_manager Manifest#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#field_manager Manifest#field_manager}
 
 ---
 
@@ -152,7 +152,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 The resulting resource state, as returned by the API server after applying the desired state from `manifest`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#object Manifest#object}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#object Manifest#object}
 
 ---
 
@@ -162,7 +162,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#timeouts Manifest#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#timeouts Manifest#timeouts}
 
 ---
 
@@ -172,19 +172,19 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 wait block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#wait Manifest#wait}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#wait Manifest#wait}
 
 ---
 
 ##### `wait_for`<sup>Optional</sup> <a name="wait_for" id="@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.waitFor"></a>
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a>, cdktf.IResolvable]
+- *Type:* <a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a>
 
 A map of attribute paths and desired patterns to be matched.
 
 After each apply the provider will wait for all attributes listed here to reach a value that matches the desired pattern.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#wait_for Manifest#wait_for}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#wait_for Manifest#wait_for}
 
 ---
 
@@ -211,6 +211,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.putFieldManager">put_field_manager</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.putTimeouts">put_timeouts</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.putWait">put_wait</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.putWaitFor">put_wait_for</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.resetComputedFields">reset_computed_fields</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.resetFieldManager">reset_field_manager</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.resetObject">reset_object</a></code> | *No description.* |
@@ -444,7 +445,7 @@ def put_field_manager(
 
 Force changes against conflicts.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#force_conflicts Manifest#force_conflicts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#force_conflicts Manifest#force_conflicts}
 
 ---
 
@@ -454,7 +455,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 The name to use for the field manager when creating and updating the resource.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#name Manifest#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#name Manifest#name}
 
 ---
 
@@ -474,7 +475,7 @@ def put_timeouts(
 
 Timeout for the create operation.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#create Manifest#create}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#create Manifest#create}
 
 ---
 
@@ -484,7 +485,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 Timeout for the delete operation.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#delete Manifest#delete}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#delete Manifest#delete}
 
 ---
 
@@ -494,7 +495,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 Timeout for the update operation.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#update Manifest#update}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#update Manifest#update}
 
 ---
 
@@ -514,7 +515,7 @@ def put_wait(
 
 condition block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#condition Manifest#condition}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#condition Manifest#condition}
 
 ---
 
@@ -524,7 +525,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 A map of paths to fields to wait for a specific field value.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#fields Manifest#fields}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#fields Manifest#fields}
 
 ---
 
@@ -534,7 +535,23 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 Wait for rollout to complete on resources that support `kubectl rollout status`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#rollout Manifest#rollout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#rollout Manifest#rollout}
+
+---
+
+##### `put_wait_for` <a name="put_wait_for" id="@cdktf/provider-kubernetes.manifest.Manifest.putWaitFor"></a>
+
+```python
+def put_wait_for(
+  fields: typing.Mapping[str] = None
+) -> None
+```
+
+###### `fields`<sup>Optional</sup> <a name="fields" id="@cdktf/provider-kubernetes.manifest.Manifest.putWaitFor.parameter.fields"></a>
+
+- *Type:* typing.Mapping[str]
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#fields Manifest#fields}.
 
 ---
 
@@ -662,7 +679,7 @@ manifest.Manifest.is_terraform_resource(
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.terraformResourceType">terraform_resource_type</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.terraformGeneratorMetadata">terraform_generator_metadata</a></code> | <code>cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.connection">connection</a></code> | <code>typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.count">count</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.count">count</a></code> | <code>typing.Union[typing.Union[int, float], cdktf.TerraformCount]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.dependsOn">depends_on</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.forEach">for_each</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -671,6 +688,7 @@ manifest.Manifest.is_terraform_resource(
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.fieldManager">field_manager</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestFieldManagerOutputReference">ManifestFieldManagerOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestTimeoutsOutputReference">ManifestTimeoutsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.wait">wait</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitOutputReference">ManifestWaitOutputReference</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.waitFor">wait_for</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitForOutputReference">ManifestWaitForOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.computedFieldsInput">computed_fields_input</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.fieldManagerInput">field_manager_input</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestFieldManager">ManifestFieldManager</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.manifestInput">manifest_input</a></code> | <code>typing.Mapping[typing.Any]</code> | *No description.* |
@@ -681,7 +699,6 @@ manifest.Manifest.is_terraform_resource(
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.computedFields">computed_fields</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.manifest">manifest</a></code> | <code>typing.Mapping[typing.Any]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.object">object</a></code> | <code>typing.Mapping[typing.Any]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.waitFor">wait_for</a></code> | <code>typing.Union[<a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a>, cdktf.IResolvable]</code> | *No description.* |
 
 ---
 
@@ -770,10 +787,10 @@ connection: typing.Union[SSHProvisionerConnection, WinrmProvisionerConnection]
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.manifest.Manifest.property.count"></a>
 
 ```python
-count: typing.Union[int, float]
+count: typing.Union[typing.Union[int, float], TerraformCount]
 ```
 
-- *Type:* typing.Union[int, float]
+- *Type:* typing.Union[typing.Union[int, float], cdktf.TerraformCount]
 
 ---
 
@@ -854,6 +871,16 @@ wait: ManifestWaitOutputReference
 ```
 
 - *Type:* <a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitOutputReference">ManifestWaitOutputReference</a>
+
+---
+
+##### `wait_for`<sup>Required</sup> <a name="wait_for" id="@cdktf/provider-kubernetes.manifest.Manifest.property.waitFor"></a>
+
+```python
+wait_for: ManifestWaitForOutputReference
+```
+
+- *Type:* <a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitForOutputReference">ManifestWaitForOutputReference</a>
 
 ---
 
@@ -957,16 +984,6 @@ object: typing.Mapping[typing.Any]
 
 ---
 
-##### `wait_for`<sup>Required</sup> <a name="wait_for" id="@cdktf/provider-kubernetes.manifest.Manifest.property.waitFor"></a>
-
-```python
-wait_for: typing.Union[ManifestWaitFor, IResolvable]
-```
-
-- *Type:* typing.Union[<a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a>, cdktf.IResolvable]
-
----
-
 #### Constants <a name="Constants" id="Constants"></a>
 
 | **Name** | **Type** | **Description** |
@@ -996,7 +1013,7 @@ from cdktf_cdktf_provider_kubernetes import manifest
 
 manifest.ManifestConfig(
   connection: typing.Union[SSHProvisionerConnection, WinrmProvisionerConnection] = None,
-  count: typing.Union[int, float] = None,
+  count: typing.Union[typing.Union[int, float], TerraformCount] = None,
   depends_on: typing.List[ITerraformDependable] = None,
   for_each: ITerraformIterator = None,
   lifecycle: TerraformResourceLifecycle = None,
@@ -1008,7 +1025,7 @@ manifest.ManifestConfig(
   object: typing.Mapping[typing.Any] = None,
   timeouts: ManifestTimeouts = None,
   wait: ManifestWait = None,
-  wait_for: typing.Union[ManifestWaitFor, IResolvable] = None
+  wait_for: ManifestWaitFor = None
 )
 ```
 
@@ -1017,7 +1034,7 @@ manifest.ManifestConfig(
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.connection">connection</a></code> | <code>typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.count">count</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.count">count</a></code> | <code>typing.Union[typing.Union[int, float], cdktf.TerraformCount]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.dependsOn">depends_on</a></code> | <code>typing.List[cdktf.ITerraformDependable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.forEach">for_each</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -1029,7 +1046,7 @@ manifest.ManifestConfig(
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.object">object</a></code> | <code>typing.Mapping[typing.Any]</code> | The resulting resource state, as returned by the API server after applying the desired state from `manifest`. |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestTimeouts">ManifestTimeouts</a></code> | timeouts block. |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.wait">wait</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWait">ManifestWait</a></code> | wait block. |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.waitFor">wait_for</a></code> | <code>typing.Union[<a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a>, cdktf.IResolvable]</code> | A map of attribute paths and desired patterns to be matched. |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.waitFor">wait_for</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a></code> | A map of attribute paths and desired patterns to be matched. |
 
 ---
 
@@ -1046,10 +1063,10 @@ connection: typing.Union[SSHProvisionerConnection, WinrmProvisionerConnection]
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.manifest.ManifestConfig.property.count"></a>
 
 ```python
-count: typing.Union[int, float]
+count: typing.Union[typing.Union[int, float], TerraformCount]
 ```
 
-- *Type:* typing.Union[int, float]
+- *Type:* typing.Union[typing.Union[int, float], cdktf.TerraformCount]
 
 ---
 
@@ -1113,7 +1130,7 @@ manifest: typing.Mapping[typing.Any]
 
 A Kubernetes manifest describing the desired state of the resource in HCL format.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#manifest Manifest#manifest}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#manifest Manifest#manifest}
 
 ---
 
@@ -1127,7 +1144,7 @@ computed_fields: typing.List[str]
 
 List of manifest fields whose values can be altered by the API server during 'apply'. Defaults to: ["metadata.annotations", "metadata.labels"].
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#computed_fields Manifest#computed_fields}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#computed_fields Manifest#computed_fields}
 
 ---
 
@@ -1141,7 +1158,7 @@ field_manager: ManifestFieldManager
 
 field_manager block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#field_manager Manifest#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#field_manager Manifest#field_manager}
 
 ---
 
@@ -1155,7 +1172,7 @@ object: typing.Mapping[typing.Any]
 
 The resulting resource state, as returned by the API server after applying the desired state from `manifest`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#object Manifest#object}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#object Manifest#object}
 
 ---
 
@@ -1169,7 +1186,7 @@ timeouts: ManifestTimeouts
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#timeouts Manifest#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#timeouts Manifest#timeouts}
 
 ---
 
@@ -1183,23 +1200,23 @@ wait: ManifestWait
 
 wait block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#wait Manifest#wait}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#wait Manifest#wait}
 
 ---
 
 ##### `wait_for`<sup>Optional</sup> <a name="wait_for" id="@cdktf/provider-kubernetes.manifest.ManifestConfig.property.waitFor"></a>
 
 ```python
-wait_for: typing.Union[ManifestWaitFor, IResolvable]
+wait_for: ManifestWaitFor
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a>, cdktf.IResolvable]
+- *Type:* <a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a>
 
 A map of attribute paths and desired patterns to be matched.
 
 After each apply the provider will wait for all attributes listed here to reach a value that matches the desired pattern.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#wait_for Manifest#wait_for}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#wait_for Manifest#wait_for}
 
 ---
 
@@ -1235,7 +1252,7 @@ force_conflicts: typing.Union[bool, IResolvable]
 
 Force changes against conflicts.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#force_conflicts Manifest#force_conflicts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#force_conflicts Manifest#force_conflicts}
 
 ---
 
@@ -1249,7 +1266,7 @@ name: str
 
 The name to use for the field manager when creating and updating the resource.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#name Manifest#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#name Manifest#name}
 
 ---
 
@@ -1287,7 +1304,7 @@ create: str
 
 Timeout for the create operation.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#create Manifest#create}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#create Manifest#create}
 
 ---
 
@@ -1301,7 +1318,7 @@ delete: str
 
 Timeout for the delete operation.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#delete Manifest#delete}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#delete Manifest#delete}
 
 ---
 
@@ -1315,7 +1332,7 @@ update: str
 
 Timeout for the update operation.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#update Manifest#update}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#update Manifest#update}
 
 ---
 
@@ -1353,7 +1370,7 @@ condition: typing.Union[IResolvable, typing.List[ManifestWaitCondition]]
 
 condition block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#condition Manifest#condition}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#condition Manifest#condition}
 
 ---
 
@@ -1367,7 +1384,7 @@ fields: typing.Mapping[str]
 
 A map of paths to fields to wait for a specific field value.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#fields Manifest#fields}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#fields Manifest#fields}
 
 ---
 
@@ -1381,7 +1398,7 @@ rollout: typing.Union[bool, IResolvable]
 
 Wait for rollout to complete on resources that support `kubectl rollout status`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#rollout Manifest#rollout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#rollout Manifest#rollout}
 
 ---
 
@@ -1417,7 +1434,7 @@ status: str
 
 The condition status.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#status Manifest#status}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#status Manifest#status}
 
 ---
 
@@ -1431,7 +1448,7 @@ type: str
 
 The type of condition.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#type Manifest#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#type Manifest#type}
 
 ---
 
@@ -1451,7 +1468,7 @@ manifest.ManifestWaitFor(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor.property.fields">fields</a></code> | <code>typing.Mapping[str]</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#fields Manifest#fields}. |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor.property.fields">fields</a></code> | <code>typing.Mapping[str]</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#fields Manifest#fields}. |
 
 ---
 
@@ -1463,7 +1480,7 @@ fields: typing.Mapping[str]
 
 - *Type:* typing.Mapping[str]
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#fields Manifest#fields}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#fields Manifest#fields}.
 
 ---
 

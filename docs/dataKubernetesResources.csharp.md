@@ -1,6 +1,6 @@
 # `data_kubernetes_resources`
 
-Refer to the Terraform Registory for docs: [`data_kubernetes_resources`](https://www.terraform.io/docs/providers/kubernetes/d/resources).
+Refer to the Terraform Registory for docs: [`data_kubernetes_resources`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/resources).
 
 # `dataKubernetesResources` Submodule <a name="`dataKubernetesResources` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesResources"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`data_kubernetes_resources`](https:/
 
 ### DataKubernetesResources <a name="DataKubernetesResources" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/resources kubernetes_resources}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/resources kubernetes_resources}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.Initializer"></a>
 
@@ -373,7 +373,7 @@ DataKubernetesResources.IsTerraformDataSource(object X);
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.property.terraformMetaArguments">TerraformMetaArguments</a></code> | <code>System.Collections.Generic.IDictionary<string, object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.property.terraformResourceType">TerraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>HashiCorp.Cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.property.count">Count</a></code> | <code>double</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.property.count">Count</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.property.dependsOn">DependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -470,10 +470,10 @@ public TerraformProviderGeneratorMetadata TerraformGeneratorMetadata { get; }
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.property.count"></a>
 
 ```csharp
-public double Count { get; }
+public object Count { get; }
 ```
 
-- *Type:* double
+- *Type:* object
 
 ---
 
@@ -686,7 +686,7 @@ using HashiCorp.Cdktf.Providers.Kubernetes;
 
 new DataKubernetesResourcesConfig {
     object Connection = null,
-    double Count = null,
+    object Count = null,
     ITerraformDependable[] DependsOn = null,
     ITerraformIterator ForEach = null,
     TerraformResourceLifecycle Lifecycle = null,
@@ -707,7 +707,7 @@ new DataKubernetesResourcesConfig {
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResourcesConfig.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResourcesConfig.property.count">Count</a></code> | <code>double</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResourcesConfig.property.count">Count</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResourcesConfig.property.dependsOn">DependsOn</a></code> | <code>HashiCorp.Cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResourcesConfig.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResourcesConfig.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -736,10 +736,10 @@ public object Connection { get; set; }
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResourcesConfig.property.count"></a>
 
 ```csharp
-public double Count { get; set; }
+public object Count { get; set; }
 ```
 
-- *Type:* double
+- *Type:* object
 
 ---
 
@@ -803,7 +803,7 @@ public string ApiVersion { get; set; }
 
 The resource apiVersion.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/resources#api_version DataKubernetesResources#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/resources#api_version DataKubernetesResources#api_version}
 
 ---
 
@@ -817,7 +817,7 @@ public string Kind { get; set; }
 
 The resource kind.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/resources#kind DataKubernetesResources#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/resources#kind DataKubernetesResources#kind}
 
 ---
 
@@ -831,7 +831,7 @@ public string FieldSelector { get; set; }
 
 A selector to restrict the list of returned objects by their fields.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/resources#field_selector DataKubernetesResources#field_selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/resources#field_selector DataKubernetesResources#field_selector}
 
 ---
 
@@ -845,7 +845,7 @@ public string LabelSelector { get; set; }
 
 A selector to restrict the list of returned objects by their labels.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/resources#label_selector DataKubernetesResources#label_selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/resources#label_selector DataKubernetesResources#label_selector}
 
 ---
 
@@ -859,7 +859,7 @@ public double Limit { get; set; }
 
 Limit is a maximum number of responses to return for a list call.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/resources#limit DataKubernetesResources#limit}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/resources#limit DataKubernetesResources#limit}
 
 ---
 
@@ -873,7 +873,7 @@ public string Namespace { get; set; }
 
 The resource namespace.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/resources#namespace DataKubernetesResources#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/resources#namespace DataKubernetesResources#namespace}
 
 ---
 
@@ -887,7 +887,7 @@ public System.Collections.Generic.IDictionary<string, object> Objects { get; set
 
 The response from the API server.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/resources#objects DataKubernetesResources#objects}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/resources#objects DataKubernetesResources#objects}
 
 ---
 

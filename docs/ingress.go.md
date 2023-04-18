@@ -1,6 +1,6 @@
 # `kubernetes_ingress`
 
-Refer to the Terraform Registory for docs: [`kubernetes_ingress`](https://www.terraform.io/docs/providers/kubernetes/r/ingress).
+Refer to the Terraform Registory for docs: [`kubernetes_ingress`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress).
 
 # `ingress` Submodule <a name="`ingress` Submodule" id="@cdktf/provider-kubernetes.ingress"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_ingress`](https://www.te
 
 ### Ingress <a name="Ingress" id="@cdktf/provider-kubernetes.ingress.Ingress"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress kubernetes_ingress}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress kubernetes_ingress}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.Ingress.Initializer"></a>
 
@@ -379,7 +379,7 @@ ingress.Ingress_IsTerraformResource(x interface{}) *bool
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.property.terraformResourceType">TerraformResourceType</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.property.dependsOn">DependsOn</a></code> | <code>*[]*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -482,10 +482,10 @@ func Connection() interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.ingress.Ingress.property.count"></a>
 
 ```go
-func Count() *f64
+func Count() interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -658,7 +658,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/ingress"
 
 &ingress.IngressConfig {
 	Connection: interface{},
-	Count: *f64,
+	Count: interface{},
 	DependsOn: *[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable,
 	ForEach: github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator,
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
@@ -676,7 +676,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/ingress"
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.dependsOn">DependsOn</a></code> | <code>*[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -684,7 +684,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/ingress"
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressMetadata">IngressMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.spec">Spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpec">IngressSpec</a></code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#id Ingress#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#id Ingress#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.waitForLoadBalancer">WaitForLoadBalancer</a></code> | <code>interface{}</code> | Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created. |
 
 ---
@@ -702,10 +702,10 @@ Connection interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.ingress.IngressConfig.property.count"></a>
 
 ```go
-Count *f64
+Count interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -769,7 +769,7 @@ Metadata IngressMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#metadata Ingress#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#metadata Ingress#metadata}
 
 ---
 
@@ -783,7 +783,7 @@ Spec IngressSpec
 
 spec block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#spec Ingress#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#spec Ingress#spec}
 
 ---
 
@@ -795,7 +795,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#id Ingress#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#id Ingress#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -812,7 +812,7 @@ WaitForLoadBalancer interface{}
 
 Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#wait_for_load_balancer Ingress#wait_for_load_balancer}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#wait_for_load_balancer Ingress#wait_for_load_balancer}
 
 ---
 
@@ -856,7 +856,7 @@ An unstructured key value map stored with the ingress that may be used to store 
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#annotations Ingress#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#annotations Ingress#annotations}
 
 ---
 
@@ -872,7 +872,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#generate_name Ingress#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#generate_name Ingress#generate_name}
 
 ---
 
@@ -888,7 +888,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#labels Ingress#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#labels Ingress#labels}
 
 ---
 
@@ -902,7 +902,7 @@ Name *string
 
 Name of the ingress, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#name Ingress#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#name Ingress#name}
 
 ---
 
@@ -916,7 +916,7 @@ Namespace *string
 
 Namespace defines the space within which name of the ingress must be unique.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#namespace Ingress#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#namespace Ingress#namespace}
 
 ---
 
@@ -956,7 +956,7 @@ Backend IngressSpecBackend
 
 backend block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#backend Ingress#backend}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#backend Ingress#backend}
 
 ---
 
@@ -972,7 +972,7 @@ IngressClassName is the name of the IngressClass cluster resource.
 
 The associated IngressClass defines which controller will implement the resource. This replaces the deprecated `kubernetes.io/ingress.class` annotation. For backwards compatibility, when that annotation is set, it must be given precedence over this field. The controller may emit a warning if the field and annotation have different values. Implementations of this API should ignore Ingresses without a class specified. An IngressClass resource may be marked as default, which can be used to set a default value for this field. For more information, refer to the IngressClass documentation.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#ingress_class_name Ingress#ingress_class_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#ingress_class_name Ingress#ingress_class_name}
 
 ---
 
@@ -986,7 +986,7 @@ Rule interface{}
 
 rule block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#rule Ingress#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#rule Ingress#rule}
 
 ---
 
@@ -1000,7 +1000,7 @@ Tls interface{}
 
 tls block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#tls Ingress#tls}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#tls Ingress#tls}
 
 ---
 
@@ -1036,7 +1036,7 @@ ServiceName *string
 
 Specifies the name of the referenced service.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#service_name Ingress#service_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#service_name Ingress#service_name}
 
 ---
 
@@ -1050,7 +1050,7 @@ ServicePort *string
 
 Specifies the port of the referenced service.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#service_port Ingress#service_port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#service_port Ingress#service_port}
 
 ---
 
@@ -1086,7 +1086,7 @@ Http IngressSpecRuleHttp
 
 http block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#http Ingress#http}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#http Ingress#http}
 
 ---
 
@@ -1109,7 +1109,7 @@ Both these may change in the future. Incoming requests are matched against the h
 
 Host can be "precise" which is a domain name without the terminating dot of a network host (e.g. "foo.bar.com") or "wildcard", which is a domain name prefixed with a single wildcard label (e.g. "*.foo.com"). The wildcard character '*' must appear by itself as the first DNS label and matches only a single label. You cannot have a wildcard label by itself (e.g. Host == "*"). Requests will be matched against the Host field in the following way: 1. If Host is precise, the request matches this rule if the http host header is equal to Host. 2. If Host is a wildcard, then the request matches this rule if the http host header is to equal to the suffix (removing the first label) of the wildcard rule.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#host Ingress#host}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#host Ingress#host}
 
 ---
 
@@ -1143,7 +1143,7 @@ Path interface{}
 
 path block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#path Ingress#path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#path Ingress#path}
 
 ---
 
@@ -1179,7 +1179,7 @@ Backend IngressSpecRuleHttpPathBackend
 
 backend block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#backend Ingress#backend}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#backend Ingress#backend}
 
 ---
 
@@ -1195,7 +1195,7 @@ Path is matched against the path of an incoming request.
 
 Currently it can contain characters disallowed from the conventional "path" part of a URL as defined by RFC 3986. Paths must begin with a '/' and must be present when using PathType with value "Exact" or "Prefix".
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#path Ingress#path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#path Ingress#path}
 
 ---
 
@@ -1231,7 +1231,7 @@ ServiceName *string
 
 Specifies the name of the referenced service.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#service_name Ingress#service_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#service_name Ingress#service_name}
 
 ---
 
@@ -1245,7 +1245,7 @@ ServicePort *string
 
 Specifies the port of the referenced service.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#service_port Ingress#service_port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#service_port Ingress#service_port}
 
 ---
 
@@ -1283,7 +1283,7 @@ Hosts are a list of hosts included in the TLS certificate.
 
 The values in this list must match the name/s used in the tlsSecret. Defaults to the wildcard host setting for the loadbalancer controller fulfilling this Ingress, if left unspecified.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#hosts Ingress#hosts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#hosts Ingress#hosts}
 
 ---
 
@@ -1299,7 +1299,7 @@ SecretName is the name of the secret used to terminate TLS traffic on port 443.
 
 Field is left optional to allow TLS routing based on SNI hostname alone. If the SNI host in a listener conflicts with the "Host" header field used by an IngressRule, the SNI host is used for termination and value of the Host header is used for routing.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/ingress#secret_name Ingress#secret_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/ingress#secret_name Ingress#secret_name}
 
 ---
 

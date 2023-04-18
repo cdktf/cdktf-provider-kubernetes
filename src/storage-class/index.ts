@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/storage_class
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,11 +10,11 @@ export interface StorageClassConfig extends cdktf.TerraformMetaArguments {
   /**
   * Indicates whether the storage class allow volume expand
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#allow_volume_expansion StorageClass#allow_volume_expansion}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#allow_volume_expansion StorageClass#allow_volume_expansion}
   */
   readonly allowVolumeExpansion?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#id StorageClass#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#id StorageClass#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -23,43 +23,43 @@ export interface StorageClassConfig extends cdktf.TerraformMetaArguments {
   /**
   * Persistent Volumes that are dynamically created by a storage class will have the mount options specified
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#mount_options StorageClass#mount_options}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#mount_options StorageClass#mount_options}
   */
   readonly mountOptions?: string[];
   /**
   * The parameters for the provisioner that should create volumes of this storage class
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#parameters StorageClass#parameters}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#parameters StorageClass#parameters}
   */
   readonly parameters?: { [key: string]: string };
   /**
   * Indicates the type of the reclaim policy
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#reclaim_policy StorageClass#reclaim_policy}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#reclaim_policy StorageClass#reclaim_policy}
   */
   readonly reclaimPolicy?: string;
   /**
   * Indicates the type of the provisioner
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#storage_provisioner StorageClass#storage_provisioner}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#storage_provisioner StorageClass#storage_provisioner}
   */
   readonly storageProvisioner: string;
   /**
   * Indicates when volume binding and dynamic provisioning should occur
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#volume_binding_mode StorageClass#volume_binding_mode}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#volume_binding_mode StorageClass#volume_binding_mode}
   */
   readonly volumeBindingMode?: string;
   /**
   * allowed_topologies block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#allowed_topologies StorageClass#allowed_topologies}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#allowed_topologies StorageClass#allowed_topologies}
   */
   readonly allowedTopologies?: StorageClassAllowedTopologies;
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#metadata StorageClass#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#metadata StorageClass#metadata}
   */
   readonly metadata: StorageClassMetadata;
 }
@@ -67,13 +67,13 @@ export interface StorageClassAllowedTopologiesMatchLabelExpressions {
   /**
   * The label key that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#key StorageClass#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#key StorageClass#key}
   */
   readonly key?: string;
   /**
   * An array of string values. One value must match the label to be selected.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#values StorageClass#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#values StorageClass#values}
   */
   readonly values?: string[];
 }
@@ -195,7 +195,7 @@ export interface StorageClassAllowedTopologies {
   /**
   * match_label_expressions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#match_label_expressions StorageClass#match_label_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#match_label_expressions StorageClass#match_label_expressions}
   */
   readonly matchLabelExpressions?: StorageClassAllowedTopologiesMatchLabelExpressions[] | cdktf.IResolvable;
 }
@@ -262,25 +262,25 @@ export interface StorageClassMetadata {
   /**
   * An unstructured key value map stored with the storage class that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#annotations StorageClass#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#annotations StorageClass#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#generate_name StorageClass#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#generate_name StorageClass#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the storage class. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#labels StorageClass#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#labels StorageClass#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the storage class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class#name StorageClass#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class#name StorageClass#name}
   */
   readonly name?: string;
 }
@@ -429,7 +429,7 @@ export class StorageClassMetadataOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class kubernetes_storage_class}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class kubernetes_storage_class}
 */
 export class StorageClass extends cdktf.TerraformResource {
 
@@ -443,7 +443,7 @@ export class StorageClass extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/storage_class kubernetes_storage_class} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/storage_class kubernetes_storage_class} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

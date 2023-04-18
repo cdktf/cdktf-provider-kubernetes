@@ -1,3 +1,3 @@
 # `data_kubernetes_ingress`
 
-Refer to the Terraform Registory for docs: [`data_kubernetes_ingress`](https://www.terraform.io/docs/providers/kubernetes/d/ingress).
+Refer to the Terraform Registory for docs: [`data_kubernetes_ingress`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/ingress).

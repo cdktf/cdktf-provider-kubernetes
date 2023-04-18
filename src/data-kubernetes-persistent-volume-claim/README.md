@@ -1,3 +1,3 @@
 # `data_kubernetes_persistent_volume_claim`
 
-Refer to the Terraform Registory for docs: [`data_kubernetes_persistent_volume_claim`](https://www.terraform.io/docs/providers/kubernetes/d/persistent_volume_claim).
+Refer to the Terraform Registory for docs: [`data_kubernetes_persistent_volume_claim`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/persistent_volume_claim).

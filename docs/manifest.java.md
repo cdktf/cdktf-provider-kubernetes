@@ -1,6 +1,6 @@
 # `kubernetes_manifest`
 
-Refer to the Terraform Registory for docs: [`kubernetes_manifest`](https://www.terraform.io/docs/providers/kubernetes/r/manifest).
+Refer to the Terraform Registory for docs: [`kubernetes_manifest`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest).
 
 # `manifest` Submodule <a name="`manifest` Submodule" id="@cdktf/provider-kubernetes.manifest"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_manifest`](https://www.t
 
 ### Manifest <a name="Manifest" id="@cdktf/provider-kubernetes.manifest.Manifest"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest kubernetes_manifest}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest kubernetes_manifest}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.manifest.Manifest.Initializer"></a>
 
@@ -19,6 +19,7 @@ Manifest.Builder.create(Construct scope, java.lang.String id)
 //  .connection(SSHProvisionerConnection)
 //  .connection(WinrmProvisionerConnection)
 //  .count(java.lang.Number)
+//  .count(TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
@@ -33,7 +34,6 @@ Manifest.Builder.create(Construct scope, java.lang.String id)
 //  .timeouts(ManifestTimeouts)
 //  .wait(ManifestWait)
 //  .waitFor(ManifestWaitFor)
-//  .waitFor(IResolvable)
     .build();
 ```
 
@@ -42,7 +42,7 @@ Manifest.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.scope">scope</a></code> | <code>software.constructs.Construct</code> | The scope in which to define this construct. |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | The scoped construct ID. |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.count">count</a></code> | <code>java.lang.Number</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -54,7 +54,7 @@ Manifest.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.object">object</a></code> | <code>java.util.Map<java.lang.String, java.lang.Object></code> | The resulting resource state, as returned by the API server after applying the desired state from `manifest`. |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestTimeouts">ManifestTimeouts</a></code> | timeouts block. |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.wait">wait</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWait">ManifestWait</a></code> | wait block. |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.waitFor">waitFor</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a> OR com.hashicorp.cdktf.IResolvable</code> | A map of attribute paths and desired patterns to be matched. |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.waitFor">waitFor</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a></code> | A map of attribute paths and desired patterns to be matched. |
 
 ---
 
@@ -84,7 +84,7 @@ Must be unique amongst siblings in the same scope
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.count"></a>
 
-- *Type:* java.lang.Number
+- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -124,7 +124,7 @@ Must be unique amongst siblings in the same scope
 
 A Kubernetes manifest describing the desired state of the resource in HCL format.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#manifest Manifest#manifest}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#manifest Manifest#manifest}
 
 ---
 
@@ -134,7 +134,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 List of manifest fields whose values can be altered by the API server during 'apply'. Defaults to: ["metadata.annotations", "metadata.labels"].
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#computed_fields Manifest#computed_fields}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#computed_fields Manifest#computed_fields}
 
 ---
 
@@ -144,7 +144,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 field_manager block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#field_manager Manifest#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#field_manager Manifest#field_manager}
 
 ---
 
@@ -154,7 +154,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 The resulting resource state, as returned by the API server after applying the desired state from `manifest`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#object Manifest#object}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#object Manifest#object}
 
 ---
 
@@ -164,7 +164,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#timeouts Manifest#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#timeouts Manifest#timeouts}
 
 ---
 
@@ -174,19 +174,19 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 wait block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#wait Manifest#wait}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#wait Manifest#wait}
 
 ---
 
 ##### `waitFor`<sup>Optional</sup> <a name="waitFor" id="@cdktf/provider-kubernetes.manifest.Manifest.Initializer.parameter.waitFor"></a>
 
-- *Type:* <a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a> OR com.hashicorp.cdktf.IResolvable
+- *Type:* <a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a>
 
 A map of attribute paths and desired patterns to be matched.
 
 After each apply the provider will wait for all attributes listed here to reach a value that matches the desired pattern.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#wait_for Manifest#wait_for}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#wait_for Manifest#wait_for}
 
 ---
 
@@ -213,6 +213,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.putFieldManager">putFieldManager</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.putTimeouts">putTimeouts</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.putWait">putWait</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.putWaitFor">putWaitFor</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.resetComputedFields">resetComputedFields</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.resetFieldManager">resetFieldManager</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.resetObject">resetObject</a></code> | *No description.* |
@@ -442,6 +443,18 @@ public void putWait(ManifestWait value)
 
 ---
 
+##### `putWaitFor` <a name="putWaitFor" id="@cdktf/provider-kubernetes.manifest.Manifest.putWaitFor"></a>
+
+```java
+public void putWaitFor(ManifestWaitFor value)
+```
+
+###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-kubernetes.manifest.Manifest.putWaitFor.parameter.value"></a>
+
+- *Type:* <a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a>
+
+---
+
 ##### `resetComputedFields` <a name="resetComputedFields" id="@cdktf/provider-kubernetes.manifest.Manifest.resetComputedFields"></a>
 
 ```java
@@ -560,7 +573,7 @@ Manifest.isTerraformResource(java.lang.Object x)
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.terraformResourceType">terraformResourceType</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.terraformGeneratorMetadata">terraformGeneratorMetadata</a></code> | <code>com.hashicorp.cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.count">count</a></code> | <code>java.lang.Number</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.dependsOn">dependsOn</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -569,6 +582,7 @@ Manifest.isTerraformResource(java.lang.Object x)
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.fieldManager">fieldManager</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestFieldManagerOutputReference">ManifestFieldManagerOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestTimeoutsOutputReference">ManifestTimeoutsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.wait">wait</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitOutputReference">ManifestWaitOutputReference</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.waitFor">waitFor</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitForOutputReference">ManifestWaitForOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.computedFieldsInput">computedFieldsInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.fieldManagerInput">fieldManagerInput</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestFieldManager">ManifestFieldManager</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.manifestInput">manifestInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.Object></code> | *No description.* |
@@ -579,7 +593,6 @@ Manifest.isTerraformResource(java.lang.Object x)
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.computedFields">computedFields</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.manifest">manifest</a></code> | <code>java.util.Map<java.lang.String, java.lang.Object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.object">object</a></code> | <code>java.util.Map<java.lang.String, java.lang.Object></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.Manifest.property.waitFor">waitFor</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a> OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 
 ---
 
@@ -668,10 +681,10 @@ public java.lang.Object getConnection();
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.manifest.Manifest.property.count"></a>
 
 ```java
-public java.lang.Number getCount();
+public java.lang.Object getCount();
 ```
 
-- *Type:* java.lang.Number
+- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -752,6 +765,16 @@ public ManifestWaitOutputReference getWait();
 ```
 
 - *Type:* <a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitOutputReference">ManifestWaitOutputReference</a>
+
+---
+
+##### `waitFor`<sup>Required</sup> <a name="waitFor" id="@cdktf/provider-kubernetes.manifest.Manifest.property.waitFor"></a>
+
+```java
+public ManifestWaitForOutputReference getWaitFor();
+```
+
+- *Type:* <a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitForOutputReference">ManifestWaitForOutputReference</a>
 
 ---
 
@@ -855,16 +878,6 @@ public java.util.Map<java.lang.String, java.lang.Object> getObject();
 
 ---
 
-##### `waitFor`<sup>Required</sup> <a name="waitFor" id="@cdktf/provider-kubernetes.manifest.Manifest.property.waitFor"></a>
-
-```java
-public java.lang.Object getWaitFor();
-```
-
-- *Type:* <a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a> OR com.hashicorp.cdktf.IResolvable
-
----
-
 #### Constants <a name="Constants" id="Constants"></a>
 
 | **Name** | **Type** | **Description** |
@@ -896,6 +909,7 @@ ManifestConfig.builder()
 //  .connection(SSHProvisionerConnection)
 //  .connection(WinrmProvisionerConnection)
 //  .count(java.lang.Number)
+//  .count(TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
@@ -910,7 +924,6 @@ ManifestConfig.builder()
 //  .timeouts(ManifestTimeouts)
 //  .wait(ManifestWait)
 //  .waitFor(ManifestWaitFor)
-//  .waitFor(IResolvable)
     .build();
 ```
 
@@ -919,7 +932,7 @@ ManifestConfig.builder()
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.count">count</a></code> | <code>java.lang.Number</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -931,7 +944,7 @@ ManifestConfig.builder()
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.object">object</a></code> | <code>java.util.Map<java.lang.String, java.lang.Object></code> | The resulting resource state, as returned by the API server after applying the desired state from `manifest`. |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestTimeouts">ManifestTimeouts</a></code> | timeouts block. |
 | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.wait">wait</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWait">ManifestWait</a></code> | wait block. |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.waitFor">waitFor</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a> OR com.hashicorp.cdktf.IResolvable</code> | A map of attribute paths and desired patterns to be matched. |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestConfig.property.waitFor">waitFor</a></code> | <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a></code> | A map of attribute paths and desired patterns to be matched. |
 
 ---
 
@@ -948,10 +961,10 @@ public java.lang.Object getConnection();
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.manifest.ManifestConfig.property.count"></a>
 
 ```java
-public java.lang.Number getCount();
+public java.lang.Object getCount();
 ```
 
-- *Type:* java.lang.Number
+- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -1015,7 +1028,7 @@ public java.util.Map<java.lang.String, java.lang.Object> getManifest();
 
 A Kubernetes manifest describing the desired state of the resource in HCL format.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#manifest Manifest#manifest}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#manifest Manifest#manifest}
 
 ---
 
@@ -1029,7 +1042,7 @@ public java.util.List<java.lang.String> getComputedFields();
 
 List of manifest fields whose values can be altered by the API server during 'apply'. Defaults to: ["metadata.annotations", "metadata.labels"].
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#computed_fields Manifest#computed_fields}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#computed_fields Manifest#computed_fields}
 
 ---
 
@@ -1043,7 +1056,7 @@ public ManifestFieldManager getFieldManager();
 
 field_manager block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#field_manager Manifest#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#field_manager Manifest#field_manager}
 
 ---
 
@@ -1057,7 +1070,7 @@ public java.util.Map<java.lang.String, java.lang.Object> getObject();
 
 The resulting resource state, as returned by the API server after applying the desired state from `manifest`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#object Manifest#object}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#object Manifest#object}
 
 ---
 
@@ -1071,7 +1084,7 @@ public ManifestTimeouts getTimeouts();
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#timeouts Manifest#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#timeouts Manifest#timeouts}
 
 ---
 
@@ -1085,23 +1098,23 @@ public ManifestWait getWait();
 
 wait block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#wait Manifest#wait}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#wait Manifest#wait}
 
 ---
 
 ##### `waitFor`<sup>Optional</sup> <a name="waitFor" id="@cdktf/provider-kubernetes.manifest.ManifestConfig.property.waitFor"></a>
 
 ```java
-public java.lang.Object getWaitFor();
+public ManifestWaitFor getWaitFor();
 ```
 
-- *Type:* <a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a> OR com.hashicorp.cdktf.IResolvable
+- *Type:* <a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor">ManifestWaitFor</a>
 
 A map of attribute paths and desired patterns to be matched.
 
 After each apply the provider will wait for all attributes listed here to reach a value that matches the desired pattern.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#wait_for Manifest#wait_for}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#wait_for Manifest#wait_for}
 
 ---
 
@@ -1138,7 +1151,7 @@ public java.lang.Object getForceConflicts();
 
 Force changes against conflicts.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#force_conflicts Manifest#force_conflicts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#force_conflicts Manifest#force_conflicts}
 
 ---
 
@@ -1152,7 +1165,7 @@ public java.lang.String getName();
 
 The name to use for the field manager when creating and updating the resource.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#name Manifest#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#name Manifest#name}
 
 ---
 
@@ -1190,7 +1203,7 @@ public java.lang.String getCreate();
 
 Timeout for the create operation.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#create Manifest#create}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#create Manifest#create}
 
 ---
 
@@ -1204,7 +1217,7 @@ public java.lang.String getDelete();
 
 Timeout for the delete operation.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#delete Manifest#delete}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#delete Manifest#delete}
 
 ---
 
@@ -1218,7 +1231,7 @@ public java.lang.String getUpdate();
 
 Timeout for the update operation.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#update Manifest#update}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#update Manifest#update}
 
 ---
 
@@ -1258,7 +1271,7 @@ public java.lang.Object getCondition();
 
 condition block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#condition Manifest#condition}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#condition Manifest#condition}
 
 ---
 
@@ -1272,7 +1285,7 @@ public java.util.Map<java.lang.String, java.lang.String> getFields();
 
 A map of paths to fields to wait for a specific field value.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#fields Manifest#fields}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#fields Manifest#fields}
 
 ---
 
@@ -1286,7 +1299,7 @@ public java.lang.Object getRollout();
 
 Wait for rollout to complete on resources that support `kubectl rollout status`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#rollout Manifest#rollout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#rollout Manifest#rollout}
 
 ---
 
@@ -1322,7 +1335,7 @@ public java.lang.String getStatus();
 
 The condition status.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#status Manifest#status}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#status Manifest#status}
 
 ---
 
@@ -1336,7 +1349,7 @@ public java.lang.String getType();
 
 The type of condition.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#type Manifest#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#type Manifest#type}
 
 ---
 
@@ -1356,7 +1369,7 @@ ManifestWaitFor.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor.property.fields">fields</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#fields Manifest#fields}. |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor.property.fields">fields</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#fields Manifest#fields}. |
 
 ---
 
@@ -1368,7 +1381,7 @@ public java.util.Map<java.lang.String, java.lang.String> getFields();
 
 - *Type:* java.util.Map<java.lang.String, java.lang.String>
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/manifest#fields Manifest#fields}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest#fields Manifest#fields}.
 
 ---
 
