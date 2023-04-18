@@ -1,3 +1,7 @@
+# `kubernetes_env`
+
+Refer to the Terraform Registory for docs: [`kubernetes_env`](https://www.terraform.io/docs/providers/kubernetes/r/env).
+
 # `env` Submodule <a name="`env` Submodule" id="@cdktf/provider-kubernetes.env"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

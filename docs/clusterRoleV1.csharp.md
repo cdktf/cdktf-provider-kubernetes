@@ -1,3 +1,7 @@
+# `kubernetes_cluster_role_v1`
+
+Refer to the Terraform Registory for docs: [`kubernetes_cluster_role_v1`](https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_v1).
+
 # `clusterRoleV1` Submodule <a name="`clusterRoleV1` Submodule" id="@cdktf/provider-kubernetes.clusterRoleV1"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

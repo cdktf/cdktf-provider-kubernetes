@@ -1,3 +1,7 @@
+# `kubernetes_role`
+
+Refer to the Terraform Registory for docs: [`kubernetes_role`](https://www.terraform.io/docs/providers/kubernetes/r/role).
+
 # `role` Submodule <a name="`role` Submodule" id="@cdktf/provider-kubernetes.role"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

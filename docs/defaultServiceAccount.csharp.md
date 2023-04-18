@@ -1,3 +1,7 @@
+# `kubernetes_default_service_account`
+
+Refer to the Terraform Registory for docs: [`kubernetes_default_service_account`](https://www.terraform.io/docs/providers/kubernetes/r/default_service_account).
+
 # `defaultServiceAccount` Submodule <a name="`defaultServiceAccount` Submodule" id="@cdktf/provider-kubernetes.defaultServiceAccount"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

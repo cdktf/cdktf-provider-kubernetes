@@ -1,3 +1,7 @@
+# `kubernetes_cluster_role_binding_v1`
+
+Refer to the Terraform Registory for docs: [`kubernetes_cluster_role_binding_v1`](https://www.terraform.io/docs/providers/kubernetes/r/cluster_role_binding_v1).
+
 # `clusterRoleBindingV1` Submodule <a name="`clusterRoleBindingV1` Submodule" id="@cdktf/provider-kubernetes.clusterRoleBindingV1"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

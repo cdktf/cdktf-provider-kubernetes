@@ -1,3 +1,7 @@
+# `kubernetes_horizontal_pod_autoscaler_v2beta2`
+
+Refer to the Terraform Registory for docs: [`kubernetes_horizontal_pod_autoscaler_v2beta2`](https://www.terraform.io/docs/providers/kubernetes/r/horizontal_pod_autoscaler_v2beta2).
+
 # `horizontalPodAutoscalerV2Beta2` Submodule <a name="`horizontalPodAutoscalerV2Beta2` Submodule" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2Beta2"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

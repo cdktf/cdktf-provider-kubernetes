@@ -1,3 +1,7 @@
+# `kubernetes_resource_quota`
+
+Refer to the Terraform Registory for docs: [`kubernetes_resource_quota`](https://www.terraform.io/docs/providers/kubernetes/r/resource_quota).
+
 # `resourceQuota` Submodule <a name="`resourceQuota` Submodule" id="@cdktf/provider-kubernetes.resourceQuota"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

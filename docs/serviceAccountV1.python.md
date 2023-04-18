@@ -1,3 +1,7 @@
+# `kubernetes_service_account_v1`
+
+Refer to the Terraform Registory for docs: [`kubernetes_service_account_v1`](https://www.terraform.io/docs/providers/kubernetes/r/service_account_v1).
+
 # `serviceAccountV1` Submodule <a name="`serviceAccountV1` Submodule" id="@cdktf/provider-kubernetes.serviceAccountV1"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

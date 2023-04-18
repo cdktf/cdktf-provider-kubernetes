@@ -1,3 +1,7 @@
+# `data_kubernetes_resource`
+
+Refer to the Terraform Registory for docs: [`data_kubernetes_resource`](https://www.terraform.io/docs/providers/kubernetes/d/resource).
+
 # `dataKubernetesResource` Submodule <a name="`dataKubernetesResource` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesResource"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

@@ -1,3 +1,7 @@
+# `kubernetes_annotations`
+
+Refer to the Terraform Registory for docs: [`kubernetes_annotations`](https://www.terraform.io/docs/providers/kubernetes/r/annotations).
+
 # `annotations` Submodule <a name="`annotations` Submodule" id="@cdktf/provider-kubernetes.annotations"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

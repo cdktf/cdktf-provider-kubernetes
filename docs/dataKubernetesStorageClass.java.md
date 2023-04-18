@@ -1,3 +1,7 @@
+# `data_kubernetes_storage_class`
+
+Refer to the Terraform Registory for docs: [`data_kubernetes_storage_class`](https://www.terraform.io/docs/providers/kubernetes/d/storage_class).
+
 # `dataKubernetesStorageClass` Submodule <a name="`dataKubernetesStorageClass` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesStorageClass"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

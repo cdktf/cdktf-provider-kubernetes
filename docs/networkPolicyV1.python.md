@@ -1,3 +1,7 @@
+# `kubernetes_network_policy_v1`
+
+Refer to the Terraform Registory for docs: [`kubernetes_network_policy_v1`](https://www.terraform.io/docs/providers/kubernetes/r/network_policy_v1).
+
 # `networkPolicyV1` Submodule <a name="`networkPolicyV1` Submodule" id="@cdktf/provider-kubernetes.networkPolicyV1"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

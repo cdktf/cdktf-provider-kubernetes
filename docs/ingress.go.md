@@ -1,3 +1,7 @@
+# `kubernetes_ingress`
+
+Refer to the Terraform Registory for docs: [`kubernetes_ingress`](https://www.terraform.io/docs/providers/kubernetes/r/ingress).
+
 # `ingress` Submodule <a name="`ingress` Submodule" id="@cdktf/provider-kubernetes.ingress"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
