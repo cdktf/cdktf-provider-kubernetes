@@ -1,6 +1,6 @@
 # `kubernetes_limit_range_v1`
 
-Refer to the Terraform Registory for docs: [`kubernetes_limit_range_v1`](https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1).
+Refer to the Terraform Registory for docs: [`kubernetes_limit_range_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1).
 
 # `limitRangeV1` Submodule <a name="`limitRangeV1` Submodule" id="@cdktf/provider-kubernetes.limitRangeV1"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_limit_range_v1`](https:/
 
 ### LimitRangeV1 <a name="LimitRangeV1" id="@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1 kubernetes_limit_range_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1 kubernetes_limit_range_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer"></a>
 
@@ -19,6 +19,7 @@ LimitRangeV1.Builder.create(Construct scope, java.lang.String id)
 //  .connection(SSHProvisionerConnection)
 //  .connection(WinrmProvisionerConnection)
 //  .count(java.lang.Number)
+//  .count(TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
@@ -37,14 +38,14 @@ LimitRangeV1.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.scope">scope</a></code> | <code>software.constructs.Construct</code> | The scope in which to define this construct. |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | The scoped construct ID. |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.count">count</a></code> | <code>java.lang.Number</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Metadata">LimitRangeV1Metadata</a></code> | metadata block. |
-| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#id LimitRangeV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#id LimitRangeV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.spec">spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Spec">LimitRangeV1Spec</a></code> | spec block. |
 
 ---
@@ -75,7 +76,7 @@ Must be unique amongst siblings in the same scope
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.Initializer.parameter.count"></a>
 
-- *Type:* java.lang.Number
+- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -115,7 +116,7 @@ Must be unique amongst siblings in the same scope
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#metadata LimitRangeV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#metadata LimitRangeV1#metadata}
 
 ---
 
@@ -123,7 +124,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#id LimitRangeV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#id LimitRangeV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -136,7 +137,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 spec block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#spec LimitRangeV1#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#spec LimitRangeV1#spec}
 
 ---
 
@@ -469,7 +470,7 @@ LimitRangeV1.isTerraformResource(java.lang.Object x)
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.property.terraformResourceType">terraformResourceType</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.property.terraformGeneratorMetadata">terraformGeneratorMetadata</a></code> | <code>com.hashicorp.cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.property.count">count</a></code> | <code>java.lang.Number</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.property.dependsOn">dependsOn</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -569,10 +570,10 @@ public java.lang.Object getConnection();
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1.property.count"></a>
 
 ```java
-public java.lang.Number getCount();
+public java.lang.Object getCount();
 ```
 
-- *Type:* java.lang.Number
+- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -717,6 +718,7 @@ LimitRangeV1Config.builder()
 //  .connection(SSHProvisionerConnection)
 //  .connection(WinrmProvisionerConnection)
 //  .count(java.lang.Number)
+//  .count(TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
@@ -735,14 +737,14 @@ LimitRangeV1Config.builder()
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.count">count</a></code> | <code>java.lang.Number</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Metadata">LimitRangeV1Metadata</a></code> | metadata block. |
-| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#id LimitRangeV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#id LimitRangeV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.spec">spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Spec">LimitRangeV1Spec</a></code> | spec block. |
 
 ---
@@ -760,10 +762,10 @@ public java.lang.Object getConnection();
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1Config.property.count"></a>
 
 ```java
-public java.lang.Number getCount();
+public java.lang.Object getCount();
 ```
 
-- *Type:* java.lang.Number
+- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -827,7 +829,7 @@ public LimitRangeV1Metadata getMetadata();
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#metadata LimitRangeV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#metadata LimitRangeV1#metadata}
 
 ---
 
@@ -839,7 +841,7 @@ public java.lang.String getId();
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#id LimitRangeV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#id LimitRangeV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -856,7 +858,7 @@ public LimitRangeV1Spec getSpec();
 
 spec block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#spec LimitRangeV1#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#spec LimitRangeV1#spec}
 
 ---
 
@@ -900,7 +902,7 @@ An unstructured key value map stored with the limit range that may be used to st
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#annotations LimitRangeV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#annotations LimitRangeV1#annotations}
 
 ---
 
@@ -916,7 +918,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#generate_name LimitRangeV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#generate_name LimitRangeV1#generate_name}
 
 ---
 
@@ -932,7 +934,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#labels LimitRangeV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#labels LimitRangeV1#labels}
 
 ---
 
@@ -946,7 +948,7 @@ public java.lang.String getName();
 
 Name of the limit range, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#name LimitRangeV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#name LimitRangeV1#name}
 
 ---
 
@@ -960,7 +962,7 @@ public java.lang.String getNamespace();
 
 Namespace defines the space within which name of the limit range must be unique.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#namespace LimitRangeV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#namespace LimitRangeV1#namespace}
 
 ---
 
@@ -995,7 +997,7 @@ public java.lang.Object getLimit();
 
 limit block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#limit LimitRangeV1#limit}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#limit LimitRangeV1#limit}
 
 ---
 
@@ -1039,7 +1041,7 @@ public java.util.Map<java.lang.String, java.lang.String> getDefault();
 
 Default resource requirement limit value by resource name if resource limit is omitted.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#default LimitRangeV1#default}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#default LimitRangeV1#default}
 
 ---
 
@@ -1053,7 +1055,7 @@ public java.util.Map<java.lang.String, java.lang.String> getDefaultRequest();
 
 The default resource requirement request value by resource name if resource request is omitted.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#default_request LimitRangeV1#default_request}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#default_request LimitRangeV1#default_request}
 
 ---
 
@@ -1067,7 +1069,7 @@ public java.util.Map<java.lang.String, java.lang.String> getMax();
 
 Max usage constraints on this kind by resource name.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#max LimitRangeV1#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#max LimitRangeV1#max}
 
 ---
 
@@ -1083,7 +1085,7 @@ The named resource must have a request and limit that are both non-zero where li
 
 this represents the max burst for the named resource.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#max_limit_request_ratio LimitRangeV1#max_limit_request_ratio}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#max_limit_request_ratio LimitRangeV1#max_limit_request_ratio}
 
 ---
 
@@ -1097,7 +1099,7 @@ public java.util.Map<java.lang.String, java.lang.String> getMin();
 
 Min usage constraints on this kind by resource name.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#min LimitRangeV1#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#min LimitRangeV1#min}
 
 ---
 
@@ -1111,7 +1113,7 @@ public java.lang.String getType();
 
 Type of resource that this limit applies to.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/limit_range_v1#type LimitRangeV1#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/limit_range_v1#type LimitRangeV1#type}
 
 ---
 

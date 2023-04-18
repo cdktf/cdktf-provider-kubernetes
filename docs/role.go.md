@@ -1,6 +1,6 @@
 # `kubernetes_role`
 
-Refer to the Terraform Registory for docs: [`kubernetes_role`](https://www.terraform.io/docs/providers/kubernetes/r/role).
+Refer to the Terraform Registory for docs: [`kubernetes_role`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role).
 
 # `role` Submodule <a name="`role` Submodule" id="@cdktf/provider-kubernetes.role"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`kubernetes_role`](https://www.terra
 
 ### Role <a name="Role" id="@cdktf/provider-kubernetes.role.Role"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/role kubernetes_role}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role kubernetes_role}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.role.Role.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/role"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/role"
 
 role.NewRole(scope Construct, id *string, config RoleConfig) Role
 ```
@@ -303,7 +303,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.role.Role.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/role"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/role"
 
 role.Role_IsConstruct(x interface{}) *bool
 ```
@@ -335,7 +335,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.role.Role.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/role"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/role"
 
 role.Role_IsTerraformElement(x interface{}) *bool
 ```
@@ -349,7 +349,7 @@ role.Role_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.role.Role.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/role"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/role"
 
 role.Role_IsTerraformResource(x interface{}) *bool
 ```
@@ -372,7 +372,7 @@ role.Role_IsTerraformResource(x interface{}) *bool
 | <code><a href="#@cdktf/provider-kubernetes.role.Role.property.terraformResourceType">TerraformResourceType</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.Role.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.Role.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.role.Role.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.role.Role.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.Role.property.dependsOn">DependsOn</a></code> | <code>*[]*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.Role.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.Role.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -472,10 +472,10 @@ func Connection() interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.role.Role.property.count"></a>
 
 ```go
-func Count() *f64
+func Count() interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -614,17 +614,17 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.role.RoleConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/role"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/role"
 
 &role.RoleConfig {
 	Connection: interface{},
-	Count: *f64,
+	Count: interface{},
 	DependsOn: *[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable,
 	ForEach: github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator,
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.role.RoleMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.role.RoleMetadata,
 	Rule: interface{},
 	Id: *string,
 }
@@ -635,7 +635,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/role"
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleConfig.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.role.RoleConfig.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.role.RoleConfig.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleConfig.property.dependsOn">DependsOn</a></code> | <code>*[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleConfig.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleConfig.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -643,7 +643,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/role"
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.role.RoleMetadata">RoleMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleConfig.property.rule">Rule</a></code> | <code>interface{}</code> | rule block. |
-| <code><a href="#@cdktf/provider-kubernetes.role.RoleConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#id Role#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.role.RoleConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#id Role#id}. |
 
 ---
 
@@ -660,10 +660,10 @@ Connection interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.role.RoleConfig.property.count"></a>
 
 ```go
-Count *f64
+Count interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -727,7 +727,7 @@ Metadata RoleMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#metadata Role#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#metadata Role#metadata}
 
 ---
 
@@ -741,7 +741,7 @@ Rule interface{}
 
 rule block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#rule Role#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#rule Role#rule}
 
 ---
 
@@ -753,7 +753,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#id Role#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#id Role#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -765,7 +765,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.role.RoleMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/role"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/role"
 
 &role.RoleMetadata {
 	Annotations: *map[string]*string,
@@ -800,7 +800,7 @@ An unstructured key value map stored with the role that may be used to store arb
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#annotations Role#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#annotations Role#annotations}
 
 ---
 
@@ -816,7 +816,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#generate_name Role#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#generate_name Role#generate_name}
 
 ---
 
@@ -832,7 +832,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#labels Role#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#labels Role#labels}
 
 ---
 
@@ -846,7 +846,7 @@ Name *string
 
 Name of the role, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#name Role#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#name Role#name}
 
 ---
 
@@ -860,7 +860,7 @@ Namespace *string
 
 Namespace defines the space within which name of the role must be unique.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#namespace Role#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#namespace Role#namespace}
 
 ---
 
@@ -869,7 +869,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.role.RoleRule.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/role"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/role"
 
 &role.RoleRule {
 	ApiGroups: *[]*string,
@@ -900,7 +900,7 @@ ApiGroups *[]*string
 
 Name of the APIGroup that contains the resources.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#api_groups Role#api_groups}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#api_groups Role#api_groups}
 
 ---
 
@@ -914,7 +914,7 @@ Resources *[]*string
 
 List of resources that the rule applies to.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#resources Role#resources}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#resources Role#resources}
 
 ---
 
@@ -928,7 +928,7 @@ Verbs *[]*string
 
 List of Verbs that apply to ALL the ResourceKinds and AttributeRestrictions contained in this rule.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#verbs Role#verbs}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#verbs Role#verbs}
 
 ---
 
@@ -942,7 +942,7 @@ ResourceNames *[]*string
 
 White list of names that the rule applies to.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/role#resource_names Role#resource_names}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/role#resource_names Role#resource_names}
 
 ---
 
@@ -953,7 +953,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.role.RoleMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/role"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/role"
 
 role.NewRoleMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) RoleMetadataOutputReference
 ```
@@ -1380,7 +1380,7 @@ func InternalValue() RoleMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.role.RoleRuleList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/role"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/role"
 
 role.NewRoleRuleList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) RoleRuleList
 ```
@@ -1523,7 +1523,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.role.RoleRuleOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/role"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/role"
 
 role.NewRoleRuleOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) RoleRuleOutputReference
 ```

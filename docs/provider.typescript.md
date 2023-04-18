@@ -1,6 +1,6 @@
 # `provider`
 
-Refer to the Terraform Registory for docs: [`kubernetes`](https://www.terraform.io/docs/providers/kubernetes).
+Refer to the Terraform Registory for docs: [`kubernetes`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs).
 
 # `provider` Submodule <a name="`provider` Submodule" id="@cdktf/provider-kubernetes.provider"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes`](https://www.terraform.
 
 ### KubernetesProvider <a name="KubernetesProvider" id="@cdktf/provider-kubernetes.provider.KubernetesProvider"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes kubernetes}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs kubernetes}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer"></a>
 
@@ -883,9 +883,9 @@ const kubernetesProviderConfig: provider.KubernetesProviderConfig = { ... }
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.clientCertificate">clientCertificate</a></code> | <code>string</code> | PEM-encoded client certificate for TLS authentication. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.clientKey">clientKey</a></code> | <code>string</code> | PEM-encoded client certificate key for TLS authentication. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.clusterCaCertificate">clusterCaCertificate</a></code> | <code>string</code> | PEM-encoded root certificates bundle for TLS authentication. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configContext">configContext</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context KubernetesProvider#config_context}. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configContextAuthInfo">configContextAuthInfo</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context_auth_info KubernetesProvider#config_context_auth_info}. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configContextCluster">configContextCluster</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context_cluster KubernetesProvider#config_context_cluster}. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configContext">configContext</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#config_context KubernetesProvider#config_context}. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configContextAuthInfo">configContextAuthInfo</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#config_context_auth_info KubernetesProvider#config_context_auth_info}. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configContextCluster">configContextCluster</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#config_context_cluster KubernetesProvider#config_context_cluster}. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configPath">configPath</a></code> | <code>string</code> | Path to the kube config file. Can be set with KUBE_CONFIG_PATH. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configPaths">configPaths</a></code> | <code>string[]</code> | A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.exec">exec</a></code> | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a></code> | exec block. |
@@ -911,7 +911,7 @@ public readonly alias: string;
 
 Alias name.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#alias KubernetesProvider#alias}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#alias KubernetesProvider#alias}
 
 ---
 
@@ -925,7 +925,7 @@ public readonly clientCertificate: string;
 
 PEM-encoded client certificate for TLS authentication.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#client_certificate KubernetesProvider#client_certificate}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#client_certificate KubernetesProvider#client_certificate}
 
 ---
 
@@ -939,7 +939,7 @@ public readonly clientKey: string;
 
 PEM-encoded client certificate key for TLS authentication.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#client_key KubernetesProvider#client_key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#client_key KubernetesProvider#client_key}
 
 ---
 
@@ -953,7 +953,7 @@ public readonly clusterCaCertificate: string;
 
 PEM-encoded root certificates bundle for TLS authentication.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#cluster_ca_certificate KubernetesProvider#cluster_ca_certificate}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#cluster_ca_certificate KubernetesProvider#cluster_ca_certificate}
 
 ---
 
@@ -965,7 +965,7 @@ public readonly configContext: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context KubernetesProvider#config_context}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#config_context KubernetesProvider#config_context}.
 
 ---
 
@@ -977,7 +977,7 @@ public readonly configContextAuthInfo: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context_auth_info KubernetesProvider#config_context_auth_info}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#config_context_auth_info KubernetesProvider#config_context_auth_info}.
 
 ---
 
@@ -989,7 +989,7 @@ public readonly configContextCluster: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_context_cluster KubernetesProvider#config_context_cluster}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#config_context_cluster KubernetesProvider#config_context_cluster}.
 
 ---
 
@@ -1003,7 +1003,7 @@ public readonly configPath: string;
 
 Path to the kube config file. Can be set with KUBE_CONFIG_PATH.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_path KubernetesProvider#config_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#config_path KubernetesProvider#config_path}
 
 ---
 
@@ -1017,7 +1017,7 @@ public readonly configPaths: string[];
 
 A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#config_paths KubernetesProvider#config_paths}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#config_paths KubernetesProvider#config_paths}
 
 ---
 
@@ -1031,7 +1031,7 @@ public readonly exec: KubernetesProviderExec;
 
 exec block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#exec KubernetesProvider#exec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#exec KubernetesProvider#exec}
 
 ---
 
@@ -1045,7 +1045,7 @@ public readonly experiments: KubernetesProviderExperiments;
 
 experiments block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#experiments KubernetesProvider#experiments}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#experiments KubernetesProvider#experiments}
 
 ---
 
@@ -1059,7 +1059,7 @@ public readonly host: string;
 
 The hostname (in form of URI) of Kubernetes master.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#host KubernetesProvider#host}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#host KubernetesProvider#host}
 
 ---
 
@@ -1075,7 +1075,7 @@ List of Kubernetes metadata annotations to ignore across all resources handled b
 
 Each item is a regular expression.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#ignore_annotations KubernetesProvider#ignore_annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#ignore_annotations KubernetesProvider#ignore_annotations}
 
 ---
 
@@ -1091,7 +1091,7 @@ List of Kubernetes metadata labels to ignore across all resources handled by thi
 
 Each item is a regular expression.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#ignore_labels KubernetesProvider#ignore_labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#ignore_labels KubernetesProvider#ignore_labels}
 
 ---
 
@@ -1105,7 +1105,7 @@ public readonly insecure: boolean | IResolvable;
 
 Whether server should be accessed without verifying the TLS certificate.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#insecure KubernetesProvider#insecure}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#insecure KubernetesProvider#insecure}
 
 ---
 
@@ -1119,7 +1119,7 @@ public readonly password: string;
 
 The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#password KubernetesProvider#password}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#password KubernetesProvider#password}
 
 ---
 
@@ -1133,7 +1133,7 @@ public readonly proxyUrl: string;
 
 URL to the proxy to be used for all API requests.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#proxy_url KubernetesProvider#proxy_url}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#proxy_url KubernetesProvider#proxy_url}
 
 ---
 
@@ -1147,7 +1147,7 @@ public readonly token: string;
 
 Token to authenticate an service account.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#token KubernetesProvider#token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#token KubernetesProvider#token}
 
 ---
 
@@ -1161,7 +1161,7 @@ public readonly username: string;
 
 The username to use for HTTP basic authentication when accessing the Kubernetes master endpoint.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#username KubernetesProvider#username}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#username KubernetesProvider#username}
 
 ---
 
@@ -1179,10 +1179,10 @@ const kubernetesProviderExec: provider.KubernetesProviderExec = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec.property.apiVersion">apiVersion</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#api_version KubernetesProvider#api_version}. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec.property.command">command</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#command KubernetesProvider#command}. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec.property.args">args</a></code> | <code>string[]</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#args KubernetesProvider#args}. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec.property.env">env</a></code> | <code>{[ key: string ]: string}</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#env KubernetesProvider#env}. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec.property.apiVersion">apiVersion</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#api_version KubernetesProvider#api_version}. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec.property.command">command</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#command KubernetesProvider#command}. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec.property.args">args</a></code> | <code>string[]</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#args KubernetesProvider#args}. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec.property.env">env</a></code> | <code>{[ key: string ]: string}</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#env KubernetesProvider#env}. |
 
 ---
 
@@ -1194,7 +1194,7 @@ public readonly apiVersion: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#api_version KubernetesProvider#api_version}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#api_version KubernetesProvider#api_version}.
 
 ---
 
@@ -1206,7 +1206,7 @@ public readonly command: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#command KubernetesProvider#command}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#command KubernetesProvider#command}.
 
 ---
 
@@ -1218,7 +1218,7 @@ public readonly args: string[];
 
 - *Type:* string[]
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#args KubernetesProvider#args}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#args KubernetesProvider#args}.
 
 ---
 
@@ -1230,7 +1230,7 @@ public readonly env: {[ key: string ]: string};
 
 - *Type:* {[ key: string ]: string}
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#env KubernetesProvider#env}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#env KubernetesProvider#env}.
 
 ---
 
@@ -1262,7 +1262,7 @@ public readonly manifestResource: boolean | IResolvable;
 
 Enable the `kubernetes_manifest` resource.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes#manifest_resource KubernetesProvider#manifest_resource}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs#manifest_resource KubernetesProvider#manifest_resource}
 
 ---
 

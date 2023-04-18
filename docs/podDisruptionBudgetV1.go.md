@@ -1,6 +1,6 @@
 # `kubernetes_pod_disruption_budget_v1`
 
-Refer to the Terraform Registory for docs: [`kubernetes_pod_disruption_budget_v1`](https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1).
+Refer to the Terraform Registory for docs: [`kubernetes_pod_disruption_budget_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1).
 
 # `podDisruptionBudgetV1` Submodule <a name="`podDisruptionBudgetV1` Submodule" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`kubernetes_pod_disruption_budget_v1
 
 ### PodDisruptionBudgetV1 <a name="PodDisruptionBudgetV1" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1 kubernetes_pod_disruption_budget_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1 kubernetes_pod_disruption_budget_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 poddisruptionbudgetv1.NewPodDisruptionBudgetV1(scope Construct, id *string, config PodDisruptionBudgetV1Config) PodDisruptionBudgetV1
 ```
@@ -303,7 +303,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 poddisruptionbudgetv1.PodDisruptionBudgetV1_IsConstruct(x interface{}) *bool
 ```
@@ -335,7 +335,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 poddisruptionbudgetv1.PodDisruptionBudgetV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -349,7 +349,7 @@ poddisruptionbudgetv1.PodDisruptionBudgetV1_IsTerraformElement(x interface{}) *b
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 poddisruptionbudgetv1.PodDisruptionBudgetV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -372,7 +372,7 @@ poddisruptionbudgetv1.PodDisruptionBudgetV1_IsTerraformResource(x interface{}) *
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.property.terraformResourceType">TerraformResourceType</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.property.dependsOn">DependsOn</a></code> | <code>*[]*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -472,10 +472,10 @@ func Connection() interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1.property.count"></a>
 
 ```go
-func Count() *f64
+func Count() interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -614,18 +614,18 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 &poddisruptionbudgetv1.PodDisruptionBudgetV1Config {
 	Connection: interface{},
-	Count: *f64,
+	Count: interface{},
 	DependsOn: *[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable,
 	ForEach: github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator,
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.podDisruptionBudgetV1.PodDisruptionBudgetV1Metadata,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.podDisruptionBudgetV1.PodDisruptionBudgetV1Spec,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Metadata,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Spec,
 	Id: *string,
 }
 ```
@@ -635,7 +635,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptio
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.property.dependsOn">DependsOn</a></code> | <code>*[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -643,7 +643,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptio
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Metadata">PodDisruptionBudgetV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.property.spec">Spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Spec">PodDisruptionBudgetV1Spec</a></code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#id PodDisruptionBudgetV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#id PodDisruptionBudgetV1#id}. |
 
 ---
 
@@ -660,10 +660,10 @@ Connection interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Config.property.count"></a>
 
 ```go
-Count *f64
+Count interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -727,7 +727,7 @@ Metadata PodDisruptionBudgetV1Metadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#metadata PodDisruptionBudgetV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#metadata PodDisruptionBudgetV1#metadata}
 
 ---
 
@@ -741,7 +741,7 @@ Spec PodDisruptionBudgetV1Spec
 
 spec block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#spec PodDisruptionBudgetV1#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#spec PodDisruptionBudgetV1#spec}
 
 ---
 
@@ -753,7 +753,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#id PodDisruptionBudgetV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#id PodDisruptionBudgetV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -765,7 +765,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 &poddisruptionbudgetv1.PodDisruptionBudgetV1Metadata {
 	Annotations: *map[string]*string,
@@ -800,7 +800,7 @@ An unstructured key value map stored with the pod disruption budget that may be 
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#annotations PodDisruptionBudgetV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#annotations PodDisruptionBudgetV1#annotations}
 
 ---
 
@@ -816,7 +816,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#generate_name PodDisruptionBudgetV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#generate_name PodDisruptionBudgetV1#generate_name}
 
 ---
 
@@ -832,7 +832,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#labels PodDisruptionBudgetV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#labels PodDisruptionBudgetV1#labels}
 
 ---
 
@@ -846,7 +846,7 @@ Name *string
 
 Name of the pod disruption budget, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#name PodDisruptionBudgetV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#name PodDisruptionBudgetV1#name}
 
 ---
 
@@ -860,7 +860,7 @@ Namespace *string
 
 Namespace defines the space within which name of the pod disruption budget must be unique.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#namespace PodDisruptionBudgetV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#namespace PodDisruptionBudgetV1#namespace}
 
 ---
 
@@ -869,10 +869,10 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 &poddisruptionbudgetv1.PodDisruptionBudgetV1Spec {
-	Selector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.podDisruptionBudgetV1.PodDisruptionBudgetV1SpecSelector,
+	Selector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1SpecSelector,
 	MaxUnavailable: *string,
 	MinAvailable: *string,
 }
@@ -883,8 +883,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptio
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Spec.property.selector">Selector</a></code> | <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1SpecSelector">PodDisruptionBudgetV1SpecSelector</a></code> | selector block. |
-| <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Spec.property.maxUnavailable">MaxUnavailable</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#max_unavailable PodDisruptionBudgetV1#max_unavailable}. |
-| <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Spec.property.minAvailable">MinAvailable</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#min_available PodDisruptionBudgetV1#min_available}. |
+| <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Spec.property.maxUnavailable">MaxUnavailable</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#max_unavailable PodDisruptionBudgetV1#max_unavailable}. |
+| <code><a href="#@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1Spec.property.minAvailable">MinAvailable</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#min_available PodDisruptionBudgetV1#min_available}. |
 
 ---
 
@@ -898,7 +898,7 @@ Selector PodDisruptionBudgetV1SpecSelector
 
 selector block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#selector PodDisruptionBudgetV1#selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#selector PodDisruptionBudgetV1#selector}
 
 ---
 
@@ -910,7 +910,7 @@ MaxUnavailable *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#max_unavailable PodDisruptionBudgetV1#max_unavailable}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#max_unavailable PodDisruptionBudgetV1#max_unavailable}.
 
 ---
 
@@ -922,7 +922,7 @@ MinAvailable *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#min_available PodDisruptionBudgetV1#min_available}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#min_available PodDisruptionBudgetV1#min_available}.
 
 ---
 
@@ -931,7 +931,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1SpecSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 &poddisruptionbudgetv1.PodDisruptionBudgetV1SpecSelector {
 	MatchExpressions: interface{},
@@ -958,7 +958,7 @@ MatchExpressions interface{}
 
 match_expressions block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#match_expressions PodDisruptionBudgetV1#match_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#match_expressions PodDisruptionBudgetV1#match_expressions}
 
 ---
 
@@ -974,7 +974,7 @@ A map of {key,value} pairs.
 
 A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#match_labels PodDisruptionBudgetV1#match_labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#match_labels PodDisruptionBudgetV1#match_labels}
 
 ---
 
@@ -983,7 +983,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1SpecSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 &poddisruptionbudgetv1.PodDisruptionBudgetV1SpecSelectorMatchExpressions {
 	Key: *string,
@@ -1012,7 +1012,7 @@ Key *string
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#key PodDisruptionBudgetV1#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#key PodDisruptionBudgetV1#key}
 
 ---
 
@@ -1026,7 +1026,7 @@ Operator *string
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#operator PodDisruptionBudgetV1#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#operator PodDisruptionBudgetV1#operator}
 
 ---
 
@@ -1042,7 +1042,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_disruption_budget_v1#values PodDisruptionBudgetV1#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_disruption_budget_v1#values PodDisruptionBudgetV1#values}
 
 ---
 
@@ -1053,7 +1053,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 poddisruptionbudgetv1.NewPodDisruptionBudgetV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodDisruptionBudgetV1MetadataOutputReference
 ```
@@ -1480,7 +1480,7 @@ func InternalValue() PodDisruptionBudgetV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 poddisruptionbudgetv1.NewPodDisruptionBudgetV1SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodDisruptionBudgetV1SpecOutputReference
 ```
@@ -1822,7 +1822,7 @@ func InternalValue() PodDisruptionBudgetV1Spec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1SpecSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 poddisruptionbudgetv1.NewPodDisruptionBudgetV1SpecSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodDisruptionBudgetV1SpecSelectorMatchExpressionsList
 ```
@@ -1965,7 +1965,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1SpecSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 poddisruptionbudgetv1.NewPodDisruptionBudgetV1SpecSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodDisruptionBudgetV1SpecSelectorMatchExpressionsOutputReference
 ```
@@ -2319,7 +2319,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podDisruptionBudgetV1.PodDisruptionBudgetV1SpecSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/poddisruptionbudgetv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/poddisruptionbudgetv1"
 
 poddisruptionbudgetv1.NewPodDisruptionBudgetV1SpecSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodDisruptionBudgetV1SpecSelectorOutputReference
 ```

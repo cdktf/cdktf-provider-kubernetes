@@ -1,6 +1,6 @@
 # `kubernetes_cluster_role`
 
-Refer to the Terraform Registory for docs: [`kubernetes_cluster_role`](https://www.terraform.io/docs/providers/kubernetes/r/cluster_role).
+Refer to the Terraform Registory for docs: [`kubernetes_cluster_role`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role).
 
 # `clusterRole` Submodule <a name="`clusterRole` Submodule" id="@cdktf/provider-kubernetes.clusterRole"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`kubernetes_cluster_role`](https://w
 
 ### ClusterRole <a name="ClusterRole" id="@cdktf/provider-kubernetes.clusterRole.ClusterRole"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role kubernetes_cluster_role}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role kubernetes_cluster_role}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRole.ClusterRole.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 clusterrole.NewClusterRole(scope Construct, id *string, config ClusterRoleConfig) ClusterRole
 ```
@@ -330,7 +330,7 @@ func ResetRule()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.clusterRole.ClusterRole.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 clusterrole.ClusterRole_IsConstruct(x interface{}) *bool
 ```
@@ -362,7 +362,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.clusterRole.ClusterRole.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 clusterrole.ClusterRole_IsTerraformElement(x interface{}) *bool
 ```
@@ -376,7 +376,7 @@ clusterrole.ClusterRole_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.clusterRole.ClusterRole.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 clusterrole.ClusterRole_IsTerraformResource(x interface{}) *bool
 ```
@@ -399,7 +399,7 @@ clusterrole.ClusterRole_IsTerraformResource(x interface{}) *bool
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRole.property.terraformResourceType">TerraformResourceType</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRole.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRole.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRole.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRole.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRole.property.dependsOn">DependsOn</a></code> | <code>*[]*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRole.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRole.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -501,10 +501,10 @@ func Connection() interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.clusterRole.ClusterRole.property.count"></a>
 
 ```go
-func Count() *f64
+func Count() interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -663,7 +663,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleAggregationRule.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 &clusterrole.ClusterRoleAggregationRule {
 	ClusterRoleSelectors: interface{},
@@ -688,7 +688,7 @@ ClusterRoleSelectors interface{}
 
 cluster_role_selectors block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#cluster_role_selectors ClusterRole#cluster_role_selectors}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#cluster_role_selectors ClusterRole#cluster_role_selectors}
 
 ---
 
@@ -697,7 +697,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleAggregationRuleClusterRoleSelectors.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 &clusterrole.ClusterRoleAggregationRuleClusterRoleSelectors {
 	MatchExpressions: interface{},
@@ -724,7 +724,7 @@ MatchExpressions interface{}
 
 match_expressions block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#match_expressions ClusterRole#match_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#match_expressions ClusterRole#match_expressions}
 
 ---
 
@@ -740,7 +740,7 @@ A map of {key,value} pairs.
 
 A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#match_labels ClusterRole#match_labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#match_labels ClusterRole#match_labels}
 
 ---
 
@@ -749,7 +749,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 &clusterrole.ClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressions {
 	Key: *string,
@@ -778,7 +778,7 @@ Key *string
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#key ClusterRole#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#key ClusterRole#key}
 
 ---
 
@@ -792,7 +792,7 @@ Operator *string
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#operator ClusterRole#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#operator ClusterRole#operator}
 
 ---
 
@@ -808,7 +808,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#values ClusterRole#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#values ClusterRole#values}
 
 ---
 
@@ -817,18 +817,18 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 &clusterrole.ClusterRoleConfig {
 	Connection: interface{},
-	Count: *f64,
+	Count: interface{},
 	DependsOn: *[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable,
 	ForEach: github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator,
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.clusterRole.ClusterRoleMetadata,
-	AggregationRule: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.clusterRole.ClusterRoleAggregationRule,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.clusterRole.ClusterRoleMetadata,
+	AggregationRule: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.clusterRole.ClusterRoleAggregationRule,
 	Id: *string,
 	Rule: interface{},
 }
@@ -839,7 +839,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.dependsOn">DependsOn</a></code> | <code>*[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -847,7 +847,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleMetadata">ClusterRoleMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.aggregationRule">AggregationRule</a></code> | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleAggregationRule">ClusterRoleAggregationRule</a></code> | aggregation_rule block. |
-| <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#id ClusterRole#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#id ClusterRole#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.rule">Rule</a></code> | <code>interface{}</code> | rule block. |
 
 ---
@@ -865,10 +865,10 @@ Connection interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.count"></a>
 
 ```go
-Count *f64
+Count interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -932,7 +932,7 @@ Metadata ClusterRoleMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#metadata ClusterRole#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#metadata ClusterRole#metadata}
 
 ---
 
@@ -946,7 +946,7 @@ AggregationRule ClusterRoleAggregationRule
 
 aggregation_rule block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#aggregation_rule ClusterRole#aggregation_rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#aggregation_rule ClusterRole#aggregation_rule}
 
 ---
 
@@ -958,7 +958,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#id ClusterRole#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#id ClusterRole#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -975,7 +975,7 @@ Rule interface{}
 
 rule block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#rule ClusterRole#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#rule ClusterRole#rule}
 
 ---
 
@@ -984,7 +984,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 &clusterrole.ClusterRoleMetadata {
 	Annotations: *map[string]*string,
@@ -1017,7 +1017,7 @@ An unstructured key value map stored with the clusterRole that may be used to st
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#annotations ClusterRole#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#annotations ClusterRole#annotations}
 
 ---
 
@@ -1033,7 +1033,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#generate_name ClusterRole#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#generate_name ClusterRole#generate_name}
 
 ---
 
@@ -1049,7 +1049,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#labels ClusterRole#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#labels ClusterRole#labels}
 
 ---
 
@@ -1063,7 +1063,7 @@ Name *string
 
 Name of the clusterRole, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#name ClusterRole#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#name ClusterRole#name}
 
 ---
 
@@ -1072,7 +1072,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleRule.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 &clusterrole.ClusterRoleRule {
 	Verbs: *[]*string,
@@ -1107,7 +1107,7 @@ Verbs is a list of Verbs that apply to ALL the ResourceKinds and AttributeRestri
 
 VerbAll represents all kinds.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#verbs ClusterRole#verbs}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#verbs ClusterRole#verbs}
 
 ---
 
@@ -1123,7 +1123,7 @@ APIGroups is the name of the APIGroup that contains the resources.
 
 If multiple API groups are specified, any action requested against one of the enumerated resources in any API group will be allowed.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#api_groups ClusterRole#api_groups}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#api_groups ClusterRole#api_groups}
 
 ---
 
@@ -1139,7 +1139,7 @@ NonResourceURLs is a set of partial urls that a user should have access to.
 
 *s are allowed, but only as the full, final step in the path Since non-resource URLs are not namespaced, this field is only applicable for ClusterRoles referenced from a ClusterRoleBinding. Rules can either apply to API resources (such as "pods" or "secrets") or non-resource URL paths (such as "/api"), but not both.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#non_resource_urls ClusterRole#non_resource_urls}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#non_resource_urls ClusterRole#non_resource_urls}
 
 ---
 
@@ -1155,7 +1155,7 @@ ResourceNames is an optional white list of names that the rule applies to.
 
 An empty set means that everything is allowed.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#resource_names ClusterRole#resource_names}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#resource_names ClusterRole#resource_names}
 
 ---
 
@@ -1169,7 +1169,7 @@ Resources *[]*string
 
 Resources is a list of resources this rule applies to. ResourceAll represents all resources.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/cluster_role#resources ClusterRole#resources}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/cluster_role#resources ClusterRole#resources}
 
 ---
 
@@ -1180,7 +1180,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleAggregationRuleClusterRoleSelectorsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 clusterrole.NewClusterRoleAggregationRuleClusterRoleSelectorsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ClusterRoleAggregationRuleClusterRoleSelectorsList
 ```
@@ -1323,7 +1323,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 clusterrole.NewClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressionsList
 ```
@@ -1466,7 +1466,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 clusterrole.NewClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ClusterRoleAggregationRuleClusterRoleSelectorsMatchExpressionsOutputReference
 ```
@@ -1820,7 +1820,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleAggregationRuleClusterRoleSelectorsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 clusterrole.NewClusterRoleAggregationRuleClusterRoleSelectorsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ClusterRoleAggregationRuleClusterRoleSelectorsOutputReference
 ```
@@ -2158,7 +2158,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleAggregationRuleOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 clusterrole.NewClusterRoleAggregationRuleOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ClusterRoleAggregationRuleOutputReference
 ```
@@ -2449,7 +2449,7 @@ func InternalValue() ClusterRoleAggregationRule
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 clusterrole.NewClusterRoleMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ClusterRoleMetadataOutputReference
 ```
@@ -2847,7 +2847,7 @@ func InternalValue() ClusterRoleMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleRuleList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 clusterrole.NewClusterRoleRuleList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ClusterRoleRuleList
 ```
@@ -2990,7 +2990,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRole.ClusterRoleRuleOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/clusterrole"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/clusterrole"
 
 clusterrole.NewClusterRoleRuleOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ClusterRoleRuleOutputReference
 ```

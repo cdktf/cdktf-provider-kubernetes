@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/d/nodes
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/nodes
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -8,7 +8,7 @@ import * as cdktf from 'cdktf';
 
 export interface DataKubernetesNodesConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/nodes#id DataKubernetesNodes#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/nodes#id DataKubernetesNodes#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -17,7 +17,7 @@ export interface DataKubernetesNodesConfig extends cdktf.TerraformMetaArguments 
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/nodes#metadata DataKubernetesNodes#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/nodes#metadata DataKubernetesNodes#metadata}
   */
   readonly metadata?: DataKubernetesNodesMetadata;
 }
@@ -538,7 +538,7 @@ export interface DataKubernetesNodesMetadata {
   /**
   * Select nodes with these labels. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/nodes#labels DataKubernetesNodes#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/nodes#labels DataKubernetesNodes#labels}
   */
   readonly labels: { [key: string]: string };
 }
@@ -600,7 +600,7 @@ export class DataKubernetesNodesMetadataOutputReference extends cdktf.ComplexObj
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/nodes kubernetes_nodes}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/nodes kubernetes_nodes}
 */
 export class DataKubernetesNodes extends cdktf.TerraformDataSource {
 
@@ -614,7 +614,7 @@ export class DataKubernetesNodes extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/d/nodes kubernetes_nodes} Data Source
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/nodes kubernetes_nodes} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

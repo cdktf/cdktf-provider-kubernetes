@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/kubernetes/r/node_taint
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,17 +10,17 @@ export interface NodeTaintConfig extends cdktf.TerraformMetaArguments {
   /**
   * Set the name of the field manager for the node taint
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/node_taint#field_manager NodeTaint#field_manager}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#field_manager NodeTaint#field_manager}
   */
   readonly fieldManager?: string;
   /**
   * Force overwriting annotations that were created or edited outside of Terraform.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/node_taint#force NodeTaint#force}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#force NodeTaint#force}
   */
   readonly force?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/node_taint#id NodeTaint#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#id NodeTaint#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -29,13 +29,13 @@ export interface NodeTaintConfig extends cdktf.TerraformMetaArguments {
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/node_taint#metadata NodeTaint#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#metadata NodeTaint#metadata}
   */
   readonly metadata: NodeTaintMetadata;
   /**
   * taint block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/node_taint#taint NodeTaint#taint}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#taint NodeTaint#taint}
   */
   readonly taint: NodeTaintTaint;
 }
@@ -43,7 +43,7 @@ export interface NodeTaintMetadata {
   /**
   * The name of the node
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/node_taint#name NodeTaint#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#name NodeTaint#name}
   */
   readonly name: string;
 }
@@ -107,19 +107,19 @@ export interface NodeTaintTaint {
   /**
   * The taint effect
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/node_taint#effect NodeTaint#effect}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#effect NodeTaint#effect}
   */
   readonly effect: string;
   /**
   * The taint key
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/node_taint#key NodeTaint#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#key NodeTaint#key}
   */
   readonly key: string;
   /**
   * The taint value
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/node_taint#value NodeTaint#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#value NodeTaint#value}
   */
   readonly value: string;
 }
@@ -221,7 +221,7 @@ export class NodeTaintTaintOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/node_taint kubernetes_node_taint}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint kubernetes_node_taint}
 */
 export class NodeTaint extends cdktf.TerraformResource {
 
@@ -235,7 +235,7 @@ export class NodeTaint extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/kubernetes/r/node_taint kubernetes_node_taint} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint kubernetes_node_taint} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

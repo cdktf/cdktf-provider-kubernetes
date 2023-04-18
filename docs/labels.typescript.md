@@ -1,6 +1,6 @@
 # `kubernetes_labels`
 
-Refer to the Terraform Registory for docs: [`kubernetes_labels`](https://www.terraform.io/docs/providers/kubernetes/r/labels).
+Refer to the Terraform Registory for docs: [`kubernetes_labels`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/labels).
 
 # `labels` Submodule <a name="`labels` Submodule" id="@cdktf/provider-kubernetes.labels"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_labels`](https://www.ter
 
 ### Labels <a name="Labels" id="@cdktf/provider-kubernetes.labels.Labels"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/labels kubernetes_labels}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/labels kubernetes_labels}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.labels.Labels.Initializer"></a>
 
@@ -373,7 +373,7 @@ labels.Labels.isTerraformResource(x: any)
 | <code><a href="#@cdktf/provider-kubernetes.labels.Labels.property.terraformResourceType">terraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.labels.Labels.property.terraformGeneratorMetadata">terraformGeneratorMetadata</a></code> | <code>cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.labels.Labels.property.connection">connection</a></code> | <code>cdktf.SSHProvisionerConnection \| cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.labels.Labels.property.count">count</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.labels.Labels.property.count">count</a></code> | <code>number \| cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.labels.Labels.property.dependsOn">dependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.labels.Labels.property.forEach">forEach</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.labels.Labels.property.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -481,10 +481,10 @@ public readonly connection: SSHProvisionerConnection | WinrmProvisionerConnectio
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.labels.Labels.property.count"></a>
 
 ```typescript
-public readonly count: number;
+public readonly count: number | TerraformCount;
 ```
 
-- *Type:* number
+- *Type:* number | cdktf.TerraformCount
 
 ---
 
@@ -713,7 +713,7 @@ const labelsConfig: labels.LabelsConfig = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.connection">connection</a></code> | <code>cdktf.SSHProvisionerConnection \| cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.count">count</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.count">count</a></code> | <code>number \| cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.dependsOn">dependsOn</a></code> | <code>cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.forEach">forEach</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -725,7 +725,7 @@ const labelsConfig: labels.LabelsConfig = { ... }
 | <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.labels.LabelsMetadata">LabelsMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.fieldManager">fieldManager</a></code> | <code>string</code> | Set the name of the field manager for the specified labels. |
 | <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.force">force</a></code> | <code>boolean \| cdktf.IResolvable</code> | Force overwriting labels that were created or edited outside of Terraform. |
-| <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/labels#id Labels#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/labels#id Labels#id}. |
 
 ---
 
@@ -742,10 +742,10 @@ public readonly connection: SSHProvisionerConnection | WinrmProvisionerConnectio
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.labels.LabelsConfig.property.count"></a>
 
 ```typescript
-public readonly count: number;
+public readonly count: number | TerraformCount;
 ```
 
-- *Type:* number
+- *Type:* number | cdktf.TerraformCount
 
 ---
 
@@ -809,7 +809,7 @@ public readonly apiVersion: string;
 
 The apiVersion of the resource to label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/labels#api_version Labels#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/labels#api_version Labels#api_version}
 
 ---
 
@@ -823,7 +823,7 @@ public readonly kind: string;
 
 The kind of the resource to label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/labels#kind Labels#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/labels#kind Labels#kind}
 
 ---
 
@@ -837,7 +837,7 @@ public readonly labels: {[ key: string ]: string};
 
 A map of labels to apply to the resource.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/labels#labels Labels#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/labels#labels Labels#labels}
 
 ---
 
@@ -851,7 +851,7 @@ public readonly metadata: LabelsMetadata;
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/labels#metadata Labels#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/labels#metadata Labels#metadata}
 
 ---
 
@@ -865,7 +865,7 @@ public readonly fieldManager: string;
 
 Set the name of the field manager for the specified labels.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/labels#field_manager Labels#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/labels#field_manager Labels#field_manager}
 
 ---
 
@@ -879,7 +879,7 @@ public readonly force: boolean | IResolvable;
 
 Force overwriting labels that were created or edited outside of Terraform.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/labels#force Labels#force}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/labels#force Labels#force}
 
 ---
 
@@ -891,7 +891,7 @@ public readonly id: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/labels#id Labels#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/labels#id Labels#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -927,7 +927,7 @@ public readonly name: string;
 
 The name of the resource.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/labels#name Labels#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/labels#name Labels#name}
 
 ---
 
@@ -941,7 +941,7 @@ public readonly namespace: string;
 
 The namespace of the resource.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/labels#namespace Labels#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/labels#namespace Labels#namespace}
 
 ---
 

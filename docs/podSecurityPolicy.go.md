@@ -1,6 +1,6 @@
 # `kubernetes_pod_security_policy`
 
-Refer to the Terraform Registory for docs: [`kubernetes_pod_security_policy`](https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy).
+Refer to the Terraform Registory for docs: [`kubernetes_pod_security_policy`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy).
 
 # `podSecurityPolicy` Submodule <a name="`podSecurityPolicy` Submodule" id="@cdktf/provider-kubernetes.podSecurityPolicy"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`kubernetes_pod_security_policy`](ht
 
 ### PodSecurityPolicy <a name="PodSecurityPolicy" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy kubernetes_pod_security_policy}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy kubernetes_pod_security_policy}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicy(scope Construct, id *string, config PodSecurityPolicyConfig) PodSecurityPolicy
 ```
@@ -303,7 +303,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.PodSecurityPolicy_IsConstruct(x interface{}) *bool
 ```
@@ -335,7 +335,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.PodSecurityPolicy_IsTerraformElement(x interface{}) *bool
 ```
@@ -349,7 +349,7 @@ podsecuritypolicy.PodSecurityPolicy_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.PodSecurityPolicy_IsTerraformResource(x interface{}) *bool
 ```
@@ -372,7 +372,7 @@ podsecuritypolicy.PodSecurityPolicy_IsTerraformResource(x interface{}) *bool
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.property.terraformResourceType">TerraformResourceType</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.property.dependsOn">DependsOn</a></code> | <code>*[]*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -472,10 +472,10 @@ func Connection() interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.property.count"></a>
 
 ```go
-func Count() *f64
+func Count() interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -614,18 +614,18 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicyConfig {
 	Connection: interface{},
-	Count: *f64,
+	Count: interface{},
 	DependsOn: *[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable,
 	ForEach: github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator,
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.podSecurityPolicy.PodSecurityPolicyMetadata,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.podSecurityPolicy.PodSecurityPolicySpec,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicy.PodSecurityPolicyMetadata,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicy.PodSecurityPolicySpec,
 	Id: *string,
 }
 ```
@@ -635,7 +635,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecurityp
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.dependsOn">DependsOn</a></code> | <code>*[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -643,7 +643,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecurityp
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyMetadata">PodSecurityPolicyMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.spec">Spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpec">PodSecurityPolicySpec</a></code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#id PodSecurityPolicy#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#id PodSecurityPolicy#id}. |
 
 ---
 
@@ -660,10 +660,10 @@ Connection interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.count"></a>
 
 ```go
-Count *f64
+Count interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -727,7 +727,7 @@ Metadata PodSecurityPolicyMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#metadata PodSecurityPolicy#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#metadata PodSecurityPolicy#metadata}
 
 ---
 
@@ -741,7 +741,7 @@ Spec PodSecurityPolicySpec
 
 spec block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#spec PodSecurityPolicy#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#spec PodSecurityPolicy#spec}
 
 ---
 
@@ -753,7 +753,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#id PodSecurityPolicy#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#id PodSecurityPolicy#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -765,7 +765,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicyMetadata {
 	Annotations: *map[string]*string,
@@ -796,7 +796,7 @@ An unstructured key value map stored with the podsecuritypolicy that may be used
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#annotations PodSecurityPolicy#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#annotations PodSecurityPolicy#annotations}
 
 ---
 
@@ -812,7 +812,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#labels PodSecurityPolicy#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#labels PodSecurityPolicy#labels}
 
 ---
 
@@ -826,7 +826,7 @@ Name *string
 
 Name of the podsecuritypolicy, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#name PodSecurityPolicy#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#name PodSecurityPolicy#name}
 
 ---
 
@@ -835,12 +835,12 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpec {
-	FsGroup: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.podSecurityPolicy.PodSecurityPolicySpecFsGroup,
-	RunAsUser: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.podSecurityPolicy.PodSecurityPolicySpecRunAsUser,
-	SupplementalGroups: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.podSecurityPolicy.PodSecurityPolicySpecSupplementalGroups,
+	FsGroup: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicy.PodSecurityPolicySpecFsGroup,
+	RunAsUser: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicy.PodSecurityPolicySpecRunAsUser,
+	SupplementalGroups: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicy.PodSecurityPolicySpecSupplementalGroups,
 	AllowedCapabilities: *[]*string,
 	AllowedFlexVolumes: interface{},
 	AllowedHostPaths: interface{},
@@ -857,8 +857,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecurityp
 	Privileged: interface{},
 	ReadOnlyRootFilesystem: interface{},
 	RequiredDropCapabilities: *[]*string,
-	RunAsGroup: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.podSecurityPolicy.PodSecurityPolicySpecRunAsGroup,
-	SeLinux: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.podSecurityPolicy.PodSecurityPolicySpecSeLinux,
+	RunAsGroup: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicy.PodSecurityPolicySpecRunAsGroup,
+	SeLinux: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinux,
 	Volumes: *[]*string,
 }
 ```
@@ -902,7 +902,7 @@ FsGroup PodSecurityPolicySpecFsGroup
 
 fs_group block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#fs_group PodSecurityPolicy#fs_group}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#fs_group PodSecurityPolicy#fs_group}
 
 ---
 
@@ -916,7 +916,7 @@ RunAsUser PodSecurityPolicySpecRunAsUser
 
 run_as_user block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#run_as_user PodSecurityPolicy#run_as_user}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#run_as_user PodSecurityPolicy#run_as_user}
 
 ---
 
@@ -930,7 +930,7 @@ SupplementalGroups PodSecurityPolicySpecSupplementalGroups
 
 supplemental_groups block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#supplemental_groups PodSecurityPolicy#supplemental_groups}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#supplemental_groups PodSecurityPolicy#supplemental_groups}
 
 ---
 
@@ -946,7 +946,7 @@ allowedCapabilities is a list of capabilities that can be requested to add to th
 
 Capabilities in this field may be added at the pod author's discretion. You must not list a capability in both allowedCapabilities and requiredDropCapabilities.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#allowed_capabilities PodSecurityPolicy#allowed_capabilities}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#allowed_capabilities PodSecurityPolicy#allowed_capabilities}
 
 ---
 
@@ -960,7 +960,7 @@ AllowedFlexVolumes interface{}
 
 allowed_flex_volumes block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#allowed_flex_volumes PodSecurityPolicy#allowed_flex_volumes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#allowed_flex_volumes PodSecurityPolicy#allowed_flex_volumes}
 
 ---
 
@@ -974,7 +974,7 @@ AllowedHostPaths interface{}
 
 allowed_host_paths block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#allowed_host_paths PodSecurityPolicy#allowed_host_paths}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#allowed_host_paths PodSecurityPolicy#allowed_host_paths}
 
 ---
 
@@ -990,7 +990,7 @@ AllowedProcMountTypes is an allowlist of allowed ProcMountTypes.
 
 Empty or nil indicates that only the DefaultProcMountType may be used. This requires the ProcMountType feature flag to be enabled.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#allowed_proc_mount_types PodSecurityPolicy#allowed_proc_mount_types}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#allowed_proc_mount_types PodSecurityPolicy#allowed_proc_mount_types}
 
 ---
 
@@ -1008,7 +1008,7 @@ Each entry is either a plain sysctl name or ends in "*" in which case it is cons
 
 Examples: e.g. "foo/*" allows "foo/bar", "foo/baz", etc. e.g. "foo.*" allows "foo.bar", "foo.baz", etc.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#allowed_unsafe_sysctls PodSecurityPolicy#allowed_unsafe_sysctls}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#allowed_unsafe_sysctls PodSecurityPolicy#allowed_unsafe_sysctls}
 
 ---
 
@@ -1022,7 +1022,7 @@ AllowPrivilegeEscalation interface{}
 
 allowPrivilegeEscalation determines if a pod can request to allow privilege escalation. If unspecified, defaults to true.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#allow_privilege_escalation PodSecurityPolicy#allow_privilege_escalation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#allow_privilege_escalation PodSecurityPolicy#allow_privilege_escalation}
 
 ---
 
@@ -1038,7 +1038,7 @@ defaultAddCapabilities is the default set of capabilities that will be added to 
 
 You may not list a capability in both defaultAddCapabilities and requiredDropCapabilities. Capabilities added here are implicitly allowed, and need not be included in the allowedCapabilities list.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#default_add_capabilities PodSecurityPolicy#default_add_capabilities}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#default_add_capabilities PodSecurityPolicy#default_add_capabilities}
 
 ---
 
@@ -1052,7 +1052,7 @@ DefaultAllowPrivilegeEscalation interface{}
 
 defaultAllowPrivilegeEscalation controls the default setting for whether a process can gain more privileges than its parent process.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#default_allow_privilege_escalation PodSecurityPolicy#default_allow_privilege_escalation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#default_allow_privilege_escalation PodSecurityPolicy#default_allow_privilege_escalation}
 
 ---
 
@@ -1070,7 +1070,7 @@ Each entry is either a plain sysctl name or ends in "*" in which case it is cons
 
 Examples: e.g. "foo/*" forbids "foo/bar", "foo/baz", etc. e.g. "foo.*" forbids "foo.bar", "foo.baz", etc.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#forbidden_sysctls PodSecurityPolicy#forbidden_sysctls}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#forbidden_sysctls PodSecurityPolicy#forbidden_sysctls}
 
 ---
 
@@ -1084,7 +1084,7 @@ HostIpc interface{}
 
 hostIPC determines if the policy allows the use of HostIPC in the pod spec.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#host_ipc PodSecurityPolicy#host_ipc}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#host_ipc PodSecurityPolicy#host_ipc}
 
 ---
 
@@ -1098,7 +1098,7 @@ HostNetwork interface{}
 
 hostNetwork determines if the policy allows the use of HostNetwork in the pod spec.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#host_network PodSecurityPolicy#host_network}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#host_network PodSecurityPolicy#host_network}
 
 ---
 
@@ -1112,7 +1112,7 @@ HostPid interface{}
 
 hostPID determines if the policy allows the use of HostPID in the pod spec.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#host_pid PodSecurityPolicy#host_pid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#host_pid PodSecurityPolicy#host_pid}
 
 ---
 
@@ -1126,7 +1126,7 @@ HostPorts interface{}
 
 host_ports block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#host_ports PodSecurityPolicy#host_ports}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#host_ports PodSecurityPolicy#host_ports}
 
 ---
 
@@ -1140,7 +1140,7 @@ Privileged interface{}
 
 privileged determines if a pod can request to be run as privileged.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#privileged PodSecurityPolicy#privileged}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#privileged PodSecurityPolicy#privileged}
 
 ---
 
@@ -1156,7 +1156,7 @@ readOnlyRootFilesystem when set to true will force containers to run with a read
 
 If the container specifically requests to run with a non-read only root file system the PSP should deny the pod. If set to false the container may run with a read only root file system if it wishes but it will not be forced to.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#read_only_root_filesystem PodSecurityPolicy#read_only_root_filesystem}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#read_only_root_filesystem PodSecurityPolicy#read_only_root_filesystem}
 
 ---
 
@@ -1172,7 +1172,7 @@ requiredDropCapabilities are the capabilities that will be dropped from the cont
 
 These are required to be dropped and cannot be added.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#required_drop_capabilities PodSecurityPolicy#required_drop_capabilities}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#required_drop_capabilities PodSecurityPolicy#required_drop_capabilities}
 
 ---
 
@@ -1186,7 +1186,7 @@ RunAsGroup PodSecurityPolicySpecRunAsGroup
 
 run_as_group block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#run_as_group PodSecurityPolicy#run_as_group}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#run_as_group PodSecurityPolicy#run_as_group}
 
 ---
 
@@ -1200,7 +1200,7 @@ SeLinux PodSecurityPolicySpecSeLinux
 
 se_linux block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#se_linux PodSecurityPolicy#se_linux}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#se_linux PodSecurityPolicy#se_linux}
 
 ---
 
@@ -1216,7 +1216,7 @@ volumes is an allowlist of volume plugins.
 
 Empty indicates that no volumes may be used. To allow all volumes you may use '*'.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#volumes PodSecurityPolicy#volumes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#volumes PodSecurityPolicy#volumes}
 
 ---
 
@@ -1225,7 +1225,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecAllowedFlexVolumes.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecAllowedFlexVolumes {
 	Driver: *string,
@@ -1250,7 +1250,7 @@ Driver *string
 
 driver is the name of the Flexvolume driver.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#driver PodSecurityPolicy#driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#driver PodSecurityPolicy#driver}
 
 ---
 
@@ -1259,7 +1259,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecAllowedHostPaths.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecAllowedHostPaths {
 	PathPrefix: *string,
@@ -1290,7 +1290,7 @@ It does not support `*`. Trailing slashes are trimmed when validating the path p
 
 Examples: `/foo` would allow `/foo`, `/foo/` and `/foo/bar` `/foo` would not allow `/food` or `/etc/foo`
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#path_prefix PodSecurityPolicy#path_prefix}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#path_prefix PodSecurityPolicy#path_prefix}
 
 ---
 
@@ -1304,7 +1304,7 @@ ReadOnly interface{}
 
 when set to true, will allow host volumes matching the pathPrefix only if all volume mounts are readOnly.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#read_only PodSecurityPolicy#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#read_only PodSecurityPolicy#read_only}
 
 ---
 
@@ -1313,7 +1313,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecFsGroup.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecFsGroup {
 	Rule: *string,
@@ -1340,7 +1340,7 @@ Rule *string
 
 rule is the strategy that will dictate what FSGroup is used in the SecurityContext.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#rule PodSecurityPolicy#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
 
 ---
 
@@ -1354,7 +1354,7 @@ Range interface{}
 
 range block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#range PodSecurityPolicy#range}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
 
 ---
 
@@ -1363,7 +1363,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecFsGroupRange.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecFsGroupRange {
 	Max: *f64,
@@ -1390,7 +1390,7 @@ Max *f64
 
 max is the end of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#max PodSecurityPolicy#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
 
 ---
 
@@ -1404,7 +1404,7 @@ Min *f64
 
 min is the start of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#min PodSecurityPolicy#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
 
 ---
 
@@ -1413,7 +1413,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecHostPorts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecHostPorts {
 	Max: *f64,
@@ -1440,7 +1440,7 @@ Max *f64
 
 max is the end of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#max PodSecurityPolicy#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
 
 ---
 
@@ -1454,7 +1454,7 @@ Min *f64
 
 min is the start of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#min PodSecurityPolicy#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
 
 ---
 
@@ -1463,7 +1463,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecRunAsGroup.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecRunAsGroup {
 	Rule: *string,
@@ -1490,7 +1490,7 @@ Rule *string
 
 rule is the strategy that will dictate the allowable RunAsGroup values that may be set.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#rule PodSecurityPolicy#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
 
 ---
 
@@ -1504,7 +1504,7 @@ Range interface{}
 
 range block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#range PodSecurityPolicy#range}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
 
 ---
 
@@ -1513,7 +1513,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecRunAsGroupRange.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecRunAsGroupRange {
 	Max: *f64,
@@ -1540,7 +1540,7 @@ Max *f64
 
 max is the end of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#max PodSecurityPolicy#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
 
 ---
 
@@ -1554,7 +1554,7 @@ Min *f64
 
 min is the start of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#min PodSecurityPolicy#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
 
 ---
 
@@ -1563,7 +1563,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecRunAsUser.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecRunAsUser {
 	Rule: *string,
@@ -1590,7 +1590,7 @@ Rule *string
 
 rule is the strategy that will dictate the allowable RunAsUser values that may be set.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#rule PodSecurityPolicy#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
 
 ---
 
@@ -1604,7 +1604,7 @@ Range interface{}
 
 range block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#range PodSecurityPolicy#range}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
 
 ---
 
@@ -1613,7 +1613,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecRunAsUserRange.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecRunAsUserRange {
 	Max: *f64,
@@ -1640,7 +1640,7 @@ Max *f64
 
 max is the end of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#max PodSecurityPolicy#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
 
 ---
 
@@ -1654,7 +1654,7 @@ Min *f64
 
 min is the start of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#min PodSecurityPolicy#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
 
 ---
 
@@ -1663,7 +1663,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinux.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecSeLinux {
 	Rule: *string,
@@ -1690,7 +1690,7 @@ Rule *string
 
 rule is the strategy that will dictate the allowable labels that may be set.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#rule PodSecurityPolicy#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
 
 ---
 
@@ -1704,7 +1704,7 @@ SeLinuxOptions interface{}
 
 se_linux_options block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#se_linux_options PodSecurityPolicy#se_linux_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#se_linux_options PodSecurityPolicy#se_linux_options}
 
 ---
 
@@ -1713,7 +1713,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions {
 	Level: *string,
@@ -1727,10 +1727,10 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecurityp
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.level">Level</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#level PodSecurityPolicy#level}. |
-| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.role">Role</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#role PodSecurityPolicy#role}. |
-| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.type">Type</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#type PodSecurityPolicy#type}. |
-| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.user">User</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#user PodSecurityPolicy#user}. |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.level">Level</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#level PodSecurityPolicy#level}. |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.role">Role</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#role PodSecurityPolicy#role}. |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.type">Type</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#type PodSecurityPolicy#type}. |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.user">User</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#user PodSecurityPolicy#user}. |
 
 ---
 
@@ -1742,7 +1742,7 @@ Level *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#level PodSecurityPolicy#level}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#level PodSecurityPolicy#level}.
 
 ---
 
@@ -1754,7 +1754,7 @@ Role *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#role PodSecurityPolicy#role}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#role PodSecurityPolicy#role}.
 
 ---
 
@@ -1766,7 +1766,7 @@ Type *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#type PodSecurityPolicy#type}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#type PodSecurityPolicy#type}.
 
 ---
 
@@ -1778,7 +1778,7 @@ User *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#user PodSecurityPolicy#user}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#user PodSecurityPolicy#user}.
 
 ---
 
@@ -1787,7 +1787,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSupplementalGroups.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecSupplementalGroups {
 	Rule: *string,
@@ -1814,7 +1814,7 @@ Rule *string
 
 rule is the strategy that will dictate what supplemental groups is used in the SecurityContext.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#rule PodSecurityPolicy#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
 
 ---
 
@@ -1828,7 +1828,7 @@ Range interface{}
 
 range block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#range PodSecurityPolicy#range}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
 
 ---
 
@@ -1837,7 +1837,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSupplementalGroupsRange.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 &podsecuritypolicy.PodSecurityPolicySpecSupplementalGroupsRange {
 	Max: *f64,
@@ -1864,7 +1864,7 @@ Max *f64
 
 max is the end of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#max PodSecurityPolicy#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
 
 ---
 
@@ -1878,7 +1878,7 @@ Min *f64
 
 min is the start of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/pod_security_policy#min PodSecurityPolicy#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
 
 ---
 
@@ -1889,7 +1889,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicyMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicyMetadataOutputReference
 ```
@@ -2258,7 +2258,7 @@ func InternalValue() PodSecurityPolicyMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecAllowedFlexVolumesList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecAllowedFlexVolumesList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicySpecAllowedFlexVolumesList
 ```
@@ -2401,7 +2401,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecAllowedFlexVolumesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecAllowedFlexVolumesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicySpecAllowedFlexVolumesOutputReference
 ```
@@ -2690,7 +2690,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecAllowedHostPathsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecAllowedHostPathsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicySpecAllowedHostPathsList
 ```
@@ -2833,7 +2833,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecAllowedHostPathsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecAllowedHostPathsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicySpecAllowedHostPathsOutputReference
 ```
@@ -3151,7 +3151,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecFsGroupOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecFsGroupOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicySpecFsGroupOutputReference
 ```
@@ -3464,7 +3464,7 @@ func InternalValue() PodSecurityPolicySpecFsGroup
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecFsGroupRangeList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecFsGroupRangeList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicySpecFsGroupRangeList
 ```
@@ -3607,7 +3607,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecFsGroupRangeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecFsGroupRangeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicySpecFsGroupRangeOutputReference
 ```
@@ -3918,7 +3918,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecHostPortsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecHostPortsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicySpecHostPortsList
 ```
@@ -4061,7 +4061,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecHostPortsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecHostPortsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicySpecHostPortsOutputReference
 ```
@@ -4372,7 +4372,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicySpecOutputReference
 ```
@@ -5342,7 +5342,7 @@ func InternalValue() PodSecurityPolicySpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecRunAsGroupOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecRunAsGroupOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicySpecRunAsGroupOutputReference
 ```
@@ -5655,7 +5655,7 @@ func InternalValue() PodSecurityPolicySpecRunAsGroup
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecRunAsGroupRangeList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecRunAsGroupRangeList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicySpecRunAsGroupRangeList
 ```
@@ -5798,7 +5798,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecRunAsGroupRangeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecRunAsGroupRangeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicySpecRunAsGroupRangeOutputReference
 ```
@@ -6109,7 +6109,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecRunAsUserOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecRunAsUserOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicySpecRunAsUserOutputReference
 ```
@@ -6422,7 +6422,7 @@ func InternalValue() PodSecurityPolicySpecRunAsUser
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecRunAsUserRangeList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecRunAsUserRangeList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicySpecRunAsUserRangeList
 ```
@@ -6565,7 +6565,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecRunAsUserRangeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecRunAsUserRangeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicySpecRunAsUserRangeOutputReference
 ```
@@ -6876,7 +6876,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecSeLinuxOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicySpecSeLinuxOutputReference
 ```
@@ -7189,7 +7189,7 @@ func InternalValue() PodSecurityPolicySpecSeLinux
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecSeLinuxSeLinuxOptionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicySpecSeLinuxSeLinuxOptionsList
 ```
@@ -7332,7 +7332,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecSeLinuxSeLinuxOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicySpecSeLinuxSeLinuxOptionsOutputReference
 ```
@@ -7687,7 +7687,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSupplementalGroupsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecSupplementalGroupsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicySpecSupplementalGroupsOutputReference
 ```
@@ -8000,7 +8000,7 @@ func InternalValue() PodSecurityPolicySpecSupplementalGroups
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSupplementalGroupsRangeList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecSupplementalGroupsRangeList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicySpecSupplementalGroupsRangeList
 ```
@@ -8143,7 +8143,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSupplementalGroupsRangeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/podsecuritypolicy"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicy"
 
 podsecuritypolicy.NewPodSecurityPolicySpecSupplementalGroupsRangeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicySpecSupplementalGroupsRangeOutputReference
 ```

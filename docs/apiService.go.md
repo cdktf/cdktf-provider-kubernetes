@@ -1,6 +1,6 @@
 # `kubernetes_api_service`
 
-Refer to the Terraform Registory for docs: [`kubernetes_api_service`](https://www.terraform.io/docs/providers/kubernetes/r/api_service).
+Refer to the Terraform Registory for docs: [`kubernetes_api_service`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service).
 
 # `apiService` Submodule <a name="`apiService` Submodule" id="@cdktf/provider-kubernetes.apiService"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`kubernetes_api_service`](https://ww
 
 ### ApiService <a name="ApiService" id="@cdktf/provider-kubernetes.apiService.ApiService"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service kubernetes_api_service}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service kubernetes_api_service}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.apiService.ApiService.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservice"
 
 apiservice.NewApiService(scope Construct, id *string, config ApiServiceConfig) ApiService
 ```
@@ -303,7 +303,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.apiService.ApiService.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservice"
 
 apiservice.ApiService_IsConstruct(x interface{}) *bool
 ```
@@ -335,7 +335,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.apiService.ApiService.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservice"
 
 apiservice.ApiService_IsTerraformElement(x interface{}) *bool
 ```
@@ -349,7 +349,7 @@ apiservice.ApiService_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.apiService.ApiService.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservice"
 
 apiservice.ApiService_IsTerraformResource(x interface{}) *bool
 ```
@@ -372,7 +372,7 @@ apiservice.ApiService_IsTerraformResource(x interface{}) *bool
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiService.property.terraformResourceType">TerraformResourceType</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiService.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiService.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.apiService.ApiService.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.apiService.ApiService.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiService.property.dependsOn">DependsOn</a></code> | <code>*[]*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiService.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiService.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -472,10 +472,10 @@ func Connection() interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.apiService.ApiService.property.count"></a>
 
 ```go
-func Count() *f64
+func Count() interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -614,18 +614,18 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.apiService.ApiServiceConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservice"
 
 &apiservice.ApiServiceConfig {
 	Connection: interface{},
-	Count: *f64,
+	Count: interface{},
 	DependsOn: *[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable,
 	ForEach: github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator,
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.apiService.ApiServiceMetadata,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.apiService.ApiServiceSpec,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.apiService.ApiServiceMetadata,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.apiService.ApiServiceSpec,
 	Id: *string,
 }
 ```
@@ -635,7 +635,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceConfig.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceConfig.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceConfig.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceConfig.property.dependsOn">DependsOn</a></code> | <code>*[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceConfig.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceConfig.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -643,7 +643,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceMetadata">ApiServiceMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceConfig.property.spec">Spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceSpec">ApiServiceSpec</a></code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#id ApiService#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.apiService.ApiServiceConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#id ApiService#id}. |
 
 ---
 
@@ -660,10 +660,10 @@ Connection interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.apiService.ApiServiceConfig.property.count"></a>
 
 ```go
-Count *f64
+Count interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -727,7 +727,7 @@ Metadata ApiServiceMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#metadata ApiService#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#metadata ApiService#metadata}
 
 ---
 
@@ -741,7 +741,7 @@ Spec ApiServiceSpec
 
 spec block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#spec ApiService#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#spec ApiService#spec}
 
 ---
 
@@ -753,7 +753,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#id ApiService#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#id ApiService#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -765,7 +765,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.apiService.ApiServiceMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservice"
 
 &apiservice.ApiServiceMetadata {
 	Annotations: *map[string]*string,
@@ -798,7 +798,7 @@ An unstructured key value map stored with the api_service that may be used to st
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#annotations ApiService#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#annotations ApiService#annotations}
 
 ---
 
@@ -814,7 +814,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#generate_name ApiService#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#generate_name ApiService#generate_name}
 
 ---
 
@@ -830,7 +830,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#labels ApiService#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#labels ApiService#labels}
 
 ---
 
@@ -844,7 +844,7 @@ Name *string
 
 Name of the api_service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#name ApiService#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#name ApiService#name}
 
 ---
 
@@ -853,7 +853,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.apiService.ApiServiceSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservice"
 
 &apiservice.ApiServiceSpec {
 	Group: *string,
@@ -862,7 +862,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
 	VersionPriority: *f64,
 	CaBundle: *string,
 	InsecureSkipTlsVerify: interface{},
-	Service: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.apiService.ApiServiceSpecService,
+	Service: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.apiService.ApiServiceSpecService,
 }
 ```
 
@@ -890,7 +890,7 @@ Group *string
 
 Group is the API group name this server hosts.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#group ApiService#group}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#group ApiService#group}
 
 ---
 
@@ -906,7 +906,7 @@ GroupPriorityMinimum is the priority this group should have at least.
 
 Higher priority means that the group is preferred by clients over lower priority ones. Note that other versions of this group might specify even higher GroupPriorityMininum values such that the whole group gets a higher priority. The primary sort is based on GroupPriorityMinimum, ordered highest number to lowest (20 before 10). The secondary sort is based on the alphabetical comparison of the name of the object. (v1.bar before v1.foo) We'd recommend something like: *.k8s.io (except extensions) at 18000 and PaaSes (OpenShift, Deis) are recommended to be in the 2000s.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#group_priority_minimum ApiService#group_priority_minimum}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#group_priority_minimum ApiService#group_priority_minimum}
 
 ---
 
@@ -920,7 +920,7 @@ Version *string
 
 Version is the API version this server hosts. For example, `v1`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#version ApiService#version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#version ApiService#version}
 
 ---
 
@@ -936,7 +936,7 @@ VersionPriority controls the ordering of this API version inside of its group.
 
 Must be greater than zero. The primary sort is based on VersionPriority, ordered highest to lowest (20 before 10). Since it's inside of a group, the number can be small, probably in the 10s. In case of equal version priorities, the version string will be used to compute the order inside a group. If the version string is `kube-like`, it will sort above non `kube-like` version strings, which are ordered lexicographically. `Kube-like` versions start with a `v`, then are followed by a number (the major version), then optionally the string `alpha` or `beta` and another number (the minor version). These are sorted first by GA > `beta` > `alpha` (where GA is a version with no suffix such as `beta` or `alpha`), and then by comparing major version, then minor version. An example sorted list of versions: `v10`, `v2`, `v1`, `v11beta2`, `v10beta3`, `v3beta1`, `v12alpha1`, `v11alpha2`, `foo1`, `foo10`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#version_priority ApiService#version_priority}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#version_priority ApiService#version_priority}
 
 ---
 
@@ -952,7 +952,7 @@ CABundle is a PEM encoded CA bundle which will be used to validate an API server
 
 If unspecified, system trust roots on the apiserver are used.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#ca_bundle ApiService#ca_bundle}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#ca_bundle ApiService#ca_bundle}
 
 ---
 
@@ -968,7 +968,7 @@ InsecureSkipTLSVerify disables TLS certificate verification when communicating w
 
 This is strongly discouraged. You should use the CABundle instead.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#insecure_skip_tls_verify ApiService#insecure_skip_tls_verify}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#insecure_skip_tls_verify ApiService#insecure_skip_tls_verify}
 
 ---
 
@@ -982,7 +982,7 @@ Service ApiServiceSpecService
 
 service block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#service ApiService#service}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#service ApiService#service}
 
 ---
 
@@ -991,7 +991,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.apiService.ApiServiceSpecService.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservice"
 
 &apiservice.ApiServiceSpecService {
 	Name: *string,
@@ -1020,7 +1020,7 @@ Name *string
 
 Name is the name of the service.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#name ApiService#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#name ApiService#name}
 
 ---
 
@@ -1034,7 +1034,7 @@ Namespace *string
 
 Namespace is the namespace of the service.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#namespace ApiService#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#namespace ApiService#namespace}
 
 ---
 
@@ -1050,7 +1050,7 @@ If specified, the port on the service that is hosting the service.
 
 Defaults to 443 for backward compatibility. Should be a valid port number (1-65535, inclusive).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/r/api_service#port ApiService#port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/api_service#port ApiService#port}
 
 ---
 
@@ -1061,7 +1061,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kuber
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.apiService.ApiServiceMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservice"
 
 apiservice.NewApiServiceMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ApiServiceMetadataOutputReference
 ```
@@ -1459,7 +1459,7 @@ func InternalValue() ApiServiceMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.apiService.ApiServiceSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservice"
 
 apiservice.NewApiServiceSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ApiServiceSpecOutputReference
 ```
@@ -1896,7 +1896,7 @@ func InternalValue() ApiServiceSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.apiService.ApiServiceSpecServiceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/apiservice"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservice"
 
 apiservice.NewApiServiceSpecServiceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ApiServiceSpecServiceOutputReference
 ```

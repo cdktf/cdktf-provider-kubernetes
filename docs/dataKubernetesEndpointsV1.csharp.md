@@ -1,6 +1,6 @@
 # `data_kubernetes_endpoints_v1`
 
-Refer to the Terraform Registory for docs: [`data_kubernetes_endpoints_v1`](https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1).
+Refer to the Terraform Registory for docs: [`data_kubernetes_endpoints_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1).
 
 # `dataKubernetesEndpointsV1` Submodule <a name="`dataKubernetesEndpointsV1` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesEndpointsV1"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`data_kubernetes_endpoints_v1`](http
 
 ### DataKubernetesEndpointsV1 <a name="DataKubernetesEndpointsV1" id="@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1 kubernetes_endpoints_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1 kubernetes_endpoints_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1.Initializer"></a>
 
@@ -378,7 +378,7 @@ DataKubernetesEndpointsV1.IsTerraformDataSource(object X);
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1.property.terraformMetaArguments">TerraformMetaArguments</a></code> | <code>System.Collections.Generic.IDictionary<string, object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1.property.terraformResourceType">TerraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>HashiCorp.Cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1.property.count">Count</a></code> | <code>double</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1.property.count">Count</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1.property.dependsOn">DependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -467,10 +467,10 @@ public TerraformProviderGeneratorMetadata TerraformGeneratorMetadata { get; }
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1.property.count"></a>
 
 ```csharp
-public double Count { get; }
+public object Count { get; }
 ```
 
-- *Type:* double
+- *Type:* object
 
 ---
 
@@ -603,7 +603,7 @@ using HashiCorp.Cdktf.Providers.Kubernetes;
 
 new DataKubernetesEndpointsV1Config {
     object Connection = null,
-    double Count = null,
+    object Count = null,
     ITerraformDependable[] DependsOn = null,
     ITerraformIterator ForEach = null,
     TerraformResourceLifecycle Lifecycle = null,
@@ -620,14 +620,14 @@ new DataKubernetesEndpointsV1Config {
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.count">Count</a></code> | <code>double</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.count">Count</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.dependsOn">DependsOn</a></code> | <code>HashiCorp.Cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Metadata">DataKubernetesEndpointsV1Metadata</a></code> | metadata block. |
-| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#id DataKubernetesEndpointsV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#id DataKubernetesEndpointsV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.subset">Subset</a></code> | <code>object</code> | subset block. |
 
 ---
@@ -645,10 +645,10 @@ public object Connection { get; set; }
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-kubernetes.dataKubernetesEndpointsV1.DataKubernetesEndpointsV1Config.property.count"></a>
 
 ```csharp
-public double Count { get; set; }
+public object Count { get; set; }
 ```
 
-- *Type:* double
+- *Type:* object
 
 ---
 
@@ -712,7 +712,7 @@ public DataKubernetesEndpointsV1Metadata Metadata { get; set; }
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#metadata DataKubernetesEndpointsV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#metadata DataKubernetesEndpointsV1#metadata}
 
 ---
 
@@ -724,7 +724,7 @@ public string Id { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#id DataKubernetesEndpointsV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#id DataKubernetesEndpointsV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -741,7 +741,7 @@ public object Subset { get; set; }
 
 subset block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#subset DataKubernetesEndpointsV1#subset}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#subset DataKubernetesEndpointsV1#subset}
 
 ---
 
@@ -785,7 +785,7 @@ An unstructured key value map stored with the endpoints that may be used to stor
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#annotations DataKubernetesEndpointsV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#annotations DataKubernetesEndpointsV1#annotations}
 
 ---
 
@@ -801,7 +801,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#generate_name DataKubernetesEndpointsV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#generate_name DataKubernetesEndpointsV1#generate_name}
 
 ---
 
@@ -817,7 +817,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#labels DataKubernetesEndpointsV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#labels DataKubernetesEndpointsV1#labels}
 
 ---
 
@@ -831,7 +831,7 @@ public string Name { get; set; }
 
 Name of the endpoints, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#name DataKubernetesEndpointsV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#name DataKubernetesEndpointsV1#name}
 
 ---
 
@@ -845,7 +845,7 @@ public string Namespace { get; set; }
 
 Namespace defines the space within which name of the endpoints must be unique.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#namespace DataKubernetesEndpointsV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#namespace DataKubernetesEndpointsV1#namespace}
 
 ---
 
@@ -883,7 +883,7 @@ public object Address { get; set; }
 
 address block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#address DataKubernetesEndpointsV1#address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#address DataKubernetesEndpointsV1#address}
 
 ---
 
@@ -897,7 +897,7 @@ public object NotReadyAddress { get; set; }
 
 not_ready_address block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#not_ready_address DataKubernetesEndpointsV1#not_ready_address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#not_ready_address DataKubernetesEndpointsV1#not_ready_address}
 
 ---
 
@@ -911,7 +911,7 @@ public object Port { get; set; }
 
 port block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#port DataKubernetesEndpointsV1#port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#port DataKubernetesEndpointsV1#port}
 
 ---
 
@@ -949,7 +949,7 @@ public string Ip { get; set; }
 
 The IP of this endpoint. May not be loopback (127.0.0.0/8), link-local (169.254.0.0/16), or link-local multicast ((224.0.0.0/24).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#ip DataKubernetesEndpointsV1#ip}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#ip DataKubernetesEndpointsV1#ip}
 
 ---
 
@@ -963,7 +963,7 @@ public string Hostname { get; set; }
 
 The Hostname of this endpoint.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#hostname DataKubernetesEndpointsV1#hostname}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#hostname DataKubernetesEndpointsV1#hostname}
 
 ---
 
@@ -977,7 +977,7 @@ public string NodeName { get; set; }
 
 Node hosting this endpoint. This can be used to determine endpoints local to a node.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#node_name DataKubernetesEndpointsV1#node_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#node_name DataKubernetesEndpointsV1#node_name}
 
 ---
 
@@ -1015,7 +1015,7 @@ public string Ip { get; set; }
 
 The IP of this endpoint. May not be loopback (127.0.0.0/8), link-local (169.254.0.0/16), or link-local multicast ((224.0.0.0/24).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#ip DataKubernetesEndpointsV1#ip}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#ip DataKubernetesEndpointsV1#ip}
 
 ---
 
@@ -1029,7 +1029,7 @@ public string Hostname { get; set; }
 
 The Hostname of this endpoint.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#hostname DataKubernetesEndpointsV1#hostname}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#hostname DataKubernetesEndpointsV1#hostname}
 
 ---
 
@@ -1043,7 +1043,7 @@ public string NodeName { get; set; }
 
 Node hosting this endpoint. This can be used to determine endpoints local to a node.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#node_name DataKubernetesEndpointsV1#node_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#node_name DataKubernetesEndpointsV1#node_name}
 
 ---
 
@@ -1081,7 +1081,7 @@ public double Port { get; set; }
 
 The port that will be exposed by this endpoint.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#port DataKubernetesEndpointsV1#port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#port DataKubernetesEndpointsV1#port}
 
 ---
 
@@ -1097,7 +1097,7 @@ The name of this port within the endpoint.
 
 Must be a DNS_LABEL. Optional if only one Port is defined on this endpoint.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#name DataKubernetesEndpointsV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#name DataKubernetesEndpointsV1#name}
 
 ---
 
@@ -1111,7 +1111,7 @@ public string Protocol { get; set; }
 
 The IP protocol for this port. Supports `TCP` and `UDP`. Default is `TCP`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1#protocol DataKubernetesEndpointsV1#protocol}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/endpoints_v1#protocol DataKubernetesEndpointsV1#protocol}
 
 ---
 

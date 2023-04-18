@@ -1,3 +1,3 @@
 # `kubernetes_default_service_account`
 
-Refer to the Terraform Registory for docs: [`kubernetes_default_service_account`](https://www.terraform.io/docs/providers/kubernetes/r/default_service_account).
+Refer to the Terraform Registory for docs: [`kubernetes_default_service_account`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/default_service_account).
