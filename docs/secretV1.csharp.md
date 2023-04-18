@@ -1,3 +1,7 @@
+# `kubernetes_secret_v1`
+
+Refer to the Terraform Registory for docs: [`kubernetes_secret_v1`](https://www.terraform.io/docs/providers/kubernetes/r/secret_v1).
+
 # `secretV1` Submodule <a name="`secretV1` Submodule" id="@cdktf/provider-kubernetes.secretV1"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

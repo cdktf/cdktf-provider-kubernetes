@@ -1,3 +1,7 @@
+# `data_kubernetes_endpoints_v1`
+
+Refer to the Terraform Registory for docs: [`data_kubernetes_endpoints_v1`](https://www.terraform.io/docs/providers/kubernetes/d/endpoints_v1).
+
 # `dataKubernetesEndpointsV1` Submodule <a name="`dataKubernetesEndpointsV1` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesEndpointsV1"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
