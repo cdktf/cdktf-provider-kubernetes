@@ -1,6 +1,6 @@
 # `kubernetes_validating_webhook_configuration`
 
-Refer to the Terraform Registory for docs: [`kubernetes_validating_webhook_configuration`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration).
+Refer to the Terraform Registory for docs: [`kubernetes_validating_webhook_configuration`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration).
 
 # `validatingWebhookConfiguration` Submodule <a name="`validatingWebhookConfiguration` Submodule" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`kubernetes_validating_webhook_confi
 
 ### ValidatingWebhookConfiguration <a name="ValidatingWebhookConfiguration" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfiguration"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration kubernetes_validating_webhook_configuration}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration kubernetes_validating_webhook_configuration}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfiguration.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfiguration(scope Construct, id *string, config ValidatingWebhookConfigurationConfig) ValidatingWebhookConfiguration
 ```
@@ -303,7 +303,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfiguration.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.ValidatingWebhookConfiguration_IsConstruct(x interface{}) *bool
 ```
@@ -335,7 +335,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfiguration.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.ValidatingWebhookConfiguration_IsTerraformElement(x interface{}) *bool
 ```
@@ -349,7 +349,7 @@ validatingwebhookconfiguration.ValidatingWebhookConfiguration_IsTerraformElement
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfiguration.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.ValidatingWebhookConfiguration_IsTerraformResource(x interface{}) *bool
 ```
@@ -614,7 +614,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 &validatingwebhookconfiguration.ValidatingWebhookConfigurationConfig {
 	Connection: interface{},
@@ -624,7 +624,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwe
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.validatingWebhookConfiguration.ValidatingWebhookConfigurationMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationMetadata,
 	Webhook: interface{},
 	Id: *string,
 }
@@ -643,7 +643,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwe
 | <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationMetadata">ValidatingWebhookConfigurationMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationConfig.property.webhook">Webhook</a></code> | <code>interface{}</code> | webhook block. |
-| <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#id ValidatingWebhookConfiguration#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#id ValidatingWebhookConfiguration#id}. |
 
 ---
 
@@ -727,7 +727,7 @@ Metadata ValidatingWebhookConfigurationMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#metadata ValidatingWebhookConfiguration#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#metadata ValidatingWebhookConfiguration#metadata}
 
 ---
 
@@ -741,7 +741,7 @@ Webhook interface{}
 
 webhook block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#webhook ValidatingWebhookConfiguration#webhook}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#webhook ValidatingWebhookConfiguration#webhook}
 
 ---
 
@@ -753,7 +753,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#id ValidatingWebhookConfiguration#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#id ValidatingWebhookConfiguration#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -765,7 +765,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 &validatingwebhookconfiguration.ValidatingWebhookConfigurationMetadata {
 	Annotations: *map[string]*string,
@@ -798,7 +798,7 @@ An unstructured key value map stored with the validating webhook configuration t
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#annotations ValidatingWebhookConfiguration#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#annotations ValidatingWebhookConfiguration#annotations}
 
 ---
 
@@ -814,7 +814,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#generate_name ValidatingWebhookConfiguration#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#generate_name ValidatingWebhookConfiguration#generate_name}
 
 ---
 
@@ -830,7 +830,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#labels ValidatingWebhookConfiguration#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#labels ValidatingWebhookConfiguration#labels}
 
 ---
 
@@ -844,7 +844,7 @@ Name *string
 
 Name of the validating webhook configuration, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#name ValidatingWebhookConfiguration#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#name ValidatingWebhookConfiguration#name}
 
 ---
 
@@ -853,16 +853,16 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhook.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 &validatingwebhookconfiguration.ValidatingWebhookConfigurationWebhook {
-	ClientConfig: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookClientConfig,
+	ClientConfig: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookClientConfig,
 	Name: *string,
 	AdmissionReviewVersions: *[]*string,
 	FailurePolicy: *string,
 	MatchPolicy: *string,
-	NamespaceSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookNamespaceSelector,
-	ObjectSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookObjectSelector,
+	NamespaceSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookNamespaceSelector,
+	ObjectSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookObjectSelector,
 	Rule: interface{},
 	SideEffects: *string,
 	TimeoutSeconds: *f64,
@@ -896,7 +896,7 @@ ClientConfig ValidatingWebhookConfigurationWebhookClientConfig
 
 client_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#client_config ValidatingWebhookConfiguration#client_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#client_config ValidatingWebhookConfiguration#client_config}
 
 ---
 
@@ -912,7 +912,7 @@ The name of the admission webhook.
 
 Name should be fully qualified, e.g., imagepolicy.kubernetes.io, where "imagepolicy" is the name of the webhook, and kubernetes.io is the name of the organization. Required.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#name ValidatingWebhookConfiguration#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#name ValidatingWebhookConfiguration#name}
 
 ---
 
@@ -928,7 +928,7 @@ AdmissionReviewVersions is an ordered list of preferred `AdmissionReview` versio
 
 API server will try to use first version in the list which it supports. If none of the versions specified in this list supported by API server, validation will fail for this object. If a persisted webhook configuration specifies allowed versions and does not include any versions known to the API Server, calls to the webhook will fail and be subject to the failure policy.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#admission_review_versions ValidatingWebhookConfiguration#admission_review_versions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#admission_review_versions ValidatingWebhookConfiguration#admission_review_versions}
 
 ---
 
@@ -944,7 +944,7 @@ FailurePolicy defines how unrecognized errors from the admission endpoint are ha
 
 Defaults to Fail.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#failure_policy ValidatingWebhookConfiguration#failure_policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#failure_policy ValidatingWebhookConfiguration#failure_policy}
 
 ---
 
@@ -963,7 +963,7 @@ matchPolicy defines how the "rules" list is used to match incoming requests. All
 
 Defaults to "Equivalent"
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#match_policy ValidatingWebhookConfiguration#match_policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#match_policy ValidatingWebhookConfiguration#match_policy}
 
 ---
 
@@ -977,7 +977,7 @@ NamespaceSelector ValidatingWebhookConfigurationWebhookNamespaceSelector
 
 namespace_selector block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#namespace_selector ValidatingWebhookConfiguration#namespace_selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#namespace_selector ValidatingWebhookConfiguration#namespace_selector}
 
 ---
 
@@ -991,7 +991,7 @@ ObjectSelector ValidatingWebhookConfigurationWebhookObjectSelector
 
 object_selector block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#object_selector ValidatingWebhookConfiguration#object_selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#object_selector ValidatingWebhookConfiguration#object_selector}
 
 ---
 
@@ -1005,7 +1005,7 @@ Rule interface{}
 
 rule block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#rule ValidatingWebhookConfiguration#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#rule ValidatingWebhookConfiguration#rule}
 
 ---
 
@@ -1021,7 +1021,7 @@ SideEffects states whether this webhook has side effects.
 
 Acceptable values are: None, NoneOnDryRun (webhooks created via v1beta1 may also specify Some or Unknown). Webhooks with side effects MUST implement a reconciliation system, since a request may be rejected by a future step in the admission chain and the side effects therefore need to be undone. Requests with the dryRun attribute will be auto-rejected if they match a webhook with sideEffects == Unknown or Some.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#side_effects ValidatingWebhookConfiguration#side_effects}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#side_effects ValidatingWebhookConfiguration#side_effects}
 
 ---
 
@@ -1037,7 +1037,7 @@ TimeoutSeconds specifies the timeout for this webhook.
 
 After the timeout passes, the webhook call will be ignored or the API call will fail based on the failure policy. The timeout value must be between 1 and 30 seconds. Default to 10 seconds.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#timeout_seconds ValidatingWebhookConfiguration#timeout_seconds}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#timeout_seconds ValidatingWebhookConfiguration#timeout_seconds}
 
 ---
 
@@ -1046,11 +1046,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookClientConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 &validatingwebhookconfiguration.ValidatingWebhookConfigurationWebhookClientConfig {
 	CaBundle: *string,
-	Service: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookClientConfigService,
+	Service: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookClientConfigService,
 	Url: *string,
 }
 ```
@@ -1077,7 +1077,7 @@ CaBundle *string
 
 If unspecified, system trust roots on the apiserver are used.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#ca_bundle ValidatingWebhookConfiguration#ca_bundle}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#ca_bundle ValidatingWebhookConfiguration#ca_bundle}
 
 ---
 
@@ -1091,7 +1091,7 @@ Service ValidatingWebhookConfigurationWebhookClientConfigService
 
 service block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#service ValidatingWebhookConfiguration#service}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#service ValidatingWebhookConfiguration#service}
 
 ---
 
@@ -1117,7 +1117,7 @@ A path is optional, and if present may be any string permissible in a URL. You m
 
 Attempting to use a user or basic auth e.g. "user:password@" is not allowed. Fragments ("#...") and query parameters ("?...") are not allowed, either.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#url ValidatingWebhookConfiguration#url}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#url ValidatingWebhookConfiguration#url}
 
 ---
 
@@ -1126,7 +1126,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookClientConfigService.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 &validatingwebhookconfiguration.ValidatingWebhookConfigurationWebhookClientConfigService {
 	Name: *string,
@@ -1157,7 +1157,7 @@ Name *string
 
 `name` is the name of the service. Required.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#name ValidatingWebhookConfiguration#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#name ValidatingWebhookConfiguration#name}
 
 ---
 
@@ -1171,7 +1171,7 @@ Namespace *string
 
 `namespace` is the namespace of the service. Required.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#namespace ValidatingWebhookConfiguration#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#namespace ValidatingWebhookConfiguration#namespace}
 
 ---
 
@@ -1185,7 +1185,7 @@ Path *string
 
 `path` is an optional URL path which will be sent in any request to this service.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#path ValidatingWebhookConfiguration#path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#path ValidatingWebhookConfiguration#path}
 
 ---
 
@@ -1201,7 +1201,7 @@ If specified, the port on the service that hosting webhook.
 
 Default to 443 for backward compatibility. `port` should be a valid port number (1-65535, inclusive).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#port ValidatingWebhookConfiguration#port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#port ValidatingWebhookConfiguration#port}
 
 ---
 
@@ -1210,7 +1210,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookNamespaceSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 &validatingwebhookconfiguration.ValidatingWebhookConfigurationWebhookNamespaceSelector {
 	MatchExpressions: interface{},
@@ -1237,7 +1237,7 @@ MatchExpressions interface{}
 
 match_expressions block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#match_expressions ValidatingWebhookConfiguration#match_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#match_expressions ValidatingWebhookConfiguration#match_expressions}
 
 ---
 
@@ -1253,7 +1253,7 @@ A map of {key,value} pairs.
 
 A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#match_labels ValidatingWebhookConfiguration#match_labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#match_labels ValidatingWebhookConfiguration#match_labels}
 
 ---
 
@@ -1262,7 +1262,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 &validatingwebhookconfiguration.ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions {
 	Key: *string,
@@ -1291,7 +1291,7 @@ Key *string
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#key ValidatingWebhookConfiguration#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#key ValidatingWebhookConfiguration#key}
 
 ---
 
@@ -1305,7 +1305,7 @@ Operator *string
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#operator ValidatingWebhookConfiguration#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#operator ValidatingWebhookConfiguration#operator}
 
 ---
 
@@ -1321,7 +1321,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#values ValidatingWebhookConfiguration#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#values ValidatingWebhookConfiguration#values}
 
 ---
 
@@ -1330,7 +1330,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookObjectSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 &validatingwebhookconfiguration.ValidatingWebhookConfigurationWebhookObjectSelector {
 	MatchExpressions: interface{},
@@ -1357,7 +1357,7 @@ MatchExpressions interface{}
 
 match_expressions block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#match_expressions ValidatingWebhookConfiguration#match_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#match_expressions ValidatingWebhookConfiguration#match_expressions}
 
 ---
 
@@ -1373,7 +1373,7 @@ A map of {key,value} pairs.
 
 A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#match_labels ValidatingWebhookConfiguration#match_labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#match_labels ValidatingWebhookConfiguration#match_labels}
 
 ---
 
@@ -1382,7 +1382,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 &validatingwebhookconfiguration.ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressions {
 	Key: *string,
@@ -1411,7 +1411,7 @@ Key *string
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#key ValidatingWebhookConfiguration#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#key ValidatingWebhookConfiguration#key}
 
 ---
 
@@ -1425,7 +1425,7 @@ Operator *string
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#operator ValidatingWebhookConfiguration#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#operator ValidatingWebhookConfiguration#operator}
 
 ---
 
@@ -1441,7 +1441,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#values ValidatingWebhookConfiguration#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#values ValidatingWebhookConfiguration#values}
 
 ---
 
@@ -1450,7 +1450,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookRule.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 &validatingwebhookconfiguration.ValidatingWebhookConfigurationWebhookRule {
 	ApiGroups: *[]*string,
@@ -1465,11 +1465,11 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwe
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookRule.property.apiGroups">ApiGroups</a></code> | <code>*[]*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#api_groups ValidatingWebhookConfiguration#api_groups}. |
-| <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookRule.property.apiVersions">ApiVersions</a></code> | <code>*[]*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#api_versions ValidatingWebhookConfiguration#api_versions}. |
+| <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookRule.property.apiGroups">ApiGroups</a></code> | <code>*[]*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#api_groups ValidatingWebhookConfiguration#api_groups}. |
+| <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookRule.property.apiVersions">ApiVersions</a></code> | <code>*[]*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#api_versions ValidatingWebhookConfiguration#api_versions}. |
 | <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookRule.property.operations">Operations</a></code> | <code>*[]*string</code> | Operations is the operations the admission hook cares about - CREATE, UPDATE, DELETE, CONNECT or * for all of those operations and any future admission operations that are added. |
-| <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookRule.property.resources">Resources</a></code> | <code>*[]*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#resources ValidatingWebhookConfiguration#resources}. |
-| <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookRule.property.scope">Scope</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#scope ValidatingWebhookConfiguration#scope}. |
+| <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookRule.property.resources">Resources</a></code> | <code>*[]*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#resources ValidatingWebhookConfiguration#resources}. |
+| <code><a href="#@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookRule.property.scope">Scope</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#scope ValidatingWebhookConfiguration#scope}. |
 
 ---
 
@@ -1481,7 +1481,7 @@ ApiGroups *[]*string
 
 - *Type:* *[]*string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#api_groups ValidatingWebhookConfiguration#api_groups}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#api_groups ValidatingWebhookConfiguration#api_groups}.
 
 ---
 
@@ -1493,7 +1493,7 @@ ApiVersions *[]*string
 
 - *Type:* *[]*string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#api_versions ValidatingWebhookConfiguration#api_versions}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#api_versions ValidatingWebhookConfiguration#api_versions}.
 
 ---
 
@@ -1509,7 +1509,7 @@ Operations is the operations the admission hook cares about - CREATE, UPDATE, DE
 
 If '*' is present, the length of the slice must be one. Required.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#operations ValidatingWebhookConfiguration#operations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#operations ValidatingWebhookConfiguration#operations}
 
 ---
 
@@ -1521,7 +1521,7 @@ Resources *[]*string
 
 - *Type:* *[]*string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#resources ValidatingWebhookConfiguration#resources}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#resources ValidatingWebhookConfiguration#resources}.
 
 ---
 
@@ -1533,7 +1533,7 @@ Scope *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/validating_webhook_configuration#scope ValidatingWebhookConfiguration#scope}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/validating_webhook_configuration#scope ValidatingWebhookConfiguration#scope}.
 
 ---
 
@@ -1544,7 +1544,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ValidatingWebhookConfigurationMetadataOutputReference
 ```
@@ -1942,7 +1942,7 @@ func InternalValue() ValidatingWebhookConfigurationMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookClientConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationWebhookClientConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ValidatingWebhookConfigurationWebhookClientConfigOutputReference
 ```
@@ -2291,7 +2291,7 @@ func InternalValue() ValidatingWebhookConfigurationWebhookClientConfig
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookClientConfigServiceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationWebhookClientConfigServiceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ValidatingWebhookConfigurationWebhookClientConfigServiceOutputReference
 ```
@@ -2642,7 +2642,7 @@ func InternalValue() ValidatingWebhookConfigurationWebhookClientConfigService
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationWebhookList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ValidatingWebhookConfigurationWebhookList
 ```
@@ -2785,7 +2785,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsList
 ```
@@ -2928,7 +2928,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsOutputReference
 ```
@@ -3282,7 +3282,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookNamespaceSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationWebhookNamespaceSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ValidatingWebhookConfigurationWebhookNamespaceSelectorOutputReference
 ```
@@ -3602,7 +3602,7 @@ func InternalValue() ValidatingWebhookConfigurationWebhookNamespaceSelector
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsList
 ```
@@ -3745,7 +3745,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsOutputReference
 ```
@@ -4099,7 +4099,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookObjectSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationWebhookObjectSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ValidatingWebhookConfigurationWebhookObjectSelectorOutputReference
 ```
@@ -4419,7 +4419,7 @@ func InternalValue() ValidatingWebhookConfigurationWebhookObjectSelector
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationWebhookOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ValidatingWebhookConfigurationWebhookOutputReference
 ```
@@ -5014,7 +5014,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookRuleList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationWebhookRuleList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ValidatingWebhookConfigurationWebhookRuleList
 ```
@@ -5157,7 +5157,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.validatingWebhookConfiguration.ValidatingWebhookConfigurationWebhookRuleOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/validatingwebhookconfiguration"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/validatingwebhookconfiguration"
 
 validatingwebhookconfiguration.NewValidatingWebhookConfigurationWebhookRuleOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ValidatingWebhookConfigurationWebhookRuleOutputReference
 ```

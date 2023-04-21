@@ -1,4 +1,4 @@
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,17 +10,17 @@ export interface NodeTaintConfig extends cdktf.TerraformMetaArguments {
   /**
   * Set the name of the field manager for the node taint
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#field_manager NodeTaint#field_manager}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#field_manager NodeTaint#field_manager}
   */
   readonly fieldManager?: string;
   /**
   * Force overwriting annotations that were created or edited outside of Terraform.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#force NodeTaint#force}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#force NodeTaint#force}
   */
   readonly force?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#id NodeTaint#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#id NodeTaint#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -29,21 +29,21 @@ export interface NodeTaintConfig extends cdktf.TerraformMetaArguments {
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#metadata NodeTaint#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#metadata NodeTaint#metadata}
   */
   readonly metadata: NodeTaintMetadata;
   /**
   * taint block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#taint NodeTaint#taint}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#taint NodeTaint#taint}
   */
-  readonly taint: NodeTaintTaint;
+  readonly taint: NodeTaintTaint[] | cdktf.IResolvable;
 }
 export interface NodeTaintMetadata {
   /**
   * The name of the node
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#name NodeTaint#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#name NodeTaint#name}
   */
   readonly name: string;
 }
@@ -107,24 +107,24 @@ export interface NodeTaintTaint {
   /**
   * The taint effect
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#effect NodeTaint#effect}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#effect NodeTaint#effect}
   */
   readonly effect: string;
   /**
   * The taint key
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#key NodeTaint#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#key NodeTaint#key}
   */
   readonly key: string;
   /**
   * The taint value
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#value NodeTaint#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#value NodeTaint#value}
   */
   readonly value: string;
 }
 
-export function nodeTaintTaintToTerraform(struct?: NodeTaintTaintOutputReference | NodeTaintTaint): any {
+export function nodeTaintTaintToTerraform(struct?: NodeTaintTaint | cdktf.IResolvable): any {
   if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -138,16 +138,22 @@ export function nodeTaintTaintToTerraform(struct?: NodeTaintTaintOutputReference
 
 export class NodeTaintTaintOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
   }
 
-  public get internalValue(): NodeTaintTaint | undefined {
+  public get internalValue(): NodeTaintTaint | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._effect !== undefined) {
@@ -165,15 +171,21 @@ export class NodeTaintTaintOutputReference extends cdktf.ComplexObject {
     return hasAnyValues ? internalValueResult : undefined;
   }
 
-  public set internalValue(value: NodeTaintTaint | undefined) {
+  public set internalValue(value: NodeTaintTaint | cdktf.IResolvable | undefined) {
     if (value === undefined) {
       this.isEmptyObject = false;
+      this.resolvableValue = undefined;
       this._effect = undefined;
       this._key = undefined;
       this._value = undefined;
     }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
       this._effect = value.effect;
       this._key = value.key;
       this._value = value.value;
@@ -220,8 +232,28 @@ export class NodeTaintTaintOutputReference extends cdktf.ComplexObject {
   }
 }
 
+export class NodeTaintTaintList extends cdktf.ComplexList {
+  public internalValue? : NodeTaintTaint[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NodeTaintTaintOutputReference {
+    return new NodeTaintTaintOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint kubernetes_node_taint}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint kubernetes_node_taint}
 */
 export class NodeTaint extends cdktf.TerraformResource {
 
@@ -235,7 +267,7 @@ export class NodeTaint extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint kubernetes_node_taint} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint kubernetes_node_taint} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -246,7 +278,7 @@ export class NodeTaint extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_node_taint',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.19.0',
+        providerVersion: '2.20.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
@@ -330,11 +362,11 @@ export class NodeTaint extends cdktf.TerraformResource {
   }
 
   // taint - computed: false, optional: false, required: true
-  private _taint = new NodeTaintTaintOutputReference(this, "taint");
+  private _taint = new NodeTaintTaintList(this, "taint", false);
   public get taint() {
     return this._taint;
   }
-  public putTaint(value: NodeTaintTaint) {
+  public putTaint(value: NodeTaintTaint[] | cdktf.IResolvable) {
     this._taint.internalValue = value;
   }
   // Temporarily expose input value. Use with caution.
@@ -352,7 +384,7 @@ export class NodeTaint extends cdktf.TerraformResource {
       force: cdktf.booleanToTerraform(this._force),
       id: cdktf.stringToTerraform(this._id),
       metadata: nodeTaintMetadataToTerraform(this._metadata.internalValue),
-      taint: nodeTaintTaintToTerraform(this._taint.internalValue),
+      taint: cdktf.listMapper(nodeTaintTaintToTerraform, true)(this._taint.internalValue),
     };
   }
 }

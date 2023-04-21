@@ -1,3 +1,3 @@
 # `data_kubernetes_namespace`
 
-Refer to the Terraform Registory for docs: [`data_kubernetes_namespace`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/namespace).
+Refer to the Terraform Registory for docs: [`data_kubernetes_namespace`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/data-sources/namespace).
